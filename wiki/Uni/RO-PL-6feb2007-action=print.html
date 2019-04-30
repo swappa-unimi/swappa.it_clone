@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - PL - Pizze - 6.02.07</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RO-PL-6feb2007.html' title='Ricerca Operativa - PL - Pizze - 6.02.07'>Ricerca Operativa - PL - Pizze - 6.02.07</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PL - Pizze - 6.02.07 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>Per festeggiare il superamento dell’esame di Ricerca Operativa, due amici escono in pizzeria e, affamatissimi per l’immane sforzo compiuto, ordinano tre pizze diverse. Ognuno dei due attribuisce diversi valori di gradimento percentuale alle tre pizze; i valori sono riportati nel file PIZZE.TXT. I due amici vorrebbero dividersi le pizze in modo che ciascuno sia il più contento possibile e, riconoscendo la conflittualità dei loro obiettivi, decidono ovviamente di formulare il problema e risolverlo in modo scientifico.<br />Considerare separatamente i due casi: (a) senza vincoli sulla quantità di pizza mangiata da ciascuno; (b) con il vincolo che ciascuno mangi l’equivalente di una pizza e mezzo.<br />Trovare la soluzione ottima con le seguenti funzioni obiettivo:
+</p><ul><li>massimizzare il grado di contentezza del più scontento
+</li><li>massimizzare il grado di contentezza del più contento
+</li><li>massimizzare il grado di contentezza totale
+</li></ul><div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+Le pizze sono tre: ai formaggi, ai salumi, alle verdure.
+
+========================================================
+
+Tabella 1: Percentuale di gradimento
+
+Amico    Formaggi  Salumi  Verdure
+  1         0.3     0.5     0.2
+  2         0.7     0.2     0.1
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<ul><li><strong>amici = 2</strong> (numero di amici)
+</li><li><strong>pizze = 3</strong> (numero di pizze)
+</li><li><strong>grad<sub>ij</sub></strong> (percentuale gradimento della pizza i=1..3 per l'amico j=1..2) [%]
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<p>Conviene separare in due variabili distinte le quantità di pizze mangiate dai due amici. Quindi:
+</p><ul><li><strong>x<sub>i</sub></strong> (quantità di pizza i=1..3 mangiata dall'amico 1)
+</li><li><strong>y<sub>i</sub></strong> (quantità di pizza i=1..3 mangiata dall'amico 2)
+</li></ul><p class='vspace'>Le variabili sono continue e non negative.
+</p>
+<div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p>Nel problema non ci viene chiesto di massimizzare il gradimento di uno solo dei due amici, ma di entrambi. Dovremmo quindi avere due funzioni obiettivo per ciascuno di essi da considerare contemporaneamente, ma dal momento che ciò non è realizzabile trasformeremo una delle due in un vincolo (che definiremo poi).<br />Come funzione obiettivo manterremo:<br /><strong>max (somma)<sub>i</sub> grad<sub>ij</sub> * x<sub>i</sub></strong> (per j=1)
+</p>
+<p class='vspace'>Per poter rispondere alle richieste del testo (massimizzare il grado di contentezza del più scontento, massimizzare il grado di contentezza del più contento, massimizzare il grado di contentezza totale) ricorreremo in un secondo momento con l'analisi parametrica.
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<ul><li>come prima cosa definiamo il vincolo che rappresenta la funzione obiettivo che riguarda il secondo amico:<br /><strong>(somma)<sub>i</sub> grad<sub>ij</sub> * y<sub>i</sub> &gt;= 0</strong> (per j=2)
+</li></ul><p class='vspace'>Caso (a):
+</p><ul><li>vincolo che impone che ogni pizza sia mangiata per intero:<br /><strong>x<sub>i</sub> + y<sub>i</sub> = 1</strong> (per ogni i)
+</li></ul><p class='vspace'>Caso (b):
+</p><ul><li>vincolo che impone che ogni pizza sia mangiata per intero:<br /><strong>x<sub>i</sub> + y<sub>i</sub> = 1</strong> (per ogni i)
+</li><li>vincolo che impone che ogni amico mangi la stessa quantità di pizza. Notare che non va bene un'espressione con questa forma:<br /><strong>(somma)<sub>i</sub> x<sub>i</sub> = (somma)<sub>i</sub> y<sub>i</sub></strong><br />perché sappiamo che Lindo vuole 
+</li></ul><div class='vspace'></div><h2>Lindizzazione del problema</h2>
+<h3>Caso (a)</h3>
+<pre class='escaped'>
+! esercizio - Pizze
+! variabili: x(i) = quantità di pizza i mangiata dall'amico 1
+!            y(i) = quantità di pizza i mangiata dall'amico 2
+! le variabili sono continue e non negative
+
+! funzione obiettivo (riguardante l'amico 1)
+max 0.3 x1 + 0.5 x2 + 0.2 x3 
+
+st
+
+! vincolo che trasforma la funzione obiettivo riguardante l'amico 2
+vinFO2) 0.7 y1 + 0.2 y2 + 0.1 y3 &gt;= 0
+
+! caso (a): vincolo che impone di mangiare la pizza per intero
+pizza1) x1 + y1 = 1
+pizza2) x2 + y2 = 1
+pizza3) x3 + y3 = 1
+
+end
+</pre>
+<div class='vspace'></div><h3>Caso (b):</h3>
+<pre class='escaped'>
+! esercizio - Pizze
+! variabili: x(i) = quantità di pizza i mangiata dall'amico 1
+!            y(i) = quantità di pizza i mangiata dall'amico 2
+! le variabili sono continue e non negative
+
+! funzione obiettivo (riguardante l'amico 1)
+max 0.3 x1 + 0.5 x2 + 0.2 x3 
+
+st
+
+! vincolo che trasforma la funzione obiettivo riguardante l'amico 2
+vinFO2) 0.7 y1 + 0.2 y2 + 0.1 y3 &gt;= 0
+
+! caso (b): vincolo che impone di mangiare la pizza per intero
+pizza1) x1 + y1 = 1
+pizza2) x2 + y2 = 1
+pizza3) x3 + y3 = 1
+
+! caso (b): vincolo che impone che gli amici mangino la stessa quantità di pizza
+ugPizza) x1 + x2 + x3 - y1 - y2 - y3 = 0
+
+end
+</pre>
+<div class='vspace'></div><h2>Le tre funzioni obiettivo richieste nel testo</h2>
+<h3>Caso (a)</h3>
+<p>Riportiamo il report della soluzione del caso (a):
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ LP OPTIMUM FOUND AT STEP      0
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      1.000000
+
+  VARIABLE        VALUE          REDUCED COST
+        X1         1.000000          0.000000
+        X2         1.000000          0.000000
+        X3         1.000000          0.000000
+        Y1         0.000000          0.300000
+        Y2         0.000000          0.500000
+        Y3         0.000000          0.200000
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+   VINFO2)         0.000000          0.000000
+   PIZZA1)         0.000000          0.300000
+   PIZZA2)         0.000000          0.500000
+   PIZZA3)         0.000000          0.200000
+
+ NO. ITERATIONS=       0</pre>
+<p class='vspace'>Facciamo ora l'analisi parametrica sul vincolo che rappresenta la seconda funzione obiettivo, fissando il nuovo valore a 1:
+</p>
+<div class='vspace'></div><pre class='escaped'> RIGHTHANDSIDE PARAMETRICS REPORT FOR ROW: VINFO2
+
+    VAR       VAR    PIVOT    RHS       DUAL PRICE      OBJ
+    OUT       IN      ROW     VAL      BEFORE PIVOT     VAL
+
+                           0.000000E+00  0.000000E+00   1.00000
+ SLK    2        Y1     2  0.000000E+00  0.000000E+00   1.00000
+       X1        Y3     3  0.700000     -0.428571      0.700000
+       X3        Y2     5  0.800000      -2.00000      0.500000
+                            1.00000      -2.50000      0.372529E-07</pre>
+<p class='vspace'>Rispondiamo ora alle richieste del testo:
+</p><ul><li>massimizzare il grado di contentezza del più contento: evidentemente è la situazione in cui uno dei due amici mangia tutto e l'altro non mangia niente. Infatti quando uno dei due amici ha soddisfazione complessiva 1, l'altro ha 0
+</li><li>massimizzare il grado di contentezza del più scontento: dobbiamo confrontare nei risultati dell'analisi parametrica la colonna del valore attuale del vincolo sulla seconda funzione obiettivo ("RHS VAL") e il valore ottimo corrispondente del problema ("OBJ VAL"). In questo modo osserviamo che l'OBJ VAL che massimizza l'RHS VAL (ricordando sempre che il primo deve essere maggiore del secondo) è quello in cui il primo e il secondo amico hanno grado di contentezza pari a 0.7
+</li><li>massimizzare il grado di contentezza totale: evidentemente è lo stesso risultato del punto precedente, ovvero quello in cui entrambi hanno grado di contentezza pari a 0.7
+</li></ul><div class='vspace'></div><h3>Caso (b)</h3>
+<p>Riportiamo il report della soluzione del caso (b):
+</p>
+<div class='vspace'></div><pre class='escaped'> LP OPTIMUM FOUND AT STEP      2
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)     0.6500000
+
+  VARIABLE        VALUE          REDUCED COST
+        X1         0.500000          0.000000
+        X2         1.000000          0.000000
+        X3         0.000000          0.100000
+        Y1         0.500000          0.000000
+        Y2         0.000000          0.200000
+        Y3         1.000000          0.000000
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+   VINFO2)         0.450000          0.000000
+   PIZZA1)         0.000000          0.150000
+   PIZZA2)         0.000000          0.350000
+   PIZZA3)         0.000000          0.150000
+  UGPIZZA)         0.000000          0.150000
+
+ NO. ITERATIONS=       2</pre>
+<p class='vspace'>Facciamo ora l'analisi parametrica sul vincolo che rappresenta la seconda funzione obiettivo, fissando il nuovo valore a 1:
+</p>
+<div class='vspace'></div><pre class='escaped'> RIGHTHANDSIDE PARAMETRICS REPORT FOR ROW: VINFO2
+
+    VAR       VAR    PIVOT    RHS       DUAL PRICE      OBJ
+    OUT       IN      ROW     VAL      BEFORE PIVOT     VAL
+
+                           0.000000E+00  0.000000E+00  0.650000
+ SLK    2        X3     2  0.450000      0.000000E+00  0.650000
+       X1        Y2     3  0.750000     -0.166667      0.600000
+       Y3  ART          5  0.800000      -3.00000      0.450000
+                            1.00000       -INFINITY   INFEASIBLE</pre>
+<p class='vspace'>Rispondiamo ora alle richieste del testo:
+</p><ul><li>massimizzare il grado di contentezza del più contento: in questo caso la soluzione ottima si trova nel punto (0.65 , 0.45)
+</li><li>massimizzare il grado di contentezza del più scontento: per lo stesso ragionamento fatto nel caso (a), la soluzione ottima si trova nel punto (0.65 , 0.45)
+</li><li>massimizzare il grado di contentezza totale: ??
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RO-PL-6feb2007)</span></div>
+  </div>
+</body>
+</html>

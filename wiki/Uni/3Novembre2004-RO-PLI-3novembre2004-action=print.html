@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - PLI - 3 novembre 2004</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='3Novembre2004-RO-PLI-3novembre2004.html' title='Ricerca Operativa - PLI - 3 novembre 2004'>Ricerca Operativa - PLI - 3 novembre 2004</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PLI - 3 novembre 2004 ::</strong>
+</pre><div class='vspace'></div><h2>Testo</h2>
+<p>Una macchina utensile deve svolgere una serie di operazioni (jobs). Di ogni job è nota la durata. I jobs ovviamente non si possono sovrapporre: per poterne iniziare uno dev&#8217;essere finito quello precedente.<br />Per ogni job sono noti gli istanti iniziale e finale di una finestra temporale all&#8217;interno della quale deve iniziare e terminare la lavorazione.<br />Sull&#8217;obiettivo i responsabili della pianificazione della produzione discutono; si vorrebbero considerare diverse possibilità.<br />* Un primo obiettivo è quello di minimizzare il tempo complessivo necessario ad eseguire tutti i jobs.
+</p><ul><li>Un secondo obiettivo consiste nel minimizzare il tempo medio di completamento dei jobs.
+</li><li>Un terzo obiettivo consiste nel massimizzare l&#8217;anticipo con cui mediamente i jobs vengono completati rispetto alla loro scadenza, cioè all&#8217;istante finale della loro finestra temporale.
+</li></ul><p class='vspace'>Formulare il problema, classificarlo e risolverlo nei tre casi indicati con i dati del file SCHEDULE.TXT.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+I jobs sono 7.
+
+========================================
+
+Tabella 1: Tempi di lavorazione
+
+ Job Tempo
+  1   10  
+  2   14  
+  3   21  
+  4   18  
+  5    4  
+  6   23  
+  7   35
+
+========================================
+
+Tabella 2: Finestre temporali
+
+ Job  Inizio   Fine
+  1     15      50
+  2      0      80
+  3      0      95
+  4     10      75
+  5      5      30
+  6     13     130
+  7     18     120
+
+</pre>
+<div class='vspace'></div><h2>Soluzione</h2>
+<h3>Dati</h3>
+<p>Allora, quello che abbiamo sono:
+</p><ul><li>N <del>blow</del>jobs
+</li><li>d<sub>j</sub>, j=1..N : durata di un job [misteriosa unità di tempo]
+</li><li>a<sub>j</sub>, b<sub>j</sub>, j=1..N : finestra temporale di ogni job, dove <strong>a</strong> è l'inizio e <strong>b</strong> la fine
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<p>Quello che dobbiamo scoprire è in che istante far partire il j-esimo <a class='urllink' href='http://uncyclopedia.wikia.com/wiki/Steve_Jobs' title='' rel='nofollow'><del>Steve</del> job<del>s</del></a>:
+</p><ul><li>t<sub>j</sub>, j=1..N : istante di inizio del j-esimo job, variabile continua non negativa.
+</li></ul><p class='vspace'>È continua non negativa perché qualsiasi istante dopo lo 0 va bene.
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<p>Il primo vincolo riguarda la finestra temporale. Il testo ci dice che un job ha una finestra temporale che gli è stata assegnata, e deve iniziare e terminare dentro di essa. Quindi, l'istante iniziale del job deve essere &gt;= all'istante di inizio della sua finestra temporale, e l'istante finale deve essere &lt;= all'istante finale della sua finestra temporale:
+</p><ul><li>t<sub>j</sub> &gt;= a<sub>j</sub>, j=1..N : deve iniziare dopo l'inizio della sua finestra temporale
+</li><li>t<sub>j</sub> + d<sub>j</sub> &lt;= b<sub>j</sub> : deve finire entro l'istante temporale.
+</li></ul><p>t<sub>j</sub> + d<sub>j</sub> mi dà l'esatto istante in cui finisce il job, perché sommo l'istante in cui comincia con la sua durata, la quale è un dato.
+</p>
+<div class='vspace'></div><h3>Ancora variabili...</h3>
+<p>Torniamo a parlare delle variabili. Quelle di sopra erano quelle più facilmente riconoscibili leggendo il testo. Però, approfondendo il discorso salta fuori che ci sono altre cose di cui occorre tenere traccia.
+</p>
+<p class='vspace'>La prima è che i job non si possono sovrapporre. Qui entrano in ballo le variabili binarie: prendo una bella tabella N*N, in cui la casella (i,j) vale 1 se il job i precede il job j, 0 altrimenti. La tabella la chiamiamo y:
+</p><ul><li>y<sub>i,j</sub> binaria, i,j=1..N : il lavoro i precede il lavoro j se vale 1, 0 altrimenti
+</li></ul><div class='vspace'></div><h3>...e ancora vincoli</h3>
+<p>La nuova variabile y introduce un'altro problema: se il lavoro <em>i</em> precede il lavoro <em>j</em>, allora vuol dire che t<sub>i</sub> + d<sub>i</sub> &lt;= t<sub>j</sub>, cioè l'istante di fine del lavoro <em>i</em> deve precedere l'istante di inizio del lavoro <em>j</em>. Al contrario, se <em>j</em> precede <em>i</em>, allora t<sub>j</sub> + d<sub>j</sub> &lt;= t<sub>i</sub>:
+</p><ul><li>se y<sub>i,j</sub> = 1, t<sub>i</sub> + d<sub>i</sub> &lt;= t<sub>j</sub>
+</li><li>se y<sub>i,j</sub> = 0, t<sub>j</sub> + d<sub>j</sub> &lt;= t<sub>i</sub>
+</li></ul><p class='vspace'>Per rappresentare queste condizioni, usiamo un trucco barbino che non sarebbe mai venuto in mente in sede d'esame. Prendiamo una variabile M, di valore molto grande, e la usiamo in questo modo:
+</p><ul><li>t<sub>i</sub> + d<sub>i</sub> &lt;= t<sub>j</sub> + M(1-y<sub>i,j</sub>)
+</li><li>t<sub>j</sub> + d<sub>j</sub> &lt;= t<sub>i</sub> + M(y<sub>i,j</sub>)
+</li></ul><p class='vspace'>In pratica, moltiplicando M per il valore di y in corrispondenza di <em>i</em> e ''j, è come se dicessimo:
+</p><ul><li>se y vale 1 (cioè i precede j), allora 1-y vale 0, e quindi M*0 = 0, e in questo caso diventa stringente il primo vincolo, che dice che l'istante finale di <em>i</em> deve essere minore dell'istante iniziale di <em>j</em>
+</li><li>se y vale 0 (cioè i segue j), allora 1-y vale 1, e quindi M*1 = M, e in questo caso diventa stringente il secondo vincolo, che dice che l'istante iniziale di <em>j</em> deve essere minore dell'istante iniziale di <em>i</em>
+</li></ul><p class='vspace'>C'è anche un'altra cosa da dire: se il job <em>i</em> precede <em>j</em>, ovvero ha un 1 nella cella y<sub>i,j</sub>, allora NON deve accadere che <em>j</em> preceda <em>i</em>, cioè che ci sia un 1 ANCHE nella cella y<sub>j,i</sub>:
+</p><ul><li>y<sub>i,j</sub> + y<sub>j,i</sub> = 1
+</li></ul><div class='vspace'></div><h2>Funzioni obiettivo</h2>
+<h3>Minimizzare il massimo tempo impiegato</h3>
+<p>Il tempo impiegato è dato da SOMMA(j): t(j) + i(j), per ogni lavoro: istante iniziale più durata di ogni lavoro. Vogliamo che questa somma sia minima, e quindi:
+</p>
+<p class='vspace'>min = delta;<br />delta &gt;= t<sub>j</sub> + d<sub>j</sub>, per ogni j
+</p>
+<div class='vspace'></div><h3>Minimizzare il tempo medio di completamento</h3>
+<p>Per il tempo medio di completamento, prendo tutti i tempi di completamento e ne faccio la media:<br />min = 1/7 * @sum(jobs(j): t(j) + d(j));
+</p>
+<div class='vspace'></div><h3>Massimizzare l'anticipo medio con cui un job termina rispetto alla sua finestra massima</h3>
+<p>Un job deve terminare, come scritto nei vincoli, entro l'istante finale della sua finestra temporale. Qui vogliamo che la media delle differenze tra istante finale effettivo e istante finale massimo consentito (fine della finestra) sia massima:<br />max = 1/7 * @sum(jobs(i): b(i) - a(i) + t(i));
+</p>
+<div class='vspace'></div><h2>Codice Lingo</h2>
+<pre class='escaped'>
+! 3 novembre 2004 - Scheduling;
+
+model:
+
+sets:
+jobs /1..7/: durata, iniziowin, finewin, t;
+schedule (jobs,jobs): y;
+
+endsets
+
+data:
+durata = 10 14 21 18 4 23 35;
+iniziowin = 15 0 0 10 5 13 18;
+finewin = 50 80 95 75 30 130 120;
+M = 1000;
+
+enddata
+
+! Ci sono 3 funzioni obiettivo:
+! 1) minimizzare il tempo complessivo necessario al completamento di 
+! tutti i job (min makespan)
+! Si tratta di minimizzare il massimo tempo, quindi un min max.
+! Introduco una variabile ausiliaria delta;
+!min = delta;
+!@for(jobs(j): delta &gt;= t(j) + durata(j));
+
+! 2) Minimizzare il tempo medio di completamento;
+!min = 1/7 * @sum(jobs(i): t(i) +durata(i));
+
+! 3) Massimizzare l'anticipo medio con cui i jobs terminano il loro lavoro;
+max = 1/7 * @sum(jobs(i): finewin(i) - (iniziowin(i) + durata(i)));
+
+! Vincoli sulle finestre temporali;
+@for (jobs(j): t(j) &gt;= iniziowin(j));
+@for (jobs(j): t(j) + durata(j) &lt;= finewin(j));
+
+! Vincoli di non sovrapposizione;
+! Ho un vincolo per ogni coppia di job =&gt; 2 cicli for innestati;
+@for (jobs(i):
+	@for(jobs(j) | i #NE# j: t(i) + durata(i) &lt;= t(j) + M * (1 - y(i,j))
+	)
+);
+
+@for (jobs(i):
+	@for(jobs(j)  | i #NE# j: t(j) + durata(j) &lt;= t(i) + M * y(i,j)
+	)
+);
+
+@for (schedule(i,j)  | i #NE# j: y(i,j) + y(j,i) = 1);
+
+! Per evitare di fare due volte lo stesso conto, scrivo LT: lesser than, così
+! fa il giro una volta sola;
+!@for (schedule(i,j)  | i #LT# j: y(i,j) = 1);
+
+
+@for(schedule(i,j): @bin(y(i,j)));
+
+end
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/3Novembre2004-RO-PLI-3novembre2004)</span></div>
+  </div>
+</body>
+</html>

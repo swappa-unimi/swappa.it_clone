@@ -1,0 +1,321 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - PL - Fonderie - 22.07.02</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RO-PL-22luglio2002.html' title='Ricerca Operativa - PL - Fonderie - 22.07.02'>Ricerca Operativa - PL - Fonderie - 22.07.02</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PL - Fonderia - 29.07.02 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>Una fonderia deve pianificare la produzione di lingotti di diverse leghe,ottenute miscelando metalli in percentuali differenti e conosciute. Il reparto rifornimenti conosce le quantità di materie prime che saranno disponibili nel periodo di riferimento. Ciò che non si conosce è quale sarà il prezzo a cui i prodotti potranno essere venduti, a causa della situazione incerta del mercato. Gli esperti ipotizzano che si possano verificare due scenari e indicano quali potrebbero essere i prezzi nei due casi.<br />Non disponendo di altre informazioni, il consiglio di amministrazione decide di seguire una strategia volta ad ottimizzare i ricavi dell&#8217;azienda nel caso peggiore.<br />* Formulare il problema, classificarlo e risolverlo con i dati del file FONDERIA.TXT.
+</p><ul><li>Valutare di quanto si discosta il ricavo ottenuto in tal modo dal ricavo ottenibile ottimizzando rispetto ad uno solo dei due scenari possibili.
+</li><li>Il reparto rifornimenti comunica di essere in grado di rifornirsi di ulteriori quantitativi di materie prime, di tutti i tipi. Valutare le offerte per decidere se e di quanto sia conveniente rifornirsi ulteriormente.
+</li></ul><div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+=========================================================
+
+I prodotti sono 3.
+Le materie prime sono di 4 tipi.
+
+**************************************************
+
+Tabella 1: Disponibilità delle materie prime
+
+Mat. prima  Quantità [Kg/g]
+    M1        2900
+    M2        2200
+    M3        4000
+    M4        1550
+
+**************************************************
+
+Tabella 2: Assemblaggio: percentuale di materia prima per ogni prodotto
+
+   Prodotto  P1   P2   P3
+Mat.pr.
+  M1         58   22   30  
+  M2         12   15   60  
+  M3         20   53   14  
+  M4         10   15   23  
+
+**************************************************
+
+Tabella 3: Prezzi - primo scenario
+
+Prodotto Prezzo [Euro/Kg]
+   P1       6
+   P2      10
+   P3      12
+
+**************************************************
+
+Tabella 4: Prezzi - secondo scenario
+
+Prodotto Prezzo [Euro/Kg]
+   P1      12
+   P2      10
+   P3       6
+
+**************************************************
+
+Tabella 5: Prezzi di rifornimento ulteriore
+
+Materia prima   Prezzo [Euro/Kg]
+     M1           16
+     M2           10.5
+     M3            4.5
+     M4            2
+
+**************************************************
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<p>I dati visti qui sopra sono piuttosto semplici. Ecco quello che ho in mano:
+</p><ul><li>N = 3 : numero di prodotti
+</li><li>M = 4 : numero di materie prime
+</li><li>D<sub>i</sub>, i=1..M [kg/g] : disponibilità della materia i-esima
+</li><li>A<sub>ij</sub>, i=1..N, j=1..M [%] : percentuale di materia prima per ogni unità di prodotto
+</li><li>P1<sub>i</sub>, P2<sub>i</sub>, i =1..N [Euro/Kg] : prezzo al kilogrammo per ogni prodotto =&gt; ci sono due scenari, ecco perché ho P1 e P2
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<p>Leggendo il problema, pare proprio che quello che voglio sapere è quanti kg al giorno produrre di prodotto 1, prodotto 2 e prodotto 3. Si tratta di una variabile continua non-negativa, visto che posso produrre anche quantità frazionarie di kg. L'unità di misura è il [kg/g], cioè il kilogrammo al giorno, per uniformarmi alla tabella qui sopra, che mi dà la quantità giornaliera di materie prime in [kg/g].
+</p><ul><li>x<sub>i</sub> [kg/g] i=1..N : quantità in kg al giorno di prodotto i
+</li></ul><div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p>Se ho capito bene il problema, qui voglio avere il mix produttivo che rende il massimo, nel caso in cui tutto va storto. Cioè, quando tutto sarà contro di me, qual'è il mix produttivo che mi renderà di più?<br />La funzione obiettivo dovrebbe essere una <strong>max min</strong>, perché voglio avere il <strong>massimo</strong> rendimento nel caso del <strong>peggiore (minimo)</strong> scenario.<br />Ma a Lindo non piace il max min, perché si tratterebbe di una funzione non-lineare. Adotto allora un'escamotage: tiro fuori una funzione ausiliaria, che chiamo <strong>z</strong>, e stabilisco che <strong>z</strong> debba sempre essere il <strong>minimo</strong> tra il primo scenario ed il secondo scenario, e dico a Lindo che, tra tutti i minimi, voglio quello più ciccione:
+</p><pre class='escaped'>
+scenario1 - z &gt;= 0
+scenario2 - z &gt;= 0
+max z
+</pre>
+<div class='vspace'></div><h3>Vincoli</h3>
+<p>L'unico vincolo che ho riguarda la disponibilità di materia prima giornaliera. Mi vengono dati gli assorbimenti di materia prima, in percentuale, per ogni prodotto:<br />Somma A<sub>ij</sub> * X<sub>i</sub>  &lt;= D<sub>j</sub>, i=1..N, j=1..M [kg/g]
+</p>
+<p class='vspace'>Le X<sub>i</sub> mi dicono i kg al giorno che produco di prodotto i-esimo. Di ogni prodotto so la percentuale di materia 1, 2, 3 e 4 che consuma, e voglio che la somma di tutto ciò che consumo sia inferiore alla disponibilità giornaliera di quella materia.
+</p>
+<div class='vspace'></div><h2>Lindizzazione del problema</h2>
+<pre class='escaped'>
+! Esercizio fonderia
+
+! Variabili: x(i) = quantità di prodotto i-esimo da produrre al giorno [kg/g]
+! È continua, non-negativa
+
+! Funzione obiettivo: massimizzare il guadagno nello scenario 1, e poi nel 2;
+! Scenario 1
+! max 6 x1 + 10 x2 + 12 x3
+! Scenario 2
+! max 12 x1 + 10 x2 + 6 x3
+
+max z
+
+s.t.
+
+!Vincoli sulla quantità di materia utilizzabile in un giorno
+!Prodotto  P1   P2   P3
+!Mat.pr.
+!  M1         58   22   30  
+!  M2         12   15   60  
+!  M3         20   53   14  
+!  M4         10   15   23  
+
+!Mat. prima  Quantità [Kg/g]
+!    M1        2900
+!    M2        2200
+!    M3        4000
+!    M4        1550
+mat1) 0.58 x1 + 0.22 x2 + 0.30 x3 &lt;= 2900
+mat2) 0.12 x1 + 0.15 x2 + 0.6 x3 &lt;= 2200
+mat3) 0.2 x1 + 0.53 x2 + 0.14 x3 &lt;= 4000
+mat4) 0.1 x1 + 0.15 x2 + 0.23 x3 &lt;= 1550
+
+z1) 6 x1 + 10 x2 + 12 x3 - z &gt;= 0
+z2) 12 x1 + 10 x2 + 6 x3 -z &gt;= 0
+
+end
+</pre>
+<p class='vspace'>Non sto qui a spiegarlo tutto perché mi sembra piuttosto simile alla formulazione matematica del problema.
+</p>
+<div class='vspace'></div><h2>Altre domande</h2>
+<h3>Valutare di quanto si discosta il ricavo ottenuto in tal modo dal ricavo ottenibile ottimizzando rispetto ad uno solo dei due scenari possibili.</h3>
+<p>Questa domanda vuol dire che devo calcolare il massimo dello scenario 1, il massimo dello scenario 2, e confrontarli con il massimo del peggio che ho calcolato qui sopra. Nel codice sono già presenti, commentate, le righe che rappresentano i due scenari. Quindi, prima faccio girare Lindo con una, poi con l'altra, vedo la differenza e la scrivo al professore.
+</p>
+<div class='vspace'></div><h3>Il reparto rifornimenti comunica di essere in grado di rifornirsi di ulteriori quantitativi di materie prime, di tutti i tipi. Valutare le offerte per decidere se e di quanto sia conveniente rifornirsi ulteriormente.</h3>
+<p>Quando si sente parlare di convenienza etc. bisogna fare un salto alla teoria. La teoria mi dice che il simplesso, quando termina, mi dice per ogni vincolo qual'è il suo prezzo ombra, chiamato <strong>dual price</strong> in Lindo. Il prezzo ombra mi dice:
+</p><ul><li>quanto sono disposto a pagare al massimo per avere un'unità di quel materiale;
+</li><li>il minimo che chiederei per vendere un'unità di quel materiale.
+</li></ul><p>Qui, i nostri vincoli sono esattamente questo: vincoli sulla disponibilità di materiale. Se il prezzo ombra è 0, vuol dire che di quella materia lì ce n'è anche per i cavalli, cioè <strong>avanza</strong>. Infatti, la corrispondente variabile di slack sarà diversa da 0. Lo slack è lo scarto, appunto ciò che avanza.<br />Se invece il prezzo ombra non è 0, quello è esattamente quanto sarei disposto a spendere per quella materia.
+</p>
+<p class='vspace'>Il ragionamento sottostante è: se mi avanza del materiale, non sarei disposto a pagare per averne altro, visto appunto che mi avanza! Se invece lo sto usando tutto, sono disposto a pagare, entro un certo limite, per averne altro, e oltre quel limite non sarebbe più conveniente.
+</p>
+<p class='vspace'>Compilando il modello, Lindo dice:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ROW   SLACK OR SURPLUS     DUAL PRICES
+     MAT1)         0.000000         15.679265
+     MAT2)        21.399387          0.000000
+     MAT3)         0.000000         12.359550
+     MAT4)        25.715015          0.000000
+</pre>
+<p>Possiamo interpretarlo così:
+</p><ul><li>MAT2 e MAT4 non mi conviene acquistarle: già mi avanzano
+</li><li>Il prezzo propostomi per comprare MAT1 è di 16 euro/kg. Ma lindo mi dice che il massimo che posso spendere per avere un kg di MAT1 è 15.679265. Pertanto, non mi conviene
+</li><li>Il prezzo propostomi per comprare MAT3 è di 4.5 euro/kg. Lindo mi dice che al max posso spendere 12.359550, e quindi in questo caso mi converrebbe prenderne!
+</li></ul><p class='vspace'>A mio avviso, il problema terminerebbe qui. MA nella soluzione ufficiale, si va avanti, e mi si dice che devo anche scoprire fino a che punto mi conviene comprare MAT3.<br />Questo è compito dell'analisi parametrica: vedo quanto varia la soluzione variando un solo parametro. Il parametro qui è la quantità di MAT3 che ho disponibile. Se vario la quantità di MAT3 disponibile, vuol dire che cambierà il mio profitto massimo, e cambierà l'assorbimento di MAT3, e cambierà anche il prezzo ombra di MAT3.<br />Devo quindi scoprire fino a che punto mi conviene comprare, a quel prezzo, della MAT3 aggiuntiva, e quel punto è il punto in cui il prezzo ombra di MAT3 diventa inferiore ai 4.5 euro/kg segnalati tra i dati.
+</p>
+<p class='vspace'>Per fare ciò, faccio fare l'analisi parametrica a Lindo. Mi chiederà un vincolo su cui parametrizzare, e scelgo appunto MAT3. Gli dico di andare a "snasellare" fino a 8000 (valore tirato a botto, che sarebbe il doppio della disponibilità iniziale) come incremento massimo di MAT3, e vedo un po' quello che esce:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+    VAR       VAR    PIVOT    RHS       DUAL PRICE      OBJ
+    OUT       IN      ROW     VAL      BEFORE PIVOT     VAL
+
+                            4000.00       12.3596      0.000000E+00
+ SLK    5  SLK    7     5   4169.53       12.3596       97003.4
+       X3  SLK    2     3   5254.92       4.94370       102369.
+       X1  SLK    4     6   5476.67       4.34783       103333.
+                            8000.00      0.355271E-14   103333.
+</pre>
+<p class='vspace'>Guardiamo la colonna <strong>DUAL PRICE BEFORE PIVOT</strong>: essa mi dice, alla penultima riga, che il prezzo ombra è di 4.34783. Vuol dire che, in quel punto, non è più conveniente acquistare altra MAT3, perché il suo prezzo ombra diventerebbe inferiore al prezzo di acquisto che mi viene proposto.<br />Quindi, l'ideale è di comprare fino a 5254.92 kg di MAT3, che sarebbe la quantità di MAT3 dell riga precedente.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RO-PL-22luglio2002)</span></div>
+  </div>
+</body>
+</html>

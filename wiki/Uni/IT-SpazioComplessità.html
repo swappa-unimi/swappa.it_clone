@@ -1,0 +1,510 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Informatica Teorica - Spazio-complessità </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IT-SpazioComplessità' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Informatica Teorica - Spazio-complessità
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-SpazioComplessit%e0?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-SpazioComplessit%e0?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IT-SpazioComplessit%C3%A0-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-SpazioComplessit%e0?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-SpazioComplessit%e0?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Informatica Teorica - Spazio-complessità was last modified on June 07, 2010, at 11:35 AM'>
+							<span style='display:none;'>Informatica Teorica - Spazio-complessità</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Spazio-complessità ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 19 Maggio</span>
+</p>
+<div class='vspace'></div><h2>Complessità in termini di spazio</h2>
+<p>Così come è possibile quantificare la complessità di un algoritmo in funzione della risorsa tempo, si può fare lo stesso considerando la risorsa spazio, ovvero la memoria utilizzata. Per misurarla si utilizzerà una MdT M, e in particolare:
+</p><ul><li>se M è <code class='escaped'>deterministica</code>, allora la sua <em>spazio complessità</em> è la funzione <em>f(n)</em>, cioè il massimo numero di celle del nastro su cui M farà uno scan per ogni ingresso di lunghezza <em>n</em>;
+</li><li>se M è <code class='escaped'>non deterministica</code> (da ora, <code class='escaped'>n.d.</code>), allora la sua spazio complessità <em>f(n)</em> sarà il numero massimo di celle del nastro su cui M farà uno scan per ogni ramo della sua computazione e per ogni ingresso di lunghezza <em>n</em>.
+</li></ul><p class='vspace'>Quella che ci interessa è però la stima asintotica della spazio-complessità, che può essere così definita:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Sia f:N-&gt;R<sup>+</sup> una funzione. Le <strong>classi di spazio complessità</strong>, <strong>SPACE(f(n))</strong> ed <strong>NSPACE(f(n))</strong>, sono definite come segue:
+</p><ul><li>SPACE(f(n)) = {L|L è un linguaggio deciso da una MdT deterministica O(f(n))-spazio}
+</li><li>NSPACE(f(n)) = {L|L è un linguaggio deciso da una MdT <code class='escaped'>n.d.</code> O(f(n))-spazio}
+</li></ul></div>
+<div class='vspace'></div><h2>Esempio 1: SAT è spazio-lineare?</h2>
+<p>Sappiamo che il problema SAT è NP-completo, e che quindi non può essere risolto con una MdT deterministica in tempo polinomiale. Figurarsi se ci riesce in tempo lineare. Lo spazio ha però una caratteristica vincente rispetto al tempo: può essere riutilizzato!<br />L'idea per la nostra MdT che risolve il problema SAT in spazio lineare, è quella di assegnare una cella ad ogni variabile, e riutilizzarla ogni volta che facciamo un nuovo assegnamento:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>M = "su ingresso &#934;:	<em>(dove &#934; è una formula booleana)</em>
+</p><div class='indent'>1. per ogni valore di verità assegnato alle variabili x<sub>1</sub>..x<sub>n</sub> di &#934;:
+<div class='indent'>2. valuta &#934; sull'assegnamento;
+</div></div><div class='indent'>3. se &#934;=1 in almeno un assegnamento, allora ACCETTA; altrimenti RIFIUTA."
+</div></div>
+<p class='vspace'>M è evidentemente spazio-lineare, perché ad ogni iterazione utilizza sempre lo stesso spazio in memoria, lineare al numero di variabili. Dato che tale numero è al più pari ad <em>n</em>, la lunghezza dell'ingresso, allora possiamo dire che la macchina è eseguita in O(n)-spazio.
+</p>
+<div class='vspace'></div><h2>Esempio 2: (not)ALL è spazio-lineare?</h2>
+<p>Consideriamo ora un problema risolvibile con una MdT <code class='escaped'>n.d.</code>, il problema ALL<sub>NFA</sub>, che deve stabilire se un determinato linguaggio accetta tutte le stringhe. Più formalmente:<br /><em>ALL<sub>NFA</sub> = {&lt;A&gt; | A è un NFA ed L(A)=&#931;<sup>*</sup>}</em>
+</p>
+<p class='vspace'>A noi non interessa il problema ALL<sub>NFA</sub>, ma il suo complementare, di cui vogliamo trovare una MdT <code class='escaped'>n.d.</code> spazio-lineare che lo risolva. L'idea è quella di usare il non determinismo per trovare una stringa che sia rifiutata dall'NFA, ed usare uno spazio lineare per tenere traccia degli stati in cui l'automa può trovarsi in un determinato momento. Lineare a cosa? Semplice: al numero <em>q</em> di stati in cui può trovarsi l'NFA, di cui ricordiamo possono esserne contemporaneamente attivi 2<sup>q</sup>, ognuno rappresentato con un simbolo. <br />Scriviamo la MdT N:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>N = "su ingresso &lt;M&gt;:	<em>(dove &lt;M&gt; è un NFA)</em>
+</p><div class='indent'>1. metti un marker sullo stato iniziale dell'NFA;
+</div><div class='indent'>2. ripeti 2<sup>q</sup> volte:
+<div class='indent'>3. seleziona in modo <code class='escaped'>n.d.</code> un simbolo d'ingresso e aggiorna le posizioni dei 
+<div class='indent'>marker sugli stati di M;
+</div></div></div><div class='indent'>4. se nessun marker è su uno stato accettante, allora ACCETTA; altrimenti RIFIUTA."
+</div></div>
+<p class='vspace'>Si noti che il passo 3 non fa altro che simulare la lettura del simbolo selezionato in modo <code class='escaped'>n.d.</code>.<br />Per come è stato costruito N, l'unico spazio di cui ha bisogno è quello per memorizzare le posizioni dei marker e per il contatore del ciclo descritto ai passi (2) e (3). Si tratta quindi di uno spazio lineare all'ingresso, perché ad ogni iterazione andrò a scrivere sempre sulle stesse celle di memoria!
+</p>
+<div class='vspace'></div><h2>Teorema di Savitch</h2>
+<p>La MdT deterministica che simula la corrispondente <code class='escaped'>n.d.</code> ha una complessità tempo esponenziale rispetto al suo modello. Il <em>teorema di Savitch</em> dimostra invece che nello spazio la complessità non aumenta allo stesso modo, ma molto meno.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Per ogni funzione f:N-&gt;R<sup>+</sup>, dove <em>f(n)&gt;=n</em>, 
+</p><div  style='text-align: center;'><img src='../uploads/Uni/IT-savitch.gif' alt='' title='' /></div>
+</div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>La situazione: partiamo con una MdT <code class='escaped'>n.d.</code> f(n)-spazio, e dobbiamo simularla in modo deterministico sapendo che con quella si potranno avere più scelte per ogni nodo.<br />Una prima idea è simulare tutti i possibili rami della <code class='escaped'>n.d.</code>, ma così facendo non potremo sovrascrivere l'area di memoria utilizzata, perché dobbiamo tenere traccia di quale ramo termina e quale no; con questa strategia si userebbe quindi uno spazio esponenziale, e non va bene.<br />La soluzione è introdurre un nuovo problema, quello che ci permette di verificare se una MdT <code class='escaped'>n.d.</code> può passare da una configurazione iniziale c<sub>1</sub> a quella finale c<sub>2</sub> in un numero di passi minore o uguale a <em>t</em>. Chiamiamo questo secondo problema <em>yieldability problem</em>, e lo risolviamo definendo la MdT deterministica e ricorsiva <code class='escaped'>CANYIELD</code>.
+</p>
+<p class='vspace'>Arriviamo al dunque. <br />Data una MdT <code class='escaped'>n.d.</code> N che decide un linguaggio A in uno spazio f(n), costruiamo la MdT deterministica M che utilizzando la procedura CANYIELD riesca a decidere A. N avrà come input la stringa <em>w</em> da verificare, mentre CANYIELD riceverà in ingresso le due configurazioni <em>c<sub>1</sub> </em> e <em>c<sub>2</sub> </em>, ed il numero massimo di passi impiegabili <em>t</em>.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>CANYIELD = "su ingresso c<sub>1</sub>, c<sub>2</sub>, t:
+</p><ol><li>se t=1, verifica se c<sub>1</sub>=c<sub>2</sub> o se c<sub>1</sub>-&gt;c<sub>2</sub> in un unico passo in accordo alle regole di N. Se uno dei due test va a buon fine, ACCETTA; altrimenti RIFIUTA;
+</li></ol><div class='indent'>2. se t&gt;1, per ogni configurazione c<sub>m</sub> di N su w che usa spazio f(n);
+<div class='indent'>3. esegui CANYIELD su ingresso c<sub>1</sub>, c<sub>m</sub>, t/2;
+</div><div class='indent'>4. esegui CANYIELD su ingresso c<sub>m</sub>, c<sub>2</sub>, t/2;
+</div></div><div class='indent'>5. se (3) e (4) vanno entrambi a buon fine, allora ACCETTA; altrimenti RIFIUTA."
+</div></div>
+<p class='vspace'>Passiamo ora a definire la MdT M che simula N, e per farlo introduciamo alcuni accorgimenti:
+</p><ul><li>quando N accetta pulisce l'intero contenuto del nastro e lo sostituisce con la configurazione c<sub>accept</sub>;
+</li><li>chiamiamo c<sub>start</sub> la configurazione iniziale di N sulla stringa d'ingresso w;
+</li><li>selezioniamo una costante <em>d</em> tale che N non abbia un numero di configurazioni maggiore di 2<sup>d*f(n)</sup>, dove <em>n</em> è la lunghezza di w. In questo modo fissiamo un limite superiore al tempo di computazione per ogni ramo, e creiamo un legame tra numero di configurazioni possibili e tempo.
+</li></ul><div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>M = "su ingresso w:
+</p><ol><li>restituisci il risultato di CANYIELD(c<sub>start</sub>, c<sub>accept</sub>,2<sup>d*f(n)</sup>)."
+</li></ol></div>
+<p class='vspace'>Dato che CANYIELD risolve sicuramente l'yieldability problem, possiamo affermare che M simula correttamente N. Non ci resta che fare l'analisi dell'algoritmo e verificare se M è eseguito in O(f<sup>2</sup>(n)) spazio, come sostiene il teorema. Cosa dobbiamo fare? Calcolare quanto spazio richiede ogni ricorsione di CANYIELD e moltiplicarlo per il numero di ricorsioni stesse.<br />Ogni volta che CANYIELD invoca sé stesso ricorsivamente, memorizza il numero di stato corrente e i valori di c<sub>1</sub> c<sub>2</sub> e <em>t</em> su uno stack, così che possano essere ripristinati una volta tornati dalla chiamata ricorsiva. Ogni livello di ricorsione richiede quindi uno spazio addizionale O(f(n)).<br />Considerato che ad ogni ricorsione dimezziamo il numero di passi impiegabili <em>t</em>, e che inizialmente <em>t</em> è pari a 2<sup>d*f(n)</sup>, il numero di ricorsioni è:<br />O(log2<sup>d*f(n)</sup>) = O(d*f(n)) = O(f(n))
+</p>
+<p class='vspace'>Quindi, spazio richiesto ad ogni ricorsione per il numero di ricorsioni:<br />O(f(n)) * O(f(n)) = O(f<sup>2</sup>(n)), come sostenuto dal teorema di Savitch.
+</p>
+<div class='vspace'></div><h2>Classe PSPACE e PSPACE-completezza</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><strong>PSPACE</strong> è la classe di linguaggi decidibili in spazio polinomiale usando una MdT deterministica. In altre parole:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/IT-pspace.gif' alt='' title='' /></div>
+</div>
+<p class='vspace'>Analogamente, NPSPACE sarà la classe di linguaggi decidibili in spazio polinomiale usando una MdT <code class='escaped'>n.d.</code>. Si noti che per il teorema di Savitch è possibile simulare una MdT deterministica spazio-polinomiale con una MdT <code class='escaped'>n.d.</code> anch'essa spazio-polinomiale. Quindi possiamo affermare che <code class='escaped'>NPSPACE=PSPACE</code>, al contrario di quanto avviene per la tempo-complessità.
+</p>
+<p class='vspace'>Per quanto riguarda la completezza, possiamo affermare che:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio B è <strong>PSPACE-completo</strong> se soddisfa due condizioni:
+</p><ol><li>B è in PSPACE;
+</li><li>Ogni A in PSPACE è riducibile in tempo polinomiale a B.
+</li></ol><p class='vspace'>Se B soddisfa solo la seconda condizione è chiamato <em>PSPACE-hard</em>.
+</p></div>
+<p class='vspace'>Perché parliamo di tempo riducibilità e non di spazio riducibilità? Ma per non complicarci troppo la vita, belin! Life is too short! (i problemi completi sono i più difficili di tutti, ed una volta che abbiamo verificato che è in PSPACE chi se ne frega se consideriamo la riducibilità nel tempo o nello spazio)
+</p>
+<div class='vspace'></div><h2>Teorema 1 - TQBF è PSPACE-completo?</h2>
+<p>Una "formula booleana" è un'espressione che contiene variabili booleane, costanti 0 e 1, e gli operatori booleani AND, OR e NOT. <br />Una "formula booleana quantificata" è una formula booleana che contiene quantificatori universali o esistenziali (o entrambi), ognuno dei quali ha una variabile nel proprio scope.<br />Una "<strong>formula booleana completamente quantificata</strong>" (TQBF) è una formula booleana quantificata in cui ogni variabile compare nello scope di un quantificatore.<br />Una "formula soddisfacibilmente booleana completamente quantificata" non esiste, me la sono inventata ora, ma era divertente continuare ad aggiungere parole.
+</p>
+<p class='vspace'>Il problema <strong>TQBF</strong> consiste nel determinare se una formula booleana completamente quantificata sia vera. Più formalmente:<br /><em>TQBF = {&#934; | &#934; è una formula booleana completamente quantificata vera}</em>
+</p>
+<p class='vspace'>Ed ecco l'agognato teorema da dimostrare:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>TQFB è PSPACE-completo.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>La <code class='escaped'>prima condizione da verificare</code> è che TQBF sia in PSPACE, cioè se è risolvibile in uno spazio polinomiale con una MdT deterministica. Vediamo se questa va bene:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>T = "su ingresso &#934;:	<em>(dove &#934; è una formula booleana completamente quantificata)</em>
+</p><ol><li>se &#934; non ha quantificatori vuol dire che è un'espressione con sole costanti, quindi valuta &#934; è ACCETTA se è vera; altrimenti RIFIUTA;
+</li><li>se &#934; è uguale a <em>&#8707;x &#966;</em>, chiama ricorsivamente T su &#966;, prima sostituendo 0 a x e poi sostituendo 1 a x. Se uno dei due risultati è accettato, allora ACCETTA; altrimenti RIFIUTA;
+</li><li>se &#934; è uguale a <em>&#8704;x &#966;</em>, chiama ricorsivamente T su &#966;, prima sostituendo 0 a x e poi sostituendo 1 a x. Se entrambi i risultati sono accettati, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>L'algoritmo T decide TQBF ed usa uno spazio polinomiale, perché è lineare al numero <em>m</em> di variabili di &#934; date in ingresso (spazio usato: O(m)).
+</p>
+<p class='vspace'>La <code class='escaped'>seconda condizione da verificare</code> è che qualunque problema A in PSPACE possa essere ridotto in tempo polinomiale a TQBF. In altre parole, dato un linguaggio A deciso da una MdT M deterministica (tempo esponenziale) in spazio polinomiale, dobbiamo verificare se è possibile mappare una stringa w in una formula booleana completamente quantificata &#934; che sia vera se e solo se M accetta w. Non avete anche voi una sorta di deja-vu? Quello che abbiamo appena detto non ha vaghe somiglianze col problema di Cook-Levin ("<em>SAT è NP-completo</em>")? Essì, qualcosa in comune c'è, vediamo dove ci porta questa strada. Dobbiamo costruire una formula &#934; che simuli M su un ingresso w esprimendo i requisiti che dovrebbe avere un tableau accettante. Abbiamo un problema però: in Cook-Levin il tableau è <em>n<sup>k</sup> x n<sup>k</sup></em>, mentre in questo caso avremmo larghezza n<sup>k</sup> (lo spazio usato da M) ma altezza esponenziale dato che M può essere eseguito in tempo esponenziale. Merda: per rappresentare un tableau di dimensione esponenziale dovremo usare una formula con una dimensione altrettanto esponenziale, esattamente il risultato che non vogliamo ottenere da una riduzione tempo polinomiale. <br />Ci viene in aiuto il teorema di Savitch, grazie al quale possiamo dimezzare ad ogni iterazione lo spazio entro cui cercare la soluzione. Riusciamo così a compattare la dimensione esponenziale (che otterremmo applicando paro-paro Cook-Levin) in una polinomiale. La formula di compattamento è questa:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-compattamento.gif' alt='' title='' /></div>
+<p class='vspace'>Dove, per qualsiasi coppia (c<sub>3</sub>,c<sub>4</sub>), <strong>*</strong> può essere uguale sia a (c<sub>1</sub>,m<sub>1</sub>) che a (m<sub>1</sub>,c<sub>2</sub>), quindi sto considerando contemporaneamente la metà superiore e quella inferiore della formula. <br />Alla prof non interessa che si dimostri (o capisca) come si è arrivati a questa formula, l'importante è <strong>credere</strong> che sia giusta. Per quanto riguarda la complessità, si tratta di una formula ricorsiva in cui:
+</p><ul><li>lo spazio usato da ogni ricorsione è lineare alla dimensione della configurazione, quindi è O(f(n));
+</li><li>il numero di ricorsioni è pari a log(2<sup>d*f(n)</sup>), quindi O(f(n)).
+</li></ul><p class='vspace'>Ne deriva che la complessità della formula è O(f<sup>2</sup>(n)), che è polinomiale e quindi soddisfa la seconda condizione da verificare.<br />Il teorema è dunque dimostrato: TQBF è PSPACE-completo.
+</p>
+<div class='vspace'></div><h2>Teorema 2 - FORMULA-GAME è PSPACE-completo?</h2>
+<p>In generale, per gioco si intende una competizione in cui i partecipanti devono raggiungere un certo obiettivo rispettando una serie di regole.<br />Il <strong>FORMULA GAME</strong> è un gioco elettrizzante con tutti gli ingredienti per diventare il successo più frizzante dell'estate: quantificatori e valori di verità di formule booleane.<br />La formula &#934; con cui si gioca ha questo aspetto:<br /><em>&#934; = &#8707;x<sub>1</sub> &#8704;x<sub>2</sub> &#8707;x<sub>3</sub> ... Qx<sub>k</sub> [&#966;]</em><br />, dove Q è un quantificatore universale o esistenziale e &#966; il resto della formula senza quantificatori (ma con le variabili che si trovano nei loro scope).<br />Ci sono due giocatori, che giocano a turni alternati:
+</p><ul><li>giocatore E, che deve dare un valore di verità a tutte le variabili con quantificatore esistenziale. Vince se il valore finale della &#934; è pari a 1;
+</li><li>giocatore A, che deve dare un valore di verità a tutte le variabili con quantificatore universale. Vince se il valore finale della &#934; è pari a 0.
+</li></ul><p class='vspace'>Ad esempio, sia data questa formula:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/IT-fgame.gif' alt='' title='' /></div>
+<p class='vspace'>Il giocatore E inizia per primo e dovrà assegnare un valore alla variabile x<sub>1</sub>. Siccome il suo scopo è fare in modo che la formula risulti pari a 1, per come questa è costruita dovrà riuscire a ottenere un 1 in tutte le sottoformule messe in AND tra loro. Assegnando x<sub>1</sub>=1 si assicura un 1 nella prima sottoformula. <br />Tocca ora ad A, che dovrà intervenire su x<sub>2</sub>. Il suo scopo è fare in modo che almeno una sottoformula abbia valore 0, così che messa in AND con le altre renda la formula globale pari a 0. Ha senso perciò che assegni x<sub>2</sub>=0. Si noti però che così facendo ha fatto finire un 1 nella terza sottoformula, in cui era presente la negazione della stessa variabile x<sub>2</sub>.<br />L'ultimo turno spetta ad E, per cui è vita facile assegnare x<sub>3</sub>=1 e vincere la partita.
+</p>
+<p class='vspace'>Da tutto questo appare evidente che i giocatori non scelgono a caso i valori, ma adottano una strategia. In particolare diciamo che un giocatore ha una <strong>strategia vincente</strong> per una partita quando entrambi i contendenti giocano in modo ottimale e riesce comunque a vincere.
+</p>
+<p class='vspace'>Il problema del FORMULA-GAME può essere così definito:<br /><em>FORMULA-GAME = {&#966; | il giocatore E ha una strategia vincente nel formula-game associato a &#966;}</em>
+</p>
+<p class='vspace'>Il teorema da dimostrare è il seguente:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>FORMULA-GAME è PSPACE-completo.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Invece di dimostrare le due condizioni della PSPACE-completezza possiamo provare a dimostrare che il problema è formulato in modo analogo ad un altro problema PSPACE-completo.<br />In effetti a pensarci bene FORMULA-GAME è riconducibile a TQBF: la strategia vincente di E è quella che lo porta a rendere la formula pari a 1, esattamente lo stesso scopo di TQFB che vuole che la formula booleana completamente quantificata sia vera. Inoltre in entrambi i casi si interviene sull'assegnamento di valori 0/1 alle variabili, anche se in un caso con l'obiettivo di vincere e nell'altro per provare la soddisfacibilità.<br />Poche balle: dato che una formula &#966; appartiene a TQBF quando &#966; appartiene a FORMULA-GAME, il teorema è dimostrato dalla stessa dimostrazione di TQBF.
+</p>
+<div class='vspace'></div><h2>L e NL</h2>
+<p>Se pensavate che usare spazi lineari poteva soddisfarci vi sbagliavate di grosso. Da questo momento studieremo limiti di spazio sotto-lineari (logaritmici), in cui la macchina legge l'intero ingresso ma non ha spazio sufficiente per memorizzarlo tutto. Va da sé che si tratta di un concetto inapplicabile al tempo, perché significherebbe non avere il tempo di leggere l'intero ingresso.
+</p>
+<p class='vspace'>Per capire meglio la situazione dovremo cambiare modello computazionale: una MdT con due nastri, uno di sola lettura (per gli ingressi) e l'altro di lettura/scrittura (di lavoro). Gli ingressi dovranno rimanere sempre sul primo nastro, mentre sarà quello di lavoro che contruibirà alla spazio complessità della MdT. A queste condizioni possiamo affermare che:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><strong>L</strong> è la classe di linguaggi che sono decidibili in spazio logaritmico su una MdT deterministica. In altre parole: <code class='escaped'>L=SPACE(logn)</code>.
+</p>
+<p class='vspace'><strong>NL</strong> è la classe di linguaggi che sono decidibili in spazio logaritmico su una MdT <code class='escaped'>n.d.</code>. In altre parole: <code class='escaped'>NL=NSPACE(logn)</code>.
+</p></div>
+<p class='vspace'>Si noti che il dilemma "L=NL ?" è analogo a quello "P=NP ?".
+</p>
+<div class='vspace'></div><h3>Esempio L</h3>
+<p>Come esempio di linguaggio in L consideriamo A={0<sup>k</sup>1<sup>k</sup> | k&gt;=0}.<br />Una MdT che lo descrive potrebbe essere: 
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>M = "su ingresso w:	<em>(dove w è una stringa)</em>
+</p><div class='indent'>1. fai uno scan del nastro e RIFIUTA se c'è uno 0 a destra di un 1;
+</div><div class='indent'>2. ripeti finché ci sono sia 0 che 1 sul nastro:
+<div class='indent'>3. fai uno scan del nastro, marcando un singolo 0 e un singolo 1;
+</div></div><div class='indent'>4. se rimangono degli 0 non marcati mentre tutti gli 1 lo sono (o viceversa),
+<div class='indent'>allora RIFIUTA; altrimenti ACCETTA."
+</div></div></div>
+<p class='vspace'>Lo spazio richiesto da M è però lineare al numero di caratteri, quindi non va bene.<br />Dato però che con una MdT possiamo realizzare qualsiasi funzione eseguibile da un elaboratore, ne potremmo definire una che lavora come contatore. La nostra MdT spazio logaritmica userà allora due contatori, uno per gli 0 e uno per gli 1, e scriverà i risultati sul nastro di lavoro per fare un confronto: se i numeri sono uguali, allora ACCETTA; altrimenti RIFIUTA. Rispetta i requisiti di L? Sì, perché la rappresentazione in binario del numero che quantifica la dimensione di una stringa di caratteri (gli 0 e gli 1) è logaritmica alla dimensione stessa. Sopracciglio alzato? Facciamo un esempio di stringa di 30 caratteri, e subito sotto il numero binario che ne indica la dimensione:<br /><code class='escaped'>000000000000000000000000000000</code><br /><code class='escaped'>11110</code><br />Un bel risparmio di spazio, no?!
+</p>
+<p class='vspace'>Quindi A appartiene alla classe L.
+</p>
+<div class='vspace'></div><h3>Esempio NL</h3>
+<p>Nel capitolo sulla <a class='wikilink' href='IT-Complessit%C3%A0NelTempo.html'>Complessità nel tempo</a> abbiamo dimostrato che il problema <strong>PATH</strong> è in P. Ora vogliamo vedere se è anche in NL.<br />Dato un grafo diretto G, il problema PATH ha come obiettivo quello di determinare se esiste un percorso diretto tra due nodi s e t. Più formalmente: <br /><code class='escaped'>PATH = {&lt;G,s,t&gt; | G è un grafo diretto che ha percorso diretto tra s e t}</code>
+</p>
+<p class='vspace'>Supponiamo di avere una MdT <code class='escaped'>n.d.</code>, e selezioniamo in modo <code class='escaped'>n.d.</code> un nodo collegato ad <em>s</em>, memorizzandolo (solo lui) sul nastro. Ripetiamo l'operazione sull'ultimo nodo selezionato, andando a sovrascrivere l'identificativo del nuovo nodo estratto in modo <code class='escaped'>n.d.</code>. Continuiamo a ciclare finché non si è raggiunto il nodo <em>t</em>, o finché il numero di iterazioni non sia maggiore del numero dei nodi (così da escludere loop infiniti su un percorso).<br />Questo algoritmo garantisce la soluzione del problema in uno spazio logaritmico, quindi PATH è in NL.
+</p>
+<div class='vspace'></div><h2>NL-completezza</h2>
+<p>Dopo NP-completezza e PSPACE-completezza, non potevamo perdere la ghiotta occasione di parlare di <strong>NL-completezza</strong>.<br />In generale possiamo dire che un linguaggio è NL-completo se è in NL e se ogni altro linguaggio in NL è riducibile al linguaggio considerato. La riducibilità non può però avvenire in tempo-polinomiale (tutti i problemi sotto-lineari come il nostro sono risolvibili in tempo-polinomiale), ma dobbiamo introdurre un nuovo tipo di riducibilità, quella <em>spazio-logaritmica</em>.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un <strong>trasduttore spazio logaritmico</strong> è una MdT con un nastro in sola lettura (ingressi), uno in sola scrittura (uscite) ed uno di lavoro in lettura/scrittura. Il nastro di lavoro può contenere O(logn) simboli. Un trasduttore spazio logaritmico M computa una funzione <em>f:&#931;<sup>*</sup>-&gt;&#931;<sup>*</sup></em>, dove f(w) è la stringa che rimane sul nastro di uscita al termine di M eseguito su ingresso w. Chiamiamo f <strong>log space computable function</strong>. Il linguaggio A è <strong>spazio-logaritmico riducibile</strong> a B, scritto A&#8804;<sub>L</sub>B, se A è mapping riducibile a B utilizzando una log space computable function f.
+</p></div>
+<p class='vspace'>Ora possiamo definire la NL-completezza:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio B è <strong>NL-completo</strong> se soddisfa due condizioni:
+</p><ol><li>B è in NL;
+</li><li>Ogni A in NL è spazio-logaritmico riducibile a B.
+</li></ol></div>
+<p class='vspace'>Ciliegina sulla torta, citiamo due teoremi sulla NL-completezza (che non dimostreremo).
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Se A&#8804;<sub>L</sub>B e B appartiene ad L, allora A appartiene ad L.
+</p></div>
+<p class='vspace'>Il corollario è la solita speranzosa strada da battere per verificare se L=NL:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Se un linguaggio NL-completo è in L, allora L=NL.
+</p></div>
+<div class='vspace'></div><h2>Teorema 3 - PATH è NL-completo?</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>PATH è NL-completo.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>La <code class='escaped'>prima condizione da verificare</code> è che PATH sia in NL, e l'abbiamo dimostrato poche righe fa nel paragrafo "Esempio NL".
+</p>
+<p class='vspace'>La <code class='escaped'>seconda condizione da verificare</code> è che ogni A in NL sia spazio-logaritmico riducibile a PATH. In altre parole, dato un linguaggio A deciso da una MdT M in spazio logaritmico, dobbiamo verificare se è possibile mappare una stringa w in un grafo G che abbia un percorso diretto tra <em>s</em> e <em>t</em> se e solo se M accetta w.<br />L'idea dietro la riduzione spazio logaritmica da A a PATH è quella di costruire un grafo che rappresenti la computazione della MdT <code class='escaped'>n.d.</code> spazio logaritmica che risolve A. Basterà dunque far corrispondere ad ogni configurazione di M un nodo del grafo, ed unirne due con un arco se e solo se esiste una transizione possibile (permessa dalle funzioni di transizione del linguaggio) che giustifichi il passaggio da una configurazione all'altra. In tutto questo avremo premura di far corrispondere al nodo <em>s</em> la configurazione iniziale di M, e a <em>t</em> quella terminale accettata.<br />Ora che sappiamo come ridurre, dobbiamo dimostrare che riusciamo a farlo utilizzando un trasduttore spazio logaritmico. Nel nastro in sola lettura ci mettiamo l'ingresso w, e su quello di uscita la descrizione di G, composta da una lista di nodi e una lista di archi. Per verificare se si può passare da una configurazione all'altra (quindi il controllo degli archi) posso memorizzare solo le celle intorno la testina, perché sono le uniche che cambieranno (dunque le uniche con informazioni utili). In questo modo si riesce ad utilizzare uno spazio logaritmico rispetto alla dimensione dell'ingresso w, dimostrando perciò la seconda condizione.
+</p>
+<p class='vspace'>Poiché entrambe le condizioni sono rispettate, possiamo affermare che PATH è NL-completo.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 07, 2010, at 11:35 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-SpazioComplessit%e0?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-SpazioComplessit%e0?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

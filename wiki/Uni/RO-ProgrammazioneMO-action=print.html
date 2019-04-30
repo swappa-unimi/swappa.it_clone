@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - Programmazione a molti obiettivi</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RO-ProgrammazioneMO.html' title='Ricerca Operativa - Programmazione a molti obiettivi'>Ricerca Operativa - Programmazione a molti obiettivi</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ricerca Operativa - Programmazione a molti obiettivi ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='GiovanniRighini.html'>Giovanni Righini</a>
+</p></div>
+<div class='vspace'></div><h2>Introduzione</h2>
+<p>La <strong>programmazione a molti obiettivi</strong> (<strong>MO</strong>) è molto importante per la Ricerca Operativa, dato che la maggior parte dei problemi che si trova a dover risolvere nella pratica hanno spesso più obiettivi da realizzare simultaneamente. Ma cosa cambia rispetto a prima? Avremo sempre un decisore, un ambiente deterministico, ma molte funzioni obiettivo, rappresentabili come un vettore di funzioni.
+</p>
+<p class='vspace'>Per affrontare questo tipo di problemi bisogna fare una distinzione importante tra due fasi distinte della risoluzione:
+</p><ol><li>analisi della corrispondenza tra cause ed effetti, dalla quale bisognerà estrarre un algoritmo che ci aiuti a comprenderla
+</li><li>decisione, presa da un decisore umano che si assume la responsabilità della scelta
+</li></ol><p class='vspace'>Nella programmazione MO si riesce a cogliere molto bene questa distinzione, poiché abbiamo anche qui due momenti ben distinti nella risoluzione:
+</p><ol><li>determinazione dell'insieme delle soluzioni cosiddette <em>efficienti</em> o <strong>pareto-ottime</strong>, ovvero quelle tra cui è possibile fare una scelta razionale
+</li><li>scelta di una soluzione finale tra quelle efficienti, utilizzando opportuni criteri che vedremo poi
+</li></ol><div class='vspace'></div><h2>Dominanza e regione paretiana</h2>
+<p>Vediamo cos'è una soluzione pareto-ottima introducendo il concetto di <strong>dominanza</strong>.<br />Se stiamo massimizzando, diciamo che una soluzione <strong>x<sup>i</sup></strong> è <em>dominata</em> da una soluzione <strong>x<sup>j</sup></strong> se per ogni funzione obiettivo (di seguito indicata con <em>h</em>) il valore della soluzione <strong>x<sup>i</sup></strong> non è migliore di <strong>x<sup>j</sup></strong> per nessuno dei suoi obiettivi, ed esiste almeno un obiettivo per cui ne è strettamente peggiore. Quindi non è razionale scegliere x<sup>i</sup> dal momento che scegliendo x<sup>j</sup> non peggiorerei rispetto a nessun obiettivo e anzi migliorerei in almeno un caso. In conclusione, tutte le soluzioni dominate dovranno essere scartate senza nemmeno essere considerate.<br />Mettendo tutto in formula otteniamo:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROdominanza.jpg' alt='' title='' /></div>
+<p>Notare che se stessimo minimizzando, le disequazioni del sistema dovrebbero essere invertite.
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/ROregioneParetiana.jpg' alt='' title='' /></span></div>
+<p>Cosa resta dopo aver scartato tutte le soluzioni dominate? La <strong>regione pareto-ottima</strong> o <strong>regione paretiana</strong>, cioè quell'insieme di soluzioni ammissibili non dominate. 
+</p>
+<p class='vspace'>Consideriamo il grafico a destra, in cui i puntini blu rappresentano le soluzioni e le freccette in rosso indicano le dominanze. Graficamente possiamo dire che tutte le volte che posso collegare un punto a un altro che si trova "in alto" o "a destra", significa che la soluzione corrispondente è dominata. I punti cerchiati in verde sono intuitivamente quelli che formano la regione pareto-ottima.
+</p>
+<p class='vspace'>Se stiamo minimizzando vale il discorso inverso ("in basso" o "a sinistra").
+</p>
+<p class='vspace'>Vediamo ora alcuni metodi operativi per trovare la regione paretiana.
+</p>
+<div class='vspace'></div><h3>Metodo dei pesi</h3>
+<p>Il <strong>metodo dei pesi</strong> consiste nel dare un peso a ciascuna delle funzioni obiettivo, così da ridurre il problema MO in uno di programmazione matematica parametrica. Consideriamo ad esempio una funzione <strong>&#966;(x)</strong> data dalla somma pesata di tutte le funzioni obiettivo: <br /><strong>&#966;(x) = &#955;<sub>1</sub>f<sub>1</sub>(x) + &#955;<sub>2</sub>f<sub>2</sub>(x) + ... &#955;<sub>k</sub>f<sub>k</sub>(x)</strong><br />Perché questa funzione possa essere considerata valida deve soddisfare due condizioni: x appartiene a X (quindi i vincoli del problema non cambiano), e la sommatoria di tutte le &#955;<sub>i</sub> deve essere pari a 1 (i dati devono essere normalizzati).<br />Che valore dare ai vari &#955;<sub>i</sub> lo decidiamo noi, ma attenzione: cambiando valore otteniamo una soluzione diversa! Che fare allora? Dovremo risolvere il problema per tutti i valori possibili di &#955;.
+</p>
+<p class='vspace'>Commentiamo l'esempio sulle slide:
+</p>
+<p class='vspace'>Riportiamo l'esempio presente sulle slide:
+</p><table cellpadding='10' cellspacing='10' width='80%' >
+<tr ><td width='49%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROmetodoPesi1.jpg' alt='' title='' /></div>
+</td><td align='center' valign='middle' ><span style='font-size:120%'><code class='escaped'>-&gt;</code></span><br /><strong>&#966;(x)</strong><br /><span style='font-size:120%'><code class='escaped'>-&gt;</code></span>
+</td><td width='49%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROmetodoPesi2.jpg' alt='' title='' /></div>
+<p class='vspace'>Dato che abbiamo solo due funzioni obiettivo possiamo usare un unico &#955; distinguendo in: &#955; e (1-&#955;)
+</p></td></tr></table>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/ROmetodoPesiGraf.jpg' alt='' title='' /></span></div>
+<p>Ora che abbiamo parametrizzato il problema MO considero &#966;(x) nei casi estremi:
+</p><ul><li><em>&#955; = 0</em> (curve di livello orizzontali), &#966;(0) = x<sub>2</sub>
+</li><li><em>&#955; = 1</em> (curve di livello parallele a quelle di f<sub>1</sub>), &#966;(1) = 2x<sub>1</sub> + x<sub>2</sub>
+</li></ul><p class='vspace'>Gli altri valori che può assumere &#955; sono tutti tutti quelli che si trovano su quella parte del perimetro del poliedro compresa tra gli estremi appena definiti.
+</p>
+<p class='vspace'>Guardando il grafico accanto possiamo dire che la regione pareto-ottima, composta da tutte le soluzioni che per un certo valore di &#955; possono essere ottime, è quella segnata in verde. Tutte le altre soluzioni ammissibili nel poliedro sono infatti dominate da quelle segnate in verde.<br />Per quanto riguarda i valori ottimi possiamo distinguere tre casi:
+</p><ul><li>0 &lt;= &#955; &lt;= 1/6 , ha coordinate <code class='escaped'>x* = (0,6)</code> e ha &#966;* = 6
+</li><li>1/6 &lt;= &#955; &lt;= 1/2 , ha coordinate <code class='escaped'>x* = (3,5)</code> e ha &#966;* = 5 + 6&#955;
+</li><li>1/2 &lt;= &#955; &lt;= 1 , ha coordinate <code class='escaped'>x* = (5,3)</code> e ha &#966;* = 3 + 10&#955;
+</li></ul><div class='vspace'></div><h3>Metodo dei vincoli</h3>
+<p>La seconda tecnica per calcolare la regione paretiana è il <strong>metodo dei vincoli</strong>, che consiste nello scegliere una sola funzione obiettivo trasformando le altre in vincoli. Ha senso trasformarle? Beh sì, ad esempio posso vedere la massimizzazione di una funzione come un vincolo che le impone di essere maggiore o uguale a qualcosa, o viceversa se sto minimizzando. Questi "qualcosa", ovvero i termini noti dei nuovi vincoli, si chiamano <strong>standard</strong> e sono indicati con &#949;<sub>i</sub>. In formula:
+</p>
+<p class='vspace'><strong>max f<sub>i</sub>(x)</strong>
+</p><div class='indent'>x appartiene a X
+</div><div class='indent'><strong>f<sub>i</sub>(x) &gt;= &#949;<sub>i</sub></strong> , per ogni i = 2, ... , k
+</div><p class='vspace'>Come per il metodo dei pesi, anche con quello dei vincoli parto da un problema di programmazione MO ad uno di PM parametrica, dove i parametri stavolta sono proprio gli <em>standard</em>. Un altro modo di interpretarli è considerarli (se sto massimizzando) il minimo richiesto perché il valore della funzione sia considerato decente. Va da sé che cambiando gli &#949; cambia anche la soluzione ottima, quindi dovrò risolvere il problema per ognuno dei loro valori.
+</p>
+<p class='vspace'>Riprendiamo il problema dell'esempio di prima e utilizziamo questa volta il metodo dei vincoli.
+</p><table cellpadding='10' cellspacing='10' width='80%' >
+<tr ><td width='49%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROmetodoPesi1.jpg' alt='' title='' /></div>
+</td><td align='center' valign='middle' ><span style='font-size:120%'><code class='escaped'>-&gt;</code></span>
+</td><td width='49%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROmetodoVincoli2.jpg' alt='' title='' /></div>
+</td></tr></table>
+<p>Quell'x appartenente ad X mi dice che sto mantenendo tutti i vincoli di partenza, a cui ne aggiungo uno nuovo: x<sub>2</sub> &gt;= &#949;. Quest'ultimo mi costringe di fatto a stare al di sopra di una certa retta orizzontale condizionata da &#949;, e graficamente (vedi grafico sotto) potremo facilmente intuire che man mano che alzo la retta faccio scorrere l'ottimo lungo alcuni segmenti del perimetro del poliedro (indicati in blu).
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/ROmetodoVincoliGraf.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h2>Scelta di una soluzione finale</h2>
+<p>Passiamo ora alla seconda delle due fasi che abbiamo descritto all'inizio, ovvero quella in cui dovremo scegliere una soluzione finale tra tutte quelle paretiane calcolate. Si osservi che questa operazione è di tipo politico, cioè non dipende dal problema ma da una nostra scelta. Ovviamente non siamo lasciati in balia dell'incertezza, ma esistono vari criteri rigorosi e matematicamente giustificabili che ci guidano nella scelta. 
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/ROcurveIndiff.jpg' alt='' title='' /></span></div>
+<h3>Curve di indifferenza</h3>
+<p>Il primo criterio è quello delle <strong>curve di indifferenza</strong>, ovvero insiemi di soluzioni che sono ritenute egualmente buone. 
+</p>
+<p class='vspace'>La soluzione finale sarà il punto in cui una di queste curve risulterà tangente alla regione pareto-ottima, situazione in cui ci aspettiamo il miglior risultato possibile dato che abbiamo un unico punto di contatto. 
+</p>
+<p class='vspace'>Evidentemente questo criterio può essere usato solo nel continuo dato che il concetto di tangente non esiste nel discreto.
+</p>
+<p class='vspace'>Alcune curve di indifferenza facili da usare sono quelle originate da questa formula (a cui seguono degli esempi):
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/ROcurveIndiffEs.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Criterio della massima curvatura</h3>
+<div><span class='frame rfloat'><img src='../uploads/Uni/ROmaxCurvatura.jpg' alt='' title='' /></span></div>
+<p>Il <strong>criterio della massima curvatura</strong> consiste nel trovare quel punto in cui ad un piccolo miglioramento di f<sub>1</sub> corrisponde un grosso peggioramento di f<sub>2</sub> (e viceversa).
+</p>
+<p class='vspace'>Ovviamente nell'esempio accanto e nella descrizione operativa del metodo abbiamo considerato solo due funzioni obiettivo per semplicità di espressione, ma può essere generalizzato a <em>k</em> funzioni.
+</p>
+<p class='vspace'>Il criterio della massima curvatura è una di quelle poche tecniche che si riesce ad applicare anche ad occhio guardando solo il grafico.
+<br clear='all' />
+</p>
+<div class='vspace'></div><h3>Criterio dell'utopia</h3>
+<div><span class='frame lfloat'><img src='../uploads/Uni/ROcritUtopia.jpg' alt='' title='' /></span></div>
+<p>L' <strong>utopia</strong> è il punto le cui coordinate f<sub>1</sub><sup>*</sup>, f<sub>2</sub><sup>*</sup>, .. , f<sub>k</sub><sup>*</sup> (siamo quindi nello spazio degli obiettivi) sono ottenute ottimizzando separatamente ciascuna funzione obiettivo. 
+</p>
+<p class='vspace'>Di solito l'utopia non è una soluzione ammissibile, perché se lo fosse vorrebbe dire che le funzioni obiettivo non sono in conflitto tra loro, e quindi non sarebbe necessaria la MO.<br />La soluzione paretiana è quella più vicina all'utopia.
+<br clear='all' />
+</p>
+<div class='vspace'></div><h3>Criterio degli standard</h3>
+<div><span class='frame rfloat'><img src='../uploads/Uni/ROcritStandard.jpg' alt='' title='' /></span></div>
+<p>Con il <strong>criterio degli standard</strong> bisogna prima accordarsi sui valori minimi di decenza (gli standard) per ciascuna delle funzioni obiettivo, poi verificare se il punto che ha coordinate &#949;<sub>1</sub>, &#949;<sub>2</sub>, .. , &#949;<sub>k</sub> sia ammissibile. Generalmente questo punto si trova lontano dall'ottimo, quindi non è paretiano; tuttavia può essere migliorato rispetto a tutte le funzioni obiettivo, ovvero un procedimento che le migliori tutte di una stessa percentuale. 
+</p>
+<p class='vspace'>In formula:
+</p>
+<p class='vspace'><strong>max z</strong>
+</p><div class='indent'><strong>f<sub>1</sub>(x) - &#949;<sub>1</sub> &gt;= z</strong>
+</div><div class='indent'><strong>f<sub>2</sub>(x) - &#949;<sub>2</sub> &gt;= z</strong>
+</div><div class='indent'>x appartiene a X
+</div><div class='indent'><strong>z &gt;= 0</strong>
+</div><p class='vspace'>La seconda e terza riga si leggono come "il miglioramento di f<sub>1</sub> e f<sub>2</sub> rispetto ad &#949;<sub>1</sub> ed &#949;<sub>2</sub> deve essere maggiore o uguale ad un certo z da massimizzare".
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RO-ProgrammazioneMO)</span></div>
+  </div>
+</body>
+</html>

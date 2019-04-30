@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / SNR - iptables</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SNRiptables.html' title='SNR - iptables'>SNR - iptables</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: SNR - iptables ::</strong>
+</pre><div class='vspace'></div><h2>Che cos'è</h2>
+<p><strong>iptables</strong> è l'applicazione che serve per modificare i parametri di <strong>netfilter</strong>, che a sua volta è il sistema di gestione dei pacchetti integrato nel kernel di Linux.
+</p>
+<p class='vspace'>Nel corso si <a class='wikilink' href='SicurezzaNelleReti.html'>Sicurezza nelle Reti</a> si impara ad utilizzare <strong>iptables</strong> per configurare un firewall.
+</p>
+<p class='vspace'>Per la sintassi di iptables, è opportuno consultare la pagina <strong>man</strong> relativa. Qui si assume che si sappia come scrivere regole, e si cerca di dare risposte agli esercizi visti in classe.
+</p>
+<div class='vspace'></div><h3>Logging</h3>
+<p>Le regole di <strong>logging</strong> vanno messe prima delle corrispondenti regole bloccanti. Le regole di logging non sono bloccanti: quando vengono interpretate, l'esecuzione della chain non si ferma ma prosegue. Così non avviene per le regole "normali": se una di esse viene soddisfatta, non si prosegue alla regola successiva, ma netfilter si ferma. Per questo motivo vanno scritte prima.
+</p>
+<p class='vspace'>Esempio:
+</p><pre class='escaped'>
+ iptables -A OUTPUT -o eth0 -p tcp -d 192.168.10.3 --dport 80 -j LOG 
+          --log-prefix "Server HTTP:"
+ iptables -A OUTPUT -o eth0 -p tcp -d 192.168.10.3 --dport 80 -j ACCEPT
+</pre>
+<p class='vspace'>La regola di logging è identica, se non per l'azione, che è <strong>LOG</strong> invece che <strong>ACCEPT</strong>.<br />La direttiva <strong>--log-prefix</strong> seguita da una stringa compresa tra virgolette scrive, nel log di sistema, quella stringa prima del log effettivo. Questo è utile ad esempio per poter selezionare in modo automatico le righe interessanti dal log. Ad esempio:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ dmesg|grep "Server HTTP:"
+</pre>
+<p class='vspace'>prenderà dal log di sistema le sole righe che conterranno da qualche parte la scritta <strong>"Server HTTP:"</strong>, che guarda caso è quella che abbiamo inserito noi come prefisso nella regola di logging.
+</p>
+<div class='vspace'></div><h3>Flags</h3>
+<p>Per indicare regole relativa ai flag tcp, si usa la seguente sintassi:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ --tcp-flags SYN,ACK SYN,ACK
+</pre>
+<p class='vspace'>Il significato è il seguente:
+</p><ol><li>le prime due occorrenze di <strong>SYN,ACK</strong> dicono a iptables di controllare, nel pacchetto, i flag <strong>SYN</strong> e <strong>ACK</strong>
+</li><li>le seconde due occorrenze di <strong>SYN,ACK</strong> dicono invece QUALI dei due pacchetti devono essere settati a uno
+</li></ol><p class='vspace'>Per esempio, scrivendo
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ --tcp-flags SYN,ACK SYN
+</pre>
+<p class='vspace'>sto filtrando i pacchetti che hanno SYN a 1 ma ACK a 0. Infatti ACK non compare nella seconda serie di flag. Sembra contorto e probabilmente lo è...:)
+</p>
+<div class='vspace'></div><h3>Stati</h3>
+<p>iptables ha nozione delle connessioni: sa identificare un pacchetto come appartenente o meno ad una connessione. In particolare, i pacchetti possono essere in uno dei seguenti stati:
+</p><ul><li>NEW = è un pacchetto che tenta di iniziare una connessione
+</li><li>ESTABLISHED = il pacchetto appartiene ad una connessione già esistente
+</li><li>RELATED = il pacchetto non fa parte di una connessione, ma la riguarda (ICMP)
+</li></ul><p class='vspace'>Gli stati si usano per evitare di scrivere cose strane con i flag. Per fare un esempio, se vogliamo permettere le connessioni in uscita dalla nostra macchina al server del professore, sulla porta TCP 80, scriveremo:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -A OUTPUT -o eth0 -p tcp -d $PROF --dport 80 -m state 
+          --state NEW,ESTABLISHED -j ACCEPT
+</pre>
+<p class='vspace'>Questa riga significa che i pacchetti che si trovano nello stato <strong>NEW</strong> oppure <strong>ESTABLISHED</strong> andranno accettati. Infatti, se sono io a comunicare con un server, allora farò io i tentativi di connessioni (ecco perché scrivo NEW). Oltre a quelli invierò anche altra roba, legata alla connessione, e questo spiega l'ESTABLISHED.
+</p>
+<p class='vspace'>Lato input, invece, se vogliamo che dalla porta 80 del server arrivino solo risposte a nostre precise interrogazioni, e NON tentativi di nuove connessioni, avremo una regola così:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -A INPUT -i eth0 -p tcp -s $PROF --sport 80 -m state --state ESTABLISHED -j ACCEPT
+</pre>
+<p class='vspace'>che dice a Netfilter di accettare solo quei paccheti che provengono da $PROF:80 e che fanno parte di una connessione già esistente. Se avessimo avuto <strong>-m state --state NEW,ESTABLISHED</strong> nella regola qui sopra, avremmo dato il permesso di connettersi a noi a partire dalla porta 80 della macchina $PROF: grave:)
+</p>
+<p class='vspace'>Ricordiamo che anche per i pacchetti UDP si usano le nozioni di stato: voci divine asseriscono che dimenticare ciò consista in un errore in sede d'esame. E noi che siamo andati avanti per anni a credere che UDP fosse senza connessione...:/
+</p>
+<div class='vspace'></div><h3>Loggare in modo opportuno le connessioni andate a buon fine e quelle rifiutate</h3>
+<p>Prendiamo un tentativo di connessione dalla nostra macchina alla porta 666 di un server. Se quella porta è aperta, ci arriveranno pacchetti in risposta. Se quella porta è chiusa, presumibilmente la connessione verrà terminata subito.
+</p>
+<p class='vspace'>Se c'è la necessità di loggare in modo diverso queste due evenienze, occorre fare così:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -A INPUT -p tcp -s $PROF --sport 666 -m state --state ESTABLISHED 
+          -j LOG --log-prefix "CONN OK"
+ iptables ... --tcp-flags RST,ACK RST,ACK -j LOG --log-prefix "CONN REFUSED"
+</pre>
+<p class='vspace'>Queste righe fanno sì che i pacchetti in arrivo da $PROF:80, con i flag RST e ACK a 1, verranno marcati in modo particolare nel log. Infatti, se una porta è chiusa lo stack TCP comunica l'intenzione di terminare la connessione.
+</p>
+<p class='vspace'>Se si tratta di un tentativo di comunicazione UDP, la mancata consegna di un datagram al server verrà notificata tramite la ricezione di un pacchetto ICMP, che possiamo identificare così:
+</p>
+<div class='vspace'></div><pre class='escaped'> 
+ iptables ... -p icmp --icmp-type 3/3 -j LOG --log-prefix "UDP REFUSED"
+</pre>
+<p class='vspace'>In questa riga si indica il filtro sui pacchetti appartenenti a icmp (<strong>-p icmp</strong>), e di questi pacchetti si filtrano quelli il cui tipo è 3/3, che vuol dire <strong>port unavailable</strong>. Per le associazioni tra tipo e significato, i files sul server del professore in laboratorio saranno d'aiuto.
+</p>
+<p class='vspace'>Ad ogni modo, il comando
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -p icmp -h
+</pre>
+<p class='vspace'>stamperà una bella lista di tutti i tipi di pacchetti icmp disponibili.
+</p>
+<div class='vspace'></div><h3>REJECT</h3>
+<p>L'azione di default che dobbiamo settare di solito è <strong>DROP</strong>. DROP fa morire silenziosamente il pacchetto, e chi ci ha inviato la richiesta non viene a sapere nulla. Per essere più informativi è possibile anche usare l'azione <strong>REJECT</strong>, che si preoccupa di inviare un pacchetto icmp, ed eventualmente specificare quale.
+</p>
+<p class='vspace'>Se usiamo REJECT dobbiamo però anche ricordarci di permettere ai pacchetti icmp di uscire dal sistema, altrimenti non saranno mai consegnati.
+</p>
+<p class='vspace'>Ecco un esempio
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -A OUTPUT -p icmp -j ACCEPT
+ iptables -A INPUT -i eth0 --dport 80 -j REJECT --reject-with icmp-host-prohibited
+</pre>
+<p class='vspace'>La scelta dei possibili icmp da inviare ci viene data dal man di iptables:
+</p><ul><li>icmp-net-unreachable
+</li><li>icmp-host-unreachable
+</li><li>icmp-port-unreachable
+</li><li>icmp-proto-unreachable
+</li><li>icmp-net-prohibited
+</li><li>icmp-host-prohibited or
+</li><li>icmp-admin-prohibited (solo se è attivata una certa opzione nel kernel)
+</li></ul><p class='vspace'>Il messaggio di default, se non si specifica il <strong>--reject-with</strong>, è <strong>icmp-port-unreacheable</strong>.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SicurezzaNelleReti.html'>Torna alla pagina di SNR</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SNRiptables)</span></div>
+  </div>
+</body>
+</html>

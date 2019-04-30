@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ingegeneria del software - Appunti del 9 marzo 2009 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IDS-9Marzo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ingegeneria del software - Appunti del 9 marzo 2009
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-9Marzo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-9Marzo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IDS-9Marzo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-9Marzo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-9Marzo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ingegeneria del software - Appunti del 9 marzo 2009 was last modified on March 12, 2009, at 10:23 PM'>
+							<span style='display:none;'>Ingegeneria del software - Appunti del 9 marzo 2009</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ingegeneria del software - Appunti del 9 marzo 2009 ::</strong>
+</p>
+<p class='vspace'>Partiamo subito ribadendo il concetto che, se i requisiti sono stati raccolti male, allora quasi sicuramente il progetto fallisce. Ecco perché vanno raccolti e sistemati per bene.
+</p>
+<p class='vspace'>La scala di priorità <em>must - should - may</em> è ovviamente soggettiva ma molto utile: occorre sempre tenere a mente che l'unico giudice del prodotto finito sarà il cliente, e il cliente ha sempre ragione.<br />
+</p><h2>Coinvolgimento degli utenti</h2>
+<p>Gli utenti finali del software molto probabilmente non sono dei tecnici. Ma non ci interessano solo gli utenti, bensì gli <strong>stakeholder</strong>, cioè tutti quelli che hanno un qualche interesse o una qualche parte nel progetto sw. Ovviamente quelli più importanti sono gli utenti, perché saranno loro ad avere in mano il sw alla fine.<br />Il problema è che non tutti gli utenti sono in grado di avere un'idea chiara su quello che deve fare il sw, e altre volte possono essere addirittura ostili, per varie ragioni, alla creazione del sw stesso. Gli ingegneri del software hanno inventato un po' di sistemi per andare in giro ad intervistare gli utenti e trarne informazioni utili senza farsi fermare dalla loro ostilità o dalla loro ignoranza in materia.
+</p>
+<div class='vspace'></div><h3>Consultative Design</h3>
+<p>L'idea di questo sistema è che sono gli analisti a fare la maggior parte del lavoro di specifica dei requisiti, quindi persone che conoscono molto bene il dominio del software. Si fanno raccontare le esigenze degli utenti, e poi si riuniscono e decidono loro priorità, dipendenze etc. Possiamo dire che questo è un sistema <em>developers power</em>, proprio perché sono gli sviluppatori a fare la parte del leone nel decidere che cosa il sw deve fare.
+</p>
+<p class='vspace'>Naturalmente i developers non possono inventarsi tutto di sana pianta: devono comunque avere un contatto nel mondo degli utenti. Questo contatto viene chiamato <em>user liaison</em>, e si tratta di una persona che viene considerata come la <em>fonte</em> da cui trarre le informazioni per i requisiti. E' importante che questa fonte rimanga sempre la stessa, perché è facile che utenti diversi abbiano visioni discordanti se non contraddittorie dello stesso sistema. Inoltre, occorre anche stare attenti a <em>chi</em> scegliere come liaison: se capiamo male i requisiti e il sw fallisce, allora la colpa sarà data solo a noi (noi intesi come sviluppatori). Ecco perché serve scegliere la fonte migliore possibile, altissima purissima e levissima.
+</p>
+<div class='vspace'></div><h3>Representative Design</h3>
+<p>Con questo sistema abbiamo un rappresentante del committente che prende su le valigie e si trasferisce, per tutta la durata della realizzazione del sistema, presso gli sviluppatori. Questo rappresentante in pratica diviene membro del team di sviluppo a tempo pieno.
+</p>
+<p class='vspace'>Ci sono un paio di varianti rispetto a questa situazione:
+</p><ul><li><strong>Joint Application Design (JAD)</strong>: il cliente approva anche i diagrammi, e non solo l'analisi dei requisiti
+</li><li><strong>Quality Functional Deployment (QFD)</strong>: il cliente entra in gioco in <em>tutte</em> le fasi, compresa la messa in opera (il deployment). "Contrariamente a quanto si possa pensare" (sic) questa tecnica non è poi così rara
+</li></ul><p class='vspace'>Ocio: qui sopra ho scritto "il cliente", ma è ovvio che il cliente entra in ballo tramite il suo rappresentante. E si può anche intuire che questo rappresentante sarà anche il parafulmine delle ire del committente, in caso il prodotto sw non sarà adatto.
+</p>
+<p class='vspace'>Il sistema RD funziona meglio di Consultative Design nel caso in cui il committente e lo sviluppatore siano dipartimenti diversi della stessa azienda. Perché? BOH!
+</p>
+<div class='vspace'></div><h3>Consensus Design</h3>
+<p>Questo è un tipo di design che si presta bene allo sviluppo di software di cui viene venduta la licenza d'uso.<br />In questo caso, infatti, non c'è un committente direttamente interessato al sw, ma c'è un mercato composto da potenziali utenti finali. Lo sviluppatore ha tutto l'interesse di sentire i pareri di questi utenti finali per regolare le fasi di sviluppo del suo software. La relazione tra sviluppatore ed utente è quindi <em>indiretta</em>.
+</p>
+<p class='vspace'>E' però anche possibile realizzare dei <em>focus group</em>, ovvero raccogliere in una stanza un certo numero di persone interessate al mio sw e rappresentativi della potenziale utenza, e farli parlare per sentire i loro pareri. Si tratterà di un'iniziativa una tantum, perché chiaramente l'utente finale non può distaccarsi e vivere presso la sw house per supervisionare lo sviluppo...
+</p>
+<p class='vspace'>Il sistema generale comunque consiste nel rilascio di <em>versioni beta</em>, più o meno fasulle, ad un gruppo più o meno ristretto di utenti. Dopodiché, gli sviluppatori passano in rassegna i forum, i blog e i siti specializzati (messi spesso a disposizione da loro stessi) che hanno recensito la loro beta, e si fanno un'idea dell'umore degli utenti.
+</p>
+<div class='vspace'></div><h3>Gestione dei requisiti</h3>
+<p>Se stiamo adottando un prcesso software di tipo non-waterfall (ad esempio quello iterativo o il RUP) è vitale che i requisiti siano sempre tenuti aggiornati, quale che sia la nostra tecnica per raccoglierli. Ad ogni iterazioni del ciclo di vita del nostro prodotto si produce una <strong>RFC</strong>, ovvero <strong>request for change</strong>, che è un documento che raggruppa tutte le modifiche ai requisiti che le ultime analisi hanno scoperto essere necessarie. In particolare, le RFC parlano di variazioni <em>correttive</em>, ma possono anche rendersi necessarie variazioni <em>aggiuntive</em>.
+</p>
+<div class='vspace'></div><h2>Ian Sommerville</h2>
+<p>Questo <a class='urllink' href='http://www.comp.lancs.ac.uk/computing/resources/IanS/' title='' rel='nofollow'>Sommerville</a> è un amico del professor Damiani e si occupa di software engineering. Ha scritto libroni sull'ingegneria dei requisiti, ed è potenzialmente uno di quelli che vengono pagati per raccontare favole alle conferenze, che poi nessuno metterà in pratica (vedi <a class='urllink' href='http://it.wikipedia.org/wiki/Derrick_de_Kerckhove' title='' rel='nofollow'>questo individuo</a>).
+</p>
+<p class='vspace'>Ma ha comunque detto cose interessanti, visto che poi saranno chieste all'esame:D
+</p>
+<p class='vspace'>Introduciamo subito un termine nuovo: <strong><a class='urllink' href='http://www.wordreference.com/enit/elicit' title='' rel='nofollow'>elicitation</a></strong>, che indica le fasi di interviste agli utenti secondo le tre tecniche viste sopra.
+</p>
+<div class='vspace'></div><h3>Studio di fattibilità</h3>
+<p>Lo studio di fattibilità dà un'idicazione strategica sul perché un'azienda troverebbe utile sviluppare un certo software. Diciamo subito che non sempre si fa. Quando viene fatto, serve per rispondere a queste domande:
+</p><ul><li>questo sw contribuirà agli obiettivi organizzativi della nostra azienda, ad esempio riduzione delle giacenze in magazzino e così via?
+</li><li>questo sw è fattibile con la tecnologia attualmente in nostro possesso?
+</li><li>il costo di questo sw ci sta nel budget?
+</li><li>questo sw sarà integrabile con gli altri sw già esistenti che già utilizzo?
+</li></ul><div class='vspace'></div><div><span class='frame lfloat'><img width='200px' src='http://diecastdisco.files.wordpress.com/2008/11/it-clown1.jpg' alt='' title='' /><br />Il capo del dipartimento IT</span></div>
+<p>Questo documento appartiene alla categoria dei <em>business document</em>, ovvero un documento realizzato non dal dipartimento IT, ma dalla sezione marketing o da chi per essi.
+</p>
+<p class='vspace'>Lo studio di fattibilità rende più facile la fase di <strong>elicitation and analisys</strong>, ovvero l'andare in giro a sentire gli utenti che cosa vogliono (leggi interviste agli stakeholder). Se non c'è lo studio di fattibilità, l'elicitation and analisys si fa lo stesso.
+</p>
+<p class='vspace'>Abbiamo già detto in diverse occasioni che una qualsiasi fase di processo può essere a sua volta divisa in sottofasi; quelle della elicitation sono:
+</p><ul><li><em>requirement discovery</em>: colloqui con gli stakeholder per raccogliere le loro richieste
+</li><li><em>requirement classification &amp; organization</em>: raggruppamento e organizzazione dei requisiti in classi concettualmente omogenee
+</li><li><em>prioritisation &amp; negotiation</em>: stabilire delle priorità tra i vari gruppi di requisiti e negoziare con gli stakeholder sulle eventuali (ma molto probabili) contraddizioni
+</li><li><em>requirements documentation</em>
+</li></ul><div class='vspace'></div><h3>Raggruppamento dei requisiti</h3>
+<p>Una cosa interessante consiste nel raggruppare gli stakeholder in categorie, e creare così dei <strong>viewpoint</strong>, ovvero una raccolta dei loro punti di vista sulle funzionalità che il sistema dovrà avere. In questo modo ci si può fare un'idea di quello che le categorie di stakeholder vogliono, ed analizzarne con più agio gli eventuali conflitti.<br />
+I conflitti non ci sono solo tra viewpoint differenti, ma anche tra stakeholder appartenenti allo stesso viewpoint. Ma in caso di conflitto, che si fa?
+</p><ul><li>posso ripetere le interviste, cercando di spiegare meglio il punto oscuro
+</li><li>posso scegliere di dare retta ad uno stakeholder e non ad un altro, secondo il mio libero arbitrio. Va detto però che nella maggior parte dei casi l'ago della bilancia pende più dalla parte di chi che ci mette i soldi, per ovvie ragioni
+</li></ul><p class='vspace'>Ecco qui le tre categorie principali in cui gli stakeholder vengono divisi:
+</p><ul><li><strong>interactor viewpoints</strong>: si tratta di tutti quelli che avranno a che fare direttamente con il sistema, ovvero gli utenti o altri sistemi che utilizzeranno il nostro programma
+</li><li><strong>indirect viewpoints</strong>: tutti quegli stakeholder che non usano il sistema, ma lo influenzano
+</li><li><strong>domain viewpoints</strong>: tutti gli stakeholder che rappresentano esigenze normative o regolative (ministeri, leggi etc.). Non hanno rapporti né diretti né indiretti, stanno al di sopra di tutto
+</li></ul><p class='vspace'>Facciamo un esempio: un impianto di gestione dello skilift.
+</p><ul><li>i <strong>direct</strong> saranno gli sciatori, i cassieri che vendono i biglietti, gli addetti che ci fanno salire sullo skilift
+</li><li>gli <strong>indirect</strong> saranno ad esempio il consorzio degli impianti di risalita, perché devo magari poter accedere ad un database generale per eventuali sconti etc.
+</li><li>i <strong>domain</strong> saranno ad esempio l'Ente Nazionale per la Protezione Infortuni, le assicurazioni
+</li></ul><div class='vspace'></div><h2>Tecniche alternative alla raccolta dei requisiti</h2>
+<p>No, non ci sono solo i requisiti. Ci sono anche altre tecniche utilizzabili per capire come deve essere fatto un sw. Qui ne vediamo un paio.
+</p>
+<div class='vspace'></div><h3>Lo Scenario</h3>
+<p>Uno scenario è la descrizione di "un giorno qualunque nella vita dell'utente". Questi si alza, accende il computer, apre il nostro sw, usa questa funzione, poi arriva quell'altro cliente, usa quell'altra funzione e così via.
+</p>
+<p class='vspace'>Attraverso lo scenario si riesce a capire in modo <em>cronologico</em> quello che il nostro sistema deve fare.
+</p>
+<p class='vspace'>Inoltre, lo scenario è anche utile per <strong>presentare</strong> un progetto al cliente. Infatti, la maggior parte della gente farebbe fatica a capire qualcosa da dei documenti cartacei: magari annuisce e poi si lamenta perché non è quello che voleva. Mettere tutto sotto forma di scenario aiuta tutti a capire meglio quello che succede rispetto a quello che si vuole.
+</p>
+<p class='vspace'>Ricapitolando, lo scenario rappresenta una filiera di tipo cronologico: descrizione della situazione di partenza, flusso delle operazioni normali, cosa succede in caso di malfunzionamenti o imprevisti (eventi eccezionali).
+</p>
+<div class='vspace'></div><h3>Mock-up</h3>
+<p>Una mock-up è una finta interfaccia del programma, che viene presentata agli stakeholder. In questo modo loro vedono con mano (?) che aspetto avrà il programma, e quindi molti loro dubbi e perplessità riusciranno a trovare una forma per essere espressi. Capita spesso infatti che il committente che ha approvato la lista dei requisiti il giorno dopo guarda il mock-up e cambia idea inorridito.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 12, 2009, at 10:23 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-9Marzo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-9Marzo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

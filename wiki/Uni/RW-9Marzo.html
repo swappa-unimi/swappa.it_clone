@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Reti wireless - RS-232 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RW-9Marzo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Reti wireless - RS-232
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-9Marzo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-9Marzo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RW-9Marzo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-9Marzo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-9Marzo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Reti wireless - RS-232 was last modified on June 14, 2010, at 02:28 PM'>
+							<span style='display:none;'>Reti wireless - RS-232</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RetiWireless.html'>Torna alla pagina di Reti wireless</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Reti wireless - RS-232 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti del 9 Marzo</span>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Alcune immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='GiovanniRapacioli.html'>Rapacioli</a>
+</p></div>
+<div class='vspace'></div><h2>RS-232</h2>
+<p>L'interfaccia seriale <strong>RS-232</strong> (Recommended Standard 232) permette lo scambio di dati tra dispositivi digitali, ed è la più semplice possibile e la meno costosa su cavo. È stata standardizzata da diversi enti in anni successivi (RS-232 è la sigla data dall'ente di certificazione EIA, mentre per l'europeo CCITT è chiamata V.21/V.24), rimanendo sostanzialmente uguale a sé stessa. Si noti che lo standard riguarda solo le caratteristiche fisico/elettriche, e infatti contiene solo indicazioni su come deve essere modulato il segnale (forma, voltaggi, frequenze, ..) su un cavo seriale. Lo standard quindi non dice nulla sul come deve avvenire la trasmissione dei dati, anche se col tempo sono stati elaborati protocolli condivisi tra i maggiori produttori.
+</p>
+<p class='vspace'>Con una RS-232 i singoli bit che compongono un byte sono trasmessi uno dopo l'altro in serie (da cui <em>seriale</em>) lungo il cavo. Esistono protocolli alternativi come il <em>parallelo</em> in cui i dati sono trasmessi contemporaneamente su più fili, così che possano essere inviati più byte in un colpo solo. L'interfaccia parallela comunque non ha avuto molta fortuna, mentre il seriale continua ad essere pesantemente usato, nonostante tutti i suoi limiti.
+</p>
+<p class='vspace'>La velocità di una linea seriale si può calcolare in due modi: 
+</p><ul><li>bit per secondo (bps), che indica il numero di bit che vengono trasmessi in un secondo lungo la linea
+</li><li>baud rate, che indica il numero di transizioni del segnale che avvengono in un secondo lungo la linea. Poiché nello standard RS-232 la trasmissione è binaria (si hanno due soli livelli: uno alto ed uno basso), il baud rate e bps coincidono numericamente.
+</li></ul><p class='vspace'>Anche la trasmissione dei dati può avvenire in due modi:
+</p><ul><li>half-duplex, in cui la trasmissione è bidirezionale ma non avviene contemporaneamente nelle due direzioni
+</li><li>full-duplex, in cui la trasmissione è bidirezionale e contemporanea. Lo standard RS-232 permette una trasmissione di questo tipo in quanto è utilizzato un conduttore separato per ciascun verso di trasmissione delle informazioni
+</li></ul><div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit</strong><br />"Half-duplex è una discussione normale, la full-duplex è una conversazione tra suocere"
+</p></div>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/RW-DB25.gif' alt='' title='' /><br /><strong>Connettore DB25</strong></span></div>
+<p>Lo standard RS-232 non obbliga all'utilizzo di uno specifico connettore. Per PC ci sono gli attuali DB9 (a 9 pin) e i vecchi DB25 (a 25 pin), mentre per applicazioni industriali ci sono altri tipi più efficienti come quelli a morsetti. <br />I connettori per PC sono di tipo consumer, che costano poco (sui 20 centesimi) ma che non garantiscono buone performance. Ad esempio, la maggior parte di questi non arrivano a 100 inserimenti, ma si usurano prima (soprattutto la porta femmina, che si slabbra facilmente interrompendo la continuità elettrica tra i pin dei connettori). I connettori di tipo industriale (come quello del prof a quattro fili), costano molto di più (a partire da 20 euro) ma garantiscono un numero di inserimenti noto e sono certificati.
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/RW-DB9.gif' alt='' title='' /><br /><strong>Connettore DB9</strong></span></div>
+<p>Il costo e l'usura della cavetteria non sono aspetti da sottovalutare, e un punto di forza del wireless è che supera questi problemi. In applicazioni in cui è previsto un alto numero di inserzioni/deinserzioni basterebbero queste considerazioni per decidersi a passare da connessioni wired a quelle senza fili.<br />Come abbiamo già detto, lo standard RS-232 non definisce come deve essere fatta la presa di una seriale, ma i connettori consumer citati prima sono stati comunque standardizzati. Dagli schemi del DB25 e DB9 mostrati accanto si notano alcune linee rosse, che rappresentano delle ponticellature che permettono di usare solo i cavi TX, RX e GND. Il DB9 riduce drasticamente il numero di pin rispetto ai 25 del vecchio standard, così da occupare meno spazio a livello hardware e possa starci ad esempio su laptop.<br />Ultima nota: il motivo per cui la parte attorno i connettori è fatta in metallo, è perché ad essa si allaccia la massa del cavo schermato, così da scaricare a terra.
+</p>
+<p class='vspace'>Osservando con un oscilloscopio il segnale seriale si osserva una forma come quella sottostante:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-segnaleSeriale.gif' alt='' title='' /></div>
+<p class='vspace'>Il segnale è modulato in partenza e demodulato in arrivo, e sotto in blu sono riportate le tacche del tempo che indicano la velocità con cui avviene la campionatura. Il segnale oscilla tra +12 e -12 volt (è portato a questa ampiezza proprio nella fase di modulazione), che sono i valori standard stabiliti per la seriale. A -12V è associato il bit 1, mentre a +12V il bit 0. Ovviamente si tratta di valori indicativi: normalmente sono ammessi tutti i voltaggi che stiano almeno a 3 volt dallo zero. Il segnale infatti perde differenza di potenziale durante il tragitto, affievolendosi in modo direttamente proporzionale sia alla lunghezza che alla qualità del cavo. Poiché ad esempio il segnale può partire da 12V e arrivare con 7V, si mantiene un intervallo di indeterminatezza sopra e sotto i 3V, superato il quale tutti i voltaggi sono considerati validi.
+</p>
+<p class='vspace'>Elenchiamo una serie di parametri della RS-232:
+</p><ul><li>la velocità di una linea seriale va da un minimo di 110 bps, ad un massimo - attuale - di 115000 bps. Più aumentano le velocità e più performanti devono essere le apparecchiature ai due capi del cavo di comunicazione, o una spara così velocemente le informazioni che l'altra non ci sta dietro e va in over-run. Inoltre è interessante osservare il rapporto tra time slice (campionatura del segnale) e baud rate. Ad esempio se trasmetto a 110 ho un time slice di 9,10 secondi, che è un'eternità; mentre se trasmetto a 19200 ho 52 microsecondi di intervallo di campionamento. Si dice che l'affidabilità della linea seriale è inversamente proporzionale alla velocità a cui trasmette: più veloce vado e più errori avrò (vedi figura sotto)
+</li></ul><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-affidabSeriale.gif' alt='' title='' /><br /><em>In rosso il segnale ideale, mentre in blu quello reale. Nella figura di sinistra il time slice è sufficientemente ampio perché si riesca a captare un segnale reale ammissibile; mentre nella figura a destra il time slice ridotto, ad esempio tra t<sub>2</sub>-t<sub>3</sub>, fa campionare in modo errato perché il segnale non ha fatto in tempo a superare la soglia dei 3 volt</em></div>
+<div class='vspace'></div><ul><li>parità, che è l'unico controllo fatto dalla seriale sulla bontà del dato trasmesso. Può essere parità pari, dispari, o nessuna
+</li><li>bit di stop, che indicano la fine di una trama di trasmissione, e che possono essere 1, 1.5 o 2
+</li><li>numero di bit per carattere, che possono essere 5,6,7,8 (anche se normalmente è o 7 o 8)
+</li></ul><div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit</strong><br />"Se scegli meno di 5 bit per un carattere devono averti picchiato da bambino."
+</p></div>
+<p class='vspace'>Ricapitoliamo le caratteristiche e i limiti della RS-232:
+</p><ul><li>velocità di trasferimento dei dati, relativamente bassa (massimo 115000 bps)
+</li><li>lunghezza del cavo, circa 15 metri (dipende anche dalla qualità del cavo stesso)
+</li><li>resistenza al rumore di contesto, decisamente scarsa. Se il cavo passa per ambienti inquinati si lascia influenzare – e quindi sporcare – moltissimo. Basta ad esempio che il voltaggio nel cavo aumenti di 10 volt (passando ad esempio vicino a un motore), e quello che era a -12V va a -2V, e quindi sarà ignorato devastando la comunicazione. I cavi seriali RS-232 non sono quindi in grado di funzionare correttamente quando il contesto è particolarmente ostile, perché misurano la tensione rispetto ad uno zero. Se in un ambiente tranquillo/domestico come quello di ufficio la trasmissione va bene, in un ambiente industriale no, basta farlo passare vicino a dei motori perché il risultato sia pesantemente inquinato. Va ancora peggio se viene adoperato su un'automobile, un ambiente estremamente sporco: batterie, relè, motori, .. <br />Concludendo, cavo seriale: poca resistenza al rumore di contesto
+</li><li>affidabilità, buona nelle condizioni ottimali, quindi in contesti non stressati
+</li><li>costo dei nodi, il più basso possibile: se devo fare una comunicazione tra due oggetti è sicuramente il meno costoso
+</li><li>costo del cablaggio (cavo, prese, ...) molto basso, siamo nei limiti inferiori dei costi possibili
+</li><li>il numero di punti da connettere sono due. L'RS-232 è infatti single-ended, quindi point-to-point, quindi non utilizzabile per realizzare un bus
+</li><li>i componenti che fanno uso di interfaccia seriale sono normalmente alimentati
+</li></ul><p class='vspace'>Tipici utilizzi dell'interfaccia RS-232: stampanti (soprattutto in ambienti industriali), device a bassa velocità (ad esempio tutte le componenti di un bancomat, stampante che stampa lo scontrino compresa), comunicazioni tra CPU, o ad esempio nelle connessioni tra componenti di cellulari consumer, eccetera.<br />Si noti bene che le linee seriali continuano ad essere utilizzate pesantemente nell'industria nonostante stiano sparendo in ambienti consumer.
+</p>
+<p class='vspace'>La lezione si conclude con l'esercizio proposto sulle slide: scrivere un protocollo di comunicazione seriale fra due processi su due pc diversi in grado di riprendersi anche a fronte di disconnessioni e riconnessioni successive e/o di errori di protocollo. Si tratta di un problema che chi progetta applicazioni vere deve porsi, perché non si può assumere che ogni bit inviato arrivi correttamente a destinazione. Si deve invece partire dall'assunzione che la trasmissione può fallire, e quindi dobbiamo riuscire a capire se e cosa è andato storto, e come rimettere le cose a posto.<br />Il protocollo proposto è quello sviluppato dalla Siemens, molto diffuso per le comunicazioni con i PLC.
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit</strong><br />"Come ogni informatico che si rispetti l'ho copiato. Siccome qualcuno ci aveva pensato io ho detto 'perché devo pensarci anch'io che poi mi fumano le orecchie?'. Poi se penso molto sparo fuori minchiate, quindi l'ho copiato."
+</p></div>
+<p class='vspace'>In questo protocollo un PC riveste il ruolo di master della comunicazione e l'altro (slave) gli risponde solo se interrogato. C'è inoltre una fase di sicronizzazione iniziale, del tipo "sto per farti una domanda, sei pronto?" "sì sono pronto" "bene, rispondi a..". Solo che la prima risposta alla domanda da parte del ricevente è la domanda stessa. Prima di confondere troppo le idee, vediamo lo schema della fase di sincronizzazione.
+</p>
+<p class='vspace'><strong>Fase 1</strong>
+</p><div><span class='frame lfloat'><img src='../uploads/Uni/RW-siemens1.gif' alt='' title='' /></span></div>
+<p>La prima operazione che fa il master in fase di inizializzazione è svuotare i suoi buffer input/output, così qualunque residuo precedente di conversazione viene buttato via. I buffer sono infatti molto utili per la velocità di esecuzione dei programmi, ma sono un casino per la gestione dei protocolli perché c'è il rischio di considerare attuale una risposta ad una domanda precedente. Due precisazioni: 1. sono solo i buffer del master ad essere svuotati, 2. questi possono riempirsi un attimo dopo perché c'erano ancora delle comunicazioni pendenti, ma va beh, è un rischio accettabile. <br />La sincronizzazione continua con l'invio del comando <strong>STX</strong>, trasmesso come uno dei primi 30 caratteri della tabella ASCII, a cui normalmente non corrisponde niente di indispensabile per una comunicazione, ma che tornano utili in questi casi. Al comando segue la domanda che vuole fare il master, trasmessa sottoforma di funzione.<br />Lo slave dà il comando <strong>DLE</strong> e rispedisce al mittente la stessa funzione, dimostrando così che ha capito la domanda. A questo punto si può assumere che la trasmissione è andata bene e che è lecito aspettarsi una risposta.
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+<p class='vspace'><strong>Fase 2</strong>
+</p><div><span class='frame lfloat'><img src='../uploads/Uni/RW-siemens2.gif' alt='' title='' /></span></div>
+<p>Conclusa con successo la sincronizzazione, il master rimanda allo slave il comando STX seguito da alcuni byte che rappresentano i parametri della funzione, due CRC per fare il controllo sulla correttezza dei dati inviati, e infine il segnale <code class='escaped'>end of transmission</code>. 
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+<p class='vspace'><strong>Fase 3</strong>
+</p><div><span class='frame lfloat'><img src='../uploads/Uni/RW-siemens3.gif' alt='' title='' /></span></div>
+<p>Lo slave a questo punto ha ricevuto tutto: funzione + parametri. Come prima cosa manda al master un ack (o un nack se non ha ricevuto abbastanza parametri), poi i vari byte contenenti la risposta, poi i CRC della risposta e infine il solito EOT.<br />Il master chiude la menata trasmettendo un DLE+ACK se è andato tutto a buon fine, o un DLE+NACK se ci sono problemi. 
+</p>
+<p class='vspace'>Ovviamente il master e lo slave non attendono indefinitamente la comunicazione dell'altro, ma c'è un timeout, superato il quale si assume che l'altro non risponderà mai e si chiude l'attesa.
+<br clear='all' />
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RetiWireless.html'>Torna alla pagina di Reti wireless</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 14, 2010, at 02:28 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-9Marzo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-9Marzo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Protocolli avanzati di rete - Appunti del 25 Maggio</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='PAR-25Maggio.html' title='Protocolli avanzati di rete - Appunti del 25 Maggio'>Protocolli avanzati di rete - Appunti del 25 Maggio</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 25 Maggio ::</strong>
+</pre><div class='vspace'></div><h2>Ancora sulla sicurezza dell'802.11</h2>
+<p>Uno dei più classici attacchi al protocollo WEP è il password cracking, utilizzato sia per il recupero della chiave una volta avviato il processo di scambio tra host e access point, sia durante la fase di autenticazione delle stazioni attraverso la procedura di fiducia del challenge/response. In questo secondo caso l'attaccante potrebbe utilizzare un dizionario di password probabili e verificare che il response ottenuto sia uguale a quello inviato dalla stazione, che si presume corretto. Ovviamente siamo nell'ipotesi che l'access point continui a inviare sempre lo stesso challenge, o il cracking non servirebbe a nulla. 
+</p>
+<p class='vspace'>Prima di perderci nei vari dettagli, facciamo il punto sulle fasi del protocollo WEP:
+</p><ol><li><strong>autenticazione</strong>: è l'access control, ovvero il momento in cui mi faccio riconoscere dalla rete. Non è obbligatoria né un prerequisito del protocollo, e proprio per questo motivo gli attaccanti preferiscono non concentrare i propri sforzi su di essa. Nel caso in cui non venga implementata, chiunque può ottenere il suo blocchetto di chiavi e comunicare, ma senza poter leggere le conversazioni altrui; è quello che dicevamo nella <a class='wikilink' href='PAR-19Maggio.html'>scorsa lezione</a>: il WEP garantisce la privacy ma non la sicurezza
+</li><li><strong>scambio chiavi</strong>. Nel WEP originale la chiave per autenticarsi alla rete locale viene generata dal software dell'access point, ma va poi inserita manualmente sul PC in sede di configurazione. C'è la possibilità di automatizzare il tutto col <em>Rivest</em>, a patto però che le schede di rete supportino certi requisiti
+</li><li><strong>protezione flussi</strong>, realizzata con le tecniche di cui abbiamo già discusso e che utilizzano la concatenazione di "initialization vector + chiave"
+</li></ol><p class='vspace'>Una variante del WEP originale è il <strong>WEP 128</strong>, dove 128 sono i bit usati per la chiave. Non è considerato uno standard, ma è stato introdotto poiché con chiavi a 64 bit bastava mezz'ora per avere buone probabilità di ricostruire i flussi di ex-or.
+</p>
+<p class='vspace'>Esistono molti software gratuiti per la generazione di chiavi, vediamo tre cose generali che potrebbero richiedere: se si vuole crittare a 64 o 128 bit; se si vuole utilizzare una <strong>passphrase</strong>, ovvero un seme di inizializzazione della chiave; se si vuole inserire manualmente la chiave stessa.
+</p>
+<div class='vspace'></div><h3>Generazione di chiavi a 64bit</h3>
+<div  style='text-align: center;'><img src='../uploads/Uni/PAR-keyGen64.jpg' alt='' title='' /></div>
+<p>In pratica, attraverso una serie di ex-or sulla passphrase opportunamente mappata, si ottiene una stringa di 32 bit che sarà usata come seed di inizializzazione di un generatore di numeri pseudo-casuali, il <strong>PRNG</strong>. Quest'ultimo effettua 40 iterazioni del suo algoritmo, ottenendo così 40 stringhe ASCII da 32 bit, da ognuna delle quali verrà preso un byte. Si dice che il generatore è sufficientemente casuale quando la probabilità di scegliere un numero è la stessa sia che conosca quelli precedenti sia che non li conosca affatto. Il generatore del WEP non gode di questa proprietà, anche detta di <em>massima entropia</em>, perché non tutte le stringhe di seme hanno la stessa probabilità di essere generate, ma ce ne sono alcune per cui è molto alta ed altre per cui è praticamente nulla. La sua entropia è infatti limitata da vari fattori, tra cui ad esempio il fatto che nell'ASCII il bit di peso maggiore ha sempre valore 0; ne deriva che potremo ottenere solo seed che vanno da 00:00:00:00 a 7f:7f:7f:7f (ovviamente siamo nell'ipotesi che abbiamo utilizzato una passphrase). Non solo, sappiamo che il PRNG è uno shift register, che esegue cioè la divisione per modulo di un numero per un intero (in questo caso l'intero è il 2); degli shift register sappiamo anche che non è vero che tutti i bit hanno uguale casualità, ma quelli più bassi sono un po' meno casuali di quelli più alti. E ancora, un altro fattore che limita l'entropia del WEP a 64 bit è il fatto che prendendo un solo byte (il terzo dal basso) delle 40 chiavi generate, ne avremo alcuni la cui divisione per 2 è identica, e darà dunque lo stesso risultato. Tiriamo le somme: da 2<sup>32</sup> chiavi possibili, per i vari fattori illustrati finora si riescono ad ottenere solo 2<sup>21</sup> chiavi uniche, che non sono affatto impegnative da provare tutte.
+</p>
+<div class='vspace'></div><h3>Generazione di chiavi a 128bit</h3>
+<div  style='text-align: center;'><img src='../uploads/Uni/PAR-keyGen128.jpg' alt='' title='' /></div>
+<p>Nella versione a 128 bit del WEP non viene utilizzato lo stesso generatore di prima, ma viene seguita questa procedura:
+</p><ol><li>si fa scrivere una passphrase
+</li><li>la si porta a 64 byte di lunghezza, eventualmente ripetendola
+</li><li>le viene applicato l'algoritmo MD5, ovvero una funzione di hashing facile da calcolare ma molto difficile da invertire
+</li><li>i primi 104 bit del risultato vengono utilizzati come chiave
+</li></ol><p class='vspace'>Quindi le versioni a 64 e a 128 bit hanno in comune il fatto che dietro c'è sempre lo stesso concetto dello shift register, ovvero la divisione in modulo di un numero per un intero, che nel primo caso è implementata con la PRNG mentre nel secondo col più efficiente MD5.
+</p>
+<p class='vspace'>Anche la versione a 128 bit del WEP è attaccabile, ma nemmeno lontamente così facile come per quella a 64. L'MD5 è infatti stato crackato (quindi invertito) con successo in laboratorio, utilizzando cluster di super computer che hanno lavorato su una stessa stringa per giorni; questo ci fa stare tutti tranquilli dato che è impensabile che gli hacker vogliano impegare questi tempi e mezzi per crackare una singola chiave, ma non è sufficiente per quei sistemi dove la sicurezza è un fattore più che critico (ad esempio banche dati delle forze dell'ordine o di grandi banche): il solo fatto che è stata invertita in laboratorio ci deve dissuadere dall'utilizzarla.
+</p>
+<p class='vspace'>Immedesimandoci per un momento negli attaccanti, quale strategia dovremmo adottare per crackare il sistema? Dovremo puntare tutto sul password cracking della passphrase con un dictionary attack: si prende un generatore di passphrase (quindi un dizionario), si costruisce la chiave corrispondente e se coincide con quella esatta siamo a cavallo. Ovviamente quella esatta l'abbiamo recuperata dopo aver sniffatto un numero sufficiente di pacchetti da e per lei.<br />Il brute force attack su 104 bit è invece impensabile: provare tutte le combinazioni (2<sup>104</sup>) è decisamente ridicolo, a meno che non siamo IMMENSAMENTE motivati e IMMENSAMENTE attrezzati.
+</p>
+<div class='vspace'></div><h2>Introduzione all'802.16</h2>
+<p>Vogliamo finalmente allargare i nostri orizzonti passando dal wireless locale al wireless <strong>MAN</strong> (<em>Metropolitan Area Network</em>), quindi con estensioni a livello cittadino. Adottando il protocollo 802.11 non riusciamo a coprire grandi distanze, non tanto perché le antenne non hanno potenza sufficiente (se fosse per questo basterebbe aumentarla), ma perché sarebbe un MAC a contesa che pretende di simulare una ethernet a banda base, quindi un ambito trasmissivo comune dove bisogna garantire che ognuno riesca a sentire gli altri (problemi delle stazioni esposte/nascoste permettendo).
+</p>
+<p class='vspace'>Il protocollo 802.16 rende wireless anche la parte di distribuzione del traffico di rete tramite gli access point, che finora avevamo sempre considerato come attaccati via cavo. Dal momento che è tutto wireless avremo enormi problemi a livello 1 (line of sight, distanze, ...), e anche di sicurezza poiché il segnale può essere intercettato da molte più persone; paradossalmente le basse potenze dell'802.11 garantivano maggior sicurezza dato che l'eventuale intercettatore doveva essere in zona per captare il traffico.
+</p>
+<p class='vspace'>Quindi la 802.16 ha come obiettivo quello di ottenere la connessione unica, con un handover sul segnale dati (proponendosi quindi come alternativa all'HDSPA a livello cittadino) impraticabile nel protocollo 802.11, che richiederebbe la ri-autenticazione dell'host ogni volta che passa sotto la gestione di un altro access point.
+</p>
+<p class='vspace'>La tecnologia utilizzata per realizzare una MAN è una via di mezzo tra quella a rete pubblica e privata: dalla rete pubblica abbiamo ad esempio il concetto di base station, ma poi facciamo anche collision avoidance (sia perché in ambito metropolitano la contesa non funziona, sia perché altrimenti non si riuscirebbe a fare streaming, e spiegaglielo tu a Damiani collegato in MAN che non può parlare in Skype guardandosi i video della posa dei cavi sottomarini a Tahiti su YouTube).
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/PAR-25Maggio)</span></div>
+  </div>
+</body>
+</html>

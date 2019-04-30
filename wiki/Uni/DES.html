@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Crittografia - DES </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.DES' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Crittografia - DES
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/DES?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/DES?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='DES-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/DES?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/DES?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Crittografia - DES was last modified on July 13, 2011, at 03:23 PM'>
+							<span style='display:none;'>Crittografia - DES</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Crittografia - DES ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><span  style='color: white;'><strong>Mancano le IMMAGINI, che renderanno il tutto molto più chiaro (si spera...)</strong></span>
+</p>
+<p class='vspace'>Il DES è un crittosistema basato sulla rete di <a class='wikilink' href='CifrariABlocchi.html'>Feistel</a>. Usa un blocco di <strong>64 bit</strong> e una chiave di <strong>56 bit</strong>, ed è abbastanza complicato!
+</p>
+<p class='vspace'>In complesso i passaggi sono i seguenti:
+</p><ol><li><strong>permutazione iniziale</strong> = si permuta il blocco di 64 bit 
+</li><li><strong>16 fasi</strong> in stile Feistel
+</li><li><strong>preoutput</strong> = si scambiano la metà di SX e quella di DX
+</li><li><strong>permutazione finale</strong> = è l'inverso di quella iniziale.
+</li></ol><div class='vspace'></div><h3>Permutazione iniziale</h3>
+<p>Scambia di posto i 64 bit del blocco, ed è una funzione invertibile. Infatti, la permutazione finale è l'inverso di quella iniziale.
+</p>
+<div class='vspace'></div><h3>Fase</h3>
+<p>La <strong>sottochiave</strong> è composta da <strong>48 bit</strong>, ricavati - vedremo poi - dalla chiave di 56 bit.
+</p>
+<p class='vspace'>Il destino del blocco <strong>R</strong> è il seguente:
+</p><ul><li>viene espanso da 32 bit (metà di 64) a 48 bit, e viene messo in <strong>XOR</strong> con la chiave K.
+</li><li>quello che esce viene dato in pasto ad una <strong>funzione di sostituzione</strong> che ottiene, dai 48 bit, ancora <strong>32bit</strong>.
+</li><li>si permuta ancora secondo una tabella.
+</li></ul><p class='vspace'>Poi, l'output di questo lavorìo viene <strong>XOR</strong>ato con il blocco L.
+</p>
+<p class='vspace'>In pratica, la funzione <strong>F</strong> della rete di Feistel diviene in DES la sequenza di operazioni qui sopra.
+</p>
+<div class='vspace'></div><h4>Funzione di sostituzione</h4>
+<p>La funzione di sostituzione di cui abbiamo parlato cui sopra è realizzata tramite <strong>8 S-Box</strong>.
+</p>
+<p class='vspace'>Ogni S-Box prende in input <strong>6 bit</strong> e ne restituisce <strong>4</strong>. Ecco perché passa da 48 bit a 32.
+</p>
+<p class='vspace'>Una S-Box è composta da <strong>4 righe</strong> e <strong>16 colonne</strong>, e <strong>non</strong> è una funzione lineare.
+</p>
+<p class='vspace'>Il primo e l'ultimo bit dei 6 in ingresso scelgono la <strong>riga</strong>, i 4 in mezzo scelgono la <strong>colonna</strong>. La cella della S-Box tramite riga e colonna contiene un numero a 4 bit (0 - 16).
+</p>
+<div class='vspace'></div><h4>Generazione della chiave</h4>
+<p>Abbiamo visto che si parte da una chiave a 56 bit, ma la sottochiave è di 48.
+</p>
+<p class='vspace'>In realtà non è proprio così: si prende una chiave di 64 bit, e un bit ogni 8 viene scartato, ottenendone così 56. Questi 56 bit vengono divisi in <strong>2 parti</strong>, ciascuna di <strong>28 bit</strong>.
+</p>
+<p class='vspace'>Vengono fatte 2 copie di queste mezze chiavi, e ciascuna copia segue una strada diversa:
+</p><ol><li>la prima copia di mezze chiavi viene sottoposta a <strong>scorrimento circolare</strong> a sx o dx, di 1 o 2 bit, e viene mandata alla fase successiva
+</li><li>la seconda copia viene sottoposta ad una tabella, che la riduce da 56 a 48 bit, e la fa entrare nella <strong>funzione di sostituzione</strong>
+</li></ol><p><br />
+</p><h4>Immagine chiarificatrice</h4>
+<p><em>Sito internet con immagini sul funzionamento di DES : </em> <a class='urllink' href='http://www.amagri.it/crittologia/crittografia/algoritmi_crittografici/des/analisi_algoritmo.htm' title='' rel='nofollow'>http://www.amagri.it/crittologia/crittografia/algoritmi_crittografici/des/analisi_algoritmo.htm</a>
+</p>
+<p class='vspace'><br />
+</p><h3>Decrittazione</h3>
+<p>Come in Feistel, la decrittazione avviene eseguendo le fasi con le chiavi generate al contrario.
+</p>
+<div class='vspace'></div><h3>Effetto valanga</h3>
+<p>Tutto questo macello produce un <strong>effetto valanga</strong>, che vuol dire che da pochi bit di differenza - nel testo in chiaro o nella chiave - si producono molti bit di differenza nel testo cifrato.
+</p>
+<div class='vspace'></div><h3>Numero di fasi</h3>
+<p>In generale si usano tante fasi perché, anche se una fase è relativamente debole, metterle una dopo l'altra aumenta notevolmente la robustezza dell'intero algoritmo. Nel caso di DES, le 16 fasi sono in grado di vanificare gli attacchi di <strong>analisi differenziale</strong> con known plain text.
+</p>
+<div class='vspace'></div><h3>La funzione F</h3>
+<p>La funzione F serve per aumentare la <a class='wikilink' href='CifrariABlocchi.html'>confusione</a>. Deve essere il meno lineare possibile, sia che usi le S-Box sia che non le usi.
+</p>
+<p class='vspace'>I criteri sono due: <strong>SAC</strong> e <strong>BIC</strong>.
+</p><ul><li><strong>SAC</strong> = Strict Avalanche Criterion: se cambio un bit in input, i bit in output devono avere probabilità almeno 1/2 di cambiare
+</li><li><strong>BIC</strong> = Bit Independence Criterion: se cambio 1 bit in input, i bit di output devono cambiare l'uno indipendentemente dall'altro
+</li></ul><p class='vspace'>La <strong>chiave</strong> deve contribuire anch'essa a soddisfare BIC e SAC.
+</p>
+<div class='vspace'></div><h3>Le S-Box</h3>
+<p>Lo scopo di vita delle S-Box è quello di dare un aspetto il più casuale possibile al blocco in input. Se sono grosse, funzionano meglio, ma sono anche molto più difficili da realizzare e da implementare correttamente.
+</p>
+<p class='vspace'>È stato inventato il criterio <strong>GA</strong> = Guaranteed Avalanche. Una S-Box soddisfa il <strong>GA di ordine &#947;</strong> se, per ogni bit in input che cambia, ci sono &#947; bit in output che cambiano. Un GA con &#947; tra 2 e 5 è considerato buono per la <strong>diffusione</strong>.
+</p>
+<p class='vspace'>Ci sono 4 modi per inventare S-Box:
+</p><ul><li>generarle casualmente
+</li><li>generarle casualmente, ma sottoporle a test
+</li><li>crearle manualmente
+</li><li>crearle matematicamente seguendo qualche algoritmo
+</li></ul><div class='vspace'></div><h2>Modi di utilizzo di DES</h2>
+<p>Il DES non si usa sempre allo stesso modo, ma sono stati inventati modi diversi per utilizzarlo.
+</p>
+<div class='vspace'></div><h3>ECB = Electronic CodeBook</h3>
+<p>Si divide il testo in blocchi di 64 bit, e ogni blocco viene DESsificato con la stessa chiave. Se la lunghezza del testo non è multipla di 64 bit, si aggiungono bit per pareggiare.
+</p>
+<p class='vspace'>Questo vuole anche dire che 2 blocchi uguali vengono cifrati allo stesso modo.
+</p>
+<div class='vspace'></div><h3>CBC = Cipher Block Chaining</h3>
+<p>L'inpute che viene DESsificato non è il blocco in chiaro, ma è il prodotto dello <strong>XOR</strong> tra il blocco corrente e il blocco cifrato precedente.
+</p>
+<p class='vspace'>Quando si cifra il primo blocco, ovviamente, non si ha a disposizione un blocco cifrato precedente. Si usa allora un <strong>vettore di inizializzazione</strong>, detto <strong>IV</strong>, che deve quindi fare parte della chiave.
+</p>
+<div class='vspace'></div><h3>CFB = Cipher FeedBack</h3>
+<p>Anche qui non uso blocchi di 64 bit di testo in chiaro, ma uso un altro concetto detto <strong>segmento</strong> composto da un numero <strong>s</strong> di bit, con s &lt; 64.
+</p>
+<p class='vspace'>Anche qui si parte con un <strong>IV</strong> di 64 bit, che viene DESsificato e che produce un blocco cifrato di 64 bit.
+</p>
+<p class='vspace'>Di questo blocco cifrato, prendo gli <strong>s</strong> bit più significativi, e ne faccio lo <strong>XOR</strong> con i primi <strong>s</strong> bit del testo in chiaro. Il prodotto di questo XOR è il primo <strong>segmento</strong> di testo cifrato, lungo quindi <strong>s</strong> bit.
+</p>
+<p class='vspace'>Questo segmento di testo cifrato viene utilizzato anche per cifrare il segmento successivo. Prendo ancora il vettore <strong>IV</strong>, elimino gli <strong>s</strong> bit più significativi e aggiungo in coda gli <strong>s</strong> bit cifrati (in sostanza compio uno scorrimento a sinistra di <strong>s</strong> bit, aggiungendo il testo cifrato precedente).
+</p>
+<p class='vspace'>E poi vado avanti: DESsifico il nuovo <strong>IV</strong>, ottengo 64 bit, di cui i primi <strong>s</strong> diventano il secondo segmento di testo cifrato, e che andranno anche a nutrire IV per la cifratura del prossimo segmento etc.
+</p>
+<p class='vspace'>In genere si usa <strong>s = 8 bit</strong>, così ho che 1 segmento corrisponde ad un byte.
+</p>
+<div class='vspace'></div><h3>OFB = Output FeedBack</h3>
+<p>È uguale a CFB, con una differenza: gli <strong>s</strong> bit che userò al posto degli <strong>s</strong> bit meno significativi di <strong>IV</strong> nella prossima cifratura, NON sono il prodotto dello XOR tra gli <strong>s</strong> bit più significativi della DESsificazione precedente e il primo segmento di testo in chiaro, bensì sono direttamente gli <strong>s</strong> bit più significativi della DESsificazione.
+</p>
+<p class='vspace'>Questo serve per non propagare errori di trasmissione.
+</p>
+<div class='vspace'></div><h3>Counter</h3>
+<p>Questa è la modalità più interessante. C'è un contatore, che ad ogni passo deve produrre un valore a 64 bit.
+</p>
+<p class='vspace'><strong>QUESTO</strong> valore a 64 bit viene DESsificato, e al risultato della DESsificazione si <strong>XOR</strong>ano i 64 bit del testo in chiaro.
+</p>
+<p class='vspace'>Questo procedimento ha degli ottimi vantaggi:
+</p><ul><li>Per decifrare un blocco, NON mi serve il blocco precedente. Posso quindi eseguire in parallelo le decifrature di diversi blocchi, sfruttando le CPU parallele etc.
+</li><li>Se conosco prima il contatore, posso PRECALCOLARE l'output del DES per tot posizioni del contatore, così che quando più tardi mi arriva il blocco, devo solo fare lo XOR
+</li><li>Posso accedere direttamente al blocco che voglio, senza dover dipendere dalla decrittatura di tutti i blocchi precedenti
+</li><li>È sicuro quanto gli altri metodi
+</li><li>È anche più semplice
+</li></ul><p class='vspace'>Il contatore può essere realizzato in qualsiasi modo, purché sia un valore a 64 bit.
+</p>
+<div class='vspace'></div><h2>Double DES</h2>
+<p>È una modalità di utilizzo di DES, che prevede una doppia cifratura. In pratica:
+</p><pre> E<sub>k2</sub>(E<sub>k1</sub>(M))
+</pre><p>che vuol dire che cifro M con la prima chiave, e cifro il cifrato con la seconda chiave.
+</p>
+<p class='vspace'>Il flusso delle informazioni è il seguente:
+</p><pre> x -&gt; DES -&gt; y -&gt; DES -&gt; z
+</pre><p class='vspace'>Utilizzando 2 chiavi, i bit totali che compongono la chiave devono quindi essere 56 * 2 = 112. Ci si aspetterebbe quindi che la crittanalisi di Double DES sia pesante il doppio rispetto a quella di DES, che si aggira, per la forza bruta, intorno a 2<sup>55</sup>.<br />E invece no: adesso vedremo che un attacco a forza bruta a Double DES richiede uno sforzo asintotico a 2<sup>56</sup>, che rispetto al 2<sup>55</sup> del DES normale non giustifica affatto la chiave lunga il doppio.
+</p>
+<div class='vspace'></div><h3>Attacco meet in the middle</h3>
+<pre>  x -&gt; DES -&gt; y -&gt; DES -&gt; z
+</pre><p class='vspace'>Si tratta di un attacco <strong>known plaintext</strong>, ovvero l'attaccante conosce il testo in chiaro ed anche il suo cifrato corrispondente: <strong>x</strong> e <strong>z</strong> in questo schema.
+</p>
+<p class='vspace'>Si procede così:
+</p><ul><li>dato <strong>x</strong>, calcolo tutte le possibili <strong>crittografie</strong> usando tutte le 2<sup>56</sup> chiavi possibili, e le salvo in una tabella
+</li><li>dato <strong>z</strong>, calcolo tutte le possibili <strong>decrittografie</strong> e le salvo in una tabella
+</li><li>confronto le 2 tabelle per vedere le voci che coincidono
+</li><li>scopro la password usando un'altra coppia di testo in chiaro / testo cifrato
+</li></ul><p class='vspace'>Quello che si fa in pratica è provare a crittare in tutti i modi possibili il testo in chiaro <strong>x</strong> di cui dispongo. Crittare in tutti i modi possibili vuol dire provare a crittare <strong>x</strong> con tutte le 2<sup>56</sup> chiavi.<br />Poi, devo provare a decrittare <strong>z</strong>, anche lui con tutte le 2<sup>56</sup> chiavi possibili. In pratica, cerco di arrivare ad <strong>y</strong> sia da sinistra che da destra.
+</p>
+<p class='vspace'>Siccome la chiave di 56 bit è <a class='wikilink' href='CifrariABlocchi.html'>ben minore di 64 * 2<sup>64</sup> bit</a>, allora ci saranno chiavi diverse che, applicate allo stesso blocco, porteranno allo stesso risultato, sia in cifratura che in decifratura: ecco perché ci sarà più di una coincidenza, e occorre una seconda coppia di testo in chiaro / testo cifrato.
+</p>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: July 13, 2011, at 03:23 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/DES?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/DES?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

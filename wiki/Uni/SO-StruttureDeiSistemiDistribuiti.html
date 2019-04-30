@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Strutture dei sistemi distribuiti </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-StruttureDeiSistemiDistribuiti' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Strutture dei sistemi distribuiti
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StruttureDeiSistemiDistribuiti?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StruttureDeiSistemiDistribuiti?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-StruttureDeiSistemiDistribuiti-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StruttureDeiSistemiDistribuiti?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StruttureDeiSistemiDistribuiti?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Strutture dei sistemi distribuiti was last modified on October 30, 2008, at 11:19 AM'>
+							<span style='display:none;'>Sistemi Operativi - Strutture dei sistemi distribuiti</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Strutture dei sistemi distribuiti</span>
+</p>
+<div class='vspace'></div><h2>Concetti di base</h2>
+<p>Un <strong>sistema distribuito</strong> è un insieme di sistemi di elaborazione che non condividono memorie o orologi e che sono connessi tra loro mediante una rete di comunicazione. Ognuno dei singoli sistemi può essere chiamato con molti nomi, ad esempio <strong>host</strong> o <strong>macchina</strong>, e mentre le sue risorse interne sono definite <em>locali</em>, quelle che può raggiungere attraverso la rete sono dette <em>remote</em>.
+</p>
+<p class='vspace'>Obiettivo dei sistemi distribuiti è fornire un ambiente efficace e conveniente per la condivisione di risorse tra macchine diverse.
+</p>
+<div class='vspace'></div><h3>Vantaggi dei sistemi distribuiti</h3>
+<p>I principali motivi per costruire sistemi distribuiti sono:
+</p><ul><li><em>condivisione delle risorse</em>: ogni utente è in grado di usare le risorse (file, periferiche, potenza di calcolo) disponibili su macchine remote
+</li><li><em>velocità di calcolo</em>: può aumentare se l'elaborazione viene suddivisa ed eseguita in modo concorrente su più host. Si può condividere anche il carico di lavoro, distribuendolo su più macchine così da evitare sovraccarichi
+</li><li><em>affidabilità</em>: il guasto di un host generalmente non compromette il funzionamento dell'intero sistema. Certo deve essere progettato con intelligenza, con ridondanze adeguate sia hardware che dei dati
+</li><li><em>comunicazione</em>: molto simile a quella che avviene fra i processi all'interno di un singolo sistema, così che possa essere facilmente estesa all'ambiente distribuito
+</li><li><em>scalabilità</em>: capacità del sistema di adattarsi al variare del carico di servizio
+</li></ul><p class='vspace'>Tutti questi fattori hanno fatto sì che le industrie si orientassero verso i sistemi distribuiti e allo stesso tempo verso un <em>downsizing</em> dei sistemi di calcolo, dal momento che reti di macchine a medio-basse prestazioni hanno nell'insieme ottime funzionalità e costi ridotti.
+</p>
+<div class='vspace'></div><h3>Tipi di sistemi distribuiti</h3>
+<p>Esistono due grandi categorie di sistemi orientati alle reti e li vedremo nei prossimi capitoli.
+</p>
+<div class='vspace'></div><h4>Sistemi operativi di rete</h4>
+<p>Un <strong>sistema operativo di rete</strong> fornisce un ambiente in cui gli utenti, che sono consapevoli della molteplicità delle macchine, possono accedere a risorse remote.
+</p>
+<p class='vspace'>Tre importanti funzioni di questo sistema sono:
+</p><ul><li><em>sessioni di lavoro remote</em>, ovvero la possibilità per un utente di collegarsi ad un'altra macchina in remoto (previa login) e interagire con essa come se fosse in locale. E' ciò che fa il programma <code class='escaped'>telnet</code> per Internet
+</li><li><em>trasferimento remoto di file</em> tra host, con una copia esplicita dal file system remoto a quello locale. In internet ciò è reso possibile dal protocollo <code class='escaped'>ftp</code>
+</li><li>attivare procedure remote attraverso le <em>Remote Procedure Calls</em> (<em>RPC</em>)
+</li></ul><p class='vspace'>Notare che ogni computer <em>conserva il proprio file system locale</em> e (molto importante) la posizione dei file <em>non è trasparente</em> agli utenti, che devono sapere esattamente dove si trovano. Abbiamo già detto infatti che non avviene una vera condivisione di dati: l'utente può solo copiarli da un host all'altro.
+</p>
+<div class='vspace'></div><h4>Sistemi operativi distribuiti</h4>
+<p>In un <strong>sistema operativo distribuito</strong> gli utenti accedono alle risorse remote nello stesso modo in cui accedono a quelle locali, e la migrazione dei processi e dei dati da un host all'altro avviene sotto il controllo del sistema operativo distribuito.
+</p>
+<p class='vspace'>La <em>migrazione dei dati</em> può avvenire in due modi:
+</p><ol><li>quando un utente richiede un file su una macchina remota, questo viene interamente trasferito così da potervi accedere in locale. A elaborazione compiuta, se è stato modificato, viene interamente ricopiato nella macchina di origine
+</li><li>simile al precedente, ma a differenza dell'intero file vengono trasferite solo le parti effettivamente necessarie al processo in quel preciso momento
+</li></ol><p>In entrambi i metodi il sistema non si limita a trasferire, ma fa anche le traduzioni opportune se le rappresentazioni dei dati (big endian, little endian) non sono compatibili.<br />Qual è la tecnica migliore? Dipende dalle porzioni di file che vengono mediamente richieste. 
+</p>
+<p class='vspace'>In alcuni casi è preferibile <em>trasferire la computazione</em> piuttosto che i dati, scelta particolarmente saggia se il tempo di trasferimento è più lungo del tempo di esecuzione di un comando remoto. Il tutto può essere realizzato con una RPC o con l'attivazione di un processo remoto per mezzo di scambio di messaggi.
+</p>
+<p class='vspace'>Una logica estensione della <em>migrazione della computazione</em> è quella dei processi, dove l'esecuzione di questi ultimi non avviene interamente nell'host in cui sono stati attivati. Ci sono due tecniche per spostarli, una che prevede la migrazione in modo tatalmente trasparente all'utente (più rapida su sistemi omogenei), l'altra che invece permette o richiede le modalità di migrazione (più portabile e configurabile). Alcuni motivi per la migrazione dei processi sono il bilanciamento del carico, una maggiore velocità di calcolo, maggiore compatibilità dell'hardware o del software, accesso ai dati, ecc.
+</p>
+<div class='vspace'></div><h2>Topologia</h2>
+<p>I vari host in un sistema distribuito possono essere connessi fisicamente in molti modi diversi, e le configurazioni ottenute si possono valutare in base al costo dell'installazione e della comunicazione (tempo + soldi) e dalla disponibilità, ovvero dall'ampiezza della zona in cui si può accedere ai dati malgrado il guasto di alcuni collegamenti o macchine.
+</p>
+<p class='vspace'>Le reti completamente connesse sono molto performanti e affidabili, ma hanno costi d'installazione spesso insostenibili; gli si preferisce quelle parzialmente connesse, nelle quali vanno però fornite informazioni d'instradamento a quegli host che non sono direttamente collegati.
+</p>
+<p class='vspace'>La scelta della configurazione migliore dipende dal sistema che si vuole ottenere e dalla situazione ambientale, non esiste una topologia migliore in assoluto.
+</p>
+<div class='vspace'></div><h2>Comunicazione</h2>
+<h3>Attribuzione e risoluzione dei nomi</h3>
+<p>Per identificare in modo certo i siti di una rete e i loro processi è necessario dare loro un nome univoco. I processi su sistemi remoti vengono usualmente identificati dalla coppia <code class='escaped'>&lt;nome host, identificatore&gt;</code>, dove <code class='escaped'>nome host</code> è unico nella rete e l'<code class='escaped'>identificatore</code> è il comune <em>id</em> del processo.
+</p>
+<p class='vspace'>La risoluzione dei nomi deve tradurre il nome di una macchina in un valore numerico che descriva il sistema di destinazione all'hardware della rete. Ciò avviene o per mezzo di una lista mantenuta in locale da ogni host che riporta tutte le corrispondenze tra nomi e indirizzi (soluzione onerosa), o distribuendo tali informazioni tra i computer della rete ed utilizzando un protocollo per la risoluzione. Questo secondo sistema è quello del <em>server dei nomi del dominio</em> (<em>DNS</em>), reso nel tempo sempre più efficiente e sicuro grazie a numerosi raffinamenti.
+</p>
+<div class='vspace'></div><h3>Strategie di instradamento</h3>
+<p>Se in un sistema distribuito esistono più percorsi per collegare due host, allora ci sono diverse opzioni di instradamento. Ogni sito ha una <em>tabella di instradamento</em> mantenuta aggiornata che indica i vari percorsi alternativi per la trasmissione di un messaggio, e che può contenere informazioni aggiuntive come velocità e costi.
+</p>
+<p class='vspace'>Sono tre gli schemi di instradamento più comuni:
+</p><ul><li><strong>instradamento fisso</strong>: un percorso tra due macchine viene determinato a priori e non cambia a meno di guasti
+</li><li><strong>instradamento virtuale</strong>: viene definito un percorso tra due host valido per tutta la durata di una sessione
+</li><li><strong>instradamento dinamico</strong>: il percorso da impiegare per inviare un messaggio viene scelto al momento dell'invio
+</li></ul><p class='vspace'>L'instradamento dinamico è il più complicato da organizzare e gestire, ma è il più efficace in ambienti complessi data l'adattabilità alle variazioni di carico e di gestione dei guasti.
+</p>
+<p class='vspace'>Il <strong>gateway</strong> è un dispositivo hardware dedicato che collega la rete locale ad altre reti, gestendo l'eventuale cambiamento di protocollo di comunicazione. Gli host si collegano al gateway con instradamento statico, mentre quest'ultimo si collega alla rete con schema dinamico. Un altro dispositivo molto importante in una rete è il <strong>router</strong>, responsabile dell'instradamento dei messaggi tra due reti.
+</p>
+<div class='vspace'></div><h3>Strategie di pacchetto</h3>
+<p>I messaggi di per sé non hanno una lunghezza standard, ma per semplificare la progettazione del sistema si preferisce realizzare comunicazioni con messaggi a dimensione fissa chiamati <strong>pacchetti</strong> (o <em>frame</em> o <em>datagram</em>). La comunicazione implementata a pacchetti può avvenire mediante messaggi senza connessione inaffidabili (senza garanzia di ricezione, esempio l'UDP) o affidabili (esempio TCP).
+</p>
+<div class='vspace'></div><h3>Strategie di connessione</h3>
+<p>Una volta che i messaggi sono in grado di arrivare a destinazione i processi possono istituire delle <strong>sessioni di comunicazione</strong> per scambiarsi le informazioni. Ne vengono comunemente usate di tre tipi:
+</p><ul><li><strong>commutazione di circuito</strong>, con un collegamento fisico permanente che perdura per tutta la comunicazione e che non può essere usato da altri processi. Richiede alti tempi di attivazione e può sprecare molta larghezza di banda
+</li><li><strong>commutazione di messaggi</strong>, in cui si stabilisce un collegamento temporaneo tra due processi che termina col completamento del trasferimento. I collegamenti fisici vengono allocati dinamicamente per brevi periodi in base alle necessità
+</li><li><strong>commutazione di pacchetto</strong>, dove ciascun pacchetto di un messaggio è inviato separatamente su una connessione attivata dinamicamente. E' la tecnica che fa il miglior uso della larghezza di banda e per questo è tra le più utilizzate. Tuttavia ha un alto overhead per ogni messaggio, dato che deve contenere diverse informazioni per essere suddiviso in pacchetti e correttamente riassemblato
+</li></ul><div class='vspace'></div><h3>Gestione dei conflitti</h3>
+<p>Le <strong>collisioni</strong> in un sistema distribuito avvengono quando a un host arrivano contemporaneamente due messaggi, che diventano entrambi indecifrabili. Esistono molte tecniche per evitarlo, tra cui ricordiamo:
+</p><ul><li>il rilevamento della portante ad accesso multiplo (CSMA) unito al rilevamento delle collisioni (CD). In breve, prima di trasmettere un messaggio l'host verifica che la linea di comunicazione non sia usata da altri; se si rileva una collisione si interrompe la trasmissione e la si ritenta dopo un intervallo di tempo casuale
+</li><li>passaggio di token per imporre la turnazione, adoperato nei sistemi con struttura ad anello. La macchina può inviare un messaggio solo se è in possesso del token, che viene passato tra i vari host a intervalli regolari
+</li></ul><div class='vspace'></div><h2>Protocolli di comunicazione</h2>
+<p>Nella progettazione di una rete di comunicazione i fattori critici da tenere in considerazione sono le <em>comunicazioni asincrone</em>, le <em>interazioni tra ambienti non omogenei</em> e la <em>probabilità di avere errori</em>. L'obiettivo che ci si prefigge è dunque creare un ambiente omogeneo di comunicazione che la astragga e virtualizzi così da semplificare la progettazione e avere una gestione efficiente del sistema. <br />La soluzione è l'adozione di protocolli di comunicazione da applicare a strati distinti del sistema, utilizzati un po' come se fossero i driver della rete. La comunicazione avviene ovviamente solo tra strati equivalenti.
+</p>
+<p class='vspace'>Il modello teorico standard è l'ISO/OSI, che divide il sistema in:
+</p><ul><li><strong>strato fisico</strong>, responsabile della definizione dei dettagli elettromeccanici della trasmissione fisica. Implementato nell'hardware
+</li><li><strong>strato di collegamento dei dati</strong>, che gestisce la trasmissione dei pacchetti e rileva e corregge gli errori
+</li><li><strong>strato di rete</strong>, che si occupa delle connessioni e dell'instradamento dei pacchetti
+</li><li><strong>strato di trasporto</strong>, che partiziona e mantiene ordinati i pacchetti di un messaggio, ne controlla il flusso e gestisce gli errori
+</li><li><strong>strato di sessione</strong>, che realizza le sessioni e i protocolli di comunicazione tra processi
+</li><li><strong>strato di presentazione</strong>, che risolve le differenze di formato tra le varie macchine
+</li><li><strong>strato di applicazione</strong>, responsabile dell'interazione con gli utenti
+</li></ul><p class='vspace'>Questo è un buon modello, ma storicamente si è preferito adottarne uno più semplice ed efficiente: il <strong>TCP/IP</strong>, detto anche <em>modello reale</em>. Il protocollo TCP corrisponde allo strato di trasporto, è orientato alle connessioni ed è affidabile (l'opposto dell'UDP). Il protocollo IP è invece responsabile dell'instradamento dei pacchetti attraverso Internet.
+</p>
+<div class='vspace'></div><h2>Robustezza</h2>
+<p>In un sistema distribuito sono molti i tipi di guasti in cui si può incorrere, ma per garantire la <strong>robustezza</strong> bisogna comunque individuarli, rinconfigurare il sistema per poter continuare la computazione e infine recuperare la configurazione iniziale a guasto riparato.
+</p>
+<div class='vspace'></div><h3>Individuazione dei guasti</h3>
+<p>In un ambiente senza memoria condivisa è di solito impossibile distinguere le tipologie di guasto, se hardware o software ad esempio, ma ci si deve accontentare di rilevarli (che è già tanto). Tra le tecniche di rilevamento le più utilizzate sono il <em>monitoraggio periodico con handshaking</em>, l'impostazione di un <em>time-out</em> (superato il quale viene sollevato un errore) e la <em>computazione duplicata con confronto dei risultati</em> (che oltre a rilevare il guasto offre una controprova della correttezza dei risultati).
+</p>
+<div class='vspace'></div><h3>Riconfigurazione del sistema</h3>
+<p>Una volta rilevato che un certo host è guasto, bisogna anzitutto aggiornare tutte le tabelle di instradamento della rete affinché la comunicazione non passi da lì. Bisogna poi fare in modo che siano tutti informati del fatto che i servizi erogati da quella macchina non sono temporaneamente disponibili, e anzi bisogna cercare di far migrare tali servizi su altri siti.
+</p>
+<div class='vspace'></div><h3>Recupero di un guasto</h3>
+<p>A guasto riparato la macchina deve essere reintegrata nel sistema in modo che gli altri host possano essere informati (tramite handshaking) del suo ripristino. Le tabelle interne della macchina verranno quindi ripristinate e aggiornate, e gli verranno recapitati i messaggi pendenti.
+</p>
+<div class='vspace'></div><h2>Problemi progettuali</h2>
+<p>L'obiettivo principale di un progettista di sistemi distribuiti è renderli del tutto trasparenti agli utenti, dando l'illusione che stiano operando su un sistema centralizzato convenzionale.
+</p>
+<p class='vspace'>Altri aspetti che vanno tenuti in considerazione sono:
+</p><ul><li>la <em>mobilità dell'utente</em>, che non deve essere obbligato a collegarsi a un unico host specifico
+</li><li>la <em>tolleranza ai guasti</em>, ovvero il sistema dovrebbe continuare a funzionare anche in caso di guasto - anche se con funzionalità in meno - fino alla riparazione
+</li><li>la <em>scalabilità</em>, ovvero la capacità del sistema di adattarsi all'aumento del carico di servizio
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: October 30, 2008, at 11:19 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StruttureDeiSistemiDistribuiti?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StruttureDeiSistemiDistribuiti?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

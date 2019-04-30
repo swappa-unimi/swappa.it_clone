@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : PmWikiIt / List Local</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/PmWikiIt' title='Pm Wiki It Home'>Pm Wiki It</a> /
+    <a href='ListLocal.html' title='List Local'>List Local</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right;' >
+</div>
+<div class='fpltemplate'><table border='1' cellspacing='0' cellpadding='0' >
+<tr ><td align='center' colspan='2'  valign='top'><strong>Original page PmWiki</strong>
+</td><td align='center' colspan='2'  valign='top'><strong>Translation PmWikiIt</strong>
+</td></tr><tr ><td align='center'  valign='top'>Page name
+</td><td align='center'  valign='top'>Last modified
+</td><td align='center'  valign='top'>Last modified
+</td><td align='center'  valign='top'>Page name
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/CustomMarkup.html'>CustomMarkup</a>
+</td><td  valign='top'>November 24, 2010, at 12:50 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/CustomMarkup?action=edit'>CustomMarkup</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/CustomMarkup?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Tables.html'>Tables</a>
+</td><td  valign='top'>November 09, 2010, at 01:13 PM
+</td><td  valign='top'>December 09, 2007, at 01:12 PM
+</td><td  valign='top'><a class='wikilink' href='Tables.html'>Tabelle</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Links.html'>Links</a>
+</td><td  valign='top'>October 17, 2010, at 10:23 PM
+</td><td  valign='top'>October 21, 2008, at 03:19 PM
+</td><td  valign='top'><a class='wikilink' href='Links.html'>Collegamenti</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PageListTemplates.html'>PageListTemplates</a>
+</td><td  valign='top'>October 14, 2010, at 09:39 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/PageListTemplates?action=edit'>PageListTemplates</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/PageListTemplates?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Skins.html'>Skins</a>
+</td><td  valign='top'>September 27, 2010, at 09:49 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Skins?action=edit'>Skins</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Skins?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Images.html'>Images</a>
+</td><td  valign='top'>September 16, 2010, at 12:06 AM
+</td><td  valign='top'>October 21, 2008, at 04:15 PM
+</td><td  valign='top'><a class='wikilink' href='Images.html'>Immagini</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/UploadVariables.html'>UploadVariables</a>
+</td><td  valign='top'>September 04, 2010, at 07:15 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/UploadVariables?action=edit'>UploadVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/UploadVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/UploadsAdmin.html'>Uploads Administration</a>
+</td><td  valign='top'>August 28, 2010, at 11:19 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/UploadsAdmin?action=edit'>UploadsAdmin</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/UploadsAdmin?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/TextFormattingRules.html'>TextFormattingRules</a>
+</td><td  valign='top'>August 22, 2010, at 09:29 PM
+</td><td  valign='top'>May 03, 2010, at 10:17 PM
+</td><td  valign='top'><a class='wikilink' href='TextFormattingRules.html'>Regole per la formattazione</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Requirements.html'>Requirements</a>
+</td><td  valign='top'>August 19, 2010, at 12:26 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Requirements?action=edit'>Requirements</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Requirements?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/BasicEditing.html'>Basic PmWiki editing rules</a>
+</td><td  valign='top'>August 12, 2010, at 03:17 PM
+</td><td  valign='top'>May 03, 2010, at 10:19 PM
+</td><td  valign='top'><a class='wikilink' href='BasicEditing.html'>Regole di base per la modifica</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Categories.html'>Categories</a>
+</td><td  valign='top'>August 12, 2010, at 08:34 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Categories?action=edit'>Categories</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Categories?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Internationalizations.html'>Internationalizations</a>
+</td><td  valign='top'>August 06, 2010, at 12:04 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Internationalizations?action=edit'>Internationalizations</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Internationalizations?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/FmtPageName.html'>FmtPageName</a>
+</td><td  valign='top'>July 28, 2010, at 05:09 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/FmtPageName?action=edit'>FmtPageName</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/FmtPageName?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/SkinTemplates.html'>SkinTemplates</a>
+</td><td  valign='top'>July 18, 2010, at 10:02 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/SkinTemplates?action=edit'>SkinTemplates</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/SkinTemplates?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Contributors.html'>Contributors</a>
+</td><td  valign='top'>June 20, 2010, at 04:38 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Contributors?action=edit'>Contributors</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Contributors?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PageTextVariables.html'>PageTextVariables</a>
+</td><td  valign='top'>June 20, 2010, at 03:14 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/PageTextVariables?action=edit'>PageTextVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/PageTextVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Forms.html'>Forms</a>
+</td><td  valign='top'>June 20, 2010, at 02:41 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Forms?action=edit'>Forms</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Forms?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Installation.html'>PmWiki Installation</a>
+</td><td  valign='top'>June 16, 2010, at 09:55 AM
+</td><td  valign='top'>May 26, 2010, at 09:16 PM
+</td><td  valign='top'><a class='wikilink' href='Installation.html'>Installazione di PmWiki</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/ConditionalMarkup.html'>ConditionalMarkup</a>
+</td><td  valign='top'>June 10, 2010, at 11:05 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/ConditionalMarkup?action=edit'>ConditionalMarkup</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/ConditionalMarkup?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiStyles.html'>WikiStyles</a>
+</td><td  valign='top'>May 11, 2010, at 08:04 AM
+</td><td  valign='top'>May 03, 2010, at 05:56 PM
+</td><td  valign='top'><a class='wikilink' href='WikiStyles.html'>Stili wiki</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/DocumentationIndex.html'>Documentation Index</a>
+</td><td  valign='top'>March 26, 2010, at 01:56 AM
+</td><td  valign='top'>May 03, 2010, at 11:01 PM
+</td><td  valign='top'><a class='wikilink' href='DocumentationIndex.html'>Indice documentazione</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/TableDirectives.html'>Table directives</a>
+</td><td  valign='top'>March 14, 2010, at 06:03 PM
+</td><td  valign='top'>December 08, 2007, at 12:10 AM
+</td><td  valign='top'><a class='wikilink' href='TableDirectives.html'>Direttive per tabelle</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/IncludeOtherPages.html'>IncludeOtherPages</a>
+</td><td  valign='top'>February 23, 2010, at 04:06 PM
+</td><td  valign='top'>February 10, 2008, at 04:36 PM
+</td><td  valign='top'><a class='wikilink' href='IncludeOtherPages.html'>Includere altre pagine</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PageHistory.html'>PageHistory</a>
+</td><td  valign='top'>February 21, 2010, at 05:13 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/PageHistory?action=edit'>PageHistory</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/PageHistory?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Upgrades.html'>Upgrades</a>
+</td><td  valign='top'>February 21, 2010, at 04:29 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Upgrades?action=edit'>Upgrades</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Upgrades?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/BasicVariables.html'>BasicVariables</a>
+</td><td  valign='top'>February 11, 2010, at 12:14 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/BasicVariables?action=edit'>BasicVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/BasicVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Troubleshooting.html'>Troubleshooting</a>
+</td><td  valign='top'>February 01, 2010, at 01:57 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Troubleshooting?action=edit'>Troubleshooting</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Troubleshooting?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/LocalCustomizations.html'>LocalCustomizations</a>
+</td><td  valign='top'>January 30, 2010, at 11:45 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/LocalCustomizations?action=edit'>LocalCustomizations</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/LocalCustomizations?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PageDirectives.html'>PageDirectives</a>
+</td><td  valign='top'>January 17, 2010, at 10:40 PM
+</td><td  valign='top'>August 27, 2009, at 11:13 PM
+</td><td  valign='top'><a class='wikilink' href='PageDirectives.html'>Direttive per pagine</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Variables.html'>Variables</a>
+</td><td  valign='top'>January 06, 2010, at 07:32 AM
+</td><td  valign='top'>May 01, 2010, at 10:35 PM
+</td><td  valign='top'><a class='wikilink' href='Variables.html'>Variabili</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/InitialSetupTasks.html'>InitialSetupTasks</a>
+</td><td  valign='top'>December 24, 2009, at 10:40 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/InitialSetupTasks?action=edit'>InitialSetupTasks</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/InitialSetupTasks?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiTrails.html'>WikiTrails</a>
+</td><td  valign='top'>December 02, 2009, at 11:01 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiTrails?action=edit'>WikiTrails</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiTrails?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/MarkupMasterIndex.html'>Markup Master Index</a>
+</td><td  valign='top'>November 13, 2009, at 08:47 AM
+</td><td  valign='top'>November 14, 2007, at 07:06 PM
+</td><td  valign='top'><a class='wikilink' href='MarkupMasterIndex.html'>Indice principale markup</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/AvailableActions.html'>AvailableActions</a>
+</td><td  valign='top'>November 12, 2009, at 06:55 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/AvailableActions?action=edit'>AvailableActions</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/AvailableActions?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/GroupFooter.html'>GroupFooter</a>
+</td><td  valign='top'>October 18, 2009, at 11:12 PM
+</td><td  valign='top'>May 02, 2010, at 04:03 PM
+</td><td  valign='top'><a class='wikilink' href='GroupFooter.html'>GroupFooter</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/CreatingNewPages.html'>Creating New Pages</a>
+</td><td  valign='top'>October 18, 2009, at 09:56 PM
+</td><td  valign='top'>October 21, 2008, at 02:59 PM
+</td><td  valign='top'><a class='wikilink' href='CreatingNewPages.html'>Creare nuove pagine</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Introduction.html'>Introduction</a>
+</td><td  valign='top'>October 16, 2009, at 10:15 PM
+</td><td  valign='top'>May 03, 2010, at 05:43 PM
+</td><td  valign='top'><a class='wikilink' href='Introduction.html'>Introduzione</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiWord.html'>WikiWord</a>
+</td><td  valign='top'>October 08, 2009, at 12:28 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiWord?action=edit'>WikiWord</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiWord?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/I18nVariables.html'>I18nVariables</a>
+</td><td  valign='top'>October 05, 2009, at 11:26 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/I18nVariables?action=edit'>I18nVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/I18nVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiFarms.html'>WikiFarms</a>
+</td><td  valign='top'>October 04, 2009, at 01:59 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiFarms?action=edit'>WikiFarms</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiFarms?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Passwords.html'>Passwords</a>
+</td><td  valign='top'>October 04, 2009, at 01:43 PM
+</td><td  valign='top'>May 03, 2010, at 09:24 PM
+</td><td  valign='top'><a class='wikilink' href='Passwords.html'>Passwords</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/MarkupExpressions.html'>MarkupExpressions</a>
+</td><td  valign='top'>September 29, 2009, at 12:41 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/MarkupExpressions?action=edit'>MarkupExpressions</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/MarkupExpressions?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/InterMap.html'>InterMap</a>
+</td><td  valign='top'>September 24, 2009, at 10:46 PM
+</td><td  valign='top'>February 10, 2008, at 04:35 PM
+</td><td  valign='top'><a class='wikilink' href='InterMap.html'>InterMap</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Drafts.html'>Drafts</a>
+</td><td  valign='top'>September 23, 2009, at 01:07 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Drafts?action=edit'>Drafts</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Drafts?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/GroupHeaders.html'>GroupHeaders</a>
+</td><td  valign='top'>September 20, 2009, at 05:11 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/GroupHeaders?action=edit'>GroupHeaders</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/GroupHeaders?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/GroupCustomizations.html'>GroupCustomizations</a>
+</td><td  valign='top'>August 27, 2009, at 10:55 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/GroupCustomizations?action=edit'>GroupCustomizations</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/GroupCustomizations?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PageFileFormat.html'>PageFileFormat</a>
+</td><td  valign='top'>August 26, 2009, at 02:06 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/PageFileFormat?action=edit'>PageFileFormat</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/PageFileFormat?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/UTF-8.html'>UTF-8</a>
+</td><td  valign='top'>August 23, 2009, at 07:06 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/UTF-8?action=edit'>UTF-8</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/UTF-8?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Uploads.html'>Uploads</a>
+</td><td  valign='top'>August 20, 2009, at 08:36 PM
+</td><td  valign='top'>November 24, 2008, at 01:41 PM
+</td><td  valign='top'><a class='wikilink' href='Uploads.html'>Caricare file</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/GroupCustomizations-from=PmWiki.PerGroupCustomizations.html'>PerGroupCustomizations</a>
+</td><td  valign='top'>August 19, 2009, at 03:46 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/PerGroupCustomizations?action=edit'>PerGroupCustomizations</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/PerGroupCustomizations?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Version.html'>Version</a>
+</td><td  valign='top'>July 14, 2009, at 01:08 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Version?action=edit'>Version</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Version?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/CustomInterMap.html'>Custom InterMap</a>
+</td><td  valign='top'>July 14, 2009, at 01:06 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/CustomInterMap?action=edit'>CustomInterMap</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/CustomInterMap?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/LinkVariables.html'>LinkVariables</a>
+</td><td  valign='top'>July 12, 2009, at 04:57 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/LinkVariables?action=edit'>LinkVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/LinkVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/MailingLists.html'>MailingLists</a>
+</td><td  valign='top'>July 07, 2009, at 10:05 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/MailingLists?action=edit'>MailingLists</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/MailingLists?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/OtherVariables.html'>OtherVariables</a>
+</td><td  valign='top'>July 05, 2009, at 03:26 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/OtherVariables?action=edit'>OtherVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/OtherVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Audiences.html'>Audiences</a>
+</td><td  valign='top'>June 11, 2009, at 02:49 AM
+</td><td  valign='top'>May 02, 2010, at 02:06 PM
+</td><td  valign='top'><a class='wikilink' href='Audiences.html'>Pubblico PmWiki</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/BackupAndRestore.html'>Backup and Restore</a>
+</td><td  valign='top'>May 08, 2009, at 12:48 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/BackupAndRestore?action=edit'>BackupAndRestore</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/BackupAndRestore?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PathVariables.html'>PathVariables</a>
+</td><td  valign='top'>March 28, 2009, at 10:38 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/PathVariables?action=edit'>PathVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/PathVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiAdministrator.html'>WikiAdministrator</a>
+</td><td  valign='top'>March 28, 2009, at 10:36 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiAdministrator?action=edit'>WikiAdministrator</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiAdministrator?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiPage.html'>WikiPage</a>
+</td><td  valign='top'>March 28, 2009, at 10:36 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiPage?action=edit'>WikiPage</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiPage?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiStyleExamples.html'>WikiStyleExamples</a>
+</td><td  valign='top'>March 28, 2009, at 09:23 PM
+</td><td  valign='top'>January 26, 2008, at 09:33 PM
+</td><td  valign='top'><a class='wikilink' href='WikiStyleExamples.html'>Esempi di stili wiki</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiStructure.html'>WikiStructure</a>
+</td><td  valign='top'>March 15, 2009, at 02:02 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiStructure?action=edit'>WikiStructure</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiStructure?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../Main/WikiSandbox-from=PmWiki.WikiSandbox.html'>WikiSandbox</a>
+</td><td  valign='top'>March 15, 2009, at 01:57 AM
+</td><td  valign='top'>April 22, 2010, at 08:23 PM
+</td><td  valign='top'><a class='wikilink' href='WikiSandbox.html'>WikiSandbox</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/SecurityVariables.html'>SecurityVariables</a>
+</td><td  valign='top'>February 15, 2009, at 12:21 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/SecurityVariables?action=edit'>SecurityVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/SecurityVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/GroupHeader.html'>GroupHeader</a>
+</td><td  valign='top'>February 14, 2009, at 09:10 PM
+</td><td  valign='top'>October 21, 2008, at 02:48 PM
+</td><td  valign='top'><a class='wikilink' href='GroupHeader.html'>GroupHeader</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/DebugVariables.html'>DebugVariables</a>
+</td><td  valign='top'>February 14, 2009, at 03:44 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/DebugVariables?action=edit'>DebugVariables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/DebugVariables?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/CustomWikiStyles.html'>CustomWikiStyles</a>
+</td><td  valign='top'>February 14, 2009, at 03:36 PM
+</td><td  valign='top'>May 01, 2010, at 11:02 PM
+</td><td  valign='top'><a class='wikilink' href='CustomWikiStyles.html'>Stili wiki personalizzati</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Blocklist.html'>Blocklist</a>
+</td><td  valign='top'>February 14, 2009, at 03:03 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Blocklist?action=edit'>Blocklist</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Blocklist?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/SitePreferences.html'>SitePreferences</a>
+</td><td  valign='top'>February 09, 2009, at 04:41 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/SitePreferences?action=edit'>SitePreferences</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/SitePreferences?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/SitePageActions.html'>SitePageActions</a>
+</td><td  valign='top'>January 30, 2009, at 05:12 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/SitePageActions?action=edit'>SitePageActions</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/SitePageActions?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/DesignNotes.html'>DesignNotes</a>
+</td><td  valign='top'>October 02, 2008, at 12:45 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/DesignNotes?action=edit'>DesignNotes</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/DesignNotes?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/UpgradingFromPmWiki1.html'>UpgradingFromPmWiki1</a>
+</td><td  valign='top'>September 01, 2008, at 02:41 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/UpgradingFromPmWiki1?action=edit'>UpgradingFromPmWiki1</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/UpgradingFromPmWiki1?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/SimultaneousEdits.html'>SimultaneousEdits</a>
+</td><td  valign='top'>August 31, 2008, at 12:48 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/SimultaneousEdits?action=edit'>SimultaneousEdits</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/SimultaneousEdits?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/Glossary.html'>Glossary</a>
+</td><td  valign='top'>August 31, 2008, at 12:39 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Glossary?action=edit'>Glossary</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Glossary?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PmWikiPhilosophy.html'>PmWikiPhilosophy</a>
+</td><td  valign='top'>August 31, 2008, at 12:34 PM
+</td><td  valign='top'>May 02, 2010, at 02:16 PM
+</td><td  valign='top'><a class='wikilink' href='PmWikiPhilosophy.html'>Filosofia di PmWiki</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/FilePermissions.html'>FilePermissions</a>
+</td><td  valign='top'>April 14, 2008, at 10:41 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/FilePermissions?action=edit'>FilePermissions</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/FilePermissions?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiWord-from=PmWiki.WikiWords.html'>WikiWords</a>
+</td><td  valign='top'>January 31, 2008, at 03:31 AM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiWords?action=edit'>WikiWords</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiWords?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiGroup-from=PmWiki.WikiGroups.html'>WikiGroups</a>
+</td><td  valign='top'>July 22, 2007, at 11:38 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiGroups?action=edit'>WikiGroups</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiGroups?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/FAQ.html'>FAQ</a>
+</td><td  valign='top'>June 02, 2007, at 10:32 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/FAQ?action=edit'>FAQ</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/FAQ?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/SpecialCharacters.html'>SpecialCharacters</a>
+</td><td  valign='top'>August 31, 2006, at 03:18 PM
+</td><td  valign='top'>May 03, 2010, at 09:56 PM
+</td><td  valign='top'><a class='wikilink' href='SpecialCharacters.html'>Caratteri speciali</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/ChangesFromPmWiki1.html'>ChangesFromPmWiki1</a>
+</td><td  valign='top'>August 25, 2006, at 07:22 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/ChangesFromPmWiki1?action=edit'>ChangesFromPmWiki1</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/ChangesFromPmWiki1?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/WikiFarmTerminology.html'>WikiFarmTerminology</a>
+</td><td  valign='top'>March 24, 2006, at 10:08 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiFarmTerminology?action=edit'>WikiFarmTerminology</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiFarmTerminology?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PmWiki.html'>PmWiki</a>
+</td><td  valign='top'>March 12, 2006, at 09:32 PM
+</td><td  valign='top'>April 26, 2019, at 04:37 PM
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/PmWiki?action=edit'>PmWiki</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/PmWiki?action=edit'>?</a>
+</td></tr><tr ><td  valign='top'><a class='wikilink' href='../PmWiki/PatrickMichaud.html'>PatrickMichaud</a>
+</td><td  valign='top'>March 12, 2006, at 04:07 AM
+</td><td  valign='top'>May 20, 2005, at 09:02 PM
+</td><td  valign='top'><a class='wikilink' href='PatrickMichaud.html'>PatrickMichaud</a>
+</td></tr></table>
+</div>
+<p class='vspace'><a name='translation' id='translation'></a>
+</p><tr ><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/FullName?action=edit'>FullName</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/FullName?action=edit'>?</a>
+</td><td  valign='top'>{=&#36;LastModified}
+</td><td  valign='top'>{PmWikiIt.{=$Name}&#36;LastModified}
+</td><td  valign='top'><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Name?action=edit'>Name</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Name?action=edit'>?</a>
+<p><a name='translationend' id='translationend'></a>
+<a name='trailend' id='trailend'></a>
+</p>
+<div class='vspace'></div><hr />
+<p  style='color: #060; background-color: #cf9; border: 1px solid #060; padding: 3px; font-size: smaller;'> 
+Pagina originale: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWikiIt.ListLocal' title='' rel='nofollow'>PmWikiIt.ListLocal</a> -
+<a class='wikilink' href='A-action=search&amp;q=link=PmWikiIt.ListLocal&amp;fmt=title.html'>Backlinks</a><br />
+Ultime modifiche:<br /><a class='selflink' href='ListLocal.html'>PmWikiIt.ListLocal</a>: March 18, 2008, at 07:09 PM<br />
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/PmWikiIt/ListLocal)</span></div>
+  </div>
+</body>
+</html>

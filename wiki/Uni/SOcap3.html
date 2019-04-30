@@ -1,0 +1,648 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Riassunto Capitolo 3 - Struttura dei SO </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SOcap3' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Riassunto Capitolo 3 - Struttura dei SO
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap3?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap3?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SOcap3-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap3?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap3?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Riassunto Capitolo 3 - Struttura dei SO was last modified on April 07, 2008, at 12:51 PM'>
+							<span style='display:none;'>Riassunto Capitolo 3 - Struttura dei SO</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Riassunto Capitolo 3 - Struttura dei SO ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'>Diversi punti di vista per considerare un SO:
+</p><ol><li>servizi che offre
+</li><li>interfaccia ad utenti
+</li><li>interfaccia ai programmatori
+</li><li>componenti
+</li><li>interconnessioni
+</li></ol><div class='vspace'></div><h2>3.1 Componenti del SO</h2>
+<h3>3.1.1 La gestione dei processi</h3>
+<p>Processo = programma in esecuzione =&gt; chiamate di sistema per permettere ai processi di creare sottoprocessi da eseguire in modo concorrente.
+</p>
+<p class='vspace'>OCIO: programma != processo:
+programma = <em>passivo</em>
+processo = <em>attivo</em>
+</p>
+<p class='vspace'>Processo: esecuzione sequenziale =&gt; <strong>contatore di programma</strong> che dice qual'è la prossima istruzione da eseguire.
+</p>
+<p class='vspace'>In relazione ai processi, il SO deve:
+</p><ol><li>generare e cancellare processi di sistema
+</li><li>generare e cancellare processi utente
+</li><li>sospendere e riattivare i processi
+</li><li>meccanismi per sincronizzare processi 
+</li><li>meccanismi per far comunicare i processi
+</li><li>meccanismi per gestire i deadlock
+</li></ol><div class='vspace'></div><h3>3.1.2 La gestione della memoria centrale</h3>
+<p>Durante la fase di <strong>fetch</strong> la CPU preleva istruzioni dalla memoria.
+La fase di <strong>data-fetch</strong> invece legge e scrive sulla memoria.
+</p>
+<p class='vspace'>Multiprogrammazione =&gt; occorre gestire la memoria centrale:
+</p><ol><li>sapere chi ha la proprietà su quale parte della memoria
+</li><li>decidere quali processi caricare in memoria quando lo spazio si libera
+</li><li>allocare e deallocare spazio in memoria quando è necessario
+</li></ol><div class='vspace'></div><h3>3.1.3 La gestione dei file</h3>
+<p>Uso comodo del computer =&gt; visione logica di memorizzazione delle info =&gt; <strong>file</strong> = unità logica di memorizzazione.
+</p>
+<p class='vspace'>File = insieme di info correlate dal creatore del file.
+Organizzati in <strong>directory</strong> per facilitarne l'uso.
+</p>
+<p class='vspace'>Operazioni che il SO fa riguardo ai files:
+</p><ol><li>creare e cancellare i files
+</li><li>creare e cancellare directory
+</li><li>manipolare files e directory
+</li><li>copiare i files
+</li><li>salvare i files
+</li></ol><div class='vspace'></div><h3>3.1.4 La gestione dell I/O</h3>
+<p><strong>Sottosistema di I/O</strong> = nasconde le caratteristiche dei dispositivi I/O al resto del SO.
+</p>
+<p class='vspace'>Il sottosistema I/O è fatto di:
+</p><ol><li>componente per la gestione della memoria che include buffer, cache, processo di stampa (?? che c'entra? è un solo esempio?)
+</li><li>interfaccia generale del driver
+</li><li>driver per dispositivi hardware specifici
+</li></ol><div class='vspace'></div><h3>3.1.5 La gestione delle unità di memorizzazione secondarie</h3>
+<p>Dicevamo che la memoria centrale è troppo piccola per contenere tutto, e soprattutto è volatile =&gt; occorre avere un'unità di memorizzazione secondaria che supplisca, e da cui e verso cui copiare dati e programmi che man mano servono 
+</p>
+<p class='vspace'>Le unità di memorizzazione secondarie vanno ben gestite:
+</p><ol><li>gestire lo spazio libero
+</li><li>allocare le unità disco
+</li><li>occuparsi della schedulazione dei dischi
+</li></ol><div class='vspace'></div><h3>3.1.6 Le reti informatiche</h3>
+<p><strong>Sistema distribuito</strong> = insieme di processori che non condivide memoria, periferiche o orologio =&gt; collegati con una <strong>rete di comunicazione</strong>
+</p>
+<p class='vspace'>HW per realizzare la rete + SW per gestirla = <strong>rete informatica</strong>
+</p>
+<div class='vspace'></div><h3>3.1.7 Il sistema di protezione</h3>
+<p>Processi separati protetti l'un l'altro
+</p>
+<p class='vspace'><strong>Protezione</strong> = insieme dei meccanismi per il controllo dell'accesso alle risorse da parte dei processi o degli utenti dei computer.
+</p>
+<div class='vspace'></div><h3>3.1.8 L'interprete dei comandi</h3>
+<p><strong>Interprete dei comandi</strong> = uno dei programmi di sistema più importanti = interfaccia tra utente e SO.
+</p>
+<p class='vspace'>SO = differenti in base all<strong>'amichevolezza</strong> dell'interprete dei comandi, che può esere una <strong>shell</strong> testuale o una <strong>GUI</strong> (graphical user interface).
+</p>
+<p class='vspace'>Comandi accessibili tramite interprete = tutti, eg gestire processi, I/O etc.
+</p>
+<div class='vspace'></div><h2>3.2 Servizi del sistema operativo</h2>
+<p>Ogni SO fornisce servizi diversi ma si possono raggruppare in categorie comuni
+</p>
+<div class='vspace'></div><ul><li><strong>Esecuzione di un programma</strong> = caricare un programma in memoria ed eseguirlo, poi terminarlo in modo normale od erroneo
+</li><li><strong>Operazioni di I/O</strong> = per sicurezza non deve essere l'utente a gestire direttamente le periferiche, ma deve chiedere al SO di farlo
+</li><li><strong>Manipolazione del file system</strong>
+</li><li><strong>Comunicazioni</strong> = tra processi (memoria condivisa, mailbox &amp; co.)
+</li><li><strong>Rilevamento degli errori</strong> = errori HW o SW
+</li></ul><p class='vspace'>Gruppo di funzioni che servono ad assicurare un uso efficiente del sistema:
+</p><ul><li><strong>Allocazione delle risorse</strong> = assegnare risorse ai molteplici processi in funzione contemporaneamente
+</li><li><strong>Contabilità</strong> = sapere quali utenti stanno usando quali risorse =&gt; eg far pagare in base all'uso, o fare statistiche per poi magari impostare meglio i parametri del SO in funzione dell'uso che se ne fa
+</li><li><strong>Protezione e sicurezza</strong> = accessi controllati a tutte le risorse del sistema. Sicurezza esterna = rispetto agli utenti.
+</li></ul><div class='vspace'></div><h2>3.3 Chiamate di sistema</h2>
+<p>Chiamata di sistema = interfaccia tra processo e SO =&gt; accessibili in assembly o anche in linguaggi di alto livello =&gt; in questo caso assomigliano a chiamate di funzioni normali.
+</p>
+<p class='vspace'>Dettagli di tale interfaccia = nascosti al programmatore.
+</p>
+<p class='vspace'>Passare parametri al SO: tre metodi
+</p><ol><li>usare i registri, ma i registri sono pochi
+</li><li>metterli in una tabella (blocco) in memoria e passare l'indirizzo di tale blocco
+</li><li>metterli in uno stack
+</li></ol><p>Gli ultimi 2 metodi non impongono limitazioni al numero di parametri.
+</p>
+<p class='vspace'>Chiamate di sistema = raggruppabili in 5 categorie:
+</p><ol><li>controllo del processo
+</li><li>gestione dei file
+</li><li>gestione del dispositivo
+</li><li>gestione delle informazioni
+</li><li>comunicazioni
+</li></ol><div class='vspace'></div><h3>3.3.1 Il controllo del processo</h3>
+<p>Processo:
+</p><ul><li><strong>fine</strong> = termina correttamente
+</li><li><strong>aborto</strong> = termina in modo anormale
+</li></ul><p class='vspace'><strong>load</strong> = caricare un altro programma.
+<strong>execute</strong> = eseguire l'altro programma.
+=&gt; i nuovi programmi possono essere eseguiti in sequenza (A crea B, lo esegue, B finisce e il controllo torna ad A) oppure in modo concorrente (A crea B e ognuno va per la sua strada).
+</p>
+<p class='vspace'>Patria potestà sui processi generati:
+</p><ul><li>richiedere ed impostare gli attributi dei processi generati (priorità, tempo massimo di esecuzione, ...)
+</li><li>terminare i processi generati
+</li><li>aspettare che finiscano l'esecuzione
+</li></ul><p class='vspace'>Debug: <strong>dump</strong> della memoria per vedere eventuali errori; <strong>trace</strong> per seguire le istruzioni passo passo =&gt; alcune CPU hanno la modalità <strong>single step</strong> in HW, in cui dopo ogni istruzione si esegue una TRAP.
+</p>
+<p class='vspace'>Tracciamento = con <strong>trace</strong> e temporizzatore vedo quali porzioni di codice sono più usate dal mio processo =&gt; utile per i programmatori.
+</p>
+<p class='vspace'>Esempi:
+<strong>MSDOS</strong>: SO a processo singolo =&gt; carico un programma e questo sostituisce una parte dell'interprete dei comandi. Quando termina, ricarica l'interprete dei comandi. 
+TSR = <strong>terminate and stay resident</strong> = intercetta interrupt, viene eseguito e termina, ma non viene tolto dalla memoria =&gt; l'interprete gli riserva dello spazio non sovrascrivibile.
+</p>
+<p class='vspace'><strong>FreeBSD</strong>: multitasking. Un utente lancia un comando dalla shell =&gt; la shell fa una <strong>fork</strong> e poi nella copia ottenuta viene chiamata la <strong>exec</strong>, che sostituisce il codice della shell con quello del programma invocato.
+Si può scegliere di attenderne l'esecuzione, o di eseguirlo in parallelo.
+</p>
+<div class='vspace'></div><h3>3.3.2 La gestione dei file</h3>
+<p>Generare, cancellare, read, write, reposition, close. Idem per le directory.
+Occorre anche saper leggere e impostare gli attributi dei files.
+</p>
+<div class='vspace'></div><h3>3.3.3 La gestione dei dispositivi</h3>
+<p>File = si possono vedere come dispositivi astratti =&gt; le chiamate di sistema per i files vanno bene anche per i dispositivi.
+</p>
+<p class='vspace'>Infatti molti SO (eg UNIX) mappano i dispositivi nel filesystem.
+</p>
+<div class='vspace'></div><h3>3.3.4 La gestione delle informazioni di sistema</h3>
+<p>Ora, data, numero di utenti, versione del SO, RAM libera, disco utilizzato; info per ogni processo (chi lo ha eseguito, da quanto, quanta RAM occupa etc. =&gt; Capitolo 4.1.3)
+</p>
+<div class='vspace'></div><h3>3.3.5 Le comunicazioni</h3>
+<p>2 modelli:
+</p><ol><li>message passing
+</li><li>shared memory
+</li></ol><p class='vspace'><strong>Message passing</strong> = il SO permette la creazione di un collegamento fra processi.
+</p>
+<p class='vspace'><strong>Shared memory</strong> = si elimina consensualmente tra processi la protezione della memoria, così che più processi possano accedervi.
+</p>
+<div class='vspace'></div><h2>3.4 Programmi di sistema</h2>
+<p>Programmi di sistema = ambiente opportuno per sviluppo ed esecuzione di programmi.
+</p>
+<div class='vspace'></div><ul><li>Gestione dei file
+</li><li>Informazioni di stato
+</li><li>Modifica dei file
+</li><li>Supporto ai linguaggi di programmazione
+</li><li>Caricamento ed esecuzione di programmi (linker, overlay etc.)
+</li><li>Comunicazioni
+</li></ul><p class='vspace'>Ci sono anche i programmi applicativi.
+</p>
+<p class='vspace'>Programma di sistema più importante = <strong>interprete dei comandi</strong>.
+</p>
+<p class='vspace'>2 modi per implementare i comandi dell'interprete:
+</p><ol><li>l'interprete contiene in sé il codice del comando
+</li><li>l'interprete chiama un programma di sistema per ogni comando
+</li></ol><p class='vspace'>UNIX usa il metodo 2:
+</p><ul><li>pro = si possono aggiungere comandi a piacimento, e lasciare uguale l'interprete
+</li><li>contro = occorre passare parametri ai comandi, e possono non essere uniformi (dipende da chi ha scritto il particolare programma)
+</li></ul><p class='vspace'>L'utente vede il SO tramite i programmi di sistema, non tramite le chiamate di sistema.
+</p>
+<p class='vspace'>OCIO: il SO non fa distinzione tra processi applicativi e processi di sistema: per lui sono tutti processi.
+</p>
+<div class='vspace'></div><h2>3.5 Struttura del sistema</h2>
+<p>Dopo aver visto le componenti, ora vediamo come metterle insieme in un <strong>kernel</strong> = nucleo.
+</p>
+<div class='vspace'></div><h3>3.5.1 Una struttura semplice</h3>
+<p>Sistemi che non sono divisi in moduli, per vari motivi progettuali o storici.
+</p>
+<p class='vspace'><strong>Interfaccia dei programmi applicativi</strong> = API =  chiamate di sistema.
+<strong>Interfaccia utente</strong> = gruppo di programmi di sistema disponibili, che usano le chiamate di sistema.
+</p>
+<p class='vspace'>=&gt; Top-down: dall'utente all'hardware =&gt; le interfacce esterne possono rimanere identiche anche se quelle interne cambiano.
+</p>
+<div class='vspace'></div><h3>3.5.2 La struttura stratificata</h3>
+<p>SO = diviso in <strong>layer</strong> (strati). Il più basso è l'hw. Quello più alto è l'interfaccia utente.
+</p>
+<p class='vspace'>Vantaggi:
+</p><ul><li>modularità: ogni strato permette di usare solo le funzioni dello strato immediatamente sotto, e non di quelli più in fondo =&gt; debug semplice
+</li><li>progettazione facilitata
+</li><li>uno strato è implementato con le sole interfacce dello strato cui si appoggia =&gt; dettagli nascosti
+</li></ul><p class='vspace'>Difficoltà:
+</p><ul><li>definire i vari strati
+</li><li>efficienza: una chiamata da uno strato alto deve attraversare N strati prima di arrivare dove vuole =&gt; overhead delle chiamate
+</li></ul><div class='vspace'></div><h3>3.5.3 Microkernel</h3>
+<p>Microkernel = tutto ciò che non è indispensabile è levato dal kernel. Fondamentalmente rimangono i meccanismi di comunicazione tra processi.
+</p>
+<p class='vspace'>Tutto il resto è implementato come programmi di sistema.
+</p>
+<p class='vspace'>Pro:
+</p><ul><li>il SO è estendibili aggiungendo programmi e lasciando inalterato il microkernel
+</li><li>il microkernel è facilmente mantenibile
+</li><li>il microkernel è semplice =&gt; facilmente portabile da un'architettura HW ad un'altra
+</li><li>siccome i servizi sono a livello utente, è in generale più sicuro
+</li></ul><p class='vspace'>Contro:
+</p><ul><li>calo di prestazioni, perché tutti i messaggi devono passare dal microkernel =&gt; sovraccarico
+</li></ul><div class='vspace'></div><h3>3.5.4 La struttura modulare</h3>
+<p>C'è un kernel centrale, e intorno, allo <em>stesso livello</em>, sono creati diversi moduli, raggruppabili in 7 categorie:
+</p>
+<div class='vspace'></div><ol><li>classi di schedulazione
+</li><li>file system
+</li><li>chiamate di sistema caricabili
+</li><li>formati eseguibili
+</li><li>moduli degli stream
+</li><li>driver dei dispositivi
+</li><li>varie
+</li></ol><p class='vspace'>In questo modo, il kernel offre le funzioni base, gli altri moduli forniscono il resto, e i vari moduli possono comunicare direttamente tra loro senza passare per gli strati.
+</p>
+<div class='vspace'></div><h2>3.6 Macchine virtuali</h2>
+<p>Virtualizzazione = dare al processo l'illusione di avere una macchina tutta per sé.
+</p>
+<p class='vspace'>Sopra l'HW c'è l'implementazione di una <strong>macchina virtuale</strong> =&gt; la macchina virtuale riproduce una <strong>copia esatta</strong> dell HW sottostante =&gt; su ogni macchina gira un kernel diverso.
+</p>
+<p class='vspace'>I processi girano quindi dentro il loro SO privato.
+</p>
+<p class='vspace'>Pro:
+</p><ul><li>protezione completa dei processi (ma anche problema nella condivisione di risorse)
+</li><li>ideale per sviluppare e provare SO nuovi
+</li><li>risolve problemi di compatibilità (uso un SO diverso su ogni macchina, per avere il meglio delle 2)
+</li></ul><p class='vspace'>Implementazione: prima dicevamo che c'è una modalità utente, e una modalità di sistema (monitor) =&gt; qui le cose si complicano perché c'è la modalità <strong>utente virtuale</strong> e la modalità <strong>monitor virtuale</strong>.
+</p>
+<p class='vspace'>Le macchine virtuali (VM) sono processi che, rispetto al SO vero e proprio sottostante (quello che offre una copia dell'HW), sono dei processi utente.
+</p>
+<p class='vspace'>Un processo su una VM gira in modalità utente virtuale. Quando fa chiamate di sistema, queste vengono eseguite in modalità monitor virtuale.
+</p>
+<p class='vspace'>=&gt; una chiamata I/O fa questa strada: utente virtuale =&gt; monitor virtuale =&gt; utente fisico =&gt; monitor fisico; poi c'è il ritorno =&gt; può metterci molto tempo.
+</p>
+<div class='vspace'></div><h2>3.7 Java</h2>
+<p>Java = è una <strong>tecnologia</strong>, non un semplice linguaggio, perché fornisce un sacco di cose in più rispetto ad un semplice linguaggio:
+</p><ol><li>specifiche del linguaggio di programmazione
+</li><li>interfaccia di programmazione (API) =&gt; è vastissima ed onnicomprensiva
+</li><li>specifiche della macchina virtuale
+</li></ol><p class='vspace'>Unisce l'idea di macchina virtuale, realizzata come processo utente su di un SO =&gt; i concetti visti nei paragrafi sopra non sono mutuamente esclusivi.
+</p>
+<div class='vspace'></div><h3>3.7.1 Il linguaggio di programmazione</h3>
+<p>Orientato agli oggetti, indipendente dall'architettura, distribuito, multithread.
+</p>
+<p class='vspace'>Le classi sono compilate in <strong>bytecode</strong>, a sua volta eseguito dalla macchina virtuale (realizzata in SW o anche in HW, volendo).
+</p>
+<p class='vspace'>Applet = programmi con accesso limitato alle risorse eseguibili direttamente in un browser web.
+</p>
+<p class='vspace'>Garbage collection = l'allocazione e la deallocazione della memoria è a carico di Java e non dell'utente.
+</p>
+<div class='vspace'></div><h3>3.7.2 L'interfaccia per i programmi applicativi (API)</h3>
+<ol><li>API standard per appli desktop, applet, grafica, I/O, utilità, rete
+</li><li>API industriale per server, database
+</li><li>API per piccoli dispositivi eg palmari, cellulari
+</li></ol><p class='vspace'>Nel testo ci si concentra sulle API standard.
+</p>
+<div class='vspace'></div><h3>3.7.3 Java Virtual Machine</h3>
+<p>Java Virtual Machine = JVM =&gt; <strong>caricatore di classi</strong> ed <strong>interprete</strong> che esegue i bytecode.
+</p>
+<p class='vspace'>Bytecode = formato in cui sono compilate le classi =&gt; è indipendente dall'architettura HW =&gt; un programma Java funziona su qualsiasi JVM su qualsiasi sistema operativo.
+</p>
+<p class='vspace'>Interprete = esegue i comandi uno alla volta, o li compila in tempo reale (<strong>JIT</strong> = just in time) in linguaggio nativo del computer ospite.
+</p>
+<p class='vspace'>Piattaforma Java = astrazione dalla macchina fisica =&gt; permette la portabilità.
+</p>
+<div class='vspace'></div><h3>3.7.4 L'ambiente di sviluppo per Java</h3>
+<p>Ambiente di compilazione e di run-time.
+Ambiente di compilazione = trasforma una classe in bytecode
+Run-time = la JVM su cui viene eseguito il codice
+</p>
+<div class='vspace'></div><h3>3.7.5 Sistemi operativi in linguaggio Java</h3>
+<p>È basato sul <strong>linguaggio</strong> =&gt; tutto funziona nello stesso spazio di indirizzamento =&gt; la protezione della memoria è affidata al linguaggio e non al SO.
+</p>
+<div class='vspace'></div><h2>3.8 Progettazione ed implementazione di un sistema operativo</h2>
+<h3>3.8.1 Obiettivi del progetto</h3>
+<p>Primo problema = definire obiettivi e specifiche.
+</p>
+<p class='vspace'>Alto livello: 
+</p><ul><li>su quale HW gira
+</li><li>tipo di sistema: a batch, a condivisione di tempo, realtime, mono|multi utente, distribuito etc.
+</li></ul><p class='vspace'>Obiettivi dell'utente:
+</p><ul><li>comodo e facile da usare
+</li><li>affidabile
+</li><li>sicuro
+</li><li>veloce
+</li></ul><p class='vspace'>Obiettivi del programmatore:
+</p><ul><li>facile da progettare e mantenere
+</li><li>flessibile
+</li><li>affidabile
+</li><li>efficiente
+</li></ul><p class='vspace'>=&gt; In conclusione, sono tutti obiettivi vaghi e non c'è accordo su come realizzarli =&gt; creatività ed esperienza.
+</p>
+<p class='vspace'>Ci sono però principi generali, che vediamo qui sotto.
+</p>
+<div class='vspace'></div><h3>3.8.2 Meccanismi e politiche</h3>
+<p>Meccanismo = <strong>come</strong> fare qualcosa.
+Politica = <strong>che cosa</strong> fare, e quando
+</p>
+<p class='vspace'>Desiderabile avere meccanismi slegati dalle politiche:
+</p><ul><li>se il meccanismo cambia, la politica resta uguale
+</li><li>se la politica cambia, il meccanismo resta uguale
+</li></ul><p class='vspace'>=&gt; posso provare e sperimentare diverse politiche e meccanismi
+</p>
+<div class='vspace'></div><h3>3.8.3 Implementazione</h3>
+<p>Dopo la progettazione, devo realizzare il SO.
+</p>
+<p class='vspace'>Tradizonalmente = assembly o linguaggio macchina.
+</p>
+<p class='vspace'>Ora = linguaggi a più alto livello (in genere C).
+</p>
+<p class='vspace'>Vantaggi dell'utilizzo di linguaggi ad alto livello:
+</p><ul><li>scrivere codice più velocemente
+</li><li>mantenibilità del codice
+</li><li>portabilià
+</li><li>se migliora il compilatore, basta ricompilare il tutto per avere vantaggi
+</li></ul><p class='vspace'>Svantaggi:
+</p><ul><li>velocità inferiore rispetto all'assembly
+</li><li>più memoria necessaria
+</li></ul><p class='vspace'>Però:
+</p><ul><li>i miglioramenti si hanno quando si usano <strong>algoritmi</strong> migliori, non quando si scrive meglio in <strong>assembly</strong>
+</li><li>solo piccole parti del SO sono critiche per la velocità
+</li></ul><p class='vspace'>=&gt; uso l'ASM per le parti critiche, dopo aver identificato i colli di bottiglia (trace e debug, vedi sopra).
+</p>
+<div class='vspace'></div><h2>3.9 Generazione del SO</h2>
+<p>Posso scrivere SO specifici per una certa macchina.
+</p>
+<p class='vspace'>Ma in generale sono più versatili (girano su più HW etc.) =&gt; il procedimento chiamato <strong>SYSGEN</strong> (system generation) configura il SO in base ai parametri:
+</p><ul><li>Quale CPU si usa? (x86, MIPS, PPC... ha coprocessore matematico...) E quante?
+</li><li>Quanta memoria è disponibile? =&gt; molti SO lo scoprono da soli all'avvio
+</li><li>Quali dispositivi sono disponibili?
+</li><li>Quali opzioni del sistema attivo, e quali no?
+</li></ul><p class='vspace'>Queste scelte possono essere prese una volta, oppure organizzate in tabelle =&gt; all'avvio, il SO legge dalle tabelle e si autoconfigura.
+</p>
+<p class='vspace'>L'avvio del sistema operativo avviene nella fase di <strong>boot</strong>.
+</p>
+<div class='vspace'></div><h2>3.10 Avvio del SO</h2>
+<p><strong>Bootstrap</strong>: all'avvio o al reset, viene caricato il program counter con una <strong>locazione di memoria prestabilita</strong> =&gt; l'esecuzione parte da lì.
+</p>
+<p class='vspace'>Il programma di bootstrap di solito è in ROM. Può fare tutto quello che vuole (diagnostica etc.). Alcuni SO hanno tutto in ROM (eg i palmari) =&gt; EPROM riscrivibili etc.
+</p>
+<p class='vspace'>Sistemi operativi grandi:
+</p><ol><li>il bootstrap fa la diagnostica
+</li><li>carica un programma da un punto predeterminato in memoria secondaria, eg il blocco di avvio di un disco
+</li><li>questo programma (piccolo e semplice perché sta in un singolo blocco) conosce l'indirizzo sul disco del SO e lo carica da lì: sa come trovare le info nel filesystem
+</li><li>il sistema è finalmente avviato.
+</li></ol><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 07, 2008, at 12:51 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap3?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap3?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

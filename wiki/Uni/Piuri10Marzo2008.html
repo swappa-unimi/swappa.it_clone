@@ -1,0 +1,471 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Lezione del 10 marzo 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Piuri10Marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Lezione del 10 marzo 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri10Marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri10Marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Piuri10Marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri10Marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri10Marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Lezione del 10 marzo 2008 was last modified on March 31, 2008, at 09:37 PM'>
+							<span style='display:none;'>Sistemi Operativi - Lezione del 10 marzo 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi operativi - Lezione del 10 marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'>Stavamo parlando dei processi. Possiamo vederli come un <em>flusso di esecuzione di computazione</em>. Due processi separati daranno luogo a 2 flussi diversi.
+Tra di loro, questi 2 flussi possono essere sincronizzati o indipendenti.
+</p>
+<p class='vspace'>Questo piccolo ragionamento ci introduce ad una nuova visione della computazione, ovvero considerarla come una serie di attività che si possono spezzare in più processi, ognuno che si occupa di un determinato aspetto.
+Rispetto a questa visione, il processo può essere:
+</p><ul><li><strong>monolitico</strong>: un programma che parte e va fino alla fine dritto come un treno;
+</li><li><strong>cooperante</strong>: un programma che attiva più processi, alcuni indipendenti, altri no, e tutti con lo stesso obiettivo.
+</li></ul><p class='vspace'>Per realizzare un processo monolitico si scrive un programma monolitico.
+Per realizzare processi cooperanti posso ancora scrivere opportunamente un programma monolitico, oppure scrivere programmi diversi eseguiti come processi diversi. Un processo può generarne altri, e ogni processo generato può generare ancora.
+</p>
+<div class='vspace'></div><h2>Generare un processo</h2>
+<p>Il processo che ne vuole generare una copia di se stesso deve chiamare una funzione di sistema che sulle macchine <strong>Unix</strong> si chiama <strong>fork()</strong>. Il generante si chiama padre, il generato figlio.
+</p>
+<p class='vspace'>Padre e figlio possono usare lo stesso codice, ma due contesti diversi (ovvero lavorare su istanze diverse dei dati), oppure avere codice diverso per ognuno.
+</p>
+<p class='vspace'>Quest'ultima affermazione è interessante: quando un processo crea un processo figlio, quest'ultimo a che risorse ha accesso?
+</p><ul><li>padre e figlio possono usare le stesse risorse, coi permessi giusti, e soprattutto opportunamente sincronizzati;
+</li><li>possono condividere solo alcune delle risorse;
+</li><li>non condividono niente.
+</li></ul><p class='vspace'>Quale che sia l'atteggiamento del figlo verso il padre, un processo ha sempre il suo proprio spazio di indirizzamento intoccabile da parte degli altri.
+</p>
+<p class='vspace'>Quindi, all'attivazione del figlio il padre potrebbe decidere di <strong>copiare</strong> tutto o in parte il suo spazio di indirizzamento in quello del figlio, per ottenere uno dei primi due punti visti qui sopra.
+</p>
+<p class='vspace'>Nell'ambito della programmazione, la <strong>fork()</strong> restituisce un valore. Se il valore è 0, vuol dire che si tratta del processo figlio. Se il valore non è 0, allora è il <strong>pid</strong> (process id) del padre.
+</p>
+<div class='vspace'></div><pre> int valore = fork();
+ if (valore == 0) {
+    printf("Sono il figlio!\n");
+    return (0);
+ }
+ else {
+    printf("Sono il padre!\n");
+    return (0);
+ }
+</pre><p class='vspace'>In genere, un figlio generato va per la sua strada indipentemente dal padre. Se il padre vuole aspettare la terminazione dell'esecuzione del figlio, deve chiamare la funzione di sistema <strong>wait()</strong>.
+</p>
+<p class='vspace'>Se un processo vuole sì generarne un altro, ma non uguale a se stesso, non basta chiamare la <strong>fork()</strong>. Occorre chiamare anche la <strong>exec()</strong> e avviare un programma del tutto nuovo. La <strong>exec()</strong> sostituisce interamente il codice ed i dati del processo figlio, che la <strong>fork()</strong> ha reso uguale al padre, con codice e dati del programma indicato alla <strong>exec()</strong>. Si possono anche passarci dei parametri per copiare dati etc. etc.
+</p>
+<p class='vspace'>Quando un processo termina graziosamente, restituisce un valore di stato a seconda che abbia avuto successo o no. Se invece termina ex abrupto, accade quella che si dice <strong>abort</strong>. Il padre muore improvvisamente a metà computazione e fa morire a cascata tutti i figli.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3: sospensione e riattivazione dei processi</strong></span>
+</p>
+<p class='vspace'>Sospendere e riattivare i processi è l'anima del multitasking. Ricordiamolo ancora una volta:
+</p><ul><li>multiprogrammazione = più programmi contemporaneamente in memoria;
+</li><li>multitasking = più processi eseguti in "parallelo".
+</li></ul><p class='vspace'>Dividiamo i processi in due classi astratte:
+</p><ul><li>i processi <strong>CPU-bound</strong>, che usano principalmente la CPU;
+</li><li>i processi <strong>I/O-bound</strong>, che usano principalmente l'I/O del sistema.
+</li></ul><p class='vspace'>Si tratta di due classi estreme, i processi nella realtà non sono così manichei nella divisione.
+</p>
+<p class='vspace'>Per ottenere il multitasking, devo comportarmi in modo diverso a seconda che un processo sia CPU- o I/O-bound.
+Nel caso del CPU-bound, se l'obiettivo è utilizzare al massimo il mio processore, allora non mi interessa nemmeno QUALE processo lo stia usando, purché ce ne sia uno che lo faccia. Posso far partire il mio processo CPU-bound, e questo si mette a macinare calcoli continuamente. Il processore viene sfruttato.
+Ma c'è un'altra cosa da considerare: all'utente tutto ciò come appare? Se un processo monopolizza il processore, vuol dire che gli altri non fanno niente, e la macchina apparirà immobile all'utente.
+</p>
+<p class='vspace'>Quindi, non basta occupare il processore, occorre anche che tutto appaia fluido e in esecuzione parallela all'utente. E allora, per ottenere del vero multitasking, occorre che io sappia fermare un processo, attivarne (<strong>dispatching</strong>) un altro in base a qualche criterio (<strong>scheduling</strong>), e poi tornare al processo di prima.
+Come al solito, possiamo distinguere tra <strong>politiche</strong> e <strong>meccanismi</strong>. Decidere CHI sospendere è politica, COME farlo è un meccanismo.
+</p>
+<div class='vspace'></div><h2>Politiche di sospensione dei processi</h2>
+<p>Sono le regole in base alle quali si stabilisce di interrompere un processo.
+</p>
+<p class='vspace'>Un processo viene sospeso <strong>implicitamente</strong> quando:
+</p><ul><li>esegue un'operazione I/O;
+</li><li>fa una fork();
+</li></ul><p class='vspace'>Un processo si autosospende <strong>esplicitamente</strong> quando è lui stesso a volerlo.
+</p>
+<p class='vspace'>Quale che sia l'occasione, queste sospensioni sono tutte <strong>sincrone</strong> con lo stato dell'evoluzione della computazione, e avvengono sempre all'interno di chiaamte di sistema. Infatti le chiamate I/O sono chiamate di sistema, così come le fork e le richieste esplicite di sospensione.
+</p>
+<div class='vspace'></div><h3>Time Sharing</h3>
+<p>Per ottenere la fluidità e l'illusione che diverse cose avvengano contemporaneamente in un processore si usa la tecnica del <strong>time sharing</strong>. Il processo in esecuzione viene obbligato a ad andarsene: questo si chiama <strong>preemption</strong>.
+</p>
+<p class='vspace'>Il principio è che un processo può utilizzare la CPU per una certa quantità di tempo detta <strong>time slice</strong>, o <strong>quanto di tempo</strong>. Finito il tempo a sua disposizione, volente o nolente il SO obbliga il processo a menare le tolle, lo sospende e ne prende un altro.
+</p>
+<p class='vspace'>Così, ho i processo che sono forzatamente obbligati a farsi strada l'un l'altro. Certo che se una certo evento da cui il processo dipende avviene proprio nell'istante in cui il SO lo preemptiva, possono nascere casini. Ricordiamoci quindi che il <strong>time sharing</strong> non è indolore.
+</p>
+<p class='vspace'>Anche se c'è il time sharing, le recole implicite ed esplicite del paragrafo precedente rimangono comunque valide.
+</p>
+<p class='vspace'>Domanda da un milione di banconote del Paninopoli: se un processo è in esecuzione, e sta usando la CPU, come fa il SO a sospenderlo?
+La risposta sta nel <strong>RTC</strong>, il <strong>real time clock</strong>, che è un orologietto al quarzo che ad intervalli regolari invia delle interruzioni. Il SO le gestisce, e decide che è ora di cambiare processo.
+Certo che se il periodo tra un'interruzione e un'altra è troppo piccolo, il SO perde tempo a gestire le interruzioni più che ad eseguire effettivamente i processi. E il RTC lavora ad alte frequenze. Quindi nella pratica si usa come intervallo di interruzione non tanto la frequenza del RTC, ma un suo multiplo.
+</p>
+<p class='vspace'>Come al solito durante le interruzioni, quando il processore ne gestisce una, disabilita la ricezione delle altre. Quindi è possibile che durante la gestione dell'interruzione di altre periferiche, arrivi il segnale RTC e il processore non se ne accorga! Ecco quindi che si imposta il valore di interruzione dell'RTC un po' più basso di quello che si vorrebbe, così che statisticamente si ottiene il valore desiderato.
+</p>
+<div class='vspace'></div><h3>Meccanismi di sospensione dei processi</h3>
+<p>Quando avvengono le sospensioni, il SO è in modalità <strong>supervisor</strong>, ovvero è uno di quei moemnti in cui è proprio il SO ad avere il controllo del sistema.
+</p>
+<p class='vspace'>Il contesto dei singoli processi viene salvato: i registri nello stack del processo, lo stack pointer nel Process Control Block del sistema operativo. Per <em>ripristinare</em>, faccio l'inverso: copio i dati dal PCB alla cima dello stack, e ripristino i registri.
+</p>
+<p class='vspace'>Il cambiamento di contesto si chiama <strong>context switchig</strong>: sospensione e riattivazione di un processo.
+</p>
+<p class='vspace'>Da notare che alcuno processori (eg gli x86) possono farlo anche in hardware (c'è un'istruzione apposita che salva il contesto dove indicato), ma a volte farlo in software risulta più veloce.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Modulo 4 - Lezione 1: i Thread</strong></span>
+</p>
+<p class='vspace'>I processi sono realtà autonome, con il loro spazio nella memoria toccale intangibile agli altri. Bella cosa; un po' meno però quando ho la necessità di scambiare dati fra processi: sincronizzarli non è così semplice, e soprattutto è una cosa lenta.
+Poi, prendiamo il caso di un web server, a cui viene richiesta 2 volte di fila la stessa pagina: un processo la legge e la invia al client; poi arriva il secondo processo che la rilegge e la invia al secondo client. Ho quindi letto 1 volta di troppo la stessa pagina, e questo perché non ho potuto comunicare tra i processi.
+</p>
+<p class='vspace'>L'idea sarebbe quindi che i processi possano avere uno spazio condiviso a cui accedere in modo nativo e naturale. In particolare, se ho un'applicazione che rende disponibili dei dati, vorrei che tutti i suoi dati siano accessibili ai processi figli in modo semplice, senza dover copiare i dati dallo spazio di indirizzamento di un processo allo spazio di un altro processo, perché è <em>inefficiente</em>.
+</p>
+<p class='vspace'>Allora inventiamo il <strong>thread</strong>, che è un flusso di controllo indipendente dell'esecuzione di istruzioni di 1 programma, ma NON autonomo rispetto al sistema, bensì autonomo solo all'interno del programma.
+Detto in altre parole, è un mini-processo che vive all'interno di un processo vero, autonomo dal punto di vista dell'esecuzione, ma con la stessa "base di dati" a cui attingere, ovvero quella del processo che lo ha generato.
+</p>
+<p class='vspace'>Il processo tradizionale, detto <strong>pesante</strong>, ha 1 solo thread che fa tutto.
+Un processo <strong>multi-thread</strong> ha invece più thread, ognuno dei quali fa cose differenti, e che possono comunicare in modo più semplice perché hanno accesso alla stesso spazio di indirizzamento, quello del processo. Ovvio che vanno sincronizzati opportunamente, ma questa è un'altra storia:)
+</p>
+<p class='vspace'>Benefici dell'uso dei thread:
+</p><ul><li>prontezza di risposta rispetto a più processi;
+</li><li>condivisione delle risorse tra di loro;
+</li><li>economia nell'occupazione di risorse proprio per via della condivisione;
+</li><li>sfruttabili dai sistemi multiprocessore.
+</li></ul><p class='vspace'>Il supporto ai thread può essere realizzato nello spazio utente, come una libreria, oppure essere implementato direttamente dal SO nello spazio kernel. 
+Se è implementato nello spazio utente, è il mio processo che gestisce tutti i suoi thread interni, e il SO non ne sa niente. Il SO vede solo un processo; quello che poi il processo fa al suo interno non lo sa.
+Se invece è il kernel ad implementarli, allora il SO è a conoscenza dei miei thread.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2: modelli multi-thread</strong></span>
+</p>
+<p class='vspace'>All'interno del SO, posso vedere i thread di livello utente in molti modi:
+</p><ul><li>molti a uno;
+</li><li>uno a uno;
+</li><li>molti a molti;
+</li><li>2 livelli.
+</li></ul><p class='vspace'>Certo, se il SO NON supporta i thread, lui vede solo un processo, e all'interno del processo c'è una libreria che si occupa dei thread.
+Se invece li supporta, ogni thread del processo può essere visto dal SO in uno dei modi elencati sopra.
+<strong>Uno a uno</strong> vuol dire che 1 thread del processo equivale ad 1 thread del processore. <strong>Molti a uno</strong> vuol dire che più thread del processo sono visti come 1 thread dal processore. <strong>Molti a molti</strong> vuol dire che i thread del processo sono raggruppati in vario modo in diversi thread (di numero inferiore) del processore.
+</p>
+<p class='vspace'>Se i thread sono mappati molti a molti o molti a uno, è il programma utente che deve far sì che i suoi thread interni siano opportunamente sincronizzati in modo che il thread di livello kernel che li gestise li veda come uno solo. Se invece sono mappati uno a uno, è il kernel che si prende la briga di sincronizzarli tutti.
+</p>
+<p class='vspace'>Ognuno di questi approcci ha i suoi svantaggi.
+</p>
+<p class='vspace'>Lo svantaggio di avere una mappatura molti a uno vuol dire che se uno degli x si blocca eg per un I/O, allora blocchera tutti gli altri thread che fanno parte del suo stesso gruppo.
+Per fare un esempio, il thread kernel A gestisce i thread utente Alfa, Beta e Gamma. Se Beta fa un'I/O, si blocca in attesa del risultato. Bloccandosi Beta, anche A si blocca perché è proprio A a smazzare l'I/O di Beta. Ma se A smazza l'I/O di Beta, allora Alfa e Gamma non possono fare altro che dormire, perché A, che dovrebbe gestirli, non può ascoltarli in quanto impegnato a dare retta all'I/O di Beta!
+</p>
+<p class='vspace'>Lo svantaggio invece della mappatura uno a uno è che l'efficienza complessiva del SO cala, perché il SO deve, oltre che a gestire i processi, gestire anche la miriade di thread da questi creati.
+</p>
+<p class='vspace'>Il miglior compromesso è quindi fare una mappatura molti a molti, in cui creo diversi kernel thread, i quali si occupano ciascuno di diversi userspace thread. Magari anche ben raggruppati in base alle funzionalità. Così cerco di evitare gli svantaggi delle 2 situazioni qui sopra illustrate.
+</p>
+<div class='vspace'></div><h3>Cooperazione tra thread</h3>
+<p>Per far cooperare tra di loro i thread, ho 3 modelli di comportamento:
+</p><ul><li>thread simmetrici;
+</li><li>thread gerarchici;
+</li><li>strutture in pipeline.
+</li></ul><p class='vspace'>Nel modello dei <strong>thread simmetrici</strong> tutti i thread sono equipotenti, e quando mi arriva una richiesta scelgo uno qualsiasi dei thread per attivarlo (o ne creo uno per l'occasione).
+Nel caso del server web, se mi arriva un client, io creo un thread che si occupi di ascoltare la richiesta, pescare la pagina da disco e reinviargliela.
+</p>
+<p class='vspace'>Nel sistema dei <strong>thread gerarchici</strong>, ho un thread capo che coordina i <em>worker thread</em>, e i worker eseguono. In questo caso è conveniente mappare il thread capo nel kernel, e i worker nell'user space.
+</p>
+<p class='vspace'>Il sistema a <strong>pipeline</strong> invece divide il lavoro come in catena di montaggio. Ogni thread fa un solo aspetto del lavoro. Uno riceve tutte le richieste. Uno fa tutto l'I/O dal disco. Uno risponde alle richieste. Quindi, ognuno dei thread lavora poco ma spesso, perché è subito pronto a gestire nuove richieste.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3 - Gestione dei Thread</strong></span>
+</p><h3>Creazione dei thread</h3>
+<p>Uso una fork() più o meno come per i processi. La domandona però è: se ho un processo multithread, ne verrà creato uno nuovo con la copia di tutti i suoi thread, o un processo pesante composto da quell'unico thread che aveva lanciato la fork? La risposta è: dipende. Ad esempio nei sistemi UNIX viene data la possibilità di scegliere tra le due alternative fornendo due funzioni fork() distinte.
+</p>
+<div class='vspace'></div><h3>Esecuzione in thread</h3>
+<p>Uso ancora la exec() per eseguire un programma all'interno del thread, diverso dal chiamante.
+</p>
+<div class='vspace'></div><h3>Cancellazione</h3>
+<p>Posso uccidere un thread quando mi pare, anche in modo asincrono rispetto al suo stato di evoluzione della computazione.
+Ma posso anche aspettare: quando un thread comunica di aver finito la sua carriera, viene messo nella lista nera, e quando avrà tempo il processo libererà le sue risorse.
+</p>
+<div class='vspace'></div><h3>Sincronizzazione e comunicazione</h3>
+<p>Il SO permette la comunicazione di info tra tutti i thread di 1 processo, oppure può limitarla in vario modo.
+</p>
+<div class='vspace'></div><h2>Processo leggero</h2>
+<p>Il <strong>processo leggero</strong>, altrimento noto come <strong>LWP = Light Weight Process</strong>, è una via di mezzo tra il processo ed i thread.
+Del processo ha tutto ciò che lo renderebbe autonomo e passibile di context-switching, al pari degli altri processi. Però gran parte della sua memoria viene condivisa con quella di altri processi.
+</p>
+<p class='vspace'>È un modo per realizzare i thread nello spazio kernel, in quanto è sì schedulato dal kernel come un processo, ma dispone della memoria assegnata ad un altro processo.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 31, 2008, at 09:37 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri10Marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri10Marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

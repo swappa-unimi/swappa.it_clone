@@ -1,0 +1,223 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ingegneria del software - Appunti del 2 Marzo</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IDS-2Marzo.html' title='Ingegneria del software - Appunti del 2 Marzo'>Ingegneria del software - Appunti del 2 Marzo</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del software</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del software - Appunti del 2 Marzo ::</strong>
+</pre><div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 200px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#i1'>Il prodotto software</a>
+</li><li><a href='#i2'>Il processo software</a>
+</li><li><a href='#i3'>Il modello waterfall</a>
+</li></ol></div>
+<p class='vspace'><a name='i1' id='i1'></a>
+</p><h2>Il prodotto software</h2>
+<p>Secondo la definizione della IEEE, "l<strong>'ingegneria del software</strong> è la disciplina tecnologia e manageriale che riguarda la produzione sistematica e la manutenzione dei prodotti software entro tempi e costi preventivati". Riprendiamo con maggiore attenzione alcuni concetti:
+</p><ul><li><em>manageriale</em>, quindi stiamo parlando di un qualcosa che ha aspetti aziendali e/o industriali
+</li><li><em>produzione sistematica</em>, cioè di massa. Ciò ci fa capire che non stiamo parlando di "artisti programmatori", ma di veri e propri operai
+</li><li><em>manutenzione</em>, quindi l'ingegneria del software non si occupa solo dello sviluppo
+</li></ul><p class='vspace'>La produzione di un bene o di un servizio informatico rientra in un'attività aziendale ben precisa e definita chiamata <strong>processo software</strong>. In molti casi questa è legata al concetto di ciclo <code class='escaped'>ideazione - progetto - produzione</code>, di cui l'ideazione è sorprendentemente la parte più difficile e problematica dato che un errore commesso in questa fase richiederà maggiori energie per essere risolto. La sequenza appena descritta non è sempre applicabile, ad esempio in un contesto open-source non si decidono a priori le proprietà che avrà il prodotto, ma solo successivamente basandosi sui feedback e le proposte della comunità.
+</p>
+<p class='vspace'>Vediamo altri termini del glossario IEEE che riguardano l'ingegneria del software:
+</p><ul><li><strong>affidabilità</strong>, il software si comporta come previsto
+</li><li><strong>correttezza</strong>, il prodotto fa quello che ci si aspetta che faccia. Più formalmente un software è corretto quando soddisfa i requisiti concordati tra gli sviluppatori e i committenti. Questa proprietà può essere messa alla prova ad esempio con una fase di testing
+</li><li><strong>interoperabilità</strong>, quando il software non è monolitico ma è in grado di integrarsi con altri prodotti
+</li><li><strong>manutenibilità</strong>, facilità nel realizzare adattamenti o evoluzioni e semplicità nel correggere gli errori
+</li><li><strong>riusabilità</strong>, riutilizzo di componenti già esistenti
+</li><li><strong>usabilità</strong>, facilità d'uso da parte dell'utente
+</li><li><strong>verificabilità</strong>, possibilità di dimostrare a posteriori la correttezza o altre caratteristiche del software
+</li><li><strong>sicurezza</strong>
+</li></ul><p class='vspace'>Si trattano tutte di proprietà di alto livello che cercheremo di ottenere nel corso del ciclo di produzione e che concorrono al concetto di <strong>qualità</strong>. Abbiamo due tipi di qualità:
+</p><ul><li><strong>qualità interna</strong>, che riguarda la concisione e la leggibilità del codice. Maggiore è la qualità interna e minori saranno i costi di adattamento e manutenzione, ed inoltre si rivelerà un mezzo per ottenere quella esterna. E' anche chiamata <em>white-box</em> proprio perché si deve poter consultare il codice
+</li><li><strong>qualità esterna</strong>, che riguarda le caratteristiche lato utente, come ad esempio le prestazioni, la correttezza, la facilità di utilizzo, eccetera. E' anche chiamata <em>black-box</em> perché non è necessario guardare il codice
+</li></ul><p class='vspace'>Concludiamo questa parte elencando alcune proprietà non funzionali che massimizzano quelle viste prima:
+</p><ul><li><strong>malleabilità</strong>, ovvero la capacità del prodotto di adattarsi a nuove esigenze sia che sia in corso d'opera sia che sia già finito. Ovviamente questa caratteristica non è propria di ogni tipo di prodotto, ad esempio non lo è per il mercato dei telefonini: per avere una nuova funzionalità (ad esempio, il supporto al VOIP) non puoi fare altro che buttare quello vecchio e comprarne uno nuovo che la supporta
+</li><li><strong>manutenzione correttiva e adattativa</strong>, che è più un servizio che la produzione di un bene
+</li><li><strong>preminenza del design</strong>, che considera la produzione del software come un'attività prevalentemente progettuale
+</li></ul><p class='vspace'><a name='i2' id='i2'></a>
+</p><h2>Il processo software</h2>
+<p>Per <em>processo</em> si intende un insieme di attività eseguite in funzione della produzione di un bene o un servizio. La codifica di un processo produttivo (in generale) permette di ottenere un'alta ripetibilità e riproducibilità dello stesso, così da renderlo indipendente dall'operatore che lo implementa.
+</p>
+<p class='vspace'>Le principali caratteristiche di un processo software sono:
+</p><ul><li>integrazione continua e progressiva
+</li><li>frequenti rilasci intermedi di codice eseguibile, prima interni poi esterni
+</li><li>possibilità di effettuare una valutazione indipendente del progresso del progetto, certificabile con opportune metriche che considerano determinati aspetti e caratteristiche. Lo standard ISO 9000 disciplina questi monitoraggi, ma senza dirci se l'operato è di qualità o no, ma solo se le rilevazioni sono state fatte correttamente
+</li></ul><p class='vspace'>Il processo software legato ad un <strong>ciclo di vita</strong> è stato il primo ad essere definito ed è tra i tipi più semplici da adottare. E' caratterizzato da una serie di fasi ognuna delle quali prevede un certo numero di attività distinte ed autocontenute che coincidono col ciclo di vita del prodotto.
+</p>
+<p class='vspace'>Se ogni fase consegna il suo prodotto (<strong>work product</strong>) a quella successiva e non è previsto un ritorno a quella precedente otteniamo un modello sequenziale e ordinato detto <em>a cascata</em> o <strong>waterfall</strong>. Una volta era molto diffuso, ma attualmente è poco utilizzato perché richiede molto tempo a disposizione e la conoscenza a priori di ogni aspetto da realizzare. E' facilmente intuibile come quest'ultimo requisito sia oggi impensabile a causa dell'elevata variabilità dello scenario tecnologico e di altri fattori endogeni, soprattutto se stiamo lavorando ad un processo su scala molto vasta. Pur essendo ormai obsoleto il waterfall è comunque utile da studiare in quanto i modelli successivi sono suoi derivati e miglioramenti, come ad esempio il modello <em>trasformazionale</em> che al contrario del precedente prevede il riutilizzo e la trasformazione dei componenti già esistenti adattandoli ai nuovi contesti. <br />Questo argomento lo vedremo meglio nella <a href='#i3'>prossima lezione</a>.
+</p>
+<p class='vspace'>In generale per codificare un processo vanno definite le fasi, quindi il loro ordine (o assenza di ordine), le attività che prevedono e i loro <em>work product</em>. Dal momento che questi ultimi devono essere dati in pasto ad altre fasi per portare avanti il processo globale, per ogni processo software bisogna definire esattamente dove e come salvarli.
+</p>
+<p class='vspace'>Terminiamo il discorso con una considerazione sui possibili scenari di un mercato del software, semplificando al massimo e considerando i ruoli che potrebbero rivestire i vari attori. Abbiamo quattro casi:
+</p><ul><li>il produttore coincide con il consumatore, il caso più semplice, ovvero un autoconsumo
+</li><li>produttore e consumatore sono unità distinte di una stessa azienda o istituzione. Già in questo caso è importante conoscere la definizione del processo software
+</li><li>il produttore è una software house che sviluppa un'applicazione custom per un singolo utente, che quindi compra l'intero ciclo di sviluppo acquisendo la proprietà intellettuale del prodotto in cambio della copertura dei costi più i margini di profitto
+</li><li>il compratore non acquisisce la proprietà intellettuale, ma paga al produttore solo una licenza d'uso. La software house che sceglie questa modalità si assume un rischio, quello di non riuscire a coprire i costi di sviluppo, quindi deve prevedere nel modo più accorto possibile il numero minimo di copie che venderà
+</li></ul><p class='vspace'><a name='i3' id='i3'></a>
+</p><h2>Il modello waterfall</h2>
+<p>Nel capitolo precedente abbiamo visto che il <strong>modello waterfall</strong> (o <em>a cascata</em>) prevede una serie ordinata e unidirezionale di fasi del ciclo produttivo, ognuna delle quali consegna il suo <em>work product</em> a quella successiva. Potremo passare da modello a processo solo quando riusciremo a definire le attività a livello operativo per implementarlo, sempre rispettando le fasi del ciclo di vita. Bene, vediamole queste fasi:
+</p><ol><li><strong>studio di fattibilità</strong>
+</li><li><strong>specifica dei requisiti</strong>
+</li><li><strong>progettazione</strong>
+</li><li><strong>codifica</strong>
+</li><li><strong>verifica</strong> e <strong>validazione</strong>
+</li><li><strong>manutenzione</strong>
+</li></ol><p class='vspace'>Alcune critiche mosse contro questo modello le abbiamo già dette, tra queste l'impossibilità di variare i requisiti in fase di sviluppo, la scarsa adattabilità del processo produttivo una volta messo in moto, tempi di produzione molto lunghi. A questi aggiungiamo il fatto l'applicazione rigida di questo modello prevede che ogni software debba essere riscritto da zero ("<em>from scratch</em>"): nulla può essere riciclato.
+</p>
+<p class='vspace'>Si è cercato di superare le rigidità intrinseche del modello waterfall rendendo ripetibili alcune fasi, riutilizzando i risultati di precedenti iterazioni così da assecondare le esigenze di cambiamento. Questa prima modifica al waterfall canonico si chiama <strong>mini waterfall</strong> e prevede come prima fase, prima ancora dello studio di fattibilità, una <em>pianificazione delle iterazioni</em>. Per quanto riguarda le tecniche iterative ne esistono due principali:
+</p><ul><li>la <em>throw away</em>, che prevede la riscrittura completa del prototipo ad ogni iterazione. Ciò che sembra folle e dispensioso in realtà è molto furbo, dato che permette di realizzare un primo prototipo semplice semplice (ad esempio realizzato in PHP e per nulla ottimizzato) in tempi brevi per sottoporlo all'attenzione del cliente; se questo poi lo approva si può passare all'iterazione successiva riscrivendolo in modo ottimizzato e in un linguaggio appropriato mantenendone inalterate le funzionalità
+</li><li>la <em>onion skin</em>, che prevede prototipi evolutivi a cui aggiungere a ogni passaggio iterativo nuove funzionalità e migliorie, senza cancellare ogni volta tutto il lavoro fatto
+</li></ul><p class='vspace'>Questi concetti saranno ampliati nella lezione sui modelli iterativi.
+</p>
+<p class='vspace'>Concludiamo segnalando l'esistenza di attività trasversali al progetto, che si effettuano cioè indipendentemente dal modello adottato o dalla fase che si sta affrontando. Queste sono la <em>documentazione</em>, il <em>controllo di qualità</em> e la <em>gestione</em> (di processo, di prodotto e delle configurazioni).
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del software</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IDS-2Marzo)</span></div>
+  </div>
+</body>
+</html>

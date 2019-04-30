@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Reti wireless - RS-422, RS-485</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RW-12Marzo.html' title='Reti wireless - RS-422, RS-485'>Reti wireless - RS-422, RS-485</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RetiWireless.html'>Torna alla pagina di Reti wireless</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Reti wireless - RS-422, RS-485 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti del 12 Marzo</span>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Alcune immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='GiovanniRapacioli.html'>Rapacioli</a>
+</p></div>
+<div class='vspace'></div><h2>RS-422</h2>
+<p>L' <strong>RS-422</strong> parte dai limiti della linea seriale RS-232 ed elabora uno standard di trasmissione completamente diverso. Se infatti nell'RS-232 abbiamo che il voltaggio dei segnali è misurato rispetto a uno zero (GND, la terra), nell'RS-422 (così come anche nell'RS-485) la misurazione è differenziale. Cosa significa? Che la trasmissione avviene lungo due cavi, uno per il segnale originale e l'altro per il suo negato, e che in base al valore della differenza di potenziale &#916;V tra i due capisco se il bit di informazione corrispondente vale 1 o vale 0 (a seconda che il &#916;V sia sopra o sotto una certa soglia). <br />Il vantaggio di questa strategia è che se un cavo RS-422 passa vicino a un ambiente disturbato, i due cavi aumenteranno o diminuiranno il loro potenziale in funzione dell'inquinamento, ma contemporaneamente, mantenendo quindi inalterata la differenza di potenziale. Si tratta dunque di uno standard decisamente immune al rumore del contesto, e particolarmente adatto per ambienti rumorosi come veicoli o linee di produzione industriale.
+</p>
+<p class='vspace'>Altre caratteristiche:
+</p><ul><li>la trasmissione non è più punto a punto, ma viene introdotto per la prima volta in trasmissioni di tipo seriale il concetto di bus, permettendo la connessione sulla stessa linea di massimo 10 nodi. Il segnale parte da un nodo che fa da master, viaggia sulla linea e tutti i nodi lo ricevono; tutti capiscono il pacchetto, ma solo il nodo destinatario non lo butterà via. Nell'RS-485 sarà invece introdotta la possibilità di avere un multi-master, tuttavia poco utilizzato dal momento che nell'automazione industriale ciò che più si vuole è garanzia di stabilità e sicurezza, proprietà che vengono a mancare quando ho più master attivati sullo stesso bus
+</li><li>la lunghezza supportata dei cavi diventa di due ordini di grandezza superiore, da 15 metri a 1200 metri. Si tratta di una distanza decisamente importante per un bus, neanche lontamente raggiungibile ad esempio da un cavo ethernet
+</li><li>permette di affrontare situazioni in cui si richiede maggiore velocità di trasmissione: 100 Kbps era circa il massimo dell'RS-232, ora è la velocità minima; la massima è di 10 Mbps
+</li><li>la trasmissione rimane ovviamente seriale (i bit continuano ad essere sparati uno dietro l'altro). Si usano quattro fili perché la linea è full-duplex, quindi ne utilizzo due ad andare e due a tornare
+</li><li>può essere utilizzato come estensione della RS-232, usando il bus per realizzare collegamenti punto a punto. Nessuno me lo vieta, ed è una scelta che può essere fatta per superare alcuni limiti del seriale (come ad esempio la lunghezza massima del cavo o la resistenza agli ambienti inquinati). Per implementarla basta collegare due nodi con il RS-422 e mettere un modulatore e un demodulatore RS-232 alle estremità. Si noti bene che l'RS-232 si continua ad usare ancora oggi; è come il Cobol o il C: ci sono centinaia di linguaggi migliori e più recenti ma loro continuano a resistere. 
+</li></ul><p class='vspace'>Come detto, l'RS-422 è pensato per soluzioni multi-drop, dove un nodo spedisce ad un bus e il pacchetto può arrivare a massimo 10 ricevitori. Il passare dall'"uno a uno" all'"uno a molti" è stata un'esigenza imposta dall'elaborazione industriale, in cui ci sono varie isole di lavoro collegate tra loro, ognuna delle quali svolge una parte della lavorazione del prodotto. Dato che nella maggior parte dei casi si hanno più flussi di lavoro, il supervisore ha bisogno di parlare contemporaneamente a più isole ordinando cose diverse ("prendi il pezzo della prima isola e immergilo nella vasca della seconda, poi asciugalo nel forno della quarta e lucidalo nella..."). In uno scenario del genere non è pensabile mettere due linee seriali per ogni collegamento supervisore-isola, o si avrebbe una fabbrica cosparsa di cavi. Altro esempio: è stato calcolato che nell'Alfa 164 c'erano 250km di cavi che collegavano i vari sensori alla centralina. Altro esempio: il pulsante di chiamata della hostess sull'aereo: se ci sono 200 posti da collegare alla lucetta, non si può pensare di utilizzare due fili dedicati per ogni bottone, o l'aereo non decollerebbe sotto il peso dei cavi. Con la RS-422 si riduce un po' il numero di linee di comunicazione necessarie, perché riesce ad incapsulare 10 nodi per volta con la formazione di bus.  
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit:</strong><br />"Perché 10 nodi? Cazzo l'ha detto che 10 nodi bastano? Qualche coglione che stava a Bruxelles avrà detto 'Facciamone 10' 'Perché non ne facciamo 11?' 'No 10 è meglio' 'Va bene' 'Ok, sentiamo Sarkozy, cosa dici?' '10' 'Va boh, 10!'. Gli standard si definiscono più o meno così”. 
+</p></div>
+<p class='vspace'>Oggi il protocollo RS-422 non viene più usato per applicazioni nuove perché ormai è superato, ma per un certo periodo di tempo è stato pesantemente utilizzato nel settore dell'automatismo industriale. I motivi per cui è caduto in disuso è che anche lui aveva dei grossi limiti, il principale dei quali era il numero massimo di 10 nodi per ogni bus. Partendo dallo stesso standard gli enti di certificazione hanno cercato di superare questo vincolo arrivando a definire un nuovo standard, l'RS-485, quello attuale e non ancora superato. Oggi la quasi totalità delle apparecchiature industriali ha due sole interfacce: ethernet o RS-485. 
+</p>
+<div class='vspace'></div><h2>RS-485</h2>
+<p>Riprendiamo l'esempio del pulsante di chiamata hostess sull'aereo: sarebbe meraviglioso se riuscissimo con un solo paio di cavi a realizzare un bus che supporti le derivazioni dei bottoni su tutti i posti. Ma: incredibile! Si può fare! Basta passare allo standard <strong>RS-485</strong>, che...
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit:</strong><br />"...si è fottuto il 422 alla grande!"
+</p></div>
+<p class='vspace'>Vediamo le principali caratteristiche dell'RS-485:
+</p><ul><li>può realizzare un bus che ha fino a 256 nodi (2<sup>8</sup>), così che possa essere indirizzato con un byte (da anteporre al messaggio da inviare). Questo valore è un buon compromesso tra numero di nodi collegati e rapidità di ricerca di quello interessato. La ricerca avviene mediante una sorta di polling sul bus, interrogando un nodo alla volta ogni tot secondi
+</li><li>la configurazione standard prevede un bus a 2 o 4 fili, con N nodi connessi in serie e identificati da un numero di nodo, che va da 1 a 255. 
+</li><li>la trasmissione dei dati è differenziale, ed è praticamente il livello massimo di immunità al rumore raggiungibile. Va beh, se lo faccio passare nel nucleo di una centrale nucleare qualche disturbo lo sentirebbe, ma normalmente anche in ambienti molto inquinati fa il suo sporco lavoro senza problemi
+</li><li>l'RS-485 specifica a livello fisico una connessione seriale a due fili e half-duplex
+</li><li>la lunghezza massima dei cavi è 1200 metri, uguale a quella dell'RS-422, che evidentemente è uno dei limiti fisici attuali
+</li><li>la velocità di trasmissione su cavi lunghi fino a 10 metri arriva a 35 Mbps, per poi scendere a 100 Kbps per distanze pari a 1200 metri
+</li></ul><p class='vspace'>L'RS-485 è lo standard attuale del settore industriale: tutti i PLC oggi sono prodotti con su il 485, o non lo venderebbero a nessuno. Possiamo affermare che oggi le trasmissioni seriali sono sostanzialmente due: la RS-232 e la RS-485, scelte a seconda dei vincoli e delle necessità dell'applicazione in cui dovrò usarle. 
+</p>
+<p class='vspace'>Per motivi di sicurezza l'RS-485 persegue la strada della ridondanza dei pacchetti. Per raggiungere affidabilità maggiori è stata ulteriormente estesa (aggiungendo un sacco di CRC), dando vita a una variante del protocollo originale: il <strong>Can bus</strong>, lo standard attuale per applicazioni su autoveicoli. E' quello che collega tutti i sensori dell'auto, molto semplice da realizzare (bastano due cavetti che fanno il giro dell'auto e ai quali si attaccano le varie componenti dell'elettronica), ed infinitamente più robusto di qualsiasi altra soluzione, tenendo conto che l'automobile è un ambiente estremamente inquinato. È talmente robusto che spesso le derivazioni vengono fatte coi <a target='_blank'  class='urllink' href='http://compraonline.mediaworld.it/product/big/535023.jpg' title='' rel='nofollow'>mammut</a>, senza saldare niente. Il Can bus è utilizzano da tutti: dalla FIAT alla BMW alla Toyota, perché funziona bene e non dà problemi sulle macchine. <br />Un'altro standard implementato a livello fisico su RS-485 è lo SCSI, per la comunicazione con gli hard-disk.
+</p>
+<p class='vspace'>Abbiamo detto che al bus possono essere allacciati fino a 256 nodi. Questo è lo standard, poi c'è la prassi. Tutti i produttori di apparecchiature che usano l'RS-485 consigliano di mettere su una catena massimo 60-70 nodi, anche se potrebbero permettersene quasi il quadruplo. Il numero dipende sorpattutto da quello che stiamo facendo, e da quali esigenze di velocità e reattività posso sopportare per la mia applicazione. Ad esempio se sul mio famoso aereo ci metto due secondi a capire in quale posto hanno premuto il pulsante ci può stare.
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit:</strong><br />"Tanto l'hostess non è che si catapulta da me appena premo il bottone. Premo il pulsante, 'Minchia che palle', si alza e va dal rompicoglioni di turno. Tu voli spesso? No, se lo facessi sapresti che le hostess sono sempre incazzate nere. E non ti cagano mai. 'Vuoi una coperta? Trovatela e non rompere i coglioni!'". 
+</p></div>
+<p class='vspace'>Lo standard RS-485 è un oggetto abbastanza vecchio, e quindi come l'RS-422 non parla assolutamente del protocollo di trasmissione dati, ma dice solo che i due fili si chiamano A+ e B+; non c'è dunque uno standard di trasmissione e connessione, ma solo la semantica dei segnali. Come è fatto un connettore non l'ha mai stabilito nessuno, così ognuno usa quelli che vuole in base alle proprie necessità. <br />Sopra l'RS-485 sono stati standardizzati comunque dei protocolli, il più noto dei quali è il Modbus. Tutti i PLC possono avere interfaccia seriale RS-485 o interfaccia ethernet o tutte e due, ma normalmente implementano entrambe il Modbus. È lo standard più aperto che esista oggi, il vero protocollo di comunicazione con le apparecchiature, e non è stato ancora soppiantato da nulla di successivo perché è un protocollo molto furbo. È vero comunque che alcuni produttori di PLC come la Siemens hanno il proprio standard come il Profibus (pensato per le aziende), ma anche loro a richiesta implementano Modbus, che è trasversale alle aziende e quindi più vendibile e versatile.
+</p>
+<p class='vspace'>L'RS-485 ad oggi è considerato più <em>rugged</em> (= robusto, capace di resistere ad ambienti ostili) rispetto ad ethernet. 
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit:</strong><br />"Un PDA rugged è un PDA che lo butto per terra da un metro e non si fa un cazzo, lo pigliate lo mettete sotto l'acqua e questo se ne fotte, lo butto nel fango e questo sta bene così: 'che bello, sono nel fango'".
+</p></div>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RetiWireless.html'>Torna alla pagina di Reti wireless</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RW-12Marzo)</span></div>
+  </div>
+</body>
+</html>

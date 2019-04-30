@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Basi di Dati - Complementi - Esercizi: Timestamp </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.BDC-Timestamp' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Basi di Dati - Complementi - Esercizi: Timestamp
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Timestamp?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Timestamp?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='BDC-Timestamp-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Timestamp?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Timestamp?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Basi di Dati - Complementi - Esercizi: Timestamp was last modified on June 09, 2010, at 11:01 AM'>
+							<span style='display:none;'>Basi di Dati - Complementi - Esercizi: Timestamp</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Esercizi: Timestamp</strong></span>
+</p>
+<div class='vspace'></div><h2>Teoria</h2>
+<p>Il <em>timestamp</em> è un metodo per il controllo della concorrenza utilizzato per garantire la serializzabilità di uno schedule. L'unico motivo per il quale non è stato trattato in <a class='wikilink' href='BDC-Serializzabilit%C3%A0.html'>questa pagina</a> è che viene generalmente sottoposto come esercizio separato.
+</p>
+<p class='vspace'>Anzitutto, cos'è il timestamp? E' un identificatore generato dall'orologio di sistema che definisce un ordinamento temporale tra gli eventi generati dal sistema stesso: ogni evento avrà un timestamp maggiore (quindi diverso) da quello degli eventi che l'hanno preceduto. Il principio del controllo di concorrenza è che uno schedule viene accettato solo se soddisfa l'ordine seriale delle transazioni basato sui valori dei timestamp.
+</p>
+<p class='vspace'>A ogni oggetto (risorsa) <em>x</em> sono associati due indicatori:
+</p><ul><li><strong>WTM(x)</strong>: il massimo timestamp tra le transazioni che hanno scritto x, o in altre parole la transazione che vi ha eseguito l'ultima scrittura
+</li><li><strong>RTM(x)</strong>: il massimo timestamp tra le transazioni che hanno letto x, o in altre parole la transazione che vi ha eseguito l'ultima lettura
+</li></ul><p class='vspace'>Le richieste che arrivano al gestore dello scheduler possono essere di due tipi:
+</p><ul><li><strong>read(x, ts)</strong>, ovvero la richiesta di lettura dell'oggetto x con <em>ts</em> timestamp della transazione
+</li><li><strong>write(x, ts)</strong>, ovvero la richiesta di scrittura dell'oggetto x con <em>ts</em> timestamp della transazione
+</li></ul><p class='vspace'>Uno dei vantaggi di questo metodo è la scomparsa delle variabili di lock, che come sappiamo da <a class='wikilink' href='SistemiOperativi.html'>certe materie</a> possono incorrere in simpatiche situazioni come il deadlock. Ha però come svantaggio il fatto di comportare molti più rifiuti e di funzionare solo con l'assunzione di commit-proiezione (a meno di bufferizzare le scritture).
+</p>
+<p class='vspace'>Una variante del metodo è l'utilizzo delle <em>multiversioni</em>: le scritture avvengono su nuove copie dell'oggetto, così che le letture possano essere sempre accettate (e dirette verso la versione dei dati corretta rispetto il loro timestamp).
+</p>
+<div class='vspace'></div><h2>Cosa fare</h2>
+<h4>Timestamp monoversione</h4>
+<p>Un classico esercizio sul timestamp monoversione è, data una sequenza di operazioni e i valori iniziali dell'RTM(x) e WTM(x), stabilire se le operazioni vengono accordate o meno e aggiornare i valori di RTM e WTM.
+</p>
+<p class='vspace'>Le regole da applicare per accettare o rifiutare un'operazione sono le seguenti:
+</p>
+<div class='vspace'></div><ul><li>se ho una <em>read(x, ts)</em> la dovrò:
+<ul><li><strong>rifiutare</strong> se <code class='escaped'>ts &lt; WTM(x)</code>. La transazione andrà riportata tra quelle uccise
+</li><li><strong>accettata</strong> se <code class='escaped'>ts &gt;= WTM(x)</code>. Bisognerà quindi aggiornare il valore RTM(x) assegnandogli il valore più grande tra il <em>ts</em> e l'RTM(x) precedente
+</li></ul><div class='vspace'></div></li><li>se ho una <em>write(x, ts)</em> la dovrò:
+<ul><li><strong>rifiutare</strong> se <code class='escaped'>ts &lt; RTM(x)</code> oppure <code class='escaped'>ts &lt; WTM(x)</code>. La transazione andrà riportata tra quelle uccise
+</li><li><strong>accettata</strong> se <code class='escaped'>ts &gt;= RTM(x)</code>. Bisognerà quindi aggiornare il valore WTM(x) assegnandogli quello di <em>ts</em>
+</li></ul></li></ul><p class='vspace'>Consideriamo ad esempio un controllo di concorrenza monoversione basato su timestamp e un oggetto x con timestamp RTM(x) = 4 e WTM(x) = 2. Date le seguenti operazioni:<br /><code class='escaped'>read(x,3) , write(x,6), write(x,9), read(x,8), read(x,10), write(x,13)</code>
+indicare se l'operazione viene accordata o meno, indicare eventuali transazioni uccise e aggiornare i valori di RTM(x) e WTM(x).<br />La risoluzione del problema viene strutturata in forma tabellare: avremo una colonna per le richieste (le operazioni), una per le risposte (OK/NO), una per i valori di RTM e WTM aggiornati e un'ultima dove indicare le transazioni uccise, se ci sono. Nel nostro caso avremo:
+</p>
+<div class='vspace'></div><table align='center' width='550px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RICHIESTA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RISPOSTA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RTM</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>WTM</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>TRANS.UCCISA</strong>
+</td></tr><tr ><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>4
+</td><td  valign='top'>2
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>read(x,3)
+</td><td  valign='top'>OK
+</td><td  valign='top'>4
+</td><td  valign='top'>2
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>write(x,6)
+</td><td  valign='top'>OK
+</td><td  valign='top'>4
+</td><td  valign='top'>6
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>write(x,9)
+</td><td  valign='top'>OK
+</td><td  valign='top'>4
+</td><td  valign='top'>9
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>read(x,8)
+</td><td  valign='top'>NO
+</td><td  valign='top'>4
+</td><td  valign='top'>9
+</td><td  valign='top'>t<sub>8</sub>
+</td></tr><tr ><td  valign='top'>read(x,10)
+</td><td  valign='top'>OK
+</td><td  valign='top'>10
+</td><td  valign='top'>9
+</td><td  valign='top'>
+</td></tr></table>
+<p class='vspace'>Perché <code class='escaped'>read(x,8)</code> è stato rifiutato? Perché il suo timestamp era inferiore al WTM(x) precedente: 8 &lt; 9!!
+</p>
+<div class='vspace'></div><h4>Timestamp multiversione</h4>
+<p>Gli esercizi sui timestamp multiversioni sono simili a quelli monoversione, con la differenza che dovrò considerare gli RTM(x<sub>i</sub>) e i WTM(x<sub>i</sub>) della versione i-sima della risorsa.
+</p>
+<p class='vspace'>Le regole da applicare per accettare o rifiutare un'operazione saranno dunque le seguenti:
+</p>
+<div class='vspace'></div><ul><li>se ho una <em>read(x, ts)</em> la dovrò <strong>sempre accettare</strong>. In particolare:
+<ul><li>tra tutti gli x<sub>i</sub> con WTM(x<sub>j</sub>) &lt;= <em>ts</em>, leggerà da quello che ha il WTM(x<sub>j</sub>) maggiore
+</li><li>aggiornerà il valore dell'RTM(x<sub>i</sub>) assegnandogli il valore più grande tra il suo <em>ts</em> e l'RTM della stessa versione
+</li><li>il WTM(x<sub>i</sub>) non cambia
+</li></ul><div class='vspace'></div></li><li>se ho una <em>write(x, ts)</em> dovrò prima di tutto individuare tra tutte le versioni x<sub>i</sub> con WTM(x<sub>j</sub>) &lt;= <em>ts</em>, quella che ha il WTM(x<sub>j</sub>) maggiore. A questo punto dovrò:
+<ul><li><strong>rifiutare</strong> se <em>ts</em> &lt; RTM(x<sub>i</sub>). La transazione andrà riportata tra quelle uccise
+</li><li><strong>accettare</strong> se <em>ts</em> &gt;= RTM(x<sub>i</sub>). Bisognerà quindi creare una nuova versione x<sub>i+1</sub> e assegnarle stessi valori di WTM(x<sub>i+1</sub>) e RTM(x<sub>i+1</sub>) pari al valore del suo <em>ts</em>
+</li></ul></li></ul><p class='vspace'>Consideriamo ad esempio un controllo di concorrenza multiversione basato su timestamp e un oggetto x con timestamp RTM(x<sub>1</sub>) = 10 e WTM(x<sub>1</sub>) = 8. Date le seguenti operazioni:<br /><code class='escaped'>read(x,12) , write(x,12), write(x,15), write(x,9), read(x,14), read(x,17)</code>
+indicare se l'operazione viene accordata o meno, indicare eventuali transazioni uccise e aggiornare i valori di RTM(x<sub>i</sub>) e WTM(x<sub>i</sub>).<br />Anche in questo caso dovremo compilare una tabella simile a quella vista per i timestamp monoversione, con l'aggiunta di una colonna ove indicare le versioni da associare alle varie richieste. Aggiungiamo inoltre per comodità di studio una colonna iniziale per indicare il numero di riga.
+</p>
+<div class='vspace'></div><table align='center' width='550px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>N.RIGA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RICHIESTA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RISPOSTA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>x<sub>k</sub> </strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RTM(x<sub>k</sub>) </strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>WTM(x<sub>k</sub>) </strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>TRANS.UCCISA</strong>
+</td></tr><tr ><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>x<sub>1</sub>
+</td><td  valign='top'>10
+</td><td  valign='top'>8
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>1
+</td><td  valign='top'>read(x,12)
+</td><td  valign='top'>OK
+</td><td  valign='top'>x<sub>1</sub>
+</td><td  valign='top'>12
+</td><td  valign='top'>8
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>2
+</td><td  valign='top'>write(x,12)
+</td><td  valign='top'>OK
+</td><td  valign='top'>x<sub>2</sub>
+</td><td  valign='top'>12
+</td><td  valign='top'>12
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>3
+</td><td  valign='top'>write(x,15)
+</td><td  valign='top'>OK
+</td><td  valign='top'>x<sub>3</sub>
+</td><td  valign='top'>15
+</td><td  valign='top'>15
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>4
+</td><td  valign='top'>write(x,9)
+</td><td  valign='top'>NO
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>t<sub>9</sub>
+</td></tr><tr ><td  valign='top'>5
+</td><td  valign='top'>read(x,14)
+</td><td  valign='top'>OK
+</td><td  valign='top'>x<sub>2</sub>
+</td><td  valign='top'>14
+</td><td  valign='top'>12
+</td><td  valign='top'>
+</td></tr></table>
+<p class='vspace'>Commentiamo ora riga per riga:
+</p><ol><li>la lettura è sempre sicuramente accettata. Tra tutti i WTM di tutte le versioni, con valore minore del timestamp, il maggiore è quello associato a x<sub>1</sub> (8), quindi la lettura avverrà su esso. Il timestamp è maggiore dell'RTM precedente, quindi lo sostituirà
+</li><li>tra tutti i WTM di tutte le versioni, con valore minore del timestamp, il maggiore è quello associato a x<sub>1</sub> (8). L'RTM corrispondente ha valore 12, che è minore uguale a quello del timestamp (12): quindi l'operazione di scrittura può avvenire. La versione sarà la x<sub>1+1</sub> = x<sub>2</sub>, mentre RTM e WTM saranno fissati entrambi a 12
+</li><li>stesso ragionamento del punto precedente
+</li><li>tra tutti i WTM di tutte le versioni, con valore minore del timestamp, il maggiore è quello associato a x<sub>1</sub> (8). L'RTM corrispondente ha valore 12, che è maggiore del timestamp (9): quindi l'operazione di scrittura deve essere rifiutata. Nell'ultima colonna andrà scritto che la transazione uccisa è la t<sub>9</sub>
+</li><li>la lettura è sempre sicuramente accettata. Tra tutti i WTM di tutte le versioni, con valore minore del timestamp (quindi tra 8 e 12), il maggiore è quello associato a x<sub>2</sub> (12), quindi la lettura avverrà su esso. Il timestamp è maggiore dell'RTM precedente, quindi lo sostituirà
+</li></ol><div class='vspace'></div><hr />
+<p><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 09, 2010, at 11:01 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Timestamp?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Timestamp?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Algoritmi e strutture dati - Concetti iniziali</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='DomandeAlgoritmi.html' title='Algoritmi e strutture dati - Concetti iniziali'>Algoritmi e strutture dati - Concetti iniziali</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><pre> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>:: Domande di Algoritmi ::</strong></span>
+</pre><div class='vspace'></div><h2>Teoria </h2>
+<ul><li>Descrivere i possibili approcci all'implementazione dei grafi, fornendo esempi e discutendo vantaggi e svantaggi
+<div class='vspace'></div></li><li>Spiegare il concetto di complessità di un programma e descrivere le notazioni asintotiche (O, teta, omega, o, w)
+<div class='vspace'></div></li><li>Discutere il problema del bilanciamento negli alberi binari di ricerca. Definire bilanciamento perfetto e bilanciamento AVL e le implicazioni fra essi. Discutere il mantenimento del bilanciamento AVL a seguito di operazioni di inserimento e cancellazione, descrivendo i controlli che devono essere fatti e le conseguenti azioni che devono essere compiute.
+<div class='vspace'></div></li><li>Descrivere il problema dell’ordinamento. Si richiede inoltre di: descrivere gli algoritmi di ordinamento radix sort e bucket sort; mostrare lo pseudocodice di tali algoritmi ed un esempio di funzionamento; indicare la complessità del radix sort e la complessità nel caso peggiore, medio e migliore per il bucket sort.
+<div class='vspace'></div></li><li>Descrivere il problema dell’esistenza degli archi con pesi negativi quando e perch´e creano problemi nella definizione e ritrovamento del cammino minimo (illustrare un esempio). Descrivere inoltre un algoritmo per il calcolo dei cammini minimi da sorgente unica e discuterne la complessità.
+<div class='vspace'></div></li><li>Caratterizzare il problema del dizionario e discutere la applicazione di tecniche di hash per la sua soluzione. Discutere in particolare la differenza tra hashing interno ed esterno ed i criteri che si conosco per la gestione delle collisioni (ispezione lineare, ispezione quadratica, hashing doppio).
+<div class='vspace'></div></li><li>Spiegare il concetto di Spanning Tree e di Minimum Spanning Tree e descrivere gli algoritmi di Prim e di Kruskal per il ritrovamento di un MST evidenziando gli aspetti comuni e le differenze e fornendo un semplice esempio di utilizzo dei due approcci.
+<div class='vspace'></div></li><li>Discutere il problema della ricorsione: cosa si intende per ricorsione, le diverse tipologie di ricorsione e come sono strutturate le procedure ricorsive. Descrivere inoltre la tecnica di tail recursion.
+<div class='vspace'></div></li><li>Descrivere le tecniche DFS e BFS per attraversare grafi e scrivere (pseudocodice) gli algoritmi per la BFS e la DFS. Che costo hanno? Indicare esempi di applicazione delle due tecniche di attraversamento per la risoluzione di problemi.
+<div class='vspace'></div></li><li>Quando può cambiare l'altezza di un B-albero? Motivare la risposta fornendo anche degli esempi.
+<div class='vspace'></div></li><li>Descrivere il concetto di B-albero, indicandone le proprietà. Discutere inoltre le operazioni di aggiunta di elementi.
+<div class='vspace'></div></li><li>Dire che problemi risolve l'algoritmo di Dijkstra e che limitazioni (e a cosa sono dovute, perché ci sono) ha mostrando anche un esempio. Quanto costa l'algoritmo?
+<div class='vspace'></div></li><li>Dire cosa sono i codici di Huffman e mostrare un esempio.
+<div class='vspace'></div></li><li>Dire cosa rappresenta il fattore di bilanciamento di un nodo in un albero binario di ricerca. Descrivere inoltre le proprietà che devono essere soddisfatte da un albero rosso-nero e fornire un esempio di albero rosso-nero valido e un esempio di albero rosso-nero non valido.
+<div class='vspace'></div></li><li>Nell'ambito delle reti di flusso, fornire la definizione formale delle proprietà di vincolo sulla capacità, antisimmetria e conservazione del flusso e dire cosa rappresentano.
+<div class='vspace'></div></li><li>Notazioni asintotiche: definizione e proprietà. Concetto di complessità di un programma.
+<div class='vspace'></div></li><li>ADT stack e code: definizioni, operazioni ed esempi di applicazione.
+<div class='vspace'></div></li><li>Dire cosa si intende con ricorsione diretta e ricorsione indiretta e fornire degli esempi.
+<div class='vspace'></div></li><li>Nell’ambito delle strutture dati per insiemi disgiunti, dire cosa si intende per euristica dell’unione pesata. Si rischiede inoltre di scrivere la procedura Union con tale euristica.
+<div class='vspace'></div></li><li>Definire il tipo di dato insiemi disgiunti specificando quali sono le operazioni definite su di esso. Nel caso inoltre di rappresentazione con foreste, dire in cosa consiste l’euristica dell’unione per rango.
+<div class='vspace'></div></li><li>Dare la definizione precisa di grafo delle componenti fortemente connesse. Si richiede inoltre di fornire un esempio.
+<div class='vspace'></div></li><li>Definire il concetto di componente fortemente connessa in un grafo orientato e illustrare un approccio per la sua risoluzione.
+<div class='vspace'></div></li><li>Spiegare le proprietà principali degli alberi rosso-neri e descrivere le operazioni di inserimento e le conseguenti operazioni per il mantenimento delle proprietà, mostrando degli esempi.
+<div class='vspace'></div></li><li>Definire il concetto di grado di un nodo nel caso in cui il nodo faccia parte di un grafo orientato. Mostrare anche un esempio.
+<div class='vspace'></div></li><li>Dire quale e la complessità dei seguenti algoritmi: insertion-sort, quicksort, DFS.
+<div class='vspace'></div></li><li>Spiegare i concetti di: pila (stack), coda, coda di priorità, coda circolare, procedura ricorsiva.
+<div class='vspace'></div></li><li>Si descriva in breve il funzionamento dell’algoritmo di visita in ampiezza (breadth-first) di un grafo, indicando in particolare quale complessit`a temporale ha e di quale struttura dati conviene servirsi nell'eseguirlo.
+<div class='vspace'></div></li><li>In che cosa consiste l’approccio “divide et impera”? Nominare un algoritmo che se ne serva.
+<div class='vspace'></div></li><li>Il vettore A = [ 8 6 3 10 7 4 ] pu`o rappresentare un max-heap? Motivare la risposta. Qualunque sia la risposta, fare un esempio di vettore che non sia uno heap (copiando A o modificandolo leggermente) e trasformarlo in uno max-heap usando la procedura Max-Heapify (mostrare passo-passo le modifiche effettuata dalla procedura).
+<div class='vspace'></div></li><li>Dato un grafo G = (V,E) dire cosa si intende per sottografo di G e sottografo di G indotto da V';. Dire cosa `e V'; e mostrare un esempio di sottografo e sottografo indotto.
+<div class='vspace'></div></li><li>Dire cosa si intende per albero binario di ricerca. Si richiede inoltre di descrivere l’operazione di cancellazione e di fornire un esempio per i diversi casi. Che complessità ha tale operazione?
+<div class='vspace'></div></li><li>Nell’ambito delle tecniche di programmazione, confrontare la tecnica divide-et-impera con la di programmazione dinamica e specificare quando applicare la programmazione dinamica.
+<div class='vspace'></div></li><li>Dire cosa si intende per profondità, livello ed altezza di un albero.
+<div class='vspace'></div></li><li>Quante foglie ha un albero binario completo di altezza h? e Quanti nodi sono contenuti in un albero binario completo di altezza h?
+<div class='vspace'></div></li><li>Definire il concetto di ordinamento topologico di un grafo orientato. Descrivere inoltre il funzionamento della “soluzione diretta” per la determinazione dell’ordine topologico.
+<div class='vspace'></div></li><li>Dato un grafo orientato G, dire cosa si intende per chiusura transitiva di G. Descrivere a parole un possibile algoritmo per il calcolo della chiusura transitiva.
+<div class='vspace'></div></li><li>Si descriva in modo sintetico e preciso cosa è uno heap e come può essere mantenuto attraverso un vettore.
+<div class='vspace'></div></li><li>Dato un albero binario con N nodi, quale può essere la sua altezza minima? e quella massima?
+</li></ul><div class='vspace'></div><h2>Esercizi</h2>
+<p>Gli esercizi richiesti sono:
+</p><ul><li>Mergesort
+</li><li>Quicksort
+</li><li>Heapsort
+</li><li>Hashing
+</li><li>albero AVL
+</li><li>B-albero
+</li><li>DFS e BFS
+</li><li>Componenti fortemente connesse
+</li><li>Ordine topologico
+</li><li>Prim
+</li><li>Kruskal
+</li><li>Bellman-Ford
+</li><li>Dijkstra
+</li><li>Floyd-Wharshall
+</li><li>chiusura transitiva
+</li><li>Ford-fulkerson
+</li><li>grafo bipartito
+</li><li>codici di Huffman 
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/DomandeAlgoritmi)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Protocolli avanzati di rete - Appunti del 11 e 12 Maggio</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='PAR-11e12Maggio.html' title='Protocolli avanzati di rete - Appunti del 11 e 12 Maggio'>Protocolli avanzati di rete - Appunti del 11 e 12 Maggio</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 11 e 12 Maggio ::</strong>
+</pre><div class='vspace'></div><h2>Ripassone: Media Access Protocol su reti wireless</h2>
+<p>Lo standard definito per le reti wireless è l<strong>'IEEE 802.11</strong> o <strong>Wi-Fi</strong>, e si riferisce in particolare al livello fisico e MAC del modello ISO/OSI. Comprende una famiglia di protocolli, di cui tre dedicati alla trasmissione delle informazioni (<strong>a</strong>, <strong>b</strong>, <strong>g</strong>), uno per la sicurezza (<strong>i</strong>), ed altri come estensioni e miglioramenti dei servizi di base. Il primo protocollo largamente diffuso è stato il <strong>b</strong>; in seguito si sono diffusi il protocollo <strong>a</strong> e soprattutto il <strong>g</strong>.
+</p>
+<p class='vspace'>Lo standard 802.11 gestisce sia reti <em>ad hoc</em> (sprovviste di struttura client-server) che reti <em>ad infrastruttura</em>, queste ultime costituite da una o più celle indipendenti ognuna delle quali è controllata da una stazione base chiamata <strong>Access Point</strong> (o <strong>AP</strong>). 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PAR-retiWireless.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Problemi del CSMA/CD</h3>
+<p>Il canale wireless è un mezzo trasmissivo condiviso, quindi abbiamo bisogno di un meccanismo di controllo e gestione che limiti il numero di interferenze tra i dispositivi che vi accedono. E' possibile applicare lo stesso protocollo usato per <code class='escaped'>ethernet</code> perché tutto funzioni e per limitare il numero di collisioni? Stiamo parlando del <strong>CSMA/CD</strong>, ovvero:
+</p><ul><li><strong>CS</strong> (<em>Carrier Sense</em>): le stazioni della rete possono distinguere i canali liberi (<em>idle</em>) da quelli occupati (<em>busy</em>). Problema: stazione nascosta/esposta (che vedremo fra poco)
+</li><li><strong>MA</strong> (<em>Multiple Access</em>): le stazioni della rete si scambiano frame attraverso canali condivisi
+</li><li><strong>CD</strong> (<em>Collision Detection</em>): protocollo per la rilevazione delle collisioni. Problemi: per molti dispositivi la trasmissione è half-duplex, quindi se trasmettono non possono ricevere (dunque rilevare problemi); le collisioni avvenute nel ricevente potrebbero non essere rilevate dal mittente. 
+</li></ul><p class='vspace'>Vediamo ora qual è il <strong>problema della stazione nascosta/esposta</strong>.<br />Consideriamo tre stazioni (A, B e C), di cui sono indicati i raggi d'azione, e con A che sta trasmettendo a B.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PAR-stazioneNascosta.jpg' alt='' title='' /></div>
+<p class='vspace'>Se C sta ascoltando il mezzo lo troverà libero dato che è fuori dal raggio di azione di A, dunque sarà convinto di poter trasmettere a B. Così facendo disturberà però la trasmissione di A, impedendo a B di ricevere sia la sua che quello dell'altro, che saranno costretti a ritrasmettere. Questo è noto come il <em>problema della stazione nascosta</em>.
+</p>
+<p class='vspace'>Consideriamo adesso quattro stazioni (A, B, C e D), di cui sono indicati i raggi d'azione, e con B che sta trasmettendo ad A e C che vuole trasmettere a D.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PAR-stazioneEsposta.jpg.png' alt='' title='' /></div>
+<p class='vspace'>Se C sta ascoltando il mezzo lo troverà occupato dato che rileverà la trasmissione di B, dunque sarà erroneamente convinto di non poter trasmettere. In realtà D è fuori dalla portata di B, ed A fuori da quella di C, quindi le trasmissioni potrebbero benissimo avvenire parallelamente senza interferenze. Questo è noto come il <em>problema della stazione esposta</em>.
+</p>
+<p class='vspace'>Come risolviamo tutto questo?
+</p>
+<div class='vspace'></div><h3>CSMA/CA</h3>
+<p>La <strong>Collision Avoidance</strong> (<strong>CA</strong>) permette di prevenire il manifestarsi di collisioni attraverso l'utilizzo di appositi segnali di sincronizzazione: il <strong>Request To Send</strong> (RTS) e il <strong>Clear To Send</strong> (CTS). Entrambi i frame contengono il tempo mancante prima della fine della trasmissione, quindi ogni stazione che li riceve potrà impostare il proprio indicatore di <em>Carrier Sensing Virtuale</em> per la durata indicata dai frame. Questo indicatore è chiamato <strong>NAV</strong> (<em>Network Allocation Vector</em>) ed è un vero e proprio contatore che viene decrementato nel tempo fino ad arrivare a 0: se è diverso da 0 significa che nelle vicinanze qualcuno sta trasmettendo.
+</p>
+<p class='vspace'>Nell'ipotesi in cui ogni stazione abbia lo stesso raggio di azione e che gli RTS e CTS possano essere scambiati in un tempo infinitesimo, il protocollo è il seguente: 
+</p><ol><li>quando la stazione A vuole trasmettere un frame a B gli invia prima una RTS
+</li><li>B gli risponde con una CTS
+</li><li>quando A riceve la CTS può iniziare a trasmettere
+</li></ol><p class='vspace'>Nella stragrande maggioranza dei casi la nostra rete non soddisferà le ipotesi stringenti che abbiamo appena enunciato, dunque ci troveremmo nella situazione di non poter garantire la totale assenza di collisioni. Per questo motivo alla <em>Collision Avoidance</em> vengono affiancati i protocolli di <em>Carrier Sensing</em> (CS) e <em>Multiple Access</em> (MA): i primi ridurranno il numero di collisioni dovute a tentativi di accesso contemporaneo al mezzo, i secondi introdurranno il l'acknowledgement a livello di MAC sublayer. Questo secondo punto è molto più semplice di quanto possa sembrare, ovvero prevede la trasmissione di un segnale di ACK da parte del ricevente quando riceve con successo il frame inviatogli dal mittente.<br />Alla luce di tutte queste innovazioni, vediamo come funziona il protocollo <strong>CSMA/CA</strong>:
+</p><ol><li>la stazione trasmittente A cerca di determinare lo stato del mezzo valutando il contenuto del NAV ed ascoltando il mezzo. Il canale è considerato libero quando sia il Carrier Sensing Virtuale che quello Reale non rilevano attività. I casi sono due:
+<ul><li>Se il canale rimane libero per un intervallo di tempo DIFS (che vedremo poi), salta al punto 3
+</li><li>Se invece il canale è occupato (o viene occupato durante l’intervallo DIFS), prosegue al punto 2
+</li></ul></li><li>A avvia la procedura di back-off (che vedremo poi)
+</li><li>A invia la RTS
+</li><li>Se entro un intervallo di tempo ben definito A non riceve il CTS da B, molto probabilmente l’RTS ha colliso con un altro frame. Impareremo che spesso ciò significa che due stazioni hanno scelto lo stesso slot nella finestra di back-off, quindi A prima di ritentare la trasmissione raddoppierà la dimensione di tale finestra, e poi ripeterà tutto dal punto 2. Lo scopo di tale raddoppiamento è quello di adattare la dimensione della finestra al numero di contendenti, in virtù del fatto che le collisioni sono indice di "affollamento"
+</li><li>Quando B riceve l’RTS, risponde con un CTS
+</li><li>Ricevuto il CTS, A può cominciare a trasmettere il frame con i dati veri e propri
+</li><li>Se entro un intervallo di tempo ben definito A non riceve un ACK da B, vuol dire che il frame <em>Dati</em> non è stato ricevuto correttamente, e quindi A deve ritrasmetterlo ripetendo tutta la procedura
+</li><li>Una volta che B ha ricevuto correttamente il frame <em>Dati</em>, risponde con un ACK concludendo il protocollo
+</li></ol><p class='vspace'>Concludiamo il paragrafo con un esempio. Abbiamo quattro stazioni (A, B, C, D), ed A vuole trasmettere a B:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PAR-CSMACA.jpg' alt='' title='' /></div>
+<p class='vspace'>Dal grafico in funzione del tempo capiamo al volo che D è nel raggio di azione di B ma non di A, dato che aggiorna il proprio NAV solo dopo aver ricevuto la Clear To Send inviata da B.
+</p>
+<div class='vspace'></div><h3>MACA e MACAW</h3>
+<p>Dimentichiamo quanto detto nell'ultimo paragrafo e facciamo un passo indietro, a quando avevamo scoperto che il protocollo CSMA/CD non è sufficiente per risolvere i problemi di collisione su reti wireless. In particolare, la rilevazione del canale (quindi la <em>Carrier Sense</em>) era problematica dal momento che se il canale è libero (o occupato) per il trasmettitore non è detto che lo sia per il ricevitore. <br />Possiamo superare entrambi i problemi adottando il protocollo <strong>MACA</strong> (<em>Multiple Access with Collision Avoidance</em>), nel quale non c'è ascolto del canale e si cerca di prevenire le collisioni piuttosto che rilevarle. Si implementa con le RTS e le CTS che abbiamo già visto, e il comportamento delle stazioni è il seguente:
+</p><ul><li>tutte le stazioni che ricevono il frame RTS di una stazione A devono rimanere in silenzio per un tempo che consenta al frame CTS di arrivare ad A, dopodiché potranno ricominciare a trasmettere
+</li><li>tutte le stazioni che ricevono il solo frame CTS (quindi nella portata del ricevente B, ma non di A) devono rimanere in silenzio per il tempo necessario alla trasmissione del frame dati (la cui lunghezza è riportata nel CTS)
+</li><li>le stazioni che ricevono sia il frame RTS che quello CTS (situate nella portata di A e B) applicheranno entrambe le regole
+</li></ul><p class='vspace'>Questa tecnica non garantisce l'assenza totale di collisioni, però fa si che siano circoscritte ai frame RTS e CTS, che essendo di dimensioni ridotte non influiranno pesantemente sulle trasmissioni. <br />Un'evoluzione del protocollo MACA è rappresentata dal <strong>MACAW</strong> (<em>MACA for Wireless</em>), che introduce alcune migliorie:
+</p><ul><li>il ricevente invia un ACK se la ricezione del frame dati si è conclusa con successo
+</li><li>dopo la ricezione del CTS, il mittente invia un breve frame DS (<em>Data Send</em>) che contiene la dimensione del frame dati che verrà trasmesso. In questo modo le stazioni fuori dalla portata del mittente non gli manderanno RTS prima che abbia finito
+</li><li>se una stazione rileva un RTS ma non un CTS allora può trasmettere, se invece rileva solo un CTS allora aspetta finché non capta il segnale di ACK
+</li></ul><div class='vspace'></div><h3>Protocolli MAC</h3>
+<p>Nello standard 802.11 sono previste due modalità di funzionamento:
+</p><ul><li>la <strong>DCF</strong> (<em>Distributed Coordination Function</em>) prevede che le stazioni gestiscano in modo distribuito l'accesso al mezzo, in particolare secondo il protocollo CSMA/CA. Facendo riferimento alle architetture wireless che abbiamo citato all'inizio, la DCF è tipica delle reti ad hoc
+</li><li>la <strong>PCF</strong> (<em>Point Coordination Function</em>) affida all’access point il compito di coordinare tutte le stazioni di cui è responsabile. L'AP interroga ciclicamente le altre stazioni, che possono trasmettere solo quando è il loro turno; dato che l’ordine delle trasmissioni è completamente controllato dalla stazione base, non possono verificarsi collisioni
+</li></ul><p class='vspace'>Tutte le stazioni della rete devono supportare DCF, mentre PCF è opzionale e raramente implementato. 
+</p>
+<div class='vspace'></div><h3>IFS</h3>
+<p>Gli <em>InterFrame Spaces</em> (<strong>IFS</strong>) sono quei tempi di attesa da lasciare tra un evento di protocollo e l'altro, e che permettono la sincronizzazione tra trasmissioni e la creazione di diversi livelli di priorità a seconda del tipo di traffico. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PAR-ifs.jpg' alt='' title='' /></div>
+<p class='vspace'>Nel protocollo 802.11 ne esistono quattro tipi diversi:
+</p><ul><li><strong>SIFS</strong> (<em>Short InterFrame Space</em>), il minimo intervallo di attesa possibile tra un frame e l'altro della stessa trasmissione, ad esempio tra un frame dati e il segnale di ACK. Notare che solo una stazione è abilitata a rispondere dopo un intervallo SIFS, così che le altre (che devono attendere un periodo più lungo) non possano interrompere la trasmissione in corso
+</li><li><strong>PIFS</strong> (<em>PCF InterFrame Space</em>), il minimo intervallo di tempo tra un frame e l'altro in modalità PCF, quindi non a contesa. Deve essere maggiore del SIFS (perché comprende alcune operazioni del Point Coordinator), ma minore del DIFS
+</li><li><strong>DIFS</strong> (<em>DCF InterFrame Space</em>), il minimo intervallo di tempo tra un frame e l'altro in modalità DCF, quindi a contesa. E' il più lungo di tutti gli <em>InterFrame Spaces</em>, e più il suo valore è alto e più il traffico è a bassa priorità. Viceversa, più il DIFS è breve e più la priorità aumenta; ciò significa che appena c'è silenzio mi inserisco, a rischio di collisioni. <br />Trascorso il DIFS, ogni stazione può tentare di acquisire il canale per iniziare una nuova trasmissione; è a questo punto che possono verificarsi le collisioni per accesso contemporaneo, ed infatti la finestra di contesa (<em>slotted back-off window</em>, che vedremo nel prossimo paragrafo) comincia proprio dopo questo intervallo
+</li><li><strong>EIFS</strong> (<em>Extended InterFrame Space</em>), usato al posto di DIFS quando ci sono stati degli errori nella trasmissione, sufficientemente lungo da consentire al ricevente di rispondere al frame errato e risincronizzarsi col mittente
+</li></ul><p class='vspace'>Buttiamola sul pratico. Un protocollo che invia video in streaming deve garantire un tasso di recapito costante a livello applicativo, quindi anche a livello 2; per questo motivo dovrei mantenere sempre i SIFS come tempo di attesa, così da garantire alta priorità. Se invece consideriamo un protocollo che gestisce il file sharing, tipicamente si attenderanno intervalli DIFS dal momento che non tutti i pacchetti hanno la stessa priorità.<br />Breve digressione sullo streaming. Abbiamo appena detto che dovrei garantire un tasso di recapito costante a livello 2, ma nel wireless questo requisito è particolarmente difficile da soddisfare sia per il traffico che per la carica residua delle batterie. Una soluzione consiste nel monitorare le informazioni sulla qualità della rete, e in base ad esse cambiare in run-time la codifica dello streaming; mantengo cioè diverse versioni a diversa qualità e risoluzione dello stesso media, e a seconda della variabilità della rete invio quello più indicata. La fregatura è che devo allungare i tempi di pre-caricamento, il che è rischioso dal momento che poi verrebbe meno il concetto stesso di streaming. A ogni modo, questa tecnica è ancora oggetto di ricerca.
+</p>
+<div class='vspace'></div><h3>Back-off</h3>
+<p>La <em>procedura di back-off</em> è stata inserita nelle fasi del protocollo CSMA/CA in cui le collisioni sono più frequenti, e consiste nell’attendere per un tempo casuale (limitato) calcolato con l’algoritmo di <strong>binary exponential back-off</strong>. L'obiettivo è evitare che tutte le stazioni in attesa che il canale si liberi tentino di acquisirlo contemporaneamente nell'istante in cui questo viene rilasciato.
+</p>
+<p class='vspace'>La procedura base di back-off richiede che ogni stazione scelga un numero casuale compreso tra 0 e un valore <strong>CW</strong> (<em>Contention Window</em>, la dimensione della finestra di contesa), e aspetti per questo numero di slot prima di accedere al mezzo, effettuando comunque il controllo sulla portante per vedere se qualche altra stazione sta tentando di accedere al mezzo. Lo <strong>Slot time</strong> è definito infatti in modo tale che la stazione sia sempre capace di determinare se un’altra abbia acceduto al mezzo all’inizio del precedente slot, così da ridurre drasticamente le probabilità di collisione.
+</p>
+<p class='vspace'>Il <em>back-off esponenziale</em> impone invece che ogni volta che la stazione sceglie uno slot per la trasmissione e si verifica una collisione venga esponenzialmente aumentato il valore della CW, così da limitare il rischio che la collisione si ripeta. In particolare, lo standard 802.11 prevede che l'algoritmo di back-off esponenziale debba essere eseguito nei seguenti casi:
+</p><ul><li>prima della prima trasmissione se la stazione rileva che il mezzo è occupato
+</li><li>dopo ciascuna ritrasmissione, per cui è previsto un raddoppio del numero degli slot
+</li><li>dopo una trasmissione che ha avuto successo, per cui è previsto l'azzeramento del numero degli slot
+</li></ul><p class='vspace'>Se invece una stazione decide di inviare un frame e rileva che il mezzo è libero per un tempo maggiore di DIFS, allora tutto questo meccanismo non si mette in moto e la trasmissione avviene tranquillamente.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PAR-backoff.jpg' alt='' title='' /></div>
+<p class='vspace'>Il rettangolo fucsia dell'immagine sopra contiene il numero casuale di slot che in caso di collisione dovrò attendere per via del meccanismo di back-off.
+</p>
+<p class='vspace'>Ci potremmo chiedere: è fair questa procedura? Riesce ad assicurare una ripartizione (più o meno) equa della banda? Non molto, dipende da quanto sono diversi i valori di back-off scelti dalle stazioni che sono entrate in collisione. <br />Facciamo un esempio: 
+</p><ul><li>A e B hanno una CW di [0..31]
+</li><li>collidono, quindi la loro CW raddoppia a [0..63]
+</li><li>lo slot casuale scelto da A a 4, mentre quello scelto da B è 60
+</li><li>A aspetta 4, riesce a inviare il suo frame e quindi la sua CW torna ad essere [0..31]
+</li><li>potenzialmente A potrebbe mandare molti altri frame prima che arrivi il turno di B (che magari quando arriva il suo momento collide ancora e tanti saluti)
+</li></ul><p class='vspace'>Il protocollo a contesa quindi premia il vincitore, ma questo non vuol dire che sia sempre una cosa da evitare: in uno scenario client-server che senso avrebbe avere un client che ha più banda del server??
+</p>
+<p class='vspace'>Ultima nota: il meccanismo di exponential back-off è validato solo a livello di simulazioni, ma non è ancora stato validato a livello di modello (quindi a priori).
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/PAR-11e12Maggio)</span></div>
+  </div>
+</body>
+</html>

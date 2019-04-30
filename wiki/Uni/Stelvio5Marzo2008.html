@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Crittografia - Lezione del 5 marzo 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Stelvio5Marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Crittografia - Lezione del 5 marzo 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Stelvio5Marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Stelvio5Marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Stelvio5Marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Stelvio5Marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Stelvio5Marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Crittografia - Lezione del 5 marzo 2008 was last modified on March 13, 2008, at 04:22 PM'>
+							<span style='display:none;'>Crittografia - Lezione del 5 marzo 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Crittografia - Lezione del 5 marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<div class='vspace'></div><h2>Cifrario affine</h2>
+<p>Si tratta di un cifrario a sostituzione, in cui un simbolo è sostituito da un altro simbolo. Per trovare la sostituzione si utilizza un'equazione:
+</p>
+<div class='vspace'></div><pre> c<sub>i</sub> = E(p<sub>i</sub>) = (k<sub>1</sub>p<sub>1</sub> + k<sub>2</sub>) mod 26
+</pre><p class='vspace'>Ci sono quindi due costanti, <strong>k<sub>1</sub></strong> e <strong>k<sub>2</sub></strong>.
+La decrittazione invece seguirà questa formula:
+</p>
+<div class='vspace'></div><pre> p<sub>i</sub> = D(C<sub>i</sub>) = (c<sub>1</sub> - k<sub>2</sub>) * k<sub>1</sub><sup>-1</sup> mod 26
+</pre><p class='vspace'>Il <strong>k<sub>1</sub><sup>-1</sup></strong> sta a significare che devo prendere <strong>l'inverso in modulo 26</strong> del valore <strong>k<sub>1</sub></strong>. L'inverso di un numero è quel numero che, moltiplicato per il primo numero, dà i numeri, anzi dà 1. L'inverso in modulo è la stessa cosa, solo che deve dare 1 in quella classe di resto. La nostra classe di resto ovviamente è 26.
+</p>
+<p class='vspace'>Ecco quindi che se k<sub>1</sub> è7, il suo inverso è 15: 7 * 15 &#8801; 1 mod 26.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>---&gt; Escursus Citrinico</strong></span>
+</p>
+<p class='vspace'>Per trovare l'inverso di un numero in una certa classe di resto si adopera la formula di Euclide. Innanzitutto, in una certa classe di resto un numero ha l'inverso se è coprimo con la n di quella classe. Quindi, il nostro k<sub>1</sub> deve essere primo con 26.
+Quando è verificata questa condizione, il <strong>teorema di Eulero</strong> mi dice che
+</p>
+<div class='vspace'></div><pre> l'inverso di <strong>a</strong> è <strong>a<sup>&#981;(n)-1</sup></strong>
+</pre><p class='vspace'>dove <strong>&#981;(n)</strong> è il <strong>toziente</strong> o <strong>numero di Eulero</strong> di <strong>a</strong>. Confusi? Anch'io.
+</p>
+<p class='vspace'>Il numero di Eulero di <strong>a</strong> è il numero di interi che sono minori di <strong>a</strong>, e primi con esso. Per un numero <strong>p</strong> primo, è ovvio che <strong>&#981;(p) = p - 1</strong>, proprio perché è primo e non ha divisori tranne se stesso e 1.
+Se invece ho 2 numeri primi, <strong>p</strong> e <strong>q</strong>, con <strong>p &#8800; q</strong>, allora <strong>&#981;(p x q) = (p - 1)(q - 1)</strong>. La dimostrazione la ometto, tanto mi credete.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Fine Escursus Citrinico &lt;---</strong></span>
+</p>
+<p class='vspace'>Il <strong>cifrario affine</strong> è comunque <strong>monoalfabetico</strong>, perché un carattere è mappato ad un altro unico carattere. Per complicarlo un po' si possono usare più alfabeti cifranti, oppure usare più lettere per volta nella cifratura.
+</p>
+<div class='vspace'></div><h3>Cifrario di Leon Battista Alberti</h3>
+<p>Felon Gattista Alberti nel 1403 usa più alfabeti cifranti, in pratica un cifrario <strong>polialfabetico</strong>, secondo questa regola:
+</p><pre> lettere pari cifrate dal 1° alfabeto
+ lettere dispari cifrate dal 2° alfabeto
+</pre><p class='vspace'>Cade la relazione biunivoca tra lettere del testo in chiaro e lettere del testo cifrato.
+</p>
+<div class='vspace'></div><h3>Giovanni Battista Porta</h3>
+<p>Giovanni Gattista Porta invece di cifrare le lettere cifra i digrammi, cioè gruppi di due lettere per volta =&gt; è una <strong>cigra a gruppi</strong>. Ogni digramma è poi assegnato ad un numero, e la chiave consiste nella tabella:
+</p>
+<div class='vspace'></div><pre>   A  B  C  D ....
+ A 1  2  3  4 ....
+ B 27 28 29 30 ...
+ .................
+</pre><p class='vspace'>AA = 1, AB = 2 e così via. Oppure uso simboli strani al posto dei numeri, o quello che voglio. La chiave rimane sempre la tabella, composta da 26 x 26 = 676 simboli.
+</p>
+<div class='vspace'></div><h3>Cifrario di Playfair</h3>
+<p>Ho una tabella 5x5, in cui metto le lettere dell'alfabeto in un ordine casuale. La I viene accorpata alla J per ottenere appunto il 5x5.
+Poi, mi metto a cifrare digrammi.
+</p>
+<p class='vspace'>Prendo la prima lettera del digramma, e la seconda, e considero il rettangolo formato da queste due lettere, considerandole come estremi di una diagonale di questo rettangolo. Una lettera viene quindi cifrata con quella che appare all'altro capo del lato del rettangolo su cui si trova.
+Se due lettere sono sulla stessa riga, la loro crittazione si ottiene shiftandole a destra di 1. Se sono sulla stessa colonna, le shifto di 1 sotto.
+<strong>Non fatemi fare un disegno che non ne ho voglia!:)</strong>
+</p>
+<p class='vspace'>La struttura del testo, nonostante questo daffare, rimane, e si può usare ancora un attacco statistico basato sulla frequenza dei digrammi.
+</p>
+<div class='vspace'></div><h3>Cifrario di Hill</h3>
+<p>Lester Hill nel 1929 inventa il suo cifrario, basato su m-grammi (neologismo da me inventato). Per cifrare m lettere, uso m equazioni lineari.
+Nell'esempio consideriamo m = 2, e quindi 2 equazioni lineari.
+</p>
+<div class='vspace'></div><pre> y^_1_^ = ax<sub>1</sub> + bx^_2_^ mod 26
+ y^_2_^ = cx<sub>1</sub> + dx^_2_^ mod 26
+</pre><p class='vspace'>Ho quindi che <strong>x^_1_^</strong> diventa <strong>y^_1_^</strong>, e <strong>x^_2_^</strong> diventa <strong>y^_2_^</strong>.
+</p>
+<p class='vspace'>Un altro modo per scrivere la stessa roba è 
+</p><div><img src='../uploads/Uni/critto01.jpg' alt='' title='' /></div>
+<p>Si tratta di un conto da eseguire riga per colonna: riga per colonna 1, riga per colonna 2: vettore per matrice.
+</p>
+<p class='vspace'>Più la m è grossa, più ho matricione grosse. La chiave è quindi la matrice, e per decrittare devo usare la <strong>matrice inversa</strong>. La Citrini ritorna qui in campo...
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>---&gt; Escursus Citrinico</strong></span>
+</p>
+<p class='vspace'>La matrice inversa di <strong>A</strong> è <strong>A<sup>-1</sup></strong>, ed è quella matrice che moltiplicata per <strong>A</strong> mi dà la matrice <strong>I</strong>, quella che è composta da tutti 0 e da 1 sulla diagonale principale. L'inversa di <strong>A</strong> esiste solo se il determinante di <strong>A</strong> è diverso da 0. 
+</p>
+<p class='vspace'>Il determinante di una 2 x 2 si trova facendo il prodotto degli elementi della diagonale principale, meno il prodotto degli elementi sull'altra diagonale. Nella matrice di prima, con la prima <strong>riga</strong> = <strong>a c</strong> e la seconda <strong>riga</strong> = <strong>b d</strong>, il determinante è <strong>ad - cb</strong>.
+OCIO che in genere è la <strong>prima riga</strong> ad essere <strong>a b</strong>!!!
+</p>
+<p class='vspace'>Per calcolare la matrice inversa, si può usare generalmente il metodo di <strong>Gauss - Jordan</strong>, ma non ne voglio parlare qui.
+</p>
+<p class='vspace'>La matrica inversa di una matrice 2 x 2 si ottiene in modo un po' più semplice. Trovato il mio determinante, devo:
+</p><ol><li>invertire i numeri sulla diagonale principale
+</li><li>dividere tutti i numeri per il determinante
+</li></ol><div class='vspace'></div><div><img src='../uploads/Uni/critto02.jpg' alt='' title='' /></div>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Fine Escursus Citrinico &lt;---</strong></span>
+</p>
+<div class='vspace'></div><h3>Vigenere</h3>
+<p>È un cifrario <strong>polialfabetico</strong> che <strong>non</strong> fu inventato da Vigenere ma da Giovan Gattista Belaso. I Gattista la fanno da padrone, a quanto pare, nella crittografia classica.
+</p>
+<p class='vspace'>Si tratta di applicare una cifra di Cesare ad ogni lettera del testo in chiaro, cioè uno shift. L'entità dello shift dipende dalla chiave, e dalla posizione nel testo. L'esempio chiarirà tutto.
+</p>
+<div class='vspace'></div><pre> testo in chiaro: CIAO DA ME CHE SONO IO
+ password: DARIO
+
+  CIAO DA ME CHE SONO IO +
+  DARI OD AR IOD ARIO DA =
+ --------------------------
+  FIRW RD MV KVH SFVC LO
+</pre><p class='vspace'>Resiste all'analisi delle frequenze, ma ci sono altre cose interessanti che possono rompere questo cifrario.
+Per un'implementazione, vedi la <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Dario#g13'>pagina di Dario</a>
+</p>
+<div class='vspace'></div><h2>Trasposizioni</h2>
+<p>Invece di sostituire caratteri, li sposto all'interno del testo. I metodi sono molteplici.
+</p>
+<div class='vspace'></div><h3>Rail fence</h3>
+<p>Se il testo in chiaro è <strong>CIAO DA ME CHE SONO IO</strong>, lo scrivo come su una staccionata, uno su uno giù:
+</p>
+<div class='vspace'></div><pre> C A D M C E O O O
+ I O A E H S N I
+</pre><p class='vspace'>e leggo poi in riga: <strong>CADMCEOOOIOAEHSNI</strong>.
+</p>
+<p class='vspace'>La chiave è il numero di colonne della mia staccionata. Qui so che ho 9 colonne, quindi scrivo i primi 9 caratteri, e sotto i secondi 9, e poi sotto ancora gli eventuali terzi 9 etc. e infine leggo di colonna in colonna.
+</p>
+<div class='vspace'></div><h3>Cifrario a colonne</h3>
+<p>Variazione del Rail Fence.
+Stabilisco un numero n di colonne, e scrivo il mio messaggio in righe composte da n colonne. Quando lo trascrivo, però, non leggo le colonne in fila, ma le sposto, e la chiave è quindi composta, oltre che dal numero di colonne, anche dalla loro sequenza.
+</p>
+<div class='vspace'></div><h3>Cifrario a trasposizione</h3>
+<p>È basato sulle <strong>permutazioni</strong>, ora vedremo perché.
+Divido il mio testo in chiaro in blocchi di n caratteri. Poi, stabilisco una funzione bijettiva per cui ognuno degli n caratteri finisce in una e una sola posizione tra quegli n, e viceversa.
+Se la parola è <strong>gatto</strong>, e stabilisco che:
+</p>
+<div class='vspace'></div><pre> 1 -&gt; 2
+ 2 -&gt; 1
+ 3 -&gt; 5
+ 4 -&gt; 4
+ 5 -&gt; 3
+</pre><p class='vspace'>allora avrei:
+</p>
+<div class='vspace'></div><pre> G -&gt; 2
+ A -&gt; 1
+ T -&gt; 5
+ T -&gt; 4
+ O -&gt; 3
+ =&gt; AGOTT
+</pre><p class='vspace'>Notare che la trasposizione è bijettiva, cioè se <strong>a</strong> va in <strong>b</strong>, allora <strong>b</strong> va in <strong>a</strong>. Altrimenti non ne esco più:)
+</p>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<div class='vspace'></div>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 13, 2008, at 04:22 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Stelvio5Marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Stelvio5Marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

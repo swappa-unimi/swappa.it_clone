@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Tecnologie Web - Nozioni Fondamentali </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.XMLNozioniFondamentali' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Tecnologie Web - Nozioni Fondamentali
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLNozioniFondamentali?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLNozioniFondamentali?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='XMLNozioniFondamentali-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLNozioniFondamentali?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLNozioniFondamentali?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Tecnologie Web - Nozioni Fondamentali was last modified on July 10, 2009, at 01:05 PM'>
+							<span style='display:none;'>Tecnologie Web - Nozioni Fondamentali</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Tecnologie Web ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Nozioni Fondamentali</strong></span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Elementi, Tag, Attributi</a>
+</li><li><a href='#s2'>Nomi XML</a>
+</li><li><a href='#s3'>Referenze a entità</a>
+</li><li><a href='#s4'>Commenti</a>
+</li><li><a href='#s5'>Istruzioni di elaborazione</a>
+</li><li><a href='#s6'>Dichiarazione XML</a>
+</li><li><a href='#s7'>Regole documento ben formato</a>
+</li></ol></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>Elementi, Tag, Attributi</h2>
+<p>Esempio di documento XML:<br /><br />
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;autore&gt;
+  E.A.Poe
+&lt;/autore&gt;
+</pre>
+</div>
+<p class='vspace'>Queste tre righe di codice potrebbero essere l'intero contenuto di un file XML chiamato <em>autore.xml</em> o <em>PoeRulez.xml</em>.<br /><ins>NOTA</ins>: XML non impone nessuna restrizione per quanto riguarda il nome del file, in quanto il parser se ne frega del nome del file.<br /><br />
+<strong>Analisi dell'esempio</strong>:<br />Il documento è formato da un singolo <strong>elemento</strong> il cui tipo è <em>autore</em>. L'elemento è delimitato da un <em><ins>tag iniziale</ins></em> <em>&lt;autore&gt;</em> e da un <em><ins>tag finale</ins></em> <em>&lt;/autore&gt;</em>. Tutto ciò che si trova tra il tag iniziale e il tag finale è il <em><ins>contenuto</ins></em> dell'elemento. In questo caso quindi il contenuto dell'elemento autore è la stringa di testo: <em>E.A.Poe</em>.<br />&lt;autore&gt; e &lt;/autore&gt; sono considerati testo di <em>markup</em>, mentre la stringa E.A.Poe e gli spazi che la circondano sono considerati <em><ins>dati di tipo carattere</ins></em>.<br /><strong>Riassumendo</strong>:<br />gli elementi sono le parti di documento dotate di un senso proprio e individuate da un tag iniziale, un contenuto ed un tag finale.<br /><img src='../uploads/Uni/XMLNFes0.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h3>Sintassi dei tag</h3>
+<p>I tag XML quindi sono identici ai tag HTML:
+</p><ul><li><em>tag iniziali</em> cominciano con <strong>&lt;</strong>
+</li><li><em>tag finali</em> cominciano con <strong>&lt;/</strong>
+</li></ul><p>entrambi sono seguiti dal nome dell'elemento e si concludono con il carattere <strong>&gt;</strong><br /><br />
+Gli <strong>Elementi Vuoti</strong> sono quelli privi di contenuto. Sono rappresentati da tag che iniziano con <strong>&lt;</strong> e terminano con i caratteri <strong>/&gt;</strong>.
+</p>Esempi:<br /><pre class='escaped'>
+&lt;br/&gt;
+&lt;hr/&gt;
+</pre>
+<p>In XML e XHTML non è permesso utilizzare solo il tag iniziale (cosa invece concessa in HTML) senza specificare il tag finale. Quindi inserire in un documento &lt;br&gt; senza &lt;/br&gt;, genera un errore in quanto il documento non è ben formato.<br /><br />
+XML è <strong>Case Sensitive</strong>(a differenza di HTML), quindi distingue tra maiuscole e minuscole.
+</p>Esempio:<br /><pre class='escaped'>
+&lt;person&gt;
+...
+&lt;/PERSON&gt;
+</pre>
+<p>genera un errore.
+</p>
+<div class='vspace'></div><h3>Alberi XML</h3>
+<p>I documenti XML sono assimilabili ad alberi gerarchici.
+Esempio:<br />
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;person&gt;
+  &lt;name&gt;
+    &lt;first_name&gt;Howard Phillips&lt;/first_name&gt;
+    &lt;last_name&gt;Lovecraft&lt;/last_name&gt;
+  &lt;/name&gt;
+  &lt;profession&gt;writer&lt;/profession&gt;
+  &lt;profession&gt;poet&lt;/profession&gt;
+  &lt;profession&gt;genius&lt;/profession&gt;
+&lt;/person&gt;
+
+</pre>
+</div>
+<div class='vspace'></div><h4>Padri e figli</h4>
+<p>Analisi dell'esempio:<br />Nell'esempio c'è un elemento <em>person</em> che contiene quattro elementi <strong>FIGLI</strong>: un elemento <em>name</em> e tre elementi <em>profession</em>. L'elemento <em>name</em> a sua volta contiene i due elementi figli <em>first_name</em> e <em>last_name</em>.<br />L'elemento <em>person</em> è quindi <strong>PADRE</strong> dei suoi quattro elementi figli(name e i tre profession) e l'elemento <em>name</em> è padre dei suoi due elementi figli(first_name a last_name).<br />L'elemento <em>name</em> e i tre elementi <em>profession</em> sono tra di loro <strong>FRATELLI</strong>, stessa cosa vale per <em>first_name</em> e <em>last_name</em>.<br /><ins>Note</ins>:
+</p><ul><li>qualsiasi padre può avere più figli.
+</li><li>XML associa ad ogni figlio esattamente un padre. Quindi l'elemento figlio è completamente incluso nell'elemento padre.
+</li><li>in XML è vietata la sovrapposizione<br />Esempio:<br /><pre class='escaped'>
+&lt;autore&gt;&lt;name&gt;
+Lovecraft
+&lt;/autore&gt;&lt;/name&gt;
+</pre>
+</li></ul><div class='vspace'></div><h4>L'elemento root</h4>
+<p><strong>L'elemento radice</strong> è presente in ogni documento XML ed è il primo elemento del documento, quindi è quell'elemento che non ha un padre. Nel nostro esempio è l'elemento <em>person</em>.<br />Per questo motivo abbiamo detto che un documento XML è come un albero.<br />Infatti:<br /><img src='../uploads/Uni/XMLNFes1.jpg' alt='' title='' />
+</p>
+<p class='vspace'><ins>Legenda</ins>:<br />azzurro: elemento root<br />bianco: elemento<br />blu sfumato: dati di tipo carattere
+</p>
+<div class='vspace'></div><h3>Attributi</h3>
+<p>Un attributo è una coppia nome-valore associata al tag iniziale di un elemento. Il nome viene separato dal valore tramite un <strong>=</strong>; i valori sono racchiusi tra virgolette singole ' o doppie " .<br /><br />
+Esempio di prima riscritto con attributi:<br />
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;person&gt;
+  &lt;name first="Howard Phillips" last="Lovecraft"/&gt;
+  &lt;profession value="writer"/&gt;
+  &lt;profession value="poet"/&gt;
+  &lt;profession value="genius"/&gt;
+&lt;/person&gt;
+</pre>
+</div>
+<div class='vspace'></div><div><img src='../uploads/Uni/XMLNFes2.jpg' alt='' title='' /></div>
+<p class='vspace'>La scelta di utilizzare elementi figli o attributi dipende da cosa dobbiamo fare. Nel momento in cui effettuiamo la scelta però dobbiamo ricordare che gli attributi sono limitati, in quanto il loro valore è semplicemente una stringa di testo. Quindi una struttura ad elementi sarà sicuramente più flessibile ed estensibile.<br />
+<a name='s2' id='s2'></a>
+</p><h2>Nomi XML</h2>
+<p>Le regole elencate qui sotto vanno rispettate per la definizione dei nomi degli elementi, degli attributi e di altre strutture.<br />I nomi XML possono contenere:
+</p><ul><li>qualsiasi carattere alfanumerico
+<ul><li>lettere inglesi dalla A alla Z, dalla a alla z, cifre da 0 a 9
+</li><li>lettere non inglesi, numeri, ideogrammi
+</li></ul></li><li>i tre caratteri di punteggiatura: _ - .
+</li></ul><p class='vspace'>non possono contenere:
+</p><ul><li>virgolette; apostrofi; <strong>$</strong>; <strong>&lt;</strong>; <strong>&gt;</strong>; <strong>%</strong>; <strong>;</strong>
+</li></ul><p class='vspace'>possono iniziare solo con:
+</p><ul><li>lettere
+</li><li>ideogrammi
+</li><li>_
+</li></ul><p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Referenze a entità</h2>
+<p>Ci sono 5 referenze a entità:
+</p><ul><li>&alt;
+<div class='indent'>il carattere &lt;
+</div><div class='indent'>motivo: altrimenti il parser interpreta il carattere &lt; come inizio di un tag
+</div></li><li><code class='escaped'>&amp;amp;</code>
+<div class='indent'>il carattere &amp;
+</div><div class='indent'>motivo: altrimenti il parser interpreta il carattere &amp; come inizio di una referenza
+</div></li><li><code class='escaped'>&amp;gt;</code>
+<div class='indent'>il carattere &gt;
+</div></li><li><code class='escaped'>&amp;quot;</code>
+<div class='indent'>le virgolette "
+</div></li><li><code class='escaped'>&amp;apos;</code>
+<div class='indent'>virgoletta singola '
+</div></li></ul><p class='vspace'><ins>NOTA</ins>:<br />Le prime due sono obbligatorie, mentre le altre tre sono opzionali.<br />I dati di tipo carattere all'interno di un elemento non possono contenere i caratteri sopra elencati senza che questi siano sottoposti ad <em>escape</em> perché altrimenti vengono interpretati in modo scorretto.<br />In pratica se nel testo serve inserire quei caratteri bisogna sottoporli ad escape tramite la referenza. Quando il parser legge il documento andrà a sostituire &alt; con il carattere <strong>&lt;</strong>. Se non si utilizzasse la referenza a entità il parser interpreterebbe il &lt; come inizio di un tag.<br />
+</p><h3>Sezioni CDATA</h3>
+<p>Una sezione CDATA corrisponde a un contenuto testuale puro senza alcuna sostituzione o espansione di testo.<br />Le sezioni CDATA entrano in gioco nel momento in cui nel nostro documento abbiamo delle porzioni di codice sorgente XML o HTML con molti caratteri <strong>&lt;</strong> e <strong>&amp;</strong> da dover quindi sostituire con le rispettive referenze a entità. Per evitare di dover scrivere decine di referenze a entità possiamo racchiudere ogni porzione di codice all'interno di una sezione <strong>CDATA (Character DATA)</strong>.<br />Una sezione CDATA inizia con:
+</p><ul><li><strong>&lt;![CDATA[</strong>
+</li></ul><p>e finisce con:
+</p><ul><li><strong>]]&gt;</strong>
+</li></ul><p class='vspace'>L'utilità di ciò consiste nel fatto che tutto quello che si trova all'interno della sezione CDATA non viene interpretato dal parser, ma viene trattato come <em>dato di tipo carattere</em>, non come markup. Quindi i caratteri &lt; e &amp; posso inserirli senza dover ricorrere alla referenza a entità, questo perché non vengono interpretati come inizio di un tag o inizio di una referenza.<br />
+<ins>NOTA</ins>:<br />all'interno di una sezione CDATA non può <strong>MAI</strong> comparire la sequenza di caratteri ]]&gt;, perché sarebbe ovviamente interpretata come fine della sezione CDATA.
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>Commenti</h2>
+<p>I commenti XML sono identici ai commenti HTML.<br />Iniziano con
+</p><ul><li><strong>&lt;!--</strong>
+</li></ul><p>terminano con
+</p><ul><li><strong>--&gt;</strong>
+</li></ul><p class='vspace'><ins>Esempio</ins>:<br /><em>&lt;!-- mmm ma che carino questo commento: Il sentimento più forte e più antico dell'animo umano è la paura, e la paura più grande è quella dell'ignoto --&gt;</em><br /><br />
+<ins>NOTE</ins>:<br />- possono apparire in qualsiasi punto all'interno dei dati di tipo carattere e prima o dopo l'elemento radice.<br />- Non possono apparire all'interno di un tag o all'interno di altri commenti.
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h2>Istruzioni di elaborazione</h2>
+<p>Le istruzioni di elaborazione sono un mezzo che serve per passare informazioni ad applicazioni che potrebbero leggere il documento.
+Iniziano con
+</p><ul><li><strong>&lt;?</strong> e subito dopo va inserito un <em>target</em> che indica il nome dell'applicazione per la quale è stata inserita l'istruzione di elaborazione.
+</li></ul><p class='vspace'>terminano con
+</p><ul><li><strong>?&gt;</strong>
+</li></ul><p class='vspace'>Ovviamente all'interno dei due delimitatori vanno inserite istruzioni appropriate in base all'applicazione utilizzata.<br />Le istruzioni di elaborazione vengono considerate markup, non elementi. Quindi possono comparire in qualunque parte del documento, tranne che all'interno di un tag.<br />
+<ins>Esempio</ins>:<br />
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?php
+if( isset($_COOKIE["visite"]) )
+    $numero_visite=(int)$_COOKIE["visite"]+1;
+else
+    $numero_visite=1;
+// Il cookie verrà cancellato dal client dopo 3600 secondi = 1 ora
+setcookie("visite", $numero_visite, time()+3600);
+#setcookie("visite", $numero_visite, time()-3600);
+?&gt;
+</pre>
+</div>
+<p class='vspace'><a name='s6' id='s6'></a>
+</p><h2>La dichiarazione XML</h2>
+<p>La dichiarazione XML non è obbligatoria, però dovrebbe sempre comparire all'inizio del documento XML. Ha l'aspetto di una istruzione di elaborazione con nome <strong>xml</strong> e attributi <strong>version</strong>, <strong>standalone</strong> e <strong>encoding</strong>.<br />
+<ins>Esempio dichiarazione</ins>:<br />
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8" standalone"yes"?&gt;
+&lt;autore&gt;&lt;name&gt;
+Lovecraft
+&lt;/autore&gt;&lt;/name&gt;
+</pre>
+</div>
+<div class='vspace'></div><h4>version</h4>
+<p>L'attributo version indica la versione utilizzata di XML. Può essere 1.0 o 1.1, ma solitamente è 1.0 in quanto XML è stato progettato per essere compatibile sia in avanti che indietro.
+</p>
+<div class='vspace'></div><h4>encoding</h4>
+<p>L'attributo encoding indica la codifica utilizzata per il testo. E' opzionale e se non viene dichiarato il parser assume che sia stato utilizzato il set di caratteri Unicode.
+</p>
+<div class='vspace'></div><h4>standalone</h4>
+<p>L'attributo standalone può avere valore <strong>yes</strong> o <strong>no</strong> ed è legato alla lettura del DTD da parte dell'applicazione.<br />Se ha valore no: l'applicazione deve leggere un DTD esterno per determinare i valori appropriati per le porzioni del documento.
+Se ha valore yes: il documento non fa uso di DTD(come per gli esempi visti fino ad ora) oppure il DTD è stato inserito direttamente dentro il documento.<br />Anche questo attributo è opzionale e se omesso il parser assume come valore di default no.
+</p>
+<p class='vspace'><a name='s7' id='s7'></a>
+</p><h2>Regole documento ben formato</h2>
+<p>Le regole che ogni documento XML deve rispettare per poter essere ben formato sono:
+</p><ul><li>a ogni tag iniziale deve corrispondere un tag finale
+</li><li>gli elementi non possono sovrapporsi
+</li><li>deve esistere esattamente un elemento radice
+</li><li>i valori degli attributi devono essere specificati tra apici
+</li><li>un elemento non può contenere due attributi che abbiano lo stesso nome
+</li><li>i commenti e le istruzioni di elaborazione non possono apparire all'interno dei tag
+</li><li>non deve apparire nessun carattere &lt; &amp; non sottoposto ad escape all'interno dei caratteri di un elemento o di un attributo(se non usiamo CDATA)
+</li></ul><p class='vspace'>Come abbiamo già detto in precedenza il parser si limita a segnalare la presenza di errori, non corregge nessun problema. Quindi non avviene come in HTML che una eventuale dimenticanza viene corretta automaticamente(ad esempio la chiusura di un tag), questo viene fatto per evitare la generazione di bug dovuti alla copertura di altri bug.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: July 10, 2009, at 01:05 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLNozioniFondamentali?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLNozioniFondamentali?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

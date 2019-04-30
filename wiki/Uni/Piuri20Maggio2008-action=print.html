@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Lezione del 20 Maggio 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri20Maggio2008.html' title='Sistemi Operativi - Lezione del 20 Maggio 2008'>Sistemi Operativi - Lezione del 20 Maggio 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Lezione del 20 Maggio 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3 - Allocazione dei processi</strong></span>
+</p>
+<p class='vspace'>In questo contesti (Sistemi Distribuiti) allocare processi vuol dire perseguire i seguenti scopi:
+</p><ul><li>bilanciare il carico tra le varie macchine
+</li><li>sfruttare bene le risorse delle macchine
+</li><li>mettere i processi sulle macchine adatte (requisiti HW o SW)
+</li><li>avere tolleranza ai guasti
+</li></ul><p class='vspace'>Quello che <strong>non</strong> si fa è di avere uno schedulatore generale per tutto il sistema distribuito: è praticamente impossibile, e si avrebbe un overhead gigantesco.
+</p>
+<p class='vspace'>Invece, si schedula solo all'interno di una stessa macchina, e i processi vengono allocati qua e là a seconda delle esigenze.
+</p>
+<div class='vspace'></div><h3>Allocazione statica</h3>
+<p>Si decide su quale macchina allocare un processo all<strong>'avvio</strong> del processo stesso, in base a qualche parametro. Una volta decisa l'allocazione, il processo non si sposta più da quella macchina fino alla sua morte
+</p>
+<p class='vspace'>L'allocazione statica può essere:
+</p><ul><li><strong>completa</strong>
+</li><li><strong>incrementale</strong>
+</li></ul><p class='vspace'>L<strong>'allocazione completa</strong> si usa quando stabilisco che un processo, tutte le volte che sarà eseguito, sarà sempre allocato sulla stessa macchina. Lo decido una volta per tutte.
+</p>
+<p class='vspace'>Con l<strong>'allocazione incrementale</strong>, invece, la decisione sull'allocazione viene fatta ad ogni avvio del processo, e quindi è possibile che in 2 vite diverse il processo sia stato attivato su 2 macchine diverse.
+</p>
+<div class='vspace'></div><h4>Funzione obiettivo</h4>
+<p>Dicevamo prima che si decide su quale macchina allocare il processo in base a qualche parametro. Questi parametri entrano a far parte di una <strong>funzione obiettivo</strong>, la quale si prefigge di ottenere - ma no? - un certo obiettivo.
+</p>
+<p class='vspace'>Quali obiettivi? Ce ne sono svariati, ad esempio sfruttare meglio i processori o mettere il processo dove la sua esecuzione sia meno costosa.
+</p>
+<p class='vspace'>Per determinare l'obiettivo, la funzione deve rispettare però dei <strong>vincoli</strong>, che bene o male abbiamo già capito quali sono:
+</p><ul><li>dove si trovano i processi stessi
+</li><li>dove si trovano le risorse che il processo usa
+</li><li>incompatibilità eventuale con HW o SW
+</li><li>incompatibilità eventuale con altri processi in esecuzione
+</li></ul><p class='vspace'>Gli <strong>algoritmi di allocazione</strong> sono quelli che implementano una funzione obiettivo, tenendo presente i vincoli imposti.
+</p>
+<p class='vspace'>Ci sono due tipi di algoritmi di allocazione:
+</p><ul><li><strong>deterministico</strong>
+</li><li><strong>euristico</strong>
+</li></ul><p class='vspace'>Un <strong>algoritmo deterministico</strong> in genere ci dà la soluzione ottima. Quello <strong>euristico</strong> invece la approssima.
+</p>
+<p class='vspace'>Quando uso l'uno e quando l'altro? Un algo deterministico in genere sarà più lungo e pesante, e quindi è meglio se lo si fa girare una volta sola quando prendo le decisioni sull<strong>'allocazione statica completa</strong>. Al contrario, se ad ogni nascita di processo devo decidere rapidamente dove allocarlo (<strong>allocazione incrementale</strong>) allora meglio usare un algo euristico, più veloce. Si corre se no il rischio di passare il tempo a decidere dove mettere i processi, invece che eseguirli.
+</p>
+<p class='vspace'>Questi algoritmi possono essere <strong>centralizzati</strong> o <strong>distribuiti</strong>. Un algo centralizzato, si sa bene che cosa offre: un single point of failure. Un algo distribuito, a fronte di più complessità, funziona anche se qualche nodo va giù.
+</p>
+<p class='vspace'>Infine, un'altra scelta che ho per questi algo è quella di decidere se eseguirli sulla macchina mittente, o su quella ricevente. E che cosa ciò voglia dire, NON LO SO!:)
+</p>
+<div class='vspace'></div><h3>Allocazione dinamica</h3>
+<p>Se ho un'allocazione incrementale, non avrò mai l'ottimo globale, perché l'inserimento di un nuovo proceso avviene a partire da una situazione preesistente, e quindi non si può fare più di tanto.
+</p>
+<p class='vspace'>Se invece volessi raggiungere questo ottimo, dovrei poter essere in grado di spostare i processi dove è meglio: <strong>allocazione dinamica</strong>.
+</p>
+<p class='vspace'>L'allocazione dinamica è di 2 tipi:
+</p><ul><li><strong>totale</strong> = definisco l'allocazione considerando tutti i processi in giro per il sistema distribuito
+</li><li><strong>parziale</strong> = definisco l'allocazione considerando solo alcuni processi, ad esempio quelli presenti in una sottorete o quello che è
+</li></ul><p class='vspace'>L'algoritmo di allocazione, dicevamo sopra, può essere eseguito più volte. Quando?
+</p><ul><li>periodicamente: ogni tot tempo lo faccio andare
+</li><li>reattivamente: quando si verificano certe condizioni nel sistema, eseguo l'algoritmo (eg una macchina è troppo carica)
+</li><li>volontariamente: è il processo stesso che chiede di essere riallocato altrove, e quindi il sistema provvede a spostare lui e se utile anche gli altri
+</li></ul><p class='vspace'>Come sopra, c'è sempre la funzione obiettivo e i vincoli da rispettare. In aggiunta c'è un altro fattore da tenere in considerazione: il <strong>tempo di migrazione</strong>. Infatti, non è così indolore spostare un processo da una parte all'altra.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 4 - Agenti mobili</strong></span>
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><strong>OCIO: argomento appena accennato e di scarsa rilevanza...</strong>
+</p>
+<p class='vspace'>Obiettivo = innalzare il livello di astrazione. Il modello della computazione ad oggetti mi ha già permesso un certo tipo di astrazione, nel senso che incapsulo dati e metodi in un solo oggetto.
+</p>
+<p class='vspace'>Ma ciò che rimane è che l'oggetto è passivo, ed è in attesa che qualcuno lo esegua.
+</p>
+<p class='vspace'>Un <strong>agente mobile</strong> invece è un'entità autonoma, inserita in un ambiente, pro-attiva e cooperante. <strong>Pro-attiva</strong> vuol dire che ogni agente è dotato di vita propria. Sa muoversi da solo tra le varie macchine, sa scoprire servizi e risorse.
+</p>
+<p class='vspace'>La progressione in astrazione è: oggetti =&gt; agenti =&gt; ageni mobili.
+</p>
+<p class='vspace'>Ad ogni modo, occorre un supporto a livello di SO per fare tutte ste cose carine.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 5 - Coordinamento distribuito tra processi - Parte 1</strong></span>
+</p>
+<p class='vspace'>Devo poter ordinare gli eventi, se voglio coordinare i processi, e per ordinare qualcosa mi occorre una <strong>nozione di tempo globale</strong>. Ma non posso averla: ogni macchina ha il suo orologio etc. =&gt; è impossibile che siano tutte sincronizzate. Vediamo qualche trucco per ovviare a ciò.
+</p>
+<div class='vspace'></div><h3>Relazione "accaduto prima"</h3>
+<p>Definiamo la relazione <strong>accaduto prima</strong>.
+</p>
+<div class='vspace'></div><ul><li>Se A e B sono eventi di uno stesso processo, e A viene prima di B, allora scrivo <strong>A -&gt; B</strong>
+</li><li>Se A è l'evento della trasmissione di un messaggio da parte di un processo, e B è l'evento della ricezione dello stesso messaggio da parte di un altro processo, allora <strong>A -&gt; B</strong>
+</li><li>Se A -&gt; B, e B -&gt; C, allora A -&gt; C (proprietà transitiva)
+</li></ul><p class='vspace'>Due eventi che <strong>non sono</strong> in relazione li posso considerare <strong>concorrenti</strong>, perché non si influenzano. Se invece sono in relazione, vuol dire che possono influenzarsi a vicenda.
+</p>
+<p class='vspace'>Bene, come faccio a realizzare queste relazioni?
+</p>
+<div class='vspace'></div><h4>Marca di tempo</h4>
+<p>Posso generare delle marche di tempo da parte di un server centralizzato, e distribuirle ai vari sistemi.
+</p>
+<p class='vspace'>Ma la soluzione migliore è invece questa: ogni macchina mantiene un orologio o contatore privato. Quando riceve un messaggio da un'altra macchina, confronta il timestamp del messaggio in arrivo con il timestamp proprio. Se il timestamp in arrivo è <strong>minore</strong> del mio timestamp, tutto bene. Al contrario, se il timestamp in arrivo è <strong>maggiore</strong> del mio, non va bene, perché dicevamo sopra che gli eventi di comunicazione sono in relazione "accaduto prima". Quello che devo fare è prendere quel timestamp in arrivo, aggiungerci uno e a partir da lì ricominciare a contare.
+</p>
+<p class='vspace'>Notiamo che in questo modo NON abbiamo un orologio globale. Abbiamo però una relazione prima - dopo condivisa da tutti.
+</p>
+<div class='vspace'></div><h3>Mutua esclusione in un sistema distribuito</h3>
+<p>Bisogna gestire il lock in un sistema distribuito. Ci sono tre vie:
+</p><ol><li>avere un singolo sistema centralizzato che dà il lock a tutti, e tutti i processi si mettono in coda da lui
+</li><li>avere un qualche algoritmo distribuito
+</li><li>uso di token
+</li></ol><p class='vspace'>Nel caso numero 1, avere un solo sistema che fa tutto non è il massimo della vita, in quanto la macchina si intaserebbe alla svelta, e al solito se cade lei gli altri processi non vanno più avanti.
+</p>
+<p class='vspace'>Nel caso numero 2, invece, si usano le marche di tempo. Se un processo P vuole entrare in una sezione critica, genera una marca di tempo e la invia a tutti gli altri.
+</p>
+<p class='vspace'>Gli altri processi (chiamiamolo processo Q per comodità) reagiscono in modo diverso a seconda delle condizioni:
+</p><ul><li>se Q è già nella sua sezione critica, non risponde a P
+</li><li>se non intende entrare, risponde subito
+</li><li>se intende entrare, ma non l'ha ancora fatto, confronta il suo timestamp con quello inviato da P
+<ul><li>se il timestamp di Q è maggiore di quello di Q, deve attendere: risponde quindi a P
+</li><li>se invece ha timestamp minore, non risponde, perché è lui ad avere la precedenza su P
+</li></ul></li></ul><p class='vspace'>Anche qui non importa avere un tempo unico per tutti, è sufficiente avere un tempo relativo tra le varie macchine. Questo sistema è tollerante ai guasti, e garantisce l'assenza di starvation e di deadlock.
+</p>
+<p class='vspace'>Per quanto riguarda il <strong>passaggio di token</strong>, si mettono tutti i processi in un anello logico, e il token gira per l'anello. Il token rappresenta l'autorizzazione a usare una risorsa. Se ho il token, uso la risorsa. Quando ho finito, lascio il token al prossimo processo nell'anello.
+</p>
+<p class='vspace'>Occorre però un sistema per ricreare il token in caso esso si perda nei meandri della rete.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 5 - Coordinamento parte 2</strong></span>
+</p>
+<p class='vspace'>Adesso vediamo come garantire l<strong>'atomicità</strong> alle operazioni, usando il concetto di <strong>transazione</strong> di pierangelica memoria.
+</p>
+<p class='vspace'>L'idea di fondo è dividere la transazione in sottotransazioni, ed usare il <strong>protocollo di commit a 2 fasi</strong>.
+</p>
+<p class='vspace'>Questo protocollo ha bisogno di un commit globale tra tutte le macchine che sono interessate dalla transazione, ovvero che stanno realizzando almeno una delle sottotransazioni in cui la transazione viene divisa. Devono essere <strong>tutte</strong> d'accordo, se ce n'è una che fa abort, allora anche tutte le altre devono farlo.
+</p>
+<p class='vspace'>L'idea di dividere la transazione in sottotransazioni dipende dalla volontà di sfruttare per quanto più possibile il parallelismo fisico del nostro sistema distribuito.
+</p>
+<p class='vspace'>Questa situazione, però, genera <strong>concorrenza</strong>.
+</p>
+<div class='vspace'></div><h3>Concorrenza</h3>
+<p>Per gestire la concorrenza, ho diverse strade.
+</p>
+<p class='vspace'>Posso poter decidere di tenere i <strong>dati replicati</strong>: avendo più copie degli stessi dati, il problema cade alla radice. Ne nasce però un'altro, ovvero quello di mantenere la sincronia tra le diverse copie dei dati.
+</p>
+<p class='vspace'>Posso avere un <strong>coordinatore centralizzato</strong>, senza i dati replicati. I processi chiedono tutto a lui, e ci pensa a tutto lui. Abbiamo i soliti problemi di performance e di affidabilità.
+</p>
+<p class='vspace'>Posso avere <strong>coordinatori multipli</strong>, senza dati replicati. Ogni macchina gestisce i lock per le proprie risorse. Nascono difficoltà quando si deve gestire uno stallo, perché occorre sentire tutti i coordinatori. Ma è comunque meglio per prestazioni e tolleranza ai guasti.
+</p>
+<p class='vspace'>Posso avere un <strong>coordinatore del lock a maggioranza</strong>. Replico tutti i dati, e ogni replica si gestisce i suoi lock. I dati vanno poi però sincronizzati per evitare discrepanze tra le varie copie.<br />Inoltre, un processo deve ricordarsi di fare richieste di lock a <strong>tutte</strong> le copie:
+</p><ul><li>se ottengo <strong>la metà più uno</strong> di risposte positive, allora la risorsa è mia: ho il lock globale
+</li><li>se no, attendo
+</li></ul><p>Si vede subito che è abbastanza complicato da gestire.
+</p>
+<p class='vspace'>C'è infine il <strong>protocollo polarizzato</strong>, che usa ancora i dati replicati, e usa la stessa tecnica del lock a maggioranza. La differenza è che ogni macchina gestisce per conto suo i lock condivisi, mentre si appella ancora alla maggioranza per quanto riguarda i lock esclusivi. Rispetto al lock a maggioranza, è un po' meno pesante.
+</p>
+<div class='vspace'></div><h3>Se il coordinatore va giù?</h3>
+<p>Occorre sostituirlo, dato che ce n'è uno centralizzato. A questo scopo, ho due algoritmi disponibili: l<strong>'algoritmo del bullo</strong> e l<strong>'algoritmo dell'anello</strong>.
+</p>
+<p class='vspace'><strong>Algoritmo del bullo</strong>: quando un processo P si accorge che il coordinatore è morto, allora manda 1 messaggio di inizio elezione a tutti i processi che hanno priorità più alta della sua. Se entro 1 certo timeout non riceve risposta, assume di essere diventato lui il coordinatore, e lo comunica a tutti. Se invece ottiene risposta, attende, in quanto le risposte arriveranno solo da processi con priorità più alta e quindi più "importanti" di lui. Anche qui, se ha ricevuto risposte e si mette in attesa, ma non arriva il messaggio di avvenuta elezione, ricomincia da capo.
+</p>
+<p class='vspace'><span  style='color: red;'><strong>OCIO: ROBA MISTERIOSA, CONTROLLARE ALTROVE!</strong> - <strong>Algoritmo dell'anello</strong>: si crea una lista di processi attivi, all'inizio vuota. P attiva l'elezione inviando la lista in giro per l'anello logico dei processi. Se un processo si vede arrivare la lista vuota, si dichiara disponibile e si mette lui stesso nella lista, assiema al processo da cui l'ha ricevuta, e la forwarda al prossimo elemento dell'anello.</span>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 6 - Deadlock in ambiente distribuito</strong></span>
+</p>
+<p class='vspace'>Qui riprendiamo tutti gli elementi già visti a proposito del deadlock, e li trasportiamo in un ambiente distribuito.
+</p>
+<div class='vspace'></div><h3>Prevenzione dello stallo</h3>
+<p>Ecco le mie alternative:
+</p><ul><li>estendere l'ordinamento globale a tutte le risorse del sistema. L'overhead è basso.
+</li><li>estendere l'algoritmo del banchiere: molto costoso
+</li><li>timestamp con rilascio della risorsa: wait-die e wound-wait = ???
+</li></ul><div class='vspace'></div><h3>Rilevamento dello stallo</h3>
+<p>Uso un grafo di allocazione delle risorse, ma distribuito, nel senso che riguarda tutte le macchine del mio sistema distribuito.
+</p>
+<p class='vspace'>Ogni macchinina deve avere il proprio grafetto delle risorsine, ma occorre che da qualche parte ci sia l<strong>'unione</strong> di tutti sti grafetti, perché è possibile che ci siano lock visibili solo dall'unione dei grafetti e non dal singolo grafetto.
+</p>
+<p class='vspace'>C'è però un'altra cosuccia da notare: per realizzare l'unione, si mandano messaggini a chi di dovere. Ma è possibile che nel tempo intercorso tra l'invio del messaggio e la ricostruzione dell'unione dei grafetti, la situazione su di una macchina sia già cambiata in peggio.
+</p>
+<p class='vspace'>Questo vuol dire che l'assenza di cicli nel grafone delle risorsone globale <strong>non</strong> vuol dire che non ci sono dl in quel momento, bensì non ce n'erano all'invio dei messaggi. Al contrario, se c'è un ciclio nel grafone, allora lo stallo è sicuro.
+</p>
+<p class='vspace'>Nasce dunque la necessità di tenere aggiornato il grafone. Quando una macchina dovrebbe inviare gli aggiornamento che ha fatto in locale al proprio grafetto?
+</p><ul><li>ad ogni modifica
+</li><li>oppure dopo un certo numero di cambiamenti al grafetto
+</li></ul><p class='vspace'>Finora abbiamo però supposto che ci fosse una macchina sola che si occupasse di crearsi il grafone a partire dai grafetti. Ma si può avere un algoritmo distribuito.
+</p>
+<p class='vspace'>Ogni macchina si costruisce il proprio grafetto. In presenza di una richesta ad una <strong>macchina esterna</strong>, nel proprio grafo mette il nodo <strong>Pex</strong>, ad esempio, ad indicare <strong>processo esterno</strong>.
+</p>
+<p class='vspace'>Se non ci sono cicli nel mio grafetto, ok. Se invece ci sono cicli, io sono in stallo. Se c'è un ciclo che coinvolge il nodo Pex, allora devo andare a verificare se veramente, all'esterno, c'è un ciclo.
+</p>
+<p class='vspace'>In altre parole, un ciclo che coinvolge il nodo Pex va verificato, perché non è detto che globalmento esso sia un ciclo.
+</p>
+<p class='vspace'>Quindi, comunico con le altre macchine e poi si vede se il ciclo c'è o mica.
+</p>
+<div class='vspace'></div><h3>Gestione dello stallo</h3>
+<p>Se trovo un ciclo, devo trovare una vittima e costringerla a fare rollback. Ma non solo: tutti i processi che interagivano con lei dovranno rollbackare.
+</p>
+<p class='vspace'>Il problema è che, a causa dei tempi di trasmissione, si possano rilevare dei falsi cicli, ovveri dei cicli causati da rappresentazioni datate della situazione delle varie macchine. Avrei quindi dei dl falsi, e farei rollbackare inutilmente una vittima.
+</p>
+<p class='vspace'>A questo scopo, occorre avere un timestamp univoco per tutto il sistema distribuito (e che vuol dire?).
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 7 - Comunicazione tra processi in rete</strong></span>
+</p>
+<div class='vspace'></div><h3>Scambio di messaggi</h3>
+<p>Trovo un buffer da qualche parte, e lo uso per scambiare i messaggi tra i processi. Le funzioni per interagire con sto buffer saranno implementate tramite RPC.
+</p>
+<p class='vspace'>Da qualche parte vuol dire su una qualsiasi macchina coinvolta, o anche una terza macchina.
+</p>
+<div class='vspace'></div><h3>Mailbox</h3>
+<p>Funziona esattamente come per un sistema singolo. Anche qui la mailbox è remota, locale etc.
+</p>
+<div class='vspace'></div><h3>File</h3>
+<p>Idem come sopra, con il lock distribuito
+</p>
+<div class='vspace'></div><h3>Socket</h3>
+<p>bla bla bla
+</p>
+<p class='vspace'>Insomma, posso fare tutto quello che facevo con i processi su di una singola macchina, ad esclusione della memoria condivisa e delle pipe, per motivi ovvi.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Filesystem distribuiti</strong></span>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 1 - Struttura e funzioni</strong></span>
+</p>
+<p class='vspace'>Devo accedere ai vari FS nelle varie macchine in modo <strong>TRASPARENTEEEEEEEEEEE</strong> ed efficiente. Ho due approcci:
+</p><ul><li>Network File System = NFS (che è anche il nome di un filesytem reale)
+</li><li>Distributed File System = DFS
+</li></ul><p class='vspace'>NFS = la collezione dei FS delle macchine locali. Monto localmente i FS remoti.<br />DFS = integrazione di tutti i FS in un unico FS globale: tutte le macchine vedono lo stesso FS
+</p>
+<div class='vspace'></div><h3>Nome del file:</h3>
+<p>NFS = il nome è preceduto dall'indicatore della macchina. Quando monto il FS remoto localmente, il percorso per prendere quel file dipenda da DOVE è stato montato.
+</p>
+<p class='vspace'>DFS = il nome è unico per tutto il sistema. Non il nome stesso: intendo dire che c'è un unico percorso, in tutto il sistema, che porta a quel file.
+</p>
+<p class='vspace'>Se la locazione del file è visibile all'utente è NFS. Se è TRASPARENTTTEEE è DFS.
+</p>
+<p class='vspace'>La cosa carina del DFS è che posso spostare fisicamente un file da una macchina all'altra, ma il SO deve fare in modo che la sua posizione logica sia sempre quella. Il SO potrebbe anche pensare di fare copie locali di un file fisicamente remoto, per velocizzare le cose, a patto di sincronizzarne poi le modifiche.
+</p>
+<p class='vspace'>È inoltre possibile migrare il file: il percorso logico è sempre lo stesso, ma fisicamente l'ho spostato dove mi fa più comodo.
+</p>
+<div class='vspace'></div><h3>Accesso al file</h3>
+<p>NFS: posso avere:
+</p><ul><li>chiamate implementate come RPC
+</li><li>copia del file in locale
+</li></ul><p class='vspace'>DFS: le chiamate locali vengono trasformate in eventuali chiamate remote: il SO pensa a tutto lui, l'utente non si deve accorgere di niente. Ovviamente è un compito pesante per il SO.
+</p>
+<p class='vspace'>Posso anche decidere di avere una cache da qualche parte. Ho diverse possibilità:
+</p><ul><li>la metto sul server dove il file è presente
+</li><li>la metto sulla macchina che sta usando il file
+</li><li>la metto in una macchina accessibile da una sottorete che fa uso frequente di quel file
+</li></ul><p class='vspace'>E quando aggiorno la cache? Le politiche sono più o meno sempre quelle:
+</p><ul><li>write-through: ogni volta che scrivo in cache, scrivo sincronicamente anche nel file
+</li><li>delayed-write: scrivo dopo, quando mi fa più comodo
+</li><li>write-on-close: scrivo quando chiudo il file
+</li></ul><p class='vspace'>La verifica della coerenza tra cache e dati reali può essere iniziata sia dal server che dal client.
+</p>
+<div class='vspace'></div><h3>Stato del file server</h3>
+<p>Il concetto di stato del file server rappresenta tutte le informazioni che caratteizzano lo stato di uso di 1 file.
+</p>
+<p class='vspace'>Posso avere un file server senza stato: ogni richiesta ricevuta viene soddisfatta in modo indipendente. Il problema è che il server deve controllare ogni volta dove si trova il file, eventuali condivisioni e così via.
+</p>
+<p class='vspace'>E allora, è meglio anche per i FS distribuiti usare la semantica che già abbiamo visto per i FS locali: usare la <strong>open()</strong> e la <strong>close()</strong>. In questo modo, un processo ottiene una volta per tutte le informazioni che gli servono per accedere a quel dannato file, e lo può fare rapidamente senza stare lì ad interpellare il file server per ogni scrittura di byte.
+</p>
+<p class='vspace'>Ecco quindi che i file server con stato implementano la chiamata open() e un identificatore di connessione, per offrire a noialtri più efficienza.
+</p>
+<div class='vspace'></div><h3>Replica dei file</h3>
+<p>La replica deve essere T-R-A-S-P-A-R-E-N-T-E.
+</p>
+<p class='vspace'>Si replicano i files per maggiore efficienza, e AL SOLITO devo stare attento a sincronizzare i dati.
+</p>
+<p class='vspace'>E con questo abbiamo FINITO!!!!!!!!!!
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri20Maggio2008)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Algoritmi e strutture dati - Cammini minimi</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='A-CamminiMinimi.html' title='Algoritmi e strutture dati - Cammini minimi'>Algoritmi e strutture dati - Cammini minimi</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e strutture dati - Cammini minimi ::</strong>
+</pre><div class='vspace'></div><h3>Alberi di connessione minima</h3>
+<p>Si vuole trovare un sottoinsieme aciclico che connetta tutti i vertici di un grafo e tale che venga minimizzato il peso totale. Questo sottoinsieme aciclico deve formare un <strong>albero di copertura</strong>. Il problema di costruire un albero di copertura si può risolvere con due algoritmi: <strong>Kruskal</strong> e <strong>Prim</strong>. Questi due algoritmi vengono eseguiti nel tempo O(E lg V) se usano heap binari mentre quello di Prim se usa heap di Fibonacci viene eseguito nel tempo O(E + V lg V).<br />I due algoritmi illustrano inoltre un'euristica di ottimizzazione: <strong>la strategia greedy</strong>. Questa strategia prescrive di fare la scelta più conveniente quando bisogna scegliere tra varie alternative durante l'esecuzione di un algoritmo.
+</p>
+<p class='vspace'>Sia dato un grafo non orientato G = (V, E) con una funzione peso w: E ---&gt; R, si vuole costruire un albero di connessione minima.<br />La strategia greedy utilizza un algoritmo generico che fa crescere l'albero di copertura minima di un arco alla volta.<br />L'algoritmo considera un sottoinsieme A di un qualche albero di copertura minimo e ad ogni passo viene determinato un arco che può essere aggiunto ad A senza violare la proprietà di A (deve essere un sottoinsieme di un qualche albero di copertura minimo). Questo arco è detto <strong>arco sicuro per A</strong> perché può essere aggiunto ad appunto senza violare la sua proprietà.
+</p>
+<p class='vspace'>Si dice <strong>TAGLIO(S, V-S)</strong> di un grafo non orientato, una partizione di V.<br />Un arco attraversa il taglio se uno dei suoi estremi è in S e l'altro in V-S.<br />Un taglio rispetta un insieme A di archi se nessun arco di A attraversa il taglio.<br />Si dice <strong>ARCO LEGGERO</strong>: l'arco che attraversa il taglio ed il suo peso è minimo tra i pesi degli archi che attraversano quel taglio.
+</p>
+<div class='vspace'></div><h5>KRUSKAL (caso speciale dell'algoritmo generico)</h5>
+<p>L'insieme A è una foresta e l'arco sicuro che viene aggiunto ad A è sempre un arco di peso minimo che connette due componenti distinte.<br />Vengono esaminati gli archi ed ordinati in ordine di peso dal più piccolo al più grande. Successivamente per ogni arco si controlla se le estremità appartengono allo stesso albero; se è così l'arco viene scartato perchè non può essere aggiunto alla foresta senza creare cicli. Se invece i due vertici appartengo a due alberi diversi, viene aggiunto l'arco e i due vertici vengono fusi in un unico insieme.<br />Tempo <strong>O(E lg E)</strong>.
+</p>
+<div class='vspace'></div><h5>PRIM (caso speciale dell'algoritmo generico)</h5>
+<p>A forma un singolo albero e l'arco sicuro aggiunto ad A è sempre quello peso minimo che connette l'albero a un vertice non appartenente all'albero.<br />Proprietà: gli archi di A formano un singolo albero.<br />L'albero parte da un arbitrario vertice radice e cresce fino a quando l'albero non copre tutti i vertici in v. Ad ogni passo, viene aggiunto un arco leggero.<br />Durante l'esecuzione dell'algoritmo tutti i vertici che non sono nell'albero risiedono in una coda con priorità Q basata su di un campo chiave key.
+</p><ul><li>Si inizializza la coda con tutti i vertici ponendo al valore infinito la key di ogni vertice, tranne nella radice dove viene posta a zero.
+</li><li>Il predecessore della radice viene posto a NIL.
+</li><li>Vengono poi aggiornati i campi chiave e predecessore di ogni vertice v adiacente ad u ma non appartenente all'albero.
+</li></ul><p>Il colore dei vertici è inizialmente bianco e diventa nero quando il vertice viene aggiunto all'albero.<br />Complessità: <strong>O( V lg V + E lg E)</strong>.
+</p>
+<div class='vspace'></div><h3>Cammini minimi da sorgente unica</h3>
+<p>Dato un grafo G = (V, E) orientato e pesato, il <strong>peso di un cammino</strong> è la somma dei pesi associati agli archi che compongono il cammino.<br />Il <strong>peso minimo da u a v</strong> è uguale al minimo peso tra i cammini uv se esiste un cammino da u a v altrimenti è uguale a infinito.
+</p>
+<p class='vspace'>Varianti del calcolo dei cammini minimi (casi):
+</p><ol><li>cammini minimi da <em>sorgente unica</em> a tutti gli altri vertici;
+</li><li>cammini minimi da <em>ogni vertice ad un'unica destinazione</em>;
+</li><li>cammini minimi da <em>un'unica sorgente ad un'unica destinazione</em>;
+</li><li>cammini minimi da <em>ogni vertice</em> ad <em>ogni altro vertice</em>.
+</li></ol><p class='vspace'>Con i cammini minimi da sorgente unica si possono avere archi con <strong>pesi negativi</strong>.
+Se il grafo:
+</p><ul><li>non contiene cicli di peso negativo raggiungibili dalla sorgente s, allora per ogni vertice il peso del cammino minimo rimane ben definito anche se ha valore negativo;
+</li><li>contiene cicli di peso negativo raggiungibili da s, allora il peso dei cammini minimi non rimangono più ben definiti. Nessun cammino da s a un vertice nel ciclo può essere minimo, dato che un cammino di peso minore può essere sempre trovato seguendo il cammino minimo proposto e quindi percorrendo il ciclo negativo. Il peso del cammino negativo è – infinito.
+</li></ul><p class='vspace'>Se un vertice è raggiungibile da un cammino – infinito allora anche quel vertice avrà valore di – infinito.
+</p>
+<p class='vspace'>Spesso è utile calcolare oltre ai cammini minimi anche i vertici che li compongono.<br />Dato un grafo si mantiene per ogni vertice v un predecessore che può essere un altro nodo o NIL.<br />Alcuni algoritmi gestiscono i predecessori in modo tale da ripercorrere all'indietro un cammino da un nodo all'altro.<br />Ricordiamo inoltre, che un cammino minimo, non può contenere alcun tipo di cicli.<br />Se un cammino è minimo anche i suoi sottocammini allora sono cammini minimi.
+</p>
+<div class='vspace'></div><h5>TECNICA DEL RILASSAMENTO</h5>
+<p>La tecnica del rilassamento è utilizzata dagli algoritmi che studieremo a breve.<br />Questa tecnica consiste nel associare ad ogni vertice un attributo d[v] chiamato <strong>stima di cammino minimo</strong> che costituisce un limite superiore al peso di cammino minimo da s a v; e a diminuire ripetutamente questo limite superiore al reale peso di cammino minimo di ogni vertice, finché il limite superiore non diventa uguale al peso di cammino minimo stesso.<br />Gli attributi d[v] e il predecessore vengono inizializzati sempre rispettivamente a infinito e NIL.
+</p><div class='indent'><em>d[v] = 0 per v = s</em>
+</div><p>Si applica su un arco e verifica se passando per u è possibile diminuire la distanza per v.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+s                v           s               v
+5 -----2-------&gt; 9           5 -----2-------&gt;6
+       |                            |
+       | relax                      | relax
+       |                            |
+5 -----2-------&gt; 7           5 -----2-------&gt;6</pre>
+<p class='vspace'>Nell'algoritmo di Dijkstra e nell'algoritmo dei cammini minimi per grafi orientati aciclici, ogni arco viene rilassato una sola volta; mentre con Bellman – Ford viene rilassato più volte.
+</p>
+<div class='vspace'></div><h5>DIJKSTRA</h5>
+<p>Questo algoritmo risolve il problema di cammini minimi con sorgente singola su un grafo orientato e pesato se tutti i pesi degli archi <strong>non sono negativi</strong>.<br />Seleziona ripetutamente il vertice u che appartiene a V-s con la minima stima di cammino minimo, inserisce u in S e rilassa tutti gli archi uscenti da u.<br />L'algoritmo mantiene una coda a priorità Q contenente tutti i vertici di V-S, usando come chiave i rispettivi valori d.<br />Si assume, inoltre, che il grafo sia rappresentato con liste di adiacenza.<br />Utilizza la strategia greedy vista in precedenza.<br />Complessità: <strong>O(n^2)</strong>.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-dijkstra.gif' alt='' title='' /></div>
+<p class='vspace'>Videolezioni su YouTube con esempi pratici:
+</p>
+<div class='vspace'></div><ul><li><a class='urllink' href='https://www.youtube.com/watch?v=fgdCNuGPJnw' title='' rel='nofollow'>https://www.youtube.com/watch?v=fgdCNuGPJnw</a>
+</li><li><a class='urllink' href='https://www.youtube.com/watch?v=607Y3dJGUHI' title='' rel='nofollow'>https://www.youtube.com/watch?v=607Y3dJGUHI</a>
+</li><li><a class='urllink' href='https://www.youtube.com/watch?v=S_5W5bImTH4' title='' rel='nofollow'>https://www.youtube.com/watch?v=S_5W5bImTH4</a>
+</li></ul><div class='vspace'></div><h5>BELLMAN – FORD</h5>
+<p>Questo algoritmo risolve il problema di cammini minimi con sorgente singola su un grafo orientato e pesato se tutti i pesi degli archi possono essere <strong>negativi</strong>.<br />Restituisce un valore booleano che indica se esiste o no un ciclo di peso negativo raggiungibile dalla sorgente.<br />Se esiste l'algoritmo indica che non esiste soluzione altrimenti se non esiste produce i cammini minimi e i loro pesi.<br />Questo algoritmo usa anch'esso, come Dijkstra, la tecnica del rilassamento.<br />Esegue V-1 passate ma esegue molti rilassamenti inutili.<br />Complessità: <strong>O(VE)</strong>.
+</p>
+<div class='vspace'></div><h5>GRAFI ORIENTATI ACICLICI</h5>
+<p>I cammini minimi da sorgente unica possono essere calcolati nel tempo O(V+E) rilassando gli archi di un grafo orientato aciclico (DAG) pesato secondo un ordinamento topologico dei suoi vertici.<br />Nei dag non possono esistere cicli di peso negativo anche se esistono archi negativi.
+</p>
+<p class='vspace'>Funzionamento dell'algoritmo:<br />ordina il dag topologicamente: se c'è un cammino da u a v allora u precede v.<br />Esegue una sola passata sui vertici seguendo l'ordinamento topologico: quando un vertice viene elaborato, tutti gli archi uscenti da esso vengono rilassati.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-goaciclici.gif' alt='' title='' /></div>
+<div class='vspace'></div><h3>Cammini minimi tra tutte le coppie di vertici in un grafo</h3>
+<p>Dato un grafo orientato e pesato che associa ad ogni arco un peso a valore nei reali, si vuole trovare per ogni coppia di vertici un cammino minimo restituendo come output una tabella.<br />Il problema dei cammini minimi tra tutte le coppie si risolve con un algoritmo dei cammini minimi da sorgente unica. In particolare se i pesi degli archi non sono negativi si utilizza Dijkstra mentre se i pesi sono negativi si usa Bellman – Ford una volta per ogni vertice.<br />Il grafo viene rappresentato con una matrice di adiacenza dove:
+</p><ul><li>se i = j allora w(i,j) = 0;
+</li><li>se i =! j e (i,j) appartengono a E allora w(i,j) = peso dell'arco orientato (i,j);
+</li><li>se i =! j e (i,j) non appartengono a E allora w(i,j) = infinito.
+</li></ul><p>Sono ammessi archi di peso negativo.
+</p>
+<p class='vspace'>Oltre alla matrice di adiacenza si deve calcolare anche la <strong>matrice dei predecessori</strong> e da essa, per ogni vertice, si definisce il <strong>sottografo dei predecessori</strong>.
+</p>
+<div class='vspace'></div><h3>Algoritmo Floyd – Warshall</h3>
+<p>Con questo algoritmo si possono avere archi negativi ma si assume di non avere cicli di peso negativo. Esso considera i <strong>vertici intermedi</strong> di un cammino minimo ovvero: &lt;V<sub>2</sub>,V<sub>3</sub>,...,V<sub>v-1</sub>&gt;.
+</p>
+<p class='vspace'>Dato un insieme di vertici V di G si consideri un sottoinsieme di vertici da 1 a k per un qualche k.<br />Per ogni coppia di vertici ij, si considerino tutti i cammini da i a j cui i vertici intermedi stanno nel sottoinsieme e sia p un cammino di peso minimo tra di essi.<br />Se k:
+</p><ul><li>non è un vertice intermedio di p, allora tutti i vertici intermedi sul cammino p sono in (1, 2, ..., k-1);
+</li><li>è un vertice intermedio su p cammino minimo, allora spezzo k in p1 (cammino minimo da i a k) con vertici intermedi in (1, ..., k-1) e p2 (cammino minimo da k a j) con vertici intermedi in (1, ..., k-1).
+</li></ul><p>Complessità: <strong>teta(n^3)</strong>.
+</p>
+<div class='vspace'></div><h5>SOLUZIONE RICORSIVA</h5>
+<p>Dato il peso di un cammino minimo da i a j con vertici intermedi in (1, ..., k), quando:
+</p><ul><li>k = 0: si ha un cammino che non ha vertici intermedi e quindi ha, al massimo, un arco.
+</li></ul><div class='vspace'></div><h5>COSTRUIRE UN CAMMINO MINIMO</h5>
+<p>Ci sono diversi metodi:
+</p><ul><li>calcolo la matrice D dei pesi di cammino minimo e ricavo la matrice dei predecessori da D;
+</li><li>si costruisce la matrice dei predecessori “in linea” mentre l'algoritmo Floyd Marshall calcola D.
+</li></ul><p>Se:
+</p><ul><li>k = 0: (cammino minimo senza vertici intermedi)
+<ul><li>se i = j o il peso del cammino minimo ij = infinito, allora il predecessore ij = NIL;
+</li><li>se i =! j e il peso del cammino minimo ij &lt; infinito, allora il predecessore ij = i.
+</li></ul></li><li>k &gt;= 1: se prendo il cammino i---&gt; k----&gt; j allora il predecessore di j = predecessore del cammino minimo da k con vertici intermedi (1,...., k-1). Altrimenti scelgo lo stesso predecessore j scelto in un cammino minimo dai i a v con vertici (1, ..., k-1).
+</li></ul><div class='vspace'></div><h5>CHIUSURA TRANSITIVA DI UN GRAFO</h5>
+<p>Consiste nel generare un altro grafo con gli stessi nodi e con archi da i a j se nel grafo precedente esiste un percorso da i a j.<br />Due soluzioni:
+</p><ol><li> Assegno un peso pari a 1 ad ogni arco in E ed applico Floyd-Warshall e se esiste un cammino da i a j allora dij &lt; n; altrimenti dj = &#8734; &#8658; complessità &#920;(n3)
+</li><li>Sostituisco le operazioni di min e + dell’algoritmo di Floyd-Warshall con le operazioni logiche &#8744; (or) e &#8743; (and) Per i,j,k=1,...,n, definiamo tij (k) pari a 1 se esiste in G un cammino da i a j con tutti i vertici intermedi in {1,...,k}; 0 altrimenti.
+</li></ol><div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/A-CamminiMinimi)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Laboratorio C - Lezione 23-24</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LabC23-24.html' title='Laboratorio C - Lezione 23-24'>Laboratorio C - Lezione 23-24</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio C - Lezione 23-24 ::</strong>
+</pre><p class='vspace'>Qui ci sono le soluzioni agli esercizi dell'ultima lezione, con tanto di commento.
+</p>
+<div class='vspace'></div><h2>Esercizio 1</h2>
+<p>Data la traccia sotto riportata completare il codice in modo di aumentare di 1 tutti gli interi pari e diminuire di 1 tutti quelli dispari nell'array vettore[] di dimensione dim. Riportare come risultato il numero che comparira' a monitor. Per esempio un vettore che contiene gli elementi {4,56,3,78,23} dopo essere stato aggiornato deve contenere gli elementi {5,57,2,79,22}.
+</p>
+<div class='vspace'></div><pre> <strong>Aumenta interi pari</strong>
+ #include &lt;stdio.h&gt;
+
+ float CalcolaRisultato(int vettore[], int dim);
+
+ int main() {
+
+    int vettore[] = {4,56,3,78,23}  ;
+    int dim = 5;
+    int conto;
+    float risultato;
+
+    //Se il tuo programma funziona correttamente, dovresti ottenere: 2573
+
+    for (conto = 0; conto &lt; dim; conto ++) {
+        if ((vettore[conto] % 2) == 0) vettore[conto] ++;
+        else vettore[conto] --;
+    }
+
+    risultato = CalcolaRisultato(vettore, dim);
+    printf("\nrisultato da copiare ed incollare = %d \n\n" , (int) risultato );
+    getchar();
+    exit(0);
+ }  // main
+
+ float CalcolaRisultato(int vettore[], int dim)
+ {
+   int i;
+   float divisore, dividendo=0;
+   for(i=0;i &lt; dim; i++)
+   {
+      dividendo += i * vettore[i];
+   }
+   divisore = (dim +1)*dim/2; 
+   return 100*dividendo/divisore; 
+ }
+</pre><div class='vspace'></div><h3>Note sull'esercizio</h3>
+<p>Innanzitutto, l'esercizio ti dava un vettore di 462 elementi, mentre qui il vettore ne ha solamente 5.<br /><br />Il cuore dell'esercizio sta nella sequenza<br /><br />
+</p><pre>    for (conto = 0; conto &lt; dim; conto ++) {
+        if ((vettore[conto] % 2) == 0) vettore[conto] ++;
+        else vettore[conto] --;
+    }
+</pre><p class='vspace'>che vuol dire esattamente questo:
+</p>
+<div class='vspace'></div><pre>  for (conto = 0; conto &lt; dim; conto ++)
+</pre><p>esamina il vettore dal primo all'ultimo elemento, ricordando che dim = numero elementi del vettore.<br /><br />
+</p><pre>   if ((vettore[conto] % 2) == 0) vettore[conto] ++;
+   else vettore[conto] --;
+</pre><p><em>If ((vettore[conto] % 2) == 0)</em> controlla se l'elemento conto-esimo del vettore è pari, cioè se il resto della divisione intera per due è 0.<br /><br />In caso positivo, esegue la riga <em>vettore[conto] ++</em>, come da specifica; in caso contrario invece viene diminuito con <em>vettore[conto] --</em>, sempre come da specifica.<br /><br />
+La funzione <em>CalcolaRisultato</em> è stata data dal professore, serve per generare il valore che va incollato etc. etc.<br /><br />
+</p><h2>Esercizio 2</h2>
+<p>Esegui le seguenti attivita':
+</p><ul><li>salva il testo sotto riportato nel file telefonate.txt ;
+</li><li>scrivi il programma Contatelefonate.c che accede al file telefonate.txt e calcola il numero di telefonate effettuate a un cellulare e il numero di quelle effettuate verso un numero fisso;
+</li><li>calcola come risultato il maggiore tra questi due numeri.
+</li></ul><p class='vspace'>Per stabilire se il telefono e' un cellulare o un fisso si consiglia di utilizzare la funzione strcmp(s1,s2) che restituisce 0 se le due stringhe sono uguali, un numero negativo se s1 e' minore di s2 in ordine lessicografico e un numero positivo altrimenti. Nota bene: il file telefonate.txt e' composto da stringa tabulatore numeroconvirgola tabulatore stringa tabulatore stringa FINERIGA
+</p>
+<div class='vspace'></div><h3>Note preliminari</h3>
+<p>Il file <em>telefonate.txt</em> fornito dal professore NON è nel formato che lui indica, cioè <em>stringa tab numeroconvirgola tab stringa tab string FINERIGA</em>, perché non ci sono TAB ma SPAZI fra una riga e l'altra!<br /><br />Inoltre, il risultato che dà lui, cioè 45, è SBAGLIATO: le chiamate a cellulare sono 44, e sono maggiori delle 23 chiamate a fisso...<br /><br />
+<strong>Telefonate</strong>
+</p><pre> #include &lt;stdio.h&gt;
+ #include &lt;string.h&gt;
+
+ int main() {
+    FILE * telefonate;
+    int chiamate_fisso = 0;
+    int chiamate_cell = 0;
+    int valore;
+
+
+    char numero[30];
+    char ora[30];
+    char tipo[30];
+    char durata[30];
+
+    telefonate = fopen("telefonate.txt", "r");
+
+    if (telefonate == NULL) {
+       printf("Errore nell'apertura del file telefonate.txt\n");
+       getchar();
+       return 1;
+    }
+
+    while (!feof(telefonate)) {
+          fscanf(telefonate,"<span class='s'>s </span><span class='s'>s\n", numero, ora, tipo, durata);</span>
+          printf("%s\n", tipo);
+          valore = strcmp(tipo, "cellul");
+          if (valore == 0) chiamate_cell ++;
+          else chiamate_fisso++;
+    }
+
+    if (chiamate_fisso &gt; chiamate_cell) printf("%d\n", chiamate_fisso);
+    else printf("%d\n", chiamate_cell);
+
+    getchar();
+    return 0;
+ }
+</pre><div class='vspace'></div><h3>Note postliminari</h3>
+<p>L'unica stringa che ci interessa è la 3a, cioè quella che contiene scritto <em>cellul</em> oppure <em>milano</em>, <em>firenze</em> o quel diavolo che è.<br /><br />
+La funzione <em>strcmp(stringa1,stringa2)</em> fa parte della libreria standard del C, e la si ottiene con la riga
+</p><pre> #include &lt;string.h&gt;
+</pre><p>in cima.<br /><br />
+<em>strcmp(stringa1, stringa2)</em> funziona così:
+</p><ul><li>se le stringhe sono uguali, restituisce uno 0;
+</li><li>se la prima stringa è MINORE della seconda, lessicograficamente parlando, resituisce -1, o comunque un valore minore di 0
+</li><li>se invece la seconda stringa è MAGGIORE della seconda, restituisce un valore maggiore di 0, di solito + 1.
+</li></ul><p class='vspace'>Che cosa vuol dire lessicograficamente parlando? Bene o male, è una specie di conto alfabetico, provate un po' per vedere che cosa voglia significare.<br /><br />Ai nostri fini, serve solo verificare che la terza stringa sia uguale a <em>cellul</em>, e in quel caso aumentare il contatore di numero di chiamate a cell.<br /><br />Tutto ciò lo si ottiene con
+</p>
+<div class='vspace'></div><pre> valore = strcmp(tipo, "cellul");
+ if (valore == 0) chiamate_cell ++;
+ else chiamate_fisso++;
+</pre><p class='vspace'>dove <em>int valore</em> l'ho dichiarata appositamente allo scopo.
+</p>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p>Scrivi un programma che:
+</p><ol><li>conta quanti caratteri ci sono nel file COSTITUZ.TXT (63 KB) ;
+</li><li>conta quante volte compare la lettera minuscola 'r' seguita dalla minuscola 'a' ;
+</li><li>calcola come FLOAT la frequenza di occorrenza della lettera 'i' (e' indifferente se maiuscola o minuscola);
+</li><li>restituisce come soluzione (con due decimali dopo la virgola) il FLOAT contenete il prodotto delle due quantita' appena calcolate nei punti 2.e 3.
+</li></ol><p class='vspace'>Soluzione: risultato da copiare ed incollare = 45.23
+</p>
+<p class='vspace'><strong>costituzione.c</strong>
+</p><pre> #include &lt;stdio.h&gt;
+
+ int main() {
+    FILE * costituzione;
+    int numero_ra = 0;
+    int numero_i = 0;
+    int numero_caratteri = 0;
+    float frequenza_i;
+    int flag = 0;
+    float risultato;
+    char c;
+
+    costituzione = fopen("costituzione.txt", "r");
+
+    if (costituzione == NULL) {
+       printf("Errore nell'apertura del file costituzione.txt");
+       getchar();
+       return 1;
+    }
+
+    <span  style='background-color: yellow;'>while (!feof(costituzione)) {</span>
+
+          <span  style='background-color: yellow;'>fscanf(costituzione, "%c", &amp;c);</span>
+          <span  style='background-color: yellow;'>numero_caratteri ++;</span>
+          <span  style='background-color: yellow;'>if (c == 'r') {</span>
+          <span  style='background-color: yellow;'>      fscanf(costituzione, "%c", &amp;c);</span>
+          <span  style='background-color: yellow;'>      numero_caratteri ++;</span>
+          <span  style='background-color: yellow;'>      if (c == 'a') numero_ra ++;</span>
+          <span  style='background-color: yellow;'>}</span>
+          <span  style='background-color: yellow;'>else if (c == 'i' || c == 'I') numero_i ++;</span>
+    <span  style='background-color: yellow;'>}</span>
+
+  while(fscanf(costituzione, "%c", &amp;c") == 1)
+  {
+    if (c == 'r') flag = 1;
+    else if (c == 'a' &amp;&amp; flag == 1) {
+      flag = 0;
+      numero_ra++;
+    }
+    else if (c=='i' || c == 'I') {
+      numero_i++;
+      flag = 0;
+    }
+    else flag = 0;
+  }
+
+    frequenza_i = (float) numero_i / numero_caratteri;
+
+    printf("Numero di ra = %d\n", numero_ra);
+    printf("Numero di i = %d\n", numero_i);
+    printf("Numero di caratteri = %d\n", numero_caratteri);
+    printf("Frequenza di i = %f\n", frequenza_i);
+    printf("risultato = %2.2f", numero_ra * frequenza_i);
+
+    fclose(costituzione);
+
+    getchar();
+    return 0;
+ }
+</pre><div class='vspace'></div><h3>Note sull'esercizio</h3>
+<p>I punti dubbi sono:
+</p><ul><li>I caratteri come lo spazio o la punteggiatura vanno contati come numero_caratteri, oppure no? E le lettere accentate, vanno trasformate in lettere non accentate o che diavolo?
+</li></ul><p class='vspace'>Ad ogni modo, il cuore dell'esercizio sta nelle righe
+</p><pre> while(fscanf(costituzione,"%c", &amp;c") == 1)
+  {
+   if (c == 'r') flag = 1;
+   else if (c == 'a' &amp;&amp; flag == 1) {
+	flag = 0;
+	numero_ra++;
+   }
+   else if (c=='i' || c == 'I') {
+        numero_i++;
+	flag = 0;
+   }
+   else flag = 0;
+  }
+</pre><p class='vspace'><span class='bgcolor' style='color: yellow;'> DA MODIFICARE</span>
+</p>
+<div class='vspace'></div><h2>Esercizio 4</h2>
+<p>Utilizzando codoce sotto riportato come traccia si scriva un programma che contiene una funzione ricorsiva int magia(int n) che si basa sulla funzione ricorsiva magia(n):
+</p><ol><li>magia(0) vale 1;
+</li><li>se n&gt;0, allora magia(n) vale (magia(n-1)+100) se n e' pari e (2*magia(n-1)) se n e' dispari;
+</li></ol><p class='vspace'>Il risultato e' quello restituito a monitor dal codice.
+</p>
+<p class='vspace'><strong>magia.c</strong>
+</p><pre> #include &lt;stdio.h&gt;
+
+ int magia(int n);
+
+ int main() //NON MODIFICARE IL MAIN
+ {
+   printf("la soluzione e' --&gt; %d", magia(13));
+   getchar();
+   return(0);
+ }
+
+ int magia(int n) {
+ 1.  magia(0) vale 1;
+ 2. se n&gt;0, allora magia(n) vale (magia(n-1)+100) se n e' pari 
+                               e (2*magia(n-1)) se n e' dispari;
+   if (n == 0) return 1;
+   else if (n &gt; 0) {
+        if ((n % 2) == 0) return magia(n - 1) + 100;
+        else return 2*magia(n-1);
+   }
+ }
+</pre><div class='vspace'></div><h3>Note sull'esercizio</h3>
+<p>Le funzioni ricorsive si scrivono esattamente come le leggete: se ci fate caso, ho copiato pari pari la specifica data dal problema e l'ho tradotta in C.<br /><br />Infatti, la riga che dice:<br /><em>magia(0) vale 1;</em><br /><br />
+si traduce letteralmente in 
+</p><pre> if (n == 0) return 1;
+</pre><p class='vspace'>mentre la riga che dice:<br /><em>se n&gt;0, allora magia(n) vale (magia(n-1)+100) se n e' pari e (2*magia(n-1)) se n e' dispari;</em><br /><br />
+diventa
+</p><pre>   else if (n &gt; 0) {
+        if ((n % 2) == 0) return magia(n - 1) + 100;
+        else return 2*magia(n-1);
+   }
+</pre><div class='vspace'></div><h2>Esercizio 5</h2>
+<p>Si utilizzi il codice sotto riportato per risolvere l'esercizio. Data il vettore di caratteri (stringa) v[] inizializzato nel codice dell'esercizio:
+</p><ul><li>si critti carattere per carattere la stringa v[] mediante il metodo di Cesare con chiave 1 memorizzando il risultato nella stringa srt[];
+</li><li>La stringa srt[] deve possedere il proprio terminatore;
+</li><li>il risultato finale e' il numero che compare a monitor (viene prodotto automaticamente dalla funzione CalcolaRisulato che ha gia' impostato il passaggio della stringa srt).
+</li></ul><p class='vspace'><strong>cesare.c</strong>
+</p><pre> #include &lt;stdio.h&gt;
+ #include &lt;stdlib.h&gt;
+ #include &lt;string.h&gt;
+
+ float CalcolaRisultato(char stringa[]);
+
+ int main()
+ {
+
+ char v[]="SIATTACCADOMANIALLALBA" ; 
+ char str[1000]=""; // stringa nella quale va inserito il risultato finale
+
+ float risultato;
+ int i;
+
+ // ----- inzio dell'esercizo -------
+ for (i = 0; i &lt; strlen(v); i ++) {
+     str[i] = v[i] + 1;
+ } 
+ str[strlen(v)] = 0;
+ printf("%s\n", str);
+
+  // ----- fine dell'esercizo -------
+
+
+
+ // NON TOCCARE TUTTE LE RIGHE QUI SOTTO
+ risultato = CalcolaRisultato(str);
+ printf("\nrisultato da copiare ed incollare = %d \n\n" , (int) risultato );
+ getchar();
+ exit(0);
+ }  // main
+
+ float CalcolaRisultato(char stringa[])
+ {
+   int i;
+   float divisore, dividendo=0;
+   int dim = strlen(stringa);
+   for(i=0;i &lt; dim; i++)
+   {
+      dividendo += i * (int)stringa[i];
+   }
+   divisore = (dim +1)*dim/2; 
+   return 100*dividendo/divisore; 
+ }
+</pre><div class='vspace'></div><h3>Note sull'esercizio</h3>
+<p>Mi sembra semplice: ogni lettera va incrementata di 1, cioè la <em>a</em> diventa <em>b</em> etc.<br /><br />Inoltre, questa modifica non va salvata nella stringa originale, bensì in str[]. Ciò vuol dire che occorre mettere il \0 alla fine della stringa, perché la teoria ci insegna che le stringhe in C sono NULL-terminated, cioè finiscono con uno 0 (non il carattere, ma proprio il valore 0).<br /><br />Ecco perché ho messo
+</p><pre> str[strlen(v)] = 0;
+</pre><p class='vspace'>La <em>strlen(v)</em> mi restituisce la lunghezza della stringa <em>v</em>. Da notare che se la stringa ha 4 caratteri, la strlen mi restituisce il numero 4 =&gt; occorre ricordarsi che la prima posizione delle stringhe è 0.<br /><br />Quindi, il ciclo <em>for</em> è stato scritto cos':
+</p><pre> for (i = 0; i &lt; strlen(v); i ++) {
+</pre><p class='vspace'>mentre il 5° carattere deve essere il famoso 0 di cui sopra:
+</p><pre> str[strlen(v)] = 0;
+</pre><div class='vspace'></div><hr />
+<p><a class='wikilink' href='LaboratorioC.html'>Torna al Laboratorio di C</a> | <a class='categorylink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LabC23-24)</span></div>
+  </div>
+</body>
+</html>

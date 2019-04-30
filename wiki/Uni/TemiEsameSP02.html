@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Tema d'Esame di Sicurezza e Privatezza - 05/02/2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.TemiEsameSP02' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Tema d'Esame di Sicurezza e Privatezza - 05/02/2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TemiEsameSP02?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TemiEsameSP02?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='TemiEsameSP02-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TemiEsameSP02?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TemiEsameSP02?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Tema d'Esame di Sicurezza e Privatezza - 05/02/2008 was last modified on February 12, 2009, at 12:23 PM'>
+							<span style='display:none;'>Tema d'Esame di Sicurezza e Privatezza - 05/02/2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Sicurezza &amp; Privatezza</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appello d'esame di Sicurezza e Privatezza - 05/02/2008 ::</strong>
+</pre><div class='vspace'></div><h2>Domande</h2>
+<p><strong>Rispondere brevemente ma in modo completo alle seguenti domande.</strong>
+</p>
+<div class='vspace'></div><ol><li><strong>Data una politica ChineseWall dove i company dataset sono BankA, BankB, OilA, OilB e le classi di conflitto di interesse sono CoI1 = {BankA, BankB} e CoI2 = {OilA, OilB}, si supponga che un soggetto S1 esegua una operazione di lettura su un oggetto del dataset BankA ed un oggetto del dataset OilB. Si richiede di indicare i dataset che contengono oggetti che S1 può scrivere e di motivare la risposta.</strong>
+</li><li><strong>Nell’ambito dei sistemi operativi Unix-based, descrivere il significato dei privilegi setuid e setgid.</strong>
+</li><li><strong>Descrivere il metodo basato sulla matrice delle risorse condivise per l’identificazione di covert channel. Illustrare inoltre un esempio di possibile canale che può essere scoperto tramite tale tecnica.</strong>
+</li><li><strong>Illustrare in modo dettagliato e preciso come la stringa di formato %n può essere utilizzata per sovrascrivere l’indirizzo RET nello stack.</strong>
+</li><li><strong>Nell’ambito del modello a matrice di accesso, dare la definizione di transizione di stato ed enunciare in modo preciso e formale il problema della safety.</strong>
+</li><li><strong>Dare la definizione di virus crittografico e descrivere le tre parti principali di cui tale tipo di virus solitamente si compone.</strong>
+</li><li><strong>Nell’ambito del sistema Kerberos, dire quali sono i tre compiti principali dell’Authentication Server (AS) ed i tre compiti principali del Ticket Granting Server (TGS).</strong>
+</li><li><strong>Nell’ambito dei sistemi per la determinazione di intrusioni, dire cosa si intende per falsi negativi e falsi positivi.</strong>
+</li></ol><p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><strong>1.</strong><br />
+</p><div><img src='../uploads/Uni/TemiEsameSP02Dom1.jpg' alt='' title='' /></div>
+<p class='vspace'>All'inizio un utente può leggere qualsiasi cosa. Se legge da BankA significa che escludiamo BankB, perché fa parte della stessa classe di conflitto di interessi, mentre rimangono accessibili OilA e OilB. Successivamente se legge da OilB significa che dobbiamo escludere OilA, ancora perché fa parte della stessa classe di conflitto di interessi.<br />L'utente S1 non può scrivere da nessun parte se non all'interno di BankA e OilB, perché i company dataset rimanenti(BankB e OilA) sono stati esclusi per conflitto di interessi.
+</p>
+<p class='vspace'><strong>2.</strong><br />Setuid e Setgid sono privilegi addizionali. Setuid significa che l'UID del processo che esegue il file coincide con l'UID del file.<br />Setgid significa che il GID del processo che esegue il file coincide con il GID del file.<br />Entrambi si rappresentano tramite una <strong>s</strong> se l'utente(es: rws --- ---) o il gruppo(es: rwx rws ---) hanno privilegio di esecuzione sul file, tramite una <strong>S</strong> se l'utente(es: r-S --- ---) o il gruppo(es: rwx r-S ---) non hanno privilegio di esecuzione sul file.
+</p>
+<p class='vspace'><strong>3.</strong><br />La matrice delle risorse condivise sfrutta il fatto che la base di ogni covert channel sono le risorse condivise. Si costruisce una matrice M dove le righe sono le risorse e le colonne sono i processi.
+</p><ul><li>M[i,j]: <strong>R</strong> se il processo j può leggere o osservare la risorsa i
+</li><li>M[i,j]: <strong>M</strong> se il processo j può creare o modificare o cancellare la risorsa i
+</li></ul><p class='vspace'>Esempio:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TemiEsameSP02Dom3.jpg' alt='' title='' /></div>
+<p class='vspace'>E' un pattern sospetto perché la risorsa 2 è condivisa dal processo 2 e dal processo 4(modificata da uno e letta dall'altro). Il processo 2 legge il contenuto della risorsa 4 e la trasmette alla risorsa 2, il processo 4 quindi può leggere indirettamente l'informazione della risorsa 4, cosa che direttamente non potrebbe fare.<br />Bisogna completare la matrice con il flusso potenziale di informazione e cercare eventuali flussi indesiderati, in questo caso:<br />
+</p><div><img src='../uploads/Uni/TemiEsameSP02Dom3.1.jpg' alt='' title='' /></div>
+<p class='vspace'><strong>4.</strong><br /><img src='../uploads/Uni/TemiEsameSP02Dom4.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div>L'attaccante inserisce il codice maligno, il programma sovrascrive sulla printf.<br />Avviene una sovrascrittura dell'indirizzo di ritorno con un indirizzo significativo che non porta più all'applicazione originale, ma all'applicazione dell'attaccante, al codice maligno.<br />Ad esempio:<br /><pre class='escaped'>
+char buf[16]="Overflow!%n";
+printf(buf);
+</pre>
+<p>Il valore 9 verrà scritto all’interno della memoria puntata dal puntatore della printf, perché non c’è nessun secondo argomento nella printf.
+</p>
+<p class='vspace'><strong>5.</strong><br />Una transizione di stato è un passaggio da uno stato iniziale Q=(S,O,A) a uno stato finale diverso Q', tramite un comando primitivo c(x1,...,xk), dove le x sono sostituite dai parametri attuali con i quali la chiamata è effettuata.<br />Il problema della Safety afferma che:<br />dato uno stato iniziale Q<sub>0</sub> esiste una sequenza di richieste che portano da Q<sub>0</sub> a Q<sub>1</sub> e l'azione a è in A[s,o] nello stato Q<sub>1</sub> ma non in Q<sub>0</sub>?<br />Non possiamo rispondere a questa domanda in tempo polinomiale, è un problema non decidibile. Diventa decidibile solo per comandi mono-operazionali e quando i soggetti e gli oggetti sono finiti.
+</p>
+<p class='vspace'><strong>6.</strong><br />Un virus crittografico è un virus polimorfo che sfrutta tecniche crittografiche per cambiare forma.<br />Le tre parti di cui è composto sono:
+</p><ol><li>chiave di decrittazione: varia da infezione a infezione
+</li><li>codice crittato
+</li><li>routine per la decrittazione del codice: questa è la parte costante del virus e per questo può essere considerata la sua <em>signature</em>.
+</li></ol><div class='vspace'></div><h2>Esercizi</h2>
+<div class='vspace'></div><h4>Esercizio 1</h4>
+<p><strong>Si consideri lo chema di rete del comune di Smallville protetta da due Firewall (FW1 e FW2) in cascata avente ognuno due interfacce di rete.<br />La rete InternalNet prende indirizzi tra 13.10.22.0/24. Nella rete interna risiedono le postazione di lavoro degli utenti Users e un Web Server all'indirizzo 13.10.22.7 che fornisce servizi HTTP e HTTPS. La sottorete DMZ posta tra i due firewall prende indirizzi tra 13.10.121.111. Il Syslog Server fornisce meccanismi per la gestione centralizzata dei log, mentre il Domain Name Server fornisce servizi di naming. All'interno della rete esterna Internet, è presente una admin (111.111.12.24).<br />Si specifichino le politiche di sicurezza necessarie e sufficienti di FW1 e FW2 per autorizzare le seguenti connessioni:</strong><br />
+</p><ul><li><strong>Gli utenti della rete interna devono poter accedere a Web Server esterni via HTTP (80/tcp) per visualizzare siti Web esterni;</strong>
+</li><li><strong>Utenti Internet devono poter accedere al Web Server interno tramite connessioni HTTPS (443/tcp);</strong>
+</li><li><strong>Qualsiasi utente della rete interna deve poter accedere al Domain Name Server tramite il protocollo DNS (53/udp);</strong>
+</li><li><strong>Admin deve poter accedere al Syslog Server tramite il protocollo SSH (22/tcp);</strong>
+</li><li><strong>Il DNS deve collegarsi a DNS esterni (Internet) per effettuare query attraverso il servizio di naming (53/tcp);</strong>
+</li><li><strong>Ogni altra connessione, in ingresso o in uscita, sia per FW1 e FW2, non esplicitamente prevista dai punti precedenti deve essere impedita (scrivere regole).</strong>
+</li></ul><div class='vspace'></div><div><img src='../uploads/Uni/Immagine2.jpg' alt='' title='' /></div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><strong>FW1</strong>
+</p><table border='1' width='80%' >
+<tr ><td style='padding:5px;'  valign='top'>
+<p>Direzione
+</p></td><td style='padding:5px;'  valign='top'>
+<p>IP Sorgente
+</p></td><td style='padding:5px;'  valign='top'>
+<p>IP Destinazione
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Protocollo
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Porta Sorgente
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Porta Destinazione
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Flag ACK
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Azione
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>OUT
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.0/24
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>80
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>IN
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.0/24
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>80
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>1
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>IN
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.7
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>443
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>OUT
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.7
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>443
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>1
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>OUT
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.121.111
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>53
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>IN
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.121.111
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>53
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>1
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>IN/OUT
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>DENY
+</p></td></tr></table>
+<p class='vspace'><strong>FW2</strong>
+</p><table border='1' width='80%' >
+<tr ><td style='padding:5px;'  valign='top'>
+<p>Direzione
+</p></td><td style='padding:5px;'  valign='top'>
+<p>IP Sorgente
+</p></td><td style='padding:5px;'  valign='top'>
+<p>IP Destinazione
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Protocollo
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Porta Sorgente
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Porta Destinazione
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Flag ACK
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Azione
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>OUT
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.0/24
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>80
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>IN
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.0/24
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>80
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>1
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>IN
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.7
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>443
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>OUT
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.7
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>TCP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>443
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>1
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>IN
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.0/24
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.121.111
+</p></td><td style='padding:5px;'  valign='top'>
+<p>UDP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>53
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>OUT
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.121.111
+</p></td><td style='padding:5px;'  valign='top'>
+<p>13.10.22.0/24
+</p></td><td style='padding:5px;'  valign='top'>
+<p>UDP
+</p></td><td style='padding:5px;'  valign='top'>
+<p>53
+</p></td><td style='padding:5px;'  valign='top'>
+<p>&gt;=1024
+</p></td><td style='padding:5px;'  valign='top'>
+<p>1
+</p></td><td style='padding:5px;'  valign='top'>
+<p>PERMIT
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>IN/OUT
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>ANY
+</p></td><td style='padding:5px;'  valign='top'>
+<p>DENY
+</p></td></tr></table>
+<div class='vspace'></div><h4>Esercizio 3</h4>
+<p><strong>Si consideri la seguente gerarchia utenti gruppi ed il seguente insieme di autorizzazioni: (G1,+,read,file1); (G2,-,read,file1); (G3,-,read,file1); (G4,+,read,file1).<br /> Si richiede di compilare la tabella allegata indicando il segno/segni (-,+) della autorizzazione che si applicano a ciascun utente, considerando come politiche di risoluzione dei conflitti quelle specificate nella tabella stessa.</strong>
+</p><div><img src='../uploads/Uni/Immagine3.png' alt='' title='' /></div>
+<div class='vspace'></div><table border='1' width='80%' >
+<tr ><td align='center' style='padding:5px;'  valign='top'>
+<p>POLITICHE
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>Alice
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>Barbara
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>Carol
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>Dave
+</p></td></tr><tr ><td align='center' style='padding:5px;'  valign='top'>
+<p>Nothing take precedence
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+/-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+/-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+/-
+</p></td></tr><tr ><td align='center' style='padding:5px;'  valign='top'>
+<p>Denial take precedence
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td></tr><tr ><td align='center' style='padding:5px;'  valign='top'>
+<p>Permission Take precedence
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+
+</p></td></tr><tr ><td align='center' style='padding:5px;'  valign='top'>
+<p>Most specific take precedence
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+/-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+
+</p></td></tr><tr ><td align='center' style='padding:5px;'  valign='top'>
+<p>Most specific along a path take precedence
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+/-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>-
+</p></td><td align='center' style='padding:5px;'  valign='top'>
+<p>+/-
+</p></td></tr></table>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Sicurezza &amp; Privatezza</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: February 12, 2009, at 12:23 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TemiEsameSP02?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TemiEsameSP02?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

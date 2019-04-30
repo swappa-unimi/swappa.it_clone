@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Informatica Teorica - Riducibilità</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IT-Riducibilit%C3%A0.html' title='Informatica Teorica - Riducibilità'>Informatica Teorica - Riducibilità</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Informatica Teorica - Riducibilità ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti del 28 Aprile</span>
+</p>
+<div class='vspace'></div><h2>Riducibilità</h2>
+<p>La riducibilità è un metodo per convertire l'istanza di un problema <em>A</em> in un'istanza di un problema <em>B</em> e utilizzare la soluzione di quest'ultimo per ottenere la soluzione di <em>A</em>. La riducibilità è anche uno dei metodi principali per dimostrare che un problema non è computazionalmente decidibile.
+</p>
+<p class='vspace'>Quando <em>A</em> è riducibile a <em>B</em> allora:
+</p><ul><li>risolvere <em>A</em> non può essere più difficile di risolvere <em>B</em> 
+</li><li>risolvere <em>B</em> ci permette di ottenere la soluzione di <em>A</em>
+</li><li>se <em>B</em> è decidibile allora lo è anche <em>A</em>
+</li><li>se <em>A</em> non è decidibile allora anche <em>B</em> non è decidibile
+</li></ul><div class='vspace'></div><h3>Non decidibilità di <em>HALT<sub>TM</sub></em></h3>
+<p>Tramite riducibilità è possibile dimostrare che il problema <em>HALT<sub>TM</sub></em>, ovvero il problema della terminazione di una macchina di turing su un dato ingresso, non è decidibile:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><em>HALT<sub>TM</sub> = {&lt;M, w&gt; | M è una MdT e M termina sull'ingresso w}</em>
+</p>
+<p class='vspace'>Supponiamo che esista una MdT <em>R</em> che decide il nostro problema e proviamo a descrivere la MdT <em>S</em> che decide <em>A<sub>TM</sub></em> riducendo il problema di accettazione al nostro problema di terminazione <em>HALT<sub>TM</sub></em>:
+</p>
+<p class='vspace'><em>S</em> = "su ingresso <em>&lt;M, w&gt;</em>:
+</p><ol><li>esegui <em>R</em> su ingresso <em>&lt;M, w&gt;</em>
+</li><li>se <em>R</em> rifiuta &rarr; rifiuta (<em>M</em> non termina sull'ingresso <em>w</em>)
+</li><li>se <em>R</em> accetta (<em>M</em> non va in loop) simula <em>M</em> su ingresso <em>w</em>
+</li><li>se <em>M</em> accetta &rarr; accetta<br />altrimenti &rarr; rifiuta
+</li></ol><p class='vspace'>Abbiamo dimostrato che se esistesse <em>R</em> allora saremmo in grado di costruire anche <em>S</em>, ma sappiamo che il problema <em>A<sub>TM</sub></em> non è decidibile e che quindi <em>S</em> non può esistere, quindi non esiste nemmeno <em>R</em> (dimostrazione per contraddizione).
+</p></div>
+<div class='vspace'></div><h3>Non decidibilità di <em>E<sub>TM</sub></em></h3>
+<p>Il problema <em>E<sub>TM</sub></em> consiste nello stabilire se il linguaggio di un automa è vuoto. Questo problema non è decidibile e lo si può dimostrare sempre tramite riducibilità:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><em>E<sub>TM</sub> = {&lt;M&gt; | M è una MdT e L(M) = 0}</em>
+</p>
+<p class='vspace'>Come nella precedente dimostrazione riduciamo <em>A<sub>TM</sub></em> a <em>E<sub>TM</sub></em>:
+</p><ul><li><em>R</em> decisore per <em>E<sub>TM</sub></em>
+</li><li><em>S</em> decisore per <em>A<sub>TM</sub></em>
+</li></ul><p class='vspace'>Per la dimostrazione è necessario definire <em>M<sub>1</sub></em> come la MdT che rifiuta tutte le stringhe diverse da <em>w</em> e nel caso l'ingresso sia proprio <em>w</em> allora esegue <em>M</em> sull'ingresso:
+</p>
+<p class='vspace'><em>M<sub>1</sub></em> = "su ingresso <em>&lt;x&gt;</em>:
+</p><ol><li>se x &ne; w &rarr; rifiuta
+</li><li>se x = w &rarr; esegui <em>M</em> su <em>w</em> e accetta se <em>M</em> accetta."
+</li></ol><p class='vspace'>È ora possibile definire <em>S</em>:
+</p>
+<p class='vspace'><em>S</em> = "su ingresso <em>&lt;M, w&gt;</em>:
+</p><ol><li>costruisci <em>M<sub>1</sub></em>
+</li><li>esegui <em>R</em> su ingresso <em>&lt;M<sub>1</sub>&gt;</em>
+</li><li>se <em>R</em> accetta &rarr; rifiuta (<em>L(M) = 0</em> &rarr; <em>M</em> non riconosce nessuna stringa e quindi neanche <em>w</em>)<br />altrimenti &rarr; accetta (<em>L(M<sub>1</sub>)</em> non vuoto quindi <em>M</em> riconosce <em>w</em>)."
+</li></ol><p class='vspace'>Dato che <em>S</em> non può esistere (<em>A<sub>TM</sub></em> non decidibile) non può esistere neanche <em>R</em>, quindi <em>E<sub>TM</sub></em> non è decidibile (dimostrazione per contraddizione).
+</p></div>
+<div class='vspace'></div><h3>Non decidibilità di <em>EQ<sub>TM</sub></em></h3>
+<p>Il problema <em>EQ<sub>TM</sub></em> consiste nello stabilire se due macchine di Turing riconoscono lo stesso linguaggio. Questo problema non è decidibile e lo si può dimostrare utilizzando la riducibilità di <em>E<sub>TM</sub></em> a <em>EQ<sub>TM</sub></em>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><em>EQ<sub>TM</sub> = {&lt;M<sub>1</sub>, M<sub>2</sub>&gt; | M<sub>1</sub> e M<sub>2</sub> MdT t.c. L(M<sub>1</sub>) = L(M<sub>2</sub>)}</em>
+</p>
+<p class='vspace'>Per ottenere <em>S</em> riduciamo il problema di decidere se un linguaggio è vuoto (<em>E<sub>TM</sub></em>) al problema di dire se una MdT riconosce lo stesso linguaggio (<em>EQ<sub>TM</sub></em>) di una MdT il cui linguaggio è vuoto:
+</p>
+<p class='vspace'>Riduciamo <em>E<sub>TM</sub></em> a <em>EQ<sub>TM</sub></em>:
+</p><ul><li><em>R</em> decisore per <em>EQ<sub>TM</sub></em>
+</li><li><em>S</em> decisore per <em>E<sub>TM</sub></em>
+</li></ul><p class='vspace'><em>S</em> = "su ingresso <em>&lt;M&gt;</em>:
+</p><ol><li>costruisci <em>M<sub>1</sub></em> come la MdT t.c. <em>L(M<sub>1</sub>) = 0</em>
+</li><li>esegui <em>R</em> su ingresso <em>&lt;M, M<sub>1</sub>&gt;</em>
+</li><li>se <em>R</em> accetta &rarr; accetta (<em>L(M) = L(M<sub>1</sub>) = 0</em>)<br />altrimenti &rarr; rifiuta (<em>L(M) &ne; L(M<sub>1</sub>)</em> quindi il linguaggio riconosciuto da <em>M</em> non è vuoto)."
+</li></ol><p class='vspace'>Dato che <em>S</em> non può esistere (<em>E<sub>TM</sub></em> non decidibile) non può esistere neanche <em>R</em>, quindi <em>EQ<sub>TM</sub></em> non è decidibile (dimostrazione per contraddizione).
+</p></div>
+<div class='vspace'></div><h2>Computation Histories (CH)</h2>
+<p>Una CH di una MdT non è altro che la sequenza di configurazioni che la macchina attraversa per elaborare un ingresso. Ogni CH è una sequenza finita di configurazioni, in quanto se la macchina di Turing non termina su un ingresso allora non esiste una CH per quel dato ingresso.
+</p>
+<p class='vspace'>Formalmente si può definire una CH in questo modo:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Sia <em>M</em> una MdT e <em>w</em> un ingresso per <em>M</em>. Una <strong>CH accettante</strong> per <em>M</em> su <em>w</em> è una sequenza di configurazioni <em>C<sub>1</sub>, C<sub>2</sub>, ..., C<sub>l</sub></em> dove:
+</p><ul><li><em>C<sub>1</sub></em> è la configurazione di partenza di <em>M</em> su <em>w</em>
+</li><li><em>C<sub>l</sub></em> è una configurazione accettante
+</li><li>ogni <em>C<sub>i</sub></em> segue <em>C<sub>i-1</sub></em> secondo le regole di <em>M</em>
+</li></ul><p>Una <strong>CH non accettante</strong> è simile ad una CH accettante tranne che <em>C<sub>l</sub></em> è una configurazione non accettante.
+</p></div>
+<p>Le MdT deterministiche possiedono una sola CH per un dato input, mentre le MdT non deterministiche ne possiedono molte, in corrispondenza ai possibili rami della computazione.
+</p>
+<div class='vspace'></div><h2>Linear Bounded Automa (LBA)</h2>
+<p>Un LBA è una MdT limitata in memoria in cui la testina non può muoversi oltre il limite destro e sinistro della stringa di input. Lo spazio di memoria utilizzabile è quindi ristretto alla lunghezza della stringa di input. 
+</p>
+<p class='vspace'>Per incrementare la memoria disponibile è possibile però aumentare l'insieme dei simboli dell'alfabeto rendendolo più ampio rispetto all'insieme dei simboli dell'alfabeto di ingresso. In questo modo si incrementa la memoria di un fattore costante, quindi la quantità di memoria disponibile è lineare rispetto alla dimensione dell'input.
+</p>
+<p class='vspace'>È possibile dimostrare che un LBA possiede un numero limitato di configurazioni:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Sia <em>M</em> un LBA con:
+</p><ul><li><em>q</em> stati
+</li><li><em>g</em> simboli di ingresso
+</li><li>un nastro lungo <em>n</em>
+</li></ul><p>Il numero di configurazioni distinte possibili è <em>qng<sup>n</sup></em>.
+</p></div>
+<div class='vspace'></div><h3>Decidibilità di <em>A<sub>LBA</sub></em></h3>
+<p>Grazie a questa proprietà degli LBA è possibile dimostrare che il problema dell'accettazione di una stringa per un LBA è decidibile:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><em>A<sub>LBA</sub> = {&lt;M, w&gt; | M è un LBA che accetta w}</em>
+</p>
+<p class='vspace'>Costruiamo il decisore <em>L</em> che decide <em>A<sub>LBA</sub></em>:
+<em>L</em> = su ingresso <em>&lt;M, w&gt;</em>
+</p><ol><li>simula <em>M</em> su <em>w</em> fino a che <em>M</em> termina o fino a che ha effettuato <em>qng<sup>n</sup></em> passi
+</li><li>se <em>M</em> termina e accetta &rarr; accetta<br />altrimenti &rarr; rifiuta (<em>M</em> non ha accettato o è finito in loop)
+</li></ol><p class='vspace'>La simulazione di <em>M</em> su <em>w</em> si ferma anche quando si ricade in una configurazione già vista in precedenza: questa situazione indica la presenza di un loop infinito. 
+La simulazione inoltre può fare al massimo <em>qng<sup>n</sup></em> passi: se si arriva ad aver visitato <em>qng<sup>n</sup></em> configurazioni distinte, il prossimo passo ci porterà in una configurazione sicuramente già vista (perché le configurazioni sono in numero limitato) e quindi in un loop.
+</p></div>
+<div class='vspace'></div><h3>Non decidibilità di <em>E<sub>LBA</sub></em></h3>
+<p>Mentre è decidibile <em>A<sub>LBA</sub></em>, non è invece decidibile <em>E<sub>LBA</sub></em>, ovvero il problema che consiste nel dire se un LBA non accetta alcuna stringa. È possibile dimostrarlo tramite riduzione:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><em>E<sub>LBA</sub> = {&lt;M&gt; | M è un LBA e L(M)=0}</em>
+</p>
+<p class='vspace'>Supponiamo che il decisore per <em>E<sub>LBA</sub></em> esista e proviamo a ridurre un problema noto a <em>E<sub>LBA</sub></em>:<br />riduciamo <em>A<sub>TM</sub></em> a <em>E<sub>LBA</sub></em>:
+</p><ul><li><em>R</em> decisore per <em>E<sub>LBA</sub></em>
+</li><li><em>S</em> decisore per <em>A<sub>TM</sub></em>
+</li></ul><p class='vspace'>Per effettuare la riduzione definiamo l'LBA <em>B</em> tale che <em>L(B)={CH accettanti per una data MdT </em>M<em> e un dato ingresso </em>w<em>}</em>. L'ingresso per <em>B</em> è una sequenza di configurazioni e per verificare che la sequenza sia una CH accettante devono essere verificate le condizioni già descritte in precedenza.
+</p>
+<p class='vspace'>Se <em>L(B) = 0</em> vuol dire che non esistono CH che consentono a <em>M</em> di accettare <em>w</em> e quindi <em>A<sub>TM</sub></em> dovrà rifiutare. Viceversa se il linguaggio di B non è vuoto allora <em>M</em> accetta <em>w</em>.
+</p>
+<p class='vspace'>Costruiamo il decisore <em>S</em> che decide <em>A<sub>TM</sub></em>:
+<em>S</em> = su ingresso <em>&lt;M, w&gt;</em>
+</p><ol><li>costruisci LBA <em>B</em> da <em>M</em> e <em>w</em>
+</li><li>esegui <em>R</em> su ingresso <em>&lt;B&gt;</em>
+</li><li>se <em>R</em> accetta &rarr; rifiuta (<em>L(B)</em> vuoto &rarr; <em>M</em> non accetta <em>w</em>)<br />altrimenti &rarr; accetta
+</li></ol><p class='vspace'>Quindi se esistesse un decisore per <em>E<sub>LBA</sub></em> potremmo ottenere un decisore per <em>A<sub>TM</sub></em>. Sappiamo però che non è possibile decidere <em>A<sub>TM</sub></em> e quindi non esiste un decisore per <em>E<sub>LBA</sub></em>.
+</p></div>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IT-Riducibilit%e0)</span></div>
+  </div>
+</body>
+</html>

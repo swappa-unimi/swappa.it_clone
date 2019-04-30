@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Intelligenti - Appunti del 7 Ottobre</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SI-7ottobre.html' title='Sistemi Intelligenti - Appunti del 7 Ottobre'>Sistemi Intelligenti - Appunti del 7 Ottobre</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Intelligenti - Appunti del 7 Ottobre ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>La lezione di oggi è stata tenuta - in via sempre meno eccezionale - dal prof Ferrari.
+</p></div>
+<div class='vspace'></div><h2>Ancora sulle reti feed-forward</h2>
+<p>Portiamo avanti il <a class='wikilink' href='SI-6ottobre.html'>discorso iniziato ieri</a> sulle reti neurali <strong>feed-forward</strong>, che grazie alla loro flessibilità sono tra le architetture più utilizzate. 
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/feed-forward.gif' alt='' title='' /></span></div>
+<p>Sappiamo già che in queste reti i neuroni sono organizzati in strati detti layer, e che l'informazione passa da uno all'altro seguendo un'unica direzione. Distinguiamo sostanzialmente tre strati, ognuno caratterizzato dalla stessa funzione di attivazione e quindi la stessa reazione agli stimoli:
+</p><ul><li><em>strato di ingresso</em>. Nella maggior parte dei casi ha funzione di attivazione lineare, cioè non cambia la forma del segnale di ingresso (al più la amplifica)
+</li><li><em>strato di uscita</em>. Dato che dipende molto dal tipo di applicazione che la rete implementa, questo è lo strato che più di tutti la caratterizza. Le risposte possono essere a soglia (secondo una funzione a gradino, in cui si sceglie tra due soli valori) o lineari (con una somma degli ingressi). La prima strategia è quella tipica delle classificazioni, mentre la seconda viene usata per l'approssimazione di funzioni (regressione)
+</li><li><em>strati nascosti</em>, sono quelli intermedi, che effettuano in genere trasformazioni non lineari
+</li></ul><div class='vspace'></div><h2>Percettrone</h2>
+<h3>Introduzione</h3>
+<p>La prima rete feed-forward realizzata è anche la più semplice, ed è il <strong>percettrone</strong>. Nel percettrone l'uscita viene generata pesando gli ingressi e applicando al risultato un sogliatore.
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/percettrone.gif' alt='' title='' /></span></div>
+<p>Facendo riferimento ai numeri in rosso dello schema accanto:
+</p><ol><li>indicano una funzione di attivazione di tipo lineare
+</li><li><strong>b</strong> è la costante usata per calibrare il percettrone. In alcuni casi può tornare utile considerarla come peso ulteriore (nel nostro esempio sarebbe w<sub>4</sub>), così da arrivare ad avere n+1 ingressi. Si tratta di un trucchetto che spesso semplifica l'implementazione della rete
+</li><li>sogliatore, con soglia sullo 0
+</li></ol><div class='vspace'></div><h3>Funzione di attivazione</h3>
+<p>Per convenzione i pesi e gli ingressi sono organizzati in vettori, indicati con il simbolo in grassetto: <strong>w</strong> è il vettore dei pesi, <strong>x</strong> quello degli ingressi.<br />Varrà quindi la seguente formula: <strong>w</strong> * <strong>x</strong> = &#931;<sub>i</sub> w<sub>i</sub> * x<sub>i</sub>
+</p>
+<p class='vspace'>Altra formula interessante è: <strong>w</strong> * <strong>x</strong> + b = &#931;<sub>i</sub> w<sub>i</sub> * x<sub>i</sub> + 1 * b<br />Questa equazione ribadisce il concetto espresso prima al punto (2), ovvero che la costante di calibrazione del percettrone può essere considerata come peso (w<sub>n+1</sub>) di un nuovo ingresso (x<sub>n+1</sub>) che ha valore pari ad 1.
+</p>
+<p class='vspace'>Una proprietà geometrica che si rivelerà presto importante è che "<strong>w</strong> * <strong>x</strong> + b" identifica un iperpiano nello spazio dei reali R<sup>n+1</sup>. Per capire l'importanza basta vedere com'è fatta la funzione di uscita della rete:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/percettrone-modello.gif' alt='' title='' /></div>
+<p class='vspace'>Alla luce di quanto detto poco fa, possiamo affermare che tutti i punti di ingresso che si trovano sopra l'iperpiano avranno come risposta 1, altrimenti avranno risposta 0. Grazie al lavoro del sogliatore lineare binario si ottengono dunque due classi.
+</p>
+<div class='vspace'></div><h3>Addestramento</h3>
+<p>I pesi del percettrone sono configurati (fase di addestramento) con un algoritmo che prevede l'apprendimento per esempi. Si tratta in questo caso di coppie di esempi (ingressi e uscite) della classificazione che si vorrebbe ottenere, che nel loro insieme andranno a formare il cosiddetto <em>dataset</em>. In questo modo si insegna al percettrone come rispondere.
+</p>
+<p class='vspace'>Vediamo come funziona l'algoritmo. Per ogni coppia di ingressi-uscite (x<sub>i</sub>, y<sub>i</sub>) vengono modificati i parametri interni w e b secondo due formule. La prima:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/percettrone-addestramento.gif' alt='' title='' /></div>
+<p class='vspace'>Dove:
+</p><ol><li>w<sub>i</sub>. All'inizio dell'addestramento gli vengono dati valori molto bassi ma leggermente diversi da 0, così da abbassare il rischio di arrivare ad un minimo locale (ci torneremo meglio poi)
+</li><li>&#951;, è il <em>tasso di apprendimento</em>, ovvero quanto velocemente il vettore peso si adatta all'apprendimento. Anche se è vero che più è alto e più sarà veloce l'adattamento, non sarà così banale trovare il valore ideale
+</li><li>y<sub>i</sub>, è l'uscita desiderata
+</li><li>f(x<sub>i</sub>), è l'uscita attuale
+</li></ol><p class='vspace'>Il concetto espresso è questo: "se l'uscita attuale è vicina a quella che mi aspetto allora non tocco nulla, altrimenti modifico i pesi in modo proporzionale agli ingressi".<br />La seconda formula è invece: <strong>b<sub>i</sub> = b + &#951; (y<sub>i</sub> - f(x<sub>i</sub>))</strong>
+</p>
+<div class='vspace'></div><h3>Applicazioni</h3>
+<p>Il percettrone permette di realizzare un numero limitato di applicazioni, in particolare riesce a implementare solo funzioni linearmente separabili (come l'AND o l'OR, ma non lo <strong>XOR</strong>). Questo limite discende direttamente dalla funzione di attivazione sopra riportata, e per meglio capire il concetto consideriamo la seguente funzione bidimensionale:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/linearmenteSep.gif' alt='' title='' /></div>
+<p class='vspace'>I pallini presenti nel grafico individuano le coppie di valori ingresso-uscita di alcuni esempi, e il colore di riempimento indica la loro classificazione. Poiché è possibile in questo caso tracciare un buon numero di linee rette che separino le due aree di valori, la funzione è linearmente separabile. Le rette rappresentano una delle soluzioni che il percettrone ha trovato per distinguere le classi partendo dagli esempi forniti nel dataset.<br />Riportiamo ora il grafico dello XOR:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/linearmenteNonSep.gif' alt='' title='' /></div>
+<p class='vspace'>Come si può facilmente vedere in questo caso non è possibile separare le due classi di valori con una retta. Per realizzare uno XOR non ci resta che abbandonare la via del percettrone, e utilizzare modelli multistrato (che vedremo nel prossimo capitolo).
+</p>
+<p class='vspace'>Ultima considerazione per l'addestramento è che il dataset va scelto bene. Questa situazione ad esempio contiene un errore:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/erroreDataset.gif' alt='' title='' /></div>
+<p class='vspace'>Il valore indicato dalla freccia rossa non è affidabile, e può essere dovuto o a un errore o a un imprevisto occorso durante la costruzione dell'insieme degli esempi. Non è affatto raro che tale fenomeno avvenga, ma non bisogna preoccuparsi perché la rete neurale è un'architettura robusta, capace di ignorare o tenere in scarso conto gli errori nel dataset. Questa proprietà è detta <em>generalizzazione</em>, e ha il vantaggio di poter essere settata (ad esempio nel caso dello XOR deve essere azzerata, perché il fatto di essere non linearmente separabile non è dovuto a errori ma alle caratteristiche intrinseche della funzione).
+</p>
+<div class='vspace'></div><h2>Reti neurali multistrato</h2>
+<p>Le prime reti neurali multistrato risalgono agli anni '80, e tra le loro caratteristiche: hanno due o più strati (evidentemente), possono avere funzioni di attivazione non lineari, sono in grado di realizzare qualsiasi funzione, sono configurabili con algoritmi di <em>backpropagation</em> dell'errore.
+</p>
+<p class='vspace'>La rete funziona sempre portando il segnale in avanti, finché non si arriva all'ultimo strato in cui facciamo la differenza tra il risultato desiderato e quello ottenuto. Il risultato di questa operazione rappresenta l'errore, e lo rimandiamo all'inizio della rete così che possa essere tenuto in considerazione per i nuovi calcoli.
+</p>
+<p class='vspace'>Consideriamo ora la cosa da un punto di vista grafico. Ammettiamo di conoscere l'andamento dell'errore (<code class='escaped'>er</code>) rispetto ad un certo parametro (<code class='escaped'>par</code>) secondo questa forma:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/erroreMultistrato.gif' alt='' title='' /></div>
+<p class='vspace'>Se sappiamo di essere nel punto (a), possiamo chiederci in che direzione dovremmo muoverci per migliorare la soluzione: aumentiamo o diminuiamo il valore del parametro? Per decidere basta calcolare la derivata della funzione in quel punto e regolarci in base ad essa. Nell'esempio sopra ci spoteremo verso sinistra.
+</p>
+<p class='vspace'>Introduciamo a questo punto il problema dei minimi locali, che abbiamo già accennato all'inizio della lezione. Per capirli facciamo un nuovo esempio:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/minimiLocali.gif' alt='' title='' /></div>
+<p class='vspace'>Se ci troviamo nel punto (a) è logico immaginare che ci sposteremo nel punto (b) e qui ci fermeremo, anche se in (c) si avrebbe una soluzione migliore.<br />Altro problema: di quanto ci dobbiamo spostare a destra o a sinistra? Se troppo poco rischiamo di rimanere bloccati in un punto, se troppo rischiamo di saltare dei minimi appetitosi. La scelta non è affatto banale.
+</p>
+<p class='vspace'>Ricapitolando, se localmente so decidere con una certa facilità in che verso muovermi, non so né di quanto e né se ci potrebbero essere soluzioni locali migliori (magari dei minimi globali).
+</p>
+<p class='vspace'>A tutto questo si tenta di far fronte con la <em>tecnica del gradiente</em> e con la <em>backpropagation</em>.
+</p>
+<p class='vspace'>Il problema è che da questo momento in poi il professore è andato un po' in crisi, ed io con lui. Se qualcuno ha preso appunti decenti, prego di postarli ;)
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SI-7ottobre)</span></div>
+  </div>
+</body>
+</html>

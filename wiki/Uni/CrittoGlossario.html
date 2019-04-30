@@ -1,0 +1,706 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Crittografia - Glossario Crittografia </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.CrittoGlossario' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Crittografia - Glossario Crittografia
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGlossario?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGlossario?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='CrittoGlossario-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGlossario?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGlossario?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Crittografia - Glossario Crittografia was last modified on June 22, 2011, at 12:29 PM'>
+							<span style='display:none;'>Crittografia - Glossario Crittografia</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Crittografia - Glossario Crittografia ::</strong>
+</pre><div class='vspace'></div><div  style='text-align: center; background-color: #f5f9fc; border: 2px solid #cccccc; padding: 5px;' > 
+<p><a href='#A'><strong>A</strong></a> - <a href='#B'><strong>B</strong></a> - <a href='#C'><strong>C</strong></a> - <a href='#D'><strong>D</strong></a> - <a href='#E'><strong>E</strong></a> - <a href='#F'><strong>F</strong></a> - <a href='#G'><strong>G</strong></a> - <a href='#H'><strong>H</strong></a> - <a href='#I'><strong>I</strong></a> - <a href='#J'><strong>J</strong></a> - <a href='#K'><strong>K</strong></a> - <a href='#L'><strong>L</strong></a> - <a href='#M'><strong>M</strong></a> - <a href='#N'>N</a> - <a href='#O'><strong>O</strong></a> - <a href='#P'><strong>P</strong></a> - <a href='#Q'>Q</a> - <a href='#R'><strong>R</strong></a> - <a href='#S'><strong>S</strong></a> - <a href='#T'><strong>T</strong></a> - <a href='#U'><strong>U</strong></a> - <a href='#V'>V</a> - <a href='#W'>W</a> - <a href='#X'><strong>X</strong></a> - <a href='#Y'>Y</a> - <a href='#Z'>Z</a>
+</p></div>
+<div class='vspace'></div><hr />
+<p><a name='A' id='A'></a>
+</p><h2>A</h2>
+<p><strong>Accordo su chiavi</strong>: Per mettersi d’accordo sulle chiavi ci sono due schemi: Diffie-Hellman che è basato sull’intrattabilità del problema del logaritmo discreto e quello di Puzzle di Merkle che non è basato su alcuna assunzione computazionale.
+</p>
+<p class='vspace'><strong>AES cifratura</strong>: le fasi di cifratura utilizzate sono 4. <strong>(1)</strong> Substitute bytes: usa una s-box per svolgere una sostituzione del blocco byte per byte. <strong>(2)</strong> Shift Rows: compie una semplice permutazione. <strong>(3)</strong> Mix columns: una sostituzione che utilizza l’aritmetica. <strong>(4)</strong> Add round key: una semplice operazione di XOR bit a bit del bloco corrente con una porzione della chiave espansa. 
+</p>
+<p class='vspace'><strong>AES decifratura</strong>: L’algoritmo di decifratura non è lo stesso della cifratura. Infatti usa una diversa sequenza di trasformazioni, le trasformazioni inverse. Lo svantaggio è che necessita di una doppia implementazione.Esiste anche un algoritmo di decifratura che ha la stesa struttura di quello di cifratura, infatti ha la stessa sequenza di trasformazioni, usa le trasformazioni inverse ma richiede una diversa schedulazione delle chiavi.
+</p>
+<p class='vspace'><strong>Algoritmi per firme digitali</strong>: RSA e DSS, HASH.
+</p>
+<p class='vspace'><strong>Attacco alla firma digitale</strong>: Esistono tre tipi di attacchi alle firme digitali: -<em>Key-only attack</em>, in cui l’attaccante conosce solo la chiave pubblica della vittima; -<em>Known Message Attack</em>, in cui l’attaccante conosce una lista di messaggi e le relative firme della vittima; -<em>Chosen Message Attack</em>, in cui l’attaccante sceglie dei messaggi e chiede alla vittima di firmarli. Gli Scopi dell’attacco alle firme digitali possono essere principalmente tre: -<em>Total break</em>, per determinare la chiave privata della vittima, e poter firmare qualsiasi messaggio; -<em>Selecitve forgery</em>, in cui dato un messaggio M, si può determinare la firma F tale che VERIFICA(F,M,kpub)=SI; -<em>Existential forgery</em>, per determinare una coppia (M,F) tale che VERIFICA (F,M,kpub)=SI.
+</p>
+<p class='vspace'><strong>Attacco al MAC</strong>: Gli attacchi al MAC hanno principalmente tre scopi: -<em>Total break</em>, per determinare la chiave K; -<em>Selective forgery</em>, in cui dato un messaggio M, si vuole determinare y tale che y=MAC(M,K); -<em>Existential forgery</em>:, per determinare una coppia (M,y) tale che y=MAC(M,K).Vi sono tre tipi di attacco al MAC: -<em>Known Message Attack</em>: l’attaccante conosce una lista di messaggi ed i relativi MAC; -<em>Chosen Message Attack</em>: l’attaccante sceglie dei messaggi e chiede alla vittima di computarne i MAC; -<em>Adaptive Chosen Message Attack</em>: è come il Chosen Message Attack, ma le scelte dipendono dalle risposte precedenti.
+</p>
+<p class='vspace'><strong>Attacco del compleanno</strong>: Il paradosso del compleanno può essere utilizzato per attaccare le funzioni hash. Se il digest prodotto è di n bit: genera r1 varianti del messaggio originale e r2 varianti del finto messaggio. La probabilità di trovare una coppia di varianti (una di r1 e una di r2) che producono lo stesso digest è &gt;1/2 quando la funzione hash è applicabile a k input casuali con: - K=SQR(2<sup>n</sup>)=2<sup>n/2</sup> (se n=40bit si può avere una collisione con probabilità 1&#8260;2 calcolando220=1.000.000 hash casuali). Modelli di lunghezza arbitraria sono trattati utilizzando hash con input fisso: il messaggio input M viene diviso in k blocchi di lunghezza fissa (m1,m2,...,mk), che possono essere trattati in seriale/iterato e parallelo.
+</p>
+<p class='vspace'><strong>Attacco meet in the middle (DES Doppio)</strong>: Data una coppia nota( P e C) l’attacco procede nel seguente modo: innanzitutto si esegue la crittografia di P per tutti i 2<sup>56</sup> valori possibili di k1. Si memorizzano i risultati in una tabella e si ordina la tabella.Poi si esegue la decrittografia di C utilizzando tutti i 2112 possibili valori di k2 .Man mano che vengono prodotte le decrittografie si confrontano i risultati con la tabella e si ricerca una corrispondenza.Quando viene trovata una corrispondenza si esegue il test delle due chiavi risultanti contro una nuova coppia nota di testo in chiaro/testo cifrato.Se le due chiavi producono il testo cifrato corretto si tratta delle chiavi corrette. Per un determinato testo in chiaro P esistono 2<sup>64</sup> possibili valori cifrati che potrebbero essere prodotti da una doppia applicazione dell’algoritmo 2DES.
+</p>
+<p class='vspace'><strong>Attacco Meet in the Middle (2°versione)</strong>: Per gli hash che hanno una struttura a catena, può essere utilizzata una variante del birthday attack (attacco del compleanno), con lo scopo di generare un falso messaggio R=(r1,r2) diverso da M=(m1,m2) con h(R)=h(M). L’attacco si svolge in questo modo: genera r1 varianti della prima parte e vai alla fase intermedia; genera r2 varianti della seconda parte e vai indietro alla fase intermedia; Trova una collisione (la probabilità di successo è la stessa del birthday attack). Considera lo schema di hash per M=(m1,m2): h1=E(m1,IV), d=h(m)=E(m2,h1), con E cifratura e IV valore iniziale. L’attacco consiste nel trovare M*=(m*1,m*2) collida con M: -Trova i=1,...,r1 varianti m*<sub>1,j</sub>, e calcola h*<sub>1,i</sub>=E(m*<sub>1</sub>,IV); -Trova i=1,...,r2 varianti m*<sub>2,j</sub>, e calcola h*<sub>2,i</sub>=D(m*<sub>2</sub>,IV). Se si utilizzano più round, vale lo stesso risultato.
+</p>
+<p class='vspace'><strong>Attacchi a 3-DES</strong>: Gli attacchi portati a 3-DES non sono una minaccia realistica poiché nessuno di questi è riuscito a romperlo. Un attacco prevede la ricerca di valori di testo in chiaro che producono un primo valore intermedio e poi nell’utilizzo di meet in the middle per determinare le due chiavi. Un altro attacco è l’attacco a testo in chiaro noto che si basa sull'osservazione che si conoscano un risultato intermedio del testo cifrato ed il testo cifrato finale, riducendo quindi il problema ad un attacco a 2-DES.Naturalmente chi svolge l’attacco non può avere tutte queste informazioni, quindi l’attacco risulta di difficile implementazione.
+</p>
+<p class='vspace'><strong>Attacchi al DES</strong>: Attacco a forza bruta, Time-space trade-off .Analisi crittografica: <em>Crittoanalisi lineare</em>: recupera la chiave a partire da 2<sup>43</sup> coppie di testi in chiaro noti; <em>Crittoanalisi differenziale</em>: recupera la chiave a partire da 2<sup>47</sup> coppie di testi scelti.
+</p>
+<p class='vspace'><strong>Autenticazione X.509</strong>: ci sono tre procedure: Autenticazione One-way, Autenticazione Two-way, Autenticazione Three-way. Assumiamo che i due comunicanti conoscano le chiavi pubbliche, come primo messaggio cè uno scambio di certificati oppure i certificati sono ottenuti dalle directory. Nella one-way A invia a B la Firma A {t<sub>A</sub>, r<sub>A</sub>, B, sgnData, E<sub>PKB</sub>(K<sub>AB</sub>)} dove tA è il timestamp con l’expiration time, rA è il campo nonce e gli altri due sono campi opzionali. Un attaccante tenterà di effettuare un attacco replay, ma il campo nonce è unico fino all’espiration time in modo appunto di vanificare questo attacco (B deve conservare il nonce); si conserva integrità ed originalità del messaggio. Nel two-way B risponde al messaggio di A mandando la sua firma (integrità ed originalità messaggio di B). Nel three-way si vuole eliminare il check dei timestamp (questo è necessario in assenza di clock sincronizzato), quindi si fanno le cose precedenti e in + A invia Firma A {r<sub>B</sub>}
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='B' id='B'></a>
+</p><h2>B</h2>
+<p><strong>Blowfish</strong>: E’ un cifrario simmetrico a blocchi ed ha le caratteristiche del cifrario di Feistel, ma in più è veloce, compatto e semplice da implementare e da analizzare.Espande la chiave convertendo una chiave di al più 14 word in un array di 18 sotto-chiavi a 32 bit. <em>Cifratura</em>: Utilizza due operazioni, + per la somma di word e &#8853; per lo XOR. <em>Decifratura</em>: Utilizza lo stesso algoritmo ma con le sottochiavi in ordine inverso.
+</p>
+<p class='vspace'><strong>Blowfish vs DES</strong>: Con Blowfish sia le sottochiavi che le S-BOX dipendono dalla chiave mentre in DES le S-BOX sono fissate. Inoltre, con Blowfish in ogni round le operazioni coinvolgono tutto il blocco, in DES solo la parte destra. Blowfish è invulnerabile ad attacchi di forza bruta(con dim.chiave 14 word).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='C' id='C'></a>
+</p><h2>C</h2>
+<p><strong>Certificati</strong>: nel mondo digitale un’autorità riconosciuta lega un nome ad una chiave pubblica, l’autorità di certificazione rappresenta una terza parte fidata la cui firma garantisce il legame tra chiave ed identità. Alcune proprietà dei certificati sono che ognuno può leggerli e determinare nome e chiave pubblica, ognuno può verificarli ed assicurarsi dell’autenticità, solo l’Autorità può crearli ed aggiornarli... Esempi di dati in un certificato: periodo di validità chiave pubblica, numero seriale o identificatore chiave, info addizionali su chiave (ad es., algoritmi ed utilizzo), info addizionali su utente, stato della chiave pubblica; formato più diffuso: definito dallo standard internazionale ITU-T X.509. Un certificato può essere revocato per vari motivi come Compromissione chiave privata, Info non più valide (es., cambio affiliazione), Non più utile per lo scopo prefissato, Compromissione algoritmo, Perdita o malfunzionamento (di security token, perdita di password o PIN), Cambio politiche di sicurezza (es., la CA non supporta più servizi per certificati). I metodi per revocarli sono: Data scadenza dentro un certificato (Certificati “a breve scadenza”), Notifica manuale (Informazione tramite canali speciali, utilizzabile solo per sistemi piccoli o chiusi), File pubblico di chiavi revocate (si usa certificate Revocation List (CRL)) e Certificato di revoca, che sostituisce certificato revocato nella directory. La Certificate Revocation List (CRL) è una lista firmata dalla CA contenente: numeri seriali dei certificati emessi revocati (ma non ancora scaduti), quando è avvenuta la revoca, altro (per es., motivi). La data della CRL indica quanto sia aggiornata. 
+</p>
+<p class='vspace'><strong>Chosen Plaintext Attack</strong>: L’avversario può ottenere la cifratura di un testo in chiaro a sua scelta.
+</p>
+<p class='vspace'><strong>Chosen Ciphertext Attack</strong>: L’avversario può ottenere la decifratura di un testo cifrato a sua scelta.
+</p>
+<p class='vspace'><strong>Chosen Text Attack</strong>: L’avversario può ottenere la cifratura e la decifratura di coppie di testi chiaro/cifrato.
+</p>
+<p class='vspace'><strong>Cifrari a blocchi (DES)</strong>: Cifrari a chiave simmetrica, il testo in chiaro è diviso in blocchi di lunghezza fissa e viene cifrato un blocco alla volta; opera su blocchi di n bit di input per produrre blocchi di n bit di output; con blocchi n bit di testo in chiaro ho 2<sup>n</sup> possibili input. In generale per n bit la dimensione della chiave è n*2<sup>n</sup>. Trasformazione reversibile o non singolare: ogni blocco di testo in chiaro deve produrre un blocco cifrato univoco. Sicurezza DES: Questo cifrario, per blocchi di piccola dimensione è equivalente alla cifratura a sostituzione ed è quindi vulnerabile all’analisi statistica. Per blocchi grandi si mascherano le caratteristiche statistiche ma vi sono problemi pratici per la dimensione della chiave.
+</p>
+<p class='vspace'><strong>Cifrari asimmetrici</strong>: Usano una cassaforte con due lucchetti; con una chiave pubblica chiudiamo la cassaforte, con l’altra privata apriamo la cassaforte. Chiunque può cifrare un messaggio per Alice, ma solo Alice può cifrare un messaggio cifrato per lei. Non ci sono chiavi condivise tra Alice e Bob, ciascuno dei 2 utenti genera solo la propria coppia di chiavi e rende pubblica la chiave pubblica. Ogni utente memorizza una sola chiave, quella privata.
+</p>
+<p class='vspace'><strong>Cifrari asimmetrici (2°versione)</strong>: Sono caratterizzati dall’utilizzo di due chiavi una pubblica e una privata che hanno il compito una di cifrare o verificare la firma e l’altra di decifrare o creare la firma. Per quanto riguarda la cifratura del messaggio avendo due utenti A e B e l’utente B, volesse inviare un messaggio ad A, dovrà cifrarlo mediante la chiave pubblica; una volta che il messaggio cifrato arriva ad A quest’ultimo dovrà decifrarlo mediante l’utilizzo della chiave privata. Con questo metodo chiunque può cifrare un messaggio per l’utente A e solo quest’ultimo sarà in grado di decifrarlo. Nella cifratura simmetrica quindi non vi è nessuna condivisione di chiavi ma bensì ogni utente genera da solo la propria coppia di chiavi, pubblica e privata, e rende pubblica la chiave pubblica. Fanno parte di questa categoria di algoritmi gli algoritmi: RSA, curva ellittica, Diffide-Helmann e DSS.
+</p>
+<p class='vspace'><strong>Cifrari a sostituzione</strong>: Si usa una frase chiave che sostituisce le prime lettere dell’alfabeto in chiaro senza eventuali ripetizioni. La sostituzione prosegue con le lettere conseguenti all’ultima lettera della chiave, senza ripetere quelle già presenti. Chiavi possibili: più di 26, ma meno di 26!. - <em>Crittoanalisi</em>: Tramite analisi crittografica basata sulla natura dell’algoritmo, sfrutta conoscenze sul testo in chiaro e sull’algoritmo (es. Frequenza occorrenza lettere). Invece con attacco a forza bruta si tenta ogni possibile chiave fino ad ottenere un risultato; in media bisogna provare la metà delle chiavi. –<strong>Numero chiavi possibili</strong>: Sostituzione generica: 26!.  Sostituzione con alfabeto shiftato: 25. Sostituzione con parole chiave lunga n caratteri (tutti diversi): n!.
+</p>
+<p class='vspace'><strong>Cifrari con shift</strong>: <em>Sicurezza</em>: dato un testo cifrato Y, deve essere difficile risalire alla chiave usata K. Una volta individuata la chiave, conoscendo Dk sarà possibile decrittografare tutti i messaggi. <em>Attacco a forza bruta</em>: si tenta ogni possibile chiave fino ad ottenere un risultato. In media bisogna provare la metà delle chiavi.Sono detti monoalfabetici: una volta scelta la chiave ogni carattere è mappato ad un unico carattere cifrato.
+</p>
+<p class='vspace'><strong>Cifrari di Feistel</strong>: Per la cifratura basta implementare un solo round e lo stesso codice può essere usato per ogni round. La decifratura usa lo stesso algoritmo della cifratura, ma considerando le sottochiavi in ordine inverso.
+</p>
+<p class='vspace'><strong>Cifrari ibridi</strong>: Nei sistemi di cifratura ibridi oltre alle due chiavi privata e pubblica si ha l’aggiunta di una chiave di sessione. Per quanto riguarda la cifratura del messaggio avendo due utenti A e B e l’utente A volesse inviare un messaggio a B, l’utente B dovrà inviare ad A prima la chiave di sessione k cifrata con la chiave pubblica e poi il messaggio cifrato con la chiave di sessione; una volta che A ha ricevuto entrambe le informazioni da B dovrà prima decifrare la chiave di sessione k mediante la sua chiave privata per poi decifrare il messaggio vero e proprio mediante la chiave di sessione k. I vantaggi di questo metodo di cifratura sono: che la chiave di sessione viene usata solo per uno o pochi messaggi ed inoltre è molto più veloce della sola crittografia a chiave pubblica.
+</p>
+<p class='vspace'><strong>Cifrari monoalfabetici</strong>: Al posto di una lettera dell’alfabeto in chiaro si mette quella corrispondente dell’alfabeto cifrante. Le chiavi possibili ,con un alfabeto di 21 lettere sono 21! (circa 50 miliardi).
+</p>
+<p class='vspace'><strong>Cifrari simmetrici</strong>: Crittosistemi a chiave privata/segreta. Alice e Bob conoscono la stessa chiave k. Cifrari a blocchi agiscono su ogni blocco input.Stream cipher: messaggi cifrati continuamente e flusso di chiavi. <strong>Sostituzione</strong>: ciascun elemento viene mappato su un altro elemento. <strong>Trasposizione</strong>: elementi del testo in chiaro vengono scambiati di posto.
+</p>
+<p class='vspace'><strong>Cifrari simmetrici (2°versione)</strong>: I due utenti per condividere una chiave comune possono ho utilizzare un canale privato ad esempio, un corriere fidato o un incontro faccia a faccia in un luogo segreto, oppure possono utilizzare una terza parte privata che stabilisce la chiave di sessione e la invia ad entrambi in modo sicuro. Per quanto riguarda la gestione delle chiavi nei cifrari simmetrici, in una rete con n utenti ogni coppia di utente deve condividere una chiave, quindi ogni utente deve memorizzare n-1 chiavi arrivando così a un numero totale delle chiavi segrete dell’ordine di (n<sup>2</sup>)/2; inoltre l’aggiunta di un nuovo utente alla rete implica la distribuzione della chiave a tutti i precedenti utenti.
+</p>
+<p class='vspace'><strong>Cifratura di flussi (DES)</strong>: Esegue la crittografia di un flusso digitale di dati un bit o un byte alla volte, esiste un flusso di chiavi (esempi classici Vigenère, Vernam). Utilizzando alcune modalità di funzionamento si può utilizzare la cifratura a blocchi per cifrare flussi.
+</p>
+<p class='vspace'><strong>Cifrario di Hill</strong>: m lettere in chiaro sono sostituite con m lettere cifrate secondo m equazioni lineari. Data una chiave K sottoforma di matrice, si cifra il testo in chiaro moltiplicando a 2 a 2 i caratteri convertiti in numero del testo in chiaro * la matrice. Si ottengono 2 numeri per ogni operazione di questo tipo e si fa il modulo per trovare le lettere corrispondenti cifrate. Per la decifratura si applica lo stesso procedimento utilizzando il testo cifrato e la matrice inversa.
+</p>
+<p class='vspace'><strong>Cifrario di Porta</strong>: Cifrario per digrammi. Le lettere dell’alfabeto sono sistemate sia sulla riga che sulla colonna di intestazione della tabella. Ogni coppia di lettere corrisponde ad un numero che parte da 0 per aa e arriva a 675 per zz.
+</p>
+<p class='vspace'><strong>Cifrario di Playfair</strong>: Le lettere in chiaro sono sostituite dalla lettera sulla stessa riga e colonna (diagonale inversa), le lettere ripetute vanno separate da una lettera di riempimento (ball -&gt; balxl); le lettere sulla stessa riga vengono sostituite dalle lettere a destra (es: ar -&gt; rm); le lettere sulla stessa colonna vengono sostituite dalle lettere sottostanti (es: mu -&gt; cm). <em>Sicurezza di Playfair</em>: Migliore rispetto alla cifratura monoalfabetica, perché per esempio, mentre in quest’ultima vi sono solo 26lettere, nella playfair vi sono 26*26=676 digrammi, e dunque l’identificazone dei singoli digrammi è più difficoltosa. <em>Debolezze</em>: L’analisi è condotta in base alla frequenza dei digrammi più comuni nella lingua.
+</p>
+<p class='vspace'><strong>Cifrario di Vigenère</strong>: Cifrario a sostituzione polialfabetica. Si utilizza il quadrato di Vigenère, composto nella prima riga e nella prima colonna da tutte le lettere dell’alfabeto, proseguendo completando tutte le righe e le colonne con le lettere dell’alfabeto mancanti. Dato un testo in chiaro ed una chiave, si divide il testo in chiaro per la lunghezza della chiave, e per avere il testo crittato si utilizza il quadrato trovando le corrispondenze tra la lettera del testo in chiaro e la lettera della chiave. Quindi, per la crittazione si utilizza la seguente formula: C=(M<sub>i</sub>+k<sub>mod t</sub>)mod t. Per la decrittazione invece, si fa l’operazione inversa, ovvero si sottrae ad ogni lettera del messaggio cifrato, il valore della corrispondente lettera della chiave: Mi=(C<sub>i</sub>-K<sub>mod t</sub>)mod t. Numero possibile di chiavi = 26<sup>t</sup> (dove t è il numero delle lettere dell’alfabeto). Crittoanalisi: E’ possibile romperlo usando indice di coincidenza e indice mutuo di coincidenza. Si determinano le ripetizioni e da esse si stima la lunghezza della chiave. Si analizzano le frequenze delle lettere in ognuno degli alfabeti cifranti corrispondenti alle lettere della chiave. Resiste all’analisi delle frequenze. Una lettera cifrata corrisponde a più simboli in chiaro ed esiste un numero grande di chiavi.
+</p>
+<p class='vspace'><strong>Cifrario One-Time pad</strong>: Lunghezza chiave = lunghezza testo in chiaro e chiave composta da bit indipendenti e casuali. Per ottenere il testo cifrato si fa lo XOR bit a bit fra testo in chiaro e chiave. Impossibile decifrare il messaggio. E’ unconditionally secure, cioè indipendentemente dal tempo e dalle risorse a disposizione è impossibile decrittografare il testo cifrato. Necessità però di un repertorio di chiavi.
+</p>
+<p class='vspace'><strong>Cifratura El Gamal</strong>: Avendo a disposizione la chiave pubblica (p,g, &#946;) dell’utente A; con p numero primo, g generatore di Zp e &#946;=g mod p, con &#945; chiave privata dell’utente A appartenente a Zp-1 . La cifratura di M per A risulta: y<sub>1</sub>&lt;-g<sup>k</sup> mod p e y<sub>2</sub>&lt;-M&#946;<sup>k</sup> mod p =&gt; C&lt;-(y<sub>1</sub>, y<sub>2</sub>), con k numero casuale appartenente a Z<sub>p-1</sub>.
+</p>
+<p class='vspace'><strong>Cifratura di Feistel (DES)</strong>: Molti dei cifrari a blocchi in uso si basano sulla proposta di Feistel seguendo l’idea dell’uso di cifrature in sequenza, per ottenere cifrature più complesse di ogni singola componente. Feistel alterna permutazioni e sostituzioni applicando i principi di Shannon per contrastare l’analisi statistica. Ogni cifra del testo cifrato è prodotta da più cifre del testo in chiaro. Per blocchi binari si utilizza la trasposizione; blocchi grandi migliorano la sicurezza ma riducono la velocità. Stesso principio vale per le chiavi grandi. A partire dalla chiave iniziale vengono prodotte tante sottochiavi quanti sono i round. La funzione round più è complessa, più resiste alle crittoanalisi. 
+</p>
+<p class='vspace'><strong>Cilindro di Thomas Jefferson</strong>: Cilindro di 15 cm e 36 dischi di legno; numero possibili ordinamenti dei dischi = 36!
+</p>
+<p class='vspace'><strong>Collision Resistant Hash Function (CRHF)</strong>: Verifica le proprietà di collision resistance e viene detta strong one-way hash function.
+</p>
+<p class='vspace'><strong>Concetto di probabilità</strong>: Il termine probabilità viene usato come misura del grado di plausibilità di una affermazione, ovvero del “verificarsi di un certo evento”. Per evento si intende qualsiasi affermazione o proposizione della quale sia verificabile il contenuto di verità.
+</p>
+<p class='vspace'><strong>Confronto tra SHA1 e MD4/5</strong>: -<em>Sicurezza forte</em>: è maggiore in SHA-1 con output di 32bit più lungo di MD4/5 (160 contro 128). –<em>Sicurezza contro l’analisi</em>: MD5 è soggetta ad alcuni attacchi. –<em>Velocità</em>: entrambi gli algoritmi sono molto veloci; SHA-1 ha più passi (80 contro 64) e il buffer ha 160bit rispetto ai 128bit di MD5. –<em>Semplicità e Compattezza</em>: sono entrambi semplici da descrivere e da implementare, senza uso di tabelle e di complesse strutture dati.
+</p>
+<p class='vspace'><strong>Curve ellittiche su Zp</strong>: Sono i punti (x,y) in Zp X Zp tali che y<sup>2</sup>=x<sup>3</sup>+ax+b(mod p), con p&gt;3 numero primo.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='D' id='D'></a>
+</p><h2>D</h2>
+<p><strong>Decifratura El Gamal</strong>: Dovendo decifrare il messaggio cifrato C, avendo a disposizione la chiave privata e la chiave pubblica dell’utente A oltre naturalmente al messaggio da decifrare, svolgo la seguente formula: M &lt;- z<sup>-1</sup> y<sub>2</sub> mod p , con z&lt;-y<sub>1</sub> mod p.
+</p>
+<p class='vspace'><strong>DES (Data Description Standard)</strong>: Nello standard DES la chiave è lunga 64 bit, 8 byte di cui l’ottavo bit è di parità. Il bit di parità è lo XOR dei precedenti 7 bit.
+</p>
+<p class='vspace'><strong>DES - Cifratura multipla</strong>: Si può costruire un cifrario più sicuro a partire dal DES senza modificarne la struttura.Questo lo si fa tramite la cifratura multipla che consiste nel cifrare il messaggio varie volte con chiavi differenti, sperando che questo aumenti la sicurezza, DES DOPPIO , DES TRIPLICATO(3-DES).
+</p>
+<p class='vspace'><strong>DES - Doppio (Funzionamento e Sicurezza)</strong>: Il DES doppio prevede due fasi di crittografia con 2 chiavi, utilizzate in sequenza. La fase di decifratura richiede l’applicazione delle chiavi in ordine inverso. Questo schema, apparentemente, prevede una chiave della lunghezza doppia di DES(56*2=112 bit) con un notevole incremento della potenza crittografica, ma questo solo apparentemente, in quanto il risultato di una doppia cifratura, potrebbe equivalere alla cifratura dello stesso messaggio con una sola chiave.
+</p>
+<p class='vspace'><strong>Differenze tra MD4 e MD5</strong>: -<em>MD5</em>: 4 round con 4.16 operazioni; 4 funzioni logiche; 64 costanti additive; ogni passo aggiunge il risultato del passo precedente. –<em>MD4</em>: 3 round con 3.16 operazioni; 3 funzioni logiche; 2 costanti additive; ad ogni passo NON viene aggiunto il risultato del passo precedente.
+</p>
+<p class='vspace'><strong>Diffie-Hellman</strong>: si sceglie un numero primo p, generatore g di Z<sub>p</sub>* ; g è generatore di Z<sub>p</sub>* se {g<sup>i</sup>|1&lt;i&lt; p-1}= Z<sub>p</sub>*. Generatori di Zn*: Zn* ha un generatore n = 2,4,p<sup>k</sup>,2p<sup>k</sup>, con p primo e k&gt;1. Se p è primo, allora Z<sub>p</sub>* ha un generatore; Il numero di generatori di Zn* è &#934;(&#934;(n)), Se p è primo, il numero di generatori di Zp* è &#934;(p-1). Funzionamento: Alice sceglie un x appartenente a Zp* e Bob
+un y appartenente a Zp*, poi alice manda g<sup>x</sup> mod p mentre bob manda g<sup>y</sup> mod p, entrambi sanno che k = g<sup>xy</sup> mod p, Alice quindi dovrà elevare il messaggio di Bob a x e Bob il messaggio di Alice alla y, per decifrare il messaggio dell’altro. –Sicurezza: La sicurezza dello scambio di chiavi Diffie-Hellman, si basa sul fatto che, mentre è relativamente facile calcolare dei valori esponenziali modulo un numero primo, è molto difficile calcolare i logaritmi discreti. Per valori primi molto estesi, quest’ultima operazione è considerata impossibile.
+</p>
+<p class='vspace'><strong>Digital Notary</strong>: -Il cliente usa del software venduto dalla Surety; -Funzione hash con un digest di 288bit (MD5+SHA); -Il sistema usa una struttura ad albero; -L’unità di tempo corrisponde ad un secondo; -Un numero seriale è inserito nel documento; -Il SuperHash è pubblicato in posti accessibili via rete, su un CD-ROM, ed ogni settimana sul Sunday New-York Times.
+</p>
+<p class='vspace'><strong>Digital Signature Standard (DSS)</strong>: Lo standard DSS utilizza un algoritmo progettato per fornire solo la funzionalità di firma digitale. A differenza di RSA, non può essere utilizzato per la crittografia o per lo scambio delle chiavi. Ciò nonostante si tratta di una tecnica a chiave pubblica. Le firme DSS sono sempre di 320 bit (buone per smart card) e la Sicurezza è basata sull’intrattabilità del problema del logaritmo discreto. Parametri: La chiave privata è (p, q, &#945;, s), mentre quella pubblica è (p, q, &#945;, &#946;), dove s è un numero casuale, s&lt;q, &#946; = &#945;<sup>s</sup> mod p e p è il primo di L bit, 512 &lt; L &lt; 1024 (L multiplo di 64), q è un numero primo di 160 bit, q|(p-1), mentre &#945; è un numero in Zp* di ordine q (&#945;<sup>q</sup> = 1 mod p). Per generare &#945; bisogna usare il concetto di ordine di un
+elemento, cioè: Ordine di &#945; € Zn* = è il più piccolo intero positivo r tale che &#945;<sup>r</sup> = 1 mod n; quindi per il Teorema di Lagrange: Per ogni &#945; € Zn*, ord(&#945;) divide &#934;(n); Se p è primo, ord(&#945;) divide p-1.
+</p>
+<p class='vspace'><strong>Digital Timestamp</strong>: La marca temporale di un documento è qualcosa aggiunto ad esso che prova che il documento è stato “prodotto” prima, dopo oppure ad un fissato momento. E’ in genere facile provare che un documento è stato prodotto dopo una data fissata, mentre è in genere difficile provare che un documento è stato prodotto prima di una certa data fissata. Per il Digital Timestamp possono verificarsi diverse problematiche, per cui si possono applicare 2 soluzioni, corrispondenti a due famiglie di protocolli: Protocolli distribuiti (senza Autorità Fidata, per avere più “testimonianze” del tempo e Protocolli con “link” (con Autorità Fidata, per collegare tra loro le marche dei documenti).
+</p>
+<p class='vspace'><strong>Disco di Alberti</strong>: Propose di usare più alfabeti cifranti e di sostituirli durante la cifratura.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='E' id='E'></a>
+</p><h2>E</h2>
+<p><strong>Effetto valanga(DES)</strong>: due testi che differiscono di un solo bit e sono cifrati con la stessa chiave differiscono per 34 bit.Due testi uguali cifrati con chiavi diverse per un solo bit,differiscono per 35 bit.
+</p>
+<p class='vspace'><strong>El Gamal</strong>: Parametri: Messaggio M; Numero casuale k appartenente a Z<sub>p-1</sub> ; Chiave pubblica dell’utente A che comprende p, il generatore g e &#946;; &#945; che è la chiave privata dell’utente A. Sicurezza: -Sicurezza generazione chiavi: conoscendo (p,g, &#946;) e sapendo che &#946;=g mod p l’attaccante vuole calcolare &#945; e ci riuscirebbe solo se sapesse calcolare il logaritmo discreto di &#946;= g mod p. – Sicurezza cifratura: conoscendo (p,g,&#946;) e sapendo che &#946;=g mod p e C=(y<sub>1</sub>, y<sub>2</sub>), dove y<sub>1</sub>&lt;-g<sup>k</sup> mod p e y<sub>2</sub>&lt;-M&#946;<sup>k</sup> mod p l’attaccante vuole calcolare M, ciò equivale a risolvere il problema di
+Diffie-Hellman.
+</p>
+<p class='vspace'><strong>Enigma</strong>: In astratto enigma consisteva di 3 pezzi: tastiera, scambiatore, visore. L’alfabeto cifrante cambia dopo ogni lettera. Lo scambiatore ha 26 alfabeti cifranti.Con 2 rotori la cifratura torna al punto iniziale dopo 26 * 26 cifrature, cioè ho 676 alfabeti cifranti. Le chiavi di enigma aumentano se calcoliamo che i rotori possono essere inseriti in posizioni reciproche diverse. Vi è una semplice sostituzione monoalfabetica ma con un grande numero di chiavi. Le sostituzioni non cambiano durante la cifratura; si rompe con l’analisi delle frequenze. I rotori hanno un piccolo numero di chiavi, ma l’assetto cambia continuamente e resiste all’analisi delle frequenze.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='F' id='F'></a>
+</p><h2>F</h2>
+<p><strong>Firma digitale</strong>: Equivalente alla firma convenzionale, deve poter essere facilmente prodotta dal legittimo firmatario e nessun utente deve poter riprodurre le firme di altri. Chiunque può facilmente verificare una firma.
+</p>
+<p class='vspace'><strong>Firma digitale con hash</strong>: Firma(M)&lt;-(Firma(h(M))). I vantaggi scaturiscono dall’efficienza, dall’integrità, e dalla sicurezza.
+</p>
+<p class='vspace'><strong>Firma digitale di messaggi grandi</strong>: Se M&gt;n, si può firmare in questo modo: Firma(M)&lt;-(Firma(M<sub>1</sub>), Firma(M<sub>2</sub>),...).
+</p>
+<p class='vspace'><strong>Firma DSA</strong>: Funzionamento dell’algoritmo: Vi sono 3 parametri pubblici che possono essere comuni a un gruppo di utenti. Viene scelto un numero primo q di 160 bit, successivamente viene scelto un numero primo p tale che q divida (p-1), e infine g. Avendo a disposizione questi numeri, ciascun utente seleziona una chiave privata e genera una chiave pubblica. La chiave privata x dovrebbe essere scelta casualmente, mentre la chiave pubblica viene calcolata dalla chiave privata come y=g<sup>x</sup>mod p. Per creare una firma un utente calcola 2 quantità, r ed s, che sono funzioni dei componenti della chiave pubblica, della chiave privata dell’utente, del codice hash del messaggio e
+di un intero aggiuntivo k (generato casualmente). Per verificare una firma il destinatario genera una quantità v che è funzione delle componenti della chiave pubblica globale, della chiave pubblica del mittente e del codice hash del messaggio in arrivo. La firma è valida se la quantità v corrisponde alla componente r della firma. (((Generazione firma: La firma DSA è composta da (&#947;, &#948;) dove “&#947;=(&#945;<sup>r</sup> mod p) mod q”, “&#948; = (SHA(M)+s &#947;)r<sup>-1</sup> mod q”, mentre r è numero casuale di un intervallo tra [1,q-1]. Firma (p, q, &#945;, s) (M,r) = (&#947;, &#948;). Per verificare la firma si prendono due variabili e’ ed e’’; e’=SHA(M) &#948;<sup>-1</sup> mod q, mentre e’’= &#947; &#948;<sup>-1</sup> mod q. La firma è vera se &#947;= (&#945;<sup>e’</sup> &#946;<sup>e’’</sup> mod p) mod q , altrimenti è falsa. La lunghezza della firma è di 320 bit. La sicurezza è basata sul valore privato s, i valori p,q, &#945; possono essere gli stessi per un gruppo di utenti, quindi un’autorità sceglie p,q,&#945;, mentre il singolo utente sceglie solo s e calcola &#946;))).
+</p>
+<p class='vspace'><strong>Firma RSA</strong>: Firma di M: F&lt;-M<sup>d</sup>mod n. Verifica della firma di M: vera se M=F<sup>e</sup>mod n, altrimenti è falsa. Sicurezza della firma RSA: -Selective forgery, Key only attack: per falsificare la firma di M, bisogna calcolare M<sup>d</sup>mod n; il che è equivalente a “rompere” il crittosistema RSA. –Existential forgery, Key only attack: per generare messaggi e firma, bisogna scegliere F a caso, e calcolare M&lt;-F<sup>e</sup>mod n. –Existential forgery, Known message attack: per generare messaggi e firme conoscendo le coppie (M1,F1) e (M2,F2), si possono utilizzare le proprietà di omomorfismo: F<sub>1</sub>=M<sub>1</sub><sup>d</sup>mod n, F<sub>2</sub>=M<sub>2</sub><sup>d</sup>mod n, (F<sub>1</sub>,F<sub>2</sub>)emod n=F<sub>1</sub><sup>e</sup>F<sub>2</sub><sup>e</sup>mod n=M<sub>1</sub>M<sub>2</sub>mod n: F<sub>1</sub>F<sub>2</sub>mod n è una firma valida per M<sub>1</sub>M<sub>2</sub>mod n. –Selective forgery, Chosen message attack: per falsificare la firma di M, si può scegliere M<sub>1</sub> e M<sub>2</sub> tali che M=M<sub>1</sub>M<sub>2</sub>mod n, e chiedere alla vittima di firmare M<sub>1</sub> e M<sub>2</sub> ottenendo F<sub>1</sub> e F<sub>2</sub>: F<sub>1</sub>F<sub>2</sub>mod n è una firma valida per M.
+</p>
+<p class='vspace'><strong>Firma RSA con hash</strong>: Firma di M: F&lt;-[h(M)]<sup>d</sup>mod n. Verifica firma RSA con hash: Verifica firma di M: vera se h(M)=F<sup>e</sup>mod n, altrimenti è falsa. Sicurezza firma RSA con hash: -Existential forgery, Key only attack: Per generare messaggi e firme si può scegliere F a caso, e calcolare z&lt;-F<sup>e</sup>mod n, e M&lt;-h<sup>-1</sup>(z). Per invertire “h” si procede con M&lt;-h<sup>-1</sup>(z).
+</p>
+<p class='vspace'><strong>Firme Digitali e Funzioni Hash</strong>: Il problema si pone quando si vogliono creare firme digitali per messaggi lunghi. Una soluzione è la divisione in blocchi del messaggio e la firma per ogni blocco. Sorge però il problema della sicurezza, in quanto una permutazione/composizione delle firme è una nuova firma. Una soluzione di uso corrente è firmare il valore hash del messaggio: [firma di M]=Fk(h(M)). I vantaggi principali derivano dall’integrità dei dati e dall'efficienza degli algoritmi.
+</p>
+<p class='vspace'><strong>Funzione compressione MD5</strong>: Ogni round consiste di 16 operazioni [ABCD.k.s.i], in cui ognuna agisce sul buffer di 4 word ABCD: A&lt;-B+(A+W(B,C,D)+X[k]+T[i]))&lt;&lt;s, dove K è l’indice della parola, s indica lo shift ciclico, i è l’indice dell’iterazione, W è la funzione del round (F,G,H,I), X[k]&lt;-M’[16i+k] è la k-esima word di 32bit nell’iesimo blocco e T[i] è l’iesimo elemento della tabella di 64 valori.
+</p>
+<p class='vspace'><strong>Funzione di compressione</strong>: E’ composta da quattro round, di cui ognuno prende in input un blocco corrente di 512bit=16word e un valore corrente del buffer, 4word ABCD per 128bit. Ogni round consiste di 16 operazioni [ABCD,k.s.i]; L’output dell’ultima fase viene sommato all’input della prima fase (la somma avviene word a word), mentre l’output della L-esima fase è il digest a 128bit.
+</p>
+<p class='vspace'><strong>Funzioni HASH</strong>: Il valore HASH h(M) è una rappresentazione non ambigua e non falsificabile del messaggio M. Tipico uso: Computo al tempo t il valore HASH del file M; conservo H=h(M) in un luogo sicuro. Per controllare se il file è stato successivamente modificato calcolo h(M’) e verifico se H=h(M’); assicura se una file è stato modificato.
+</p>
+<p class='vspace'><strong>Funzioni Hash (2°versione)</strong>: L’idea alla base è che il valore hash h(M) è una rappresentazione non ambigua e non falsificabile del messaggio M. L’output della funzione hash è detto fingerprint o digest o hash. Ha le proprietà di comprimere e di essere facile da computare. Le funzioni hash sono utlizzate per firme digitali, per l’integrità dei dati, e per le certificazioni nel tempo. Una funzione hash produce un output di lunghezza fissata per ogni messaggio di lunghezza arbitraria: h: &#8721;*-&gt;&#8721;n. Due messaggi m1,m2 € x collidono se: h(m1)=h(m2). Possono esistere infinite collisioni. Un possibile attacco alle funzioni hash consiste nel preparare due versioni di un contratto M ed M’ (M favorevole alla vittima, ed M’ sfavorevole), e nel modificare M’ a caso (piccoli cambiamenti come aggiunta spazi) finché h(M)=h(M’). Quindi, non appena la vittima firma M, l’attaccante ha anche la firma di M’.
+</p>
+<p class='vspace'><strong>Funzioni hash a cascata</strong>: Le funzioni hash sono composte in “parallelo”. Trovare una collisione per H(M)=H1(M).H2(M) significa trovare una collisione sia per H1 che per H2.
+</p>
+<p class='vspace'><strong>Funzioni hash basate su cifrari a blocchi</strong>: Se è disponibile una implementazione di un cifrario a blocchi, si procede in questo modo: Cifrario a blocchi E<sub>k</sub>(.) per input ad n bit; Funzione g che da n bit produce una chiave; M’<sub>1</sub>...M’<sub>i</sub> è il messaggio M con eventuale padding; H<sub>0</sub> è una costante predefinita; H<sub>i</sub> il valore hash; H<sub>i</sub>=E<sub>g(Hi-1)</sub>(M’<sub>i</sub>) XOR M’<sub>i</sub> [Matyas-Meyer-Oseas] -&gt; H<sub>i</sub>=E<sub>g(Hi-1)</sub>(M’<sub>i</sub>) XOR M’<sub>i</sub> XOR H<sub>i-1</sub> [Miyaguchi-Preneel] -&gt; H<sub>i</sub>=E<sub>M’i</sub>(H<sub>i-1</sub>) XOR H<sub>i-1</sub> [Davies-Meyer].
+</p>
+<p class='vspace'><strong>Funzioni One-Way</strong>: Una funzione f è One-Way (OWF) quando, per ogni x nel dominio di f è facile calcolare y=f(x), ma, dato y, è computazionalmente inammissibile trovare x tale che y=f(x). Le differenza con OWHF consistono nel fatto che non ci sono limitazioni sul condominio (non necessariamente comprime), e non è richiesta la sicurezza forte (2nd pre-image).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='G' id='G'></a>
+</p><h2>G</h2>
+<p><strong>Generazione delle chiavi (RSA)</strong>: Fasi: <strong>(1)</strong> Selezionare p,q (entrambi primi e p&#8800;q); <strong>(2)</strong> Calcolare n=p*q; <strong>(3)</strong> Calcolare &#966;(n)=(p-1)(q-1); <strong>(4)</strong> Selezionare l’intero e in modo che sia primo con &#966;(n), cioè gcd(e,&#966;(n))=1, con e minore di &#966;(n); <strong>(5)</strong> Calcolare d con la formula d=e-1mod &#966;(n). Quindi la chiave pubblica sarà la coppia (e,n) e la chiave privata la coppia (d,n).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='H' id='H'></a>
+</p><h2>H</h2>
+<p><strong>HMAC</strong>: HMAC è una tipologia di codice per l'autenticazione di messaggi (Message Autentication Code - MAC) basata su funzione di hash utilizzata in diverse applicazioni legate alla sicurezza informatica. Tramite HMAC è infatti possibile garantire sia l'integrità che l'autenticità di un messaggio. HMAC utilizza infatti una combinazione del messagio originale e una chiave segreta per la generazione del codice. Il vantaggio di HMAC è il non essere legata a nessuna funzione di hash particolare, questo per rendere possibile una sostituzione della funzione nel caso fosse scoperta debole. Nonostante ciò le funzioni più utilizzate sono MD5 e SHA-1. Il messaggio viene suddiviso in blocchi di lunghezza pari a j bit. Seleziono una chiave segreta K, se questa risulta essere più lunga di j bit a questa applico la funzione H. Quello che si ottiene è detta K', la chiave di HMAC. K' = K se |K| = j bit K' = K + padding di zeri se |K| &lt; j bit K' = H(K) se &gt;= jbit. Una volta definita K l'eventuale padding della chiave originale la funzione HMAC calcolerà il valore nel seguente modo: HMACK(M)=h((K&#8853;opad)||h((K&#8853;ipad)||M’)), con M’=alla suddivisione in blocchi del messaggio. -<em>Sicurezza HMAC</em>: La sicurezza dipende dalle proprietà della funzione hash usata da HMAC. Se l’attaccante ha successo in un attacco ad HMAC allora: può computare l’output della funzione di compressione anche quando IV è casuale e/o è a lui sconosciuto, e può computare collisioni nella funzione hash anche quando IV è casuale e/o sconosciuto. –<em>Attacchi ad HMAC</em>: Il miglior attacco conosciuto è basato sul paradosso del compleanno: occorrono 2<sup>|hash(.)|/2</sup> coppie (M,HMACk(M)). Per attaccare HMAC sono necessarie molte coppie M,HMAC: l’avversario non può calcolarle perché non conosce K, e deve quindi osservare un flusso di messaggi generati con la stessa chiave. HMAC con MD5 è ragionevolmente sicura.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='I' id='I'></a>
+</p><h2>I</h2>
+<p><strong>Indice di coincidenza</strong>: probabilità che due caratteri presi a caso in x1, x2,...xn, siano uguali. Il suo utilizzo nella crittoanalisi serve per determinare la lunghezza della chiave. 
+</p>
+<p class='vspace'><strong>Indice mutuo di coincidenza</strong>: probabilità che due caratteri presi a caso in x1, x2,...xn, e in y1,y2...yn siano uguali. Il suo utilizzo nella crittoanalisi serve per determinare Il valore della chiave.
+</p>
+<p class='vspace'><strong>Integrità dei Dati e Funzioni Hash</strong>: Un tipico uso delle funzioni hash è il seguente: -computo al tempo T il valore hash del file M; -conservo H=(h(M)) in un luogo sicuro; -per controllare se il file è stato successivamente modificato, calcolo h(M’) e verifico se H=h(M’): h(M) rappresenta l’impronta digitale del file. Tutto ciò assicura se un ile è stato modificato o meno.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='J' id='J'></a>
+</p><h2>J</h2>
+<p>...
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='K' id='K'></a>
+</p><h2>K</h2>
+<p><strong>Known Ciphertext Attack</strong>: L’avversario conosce solo il testo cifrato.
+</p>
+<p class='vspace'><strong>Known Plaintext Attack</strong>: L’avversario conosce sia il testo in chiaro che il testo cifrato.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='L' id='L'></a>
+</p><h2>L</h2>
+<p><strong>Little-endian e Big-endian</strong>: Consiste nel trasformare parole di byte in parole di 32 bit. Data la sequenza di byte B1,B2,B3,B4 nella parola W: -Architetture Little-endian: il byte con indirizzo più basso è quello meno significativo; valore parola: W=2<sup>24</sup>B4+2<sup>16</sup>B3+2<sup>8</sup>B2+2<sup>0</sup>B1. –Architetture Big-endian: il byte con indirizzo più basso è quello più significativo; valore parola: W:2<sup>24</sup>B1+2<sup>16</sup>B2+2<sup>8</sup>B3+2<sup>0</sup>B4.
+</p>
+<p class='vspace'><strong>Logaritmo discreto</strong>: La sicurezza di molte tecniche crittografiche si basa sulla intrattabilità del logaritmo discreto: come Crittosistema ElGamal, l’Accordo su chiavi Diffie-Hellman le Firme digitali DSS. Esso dice: Dati a,n,b calcolare x tale che a<sup>x</sup>=b mod n. Se n è primo, i migliori algoritmi hanno complessità Ln[a,c]=O(e<sup>(c+o(1))(ln n)a(lnln n)1-a</sup>) con c &gt; 0 ed 0 &lt; a &lt; 1 , il Miglior algoritmo è il Number field sieve, il tempo medio euristico è di Ln[1/3, 1.923].
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='M' id='M'></a>
+</p><h2>M</h2>
+<p><strong>MAC(Message Authentication Code)</strong>: E’ applicato per determinare l’autenticità del messaggio M, e l’integrità del messaggio M. MAC garantisce solo autenticazione e integrità, mentre se si vuole avere anche confidenzialità, si può cifrare prima/dopo con una diversa chiave condivisa K’. Costruzione: il MAC può essere costruito o basandosi su cifrari a blocchi (CBC-MAC), oppure su funzioni hash (metodo del segreto prefisso, metodo del segreto suffisso, HMAC). Le Proprietà del MAC sono: -Easy computation: dato un valore M e la chiave K, MAC(K,M) è facile da calcolare. – Compression: M di lunghezza finita, output di lunghezza fissata. –Computation-resistance: data una o più coppie MAC(K,Mi), non è possibile calcolare un nuovo MAC(K,Mj), Mi&#8800;Mj. –Key non-recovery: data una o più coppie MAC(K,Mi), non è possibile calcolare K.
+</p>
+<p class='vspace'><strong>MAC basati su Funzioni Hash</strong>: Presenta notevoli vantaggi: sono in genere più veloci dei cifrari a blocchi, sono in genere incluse nelle funzioni di libreria, non ci sono restrizioni sull’esportazione dagli USA. Bisogna però fare molta attenzione alla loro costruzione.
+</p>
+<p class='vspace'><strong>MD4/5</strong>: -Padding del messaggio:MD4 processa il messaggio in blocchi di 512bit (ogni blocco consta di 16 parole di 32bit). M è il messaggio originario di b bit: M’=M 100...0 b. M’ consta di un numero di bit multiplo di 512, ovvero di un numero L blocchi di 512bit, ovvero di N parole con N multiplo di 16. –Operazioni: MD4/5 impiegano diverse operazioni sulle word, tutte molto veloci: (X&#923;Y), (XVY), (X XOR Y), (¬X), (X+Y), (X&lt;&lt;s). –Funzioni: Funzioni definite su parole di 32bit: -round 1: F(X,Y,Z)=(X&#923;Y)V((¬X)&#923;Z); -round 2: G(X,Y,Z)= (X&#923;Z)V(Y&#923;Z)V(X&#923;Y); -round 3: H(X,Y,Z)=X XOR Y XOR Z; -round 4: I(X,Y,Z)=Y XOR (XV(¬Z)).
+</p>
+<p class='vspace'><strong>Metodo del segreto prefisso</strong>: MAC(K,M)=H(K,M). <em>Existential forgery attack</em>: per funzioni hash iterate, considero M’=Mx<sub>n+1</sub> e so calcolare f(x<sub>n+1</sub>H(K,M))=H(K,Mx<sub>n+1</sub>)=MAC(K,M’). Una possibile soluzione è H(K,L,M), con L=lunghezza di M.
+</p>
+<p class='vspace'><strong>Metodo del segreto suffisso</strong>: MAC(K,M)=H(M,K). Existential forgery attack: attacco del compleanno: Dato M, in O(2<sup>|hash(.)|/2</sup>) passi calcolare M’: H(M)=H(M’). Quindi, la soluzione è H(M,K)=H(M’,K)=MAC(M’,K).
+</p>
+<p class='vspace'><strong>Modalità operative del DES</strong>: Servono a cifrare testi più lunghi di 64 bit. <ins>Cinque modalità</ins>: <strong>(1)</strong> <em>electronic codebook chaining</em> (<strong>ECB</strong>): ciascun blocco in chiaro di 64 bit viene codificato in modo indipendente con la stessa chiave.Una sua applicazione è nella trasmissione sicura di singoli valori.Se la lunghezza del messaggio non è un multiplo di 64, se è più lungo spezzo l’input in blocchi da 64 bit, se è più corto effettuo il padding. VANTAGGI: l’ECB è il metodo più semplice e veloce ed eventuali errori non si propagano. SVANTAGGI: ha lo stesso blocco in chiaro corrisponde lo stesso blocco cifrato, quindi per messaggi lunghi non è sicuro e ci possono essere possibili attacchi di sostituzione. <strong>(2)</strong> <em>Cipher block chaining</em> (<strong>CBC</strong>): in ogni blocco l’input si ottiene come XOR dei 64 bit di testo in chiaro e dei precedenti 64 bit di testo cifrato.Una sua applicazione è nella trasmissione di caratteri a blocchi.VANTAGGI: non ci sono ripetizioni.SVANTAGGI: è meno veloce dell’ECB, c’è la propagazione di errori e c’è dipendenza tra i blocchi. <strong>(3)</strong> <em>Cipher feedback</em> (<strong>CFB</strong>): può operare in tempo reale,infatti cifro e trasmetto ciascun carattere;la lunghezza del testo cifrato è uguale a quella del testo in chiaro.Come nel CBC il testo cifrato è funzione del testo in chiaro precedente.Nella decrittografia si usa DES. VANTAGGI: può operare in tempo reale.SVANTAGGI: gli errori vengono propagati. <strong>(4)</strong> <em>Output feedback</em> (<strong>OFB</strong>): la struttura è simile al CFB ma al registro viene mandato l’output di DES invece che il testo cifrato.Una possibile applicazione è tramite i flussi su canali rumorosi.VANTAGGI: non si propagano gli errori di trasmissione dei bit. SVANTAGGI:per quanto riguarda la modifica dl flusso è più vulnerabile di CFB. <strong>(5)</strong> <em>Counter</em> (<strong>CTR</strong>): si impiega un contatore delle dimensioni del blocco in chiaro.Per ogni blocco successivo il contatore viene incrementato.VANTAGGI: Efficienza hardware e software, precalcolo dell’output DES, accesso casuale, sicurezza dimostrabile ed è semplice in quanto richiede solo l’algoritmo di crittografia.
+</p>
+<p class='vspace'><strong>Modello hash iterate</strong>: Input M. Padding ed aggiunta della lunghezza di M. Si ottiene un messaggio con blocchi di taglia uguale X<sub>1</sub>,X<sub>2</sub>,...,X<sub>n</sub>. Comutazione del valore hash: H<sub>0</sub> è una costante iniziale; Computazione di ... H<sub>i</sub>=f(X<sub>i</sub>,H<sub>i-1</sub>)...; Valore hash H<sub>n</sub>=X<sub>n</sub>,H<sub>n*1</sub>). Nel modello generale hash iterate, una collisione per h(M) implica una collisione di f.
+</p>
+<p class='vspace'><strong>Modello hash parallelo</strong>: Una funzione hash parallelo è resistente alle collisioni se lo è la funzione h (Damgard).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='N' id='N'></a>
+</p><h2>N</h2>
+<p>...
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='O' id='O'></a>
+</p><h2>O</h2>
+<p><strong>Obiettivi di progettazione</strong>: -<em>Sicurezza forte</em>: deve essere computazionalmente difficile trovare 2 messaggi con lo stesso valore hash. –<em>Sicurezza diretta</em>: la sicurezza non deve essere basata su problemi teorici difficili computazionalmente. –<em>Velocità</em>: l’algoritmo deve essere adatto per implementazioni software molto veloci. –<em>Semplicità e Compattezza</em>: deve essere semplice da descrivere e da implementare; non và fatto uso di tabelle e di complesse strutture dati.
+</p>
+<p class='vspace'><strong>Omofoni</strong>: Molti simboli per cifrare singoli caratteri frequenti cosi da abbassare le frequenze del testo cifrato.
+</p>
+<p class='vspace'><strong>One-Way Hash Function (OWHF)</strong>: Verifica le proprietà pre-image e 2nd pre-image resistance e viene deta weak one-way hash function.
+</p>
+<p class='vspace'><strong>Operazioni di trasformazione</strong>: <em>Sostituzione</em>: ciascun elemento del testo viene mappato su un altro elemento. <em>Trasposizione</em>: Elementi del testo in chiaro vengono scambiati di posto. <em>Sicurezza della trasposizione</em>: per brevi messaggi poca (es: 3 lettere -&gt; 6 anagrammi); su una frase diventa grande.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='P' id='P'></a>
+</p><h2>P</h2>
+<p><strong>Paradosso del compleanno</strong>: Può essere formulato con una domanda: qual è il valore minimo di k tale che la probabilità che almeno 2 persone in un gruppo di k persone abbiano lo stesso compleanno, sia &gt;0,5? Ignorando il 29febbraio, si suppone che ciascun compleanno sia ugualmente probabile. Per rispondere si può definire: P(n,k)=probabilità che esista almeno un duplicato in k elementi quando ciascun elemento può assumere un valore ugualmente probabile tra 1 e n. Esempi: 1)Quante persone scegliere a caso affinché, con probabilità &#8805; 0,5, ci siano almeno due con lo stesso compleanno? Risposta: bastano 23 persone; in un gruppo di 23 persone ci sono 253 coppie. - 2)Scegliamo a caso elementi in un insieme di cardinalità n. Quanti elementi scegliere se si vuole che la probabilità che ci siano almeno due elementi uguali sia &#949;? t=&#8730;(n.21n(1/(1-&#949;))). 3)Scegliamo a caso due elementi z1,z2 in un insieme di cardinalità n. Calcolare la probabilità che siano diversi: Prob(z2&#8800;z1)=1-Prob(z2=z1)=1-1/n. Se gli elementi invece sono 3, diventa (1-2/n)(1-1/n). - 4)Scegliamo a caso elementi in un insieme di cardinalità n. Quanti elementi scegliere se si vuole che la probabilità che ci siano almeno due elementi uguali sia &#949;? t=&#8730;(n.21n(1/(1-&#949;))). Se &#949;=0,5 allora t=1,17&#8730;n, mentre se n=365 e &#949;=0,5 allora t=22,3.
+</p>
+<p class='vspace'><strong>Parametri AES</strong>: nel AES-128 la lunghezza della chiave è di 4 word(128 bit),la dimensione del blocco è di 4 word e il numero di rounds è 10;con 128 bit ci sono 2<sup>128</sup> chiavi possibili.Nel AES-192 la lunghezza della chiave è di 6 word(192 bit),la dimensione del blocco è di 4 word e il numero di rounds è 12; con 192 bit ci sono 2<sup>192</sup> chiavi possibili. Nel AES-256 la lunghezza della chiave è di 8 word(256 bit),la dimensione del blocco è di 4 word e il numero di rounds è 14; con 256 bit ci sono 2<sup>256</sup> chiavi possibili.
+</p>
+<p class='vspace'><strong>PGP Digital Timestamping Service</strong>: -Il TSS firma ogni documento che riceve; -Ogni firma ha un numero seriale; -Il TSS memorizza tutte le firme che genera; -Tutte le marche emesse possono essere esaminate; -Ogni giorno viene pubblicato il numero seriale dell’ultima firma effettuata e tutte le marche emesse nella giornata.
+</p>
+<p class='vspace'><strong>Primitive di crittografia</strong>: Tecniche di cifratura: 1. cifrari simmetrici o a chiave privata (cifrari a blocchi strema cipher); 2. cifrari asimmetrici o a chiave pubblica.
+</p>
+<p class='vspace'><strong>Principio di Kerckhoffs</strong>: La sicurezza di un cifrario deve dipendere solo dalla segretezza della chiave, e non dalla segretezza dell’algoritmo usato.
+</p>
+<p class='vspace'><strong>Probabilità classica</strong>: La definizione classica di probabilità è: La probabilità, P(A), di un evento A è il rapporto tra il numero N di casi “favorevoli” e il numero totale M di casi possibili e mutuamente incompatibili(che non possono verificarsi simultaneamente). P(A) = N / M. 
+</p>
+<p class='vspace'><strong>Probabilità composte</strong>: La probabilità del prodotto di 2 eventi è uguale al prodotto della probabilità di uno degli eventi per la probabilità condizionata dell’altro calcolata a condizione che il primo abbia luogo: P(A &#8745; B) = P(A) P(B | A) = P(B) P(A | B). Se gli eventi A e B sono mutuamente escludentesi la probabilità condizionata si annulla per definizione. Se gli eventi sono indipendenti si ha che P(B | A) = P(B) e P(A | B) = P(A); quindi la probabilità del prodotto di 2 eventi indipendenti è uguale al prodotto delle probabilità di questi eventi.
+</p>
+<p class='vspace'><strong>Probabilità condizionata</strong>: La valutazione di probabilità dipende dallo stato di informazione. Invece di probabilità assoluta si parla di probabilità condizionata ad una certa informazione e si indica con P (A | B), letta probabilità di A dato B.
+</p>
+<p class='vspace'><strong>Probabilità matematica</strong>: Sia S un insieme di possibili risultati (Ai) di un esperimento, e tali eventi sono mutuamente escludentesi, allora per ognuno di essi esiste una probabilità P(A) rappresentata da un numero reale soddisfacente gli assiomi di probabilità. Assiomi: 1. P(Ai) &#8805; 0. 2. con A1 e A2 mutuamente escludentesi deve valere: P(A1 oppure A2) = P (A1) + P(A2) dove P(A1 oppure A2) è la probabilità di avere il risultato A1 o il risultato A2. 3. la sommatoria delle probabilità di tutti gli eventi mutuamente escludentesi deve risultare uguale a 1. La probabilità di non ottenere l’evento è uguale ad 1 meno la probabilità di ottenerla. La probabilità è un numero reale appartenente all’intervallo [0.1].
+</p>
+<p class='vspace'><strong>Probabilità soggettiva</strong>: La probabilità di un evento A è la misura del grado di fiducia che un individuo coerente attribuisce, secondo le sue informazioni e opinioni, all’avverarsi di A. Per passare ad un concetto pratico di probabilità bisogna quantificare in un numero il livello di probabilità e stabilire una serie di regole che questi numeri devono soddisfare.
+</p>
+<p class='vspace'><strong>Problema di Diffie-Hellman</strong>: in input si ha un numero primo p, un generatore g, g<sup>x</sup> mod p e g<sup>y</sup> mod p (dove x è la chiave privata di A e y è la chiave privata di B); in output bisogna ottenere g<sup>xy</sup> mod p. Bisogna quindi trovare x; il miglior algoritmo conosciuto calcola l’algoritmo discreto log<sub>g,p</sub>(g<sup>x</sup> mod p), il problema è che non si sa se sono equivalenti. Per scegliere le chiavi di Diffie-Hellman si scelgono a caso 2 numeri primi p1 p2, p = 1 + 2p1p2 , Se p non è primo, go to 1. g =
+Scegli_generatore(p,(2,1,p1,1,p2 ,1)).
+</p>
+<p class='vspace'><strong>Problemi del Protocollo Distribuito</strong>: Ci vogliono molte persone in grado di rispondere immediatamente all’utente, e si possono inoltre verificare problemi relativi alla durata (vita) delle firme digitali, per cui la firma potrebbe non essere più valida al tempo della verifica della marca temporale (ad esempio se la chiave privata è stata compromessa o lo schema di firme è stato rotto).
+</p>
+<p class='vspace'><strong>Prodotto di probabilità</strong>: Se 2 eventi possono verificarsi simultaneamente: P(A &#8745; B) = P(A) + P(B) - P(A &#8746; B).
+</p>
+<p class='vspace'><strong>Proprietà del complemento</strong>: Se l’algoritmo DES riceve in input un messaggio x e lo cifra con una chiave k da in output un messaggio y. Se riceve in input il messaggio x negato (cioè il complemento bit per bit di x) e lo cifra con la chiave k anch’essa in completo, restituisce in output il complemento bit a bit di y.
+</p>
+<p class='vspace'><strong>Proprietà di sicurezza</strong>: <em>Confidenzialità</em> (informazioni sono accessibili in lettura solo da chi è autorizzato), <em>Autenticazione</em>, <em>Integrità</em> (solo chi è autorizzato può modificare l’attività di un sistema o le informazioni trasmesse), <em>Non ripudio</em> (chi invia e chi riceve non può negare la trasmissione del messaggio), <em>Anonimia</em> (protezione dell’identità o del servizio utilizzato. Internet non garantisce anonimato; dall’indirizzo IP si identifica l’utente).
+</p>
+<p class='vspace'><strong>Proprietà (o Sicurezza) delle Funzioni Hash</strong>: -<em>One way</em> (pre-image resistant): dato y è computazionalente difficile trovare M tale che y =h(M). –ììSicurezza debole o weak collision<em> (2nd pre-image resistance): dato M è computazionalmente difficile trovare un altro M’ tale che h(M)=h(M’). –</em>Sicurezza forte o strong collision'' (collision resistance): computazionalmente difficile trovare 2 diversi messaggi con lo stesso valore hash.
+</p>
+<p class='vspace'><strong>Protocolli crittografici</strong>: Definisce l’interazione tra le parti (entità coinvolte nello schema) per ottenere le proprietà di sicurezza desiderate.
+</p>
+<p class='vspace'><strong>Protocollo con “link”</strong>: Riceve tutte le richiesta in intervalli prefissati, le collega tra loro, invia ad ognuna una marca temporale, e infine vincola se stesso a “non poter predatare”.
+</p>
+<p class='vspace'><strong>Public Key-Infrastructure</strong>: Le chiavi pubbliche vengono distribuite secondo alcune tecniche come: Invio point-to-point su canale fidato, Annuncio pubblico, Directory disponibile pubblicamente, Autorità per le chiavi pubbliche, Certificati per le chiavi pubbliche. Il primo può essere fatto per esempio con scambio diretto, uso di un corriere fidato, invio su canale pubblico, autenticazione (per esempio: hash su canale fidato) e va bene per un uso non frequente e per piccoli sistemi; L’annuncio pubblico consiste nell’invio ad altri utenti o al Broadcast della chiave, ad esempio: aggiunta della chiave pubblica PGP ai messaggi inviati a forum pubblici, il problema principale è la fiducia; la directory disponibile pubblicamente è un entità fidata che gestisce la directory di chiavi pubbliche. Ogni partecipante: registra la propria chiave pubblica di persona o in modo autenticato e può aggiornare la propria chiave se è usata da troppo tempo o la chiave privata è compromessa, inoltre può accedere alla directory (è necessaria comunicazione sicura ed autenticata).L’autorità per le chiavi pubbliche gestisce directory chiavi pubbliche, ha una chiave pubblica nota a tutti gli utenti e ogni utente chiede la chiave pubblica desiderata, quindi l’autorità la invia. Gli svantaggi sono la necessità di server on-line e un effetto collo di bottiglia.
+</p>
+<p class='vspace'><strong>Puzzle di Merkle</strong>: Schema: Non basato su assunzioni computazionali; Alice genera n chiavi distinte e “nasconde” ogni chiave in un puzzle. Il puzzle contiene informazioni per il calcolo della chiave, La soluzione di un puzzle richiede un tempo ragionevole, La soluzione di tutti i puzzle richiede un tempo troppo elevato. Il puzzle è composto da (x, ID, S), dove x è la soluzione del puzzle (richiede 2<sup>35</sup> operazioni in media), ID è l’identificativo del puzzle (che è unico per ciascun puzzle) ed S è un valore noto (serve per garantire l’unicità della soluzione del puzzle, ad esempio 32 bit nulli). Dato il puzzle si sceglie una chiave k, poi si computa y &lt;- CBC-DESk (x, ID, S), in return si deve avere (y, primi 20 bit di k). Il vantaggio di questo sistema è che il tempo delle computazioni di alice per la costruzione del puzzle sarà &#952;(n) e quello di bob x la risoluzione del puzzle di &#952;(t), mentre un attaccante risolverà in media n/2 puzzle, quindi in un tempo di &#952;(tn); ora se n= &#952;(n), il tempo di alice sarà sempre &#952;(n), quello di bob &#952;(n) mentre quello dell’attaccante &#952;(n2).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='Q' id='Q'></a>
+</p><h2>Q</h2>
+<p>...
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='R' id='R'></a>
+</p><h2>R</h2>
+<p><strong>RC4</strong>: cifrario simmetrico,la dimensione della chiave è variabile (da 1 a 56 byte). Genera una keystream con periodo maggiore di 10<sup>100</sup>, usa operazioni orientate ai byte ed è semplice da implementare ed analizzare.Per la crittografia si esegue l’operazione di XOR del valore k con il byte successivo di testo in chiaro.Per la decrittografia si esegue l’operazione di XOR del valore k con il byte successivo di testo cifrato. Attacchi: con chiave 128 bit non ci sono attacchi noti, esiste un attacco al protocollo WEP quindi il problema non dipende da RC4.I problemi del WEP sono che la chiave non viene cambiata e lo spazio delle chiavi è piccolo.
+</p>
+<p class='vspace'><strong>RC5</strong>: è un altro cifrario simmetrico. Parametri: la dimensione dei blocchi è variabile(32,64 o 128 bit), il numero di round è variabile (da 0 a 255) e la dimensione della chiave è variabile (da 0 a 255 byte).Altre caratteristiche sono che usa operazioni comuni dei processori, che usa poca memoria, che è semplice da implementare e da analizzare. Cifratura: utilizza tre operazioni primitive: la somma delle word, lo XOR bit a bit e la rotazione circolare a sinistra.Decifratura: la decifratura deriva fondamentalmente dall’algoritmo di cifratura, solo che in questo caso allle due word di testo cifrato vengono inizialmente assegnate le due variabili di una word A e B.
+</p>
+<p class='vspace'><strong>Relazioni fra le proprietà</strong>: -Sicurezza forte-&gt;sicurezza debole (collision-&gt;2nd pre-image): Sia h collision resistant e fissa un input x1. Se h non è anche 2nd pre-image, allora è possibile trovare x2 tale che h(x1)=h(x2). Quindi (x1,x2) è una coppia di collisioni. -2nd pre-image !-&gt; image: Considera la funzione identità. –image !-&gt;2nd pre-image: Considera la funzione g(x)=x2mod n. Dato x, -x è soluzione.
+</p>
+<p class='vspace'><strong>Rijndael (AES)</strong>: non è un cifrario di Feistel, lavora in parallelo sull’intero blocco in input.E’ un cifrario a blocchi iterato.La dimensione del blocco è di 128 bit, la lunghezza della chiave può essere 128, 192 o 256 bit.Ogni round è una composizione uniforme e parallela di 4 passi.
+</p>
+<p class='vspace'><strong>RSA</strong>: RSA è basato sul problema complesso della fattorizzazione in numeri primi. Il suo funzionamento base è: <strong>(1)</strong> si scelgono due numeri primi, p e q abbastanza grandi da garantire sicurezza; <strong>(2)</strong> si calcola il loro prodotto n=p*q, chiamato modulo; <strong>(3)</strong> si sceglie poi un numero e, chiamato esponente pubblico, più piccolo e coprimo di (p-1)(q-1); <strong>(4)</strong> si calcola il numero d, chiamato esponente privato, tale che e*d=1(mod(p-1)(q-1)). <br />La chiave pubblica è (n,e) mentre la chiave privata è (n,d); per calcolare d da e, o il contrario, non basta la conoscenza di n, ma serve il numero (p-1)(q-1), ovvero &#966;(n). Un messaggio M viene cifrato attraverso l'operazione M^e (mod n), mentre il messaggio C viene decifrato con C^d (mod n). Il procedimento funziona solo se la chiave è utilizzata per cifrare e la chiave d utilizzata per decifrare sono legate tra loro dalla relazione ed=1 (mod n), e quindi quando un messaggio viene cifrato con una delle due chiavi può essere decifrato solo utilizzando l'altra.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='S' id='S'></a>
+</p><h2>S</h2>
+<p><strong>Schemi di firme digitali (oltre a DSS)</strong>: El-Gamal (che è una versione modificata di DSS), Schnorr, Fiat-Shamir, GQ (Guillou-Quisquater), DSA, ECDSA (DSA su curve ellittiche). Ci sono vari schemi: One-time signatures, sono schemi validi per un solo messaggio (altrimenti la firma è compromessa) e sono: Rabin, Lamport-Merkle, Matyas_Meyer (basto su DES) e GMR (Goldwasser,MIcali,Rivest). Un altro è la Blind signatures, in cui il firmatario non vede il messaggio che firma. Nell’Arbitrated signatures si richiede una terza parte fidata (TTP) per la generazione e la verifica della firma; con l’ Undeniable signatures la verifica viene fatta in collaborazione con il firmatario. Fail stop signatures una firma falsa viene sempre scoperta (il firmatario può sempre dimostrarlo). Chameleon signatures solo il destinatario della firma è in grado di provare la validità.
+</p>
+<p class='vspace'><strong>Secret Sharing (Condivisione di segreti)</strong>: Un dealer vuole condividere un segreto S tra n partecipanti in modo che: - k o più partecipanti possano ricostruire S; - k-1 o meno partecipanti non hanno alcuna informazione su S. Per la condivisione dei segreti ci sono due schemi: (n,n) e (k,n). Con il primo schema il dealer sceglie un numero primo p e degli elementi in Zp da a<sub>1</sub> a a<sub>n-1</sub> e a<sub>n</sub> = S–a<sub>1</sub>-...-a<sub>n-1</sub>mod p. Poi il dealer distribuisce ai vari partecipanti a<sub>1</sub>, a<sub>2</sub> ecc... Ricostruzione: Come
+detto prima tutti i partecipanti insieme sanno che il S=a<sub>1</sub>+...+a<sub>n-1</sub>+a<sub>n</sub>mod p, ma basta la mancanza di un solo partecipante che tutti gli altri non hanno alcuna informazione sul segreto. Schema (k.n): inizializzazione: il dealer sceglie un numero primo p e degli elementi in Zp da a<sub>-1</sub> a a<sub>n-1</sub> e a<sub>n</sub> = S – a<sub>1</sub>-...- a<sub>k-1</sub> mod p. Calcolo share schema: il dealer calcola “f(x)=S+a<sub>1</sub>x+...+a<sub>k-1</sub>x<sup>k-1</sup>” e “for i=1 to n do y1&lt;- f(i)”. Il dealer distribuisce ai vari partecipanti y1 fino a y<sub>n</sub>. Per la ricostruzione: il segreto può essere ricostruito da k partecipanti anche senza il partecipante p<sub>n</sub>. Sui k partecipanti abbiamo le seguenti informazioni: K equazioni y<sub>i</sub>=S+a<sub>1</sub>i+...+ a<sub>k-1</sub>i<sup>k-1</sup> per i=i<sub>1</sub>, i<sub>2</sub>, ... i<sub>k</sub> e k incognite: S, a<sub>1</sub>, ..., a<sub>k-1</sub>. Lo stesso schema può essere visto utilizzando la formula di Lagrange per l’interpolazione polinomiale: -Un insieme di n punti individua univocamente una curva di ordine n-1 (Es. dati due punti esiste una sola retta passante) - Per uno schema a soglia k utilizzo un polinomio di grado k-1: y<sub>i</sub> = S+a<sub>1</sub>i+...+ a<sub>k-1</sub>i<sub>k-1</sub> (Distribuisco a ciascun partecipante un punto, Solo k partecipanti avranno k punti e possono ricostruire la curva, Risolvendo k equazioni in k incognite). Ricostruzione del segreto: k-1 partecipanti senza pn non riescono ad avere alcuna informazione sul segreto. Le informazioni con k-1 partecipanti sono: -k-1 equazioni: y<sub>i</sub>= S+a<sub>1</sub>i+...+ a<sub>k-1</sub>i<sub>k-1</sub> per i=i<sub>1</sub>, i<sub>2</sub>, ... i<sub>k-1</sub>; -k incognite: S, a<sub>1</sub>,..., a<sub>k-1</sub>; -Non possono ricostruire il segreto: -Ogni segreto è equamente possibile.
+</p>
+<p class='vspace'><strong>SHA (Secure Hash Algorithm)</strong>: Padding del messaggio: SHA processa il messaggio in blocchi di 512bit, di cui ognuno consta di 16 parole di 32bit. M è il messaggio originario di b bit -&gt; padding: M’=M 100...0 b; M’ consta di un numero di bit multiplo di 512, ovvero di un numero di parole N multiplo di 16.
+</p>
+<p class='vspace'><strong>SHA-1</strong>: L’algoritmo prende come input un messaggio con lunghezza massima di meno di 2<sup>64</sup>bit e produce in output un codice digest di 160bit. L’elaborazione globale di un messaggio ha la struttura con un blocco di 512bit e un codice hash e una variabile concatenamento di 160bit. L’elaborazione è costituita dai seguenti passi: aggiunta dei bit di riempimento, aggiunta della lunghezza, inizializzazione del buffer, elaborazione del messaggio in blocchi di 512bit e l’output che è il codice digest di 160bit.
+</p>
+<p class='vspace'><strong>SHA-256</strong>: Messaggio diviso in blocchi di 512bit e parole da 32bit. –SHA-512: Messaggio diviso in blocchi di 1024 bit e parole da 64bit. –SHA-384: Valore hash = primi 384bit di SHA-512, con costanti iniziali cambiate.
+</p>
+<p class='vspace'><strong>SHS (Secure Hash Standard)</strong>: Standard del governo americano dal 1993, con operazioni efficienti su architetture 32bit big-endian. Sfrutta gli stessi principi di MD4 e MD5, ma è più sicuro.
+</p>
+<p class='vspace'><strong>Sicurezza dei cifrari</strong>: <em>Incondizionatamente sicuro</em> (Unconditionally secure): indipendentemente dalle risorse disponibili, è impossibile decrittare il testo cifrato (esiste solo un sistema, il <em>One-Time pad</em>). <em>Computazionalmente sicuro</em> (Computationally secure): il tempo richiesto per violare la cifratura è grande e superiore alla vita utile delle informazioni contenute.
+</p>
+<p class='vspace'><strong>Sicurezza del sistema</strong>: Fissato il valore hash della radice, non è possibile inserire un nuovo valore nell’albero di hash o cambiarne anche un solo valore, altrimenti si determinerebbe una collisione per la funzione hash stessa. Inoltre si potrebbe rompere lo schema colludendo solo con il TSS e creando un insieme di alberi collegati lunghi “a sufficienza”. Una possibile soluzione sta nel pubblicizzare SuperHash ad intervalli regolari, ad esempio ogni giorno su Internet, sui quotidiani, ecc.
+</p>
+<p class='vspace'><strong>Sicurezza di MD4</strong>: MD4 è stato oggetto di molti attacchi, ad esempio con: -crittoanalisi dei primi 2 round: è stato provato che è facile trovare collisioni con round 3 omesso. –crittoanalisi degli ultimi 2 round: sono state trovate collisioni con round 1 omesso.
+</p>
+<p class='vspace'><strong>Sicurezza forte-&gt;One-way</strong>: E’ possibile dimostrare che un hash collision resistant deve essere one-way. Si procede provando per contraddizione: se esiste un algoritmo di inversione, allora esiste un algoritmo Las Vegas (cioè che o dà una risposta esatta o non risponde proprio), che trova collisioni con probabilità &#8805; 1/2.
+</p>
+<p class='vspace'><strong>Somma di probabilità</strong>: Se due eventi sono mutuamente escludentesi: P(A &#8746; B) = P(A) + P(B); se l’accadere di uno non preclude la possibilità che si presenti anche il secondo, P(A &#8746; B) = P(A) + P(B) – P(A &#8745; B).
+</p>
+<p class='vspace'><strong>Standard dei certificati X.509</strong>: è il più diffuso standard per i certificati. Ci sono varie versioni dalla 1 alla 3, e sono composte da vari campi: version (che può avere valore 1 per default, 2 se presente “issuer unique identifier” oppure “subject unique identifier”, 3 se ci sono estensioni), serial number (che ha valore intero, unico per ogni CA e identifica senza ambiguità il certificato), Signature algorithm ID (è l’algoritmo usato per firmare il certificato, i parametri associati, questo parametro è poco importante perché informazione ripetuta), Issuer name (è il nome X.500, sequenza di coppie nome-valore che identificano univocamente un’entità, della CA che ha creato e firmato il certificato), Validity period (ci sono due date, una per quando è stato creato il certificato e l’altra per quando scade), Subject name (è il nome utente del certificato, cioè chi conosce la chiave privata corrispondente), Subject’s public key (è la chiave pubblica del soggetto ed è identificativo dell’algoritmo e dei parametri associati) qua finiscono i campi della versione 1; Issuer unique identifier (è opzionale, è una sequenza di bit utile per identificare la CA, che ha emesso il certificato nel caso in cui il nome X.500 sia stato riutilizzato) Subject unique identifier (è opzionale, è una stringa di bit utile per identificare il soggetto nel caso che il nome X.500 sia stato riutilizzato) qua finisce la versione 2; la versione 3 ha in + il campo extension (che raccoglie diversi campi di estensione). Un campo comune a tutte le versioni è la firma dei precedenti campi (firma dell’hash di tutti gli altri campi, include il signature algorithm identifier).
+</p>
+<p class='vspace'><strong>Stream Cipher</strong>: è un cifrario simmetrico moderno a blocchi,molto più veloce dei normali cifrari a blocchi, infatti ha poche linee codice e operazioni semplici .Cifra il messaggio un byte (o bit) alla volta; utilizza una sequenza (keystream) pseudo-casuale generata a partire dalla chiave; combina la keystream tramite XOR con il messaggio.Per complicare la crittoanalisi si può usare un keystream con un lungo periodo e un keystream con le stesse caratteristiche di una sequenza casuale.
+</p>
+<p class='vspace'><strong>Struttura del DES</strong>: <em>Cifratura DES</em>: la funzione DES prevede due input, il testo in chiaro da crittografare e la chiave. L’elaborazione del testo in chiaro viene eseguita in tre fasi. Prima il testo in chiaro, di 64 bit , attraversa una permutazione iniziale che dispone i bit per produrre un input “permutato”; dopo, c’è una fase costituita da 16 ripetizioni della stessa funzione di permutazione e sostituzione. L’output dell’ultima fase è costituito da 64 bit che dipendono dal testo in chiaro e dalla chiave.La chiave attraversa invece prima una funzione di permutazione, poi per ognuna delle 16 ripetizioni, viene prodotta una sottochiave;la funzione di permutazione e la stessa per ciascuna ripetizione ma viene prodotta ogni volta una sottochiave differente. I risultati prodotti dall’elaborazione del testo in chiaro e dall’elaborazione della chiave vengono scambiate per produrre un “preoutput” che poi attraversa una permutazione inversa della permutazione iniziale. Ad eccezione delle permutazioni iniziale e finale, DES ha esattamente la stessa natura della cifratura di Feistel. Decifratura DES: come nel caso della cifratura Feistel , la decifratura utilizza lo stesso algoritmo della cifratura applicando le sottochiavi in ordine inverso. Esempio: Nella fase di cifratura partendo da 2 elementi L15 e R15 ,una chiave K16 ed una funzione f, abbiamo dopo la cifratura : R15=L16 ed L15=R16&#8853; f(L16,K16).Nella fase di decifratura scambiando gli elementi e quindi partendo da L16 e R16 otteniamo le stesse modifiche applicate in fase di cifratura.
+</p>
+<p class='vspace'><strong>Struttura di Feistel</strong>: Il testo in chiaro viene diviso in un blocco sinistro e in un blocco destro. La parte destra diventa la parte sinistra del livello successivo. Per la parte sinistra,invece, viene eseguito uno XOR con una funzione generata con la sottochiave.
+</p>
+<p class='vspace'><strong>Svantaggi DES</strong>: C’è lo svantaggio che con 8 iterazioni DES realizza una funzione random. DES ha una chiave di soli 56 bit, blocchi di 64 bit, criteri costruttivi non chiari ed è lento nell'implementazione software.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='T' id='T'></a>
+</p><h2>T</h2>
+<p><strong>Tecniche per l’autenticazione d’integrità</strong>: Funzioni HASH, MAC, e firme digitali. Scambio e condivisione di chiavi e generazione di numeri pseudo-casuali.
+</p>
+<p class='vspace'><strong>Tecniche di steganografia</strong>: Disposizione delle lettere/parole in un messaggio innocuo; contrassegna dei caratteri(ripasso a matita,fori sulle lettere..); inchiostro invisibile. Tecniche moderne: informazione nascoste nei bit (watermarking). Vantaggi: le parti possono nascondere si essere in comunicazione. Svantaggi: il messaggio segreto può essere scoperto. La segretezza è perduta quando il sistema viene scoperto.
+</p>
+<p class='vspace'><strong>3-DES</strong>: Esiste il 3-DES con tre chiavi ed il 3-DES con due chiavi.Il 3-DES con tre chiavi (DES triplicato) prevede tre fasi di crittografia con 3 chiavi diverse.Usa in pratica una chiave di 168 bit (56+56+56).Questa tecnica è una contromisura ovvia contro l’attacco meet in the middle. Lo svantaggio di questo approccio è che si ha una chiave troppo lunga. Un’alternativa è una tripla crittografia con 2 chiavi (DES triplo).Vi sono sempre 3 fasi di cifratura, ma nella terza fase si riutilizza la prima chiave. La compatibilità di 3-DES con 2 chiavi con il DES semplice è garantita ponendo k=k’, in questo modo diventa equivalente al semplice DES. La compatibilità del 3-DES con tre chiavi con DES è garantita ponendo k’’’=k’’ oppure k’=k’’.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='U' id='U'></a>
+</p><h2>U</h2>
+<p><strong>Utilizzo di Hash e MAC</strong>: Le funzioni HASH e MAC insieme all’uso di cifrari a/simmetrici garantiscono diverse proprietà durante lo scambio di messaggi, fra cui segretezza e autenticazione (sia del testo in chiaro che di quello cifrato).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='V' id='V'></a>
+</p><h2>V</h2>
+<p>...
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='W' id='W'></a>
+</p><h2>W</h2>
+<p>...
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='X' id='X'></a>
+</p><h2>X</h2>
+<p><strong>X.509 versione 3</strong>: Colma i requisiti non soddisfatti dalla versione 2: Subject field non adeguato: nomi X.509 sono corti, e mancano dettagli identificativi che potrebbero essere utili, -Subject field non adeguato per le applicazioni che riconoscono entità dall’indirizzo email, URL, -Vi è necessità di indicare politiche di sicurezza, -Vi è necessità di limitare il danno che potrebbe fare una CA maliziosa, ponendo vincoli all’applicabilità di un particolare certificato, -E’ importante distinguere chiavi diverse usate dallo stesso utente in tempi diversi. L’estensione opzionale della versione 3 la rende una soluzione flessibile, migliore dell’aggiungere altri campi fissi alla versione 2. Ogni estensione contiene: -Identificatore estensione, -Indicatore di criticità (indica se l’estensione può essere ignorata, se è TRUE e l’implementazione non riconosce l’estensione allora deve trattare il certificato come non valido) e un Valore estensione. Le estensioni si possono raggruppare in tre categorie: -<em>Key and Policy Information</em> che raggruppa: Authority key identifier (indica quale di + chiavi pubbliche della CA usare per verificare la firma di un certificato o della CRL), Subject key identifier (identifica quale di + chiavi pubbliche viene certificata), Key usage (è una restrizione sull’uso della chiave certificata), Private-key usage period (periodo uso della chiave privata), Certificate policy (insieme di regole che indica l’applicabilità di un certificato ad una comunità e/o classi di applicazioni con requisiti di sicurezza comuni), Policy mappings (usato solo per CA da altre CA. permette ad una CA di indicare che una propria politica può essere considerata equivalente ad un’altra politica usata dalla CA soggetto). -<em>Certificate Subject and Issuer Attributes</em> che raggruppa Subject alternative name (contiene uno o + nomi alternativi, in formati alternativi, imp per app che hanno formati propri per i nomi) Issuer alternative name (contiene uno o + nomi alternativi, in formati alternativi), Subject directory attributes (contiene attributi della directory X.500 per il soggetto del certificato). -<em>Certification Path Constraints</em> che raggruppa: Basic constraints (indica se il soggetto può agire come CA. se si possono specificare vincoli sulla lunghezza della certification path), Name constraints (indica uno spazio dei nomi in cui tutti i seguenti certificati in un certification path devono essere), Policy constraints (inibisce policy mappings per la parte rimanente della certification path).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='Y' id='Y'></a>
+</p><h2>Y</h2>
+<p>...
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p><hr />
+<p class='vspace'><a name='Z' id='Z'></a>
+</p><h2>Z</h2>
+<p>...
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 22, 2011, at 12:29 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGlossario?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGlossario?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

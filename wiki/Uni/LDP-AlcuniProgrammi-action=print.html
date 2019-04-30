@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Laboratorio C - Alcuni esercizi</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LDP-AlcuniProgrammi.html' title='Laboratorio C - Alcuni esercizi'>Laboratorio C - Alcuni esercizi</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='LaboratorioC.html'>Torna alla pagina di Laboratorio C</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio C - Alcuni esercizi ::</strong>
+</pre><div class='vspace'></div><h2>Prog1</h2>
+<pre class="brush:'cpp';">
+// CONTA I CARATTERI COMPRESI GLI SPAZI E UN CARATTERE IN PARTICOLARE 
+/ /SIA MINUSCOLO CHE MAIUSCOLO
+#include &lt;stdio.h&gt;
+#define NOME_FILE "prova.txt"
+
+int main()
+{
+  FILE * file_in;
+  char car;
+  int nchar; /* numero di caratteri*/
+  int nr; // numero di r
+  float freq; // frequenza di r
+  file_in = fopen(NOME_FILE, "r");
+  if(file_in == NULL)
+  {
+    printf( "Non trovo il file.\n" );
+    exit(-1);
+  }
+  nchar = 0;
+  nr = 0;
+  fscanf(file_in , "%c", &amp;car);
+  while (!feof(file_in))
+  {
+    // 1. conta quanti caratteri ci sono nel file
+    nchar++;
+    // 2. conta quante volte compare la lettera 'r' maiuscola o minuscola) ;
+    if (car == 'r'||car == 'R')
+    {
+      printf("%c \n", car);
+      nr++;
+    }
+    fscanf(file_in , "%c", &amp;car);
+  }
+  // 3. calcola come FLOAT la frequenza di occorrenza della lettera 'r'
+  // (maiuscola o minuscola)
+  freq = ((float) nr) / nchar; // attenzione: e'necessario il cast!
+  printf(" Il numero di caratteri e': %d\n", nchar);
+  printf(" Il numero di volte che compare la lettera 'r' o 'R' e': %d\n", nr);
+  printf(" La frequenza della lettera 'r' o 'R' e': %.3g\n", freq);
+  fflush(file_in);
+  fclose(file_in);
+  fflush(stdin);
+  getchar();
+  exit(0);
+}
+</pre>
+<div class='vspace'></div><h2>Prog2</h2>
+<pre class="brush:'cpp';">
+// CONTA PAROLE CON ALMENO UNA R
+#include &lt;stdio.h&gt;
+#define NOMEFILE "testo3.txt"
+
+int confronta( char *s );
+
+int main()
+{
+  FILE *qFile;
+  char string[100];
+  int contaparole = 0;
+  qFile = fopen(NOMEFILE, "r");
+  if (qFile == NULL ) 
+  {
+    printf("file non trovato\n");
+    exit(-1);
+  }
+  while (fscanf(qFile, "%s", string ) == 1) 
+  {
+    contaparole += confronta(string);
+  }
+  printf("%d\n", contaparole);
+  fflush(qFile);
+  fclose(qFile);
+  return 0;
+}
+
+int confronta ( char *s )
+{
+  int i = 0, parole = 0;
+  while ( s[i] != '\0') {
+    if (s[i] == 'r') {
+      ++parole;
+      break;
+    }
+    ++i;
+  }
+  return parole;
+}
+</pre>
+<div class='vspace'></div><h2>Prog3</h2>
+<pre class="brush:'cpp';">
+// visualizza la parola + lunga di un file
+#include &lt;stdio.h&gt;
+#define NOMEFILE "prova.txt"
+
+int main()
+{
+  FILE *pFile;
+  char string[500];
+  char string2[500] = {0};
+  int i = 0;
+  char n;
+  int max = 0;
+  pFile = fopen(NOMEFILE, "r");
+  if (pFile == NULL ) 
+  {
+    printf("file non trovato\n");
+    exit(-1);
+  }
+  while (fscanf(pFile, "%s", string ) == 1 ) 
+  {
+    i = strlen(string);
+    if ( i &gt; max ) 
+    {
+      max = i;
+      strcpy(string2, string);
+    }
+  }
+  printf("la parola piu' lunga e' %s\n", string2);
+  fflush(pFile);
+  fclose(pFile);
+  return 0;
+}
+</pre>
+<div class='vspace'></div><h2>Prog4</h2>
+<pre class="brush:'cpp';">
+// occorrenze cifre di un numero
+#include &lt;stdio.h&gt;
+
+int main()
+{
+  int num = 757179997;
+  int i = 0;
+  int freq[10] = {0};
+  while ( num &gt; 0 ) 
+  {
+    i = num % 10;
+    ++freq[ i ];
+    num /= 10;
+  }
+  for ( i = 0; i &lt; 10; i++ )
+  {
+    if ( freq[i] != 0 )
+      printf("freq[%d] = %d\n", i, freq[i]);
+  }
+  return 0;
+}
+</pre>
+<div class='vspace'></div><h2>Prog5</h2>
+<pre class="brush:'cpp';">
+// somma gli elementi di una colonna specifica di uan matrice
+#include &lt;stdio.h&gt;
+#define N 2
+#define M 3
+
+int main()
+{
+  int V[N][M] = {{ 1, 2, 3 }, { 4, 5, 6 }}; // 6 e 15
+  int c = 2, r, somma = 0;
+  for ( r = 0; r &lt;= N-1; r++ )
+    somma += V[r][c];
+  printf("la somma della prima colonna della matrice e' %d\n", somma );
+  return 0;
+}
+</pre>
+<div class='vspace'></div><h2>Prog6</h2>
+<pre class="brush:'cpp';">
+// visualizza quale numero di un vettore si ripete + volte
+#include&lt;stdio.h&gt;
+#define N 14
+#define M 10
+
+int main()
+{
+  int i, j, max = 0, indice = 0;
+  int V[N] = { 3, 2, 4, 2, 9, 1, 2, 2, 7, 4, 1, 2 }; // contiene num da 0 a 9
+  int freq[M] = {0};
+  for ( i = 0; i &lt; N; i++ )
+    ++freq[ V[i] ];
+  for ( i = 0; i &lt; M; i++ )
+    printf("V[%d] = %d\n", i, freq[i]); // per visualizzare tutte le occorrenze
+  // così posso visualizzare se è giusto
+  for ( j = 0; j &lt; M; j++) 
+  {
+    if (freq[j] &gt; max) 
+    {
+      max = freq[j];
+      indice = j;
+    }
+  }
+  printf("\nnumero + frequente: %d\n", indice);
+  return 0;
+}
+</pre>
+<div class='vspace'></div><h2>Prog7</h2>
+<pre class="brush:'cpp';">
+// ricerca numeri pari
+#include &lt;stdio.h&gt;
+#define N 5
+
+int main()
+{
+  int i, x = 0, pari = 0;
+  int V[N] = { 3, 10, 4, 7, 9 };
+  for ( i = 0; i &lt; N; i++ ) 
+  {
+    x = V[i];
+    if(( x % 2) == 0 ) 
+    {
+      pari++;
+    }
+  }
+  printf("i numeri pari sono: %d\n", pari);
+  return 0;
+}
+</pre>
+<div class='vspace'></div><h2>Prog8</h2>
+<pre class="brush:'cpp';">
+// trova numero mancante
+#include &lt;stdio.h&gt;
+#define N 14
+
+int main()
+{
+  int string[] = {0, 1, 2, 3, 4, 6, 7, 3, 2, 7, 8, 9, 10};
+  int V[N];
+  int i;
+  for( i = 0; i &lt;= 10; i++ )
+    V[i] = 0;
+  for( i = 0; i &lt; N; i++ )
+    V[string[i]] = 1;
+  printf("numeri mancanti:\n");
+  for( i = 0; i &lt;= N; i++ )
+  {
+    if( V[i] == 0 )
+    {
+      printf("%d \t", i );
+    }
+  }
+  printf("\n");
+  return 0;
+}
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='LaboratorioC.html'>Torna alla pagina di Laboratorio C</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LDP-AlcuniProgrammi)</span></div>
+  </div>
+</body>
+</html>

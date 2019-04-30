@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ricerca Operativa - PL - Macchine - 12.06.02 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RO-PL-12giu2002' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ricerca Operativa - PL - Macchine - 12.06.02
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PL-12giu2002?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PL-12giu2002?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RO-PL-12giu2002-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PL-12giu2002?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PL-12giu2002?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ricerca Operativa - PL - Macchine - 12.06.02 was last modified on December 23, 2009, at 11:39 AM'>
+							<span style='display:none;'>Ricerca Operativa - PL - Macchine - 12.06.02</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PL - Macchine - 12.06.02 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>Un’azienda meccanica produce macchine utensili di precisione di diversi tipi. Essa deve produrre una quantità minima di tali macchine perché è vincolata in questo da contratti di fornitura stipulati in precedenza.<br />Per la costruzione delle macchine l’azienda si rifornisce di parti componenti elettroniche, acquistandole in quantità variabili a prezzi noti e costanti. Anche il prezzo di vendita delle macchine è noto e costante. Ogni tipo di macchina richiede un numero variabile di componenti elettronici.<br />Prima dell’installazione sulle macchine ogni componente elettronico deve essere collaudato da operai specializzati che sono impiegati a tempo pieno in tale compito. Il tempo di collaudo è diverso a seconda del tipo di componente.<br />Formulare il problema, classificarlo e risolverlo con i dati del file MACCHINE.TXT
+</p>
+<div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+Tabella 1: Prezzi di vendita delle macchine
+
+Prodotto  Prezzo (Euro/macchina)
+   A         2050
+   B         3500
+   C         2550
+   D         1250
+
+========================================================
+
+Tabella 2: Costi dei componenti
+
+Componente  Costo (Euro/componente)
+   1           30
+   2           40
+   3           35
+   4           10
+   5           15
+
+========================================================
+
+Tabella 3: Produzione minima (numero macchine)
+
+Prodotto  Minimo
+   A        25
+   B        15
+   C        35
+   D        30
+
+========================================================
+
+Tabella 4: Quantità di componenti per ogni macchina
+
+    Componenti    1    2    3    4    5
+Macchina
+   A              3    2    2    0    3
+   B        	  4    2    5    4    4
+   C              1    3    3    3    2
+   D              1    2    0    1    1
+
+========================================================
+
+Tabella 5: Tempi di lavorazione
+
+Componente   Tempo (minuti)
+   1             10
+   2             15
+   3             10
+   4             20
+   5             25
+
+========================================================
+
+Numero di operai disponibili: 9 per 40 ore/settimanali ciascuno
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<ul><li><strong>macchine = 4</strong> (tipi di macchine da produrre)
+</li><li><strong>ricM<sub>i</sub></strong> (ricavo della vendita della macchina i=1..4) [€]
+</li><li><strong>componente = 5</strong> (tipi di componenti con cui si costruiscono le macchine)
+</li><li><strong>costC<sub>j</sub></strong> (costo del componente j=1..5) [€]
+</li><li><strong>prodMin<sub>i</sub></strong> (produzione minima settimanale di macchine di tipo i=1..4)
+</li><li><strong>composM<sub>ij</sub></strong> (quantità di componente j=1..5 per macchina i=1..4)
+</li><li><strong>temp<sub>i</sub></strong> (tempo di lavorazione per macchina i=1..4) [minuti]
+</li><li><strong>operai = 9</strong> (numero di operai)
+</li><li><strong>oreSett = 40</strong> (numero di ore settimanali)
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<ul><li><strong>x<sub>i</sub></strong> (numero di macchine da produrre ogni settimana)
+</li><li><strong>y<sub>j</sub></strong> (numero di componenti da acquistare ogni settimana)
+</li></ul><div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p>Vogliamo massimizzare il guadagno, quindi:<br /><strong>max (somma)<sub>i</sub> ricM<sub>i</sub> – (somma)<sub>j</sub> costC<sub>j</sub></strong> [€]
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<ul><li>vincolo di produzione minima:<br /><strong>x<sub>i</sub> &gt;= prodMin<sub>i</sub></strong> (per ogni i)
+</li><li>vincolo che limita l'utilizzo di componenti in funzione della loro disponibilità:<br /><strong>(somma)<sub>i</sub> x<sub>i</sub> * composM<sub>ij</sub> – y<sub>j</sub> &lt;= 0</strong> (per ogni j)
+</li><li>vincolo per evitare che la somma dei tempi di collaudo necessari per ogni componente superi la somma di ore settimanali di tutti gli operai. Nota: il dato temp<sub>i</sub> è espresso in minuti, quindi o convertiamo in ore lui o convertiamo in minuti il resto; per evitare di avere virgole tra i piedi, convertiamo tutto in minuti:<br /><strong>(somma)<sub>j</sub> y<sub>j</sub> * temp<sub>i</sub> &lt;= operai * oreSett * 60</strong> [minuti]
+</li></ul><div class='vspace'></div><h2>Lindizzazione del problema</h2>
+<pre class='escaped'>
+! esercizio - Macchine
+
+! variabili:	x(i) = numero di macchine da produrre ogni settimana
+!		y(j) = numero di componenti da acquistare ogni settimana
+! le variabili sono continue e non negative
+
+! funzione obiettivo
+max 2050 x1 + 3500 x2 + 2550 x3 + 1250 x4 - 30 y1 - 40 y2 - 35 y3 - 10 y4 - 15 y5
+
+st
+
+! vincoli di produzione minima
+prMin1) x1 &gt;= 25
+prMin2) x2 &gt;= 15
+prMin3) x3 &gt;= 35
+prMin4) x4 &gt;= 30
+
+! vincoli sulla disponibilità dei componenti
+disp1) 3 x1 + 4 x2 + 1 x3 + 1 x4 - y1 &lt;= 0
+disp2) 2 x1 + 2 x2 + 3 x3 + 2 x4 - y2 &lt;= 0
+disp3) 2 x1 + 5 x2 + 3 x3 + 0 x4 - y3 &lt;= 0
+disp4) 0 x1 + 4 x2 + 3 x3 + 1 x4 - y4 &lt;= 0
+disp5) 3 x1 + 4 x2 + 2 x3 + 1 x4 - y5 &lt;= 0
+
+! vincoli sui tempi di collaudo
+temp) 10 y1 + 15 y2 + 10 y3 + 20 y4 + 25 y5 &lt;= 21600
+
+end
+</pre>
+<div class='vspace'></div><h2>Linghizzazione del problema</h2>
+<pre class='escaped'>
+MODEL:
+
+SETS:
+macchine /1..4/: pv, pmin, x;
+componenti /1..5/: c, t, y;
+composizione(macchine,componenti): com;
+ENDSETS
+
+
+DATA:
+
+pv = 2050 3500 2550 1250;
+c = 30 40 35 10 15;
+pmin = 25 15 35 30;
+
+com =  3    2    2    0    3
+       4    2    5    4    4
+       1    3    3    3    2
+       1    2    0    1    1;
+
+t = 10 15 10 20 25;
+dispH = 21600;
+
+ENDDATA
+
+!Funzione obiettivo è quella di massimizzare i ricavi meno i costi;
+max = @sum(macchine(i): pv(i) * x(i)) - @sum(componenti(j): c(j)* y(j));
+
+!Il primo vincolo fa riferimento alla quantità minima da produrre;
+@for(macchine(i): x(i) &gt;= pmin(i));
+
+!Il secondo vincolo fa riferimento alla quantità massima di componenti utilizzabili;
+@for(componenti(j): @sum(macchine(i): com(i,j) * x(i)) &lt;= y(j));
+
+!Il terzo vincolo fa riferimento al tempo di lavorazione di ogni componente, il quale
+non deve essere maggiore del tempo totale a disposizione;
+@for(macchine(i): @sum(componenti(j): t(j) * y(j)) &lt;= dispH);
+
+END
+</pre>
+<div class='vspace'></div><h2>Altre domande</h2>
+<h3>L’ufficio personale, incaricato di assumere nuovi operai, vuol sapere di quanto aumenterebbe il profitto dell’azienda per ogni operaio specializzato in più e fino a che limite massimo.</h3>
+<p>Il motivo per cui dovremmo assumere nuovi operai è quello di aumentare il numero di componenti che riusciamo a collaudare in una settimana. Dall'analisi di sensitività osserviamo alla colonna “allowable increase” che il vincolo sul tempo di collaudo può aumentare all'infinito senza che la soluzione ottima cambi. Questo ovviamente non significa che non possa migliorare il valore ottimo, e per calcolarlo basta osservare il prezzo-ombra del vincolo tempo, che è pari a 13,117647. Dal momento che questo valore fa riferimento a un minuto di lavoro, e che ogni operaio lavora per 40*60 = 2400 minuti a settimana, per ogni nuovo operaio assunto l'azienda aumenterebbe i profitti di <strong>13,117647 * 2400 = 31482,3528 €</strong>.
+</p>
+<div class='vspace'></div><h3>L’ufficio vendite vuole sapere se preparare per l’anno prossimo contratti analoghi a quelli vigenti o se modificarli, aumentando o diminuendo il numero minimo di macchine da produrre per ogni tipo.</h3>
+<p>Osservando i risultati del problema, a quanto pare l'unica macchina che conviene produrre più dei limiti minimi richiesti è la 4:
+</p>
+<div class='vspace'></div><pre class='escaped'>ROW   SLACK OR SURPLUS     DUAL PRICES
+   PRMIN1)         0.000000       -268.235291
+   PRMIN2)         0.000000       -910.294128
+   PRMIN3)         0.000000       -322.941162
+   PRMIN4)        45.294117          0.000000</pre>
+<p class='vspace'>L'azienda dovrebbe quindi abbassare i limiti minimi di produzione per le prime tre macchine, mentre potrebbe lasciare inalterato quello sulla quarta dato che non si tratta comunque di un vincolo attivo.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: December 23, 2009, at 11:39 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PL-12giu2002?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PL-12giu2002?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

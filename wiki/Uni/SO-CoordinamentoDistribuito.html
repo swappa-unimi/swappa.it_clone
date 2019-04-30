@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Coordinamento distribuito </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-CoordinamentoDistribuito' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Coordinamento distribuito
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-CoordinamentoDistribuito?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-CoordinamentoDistribuito?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-CoordinamentoDistribuito-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-CoordinamentoDistribuito?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-CoordinamentoDistribuito?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Coordinamento distribuito was last modified on September 16, 2008, at 01:08 AM'>
+							<span style='display:none;'>Sistemi Operativi - Coordinamento distribuito</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Coordinamento distribuito</span>
+</p>
+<div class='vspace'></div><h2>Ordinamento degli eventi</h2>
+<p>A differenza di un sistema centralizzato che ha un'unica memoria centrale e un unico orologio di sistema, in un sistema distribuito diventa estremamente complesso definire l'ordine con cui sono avvenuti due eventi. Dato però che la relazione "<em>accaduto prima</em>" è cruciale per molte applicazioni (ad esempio per l'allocazione delle risorse), vedremo come estenderla anche a questi sistemi.
+</p>
+<div class='vspace'></div><h3>La relazione accaduto prima</h3>
+<p>La relazione "<em>accaduto prima</em>" può essere definita come segue:
+</p><ol><li>se A e B sono eventi dello stesso processo e A è accaduto prima di B, allora <strong>A&#8594;B</strong>
+</li><li>se A è l'evento di trasmissione di un messaggio in un processo e B è l'evento di ricezione dello stesso messaggio da parte di un altro processo, allora <strong>A&#8594;B</strong>
+</li><li>se <strong>A&#8594;B</strong> e <strong>B&#8594;C</strong>, allora <strong>A&#8594;C</strong>
+</li></ol><p class='vspace'>Due osservazioni:
+</p><ul><li>la relazione non è riflessiva
+</li><li>se due eventi non sono in relazione tra loro, allora sono concorrenti e non si influenzeranno a vicenda. E viceversa
+</li></ul><p class='vspace'>E' possibile rappresentare il tutto con un diagramma spazio-temporale, con gli assi che rappresentano i processi e il tempo, i circoli sono gli eventi e le frecce indicano le relazioni.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/accadutoPrima.gif.jpeg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Implementazione</h3>
+<p>Per stabilire quale tra due eventi è accaduto prima è necessario un orologio comune o più orologi sincronizzati tra loro, dispositivi che in un sistema distribuito sono difficilmente disponibili. La soluzione è attribuire ad ogni evento una <strong>marca di tempo</strong> (<em>timestamp</em>) che consenta il seguente ordinamento globale: se A&#8594;B allora il timestamp di A è minore di quello di B.
+</p>
+<p class='vspace'>Nel sistema distribuito si definisce inoltre per ogni processo un <em>orologio logico</em> che ordina i propri eventi con un incremento monotono, mentre per processi diversi che comunicano tra loro applica un avanzamento forzato quando un processo riceve un messaggio la cui marca di tempo è più grande del valore del proprio orologio logico.
+</p>
+<div class='vspace'></div><h2>Mutua esclusione</h2>
+<p>Come implementare la <strong>mutua esclusione</strong> in un sistema distribuito? Di seguito considereremo per semplicità un sistema con <em>n</em> processi, ognuno residente su un unico processore.
+</p>
+<div class='vspace'></div><h3>Metodo centralizzato</h3>
+<p>Con il <strong>metodo centralizzato</strong> si sceglie un processo come <em>coordinatore dell'accesso</em> alla sezione critica. Quando un processo vuole accedervi invia prima una richiesta al coordinatore; questi controlla che la risorsa sia disponibile nel qual caso invia una risposta (che è già implicitamente un permesso), altrimenti lo mette in una coda possibilmente implementata come FCFS (così da evitare starvation). Una volta che il processo termina l'utilizzo della sezione critica invia un messaggio di rilascio al coordinatore, che automaticamente seleziona il primo processo della coda e gli invia una risposta accordandogli l'accesso.<br />Se il coordinatore crasha, un altro processo verrà eletto al suo posto.
+</p>
+<p class='vspace'>Le prestazioni sono limitate, o per dirla testualmente alla Piuri, "fanno schifo".
+</p>
+<div class='vspace'></div><h3>Metodo completamente distribuito</h3>
+<p>Se si desidera distribuire nell'intero sistema la possibilità di assumere decisioni, la soluzione diventa più complicata. Il funzionamento è il seguente:
+</p><ul><li>quando P vuole entrare in sezione critica genera una marca di tempo ed invia una richiesta di accesso a tutti i processi
+</li><li>quando un processo Q riceve tale richiesta, può comportarsi in tre modi diversi:
+<ul><li>ritarda la risposta se è in sezione critica
+</li><li>risponde immediatamente se non intende entrare in sezione critica
+</li><li>se desidera entrare nella propria sezione critica ma non vi è entrato, confronta la propria marca di tempo con quella di P; se la sua è più grande allora risponde immediatamente, altrimenti ritarda la risposta per entrare prima
+</li></ul></li></ul><p class='vspace'>Ricordiamo che un processo può entrare nella propria sezione critica quando ha ricevuto un messaggio di risposta da tutti gli altri processi del sistema. In questo modo si ottiene la mutua esclusione garantendo al contempo l'assenza di stalli e starvation. L'aspetto negativo di questa tecnica è che i processi devono conoscere l'identità di tutti gli altri presenti nel sistema, e se uno di questi fallisce fallisce l'intera opera di coordinamento.
+</p>
+<p class='vspace'>Questo protocollo è particolarmente adatto a insiemi piccoli e stabili di processi cooperanti.
+</p>
+<div class='vspace'></div><h3>Il metodo del passaggio di token</h3>
+<p>I processi vengono organizzati logicamente in una struttura ad anello e viene fatto circolare tra loro un <strong>token</strong>, ovvero un messaggio speciale che autorizza il proprietario temporaneo ad entrare nella sezione critica. Essendo unico il token viene garantita la mutua esclusione.
+</p>
+<p class='vspace'>Per un corretto funzionamento bisogna fare in modo che il token non venga perso e che venga sempre mantenuta la struttura ad anello logico.
+</p>
+<div class='vspace'></div><h2>Atomicità</h2>
+<p>Una <strong>transazione atomica</strong> è un insieme di operazioni che devono essere eseguite in modo atomico, cioè o tutte o nessuna. In un sistema distribuito è garantita da un <em>coordinatore della transazione</em> che è responsabile dell'invio, della suddivisione in più parti da distribuire ai vari host partecipanti, del coordinamento e infine della sua terminazione.
+</p>
+<div class='vspace'></div><h3>Il protocollo di commit a due fasi e la gestione dei guasti nel protocollo 2PC</h3>
+<p><span style='font-size:83%'>(da Base di Dati Complementi)</span><br />Nel <strong>protocollo di commit a due fasi</strong> abbiamo due attori: il coordinatore della transazione (TM, Transaction Manager) e gli host partecipanti (RM, Resource Manager).
+</p>
+<p class='vspace'><strong>Prima fase</strong> del protocollo:
+</p><ul><li>Il TM manda un messaggio <code class='escaped'>prepare</code> a tutti gli RM e imposta un timeout indicando il massimo tempo allocato al completamento della prima fase 
+</li><li>gli RM in stato affidabile scrivono nel loro log il record <code class='escaped'>ready</code> e trasmettono al TM il messaggio <code class='escaped'>ready</code>, che indica la scelta di partecipare al protocollo 
+</li><li>gli RM in stato non affidabile mandano un messaggio <code class='escaped'>no­ready</code>
+</li><li>il TM raccoglie i messaggi di risposta
+<ul><li>se riceve un messaggio positivo da tutti gli RM, scrive un record <code class='escaped'>global commit</code> nel log e si prosegue con la seconda fase
+</li><li>se uno o più dei messaggi ricevuti è negativo o non tutti i messaggi sono ricevuti entro il time­out, il TM scrive un record <code class='escaped'>global abort</code> nel log  e termina il protocollo  
+</li></ul></li></ul><p class='vspace'><strong>Seconda fase</strong> del protocollo:
+</p><ul><li>il TM trasmette la sua decisione globale a tutti gli RM. Imposta poi un time­out. 
+</li><li>gli RM che sono in uno stato <code class='escaped'>ready</code> ricevono la decisione, scrivono il record relativo (<code class='escaped'>commit</code> o <code class='escaped'>abort</code>) nel loro log e mandano un acknowledgement (ack) al TM. Poi eseguono il <code class='escaped'>commit/abort</code>
+</li><li>il TM raccoglie tutti gli ack dagli RM coinvolti nella seconda fase. Se il time­out scade, il TM stabilisce un altro time­out e ripete la trasmissione a tutti gli RM dai quali non ha ricevuto ack 
+</li><li>quando tutti gli ack sono arrivati, il TM scrive il record <code class='escaped'>complete</code> nel suo log
+</li></ul><p class='vspace'>Questo protocollo unito al mantenimento di un file di log assicura una buona tolleranza ai guasti delle macchine e della rete, rendendo vita facile anche ai protocolli di ripristino.
+</p>
+<div class='vspace'></div><h2>Controllo della concorrenza</h2>
+<p>Il <strong>controllo della concorrenza</strong> in un ambiente distribuito è garantito da un gestore delle transazioni, che oltre a controllarne l'esecuzione (sia in locale che in globale) mantiene anche un file di log per il recupero del sistema dopo il verificarsi di guasti.
+</p>
+<div class='vspace'></div><h3>Protocolli bloccanti</h3>
+<p>I <strong>protocolli bloccanti</strong> a due fasi possono essere usati in un ambiente distribuito facendo particolare attenzione nella scelta implementativa del gestore del blocco.
+</p>
+<div class='vspace'></div><h4>Schema non replicato</h4>
+<p>Se nessun dato è replicato nel sistema allora l'implementazione più semplice prevede un unico responsabile locale del lock per macchina, il cui compito è bloccare o sbloccare le risorse in base alle transazioni che le richiedono. Il tutto viene gestito attraverso messaggi: due per la richiesta di blocco ed uno per la risposta.
+</p>
+<p class='vspace'>La gestione dello <em>stallo</em> è complicata perché le richieste non avvengono su un unico host; abbiamo però una maggiore tolleranza ai guasti dato che se il coordinatore crasha è impedito l'accesso alle sole risorse di cui era diretto responsabile.
+</p>
+<div class='vspace'></div><h4>Metodo del coordinatore singolo</h4>
+<p>A differenza di prima abbiamo un <em>unico coordinatore centralizzato del lock</em>, quindi tutte le richieste (realizzate come nello schema non replicato) passano da lui.
+</p>
+<p class='vspace'>L'implementazione è semplice così come la gestione degli stalli, ma si hanno prestazioni limitate (il coordinatore rappresenta un collo di bottiglia) e bassa tolleranza ai guasti (se salta lui addio).
+</p>
+<div class='vspace'></div><h3>Protocollo di lock a maggioranza</h3>
+<p>In questo caso è prevista una replica dei dati nel sistema ed un <em>responsabile dei lock</em> per ogni sito. Quando una transazione vuole un certo dato invia la richiesta ad almeno la metà più uno degli host che lo detengono; gli viene accordato l'accesso solo se riceve il consenso della maggioranza dei coordinatori (ognuno dei quali risponde in modo indipendente dagli altri).
+</p>
+<p class='vspace'>Il vantaggio di questa tecnica è che tratta i dati in modo decentralizzato, a fronte però di maggiori difficoltà implementative (più messaggi da gestire) e una più complessa e specifica gestione degli stalli.
+</p>
+<div class='vspace'></div><h4>Protocollo polarizzato</h4>
+<p>Il <strong>protocollo polarizzato</strong> fa una distinzione tra richieste di blocchi condivisi e esclusivi, favorendo i primi. Un blocco condiviso viene infatti rapidamente gestito in locale, mentre quello esclusivo con il sistema del protocollo a maggioranza. 
+</p>
+<p class='vspace'>Comporta un minor sovraccarico per gli accessi in lettura, ma condivide con l'altro i sovraccarichi in scrittura e i problemi di stallo (dato che le macchine non sono organizzate in modo simmetrico).
+</p>
+<div class='vspace'></div><h4>Copia primaria</h4>
+<p>Tra tutte le repliche ne viene eletta una come <strong>copia primaria</strong> ed è su essa che avvengono le richieste. E' semplice da implementare e non si ha sovraccarico, ma si ha meno probabilità di trovarla disponibile.
+</p>
+<div class='vspace'></div><h3>Marca di tempo</h3>
+<p>Esistono due modi per generare marche di tempo uniche:
+</p><ul><li>con il <strong>metodo centralizzato</strong> vengono distribuite da un singolo coordinatore, che può utilizzare un contatore logico o il suo orologio locale
+</li><li>con il <strong>metodo distribuito</strong> ogni sito genera un'unica marca di tempo locale usando un contatore logico o l'orologio locale, mentre quella globale si ottiene concatenando quella locale con l'id del sito (entrambi unici). Poiché un sito potrebbe generare marche di tempo locali più velocemente degli altri, bisogna fare in modo che la loro produzione sia ragionevolmente omogenea. Si può a tal fine utilizzare un orologio logico che viene forzato ad aggiornarsi (con un incremento unitario) ogni volta che riceve un messaggio da qualche altra transazione.
+</li></ul><div class='vspace'></div><h2>Gestione delle situazioni di stallo</h2>
+<h3>Prevenzione delle situazioni di stallo</h3>
+<p>Gli algoritmi che vedremo sono un'estensione di quelli già visti per i sistemi centralizzati.
+</p>
+<p class='vspace'>Il primo prevede un ordinamento globale delle risorse del sistema distribuito mediante <em>id</em> unici progressivi, impedendo poi a un processo di ottenere una risorsa se è già in possesso di un'altra con identificativo maggiore. E' piuttosto semplice da realizzare e comporta sovraccarichi minimi.
+</p>
+<p class='vspace'>Il secondo è una generalizzazione dell'algoritmo del banchiere, anch'esso semplice ma che può portare ad alti sovraccarichi dato che il banchiere rappresenta un collo di bottiglia. Non è tra le soluzioni preferibili.
+</p>
+<p class='vspace'>Un terzo sistema è quello delle <em>marche di tempo con rilascio anticipato delle risorse</em>, che assegna un numero univoco di priorità a ogni processo e funziona come segue: se P possiede la risorsa e Q ha priorità maggiore, allora P (su cui viene effettuato un rollback) rilascia la risorsa che passa all'altro. Questa soluzione impedisce la formazione di stalli anche a livello distribuito, ma può portare a <em>starvation</em>, evitabile con due tecniche che utilizzano le marche di tempo:
+</p><ul><li>schema <strong>wait and die</strong>: quando un processo richiede una risorsa posseduta da un altro, viene messo in attesa solo se ha una marca di tempo minore; altrimenti viene annullato
+</li><li>schema <strong>wound-wait</strong>: quando un processo richiede una risorsa posseduta da un altro, viene messo in attesa solo se ha marca di tempo maggiore; altrimenti si sottrae la risorsa al processo che la possiede attualmente
+</li></ul><div class='vspace'></div><h3>Rilevamento delle situazioni di stallo</h3>
+<p>L'algoritmo di rilevamento degli stalli prevede l'utilizzo dei <em>grafi di attesa</em>, che descrivono l'allocazione delle risorse: se c'è un ciclo nel grafo si ha uno stallo tra i processi coinvolti.
+</p>
+<p class='vspace'>In un sistema distribuito ogni sito mantiene un proprio grafo di attesa locale, nel quale però l'assenza di cicli non implica automaticamente l'assenza di deadlock: è infatti nell'unione di tutti i grafi locali che bisogna verificarne l'esistenza.
+</p>
+<p class='vspace'>Ma come possono essere organizzati questi grafi?
+</p>
+<div class='vspace'></div><h4>Metodo centralizzato</h4>
+<p>Col <strong>metodo centralizzato</strong> il grafo di attesa globale viene costruito e mantenuto aggiornato da un unico coordinatore centralizzato. A causa dei ritardi dovuti alle transazioni nel sistema distribuito bisogna distinguere tra <em>grafo reale</em> (utopico) e <em>costruito</em>. Quest'ultimo, pur essendo un'approssimazione di quello reale, deve almeno garantire che se esiste uno stallo allora deve essere segnalato, e viceversa se uno stallo viene segnalato allora deve effettivamente esistere.
+</p>
+<p class='vspace'>L'aggiornamento del grafo può avvenire in seguito all'inserimento o alla rimozione di un arco (la macchina avvisa il coordinatore con un messaggio), oppure dopo un certo numero di cambiamenti o ancora a discrezione del coordinatore.<br />L' <em>algoritmo di ricerca</em> dei cicli consiste nella trasmissione dei grafi locali da parte di tutte le macchine e successiva costruzione del grafo globale da parte del coordinatore, che avvia su esso la ricerca vera e proria. Se riscontra un ciclo seleziona un processo vittima su cui effettua un rollback per uscire dal deadlock.
+</p>
+<p class='vspace'>E' importante segnalare che si potrebbero avere dei rollback inutili a causa di <em>falsi cicli</em>, dovuti ai ritardi legati ai tempi di trasmissione, o perché in seguito alla scelta della vittima lo stallo smette di sussitere per cause indipendenti dall'algoritmo di ricerca.
+</p>
+<div class='vspace'></div><h4>Metodo completamente distribuito</h4>
+<p>Questo algoritmo fa in modo che la responsabilità del rilevamento degli stalli venga condivisa da tutti i siti, ognuno dei quali ha un controllore che costruisce un proprio grafo di attesa parziale rispetto a quello globale. Ad ognuno di questi grafi viene aggiunto un nodo <em>P<sub>ex</sub></em> che indica l'attesa per risorse appartenenti ad altre macchine. Se esiste un ciclo che non coinvolge <em>P<sub>ex</sub></em> allora c'è sicuramente uno stallo, se invece lo coinvolge bisogna contattare quella macchina per verificarne l'effettiva esistenza.
+</p>
+<p class='vspace'>Il problema di questo sistema è che il rilevamento contemporaneo di cicli in grafi di attesa locali provoca un sovraccarico di gestione e messaggi ridondanti. Una tecnica per ridurlo è assegnare a ogni processo un <em>id</em>, e se una macchina scopre uno stallo che coinvolge <em>P<sub>ex</sub></em> si comporta così:
+</p><ul><li>se il processo prima di <em>P<sub>ex</sub></em> nel ciclo ha <em>id</em> minore di quello successivo, invia il messaggio di rilevamento alle altre macchine
+</li><li>altrimenti se ne lava le mani e lascia ad altri il compito di rilevarlo e gestirlo
+</li></ul><div class='vspace'></div><h2>Algoritmi di elezione del coordinatore</h2>
+<p>Abbiamo visto come molti algoritmi distribuiti abbiano bisogno di un coordinatore perché siano assicurate un certo numero di funzioni. Se uno di questi viene meno esistono alcuni algoritmi di <em>elezione del coordinatore</em>, che presuppongono che ad ogni processo sia associato un numero di priorità: il più alto tra quelli attivi viene eletto.
+</p>
+<div class='vspace'></div><h3>Algoritmo del bullo</h3>
+<p>Se un processo invia una richiesta al coordinatore e non riceve risposta, dopo un certo intervallo di tempo suppone che sia guasta e cerca di eleggere sé stesso. La prima cosa che fa è inviare un messaggio di inizio elezione a tutti i processi con priorità più alta della sua, dopodiché si mette in attesa. Se riceve una risposta con l'identificatore del nuovo coordinatore, ne prende atto e registra l'informazione, altrimenti riavvia l'algoritmo. Se invece non riceve alcuna risposta, si autoelegge e informa tutti i processi del suo nuovo ruolo.
+</p>
+<div class='vspace'></div><h3>Algoritmo dell'anello</h3>
+<p>Si basa sul fatto che i collegamenti sono unidirezionali e utilizza una lista attiva per ogni processo. Quando P si accorge che il coordinatore non funziona genera una nuova lista attiva vuota, invia un messaggio di elezione col proprio numero al suo vicino e scrive la sua priorità nella lista. Un processo che riceve questo messaggio:
+</p><ul><li>se non è contenuto nella lista aggiunge il proprio numero nella sua lista attiva e inoltra il messaggio
+</li><li>altrimenti significa che la lista contiene già tutti i processi attivi del sistema, dunque è sufficiente controllare qual è quello a priorità maggiore ed eleggerlo coordinatore
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: September 16, 2008, at 01:08 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-CoordinamentoDistribuito?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-CoordinamentoDistribuito?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

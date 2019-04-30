@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Protocolli avanzati di rete - Appunti del 26 Maggio </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.PAR-26Maggio' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Protocolli avanzati di rete - Appunti del 26 Maggio
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-26Maggio?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-26Maggio?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='PAR-26Maggio-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-26Maggio?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-26Maggio?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Protocolli avanzati di rete - Appunti del 26 Maggio was last modified on May 27, 2009, at 09:30 PM'>
+							<span style='display:none;'>Protocolli avanzati di rete - Appunti del 26 Maggio</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 26 Maggio ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>Tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='Damiani.html'>Damiani</a>
+</p></div>
+<div class='vspace'></div><h2>802.16</h2>
+<p>Come abbiamo anticipato nella <a class='wikilink' href='PAR-25Maggio.html'>scorsa lezione</a>, il protocollo 802.16 si propone l'obiettivo di realizzare una wireless <strong>MAN</strong> (<em>Metropolitan Area Network</em>), quindi con estensioni a livello cittadino (tra i 10 e i 20 km di estensione).<br />Come nelle reti pubbliche abbiamo delle <strong>stazioni base</strong> (<em>base station</em>) che gestiscono fino a diverse centinaia di abbonati con le loro <strong>subscribers station</strong>. Il protocollo supporta ed offre numerosi servizi, tra cui naturalmente il TCP/IP, il VoIP, sistemi vocali residenziali e altri ancora.
+</p>
+<div class='vspace'></div><h3>Livello fisico</h3>
+<p>A livello fisico l'802.16 consente l'utilizzo di due diversi tipi di <em>duplexing</em>, ovvero di tecniche per separare il canale di uscita da quello di entrata: il <em>time division duplexing</em> (<strong>TDD</strong>) e il <em>frequency division duplexing</em> (<strong>FDD</strong>). Nel TDD ogni frame è suddiviso in una serie di sottoframe, ed ognuno di essi è ulteriormente diviso in sottoframe di <em>downlink</em> e di <em>uplink</em>, quindi rispettivamente con direzione della trasmissione entrante ed uscente. La suddivisione tra subframe di downlink e uplink è <strong>adattiva</strong>, quindi quando la quantità di dati da caricare aumenta si può allocare dinamicamente più banda all'uplink, mentre quando diminuisce è possibile toglierne. Come nella rete pubblica, se due stazioni non hanno nulla da dirsi ed arriva il loro turno, non viene inviato nulla e si sprecherà uno slot con buona pace di tutti (esattamente quello che accade nella telefonia pubblica).
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PAR-tdd.jpg' alt='' title='' /></div>
+<p class='vspace'>Grazie al duplexing TDD si riesce ad assegnare un frame per ogni collegamento tra base station e/o subscribers station (con una tecnica molto simile a quella dei ponti radio), ma come bisogna modularli? L'802.16 prevede che le modalità di modulazione possano essere diverse per ogni frame e per ogni collegamento, al contrario di tutti gli altri protocolli visti finora, in cui c'era un unico profilo standard che al massimo cambiava a seconda dell'installazione di rete. Il motivo di questa scelta sta nel fatto che ogni frame deve corrispondere ad un certo ponte radio, quindi deve portare traffico in un certo collegamento che avrà situazioni variabili di line of sight, rumore, ed altri fattori dipendenti dalle posizioni delle stazioni. Ogni coppia di antenne ha infatti esigenze diverse, anche molto lontane tra loro, dunque è inevitabile scegliere modulazioni differenti che meglio si adattano alle necessità. Questi profili di burst adattivi sono identificati con gli <strong>Interval Usage Code</strong> (<em>DIUC</em> e <em>UIUC</em>, rispettivamente per downlink e uplink), ovvero codici che codificano come verrà generato e modulato il segnale fisico per ogni coppia di antenne.
+</p>
+<p class='vspace'>Rispetto all'HDSPA il problema di connessione delle base stations è molto diverso dato che qui sono tutte collegate via cavo, mentre nell'802.16 è tutto wireless. Stiamo quindi guadagnando in flessibilità dato che non abbiamo più problemi di posa (come portare il cavo in località remote, come la giungla, suggerisce il prof), ma perderemo molto più tempo per la configurazione delle antenne. Infine, le base station sono collegate tra loro con uno schema <em>time division multiplexing</em> (<strong>TDM</strong>), in cui però ogni frame è preceduto da un <em>preambolo</em> che darà informazioni sul profilo di generazione e modulazione previsto per un certo collegamento.
+</p>
+<div class='vspace'></div><h3>Livello MAC</h3>
+<p>Il controllo di accesso al mezzo (<strong>MAC</strong>) nel protocollo 802.16 è orientato alla connessione, quindi la creazione del canale tra una coppia di antenne deve essere esplicita. Bisogna inoltre introdurre un sistema che permetta di ripartire i frame tra subframe in downlink e quelli in uplink, e per questo motivo si usano delle vere e proprie <em>mappe</em> (DL-Map e UL-Map) trasmesse all'inizio di ogni sottoframe in downlink. Per capirle meglio commentiamo questa figura:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PAR-DL-ULmap.jpg' alt='' title='' /></div>
+<p class='vspace'>Anzitutto va detto che non tutti i collegamenti tra stazioni sono full-duplex, ma succede spesso che se una stazione trasmette allora non può ricevere, e viceversa. Nella figura osserviamo che all'interno dello stesso frame il downlink comincia sempre con la ricezione di un preambolo mandato in broadcast, che ci dice per quanto tempo il tratto è full o half-duplex, per quanto le stazioni dovranno essere in downlink e per quanto in uplink. Più che a un modello a contesa questo meccanismo assomiglia di più a un master-slave, dal momento che il master decide come gestire il frame e l'altro non può che adeguarsi (più tardi vedremo delle eccezioni). Altre osservazioni sulla figura sopra:
+</p><ul><li>le parti in full-duplex possono tranquillamente sovrapporsi
+</li><li>non è detto che per lo stesso flusso il tempo di ricezione e trasmissione sia uguale
+</li><li>tra un flusso e l'altro di stazioni half-duplex c'è un tempo di gap per permettere al flusso stesso di invertirsi
+</li><li>poiché il preambolo permette di fare controllo anche sul broadcast, l'802.16 è potenzialmente utilizzabile anche per la comunicazione in broadcast di tipo telefonico
+</li></ul><p class='vspace'>Anticipiamo un concetto che vedremo meglio poi: abbiamo detto che è il master che decide la suddivisione dei frame, e che segnala attraverso degli <em>start points</em> quando fare uplink/downlink e quando full/half-duplex. Il ricevente può però inoltrare una sua richiesta di banda per i downlink successivi utilizzando i bit iniziali inviati nel suo subframe di uplink. Tale richiesta di bandwidth può andare in collisione se il master non ne ha abbastanza da dargli e l'altro l'ha già occupata, ed è questa l'unico tipo di contesa che si può avere nell'802.16. Il protocollo prevede che il master valuti sempre queste richiesta, ma gli lascia ovviamente la possibilità di scegliere cosa fare.
+</p>
+<p class='vspace'>Questo tipo di assestamento della rete per la distribuzione della banda può essere fatto anche in <code class='escaped'>drive-run</code>, ovvero con tutti i collegamenti funzionanti ma senza traffico dati. Tipicamente svolto in fase di configurazione iniziale della rete, si aspetta che le stazioni periferiche facciano la loro richiesta di banda alla base station responsabile, e questa al prossimo giro valuterà come e a chi assegnarle. Ribadiamo che le stazioni non dovrebbero dare per scontato che la loro richiesta venga accolta, perché se usano la banda prima di avere il permesso e poi questo permesso non è accordato, avremo collisioni.
+</p>
+<p class='vspace'>Per quanto riguarda le prestazioni, dato che ci troviamo in una situazione equiparabile alla collision avoidance, possiamo garantire una certa banda minima sia in downlink che in uplink, anche se quest'ultima la si garantisce con maggiori difficoltà. Inoltre, possiamo vendere a tutti gli host che ne facessero richiesta delle offerte più vantaggiose in termini di banda: come? Assegando codici speciali da includere nel preambolo, e che il master è in grado di riconoscere così che le richieste di banda di quelle stazioni saranno accolte il più spesso possibile.
+</p>
+<div class='vspace'></div><h3>Gestione della banda</h3>
+<p>Come abbiamo potuto intuire dagli ultimi discors, il principale problema del MAC del protocollo 802.16 (e dei MAC in generale) è quello di garantire banda. Alle subscriber stations sono dati tre modi per richiedere banda:
+</p><ul><li>usare l'intervallo "opportunità di richiesta di contesa" che sarà esaminato dalla base station
+</li><li>inviare un messaggio MAC autonomo chiamato "richiesta LB" in uno slot già garantito
+</li><li>incorporare un messaggio di richiesta di LB in un pacchetto dati
+</li></ul><p class='vspace'>Indipendentemente da come gli arriva la richiesta, le base station decide come garantire e/o allocare larghezza di banda basandosi su diversi fattori, e una volta deciso può scegliere se farlo in <strong>GPSS</strong> (<em>Grant Per Subscriber Station</em>) o in <strong>GPC</strong> (<em>Grant Per Connection</em>).
+</p>
+<p class='vspace'>Un'utilissima caratteristica dell'802.16, una di quelle che le fa meritare l'appellativo di "protocollo avanzato", è quella di prevedere diversi meccanismi di richiesta di banda a seconda delle necessità attuali, tenendo conto soprattutto dei diversi profili di variabilità delle sorgenti di banda. Tradotto: le subscriber station hanno diversi modi per richiedere più banda, ognuno dei quali è ottimizzato per certe situazioni (di traffico, di sorgenti, di servizio, ...). Vediamo quali sono:
+</p><ul><li><strong>UGS</strong> (<em>Unsolicited Grant Service</em>), che si applica a scenari in tempo reale, con trasmissioni di pacchetti a dimensione fissa (ad esempio il VoIP). La base station garantisce di inviare periodicamente dei pacchetti <strong>Poll-me</strong> ad ogni subscriber station, e se queste dopo che l'hanno ricevuto gli chiedono banda allora lui sarà obbligato a dargliene abbastanza per inviare un frame. Ripetiamo che siamo in situazioni come il VoIP in cui i frame hanno grandezze fisse, quindi o hanno dimensione 0 (non sono utilizzati) o ne hanno una già nota a priori
+</li><li><strong>rtPS</strong> (<em>real-time Polling Service</em>), per scenari in cui ci sono trasferimenti periodici di pacchetti a dimensione variabile. Un esempio è quella della trasmissione di un file video MPEG, che ha una codifica differenziale: per ogni fotogramma si inviano solo le informazioni sui pixel che cambiano. In questo caso potrei quindi avere momenti in cui ho bisogno di poca banda e altri in cui ne ho bisogno di tantissima. Una soluzione stupida sarebbe assegnare sempre tutto il frame, ma allora l'utilità della codifica dell'MPEG va a ramengo. La soluzione offerta nel protocollo è invece quella del <strong>polling unicast</strong>, in cui il master invia dei <em>poll-me</em> periodici e lo slave continua a inoltrare richieste di banda fino a quando non ottiene quella che si aspetta: prima di questo momento non invia nulla. L'aspetto negativo di questo sistema è che aumenta il tempo di latenza
+</li><li><strong>nrtPS</strong> (<em>non-real-time Polling Service</em>'), per situazioni in cui abbiamo pacchetti a dimensioni variabili e una buona tolleranza ai ritardi. In questo caso rimane sempre l'impegno del master di inviare pacchetti <em>poll-me</em>, ma senza l'obbligo di farlo con periodicità
+</li><li><strong>BES</strong> (<em>Best Effort Service</em>), che si può tradurre in "io ti dò questa banda e tu ci fai quello che vuoi". E' la soluzione che costa meno perché il master non si preoccupa minimamente di fare polling unicast
+</li></ul><div class='vspace'></div><h3>Cenni di QoS</h3>
+<p>Da <a target='_blank'  class='urllink' href='http://it.wikipedia.org/wiki/Qualit%C3%A0_di_servizio' title='' rel='nofollow'>wikipedia</a>: "Nel campo delle reti di telecomunicazioni, il termine Qualità di servizio o più semplicemente QoS (dall'inglese Quality of Service) è usato per indicare i parametri usati per caratterizzare la qualità del servizio offerto dalla rete (ad esempio perdita di pacchetti, ritardo), o gli strumenti per ottenere una qualità di servizio desiderata."
+</p>
+<p class='vspace'>Il modello a oggetti che rappresenta il QoS è il seguente:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/PAR-qos.jpg' alt='' title='' /></div>
+<p class='vspace'>Tra le entità coinvolte nel modello c'è il <em>PDU</em> che identifica il tipo di frame, il <em>flusso di servizio</em> che sarà attivato presso un certo utente e potrà creare una <em>connessione</em> unica (almeno nell'802.16). In questo modello le condizioni di un flusso di servizi sono una particolare istanza di quanto rappresentato in figura, e mi danno indicazioni su che tipo di QoS sto offrendo. Altra entità coinvolta è la <em>classe di servizio</em>, che è la definizione di un certo tipo di scheduling (ad esempio una riserva di canale esclusiva, o a contesa, o con uno dei profili usati nell'802.16).
+</p>
+<p class='vspace'>Si può arrivare ad avere un'attivazione automatica di una certa istanza del modello? Nel protocollo 802.16 sì, perché ad alto livello scelgo i profili di servizio che saranno poi implementati sul servizio offerto.
+</p>
+<div class='vspace'></div><h3>802.16a</h3>
+<p>Qual è il futuro del protocollo 802.16? Vediamo le caratteristiche di una popolare estensione, la 802.16a:
+</p><ul><li>supporto alla topologia di rete mesh (<a class='urllink' href='http://it.wikipedia.org/wiki/Wireless_mesh_network' title='' rel='nofollow'>http://it.wikipedia.org/wiki/Wireless_mesh_network</a>)
+</li><li>supporto alle tecnologie che non risentono del line of sight, con la possibilità quindi di installare le antenne in posizioni qualunque
+</li><li>modulazioni diverse che arrivano fino a 11GHz
+</li><li>implementazione del <strong>DFS</strong> (<em>Dynamic Frequency Selection</em>), che evita le interferenze tra trasmissioni 802.11 e 802.16
+</li><li>evoluzione del modello QoS a oggetti, in cui si possano maneggiare gli oggetti in run-time così da influire sul funzionamento della rete
+</li><li>supporto alla tecnologia <strong>ARQ</strong> (<em>Automatic Repeat Request</em>)
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 27, 2009, at 09:30 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-26Maggio?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-26Maggio?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

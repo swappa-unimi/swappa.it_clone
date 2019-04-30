@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Riassunto del libro di Sistemi Operativi - Capitolo 12: Implementazione del file system</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SOcap12.html' title='Riassunto del libro di Sistemi Operativi - Capitolo 12: Implementazione del file system'>Riassunto del libro di Sistemi Operativi - Capitolo 12: Implementazione del file system</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Capitolo 12: Implementazione del file system ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<div class='vspace'></div><h2>12.1 Struttura del file system</h2>
+<p>Il compito del file system è quello di far reperire le informazioni in modo rapido. Sono due i problemi per realizzare il file system:
+</p>
+<p class='vspace'>1.Come far apparire il file system all'utente;<br />2.Come memorizzare il file system logico nel disco.
+</p>
+<p class='vspace'>Il file system è composto da livelli:
+</p>
+<p class='vspace'><em>1.Controllo dell'I/O:</em> gestisce interruzioni fra memoria principale e dispositivi;<br /><em>2.File system di base:</em> gestisce comandi generici per leggere e scrivere blocchi fisici dal disco;<br /><em>3.Modulo di organizzazione dei file:</em> gestisce l'organizzazione dei blocchi fisici in modo da ricostruire ogni file;<br /><em>4.File system logico:</em> gestisce i metadati (informazioni che descrivono la struttura interna del file system).
+</p>
+<div class='vspace'></div><h3>12.2.1 Panoramica sulla realizzazione del file system</h3>
+<p>Il file system contiene diverse informazioni riguardanti:
+</p>
+<div class='vspace'></div><ul><li><em>Blocco di controllo del boot:</em> contiene informazioni necessarie per l'avvio del sistema;
+</li><li>Blocco di controllo della partizione: contiene dei dettagli sulla partizione (num blocchi liberi/occupati ecc.);
+</li><li><em>Directory: organizzano i file;</em>
+</li><li><em>Blocchi di controllo di file:</em> contengono dettagli sui file (permessi, dimensione, posizione dei blocchi occupati).
+</li></ul><p class='vspace'>Il file system contiene informazioni anche riguardanti la memoria:
+</p>
+<div class='vspace'></div><ul><li><em>tabella delle partizioni:</em> contiene informazione sulle partizioni;
+</li><li><em>descrittori della directory;</em>
+</li><li><em>Tabella dei file aperti:</em> contiene copia del FCB di ogni file aperto;
+</li><li><em>Tabella dei file aperti per ogni processo:</em> contiene puntatore all'elemento appropriato nella tabella dei file aperti.
+</li></ul><p class='vspace'>Per creare un file bisogna effettuare una chiamata di sistema per il file system che crea un nuovo FCB e aggiorna la sua directory (dove verrà posizionato il file). Per operare su tale file lo si deve prima aprire. Aprire un file consiste nel portare nella tabella dei file aperti il suo FCB. La chiamata open() restituisce un puntatore che punta al file aperto nella tabella. Tutte le operazioni avverranno mediante quel puntatore. Al solito si usa un contatore per sapere quanti processi stanno usando questo file. Quanto il contatore è peri a 0 si può togliere il file dalla tabella dei file aperti.
+</p>
+<div class='vspace'></div><h3>12.2.2 Partizioni e montaggio</h3>
+<p>Ci possono essere più partizioni su un disco:
+</p>
+<div class='vspace'></div><ul><li><em>disco grezzo:</em> partizioni senza un file system particolare;
+</li><li><em>partizioni per avvio del computer:</em> contiene una sequenza di blocchi da caricare in memoria;
+</li></ul><p class='vspace'>Per sistemi che hanno più sistemi operativi installati è necessario un avvio duplice, all'avvio viene caricato un loader in memoria, il quale può far scegliere che sistema far partire.
+Partizione radice-&gt; è quella partizione che contiene il codice del kernel, essa viene montata al momento dell'avvio. Solo dopo che è stata montata si possono montare tutte altre partizioni. Si mantiene una tabella di montaggio per sapere appunto quale e che tipo di file system è stato montato.
+</p>
+<div class='vspace'></div><h3>12.2.3 File system virtuali</h3>
+<p>Per realizzare file system diversi posso realizzare delle procedure per ogni tipo di file system. Questo metodo non è ottimale.<br />Per isolare le chiamate di sistema di base dai dettagli implementativi suddivido il file system in tre livelli principali:
+</p>
+<p class='vspace'><em>1.Interfaccia del file system;</em><br /><em>2.File system virtuale (VFS);</em><br /><em>3.Rete.</em>
+</p>
+<p class='vspace'>Vantaggi file system virtuale: 
+</p>
+<div class='vspace'></div><ul><li>Separa le operazioni generiche dalla loro realizzazione-&gt; consente accesso trasparente;
+</li><li>il VFS è basato sulla rappresentazione del file, detta vnode il quale contiene identificatore univoco del file. Unicità richiesta nella rete.
+</li></ul><p class='vspace'>Il VSF distingue i file system remoti da quelli locali, distinguendo ulteriormente questi ultimi in base al loro tipo.
+</p>
+<div class='vspace'></div><h2>12.3 Realizzazione delle directory</h2>
+<p>Le directory possono essere realizzate in modi diversi, ognuno dei quali presenta pro e contro.
+</p>
+<div class='vspace'></div><h3>12.3.1Lista</h3>
+<p>Metodo più semplice. Si mantiene una lista dei nomi che fanno riferimento (mediante puntatori) alle informazioni. Molto semplice da implementare ma richiede tempo lineare per cercare un file al suo interno, nel caso venga usato frequentemente un file il tempo di attesa aumenta.<br />Un'alternativa sarebbe quella di utilizzare una lista ordinata-&gt; diminuisce il tempo di ricerca, ma aumenta il tempo di inserimento degli elementi.
+</p>
+<div class='vspace'></div><h3>12.3.2 Tabella di hash</h3>
+<p>Tabella di hash-&gt; si memorizzano gli elementi in tale tabella. Mediante una funzione di hash ci si calcola il valore in base al parametro in entrata e tale funzione restituisce il puntatore alla locazione desiderata.
+Collisioni-&gt; è possibile che la funzione di hash identifichi due file con lo stesso valore.
+Il problema delle tabelle di hash è la dimensione, che in genere è fissa e la dipendenza dalla funzione di hash.
+</p>
+<div class='vspace'></div><h2>12.4 Metodi di allocazione</h2>
+<p>Ci sono tre metodi per allocare i file su disco: 
+</p>
+<p class='vspace'><em>1.Contigua;</em><br /><em>2.Collegata;</em><br /><em>3.Indicizzata.</em>
+</p>
+<div class='vspace'></div><h3>12.4.1 Allocazione contigua</h3>
+<p>Richiede che ogni file occupi un certo numero di blocchi contigui su disco. Si parte ad allocare dal blocco b, poi b+1, b+2, ecc...<br />L'accesso all'informazione allocata in questo modo è semplice. Il file system ricorda solo il primo blocco referenziato, poi avanza al successivo.<br />Problemi: Tale allocazione soffre si frammentazione esterna. Lo spazio su disco viene suddiviso in piccole partizioni a mano a mano che si alloca lo spazio. Si arriverà ad un punto che non sarà possibile allocare altri blocchi. Ma sommando i buchi fra una partizione e l'altra se ne potrebbero allocare altri.<br />Soluzione: Si potrebbe effettuare una compattazione di tali blocchi -&gt; durante tale operazione le normali operazioni non sono consentite.<br />Un problema più pesante è quello che non si può sapere a priori quanto spazio occuperà un processo durante la sua vita. Se si alloca poco spazio tale processo non potrebbe più avanzare, dunque dovrebbe essere terminato. Una soluzione potrebbe essere quella si assegnare delle estensioni.
+</p>
+<div class='vspace'></div><h3>12.4.2 Allocazione collegata</h3>
+<p>Ogni file è una lista collegata di blocchi su disco. Con tale metodo si individua un blocco di partenza, i successi blocchi possono essere sparsi ovunque sul disco. Essi sono collegati mediante un puntare. La directory conterrà un puntatore al primo blocco, uno all'ultimo blocco del file.<br />Risolvo tutti i problemi dell'allocazione contigua (frammentazione esterna, dimensione file).<br /><strong>Problemi:</strong> è efficiente solo per file sequenziali, se voglio accedere ad un determinato blocco devo scorrere prima tutti quelli prima per poter raggiungere quello desiderato. Un secondo problema è che i puntatori portano via spazio per l'informazione (il 0.78% è occupato dai puntatori).<br /><strong>Soluzione:</strong> Raggruppo i blocchi in cluster-&gt; metto alcuni blocchi in un unico cluster. In questo modo il ci sarà solo un puntatore per i blocchi che ho raggruppato in un cluster.<br />Un <em>problema</em> più rilevante è quello dell'inaffidabilità, i puntatori ai blocchi successivi potrebbero danneggiarsi-&gt; i blocchi potrebbero essere isolati, o peggio si potrebbe avere un collegamento ad un altro blocco.
+</p>
+<div class='vspace'></div><h3>12.4.3 Allocazione indicizzata	</h3>
+<p>Ogni file possiede un blocco indice, il quale è un vettore di indirizzi dei blocchi presenti su disco. l' i-esimo indice punta all'i-esimo blocco su disco.<br />Questo metodo non soffre di frammentazione esterna ed è in grado di accedere direttamente all'informazione.
+<strong>Problema-&gt;</strong> se ci sono pochi indirizzi nel vettore (il quale è memorizzato in un blocco a parte) si sprecherebbe un blocco. In caso contrario potrebbero esserci più indirizzi di quelli memorizzabili su un blocco.
+</p>
+<div class='vspace'></div><ul><li><em>Schema collegato:</em> il blocco indice è un blocco del disco, se si devono memorizzare molti indici si possono mettere assieme più blocchi indici. La fine del blocco è denotata con nil, oppure è utilizzato un puntatore nel caso si debba aggiungere un altro blocco indice;
+</li><li><em>Indice multi livello:</em> si utilizzano più livelli di blocchi indice, per poi giungere alle informazioni;
+</li><li><em>Schema combinato:</em> combinazione dei due metodi precedenti. Si utilizzano i primi puntatori per arrivare alle informazioni, gli altri portano ad altri indici, che potrebbero portare alle informazioni o ad altri indici. 
+</li></ul><div class='vspace'></div><h2>12.5 Gestione dello spazio libero</h2>
+<p>E' importante anche sapere come dover gestire lo spazio libero per l'allocazione di nuovi file.
+</p>
+<div class='vspace'></div><h3>12.5.1 Vettore di bit</h3>
+<p>Bit Map (o bit vector)-&gt; tramite i bit posso stabilire quali blocchi sono liberi:
+</p>
+<p class='vspace'>1-&gt;blocco libero;<br />0-&gt;blocco allocato.
+</p>
+<p class='vspace'><strong>Vantaggi-&gt;</strong> semplicità di realizzazione ed efficiente nel trovare il primo o i primi n blocchi liberi.<br /><strong>Svantaggi-&gt;</strong> è inefficiente se tale bit vector non è mantenuto nella memoria centrale per intero.
+</p>
+<div class='vspace'></div><h3>12.5.2 Lista collegata</h3>
+<p>Si mantiene una lista collegata dei blocchi liberi. Si parte dal primo blocco libero, il quale punta al successivo blocco libero. Il puntatore viene mantenuto in una locazione del disco.\\ 
+Svantaggio: tale metodo è inefficiente nel caso si debba attraversare l'intera lista. L'attraversamento però non è un'azione frequente, in quanto il sistema il più delle volte avrà bisogno di un singolo blocco libero alla volta.
+</p>
+<div class='vspace'></div><h3>12.5.3 Raggruppamento</h3>
+<p>Un metodo alternativo è quello di porre gli indirizzi dei blocchi liberi in un blocco. La reperibilità di un certo numero di blocchi liberi è immediata.
+</p>
+<div class='vspace'></div><h3>12.5.4 Conteggio</h3>
+<p>Un metodo alternativo è quello di tenere l'indirizzo del primo blocco libero e il numero di blocchi liberi dopo il primo indirizzo.
+</p>
+<div class='vspace'></div><h3>12.6.1 Efficienza</h3>
+<p>L'efficienza dello spazio libero che si ha sul disco dipende fortemente da che tipo di algoritmo si decide di utilizzare. Ogni algoritmo presenta dei vantaggi e dei svantaggi che devono essere presi in considerazione per la gestione dello spazio libero.
+</p>
+<div class='vspace'></div><h3>12.6.2 Prestazioni</h3>
+<p>E' possibile aumentare le prestazioni utilizzando la cache per la gestione dei blocchi. Generalmente in cache si mantengono i blocchi che saranno utilizzati a breve, di modo tale che non si debba accedere nuovamente al disco-&gt;risparmio notevole di tempo.<br />Altri sistemi memorizzano nella cache i dati al posto dei blocchi fisici-&gt;cache delle pagine. [...]
+</p>
+<div class='vspace'></div><h2>12.7 Recupero del file system</h2>
+<p>Directory mantenute in memoria centrale e su disco-&gt; un guasto potrebbe provocare una perdita di dati o l'incoerenza degli stessi.
+</p>
+<div class='vspace'></div><h3>12.7.1 Controllo della coerenza </h3>
+<p>Le informazioni della directory sono mantenute in memoria centrale e nella cache per velocizzare il tempo di accesso. Un blocco improvviso del computer potrebbe far perdere tutte le modifiche effettuate lasciando il file system in una situazione non coerente.<br />Il controllore della coerenza confronta i dati della struttura della directory con quelli presenti su disco e ripara eventuali incoerenze.
+</p>
+<div class='vspace'></div><h3>12.7.2 Backup e ripristino</h3>
+<p>Per non perdere i dati è consigliabile effettuare dei backup periodici dei dati. Così facendo è possibile, in caso di guasto, ripristinare il guasto utilizzando proprio questi backup. E' possibile effettuare dei backup incrementali, ovvero partendo da un backup completo è possibile effettuare un backup dei dati che hanno subito delle modifiche.
+</p>
+<div class='vspace'></div><h2>12.8 File system basato sulla registrazione delle attività</h2>
+<p>Con tale file system si registrano tutte le attività svolte dall'elaboratore. Più in particolare tutte le modifiche apportate ai metadati sono registrate in un regitro (log). Ogni insieme di operazioni sono raggruppate in transazioni. Quando si vuole effettuare un'operazione, essa è scritta sul registro ed è da considerarsi da svolgere. Quando tale operazione sarà svolta potrà essere tolta da tale registro. Nel caso in cui il sistemi si blocchi all'interno di questo registro ci saranno zero o più operazioni che non sono state completate. E' possibile dunque, mediante questo registro effettuare di nuovo tutte quelle operazioni che sono rimaste pendenti.
+</p>
+<div class='vspace'></div><h2>12.9 NFS</h2>
+<p>Network File System (NFS) è un file system di rete, il quale è utilizzato per accedere a dei file remoti mediante la rete LAN.
+</p>
+<div class='vspace'></div><h3>12.9.1 Descrizione</h3>
+<p>I computer presenti sulla rete sono indipendenti. La condivisione avviene mediante la struttura client-server. Per rendere possibile la condivisione di tali file il client deve per prima cosa iniziare un punto di montaggio.<br />Consiste nel montare una directory del file system remoto con una directory del file system locale. Così facendo si rende disponibile la directory contente il file remoto voluto.<br />Es. s1: /usr/shared/dir1; t2: /usr/local. L'effetto di montaggio di s1: /usr/shared su t2: /usr/local è: /usr/local/dir1.\\ 
+Nota: la directory /usr/local non sarà più visibile.<br />Un aspetto molto importante è che un client che ha montato un file system in remoto egli non avrà accesso agli altri file system che sono stati montati su quella macchina.\\ 
+Tramite le RPC (Remote Procedure Call) il NFS può operare in un ambiente eterogeneo, dove le macchine possono montare sistemi operativi differenti.
+</p>
+<div class='vspace'></div><h3>12.9.2 Il protocollo di montaggio</h3>
+<p>Protocollo di montaggio-&gt; stabilisce una connessione logica fra il server e il client. Successivamente si deve montare il file system, quindi si deve passare il nome della macchina remota.<br />La richiesta di montaggio è mappata in una RPC e poi inoltrata al server. Il server mantiene una lista di esportazione-&gt; contiene le informazioni sui permessi di montaggi. Quando gli arriva la richiesta verifica che il client abbia i permessi. Se il client possiede i permessi il server gli restituisce un descrittore di file, che servirà al client per i successivi accessi.
+</p>
+<div class='vspace'></div><h3>12.9.3 Il protocollo NFS</h3>
+<p>Come detto il protocollo opera su un insiemi di primitive di RPC, le quali consentono anche altre operazioni:
+</p>
+<div class='vspace'></div><ul><li><em>Ricerca di un file in una directory;</em>
+</li><li><em>Lettura di un gruppo di elementi dalla directory;</em>
+</li><li><em>Manipolazione dei collegamenti e delle directory;</em>
+</li><li><em>Accesso agli attributi dei file;</em>
+</li><li><em>Lettura e scrittura dei file.</em>
+</li></ul><div class='vspace'></div><h3>12.9.4 Traduzione del nome del percorso</h3>
+<p>Dato che ogni client possiede un suo schema del proprio spazio dei nomi logico occorre una traduzione, affinché tale nome sia comprensibile al server. Tale operazione è costosa dato che il percorso del nome è spezzettato ed ogni pezzetto è inviato al server. Tale operazione però è indispensabile. Per rendere queste traduzioni più veloci si potrebbe memorizzare tale frammento di traduzione all'interno della cache.
+</p>
+<div class='vspace'></div><h3>12.9.5 Operazioni remote</h3>
+<p>Esiste una corrispondenza biunivoca fra le normali chiamate di sistema per le operazioni sui file e le operazioni effettuate mediante le RPC.
+Nonostante il NFS utilizzi le operazioni remote per migliorare le prestazioni utilizza la cache e i buffer, con tutti i vincoli di coerenza necessari.
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SOcap12)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Debug Variables </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='PmWiki.DebugVariables' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				DebugVariables
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/DebugVariables?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/DebugVariables?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/DebugVariables?action=print' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/DebugVariables?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/DebugVariables?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> Tools
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Cal/Cal'>Calendario</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Gruppi'>Gruppi</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Categorie'>Categorie</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/WikiSandbox'>WikiSandbox</a>
+</li></ul><p class='vspace sidehead'> Categorie
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>UniCrema</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Guide'>Guide</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Qultura'>Qultura</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Recensioni'>Recensioni</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Imperdibili'>Imperdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Perdibili'>Perdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/LoschiIndividui'>Loschi individui</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/CaGate'>caGate</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringWiki'>Touring Wiki</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringBar'>Touring Bar</a>
+</li></ul><p class='vspace sidehead'> Help
+</p><ul><li><a class='urllink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki' title='' rel='nofollow'>Guide interne wiki</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><p class='vspace'  style='text-align: right;'> <span style='font-size:83%'><a class='wikilink' href='http://www.swappa.it/wiki/Site/SideBar?action=edit'>edit SideBar</a></span>
+</p>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Debug Variables was last modified on February 14, 2009, at 03:44 PM'>
+							<span style='display:none;'>Debug Variables</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#ddd;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='BasicVariables.html'>Basic Variables</a> | <a class='wikilink' href='Variables.html'>Variables</a> | <a class='wikilink' href='EditVariables.html'>Edit Variables</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' >
+</div>
+<div class='vspace'></div><dl><dt><a name='EnableDiag' id='EnableDiag'></a><a class='varlink' href='#EnableDiag'><code class='varlink'>&#36;EnableDiag</code></a></dt><dd>
+</dd></dl><div class='indent' > 
+<p><a name='BEGENABLEDIAG' id='BEGENABLEDIAG'></a>
+The following actions are available only if you set <code><a class='varlink' href='#EnableDiag'><code class='varlink'>&#36;EnableDiag</code></a> = 1;</code> in your configuration file. They can be used for debugging and should not be set in a production environment.
+</p>
+<div class='vspace'></div><dl><dt>?action=<strong>ruleset</strong></dt><dd> displays a list of all markups in 3 columns:
+<ul><li>column 1 = markup-name (1. parameter of markup() )
+</li><li>column 2 = when will rule apply (2. parameter of markup() )
+</li><li>column 3 = PmWiki's internal sort key (derived from #2)
+</li></ul></dd></dl><div class='indent'>(see <a class='wikilink' href='CustomMarkup.html'>Custom Markup</a> <span style='font-size:83%'> Using the Markup() function for custom wiki syntax </span>).
+</div><div class='indent'>To see more than what <code class='escaped'>?action=ruleset</code> gives you, apply the <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/MarkupRulesetDebugging' title='' rel='nofollow'>Cookbook:MarkupRulesetDebugging</a> recipe: it can also show the pattern and the replacement strings.
+<ul><li>doesn't make use of PmWiki's authorization mechanisms.
+</li></ul></div><p class='vspace'><a name='phpinfo' id='phpinfo'></a>
+</p><dl><dt>?action=<strong>phpinfo</strong></dt><dd> displays the output of phpinfo() and exits. no page will be processed
+<ul><li>doesn't make use of PmWiki's authorization mechanisms.
+</li></ul></dd></dl><p class='vspace'><a name='diag' id='diag'></a>
+</p><dl><dt>?action=<strong>diag</strong></dt><dd> displays a dump of all global vars and exits. no page will be processed
+<ul><li>doesn't make use of PmWiki's authorization mechanisms.
+</li></ul></dd></dl><div class='vspace'></div></div>
+<dl><dt><a name='EnableIMSCaching' id='EnableIMSCaching'></a><a class='varlink' href='#EnableIMSCaching'><code class='varlink'>&#36;EnableIMSCaching</code></a></dt><dd>A variable which, when set equal to 1, recognizes the "If-Modified-Since" header coming from browsers and allows browsers to use locally cached pages.  Disabled by default to help the administrator customize its page without needing permanent reloading.
+<div class='vspace'></div></dd><dt><a name='EnableStopWatch' id='EnableStopWatch'></a><a class='varlink' href='#EnableStopWatch'><code class='varlink'>&#36;EnableStopWatch</code></a></dt><dd>This activates an internal stopwatch that shows how long it takes to render a page. (If you have a wiki that composes a HTML page from multiple pages, such as a normal layout with a sidebar, you'll get separate timings for each subpage and for the total page.)
+<div class='vspace'></div></dd><dt> </dt><dd>The timings can be displayed by adding <code class='escaped'>&lt;!--function:StopWatchHTML 1--&gt;</code> in the wiki template.
+<div class='vspace'></div></dd><dt> </dt><dd>Valid values are:
+</dd></dl><pre>        <a class='varlink' href='#EnableStopWatch'><code class='varlink'>&#36;EnableStopWatch</code></a> = 0; # No timings (the default). No HTML will be generated.
+        <a class='varlink' href='#EnableStopWatch'><code class='varlink'>&#36;EnableStopWatch</code></a> = 1; # Wall-clock timings only.
+        <a class='varlink' href='#EnableStopWatch'><code class='varlink'>&#36;EnableStopWatch</code></a> = 2; # Wall-clock and CPU usage timings. Won't work on Windows.
+</pre><div class='vspace'></div><dl><dt> </dt><dd>See <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Stopwatch' title='' rel='nofollow'>Stopwatch</a> for more details.
+</dd></dl><p class='vspace'>See also:
+</p><ul><li>scripts/refcount.php is useful for debugging
+</li></ul><div class='vspace'></div><hr />
+<div class='faq' ><a name='faq' id='faq'></a> 
+<p class='question'>Is it possible for someone with admin priviledges to always have access to debugging tools, without letting everyone else access them?</p>
+<p>You can easily &amp; automatically allow debugging for anyone with admin priviledges (meanwhile leaving it off for everyone else) by including this line in config.php - <em>just be sure that 1) <a class='varlink' href='#EnableDiag'><code class='varlink'>&#36;EnableDiag</code></a> is either null or set to 0, and 2) to include it near the end of config.php, AFTER declaring your passwords, and after any AuthUser or other priviledge settings</em>:
+</p>
+<div class='vspace'></div><dl><dd><div class='indent'><code>if (CondAuth($pagename, 'admin')) <a class='varlink' href='#EnableDiag'><code class='varlink'>&#36;EnableDiag</code></a> = 1;  # allows admin to always call phpinfo, etc</code>
+</div></dd></dl><div class='vspace'></div></div>
+<p> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#ddd;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='BasicVariables.html'>Basic Variables</a> | <a class='wikilink' href='Variables.html'>Variables</a> | <a class='wikilink' href='EditVariables.html'>Edit Variables</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+<br clear='all' />
+</p><div  style='background-color: #ffe; border-top: 1px solid black; font-size: .8em;' > 
+<p>This page may have <span class='commentout-pmwikiorg'> a more recent version on <a class='urllink' href='http://www.pmwiki.org' title='' rel='nofollow'>pmwiki.org</a>: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/DebugVariables' title='' rel='nofollow'>PmWiki:DebugVariables</a>, and </span> a talk page: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/DebugVariables-Talk' title='' rel='nofollow'>PmWiki:DebugVariables-Talk</a>.
+</p></div>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/RecentChanges'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: February 14, 2009, at 03:44 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/DebugVariables?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/DebugVariables?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

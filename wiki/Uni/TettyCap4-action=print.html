@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Dispense Tetty - Capitolo 4</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TettyCap4.html' title='Dispense Tetty - Capitolo 4'>Dispense Tetty - Capitolo 4</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Capitolo 4: Programmazione orientata agli oggetti ::</strong>
+</p>
+<div class='vspace'></div><h3>Indice</h3>
+<p>1 <a href='#c41'>Concetti fondamentali</a>
+</p><div class='indent'>1.1 Astrazione
+</div><div class='indent'>1.2 Tipi di dati astratti
+</div><div class='indent'>1.3 Incapsulamento
+</div><div class='indent'>1.4 Esempio di incapsulamento balordo in C
+</div><div class='indent'>1.5 Classi e oggetti
+</div><p>2 <a href='#c42'>Riuso del software</a>
+</p><div class='indent'>2.1 Approcci al riuso del software
+</div><div class='indent'>2.2 Riuso del software e programmazione ad oggetti
+</div><div class='indent'>2.3 Pattern
+</div><div class='indent'>2.4 Componenti
+</div><div class='indent'>2.5 Programmazione orientata agli aspetti
+</div><div class='indent'>2.6 Riusabilità in Java
+</div><p>3 <a href='#c47'>Interfacce utente</a>
+</p><div class='indent'>3.1 Interfacce a carattere
+</div><div class='indent'>3.2 Interfacce grafiche
+</div><hr />
+<p class='vspace'><a name='c41' id='c41'></a>
+</p><h3>1. Concetti fondamentali </h3>
+<p>La Programmazione Orientata agli Oggetti (OOP da qui in poi) rappresenta lo sviluppo delle intuizioni della programmazione strutturata, <span  style='color: red;'>concentrandosi più sui dati da manipolare, piuttosto che sulle procedure che eseguono la manipolazione.</span>
+</p>
+<div class='vspace'></div><h4>1.1 Astrazione</h4>
+<p><span  style='color: red;'>L'idea che sta alla base dell'astrazione è frammentare un sistema complesso nei suoi componenti fondamentali, descrivendoli nel modo più semplice e preciso possibile trascurandone i dettagli non rilevanti.</span>
+</p>
+<div class='vspace'></div><h4>1.2 Tipo di Dato Astratto</h4>
+<p><span  style='color: red;'>Il <strong>Tipo di Dato Astratto</strong> è un modello che definisce un insieme di operazioni che costituiscono la sua interfaccia, e il suo dominio di applicazione è definito da assiomi e precondizioni.</span> Esso trascura la rappresentazione fisica del dato nella macchina, poiché in generale ciò al programmatore non importa.<br /><br />
+Ha le seguenti caratteristiche:
+</p><ul><li>Interfaccia
+<ul><li>Nome
+</li><li>Operazioni consentite
+</li><li>Assiomi e Precondizioni
+</li></ul></li></ul><p class='vspace'>E' come un uovo: i dettagli sono il tuorlo, nascosti al mondo, mentre ciò che è visibile (l'Interfaccia) è il guscio.<br /><br />
+Un esempio di dato astratto che usiamo tutti i giorni è il <ins>numero naturale</ins>, del quale definiamo il nome, di cui sappiamo le operazioni consentite (chiedere alla Citrini), e di cui abbiamo nozione dei suoi Assiomi e delle sue Precondizioni (eg., n + 0 != n; n * 0 = 0 e così via).
+</p>
+<p class='vspace'>Altro esempio più elaborato è quello dello stack. La sua interfaccia minima è definita da:
+</p><ul><li><em>PUSH &lt;dato&gt;</em>, che aggiunge un dato in cima alla pila;
+</li><li><span  style='color: red;'><em>TOP</em>, che restituisce il dato in cima alla pila (<em>precondizione</em>: il numero di elementi sullo stack è positivo, ovvero la pila deve contenere almeno un dato);</span>
+</li><li><em>DROP</em>, che elimina il dato in cima alla pila (ha la stessa <em>precondizione</em> di prima).
+</li></ul><p>Un assioma potrebbero essere che "TOP non varia il numero dei dati contenuti nella pila", oppure che "se lo stack contiene <em>n</em> elementi, dopo l'istruzione DROP ne contiene "<em>n-1</em>".
+</p>
+<div class='vspace'></div><h4>1.3 Incapsulamento</h4>
+<p>Incapsulare significa "<em>intuorlare</em>" qualche cosa, cioè farla finire in un immaginario tuorlo di un dato astratto, e progettarne il guscio.<br /><span  style='color: red;'>Il programmatore OOP individua i <em>concetti</em> del suo programma, e li intuorla, incapsulandoli da qualche parte e nascondendone i dettagli implementativi.<br /><br /></span>
+Uno dei vantaggi dell'incapsulamento è che posso mantenere l'interfaccia, e modificarne il contenuto come voglio, senza che il resto del sistema ne soffra. Ciò permette di limitare le dipendenze tra i vari oggetti alle sole <span  style='color: red;'>interfacce, che meglio rappresentano l'idea di dato astratto.</span><br />La dipendenza tra oggetti vuol dire questo: creo il tipo di dato astratto Motore, con l'interfaccia composta da Accendi, Accelera, Molla il Gas, Spegni, e poi creo il tipo di dato astratto Automobile che incorpora il Motore. Nel momento in cui decido di cambiare il codice che esegue l'operazione Accendi, per esempio, non devo stare a modificare tutto l'ambaradan dell'automobile, perché l'incapsulamento permette di fregarmene: una volta che ho deciso che l'interfaccia del Motore è composta da Accendi, Accelera, Molla il Gas e Spegni, io programmatore di Automobile non devo sapere altro. Il programmatore di Motore farà tutti i casini che vuole, ma finché l'interfaccia non cambia, non ho problemi.<br /><br />
+Domanda: <em>ma non si può fare la stessa cosa con un linguaggio strutturato? Per esempio, creo delle <code class='escaped'>struct</code>, e creo delle funzioni che le manipolino?</em>.<br />Risposta: sì, certo. Il videogioco Doom è stato programmato così. Unico problema: siccome nei linguaggi strutturati non c'è la nozione di incapsulamento, può accadere che qualcuno, senza difficoltà, si metta a cambiare le funzioni manipolatrici, oppure decida di non usarle, e tutto il mio lavoro di progettazione va a balle. L'incapsulamento invece mi dice: <em>l'interfaccia è questa: da qui non si scappa</em>, e non si può sbagliare. Obbligo chi usa il mio codice a 1) non poter modificare il funzionamento interno (vero in parte, poi vedremo perché); 2) a usare la stessa interfaccia sempre e comunque.<br /><br />
+Se volete vi faccio anche l'esempio di programmazione pseudo incapsulata in C... ma sì dai!<br /><br />
+</p><h4>1.4 Esempio di incapsulamento balordo in C</h4>
+<p>Voglio un programma che manipoli dei numeri immaginari, e devo decidere se usare la notazione geometrica o quella trigonometrica (consultare il Cariboni per i dettagli).<br /><br />
+Nel file <code class='escaped'>complex.h</code> metto delle definizioni così:
+</p>
+<div class='vspace'></div><pre> double re(void * this);
+ double im(void * this);
+ double mod(void * this);
+</pre><p class='vspace'>Queste funzioni mi restituiscono la parte immaginaria, quella reale ed il modulo del mio numero reale. La cosa interessante è che prendono come argomento un tipo anonimo che più anonimo non si può: un puntatore a void.<br /><br />
+Poi scrivo il file <code class='escaped'>complex.c</code>(notate il <code class='escaped'>.c</code> e ci metto la definizione della <code class='escaped'>struct complex</code>:
+</p>
+<div class='vspace'></div><pre> struct complex {
+   double re;
+   doube im;
+ }
+</pre><p class='vspace'>I file <code class='escaped'>.c</code> in genere vengono "inclusi" solo di proposito, in genere si includono solo gli header.<br />Invece, visibili al programmatore, metto le implementazioni delle mie operazioni <code class='escaped'>double re</code> e così via:
+</p>
+<div class='vspace'></div><pre> double re(void * this) {
+   struct complex * z = (struct complex *)this;
+   return z -&gt; re;
+ }
+</pre><p class='vspace'>Questa funzione prende il parametro <code class='escaped'>void * this</code>, lo casta a <code class='escaped'>struct complex *</code>, e restituisce la parte reale di esso.<br />Quindi, il programmatore è limitato a fare una cosa del genere:
+</p>
+<div class='vspace'></div><pre> void * z;
+ printf("%f\n", re(z));
+</pre><p class='vspace'>Ok. Come faccio a <em>creare</em> un numero complesso a partire dalla sua parte immaginaria e dalla sua parte complessa? Occorre una funzione che prenda in argomento queste cose, e le restituisca come <code class='escaped'>void * this</code>. Eccola:
+</p>
+<div class='vspace'></div><pre> //complex.h
+ void * newComplex(double re, double im);
+
+ //complex.c
+ void * newComplex(double re, double im) {
+   struct complex * z;
+   z = (struct complex *)malloc(sizeof(struct complex));
+   z -&gt; re = re;
+   z -&gt; im = im;
+   return z;
+ }
+</pre><p class='vspace'>Questa funzione si chiama costruttore: costruisce il tipo di dato.
+Quello che abbiamo sviluppato qui è una specie di anticipo della programmazione strutturata. Se un giorno decido di cambiare la rappresentazione da geometrica (quella implementata qui) ad esponenziale, devo solo ricordarmi di modificare il costruttore e le funzioni <code class='escaped'>double re</code> etc., perché tanto il programmatore usa sempre e solo il tipo di dati <code class='escaped'>void *</code>, e quindi se ne frega di come implemento io alla fine il mio bel numero complesso.<br /><br />
+La OOP mi fa fare tutto ciò in modo elegante.
+</p>
+<div class='vspace'></div><h4>1.5 Classi e Oggetti</h4>
+<p>La <em>Classe</em> è il tipo di dato astratto che descrive tutti i casi particolari di oggetti di un certo tipo. Una Classe <em>Conto Corrente</em> descrive sia il conto presso la Banca Popolare di Lodi, che presso la Banca del Seme. E' l'ultimo gradino di un processo di astrazione:
+</p>
+<div class='vspace'></div><pre> Realtà -&gt; Modello -&gt; Oggetto -&gt; Classe
+</pre><p class='vspace'>Parto dalla realtà, e ne creo un modello. Il mio modello (la mia banca, in questo esempio) vedo che è composto da entità monadiche, i miei conti correnti. Ho tanti conti, quello di <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/Uni/Patrizia?action=edit'>Patrizia</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/Uni/Patrizia?action=edit'>?</a> pieno delle bustarelle della Lobby del Fil di Ferro, e quello di <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/Uni/Dario?action=edit'>Dario</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/Uni/Dario?action=edit'>?</a> finanziato dai Terroristi Tettamanziani per la Jihad del Pinguino, ma sono tutti simili. Quindi, astraggo ancora, e arrivo al tipo di dato astratto: la Classe <em>Conto Corrente</em>. Applausi, prego.<br />Da notare che non ci sono regole fisse per stabilire chi è Classe e chi è Oggetto: è la pratica che ci fa capire che cosa è più comodo per noi.<br /><br />
+L'Oggetto è una particolare incarnazione della Classe: come dicevo qui sopra, l'incarnazione di Dario del suo conto corrente è fatta in un modo, quella di Patty in in altro. <br />Si può quindi già trarre una distinzione tra ciò che pertiene ad una Classe, e ciò che pertiene ad un Oggetto.<br /><br />
+Torniamo all'esempio delle automobili: ho creato la Classe <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/Uni/126?action=edit'>126</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/Uni/126?action=edit'>?</a>, che ha un motore di 650 cm<sup>3</sup> e una potenza di 23 cavalli. Voglio poi implementare il Garage di Dario, che in un roseo futuro ne possiede 8. Ognuna di queste 126 appartiene alla Classe 126. Quindi, tutti i miei oggetti condivideranno la cilindrata e la potenza. Ecco quindi che la cilindrata e la potenza sono dati che appartengono alla Classe, mentre la targa di ogni singolo pezzo della collezione appartiene all'oggetto, cioè all'incarnazione (in gergo OOP, <em>istanza</em>).
+</p>
+<p class='vspace'><span  style='color: red;'>Si può dire che l'idea tradizionale di struttura dati trova nell'OOP il suo corrispettivo nell'oggetto.</span>
+</p>
+<p class='vspace'>Per concludere con un'ultima nota di terminologia, le operazioni che si possono compiere su un oggetto o su una classe di oggetti vengono chiamati <em>metodi</em>.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c42' id='c42'></a>
+</p><h3>2. Riuso del codice</h3>
+<p>Fino ad ora <em>Riuso del Codice</em> ha significato il Copia e Incolla di codice scritto da altri. Riscrivere codice è costoso. Ogni anno la potenza di calcolo cresce mediamente del 20%, mentre la produttività dello sviluppo aumenta solo dell'8%. Il divario tra questi due fattori di crescita mi dice che per quanto mi sforzi, sarò sempre in perdita rispetto a quello che potrei guadagnare con l'aumento della potenza di calcolo. Ecco perché occorre far di tutto per rendere la programmazione il meno costosa possibile, e un modo per farlo è riusare il codice in modo intelligente.<br /><br />
+</p><h4>2.1 Approcci al riuso del software</h4>
+<p>Ci sono 3 approcci fondamentali al riuso del codice
+</p><ol><li>Librerie di Componenti Riusabili;
+</li><li>Schemi trasformazionali a spettro ristretto;
+</li><li>Schemi trasformazionali a spettro largo.
+</li></ol><p class='vspace'>Le <strong>librerie</strong> sono il sistema più usato:
+</p><ul><li>o uso codice di una libreria senza modificarlo (succede miliardi di volte al giorno, è comodissimo),
+</li><li>o adatto pezzi di programma al mio scopo, cioè riscrivo il minimo possibile di una libreria già fatta (si può fare anche in automatico, ma è un ramo dell'informatica ancora non ben studiato).<br /><br />
+</li></ul><p>Gli <strong>schemi trasformazionali</strong> fanno uso di linguaggi di descrizione di algoritmi, ad alto o basso livello, che generano automaticamente il codice che mi serve nel linguaggio che voglio. Ne sono un esempio le interfacce grafiche che mi permettono di mettere insieme una finestra con tutti gli annessi e connessi, generando automaticamente il codice C++ corrispondente. Il <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/Uni/Tetty?action=edit'>Tetty</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/Uni/Tetty?action=edit'>?</a> non ha specificato la differenza tra spettro ampio e ristretto, che non è importante.<br /><br />
+</p><h4>2.2 Riuso del software e programmazione ad oggetti</h4>
+<p>La OOP è quella che meglio supporta il riuso del codice, infatti:
+</p><ul><li>l'incapsulamento definisce bene l'interfaccia;
+</li><li>le librerie contengono Classi, non sottoprogrammi, col vantaggio che non posso perdere funzioni per strada, ma vengono mantenute assieme ad esse come suoi metodi;
+</li><li>incorpora già di suo la possibilità di estendere il codice, tramite le estensioni di classe e di interfaccia.
+</li></ul><div class='vspace'></div><h4>2.3 Pattern</h4>
+<p>La OOP tuttavia non basta: occorre uno <strong>Schema Progettuale</strong> = <strong>Pattern</strong>.<br /><span  style='color: red;'>Il <em>Pattern</em> descrive un problema che si incontra comunemente nello scrivere programmi ed il nucleo della sua soluzione.</span> Infatti, i problemi che saltano fuori durante la programmazione sono bene o male sempre quelli, cambia solo qualche dettaglio qua e là.<br />Per creare un pattern, seguo queste norme:
+</p><ul><li>identificare bene gli oggetti;
+</li><li>raggrupparli in classi che dividano nel giusto modo proprietà della classe e proprietà dell'oggetto;
+</li><li>definire le interfacce;
+</li><li>stabilire le <em>gerarchie</em> tra classi e interfacce;
+</li><li>stabilire relazioni tra classi ("<em>questa classe comprende quella...</em>", etc).
+</li></ul><p class='vspace'>Il trucco è rispettare le specifiche, ma rimanere anche abbasanza generici da poter trattare altri problemi simili.<br />Quando si tenta di risolvere un problema, è raro riuscire al primo colpo: si procede a tentativi. Tutti questi tentativi producono esperienza, e il progettista esperto ha un bel fagotto di esperienze e di schemi di progetto, che si possono adattare a nuove situazioni.<br /><br />
+Le aziende di software dipendono molto dal bagaglio di conoscenze dei proprio programmatori esperti. Ma se questi se ne vanno, cosa gli rimane? Loro portano tutto quello che sanno con sé e non lasciano dietro niente?<br />I pattern servono proprio a questo, cercare di mettere su carta l'impalpabile essenza dell'esperienza. <span  style='color: red;'>I suoi elementi essenziali sono:</span>
+</p><ul><li><span  style='color: red;'>nome;</span>
+</li><li><span  style='color: red;'>descrizione del problema</span> e contesto di soluzione;
+</li><li><span  style='color: red;'>soluzione</span>
+<ul><li>classi e oggetti costitutivi;
+</li><li>loro relazioni;
+</li></ul></li><li><span  style='color: red;'>conseguenze</span> dell'applicazione del pattern
+<ul><li>risultati;
+</li><li>vantaggi e svantaggi.
+</li></ul></li></ul><p class='vspace'>Concludendo, si può dire che i pattern sono un po' i mattoncini di base della programmazione <em>Bottom - Up</em>, con la differenza che qui mi danno un prefabbricato intero con fondamenta e pareti già tirate su.<br /><br />
+</p><h4>2.4 Componenti</h4>
+<p>Mettendo insieme due idee potenti come l'incapsulamento e il pattern, si arriva al concetto di <em>componente</em>. Un componente non è altro che un programma in grado di svolgere una data funzione, ma concepito in modo tale da funzionare in diversi ambienti ed essere combinato con altri componenti per creare applicazioni più complesse. Certo, perché questo accada i componenti non possono essere sviluppati a <del>cazzo</del> caso, ma devono rispettare certi standard comuni per poter essere compatibili e sviluppare così una coerente architettura di componenti (come ad esempio la <em>Java Beans</em>).
+</p>
+<p class='vspace'>I componenti generalizzano il compito che nei OOP svolgono gli oggetti, ovvero raggruppare una struttura dati e relative operazioni in un'entità logica autonoma, portandola alle estreme conseguenze. Un sistema complesso può infatti essere composto da diversi componenti anche scritti in linguaggi diversi, purché compatibili.
+</p>
+<div class='vspace'></div><h4>2.5 Programmazione orientata agli aspetti</h4>
+<p><em>Warning: qui entriamo nel filosofico</em>.<br /><br />
+Scrivo un programma, che fa una certa cosa. Posso dividere quello che fa e raggrupparlo in questi <em>aspetti</em>:
+</p><ul><li>che compito svolge;
+</li><li>come gestisce le anomalie;
+</li><li>come garantise la sicurezza;
+</li><li>come comunica con altri componenti.
+</li></ul><p class='vspace'>Un linguaggio di programmazione può essere adatto ad esprimere bene uno di questi aspetti, ma non un altro. Nessun linguaggio <em>cattura</em> tutti gli aspetti. Per esempio, il C svolge bene il suo compito, ma gestire le anomalie col C è una spina nel culo, senza contare che la sicurezza di funzione come <code class='escaped'>fscanf</code> e compagnia è limitata (chi controlla che il <code class='escaped'>char *</code> passato alla <code class='escaped'>fscanf</code> sia abbastanza grande? Nessuno! e così via).<br /><br />
+Un programma presenta tutti questi aspetti inestricabilmente mischiati insieme. Provate a scriverne uno qualsiasi, anche semplice, e vedrete linee di codice che si occupano delle anomalie (<code class='escaped'>if (Fp1 == null) ...</code>) seguite da linee che si occupano della comunicazione (<code class='escaped'>printf("Brao asen!\n");</code>) e così via.<br /><br />
+Quando parlavamo della modularità, dicevamo di poter scomporre un programma complesso in blocchi funzionali. Qui è più o meno la stessa cosa: scompongo il programma in base agli aspetti.<br /><br />
+Per gestire queste cose complesse esistono dei <em>linguaggi orientati agli aspetti</em>, che si occupano di tutto ciò. Descrivo i vari aspetti separatamente, e poi con un <em>tessitore di aspetti</em>, detto <em>weaver</em>, li metto insieme e compongo il mio programma.<br />Separare gli aspetti rende il mio programma più chiaro e più manutenibile, ed è più facile avere componenti riutilizzabili.<br /><br />
+Per Java, esiste <a class='urllink' href='http://www.aspectj.org' title='' rel='nofollow'>AspectJ</a>, a cui sono seguiti altri software dedicati ad altri linguaggi, come <a class='urllink' href='http://www.aspectc.org' title='' rel='nofollow'>AspectC++</a>. In pratica, si tratta di estensioni del linguaggio di programmazione, che permettono di separare gli aspetti. Ci sono i punti di giunzione fra vari aspetti e robe così. Poi il programma prende in mano tutto ciò e scrive il programma finito in C++ o in Java o quello che è. Se devo modificare un aspetto, non vado a cercare nel codice <em>generato</em>, ma lavoro ancora in AspectJ. Si tratta di una tecnologia molto recente, non ancora ben digerita e sviluppata.
+</p>
+<div class='vspace'></div><h4>2.6 Riusabilità in Java</h4>
+<p>Java ha tra i principali obiettivi quello di produrre codici riusabili, e lo fa - come detto all'inizio - concentrandosi sulle interfacce piuttosto che sulle implementazioni. 
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c47' id='c47'></a>
+</p><h3>3. Interfacce utente</h3>
+<p>Anche l'utente ha bisogno di interagire con un programma! Il modo con cui lo può fare è - tadam! - un' <em>interfaccia utente</em>! Come per le interfacce delle classi, l'interfaccia utente è una lista di cose che l'utente può fare per far fare al programma quello che vuole.<br /><br />
+</p><h4>3.1 Interfacce a carattere</h4>
+<p>Qualcuno ne ha mai usata una? Ma certo, quando scriviamo i programmi del Laboratorio di C, e da console immettiamo i dati, abbiamo realizzato una primitiva interfaccia a carattere.<br /><br />
+Storicamente sono state le prime ad apparire, perché le più semplici da realizzare. L'utente dialoga col programma tramite il terminale, una volta c'era solo il terminale e quindi non c'era molta scelta.<br /><br />
+Ci sono due tipi di interfacce a carattere: quelle <em>guidate</em> e quelle <em>libere</em>.<br /><br />
+Le interfacce <strong>guidate</strong> presentano dei menu oppure delle richieste di dati a cui si può rispondere in un solo modo. Questo è il caso delle nostre applicazioncine da laboratorio. Il programma in cui si chiedeva il nome del file da aprire era un'interfaccia guidata. Potevo fare solo quello.<br /><br />
+Le interfacce <strong>libere</strong> invece sono quelle in cui compare il famoso <em>prompt</em> dei programmi. Il <em>prompt</em> è per esempio quello che compare quando aprite la console di windows: il cursore lampeggia e attende istruzioni. Le istruzioni possono essere semplici (dir) oppure complesse (move *.exe d:\cartella) quanto si vuole. Ci sono alcune applicazioni in cui l'interfaccia libera è tanto potente da essere quasi un linguaggio di programmazione. Potete pensare alla Shell di Linux.<br /><br />
+È ovvio che le interfacce a carattere guidate non solo sono più semplici da usare, ma anche più semplici da scrivere! Quelle libere invece sono difficili da scrivere, nella misura in cui il "linguaggio" che abbiamo deciso di implementare è complesso, e nella stessa misura sono anche "difficili" da usare. Molto meglio per l'utente avanzato, che in una Shell di un qualsiasi Unix può fare in pochi secondi quello che l'utente medio di Windows ci mette 3 ore cliccando a destra e a sinistra. (Nota: per copiare dalla chiavetta faccio così: <code class='escaped'>mount /mnt/chiavetta &amp;&amp; cp /mnt/chiavetta/* downloads &amp;&amp; umount /mnt/chiavetta</code>. Qualcuno nota della differenza con il clicca di qua, clicca di là, cos'accadrà cos'accadrà!?:)<br />Questo tanto per dirvi che le interfacce a carattere non sono morte e non sono un ricordo del passato, anzi! Sono vive e vegete e spesso sono l'unico modo veloce per fare certe operazioni. Sono poco accattivanti, ma il computer deve innanzitutto funzionare...:)
+</p>
+<div class='vspace'></div><h4>3.2 Interfacce grafiche</h4>
+<p>Sono nate alla Xerox di Palo Alto negli anni 80. No, le finestre non le ha inventate micro$oft con windows. Anzi. Alla Xerox avevano inventato quel ridicolo oggetto chiamato <em>mouse</em>, che muoveva un cursore sullo schermo, cliccava di qua e di là e faceva accadere cose. I dirigenti Xerox pensavano che una cosa del genere sarebbe stata poco seria: non vedevano dei rispettabili manager agitare frecce per lo schermo come in un videogioco! Fu così che dell'idea si appropriò Steve Jobs, per i suoi primi Apple.<br /><br />
+Requisito fondamentale per le interfacce grafiche è di avere un computer con... capacità grafiche! Queste capacità non sono state affatto scontate fino a metà anni 80: occorreva una costosa scheda video ed un monitor adatto. Ricordo il mio primo pc su cui girava Windows 2.1 (installato dai floppony da 5-1/4 pollici), e lo schermo era <em>verde</em>, ad una risoluzione bassa, con qualche sfumatura di grigio naturalmente visualizzata <em>verde</em>. La vita era difficile, ai tempi... Per la cronaca era un Olivetti M24.<br /><br />
+Le <em>Graphical User Interface</em>, chiamate GUI, lavorano ad un livello simbolico. L'icona di un programma rappresenta un programma, il <em>desktop</em> è un simbolo per una scrivania di un ufficio, e così via. Si tratta di un'intuizione geniale.<br /><br />
+L'utente di una GUI è lui a determinare il flusso degli eventi: non c'è il programmino in C che funziona in un solo verso: dammi il numero di chilometri percorsi; dammi il numero di litri consumati; ecco che ti dico quanti chilometri fai con un litro. L'interazione dell'utente con gli elementi della GUI (menu, bottoni, liste...) provoca degli <em>eventi</em>, che vanno interpretati: l'applicazione reagisce all'utente.<br /><br />
+Per gestire questa faccenda degli eventi, un sistema GUI deve avere almeno questi 3 elementi:
+</p><ul><li>Una <em>coda degli eventi</em>, in cui tutti gli eventi generati vengono infilati come in uno stack, in attesa di essere analizzati;
+</li><li>un <em>dispatcher</em>, cioè uno smistatore di eventi, che pesca un evento dalla coda, guarda di che tipo è e lo smista al suo...
+</li><li><em>gestore di eventi</em>: la parte di programma che gestisce l'evento.
+</li></ul><p class='vspace'>Se clicco sul menu <code class='escaped'>File</code>, genero un evento <code class='escaped'>L'utente ha cliccato sul menu file</code>. Quest'evento finisce nella coda. Il dispatcher lo prende e dice: <code class='escaped'>Mmm, un evento di tipo menu. Adesso vedo a chi lo devo mandare...</code> e quando lo trova glielo manda.<br /><br />
+Ma il concetto di <em>evento</em> non si limita al bottone premuto o alla finestra che scorre. Può essere di qualsiasi tipo. Per esempio, se clicco sulla voce <code class='escaped'>Salva</code> del menu <code class='escaped'>File</code>, genero un evento particolare, che potrebbe chiamarsi <code class='escaped'>L'utente vuole salvare quello che ha scritto</code>, e qualcuno deve occuparsi di questo evento.<br /><br />
+La OOP si presta bene alla programmazione di GUI. Le classi fondamentali da implementare sono le seguenti:
+</p><ul><li>una classe per gli <strong>eventi</strong>: deve poter rappresentare tutto ciò che può succedere in un programma, e avere un'interfaccia standard;
+</li><li>un <strong>dispatcher</strong>, che controlla la coda degli eventi e li manda ai <em>listeners</em> registrati;
+</li><li>alcuni <strong>listeners</strong>: si tratta di classi che si <em>iscrivono</em> presso il registro del dispatcher e dicono: "Io mi occupo del menu file"; "Io invece del pulsante di chiusura"; "Io del bottone che dice 'Clicca qui per vincere 10.000$'";
+</li><li>delle classi che invece gli eventi li generano.
+</li></ul><p class='vspace'>Come potete vedere, questo è un <em>pattern</em>. Perché? Perché siccome tutte le GUI funzionano così, una volta che ho individuato uno schema di lavoro (quello qui sopra) tutte le altre GUI, pur diverse, saranno tutte simili.<br /><br />
+La programmazione di GUI, come si può intuire, è di molto più complessa rispetto alla programmazione di altre interfacce a carattere.<br /><br />
+Anche JAVA offre la possibilità di scrivere programmi con GUI, e lo fa attraverso la libreria JAVA.AWT. AWT sta per <em>Advanced Windowing Toolkit</em>. <em>Toolkit</em> vuol dire <em>cassetta degli attrezzi</em>.<br />I <em>listeners</em> devono implementare l'interfaccia <em>XXXListener</em>, dove XXX è il tipo di evento a cui reagiscono (ce ne sono centinaia).<br /><br />
+<a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TettyCap4)</span></div>
+  </div>
+</body>
+</html>

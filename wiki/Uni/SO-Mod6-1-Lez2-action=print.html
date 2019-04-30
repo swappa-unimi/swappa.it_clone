@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Appunti caotici</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SO-Mod6-1-Lez2.html' title='Sistemi Operativi - Appunti caotici'>Sistemi Operativi - Appunti caotici</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti caotici ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 2</span>
+<span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Direttori e loro caratteristiche</span>
+</p>
+<div class='vspace'></div><h2>Pag 1</h2>
+<h4>Sommario</h4>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 2</h2>
+<h4>Direttorio (directory)</h4>
+<p>I <strong>DIRETTORI</strong> cono strutture informative che supportano il raggruppamento dei file in base a criteri logici, in modo da gestirne l'accesso in modo efficiente. Possono essere considerati come una collezione omogenea di informazioni (attributi) su gruppi di file. Da un punto di vista formale per direttorio si intende l'insieme delle sequenze di file contenute nel direttorio stesso.
+</p>
+<div class='vspace'></div><h4>Operazioni</h4>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 3</h2>
+<h4>Strutturazione del file system</h4>
+<p>Per file system intendiamo l'insieme di file e directory che andremo a trattare nel sistema, ovvero un'organizzazione globale dei file del sistema nei vari sottoinsiemi individuati dai direttori.
+</p>
+<div class='vspace'></div><h4>Direttorio a singolo livello</h4>
+<p>I <strong>direttori a singolo livello</strong> erano usati su sistemi monoutente e con una piccola memoria di massa, anche di poche centinaia di Kb. Per "almeno concettualmente" si intende che gli utenti non usavano in modo autonomo o indipendente il calcolatore. Non esisteva ancora il concetto di omogeneizzazione tra risorse fisiche e informative, che venivano viste separate.
+</p>
+<p class='vspace'>Problemi:
+</p><ul><li>gestione omonimie. Se abbiamo file omonimi riscontriamo dei conflitti perché si trovano nello stesso contenitore e quindi non è possibile effettuare accessi corretti. Se ad esempio un utente vuole tenere due mailbox, non potrà memorizzarle entrambe col nome "mail". Terribile
+</li><li>ridenominazione, dal momento che bisogna sempre fare attenzione alle omonimie
+</li><li>raggruppamento, ovvero non si riesce a dare alcun raggruppamento logico a file di diverse attività.
+</li></ul><p class='vspace'>Se quindi ho tante attività e voglio strutturarle in modo logico, questo sistema non va bene per un cazzo.
+</p>
+<div class='vspace'></div><h2>Pag 4</h2>
+<h4>Direttorio a due livelli</h4>
+<p>Rispetto alla struttura precedente è stato assegnato un'ulteriore direttorio per ogni utente. Questo sistema è stato introdotto quando si sono diffusi i primi sistemi multiutente, che avevano comunque una bassa richiesta di memoria di massa per utente.
+</p>
+<p class='vspace'>Caratteristiche:
+</p><ul><li>si possono avere file omonimi per utenti diversi
+</li><li>ricerca più efficiente per singoli utenti, dato che ogni utente vede i suoi file
+</li><li>nessuna capacità di raggruppamento. Posso solo separare i file di utenti diversi, non tra le varie attività
+</li><li>nessuna possibilità di condivisione: ogni file rimane specifico di un direttorio
+</li></ul><p class='vspace'>Notare che il direttorio a singolo livello e quello a due livelli cercavano di risolvere dei problemi specifici, e quindi mantenevano una visione parziale e utilitaristica del file system
+</p>
+<div class='vspace'></div><h4>Visione logica del file system</h4>
+<p>Come avere una vera astrazione dell'informazione? Come organizzarla in modo logico prescindendo da dettagli come proprietà, condivisioni, ... ? Il modo più naturale per trovare informazioni è raggrupparle per aspetti comuni in sottoinsiemi disgiunti via via più specifici. Si può intuitivamente rappresentare questa struttura con un albero, dal quale è facilmente deducibile che nessun file potrà appartenere a direttori diversi dato che può avere un unico percorso radice-file.
+</p>
+<p class='vspace'>Con questa struttura non sappiamo più dove si trovano fisicamente i file nel disco, ma lo sappiamo a livello logico ed è tutto di guadagnato. La posizione logica è il percorso del file, ovvero la sequenza di cartelle a partire dalla radice che attraverso per arrivare al file stesso.
+</p>
+<div class='vspace'></div><h2>Pag 5</h2>
+<h4>Direttorio ad albero (1)</h4>
+<p>Non si applica più il criterio di assegnare un direttorio ad ogni utente in modo forzato, come nella struttura a due livelli. Ciò può accadere solo in alcuni sistemi operativi come Unix dove viene riservata una home directory; ma l'utente non è confinata in essa, che è comunque composta da un numero limitato di file. In particolare la home directory è quella porzione di file system su cui un utente specificamente lavora in modo indipendente dagli altri (utenti non cooperanti)
+</p>
+<div class='vspace'></div><h4>Direttorio ad albero (2)</h4>
+<p>Proprietà piacevoli:
+</p><ul><li><em>gestione adatta a livelli multi-utente</em> perché permette di creare sottinsiemmi di file specifici per ciascun utente, così che ognuno possa lavorare solo nella sua porzione di file system (pur potendo sempre accedere ad altre parti)
+</li><li><em>ricerca efficiente</em>
+</li><li><em>capacità di raggruppamento</em>
+</li><li><em>capacità di condivisione</em>, mettendo in piedi opportuni meccanismi di locking che garantiscano sempre la consistenza delle informazioni
+</li><li><em>identificazione e capacità di rilocazione -&gt; direttorio corrente</em>. Avviene quindi una distinzione tra percorso relativo (rispetto a un dato direttorio) e assoluto (rispetto alla radice). Se ad esempio sposto una home directory in un altro sottoalbero, il suo contenuto aggiorna automaticamente il proprio percorso assoluto
+</li></ul><div class='vspace'></div><h2>Pag 6</h2>
+<h4>Direttorio a grafo aciclico</h4>
+<p>Se non è strettamente indispensabile imporre nette separazioni tra i direttori, si potrebbero relizzare delle ripartizioni molto più lasche, non disgiunte. Ad esempio uno stesso file potrebbe avere più percorsi di accesso, il che comporta una condivisione di file e direttori.  
+</p>
+<div class='vspace'></div><h4>Direttorio a grafo generale</h4>
+<p>In questo caso posso avere dei cicli nell'albero, cui bisogna prestare particolare attenzione dato che aumentano la complessità degl algoritmi di ricerca (che potrebbero entrare in cicli infiniti).
+</p>
+<div class='vspace'></div><h2>Pag 7</h2>
+<h4>Memorie di massa a dischi multipli</h4>
+<p>Se ho più memorie di massa su più dischi, potrei avere due casi:
+</p><ul><li>ognuna di esse ha un proprio file system (windows)
+</li><li>posso scegliere di "spalmare" un unico file system su più dischi (linux)
+</li></ul><div class='vspace'></div><h4>Memorie di massa con grossi dischi</h4>
+<p>Può capitare che dischi enormi facciano pasticci con i file. La soluzione è separare porzioni di disco con delle partizioni, in modo che problemi su una di esse non si ripercuotono anche sulle altre. E' una strategia comoda anche per i backup, perché consente una separazione tra i programmi e i dati.
+</p>
+<div class='vspace'></div><h2>Pag 8</h2>
+<h4>Partizione</h4>
+<p>La partizione è un'astrazione del dispositivo fisico di memorizzazione di massa. Alcune partizioni possono distribuirsi su più dischi fisici.
+</p>
+<div class='vspace'></div><h4>Montaggio dei file system</h4>
+<p>Comunque io abbia organizzato il file system su più dischi, posso montarli in modo da vederli come uno solo. Come si fa?
+</p><ol><li>si sceglie uno dei file system, la cui radice diventerà quella del sistema che si vuole ottenere
+</li><li>si sceglie al suo interno un direttorio che dovrà rappresentare tutto l'altro file system. Questa directory è detta punto di montaggio
+</li><li>al punto di montaggio si aggancia la radice del secondo file system (ad esempio col comando mount)
+</li><li>nel secondo file system le posizioni assolute dei suoi oggetti si aggiornano automaticamente in base alla nuova radice
+</li></ol><div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SO-Mod6-1-Lez2)</span></div>
+  </div>
+</body>
+</html>

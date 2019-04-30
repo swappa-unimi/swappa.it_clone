@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Lezione del 17 marzo 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Piuri17Marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Lezione del 17 marzo 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri17Marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri17Marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Piuri17Marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri17Marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri17Marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Lezione del 17 marzo 2008 was last modified on April 05, 2008, at 05:48 PM'>
+							<span style='display:none;'>Sistemi Operativi - Lezione del 17 marzo 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Lezione del 17 marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 5 - Schedulazione dei thread</strong></span>
+</p>
+<p class='vspace'>Quello che abbiamo detti per i processi vale anche per i thread, ma in più i thread hanno altre problematiche.
+</p>
+<p class='vspace'>Una di queste nasce dal fatto che ci sono thread mappati nel SO, e altri invece gestiti autonomamente dal processo. Occorre quindi che il processo scheduli da solo i suoi thread, ed apparire come un flusso unico di istruzioni presso il SO. In genere si usa un algoritmo FCFS o Round Robin.
+A questo proposito si parla di <strong>process-contention scope</strong>, cioè di un processo che include lo scheduling dei suoi thread.
+</p>
+<p class='vspace'>A livello di sistema, sia con LWP che con altre mappature, si parla invece di <strong>system-contention scope</strong>.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Modulo 3 - Lezione 1 - Processi cooperanti</strong></span>
+</p>
+<p class='vspace'>I processi non sono sempre in lotta tra di loro, a volte un programma è stato scritto in modo tale da prevedere che processi diversi collaborino per lo stesso scopo. Nasce quindi l'esigenza di coordinare adeguatamente i vari processi (o i vari thread, al solito).
+</p>
+<p class='vspace'>Se i processi hanno accesso a risorse ben separate, non c'è nessun problema perché non ci sono conflitti (tranne ovviamente quelli per l'accesso al processore). In caso contrario, occorre sincronizzarli.
+</p>
+<p class='vspace'>Ad esempio, se ho processi che devono solo leggere un file, non c'è problema, possono leggere anche a pezzi. Ma se uno legge e l'altro scrive, allora nasce il problema della consistenza dei dati: può accadere infatti che il processo stia leggendo qualcosa, venga interrotto, il processo che scrive modifica, e poi il processo che legge torna a leggere i dati modificati interamente o parzialmente dal processo scrivente. Alla fine si troverà in mano dei dati inconsistenti e spesso inutilizzabili.
+Deve essere il SO a garantire che queste anomalie non si verifichino, deve prevenire il loro accadere in tutti i casi, per quanto rari possano essere.
+</p>
+<p class='vspace'>Se i processi accedono a risorse condivise, vanno coordinati <strong>implicitamente</strong>. Altrimenti devo pensare ad un sistema <strong>esplicito</strong> per coordinarli, nel caso cooperino.
+I processi indipendenti non hanno niente in comune, quindi la loro coordinazione riguarda solamente le risorse comuni a tutti, eg il disco fisso, la tastiera, lo schermo. È quando i processi sono cooperanti che nascono i problemi, perché in qualche modo devono condividere informazioni, e influenzarsi l'un l'altro.
+</p>
+<p class='vspace'>Ci sono dei vantaggi nello scrivere applicazioni fatte da processi cooperanti.
+</p><ul><li><strong>modularità</strong>: mi occupo di un aspetto alla volta, e poi metto insieme i moduli che riguardano i diversi aspetti. Certo, il "mettere insieme" va studiato, però in questo modo posso dividermi il lavoro, e non pensare a cose complicate come lo scheduling, perché ci pensa il SO o la libreria di thread che uso.
+</li><li><strong>parallelizzazione</strong>: più processi possono esser fatti girare su più processori, nel caso ci siano, con vantaggi per tutti. Se ho un singolo processo monolitico ciò non è possibile.
+</li><li><strong>scalabilità</strong>: se aggiungo dei processi al mio programma, ne amplio le capacità in modo semplice.
+</li><li><strong>specializzazione</strong>: un processo fa una cosa, e posso chiamare uno specialista che mi scriva quel processo: non devo fare tutto io.
+</li><li><strong>qualità del progetto e della realizzazione</strong>: sviluppando ogni aspetto in modo separato posso raggiungere qualità elevata.
+</li></ul><p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2 - Comunicazione dei processi</strong></span>
+</p>
+<p class='vspace'>Ci sono, come al solito, <strong>meccanismi</strong> e <strong>politiche</strong> per far comunicare i processi.
+La necessità della comunicazione è evidente a tutti. Le caratteristiche della comunicazione stessa sono poi varie. Posso infatti privilegiarne una veloce, una sicura, affidabile, integrata nel linguaggio di programmazione che sto usando, e così via.
+</p>
+<p class='vspace'>Importanti sono la qualità, la velocità e la scalabilità, ovvero la possibilità di aggiungere processi in modo semplice senza andare nei casini.
+</p>
+<div class='vspace'></div><h2>Implementazione</h2>
+<p>Ci sono diversi modi per implementare la comunicazione. Li dividiamo in <strong>modi diretti</strong> e <strong>modi indiretti</strong>.
+I modi diretti si hanno quando i processi che comunicano sono a conoscenza in modo esplicito l'uno dell'altro. Nei modi indiretti invece i processi conoscono solo il canale di comunicazione, ma non sanno chi sta ascoltando.
+</p>
+<p class='vspace'>Il vantaggio dei modi indiretti è che posso cambiare interlocutori senza che nessuno ne soffra. In una modalità diretta, se uno dei processi in gioco se ne va, gli altri non saprebbero più che cosa fare, proprio perché avevano accesso alle informazioni specifiche di quel processo. Se invece i processi condividono un canale di comunicazione, allora può esserci chiunque in ascolto e non ci saranno mai problemi di questo genere.
+Il canale di comunicazione è una struttura passiva, messa a disposizione dal SO, con i soliti requisiti di sicurezza, affidabilità etc.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3 - Comunicazione con memoria condivisa</strong></span>
+</p>
+<div class='vspace'></div><h2>Condividere dati in memoria centrale</h2>
+<p>I modi sono quelli di utilizzare le variabili globali, o dei buffer.
+</p>
+<div class='vspace'></div><h3>Variabili globali</h3>
+<p>2 processi hanno le variabili globali condivise, ovvero hanno lo spazio di indirizzamento che in certi punti si sovrappone.
+È un sistema molto rapido, e basta garantire la corretta alternanza delle op. di lettura e scrittura.
+</p>
+<p class='vspace'>Inoltre, il fatto stesso che due processi siano stati scritti per <em>collaborare</em>, in un certo modo mi garantisce che faranno di tutto per non crearsi guai a vicenda, proprio perché è nel loro interesse.
+</p>
+<p class='vspace'>Ovviamente, trattandosi di un metodo diretto, i processi devono conoscersi esplicitamente, con tutti gli svantaggi del caso.
+</p>
+<p class='vspace'>Dal punto di vista dei <strong>meccanismi</strong>, ci sono diversi modi di realizzare una cosa del genere.
+Uno è quello di <strong>copiare</strong> l'area delle variabili globali dallo spazio di indirizzamento di un processo nello spazio di un altro. Quindi, deve essere il SO a dare l<em>'illusione</em> che l'area sia condivisa, e l'illusione la ottiene copiando di qua e di là in continuazione.
+Lo svantaggio di questo sistema è che è lento, nonostante il fatto che si operi in memoria centrale, perché va a finire che si fanno un sacco di operazioni di copia e incolla in tutti e due i sensi.
+</p>
+<p class='vspace'>Un altro sistema è invece far sì che il SO dia uno spazio di memoria fisicamente condiviso, e che lo gestisca bene.
+</p>
+<div class='vspace'></div><h3>Condivisione di buffer</h3>
+<p>Il buffer deve contenere solo le informazioni che vogliamo trasferire. Uno lo riempie, e l'altro lo svuota. Rimaniamo quindi nello schema <strong>produttore - consumatore</strong>.
+</p>
+<p class='vspace'>Occorre quindi che nella mia memoria condivisa esista una struttura dati, limitata o virtualmente illimitata, la quale andrà ben gestita dal punto di vista della sincronizzazione.
+La scrittura è possibile fino a che il buffer non è pieno. Allo stesso modo, è possibile leggere solo quando il buffer non è vuoto. In generale si usa un buffer circolare, in cui quando si arriva alla fine si ricomincia a scrivere dall'inizio.
+</p>
+<p class='vspace'>La lunghezza del buffer dipende da quanti messaggi voglio che esso contenga. Se è limitata, vuol dire che si possono scrivere solo n messaggi. Posso per esempio stabilire per ogni coppia di processi comunicanti quanto deve essere grosso il loro buffer, a seconda delle loro esigenze.
+</p>
+<p class='vspace'>Il problema dei buffer è che quelli che scrivono tanto si impongono sui processi che invece scrivono poco, monopolizzando la struttura dati.
+</p>
+<p class='vspace'>In termini di funzioni primtive, abbiamo la <strong>send(processo, messaggio)</strong> che è bloccante: se il buffer è pieno, il processo scrivente viene bloccato finché il buffer non viene svuotato dal ricevente.
+Posso anche avere la <strong>cond_send</strong>, ovvero una scrittura condizionale: se il buffer è libero, bene, altrimenti ritorna un errore ma non si blocca. Dall'altro lato avremo la <strong>receive</strong> e la <strong>cond_receive</strong>.
+Da notare che il buffer viene identificato dal <em>processo</em> con cui l'abbiamo concordato.
+</p>
+<p class='vspace'>La comunicazione tramite buffer in generale è asincrona: io scrivo, ma <strong>non so</strong> quando l'altro leggerà.
+Per avere una comunicazione sincrona, devo allora avere un buffer di dimensione nulla: in questo modo le scritture saranno tutte bloccanti, e saranno evase solo quando qualcuno in quello stesso istante leggerà dal mio buffer. In pratica sto obbligando i processi a scrivere e leggere nello stesso momento.
+</p>
+<p class='vspace'>La comunicazione è <strong>simmetrica</strong> quando mittente e ricevente sono noti in modo esplicito. Come abbiamo visto, è uno svantaggio, e quindi è possibile permettere anche una comunicazione <strong>asimmetrica</strong>, in cui l'accesso in scrittura ad un buffer non è limitato ad un processo solo, ma ad un gruppo di processi, i quali possono decidere di far leggere il loro messaggio a tutti quelli che ascoltano, o solo ad uno del gruppo degli ascoltatori.
+</p>
+<p class='vspace'>Siccome il buffer è una struttura messa a disposizione dal SO, tutte le funzioni per accedervi saranno chiamate di sistema. Ecco quindi che tutti i processi, volenti o nolenti, quando accederanno al buffer manderanno insieme anche il loro PID. Questo serve per identificare chi sta comunicando in quel momento.
+Le chiamate di sistema relative al buffer possono anche prevedere l'indicazione di una <strong>priorità</strong> del messaggio, oppure di una <strong>deadline</strong>, ovvero quanto tempo un messaggio è disponibile a passare in coda.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 5 - Comunicazione con Mailbox</strong></span>
+</p>
+<p class='vspace'>È un sistema indiretto, in cui non c'è conoscenza esplicita tra i processi che comunicano.
+Già il sistema dei gruppi permette di rendere non necessaria la conoscenza esplicita dei processi, però rimane sempre la necessità di identificare l'id dei gruppi.
+Questo sistema invece è del tutto anonimo.
+</p>
+<p class='vspace'>Il processo sa solo che deve scrivere i suoi messaggi in un certo posto, la <strong>mailbox</strong>, che viene richiesta al SO. Un sinonimo di mailbox è <strong>porta</strong>.
+Il ricevente pesca i messaggi dalla porta, e non sa chi è il mittente.
+</p>
+<p class='vspace'>La mailbox, essendo creata dal SO, è globale, e ha un nome per identificarla.
+I messaggi contengono il pid del processo che scrive, il nome della mailbox, le info costituenti il messaggio vero e proprio e altre info a supporto della gestione dei messaggi nella mailbox.
+</p>
+<p class='vspace'>Ferma un attimo: abbiamo appena detto che la Mailbox garantisce "anonimità" tra processi, e poi qui invece si dice che i messaggi contengono il pid di chi li scrive? Com'è sta storia?
+La storia è che il pid viene innanzitutto scritto in automatico, visto che si tratta di una chiamata di sistema e il sistema sa esattamente quale processo sta scrivendo in un dato istante.
+Inoltre, se il processo A (scrivente) vuole una <em>risposta</em>, il processo B che controlla la mailbox non può usare la mailbox stessa per rispondere, in quanto essa è monodirezionale. Quindi, si creerà una mailbox che stavolta viene controllata da A. E B, in ascolto sulla prima mailbox saprà dire: "la domanda arriva da A che ha questo pid, io ho associato questo pid ad una certa mailbox, e quindi so dove andare a scrivergli le risposte".
+</p>
+<p class='vspace'>In modo simile al buffer, la mailbox può avere una capienza limitata o illimitata, indipendentemente dal numero di processi che poi vi scriveranno dentro.
+Come prima per i buffer, le chiamate di sistema sono sintetizzabili in <strong>create(M)</strong>, <strong>delete(M)</strong>, <strong>send(M, messaggio)</strong>, <strong>receive(M, messaggio)</strong>, <strong>cond_send(M, messaggio)</strong>. <strong>M</strong> è la mailbox.
+Per accedere ad una mailbox, un processo deve richiederne i diritti al SO. Dal punto di vista della sicurezza quindi siamo allo stesso livello dei buffer. Se le mailbox sono di proprietà invece del processo, quando il processo che detiene i diritti della mailbox muore, anche la mailbox muore con esso.
+</p>
+<p class='vspace'>E sempre come per i buffer, le <strong>send</strong> e le <strong>receive</strong> sono bloccanti a seconda della dimensione della mailbox stessa (vedi sopra per il motivo), quindi per sincronizzare invio e ricezione userò una mailbox di dimensione nulla. Se la dimensione della mailbox è limitata, la mia comunicazione sarà bufferizzata, ovvero passerà un po' di tempo prima che il mio messaggio inviato venga ricevuto.
+Una mailbox sincrona è detta <strong>meccanismo di rendez-vous</strong>, perché sostanzialmene obbliga i due processi a inviare e ricevere nello stesso tempo.
+</p>
+<p class='vspace'>All'interno della mailbox, l'ordinamento dei messaggi può essere di un tipo qualsiasi.
+</p>
+<div class='vspace'></div><h3>Comunicazione molti a uno, uno a molti, molti a molti</h3>
+<p>La mailbox si presta comodamente a questo tipo di comunicazioni.
+</p>
+<p class='vspace'>Nello scenario <strong>molti a uno</strong>, il processo che legge dalla mailbox è il server, e chi scrive sono i client. Se il processo server muore, non c'è problema: la stessa mailbox può essere assegnata ad un altro processo.
+</p>
+<p class='vspace'>Per la comunicazione <strong>uno a molti</strong>, ci sono più processi di servizio che soddisfano le richieste. Se uno è occupato, ce n'è magari un altro che può rispondere, con un vantaggio in termini di tempo di risposta percepito dal client.
+</p>
+<p class='vspace'>Poi c'è la comunicazione <strong>molti a molti</strong>, in cui diversi processi di servizio comunicano con diversi processi client.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 6 - Comunicazione con i file</strong></span>
+</p><h3>File condivisi</h3>
+<p>Un po' come per la memoria centrale condivisa, chiedo al SO dei permessi su di un certo file che il SO controlla ma a cui si può accedere. Come al solito, occorre che il SO controlli la sincronia di scritture e letture.
+</p>
+<p class='vspace'>L'ordine dei messaggi non è prestabilito, ma dipende da come i processi si mettono d'accordo. L'ordine di <em>accesso</em>, trattandosi di processi che vogliono accedere alla risorsa disco, dipende invece dallo scheduler del SO.
+</p>
+<div class='vspace'></div><h3>Pipe</h3>
+<p>È come un file, ma realizzato in memoria centrale. Le funzioni per accedervi sono le stesse che si usano per accedere ai file, ma il SO non scrive niente sul disco.
+La sincronia viene attuata con le solite tecniche.
+</p>
+<p class='vspace'>La pipe è una struttura dati FIFO, il che vuol dire che ciò che viene scritto per primo sarà letto per primo dal processo all'altro capo della pipe.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 7 - Comunicazione coi Socket</strong></span>
+</p>
+<p class='vspace'>È una generalizzazione in rete delle pipe, dal punto di vista concettuale, anche se dal punto di vista pratico è molto complessa.
+</p>
+<p class='vspace'>Si crea un'architettura client-server: invio richieste ad 1 porta, ed il server ivi in ascolto risponde. Tra una richiesta ed un'altra, il server attende.
+</p>
+<p class='vspace'>L'identificazione del server avviene tramite l'accoppiata <strong>indirizzo:porta</strong>.
+</p>
+<p class='vspace'>I messaggi hanno dimensione fissa o variabile, dipende dalle applicazioni, e sono ordinati FIFO. I socket si possono creare o distruggere, e si può leggerci o scriverci tramite due canali monodirezionali.
+Ciò vuol dire che nel momento in cui una connessione via socket viene accettata, è possibile sia per il server che per il client comunicare su due canali separati.
+Ma questo implica una cosa: se il server usa quella porta per comunicare con un client, tutti gli altri client troveranno la porta chiusa. Ecco quindi che è possibil fare in modo che la comunicazione di risposta tra server e client avvenga su di una porta che il client specifica nella richiesta.
+</p>
+<p class='vspace'>Il tipo di connessione tra le due macchine può essere di diverso tipo, gestita oppure no, o ancora multicast, ma questa è roba da reti e non da SO.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 05, 2008, at 05:48 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri17Marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri17Marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

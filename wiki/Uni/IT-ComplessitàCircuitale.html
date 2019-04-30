@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Informatica Teorica - Complessità circuitale  </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IT-ComplessitàCircuitale' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Informatica Teorica - Complessità circuitale 
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0Circuitale?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0Circuitale?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IT-Complessit%C3%A0Circuitale-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0Circuitale?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0Circuitale?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Informatica Teorica - Complessità circuitale  was last modified on June 07, 2010, at 11:39 AM'>
+							<span style='display:none;'>Informatica Teorica - Complessità circuitale </span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Complessità circuitale ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 26 Maggio</span>
+</p>
+<div class='vspace'></div><h2>Funzioni booleane</h2>
+<p>Una <em>funzione booleana</em> <em>f</em> con <em>n</em> ingressi ed <em>m</em> uscite è una funzione che associa ad ogni stringa binaria di lunghezza <em>n</em> una stringa binaria di lunghezza <em>m</em>, ovvero:<br /><em>f: {0,1}<sup>n</sup> -&gt; {0,1}<sup>m</sup> </em>
+</p>
+<p class='vspace'>Data una funzione f che appartiene alla classe B<sub>n</sub> (con <em>n</em> numero di variabili), il numero di stringhe che può avere in ingresso è 2<sup>n</sup>, mentre le diverse funzioni booleane ottenibili sono 2 elevato alla 2<sup>n</sup>. <br />Consideriamo ad esempio una B<sub>1</sub>:
+</p>
+<div class='vspace'></div><table width='40%' align='center' >
+<tr ><td align='center' bgcolor='#d4e1f0'  valign='top'>x
+</td><td align='center' bgcolor='#d4e1f0'  valign='top'>f<sub>1</sub>
+</td><td align='center' bgcolor='#f2f6f9'  valign='top'>f<sub>2</sub>
+</td><td align='center' bgcolor='#f2f6f9'  valign='top'>f<sub>3</sub>
+</td><td align='center' bgcolor='#f2f6f9'  valign='top'>f<sub>4</sub>
+</td></tr><tr ><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>1
+</td></tr><tr ><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>1
+</td></tr></table>
+<p class='vspace'>Come ci aspettavamo, con una variabile abbiamo 2<sup>1</sup>=2 stringhe in ingresso, e 2<sup>2</sup>=4 funzioni in uscita. In particolare, per quanto riguarda queste ultime:
+</p><ul><li>f<sub>1</sub> è la funzione costante uguale a 0;
+</li><li>f<sub>2</sub> è la funzione identità;
+</li><li>f<sub>3</sub> è la funzione complemento;
+</li><li>f<sub>4</sub> è la funzione costante uguale a 1.
+</li></ul><p class='vspace'>Consideriamo come secondo esempio una B<sub>2</sub>, per la quale ci aspetteremo di avere 2<sup>2</sup>=4 possibili stringhe in ingresso, e 2<sup>4</sup>=16 funzioni in uscita.
+</p>
+<div class='vspace'></div><table width='40%' align='center' >
+<tr ><td align='center' bgcolor='#d4e1f0'  valign='top'>x<sub>1</sub>
+</td><td align='center' bgcolor='#d4e1f0'  valign='top'>x<sub>2</sub>
+</td><td align='center' bgcolor='#f2f6f9'  valign='top'>f<sub>1</sub>
+</td><td align='center' bgcolor='#f2f6f9'  valign='top'>...
+</td><td align='center' bgcolor='#f2f6f9'  valign='top'>f<sub>16</sub>
+</td></tr><tr ><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>...
+</td><td align='center'  valign='top'>1
+</td></tr><tr ><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>...
+</td><td align='center'  valign='top'>1
+</td></tr><tr ><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>...
+</td><td align='center'  valign='top'>1
+</td></tr><tr ><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>...
+</td><td align='center'  valign='top'>1
+</td></tr></table>
+<p class='vspace'>Per rapidità non sono stati riportati in tabella tutti i valori delle funzioni intermedie, ma è importante sottolineare che ognuna di esse è ottenibile dalla combinazione dei connettivi logici applicati alle due variabili. L'insieme dei connettivi che permettono di esprimere tutte le funzioni booleane di una classe B<sub>n</sub> sono chiamati <em>base</em> per B<sub>n</sub>, la più utilizzata delle quali è la <strong>base canonica</strong>, composta dagli operatori AND, OR e NOT.
+</p>
+<div class='vspace'></div><h2>Circuiti booleani</h2>
+<p>I <strong>circuiti booleani</strong> sono un modello di calcolo diverso rispetto a quello delle MdT, e rappresentano la controparte teorica dei circuiti digitali.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un <strong>circuito booleano</strong> è un grafo diretto e aciclico, i cui nodi sono etichettati. Distinguiamo:
+</p><ul><li><em>nodi di ingresso</em>, privi di archi entranti e etichettati con una variabile booleana o una costante (0/1);
+</li><li><em>nodi operazione</em> (o <em>porte</em>), dotati di archi entranti e uscenti, ed etichettati con il simbolo di una funzione booleana di uno o più argomenti (il loro numero dipende da quello degli archi che entrano nel nodo);
+</li><li><em>nodi di uscita</em>, privi di archi uscenti e con esattamente un arco entrante, sono etichettati con un diverso simbolo di variabile.
+</li></ul></div>
+<p class='vspace'>Altri due concetti importanti sono quelli di:
+</p><ul><li><strong>fan-in</strong>, numero di archi entranti in un nodo. Il <em>fan-in di un circuito</em> è il numero massimo di fan-in calcolato sull'insieme dei nodi;
+</li><li><strong>fan-out</strong>, numero di archi uscenti da un nodo. Il <em>fan-out di un circuito</em> è il numero massimo di fan-out calcolato sull'insieme dei nodi.
+</li></ul><p class='vspace'>Un circuito booleano C con <em>n</em> nodi di ingresso ed <em>m</em> nodi di uscita calcola la funzione f:{0,1}<sup>n</sup>-&gt;{0,1}<sup>m</sup> se, per ogni assegnamento di valori alle <em>n</em> variabili che etichettano i nodi di ingresso, il valore calcolato da C è uguale a f(x<sub>1</sub>,x<sub>2</sub>,...,x<sub>n</sub>).
+</p>
+<div class='vspace'></div><h2>Circuiti e linguaggi</h2>
+<p>Una volta codificati opportunamente i linguaggi in binario, il nostro obiettivo è quello di usare i circuiti booleani per verificarli. Ma i circuiti hanno un numero fisso di ingressi, mentre i linguaggi possono contenere stringhe di lunghezze diverse, quindi che si fa? Semplice: invece di usare un unico circuito per verificare l'appartenenza a un linguaggio ne useremo un'intera <em>famiglia</em>!
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Una <strong>famiglia di circuiti</strong> C è una lista infinita di circuiti, (C<sub>0</sub>, C<sub>1</sub>, C<sub>2</sub>, ...), dove C<sub>n</sub> ha <em>n</em> variabili di ingresso. Diciamo che C decide un linguaggio A su {0,1} se, per ogni stringa w, w appartiene ad A se e solo se C<sub>n</sub>(w)=1, dove <em>n</em> in questo caso è la lunghezza di w.
+</p></div>
+<div class='vspace'></div><h2>Complessità di un circuito</h2>
+<h3>Legata alla dimensione</h3>
+<p>Per arrivare a definire la <em>size-complexity</em> di un circuito dobbiamo prima introdurre un po' di concetti:
+</p><ul><li>la <em>dimensione</em> (<strong>size</strong>) di un circuito è pari al numero di porte che esso contiene;
+</li><li>due circuiti si dicono equivalenti quando con le stesse variabili in ingresso producono lo stesso valore in uscita per qualsiasi assegnamento sugli ingressi;
+</li><li>un circuito è di <em>dimensione minima</em> se non esiste un circuito equivalente con dimensione inferiore. A dirlo è semplice, a verificarlo è un guaio;
+</li><li>una famiglia di circuiti è minimale se ogni circuito della sua lista ha dimensione minima;
+</li><li>la <em>size-complexity</em> di una famiglia di circuiti (C<sub>0</sub>, C<sub>1</sub>, C<sub>2</sub>, ...) è la funzione f:N-&gt;N dove f(n) è la dimensione di C<sub>n</sub>.
+</li></ul><p class='vspace'>Abbiamo tutto quello che ci serve per affermare che:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>La <strong>size-complexity</strong> circuitale di un linguaggio è la size-complexity della famiglia minimale di circuiti per quel linguaggio.
+</p></div>
+<div class='vspace'></div><h3>Legata alla profondità</h3>
+<p>Stesso discorso: arriveremo alla definizione della <em>depth-complexity</em> di un circuito solo dopo aver introdotto alcuni concetti basilari:
+</p><ul><li>la <em>profondità</em> (<strong>depth</strong>) di un circuito è pari alla lunghezza (il numero di fili) del percorso più lungo tra ingresso e uscita;
+</li><li>un circuito è di <em>profondità minima</em> se non esiste un circuito equivalente con profondità inferiore;
+</li><li>una famiglia di circuiti è minimale se ogni circuito della sua lista ha profondità minima;
+</li><li>la <em>depth-complexity</em> di una famiglia di circuiti (C<sub>0</sub>, C<sub>1</sub>, C<sub>2</sub>, ...) è la funzione f:N-&gt;N dove f(n) è la profondità di C<sub>n</sub>.
+</li></ul><p class='vspace'>Abbiamo tutto quello che ci serve per affermare che:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>La <strong>depth-complexity</strong> circuitale di un linguaggio è la depth-complexity della famiglia minimale di circuiti per quel linguaggio.
+</p></div>
+<div class='vspace'></div><h3>Teorema 1 - Relazioni tra complessità</h3>
+<p>Esiste una relazione tra la complessità circuitale e la tempo-complessità di un  linguaggio. Intuitivamente siamo infatti portati a pensare che ogni linguaggio con ridotta complessità nel tempo abbia anche una piccola complessità circuitale. Per chi però non si fidasse del proprio intuito, eccoci servito il Teorema 1:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Sia t:N-&gt;N una funzione con t(n)&gt;=n. Se A appartiente a TIME(t(n)), allora A ha una complessità circuitale pari a O(t<sup>2</sup>(n)).
+</p></div>
+<p class='vspace'>La dimostrazione non è richiesta, ma è importante ricordare che oltre al teorema in sé prova anche che un circuito booleano può essere simulato da una MdT.
+</p>
+<div class='vspace'></div><h2>Teorema 2 - CIRCUIT-SAT è NP-completo</h2>
+<p>Così come per le formule booleane, anche i circuiti booleani possono essere o meno soddisfacibili; in particolare, lo sono quando una certa configurazione di valori passati agli ingressi fa sì che l'uscita del circuito sia pari a 1.<br />Il problema CIRCUIT-SAT si occupa di verificare se un circuito è soddisfacibile, o più formalmente:<br /><code class='escaped'>CIRCUIT-SAT = {&lt;C&gt; | C è un circuito booleano soddisfacibile}</code>
+</p>
+<p class='vspace'>Vediamo ora il teorema:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>CIRCUIT-SAT è NP-completo.
+</p></div>
+<div class='vspace'></div><h2>Teorema 3 - 3SAT strikes back!</h2>
+<p>Ricordiamo che i 3CNF-formula sono formule in forma normale congiuntiva con clausole composte da 3 letterali, e che una 3SAT è una 3CNF-formula soddisfacibile. Il teorema:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>3SAT è NP-completo.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Che 3SAT fosse NP-completo l'avevamo già dimostrato col teorema di Cook-Levin nel capitolo sulla <a class='wikilink' href='IT-NP-Completezza.html'>NP-Completezza</a>, ma volete mettere ridimostrarlo con i circuiti booleani?
+</p>
+<p class='vspace'>Come sappiamo, un linguaggio B è NP-completo se soddisfa due condizioni:
+</p><ul><li>B è in NP;
+</li><li>ogni A in NP è tempo polinomiale riducibile a B. 
+</li></ul><p class='vspace'>La <code class='escaped'>prima condizione</code> è verificata grazie alla dimostrazione del Teorema 1, in cui si mostrava possibile l'utilizzo di una MdT <code class='escaped'>n.d.</code> per simulare un circuito.
+</p>
+<p class='vspace'>Per <code class='escaped'>la seconda condizione</code> proveremo a ridurre il problema CIRCUIT-SAT a quello 3SAT in tempo polinomiale. Si parla perciò di una riduzione da un circuito C a una formula &#934;, tale che C è soddisfacibile se e solo se &#934; lo è.<br />Le variabili di un circuito sono gli ingressi x<sub>1</sub>,...,x<sub>l</sub> e le porte g<sub>1</sub>,...,g<sub>m</sub>, che dovranno essere rimappate nelle variabili di &#934; etichettate come w<sub>1</sub>,...,w<sub>l+m</sub>.<br />Passiamo ora a costruire le clausole, che dovranno descrivere i tre operatori logici della forma canonica (AND, OR, NOT). Per semplicità utilizzeremo anche l'operatore implica, per il quale vale la proprietà:<br /><code class='escaped'>(P-&gt;Q) = (~P v Q)</code>
+</p>
+<div class='vspace'></div><ul><li>Operatore <strong>NOT</strong>.
+</li></ul><div class='indent'>Sia w<sub>i</sub> l'ingresso e w<sub>j</sub> l'uscita:
+</div><div class='indent'><img src='../uploads/Uni/IT-not1-3SAT.gif' alt='' title='' />
+</div><div class='indent'>che diventa:
+</div><div class='indent'><img src='../uploads/Uni/IT-not2-3SAT.gif' alt='' title='' />
+</div><div class='vspace'></div><ul><li>Operatore <strong>AND</strong>.
+</li></ul><div class='indent'>Siano w<sub>i</sub> e w<sub>j</sub> gli ingressi e w<sub>k</sub> l'uscita:
+</div><div class='indent'><img src='../uploads/Uni/IT-and1-3SAT.gif' alt='' title='' />
+</div><div class='indent'>che diventa:
+</div><div class='indent'><img src='../uploads/Uni/IT-and2-3SAT.gif' alt='' title='' />
+</div><div class='vspace'></div><ul><li>Operatore <strong>OR</strong>.
+</li></ul><div class='indent'>Siano w<sub>i</sub> e w<sub>j</sub> gli ingressi e w<sub>k</sub> l'uscita:
+</div><div class='indent'><img src='../uploads/Uni/IT-or1-3SAT.gif' alt='' title='' />
+</div><div class='indent'>che diventa:
+</div><div class='indent'><img src='../uploads/Uni/IT-or2-3SAT.gif' alt='' title='' />
+</div><p class='vspace'>A queste clausole ne aggiungiamo un'altra: (w<sub>m</sub>), che rappresenta il nodo di uscita del circuito C.
+</p>
+<p class='vspace'>Quello che resta da fare è riscrivere le clausole in forma 3SAT (tre letterali per clausola). Dato che le uniche clausole a non essere in 3SAT (quelle del NOT e quella di uscita) hanno meno di 3 letterali, basterà semplicemente replicare un letterale quante volte serve per arrivare a 3, e metterlo in OR con gli altri. Ad esempio (w<sub>m</sub>) diventa:<br />(w<sub>m</sub> v w<sub>m</sub> v w<sub>m</sub>)
+</p>
+<p class='vspace'>Ora che sappiamo come convertire variabili e porte logiche di un circuito in una formula 3SAT equivalente, possiamo affermare che se CIRCUIT-SAT è NP-completo (Teorema 2) allora anche 3SAT lo è, perché la riduzione da uno all'altro è tempo polinomiale nella dimensione del circuito iniziale.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 07, 2010, at 11:39 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0Circuitale?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0Circuitale?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

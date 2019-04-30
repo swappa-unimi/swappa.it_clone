@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Elaborazione Delle Immagini - Lab 0</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='EILab0.html' title='Elaborazione Delle Immagini - Lab 0'>Elaborazione Delle Immagini - Lab 0</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ElaborazioneDelleImmagini.html'>Torna alla pagina di Elaborazione Delle Immagini</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Elaborazione Delle Immagini - Lab 0::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Laboratorio 06/03/2009</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Intro</a>
+</li><li><a href='#s2'>Comandi trattati</a>
+</li><li><a href='#s3'>Esempi</a>
+</li></ol><div class='vspace'></div></div>
+<p class='vspace'>Slide di Riferimento: <a class='urllink' href='http://www.crema.unimi.it/EI/2009/Laboratorio0.pdf' title='' rel='nofollow'>Lab 0</a>
+</p>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>Intro</h2>
+<p>Nel laboratorio di Elaborazione delle Immagini si paciuga con il programma MATLAB.<br />Durante il primo laboratorio abbiamo visto soltanto l'ambiente <a class='urllink' href='http://www.swappa.it/wiki/Utenti/IntroduzioneAlMatlab' title='' rel='nofollow'>MATLAB</a> in generale e alcuni comandi per iniziare ad interagire con l'interfaccia e l'elaborazione delle immagini.
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Comandi Trattati</h2>
+<p>Prima di cominciare ad utilizzare MATLAB in questo contesto bisogna ricordare che:<br /><strong>OGNI IMMAGINE è UNA MATRICE E OGNI MATRICE è UN'IMMAGINE!</strong><br />è importante perché la maggior parte dei comandi che utilizzeremo sfrutteranno questo aspetto.<br />
+NOTA1: alcuni comandi si trovano già nella pagina di Matlab presente su Swappa, però successivamente ci focalizzeremo soprattutto sui comandi che ovviamente trattano le immagini.
+</p>
+<p class='vspace'>NOTA2: i comandi che inserite in MatLab rimangono in memoria e se non pulite la cronologia potete visualizzare tutti i comandi inseriti anche una settimana prima.
+</p>
+<p class='vspace'><strong>COMANDI</strong>
+</p><ul><li><strong>help</strong> apre l'help di matlab visualizzato in modo balordo.
+</li><li><strong>doc</strong> apre l'help di matlab in modo figoso e più leggibile.
+</li><li><strong>whos</strong> ci restituisce le variabili che abbiamo utilizzato e sono in memoria con svariate caratteristiche.
+</li><li><strong>clear all</strong> ripulisce la memoria, quindi se premete clear all e poi cercate di visualizzare le variabili con <em>whos</em> non vedrete nulla fino a quando non le riutilizzerete.
+</li><li><strong>size(nomeVariabile)</strong> restituisce la dimensione righe/colonne. Es: 496*600
+</li><li><strong>tic, comandoEseguito, toc</strong> tic e toc restituiscono il tempo che il programma ci ha impiegato ad eseguire il comando che si trova tra <em>tic</em> e <em>toc</em>, quindi corrispondono ad una sorta di tempo di avvio e tempo di fine.
+</li><li><strong>;</strong> se mettiamo il ; alla fine di un comando questo fa in modo che non venga visualizzato l'output. Se ad esempio inseriamo un'equazione con il punto e virgola alla fine verranno fatti i calcoli, ma il risultato non verrà visualizzato.
+</li><li><strong>edit</strong> (seguito dal nome del file con estensione <strong>.m</strong>)apre l'editor del programma, che vi permette di inserire qualsiasi linguaggio supportato da Matlab. E' possibile ad esempio inserire codice C o codice Java che verrà utilizzato dal programma per "lavorare" sull'immagine.<br />Da notare che il tempo di esecuzione sarà superiore rispetto ad un qualsiasi compilatore C/Java.<br />La sintassi è molto simile a quella del Fortran, dopo ne vediamo un esempio.
+</li><li><strong>[tipoRitornato1, tipoRitornato2]</strong>: indica i tipi ritornati. Notiamo quindi che in MatLab è possibile ritornare più di un elemento per volta. Es: [M, N] ritorna righe e colonne.
+</li></ul><p class='vspace'>Ora vediamo i comandi che ci interessano maggiormente:<br />
+NOTA: quando dobbiamo operare sulle immagini dobbiamo andare nella cartella che le contiene, possiamo utilizzare i comandi unix <strong>cd</strong>(per cambiare cartella) e <strong>ls</strong> (per  visualizzare tutti i file presenti nella cartella), oppure cambiare la cartella direttamente tramite programma in modo grafico.
+</p>
+<div class='vspace'></div><ul><li><strong>imshow(nome)</strong> mostra l'immagine inserita nelle parentesi tonde.
+</li><li><strong>imfinfo('nomeImmagine.estensione')</strong> restituisce l'header dell'immagine, quindi tutte le informazioni che la riguardano. La quantità di queste dipende dall'estensione dell'immagine. Ad esempio se abbiamo un'immagine .jpg avremo molte meno informazioni rispetto ad un'immagine con estensione .tif, in quanto la prima è compressa mentre la seconda no.
+</li><li><strong>imread('nomeImmagine.estensione')</strong> questo comando permette di leggere l'immagine inserendo tra parentesi tonde il nome dell'immagine specificando l'estensione.<br />Questo comando permette di assegnare l'immagine ad una variabile.
+</li><li><strong>impixelinfo(gcf)</strong> permette di visualizzare le coordinate dei pixel e i valori RGB mentre si trascina il cursore sull'immagine.<br /><em>gcf</em> significa <em>get current figure</em> e serve appunto per riferirsi all'immagine corrente.
+</li><li><strong>imdistline(gca)</strong> inserisce un asse all'interno dell'immagine e permette quindi di vedere la distanza tra due pixel. Quest'asse è trascinabile e modificabile.<br /><em>gca</em> significa <em>get current axis</em>.
+</li><li><strong>imwrite(nomeVariabile,'nomeImmagine.estensione')</strong> permette di cambiare il nome e l'estensione all'immagine.<br />Nelle parentesi tonde vanno inseriti a sinistra il nome della variabile che contiene l'immagine, mentre tra apici singoli il nuovo nome dell'immagine con specificata l'estensione che può essere differente da quella precedente.<br />L'esecuzione del comando creerà un nuovo file con il nome e l'estensione specificati.
+</li><li><strong>mean(f(i))</strong> restituisce la media dei valori dell'immagine. Si ottiene lo stesso risultato con <em>mean(mean(f))</em>.
+</li><li><strong>:</strong> i duePunti permettono di scegliere un range di valori su cui operare oppure con quale passo scorrere l'immagine.<br />Es: comando(184:286, 128:384) significa che operiamo sui pixel da 184 a 286 sulle righe e sui pixel da 128 a 384 sulle colonne.<br />Es: comando(1:2:end) significa che il comando opera su ogni riga con passo 2 fino alla fine dell'immagine.
+</li></ul><div class='vspace'></div><h2>Esempi</h2>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ElaborazioneDelleImmagini.html'>Torna alla pagina di Elaborazione Delle Immagini</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/EILab0)</span></div>
+  </div>
+</body>
+</html>

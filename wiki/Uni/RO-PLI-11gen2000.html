@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ricerca Operativa - PLI - Segherie - 11.01.00 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RO-PLI-11gen2000' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ricerca Operativa - PLI - Segherie - 11.01.00
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-11gen2000?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-11gen2000?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RO-PLI-11gen2000-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-11gen2000?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-11gen2000?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ricerca Operativa - PLI - Segherie - 11.01.00 was last modified on June 02, 2009, at 03:21 PM'>
+							<span style='display:none;'>Ricerca Operativa - PLI - Segherie - 11.01.00</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PLI - Segherie - 11.01.00 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>I tronchi tagliati nei boschi di una regione quadrata vengono portati in punti di raccolta da cui poi devono essere trasferiti nelle segherie. L'azienda che gestisce le segherie deve decidere dove aprire le segherie e in quale di esse far trasportare i tronchi da ogni punto di raccolta. Le località in cui è possibile aprire le segherie sono state individuate; le posizioni dei punti di raccolta sono date. In ciascuna delle località che potrebbero ospitare una segheria ci sono delle limitazioni di spazio e altri fattori che ne limiterebbero la capacità e ne influenzerebbero i costi di funzionamento e manutenzione.<br />Inoltre, poiché la stessa azienda deve anche eseguire il trasporto dei tronchi dai punti di raccolta alle segherie, occorre minimizzare i relativi costi di trasporto, che sono proporzionali alle quantità trasportate e alle distanze percorse (in linea d'aria, poiché la zona è estremamente impervia ed il trasporto avviene tramite elicotteri).<br />Formulare e classificare il problema e risolverlo con i dati del file SEGHERIE.TXT.
+</p>
+<div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+Le coordinate dei 15 punti di raccolta del legname sono le seguenti, 
+espresse come frazione del lato del quadrato che delimita la regione 
+(lato di 100 km).
+Ogni punto di raccolta ha associata una quantità di legname fornito.
+
+ posizione   quantita'
+            (quintali 
+           giornalieri)
+ 0.40 0.66     58
+ 0.76 0.17     35
+ 0.11 0.47     27
+ 0.65 0.58     42
+ 0.18 0.88     60
+ 0.19 0.02     31
+ 0.62 0.62     18
+ 0.90 0.17     24
+ 0.66 0.95     36
+ 0.42 1.00     37
+ 0.95 0.12     48
+ 0.16 0.26     39
+ 0.07 0.71     53
+ 0.75 0.43     61
+ 0.30 0.76     29
+
+I costi di trasporto giornalieri sono pari a 10000 Lire per ogni km 
+e per ogni quintale.
+
+Le possibili localizzazioni delle segherie sono 5:
+
+ Posizione   Costi di manutenzione      Capacita'
+          e funzionamento giornalieri  (quintali
+             (in migliaia di lire)     al giorno)
+ 0.25 0.20           3000                 190 
+ 0.55 0.25           4500                 240
+ 0.90 0.15           3000                 200
+ 0.15 0.45           4400                 220
+ 0.85 0.55           4600                 190
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<ul><li><strong>pr = 15</strong>	(numero dei punti di raccolta del legname)
+</li><li><strong>assexP<sub>i</sub></strong> (coordinata x del punto di raccolta i=1..15)
+</li><li><strong>asseyP<sub>i</sub></strong> (coordinata y del punto di raccolta i=1..15)
+</li><li><strong>lato = 100</strong> (lunghezza del lato della regione) [km]
+</li><li><strong>ql<sub>i</sub></strong>	(quantità di legname raccolto nel punto di raccolta i=1..15) [quintali/giorno]
+</li><li><strong>costi = 10000</strong> (costi di trasporto giornalieri per ogni km e per ogni quintale) [€]
+</li><li><strong>ps = 5</strong> (numero di possibili segherie)
+</li><li><strong>assexS<sub>j</sub></strong> (coordinata x della possibile segheria j=1..5)
+</li><li><strong>asseyS<sub>j</sub></strong> (coordinata y della possibile segheria j=1..5)
+</li><li><strong>manFun<sub>j</sub></strong> (costi di manutenzione e funzionamento della possibile segheria j=1..5) [€/giorno]
+</li><li>'''capa<sub>j</sub> (capacità della possibile segheria j=1..5) [quintali/giorno]
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<ul><li><strong>x<sub>j</sub></strong> (indica se la segheria j=1..5 esiste o no) (binaria)
+</li><li><strong>y<sub>ij</sub></strong>	(quantità di legname trasportato dal punto di raccolta i=1..15 alla segheria j=1..5) [quintali/giorno]
+<div class='vspace'></div></li><li><strong>z<sub>ij</sub></strong>	(distanza tra il punto di raccolta i=1..15 e la segheria j=1..5) [km]<br />Notare che questa variabile si può calcolare dai dati come:<br /><strong>z<sub>ij</sub> = radiceQuadrata ((assexP<sub>i</sub> – assexS<sub>i</sub>)<sup>2</sup> + (asseyP<sub>i</sub> - asseyS<sub>i</sub>)<sup>2</sup>)</strong>
+</li></ul><div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p><strong>min (y<sub>ij</sub> * costi * z<sub>ij</sub> * ql<sub>i</sub>) + (x<sub>j</sub> * manFun<sub>j</sub>)</strong>
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<ul><li>vincolo sulla quantità di legname che non deve superare il limite di capacità:<br /><strong>((somma)<sub>i</sub> y<sub>ij</sub>) &lt;= capa<sub>j</sub></strong> (per ogni j)
+</li><li>vincolo che imponga che ogni punto di raccolta sia servito:<br /><strong>((somma)<sub>j</sub> y<sub>ij</sub>) &gt; 0</strong> (per ogni i)
+</li></ul><div class='vspace'></div><h2>Lindizzazione del problema</h2>
+<pre class='escaped'>
+! esercizio - Segherie
+
+! variabili: x(i) = indica se la segheria esiste o no (binaria)
+!	     y(i,j) = quantità di legname trasportato da i a j
+! la variabile y è continua e non negativa
+
+! funzione obiettivo
+min  	+ 3000 x1 + 4500 x2 + 3000 x3 + 4400 x4 + 4600 x5
+ 	+ 28062.65 y11 + 25321.50 y12 + 41424.35 y13 + 18936.80 y14 
+	+ 26868.46 y15 + 17880.86 y21 + 7865.27 y22 + 4949.75 y23 
+	+ 23491.75 y24 + 13667.94 y25 + 8211.73 y31 + 13282.24 y32 
+	+ 23013.44 y33 + 1207.48 y34 + 20096.42 y35 + 23172.43 y41 
+	+ 14482.39 y42 + 20890.51 y43 + 21698.19 y44 + 8493.97 y45
+ 	+ 41015.61 y51 + 43836.97 y52 + 61519.75 y53 + 25862.71 y54 
+	+ 44811.61 y55 + 5881.84 y61 + 13243.21 y62 + 22375.90 y63 
+	+ 13387.55 y64 + 26240.36 y65 + 10075.18 y71 + 6778.14 y72 
+	+ 9847.50 y73 + 8996.40 y74 + 4327.49 y75 + 15616.61 y81 
+	+ 8616.64 y82 + 480.00 y83 + 19213.50 y84 + 9198.61 y85
+	+ 30771.05 y91 + 25509.25 y92 + 30068.08 y93 + 25711.66 y94 
+	+ 15941.94 y95 + 30260.93 y101 + 28163.78 y102 + 36118.14 y103 
+	+ 22669.86 y104 + 23029.34 y105 + 33818.72 y111 + 20188.55 y112 
+	+ 2798.86 y113 + 41538.72 y114 + 21190.79 y115 + 4218.49 y121 
+	+ 15215.00 y122 + 29177.11 y123 + 7420.26 y124 + 29190.14 y125
+ 	+ 28664.13 y131 + 35236.03 y132 + 53066.21 y133 + 14417.56 y134 
+	+ 42200.78 y135 + 33572.17 y141 + 16413.42 y142 + 19376.50 y143 
+	+ 36620.33 y144 + 9528.50 y145 + 16304.60 y151 + 16471.39 y152 
+	+ 24813.22 y153 + 9987.12 y154 + 17073.10 y155
+
+st
+
+! vincoli sulla quantità di legname
+quant1) 58 y11 + 35 y21 + 27 y31 + 42 y41 + 60 y51 + 31 y61 
+	+ 18 y71 + 24 y81 + 36 y91 + 37 y101 + 48 y111 
+	+ 39 y121 + 53 y131 + 61 y141 + 29 y151 - 190 x1 &lt;= 0
+quant2) 58 y12 + 35 y22 + 27 y32 + 42 y42 + 60 y52 + 31 y62 
+	+ 18 y72 + 24 y82 + 36 y92 + 37 y102 + 48 y112 
+	+ 39 y122 + 53 y132 + 61 y142 + 29 y152 - 240 x2 &lt;= 0
+quant3) 58 y13 + 35 y23 + 27 y33 + 42 y43 + 60 y53 + 31 y63 
+	+ 18 y73 + 24 y83 + 36 y93 + 37 y103 + 48 y113 
+	+ 39 y123 + 53 y133 + 61 y143 + 29 y153 - 200 x3 &lt;= 0
+quant4) 58 y14 + 35 y24 + 27 y34 + 42 y44 + 60 y54 + 31 y64 
+	+ 18 y74 + 24 y84 + 36 y94 + 37 y104 + 48 y114 
+	+ 39 y124 + 53 y134 + 61 y144 + 29 y154 - 220 x4 &lt;= 0
+quant5) 58 y15 + 35 y25 + 27 y35 + 42 y45 + 60 y55 + 31 y65 
+	+ 18 y75 + 24 y85 + 36 y95 + 37 y105 + 48 y115 
+	+ 39 y125 + 53 y135 + 61 y145 + 29 y155 - 190 x5 &lt;= 0
+
+! vincoli sui punti di raccolta
+racSe1) y11 + y12 + y13 + y14 + y15 = 1
+racSe2) y21 + y22 + y23 + y24 + y25 = 1
+racSe3) y31 + y32 + y33 + y34 + y35 = 1
+racSe4) y41 + y42 + y43 + y44 + y45 = 1
+racSe5) y51 + y52 + y53 + y54 + y55 = 1
+racSe6) y61 + y62 + y63 + y64 + y65 = 1
+racSe7) y71 + y72 + y73 + y74 + y75 = 1
+racSe8) y81 + y82 + y83 + y84 + y85 = 1
+racSe9) y91 + y92 + y93 + y94 + y95 = 1
+racSe10) y101 + y102 + y103 + y104 + y105 = 1
+racSe11) y111 + y112 + y113 + y114 + y115 = 1
+racSe12) y121 + y122 + y123 + y124 + y125 = 1
+racSe13) y131 + y132 + y133 + y134 + y135 = 1
+racSe14) y141 + y142 + y143 + y144 + y145 = 1
+racSe15) y151 + y152 + y153 + y154 + y155 = 1
+
+end
+
+! definiamo binarie le variabili x(i)
+int x1
+int x2
+int x3
+int x4
+int x5
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 02, 2009, at 03:21 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-11gen2000?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-11gen2000?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - PLI - Comizi - 19.04.01</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RO-PLI-19apr2001.html' title='Ricerca Operativa - PLI - Comizi - 19.04.01'>Ricerca Operativa - PLI - Comizi - 19.04.01</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PLI - Comizi - 19.04.01 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>E' l'ultimo giorno della campagna elettorale e gli onorevoli Berlustelli e Rutusconi si stanno sfidando all'ultimo comizio. Ciascuno di loro deve percorrere l'autostrada e fermarsi in alcune città per arringare le folle. Ogni loro sosta lungo il viaggio implica un certo tempo fisso, uguale per entrambi ed indipendente dalla città, che deve essere impiegato stringendo mani e baciando bambini. Ogni comizio può essere di due tipi: comizio sintetico, in cui vengono enunciati rapidi slogan, e comizio analitico, in cui vengono esaminati in dettaglio vari punti del programma di governo. Ogni tipo di comizio ha la sua durata standard, indipendente dal numero di persone che vi assistono e uguale per entrambi gli onorevoli. In ogni città corrispondente ad un'uscita dell'autostrada è previsto che possa partecipare al comizio un certo numero di persone a seconda del tipo di comizio che vi si tiene e uguale per entrambi i candidati. Poiché la campagna elettorale volge al termine i comizi devono essere programmati in modo che l'ultimo termini entro la mezzanotte. Lo scopo del viaggio è ovviamente quello di arringare il maggior numero possibile di elettori.<br />Formulare il problema, classificarlo e risolverlo con i dati del file COMIZI.TXT.
+</p>
+<div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+La seguente tabella fornisce per ogni città in cui i candidati possono fermarsi 
+la distanza dall'estremità A dell'autostrada A-Y, e l'audience prevista a 
+seconda del tipo di comizio.
+
+Città Distanza (km) Audience1 Audience2 
+  a	   0			120	  140
+  b	  12			 80	  200
+  c	  25			 60	  100
+  d	  31			400	  450
+  e	  46			200	  250
+  f	  60			 10	   30
+  g	  72			500	  550
+  h	  89			 90	  110
+  i	 110			 50	   80
+  j      127			300	  330
+  k      142			 10	   50
+  l	 160			 60	   90
+  m	 166			230	  280
+  n	 170			190	  240
+  o	 180			100	  150
+  p	 193			100	  110
+  q	 211			100	  180
+  r	 218			200	  300
+  s	 230			 80	  180
+  t	 244			 10	   20
+  u	 263			 80	  150
+  v	 280			 90	  100
+  w	 285			120	  130
+  x	 292			500	  650
+  y	 298			400	  490
+
+Gli spostamenti tra una città e l'altra avvengono ad una velocità media di 100 Km/h.
+Il tempo fisso per ogni sosta è pari a 1/2 ora.
+La durata del comizio è di 1 ora (tipo 1) o 1.5 ore (tipo 2).
+Il tempo a disposizione è di 16 ore.
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<ul><li><strong>citta = 25</strong> (numero di città)
+</li><li><strong>com = 2</strong> (numero di tipi di comizio)
+</li><li><strong>dist<sub>i</sub></strong> (distanza dalla città i=1..25) [km]
+</li><li><strong>aud<sub>ij</sub></strong> (audience nella città i=1..25 per il comizio di tipo j=1..2)
+</li><li><strong>dur<sub>j</sub></strong> (durata comizio di tipo j=1..2) [h]
+</li><li><strong>sosta = 0.5</strong> (tempo minimo per sosta) [h]
+</li><li><strong>tMax = 16</strong> (tempo a disposizione) [h]
+</li><li><strong>vel = 100</strong> (velocità di spostamento) [km/h]
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<ul><li><strong>x<sub>ij</sub></strong> (indica se il candidato si è fermato nella città i=1..25 e che tipo di comizio j=1..2 ha fatto)
+</li></ul><p class='vspace'>La variabile è binaria.
+</p>
+<div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p><strong>max (somma)<sub>i</sub> (somma)<sub>j</sub>  x<sub>ij</sub> * aud<sub>ij</sub></strong>
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<ul><li>il candidato può fare un solo tipo di comizio per città:<br /><strong>(somma)<sub>j</sub>  x<sub>ij</sub> &lt;= 1</strong> (per ogni i)
+</li></ul><p class='vspace'>Il tempo a disposizione tMax è di 16 ore, ed ha tre componenti: tempo di trasferimento, tempi dei comizi, tempi fissi per le soste.<br />Consideriamoli separatamente e poi sommiamoli:
+</p><ul><li>calcolo dei tempi di trasferimento:<br /><strong>[(somma)<sub>j</sub> x<sub>ij</sub>] * dist<sub>i</sub> / vel &lt;= tStrada</strong> (per ogni i)
+</li><li>calcolo dei tempi dedicati ai comizi:<br /><strong>(somma)<sub>i</sub> (somma)<sub>j</sub>  x<sub>ij</sub> * dur<sub>j</sub> &lt;= tComizi</strong>
+</li><li>calcolo dei tempi persi nelle soste:<br /><strong>(somma)<sub>i</sub> (somma)<sub>j</sub>  x<sub>ij</sub> * sosta &lt;= tSoste</strong>
+<div class='vspace'></div></li><li>...sommiamo le componenti e otteniamo il vincolo sul tempo a disposizione:<br /><strong>tStrada + tComizi + tSoste &lt;= tMax</strong>
+</li></ul><div class='vspace'></div><h2>Linghizzazione del problema</h2>
+<pre class='escaped'>
+! esercizio - Comizi;
+
+model:
+
+sets:
+citta /1..25/: distanze;
+comizio /1..2/: durata;
+svolgimento (citta,comizio): aud, x;
+endsets
+
+data:
+distanze = 0 12 25 31 46 60 72 89 110 127 142 160 166 170 
+           180 193 211 218 230 244 263 280 285 292 298;
+aud =   120       140    
+	80       200    
+	60       100
+	400       450 
+	200       250    
+	10        30    
+	500       550    
+	90       110    
+	50        80    
+	300       330  
+	10        50    
+	60        90    
+	230       280    
+	190       240    
+	100       150    
+	100       110    
+	100       180
+	200       300    
+	80       180    
+	10        20    
+	80       150    
+	90       100    
+	120       130   
+	500       650   
+	400       490;
+durata = 1 1.5;
+sosta = 0.5;
+tMax = 16;
+vel = 100;
+enddata
+
+! funzione obiettivo;
+max = @sum(svolgimento(i,j): x(i,j) * aud(i,j));
+
+! vincolo tipo comizio per città;
+@for(citta(i): @sum(comizio(j): x(i,j)) &lt;= 1);
+
+! calcolo/vincolo dei tempi di trasferimento;
+@for(citta(i): @sum(comizio(j): x(i,j)) * distanze(i) / vel &lt;= tStrada);
+
+! calcolo/vincolo dei tempi dedicati ai comizi;
+@sum(svolgimento(i,j): x(i,j) * durata(j)) &lt;= tComizi;
+
+! calolo/vincolo dei tempi persi nelle soste;
+@sum(svolgimento(i,j): x(i,j) * sosta) &lt;= tSoste;
+
+! vincolo sul tempo massimo a disposizione;
+tStrada + tComizi + tSoste &lt;= tMax;
+
+! dichiarazione variabile binaria x;
+@for(svolgimento(i,j): @bin(x(i,j)));
+
+end
+</pre>
+<div class='vspace'></div><h2>Altre domande</h2>
+<h3>Se i due onorevoli percorrono l'autostrada uno da A verso Y e l'altro da Y verso A, chi è avvantaggiato? </h3>
+<p>L'unico modo per scoprirlo è riformulare il problema e confrontare le due soluzioni. Per invertire il calcolo del tragitto bisognerà cambiare il vincolo:
+</p>
+<div class='vspace'></div><pre class='escaped'>! calcolo/vincolo dei tempi di trasferimento;
+@for(citta(i): @sum(comizio(j): x(i,j)) * distanze(i) / vel &lt;= tStrada);</pre>
+<p class='vspace'>in:
+</p>
+<div class='vspace'></div><pre class='escaped'>! calcolo/vincolo dei tempi di trasferimento;
+@for(citta(i): @sum(comizio(j): x(i,j)) * (298 - distanze(i)) / vel &lt;= tStrada);</pre>
+<p class='vspace'>Dove 298 era la distanza dall'ultima città. Risolvendo il problema in questa nuova forma si scopre che il valore ottimo non cambia.
+</p>
+<div class='vspace'></div><h3>E se piovesse e la velocità dovesse essere ridotta a 60 Km/h?</h3>
+<p>Bisogna risolvere il problema considerando il tragitto da "A-&gt;Y" e "Y-&gt;A", impostando stavolta la velocità (variabile <strong>vel</strong>) a 60. Si scopre così che il valore ottimo è migliore nel tragitto "Y-&gt;A", e vale 2780.
+</p>
+<div class='vspace'></div><h3>A che velocità dovrebbero viaggiare i due candidati per poter arringare più elettori?</h3>
+<p>Stiamo riformulando la funzione obiettivo del problema: vogliamo ora trovare la velocità minima a cui i candidati devono andare per arringare più elettori di quella che riescono ad arringare a 100 km/h (cioè 2980 persone). La funzione obiettivo va quindi riscritta come:
+</p>
+<p class='vspace'><code class='escaped'>min = vel</code>
+</p>
+<p class='vspace'>e bisogna introdurre il vincolo che il numero di elettori arringati sia maggiore alla soluzione ottima trovata normalmente, cioè:
+</p>
+<p class='vspace'><code class='escaped'>@sum(svolgimento(i,j): x(i,j) * aud(i,j)) &gt; 2980;</code>
+</p>
+<p class='vspace'>Le soluzioni ottime trovate sono:
+</p><ul><li>per il tragitto "A-&gt;Y": 119.2 km/h
+</li><li>per il tragitto "Y-&gt;A": 106.8 km/h
+</li></ul><div class='vspace'></div><h3>Quanto costa a ciascuno in termini di numero di elettori arringati la necessità di stringere mani e baciare bambini ad ogni tappa?</h3>
+<p>Per scoprirlo bisogna eliminare il vincolo:
+</p>
+<div class='vspace'></div><pre class='escaped'>! calolo/vincolo dei tempi persi nelle soste;
+@sum(svolgimento(i,j): x(i,j) * sosta) &lt;= tSoste;</pre>
+<p class='vspace'>e correggere il vincolo sui tempi totali in:
+</p>
+<div class='vspace'></div><pre class='escaped'>! vincolo sul tempo massimo a disposizione;
+tStrada + tComizi &lt;= tMax;</pre>
+<p class='vspace'>Risolvendo il problema scopriamo che la soluzione ottima aumenta da 2980 a 3580 elettori aringati.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RO-PLI-19apr2001)</span></div>
+  </div>
+</body>
+</html>

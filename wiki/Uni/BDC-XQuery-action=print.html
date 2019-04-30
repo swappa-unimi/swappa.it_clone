@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Basi di Dati - Complementi - XQuery</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='BDC-XQuery.html' title='Basi di Dati - Complementi - XQuery'>Basi di Dati - Complementi - XQuery</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>XQuery</strong></span>
+</p>
+<div class='vspace'></div><h3>Cos'è</h3>
+<p>Un documento XML può arrivare a contenere un enorme numero di informazioni, e reperirle semplicemente scorrendo il listato non è così efficiente. Nasce dunque l'esigenza di interrogare il documento come se fosse una vera e propria base di dati, utilizzando un opportuno linguaggio di interrogazione: l' <strong>XQuery</strong>.
+</p>
+<p class='vspace'>L'XQuery non è basato sull'XML, ma è semanticamente più simile alle interrogazioni SQL. Implementa il linguaggio <a class='wikilink' href='BDC-XPath.html'>XPath</a> aumentandone il potere di ricerca, permettendo di effettuare elaborazioni molto più complesse.
+</p>
+<p class='vspace'>Dal 23 gennaio 2007 l'XQuery è felicemente diventato <a target='_blank'  class='urllink' href='http://www.w3.org/TR/xquery/' title='' rel='nofollow'><em>W3C recommendation</em></a>.<br />Il W3C ne ha inoltre sviluppato una versione che usa sintassi XML, <a target='_blank'  class='urllink' href='http://www.w3.org/TR/xqueryx/' title='' rel='nofollow'><strong>XQueryX</strong></a>, che non interessa ai nostri scopi.
+</p>
+<div class='vspace'></div><h3>FLWOR</h3>
+<p>Un'interrogazione scritta in XQuery sfrutta la sintassi delle espressioni XPath per selezionare specifiche porzioni del documento, a cui aggiunge espressioni proprie per un recupero più selettivo delle informazioni. Tali espressioni sono le cosiddette <strong>FLWOR</strong>, che costituiscono una generalizzazione del costrutto <code class='escaped'>SELECT-FROM-WHERE</code> in SQL. Il termine <em>FLWOR</em> è dato dalle iniziali delle varie clausole che lo compongono, ovvero: <strong>for</strong>, <strong>let</strong>, <strong>where</strong>, <strong>order by</strong> e <strong>return</strong>.
+</p>
+<div class='vspace'></div><h5>For</h5>
+<p>Il <code class='escaped'>for</code> serve a dichiarare quelle variabili che permettono di iterare sugli elementi di un documento. Genera come risultato una sequenza ordinata di tuple, chiamata anche <em>tuple stream</em>.
+</p>
+<p class='vspace'>La sintassi generale è la seguente: <code class='escaped'>FOR $x IN</code> <em>pathExpression</em><br />, dove <code class='escaped'>$x</code> è la variabile il cui valore è il risultato della path expression.
+</p>
+<p class='vspace'>Ad esempio, abbiamo il seguente documento "birra.xml":
+</p><pre class='escaped'>&lt;birra produttore="Dasteb"&gt;
+  &lt;nome&gt;Chiara&lt;/nome&gt;
+  &lt;preparato&gt;Pilsener&lt;/preparato&gt;
+  &lt;confezione&gt;Bottiglia&lt;/confezione&gt;
+  &lt;confezione&gt;Lattina&lt;/confezione&gt;
+  &lt;confezione&gt;Botte&lt;/confezione&gt;
+&lt;/birra&gt;
+&lt;birra produttore="Dasteb"&gt;
+  &lt;nome&gt;Rossa&lt;/nome&gt;
+  &lt;preparato&gt;Yorkshire&lt;/preparato&gt;
+  &lt;confezione&gt;Botte&lt;/confezione&gt;
+&lt;/birra&gt;</pre>
+<p class='vspace'>L'interrogazione:
+</p><pre class='escaped'>(1) FOR $conf IN document("birra.xml")//confezione
+(2)     RETURN $conf</pre>
+<p class='vspace'>La (1) dichiara la variabile <code class='escaped'>$conf</code>, che contiene il risultato della path expression <code class='escaped'>document("birra.xml")//confezione</code>, quindi tutti gli elementi di tipo <code class='escaped'>confezione</code> presenti nel documento. Anticipiamo poi che in (2) la clausola <code class='escaped'>return</code> specifica che il risultato dell'interrogazione coincide con il valore della variabile <code class='escaped'>$conf</code>, ovvero:
+</p><pre class='escaped'>&lt;confezione&gt;Bottiglia&lt;/confezione&gt;
+&lt;confezione&gt;Lattina&lt;/confezione&gt;
+&lt;confezione&gt;Botte&lt;/confezione&gt;</pre>
+<p class='vspace'>Infine, è possibile avere espressioni <code class='escaped'>for</code> nidificate. Riprendendo l'esempio di prima, se volessimo ottenere i tipi di confezione di tutte le birre dovremmo scrivere:
+</p><pre class='escaped'>(1) FOR $bir IN document("birra.xml")//birra
+(2)     FOR $conf IN $bir/confezione
+(3) RETURN $conf</pre>
+<p class='vspace'>In (2) si può notare che <code class='escaped'>$conf</code> fa uso del valore della variabile <code class='escaped'>$bir</code> per la sua interrogazione.
+</p>
+<div class='vspace'></div><h5>Let</h5>
+<p>Grazie alla clausola <strong>let</strong> è possibile dichiarare variabili associate al risultato dell’espressione, eventualmente associandole a quelle introdotte con <code class='escaped'>for</code>. <br />La sintassi generale è la seguente: <code class='escaped'>LET $x :=</code> <em>pathExpression</em>
+</p>
+<p class='vspace'>Possiamo riscrivere l'ultima interrogazione di esempio vista utilizzando la <code class='escaped'>let</code>:
+</p><pre class='escaped'>FOR $bir IN document("birra.xml")//birra
+LET $conf := $bir/confezione
+RETURN $conf</pre>
+<p class='vspace'>La differenza rispetto all'utilizzo di <code class='escaped'>for</code> nidificate è che in questo caso viene associato come valore della variabile <code class='escaped'>$conf</code> l'intero insieme delle confezioni delle birre collegate alla variabile <code class='escaped'>$bir</code>, mentre nel primo caso avremmo avuto il passaggio di un singolo valore per volta (scandito dalle iterazioni del for nidificato).
+</p>
+<div class='vspace'></div><h5>Where</h5>
+<p>Con <strong>where</strong> si possono esprimere condizioni, quindi filtrare le tuple prodotte dalla <code class='escaped'>for</code> o dalla <code class='escaped'>let</code>.<br />La sintassi generale è la seguente: <code class='escaped'>WHERE</code> <em>condizione</em><br />, dove <code class='escaped'>condizione</code> può coinvolgere diverse variabili e/o elementi e/o valori e fa uso dei classici operatori logici e aritmetici.
+</p>
+<p class='vspace'>Se ad esempio volessimo interrogare "birra.xml" per sapere quali sono le <code class='escaped'>Pilsener</code> prodotte da "Dasteb", dovremmo scrivere:
+</p>
+<div class='vspace'></div><pre class='escaped'>FOR $bir IN document("birra.xml")//birra
+WHERE $bir/@produttore="Dasteb"
+      AND $bir/preparato="Pilsener"
+RETURN $bir</pre>
+<p class='vspace'>Come si può notare ha una forma molto simile a quella dell'SQL, dal quale eredita inoltre alcune funzioni aggregate, come la <code class='escaped'>count()</code>. Ad esempio se volessimo sapere i tipi di confezioni che nell'elenco hanno almeno due birre, scriveremmo:
+</p>
+<div class='vspace'></div><pre class='escaped'>FOR $conf IN document("birra.xml")//birra/confezione
+LET $bir:= document("birra.xml")//birra[confezione=$conf]
+WHERE count($bir) &gt; 2
+RETURN $conf</pre>
+<div class='vspace'></div><h5>Order by</h5>
+<p>La clausola <strong>order by</strong> permette di ordinare le tuple prodotte dalla <code class='escaped'>for</code> o dalla <code class='escaped'>let</code>.
+</p>
+<p class='vspace'>Ad esempio, per trovare nome e preparato di tutte le birre presenti nel documento "birra.xml", e ordinare il risultato in ordine alfabetico in base al nome, si scrive:
+</p>
+<div class='vspace'></div><pre class='escaped'>FOR $bir IN document("birra.xml")//birra
+RETURN &lt;birra&gt;
+         $bir/nome,
+         $bir/preparato
+       &lt;/birra&gt;
+ORDER BY(nome ASCENDING)</pre>
+<p class='vspace'>I parametri per la <code class='escaped'>order by</code> sono:
+</p><ul><li><em>ascending</em> | <em>descending</em>, per l'ordine ascendente o discendente
+</li><li>nel caso in cui si abbiano sequenze vuote o valori <code class='escaped'>NaN</code>, è possibile specificare la politica di gestione coi parametri: <em>empty least</em> | <em>empty greatest</em>
+</li><li>la coppia <em>Collation URILiteral</em> indica il modo in cui sono comparate le stringhe dell'URI, e quindi come dovranno essere ordinate
+</li></ul><div class='vspace'></div><h5>Return</h5>
+<p>Con l'utilizzo di <strong>return</strong>, è possibile infine generare il risultato dell'espressione <code class='escaped'>FLWOR</code>. Il risultato può essere un nodo, un insieme di nodi o un singolo valore. E' l'unica clausola obbligatoria delle cinque viste finora.
+</p>
+<p class='vspace'>Per quanto riguarda la sintassi, la <code class='escaped'>return</code> può contenere <em>costruttori di elementi</em>, riferimenti a variabili definite da <code class='escaped'>for</code> o <code class='escaped'>let</code>, espressioni annidate. Per <strong>costruttore di elemento</strong> si intende un'espressione che specifica la struttura del risultato a partire da elementi fissi o dal valore di variabili o espressioni, il tutto racchiuso tra un tag iniziale e finale.
+</p>
+<p class='vspace'>Un esempio di definizione di costruttore sul solito documento "birra.xml" è:
+</p><pre class='escaped'>FOR $bir IN document("birra.xml")//birra
+WHERE $bir/@produttore="Dasteb"
+RETURN &lt;ProdDasteb&gt;
+         $bir/Nome
+       &lt;/ProdDasteb&gt;</pre>
+<p class='vspace'>che produce il seguente risultato:
+</p><pre class='escaped'>&lt;ProdDasteb&gt;&lt;Nome&gt;Chiara&lt;/Nome&gt;&lt;/ProdDasteb&gt;
+&lt;ProdDasteb&gt;&lt;Nome&gt;Rossa&lt;/Nome&gt;&lt;/ProdDasteb&gt;</pre>
+<div class='vspace'></div><h3>Join tra documenti XML</h3>
+<p>Come si realizza con XQuery un join tra documenti lo vediamo attraverso un esempio. Abbiamo due documenti XML:
+</p><table >
+<tr ><td align='center'  valign='top'>"<em>costruttore.xml</em>"
+</td><td align='center'  valign='top'>"<em>macchina.xml</em>"
+</td></tr><tr ><td  valign='top'>
+<pre class='escaped'>&lt;costruttore&gt;
+  &lt;nome-co&gt;Toyota&lt;/nome-co&gt;
+  &lt;anno&gt;2005&lt;/anno&gt;
+  &lt;modello&gt;
+    &lt;nome-mo&gt;Prius&lt;/nome-mo&gt;
+    &lt;cilindrata&gt;1497&lt;/cilindrata&gt;
+    &lt;potenza&gt;77&lt;/potenza&gt;
+    &lt;aliment&gt;benzina&lt;/aliment&gt;
+  &lt;/modello&gt;
+  ...
+&lt;/costruttore&gt;</pre>
+</td><td  valign='top'>
+<pre class='escaped'>&lt;macchina&gt;
+  &lt;venditore&gt;Mario Rossi&lt;/venditore&gt;
+  &lt;marca&gt;Toyota&lt;/marca&gt;
+  &lt;anno&gt;2005&lt;/anno&gt;
+  &lt;modello&gt;Prius&lt;/modello&gt;
+  &lt;colore&gt;grigio metalizz&lt;/colore&gt;
+  &lt;prezzo&gt;25000&lt;/prezzo&gt;
+  ...
+&lt;/macchina&gt;</pre>
+</td></tr></table>
+<p class='vspace'>Vogliamo realizzare un join tra i documenti, ponendo <code class='escaped'>&lt;nome-co&gt; = &lt;marca&gt;</code>, <code class='escaped'>&lt;nome-mo&gt; = &lt;modello&gt;</code> e <code class='escaped'>&lt;anno&gt; = &lt;anno&gt;</code>, e memorizzare in un nuovo elemento <code class='escaped'>autovettura</code> le informazioni relative a marca, venditore, modello, cilindrata e prezzo.<br />Scriveremo il codice seguente:
+</p>
+<div class='vspace'></div><pre class='escaped'>FOR $c IN document(“costruttore.xml")//costruttore,
+      $m IN document(“macchina.xml")//macchina,
+      $mo IN $c/modello
+WHERE $c/anno=$m/anno
+      AND $c/nome-co=$m/marca
+      AND $mo/nome-mo=$m/modello
+RETURN &lt;autovettura&gt;
+         $m/marca,
+         $m/venditore,
+         $m/modello,
+         $mo/cilindrata,
+         $m/prezzo
+       &lt;/autovettura&gt;</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/BDC-XQuery)</span></div>
+  </div>
+</body>
+</html>

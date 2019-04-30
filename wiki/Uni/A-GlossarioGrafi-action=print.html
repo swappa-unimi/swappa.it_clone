@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Algoritmi e strutture dati - Glossario grafi</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='A-GlossarioGrafi.html' title='Algoritmi e strutture dati - Glossario grafi'>Algoritmi e strutture dati - Glossario grafi</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e strutture dati - Glossario grafi ::</strong>
+</pre><div class='vspace'></div><h5>Grafo</h5>
+<p>Un grafo G = (V,E) è costituito da un insieme di vertici V ed un insieme di archi E ciascuno dei quali connette due vertici in V detti estremi dell'arco.
+</p>
+<div class='vspace'></div><h4>Grafo Orientato</h4>
+<p>Quando vi è un ordine tra i due estremi degli archi. In questo caso il primo estremo si dice coda e il secondo testa.
+</p>
+<div class='vspace'></div><h4>Cappio</h4>
+<p>È un arco i cui estremi coincidono.
+</p>
+<div class='vspace'></div><h5>Grafo non orientato semplice</h5>
+<p>Grafo che non ha cappi e non ci sono due archi con gli stessi estremi.
+</p>
+<div class='vspace'></div><h5>Grafo orientato semplice</h5>
+<p>Grafo in cui non ci sono due archi con gli stessi estremi. In caso contrario si parla di
+<em>multigrafo</em>.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-grafosemplMultigrafo.gif' alt='' title='' /></div>
+<div class='vspace'></div><h5>Archi</h5>
+<p>Se un grafo è semplice indentifichiamo un arco con la coppia dei suoi estremi:
+</p><div class='indent'>e = uv &#8712; E (diciamo che l'arco e è incidente in u e in v)
+</div><p>Se il grafo è orientato la coppia uv è ordinata (v è adiacente a u) altrimenti si dice che l'arco e esce da u ed entra in v (adiacenza simmetrica).
+</p>
+<div class='vspace'></div><h5>Grado di un nodo</h5>
+<p>Il grado del vertice v è il numero di archi incidenti in v. Se il grafo è orientato si suddivide in un grado entrante (archi entranti) ed un grado uscente (archi uscenti).
+</p>
+<div class='vspace'></div><h5>Percorso in un grafo</h5>
+<p>Un percorso di lunghezza k dal vertice u al vertice v in un grafo è una sequenza di k+1 (x0 = u e xk = v) vertici. Se k &gt; 0 e x0= xk il percorso è chiuso. <br />Un cammino è un percorso i cui vertici sono tutti distinti con la possibile eccezzione di x0 = xk nel qual cosa esso è un ciclo. Un ciclo di lunghezza k=1 è un cappio. Un grafo aciclico è un grafo che non contiene cicli.
+</p>
+<div class='vspace'></div><h5>Raggiungibilità e componenti connesse</h5>
+<p>Quando esiste almeno un cammino dal vertice u al vertice v diciamo che il vertice v è accessibile o raggiungibile da u.<br />Un grafo non orientato si dice connesso se esiste almeno un cammino tra ogni coppia di vertici. Le componenti connesse di un grafo sono le classi di equivalenza dei suoi vertici rispetto alla relazione di raggiungibilità.
+</p>
+<div class='vspace'></div><h5>Componenti fortemente connesse</h5>
+<p>Un grafo orientato si dice fortemente connesso se esiste almeno un cammino da ogni vertice u ad ogni altro vertice v. Le componenti fortemente connesse di un grafo sono le classi di equivalenza dei suoi vertici rispetto alla relazione di mutua accessibilità.
+</p>
+<div class='vspace'></div><h5>Sottografo</h5>
+<p>Un sottografo del grafo G = (V,E) è un grafo G' = (V',E') tale che V'&#8838;V e E'&#8838;E.<br />Il sottografo di G = (V,E) indotto da V'&#8838;V è il grafo G' = (V',E') tale che:
+</p><div class='indent'>E' = {uv: uv &#8712; E e u,v &#8712; V'}
+</div><div class='vspace'></div><h5>Rappresenteazione di grafi: Liste di adiacenza</h5>
+<p>E' costituita da una lista Adj[u] (per ogni vertice u) che contiene i vertici adiacenti al vertice u. <br />Quantità memoria richiesta (sia orientato che non): O(|V|+|E|)<br />Velocità per determinare se un arco uv è presente: O(|V|)
+</p>
+<div class='vspace'></div><h5>Rappresentazione di grafi: Matrice delle adiacenze</h5>
+<p>Assume che i vertici siano numerati 1,2,...,|V| in modo arbitrario. La martrice è booleana e segna 1 se i vertici sono adiacenti altrimenti 0.<br />Quantita di memoria richiesta: O(|V|^2)<br />Velocita per determinare se un arco uv è presente: accesso diretto.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-listeMatriciAdiacenza.gif' alt='' title='' /></div>
+<div class='vspace'></div><h5>Visita in ampiezza (BFS)</h5>
+<p>Dato un grafo e un vertice scelto come sorgente, la visita in ampiezza parte da s e visita sistematicamente il grafo per scoprire tutti i vertici che sono raggiungibili da s. <br />Calcola la distanza (minima) di ogni vertice del grafo dalla sorgente s. Produce anche un albero BF i cui rami sono cammini di lunghezza minima. La visita espande uniformemente la frontiera tra i vertici scoperti e quelli non ancora scoperti.<br />Vertici colorati:
+</p><ol><li>Bianco (vertici non ancora raggiunti)
+</li><li>Grigio (vertici raggiunti che stanno sulla frontiera)
+</li><li>Nero (vertici raggiunti che non stanno sulla frontiera)
+</li></ol><div class='vspace'></div><h5>Algoritmo BFS</h5>
+<p>Assume che il grafo sia rappresentato con liste delle adiacenze. Usa una coda Q di vertici in cui memorizza la frontiera.<br />Complessità: O(n+m)
+</p>
+<div class='vspace'></div><h5>Proprietà delle distanze</h5>
+<p>Indichiamo con d(u,v) la distanza del vertice v dal vertice u: la lunghezza di un cammino minimo che congiunge u e v.
+</p><dl><dd><div class='indent'>d(x,v) &#8804; d(x,u) + 1 per ogni x &#8712; V e ogni uv &#8712; E
+</div></dd></dl><div class='vspace'></div><h5>Proprietà del limite superiore e della coda</h5>
+<p>Per ogni vertice u e per tutta l'esecuzione di BFS vale la diseguaglianza:
+</p><dl><dd><div class='indent'>d[u] &#8805; d(s,u)
+</div></dd></dl><p>Se la coda Q non è vuota e contiene i vertici (v1,v2,...,vt) allora per ogni i=1, ..., t-1:
+</p><dl><dd><div class='indent'>d[vi] &#8804; d[vi+1]
+</div></dd></dl><p>ed inoltre
+</p><dl><dd><div class='indent'>d[vt] &#8804; d[v1] + 1
+</div></dd></dl><div class='vspace'></div><h5>Correttezza di BFS</h5>
+<p>BFS visita tutti i vertici raggiungibili da s e quando termina d[v] = d(s,v) per ogni vertice v del grafo.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-BFS.gif' alt='' title='' /></div>
+<div class='vspace'></div><h5>Visita in profondità (DFS)</h5>
+<p>Lo scopo è avanzare in profondità nella ricerca finchè è possibile. Si esplorano gli archi uscenti dal vertice u raggiunto per ultimo. Se viene scoperto un nuovo vertice v ci si sposta su tale vertice. Se tutti gli archi uscenti da u portano a vertici già scoperti si torna indietro e si riprende esplorando archi uscenti dal vertice cui u è stato scoperto. Il procedimento contiuna finchè si sono scoperti tutti i vertici raggiungibili dal vertice iniziale scelto. Se non sono stati raggiunti tutti i vertici del grafo si ripete il procedimento partendo da un vertice non ancora raggiunto (si sceglie una nuova sorgente).<br />Vertici colore:
+</p><ol><li>Bianco (vertici non ancora raggiunti)
+</li><li>Grigio (vertici scoperti)
+</li><li>Nero (vertici la cui lista delle adiacenze è stata completamente esplorata)
+</li></ol><p>Marcatempi:
+</p><ol><li>d[u] registra quando il vertice viene scoperto e colorato di grigio.
+</li><li>f[u] registra quando il vertice è stato completato e viene colorato di nero.
+</li></ol><p>Complessità: O(|V| + |E|)
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-DFS.gif' alt='' title='' /></div>
+<div class='vspace'></div><h5>Classificazione degli archi</h5>
+<ol><li>Archi d'albero: archi uv con v scoperto visitando le adiacenze di u.
+</li><li>Archi all'indietro: archi uv con u=v oppure v ascendente di u in un albero della foresta di ricerca in profondità.
+</li><li>Archi in avanti: archi uv con v discendente di u in un albero della fortesta.
+</li><li>Archi trasversali: archi uv in cui v ed u appartengono a rami o alberi distinti della foresta.
+</li></ol><div class='vspace'></div><h5>Ordinamento topologico</h5>
+<p>Un ordinamento topologico di un grafo orientato aciclico è un ordinamento lineare dei suoi vertici tale che: 
+</p><ol><li>Per ogni arco uv &#8712; E il vertice u precede il vertice v.
+</li><li>Per transitività, ne consegue che se v è raggiungibile da u, allora compare prima di v nell'ordinamento. 
+</li></ol><p>L'ordinamento topologico si usa per determinare un ordine in cui eseguire un insieme di attività in presenza di vincoli di precedenza.
+</p>
+<div class='vspace'></div><h5>Determinare l'ordinamento topologico</h5>
+<p>Soluzione diretta:
+</p><ol><li>Trovare ogni vertice che non ha alcun arco incidente in ingresso.
+</li><li>Stampare tale vertice e rimuoverlo insieme ai suoi archi.
+</li><li>Ripetere la procedura finchè tutti i vertici risultano rimossi.
+</li></ol><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-ordTopol.gif' alt='' title='' /></div>
+<p class='vspace'>Complessità: O(|V| + |E|)<br />(Un grafo orientato è aciclico se e solo se nella visita in profondita non si trova nessun arco all'indietro)
+</p>
+<div class='vspace'></div><h5>Componenti fortemente connesse di un grafo orientato</h5>
+<p>Si possono calcolare con la visita in profondità. Una componente fortemente connessa di un grafo orientato è un insieme massimale di vertici U &#8838; V tale che per ogni u,v &#8712; U esiste un cammino da u a v ed un cammino da v ad u.<br />Sono calcolate in tre fasi:
+</p><ol><li>Si usa la visita in profondità in G per ordinare i vertici in ordine di tempo di completamento f decrescente (come per l'ordinamento topologico).
+</li><li>Si calcola il grafo trasposto del grafo G.
+</li><li>Si esegue una visita in profondita nel grafo trasposto usando l'ordine dei vertici calcolato nella prima fase nel ciclo principale.
+</li></ol><p>Gli alberi della visita in profondità nel grafo trasposto rappresentano le componenti fortemente connesse.
+</p>
+<div class='vspace'></div><h5>Grafo delle componenti fortemente connesse</h5>
+<p>Dato un grafo orientato G, il grafo delle componenti fortemente connesse di G è il grafo orientato H che ha: 
+</p><ol><li>Come vertici le componenti fortemente connesse di G
+</li><li>Un arco da una cfc C ad una cfc C' se e solo se in G vi è un arco che connette un vertice di C ad un vertice di C'.
+</li></ol><div class='vspace'></div><h5>Altre applicazioni della DFS</h5>
+<p>Catatterizzazione di alcune importanti proprietà dei grafi (non orientati):
+</p><ol><li>Ciclo di Eulero: ciclo in un grafo che visita ogni arco di G una volta.
+</li><li>Ciclo di Hamilton: ciclo in un grafo G che visita ogni nodo di G una volta.
+</li></ol><div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/A-GlossarioGrafi)</span></div>
+  </div>
+</body>
+</html>

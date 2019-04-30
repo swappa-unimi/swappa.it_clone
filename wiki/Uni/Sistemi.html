@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi di Elaborazione dell'Informazione </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Sistemi' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi di Elaborazione dell'Informazione
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Sistemi?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Sistemi?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Sistemi-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Sistemi?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Sistemi?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi di Elaborazione dell'Informazione was last modified on July 15, 2018, at 03:17 PM'>
+							<span style='display:none;'>Sistemi di Elaborazione dell'Informazione</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi di Elaborazione dell'Informazione ::</strong>
+</pre><table width='40%' align='right' cellpadding='5' cellspacing='15' >
+<tr ><td bgcolor='#f6f6ff'  valign='top'><h5>Quanto ti è piaciuta la materia?</h5>
+<form action='Sistemi.html' method='post'><input type='hidden' name='n' value='Uni.Sistemi' /><input type='hidden' name='action' value='rater' /><input type='hidden' name='rs_id' value='1' /><input type='radio' name='rating_1[]' value='1' id='rating_11' /><label for='rating_11'><span style='font-size:69%'>*</span></label> <input type='radio' name='rating_1[]' value='2' id='rating_12' /><label for='rating_12'><span style='font-size:69%'>**</span></label> <input type='radio' name='rating_1[]' value='3' id='rating_13' /><label for='rating_13'><span style='font-size:69%'>***</span></label> <input type='radio' name='rating_1[]' value='4' id='rating_14' /><label for='rating_14'><span style='font-size:69%'>****</span></label> <input type='radio' name='rating_1[]' value='5' id='rating_15' /><label for='rating_15'><span style='font-size:69%'>*****</span></label> <input type='submit' name='post' value='Vota' class='inputbutton' /><br /><img src='../pub/rater/img/yellow40star.gif' alt='4 stars' title='4 stars' /> <span style='font-size:83%'>N° voti: 40</span><br /><strong></strong>
+</form>
+
+</td></tr><tr ><td bgcolor='#f6f6ff'  valign='top'><h5>Come ti è sembrato il corso?</h5>
+<form action='Sistemi.html' method='post'><input type='hidden' name='n' value='Uni.Sistemi' /><input type='hidden' name='action' value='rater' /><input type='hidden' name='rs_id' value='2' /><input type='radio' name='rating_2[]' value='1' id='rating_21' /><label for='rating_21'><span style='font-size:69%'>*</span></label> <input type='radio' name='rating_2[]' value='2' id='rating_22' /><label for='rating_22'><span style='font-size:69%'>**</span></label> <input type='radio' name='rating_2[]' value='3' id='rating_23' /><label for='rating_23'><span style='font-size:69%'>***</span></label> <input type='radio' name='rating_2[]' value='4' id='rating_24' /><label for='rating_24'><span style='font-size:69%'>****</span></label> <input type='radio' name='rating_2[]' value='5' id='rating_25' /><label for='rating_25'><span style='font-size:69%'>*****</span></label> <input type='submit' name='post' value='Vota' class='inputbutton' /><br /><img src='../pub/rater/img/yellow30star.gif' alt='3 stars' title='3 stars' /> <span style='font-size:83%'>N° voti: 42</span><br /><strong></strong>
+</form>
+
+</td></tr></table>
+<p class='vspace'><strong>Docente</strong>: <a class='wikilink' href='Damiani.html'><strong>Ernesto Damiani</strong></a>
+</p>
+<div class='vspace'></div><h2>Materiale ufficiale</h2>
+<table cellpadding='5' cellspacing='5' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><a target='_blank'  class='urllink' href='http://ra.crema.unimi.it/turing/GUI/index52.aspx?ID=80' title='' rel='nofollow'><strong>Lucidi</strong></a>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><a target='_blank'  class='urllink' href='http://ra.crema.unimi.it/turing/GUI/index52.aspx?ID=95' title='' rel='nofollow'><strong>Temi d'esame</strong></a>
+</td></tr></table>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Appunti di Dario</a>
+</li><li><a href='#s2'>Esercizi</a>
+</li><li><a href='#s3'>Temi d'esame svolti da noi</a>
+</li><li><a href='#s4'>Possibili domande</a>
+</li><li><a href='#s5'>MAN pages</a>
+</li><li><a href='#s6'>Sigle</a>
+</li><li><a href='#s7'>Header IP</a>
+</li><li><a href='#s8'>Sunto tabellare del CIDR</a>
+</li><li><a href='#s9'>Socket Library</a>
+</li><li><a href='#s10'>HTTP headers</a>
+</li><li><a href='#s11'>Codici di Stato</a>
+</li><li><a href='#s12'>DNS</a>
+</li><li><a href='#s13'>Gnutella</a>
+</li><li><a href='#s14'>Porte note</a>
+</li><li><a href='#s15'>Link sconosciuti del corso</a>
+</li><li><a href='#s16'>Altri link</a>
+</li></ol></div>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><table width='60%' align='right' >
+<tr ><td align='right'  valign='top'>
+<div class='round prindent dicono' > 
+<p>Ciao sono Gennaro, anche io ho copiato i vostri appunti prendendo 20 punti nei primi due esercizi! Grazie, ma ora non mi rivedrete mai più!
+</p></div>
+<div class='vspace'></div><div class='round prindent dicono' > 
+<p>Volevo ringraziarvi per i temi d'esame che avete risolto e pubblicato! Finalmente saprò cosa rispondere agli studenti che mi vengono a chiedere qualcosa: "vai su swappa.it!"
+</p>
+<p class='vspace'><em>Laureato anonimo</em>
+</p></div>
+</td></tr></table>
+<p><a name='s1' id='s1'></a>
+</p><h2>Appunti di <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Dario'><strong>Dario</strong></a></h2>
+<p>Nota dell'appuntatore: "<em>qui sto mettendo tutti i miei appunti. Non so quanto ci metto, è veramente un sacco di roba. La formattazione non è ottimale, ci pensi qualche anima pia. Inoltre, ho cercato di essere chiaro e di spiegare ciò che il Damiani enumera ad altissimo bau-rate (abbaia). Il mio interlocutore ideale è <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Patrizia'>Patrizia</a>. Spero 1) che sia utile e 2) che qualcuno lo legga!</em>"
+</p>
+<div class='vspace'></div><h4>Prima parte</h4>
+<ul><li><a class='wikilink' href='LezSEDI01.html'>25 settembre 2007</a>
+</li><li><a class='wikilink' href='LezSEDI02.html'>27 settembre 2007</a>
+</li><li><a class='wikilink' href='LezSEDI03.html'>1 Ottobre 2007</a>
+</li><li><a class='wikilink' href='LezSEDI04.html'>2 Ottobre 2007</a>
+</li><li><a class='wikilink' href='LezSEDIO5.html'>4 Ottobre 2007</a>
+</li><li><a class='wikilink' href='LezSEDI06.html'>15 Ottobre 2007</a>
+</li><li><a class='wikilink' href='SEDI-CIDR.html'>Note sul CIDR</a>
+</li><li><a class='wikilink' href='LezSEDI07.html'>22 Ottobre 2007</a>
+</li><li><a class='wikilink' href='SEDI-GBN.html'>La verità sul go-back-n</a>
+</li></ul><div class='vspace'></div><h4>Seconda parte</h4>
+<ul><li><a class='wikilink' href='Ceravolo.html'>Lezioni con Ceravolo</a>
+</li></ul><p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Esercizi:</h2>
+<ul><li><a class='wikilink' href='29Ottobre2007-GtExSEDI01.html'>29 Ottobre 2007 - &gt; ExSEDI01</a>
+</li><li><a class='wikilink' href='Ex1000formule.html'>Es con 1000 formule</a>
+</li><li><a class='wikilink' href='Exber.html'>Es con il ber</a>
+</li></ul><p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Temi d'esame svolti da noi</h2>
+<p>Non garantiamo l'assoluta correttezza di tutte le soluzioni, ma è come le faremmo noi.
+</p>
+<div class='vspace'></div><h4>Prima parte</h4>
+<ul><li><a class='wikilink' href='TemiEsameSED01.html'>12/5/2007</a> - Esercizi svolti: 5/5 (ma uno è svolto per due terzi)
+</li><li><a class='wikilink' href='TemiEsameSED02.html'>30/1/2007</a> - Esercizi svolti: 3,5/4 (ma uno parla di cose mai viste)
+</li><li><a class='wikilink' href='TemiEsameSED03.html'>14/9/2006</a> - Esercizi svolti: 5/6
+</li><li><a class='wikilink' href='TemiEsameSED04.html'>20/6/2006</a> - Esercizi svolti: 4/6 (ma uno parla di cose mai viste)
+</li><li><a class='wikilink' href='TemiEsameSED05.html'>11/11/2005</a> - Esercizi svolti: 7,5/8 (ma due parlano di cose mai viste)
+</li><li><a class='wikilink' href='TemiEsameSED06.html'>9/9/2005</a> - Esercizi svolti: 4/4
+</li></ul><div class='vspace'></div><h4>Seconda parte</h4>
+<ul><li><a class='wikilink' href='TemiEsameSED07.html'>9/9/2005</a> - Esercizi svolti: <strong>5/5</strong>
+</li><li><a class='wikilink' href='TemiEsameSED08.html'>11/11/2005</a> - Esercizi svolti: <strong>4/4</strong>
+</li><li><a class='wikilink' href='TemiEsameSED11.html'>20/04/2006</a> - Esercizi svolti: <strong>5/5</strong> (cmq è assodato che quello sul RIP è errore da parte loro)
+</li><li><a class='wikilink' href='TemiEsameSED09.html'>20/06/2006</a> - Esercizi svolti: <strong>4/4</strong>
+</li><li><a class='wikilink' href='TemiEsameSED10.html'>12/05/2007</a> - Esercizi svolti: <strong>4/4</strong>
+</li><li><a class='wikilink' href='TemiEsameSED12.html'>data sconosciuta, ma vecchio</a> - Esercizi svolti: <strong>3/6</strong> (ma i 3 esercizi mancanti parlano di argomenti mai fatti)
+</li><li><a class='wikilink' href='TemiEsameSED13.html'>07/04/2008</a> - Esercizi svolti: <strong>1/4</strong>
+</li><li><a class='wikilink' href='TemiEsameSED14.html'>16/04/2009</a> - Esercizi svolti: <strong>1/4</strong>
+</li></ul><p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>Possibili Domande</h2>
+<p>Durante le lezioni di Sistemi capitava spesso che Damiani dicesse una frase del tipo "Ecco, questa potrebbe essere una domanda da compitino...". <br />Raccogliamole tutte su <a class='wikilink' href='DomandeDamiani.html'>DomandeDamiani</a>!
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h2>MAN pages</h2>
+<p>Abbiamo pdf-ato le pagine di manuale (le pagine MAN di cui parlava il professore) per i comandi <strong>arp</strong>, <strong>netstat</strong>, <strong>route</strong>, <strong>traceroute</strong> altrimenti detto <strong>tracert</strong>, <strong>ping</strong>, <strong>ifconfig</strong> altrimenti detto <strong>ipconfig</strong>. Sono in inglese, speriamo non ci siano problemi. 
+</p>
+<div class='vspace'></div><ul><li><a class='urllink' href='../uploads/Uni/arp.pdf' title='' rel='nofollow'>arp.pdf</a>
+</li><li><a class='urllink' href='../uploads/Uni/netstat.pdf' title='' rel='nofollow'>netstat.pdf</a>
+</li><li><a class='urllink' href='../uploads/Uni/route.pdf' title='' rel='nofollow'>route.pdf</a>
+</li><li><a class='urllink' href='../uploads/Uni/traceroute.pdf' title='' rel='nofollow'>traceroute.pdf</a>
+</li><li><a class='urllink' href='../uploads/Uni/ping.pdf' title='' rel='nofollow'>ping.pdf</a>
+</li><li><a class='urllink' href='../uploads/Uni/ifconfig.pdf' title='' rel='nofollow'>ifconfig.pdf</a>
+</li></ul><p class='vspace'>Qualcosa in italiano lo potete trovare <a target='_blank'  class='urllink' href='http://www.firenze.linux.it/~piccardi/corso/netadmin/node12.html' title='' rel='nofollow'>qui</a>.
+</p>
+<p class='vspace'><a name='s6' id='s6'></a>
+</p><h2>Sigle</h2>
+<p>Sistemi è una materia indubbiamente affascinante, ma portatrice sana di una valanga di acronimi, abbreviazioni e siglette. <br />Se ti trovi in alto mare e non riesci più a distinguere un GSM da un MAC, alfabetizzati oppure vai sulla pagina <a class='wikilink' href='SistemiSigle.html'>SistemiSigle</a>!
+</p>
+<p class='vspace'><a name='s7' id='s7'></a>
+</p><h2>Header IP</h2>
+<p>Tutti ne parlano. Tutti li vogliono. Tutti li cercano. Perché non dedicargli una pagina ad hoc?<br /><a class='wikilink' href='HeaderIPv4.html'>HeaderIPv4</a> - <a class='wikilink' href='HeaderIPv6.html'>HeaderIPv6</a>
+</p>
+<p class='vspace'><a name='s8' id='s8'></a>
+</p><h2>Sunto tabellare del CIDR</h2>
+<p>Che maschera hanno, che range di host consentono, a quale classe corrispondono... a tutte queste domande verrà data una risposta nella mega tabellona riassuntiva del CIDR copiata e incollata da wikipedia! La puoi trovare su questa pagina <a class='wikilink' href='TabCIDR.html'>TabCIDR</a>.
+</p>
+<p class='vspace'><a name='s9' id='s9'></a>
+</p><h2>Socket library</h2>
+<p>Se avete bisogno di delucidazioni o integrazioni sulle varie connect, accept, bind e affini, potrete trovare tutto nella pagina della <a class='wikilink' href='SocketLibrary.html'>Socket Library</a>.
+</p>
+<p class='vspace'><a name='s10' id='s10'></a>
+</p><h2>HTTP headers</h2>
+<p>In classe abbiamo visto solo tre o quattro header dei messaggi HTTP, ma nei temi d'esame il buon Damiani va a pescare quelli più assurdi. Direttamente dal protocollo W3, ecco tutti (o quasi) gli <a class='wikilink' href='HTTPHeaders.html'>HTTP Headers</a>.
+</p>
+<p class='vspace'><a name='s11' id='s11'></a>
+</p><h2>Codici di Stato</h2>
+<p>I codici di stato sono i codici a tre cifre che compaiono nella status line degli HTTP response, ma anche nei messaggi restituiti dal terminale nelle comunicazioni SMTP ed FTP.<br />Potevamo non elencarli tutti in una pagina tutta per loro?? <a class='wikilink' href='CodiciDiStato.html'>CodiciDiStato</a>
+</p>
+<p class='vspace'><a name='s12' id='s12'></a>
+</p><h2>DNS</h2>
+<p>Se cercate un po' di teoria sui DNS la potete trovare a questa pagina: <a class='wikilink' href='SistemiDNS.html'>SistemiDNS</a>.
+</p>
+<p class='vspace'><a name='s13' id='s13'></a>
+</p><h2>Gnutella</h2>
+<p>Traduzione e riassunto delle specifiche del protocollo <a class='wikilink' href='Gnutella.html'>Gnutella</a>.
+</p>
+<p class='vspace'><a name='s14' id='s14'></a>
+</p><h2>Porte note</h2>
+<p>Ecco un pdf con la <a class='urllink' href='../uploads/Uni/portenote.pdf' title='' rel='nofollow'>Lista delle porte note dalla 0 alla 1024</a> (in realtà arrivano fino a 995, le restanti non sono state assegnate).
+</p>
+<p class='vspace'><a name='s15' id='s15'></a>
+</p><h2>Link sconosciuti del corso</h2>
+<p>Questo è il link del vecchio sito di damiani: <a class='urllink' href='http://olaf.crema.unimi.it/crema.htm' title='' rel='nofollow'>http://olaf.crema.unimi.it/crema.htm</a> <br /><strong>Ci sono altri compitini!!!</strong>
+</p>
+<p class='vspace'><a name='s16' id='s16'></a>
+</p><h2>Altri link</h2>
+<table cellspacing='5' cellpadding='5' >
+<tr ><td bgcolor='#d4e1f0'  valign='top'>DNS
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://cctld.it/ARCHIVI/VANNOZZI/DOCUMENTI/presentazione-dns.pdf' title='' rel='nofollow'>http://cctld.it/ARCHIVI/VANNOZZI/DOCUMENTI/presentazione-dns.pdf</a>
+</td></tr><tr ><td bgcolor='#d4e1f0'  valign='top'>Routing
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://netgroup.polito.it/nettuno/' title='' rel='nofollow'>http://netgroup.polito.it/nettuno/</a>
+</td></tr><tr ><td bgcolor='#d4e1f0'  valign='top'>Protocolli di rete
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.rigacci.org/docs/biblio/online/netproto/06rout/rip.htm' title='' rel='nofollow'>http://www.rigacci.org/docs/biblio/online/netproto/06rout/rip.htm</a>
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.mi.infn.it/~cmp/CorsoReti/' title='' rel='nofollow'>http://www.mi.infn.it/~cmp/CorsoReti/</a>
+</td></tr><tr ><td bgcolor='#d4e1f0'  valign='top'>Socket
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.lowtek.com/sockets/' title='' rel='nofollow'>http://www.lowtek.com/sockets/</a>
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://beej.us/guide/bgnet/' title='' rel='nofollow'>http://beej.us/guide/bgnet/</a>
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.cact.unile.it/facilities/XC6000/html-man/gapil/gapilpa2.html#gapilch17.html' title='' rel='nofollow'>GaPiL di Simone Piccardi</a>
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.valtellinux.it/prj/rete/rete.html' title='' rel='nofollow'>http://www.valtellinux.it/prj/rete/rete.html</a>
+</td></tr><tr ><td bgcolor='#d4e1f0'  valign='top'>RPC
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.di.univaq.it/~vincenzo.fazio/doc/Lx-RPC-2007.pdf' title='' rel='nofollow'>http://www.di.univaq.it/~vincenzo.fazio/doc/Lx-RPC-2007.pdf</a>
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://security.polito.it/~lioy/01fqt/rpc_6x.pdf' title='' rel='nofollow'>http://security.polito.it/~lioy/01fqt/rpc_6x.pdf</a>
+</td></tr><tr ><td bgcolor='#d4e1f0'  valign='top'>HTTP
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://hell.org.ua/Docs/oreilly/webprog/webnut/ch17_01.htm' title='' rel='nofollow'>http://hell.org.ua/Docs/oreilly/webprog/webnut/ch17_01.htm</a>
+</td></tr><tr ><td bgcolor='#d4e1f0'  valign='top'>RFC di HTTP
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html' title='' rel='nofollow'>http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html</a>
+</td></tr><tr ><td bgcolor='#d4e1f0'  valign='top'>FTP
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.pluto.it/files/ildp/HOWTO/FTP/FTP-3.html' title='' rel='nofollow'>http://www.pluto.it/files/ildp/HOWTO/FTP/FTP-3.html</a>
+</td></tr><tr ><td bgcolor='#d4e1f0'  valign='top'>Funzione fork()
+</td></tr><tr ><td  valign='top'><a class='urllink' href='http://www.cs.unibo.it/~ghini/didattica/reti_lpr/TAC007.pdf' title='' rel='nofollow'>http://www.cs.unibo.it/~ghini/didattica/reti_lpr/TAC007.pdf</a>
+</td></tr></table>
+<div class='vspace'></div><hr />
+<p  style='text-align: left; background-color: #d9e4f2; font-size: 10pt; color: black; padding: 5px;'><a style='color: black' class='categorylink' href='../Category/UniCrema.html'><strong>UniCrema</strong></a> | <a style='color: black' class='categorylink' href='../Category/PrimoSemestre.html'>Primo Semestre</a> | <a style='color: black' class='categorylink' href='../Category/SecondoAnno.html'>Secondo Anno</a> | <a style='color: black' class='categorylink' href='../Category/Informatica.html'>Informatica</a> - <a style='color: black' class='categorylink' href='../Category/Sicurezza.html'>Sicurezza</a> - <a style='color: black' class='categorylink' href='../Category/TS.html'>TS</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: July 15, 2018, at 03:17 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Sistemi?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Sistemi?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

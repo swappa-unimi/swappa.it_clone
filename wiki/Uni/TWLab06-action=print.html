@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Tecnologie Web - Laboratorio 6</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TWLab06.html' title='Tecnologie Web - Laboratorio 6'>Tecnologie Web - Laboratorio 6</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio 6 ::</strong>
+</pre><p class='vspace'><strong>NOTA</strong>:<br />In questi esercizi viene utilizzata la libreria di tag standard JSTL che non è installata nel container e quindi va installata manualmente.<br />Tutti i file necessari si trovano in questo ZIP: <a class='urllink' href='../uploads/Uni/librerie.zip' title='' rel='nofollow'>Attach:librerie.zip</a>
+</p>
+<div class='vspace'></div><ul><li>jstl.jar   (installato in: &lt;inizialeCognome&gt;\WEB-INF\lib)
+</li><li>standard.jar   (installato in: &lt;inizialeCognome&gt;\WEB-INF\lib)
+</li><li>commons-lang-2.0.jar   (installato in: &lt;inizialeCognome&gt;\WEB-INF\lib)
+</li><li>taglibs-string.jar   (installato in: &lt;inizialeCognome&gt;\WEB-INF\lib)
+</li><li>taglibs-string.tld   (installato in: &lt;inizialeCognome&gt;\WEB-INF)
+</li></ul><div class='vspace'></div><h2>Esercizio 1</h2>
+<p><strong>Seguite le note indicate sopra ed installate la JSTL e la string tag library. Quindi copiate i due file dateForm.jsp e dateHandler.jsp nella vostra web application e verificate che funzionino correttamente.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><strong>dateForm.jsp</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ taglib prefix="c"
+uri="http://java.sun.com/jsp/jstl/core" %&gt;
+&lt;form method="post" action="dateHandler.jsp"&gt;
+Please enter your birthday:
+&lt;select name="month"&gt;
+	&lt;option value="Jan"&gt;January&lt;/option&gt;
+	&lt;option value="Feb"&gt;February&lt;/option&gt;
+	&lt;option value="Mar"&gt;March&lt;/option&gt;
+	&lt;option value="Apr"&gt;April&lt;/option&gt;
+	&lt;option value="May"&gt;May&lt;/option&gt;
+	&lt;option value="Jun"&gt;June&lt;/option&gt;
+	&lt;option value="Jul"&gt;July&lt;/option&gt;
+	&lt;option value="Aug"&gt;August&lt;/option&gt;
+	&lt;option value="Sep"&gt;September&lt;/option&gt;
+	&lt;option value="Oct"&gt;October&lt;/option&gt;
+	&lt;option value="Nov"&gt;November&lt;/option&gt;
+	&lt;option value="Dec"&gt;December&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;select name="day"&gt;
+	&lt;c:forEach begin="1" end="31" var="day"&gt;
+	  &lt;option&gt;&lt;c:out value="${day}"/&gt;&lt;/option&gt;
+	&lt;/c:forEach&gt;
+&lt;/select&gt;
+
+&lt;select name="year"&gt;
+	&lt;c:forEach begin="1930" end="2003" var="year"&gt;
+	  &lt;option&gt;&lt;c:out value="${year}"/&gt;&lt;/option&gt;
+	&lt;/c:forEach&gt;
+&lt;/select&gt;
+
+&lt;input type="submit" value="Submit" /&gt;
+
+&lt;/form&gt;
+</pre>
+<p class='vspace'><strong>dateHandler.jsp</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %&gt;
+&lt;%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %&gt;
+&lt;fmt:parseDate
+	var="date"
+	parseLocale="en_US"
+	value="${param.month} ${param.day}, ${param.year}"/&gt;
+	You were born
+&lt;fmt:formatDate
+
+value="${date}"
+
+dateStyle="full"/&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p><strong>Scrivete il codice HTML per una semplice form di inserimento dati. La form dovrà contenere una lista di aggettivi che descrivono il carattere di una persona (sotto forma di check box). In base agli aggettivi selezionati, dovrà comparire una seconda form con la lista degli aggettivi. Nel caso si facesse il submit selezionando un particolare aggettivo (a vostra scelta) presente nell’elenco, nella seconda form, oltre a visualizzare gli aggettivi selezionati, visualizzate anche un messaggio di commento relativo all’aggettivo scelto.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><strong>carattere.html</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt; Che carattere hai?&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="carattere.jsp" method="post"&gt;
+    Seleziona i lati del tuo carattere&lt;/br&gt;
+      &lt;input type="checkbox" name="lato" value="solare"&gt;solare&lt;br /&gt;
+      &lt;input type="checkbox" name="lato" value="simpatico"&gt;simpatico&lt;br /&gt;
+      &lt;input type="checkbox" name="lato" value="rompiscatole"&gt;rompiscatole&lt;br /&gt;
+      &lt;input type="checkbox" name="lato" value="scontroso"&gt;scontroso&lt;br /&gt;
+      &lt;input type="checkbox" name="lato" value="misterioso"&gt;misterioso&lt;br /&gt;
+      &lt;input type="checkbox" name="lato" value="permaloso"&gt;permaloso&lt;br /&gt;
+
+      &lt;input type="submit" value="Invia"&gt;   
+
+    &lt;/form&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'><strong>carattere.jsp</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%&gt;
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+&lt;title&gt;Checkbox multipli&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;tu sei un tipo&lt;/h3&gt;
+&lt;c:forEach items="${paramValues.lato}" var="lato"&gt;
+    &lt;c:choose&gt;
+        &lt;c:when test="${lato=='permaloso'}"&gt;
+            ${lato}
+            permaloso? meno male che lo ammetti
+        &lt;/c:when&gt;
+        &lt;c:otherwise&gt;
+            ${lato}
+        &lt;/c:otherwise&gt;
+    &lt;/c:choose&gt;     
+    &lt;br /&gt;
+&lt;/c:forEach&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p><strong>Scrivete il codice HTML per una semplice form di inserimento dati relativo alla scelta di generi di libri (sotto forma di check box). In base ai generi selezionati, dovrà comparire una seconda form in cui sono riportati i generi scelti e per ogni genere selezionato sia presente una lista di libri di quel genere. Cliccando sul nome del libro l’utente viene indirizzato verso una URL di presentazione del libro.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><strong>libro.html</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt; Che libri ti piacciono?&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="libro.jsp" method="post"&gt;
+    Seleziona il genere che preferisci&lt;/br&gt;
+      &lt;input type="checkbox" name="genere" value="romantico"&gt;romantico&lt;br /&gt;
+      &lt;input type="checkbox" name="genere" value="drammatico"&gt;drammatico&lt;br /&gt;
+      &lt;input type="checkbox" name="genere" value="giallo"&gt;giallo&lt;br /&gt;
+      &lt;input type="checkbox" name="genere" value="horror"&gt;horror&lt;br /&gt;
+      &lt;input type="checkbox" name="genere" value="fantascienza"&gt;fantascienza&lt;br /&gt;
+      &lt;input type="checkbox" name="genere" value="erotico"&gt;erotico&lt;br /&gt;
+
+      &lt;input type="submit" value="Invia"&gt;   
+
+    &lt;/form&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'><strong>libro.jsp</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%&gt;
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+&lt;title&gt;genere di libro&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;l'elenco dei libri&lt;/h3&gt;
+&lt;c:forEach items="${paramValues.genere}" var="gen"&gt;
+
+    &lt;c:if test="${gen=='romantico'}" &gt;
+    &lt;/br&gt;Lista dei libri di genere ${gen} &lt;/br&gt;
+      &lt;a href="&lt;c:url value="http://www.ibs.it/code/9788846208439/ahern-cecelia/
+p-s-i-love-you.html"/&gt;"/&gt;PS I LOVE YOU &lt;/a&gt;&lt;/br&gt;
+      &lt;a href="&lt;c:url value="http://www.ibs.it/code/9788882744137/steel-danielle
+/incontri.html"/&gt;"/&gt;Incontri &lt;/a&gt;
+    &lt;/c:if&gt;
+
+     &lt;c:if test="${gen=='drammatico'}" &gt;
+    &lt;/br&gt;Lista dei libri di genere ${gen} &lt;/br&gt;
+      &lt;a href="&lt;c:url value="http://www.ibs.it/code/9788860612854/bradford-barbara-
+taylor/segreto-egrave-per-sempre.html"/&gt;"/&gt;Un segreto è per sempre &lt;/a&gt;&lt;/br&gt;
+    &lt;/c:if&gt;
+
+    &lt;c:if test="${gen=='giallo'}" &gt;
+    &lt;/br&gt;Lista dei libri di genere ${gen} &lt;/br&gt;
+      &lt;a href="&lt;c:url value="http://www.ibs.it/code/9788878992535/doyle-arthur-
+conan/segno-dei-quattro.html"/&gt;"/&gt;il segno dei quattro &lt;/a&gt;&lt;/br&gt;
+      &lt;a href="&lt;c:url value="http://www.ibs.it/code/9788878992559/doyle-arthur-
+conan/mastino-dei-baskerville.html"/&gt;"/&gt;il mastino dei baskerville&lt;/a&gt;
+    &lt;/c:if&gt;
+&lt;/c:forEach&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 4</h2>
+<p><strong>Inventate una sorta di “test psicologico/attitudinale” (stile Facebook), costituito da 5 domande a risposta multipla. In base alle risposte date, dovrà comparire il profilo della persona che ha compilato il test.</strong> 
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>File HTML <strong>test.html</strong> che mostra la form col test. Il codice è indentato male per motivi di impaginazione di Swappa, se non si va a capo sbarella tutto.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt; Che carattere hai?&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="test.jsp" method="post"&gt;
+    &lt;h3&gt;che animale sei?&lt;/h3&gt;
+    &lt;ol&gt;
+      &lt;li&gt; vedi un anziano per strada che è caduto. casa fai?&lt;br /&gt;
+      &lt;input type="radio" name="domanda1" value="schivo"&gt;gli rubi 
+il portafoglio e scappi&lt;br /&gt;
+      &lt;input type="radio" name="domanda1" value="aggressivo"&gt;lo 
+investi ripetutamente&lt;br /&gt;
+      &lt;input type="radio" name="domanda1" value="amorevole"&gt;lo aiuti 
+ad alzarsi e ti assicuri che non si sia fatto nulla&lt;br /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Sei sull'autobus ed il tipo davanti a te puzza di sudore&lt;br /&gt;
+       &lt;input type="radio" name="domanda2" value="schivo"&gt;te ne vai 
+seccato&lt;br /&gt;
+       &lt;input type="radio" name="domanda2" value="aggressivo"&gt;glielo 
+dici e lo mandi via \&lt;br /&gt;
+       &lt;input type="radio" name="domanda2" value="amorevole"&gt;lo inviti
+ a casa tua e con una scusa lo inzuppi con la canna dell'acqua&lt;br /&gt;
+      &lt;/li&gt;
+       &lt;li&gt;un professore ti mette un brutto voto. cosa fai?&lt;br /&gt;
+       &lt;input type="radio" name="domanda3" value="schivo"&gt;gli fai una
+ riga sulla macchina col favore delle tenebre&lt;br /&gt;
+       &lt;input type="radio" name="domanda3" value="aggressivo"&gt;lo aspetti
+ fuori dall'uni per vedere che faccia fa quando al posto della sua auto 
+troverà solo cenere \&lt;br /&gt;
+       &lt;input type="radio" name="domanda3" value="amorevole"&gt;accetti il 
+voto ma nella tua mente lo stramaledici&lt;br /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;quando senti la parola tè..&lt;br /&gt;
+       &lt;input type="radio" name="domanda4" value="schivo"&gt;inorridisci 
+perchè l'accento è chiuso come dovrebbe esserlo anche in questa frase&lt;br /&gt;
+       &lt;input type="radio" name="domanda4" value="aggressivo"&gt;cominci 
+a sbarellare e prendi a calci la macchinetta per avere una latina &lt;br /&gt;
+       &lt;input type="radio" name="domanda4" value="amorevole"&gt;acquisti 
+regolarmente una lattina e la gusti mentre ti fai una doccia col tipo 
+di prima dell'autobus&lt;br /&gt;
+      &lt;/li&gt;
+      &lt;li&gt;quando mauro si gigiola tu...&lt;br /&gt;
+       &lt;input type="radio" name="domanda5" value="schivo"&gt;inorridisci 
+perché l'accento delle parole che sussurra mentre si abbraccia
+ è sbagliato&lt;br /&gt;
+       &lt;input type="radio" name="domanda5" value="aggressivo"&gt;cominci 
+a picchiarlo finchè non sbaglia un accento (e ce ne vuole) &lt;br /&gt;
+       &lt;input type="radio" name="domanda5" value="amorevole"&gt;ti 
+unisci a lui al gigiolamento metre gianini arriva geloso del fatto 
+che non l'abbiamo invitato&lt;br /&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+      &lt;input type="submit" value="Invia"&gt;   
+
+    &lt;/form&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'>File <strong>test.jsp</strong> che valuta le scelte effettuate nella form HTML. Non è una bellezza di codice, sicuramente ci sono altri mille modi migliori per farlo, però funziona.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%&gt;
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+&lt;title&gt;PROFILO&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;Ecco il tuo profilo&lt;/h3&gt;
+
+&lt;%
+int schivo=0;
+int amorevole=0;
+int aggressivo=0;
+%&gt;
+
+&lt;c:forEach items="${paramValues.domanda1}" var="d1"&gt;
+    &lt;c:if test="${d1=='schivo'}" &gt;
+      &lt;%
+        schivo = schivo+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+    &lt;c:if test="${d1=='aggressivo'}" &gt;
+      &lt;%
+        aggressivo = aggressivo+1;
+      %&gt;
+    &lt;/c:if&gt;  
+
+    &lt;c:if test="${d1=='amorevole'}" &gt;
+      &lt;%
+        amorevole = amorevole+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+&lt;/c:forEach&gt;
+
+&lt;c:forEach items="${paramValues.domanda2}" var="d2"&gt;
+    &lt;c:if test="${d2=='schivo'}" &gt;
+      &lt;%
+        schivo = schivo+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+    &lt;c:if test="${d2=='aggressivo'}" &gt;
+      &lt;%
+        aggressivo = aggressivo+1;
+      %&gt;
+    &lt;/c:if&gt;  
+
+    &lt;c:if test="${d2=='amorevole'}" &gt;
+      &lt;%
+        amorevole = amorevole+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+&lt;/c:forEach&gt;
+
+&lt;c:forEach items="${paramValues.domanda3}" var="d3"&gt;
+    &lt;c:if test="${d3=='schivo'}" &gt;
+      &lt;%
+        schivo = schivo+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+    &lt;c:if test="${d3=='aggressivo'}" &gt;
+      &lt;%
+        aggressivo = aggressivo+1;
+      %&gt;
+    &lt;/c:if&gt;  
+
+    &lt;c:if test="${d3=='amorevole'}" &gt;
+      &lt;%
+        amorevole = amorevole+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+&lt;/c:forEach&gt;
+
+&lt;c:forEach items="${paramValues.domanda4}" var="d4"&gt;
+    &lt;c:if test="${d4=='schivo'}" &gt;
+      &lt;%
+        schivo = schivo+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+    &lt;c:if test="${d4=='aggressivo'}" &gt;
+      &lt;%
+        aggressivo = aggressivo+1;
+      %&gt;
+    &lt;/c:if&gt;  
+
+    &lt;c:if test="${d4=='amorevole'}" &gt;
+      &lt;%
+        amorevole = amorevole+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+&lt;/c:forEach&gt;
+
+&lt;c:forEach items="${paramValues.domanda5}" var="d5"&gt;
+    &lt;c:if test="${d5=='schivo'}" &gt;
+      &lt;%
+        schivo = schivo+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+    &lt;c:if test="${d5=='aggressivo'}" &gt;
+      &lt;%
+        aggressivo = aggressivo+1;
+      %&gt;
+    &lt;/c:if&gt;  
+
+    &lt;c:if test="${d5=='amorevole'}" &gt;
+      &lt;%
+        amorevole = amorevole+1;
+      %&gt;
+    &lt;/c:if&gt;    
+
+&lt;/c:forEach&gt;
+
+&lt;% if( (schivo &gt;= amorevole) &amp;&amp; (schivo &gt;= aggressivo) ) {%&gt;
+
+sei: &lt;b&gt;SCHIVO&lt;/b&gt;  
+
+&lt;%}%&gt;
+
+&lt;% if( (amorevole &gt;= schivo) &amp;&amp; (amorevole &gt;= aggressivo) ) {%&gt;
+
+sei: &lt;b&gt;AMOREVOLE&lt;/b&gt;  
+
+&lt;%}%&gt;
+
+&lt;% if( (aggressivo &gt;= amorevole) &amp;&amp; (aggressivo &gt;= schivo) ) {%&gt;
+
+sei: &lt;b&gt;AGGRESSIVO&lt;/b&gt;  
+
+&lt;%}%&gt;
+
+&lt;/br&gt;&lt;/br&gt;&lt;/br&gt;
+I valori che hai inserito sono: &lt;/br&gt;
+
+schivo: &lt;%= schivo%&gt;
+amorevole: &lt;%= amorevole%&gt;
+aggressivo: &lt;%= aggressivo%&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TWLab06)</span></div>
+  </div>
+</body>
+</html>

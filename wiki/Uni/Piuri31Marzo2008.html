@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Lezione del 31 marzo 2008  </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Piuri31Marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Lezione del 31 marzo 2008 
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri31Marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri31Marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Piuri31Marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri31Marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri31Marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Lezione del 31 marzo 2008  was last modified on March 31, 2008, at 05:20 PM'>
+							<span style='display:none;'>Sistemi Operativi - Lezione del 31 marzo 2008 </span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi operativi - Lezione del 31 marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 1: Caratterizzazione dei deadlock</strong></span>
+</p>
+<p class='vspace'>I deadlock (dl da qui in poi) non accadono sempre: devono essere soddisfatte 4 condizioni affinché accadano.
+</p>
+<div class='vspace'></div><ol><li>C'è una risorsa in mutua esclusione.
+</li><li>Hold &amp; wait
+</li><li>Assenza di rilascio anticipato
+</li><li>Attesa circolare
+</li></ol><p class='vspace'><strong>Mutua esclusione</strong>: ovviamente, se non ho risorse per cui "lottare", non c'è nemmeno una possibilità di dl.
+</p>
+<p class='vspace'><strong>Hold &amp; Wait</strong>: è una situazione in cui un processo ha già delle risorse (<strong>hold</strong>), ma deve attenderne ancora delle altre (<strong>wait</strong>).
+</p>
+<p class='vspace'><strong>Assenza di rilascio anticipato</strong>: vuol dire che non posso privare un processo delle risorse che ha già acquisito.
+</p>
+<p class='vspace'><strong>Attesa circolare</strong>: Il processo A ha delle risorse e ne attende dal processo B, il quale a sua volta attende le risorse di A. Insomma, un cerchio dell'ammmore, con anche più di 2 processi.
+</p>
+<p class='vspace'>Quando <strong>tutte</strong> ste condizioni sono verificate, ho un dl.
+</p>
+<div class='vspace'></div><h3>I grafi di allocazione delle risorse</h3>
+<p>Suddetti grafi hanno come nodi le risorse ed i processi.
+</p>
+<p class='vspace'>Un arco uscente da una risorsa ed entrante in un nodo significa che quella risorsa è assegnata a quel nodo.
+Un arco uscente da un nodo ed entrante in una risorsa significa che quel nodo ha fatto richiesta di quella risorsa.
+</p>
+<p class='vspace'>Inoltre, le risorse hanno dei pallini. X pallini nel nodo della risorsa stanno a significare che ci sono X copie di quella risorsa disponibili da dar via.
+</p>
+<p class='vspace'>Ho un dl quando ho un ciclo, e devo verificare anche che i pallini siano tutti esauriti. Ma non è sempre vero che se ho un ciclo ho un dl: infatti, se i pallini <strong>non</strong> sono esauriti, allora non ho un deadlock. Quindi occhio ai pallini! Non fatemelo disegnare, please...
+</p>
+<p class='vspace'>Attenzione: in un sistema distribuito, il grafo si fa molto più complesso. Noi qui ci occupiamo solo dei sistemi monocalcolatore.
+</p>
+<div class='vspace'></div><h3>Gestire il deadlock</h3>
+<p>Un SO può porsi in modi diversi di fronte al problema del deadlock. Mantenere un grafo delle risorse e periodicamente controllarlo può essere una via.
+</p>
+<p class='vspace'>Ci sono però diverse strategie a disposizione:
+</p><ul><li>Ignorare bellamente il deadlock
+</li><li>Prevenire il deadlock
+</li><li>Evitare il deadlock
+</li><li>Rilevarlo e recuperare
+</li></ul><p class='vspace'><strong>Ignorare</strong> il dl vuol dire esattamente quello: ignorare. Perché mai? La risposta è che la frequenza con cui i deadlock si presentano è molto bassa; l'utente in genere dopo un po' se ne accorge, e ci penserà lui ad accoppare i processi. È parimenti molto bassa la probabilità che al prossimo riavvio i processi si metteranno in un ordine tale per cui il dl accada di nuovo.
+</p>
+<p class='vspace'><strong>Prevenire</strong> il dl vuol dire invece fare in modo che un processo venga attivato SOLO se c'è certezza che il dl non avvenga mai.
+</p>
+<p class='vspace'><strong>Evitare</strong> invece permette che i processi partano, e poi vede di smanettare per evitare che i processi già partiti creino dl. Quindi, a differenza della <strong>prevenzione</strong>, non impedisce ai processi di essere esguiti.
+</p>
+<p class='vspace'><strong>Rilevazione e recupero</strong> sta a significare che il SO permette che il deadlock accada, e poi vedrà in qualche modo di accorgersene, e uccidere processi finché il dl non scompare.
+</p>
+<p class='vspace'>Ognuna di queste scelte ha il suo costo, tenendo in mente sia quanto tempo perdo a rilevare i dl, sia quanto è alta la probabilità che accadano. Quindi occorre bilanciare.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2: Tecniche di prevenzione del deadlock</strong></span>
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/dreadlock.jpg' alt='' title='' /><br /><strong>Un d(r)eadlock</strong></span></div>
+<p>Si tratta di tecniche che cercano di annullare una della 4 condizioni viste prima, dal momento che abbiamo detto che devono verificarsi tutte e 4 per avere un deadlock.
+</p>
+<div class='vspace'></div><h3>Prevenire la mutua esclusione</h3>
+<p>Il SO cerca di fare in modo che solo le risorse che ne hanno bisogno possano attivare la mutex, ovvero quello che ne hanno <strong>intrinsecamente</strong> bisogno.
+Per le altre, impedisce la mutex: se il loro utilizzo condiviso non crea problemi, perché inventarsene?
+</p>
+<div class='vspace'></div><h3>Prevenire la hold &amp; wait</h3>
+<p>È la condizione per cui un processo che ha delle risorse sta attendendo che se ne liberino delle altre. Per evitare una situazione del genere, ci sono 2 approcci:
+</p>
+<p class='vspace'><strong>1.</strong> Un processo deve chiedere in blocco tutte le risorse necessarie quando viene avviato. Se non le ha tutte, non viene nemmeno avviato. Alla fine, le rilascia tutte.
+</p>
+<p class='vspace'>Il problema qui è evidente: il programma va scritto nel modo opportuno, innanzitutto. Ma poi, succede anche che si riduce di parecchio il parallelismo, perché un processo può monopolizzare anche delle risorse che usa poco, e impedire che altri ne usufruiscano e avanzino nella loro computazione.
+</p>
+<p class='vspace'><strong>2.</strong> Un processo che vuole delle risorse ulteriori rispetto a quelle che ha già, deve rilasciarle tutte e poi, all'occorrenza, riprenderle ancora tutte PIÙ quella che gli serve in quel momento. 
+</p>
+<p class='vspace'>Almeno questo sistema garantisce un po' di parallelismo in più rispetto al sistema <strong>1</strong>.
+</p>
+<p class='vspace'>Comunque, quale che sia il mio metodo per prevenire la hold &amp; wait, ho che in generale le risorse vengono sottoutilizzate per via di queste "paranoie" sul lock, e alcuni processi potrebbero morire di starvation, ovvero attendere indefinitamente che i progressi prepotenti liberino le risorse.
+</p>
+<div class='vspace'></div><h3>Preemption</h3>
+<p>Vuol dire, in altre parole, prevenire la non-preemption:)
+Preemption vuol dire che rubo le risorse ad un processo per darle ad un altro. Naturalmente il furto non è sempre giustificato, occorre rispettare delle condizioni, ovvero che il rilascio anticipato NON crei problemi di consistenza.
+</p>
+<p class='vspace'>Se un processo chiede risorse, e ne ha delle altre che non sono rilasciabili, allora
+</p><ul><li>rilascio anticipatamente tutte le sue risorse;
+</li><li>metto le mie vecchie risorse nella lista di quelle che vorrei;
+</li><li>aspetto di riaverle tutte.
+</li></ul><p class='vspace'>È come il sistema 2 della prevenzione della hold &amp; wait, con la differenza che qui rilascio solo le risorse che possono essere ripristinate, ovvero che non creerebbero problemi di consistenza.
+</p>
+<p class='vspace'>Se un processo chiede risorse
+</p><ul><li>se sono disponibili, pronti, gliele diamo.
+</li><li>se NON sono disponibili, devo agire in 2 modi diversi
+<ul><li>se appartengono ad un processo che deve attendere altre risorse, allora gliele posso fregare: aspetterà un po' di più.
+</li><li>se appartengono a processi che invece le stanno usando, allora sarò io ad attendere.
+</li></ul></li></ul><p class='vspace'>Ciò vuol dire che faccio preemption solo se c'è un processo in attesa di <em>altre</em> risorse, altrimenti no.
+</p>
+<div class='vspace'></div><h3>Prevenzione dell'attesa circolare</h3>
+<p>Questa mi sa che è la più paranoica.
+Devo dare un ordinamento globale a TUTTE le mie risorse, in modo che siano numerate, e che date due risorse io sappia sempre dire se l'indice di una è maggiore o minore dell'indice dell'altra.
+</p>
+<p class='vspace'>Fatto ciò (che è una cosa ingrata), obbligo i processi a chiedere SOLO risorse che indice MAGGIORE di quello della risorsa con più grande indice che già ha.
+In altre parole, se il processo A ha la risorsa R<sub>25</sub>, potrà chiedere solo risorse indicizzate da R<sub>26</sub> in su, e non da R<sub>25</sub> in giù.
+</p>
+<p class='vspace'>Se proprio vuole risorse con indice più basso, allora deve mollare tutte quelle che ha con indice maggiore di quella voluta, e ripartire da quella con indice più basso.
+</p>
+<p class='vspace'>Sembrerà balordo, ma evita le attese circolari, perché non potrà mai accadere che due processi si attendano l'un l'altro: gli indici lo proibiscono.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 4 - Tecniche per rilevazione e ripristino</strong></span>
+</p>
+<p class='vspace'>Permetto che accada il dl, lo rilevo e poi recupero.
+</p>
+<p class='vspace'>Vi ricordate il grafo delle allocazioni di prima?
+Bene. Facciamo ora la considerazione che, sinceramente, di sapere QUALE sia la risorsa che causa il dilemma, a noi non interessa niente. Ci basta sapere che un processo attende da un'altro processo, e tant'è.
+</p>
+<p class='vspace'>In questo modo, possiamo togliere un sacco di nodi dal grafo, renderlo più semplice e quindi avere un algoritmo di rilevamento dei cicli che lavora su un numero inferiore di nodi, ovvero tendenzialmente più rapido. Questo grafo si chiama <strong>wait-for</strong>, in cui un arco uscente da un nodo-processo ed entrante in un altro nodo-processo sta a significare che il primo processo vuole qualcosa che il secondo ha.
+</p>
+<p class='vspace'>Purtroppo, questo funziona SOLO se ho risorse con istanze singole. Se ho risorse con istanze multiple (il numero di pallini del grafo di allocazione delle risorse, per intenderci), allora la cosa si fa molto più complicata.
+Non basta più un grafo, occorrono delle matrici e dei vettori, e l'algoritmo si fa molto più complesso.
+</p>
+<div class='vspace'></div><h3>Quando faccio partire quest'algoritmo?</h3>
+<p>Posso decidere di farlo partire ogni volta che un processo chiede una risorsa e scopre che è occupata. Ok, però si capisce subito che l'overhead diventa tanto: chissà quante volte devo controllare il grafo!
+</p>
+<p class='vspace'>Altrimenti, decido di eseguire l'algoritmo ogni tot tempo. Il problema è che magari nel frattempo si possono essere accumulati un po' di stalli. Ma è sicuramente meno costoso che farlo ad ogni richiesta fallita.
+</p>
+<div class='vspace'></div><h3>E quando ho trovato un dl?</h3>
+<p>Un sistema un po' barbaro ma efficace consiste nell'accoppare tutti i processi che stanno nel ciclo. Sicuramente risolvo il problema del dl, ma è altrettanto sicuro che spreco un sacco di risorse uccidendo processi magari innocenti.
+</p>
+<p class='vspace'>Oppure, ne posso uccidere uno alla volta (di processi), fintantoché il dl non scompare. Lo svantaggio è che devo ripetere l'algo per ogni uccisione.
+</p>
+<div class='vspace'></div><h3>Ok, uccido processi. Ma quali?</h3>
+<p>Posso scegliere un criterio qualsiasi per uccidere i processi, nel caso non voglia compiere un genocidio. Posso ad esempio prendere quelli con priorità più bassa, o quelli che sono in esecuzione da meno tempo o quelli fatti partire da un utente a me antipatico.
+</p>
+<p class='vspace'>Qualsiasi cosa io faccia, devo però stare attento a far sì che le risorse che vengono rilasciate forzatamente possano fare un rollback e tornare in uno stato consistente precedente. E poi, devo anche stare attento quando uso un criterio, perché può darsi che ad ogni deadlock che si ripresenta, uccido sempre il solito processo sfortunato, il quale quindi andrebbe a trovarsi in una situazione di starvation.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 31, 2008, at 05:20 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri31Marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri31Marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

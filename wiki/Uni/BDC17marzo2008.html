@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Basi di Dati - Complementi - Lezione del 17 marzo 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.BDC17marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Basi di Dati - Complementi - Lezione del 17 marzo 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC17marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC17marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='BDC17marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC17marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC17marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Basi di Dati - Complementi - Lezione del 17 marzo 2008 was last modified on April 17, 2009, at 01:11 PM'>
+							<span style='display:none;'>Basi di Dati - Complementi - Lezione del 17 marzo 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+<div class='vspace'></div><h2>Ancora sulla concorrenza</h2>
+<p>Dopo la piacevole settimana di pausa con Sara Foresti, ecco che la titolare del corso ha ripreso la faccenda della <strong>gestione della concorrenza</strong>.
+</p>
+<div class='vspace'></div><h3>Conflict-serializzabilità</h3>
+<p>Abbiamo visto nella <a class='wikilink' href='BDC4marzo2008.html'>lezione precedente</a> che calcolare la bontà di uno schedule secondo i dettami della view-serializzabilità è un problema <strong>np-hard</strong>, e quindi troppo costoso.
+</p>
+<p class='vspace'>Vediamo di stringere quindi i requisiti di correttezza per trovare sistemi più rapidi dal punto di vista computazionale.
+</p>
+<p class='vspace'>Uno di questi è proprio la <strong>conflict-serializzabilità</strong>, che è basata sul concetto di <strong>conflict-equivalenza</strong>.
+</p>
+<p class='vspace'>Un <strong>conflict</strong> tra due operazioni si ha quando 
+</p><ol><li><em>almeno</em> una delle due è un'operazione di scrittura;
+</li><li>avvengono sullo stesso oggetto;
+</li><li>appartengono a 2 transazioni diverse.
+</li></ol><p class='vspace'>Quindi, i casi possono essere <strong>rw</strong>, <strong>wr</strong>, <strong>ww</strong>.
+</p>
+<p class='vspace'>2 schedule sono <strong>conflict-equivalenti</strong> quando sono definite sulle stesse transazioni, e ogni coppia di operazioni in conflitto apapre nello stesso ordine in entrambi gli schedule.
+Se uno schedulo è conflic-equivalente ad uno schedule seriale, allora quel primo schedule è conflict-serializzabile.
+</p>
+<p class='vspace'>Vediamo un esempio:
+</p>
+<div class='vspace'></div><pre> S: w<sub>0</sub>(x) r<sub>1</sub>(x) w<sub>0</sub>(z) r<sub>1</sub>(z) r<sub>2</sub>(x) r<sub>3</sub>(z) w<sub>3</sub>(z) w<sub>1</sub>(x)
+</pre><p class='vspace'>I conflitti in questo schedule sono:
+</p><pre> w<sub>0</sub>(x) r<sub>1</sub>(x)    t0 -&gt; t1
+ w<sub>0</sub>(x) r<sub>2</sub>(x)    t0 -&gt; t2
+ w<sub>0</sub>(x) w<sub>1</sub>(x)    t0 -&gt; t1
+ w<sub>0</sub>(z) r<sub>1</sub>(z)    t0 -&gt; t1
+ w<sub>0</sub>(z) r<sub>3</sub>(z)    t0 -&gt; t3
+ w<sub>0</sub>(z) w<sub>3</sub>(z)    t0 -&gt; t3
+ r<sub>1</sub>(z) w<sub>3</sub>(z)    t1 -&gt; t3
+ r<sub>2</sub>(x) w<sub>1</sub>(x)    t0 -&gt; t1
+</pre><p class='vspace'>E adesso che faccio? Devo disegnare il <strong>grafo dei conflitti</strong>, ovvero un grafo in cui i <strong>nodi</strong> siano le transazioni, e gli archi direzionali tra i nodi siano le relazioni che ho visto qui sopra. Ad esempio, se qui sopra ho scritto
+</p>
+<div class='vspace'></div><pre> t0 -&gt; t1
+</pre><p class='vspace'>vuol dire che deve esserci un arco che va da t0 a t1.
+</p>
+<p class='vspace'>Orbene, se questo grafo è <strong>aciclico</strong>, allora lo schedule è conflict-serializzabile. Un qualsiasi <strong>ordinamento topologico</strong> del grafo è uno schedule seriale conflict-equivalente con il mio schedule.
+</p>
+<p class='vspace'>Che cosa è un <strong>ordinamento topologico</strong>?
+Vuol dire che è una lista di nodi, fatta in modo tale che vengano rispettati gli ordini di apparizione dei nodi stessi. Se c'è un arco che va dal nodo <strong>a</strong> al nodo <strong>b</strong>, vuol dire che nella mia sequenza <strong>a</strong> deve venire prima di <strong>b</strong>, anche se in mezzo ci possono essere mille altri nodi, o nessuno. Per ogni nodo devo rispettare questa sequenza.
+</p>
+<p class='vspace'>Ecco il mio bel grafetto:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/bdc01.jpg' alt='' title='' /></div>
+<p class='vspace'>È ciclico? No. Allora, lo schedule serializzabile tratto dal grafo è:
+</p>
+<div class='vspace'></div><pre> t0 t2 t1 t3
+</pre><p class='vspace'>perché rispetta tutte le precedenze (le frecce) del grafo.
+</p>
+<p class='vspace'>L'insieme degli schedule conflict-serializzabili (CSR) è un sottinsieme degli schedule view-serializzabili (VSR). Ciò vuol dire che un CSR è sicuramente un VSR, ma NON viceversa.
+</p>
+<p class='vspace'>Che cosa un VSR accetta e invece il CSR rifiuta? La risposta è: <strong>le scritture cieche</strong> (<strong>blind write</strong>).
+Una scrittura cieca è un'operazione di write su una risorsa, in una transzione, che in quella transazione non è preceduta da nessuna lettura della risorsa stessa. In pratica vuol dire che la transazione scrive su quella risorsa fregandosene bellamente del valore precedente.
+</p>
+<p class='vspace'>Le scritture cieche sono tollerate da VSR, ma non da CSR, e ora facciamo un bell'esempio.
+Lo schedule è:
+</p>
+<div class='vspace'></div><pre> S: r<sub>1</sub>(x) w<sub>2</sub>(x) w<sub>1</sub>(x) w<sub>3</sub>(x)
+</pre><p class='vspace'>Siccome siamo bravi vediamo subito che
+</p>
+<div class='vspace'></div><pre> r<sub>1</sub>(x) <strong>legge da</strong> niente
+</pre><p class='vspace'>e che <strong>w<sub>3</sub>(x)</strong> è <strong>scrittura finale</strong> di <strong>x</strong>. Inoltre ho un dato solo con 3 transazioni; se scambio l'ordine delle scritture alla fine ho sempre una scrittura che sovrascrive le altre.
+Lo schedule seriale view-equivalente pertanto è:
+</p>
+<div class='vspace'></div><pre> t1 t2 t3
+</pre><p class='vspace'>Adesso passiamo a vedere se è anche conflict-serializzabile.
+I conflitti sono:
+</p>
+<div class='vspace'></div><pre> r<sub>1</sub>(x) w<sub>2</sub>(x)    t1 -&gt; t2
+ r<sub>1</sub>(x) w<sub>3</sub>(x)    t1 -&gt; t3
+ w<sub>2</sub>(x) w<sub>1</sub>(x)    t2 -&gt; t1
+ w<sub>2</sub>(x) w<sub>3</sub>(x)    t2 -&gt; t3
+ 2<sub>1</sub>(x) w<sub>3</sub>(x)    t1 -&gt; t3
+</pre><p class='vspace'>Il grafo è:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/bcd02.jpg' alt='' title='' /></div>
+<p class='vspace'>Si vede bene che c'è un ciclo, quindi sta roba non è conflict-serializzabile.
+</p>
+<p class='vspace'>Decidere se un dato schedule è conflict-serializzabile ha un costo O(n) nell'ordine delle dimensioni del grafo. Molto meglio rispetto al costo polinomiale della verifica della view-serializzabilità, ma ai fini pratici è cmq troppo costoso, perché il grafo può essere bello ciccione.
+</p>
+<div class='vspace'></div><h3>E cambiare approccio?</h3>
+<p>Finora, il metodo di lavoro è stato: <em>prendo uno schedule, vedo se è buono e se sì lo utilizzo; se no ne prendo un altro</em>.
+Di sicuro otterrò risultati buoni se non ottimi, ma il problema è che ci metterei troppo tempo!
+</p>
+<p class='vspace'>Allora, si è pensato: invece di inventare lo schedule <em>prima</em> e verificarlo <em>poi</em>, non è più semplice seguire certe regole che automaticamente mi danno uno schedule buono?
+</p>
+<p class='vspace'>Sì, si può, e lo si fa con i questi sistemi:
+</p><ul><li>locking a due fasi
+</li><li>timestamp
+<ul><li>monoversione
+</li><li>multiversione
+</li></ul></li></ul><div class='vspace'></div><h3>Locking</h3>
+<div><span class='frame lfloat'><img src='../uploads/Uni/loc.jpg' alt='' title='' /><br /><strong>An loc</strong></span></div>
+<p class='vspace'>Il <strong>lock</strong> è una variabile che mi dice come sta una risorsa.
+Nella versione a <strong>2 fasi</strong>, una risorsa può essere
+</p><ul><li>0 = libera
+</li><li>1 = locked (bloccata)
+</li></ul><p class='vspace'>Nella versione a <strong>3 fasi</strong>, ho questi stati:
+</p><ul><li>0 = libera
+</li><li>1 = lock in lettura, condivisibile
+</li><li>2 = lock in scrittura, esclusivo
+</li></ul><p class='vspace'>Il fatto che nella versione a 3 fasi il lock in lettura è condivisibile, si spiega semplicemente: anche se 1000 persone leggono contemporaneamente una risorsa, non c'è problema, perché nessuno la modifica.
+Invece, se uno vuole scriverci sopra, allora nessun altro dovrebbe leggere mentre c'è una scrittura in corso, per evitare di leggere dati inconsistenti (eg leggo un pezzo prima di una scrittura, e un pezzo dopo, e il valore risultante è balordo).
+Teniamo infatti a mente che qui si parla di operazioni concorrenti.
+</p>
+<p class='vspace'>Quando una transazione vuole il lock di una risorsa, e questo NON le viene concesso, la transazione non è che muore, semplicemente entra in lista di attesa e verrà servita, prima o poi.
+</p>
+<p class='vspace'>Il signore che si occupa di gestire tutto ciò (la terminologia è della professoressa) si chiama <strong>gestore dei lock</strong>, e a dispetto del nome non si occupa di allocchi.
+</p>
+<p class='vspace'>Ecco le tabelle delle transizioni tra stati:
+</p>
+<div class='vspace'></div><table width='45%' border='0' cellpadding='5' cellspacing='0' align='center' >
+<tr ><td bgcolor='#d9e4f2' colspan='3' align='center'  valign='top'> <strong>Lock a 2 stati</strong>
+</td></tr><tr ><td  valign='top'> 
+</td><td align='center' colspan='2'  valign='top'> <strong>Stato</strong>
+</td></tr><tr ><td  valign='top'> <strong>Risorsa</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>unlocked</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>locked</strong>
+</td></tr><tr ><td bgcolor='#d9e4f2'  valign='top'> <strong>lock</strong>
+</td><td  valign='top'> OK -&gt; locked
+</td><td  valign='top'> NO -&gt; locked
+</td></tr><tr ><td bgcolor='#d9e4f2'  valign='top'> <strong>unlock</strong>
+</td><td  valign='top'> errore
+</td><td  valign='top'> OK -&gt; unlocked
+</td></tr></table>
+<p class='vspace'>Se sono nello stato <strong>unlocked</strong>, e mi viene richiesto un <strong>unlock</strong> per quella variabile, è ovvio che si tratta di un errore.
+</p>
+<div class='vspace'></div><table width='45%' border='0' cellpadding='5' cellspacing='0' align='center' >
+<tr ><td bgcolor='#d9e4f2' colspan='4' align='center'  valign='top'> <strong>Lock a 3 stati</strong>
+</td></tr><tr ><td  valign='top'> 
+</td><td align='center' colspan='3'  valign='top'> <strong>Stato</strong>
+</td></tr><tr ><td  valign='top'> <strong>Risorsa</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>unlocked</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>read locked</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>write locked</strong>
+</td></tr><tr ><td bgcolor='#d9e4f2'  valign='top'> <strong>read lock</strong>
+</td><td  valign='top'> OK -&gt; read locked
+</td><td  valign='top'> OK (c++)-&gt; read locked
+</td><td  valign='top'> NO -&gt; write locked
+</td></tr><tr ><td bgcolor='#d9e4f2'  valign='top'> <strong>write lock</strong>
+</td><td  valign='top'>OK -&gt; write locked
+</td><td  valign='top'> NO* -&gt; read locked
+</td><td  valign='top'> NO -&gt; write lock
+</td></tr><tr ><td bgcolor='#d9e4f2'  valign='top'> <strong>unlock</strong>
+</td><td  valign='top'> errore
+</td><td  valign='top'> OK (c--) -&gt; 
+<ul><li>se c=0: unlocked
+</li><li>se c&gt;0 read locked
+</li></ul></td><td  valign='top'> OK -&gt; unlock
+</td></tr></table>
+<p class='vspace'>Questa tabella è un po' più complessa.
+La variabile <strong>c</strong> è un contatore, che mi conta quante sono le transazioni che stanno accedendo <strong>in lettura</strong> a quella risorsa. Ogni volta che qualcuno chiede un lock di lettura, il contatore viene incrementato. Se qualcuno fa un unlock di lettura, il contatore viene decrementato.
+Se il contatore è 0, la risorsa passa nello stato unlocked. Altrimenti, rimane nello stato locked.
+</p>
+<p class='vspace'>L'asterisco invece dice che se c'è un unico lock di lettura su una variabile, da parte di una transazione, e poi quella stessa transazione vuole un lock di scrittura, questo viene concesso. In tutti gli altri casi no. Si chiama <strong>upgrade del lock</strong>.
+</p>
+<div class='vspace'></div><h3>2PL</h3>
+<p>Nel <strong>lock a 2 fasi</strong>, dopo aver lasciato un lock, una transazione non può più acquisirne altri.
+OCIO: vuol dire che non può acquisirne non solo per quella stessa risorsa, ma anche per <strong>tutte</strong> le altre risorse.
+L'idea è che una transazione entri in una fase crescente, dove acquisisce tutti i lock, e poi in una fase decrescente dove li molla tutti.
+</p>
+<p class='vspace'>Il <strong>lock a 2 fasi</strong>, <strong>2PL</strong> per i nemici, garantisce la serializzabilità. Basta quindi seguire le regole del lock, e ho dei buoni schedule, anche se ovviamente potrei scartare dei buoni scheduli che queste regole troppo strette non ammettono, ma che sarebbero comunque view-serializzabili.
+<strong>2PL</strong> è un sottinsieme di <strong>CSR</strong>.
+Esisteranno quindi degli schedule che sono CSR ma non sono 2PL.
+</p>
+<p class='vspace'>Esempio:
+</p>
+<div class='vspace'></div><pre> S: r<sub>1</sub>(x) w<sub>1</sub>(x) r<sub>2</sub>(x) w<sub>2</sub>(x) r<sub>3</sub>(y) w<sub>1</sub>(y)
+</pre><p class='vspace'>Conflitti:
+</p><pre> w<sub>1</sub>(x) r<sub>1</sub>(x)    t1 -&gt; t2
+ w<sub>1</sub>(x) w<sub>2</sub>(x)    t1 -&gt; t2
+ r<sub>1</sub>(x) w<sub>2</sub>(x)    t1 -&gt; t2
+ r<sub>3</sub>(y) w<sub>1</sub>(y)    t3 -&gt; t1
+</pre><p class='vspace'>Non sto a disegnare il grafo, cmq ho uno schedule seriale che va bene:
+</p><pre> t3 t1 t2
+</pre><p class='vspace'>Ma sta roba non è 2PL.
+Il motivo è: se <strong>t1</strong> acquisisce il lock su <strong>x</strong> all'inizio, poi deve rilasciarlo per dare il lock a <strong>t2</strong> sempre su <strong>x</strong>, e quindi non potrebbe riprenderlo dopo per scrivere su <strong>y</strong>.
+D'altro canto, <strong>t1</strong> potrebbe prendere all'inizio sia il lock su <strong>x</strong> che il lock su <strong>y</strong>. Ma a questo punto, avrei in mezzo la <strong>t3</strong> che vuole un lock su <strong>y</strong>, prima che <strong>t1</strong> possa rilasciarlo.
+Quindi, non c'è verso.
+</p>
+<p class='vspace'>OCIO: se invece NON ci fosse stata in mezzo l'operazione <strong>r<sub>3</sub>(y)</strong>, tutto sarebbe filato liscio perché <strong>t1</strong> avrebbe preso il lock di <strong>x</strong> e di <strong>y</strong> all'inizio, e avrebbe mollato il lock di <strong>x</strong> in favore di t2, ma NON avrebbe lasciato il lock di <strong>y</strong>.
+</p>
+<div class='vspace'></div><h3>2PL stretto e conservativo</h3>
+<p>All'inizio del discorso sulla gestione delle transazioni avevamo preso per ipotesi che fosse valida la <strong>commit-proiezione</strong>, cioè che tutte le trans andassero a commit e nessuna in abort.
+Ma nella realtà ciò non è affatto vero, e i miei bei discorsi su lock e non lock vacillerebbero sui loro piedi.
+</p>
+<p class='vspace'>Pertanto, si introduce il <strong>2PL stretto</strong>, che aggiunge una norma: <em>posso rilasciare lock solo dopo aver fatto commit o abort</em>. Questo permette al DBMS di sapere se le mie modifiche vanno updatate al sistema oppure no.
+In questo modo evito le letture sporche.
+</p>
+<p class='vspace'>Il <strong>2PL conservativo</strong> aggiunge invece al 2PL base la norma che <em>prima di fare qualsiasi operazione, una trans deve avere tutti i lock che le serviranno</em>. Evito quindi i deadlock, ovvero due trans che aspettano l'una la risorsa dell'altra e non se ne esce fuori.
+</p>
+<div class='vspace'></div><h3>Timestamp monoversione</h3>
+<p>In questo sistema, stabilisco che ogni evento deve avere un <strong>timestamp</strong> maggiore degli eventi che lo hanno preceduto.
+Il timestamp può essere un contatore, oppure derivare dal clock di sistema, quello che è, purché aumenti sempre. Mi permette di avere un <strong>ordinamento totale</strong> tra tutti le trans.
+</p>
+<p class='vspace'>Ogni oggetto (risorsa), poi, ha associate 2 informazioni aggiuntive:
+</p><ul><li><strong>RTM(x)</strong> = il max timestamp di chi legge x
+</li><li><strong>WTM(x)</strong> = il max timestamp di chi scrive x
+</li></ul><p class='vspace'>Vuol dire che la risorsa si porta appresso il timestamp della trans più giovane che ha avuto a che fare con lei.
+</p>
+<p class='vspace'>Le operazioni si chiamano <strong>read(x, ts)</strong> e <strong>write(x, ts)</strong>, dove <strong>x</strong> è la risorsa e <strong>ts</strong> è il timestamp della transazione che fa quella richiesta.
+</p>
+<p class='vspace'>Ecco il comportamento adottato.
+</p>
+<div class='vspace'></div><pre> <strong>read(x, ts)</strong> va in <strong>abort</strong> se <strong>ts &lt; WTM(x)</strong>, altrimenti OK, e <strong>RTM(x) = max(RTM(x), ts)</strong>.
+</pre><p class='vspace'>Perché ciò? Il motivo è che se <strong>ts &lt; WTM</strong>, vuol dire che <strong>ts</strong> è più vecchia dell'ultima trans che ha scritto su <strong>x</strong>. Se permettessi a <strong>ts</strong> di leggere, vuol dire che permetterei a <strong>ts</strong> di leggere NEL FUTURO, cioè leggere le modifiche di una trans che è venuta dopo di lei!
+In caso contrario, permetto invece la lettura, e aggiorno il RTM in modo conforme alla regola.
+</p>
+<div class='vspace'></div><pre> <strong>write(x, ts)</strong> va in <strong>abort</strong> se <strong>ts &lt; WTM(x) OR ts &lt; RTM(x)</strong>, altrimenti OK e <strong>wtm(x) = ts</strong>.
+</pre><p class='vspace'>Le motivazioni sono simili.
+Se <strong>ts</strong> è più vecchia dell'ultimo che ha scritto su <strong>x</strong>, allora non va bene perché non ho rispettato l'ordine temporale. Se <strong>ts</strong> è più vecchia dell'ultimo che ha letto <strong>x</strong>, parimenti non va bene perché scriverei dal passato.
+In caso contario, invece, tutto OK.
+</p>
+<p class='vspace'>Questo sistema dei timestamp quindi garantisce <strong>a priori</strong> la bontà di uno schedule in un modo eugenetico, perché semplicemente uccide tutte le transazioni che non quadrano:) Infatti il problema è che ne potrebbe far fallire un sacco, e pensiamo a quante trans sfortunate hanno un ts così sfigato che vanno sempre a male. Inoltre, siccome non so prima se una trans abortirà o no, allora devo tenere tutte le modifiche in buffer fino a che non vedo un commit o un abort definitivo.
+Il vantaggio è che siccome non ci sono i lock, non c'è nemmeno il problema del deadlock.
+</p>
+<p class='vspace'><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 17, 2009, at 01:11 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC17marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC17marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

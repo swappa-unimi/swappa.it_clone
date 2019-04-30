@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Dispense Tetty - Integrazione JAVA</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TettyJAVA.html' title='Dispense Tetty - Integrazione JAVA'>Dispense Tetty - Integrazione JAVA</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Integrazione su JAVA ::</strong>
+</p>
+<div class='vspace'></div><hr />
+<h4>Indice</h4>
+<ul><li><a href='#java'>JAVA</a>
+</li><li><a href='#riferimenti'>Il Riferimento e gli Object</a>
+</li><li><a href='#string'>La classe String</a>
+</li><li><a href='#dichiarareriferimento'>Come faccio a dichiarare un riferimento?</a>
+</li><li><a href='#crearevettori'>Creare vettori</a>
+</li><li><a href='#dichiarazioneclasse'>Dichiarazione di una classe</a>
+</li><li><a href='#mca'>Metodi, Costruttori e Attributi</a>
+</li><li><a href='#interfacce'>Interfacce</a>
+</li><li><a href='#extends'>Extends e Implements</a>
+</li><li><a href='#modificatori'>Interfacce e incapsulamento: modificatori</a>
+</li><li><a href='#eredita'>Ereditarietà e Polimorfismo</a>
+</li><li><a href='#algebra'>Algebra dei tipi</a>
+</li><li><a href='#polimorfismo'>Polimorfismo</a>
+</li><li><a href='#eccezioni'>Errori ed Eccezioni</a>
+</li><li><a href='#viaoop'>La via OOP alla gestione di Errori ed Eccezioni</a>
+</li><li><a href='#io'>I/O in JAVA</a>
+</li><li><a href='#serializzazione'>Serializzazione</a>
+</li></ul><hr />
+<p class='vspace'><a name='java' id='java'></a>
+</p><h4>JAVA</h4>
+<p>JAVA è un linguaggio di programmazione OOP sviluppato dalla SUN.<br />Deriva dal C++, che è derivato dal C, quindi ha una sintassi a noi nota, e soprattutto nota a praticamente tutti i programmatori del mondo.<br /><br />
+Il C++ è un'estensione del C orientata agli oggetti. Presenta tutte le caratteristiche della OOP, anche se le implementa in un modo un po' complicato. La via del C pare essere sempre la più complicata. Rispetto al C++, il JAVA ha delle intuizioni piuttosto carine.<br /><br />
+Il JAVA, almeno quello distribuito dalla SUN, è un linguaggio compilato, ma non in linguaggio macchina. Tra il JAVA e il nostro computer c'è uno strato aggiuntivo, detto JAVA VIRTUAL MACHINE, il quale è una astrazione dell'hardware sottostante (il nostro computer) e allo stesso tempo è un hardware virtuale, una sorta di simulatore LC2. I programmi in JAVA vengono compilati in <em>bytecode</em>, che è il particolare linguaggio macchina della macchina virtuale. La JavaVM quindi legge il bytecode, e lo interpreta al volo.<br /><br />
+Questo sistema permette di definire un linguaggio che vada bene su tutti i computer con tutti i processori con i sistemi operativi più disparati, il che è un buon vantaggio. Lo svantaggio è che è lento, rispetto ad un programma compilato come il C o il C++.<br />Ma il vantaggio principale è che, essendo separata dall'hardware, la JavaVM mi permette di giocare finché voglio con memoria e cose simili, che tanto non potrò mai produrre danni perché proprio la JavaVM mi protegge dal fare casini a basso livello, cosa purtroppo simpaticamente possibile col C.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='riferimenti' id='riferimenti'></a>
+</p><h4>Il Riferimento e gli Object</h4>
+<p>In JAVA, il concetto di puntatore è scomparso, ed è stato sostituito con il <em>riferimento</em>.<br />Il tipo <em>riferimento</em> può anche lui puntare a una classe, ad un vettore, ad un interfaccia, al NULL. Il suo tipo base è il tipo <em>riferimento</em>, ma poi assume il tipo dell'oggetto che sta maneggiando in quel momento.<br /><br />
+Tutto ciò che esiste in JAVA deriva dalla classe primigenia detta <em>Object</em>: <ins>tutto</ins> è un'istanza di Object.<br />Quindi, un riferimento di tipo <em>Object</em> può riferirsi ad ogni cosa!<br /><br />
+Rispetto ai puntatori, i riferimenti hanno perso alcune caratteristiche che li rendevano potenti ma anche pericolosi da usare.<br />Innanzitutto è scomparsa la <em>pointer arithmetic</em>: quella roba che ci permetteva di dichiarare un'array e di girarci dentro.
+</p>
+<div class='vspace'></div><pre> char lista[20];
+ char * gatto;
+ gatto = lista;
+ *(gatto + 10) = 'a'; // equivale a dire lista[10] = 'a';
+</pre><p class='vspace'>Non è più possibile in Java prendere un riferimento e farlo puntare ad un indirizzo, perché si tratta di una cosa rischiosa. Infatti posso prendere un puntatore e dirgli di puntare a un indirizzo a caso, e mandare tutto il programma in SegFault, e nessuno me lo impedirebbe, e soprattutto è uno di quei bug che non si trovano mai.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='string' id='string'></a>
+</p><h4>La classe String</h4>
+<p>La classe String è una sequenza di caratteri Unicode.<br />E' <em>immutabile</em>: se voglio modificarla, la copio in un'altra stringa, vi copio il suo contenuto modificato, e reimposto il riferimento alla prima stringa in modo che si riferisca a questa copia modificata. Niente paura tutto ciò lo fa il JAVA da solo.<br />Questa procedura risolve tanti problemi legati al fatto che le <code class='escaped'>char[]</code> sono puntatori, ed è legittimo fare così:
+</p>
+<div class='vspace'></div><pre> char lista[20];
+ *(lista + 50) = 'f';  //Dove vado a scrivere? Chi mi controlla? Paura!
+</pre><p class='vspace'>I caratteri Unicode sono un modo per rappresentare in tabelle tutti i caratteri che non ci stanno nella misera e ristretta tabella ASCII. L'ASCII è nato in America, e lì usano pochi caratteri. E gli arabi? I cinesi? E noi europei con le lettere con strani accenti etc.? Grave problema, perché ognuno di costoro estendeva a suo modo la tabella ASCII, rendendola incompatibile con l'estensione sviluppata in un altro stato.<br />Così si è pensato all'Unicode, che rappresenta in modo univoco un carattere, tramite un sistema di tabelle indicizzate: la tabella dei caratteri greci, quella dei caratteri lituani (??) e così via.<br />Il problema dell'Unicode è che descrive <em>in astratto</em> il sistema delle tabelle, ma non dice niente sulla sua implementazione. Ecco perché sono nate le codifiche UTF: uno standard per implementare la definizione delle tabelle di caratteri inventata da quelli dell'Unicode. Si sa per esempio che in UTF il primo byte mi indica la tabella, il secondo il carattere, e così via. La specifica Unicode di per sé diceva solo: occorre indicare in modo diverso la tabella e il carattere, ma non diceva affatto come.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='dichiarareriferimento' id='dichiarareriferimento'></a>
+</p><h4>Come faccio a dichiarare un riferimento?</h4>
+<p>E' semplice.
+</p>
+<div class='vspace'></div><pre> nomeClasse riferimento_a_classe;
+ tipo[] riferimento_a_vettore;
+ nomeInterfaccia riferimento_a_interfaccia;
+</pre><p class='vspace'>e così via. Proprio come in C.<br /><br />
+Per accedere ai campi di una struttura di cui ho il riferimento, non uso più il <code class='escaped'>-&gt;</code> del C, ma mi limto al semplice '.'. Ecco un esempio per rinfrescare la memoria:
+</p>
+<div class='vspace'></div><pre> //La via del C
+ struct gatto {
+   int colore;
+ };
+
+ struct gatto * Cheope = (struct gatto *)malloc(sizeof(struct gatto));
+ Cheope -&gt; colore = 15;
+
+ //La via del JAVA
+ gatto Cheope;
+ Cheope.colore = 15;
+</pre><p class='vspace'><a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='crearevettori' id='crearevettori'></a>
+</p><h4>Creare vettori</h4>
+<p>Semplice:
+</p>
+<div class='vspace'></div><pre> int[] lista = new int[300];
+</pre><p class='vspace'>Posso creare array con qualsiasi tipo, comprese classi che creo io.<br /><br />
+Che cos'è questo <code class='escaped'>new</code>? È una sorta di <code class='escaped'>malloc</code> ma automatizzato. Ci pensa lui ad allocare la memoria necessaria all'interno della JavaVM, e io non devo preoccuparmene.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='dichiarazioneclasse' id='dichiarazioneclasse'></a>
+</p><h4>Dichiarazione di una classe</h4>
+<p>Ecco come dichiarare una classe in modo formale
+</p>
+<div class='vspace'></div><pre> &lt;modificatore&gt; class &lt;nome classe&gt; extends &lt;super classe&gt; 
+                implements &lt;interfaccia1&gt; ... &lt;interfaccia2&gt;
+ {
+   &lt;attributi&gt;
+   &lt;costruttori&gt;
+   &lt;metodi&gt;
+ }
+
+ &lt;modificatore&gt; ::= public, protected, private, abstract, static, final
+</pre><p class='vspace'>Per istanziare una classe, cioè creare un oggetto, uso ancora il <code class='escaped'>new</code>:
+</p>
+<div class='vspace'></div><pre> tipoClasse classe = new tipoClasse(parametri del costruttore);
+</pre><p class='vspace'>Il <code class='escaped'>new</code> pensa tutto a lui, alloca la memoria etc, e quando la classe non serve più decide lui come disfarsene. Il bello della JavaVM:)
+</p>
+<p class='vspace'>Vediamo in dettaglio che cosa significano quei vari peciotti.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='mca' id='mca'></a>
+</p><h4>Metodi, Costruttori e Attributi</h4>
+<p>I <em>metodi</em> sono funzioni, esattamente come quelle del C.<br /><br />
+Il <em>costruttore</em> è una funzione particolare, che appartiene alla Classe e non all'Oggetto, e serve per costruire effettivamente la mia classe. Se costruisco una classe <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/Uni/126?action=edit'>126</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/Uni/126?action=edit'>?</a>, occorre obbligatoriamente sapere il numero di targa, e questo va passato come parametro del costruttore.
+</p>
+<div class='vspace'></div><pre> class 126
+ {
+   126(string numero_di_targa) {
+     targa = numero_di_targa;
+   }
+   string targa;
+ }
+</pre><p class='vspace'>Questo costruttore di classe 126 prende come parametro il numero di targa, e lo assegna all' <em>attributo</em> <code class='escaped'>targa</code> della mia classe.<br />Come potete vedere, è una funzione sì, ma non ritorna niente. Nemmeno il void. Proprio niente.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='interfacce' id='interfacce'></a>
+</p><h4>Interfacce</h4>
+<p>Un' <em>Interfaccia</em> serve per stabilire solo l'interfaccia di una classe, ciò che è visibile all'esterno, il guscio.
+</p>
+<div class='vspace'></div><pre> interface Automobile {
+   int accendi();
+   int spegni();
+ }
+</pre><p class='vspace'>Quando stabilische che la mia classe implementa un'interfaccia, faccio così:
+</p>
+<div class='vspace'></div><pre> class 126 implements Automobile {
+   int accendi() {...}
+   int spegni() {...}
+ }
+</pre><p class='vspace'>Vuol dire che la mia classe 126 implementa l'interfaccia Automobile, e cioè <em>deve</em> fornire tutti i metodi specificati dalla mia interfaccia.<br /><br />
+Posso anche implementare più interfacce
+</p>
+<div class='vspace'></div><pre> class 126 implements Automobile, FortunaDrago { ... }
+</pre><p class='vspace'>e vuol dire che la mia 126 deve implementare tutti i metodi dell'interfaccia Automobile e tutti i metodi dell'interfaccia FortunaDrago.<br /><br />
+Quando definisco un'interfaccia, posso definire solo le seguenti cose:
+</p><ul><li>costanti
+</li><li>metodi astratti (cioè solo prototipi, devono essere le classi che implementano quell'interfaccia a scrivere l'effettivo codice: l'interfaccia mi dice solo che <em>deve</em> esserci un metodo con quel nome e quel valore di ritorno, ma poi non dice nulla di <em>come</em> vada implementato. OOP all'opera)
+</li><li>classi membro (includo altre classi)
+</li><li>interfacce membro (include altre interfacce)
+</li></ul><p class='vspace'>Questi due ultimi punti meritano un paragrafo a sé.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='extends' id='extends'></a>
+</p><h4>Extends e Implements</h4>
+<p>Parlando della OOP, dicevamo che è possibile estendere una classe o un'interfaccia.<br /><br />
+Le interfacce le abbiamo appena viste: basta che le implementi, e scriva tutti i membri che devono esserci, e ho implementato un'interfaccia. Abbiamo visto anche che posso implementare in una stessa classe più interfacce. Questa possibilità si chiama <em>ereditarietà</em>.<br /><br />
+Invece la parolina <code class='escaped'>extends</code> mi fa estendere una classe già esistente: recupero i suoi membri <em>già implementati</em>, e ne aggiungo di nuovi.<br />Per esempio, ho scritto la classe 126, e ora voglio una 126 particolare che ha anche l'autoradio:
+</p>
+<div class='vspace'></div><pre> class 126_tamarra extends 126 {
+   //tutti i metodi di 126 sono già presenti!
+   //ne aggiungo tre:
+   int accendi_autoradio();
+   int alza_volume_autoradio();
+   int spegni_autoradio();
+ }
+</pre><p class='vspace'>La differenza tra questo tipo di estensione e l'estensione di interfaccia è duplice:
+</p><ol><li>se estendo una classe eredito anche i suoi bei metodi già implementati. Se voglio posso anche riscriverli
+</li><li>posso estendere 1 sola classe, mentre posso implementare diverse interfacce.
+</li></ol><p class='vspace'>Si parla di ereditarietà multipla quando posso ereditare da più <em>classi</em>, e in JAVA ciò non è permesso: posso solo implementare più interfacce.<br /><br />
+Qual'è il problema dell'estensione di Classe?<br />Il problema è che se eredito da due classi diverse <em>che hanno implementato un metodo con lo stesso nome</em>, quale devo utilizzare? Il C++ permette sta cosa, e il procedimento per distinguere quale dei due metodi usare necessita di un avvocato per districarsene. Il JAVA semplicemente non lo permette.<br />Ciò deriva dal fatto che il JAVA è stato pensato per il Web: se eredito da un programma scaricato automaticamente da un sito, come faccio a controllare il codice come fa il C++ per stabilire chi eredita che cosa e così via? Non posso. Quindi niente ereditarietà multipla. E' molto meglio così.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='modificatori' id='modificatori'></a>
+</p><h4>Interfacce e incapsulamento: modificatori</h4>
+<p>Nella nostra definizione di Tipo di Dato Astratto, dicevamo che occorre dargli le precondizioni e gli assiomi.<br />Le interfacce si avvicinano al Tipo di Dato Astratto, nel senso che permettono di separare l'interfaccia dal tuorlo. Ma non permettono di dare precondizioni e assiomi. Quindi non sono veri Tipi di Dato Astratto(tm).<br /><br />
+Prima parlavo dei <em>modificatori</em>. Servono proprio all'incapsulamento, perché mi dicono chi rimane nascosto e chi rimane visibile.<br /><br />
+<em>Public</em> vuol dire che quel metodo è visibile: tutti quelli che hanno accesso alla mia classe lo possono vedere e quindi utilizzare.<br /><em>Private</em> è il contrario: solo gli altri metodi della mia classe possono vederlo, dall'esterno no: c'è un guscio impenetrabile sopra di esso.  Nemmeno le classi che ereditano da me possono vederlo, è mio e basta.<br /><em>Protected</em> è una cosa diversa: vuol dire che al di fuori non lo può vedere nessuno, ma i miei eredi sì.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='eredita' id='eredita'></a>
+</p><h4>Ereditarietà e Polimorfismo</h4>
+<p>Come avete visto sopra, posso far ereditare interfacce o classi ad altre classi: ho una classe <em>super</em>, cioè superiore, da cui gli altri ereditano.<br /><br />
+Il <strong>principio di sostituibilità di Liskov</strong> si occupa di queste faccende legali relative all'ereditarietà.<br /><br />
+Una classe definisce un <em>tipo</em>, le sue sottoclassi sono <em>sottotipi</em>.<br />Dire che <em>A è sottotipo di B</em> vuol dire che <em>ogni programma che utilizza un oggetto di classe A può utilizzare indifferentemente un oggetto di classe B senza modificare il comportamento logico</em>, proprio perché è un suo sottotipo.<br />Se la 126 e la Rover sono entrambi sottotipi di Automobile, il programma Pilota che prende come argomento un'Automobile può guidare indifferentemente la 126 o la Rover.<br /><br />
+Questo principio ci dice che una sottoclasse non può restringere il comportamento della classe genitrice. Se tutte le mie Automobili vanno a carburante, la 126 non può andare a pedali.<br /><br />
+Per seguire questo principio, in fase di progettazione si deve sudare un po' per capire chi eredita da chi. Ecco un bell'esempio: rettangoli o quadrati. Devo creare la classe Rettangolo e derivarne la sottoclasse Quadrato, o viceversa?<br /><br />
+Seguiamo la prima strada: creo il Rettangolo, ed il Quadrato deriva dal rettangolo. L'interfaccia del Rettangolo è questa:
+</p>
+<div class='vspace'></div><pre> double base, altezza;
+ impostaBase(double);
+ impostaAltezza(double);
+</pre><p class='vspace'>Quindi il Quadrato erediterà questa interfaccia. Ma quando implemento la classe Quadrato?<br />Supponiamo che qualcuno dica al mio quadrato: <code class='escaped'>impostaBase(23)</code>. Essendo un quadrato, anche l'Altezza deve essere impostata a 23. Posso quindi implementare il metodo <code class='escaped'>impostaBase(double)</code> in modo che se aggiorno una cosa mi aggiorni anche l'altra automaticamente.<br /><br />
+Problema problema: quando ad un Rettangolo raddoppio la base, la sua area raddoppia. Quando ad un Quadrato raddoppio la base, la sua area quadruplica! Il comportamento logico <em>non è lo stesso</em>: il principio di Liskov non è soddisfatto!!<br /><br />
+Allora devo fare così: l'interfaccia madre è Quadrato:
+</p>
+<div class='vspace'></div><pre>  double base;
+  impostaBase(double);
+</pre><p class='vspace'>e il Rettangolo <em>eredita</em> da Quadrato e lo <em>estende</em>:
+</p>
+<div class='vspace'></div><pre>  class Rettangolo implements Quadrato {
+    //la base e impostaBase(double) le ho ereditate
+    double altezza; //lo aggiungo io
+    impostaAltezza(double); //anche questo lo aggiungo io
+  }
+</pre><p class='vspace'>e così tutto funziona.<br /><br />
+Per dare un po' di termini, l'ereditarietà di interfaccia si chiama <em>subtyping</em>, mentre l'ereditarietà di realizzazione (di classe) si chiama <em>subclassing</em>.<br /><br />
+Il <em>subtyping</em> permette la compatibilità dei tipi: il sottotipo è Liskovianamente accettabile, ed è compatibile all'indietro con tutti i suoi antenati. Questo è già <em>polimorfismo</em>, nello specifico <em>polimorfismo per inclusione</em>.<br />Il controllo del polimorfismo lo si può fare anche staticamente: il JAVA prende la lista degli antenati e vede se tutto quello che faccio è accettabile.<br /><br />
+Come ho detto prima, invece, il <em>subclassing</em> prende dagli antenati anche il codice effettivamente scritto.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='algebra' id='algebra'></a>
+</p><h4>Algebra dei tipi</h4>
+<p><em>Warning: i caratteri strani usati in questa sezione sono proprio strani. Qui sono arrotondati, ma dovete immaginarveli tutti squadrati</em><br /><br />
+L'Algebra dei Tipi è una particolare Algebra usata per spiegare l'ereditarietà. I compilatori dei linguaggi OOP includono dei sistemi per verificare, in base a quest'Algebra, se le regole dell'ereditarietà sono state rispettate o meno. E valgono anche per le cose banali tipo l'assegnazione di un <code class='escaped'>char</code> ad un <code class='escaped'>int</code>.<br /><br />
+<strong>T</strong><br />T è il tipo Top, quello da cui tutti gli altri tipi derivano.<br /><br />
+<strong>&#9524;</strong><br />&#9524; è il tipo Assurdo, che cerca di riunire interfacce incompatibili
+</p>
+<p class='vspace'><strong>A <ins>&#5205;</ins> B</strong><br />Vuol dire che il tipo A è sottotipo (estende) il tipo B. Quindi A può avere qualche cosa in più di B.<br /><br />
+<strong>E = A &#5198; B</strong><br />Vuol dire che il tipo E è il tipo più generale, cioè quello con meno antenati, che estende sia A che B.<br />&#5198; si chiama <strong>meet</strong>.<br /><br />
+In base a questa
+<strong>E = A &#5196; B</strong><br />Vuol dire che E è il primo antenato che trovo, da cui sia A che B derivano.<br />&#5196; si chiama <strong>join</strong>.<br /><br />
+L'assegnazione
+</p>
+<div class='vspace'></div><pre> tipoX x;
+ tipoY y;
+ x = y;
+</pre><p class='vspace'>è valida se ho <strong>tipoX <ins>&#5205;</ins> tipoY</strong>.<br /><br />
+Lo stesso vale per i metodi
+</p>
+<div class='vspace'></div><pre> //prototipo:
+ dario (tipoX);
+
+ //chiamata:
+ dario(tipoY);
+</pre><p class='vspace'>è valida sempre se <strong>tipoX <ins>&#5205;</ins> tipoY</strong>.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='polimorfismo' id='polimorfismo'></a>
+</p><h4>Polimorfismo</h4>
+<p>Il <em>polimorfismo</em> è la capacità dello stesso oggetto di apparire in forme diverse in contesti diversi.<br />Posso anche dirla così: capacità di oggetti diversi di apparire nella stessa forma a seconda del contesto.<br /><br />
+Nei linguaggi tradizionali non c'è polimorfismo, ma solo <em>monomorfismo</em>: per esempio, una funzione accetta come parametri solo oggetti di un certo tipo. I linguaggi polimorfi accettano invece tutti i tipi che si possono "<em>trasformare</em>" in un altro tipo, secondo le regole dell'Algebra dei Tipi spiegata qui sopra.<br /><br />
+Ci sono diversi tipi di polimorfismo, secondo la classificazione <em>Cardelli-Wegner</em>:
+</p><ul><li>Universale
+</li></ul><div class='indent'>* parametrico
+</div><div class='indent'>* per inclusione
+</div><ul><li>Ad Hoc
+</li></ul><div class='indent'>* overloading
+</div><div class='indent'>* coercion
+</div><p class='vspace'>Il polimorfismo del C è del tipo <em>'ad hoc</em>: vuol dire che è limitato a pochi tipi predefiniti, scelti, appunto, <em>ad hoc</em>.<br /><br />
+La <strong>coercion</strong> si ha quando un tipo viene convertito automaticamente in un altro tipo, secondo certe precise regole di promozione. Si pensi ai <code class='escaped'>char</code> che vengono convertiti in <code class='escaped'>int</code> e così via nel C: avviene un <code class='escaped'>cast</code> automatico, lo fa il linguaggio.<br /><br />
+Invece, l' <strong>overloading</strong> si ha quando fornisco un operatore con lo <em>stesso</em> nome, ma che ho definito in più modi, ed ognuno di questi modi prende in argomento un tipo diverso.<br />Ciò vuol dire che posso definire una funzione così:
+</p>
+<div class='vspace'></div><pre> void moltiplica(int valore);
+ void moltiplica(float valore);
+</pre><p class='vspace'>Nei linguaggi che supportano l' <em>overloading</em>, è il compilatore scelto a stabilire quale delle due funzioni utilizzare, a seconda che io chiami <code class='escaped'>moltiplica</code> passandogli un intero oppure un float.<br /><br />
+Il polimorfismo <strong>universale</strong> invece si applica a tutti i tipi indifferentemente, seguendo le care regolette dell'Algebra dei Tipi.<br /><br />
+Quello <strong>per inclusione</strong> è quello della OOP: se implemento un'interfaccia, sono un suo sottotipo; se estendo una classe, sono un suo sottotipo.<br /><br />
+Il polimorfismo <strong>parametrico</strong> è ben diverso. Vuol dire avere la capacità di stabilire il tipo che una funzione <em>ritorna</em> in base al tipo <em>in ingresso</em>. Questa funzione la dichiarerei così:
+</p>
+<div class='vspace'></div><pre> Tipo somma(Tipo A, Tipo B);
+</pre><p class='vspace'>ma qui <code class='escaped'>Tipo</code> <em>non è</em> un particolare tipo, bensì vuol dire: <em>prendi il tipo che ti passano come parametro, ed utilizzalo come tipo per la variabile di ritorno</em>.<br />Avendo definito così la funzione, posso fare con la stessa funzione queste cose:
+</p>
+<div class='vspace'></div><pre>  int gatto;
+  gatto = somma(23, 45);
+
+  float cane;
+  cane = somma(23.5, 45.7);
+
+  126 dario = new 126("bg669287");
+  126 clara = new 126("cr708982");
+  126 risultato;
+  risultato = somma(dario, clara);
+</pre><p class='vspace'>Capite? È follia! Eppure si può fare, volendo. Si chiama <em>programmazione generica</em>, o <em>template programming</em>. Il C++ so per certo che implementa queste cose, non che io sappia come farlo. Cmq chi ha usato un po' la STL del C++ ha usato implicitamente template, cioè questo tipo di polimorfismo, perché la STL vuol dire proprio <em>Standard Template Library</em>.<br /><br />
+Nota: da qualche parte deve essere specificato <em>come</em> fare la somma tra due oggetti di tipo 126, e anche se sembra una cosa assurda sommare due 126, al compilatore non gliene frega niente: se definisco l'operatore '+' che prende come parametri due oggetti di tipo 126, a lui va benissimo.<br />A livello ancora più generale, dovrebbe essere possibile definire un'operazione dal nome <code class='escaped'>compareTo</code>, e tutti i tipi che la implementano sono comparabili l'un l'altro. Ciò varia da linguaggio a linguaggio, ma vi assicuro che è cosa fattibile.<br /><br />
+Ecco quindi spiegato come l'ereditarietà porti al polimorfismo.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='eccezioni' id='eccezioni'></a>
+</p><h4>Errori ed Eccezioni</h4>
+<p><em>Eccezione</em> = anomalia recuperabile.<br /><em>Errore</em> = anomalia irrecuperabile.<br /><br />
+Ho un'eccezione quando cerco di aprire un file non esistente: errore qua e là ma posso continuare il programma, magari insultando l'utente
+</p>
+<div class='vspace'></div><pre> if (Fp1 == NULL) printf("Imbecille! Devi specificare il nome file!\n");
+</pre><p class='vspace'>Ho un errore quando invece tutto quanto va a puttane, come per esempio vado a scrivere su una porzione di memoria che dovrei lasciare in pace, e il sistema operativo va in SegFault e tutto s'impalla. Gli errori sono quelli che producono gli Schermi Blu della Morte di Windows, e non c'è altro da fare se non riavviare il computer.<br /><br />
+Come fare a gestire le eccezioni? Nel passato si sono usati diversi modi.<br /><br />
+Il sistema più scarabottolesco è quello delle TRAP e degli INTERRUPT. Se qualcuno si ricorda il divertimento della LC2, qui ritrova terminologia nota. Per esempio, mi arriva una divisione ma il registro mi contiene tutti 0, e la CPU si lamenta e lancia un'INT. Sta poi a me con una TRAP gestirmi l'INT. Se non avete ancora letto del MIX, la TRAP è una trappola che intercetta vari avvenimenti hardware, in questo esempio una <em>Division by Zero</em>.<br /><br />
+Il sistema del C è quello dei valori di ritorno. Se tutto va bene ritorno 0, se no ritorno altri numeri, e sta poi a chi ha chiamato la mia funzione capire che cosa è successo.
+</p>
+<div class='vspace'></div><pre> #define ERR_FILE_NOT_FOUND 32
+
+ if (Fp1 == NULL) {
+   printf("File inesistente\n");
+   return ERR_FILE_NOT_FOUND;
+ }
+</pre><p class='vspace'>Un altro espediente è quello delle variabili di stato, cioè le variabili che vengono dichiarate prima del <code class='escaped'>main</code>, e che quindi sono visibili a tutti. Da ricordare che le variabili globali sono <em>il male</em> e sono da evitare, perché chiunque le può scrivere a caso e/o a piacimento. Si potrebbero usare così:
+</p>
+<div class='vspace'></div><pre> int ERRORE = 0,
+
+ int main() {
+   ...
+   if (Fp1 == NULL) ERRORE = 1;
+   ...
+
+   return ERRORE;
+ }
+</pre><p class='vspace'>Nel mondo delle interfacce grafiche, invece, dove è l'utente a decidere che cosa far fare all'applicazione, i vari clic del mouse o apertura di menu etc. sono detti eventi. Un errore è semplicemente un altro evento, e sta poi alla routine che gestisce gli eventi arrabattarsi per gestire l'errore. Non faccio esempi che qui si dilungherebbero troppo.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='viaoop' id='viaoop'></a>
+</p><h4>La via OOP alla gestione di Errori ed Eccezioni</h4>
+<p>I linguaggi OOP (tutti) gestiscono le Eccezioni in questo modo: un'Eccezione è un Oggetto, né più né meno, che viene istanziato nel momento in cui si verifica un'anomalia.<br />Questa creazione dell'oggetto si chiama "<em>lancio</em>", in inglese "<em>throw</em>".<br /><br />
+La teoria sottostante è quella della patata bollente: io lancio la patata bollente (la mia eccezione) e qualcuno dovrà afferrarla ("<em>catch</em>"), e quel qualcuno è la parte del mio codice che si preoccupa delle eccezioni.<br /><br />
+In JAVA esiste la classe <strong>Throwable</strong>, cioè "<em>gettabile</em>", ed Errori ed Eccezioni sono tutti derivati di questa. Esiste naturalmente una monumentale gerarchia di errori, l'uno figlio dell'altro, per rappresentare tutto ciò che può andare male in un programma, ed è tanta roba...<br />Le varie eccezioni ereditano da <strong>Exception</strong>, gli errori da <strong>Error</strong>, i due figli di primo letto di <strong>Throwable</strong>.<br /><br />
+Quindi, ho un mio bel metodo, e lo dichiaro così:
+</p>
+<div class='vspace'></div><pre> tipo mioMetodo(parametri) throws BruttaEccezione { ... }
+</pre><p class='vspace'>E poi chiamerò questo <code class='escaped'>mioMetodo</code> all'interno di un costrutto <code class='escaped'>try ... catch</code>:
+</p>
+<div class='vspace'></div><pre> try
+ {
+   mioMetodo(valore);
+ }
+ catch (BruttaEccezione ahiahi)
+ {
+   ... // gestione dell'eccezione
+ }
+</pre><p class='vspace'>Che cosa succede in queste linee di codice?<br /><br />
+Innanzitutto, ho dichiarto che il metodo <code class='escaped'>mioMetodo</code>, se va storto, lancia l'eccezione detta <code class='escaped'>BruttaEccezione</code> (posso averla inventata io, oppure esistere già in JAVA).<br /><br />
+Poi, dentro il <code class='escaped'>try { ... }</code> chiamo il <code class='escaped'>mioMetodo</code>. Chiamarlo da dentro il costrutto <code class='escaped'>try { ... }</code> mi assicura che, nel caso generi un errore, esso sarà catturato dal seguente costrutto <code class='escaped'>catch { ... }</code>.<br />Infatti, il mio <code class='escaped'>catch (BruttaEccezione ahiahi)</code> riceve l'eccezione gettata da <code class='escaped'>mioMetodo</code>, e poi se la gestisce come vuole.<br /><br />
+Posso anche non avere nessuna <code class='escaped'>catch</code>: l'errore arriva ma non reagisco. Oppure avere più di una <code class='escaped'>catch</code>, una per ogni eccezione che mi aspetto di ricevere.<br /><br />
+Esiste infine la clausola <code class='escaped'>finally {...}</code> in cui si finisce anche se c'è qualcosa che il <code class='escaped'>catch</code> non ha preso. Quindi, il costrutto definitivo è 
+</p>
+<div class='vspace'></div><pre> try
+ {
+   ...
+ }
+ catch (tipoEccezione nome)
+ {
+   ...
+ }
+ finally
+ {
+   ... // qui si viene comunque, errore o non errore
+ }
+</pre><p class='vspace'>Quando un metodo getta un'eccezione, il metodo si interrompe e ritorna a chi lo ha chiamato. Se questo chiamante non gestisce l'eccezione, si torna a chi ha chiamato il chiamante e così via. Si dice che l'eccezione si <em>propaga</em>. Se nessuno la prende, arriva alla JavaVM e si blocca. Di solito cmq c'è qualcuno che prende l'eccezione.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='io' id='io'></a>
+</p><h4>I/O in JAVA</h4>
+<p>JAVA gira su una Virtual Machine, cioè una macchina virtuale. Quindi, può girare su diversi sistemi operativi, come Linux, e anche su sistemi inoperativi come windows. Ognuno di questi sistemi, operativi o inoperativi, può gestire in modo diverso l'I/O. La JavaVM deve quindi <em>astrarre</em> dalle implementazioni specifiche, ed offrire al programmatore JAVA un'interfaccia comune a tutti.<br /><br />
+Innanzitutto, i <strong>file</strong> sono sequenze di dati di un certo tipo. Possono essere di tipo disparato, ma tutti i file hanno in comune certe cose:
+</p><ul><li>sono identificati da nome e percorso
+</li><li>si aprono e si chiudono
+</li><li>posso accedere ad essi in lettura o in scrittura
+</li><li>si può posizionare la testina all'interno di essi
+</li></ul><p class='vspace'>In JAVA ho la libreria JAVA.IO che incapsula il concetto di <em>stream</em>, a noi già noto dal C. Lo <em>stream</em> è un flusso di dati, in arrivo o in partenza.<br />L' <strong>InputStream</strong> è il flusso in arrivo, mentre <strong>OutputStream</strong> è il flusso in partenza.<br /><br />
+Tutti gli <em>stream</em> hanno un'interfaccia comune, come è lecito aspettarsi:<br /><br />
+</p><ul><li>InputStream
+</li></ul><div class='indent'>* <code class='escaped'>read();</code> legge
+</div><div class='indent'>* <code class='escaped'>skip();</code> salta un certo numero di dati
+</div><div class='indent'>* <code class='escaped'>mark();</code> marca una posizione per poi poterci ritornare
+</div><div class='indent'>* <code class='escaped'>reset();</code> azzera la testina
+</div><div class='indent'>* <code class='escaped'>close();</code> chiude il mio <em>stream</em>
+</div><p><br /><br />* OutputStream
+</p><div class='indent'>* <code class='escaped'>write();</code> scrive
+</div><div class='indent'>* <code class='escaped'>flush();</code> svuota il buffer e lo scrive tutto (sincronizzazione)
+</div><div class='indent'>* <code class='escaped'>close();</code> chiude il mio <em>stream</em>
+</div><p class='vspace'>E naturalmente ci sono tutte le classi che ereditano da ciò e sono specializzate ad esempio nella lettura di file di <code class='escaped'>char</code> e così via.<br /><br />
+<a href='#su'>Torna su</a>
+</p>
+<p class='vspace'><a name='serializzazione' id='serializzazione'></a>
+</p><h4>Serializzazione</h4>
+<p>È un meccanismo JAVA che mi permette di salvare gli oggetti su disco, in un file, anche quelli creati da me, in un certo formato, per poi recuperarli così come sono.<br />È JAVA stesso che decide come rappresentare i miei oggetti, basta che essi implementino l'interfaccia <strong>Serializable</strong>.<br /><br />
+Se invece voglio essere io a decidere come rappresentare i miei oggetti quando li salvo, devo implementare l'interfaccia <strong>Externalizable</strong>.<br /><br />
+<a href='#su'>Torna su</a>
+</p><hr />
+<p><a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TettyJAVA)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Economia del Cambiamento Tecnologico - Lezione 8 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.LezECT08' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Economia del Cambiamento Tecnologico - Lezione 8
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT08?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT08?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='LezECT08-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT08?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT08?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Economia del Cambiamento Tecnologico - Lezione 8 was last modified on January 13, 2009, at 11:52 AM'>
+							<span style='display:none;'>Economia del Cambiamento Tecnologico - Lezione 8</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='EconomiaDelCambiamentoTecnologico.html'>Torna alla pagina di Economia del Cambiamento Tecnologico</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Economia del Cambiamento Tecnologico ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 31/10/2008</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Modello ad un settore produttivo</a>
+</li><li><a href='#s2'>Sistema</a>
+</li><li><a href='#s3'>Esempio</a>
+</li></ol><div class='vspace'></div></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p>
+<div class='vspace'></div><h2>Modello ad un settore produttivo <span style='font-size:69%'>[NOTA: è un modello di analisi di crescita economica basata sull'accumulazione di capitale.]</span></h2>
+<p class='vspace'>E' il primo modello usato da Ricardo.<br />Questo modello:
+</p><ul><li>descrive i processi produttivi
+</li><li>descrive la distribuzione della nuova ricchezza prodotta (Valore Aggiunto o chiamato dai classici sovrappiù)
+</li></ul><p class='vspace'>Partiamo da 3 ipotesi:<br />1. Supponiamo di produrre un solo bene, ad esempio i grano, e diamogli variabile X.<br />2. La popolazione che produce il grano sarà la variabile N (per semplificare ipotizzo che TUTTI lavorino).<br />3. Ogni persona lavori in una porzione di campo diversa da un altro.
+</p>
+<p class='vspace'><strong><ins>Prima equazione</ins></strong>
+</p>
+<div class='vspace'></div><pre>                            <strong>X=f(N)</strong><br /><br />
+</pre><p>Questa funzione soddisfa alcune proprietà:<br /><ins>a. f(N)&gt;=0</ins> perchè la produzione non può essere negativa<br /><ins>b. f<sup>'</sup>(1)&gt;= x¯</ins> (x soprassegnato): significa che la produzione del primo occupato è sicuramente superiore al salario minimo di sopravvivenza dato a lui (attenzione: il salario non deve mai superare il minimo per garantire la distribuzione di nuova ricchezza tra le 3 classi sociali)<br /><ins>c. f<sup>''</sup>(N) &lt;0</ins>: la funzione di produzione è caratterizzata da rendimenti marginali decrescenti, fin dalle prime unità di fattore produttivo. Inoltre un buon imprenditore dovrebbe usare il terreno che ha la redditività più alta e via via scalando perchè ogni terreno ha fertilità diversa.<br /><img src='../uploads/Uni/funzionedecrescente.jpg' alt='' title='' />
+</p>
+<p class='vspace'><strong><ins>Seconda equazione</ins></strong>
+</p>
+<div class='vspace'></div><pre>                            <strong>R = X - N*f<sup>'</sup>(N)</strong><br /><br />
+</pre><p class='vspace'>Cosa significa?<br />Questa è l'equazione della RENDITA. La rendita è la somma degli eccessi di produzione dei campi messi a dimora rispetto all'ultimo campo coltivato (ossia quello meno fertile).
+Vediamo con un esempio grafico.<br /><br />
+</p><div><img src='../uploads/Uni/graficocampi.jpg' alt='' title='' /><br /><br /></div>
+<p>Per fare in modo che il quarto campo (quello meno fertile) venga coltivato è necessario che offra all'imprenditore un saggio di profitto esattamente uguale al saggio di profitto che ottengono gli imprenditori che coltivano i primi 3 campi. L'eccedenza di produzione del primo campo rispetto al quarto viene preso da terzi, cioè il proprietario.<br />Cosa indicano le variabili?
+</p><ul><li>X = produzione totale di grano
+</li><li>N = n. persone o n. campi coltivati totale
+</li><li>f<sup>'</sup>(N) = derivata prima (PMa)
+</li></ul><p>Facendo questa operazione, siccome sono nel continuo, è come se moltiplicassi la base dei rettangoli(rappresentata da N) per l'altezza dell'ultimo rettangolo (rappresentato da  PMa, ossia f<sup>'</sup>(N) e il risultato lo togliessi al prodotto totale, X).
+Vediamo nel grafico.<br /><br />
+</p><div><img src='../uploads/Uni/renditanelcontinuo.jpg' alt='' title='' /><br /><br /><img src='../uploads/Uni/renditanelcontinuo2.jpg' alt='' title='' /><br /><br /></div>
+<p class='vspace'><strong><ins>Terza equazione</ins></strong>
+</p>
+<div class='vspace'></div><pre>                           <strong>W = Nx</strong><br /><br />
+</pre><p class='vspace'>Questa è l'equazione del MONTE SALARI cioè del totale dei salari che devo ai lavoratori.<br />Le variabili sono:
+</p><ul><li>N = cioè tutti i lavoratori
+</li><li>x = salario unitario reale -&gt; perchè reale? perchè dobbiamo ricordarci che siamo <strong>in un'economia dove non si sono i prezzi</strong>
+</li></ul><p class='vspace'>E questa è abbastanza semplice.
+</p>
+<p class='vspace'><strong><ins>Quarta equazione</ins></strong>
+</p>
+<div class='vspace'></div><pre>                       <strong>K = W</strong><br /><br />
+</pre><p>Dove K sta per capitale circolante. Il pensiero dominante all'epoca infatti prevedeva che ci fosse solo capitale circolante e che questo venga interamente utilizzato per pagare i salari, cioè da qui doveva recuperare il "grano" per pagare i lavoratori.
+</p>
+<p class='vspace'><strong><ins>Quinta equazione</ins></strong>
+</p>
+<div class='vspace'></div><pre>                        <strong>P = X - R - W</strong><br /><br />
+</pre><p class='vspace'>E qui per P si intende il profitto. Questa è l'ultima equazione del sistema, quella che mi permette di conoscere la quantità di grano che rimane agli imprenditori (proprietari terrieri) per reinvestire. Mostra perciò gli effetti della politica economica.
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h3>Sistema</h3>
+<p>Perciò riprendiamo tutte le nostre belle equazioni per farne un sistema:<br /><br />
+</p>
+<div class='vspace'></div><ul><li><strong>X = f(N)</strong>
+</li><li><strong>R = X - N*f<sup>'</sup>(N)</strong>
+</li><li><strong>W = Nx</strong>
+</li><li><strong>K = W</strong>
+</li><li><strong>P = X - R - W</strong>
+</li></ul><p class='vspace'>Ci troviamo perciò con un sistema a 5 equazioni e 7 incognite (X, N, R, W, x, K, P): per risolverlo dobbiamo fare in modo che il sistema abbia al suo interno un numero di equazioni pari alle incognite, per creare equilibrio nel sistema. Come fare? Faccio in modo che due variabili vengano assunte come date introducendo due nuove equazioni nel sistema. Ricardo individua come date: K e N. Perciò:
+</p><ul><li><strong>K = K(dato)</strong> =&gt; capitale visto come variabile esogena
+</li><li><strong>N = N(dato)</strong> =&gt; la popolazione è una variabile esogena al sistema economico, cioè il numero dei residenti non è influenzato dall'economia (per intenderci l'emigrazione secondo Ricardo non è data dalla povertà)
+</li></ul><p class='vspace'>In un qualunque sistema economico questo non è possibile, dice Malthus, la popolazione <em>non</em> può seguire traiettorie autonome all'economia. Allora al posto dell'ultima equazione viene introdotta un'altra equazione che mi dà una variabile come data:
+</p><ul><li><strong>x = x(dato)</strong> =&gt; dove per "dato" si intende un salario pari al livello minimo di sussistenza. Perchè?
+<ul><li>se <em>x &gt; sussistenza</em> -&gt; N, la popolazione, cresce e devo continuamente far crescere il salario per adeguarmi, ho meno profitto, cerco di coltivare di più ecc..
+</li><li>se <em>x &lt; sussistenza</em> -&gt; N diminuisce e non avrei più lavoratori perciò cala la rendita
+</li></ul></li></ul><p class='vspace'>In queste due situazioni ci sono elementi di instabilità, perciò il sistema non converge al punto che voglio io, ma converge a un altro punto.
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Esempio</h2>
+<p>Vediamo in dettaglio come prendendo un esempio: al termine di un dato periodo il prodotto X è distribuito tra i proprietari terrieri (R) i lavoratori (W) e gli imprenditori (P). Si possono verificare due casi:<br />1. l'imprenditore consuma interamente P. Il sistema socio-economico riprende con produzione, scambio, consumo esattamente come nel periodo precedente -&gt; tutti sono felici tranne i poveri disgraziati che si spaccano la schiena per un tocco di fame.<br />2. l'imprenditore accumula al capitale K una parte di P.<br />Se una parte di P viene accumulata, K (il capitale circolante) aumenta, quindi ci sono maggiori risorse da assegnare ai lavoratori [K=W]<br />Se nel primo periodo successivo all'accumulazione la popolazione rimane costante, dall'equazione 3 [W = Nx] si evince che il salario reale aumenta; di conseguenza un aumento del salario fa aumentare la popolazione; maggiore popolazione fa aumentare la domanda di generi alimentari; questa domanda si soddisfa coltivando nuovi campi. Ne va da sè che i nuovi campi avranno fertilità minore di quella dei campi già in uso, stando al modello Ricardiano, perciò <strong>i profitti diminuiscono</strong>.<br />Vediamo in un grafico:<br /><br />
+</p><div><img src='../uploads/Uni/renditaprofittosalario1.jpg' alt='' title='' /><br /><br /></div>
+<p>L'accumulazione di K con risparmio di profitti P continua fino al punto in cui i P si annullano, fino al punto in cui poi i salari sono ancora al minimo reale. Questa è definita economia triste perchè non c'è convenienza per gli imprenditori ad accumulare.<br />
+</p><hr />
+<p><a class='wikilink' href='EconomiaDelCambiamentoTecnologico.html'>Torna alla pagina di Economia del Cambiamento Tecnologico</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 13, 2009, at 11:52 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT08?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT08?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

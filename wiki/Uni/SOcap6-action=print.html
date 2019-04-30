@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Riassunto del libro di SO - Capitolo 6: Schedulazione della CPU</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SOcap6.html' title='Riassunto del libro di SO - Capitolo 6: Schedulazione della CPU'>Riassunto del libro di SO - Capitolo 6: Schedulazione della CPU</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Riassunto del libro di SO - Capitolo 6: Schedulazione della CPU ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'>In genere, schedulazione dei thread e dei processi sono sinonimi perché funzionano allo stesso modo. Se c'è qualcosa di specifico ai thread verrà segnato.
+</p>
+<div class='vspace'></div><h2>6.1 Concetti di base</h2>
+<p>Sistemi a singolo processore = eseguono 1 solo processo per volta =&gt; se un processo deve attendere, avendo la multiprogrammazione pesco un altro processo e faccio andare quello.
+</p>
+<div class='vspace'></div><h3>6.1.1 Il ciclo di picco di CPU e di I/O</h3>
+<p>Processo: picco di utilizzo della CPU, seguito da un picco di utilizzo di I/O, seguito da un picco di utilizzo della CPU etc.
+</p>
+<p class='vspace'>Processo CPU-bound = pochi picchi di CPU, lunghi.<br />Processo I/O-bound = molti picchi di CPU, brevi.
+</p>
+<p class='vspace'>Importante per scegliere quale processo schedulare
+</p>
+<div class='vspace'></div><h3>6.1.2 Lo schedulatore della CPU</h3>
+<p>CPU inattiva =&gt; lo <strong>schedulatore a breve termine</strong> sceglie un altro processo dalla coda dei processi pronti.
+</p>
+<p class='vspace'>Ocio: vedremo che la coda non è necessariamente FIFO. Gli elementi della coda in genere sono i PCB dei processi.
+</p>
+<div class='vspace'></div><h3>6.1.3 Schedulazione con sospensione dell'esecuzione dei processi</h3>
+<p>Lo schedulatore interviene quando:
+</p><ol><li>richiesta di I/O da parte del processo attuale
+</li><li>lo stato del processo passa da <strong>esecuzione</strong> a <strong>pronto</strong> (eg per via di un interrupt)
+</li><li>lo stato del processo passa da <strong>attesa</strong> a <strong>pronto</strong> (eg fine di un I/O)
+</li><li>quando un processo termina
+</li></ol><p class='vspace'>Situazioni 1 e 4 = non c'è scelta: devo prendere un nuovo processo dalla coda dei processi pronti, se ne esiste uno.
+</p>
+<p class='vspace'>Situazioni 2 e 3 = posso invece scegliere.
+</p>
+<p class='vspace'>Schema di schedulazione <strong>cooperativa</strong> o <strong>non preemptive</strong> = una volta che la CPU è allocata ad un processo, questo non la molla finché non incappa in 1 o 4 =&gt; si può usare anche su macchine senza temporizzatore.
+</p>
+<p class='vspace'>Schema di schedulazione <strong>preemptive</strong> = viene sospesa l'esecuzione.
+</p>
+<p class='vspace'>Problemi della schedulazione preemptive:
+</p><ul><li>se un processo viene preemptivato mentre usa dati condivisi, li può lasciare in uno stato inconsistente =&gt; capitolo 7
+</li><li>il processo chiama il kernel, e il kernel modifica dati condivisi per conto del processo =&gt; quel processo viene interrotto =&gt; un altro processo interpella il kernel per accedere agli <em>stessi</em> dati = CAOS
+</li></ul><p class='vspace'>Per evitare il secondo caso, molti SO proibiscono al kernel di essere interrotto =&gt; anche se causa un calo di performance nell'esecuzione parallela di più processi (multiprocessing).
+</p>
+<div class='vspace'></div><h3>6.1.4 Caricamento del processo sulla CPU</h3>
+<p><strong>Dispatcher</strong> = dà il controllo della CPU al processo scelto:
+</p><ul><li>cambio di contesto
+</li><li>passaggio alla modalità utente
+</li><li>salto alla corretta locazione contenuta nel Program Counter
+</li></ul><p class='vspace'>Il dispatcher deve essere il più veloce possibile.
+Il <strong>tempo di latenza del dispatch</strong> è la somma del tempo <em>effettivo</em> che serve per cambiare il contesto. Il cambio fisico di contesto può essere anche molto breve, ma possono esserci altri eventi che ritardano l'ingresso in CPU di un processo. Vedi sotto per i sistemi soft realtime.
+</p>
+<div class='vspace'></div><h2>6.2 Criteri di schedulazione</h2>
+<p>Posso scegliere quale processo schedulare in base a diversi criteri, che caratterizzeranno gli algoritmi usati:
+</p><ul><li><strong>Utilizzo della CPU</strong> = voglio tenere la CPU più impegnata possibile
+</li><li><strong>Throughput</strong> = frequenza di completamento = completamento di processi nell'unità di tempo
+</li><li><strong>Tempo di completamento</strong> = quanto ci mette in media il singolo processo dall'immissione nel sistema alla terminazione
+</li><li><strong>Tempo di attesa</strong> = tempo passato dal processo nelle code
+</li><li><strong>Tempo di risposta</strong> = tempo necessario per far cominciare il processo a rispondere ad un evento processo.
+</li></ul><p class='vspace'>Per i sistemi interattivi, è importante avere <strong>varianza nel tempo di risposta</strong> bassa.
+</p>
+<div class='vspace'></div><h2>6.3 Gli algoritmi di schedulazione</h2>
+<h3>6.3.1 La schedulazione First Come First Served (FCFS)</h3>
+<p>Il processo che arriva per primo è il primo ad essere servito =&gt; una coda FIFO.
+</p>
+<p class='vspace'>Facile da gestire MA il tempo d'attesa in genere è lungo, e dipende dall'ordine di arrivo.<br />Se c'è un processo ciccione, avviene l<strong>'effetto convoglio</strong>: lui ci mette tanto e gli altri ritardano tutti.
+</p>
+<p class='vspace'>FCFS non è preemptive: se un processo ha la CPU, se la tiene.
+</p>
+<div class='vspace'></div><h3>6.3.2 Schedulazione Shortest Job First (SJF)</h3>
+<p>Il nome corretto sarebbe <strong>shortest next CPU burst first</strong>, ovvero: viene schedulato il processo che ha il più breve picco futuro di uso della CPU =&gt; non dipende dal tempo totale del processo, ma dal tempo che passerà prima di avere un picco della CPU.
+</p>
+<p class='vspace'>Questo algoritmo è <strong>ottimale</strong> =&gt; minor tempo di attesa.
+</p>
+<p class='vspace'>Problema = conoscere la lunghezza del prossimo picco di CPU!<br />In un sistema a lotti si può usare il tempo limite impostato dall'utente per quel job. Ma negli schedulatori a breve termine non c'è modo per conoscere la lunghezza del prossimo picco di CPU.
+</p>
+<p class='vspace'>Però, si può tentare di <strong>prevederla</strong> =&gt; media esponenziale delle lunghezze misurate dei picchi precedenti.<br />Si usa la seguente formula:
+</p>
+<div class='vspace'></div><pre> &#964;<sub>n+1</sub> = &#945;&#964;<sub>n</sub> + (1 - &#945;)&#964;<sub>n</sub>
+</pre><p class='vspace'>&#945; è il <strong>coefficiente di oblio</strong>: mi dice quanto far pesare la storia recente, e quanto quella passata. <strong>n</strong> è il numero di picco.<br />* &#945; = 0 =&gt; la storia recente non ha peso
+</p><ul><li>&#945; = 0 =&gt; conta solo la storia recente
+</li><li>&#945; = 1/2 =&gt; metà e metà
+</li></ul><p class='vspace'>Può essere sia preemptive che non preemptive. Se arriva un nuovo processo con un prossimo picco di CPU breve, allora, se SJF è preemptive, quello attuale viene preemptivato.
+</p>
+<p class='vspace'>SJF preemptive = schedulazione <strong>shortest remaining time first</strong> = il processo con il più breve tempo rimanente va per primo.
+</p>
+<div class='vspace'></div><h3>6.3.3 Schedulazione a priorità</h3>
+<p>SJF è un caso speciale della schedulazione a <strong>priorità</strong> =&gt; dà la priorità ad un certo parametro, nel suo caso la durata del prossimo picco di CPU.
+</p>
+<p class='vspace'>In generale, si assegna la priorità ad un processo, e chi ha la priorità maggiore va per primo.
+</p>
+<p class='vspace'>Ocio: in alcuni SO, numero alto = priorità alta; in altri è il contrario.
+</p>
+<p class='vspace'>La priorità si può decidere in base a diversi criteri, eg limiti di tempo del processo, files aperti, ma anche quanto ha pagato l'utente cui il processo appartien.
+</p>
+<p class='vspace'>Può essere sia preemptive che non preemptive.
+</p>
+<p class='vspace'>Problema: la <strong>starvation</strong> = un processo a priorità bassa può aspettare indefinitamente perché processi a più alta priorità gli passano sempre davanti.<br />Per ovviare: <strong>aging</strong> = un processo a bassa priorità invecchiando aumenta, così prima o poi verrà eseguito.
+</p>
+<div class='vspace'></div><h3>6.3.4 Schedulazione Round-Robin (RR)</h3>
+<p>Simile a FCFS ma con preemption.
+</p>
+<p class='vspace'><strong>Quanto di tempo</strong> = <strong>time slice</strong> = un processo può usare la CPU al max per un quanto di tempo. La coda è FIFO.
+</p>
+<p class='vspace'>Se un processo sta ancora usando la CPU quando scade il quanto, viene preemptivato. Se invece la lascia prima per un I/O, tanto meglio per gli altri.<br />Spesso il tempo medio di attesa è lungo.
+</p>
+<p class='vspace'>Prestazioni di RR = dipendono dalla dimensione del quanto:
+</p><ul><li>quanto grande =&gt; RR = FCFS
+</li><li>quanto piccolo =&gt; ai processi appare un processore con 1/n potenza, dove n è il numero di processi = <strong>condivisione del processore</strong> realizzato però in HW =&gt; ma se è in SW, c'è anche l'overhead dei cambi di contesto
+</li><li>regola empirica: regolo il quanto di tempo in modo che l'80% dei picchi venga realizzato entro il quanto.
+</li></ul><div class='vspace'></div><h3>6.3.5 Schedulazione con coda a più livelli (C+L)</h3>
+<p>Usata nei casi in cui posso classificare i processi in gruppi distinti.<br />Ad esempio, processi in <strong>foreground</strong> (primo piano) e <strong>background</strong> (sullo sfondo) =&gt; quelli in primo piano hanno bisogno di tempi di risposta più brevi =&gt; schedulati prima rispetto agli altri.
+</p>
+<p class='vspace'>C+L:
+</p><ul><li>molte code separate
+</li><li>un processo appartiene per sempre ad una coda
+</li><li>ogni coda ha il suo algo di schedulazione interno
+</li><li>ci deve essere schedulazione tra le code (di solito, priorità invariabile preemptive)
+</li></ul><p class='vspace'>Per schedulare tra le code, posso scegliere diversi modi:
+</p><ul><li>non eseguo niente della coda bassa se ho ancora processi nella coda alta
+</li><li>ogni coda ha tot tempo, scaduto il quale cambio coda. Le code alte hanno più tempo di quelle basse.
+</li></ul><p class='vspace'>Ocio: come detto sopra, ogni coda poi schedula i suoi processi con l'algo che preferisce.
+</p>
+<p class='vspace'>Il vantaggio è che l'overhead di schedulazione è basso, ma non è flessibile.
+</p>
+<div class='vspace'></div><h3>6.3.6 Schedulazione con coda a più livelli con retroazione (C+LR)</h3>
+<p>Come la C+L, ma permette ai processi di muoversi tra le code.<br />
+Divido i processi in base alle loro caratteristiche di uso della CPU: se uno ha picchi lunghi, lo spedisco in una coda più bassa =&gt; i processi interattivi e I/O-bound stanno in alto.
+</p>
+<p class='vspace'>Inoltre, un processo che passa troppo tempo in code basse viene <strong>promosso</strong> a code più alte =&gt; prevenzione della starvation.
+</p>
+<p class='vspace'>Gli schedulatori C+LR sono definiti in base a queste caratteristiche:
+</p><ul><li>numero di code
+</li><li>algo di schedulazione per ciascuna coda
+</li><li>metodo per far salire o scendere processi tra le code
+</li><li>metodo per stabilire la coda iniziale in cui si trova un processo appena creato
+</li></ul><p class='vspace'>È il più complesso, ma il più adattabile a tante situazioni.
+</p>
+<div class='vspace'></div><h2>6.4 Schedulazione su sistemi multiprocessore</h2>
+<p>Parleremo di sistemi <strong>omogenei</strong>, dove cioè tutti i processori sono equivalenti in quanto a funzionalità.
+</p>
+<p class='vspace'><strong>Load sharing</strong> = suddivisione del carico: 
+</p><ul><li>una coda per processore
+</li><li>una coda comune, e il processo va nel primo processore libero
+</li></ul><p class='vspace'><strong>Multiprocessamento asimmetrico</strong>: un processore gestisce le code, gli altri solo il codice utente.<br /><strong>Multiprocessamento simmetrico</strong> = <strong>SMP</strong>: ogni processore guarda la coda comune e prende da lì i processi =&gt; far sì che i 2 processori non scelgano lo stesso processo.
+</p>
+<div class='vspace'></div><h2>6.5 Schedulazione per sistemi in tempo reale</h2>
+<p><strong>Hard realtime</strong> = completare un'operazione entro un tempo garantito =&gt; occorre <strong>riservare le risorse in anticipo</strong>, e occorre sapere esattamente quanto tempo ci mette il sistema per gestire le funzioni richieste.<br />È impossibile da realizzare in sistemi con memoria secondaria o virtuale, perché impredicibili (capitoli 9 ~ 14).
+</p>
+<p class='vspace'>In molti casi, i processi sono <strong>periodici</strong>:
+</p><ul><li>tempo fisso di elaborazione: <strong>t</strong>
+</li><li>scadenza: <strong>d</strong>
+</li><li>periodo: <strong>p</strong>
+</li><li>frequenza: <strong>1/p</strong>
+</li></ul><p class='vspace'>Lo schedulatore assegna priorità in base a uno di questi fattori. Il <strong>controllo dell'ammissione</strong> stabilisce se le richieste che un processo fa possono essere soddisfatte: se non è possibile, il processo viene rifiutato.
+</p>
+<p class='vspace'><strong>Schedulazione a frequenza monotòna</strong> = un processo ha una priorità inversamente proporzionale al suo periodo =&gt; quelli che usano la CPU più frequentemente sono privilegiati. È preemptive.<br />È anche ottimo, ma la CPU non è sempre sfruttata bene.
+</p>
+<p class='vspace'><strong>Schedulazione a scadenza più urgente</strong> = EDF (earliest deadline first). Scadenza breve = priorità alta. Il processo deve dichiarare la sua scadenza.<br />Valido anche per processi non periodici, e sfrutta la CPU al massimo (escludendo i cambi di contesto).
+</p>
+<p class='vspace'><strong>Soft realtime</strong> = i processi sono divisi in critici e non, e quelli critici hanno la priorità sugli altri =&gt; va bene per multimedia etc. in sistemi che non sanno garantire l'hard realtime.
+</p>
+<p class='vspace'>Proprietà:
+</p><ol><li>la schedulazione è a priorità = i processi a priorità alta NON la abbassano mai, mentre possono alzarla i processi con priorità bassa (per evitare la starvation)
+</li><li>il tempo di dispatch deve essere il più basso possibile
+</li></ol><p class='vspace'>La proprietà 1 si ottiene facilmente.<br />La proprietà 2 no, perché molte volte il kernel è impiegato in chiamate I/O lente, in quanto le periferiche stesse sono lente =&gt; occorre poter <strong>interrompere il kernel</strong> =&gt; proteggere tutte le strutture dati del kernel con meccanismi di sincronizzazione.
+</p>
+<p class='vspace'>Infatti, se si assume che il kernel non sia mai interrotto, allora le sue strutture dati le tocca solo lui, e non c'è problema. Ma in questo caso può essere interrotto da processi =&gt; occorre provvedere.<br />Richiamo a quanto detto prima nel paragrafo 6.1.3:<br />Il kernel è impegnato in una chiamata di sistema da parte di un processo, la quale modifica dati del kernel; viene preemptivato; passa il controllo ad un'altro processo il quale vuole modificare gli <em>stessi dati</em> =&gt; o risolvo impedendo che il kernel possa essere preemptivato, o sincronizzo anche le strutture dati del kernel.<br />Nel caso del soft realtime, la sincronizzazione è obbligatoria.
+</p>
+<p class='vspace'><strong>Inversione di priorità</strong>: un processo a priorità bassa usa delle risorse condivise. Arriva un processo ad alta priorità e vuole usarle anche lui =&gt; deve <em>aspettare</em> che il processo a bassa priorità finisca.
+</p>
+<p class='vspace'>Per evitare questa situazione, si usa l<strong>'ereditarietà della priorità</strong>: se un processo vuole usare risorse usate anche da un processo ad alta priorità, prende temporaneamente la priorità del processo ad alta priorità, così si spiccia.
+</p>
+<div class='vspace'></div><h2>6.6 Schedulazione dei thread</h2>
+<p>Nei SO che li supportano, sono i <strong>kernel thread</strong>, e non i processi, ad essere schedulati. I thread <strong>user level</strong> non sono noti al kernel, e deve essere la libreria a mapparli su kernel thread (mappatura diretta) o su LWP (mappatura indiretta).
+</p>
+<div class='vspace'></div><h3>6.6.1 Visibilità della competizione</h3>
+<p><strong>Contention scope</strong> = come i thread competono per l'accesso alle risorse.
+</p>
+<p class='vspace'><strong>Process contention scope</strong> = il SO sceglie quale processo schedulare. All'interno del processo, i thread competono tra di loro.<br /><strong>System contention scope</strong> = i thread competono a livello di SO.
+</p>
+<p class='vspace'>Il SCScope è usato quindi quando ho mappature uno a uno: un thread utente compete con gli altri thread utenti anche di altri processi.<br />PCS è usato con le mappature molti a molti e molti a uno, in cui la libreria di thread sceglie chi mappare eg. sull'LWP disponibile.
+</p>
+<div class='vspace'></div><h3>6.6.2 Schedulazione di Pthread</h3>
+<p>...
+</p>
+<div class='vspace'></div><h2>6.7 Esempi di SO</h2>
+<p>...
+</p>
+<div class='vspace'></div><h2>6.8 Schedulazione dei thread in Java</h2>
+<p>...
+</p>
+<div class='vspace'></div><h2>6.9 Valutazione degli algoritmi di schedulazione</h2>
+<p>Quale algo scelgo per il mio sistema? Sopra ho visto i differenti algo, ognuno con le sue caratteristiche =&gt; decidere quale è il più adatto al mio sistema, tramite la <strong>valutazione</strong>.
+</p>
+<div class='vspace'></div><h3>6.9.1 Modellazione deterministica</h3>
+<p><strong>Valutazione analitica</strong> = uso un algo e il carico del sistema per produrre una formula che valuti le prestazioni dell'algo per quel carico.
+</p>
+<p class='vspace'><strong>Modellazione deterministica</strong> = un tipo di valutazione analitica.<br />Semplice, veloce, precisa =&gt; richiede però info esatte sul carico.
+</p>
+<div class='vspace'></div><h3>6.9.2 Modelli a reti di code</h3>
+<p>In molti sistemi i carichi variano di ora in ora =&gt; stabilisco la media dei picchi di CPU e di I/O =&gt; probabilità di un picco in un dato momento.
+</p>
+<p class='vspace'>Occorre anche la distribuzione dei tempi di arrivo dei processi nel sistema.
+</p>
+<p class='vspace'>Se ho la media dei picchi e la distribuzione dei tempi di arrivo so calcolare utilizo, throughput e tempo di attesa medio per gli algo di schedulazione.
+</p>
+<p class='vspace'>Sistema = fornitore di servizi, in generale =&gt; ogni servizio ha una <strong>coda</strong>:
+</p><pre> <strong>n</strong> = lugnhezza media della coda
+ <strong>W</strong> = tempo medio di attesa in coda
+ <strong>&#955;</strong> = frequenza media di arrivo in coda
+ =&gt; nel tempo <strong>W</strong>, arriveranno in coda <strong>&#955; * W</strong> nuovi processi
+ =&gt; formula di Little: <strong>n = &#955; * W</strong>
+</pre><p class='vspace'>La formula di Little è valida per ogni algoritmo. La posso usare per ogni coda del mio sistema e farmi un'idea generale. Il problema è che si tratta di un'approssimazione =&gt; poco accurata.
+</p>
+<div class='vspace'></div><h3>6.9.3 Simulazioni</h3>
+<p>Creo un modello del mio sistema, e simulo le varie richieste.
+</p>
+<p class='vspace'>Che dati uso da dare in pasto alla simulazione:
+</p><ul><li>valori casuali per numero processi, picchi di CPU, I/O, tempi di arrivo dei processi etc.
+</li><li>uso i dati rilevati in un sistema vero.
+</li></ul><p class='vspace'>Meglio usare dati veri. Cmq è un processo costoso: ore di calcoli.
+</p>
+<div class='vspace'></div><h3>6.9.4 Implementazione</h3>
+<p>Le simulazioni intrinsecamente sono poco accurate =&gt; implemento il mio algo di scheduler e vedo come si comporta nella realtà.
+</p>
+<p class='vspace'>Problema:
+</p><ul><li>costo dell'implementazione in un SO reale
+</li><li>insoddisfazione degli utenti: uso il SO per esperimenti e non per lavoro
+</li><li>gli utenti possono adattarsi allo scheduler dando così falsi risultati.
+</li></ul><p class='vspace'>Esempio di quest'ultimo punto: ho uno scheduler che toglie i processi che per 1 secondo non fanno I/O =&gt; i programmatori fanno scrivere a caso qualcosa sul terminale ogni secondo per non perdere priorità.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SOcap6)</span></div>
+  </div>
+</body>
+</html>

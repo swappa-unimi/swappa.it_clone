@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RicercaOperativa.html' title='Ricerca Operativa'>Ricerca Operativa</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca operativa ::</strong>
+</pre><table align='right' cellpadding='5' cellspacing='15' >
+<tr ><td bgcolor='#f6f6ff'  valign='top'><h5>Quanto ti è piaciuta la materia?</h5>
+<form action='RicercaOperativa.html' method='post'><input type='hidden' name='n' value='Uni.RicercaOperativa' /><input type='hidden' name='action' value='rater' /><input type='hidden' name='rs_id' value='1' /><input type='radio' name='rating_1[]' value='1' id='rating_11' /><label for='rating_11'><span style='font-size:69%'>*</span></label> <input type='radio' name='rating_1[]' value='2' id='rating_12' /><label for='rating_12'><span style='font-size:69%'>**</span></label> <input type='radio' name='rating_1[]' value='3' id='rating_13' /><label for='rating_13'><span style='font-size:69%'>***</span></label> <input type='radio' name='rating_1[]' value='4' id='rating_14' /><label for='rating_14'><span style='font-size:69%'>****</span></label> <input type='radio' name='rating_1[]' value='5' id='rating_15' /><label for='rating_15'><span style='font-size:69%'>*****</span></label> <input type='submit' name='post' value='Vota' class='inputbutton' /><br /><img src='../pub/rater/img/yellow30star.gif' alt='3 stars' title='3 stars' /> <span style='font-size:83%'>N° voti: 45</span><br /><strong></strong>
+</form>
+
+</td></tr><tr ><td bgcolor='#f6f6ff'  valign='top'><h5>Come ti è sembrato il corso?</h5>
+<form action='RicercaOperativa.html' method='post'><input type='hidden' name='n' value='Uni.RicercaOperativa' /><input type='hidden' name='action' value='rater' /><input type='hidden' name='rs_id' value='2' /><input type='radio' name='rating_2[]' value='1' id='rating_21' /><label for='rating_21'><span style='font-size:69%'>*</span></label> <input type='radio' name='rating_2[]' value='2' id='rating_22' /><label for='rating_22'><span style='font-size:69%'>**</span></label> <input type='radio' name='rating_2[]' value='3' id='rating_23' /><label for='rating_23'><span style='font-size:69%'>***</span></label> <input type='radio' name='rating_2[]' value='4' id='rating_24' /><label for='rating_24'><span style='font-size:69%'>****</span></label> <input type='radio' name='rating_2[]' value='5' id='rating_25' /><label for='rating_25'><span style='font-size:69%'>*****</span></label> <input type='submit' name='post' value='Vota' class='inputbutton' /><br /><img src='../pub/rater/img/yellow40star.gif' alt='4 stars' title='4 stars' /> <span style='font-size:83%'>N° voti: 34</span><br /><strong></strong>
+</form>
+
+</td></tr><tr ><td  valign='top'><span class='frame rfloat'><img width='100px' src='http://www.noantri.com/wp-content/uploads/2007/09/mrclean_circle.jpg' alt='' title='' /></span>
+</td></tr></table>
+<p class='vspace'><strong>Docente</strong>: <a class='wikilink' href='GiovanniRighini.html'><strong>Giovanni Righini</strong></a>
+</p>
+<div class='vspace'></div><h2>Materiale ufficiale</h2>
+<table cellpadding='5' cellspacing='5' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><a target='_blank'  class='urllink' href='http://www.crema.unimi.it/~righini/Didattica/RicercaOperativa/Lucidi_RO/Lucidi_RO.htm' title='' rel='nofollow'><strong>Lucidi</strong></a>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><a target='_blank'  class='urllink' href='http://www.crema.unimi.it/~righini/Didattica/RicercaOperativa/TeRO/TeRO.htm' title='' rel='nofollow'><strong>Temi d'esame</strong></a>
+</td></tr></table>
+<div class='vspace'></div><h2>Appunti di teoria</h2>
+<ul><li><a class='wikilink' href='RO-ProgrammazioneLineare.html'>Programmazione lineare</a>
+</li><li><a class='wikilink' href='RO-AlgoritmoDelSimplesso.html'>Algoritmo del simplesso</a>
+</li><li><a class='wikilink' href='RO-AnalisiPost-Ottimale.html'>Analisi post-ottimale</a>
+</li><li><a class='wikilink' href='RO-Prezzi-Ombra.html'>Prezzi-ombra</a>
+</li><li><a class='wikilink' href='RO-Dualit%C3%A0.html'>Dualità</a>
+</li><li><a class='wikilink' href='RO-ProgrammazioneMO.html'>Programmazione multi obiettivo</a>
+</li><li><a class='wikilink' href='RO-ProgrammazioneLineareIntera.html'>Programmazione lineare intera</a>
+</li></ul><div class='vspace'></div><h2>Solver</h2>
+<p>Si possono trovare le versioni di prova (valide per 60 giorni) dei risolutori utilizzati su questo <a class='urllink' href='http://www.lindo.com/index.php?option=com_content&amp;view=article&amp;id=34&amp;Itemid=14' title='' rel='nofollow'>link</a>.<br />
+</p><h2>Esercizi di laboratorio</h2>
+<p>Per gli esercizi si utilizza <strong>Lindo</strong>, il meraviglioso solver stella del pulito.<br />Da oggi anche al limone e nel nuovo formato convenienza.
+</p>
+<p class='vspace'><a class='wikilink' href='RO-Es1.html'>Esercizio 1 - Patate</a><br /><a class='wikilink' href='RO-Es2.html'>Esercizio 2 - La fattoria</a> (con analisi di sensitività e parametrica)<br /><a class='wikilink' href='RO-Es3.html'>Esercizio 3 - Scommesse sui cavalli</a><br /><a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/Uni/RO-Es4?action=edit'>Esercizio 4 - Miscelazione di idrocarburi</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/Uni/RO-Es4?action=edit'>?</a><br /><a class='wikilink' href='RO-Es6.html'>Esercizio 5 - Pesce</a><br /><a class='wikilink' href='RO-Es7.html'>Esercizio 6 - Inviti a cena</a><br /><a class='wikilink' href='RO-Es8.html'>Esercizio 7 - Zaino per Trekking</a>
+</p>
+<p class='vspace'>La sintassi di Lingo è meglio spiegarla con un esempio, altrimenti si fa complessa:
+</p><ul><li><a class='wikilink' href='RO-Es9.html'>Esercizio 8 + Sintassi di LINGO</a>
+</li><li><a class='wikilink' href='ROAntitrust.html'>Antitrust</a>
+</li><li><a class='wikilink' href='RORobot.html'>Robot</a>
+</li><li><a class='wikilink' href='ROMuseo.html'>Museo</a>
+</li></ul><div class='vspace'></div><h2>Altri esercizi</h2>
+<p>Visto che ci si deve preparare per l'esame, vediamo di fare un po' di esercizi a casa...
+</p>
+<div class='vspace'></div><h3>PL</h3>
+<ul><li><a class='wikilink' href='RO-PL-22luglio2002.html'>29 luglio 2002</a>
+</li><li><a class='wikilink' href='RO-Ex7gennaio2008.html'>Esercitazione del 7 gennaio 2008 - Esercizio a-numerico</a>
+</li><li><a class='wikilink' href='RO-PL-12giu2002.html'>12 giugno 2002: Macchine</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-14lug2003.html'>14 luglio 2003: Detersivi</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-3nov2004.html'>3 novembre 2004: Pasticceria</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-20gen2005.html'>20 gennaio 2005: Chitarre</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-20feb2006.html'>20 febbraio 2006: Radioterapia</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-27giu2006.html'>27 giugno 2006: Vigneto</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-set2006.html'>settembre 2006: Condotte</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-10ott2006.html'>10 ottobre 2006: Trasmissioni da Marte</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PL-gen2007.html'>gennaio 2007: Dosaggio farmaci</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-6feb2007.html'>6 febbraio 2007: Pizze</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-24lug2007.html'>24 luglio 2007: Elettrodomestici</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PL-16apr2009.html'>16 aprile 2009: Feriti</a> (Lingo)
+</li></ul><div class='vspace'></div><h3>PLI</h3>
+<ul><li><a class='wikilink' href='RP-PLI-15giugno2004.html'>15 giugno 2004</a>
+</li><li><a class='wikilink' href='3Novembre2004-RO-PLI-3novembre2004.html'>3 novembre 2004 - RO-PLI-3novembre2004</a>
+</li><li><a class='wikilink' href='RO-PLI-11gen2000.html'>11 gennaio 2000: Segherie</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PLI-15feb2000.html'>15 febbraio 2000: Equipaggi</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PLI-26set2000.html'>26 settembre 2000: Spedizione urgente</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-19apr2001.html'>19 aprile 2001: Comizi</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-18nov2002.html'>18 novembre 2002: Concentratori</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PLI-20gen2003.html'>20 gennaio 2003: Sfilata</a> (Lindo)
+</li><li><a class='wikilink' href='RO-PLI-16apr2003.html'>16 aprile 2003: Pronto intervento</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-3nov2003.html'>3 novembre 2003: Immagini</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-19gen2004.html'>19 gennaio 2004: Cestini</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-17feb2005.html'>17 febbraio 2005: Hong Kong</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-14set2005.html'>14 settembre 2005: Incendi</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-27giu2006.html'>27 giugno 2006: Arbitri</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-17lug2006.html'>17 luglio 2006: Pacchi postali</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-12feb2009.html'>12 febbraio 2009: Rover</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PLI-16apr2009.html'>16 aprile 2009: Ambulanze</a> (Lingo)
+</li></ul><div class='vspace'></div><h3>PNL</h3>
+<ul><li><a class='wikilink' href='RO-PNL-7novembre2007.html'>7 novembre 2007</a>
+</li><li><a class='wikilink' href='RO-PNL-7aprile2008.html'>7 aprile 2008</a>
+</li><li><a class='wikilink' href='RO-PNL-11giugno2008.html'>11 giugno 2008</a>
+</li><li><a class='wikilink' href='RO-PNL-20gen2005.html'>20 gennaio 2005: Dispersione</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PNL-4apr2007.html'>4 aprile 2007: Scorte</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PNL-24lug2007.html'>24 luglio 2007: Atomi</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PNL-12apr2006.html'>12 aprile 2006: Costi di trasporto</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PNL-12gen2009.html'>12 gennaio 2009: Palle inscatolate</a> (Lingo)
+</li><li><a class='wikilink' href='RO-PNL-12feb2009.html'>12 febbraio 2009: Resistenze</a> (Lingo)
+</li></ul><div class='vspace'></div><h2>Esempi di domande che si possono incontrare durante la prova orale</h2>
+<p>Per ogni quesito il docente chiede sia la "definizione" presente sulle sue slide che il relativo formalismo matematico.
+</p>
+<div class='vspace'></div><h3>PL</h3>
+<ul><li>Enunciare il teorema dello scarto complementare
+</li><li>Enunciare il teorema della dualità nella forma debole e nella forma forte
+</li><li>Dare la definizione di dominanza nella programmazione a molti obiettivi
+</li><li>Descrivere quali sono i criteri per eseguire un passo di pivot nell'algoritmo del simplesso duale
+</li></ul><div class='vspace'></div><h3>PLI</h3>
+<ul><li>Dare la definizione di rilassamento
+</li><li>Definire le regole di branching
+</li><li>Dare la definizione di bound
+</li><li>Parlare del branching
+</li></ul><div class='vspace'></div><h3>PNL</h3>
+<ul><li>Dare la definizione di minimo locale
+</li><li>Dare la definizione di velocità di convergenza
+</li><li>Descrivere l'algoritmo del gradiente
+</li></ul><div class='vspace'></div><hr />
+<p  style='text-align: left; background-color: #d9e4f2; font-size: 10pt; color: black; padding: 5px;'><a style='color: black' class='categorylink' href='../Category/UniCrema.html'><strong>UniCrema</strong></a> | <a style='color: black' class='categorylink' href='../Category/PrimoSemestre.html'>Primo Semestre</a> | <a style='color: black' class='categorylink' href='../Category/TerzoAnno.html'>Terzo Anno</a> | <a style='color: black' class='categorylink' href='../Category/Informatica.html'>Informatica</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RicercaOperativa)</span></div>
+  </div>
+</body>
+</html>

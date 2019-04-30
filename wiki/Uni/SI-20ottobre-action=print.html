@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Intelligenti - Appunti del 20 Ottobre</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SI-20ottobre.html' title='Sistemi Intelligenti - Appunti del 20 Ottobre'>Sistemi Intelligenti - Appunti del 20 Ottobre</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Intelligenti - Appunti del 20 Ottobre ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>La lezione di oggi è stata tenuta - indovina un po' - dal prof Ferrari.
+</p></div>
+<div class='vspace'></div><h2>Radial Basis Function Networks</h2>
+<p>Le reti neurali <strong>RBF</strong> sono tra i modelli più semplici della famiglia feed-forward. Se le reti che abbiamo visto finora avevano funzione di attivazione sigmoidale (<a target='_blank'  class='urllink' href='http://it.wikipedia.org/wiki/Funzione_sigmoidea' title='' rel='nofollow'>vedi wikipedia</a>), queste ce l'hanno a simmetria radiale: l'uscita è proporzionale a un valore che rappresenta la distanza, o ancora meglio, l'output è strutturato sulla distanza.
+</p>
+<p class='vspace'>Il <em>basis</em> del nome, deriva del fatto che la formula del percettrone è una sommatoria di funzioni, ovvero una loro combinazione lineare. A questo punto è fin troppo chiaro (!): in algebra lineare una base è proprio l'insieme di vettori indipendenti che generano uno spazio vettoriale attraverso una combinazione lineare. Eureka!<br />Quindi? Quindi le funzioni (di qualsiasi tipo) che si vogliono approssimare con una rete neurale, possono essere ottenute come combinazioni lineari delle formule di attivazione dei singoli neuroni.
+</p>
+<p class='vspace'>La base viene calcolata come: <strong>F(x) = &#931;<sub>i</sub> w<sub>i</sub> h<sub>i</sub>(x)</strong>, per i = 1..M<br />e dove <em>h<sub>i</sub>(x) = h(||x - &#956;<sub>i</sub>||)</em>
+</p>
+<p class='vspace'>Notiamo in primis che h<sub>i</sub>(x) non dipende tanto da x, quanto da &#956;<sub>i</sub>. Quest'ultimo è il centro dell'unità a simmetria naturale, ed è considerato come elemento dello spazio di ingresso.
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/rbfEs.jpg' alt='' title='' /></span></div>
+<p>Rivediamo il concetto di "output strutturato sulla distanza" con un esempio su uno spazio di ingressi bidimensionali, quello riportato nella figura accanto. Le x indicano le posizioni dei neuroni, mentre il pallino il centro. Alla luce di quanto detto finora, la risposta del neurone 3 sarà maggiore di quella del neurone 2 poiché è più vicino al centro.
+</p>
+<div class='vspace'></div><h2>Esempi di funzioni a simmetria radiale</h2>
+<p>Ecco un elenco di funzioni a simmetria radiale:<br />(1) thin plate spline<br />(2) multiquadrica<br />(3) multiquadrica inversa<br />(4) gaussiana (la più usata)
+</p>
+<p class='vspace'>La (1) e la (2) divergono agli estremi, mentre la (3) e la (4) godono della proprietà di <em>località</em>. Per località si intende che la risposta della rete sarà forte in un certo interno, e via via più debole allontanandosi da esso. Per le reti che godono di questa proprietà ha senso addestrare la risposta del singolo neurone in tali regioni; il motivo è che la procedura diventa meno costosa di quella normale feed-forward.
+</p>
+<p class='vspace'>Tutte queste funzioni devono avere un centro, indipendentemente dal comportamento che poi assumeranno in relazione alla distanza.<br />E' inoltre possibile configurarle tramite parametri; ad esempio nella gaussiana c'è quello che modula la deviazione standard, regolandone la zona di influenza sull'uscita della rete. Attenzione però: un errore sulla regolazione dei parametri comporta un errore sull'approssimazione della funzione. In particolare bisogna stare attenti alla stima del valore di quei parametri che si trovano all'esponente, dato che con piccole variazioni avremo grandi conseguenze.
+</p>
+<p class='vspace'>La formula della RBF Gaussiana presentata a lezione non ci è data saperla prima della pubblicazione dei lucidi, nel frattempo potremo dire di lei che (fidatevi):
+</p><ul><li>&#956;<sub>i</sub> è il centro
+</li><li>&#963;<sub>i</sub> fa da modulatore della risposta: più è alto e più la gaussiana si alzerà, e viceversa. In questo modo si può regolare lo spazio dell'intorno, spalmandolo o concentrandolo
+</li></ul><p class='vspace'>Con le reti RBF si può dimostrare che un solo strato è sufficiente per ottenere qualsiasi funzione, mentre in generale ci volevano come minimo due strati sigmoidali. Questo non significa che non si possano usare più strati, ma sarebbe fatica inutile.
+</p>
+<p class='vspace'>I parametri strutturali della gaussiana sono <em>centro</em> (&#956;) e <em>ampiezza</em> (&#963;), una coppia per ogni unità della rete. I parametri sinaptici sono i <em>pesi sinaptici</em> (w), che permettono di rappresentare diversi tipi di funzioni mantenendo uguale il modello.<br />In un certo senso possiamo affermare che regolando i parametri strutturali stiamo "regolando l'hardware" della rete neurale; mentre regolando i pesi sinaptici stiamo "configurando il software".
+</p>
+<div class='vspace'></div><h2>Hybrid learning</h2>
+<p>L'idea di <strong>hybrid learning</strong> è stata proposta da Moody &amp; Darken, e consiste nell'applicare tecniche di apprendimento diverse a seconda dei parametri. In questo schema si fissano (una volta avuto il dataset di esempi) le posizioni dei neuroni attraverso la tecnica del clustering: dato un insieme di punti nello spazio, identificarne un sottoinsieme che ne rappresenti bene la distribuzione. Consideriamo ad esempio la seguente situazione in uno spazio bidimensionale:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/hybridLearning.jpg' alt='' title='' /></div>
+<p class='vspace'>I puntini in nero sono gli esempi, mentre in rosso sono indicati i <strong>centroidi</strong> individuati dal clustering, che saranno da ora in poi considerati come approssimazione degli insiemi di punti. L'ampiezza viene invece stimata in modo proporzionale rispetto alla distanza dai vicini.<br />Col clustering fissiamo quindi i parametri strutturali, poiché ci vengono forniti i centroidi che rappresentano le nostre unità di cui sappiamo calcolare centri e ampiezze.<br />Per quanto riguarda invece i pesi sinaptici, l'hybrid learning prevede di calcolarli con metodi di sostituzione lineare.
+</p>
+<p class='vspace'>L'hybrid learning è una tecnica molto leggera, ma quanto sia realmente efficiente è difficile dirlo.
+</p>
+<p class='vspace'>In un'approssimazione con RBF, i parametri dell'algoritmo di addestramento potrebbero essere: numero di centroidi utilizzati (M), numero di centroidi vicini considerati dall'algoritmo (P), costante &#945;. Quest'ultima è la costante di proporzionalità con cui moltiplico la media della distanza tra i valori dei P nodi vicini, necessaria per calcolare a sua volta &#963;.<br />Diminuendo il valore di M perdo informazioni nelle zone di maggiore dettaglio.<br />Diminuendo il valore di &#945; stringiamo la gaussiana, quindi l'addestramento risentirà poco dei punti distanti e molto di quelli vicini. Aumentando &#945; otteniamo l'effetto inverso.
+</p>
+<div class='vspace'></div><h3>Problema del model selection su hybrid learning</h3>
+<p>Il <em>problema del model selection</em> si riduce a tre domande:
+</p><ol><li>che rete neurale scelgo?
+</li><li>quanti neuroni uso?
+</li><li>che valore dò ai parametri?
+</li></ol><p class='vspace'>L'algoritmo di Moody &amp; Darken distribuisce la gaussiane sulle ascisse, senza curarsi di dove ci sono maggiori variazioni della funzione. In altre parole utilizziamo solo i dati di input, e poco importa se considerando l'uscita avrebbe più senso concentrare più gaussiane in un punto (perché più elaborato da modellare) e poche in un altro.<br />La smoothness della funzione è regolata da P ed &#945;, che dobbiamo regolare ad occhio e procedendo per tentativi controllando la risposta; cosa fattibile con questo algoritmo, dato che è piuttosto semplice e snello.<br />Abbiamo dato risposte chiare ed esaustive sul come risolvere il problema del model selection su hybrid learning? NO, continua a valere la regola del "scrivi, cancella e riscrivi".
+</p>
+<div class='vspace'></div><h2>Modello incrementale</h2>
+<p>Con il <strong>modello incrementale</strong> abbiamo l'allocazione delle unità in base a criteri che riguardano sia l'input che l'output, utilizzando la tecnica del gradiente per calcolare l'ottimo e adattare i parametri (superando così i limiti dell'hybrid learning).<br />Un po' di anni fa era possibile risparmiare un po' di tempo di calcolo sostituendo l'esponenziale della funzione radiale con un polinomio che la approssimi. In questo modo aumentano gli accessi in memoria e diminuisce il numero di calcoli da fare. Oggi però non è più una scelta furba: l'attuale collo di bottiglia è proprio l'accesso in memoria, il tempo di calcolo non è più un problema.
+</p>
+<p class='vspace'>Alcuni esempi di algoritmi di costruzione incrementale sono il <strong>RAN</strong> e il <strong>Growing RBF</strong>, che spero potranno essere presto rivisti sulle slide.
+</p>
+<div class='vspace'></div><h2>Regression tree</h2>
+<p>Il <strong>regression tree</strong> è un costrutto che ci viene prestato da altre discipline ma che ben si sposa con le reti neurali. L'idea è quella di disporre le nostre unità neurali procedendo con partizoni binarie dello spazio di input.
+</p>
+<div class='vspace'></div><table cellpadding='5' >
+<tr ><td bgcolor='#f2f6f9' width='30%'  valign='top'><strong>1.</strong><br />Si parte da una radice che è posizionata in un centro 0, media di tutti i punti forniti dal dataset, e con sigma 0 (&#956;<sub>0</sub>,&#963;<sub>0</sub>)
+</td><td bgcolor='#f2f6f9' align='center' valign='middle' ><img src='../uploads/Uni/regressionTree-Graf1.jpg' alt='' title='' />
+</td><td bgcolor='#f2f6f9' align='center' valign='middle' ><img src='../uploads/Uni/regressionTree-Tree1.jpg' alt='' title='' />
+</td></tr><tr ><td  valign='top'><strong>2.</strong><br />Seleziono un punto di sezione e mi chiedo in che direzione partizionare lo spazio degli ingressi: in orizzontale o in verticale? Dipende dall'errore che avremmo in un caso piuttosto che nell'altro, quindi li provo entrambi, verifico e scelgo di conseguenza.
+</td><td rowspan='2' align='center' valign='middle' ><img src='../uploads/Uni/regressionTree-Graf2.jpg' alt='' title='' />
+</td><td rowspan='2' align='center' valign='middle' ><img src='../uploads/Uni/regressionTree-Tree2.jpg' alt='' title='' />
+</td></tr><tr ><td  valign='top'><strong>3.</strong><br />Quando effettivamente partiziono origino due figli, di cui andrò a calcolare (&#956;<sub>1</sub>,&#963;<sub>1</sub>) e (&#956;<sub>2</sub>,&#963;<sub>2</sub>), e che riporterò nel regression tree aggiornato.
+</td></tr><tr ><td bgcolor='#f2f6f9'  valign='top'><strong>4.</strong><br />Ripeto i passi 2 e 3, con la possibilità di cambiare direzione di taglio.
+</td><td bgcolor='#f2f6f9'  valign='top'>
+</td><td bgcolor='#f2f6f9'  valign='top'>
+</td></tr></table>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SI-20ottobre)</span></div>
+  </div>
+</body>
+</html>

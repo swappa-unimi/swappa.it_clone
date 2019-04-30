@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Basi di Dati - Complementi - XML Schema Definition </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.BDC-XSD' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Basi di Dati - Complementi - XML Schema Definition
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-XSD?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-XSD?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='BDC-XSD-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-XSD?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-XSD?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Basi di Dati - Complementi - XML Schema Definition was last modified on May 11, 2008, at 11:19 PM'>
+							<span style='display:none;'>Basi di Dati - Complementi - XML Schema Definition</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>XML Schema Definition</strong></span>
+</p>
+<div class='vspace'></div><h3>Cos'è</h3>
+<p>L' <strong>XML Schema Definition</strong> (<strong>XSD</strong>) è una specifica della struttura dei documenti XML, più precisa e modulare rispetto ai <a class='wikilink' href='BDC-DTD.html'>DTD</a>, definita all'interno di un altro documento XML. Un XDS consente di definire elementi e attributi, di dichiarare il tipo di ciascun elemento e attributo sulla base di un insieme ampio di tipi predefiniti, di costruire nuovi tipi con l'aiuto di costruttori di tipi complessi e di esprimere vincoli sulla struttura degli elementi e degli attributi più sofisticati di quelli offerti dai DTD. Un documento XML che rispetta la descrizione del proprio XSD, si dice <em>validato</em> rispetto ad esso.
+</p>
+<p class='vspace'>Dal 2 maggio 2001 l'XSD è felicemente diventato <a target='_blank'  class='urllink' href='http://www.w3.org/XML/Schema' title='' rel='nofollow'><em>W3C recommendation</em></a>, con successiva revisione il 28 ottobre 2004.
+</p>
+<div class='vspace'></div><h3>Componenti</h3>
+<p>L'XSD è costituito da un insieme di <em>componenti</em> elementari, 13 in tutto, divisi in tre categorie: primari, secondari e di aiuto. Di seguito studieremo solo i primari, ovvero:
+</p><ul><li><em>elementi semplici</em>
+</li><li><em>elementi complessi</em>
+</li><li><em>indicatori</em>
+</li><li><em>attributi</em>
+</li></ul><p class='vspace'>Prima di analizzarli singolarmente, anticipiamo che uno XML Schema deve avere la seguente struttura generale:
+</p>
+<div class='vspace'></div><pre class='escaped'>&lt;?xml version"1.0"?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+  "definizione della struttura"
+&lt;/xs:schema&gt;</pre>
+<p class='vspace'>Notare come il tag &lt;xs:schema&gt; specifichi attraverso l'attributo <em>xmlns</em> che in questo documento sarà applicato lo standard del W3C.
+</p>
+<div class='vspace'></div><h4>Elementi semplici</h4>
+<p>Gli <strong>elementi semplici</strong> sono quei componenti che non possono contenere altri elementi o attributi al loro interno, ma solo tipi standard o loro derivati. I tipi derivati sono generalmente generati con meccanismi di ereditarietà da altri tipi, su cui si applicano alcune restrizioni.<br />Sono elementi semplici i numeri (es: <code class='escaped'>int, float, double, byte, ...</code>), le date (es: <code class='escaped'>date, duration, ...</code>), i booleani (<code class='escaped'>boolean</code>), valori XML (<code class='escaped'>ID, IDREF, ...</code>), gli URI (<code class='escaped'>uriReference</code>), i dati binari o le stringhe di testo (es: <code class='escaped'>string</code>).  
+</p>
+<p class='vspace'>Gli elementi semplici si indicano col tag: <code class='escaped'>&lt;xs:element nomeElemento tipoElemento ...&gt;</code>
+Si possono inoltre definire <strong>valori fissi</strong> (<code class='escaped'>fixed</code>) o di <strong>default</strong> (<code class='escaped'>default</code>); la differenza è che se nel secondo caso il valore viene applicato al contenuto dell'elemento solo se questo è vuoto, con <code class='escaped'>fixed</code> l'assegnamento avviene sempre. Alcuni esempi:
+</p><pre class='escaped'>&lt;xs:element name="Nome1" type="tipo1" /&gt;
+&lt;xs:element name="Nome2" type="tipo1" default="ciao" /&gt;
+&lt;xs:element name="Nome3" type="tipo2" fixed="belo" /&gt;</pre>
+<p class='vspace'>E' infine possibile imporre diversi tipi di <strong>restrizioni</strong> sui valori, tra cui:
+</p><ul><li><em>whiteSpace</em>, tipo di gestione dei whitespace 
+</li><li><em>totalDigit</em>, numero esatto di caratteri alfanumerici 
+</li><li><em>pattern</em>, sequenza di caratteri 
+</li><li><em>min/maxLength</em>, lunghezza minima e massima 
+</li><li><em>min/maxInclusive</em>, limite numerico inferiore/superiore, esso compreso 
+</li><li><em>min/maxExclusive</em>, limite numerico inferiore/superiore, esso escluso 
+</li><li><em>length</em>, numero esatto di caratteri (&gt;=0)
+</li><li><em>fractionDigit</em>, numero di decimali dopo la virgola (&gt;=0) 
+</li><li><em>enumeration</em>, lista di valori accettabili
+</li></ul><div class='vspace'></div><h4>Elementi complessi e Indicatori</h4>
+<p>Gli <strong>elementi complessi</strong> sono quei componenti dell'XSD che possono contenere attributi o altri elementi al loro interno. Si indicano col tag: <code class='escaped'>&lt;xs:complexType&gt; ... &lt;/xs:complexType&gt;</code>
+</p>
+<p class='vspace'>Nel caso in cui l'elemento ne contenga altri, è possibile definire <em>ordinamenti</em>, <em>cardinalità</em> e <em>raggruppamenti</em> attraverso l'uso degli <strong>indicatori</strong>. In dettaglio:
+</p>
+<div class='vspace'></div><ul><li><em>indicatori di ordinamento</em>
+<ul><li><em>Any</em>: qualunque elemento, in qualunque ordine
+</li><li><em>All</em>: tutti gli elementi, in qualunque ordine
+</li><li><em>Choice</em>: uno e un solo elemento
+</li><li><em>Sequence</em>: tutti gli elementi, nell’ordine specificato
+</li></ul><div class='vspace'></div></li><li><em>indicatori di cardinalità</em>
+<ul><li><em>maxOccurs</em>: max numero di occorrenze (default 1)
+</li><li><em>minOccurs</em>: min numero di occorrenze (default 1)
+</li></ul><div class='vspace'></div></li><li><em>raggruppamento</em>
+<ul><li><em>Group name</em>
+</li><li><em>Group reference</em>
+</li></ul></li></ul><p class='vspace'>Un esempio di dichiarazione di elemento complesso è il seguente:
+</p>
+<div class='vspace'></div><pre class='escaped'>(1) &lt;xs:element name="persona"&gt;
+(2)   &lt;xs:complexType&gt;
+(3)     &lt;xs:sequence&gt;
+(4)       &lt;xs:element name="Cognome" type="xs:string" /&gt;
+(5)       &lt;xs:element name="Nome" type="xs:string" maxOccurs="4" minOccurs="1" /&gt;
+(6)     &lt;/xs:sequence&gt;
+(7)   &lt;/xs:complexType&gt;
+(8) &lt;/xs:element&gt;</pre>
+<p class='vspace'>Commenti punto per punto:
+</p><ul><li>(1) definisce un nuovo elemento che ha nome "persona"
+</li><li>(2) annuncia che tale elemento è di tipo complesso
+</li><li>(3) dichiara che gli elementi seguenti dovranno essere tutti utilizzati nell'ordine specificato
+</li><li>(4) definisce un nuovo elemento semplice di tipo stringa chiamato "Cognome"
+</li><li>(5) definisce un nuovo elemento semplice di tipo stringa chiamato "Nome", obbligatorio e che può avere massimo 4 occorrenze (es. <a class='wikilink' href='Tettamanzi.html'>Andrea Giovanni Battista</a>)
+</li><li>(6), (7) e (8) sono tags di chiusura
+</li></ul><p class='vspace'>Infine, sottolineiamo come un elemento di tipo complesso possa essere a sua volta un elemento complesso. Pensiamo ad esempio a un elemento che contenga i dati di una persona, tra cui anche l'indirizzo, anch'esso composto da più elementi (via, numero, città, ...). Oltre a permettere una nidificazione che meglio struttura il nostro documento XML, questa proprietà consente di condividere tra più elementi alcuni tipi complessi.
+</p>
+<div class='vspace'></div><h4>Attributi</h4>
+<p>Gli <strong>attributi</strong> sono quei componenti dell'XSD che forniscono informazioni aggiuntive sugli elementi complessi. Si indicano col tag: <code class='escaped'>&lt;xs:attribute ... ... /&gt;</code>
+</p>
+<p class='vspace'>Tra le proprietà che possono essere definite al loro interno ricordiamo senz'altro:
+</p><ul><li><code class='escaped'>name="NomeAttributo"</code> per indicare il nome
+</li><li><code class='escaped'>type="TipoAttributo"</code> per il tipo, che può essere solo uno di quelli standard, non derivati
+</li><li><code class='escaped'>use="TipoDiUso"</code> che specifica se l'attributo è obbligatorio o opzionale
+</li><li><code class='escaped'>default="valoreDef"</code>, <code class='escaped'>fixed="valoreFisso"</code> e le varie restrizioni, tutte proprietà che abbiamo già visto per gli elementi semplici.
+</li></ul><p class='vspace'>Un esempio di dichiarazione di attributo è il seguente:
+</p><pre class='escaped'>&lt;xs:attribute name="NomeAttributo1" type="TipoAttributo1" /&gt;
+&lt;xs:attribute name="NomeAttributo2" type="TipoAttributo1" 
+    default|fixed="ciao" use="required|optional" /&gt;</pre>
+<div class='vspace'></div><h3>Esempio finale</h3>
+<h5>XML Schema</h5>
+<pre class='escaped'>(1)  &lt;?xml version="1.0"?&gt;
+(2)  &lt;schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+(3)    &lt;xs:element name="note"&gt;
+(4)      &lt;xs:complexType&gt;
+(5)        &lt;xs:sequence&gt;
+(6)          &lt;xs:element name="to" type="xs:string"&gt;
+(7)          &lt;xs:element name="from" type="xs:string"&gt;
+(8)          &lt;xs:element name="head" type="xs:string"&gt;
+(9)          &lt;xs:element name="body" type="xs:string"&gt;
+(10)       &lt;/xs:sequence&gt;
+(11)     &lt;/xs:complexType&gt;
+(12)     &lt;xs:attribute name="when" type="xs:date" use="required" /&gt;
+(13)   &lt;/xs:element&gt;
+(14) &lt;/schema&gt;</pre>
+<div class='vspace'></div><h5>Commento</h5>
+<ul><li>(1) e (2), indicano la versione e lo standard di riferimento del documento
+</li><li>(3) definisce un nuovo elemento che ha nome "note"
+</li><li>(4) annuncia che tale elemento è di tipo complesso
+</li><li>(5) dichiara che gli elementi seguenti dovranno essere tutti utilizzati nell'ordine specificato
+</li><li>(6), (7), (8) e (9) definisce quattro nuovi elementi semplici di tipo stringa che compongono l'elemento complesso "note". Essi si chiamano rispettivamente "to", "from", "head" e "body"
+</li><li>(10) e (11) sono tags di chiusura
+</li><li>(12) definisce un attributo di nome "when" per il tipo complesso "nome". E' di tipo "data" ed il suo utilizzo è obbligatorio
+</li><li>(13) e (14) sono tags di chiusura
+</li></ul><div class='vspace'></div><h5>Documento XML valido</h5>
+<pre class='escaped'>&lt;?xml version="1.0"?&gt;
+&lt;note when="15/07/2006"&gt;
+  &lt;to&gt; Rossi Andrea &lt;/to&gt;
+  &lt;from&gt; Bianchi Riccardo &lt;/from&gt;
+  &lt;head&gt; Promemoria &lt;/head&gt;
+  &lt;body&gt; Compleanno Michela &lt;/body&gt;
+&lt;/note&gt;</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 11, 2008, at 11:19 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-XSD?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-XSD?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

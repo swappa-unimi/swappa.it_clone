@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: ESP - Lezione 7 germile 216 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.ESP27marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				ESP - Lezione 7 germile 216
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP27marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP27marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='ESP27marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP27marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP27marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='ESP - Lezione 7 germile 216 was last modified on March 27, 2008, at 05:55 PM'>
+							<span style='display:none;'>ESP - Lezione 7 germile 216</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: ESP - Lezione 7 germile 216 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Altrimenti noto come 27 marzo 2008</strong></span>
+</p>
+<p class='vspace'><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di ESP</a>
+</p>
+<div class='vspace'></div><h3>Debolezza delle politiche discrezionarie</h3>
+<p>Per completare il discorso sui problemi di sicurezza delle politiche discrezionarie, vediamo che esse non sono in grado di prevenire gli attacchi basati su Trojan Horse.
+</p>
+<p class='vspace'>Ecco uno scenario tipico.
+</p>
+<p class='vspace'>L'utente <strong>Jane</strong> possiede un file, detto <strong>RobaCheScotta.txt</strong>, di cui è proprietaria. L'utente cattivo, <strong>Devilman</strong>, vorrebbe leggerlo, ma non può. Allora che cosa fa: crea un file dal nome <strong>FileInnocente.txt</strong>, e lo rende accessibile da parte di chiunque, e un programmino che Jane troverebbe molto utile, per esempio un programma che calcola la frequenza delle sedute dal parrucchiere in funzione delle fasi lunari.
+</p>
+<p class='vspace'>Jane quindi esegue ignara questo programma, il quale però contiene occultamente delle operazioni che 1) leggono da <strong>RobaCheScotta.txt</strong> e scrivono su <strong>FileInnocente.txt</strong>. Tutto ciò è reso possibile dal fatto che Jane ha i permessi su <strong>RobaCheScotta.txt</strong>, ma anche su <strong>FileInnocente.txt</strong>, che è stato reso accessibile a tutti da Devilman.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Politiche Mandatorie</strong></span>
+</p>
+<p class='vspace'>Questo è un altro tipo di <em>politica</em>.
+Distingue tra <strong>utenti</strong>, le persone, e <strong>soggetti</strong>, ovvero i processi. Gli utenti sono considerati fidati, le persone no. Ci sono anche gli <strong>oggetti</strong>.
+</p>
+<p class='vspace'>I soggetti e gli oggetti vengono classificati tramite un<strong>'etichetta</strong>, che contiene 2 campi:
+1) Un campo che contiene valori tratti da un insieme ordinato
+2) Un campo che contiene valori tratti da un insieme non ordinato
+</p>
+<p class='vspace'>Queste etichette possono essere di 2 tipi, cioè essere fatte in modo da garantire la <strong>confidenzialità</strong> oppure l<strong>'integrità</strong>. Ma vedremo questa distinzione più tardi.
+</p>
+<p class='vspace'>L'etichetta è detta <strong>parzialmente ordinata</strong>, perché un suo campo è ordinato, mentre l'altro no.
+Il campo totalmente ordinato è il <strong>livello di sicurezza</strong>, d'ora in poi semplicemente <strong>livello</strong>.
+Il campo non ordinato è invece la <strong>categoria</strong>, che come le categorie del Wiki serve solo a distinguere i diversi ambiti.
+</p>
+<p class='vspace'>Per chiarirci, i livelli potrebbero essere, in ordine gerarchico, <strong>TS</strong> (Top Secret) &#8805; <strong>S</strong> (Secret) &#8805; <strong>C</strong> (Confidential) &#8805; <strong>U</strong> (Unclassified).
+Invece, le categorie potrebbero essere <strong>Amministrazione</strong>, <strong>Anagrafica</strong>, <strong>Armi Nucleari</strong>, e rappresentano i domini di competenza, cioè una suddivisione che il proprietario del sistema crea per distinguere tra dati pertinenti ad un'area e dati riguardanti un'altra area.
+</p>
+<p class='vspace'>Le categorie vengono utili per fare in modo che un utente possa utilizzare solo dati che facciano parte della categoria su cui ha i permessi. Ad esempio, ad un'impiegata in segreteria non dovrebbe essere permesso di accedere impunemente ai dati relativi alle Armi Nucleari.
+</p>
+<p class='vspace'>Le varie etichette, altrimenti dette <strong>classi di sicurezza</strong>, sono ordinate parzialmente tramite una <strong>relazione di dominanza</strong>, così definita:
+</p>
+<div class='vspace'></div><pre> (L1, C1) e (L2, C2) sono 2 classi di sicurezza (L è il livello, C la categoria)
+ (L1, C1) &#8805; (L2, C2) <strong>sse</strong>
+ * L1 &#8805; L2
+ * C1 &#8839; C2
+</pre><p class='vspace'>Vuol dire che L1 deve essere maggiore o uguale di L2, e C1 deve comprendere o essere al più uguale a C2.
+</p>
+<p class='vspace'>Esempio: 
+I miei livelli sono quelli di prima, ovvero <strong>TS</strong> &#8805; <strong>S</strong> &#8805; <strong>C</strong> &#8805; <strong>U</strong>, e le categorie sono ancora <strong>anagrafica</strong>, <strong>amministrazione</strong> e <strong>armi nucleari</strong>.
+La prima classe è <strong>x = (S, {anagrafica, amministrazione})</strong>. La seconda classe è <strong>y = (S, {amministrazione})</strong>. Posso dire che <strong>x &#8805; y</strong>?
+</p>
+<p class='vspace'>Possiamo verificarlo facilmente, controllando se le due proprietà sono rispettate
+</p><pre> * L1 &#8805; L2? Sì, S &#8805; S
+ * C1 &#8839; C2? Sì, perché l'insieme {anagrafica, amministrazione} contiene
+ l'insieme {amministrazione}
+</pre><p>Ecco che x &#8805; y.
+</p>
+<div class='vspace'></div><h3>Il reticolo di classificazione</h3>
+<p>Le classificazioni presentano delle simpatiche (?) proprietà.
+</p>
+<p class='vspace'><strong>Riflessività</strong>: una classe domina se stessa. Non sto qui a scribacchiarlo, però provate e vedrete che ovviamente soddisfa le condizioni di cui sopra.
+</p>
+<p class='vspace'><strong>Transitività</strong>: se <strong>x</strong> &#8805; <strong>y</strong>, e <strong>y</strong> &#8805; <strong>z</strong>, allora <strong>x</strong> &#8805; <strong>z</strong>
+</p>
+<p class='vspace'><strong>Antisimmetria</strong>:se <strong>x</strong> &#8805; <strong>y</strong> e <strong>y</strong> &#8805; <strong>x</strong>, allora <strong>x</strong> = <strong>y</strong>. La cosa è logica, se fate riferimento alla proprietà della riflessività qualche riga più sopra.
+</p>
+<p class='vspace'><strong>Least Upper Bound</strong>: date 2 classi, <strong>x</strong> e <strong>y</strong>, esiste un'unica classe <strong>z</strong> che le domina entrambe, e che è la minore di tutte le classi che dominano <strong>x</strong> e <strong>y</strong>. Vedi dopo per i dettagli.
+</p>
+<p class='vspace'><strong>Greatest Lower Bound</strong>: date 2 classi, <strong>x</strong>, e <strong>y</strong>, esiste un'unica classe <strong>z</strong> che è dominata da entrambe, e che è la maggiore di tutte le classi dominate da <strong>x</strong> e <strong>y</strong>
+</p>
+<p class='vspace'>Queste belle proprietà possono essere rappresentate graficamente in un reticolo, che io qui per pietà nei miei confronti non disegno.
+</p>
+<p class='vspace'>Inoltre, le ultime due proprietà, il <strong>Least Upper Bound</strong> e il <strong>Greatest Lower Bound</strong>, familiarmente chiamati <strong>LUB</strong> e <strong>GLB</strong>, possono essere "trovati" secondo queste semplici formulette:
+</p>
+<p class='vspace'><strong>LUB</strong>: Il LUB tra (L1, C1) e (L2, C2) è (L3, C3), dove:
+</p><ul><li>se L1 &#8805; L2, L3 = L1; altrimenti L3 = L2 (in altre parole, prendo il maggiore tra i due livelli)
+</li><li>C3 = C1 &#x22c3; C2; cioè l'unione dei due insiemi
+</li></ul><p class='vspace'><strong>GLB</strong>: Il GLB tra (L1, C1) e (L2, C2) è (L3, C3), dove:
+</p><ul><li>se L1 = L2, L3 = L2, altrimenti L3 = L1 (il più piccolo tra i due livelli)
+</li><li>C3 = C1 &#x22c2; C2.
+</li></ul><p class='vspace'>Si possono fare esercizi al riguardo, e forse in un futuro ne faremo.
+</p>
+<div class='vspace'></div><h3>Controllo di sicurezza: classificazione</h3>
+<p>La classe assegnata ad un utente è detta <strong>clearance</strong>, ed è il livello di fiducia dell'utente. Quindi, ogni utente ha un livello di segretezza a cui può accedere, ed un'area di competenza data dalle categorie a cui può accedere.
+</p>
+<p class='vspace'>Un utente può collegarsi al sistema utilizzando una qualsiasi classe che sia &#8804; della sua clearance.
+Per garantire la segretezza, vanno rispettate queste due proprietà:
+</p>
+<p class='vspace'><strong>no write down</strong>: un soggetto può scrivere <strong>solo</strong> su oggetti di una classe &#8805; della sua.
+</p>
+<p class='vspace'><strong>no read up</strong>: un soggetto può leggere <strong>solo</strong> oggetti di una classe &#8804; della sua.
+</p>
+<p class='vspace'>La seconda proprietà, <strong>no read up</strong>, è comprensibile: posso leggere solo gli oggetti appartenenti ad una classe che io posso dominare.
+Ma la prima potrebbe lasciare perplessi, ed infatti dice che posso <em>scrivere</em> su qualsiasi oggetto che sia &#8805; della mia classe, ovvero che appartenga alla mia classe o a qualsiasi classe da me dominata.
+Questo vuol proprio dire che posso <strong>scrivere</strong> su dati di una classe superiore!
+</p>
+<p class='vspace'>Infatti, questo sistema garantisce sì la <strong>confidenzialità</strong>, ovvero che non si possa leggere ciò che non mi è stato destinato, ma <strong>non</strong> garantisce l<strong>'integrità</strong> dei dati, come abbiamo appena visto. Il flusso delle informazioni va dal basso verso l'alto, ed è questo che garantisce la confidenzialità.
+</p>
+<p class='vspace'><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di ESP</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 27, 2008, at 05:55 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP27marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP27marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

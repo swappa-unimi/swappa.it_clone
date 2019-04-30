@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi per l'elaborazione delle informazioni - Lezione 2</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LezSEDI02.html' title='Sistemi per l'elaborazione delle informazioni - Lezione 2'>Sistemi per l'elaborazione delle informazioni - Lezione 2</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Sistemi per l'elaborazione delle informazioni ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 27 Settembre 2007</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 300px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Introduzione a livello di Data Link</a>
+</li><li><a href='#s2'>Tecniche standard per i computer</a>
+</li><li><a href='#s3'>Responsabilità del Data Link</a>
+</li><li><a href='#s4'>Protocolli MAC Collision Free</a>
+</li><li><a href='#s5'>Protocolli MAC a contesa</a>
+</li><li><a href='#s6'>Slotted Aloha</a>
+</li><li><a href='#s7'>CSMA / CD</a>
+</li><li><a href='#s8'>Soluzione adattiva</a>
+</li><li><a href='#s9'>Visione unificante</a>
+</li><li><a href='#s10'>Ethernet</a>
+</li></ol></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h3>Introduzione a livello di Data Link</h3>
+<p>Le reti tra computer nascono come reti private, per l'ovvio motivo che non si possono tirare in giro i cavi per l'Italia etc.
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h3>Tecniche standard per i computer</h3>
+<p>Gli standard offrono dei pro e dei contro. Il pro è che ci può essere intercomunicabilità fra produttori diversi, mentre il contro è che in genere, una volta che si è fatto uno standard, poi non lo si cambia più per un bel pezzo e la tecnologia viene per così dire congelata; inoltre è possibile che ci siano più standard per la stessa funzione.
+</p>
+<p class='vspace'>Gli standard vengono inventati, per esempio, dalla Internet Society, dall'ISO, dal CCITT, dal forum ATM (Azienda Trasporti Milanese, lo standard del degrado della linea dei pullman è loro...).
+</p>
+<p class='vspace'>Come dicevo all'inizio, all'interno del computer i bit sono organizzati spazialmente: ogni bit è una carica in una certa porzione piccola ma fisicamente reale all'interno del computer. Ma devo spostarli 1 alla volta, nel dominio del tempo, affinché io possa trasmetterli lungo una rete. Per fare ciò, occorre codificare in qualche modo la presenza e l'assenza di carica (cioè lo 0 e l'1 nella memoria del computer) in un segnale.
+</p>
+<p class='vspace'>Un modo per farlo è stabilire che 0 Volt = 1, e 5 Volt = 0. Bene. Bello. Problema: lungo un filo è più che probabile che il segnale si attenuerà, perché il filo ha una sua resistività e così via. Quindi è possibile che fra 10 metri non arrivino più 5 volt, ma 2,5, e a questo punto l'apparecchio ricevente potrebbe interpretare i 2,5 Volt arrotondandoli per difetto, e ricevendo 0 al posto di 1. I dati si perdono. La perdita di dati è ancora accettabile durante le conversazioni telefoniche, perché anche se perdiamo addirittura pezzi interi di parola, si capisce lo stesso. Ma non è assolutamente accettabile perdere pezzi durante la trasmissione di dati informatici.
+</p>
+<p class='vspace'>Quindi, per evitare sto problema del voltaggio, si è pensato di inviare i bit non come livelli diversi di corrente, ma come <em>variazioni</em> del livello di corrente, ovvero come fronti di salita e fronti di discesa. Un fronte di salita si ha quando il voltaggio sale, mentre un fronte di discesa si ha quando il voltaggio scende. Ecco quindi che abbiamo scoperto il <em>baud rate</em>, ovvero la quantità di <em>fronti</em> che si inviano per secondo. Da notare che il baudrate non è necessariamente uguale al bitrate.
+</p>
+<p class='vspace'>Nel caso dei calcolatori, NON si fa multiplexing come abbiamo visto finora: semplicemente, le varie stazioni si danno il turn nel comunicare, secondo un sistema detto Statistical Division Multiplexing, che vuol dire semplicemente che ci si dà il turno. Un altro modo per indicare questa faccenda del parlare a turni è il MAC: Medium Access Control, ovvero il modo per controllare l'accesso al medium, che non è chi comunica coi morti ma il mezzo di trasmissione.
+</p>
+<p class='vspace'>Il DLL, che sta per Data Link Layer, è il formato in cui vengono inviati i singoli blocchi di comunicazione. Come abbiamo visto prima per il misterioso ATM, se non c'è isocronia, le trasmissioni avvengono a blocchi, e ogni blocco deve essere autosufficiente nel senso che deve saper arrivare a destinazione in modo autonomo. Le informazioni per andare in giro per la rete sono distribuite nel blocco in un certo formato, detto appunto DLL. La differenza con le trame del TDM è che le trame sono i pezzi di dati circondati dai bit di sincronimo.
+</p>
+<p class='vspace'>Nelle reti di computer il controllo degli errori è fondamentale, per il motivo che ho detto prima. Occorre quindi anche un sistema per accertarsi che i blocchi siano stati ricevuti senza errori.
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h3>Responsabilità del Data Link</h3>
+<ul><li>deve fare il multiplexing finto dei flussi di dati, cioè saper dire: ora parlo io, ora parli tu
+</li><li>deve controllare l'accesso al mezzo di trasmissione
+</li><li>deve controllare gli errori.
+</li></ul><p class='vspace'>La necessità del multiplexing finto di qualche paragrafo fa nasce da una semplice constatazione amichevole. Se ho due computer, posso benissimo immaginare di tirare un cavo tra uno e l'altro ed è morta lì. Se ho tre computer idem: ho un cavo per ogni coppia di computer. Ma quando comincio ad avere 20 computer, che faccio? Un cavo per ogni coppia è improponibile. Ecco perché si usa un filo solo, e si usa questo multiplexing a turni per decidere chi parla e chi sta zitto: è il controllo di accesso al mezzo.
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h3>Protocolli MAC Collision Free</h3>
+<p>In questi protocolli, si fa in modo che non ci sia del tutto la possibilità che due stazioni si mettano ad inviare contemporaneamente dati sulla rete, rendendoli di fatto inutilizzabili. Occorre quindi stabilire dei turni: la stazione che vuole comunicare "alza la mano" (handrising) e invia a <em>tutte</em> le altre stazioni il segnale che indica la sua volontà di comunicare. Ogni scheda dice la sua in proposito, e quando si sono messe d'accordo quello che vince la trattativa (in base a certe regole) è quello che invia il messaggio.
+</p>
+<p class='vspace'>In questo caso si ha tanto overhead, perché si perde tanto tempo a mandare microframes per queste trattative.
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h3>Protocolli MAC a contesa</h3>
+<p>Con i protocolli MAC a contesa, invece, è ammesso il caso che si parli tutti insieme: nel caso Collision Free si evita a priori la collisione, qui invece la si risolve dopo che è successa.
+</p>
+<p class='vspace'><a name='s6' id='s6'></a>
+</p><h3>Slotted Aloha</h3>
+<p>È il sistema inventato all'Università delle Hawaii, dove usavano le onde radio per collegare i diversi campus presenti su isole diverse. Avevano 1 solo canale, e le collisioni succedevano frequentemente.
+</p>
+<p class='vspace'>La parola <em>slotted</em> si rifà all'idea di voler dare ad ogni stazione un suo tempo di trasmissione che abbia una lunghezza fissa: ognuno può inviare messaggi solo all'inizio del suo slot temporale. Ci sono poche probabilità che due computer si mettano ad inviare segnali nello stesso istante. Però, in caso di collisione, non è affatto stabilito quando una singola stazione potrà di nuovo comunicare.
+</p>
+<p class='vspace'>La rilevazione delle collisioni è semplice: una stazione invia dei dati, e li confronta con i dati che sta ricevendo. Se i due stream coincidono, vuol dire che solo lei sta inviando dati sulla rete. Se invece ci sono discrepanze, vuol dire che c'è una collisione in corso, e che il messaggio è da reinviare.
+</p>
+<p class='vspace'>Un altro problema dello Slotted Aloha è che le onde elettromagnetiche, per quanto veloci, hanno un tempo finito di propagazione, che è di 2*10^8 m/s. Quindi, può accadere che una stazione senta il canale libero quando invece un'altra stazione sta già inviando, proprio perché il segnale radio ci mette tempo a viaggiare da un'isola all'altra, e questo tempo è apprezzabile dalle apparecchiature elettroniche.
+</p>
+<p class='vspace'><a name='s7' id='s7'></a>
+</p><h3>CSMA / CD</h3>
+<p>Carrier Sensing Multiple Access / Collision Detection.<br />Inventato da Bob Metcalfe, è il sistema che sta alla base di Ethernet. Nella stessa parola Ethernet, si ritrova Ether, cioè etere, ovvero il richiamo alle onde radio del sistema Slotted Aloha.
+</p>
+<p class='vspace'><em>Carrier Sensing</em> vuol dire che si rileva (sensing) la portante (carrier): quando questa è pulita, vuol dire che posso cercare di trasmettere i dati che voglio. Come con Aloha, si fa il confronto tra dati inviati e ricevuti: se coincidono, allora la trasmissione non è disturbata, altrimenti c'è stata una collisione da qualche parte.
+</p>
+<p class='vspace'>Che cosa avviene quando c'è una collisione? Certo, si deve aspettare un certo po' di tempo per riprovare, ma quanto? Ci sono diverse strategie:
+</p><ul><li>non persistent = aspetto un tempo random. Siccome è poco probabile che tutte le stazioni selezioneranno lo stesso tempo random, è quasi come darsi i turni ed evitare le collisioni.
+</li><li>1 persistent = aspetto un tempo determinato
+</li><li>p-persistent = una via di mezzo tra le due precedenti.
+</li></ul><p class='vspace'>Da notare che tutti sti protocolli a contesa funzionano bene se il carico totale sulla rete è basso. In effetti, il rapporto tra banda impegnata e non impegnata non deve superare il 30%, nel caso dell'Ethernet. Questo perché altrimenti le collisioni diventerebbero tante, e si sprecherebbe tantissimo tempo. In caso di traffico più elevato occorrono protocolli Collision Free. Una delle ragioni del successo di Ethernet si è avuta nel fatto che ci sono state molte schede a basso costo: costando così poco la banda, non c'era problema anche se la si usava solo al 30%.
+</p>
+<p class='vspace'>Negli ultimi tempi, tuttavia, con gli switch che vedremo più sotto, non c'è quasi più bisogno di gestire le collisioni, quindi la banda viene sfruttata completamente.
+</p>
+<p class='vspace'><a name='s8' id='s8'></a>
+</p><h3>Soluzione adattiva</h3>
+<p>Questo titolo altisonante e vagamente misterioso si riferisce ad un sistema di gestione del traffico di rete che è una specie di misto di quelli visti finora. Non appena si rileva una collisione, si mette il gruppo su cui si è verificata la collisione in modalità Collision Detection, mentre le comunicazioni tra gruppi avvengono con Collision Free. Questo cambio di modalità dipende dalle condizioni del traffico, per questo viene detto adattivo.
+</p>
+<p class='vspace'><a name='s9' id='s9'></a>
+</p><h3>Visione unificante</h3>
+<p>Per tirare un po' le somme di questi sistemi, e vedere dove e come sono utili, viene buono il seguente schema:
+</p>
+<div class='vspace'></div><ul><li>Si ha basso carico &amp; si vuole poca latenza =&gt; Protocollo a contesa
+</li><li>Si ha alto carico &amp; si vuole massima efficienza =&gt; Collision Free
+</li><li>Carico variabile &amp; Problemi assortiti =&gt; Ibridi vari
+</li></ul><p class='vspace'>Perché il protocollo a contesa ha il vantaggio di avere poca latenza? Innanzitutto, la latenza è l'intervallo di tempo che passa dalla richiesta di trasmissione all'effettivo invio dei dati. Nei sistemi Aloha e derivati, quando voglio trasmettere trasmetto, saranno gli altri a fermarsi, e tipicamente essendo il carico non superiore al 30% questo avviene quasi sempre: invio subito. Il problema sta invece nell'efficienza: non appena il carico si alza, allora le collisioni diventano così tante che continuo a inviare roba e non arriva mai! Ecco perché se voglio inviare tanta tanta merce, è meglio usare un protocollo Collision Free: quando partono i dati, nessuno li ferma. Lo svantaggio dei sistemi Collision Free al converso sta nella latenza: siccome tutte le stazioni si devono mettere d'accordo per decidere i turni, si perde tanto tempo dal momento in cui io esprimo la volontà di inviare i miei dati a quando effettivamente questi miei dati avranno il turno libero. Più si è in tanti, più ci si mette tempo a mettersi d'accordo.
+</p>
+<p class='vspace'><a name='s10' id='s10'></a>
+</p><h3>Ethernet</h3>
+<p>È proprio vero che il cavo di rete dell'Ethernet sia proprio come l'Ethere? Metcalfe ha usato questo paragone, perché si rifaceva all'Aloha: io trasmetto, e tutti sentono.
+</p>
+<p class='vspace'>Ma c'è una differenza: se tutti sono collegati al cavo, è scontato che tutti sentano il messaggio da me inviato. Nel caso dell'Ethere vero, invece, può anche darsi che ci siano stazioni che NON si accorgano del messaggio perché sono fuori campo! Questo è proprio il caso delle reti Wireless.
+</p>
+<p class='vspace'>È il problema dell' <em>Hidden Terminal</em>: A vuole parlare a B, e sente il campo libero, e invia. Allo stesso tempo anche C vuole mandare a B, e siccome è distante da A e non si accorge che A sta parlando, parla anche lui. In casi come questo Ethernet non funziona, perché cade miseramente uno dei principi base del CSMA/CD: la Collision Detection! Infatti nel caso qui citato non c'è nessuna collision detection perché né A né B se ne accorgono! Ahi ahi ahi!
+</p>
+<p class='vspace'>E non è finita qui: c'è anche il problema inverso, quello della <em>Stazione Esposta</em>. A parla con B, e C vuole parlare con D. Sono tutti nello stesso campo. C vorrebbe parlare, ma sente che il campo è occupato dalla conversazione di A con B, e allora si astiene, mentre in realtà potrebbe benissimo parlare con D perché A sta parlando con B e non con D. Bia bi e e ba be bi e i babebi bi e o babebibo bi e u bu babebibobu.
+</p>
+<p class='vspace'>La soluzione è adottare schemi più complicati. Chi vuole intavolare una discussione invia un messaggio RTS: Request To Send, un avviso di intenzione di voler parlare. Finché non ricevo un CTS, cioè un Clear To Send (libero di parlare) non comincio. Questi messaggi vanno avanti e indietro per tutto il campo, tirando in mezzo anche le stazioni che non si sentono direttamente.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LezSEDI02)</span></div>
+  </div>
+</body>
+</html>

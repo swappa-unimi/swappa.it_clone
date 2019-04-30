@@ -1,0 +1,717 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Matematica del discreto - Guida agli esercizi 1°Parte </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.MDD-EserciziPrimaParte' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Matematica del discreto - Guida agli esercizi 1°Parte
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziPrimaParte?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziPrimaParte?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='MDD-EserciziPrimaParte-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziPrimaParte?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziPrimaParte?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Matematica del discreto - Guida agli esercizi 1°Parte was last modified on January 25, 2011, at 11:01 PM'>
+							<span style='display:none;'>Matematica del discreto - Guida agli esercizi 1°Parte</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='MatematicaDelDiscreto.html'>Torna alla pagina di Matematica del discreto</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Matematica del discreto - Guida agli esercizi 1°Parte ::</strong>
+</pre><div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 320px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#e1'>Algoritmo di Euclide per il calcolo del M.C.D.</a>
+</li><li><a href='#e2'>Cambio di base per numeri con la virgola</a>
+</li><li><a href='#e3'>Passaggio da base b a base b<sup>2</sup></a>
+</li><li><a href='#e4'>Congruenze</a>
+</li><li><a href='#e5'>Congruenze del tipo x<sup>y</sup> &#8801; w<sup>z</sup></a>
+</li><li><a href='#e6'>Calcolare l'inverso</a>
+</li><li><a href='#e7'>Divisibilità</a>
+</li><li><a href='#e8'>Equazioni Diofantee</a>
+</li><li><a href='#e9'>Gruppi di sostituzioni</a>
+</li><li><a href='#e10'>Parità e disparità</a>
+</li><li><a href='#e11'>Periodo di un elemento di un gruppo finito</a>
+</li><li><a href='#e12'>Sottogruppi</a>
+</li><li><a href='#e13'>Gruppi ciclici</a>
+</li><li><a href='#e14'>Omomorfismi</a>
+</li></ol></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e1' id='e1'></a>
+</p><h3>1. Algoritmo di Euclide per il calcolo del M.C.D.</h3>
+<p><strong>Es: calcolare il M.C.D. tra <em>a=387</em> e <em>b=144</strong></em>
+</p>
+<p class='vspace'>a/b=387/144=2 r=99<br />b/r=144/99=1 r<sub>1</sub>=45<br />r/r<sub>1</sub>=99/45=2 r<sub>2</sub>=5<br />r<sub>1</sub>/r<sub>2</sub>=45/5=9 r<sub>3</sub>=0
+</p>
+<p class='vspace'>quindi <strong>M.C.D. (387,144)=9</strong>
+</p>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e2' id='e2'></a>
+</p><h3>2. Cambio di base per numeri con la virgola</h3>
+<p><strong>Es: trasformare 7,2<sub>10</sub> in base 6.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<ol><li>trasformo la parte intera: 7<sub>10</sub> = 11<sub>6</sub>
+</li><li>moltiplico la parte decimale per la base: 0,2*6=1,2
+</li><li>tolgo la parte intera: 1,2-<ins>1</ins>=0,2 <br /><span style='font-size:83%'>(la cifra sottolineata è la parte decimale della nuova base)</span>
+</li><li>moltiplico per la base: 0,2*6=1,2
+</li></ol><p class='vspace'>quindi <strong>7,2<sub>10</sub>=11,(1)<sub>6</sub> </strong> (le parentesi indicano il periodo)
+</p></div>
+<p class='vspace'><strong>Es2: trasformare 347,6<sub>10</sub> in base 7.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<table >
+<tr ><td  valign='top'><pre class='escaped'>
+347 | 4
+ 49 | 0
+  7 | 0
+  1 | 1
+  0 |</pre>
+</td><td  valign='top'>
+<p><br /><br /><br /><strong>&#57564;</strong>
+</p></td></tr></table>
+<p class='vspace'>quindi 347<sub>10</sub>=1004<sub>7</sub><br />Per la parte decimale: 
+</p><div class='indent'>0,6*7 = 4,2–<ins>4</ins> = 0,2 
+</div><div class='indent'>0,2*7 = 1,4–<ins>1</ins> = 0,4
+</div><div class='indent'>0,4*7 = 2,8–<ins>2</ins> = 0,8
+</div><div class='indent'>0,8*7 = 5,6–<ins>5</ins> = 0,6 ho ottenuto il numero da cui sono partito quindi mi fermo.
+</div><p><span style='font-size:83%'>(le cifre sottolineate vanno considerate come nell'esercizio precedente)</span>
+</p>
+<p class='vspace'>risultato: <strong>347,6<sub>10</sub> = 1004,(4125)<sub>7</sub></strong>
+</p></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e3' id='e3'></a>
+</p><h3>3. Passaggio da base b a base b<sup>2</sup></h3>
+<p>abcde<sub>n</sub>=[a][bc][de]<sub>n</sub><sup>2</sup> con [bc]=(b*n)+c &amp; [de]=(d*n)+e
+</p>
+<p class='vspace'><strong>Es: trasformare 1004,(4125)<sub>7</sub> in base 7<sup>2</sup></strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>[10][04],[41][25]: [10]=(1*7)+0=<ins>7</ins>, [04]=(0*7)+4=<ins>4</ins>, [41]=(4*7)+1=<ins>29</ins>, [25]=(2*7)+5=<ins>19</ins>
+</p>
+<p class='vspace'>quindi risulta <strong>7:4,(29;19)</strong>
+</p></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e4' id='e4'></a>
+</p><h3>4. Congruenze</h3>
+<p><strong>a &#8801; b <em>mod</em> n &#8660; a <em>mod</em> n = b <em>mod</em> n</strong>
+</p>
+<p class='vspace'>Per risolvere gli esercizi occorre applicare le seguenti proprietà:
+</p>
+<p class='vspace'><strong>(P1)</strong><br /><em>a x &#8801; b mod n &#8660; (a mod n) x &#8801; (b mod n) (mod n)</em>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>Esercizio:</em><br />155x&#8801;85 mod 6 &#8660; (155 mod 6) x &#8801; (85 mod 6) (mod 6)<br />155x&#8801;85 mod 6 &#8660; 5x &#8801; 1 mod 6
+</p></div>
+<p class='vspace'><strong>(P2)</strong><br /><em>a x &#8801; b mod n &#8658; ka x &#8801; kb mod n</em>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>Esercizio:</em><br />5 x &#8801; 2 mod 7 &#8658; &#57502;3*5&#57503; x &#8801; &#57502;2*3&#57503; mod 7
+</p></div>
+<p class='vspace'><strong>(P3)</strong><br /><em>ka x &#8801; kb mod kn &#8658; ax &#8801; b mod n</em>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>Esercizio:</em><br />3 x &#8801; 3 mod 6 &#8658; x &#8801; 1 mod 2
+</p></div>
+<p class='vspace'><strong>(P4)</strong><br /><em>ka x &#8801; kb mod n se M.C.D. &#57502;k,n&#57503; = 1 &#8658; ax &#8801; b mod n</em>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>Esercizio:</em><br />5x &#8801; 5 mod 2 &#8658; x &#8801; 1 mod 2
+</p></div>
+<p class='vspace'><strong>(P5)</strong><br /><em>ka x &#8801; kb mod n(k&#8800;0) &#8658; ax &#8801; b mod (n/ M.C.D. (k,n))</em>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>Esercizio:</em><br />6x &#8801; 6 mod 21 &#8658; x &#8801; 1 mod &#57502;21/3&#57503; &#8658; x &#8801; 1 mod 7
+</p></div>
+<p class='vspace'><strong>(P6)</strong><br /><em>ax &#8801; b mod n, d&#8739;n &#8658; ax &#8801; b mod d</em>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>Esercizio:</em><br />3x &#8801; 4 mod 10 &#8658; 3x &#8801; 4 mod 2 o 3x &#8801; 4 mod 5<br />3x &#8801; 4 mod 2 &#8658; (3 mod 2) x &#8801; &#57502;4 mod 2&#57503; mod 2 &#8658; x &#8801; 0 mod 2
+</p></div>
+<p class='vspace'><strong>(P7)</strong><br /><em>ax &#8801; b mod r</em> e <em>ax &#8801; b mod s &#8658; ax &#8801; b mod (m.c.m.(r,s))</em>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>Esercizio:</em><br />5x &#8801; 4 mod 9 e 5x &#8801; 4 mod 6 &#8658; 5x &#8801; 4 mod 18
+</p></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e5' id='e5'></a>
+</p><h3>5. Congruenze del tipo x<sup>y</sup> &#8801; w<sup>z</sup></h3>
+<p><strong>Teorema di Fermat</strong>:
+</p><div class='indent'><em>a<sup>p&#8722;1</sup> &#8801; 1 mod p</em>, se p è primo
+</div><p><strong>Teorema di Eulero-Fermat</strong>:
+</p><div class='indent'><em>a<sup>&#966;&#57502;n&#57503;</sup> &#8801; 1 mod n</em>, se n non è un numero primo
+</div><p class='vspace'><strong>Es: 231<sup>44</sup> &#8801; 88<sup>72</sup> mod 5.</strong>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Porto tutto in mod 5: <em>1<sup>44</sup> &#8801; 3<sup>72</sup> mod 5 &#8658; 1 &#8801; 3<sup>72</sup> mod 5</em><br />72 non è un numero primo, quindi applico Eulero.<br />&#966;(5)=4 (&#966;(n) è il numero di interi positivi minori o uguali a n, primi con n
+</p><div class='indent'><em>a<sup>4</sup>&#8801;1 mod 5 M.C.D. &#57502;5,1&#57503;=1 &#8658; 3<sup>4</sup>&#8801;1 mod 5</em>
+</div><div class='indent'><em>3<sup>72</sup>=&#57502;3<sup>4</sup>&#57503;<sup>18</sup> &#8658; 1&#8801;1<sup>18</sup> mod 5 &#8658; 1&#8801;1 mod 5, VERIFICATA</em>
+</div></div>
+<p class='vspace'><strong>Es2: 97<sup>37</sup> &#8801; 11<sup>134</sup> mod 7</strong>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>6<sup>37</sup> &#8801; 4<sup>134</sup> mod 7</em>, 7 è un numero primo, quindi applico Fermat
+</p><div class='indent'><em>a<sup>7&#8722;1</sup> &#8801; 1 mod 7 &#8658; a<sup>6</sup> &#8801; 1 mod 7</em>
+</div><p><em>(6<sup>6</sup>)<sup>6</sup>*(4<sup>6</sup>)<sup>22</sup> * 4<sup>2</sup> mod 7 &#8658; 1<sup>6</sup>*6 &#8801; 1<sup>22</sup>*16 mod 7 &#8658; 6 &#8801; 2 mod 7</em>, NON VERIFICATA
+</p></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e6' id='e6'></a>
+</p><h3>6. Calcolare l'inverso</h3>
+<p><strong>Es. Trovare l'inverso di 4 in mod 9</strong>.
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><em>4*a &#8801; 1 mod 9</em>, a è l'inverso, ossia quel numero che moltiplicato per quattro e diviso per nove dà resto 1.
+</p></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e7' id='e7'></a>
+</p><h3>7. Divisibilità</h3>
+<p>Ci sono due metodi per stabilire se un numero <em>a</em> è divisibile per un altro numero <em>b</em>.
+</p>
+<p class='vspace'><strong>Metodo 1:</strong>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><strong>Stabilire se 646727 è divisibile per 17 utilizzando il criterio 17*3=51</strong>
+</p><div class='indent'>50&#8801;&#8722;1 mod 51 50=5&#8901;10, MCD&#57502;5,17&#57503;=1
+</div><div class='indent'>646727 &#8658;&#57502;64672&#8901;10&#57503;&#57475;7 &#8658;
+<div class='indent'>&#57502;64672&#8901;10&#8901;5&#57503;&#57475;7&#8901;5 &#8658;&#57502;64672&#8901;50&#57503;&#57475;35 &#8658;&#57502;64672&#8901;&#57502;&#8722;1&#57503;&#57503;&#57475;35=&#8722;64672&#57475;35=&#8722;64637
+</div></div><div class='indent'>64637 &#8658;&#57502;6463&#8901;10&#57503;&#57475;7&#8658;&#57502;6463&#8901;50&#57503;&#57475;35=&#8722;6428
+</div><div class='indent'>6428 &#8658;&#57502;642&#8901;10&#57503;&#57475;8&#8658;&#57502;642&#8901;50&#57503;&#57475;40=&#8722;602
+</div><div class='indent'>602 &#8658;&#57502;60&#8901;10&#57503;&#57475;2&#8658;&#57502;60&#8901;50 &#57503;&#57475;10=&#8722;50, <em>non congruo a 0&#8658; 646727 non divisibile per 17</em>
+</div></div>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><strong>Stabilire se 615908 è divisibile per 31</strong>
+</p><div class='indent'>30&#8801;&#8722;1 mod 31
+</div><div class='indent'>615908&#8658;&#57502;61590&#8901;10&#57503;&#57475;8&#8658;&#57502;61590&#8901;10&#8901;3&#57503;&#57475;8&#8901;3&#8658;&#57502;61590&#8901;30 &#57503;&#57475;24=&#8722;61590&#57475;24=&#8722;61566
+</div><div class='indent'>61566 &#8658;&#57502;6156&#8901;10&#57503;&#57475;6 &#8658;&#57502;6156&#8901;30&#57503;&#57475;18=&#8722;6138
+</div><div class='indent'>6138&#8658;&#57502;613&#8901;10&#57503;&#57475;8 &#8658;&#57502;613&#8901;30&#57503;&#57475;24=&#8722;589
+</div><div class='indent'>589&#8658; &#57502;58&#8901;10&#57503;&#57475;9&#8658;&#57502;58&#8901;30&#57503;&#57475;27=&#8722;31, divisibile per 31 &#8658;615908 divisibile per 31
+</div></div>
+<p class='vspace'><strong>Metodo 2:</strong>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p><strong>Stabilire se 646727 è divisibile per 31</strong>
+</p><div class='indent'>6&#8901;10<sup>5</sup> &#57475;4&#8901;10<sup>4</sup>&#57475;6&#8901;10<sup>3</sup>&#57475;7&#8901;10<sup>2</sup>&#57475;2&#8901;10<sup>1</sup>&#57475;7&#8901;10<sup>0</sup>
+</div><div class='indent'><em>calcolo i resti delle potenze di 10 (ossia calcolo le potenze di 10 mod 31)</em>
+</div><div class='indent'>10<sup>5</sup>=100000 &#8658; 100000 &#8801; 25 mod 31,
+</div><div class='indent'>10<sup>4</sup>=10000 &#8658; 10000 &#8801; 18 mod 31, 10<sup>3</sup>=1000 &#8658; 1000 &#8801; 8 mod 31, 10<sup>2</sup>=100 &#8658; 100&#8801;7 mod 31''
+</div><div class='indent'>10<sup>1</sup>=10 &#8658; 10&#8801;10 mod 31, 10<sup>0</sup>=1 &#8658; 1&#8801;1 mod 31
+</div><div class='indent'><em>sostituisco nella prima formula al posto delle potenze di 10 i resti trovati</em>
+</div><div class='indent'>6&#8901;25&#57475;4&#8901;18&#57475;6&#8901;8&#57475;7&#8901;7&#57475;2&#8901;10&#57475;7&#8901;1
+</div><div class='indent'>6&#8901;25=150, 150&#8801;&#8722;5 mod 31 ; 4&#8901;18=72, 72&#8801;10 mod 31; 6&#8901;8=48, 48&#8801;17 mod 31
+</div><div class='indent'>7&#8901;7=49, 49&#8801;18 mod 31 ; 2&#8901;10=20, 20&#8801;20 mod 31 ; 7&#8801;7 mod 31
+</div><div class='indent'>&#57502;&#8722;5&#57503;&#57475;10&#57475;17&#57475;18&#57475;20&#57475;7=67 &#8658; <em>non divisibile per 31</em>
+</div></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e8' id='e8'></a>
+</p><h3>8. Equazioni Diofantee</h3>
+<p><strong>a&#8901;x &#57475;b&#8901;y=c <em>ammette soluzione se e solo se</em> c multiplo di MCD&#57502;a,b&#57503;</strong>
+</p>
+<p class='vspace'><strong>Es. 2x&#57475;3y=12</strong>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Calcolo MCD(2,3)=1; 12 è un multiplo di 1 quindi l'equazione è risolvibile.
+</p>
+<p class='vspace'>So che:
+</p><div class='indent'><em>ax&#8801;c mod b</em> oppure <em>by&#8801;c mod a</em> quindi:
+<div class='indent'>2x&#8801;12 mod 3 &#8744; 3y&#8801;12 mod 2, <em>porto nei rispettivi mod e scelgo la più "comoda"</em>
+</div><div class='indent'>2x&#8801;0 mod 3 &#8744; y&#8801;0 mod 2, <em>scelgo la II &#8658; y =0&#57475;2&#8901;h&#8658; y=2h &#8658; 2x&#57475;3&#8901;&#57502;2h &#57503;=12</em>
+</div></div><table >
+<tr ><td valign='middle' >
+<dl><dd><div class='indent'>2x&#57475;6h=12 &#8658; 2x=12&#8722;6h &#8658; x=6&#8722;3h &#8658; 
+</div></dd></dl></td><td  valign='top'><span style='font-size:207%'>{</span>
+</td><td  valign='top'>x=6&#8722;3h<br />y =2h
+</td></tr></table>
+</div>
+<p class='vspace'><strong>Es2: determinare il più piccolo p&gt;2 per cui 7x+3y=p ammette soluzioni e calcolarle.</strong>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>MCD(7,3)=1, il più piccolo multiplo di 1 maggiore di 2 è 3, quindi p=3
+</p><div class='indent'>7x&#8801;3 mod 3 &#8744; 3y&#8801;3 mod 7&#8658; x&#8801;0 mod 3 &#8744; 3y&#8801;3 mod 7 ; <em>scelgo la prima</em>
+</div><table >
+<tr ><td valign='middle' >
+<div class='indent'>x=0&#57475;3h &#8658; 7&#8901;&#57502;3h&#57503;&#57475;3y=3&#8658; 3y=3&#8722;21h &#8658;
+</div></td><td  valign='top'><span style='font-size:207%'>{</span>
+</td><td  valign='top'>x=3h<br />y=1-7h
+</td></tr></table>
+</div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e9' id='e9'></a>
+</p><h3>9. Gruppi di sostituzioni</h3>
+<p><strong>f=(1 5 2 4 3) &#8658; f<sup>&#8722;1</sup>=(1 3 4 2 5)</strong>
+</p>
+<p class='vspace'>Es:
+</p><table >
+<tr ><td  valign='top'>
+<p><span style='font-size:207%'>(</span>
+</p></td><td  valign='top'>1 2 3 4 5 6<br />5 2 1 3 6 4
+</td><td  valign='top'><span style='font-size:207%'>)</span>
+</td></tr></table>
+<p>Cosa vuol dire? Descrive le trasformazioni, la prima riga elenca gli elementi, la seconda come cambiano, cioè:
+</p><div class='indent'>1 diventa 5,
+</div><div class='indent'>2 diventa 2,
+</div><div class='indent'>3 diventa 1,
+</div><div class='indent'>4 diventa 3,
+</div><div class='indent'>5 diventa 6,
+</div><div class='indent'>6 diventa 4.
+</div><p>Quindi partendo da 1 vado in 5, da 5 in 6, da 6 in 4, da 4 in 3, da 3 in 1. Allora
+posso scriverla così: &#57502;1 5 6 4 3&#57503;.
+</p>
+<p class='vspace'>Ogni permutazione (o sostituzione) può essere scritta, in modo unico, come prodotto di
+cicli disgiunti. Come si fa?
+</p>
+<p class='vspace'><em>&#945;=&#57502;1 5 2 8&#57503;&#57502;3 7 2 4 5 8&#57503;&#57502;1 4 8 3 6&#57503;</em> <br />Si va <strong>da destra a sinistra</strong>, parto da 1 e vado a vedere in cosa di trasforma: 1 va in 4, (mi sposto nel secondo gruppo) 4 va in 5, (mi sposto nel terzo), 5 va in 2. Sono partito da 1 e sono arrivato in 2, quindi 1 va in 2. <br />Comincio a compilare il prodotto di cicli disgiunti:<br /><em>&#945;=&#57502; 1 2</em> ..riparto: 2 nel primo gruppo non c'è, questo vuol dire che 2 va in 2, ossia non cambia, mi sposto nel secondo 2 va in 4, nel terzo 4 va in 4. Quindi 2 va in 4.<br /><em>&#945;=&#57502; 1 2 4</em> ..proseguo in questo modo e ottengo &#945;=&#57502; 1 2 4 3 6 5<br />5 va in 5, mi sposto 5 va in 8, mi sposto 8 va in 1. 5 va in 1 quindi il ciclo si chiude.<br /><em>&#945;=&#57502; 1 2 4 3 6 5 &#57503;</em> Gli elementi di &#945; da cui sono partito sono 8, a={1,2,3,4,5,6,7,8}.<br />Nel nuovo ciclo che ho scritto ne compaiono 6, mancano {7} e {8} che quindi compongono
+un ciclo tra di loro. Infatti 7 va in 7, 7 va in 2, 2 va in 8.<br />Quindi se voglio scrivere &#945; come prodotto di cicli disgiunti sarà: &#945;=&#57502;1 2 4 3 6 5&#57503;&#57502;7 8&#57503;
+</p>
+<p class='vspace'>Vediamo un altro esempio per togliere ogni dubbio.<br /><em>&#945;=&#57502;0 5 2 8 1&#57503;&#57502;4 9 6 1&#57503;&#57502;2 8 3&#57503;&#57502;0 2 4 9 3&#57503;&#8658; &#945;=&#57502;0 1 4 6&#57503;&#57502;2 9 8 3 5&#57503;</em> <br />L'unico elemento che manca è 7, ma non comparendo mai significa che non cambia, quindi non lo scrivo.
+</p>
+<p class='vspace'><strong>N.B</strong>: poiché si tratta di cicli non è importante da quale elemento si parte, io vado in ordine per comodità (parto dal minor elemento non ancora utilizzato) ma:<br />-&gt;&#57502;0 1 4 6&#57503;=&#57502;1 4 6 0&#57503;=&#57502;4 6 0 1&#57503;=&#57502;6 0 1 4&#57503; quindi scrivere &#945;=&#57502;0 1 4 6&#57503;&#57502;2 9 8 3 5&#57503;
+</p><div class='indent'>o , ad esempio , &#945;=&#57502;6 0 1 4&#57503;&#57502;3 5 2 9 8&#57503; è la stessa cosa!!!
+</div><div class='vspace'></div><hr />
+<p class='vspace'><a name='e10' id='e10'></a>
+</p><h3>10. Parità e disparità</h3>
+<p>Per calcolarle la parità di una sostituzione occorre scriverla come prodotto di trasposizioni e poi contare il numero di trasposizioni.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>&#57502;1 2 4 3 6 5&#57503;&#57502;8 7&#57503;&#8658;&#57502;1 2&#57503;&#57502;1 4&#57503;&#57502;1 3&#57503;&#57502;1 6&#57503;&#57502;1 5&#57503;&#57502;7 8&#57503; &#8658;6 &#8658; PARI<br />&#57502;0 1 4 6&#57503;&#57502;3 5 2 9 8&#57503;&#8658;&#57502;0 1&#57503;&#57502;0 4&#57503;&#57502;0 6&#57503;&#57502;3 5&#57503;&#57502;3 2&#57503;&#57502;3 9&#57503;&#57502;3 8&#57503;&#8658; 7&#8658; DISPARI
+</p></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e11' id='e11'></a>
+</p><h3>11. Periodo di un elemento di un gruppo finito</h3>
+<p>Periodo di un ciclo.
+</p>
+<p class='vspace'><strong>caso1:</strong>
+</p><div class='indent'>p=&#57502;1 3 6 8 2 5 4&#57503; il ciclo ha lunghezza 7 (formato da 7 elementi), quindi il periodo di p è 7
+</div><p><strong>caso2:</strong>
+</p><div class='indent'>q=&#57502;1 3 5 2&#57503;&#57502; 4 6 7&#57503; lunghezza cicli 4 e 3. m.c.m(4,3)=12, quindi il periodo di q è 12
+</div><p class='vspace'><strong>IMPORTANTE:</strong><br />Con u definiamo l'elemento neutro rispetto all'operazione.<br /><strong>a<sup>0</sup>=u</strong> ; <strong>a<sup>1</sup>=u°a</strong> ; <strong>a<sup>2</sup>=u°a°a</strong> ; ..e così via<br />Ad esempio se ° corrisponde alla somma: a<sup>0</sup>=0 ; a<sup>1</sup>=0&#57475;a ; a<sup>2</sup>=0&#57475;a&#57475;a=2a
+</p>
+<p class='vspace'><strong>N.B</strong>: Sia p un elemento di periodo 12. Che periodo hanno p<sup>3</sup>, p<sup>5</sup>, p<sup>8</sup>, p<sup>9</sup>, p<sup>10</sup>? Come fare a calcolare il periodo di q<sup>b</sup> se q ha periodo a?
+</p><ol><li>Calcolo M.C.D.(a,b)
+</li><li>Calcolo m.c.m.= &#57502;a&#8901;b&#57503;/M.C.D.
+</li><li>periodo= (m.c.m. / b)
+</li></ol><p class='vspace'>Nel nostro esercizio:
+</p><div class='indent'>p<sup>12</sup>=&#57502; p'^3 &#57503;'^4=id &#8658; p'^3 ha periodo 4
+</div><div class='indent'>p<sup>5</sup>: MCD&#57502;5,12&#57503;=1, mcm&#57502;5,12&#57503;=60, 60/5=12 &#8658; p<sup>5</sup> ha periodo12
+</div><div class='indent'>p<sup>8</sup>: MCD&#57502;8,12&#57503;=4, mcm &#57502;8,12&#57503;=24, 24 /8=3&#8658; p<sup>8</sup> ha periodo 3
+</div><div class='indent'>p<sup>9</sup>: MCD&#57502;9,12&#57503;=3, mcm &#57502;9,12&#57503;=36, 36/ 9=4 &#8658; p<sup>9</sup> ha periodo 4
+</div><div class='indent'>p<sup>10</sup>: MCD&#57502;10,12&#57503;=2, mcm &#57502;10,12&#57503;=60, 60 /10=6 &#8658; p<sup>10</sup> ha periodo 6
+</div><div class='vspace'></div><hr />
+<p class='vspace'><a name='e12' id='e12'></a>
+</p><h3>12. Sottogruppi</h3>
+<p>S<sub>6</sub>={1,2,3,4,5,6} &#945;=&#57502;2 6 3 5&#57503;&#57502;4 6 5&#57503;&#57502;3 4 6&#57503;&#57502;1 5 3&#57503; &#8658;&#945;=&#57502;1 4 2 6 5 3&#57503; H è un sottogruppo di
+S<sub>6</sub> generato da &#945;. Calcolare ordine e elementi di H.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>L'ordine del sottogruppo coincide con il periodo del generatore. &#945; ha periodo 6 quindi gli elementi di H sono <em>H={&#945; , &#945; 2, &#945; 3, &#945; 4, &#945;5, &#945; 6 =id}</em>
+</p><div class='indent'><em>&#945;<sup>2</sup>=&#57502;142653&#57503;&#57502;142653&#57503;=&#57502;125&#57503;&#57502;346&#57503;; &#945;<sup>3</sup> =&#57502;124653&#57503;&#57502;125&#57503;&#57502;346&#57503;=&#57502;16&#57503;&#57502; 23&#57503;&#57502; 45&#57503;</em>
+</div><div class='indent'>&#945;<sup>4</sup> =&#57502;142653&#57503;&#57502;16&#57503;&#57502; 23&#57503;&#57502; 45&#57503;=&#57502;152&#57503;&#57502;364&#57503; ; &#945;<sup>5</sup>=&#57502;124653&#57503;&#57502;152&#57503;&#57502;364&#57503;=&#57502;135624&#57503;''
+</div><p>Per calcolare il laterale destro di &#945; dato da, per esempio, (123) faccio semplicemente
+&#945;(123); per il sinistro (123)&#945;.
+</p>
+<p class='vspace'>Sottogruppi di &#57502;Z*<sub>12</sub>,x&#57503;={1,5,7,11}
+</p><ul><li>il periodo di 1=1 per convenzione
+</li><li>il periodo di 5: 5<sup>n</sup>&#8801;1 mod 12 , se n=2 5<sup>2</sup>&#8801;1 mod 12 &#8658;il periodo di 5 in Z*<sub>12</sub> è 2, sottogr. {1,5}
+</li><li>il periodo di 7: 7<sup>2</sup>&#8801;1 mod 12&#8658; il periodo di 7 è 2, sottogruppo {1,7}
+</li><li>il periodo di 11: 11<sup>2</sup>&#8801;1 mod 12 &#8658; il periodo di 11 è 2, sottogruppo {1,11}
+</li></ul><p>L'ordine del sottogruppo deve essere un divisore dell'ordine del gruppo.
+</p>
+<p class='vspace'>Sottogruppi di &#57502;Z*<sub>16</sub>,x &#57503;={1,3,5,7,9,11,13,15}<br />L'ordine di Z*<sub>16</sub> è 8 quindi l'ordine dei sottogruppi può essere 2 o 4.
+</p></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e13' id='e13'></a>
+</p><h3>13. Gruppi ciclici</h3>
+<p>Trovare un generatore diverso da 1 per: Z<sub>8</sub>,&#57475;= {0,1,2,3,4,5,6,7}
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un generatore è un elemento appartenente al gruppo su cui continuando ad eseguire l'operazione del gruppo ottengo tutti gli elementi. Nell'esercizio:
+</p><div class='indent'>1: 1<sup>0</sup>=0, 1<sup>1</sup>=1, 1<sup>2</sup>=1&#57475;1=2, 1<sup>3</sup>=1&#57475;1&#57475;1=3 ... 1<sup>7</sup>=7 ok, è un generatore
+</div><div class='indent'>2: 2<sup>0</sup>=0, 2<sup>1</sup>=2, 2<sup>2</sup>=4, 2<sup>3</sup>=6, 2<sup>4</sup>=8 &#57502;in mod8=0&#57503; , 2<sup>5</sup>=10=2 &#8658;{0,2,4,6}2 non è un generatore
+</div><div class='indent'>3: 3<sup>0</sup>=0, 3<sup>1</sup>=3, 3<sup>2</sup>=6, 3<sup>3</sup>=9=1, 3<sup>4</sup>=12=4, 3<sup>5</sup>=15=7, 3<sup>6</sup>=18=2, 3<sup>7</sup> =21=5
+</div><div class='indent'>&#8658;{0,1,2,3,4,5,6,7}&#8658;3 è un generatore
+</div></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='e14' id='e14'></a>
+</p><h3>14. Omomorfismi</h3>
+<p>Per svolgere gli esercizi bisogna prima osservare se il primo gruppo (dominio) è ciclico.
+</p>
+<p class='vspace'><strong>Se è ciclico</strong> l'esercizio è facile, devo solo costruire la tavola pitagorica degli omomorfismi. Si fa così:
+</p><ol><li>nella prima colonna un generatore e le sue potenze (ad esempio h)
+</li><li>nella prima riga gli elementi del codomio
+</li><li>nella seconda riga copio gli elementi della prima riga
+</li><li>si riempiono le colonne applicando le potenze del generatore all'elemento del codominio. <em>(tenere conto dell'operazione e del numero di elementi del codominio; se sono in &#57502;Z<sub>7</sub>,+&#57503; 2<sup>3</sup>=2&#57475;2&#57475;2=8, che in mod7 fa 1)</em>
+</li></ol><p class='vspace'><strong>Es. G&#57484;&#57502;Z*<sub>7</sub>,x&#57503;</strong>
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>G è ciclico per ipotesi, elemento generatore "q", ordine 4
+</p><div class='indent'>&#57502;Z*<sub>7</sub>,x&#57503; è ciclico, i suoi elementi sono {1,2,3,4,5,6}
+</div><div class='vspace'></div><table align='center' cellpadding='10' border='2' bordercolor='white' bgcolor='#E0EBF4' >
+<tr ><td  valign='top'><strong>f</strong>
+</td><td  valign='top'><strong>1</strong>
+</td><td  valign='top'><strong>2</strong>
+</td><td  valign='top'><strong>3</strong>
+</td><td  valign='top'><strong>4</strong>
+</td><td  valign='top'><strong>5</strong>
+</td><td  valign='top'><strong>6</strong>
+</td></tr><tr ><td  valign='top'><strong>q</strong>
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td></tr><tr ><td  valign='top'><strong>q<sup>2</sup></strong>
+</td><td  valign='top'>1<sup>2</sup>=1
+</td><td  valign='top'>22=4
+</td><td  valign='top'>2
+</td><td  valign='top'>2
+</td><td  valign='top'>4
+</td><td  valign='top'>1
+</td></tr><tr ><td  valign='top'><strong>q<sup>3</sup></strong>
+</td><td  valign='top'>1
+</td><td  valign='top'>23=8<em>mod</em>7=1
+</td><td  valign='top'>6
+</td><td  valign='top'>1
+</td><td  valign='top'>6
+</td><td  valign='top'>6
+</td></tr><tr ><td  valign='top'><strong>q<sup>4</sup>=id</strong>
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>4
+</td><td  valign='top'>4
+</td><td  valign='top'>2
+</td><td  valign='top'>1
+</td></tr><tr ><td  valign='top'><strong>Ker{f}</strong>
+</td><td  valign='top'>X
+</td><td  valign='top'>NO
+</td><td  valign='top'>NO
+</td><td  valign='top'>NO
+</td><td  valign='top'>NO
+</td><td  valign='top'>{q<sup>2</sup>,id}
+</td></tr><tr ><td  valign='top'><strong>Img{f}</strong>
+</td><td  valign='top'>{1}
+</td><td  valign='top'>NO
+</td><td  valign='top'>NO
+</td><td  valign='top'>NO
+</td><td  valign='top'>NO
+</td><td  valign='top'>{1,6}
+</td></tr></table>
+<p class='vspace'>Se c'è omomorfismo il nucleo è composto dalle potenze del generatore che danno il neutro dell'operazione (in questo caso 1).
+</p></div>
+<p class='vspace'><strong>Se non è ciclico</strong> si utilizzano gli ordini di nucleo e immagini.<br />Il teorema dell'ordine dice che l'ordine del dominio è dato dal prodotto di ordine del nucleo e ordine dell'immagine.
+</p><dl><dd><div class='indent'><em>Ord(dominio)= Ord(ker) x Ord(img)</em>
+</div></dd></dl><p class='vspace'>Un nucleo è l'insieme degli elementi che vengono trasformati nel neutro del codominio.<br />L'immagine è l'insieme degli elementi che sono trasformati negli elementi del dominio.<br />Esempio:
+</p><div class='indent'>&#57502;Z*<sub>12</sub>,x&#57503;&#57484;&#57502;Z*<sub>14</sub>,x&#57503;
+</div><div class='indent'>&#57502;Z*<sub>12</sub>,x&#57503; ha elementi {1,5,7,11}, quindi ordine 4 e non è ciclico
+</div><div class='indent'>&#57502;Z*<sub>14</sub>,x&#57503; ha elementi {1,3,5,9,11,13}, quindi ordine 6 ed è ciclico
+</div><p>Ord(dominio)=4 quindi 4=Ord(ker) x Ord(img)
+</p><div class='indent'>4=1x4 non è omomorfismo perchè non esistono immagini di ordine 4
+</div><div class='indent'>4=4x1 è l'omomorfismo banale
+</div><div class='indent'>4=2x2 devo trovare l'immagine, ossia un sottogruppo di dimensione 2 di Z<sub>14</sub>
+<div class='indent'><strong>n-1 ha sempre periodo 2</strong> in Z<sub>n</sub>, quindi come immagine prendo {1,13}
+</div></div><p>Ora costruisco la tabella: guardo gli elementi del nucleo e metto 1 in corrispondenza di quei valori nelle colonne, 13 nelle altre. Otterrò la seguente tabella:
+</p>
+<div class='vspace'></div><table align='center' cellpadding='10' border='2' bordercolor='white' bgcolor='#E0EBF4' >
+<tr ><td  valign='top'><strong>Nucleo</strong>
+</td><td  valign='top'><strong>Immagine</strong>
+</td><td  valign='top'><strong>1</strong>
+</td><td  valign='top'><strong>5</strong>
+</td><td  valign='top'><strong>7</strong>
+</td><td  valign='top'><strong>11</strong>
+</td></tr><tr ><td  valign='top'>1,5
+</td><td  valign='top'>1,13
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>13
+</td><td  valign='top'>13
+</td></tr><tr ><td  valign='top'>1,7
+</td><td  valign='top'>1,13
+</td><td  valign='top'>1
+</td><td  valign='top'>13
+</td><td  valign='top'>1
+</td><td  valign='top'>13
+</td></tr><tr ><td  valign='top'>1,11
+</td><td  valign='top'>1,13
+</td><td  valign='top'>1
+</td><td  valign='top'>13
+</td><td  valign='top'>13
+</td><td  valign='top'>1
+</td></tr><tr ><td  valign='top'>1,5,7,11
+</td><td  valign='top'>1,13
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td><td  valign='top'>1
+</td></tr></table>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='MatematicaDelDiscreto.html'>Torna alla pagina di Matematica del discreto</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 25, 2011, at 11:01 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziPrimaParte?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziPrimaParte?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

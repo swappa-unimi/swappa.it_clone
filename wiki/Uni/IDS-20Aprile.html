@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ingegneria del Software - Appunti del 20 Aprile 2009 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IDS-20Aprile' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ingegneria del Software - Appunti del 20 Aprile 2009
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-20Aprile?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-20Aprile?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IDS-20Aprile-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-20Aprile?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-20Aprile?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ingegneria del Software - Appunti del 20 Aprile 2009 was last modified on May 04, 2009, at 02:54 PM'>
+							<span style='display:none;'>Ingegneria del Software - Appunti del 20 Aprile 2009</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - Appunti del 20 Aprile 2009 ::</strong>
+</pre><div class='vspace'></div><h2>UML e il mondo reale</h2>
+<p>Come più volte affermato (ma mai visto in diretta) UML ha anche una bella semantica. Come abbiamo visto in <a class='wikilink' href='IDS-16Marzo.html'>lezioni precedenti</a>, avere una semantica è una bella cosa.
+</p>
+<p class='vspace'>Tuttavia, nel mondo reale spesso si tende ad utilizzare UML in modo meno formale rispetto alle sue potenzialità. Infatti, se viene usato in fase di <strong>analisi</strong>, cioè quando si parla col cliente, e quando si danno le <strong>istruzioni</strong> al programmatore, spesso si tralascia la semantica e si preferisce parlarne: in questo caso la semantica diventa la comprensione condivisa, che non garantirà di avere una visione oggettiva e benché meno sarà traducibile in linguaggio matematico.
+</p>
+<p class='vspace'>La semantica di UML si chiama <strong>MOF = Meta Object Format</strong>. e ci permette di verificare se il nostro modello ha certe proprietà. I tool UML che si usano integrano spesso un'implementazione del MOF, e la usano continuamente per controllare i diagrammi che facciamo (perlomeno, per avvisarci di possibili incongruenze nel nostro modello, ad esempio la comparsa di una classe nel diagramma delle sequenze che non appare nel diagramma delle classi). Tanto per citare un software che dispone di questo tool, <code class='escaped'>Argo</code> consente di fare questo tipi di controlli sul diagramma UML che si sta costruendo.
+</p>
+<p class='vspace'>Inoltre il MOF permette di avvicinarsi all'idea del Graal dei software engineer: un software che si scrive da solo dato un modello:)
+</p>
+<div class='vspace'></div><h2>Gli stereotipi</h2>
+<p>Gli <strong>stereotipi</strong> sono delle categorie precostituite cui far appartenere le classi. In un certo contesto applicativo, ad esempio, si nota che le classi che abbiamo inventato si dividono in tre ruoli distinti: Mangiare, Bere e Dormire. Ecco quindi uno stereotipo, cioè una suddivisione delle classi in categoria pronta all'uso anche in un altro progetto, un po' come i pattern.
+</p>
+<p class='vspace'>La differenza tra un pattern e uno stereotipo è che il pattern rappresenta un embrione di soluzione di <strong>design</strong>, mentre lo stereotipo è solamente un<strong>'etichetta</strong> che si appiccica alle classi per poterle raggruppare (e in certa misura quest'etichetta verrà sfruttata quando si cercherà di dividere il nostro software in componenti separate e ben coese).
+</p>
+<p class='vspace'>Ecco due divisioni in stereotipi:
+</p><ul><li>Business, Service, Interface: qui distinguo le classi in base al loro dominio applicativo
+</li><li>Contorno, Controllo, Entità, Utilità, Eccezione
+<ul><li>Contorno = vengono chiamate ma non chiamano mai
+</li><li>Controllo = il tramite tra le classi
+</li><li>Entità = classi di business, cioè entità del dominio applicativo di cui facciamo un modello
+</li><li>Utilità e Eccezione si spiegano da sé
+</li></ul></li></ul><div class='vspace'></div><h2>La fattorizzazione</h2>
+<p>Fino ad ora, il nostro percorso verso il software è stato il seguente:
+</p><ol><li>analisi dei requisiti
+</li><li>casi d'uso
+</li><li>diagrammi vari e delle classi
+</li><li>sw
+</li></ol><p class='vspace'>Tutto ciò viene sentito da diverse persone come macchinoso e troppo lungo, e spesso si preferisce passare direttamente dai requisiti alle classi. Un metodo che si usa in questo frangente è proprio la <strong>fattorizzazione</strong>. Viene anche chiamata <strong>Object Oriented Analysis</strong>.
+</p>
+<div class='vspace'></div><h3>I requisiti</h3>
+<p>I requisiti saranno della forma a noi cara <strong>soggetto - verbo - oggetto</strong>. A noi interessano i requisiti <a class='wikilink' href='IDS-3Marzo.html'>funzionali</a>, cioè quelli che specificano una funzione che il sistema deve compiere.
+</p>
+<p class='vspace'>Per esempio, nei requisiti di uno scambio ferroviario potremo trovare le seguenti frasi:
+</p><ul><li>lo scambio riceve il treno sulla linea x
+</li><li>lo scambio inoltra il treno sulla linea y
+</li></ul><p>in cui oltre all'oggetto c'è anche un ulteriore complemento, ma questo non è un problema perché la struttura di base sogg-verbo-ogg è rispettata.
+</p>
+<p class='vspace'>Per <strong>fattorizzare</strong>, si devono prendere tutti i requisiti che <strong>hanno lo stesso soggetto</strong>. In questo caso, ho due requisiti, e il soggetto di entrambi è <strong>lo scambio</strong>. Bene: il soggetto isolato diviene una <strong>classe</strong>.
+</p>
+<p class='vspace'>Il passo successivo è prendere tutti i <strong>verbi</strong> che compaiono nei requisiti del nostro soggetto testé isolato. Qui i verbi sono <strong>riceve</strong> e <strong>inoltra</strong>: i verbi diverranno le <strong>responsabilità</strong> della nostra classe <strong>Scambio</strong> (vediamo poi che cosa sono).
+</p>
+<p class='vspace'>Infine, tutti gli <strong>oggetti</strong> dei nostri requisiti isolati diventeranno <strong>collaborazioni</strong> all'interno della nostra classe.
+</p>
+<p class='vspace'>Ricapitolando, isolo tutti i requisiti con lo stesso soggetto. Di questi requisiti:
+</p><ol><li>Il soggetto diviene una <strong>classe</strong>
+</li><li>I verbi divengono <strong>responsabilità</strong>
+</li><li>Gli oggetti divengono '''collaborazioni
+</li></ol><div class='vspace'></div><h3>CRC Cards</h3>
+<div><span class='frame rfloat'><img src='../uploads/Uni/IDS-fattorizzazione-crc.png' alt='' title='' /><br /><strong>Una prima CRC Card dello scambio</strong></span></div>
+<p>Fatto questo, inseriamo il tutto in una <strong>CRC card</strong>.
+</p>
+<p class='vspace'><strong>CRC</strong> sta per <strong>Class-Responsibility-Collaborator</strong>. Si tratta di un sistema di fattorizzazione inventato da <a class='urllink' href='http://c2.com/doc/oopsla89/paper.html' title='' rel='nofollow'>Kent Beck e Ward Cunningham</a> nel lontano 1989.
+</p>
+<p class='vspace'>Nel nostro esempio, quello dello scambio ferroviario, dal momento che ho nelle collaborazioni sia <strong>treno</strong> che <strong>linea</strong>, emerge la necessità di avere altre classi, proprio per rappresentare il <strong>treno</strong> e la <strong>linea</strong>. Le collaborazioni sono infatti relazioni tra classi, e se qualcosa compare nella sezione collaborazioni deve per forza avere una sua dignità come classe.
+</p>
+<div class='vspace'></div><h3>Classificare le collaborazioni</h3>
+<p>Le relazioni tra classi sono quelle <a class='wikilink' href='IDS-6Aprile.html'>viste nella lezione precedente</a>. All'inizio le rappresenteremo come linee tratteggiate, e poi penseremo a quale tipo di relazione tra classe (ereditarietà, aggregazione, composizione) esse rappresentano.
+</p>
+<p class='vspace'>Più sotto si svilupperà meglio questo concetto.
+</p>
+<div class='vspace'></div><h2>Attributi di stato</h2>
+<p>Nella card vista sopra mancano alcune cose importanti, ovvero gli <strong>attributi di stato</strong>. Un attributo di stato è un attributo il cui valore determina un output diverso dai metodi. Se pensiamo al funzionamento interno di una classe come ad una macchina a stati, ovvero un <a class='wikilink' href='IDS-17Marzo.html'>Automa</a>, allora sappiamo che lo stesso metodo mi darà risultati diversi a seconda dello stato in cui si trova la macchina in quel momento.
+</p>
+<p class='vspace'>Prendiamo lo scambio: se lo stato è <strong>libero</strong>, la richiesta del treno <strong>riceve()</strong> sarà soddisfatta. Se invece lo stato è <strong>occupato</strong>, la richiesta del treno non potrà essere soddisfatta.
+</p>
+<p class='vspace'>Per convenzione se una classe ha un attributo di stato vengono aggiunti i metodi <code class='escaped'>check()</code> e <code class='escaped'>set()</code> per controllare e variare il suo valore.
+</p>
+<p class='vspace'>Come facciamo ad identificare gli attributi di stato? La domanda cui rispondere è questa: <em>c'è qualcosa che la classe deve sapere affinché possa dare il risultato opportuno?</em>.
+</p>
+<div class='vspace'></div><h3>Diagrammi stati-transizioni</h3>
+<div><span class='frame lfloat'><img src='../uploads/Uni/ids-diagrammastato.png' alt='' title='' /></span></div>
+<p>Tutte le volte che una classe presenta attributi di stato, è <strong>mandatorio</strong> realizzare il relativo <strong>diagramma stato-transizione</strong>, ovvero l'automa. Anche i tool UML mi "obbligheranno" a farlo, e soprattutto ci obbligherà a farlo il professore per presentare il progetto d'esame.
+</p>
+<p class='vspace'>Ma <strong>attenzione</strong>: questo diagramma va fatto classe per classe. Non è opportuno fare un automazzo immenso che tiene conto di tutto il software, altrimenti si diventa folli. Si prendono invece tutte le classi che hanno degli stati, e di queste si fa il diagramma stati-transizioni.
+</p>
+<p class='vspace'>Le variazioni di stato in una classe sono governate da chiamate ai metodi che ne mutano gli attributi di stato. In un diagramma di stato, pertanto, passerò da uno stato all'altro con transizione scatenate appunto da chiamate a questi metodi.
+</p>
+<p class='vspace'>In UML è anche possibile specificare, per ogni attributo di stato, un <strong>valore di default</strong>, cioè il valore che quello stato avrà di default nel momento in cui viene istanziato un oggetto appartenente a quella classe.
+</p>
+<p class='vspace'>In linea teorica, per ogni variazione di un attributo di stato, deve esserci una freccia che esce da uno stato e porta ad un altro. In pratica, questo lo si può evitare nella maggior parte dei casi: prendiamo ad esempio un buffer che può contenere 10 elementi. Potrei avere un attributo di stato che mi dice quanti elementi contiene il buffer: 0 = vuoto, 1, 2, ... 10 = pieno, per un totale di 10 diversi valori. In realtà quello che mi serve è avere un attributo con solo 3 valori logici: <em>vuoto</em>, <em>spazio disponibile</em> e <em>pieno</em>. Posso poi esprimere questi stati logici in condizioni numeriche, ad esempio <strong>Elementi = 0</strong>, <strong>Elementi &lt; 10</strong>, <strong>Elementi = 10</strong>, e metterle come condizioni alle mie transizioni.
+</p>
+<p class='vspace'>Se invece scelgo di rappresentare il tutto con una <strong>tabella</strong>, allora metto tutte le combinazioni tra stati nella tabella, e via.
+</p>
+<p class='vspace'>È anche possibile fare prima il diagramma di stato, e poi inventarsi gli attributi di stato che servono per implementarlo. Questo viene utile quando si ha in mente una sequenza di avvenimenti, e si preferisce prima scriverla giù, e poi fare in modo di "ridurla" ad un certo numero di stati.
+</p>
+<div class='vspace'></div><h2>Relazioni tra classi</h2>
+<p>Come facciamo a stabilire quale tipo di relazione associare ad una linea tratteggiata, oltre che a litigare con i colleghi? Esiste una tecnica chiamata <strong>test del ciclo di vita</strong>, che dice che se due oggetti nascono e muoiono insieme, si tratta di composizione. Se invece nascono e muoiono in tempi diversi, allora è aggregazione. Se invece i loro rapporti sono occasionali, allora è associazione (ad esempio auto-pilota).
+</p>
+<p class='vspace'>Nel nostro esempio, possiamo intuire che lo <strong>Scambio</strong> e la <strong>Linea</strong> siano legati da una bella composizione, poiché non ci è dato immaginare uno Scambio senza una Linea. Invece, tra <strong>Treno</strong> e <strong>Scambio</strong> ci sarà un'associazione, ma nulla di più: il treno sa giusto che deve passare per uno scambio, ma non gliene importa più di tanto, e viceversa.
+</p>
+<div class='vspace'></div><h3>Navigabilità</h3>
+<div><span class='frame lfloat'><img src='../uploads/Uni/IDS-fattorizzazione-assoc.png' alt='' title='' /></span></div>
+<p>La <strong>navigabilità</strong> di un'associazione viene rappresentata dal verso di una freccia. La presenza di una freccia non indica asimmetria della relazione, ma mi dice che - a livello di codice (C++, Java etc.) - da <strong>Scambio</strong> sarò in grado di raggiungere <strong>Treno</strong>, ovvero che un'istanza della classe Scambio avrà un attributo che mi permette di raggiungere un'istanza della classe <strong>Treno</strong>.
+</p>
+<p class='vspace'>Come dicevamo sopra, non sempre lo Scambio avrà nozione di un Treno in arrivo o in partenza, tuttavia, quando ciò si rende necessario, lo Scambio dovrà sapere <strong>quale</strong> treno è in arrivo o in partenza.
+</p>
+<p class='vspace'>Le frecce dunque indicano il senso di percorrenza che viene utilizzato in fase di codifica, dove le relazioni tra classi sono espresse tramite <strong>attributi di relazione</strong>, e la navigabilità mi indica quale delle due classi coinvolte lo contiene. Nel caso in cui non ci fossero frecce allora entrambe le classi devono avere tale attributo.
+</p>
+<p class='vspace'>Questa faccenda delle frecce e della loro navigabilità è di capitale importanza nella fase di implementazione del codice, perché a seconda del <strong>tipo</strong> di freccia dovrò scrivere codice in modo diverso, ma non solo: ogni linguaggio di programmazione mi costringerà ad utilizzare certi costrutti per realizzare un certo tipo di associazione, mentre un altro linguaggio di programmazione mi costringerà ad utilizzarne altri. La faccenda non è per niente da sottovalutare, perché oltre a richiedere la comprensione del problema (il che si traduce nel dover tracciare il diagramma corretto), serve anche una comprensione del linguaggio di programmazione che viene utilizzato.
+</p>
+<p class='vspace'>Bisogna quindi stare attenti: in UML gli attributi di relazione rimangono <strong>impliciti</strong>, e prenderanno vita solamente durante l'implementazione, poiché sono <strong>language-dependent</strong>, cioè dipendono dal linguaggio di programmazione scelto.
+</p>
+<div class='vspace'></div><h2>Diagramma delle classi e di sequenza</h2>
+<p>Entrambi i diagrammi presentano, come oggetti, delle classi. C'è una cosa di cui tenere conto: nel diagramma di sequenza non deve essere possibile avere una classe che non appaia anche nel diagramma delle classi. La ragione di ciò è abbastanza ovvia.
+</p>
+<p class='vspace'>Tuttavia, la situazione speculare è invece ammessa, cioè è possibile avere nel diagramma delle classi una classe che poi non compaia nel diagramma di sequenza. È ammessa, e il tool UML non ci dà errore, perché può trattarsi di una <strong>classe astratta</strong>, cioè una classe destinata a non avere istanze, ma a generare figli.
+</p>
+<p class='vspace'>Il tool, in questo caso, non ci darà errore, come invece ce lo darà nell'altro caso. Ma non ci dà errore solo perché non è in grado di controllare se la classe è astratta o non astratta, e nel dubbio si astiene. Spetta al designer verificare la coerenza tra i diagrammi in una simile evenienza.
+</p>
+<p class='vspace'>Il diagramma di sequenza si rende necessario, dopo aver disegnato il diagramma delle classi, per rappresentare - almeno in linea teorica - tutti i requisiti funzionali. Infatti il diagramma di sequenza ci spiega come le varie classi si parlano al fine di arrivare all'obiettivo del requisito.
+</p>
+<p class='vspace'>Riprendiamo poi due consigli/regole già visti nella <a class='wikilink' href='IDS-6Aprile.html'>lezione precedente</a>:
+</p><ol><li>tutti gli attributi di stato di una classe vanno resi accessibili (sia in lettura che in scrittura) SOLO tramite metodi <strong>check</strong> e <strong>set</strong>, così che variazioni di tali attributi possano essere controllabili e VISIBILI nel diagramma di sequenza
+</li><li>tutte le linee di comunicazione tra due classi, nel diagramma di sequenza, DEVONO avere nomi di metodi
+</li></ol><p class='vspace'>Per poter tracciare una freccia nel diagramma di sequenza, è quindi necessario che la classe chiamata presenti nella propria interfaccia un metodo con quel nome.
+</p>
+<p class='vspace'>Infine, ricordiamo che se si traccia il diagramma delle sequenze, non si fa il diagramma di collaborazione, visto che si tratta praticamente della stessa cosa presentata sotto due pdv leggermente diversi.
+</p>
+<div class='vspace'></div><h2>Reti di Petri e generazione automatica del codice</h2>
+<p>Come abbiamo visto <a class='wikilink' href='IDS-23Marzo.html'>precedentemente</a>, le Reti di Petri servono per ovviare ad alcuni problemi degli Automi. Sono state aggiunte ad UML solo di recente (nella versione 2.0), e il motivo è che se è presente una Rete di Petri, un tool potrebbe essere in grado di generare il codice corretto in modo automatico.
+</p>
+<p class='vspace'>Infatti, dato un diagramma, un tool è in grado di scrivere l'interfaccia della classe e magari i metodi <strong>check</strong> e <strong>set</strong> degli attributi. Tuttavia, il <strong>contenuto</strong> dei metodi va comunque scritto a mano. Se invece è presente un automa o, meglio, una Rete di Petri, allora il tool può generare automaticamente anche il codice interno al metodo.
+</p>
+<div class='vspace'></div><h2>CRC Cards: la versione completa</h2>
+<p>Le CRC cards viste prima sona un po' semplici, per i nostri scopi. In realtà sono un po' più complesse.
+</p>
+<div class='vspace'></div><table width='50%' border='0' cellpadding='5' cellspacing='0' align='center' >
+<tr ><td bgcolor='#d9e4f2' colspan='2' align='center'  valign='top'> <strong>Nome della Classe</strong>
+</td></tr><tr ><td colspan='2' align='left'  valign='top'> Responsabilità principale della classe
+</td></tr><tr ><td bgcolor='#d9e4f2'  valign='top'> <strong>Responsabilità:</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>Collaborazioni:</strong>
+</td></tr><tr ><td  valign='top'> Resp. 1
+</td><td  valign='top'> Collab. 1
+</td></tr><tr ><td  valign='top'> Resp. 2
+</td><td  valign='top'> Collab. 2
+</td></tr><tr ><td  valign='top'> Resp. 3
+</td><td  valign='top'> Collab. 3
+</td></tr></table> <br />
+<p>Dal punto di vista pratico, accade che in un'azienda ci si sieda attorno ad un tavolo a fare brainstorming, e poi si compilano manualmente certe schede di carta, che sono proprio le CRC Cards. Si litiga sui seguenti punti:
+</p><ul><li>dare il nome alle classi
+</li><li>scegliere le responsabilità, che diventeranno metodi
+</li><li>ripartire le responsabilità tra le diverse classi
+</li><li>non duplicare le responsabilità
+</li><li>regola verso l'alto: se ci sono tante classi con responsabilità in comune, si può provare a vedere se hanno un genitore comune
+</li></ul><p class='vspace'>Anche nel progetto che dovremo consegnare dovremo stare attenti a questi punti, perché una buona valutazione dipende anche da ciò.
+</p>
+<div class='vspace'></div><h3>XP: Xtreme Programming</h3>
+<p>L'Xtreme Programming è una tecnica tramite la quale si passa dalle CRC cards al codice senza passare per il resto dei diagrammi UML.
+</p>
+<p class='vspace'>In generale si usa UML perché (se usato bene) produce documenti che obbligano i programmatori a scrivere codice che non sgarri, e conseguentemente la manutenzione (che rappresenta l'80% del costo di un sw) sarà molto facilitata.
+</p>
+<p class='vspace'>Ma quelli che hanno inventato XP si sono resi conti che è possibile garantire la leggibilità del codice senza passare da UML, ma tramite il <strong>co-sviluppo</strong>: due persone contemporaneamente lavorano allo stesso codice, e si alternano alla tastiera ogni 1/2 ora. Uno scrive, l'altro guarda e lo interroga, e viceversa: in questo modo si controllano a vicenda, e si può garantire un bel codice pulito e rispettoso delle scelte di design. In inglese questa roba si chiama <strong>pair programming</strong>, e ci sono aziende in cui ogni mezz'ora suona una campanella e i programmatori sono tenuti a scambiarsi di posto.
+</p>
+<p class='vspace'>Se il codice è scritto bene, allora si autodocumenta: in pratica il codice è il diagramma UML di se stesso.
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><span  style='color: white;'><strong>DOMANDA D'ESAME</strong></span>
+</p>
+<p class='vspace'><em>È possibile che UML non venga fatto all'interno del processo di sviluppo di un'azienda?</em>
+</p>
+<p class='vspace'>Risposta: Sì, con il Pair Programming, il quale garantisce comunque la leggibilità del codice.
+</p>
+<div class='vspace'></div><h2>Ultima considerazione sulle classi</h2>
+<p>Dal momento che le classi UML hanno una granularità piuttosto piccola, difficilmente saranno utilizzate come unità (formato) di consegna del software. Ad esse si preferiscono invece le <strong>componenti</strong>, che contengono più classi e che affronteremo meglio nelle prossime lezioni.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 04, 2009, at 02:54 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-20Aprile?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-20Aprile?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

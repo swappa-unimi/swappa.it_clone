@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Path Variables </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='PmWiki.PathVariables' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				PathVariables
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/PathVariables?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/PathVariables?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/PathVariables?action=print' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/PathVariables?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/PathVariables?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> Tools
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Cal/Cal'>Calendario</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Gruppi'>Gruppi</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Categorie'>Categorie</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/WikiSandbox'>WikiSandbox</a>
+</li></ul><p class='vspace sidehead'> Categorie
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>UniCrema</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Guide'>Guide</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Qultura'>Qultura</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Recensioni'>Recensioni</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Imperdibili'>Imperdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Perdibili'>Perdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/LoschiIndividui'>Loschi individui</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/CaGate'>caGate</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringWiki'>Touring Wiki</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringBar'>Touring Bar</a>
+</li></ul><p class='vspace sidehead'> Help
+</p><ul><li><a class='urllink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki' title='' rel='nofollow'>Guide interne wiki</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><p class='vspace'  style='text-align: right;'> <span style='font-size:83%'><a class='wikilink' href='http://www.swappa.it/wiki/Site/SideBar?action=edit'>edit SideBar</a></span>
+</p>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Path Variables was last modified on March 28, 2009, at 10:38 PM'>
+							<span style='display:none;'>Path Variables</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#ddd;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='PagelistVariables.html'>Pagelist Variables</a> | <a class='wikilink' href='Variables.html'>Variables</a> | <a class='wikilink' href='SecurityVariables.html'>Security Variables</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' >
+</div>
+<p class='vspace'>When dealing with file or path variables, one has to recognize the difference between working with URLs and files on disk.  For example:
+</p><ul><li>The include() statements are used to include other files (on disk) into the currently running PmWiki script.  Thus they require paths on the server's filesystem. 
+</li><li>The <a class='varlink' href='#ScriptUrl'><code class='varlink'>&#36;ScriptUrl</code></a> and <a class='varlink' href='#PubDirUrl'><code class='varlink'>&#36;PubDirUrl</code></a> variables are used to tell a <em>browser</em>, connecting via the webserver, how to execute the pmwiki script (<a class='varlink' href='#ScriptUrl'><code class='varlink'>&#36;ScriptUrl</code></a>) and the base url for getting files from PmWiki's pub/ directory (<a class='varlink' href='#PubDirUrl'><code class='varlink'>&#36;PubDirUrl</code></a>).
+</li></ul><p class='vspace'>Note that a browser needs a URL (<a class='urllink' href='http://example.com/pmwiki/pub' title='' rel='nofollow'>http://example.com/pmwiki/pub</a>) while an include statement requires a server file path (<a class='varlink' href='#FarmD'><code class='varlink'>&#36;FarmD</code></a>/scripts/something.php).
+</p>
+<div class='vspace'></div><dl><dt><a name='FarmD' id='FarmD'></a><a class='varlink' href='#FarmD'><code class='varlink'>&#36;FarmD</code></a></dt><dd>The directory on the server where the farm is located (i.e., the directory containing the farm's copy of <em>pmwiki.php</em> and the <em>scripts/</em> directory).  This directory is automatically determined by pmwiki.php when it runs, and can be used to distinguish the farm's <em>cookbook/</em> and <em>pub/</em> subdirectories from a field's subdirectories.
+<div class='vspace'></div></dd><dt><a name='FarmPubDirUrl' id='FarmPubDirUrl'></a><a class='varlink' href='#FarmPubDirUrl'><code class='varlink'>&#36;FarmPubDirUrl</code></a></dt><dd>is the url that refers to the <code>pub</code> directory for an entire farm. It defaults to the same value as <a class='varlink' href='#PubDirUrl'><code class='varlink'>&#36;PubDirUrl</code></a>. 
+<div class='vspace'></div></dd><dt><a name='PageCSSListFmt' id='PageCSSListFmt'></a><a class='varlink' href='#PageCSSListFmt'><code class='varlink'>&#36;PageCSSListFmt</code></a></dt><dd>is an associative array which PmWiki uses to find any local css configuration files. It consists of a set of (<em>key</em>,<em>value</em>) pairs <span  style='color: green;'> that point to the same file</span>. The <em>key</em> is a possible path to a file on disk holding the css data, while the <em>value</em> is the coresponding URL for that <span  style='color: green;'>same file</span>. They keys are tested in turn, and for each named file that exists, the browser is instructed to load the corresponding URL. This allows for PMWiki to only load the css file if it exists. (<a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/WhySeeIfCSSExists' title='' rel='nofollow'>Why see if a CSS exists?</a>)  The default value for this variable is:
+</dd></dl><div class='vspace'></div><div class='indent'><pre class='escaped'>
+$PageCSSListFmt = array(
+  'pub/css/local.css' =&gt; '$PubDirUrl/css/local.css',
+  'pub/css/{$Group}.css' =&gt; '$PubDirUrl/css/{$Group}.css',
+  'pub/css/{$FullName}.css' =&gt; '$PubDirUrl/css/{$FullName}.css');
+</pre>
+<div class='vspace'></div></div><div class='indent'>Note that the default (as of version pmwiki-2.1.beta26) makes no reference to <a class='varlink' href='#FarmPubDirUrl'><code class='varlink'>&#36;FarmPubDirUrl</code></a> for css configuration files. If you wish to be able to place css configuration files in both the field's <code>pub</code> directory, and the farm's <code>pub</code> directory, you may want to add these lines to your <code>local/config.php</code> file (as described in <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/SharedPages' title='' rel='nofollow'>Cookbook:SharedPages</a>):
+<div class='vspace'></div></div><div class='indent'>       <span  style='color: green;'># this adds farm.css to all wikis</span>
+</div><div class='indent'><pre class='escaped'>
+$PageCSSListFmt = array(
+  '$FarmD/pub/css/farm.css' =&gt; '$FarmPubDirUrl/css/farm.css',
+  'pub/css/local.css' =&gt; '$PubDirUrl/css/local.css',
+  'pub/css/$Group.css' =&gt; '$PubDirUrl/css/$Group.css',
+  'pub/css/$FullName.css' =&gt; '$PubDirUrl/css/$FullName.css');
+</pre>
+<div class='vspace'></div></div><div class='indent'>       <span  style='color: green;'># this enables farm css files in a similar manner to a local wiki</span>
+</div><div class='indent'><pre class='escaped'>
+$PageCSSListFmt = array(
+  '$FarmD/pub/css/local.css' =&gt; '$FarmPubDirUrl/css/local.css',
+  '$FarmD/pub/css/$Group.css' =&gt; '$FarmPubDirUrl/css/$Group.css',
+  '$FarmD/pub/css/$FullName.css' =&gt; '$FarmPubDirUrl/css/$FullName.css',
+  'pub/css/local.css' =&gt; '$PubDirUrl/css/local.css',
+  'pub/css/$Group.css' =&gt; '$PubDirUrl/css/$Group.css',
+  'pub/css/$FullName.css' =&gt; '$PubDirUrl/css/$FullName.css');
+</pre>
+<div class='vspace'></div></div><div class='indent'>Note the difference between CSS configuration files and CSS files associated with a skin. Skin files, including associated CSS, can be put in either the farm or the field <code>pub/skins</code> directory, and the program will find them.
+</div><div class='vspace'></div><dl><dt><a name='PubDirUrl' id='PubDirUrl'></a><a class='varlink' href='#PubDirUrl'><code class='varlink'>&#36;PubDirUrl</code></a></dt><dd> is the URL that refers to the <code>pub</code> directory. That directory contains all the files and subdirectories that must be directly accessible from a browser (e.g. CSS and HTML files). Most prominent here is the <code>skins</code> subdirectory.
+</dd></dl><div class='indent'>The following may work for you<sup><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/CleanUrls#multiviews' title='' rel='nofollow'>[1]</a></sup>
+</div><div class='indent'><pre class='escaped'>  $ScriptUrl = 'http://'.$_SERVER['HTTP_HOST'].'/pmwiki/pmwiki.php';
+  $PubDirUrl = 'http://'.$_SERVER['HTTP_HOST'].'/pmwiki/pub';</pre>
+</div><div class='vspace'></div><dl><dt><a name='ScriptUrl' id='ScriptUrl'></a><a class='varlink' href='#ScriptUrl'><code class='varlink'>&#36;ScriptUrl</code></a></dt><dd> is the URL that you want people's browsers to use when accessing PmWiki, either as a field or farm.  It's used whenever PmWiki needs to generate a link to another PmWiki page or action. PmWiki is usually fairly good about "guessing" the correct value for <a class='varlink' href='#ScriptUrl'><code class='varlink'>&#36;ScriptUrl</code></a> on its own, but sometimes an admin needs to set it explicitly because of URL manipulations by the webserver (such as <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/CleanUrls' title='' rel='nofollow'>Cookbook:CleanUrls</a>, mod_rewrite, bizarre PHP configurations, and so on).
+<div class='vspace'></div></dd><dt><a name='SkinDirUrl' id='SkinDirUrl'></a><a class='varlink' href='#SkinDirUrl'><code class='varlink'>&#36;SkinDirUrl</code></a></dt><dd>Set by <em>scripts/skins.php</em> to be the base url of the current skin's directory (i.e., within a 'pub/skins/' directory).  This variable is typically used inside of a skin .tmpl file to provide access to .css files and graphic images associated with the skin.
+<div class='vspace'></div></dd><dt><a name='WorkDir' id='WorkDir'></a><a class='varlink' href='#WorkDir'><code class='varlink'>&#36;WorkDir</code></a></dt><dd>
+</dd><dt> </dt><dd>This variable is a string that gives a local path to a directory where the pmwiki engine can create temporary files etc. PmWiki needs this for a variety of things, such as building merged edits, caching mailposts entries, keeping track of the last modification time of the site, other types of cache, etc.  Do not confuse this variable with <a class='varlink' href='#WikiDir'><code class='varlink'>&#36;WikiDir</code></a>; the reason that both <a class='varlink' href='#WorkDir'><code class='varlink'>&#36;WorkDir</code></a> and <a class='varlink' href='#WikiDir'><code class='varlink'>&#36;WikiDir</code></a> refer by default to the directory <code class='escaped'>wiki.d/</code> is merely to simplify things for the administrator. 
+<div class='vspace'></div></dd><dt><a name='WikiDir' id='WikiDir'></a><a class='varlink' href='#WikiDir'><code class='varlink'>&#36;WikiDir</code></a></dt><dd> 
+</dd><dt> </dt><dd><a class='varlink' href='#WikiDir'><code class='varlink'>&#36;WikiDir</code></a> is a PageStore-object that refers to how wiki pages are stored. This can be a simple reference to a directory (typically <em>wiki.d/</em>), or something more advanced such as a MySQL backend or a .dbm-file.  Do not confuse this variable with <a class='varlink' href='#WorkDir'><code class='varlink'>&#36;WorkDir</code></a>; the reason that both <a class='varlink' href='#WorkDir'><code class='varlink'>&#36;WorkDir</code></a> and <a class='varlink' href='#WikiDir'><code class='varlink'>&#36;WikiDir</code></a> refer by default to the directory <code class='escaped'>wiki.d/</code> is merely to simplify things for the administrator.
+</dd><dt> </dt><dd>To store groups of pages in subdirectories add <code class='escaped'>$WikiDir = new PageStore('wiki.d/$Group/$FullName');</code> to the start of your config file. <sup><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/PerGroupSubDirectories' title='' rel='nofollow'>[2]</a></sup>
+<div class='vspace'></div></dd><dt><a name='WikiLibDirs' id='WikiLibDirs'></a><a class='varlink' href='#WikiLibDirs'><code class='varlink'>&#36;WikiLibDirs</code></a></dt><dd>
+</dd><dt> </dt><dd><a class='varlink' href='#WikiLibDirs'><code class='varlink'>&#36;WikiLibDirs</code></a> is an array of PageStore objects that specify where to look for pages.  By default it is set up to look in <em>wiki.d/</em> and <em>wikilib.d/</em>, but can be changed to look other places.  
+</dd><dt> </dt><dd>For example, to exclude the pages that are bundled in the PmWiki distribution, use the line below.  (Note that some features such as editing and search rely on having certain pages available, so you may need to copy them to the <a class='varlink' href='#WikiDir'><code class='varlink'>&#36;WikiDir</code></a>.)
+</dd></dl><pre>        <a class='varlink' href='#WikiLibDirs'><code class='varlink'>&#36;WikiLibDirs</code></a> = array(&amp;<a class='varlink' href='#WikiDir'><code class='varlink'>&#36;WikiDir</code></a>);
+</pre><dl><dt> </dt><dd>Another example
+</dd></dl><div class='indent'><pre class='escaped'>
+ 	## for any page name, use the version located in wiki.d if it exists,
+ 	## use the version located in wikilib2.d, if a wiki.d version does not, and
+ 	## the version located in wikilib.d, if neither of the above exists
+	$WikiLibDirs = array(&amp;$WikiDir,
+	    new PageStore('wikilib2.d/{$FullName}'),
+	    new PageStore('$FarmD/wikilib.d/{$FullName}'));
+</pre>
+</div><dl><dt> </dt><dd> See also <a class='urllink' href='http://www.pmwiki.org/wiki/Category/CustomPageStore' title='' rel='nofollow'>CustomPageStore</a>.
+<div class='vspace'></div></dd><dt><a name='LocalDir' id='LocalDir'></a><a class='varlink' href='#LocalDir'><code class='varlink'>&#36;LocalDir</code></a></dt><dd>The filesystem location of the <em>local/</em> directory, holding <a class='wikilink' href='LocalCustomizations.html'>local customization</a> and <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/per%20group%20customizations' title='' rel='nofollow'>per group customizations</a> files.  Typically set in a <a class='wikilink' href='WikiFarms.html'>WikiFarm</a>'s <em>farmconfig.php</em>.  (Note that farm configuration files always occur in <em><a class='varlink' href='#FarmD'><code class='varlink'>&#36;FarmD</code></a>/local/farmconfig.php</em>, regardless of any setting for <a class='varlink' href='#LocalDir'><code class='varlink'>&#36;LocalDir</code></a>.)
+</dd></dl><div class='vspace'></div><h2>See also</h2>
+<ul><li><a class='wikilink' href='LayoutVariables.html'>Layout Variables</a> for URL layout options
+</li><li><a class='wikilink' href='LinkVariables.html'>Link Variables</a> - variables that control the display of links in pages
+</li><li><a class='wikilink' href='EditVariables.html'>Edit Variables</a> - variables used when editing pages
+</li><li><a class='wikilink' href='UploadVariables.html'>Upload Variables</a> - variables used for uploads/attachments
+</li></ul><p> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#ddd;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='PagelistVariables.html'>Pagelist Variables</a> | <a class='wikilink' href='Variables.html'>Variables</a> | <a class='wikilink' href='SecurityVariables.html'>Security Variables</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+<br clear='all' />
+</p><div  style='background-color: #ffe; border-top: 1px solid black; font-size: .8em;' > 
+<p>This page may have <span class='commentout-pmwikiorg'> a more recent version on <a class='urllink' href='http://www.pmwiki.org' title='' rel='nofollow'>pmwiki.org</a>: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/PathVariables' title='' rel='nofollow'>PmWiki:PathVariables</a>, and </span> a talk page: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/PathVariables-Talk' title='' rel='nofollow'>PmWiki:PathVariables-Talk</a>.
+</p></div>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/RecentChanges'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 28, 2009, at 10:38 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/PathVariables?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/PathVariables?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

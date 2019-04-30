@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: ESP Lezione del 29 ventoso 216 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.ESP19marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				ESP Lezione del 29 ventoso 216
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP19marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP19marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='ESP19marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP19marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP19marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='ESP Lezione del 29 ventoso 216 was last modified on March 21, 2008, at 03:22 PM'>
+							<span style='display:none;'>ESP Lezione del 29 ventoso 216</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: ESP - Lezione del 29 ventoso 216 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>... altrimenti noto come 19 marzo</strong></span>
+</p>
+<p class='vspace'><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di ESP</a>
+</p>
+<div class='vspace'></div><h2>Controllo dell'accesso</h2>
+<p>C'è un modulo, nel sistema, che si occupa di controllarne l'accesso. Valuta se dire SI o NO alle richieste che gli vengono fatte, in base all'identità del richiedente ed ai suoi permessi.
+</p>
+<p class='vspace'><strong>Accountability:</strong> = l'esigenza di sapere CHI ha fatto CHE COSA, e QUANDO. Queste informazioni sono importanti soprattutto in quei sistemi dove gli utenti sono noti a priori, anche se non tutti i sistemi sono così.
+</p>
+<p class='vspace'>Come al solito, possiamo distinguere tra <strong>politica</strong>, ovvero le linee guida da applicare, e <strong>meccanismi</strong>, ovvero i modi concreti con cui attuerò le mie politiche.
+Occorre stare attenti che spesso le <strong>autorizzazioni</strong>, ovvero le regole di controllo, sono spesso chiamate <strong>politiche</strong>, ma sono due cose diverse.
+</p>
+<p class='vspace'>Ci sono dei vantaggi nel separare concettualmente le politiche dai meccanismi:
+</p><ol><li>Posso analizzare la politica senza preoccuparmi di come implementarla
+</li><li>Posso confrontare politiche diverse senza preoccuparmi di come sono implementate
+</li><li>Posso confrontare meccanismi diversi senza preoccuparmi delle politiche
+</li><li>Posso usare un unico meccanismo per implementare diverse politiche.
+</li></ol><div class='vspace'></div><h3>I meccanismi</h3>
+<p>I meccanismi presuppongono l'esistenza di un <strong>reference monitor</strong>, che è una parte fidata del nostro sistema. Deve essere fidata per poter gestire in tutta sicurezza gli accessi al sistema.
+Le sue caratteristiche sono quindi:
+</p><ul><li><strong>tamper proof</strong>: nessuno può modificarlo;
+</li><li><strong> non bypassabile</strong>: non esiste un modo di entrare nel sistema senza passare per lui;
+</li><li>confinato in un piccolo modulo del SO, inaccessibile ai più;
+</li><li>resistente ai <strong>covert channel</strong>.
+</li></ul><p class='vspace'>È ovvio che queste caratteristiche sono volute e ricercate, ma non sempre ottenute al 100%.
+</p>
+<div class='vspace'></div><h3>Progettazione del controllo dell'accesso</h3>
+<p>Sopra abbiamo visto che c'è distinzione tra politiche e meccanismi. La Politica è la linea guida generale a cui mi ispiro per realizzare la sicurezza del mio sistema. Il Meccanismo è come fisicamente implementerò quelle linee guida.
+Ad esempio, posso scegliere come politica un accesso in base all'identità: i belli possono entrare, i brutti no. E il meccanismo dovrà gestire le identità, magari prevedendo un nome diverso ed una password diversa per ogni utente diverso.
+</p>
+<p class='vspace'>Ma non si passa direttamente da politica a meccanismo: in mezzo ci sta il <strong>modello</strong>. Un modello è una rappresentazione formale delle linee guida della mia politica.
+L'aggiunta di questa fase mi permette di realizzare i meccanismi a partire da regole certe, ovvero da regole formali e non da parole un po' vaghe. Un po' la differenza che passava tra la descrizione del sistema e la realizzazione dell'ER.
+</p>
+<p class='vspace'>Il modello è
+</p><ul><li><strong>completo</strong> se rappresenta tutte le richieste previste dalla mia politica,
+</li><li><strong>consistente</strong> se no ncontiene contraddizioni al suo interno, ad esempio, "nega l'accesso a tutti i brutti", e poi sotto ha una regola "Ronaldinho può entrare". Eh no, non ci siamo.
+</li></ul><p class='vspace'>Quando il mio modello rispetta la <strong>completezza</strong> e la <strong>consistenza</strong>, allora va tutto bene, il mio modello è <strong>sicuro</strong>.
+Se poi anche il mio meccanismo è corretto rispetto al modello, allora anche il mio sistema è sicuro.
+</p>
+<div class='vspace'></div><h3>Politiche di sicurezza</h3>
+<p>Ci sono 3 categorie fondamentali di <strong>politiche di sicurezza</strong>:
+</p><ul><li><strong>DAC</strong> = Controllo dell'accesso discrezionale
+</li><li><strong>MAC</strong> = Controllo dell'accesso mandatorio
+</li><li><strong>RAC</strong> = Controllo dell'accesso basato sui ruoli
+</li></ul><p class='vspace'>Sono i modi per definire chi può e chi non può spaciugare nel sistema.
+</p>
+<p class='vspace'>Le <strong>politiche di amministrazione</strong> mi dicono invece chi può specificare le regole. Ad esempio, in una macchina UNIX tipica l'utente <em>root</em> decide per tutti gli altri.
+</p>
+<div class='vspace'></div><h3>Modelli di sicurezza</h3>
+<p>I modelli di cui parlavamo prima sono descritti facendo ricorso a queste tre entità:
+</p><ul><li><strong>soggetti</strong>: chi può accedere;
+</li><li><strong>oggetti</strong>: le risorse da proteggere;
+</li><li><strong>azioni</strong>: che cosa si può fare ad una risorsa o ad un soggetto.
+</li></ul><p class='vspace'>In un dato momento, l'insieme dei permessi dati o negati ad ogni soggetto costituisce lo <strong>stato di autorizzazione</strong> del mio sistema, ovvero lo <strong>stato di protezione</strong> del sistema stesso.
+</p>
+<p class='vspace'>Le <strong>regole di identificazione</strong> sono invece degli assiomi che vanno verificati affinché un accesso sia negato o permesso.
+</p>
+<div class='vspace'></div><h3>Politiche discrezionarie</h3>
+<p>Le politiche discrezionarie si chiamano così perché prevedono che un utente possa passare dei privilegi ad un altro utente a sua discrezione.
+</p>
+<p class='vspace'>Il controllo dell'accesso viene effettuato in base all'identità dell'utente, e si confronta l'identità con l'insieme di regole che mi dicono che cosa quell'utente può o non può fare.
+</p>
+<p class='vspace'>Ad esempio, SQL implementa una politicha discrezionaria: un utente con GRANT e REVOKE può concedere a sua discrezione privilegi ad altri utenti.
+</p>
+<div class='vspace'></div><h3>Modello a matrice di accesso</h3>
+<div><span class='frame lfloat'><img src='../uploads/Uni/primitive.gif' alt='' title='' /><br /><strong>Le primitive</strong></span></div>
+<p>Inventato da <strong>Lampson</strong> nel 1971, ma usato bene o male ancora adesso.
+Ci sono tre insiemi: <strong>S</strong> è l'insieme dei soggetti, <strong>O</strong> è l'insieme degli oggetti, e <strong>A</strong> è la <strong>matrice di accesso</strong>.
+</p>
+<p class='vspace'>La matrice di accesso è una tabella in cui le righe sono i soggetti, e le colonne sono gli oggetti. Una singola cella contiene i privilegi che l'utente di quella riga ha sulle risorse di quella colonna.
+</p>
+<p class='vspace'>Per qualche oscura ragione che mi è sfuggita, l'insieme <strong>S</strong> è un sottinsieme dell'insieme <strong>O</strong>, perché in qualche modo i processi che un utente lancia sono un estensione del soggetto. E con ciò? Boh, mi documenterò.
+</p>
+<p class='vspace'>Lo stato di protezione è modificabile nel tempo: abbiamo quindi a che fare con un <strong>sistema dinamico</strong>. Le transizioni tra uno stato e l'altro sono affidate a delle <strong>primitive</strong>. Eccole:
+</p><ul><li>enter R into A[S,O] =&gt; il privilegio R viene infilato in una cella
+</li><li>delete R from A[S,O]
+</li><li>create subject S'
+</li><li>destroy subject S'
+</li><li>create object O'
+</li><li>destroy object O'
+</li></ul><div class='vspace'></div><h3>Come implementare il modello a matrice di accesso</h3>
+<p>Non è un problema da poco. Se facessi letteralmente una tabella così, sarebbe gigantesca. Pensiamo ad un sistema con 1000 files e 10 utenti. La tabella sarebbe grossa 1000 * 10. Inoltre, gran parte della tabella stessa conterrebbe celle vuote, che rappresentano quelle risorse dove quell'utente non ha voce in capitolo. Ci sono alcune alternative, in proposito.
+</p>
+<p class='vspace'><strong>Tabelle di autorizzazione</strong>: salvo solamente le triple SOA definite.
+</p>
+<p class='vspace'><strong>ACC</strong>: memorizzo per colonne, cioè ogni riga è una risorsa, e ogni cella della colonna contiene la lista dei permessi per ogni utente.
+</p>
+<p class='vspace'>Un esempio è il filesystem delle macchine unix, in cui ogni file è così presentato.
+</p>
+<div class='vspace'></div><pre> nomefile proprietario gruppo -rwxr-xr-x
+</pre><p class='vspace'>Della stringa <strong>-rwxr-xr-x</strong>, il primo trattino ci dice se si tratta di una cartella o no (in questo caso no, se no avremmo avuto una <strong>d</strong>), ma i restanti nove caratteri sono divisi in tre gruppi di tre: i primi tre ci dicono i permessi del proprietario sulla risorsa, i secondi tre i permessi del gruppo e gli ultimi tre i permessi di tutti gli altri. I tipi di permesso sono 3, <strong>r</strong> = read, <strong>w</strong> = write e <strong>x</strong> = execute.
+</p>
+<p class='vspace'><strong>Capability List</strong>: detto anche <strong>ticket</strong>, memorizza per riga, cioè ogni riga è un utente con una lista di operazioni consentite.
+</p>
+<div class='vspace'></div><h3>ACC VS Capability List</h3>
+<p>ACC è efficiente quando si effettuano controlli per oggetto, perché ogni oggetto ha subito la sua lista di permessi. Se invece voglio controllare per soggetto, allora dovrei scandire tutta la lista prima di trovare tutte le risorse accessibili a quel soggetto.
+</p>
+<p class='vspace'>Capability List lavora al contrario: è efficiente nelle ricerche per soggetto, ma molto inefficiente nelle ricerche per oggetto. Lavorare sui soggetti cone la Capability List è semplice, perché li trovo subito, e posso aggiungere o togliere permessi o creare o eliminare soggetti con facilità. Con ACC è più complesso.
+</p>
+<p class='vspace'>Capability List però porta con sé il problema della <strong>non falsificabilità</strong>. Siccome ogni utente ha la sua lista di privilegi, questa lista deve essere ben sicura e dall'integrità garantita, altrimenti ci sono seri rischi di sicurezza. Il fatto che Capability List sia poco usato deriva proprio dalla difficoltà di mantenere una tale lista gigantesca in modo sicuro.
+</p>
+<div class='vspace'></div><h3>Problema della safety</h3>
+<p>Abbiamo detto prima che, tramite le primitive, si può passare da uno stato di autorizzazione ad un altro stato. Le transizioni tra stati sono segnate così:
+</p>
+<div class='vspace'></div><pre> Q = Q<sub>0</sub> &#8866; c<sub>1</sub> Q<sub>1</sub> &#8866; ... &#8866; c<sub>n</sub>Q<sub>n</sub> = Q' 
+</pre><p class='vspace'>in cui <strong>c<sub>n</sub></strong> sono i comandi primitivi, con certi parametri. Se ci sono delle parti condizionali nei comandi, e le condizioni non sono soddisfatte, allora lo stato finale è identico allo stato iniziale.
+</p>
+<p class='vspace'>Ma c'è un problema. Tramite questi comandi, perfettamente legali, è possibile passare da uno stato che le mie politiche considerano lecito, ad uno che invece non è lecito?
+Infatti, c'è il problema che sia possibile avere una sequenza di comandi che alla fine mi porta in uno stato dove anche l'utente brutto ha accesso al sistema, per rimanere con l'esempio di prima.
+</p>
+<p class='vspace'>La cosa brutta è che, a priori, questo è un problema <strong>non decidibile</strong>. Ovvero, in base allo stato iniziale ed ai comandi permessi non so dire prima di attivare il sistema se sarà possibile aggirare la mia politica tramite opportuni comandi sulla matrice di accesso. Non decidibile vuol dire che il tempo per scoprirlo è polinomiale, cioè costoso, e per ridurlo occorre assumere che i comandi siano tutti mono-operazionali (cioè che facciano una sola cosa) e che soggetti ed oggetti siano in numero finito.
+</p>
+<p class='vspace'><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di ESP</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 21, 2008, at 03:22 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP19marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP19marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

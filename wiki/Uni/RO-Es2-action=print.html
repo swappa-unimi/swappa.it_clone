@@ -1,0 +1,488 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - Esercizi di laboratorio</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RO-Es2.html' title='Ricerca Operativa - Esercizi di laboratorio'>Ricerca Operativa - Esercizi di laboratorio</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ricerca Operativa - Esercizi di laboratorio ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Esercizio 2: La fattoria</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 270px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#e1'>Problema</a>
+</li><li><a href='#e2'>Formalizzazione</a>
+</li><li><a href='#e3'>Risoluzione in Lindo</a>
+</li><li><a href='#e4'>Report</a>
+</li><li><a href='#e5'>Analisi di sensitività</a>
+</li><li><a href='#e6'>Analisi parametrica</a>
+</li></ol></div>
+<p class='vspace'><a name='e1' id='e1'></a>
+</p><h2>Problema</h2>
+<p>Una fattoria ha due lotti di terreno: A di 200 e B di 400 acri. Sei tipi di cereali numerati da 1 a 6 possono esservi coltivati. Per ogni quintale di cereale prodotto il profitto è dato dalla tabella seguente.
+</p>
+<div class='vspace'></div><table width='50%' border='1' cellpadding='5' >
+<tr ><td  valign='top'>Cereale
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td></tr><tr ><td  valign='top'>Profitto/quintale
+</td><td  valign='top'>48
+</td><td  valign='top'>62
+</td><td  valign='top'>28
+</td><td  valign='top'>36
+</td><td  valign='top'>122
+</td><td  valign='top'>94
+</td></tr></table>
+<p class='vspace'>Ogni quintale di cereale necessita di una certa area (espressa in acri) e di una certa quantità di acqua (espressa in metri cubi) secondo questa tabella.
+</p>
+<div class='vspace'></div><table width='50%' border='1' cellpadding='5' >
+<tr ><td  valign='top'>Cereale
+</td><td  valign='top'>1
+</td><td  valign='top'>2
+</td><td  valign='top'>3
+</td><td  valign='top'>4
+</td><td  valign='top'>5
+</td><td  valign='top'>6
+</td></tr><tr ><td  valign='top'>area su A
+</td><td  valign='top'>0.02
+</td><td  valign='top'>0.03
+</td><td  valign='top'>0.02
+</td><td  valign='top'>0.016
+</td><td  valign='top'>0.05
+</td><td  valign='top'>0.04
+</td></tr><tr ><td  valign='top'>area su B
+</td><td  valign='top'>0.02
+</td><td  valign='top'>0.034
+</td><td  valign='top'>0.024
+</td><td  valign='top'>0.02
+</td><td  valign='top'>0.06
+</td><td  valign='top'>0.034
+</td></tr><tr ><td  valign='top'>acqua
+</td><td  valign='top'>120
+</td><td  valign='top'>160
+</td><td  valign='top'>100
+</td><td  valign='top'>140
+</td><td  valign='top'>215
+</td><td  valign='top'>180
+</td></tr></table>
+<p class='vspace'>Il volume totale di acqua disponibile è di 400mila metri cubi.
+</p>
+<p class='vspace'><a name='e2' id='e2'></a>
+</p><h2>Formalizzazione</h2>
+<h4>Dati</h4>
+<table cellpadding='5' width='80%' >
+<tr ><td  valign='top'>T = 2
+</td><td  valign='top'>lotti di terreno
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>C = 6
+</td><td  valign='top'>cereali
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>p<sub>i</sub>
+</td><td  valign='top'>profitto del cereale i (1, ... , C) per quintale
+</td><td  valign='top'>[€/q]
+</td></tr><tr ><td  valign='top'>ar<sub>ij</sub>
+</td><td  valign='top'>area necessaria per quintale di cereale i (1, ... , C) a seconda<br />del tipo di terreno j (1, ... , T)
+</td><td  valign='top'>[acri]
+</td></tr><tr ><td  valign='top'>ac<sub>i</sub>
+</td><td  valign='top'>quantità di acqua necessaria per quintale di cereale i (1, ... , C)
+</td><td  valign='top'>[m<sup>3</sup>]
+</td></tr><tr ><td  valign='top'>lt<sub>j</sub>
+</td><td  valign='top'>acri disponibili per terreno j (1, ... , T)
+</td><td  valign='top'>[acri]
+</td></tr><tr ><td  valign='top'>la
+</td><td  valign='top'>totale di acqua disponibile
+</td><td  valign='top'>[m<sup>3</sup>]
+</td></tr></table>
+<div class='vspace'></div><h4>Variabili</h4>
+<table cellpadding='5' width='70%' >
+<tr ><td  valign='top'>x<sub>ij</sub> &#8805; 0
+</td><td  valign='top'>quintali di cereali i (1, ... , C) da coltivare nel<br />terreno j (1, ... , T)
+</td><td  valign='top'>[q]
+</td></tr></table>
+<p class='vspace'>Notare il maggiore uguale a 0, condizione necessaria dato che non posso coltivare una quantità negativa di cereali.
+</p>
+<div class='vspace'></div><h4>Vincoli</h4>
+<table cellpadding='5' width='60%' >
+<tr ><td  valign='top'>&#8721;<sub>i</sub>  x<sub>ij</sub> • ar<sub>ij</sub> &#8804; lt<sub>j</sub>
+</td><td  valign='top'>per ogni j = 1, ... , T<br />e con i = 1, ... , C
+</td><td  valign='top'>[acri]
+</td></tr><tr ><td  valign='top'>&#8721;<sub>i</sub>  x<sub>ij</sub> • &#8721;<sub>j</sub> ac<sub>ij</sub> &#8804; la
+</td><td  valign='top'>per ogni j = 1, ... , T<br />e con i = 1, ... , C
+</td><td  valign='top'>[m<sup>3</sup>]
+</td></tr></table>
+<div class='vspace'></div><h4>Funzione obiettivo</h4>
+<p>Massimizzare il profitto, ovviamente.
+</p>
+<div class='vspace'></div><table cellpadding='5' width='50%' >
+<tr ><td  valign='top'>max  &#8721;<sub>i</sub> &#8721;<sub>j</sub> p<sub>i</sub> • x<sub>i</sub>
+</td><td  valign='top'>[€]
+</td></tr></table>
+<div class='vspace'></div><h4>Classificazione del problema</h4>
+<p>Osservazioni da fare:
+</p><ol><li>le variabili sono continue o no? 
+</li><li>i vincoli sono lineari o no?
+</li></ol><p class='vspace'>Le variabili sono variabili continue.<br />I vincoli sono espressi con un polinomio di primo grado, quindi il modello è lineare.
+La funzione obiettivo è espressa con un polinomio di primo grado, quindi il modello è lineare.
+</p>
+<p class='vspace'>Riassumendo: è un problema di programmazione lineare.
+</p>
+<p class='vspace'><a name='e3' id='e3'></a>
+</p><h2>Risoluzione in Lindo</h2>
+<table cellpadding='10' >
+<tr ><td bgcolor='#f2f6f9'  valign='top'>
+<pre class='escaped'>!Esercizio Fattoria
+
+!Variabili x(i)(j) = quintali di cerali da coltivare nel campo j [q]
+
+!Funzione obiettivo è massimizzare i guadagni [$/q]
+max 48 x11 + 48 x12 + 62 x21 + 62 x22 + 28 x31 + 28 x32 
+    + 36 x41 + 36 x42 + 122 x51 + 122 x52 + 94 x61 + 94 x62
+
+st
+
+!Vincoli sulle aree disponibili [acri]
+acri1) 0.02 x11 + 0.03 x21 + 0.02 x31 + 0.016 x41 + 0.05 x51 + 0.04 x61 &lt;= 200
+acri2) 0.02 x12 + 0.034 x22 + 0.024 x32 + 0.02 x42 + 0.06 x52 + 0.034 x62 &lt;= 400
+
+!Vincoli sull'acqua disponibile [metri cubi]
+acqua) 120 x11 + 120 x12 + 160 x21 + 160 x22 + 100 x31 + 100 x32 + 140 x41 + 140 x42 
+        + 215 x51 + 215 x52 + 180 x61 + 180 x62 &lt;= 400000
+
+End
+</pre>
+</td></tr></table>
+<p class='vspace'>Cliccando sul pulsante della risoluzione (il bersaglio) appare la seguente finestra di riepilogo:
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/statusEs2a.jpg' alt='' title='' /></span></div>
+<p class='vspace'>Questo tipo di errore si manifesta quando si richiede la risoluzione di un problema in cui le variabili hanno valori molto grandi e molto piccoli (infatti in questo caso andiamo da 400000 a 0.016). Conviene dunque scalare il problema, magari cambiando l'unità di misura per l'acqua ed esprimendola in k metri cubi.
+<br clear='all' />
+</p>
+<p class='vspace'>Avremo perciò:
+</p>
+<div class='vspace'></div><table cellpadding='10' >
+<tr ><td bgcolor='#f2f6f9'  valign='top'>
+<pre class='escaped'>!Esercizio Fattoria
+
+!Variabili x(i)(j) = quintali di cerali da coltivare nel campo j [q]
+
+!Funzione obiettivo è massimizzare i guadagni [$/q]
+max 48 x11 + 48 x12 + 62 x21 + 62 x22 + 28 x31 + 28 x32 + 36 x41 + 36 x42 
+	+ 122 x51 + 122 x52 + 94 x61 + 94 x62
+
+st
+
+!Vincoli sulle aree disponibili [acri]
+acri1) 0.02 x11 + 0.03 x21 + 0.02 x31 + 0.016 x41 + 0.05 x51 + 0.04 x61 &lt;= 200
+acri2) 0.02 x12 + 0.034 x22 + 0.024 x32 + 0.02 x42 + 0.06 x52 + 0.034 x62 &lt;= 400
+
+!Vincoli sull'acqua disponibile [K metri cubi]
+acqua) 0.120 x11 + 0.120 x12 + 0.160 x21 + 0.160 x22 + 0.100 x31 + 0.100 x32 
+	+ 0.140 x41 + 0.140 x42 + 0.215 x51 + 0.215 x52 + 0.180 x61 
+        + 0.180 x62 &lt;= 400
+
+end</pre>
+</td></tr></table>
+<p class='vspace'>...che stavolta andrà a buon fine
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/statusEs2b.jpg' alt='' title='' /></span></div>
+<p><br clear='all' />
+</p>
+<p class='vspace'><a name='e4' id='e4'></a>
+</p><h2>Report</h2>
+<table cellpadding='10' >
+<tr ><td bgcolor='#fff7ea'  valign='top'>
+<pre class='escaped'>LP OPTIMUM FOUND AT STEP      1
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      226976.7
+
+  VARIABLE        VALUE          REDUCED COST
+       X11         0.000000         20.093021
+       X12         0.000000         20.093021
+       X21         0.000000         28.790693
+       X22         0.000000         28.790693
+       X31         0.000000         28.744186
+       X32         0.000000         28.744186
+       X41         0.000000         43.441860
+       X42         0.000000         43.441860
+       X51         0.000000          0.000000
+       X52      1860.465088          0.000000
+       X61         0.000000          8.139537
+       X62         0.000000          8.139537
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+    ACRI1)       200.000000          0.000000
+    ACRI2)       288.372101          0.000000
+    ACQUA)         0.000000        567.441833
+
+ NO. ITERATIONS=       1</pre>
+</td></tr></table>
+<p class='vspace'>Da cui osserviamo che il massimo del profitto è di 226976.7 € ottenuti coltivando esclusivamente sul terreno B col cereale 5, quello col miglior rapporto profitto/consumi. Notare che avrei avuto un risultato altrettanto ottimale se l'avessi coltivato sul campo A: la quantità di acri utilizzati non è una variabile stringente, dunque non influisce sulla soluzione. La variabile x51 ha infatti costo ridotto 0, quindi se entrasse in base varierebbe la soluzione ottima di 0, lasciandola di fatto inalterata.
+</p>
+<p class='vspace'>Il vincolo stringente è quello sull’acqua, mentre le aree avanzano.
+</p>
+<p class='vspace'><a name='e5' id='e5'></a>
+</p><h2>Analisi di sensitività</h2>
+<div><span class='frame lfloat'><img src='../uploads/Uni/sensitivityAnalysis.jpg' alt='' title='' /></span></div>
+<p>Ogni volta che facciamo calcolare la soluzione a Lindo, questi ci chiede attraverso la finestra di dialogo a sinistra se effettuare l<strong>'analisi di sensitività</strong>.<br />Finora abbiamo ignorato tale richiesta, ma stavolta clicchiamo su <strong>Yes</strong>.
+</p>
+<p class='vspace'>In calce al consueto <code class='escaped'>Report</code> verrà ora visualizzato un rapporto sulla sensitività della soluzione.
+</p>
+<p class='vspace'>Nel nostro esempio avremo:
+</p>
+<div class='vspace'></div><table cellpadding='10' >
+<tr ><td bgcolor='#edffea'  valign='top'>
+<pre class='escaped'>RANGES IN WHICH THE BASIS IS UNCHANGED:
+
+                   OBJ COEFFICIENT RANGES
+ VARIABLE         CURRENT        ALLOWABLE        ALLOWABLE
+                   COEF          INCREASE         DECREASE
+      X11       48.000000        20.093018         INFINITY
+      X12       48.000000        20.093018         INFINITY
+      X21       62.000000        28.790691         INFINITY
+      X22       62.000000        28.790691         INFINITY
+      X31       28.000000        28.744184         INFINITY
+      X32       28.000000        28.744184         INFINITY
+      X41       36.000000        43.441856         INFINITY
+      X42       36.000000        43.441856         INFINITY
+      X51      122.000000         0.000000         INFINITY
+      X52      122.000000         INFINITY         0.000000
+      X61       94.000000         8.139534         INFINITY
+      X62       94.000000         8.139534         INFINITY
+
+                   RIGHTHAND SIDE RANGES
+      ROW         CURRENT        ALLOWABLE        ALLOWABLE
+                    RHS          INCREASE         DECREASE
+    ACRI1      200.000000         INFINITY       200.000000
+    ACRI2      400.000000         INFINITY       288.372101
+    ACQUA      400.000000      1033.333374       400.000000
+</pre>
+</td></tr></table>
+<p class='vspace'>Le colonne <em>allowable increase</em> e <em>allowable decrease</em> indicano rispettivamente di quanto possono aumentare e diminuire i valori delle variabili senza che si esca dalla soluzione ottima. Nel nostro caso apprendiamo ad esempio che se il cereale 1 aumentasse il suo coefficiente di 20 allora diventerebbe anche lui ottimo e conveniente da coltivare; l'INFINITY nella colonna <em>allowable decrease</em> si spiega da sé: già così il valore non è ottimo, figuriamoci se lo diminuiamo! Consideriamo ora il cereale 5 nel campo 2, che può aumentare quanto si vuole di valore poiché è già ottimo e dunque può solo migliorare, ma non può diminuire assolutamente o uscirebbe dalla soluzione ottimale.
+</p>
+<p class='vspace'>Dall'analisi viene ulteriormente evidenziato il fatto che le aree potrebbero aumentare di valore all’infinito senza variare la soluzione ottima: già ora non le sto usando tutte! Al contrario, possono diminuire massimo di 200 acri nel terreno A (tutto) e di 288.372101 nel B (la rimanenza).<br />Il vincolo sull’acqua è invece attivo dato che uso tutti i metri cubi disponibili. Quanta acqua potrei avere in più senza cambiare la base? Se superassimo i 1033.333374 metri cubi l’acqua non sarebbe più la risorsa scarsa, ma diventerebbe qualcun’altra (si arriverebbe al punto in cui avremo acqua in abbondanza ma scarsità di terreno da coltivare, che diventerebbe il nuovo vincolo attivo).
+</p>
+<p class='vspace'><a name='e6' id='e6'></a>
+</p><h2>Analisi parametrica</h2>
+<p>L’analisi di sensitività ci dice cosa accade al valore ottimo del problema solo all’interno dell’intervallo in cui può stare il termine noto del vincolo attivo (l’acqua). Per capire cosa succede al di fuori bisogna fare l’<strong>analisi parametrica</strong>.
+</p>
+<p class='vspace'>Bisogna andare nel menù "<em>Reports</em>" e selezionare il comando "<em>Parametrics...</em>", che farà apparire questa finestra:
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/analisiParametrica.jpg' alt='' title='' /></span></div>
+<p class='vspace'>Osserviamo che:
+</p>
+<div class='vspace'></div><div class='indent'>* la risorsa scarsa da selezionare è l'Acqua
+</div><div class='indent'>* il vincolo è di tipo <code class='escaped'>&lt;=</code>
+</div><div class='indent'>* il termine noto della disuguaglianza è attualmente 400, ma possiamo (e dobbiamo) cambiarlo per effettuare l’analisi. Ad esempio diamo nuovo valore 1000000
+</div><div class='indent'>* la checkbox "Text" fornirà un output testuale, dunque è meglio checkarla
+</div><div class='indent'>* c'è un segno di spunta anche sull'opzione "Graphics", bisognerà scegliere se lo vogliamo in 2d o in 3d
+</div><p class='vspace'>Diamo l<strong>'OK</strong>.
+<br clear='all' />
+</p>
+<p class='vspace'>Prima di osservare il grafico notiamo che sono state aggiunte nuove informazioni al <code class='escaped'>Report</code>:
+</p>
+<div class='vspace'></div><table cellpadding='10' >
+<tr ><td bgcolor='#ffeaff'  valign='top'>
+<pre class='escaped'>RIGHTHANDSIDE PARAMETRICS REPORT FOR ROW: ACQUA
+
+    VAR       VAR    PIVOT    RHS       DUAL PRICE      OBJ
+    OUT       IN      ROW     VAL      BEFORE PIVOT     VAL
+
+                            400.000       567.442       226977.
+ SLK    3       X51     3   1433.33       567.442       813333.
+ SLK    2       X62     2   2293.33       567.442      0.130133E+07
+      X52  SLK    4     4   2977.65       427.507      0.159388E+07
+                           0.100000E+07  0.000000E+00  0.159388E+07
+</pre>
+</td></tr></table>
+<p class='vspace'>Le colonne indicano rispettivamente le variabili uscite di base (VAR OUT) ed entrate in base (VAR IN) per ognuno dei punti di cambio di discontinuità, stessa cosa per il PIVOT ROW, il valore del termine noto (RHS VAL), il prezzo duale di cui parleremo alla fine (DUAL PRICE BEFORE PIVOT) e la soluzione ottima (OBJ VAL).
+</p>
+<p class='vspace'>In questa tabella sono contenute le informazioni per tracciare il grafico seguente (il valore 1000000 stara un po' la percezione della forma reale della curva.. si capirà meglio il suo andamento nelle considerazioni che faremo poi):
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/analisiParametricaGraf.jpg' alt='' title='' /></div>
+<p class='vspace'>Il grafico parte dal punto con ascissa (RHS VAL) 400 e ordinata (OBJ VAL) 226977.<br />Quando arriva ad ascissa 1433.33 e ordinata 813333 avremo un primo cambio di base, e ci viene segnalato che diventa attiva la variabile slack 3. Ricordiamo brevemente l'ordine delle variabili: funzione obiettivo (1), area A (2), area B (3), acqua (4). Quindi questo cambio di base è caratterizzato dal fatto che siamo riusciti a riempire di cereali tutto il campo B.
+</p>
+<p class='vspace'><em>Situazione <strong>prima</strong> del primo cambio di base</em>:
+</p><ul><li>variabili in base: x52, slack 2, slack 3 (tutte strettamente positive)
+</li><li>vincoli attivi: acqua
+</li></ul><p><em>Situazione <strong>dopo</strong> il primo cambio di base</em>:
+</p><ul><li>variabili in base: x52, x51, slack 2
+</li><li>vincoli attivi: acqua, area B
+</li></ul><p class='vspace'>Quando arriviamo ad ascissa 2293,33 e ordinata 1301330 avremo un altro cambio di base, in cui diventa attiva la variabile slack 2. Ciò significa che siamo riusciti a riempire di cerali anche tutto il campo A.
+</p>
+<p class='vspace'><em>Situazione <strong>prima</strong> del secondo cambio di base</em>:
+</p><ul><li>variabili in base: x52, x51, slack 2 (tutte strettamente positive)
+</li><li>vincoli attivi: acqua, area B
+</li></ul><p><em>Situazione <strong>dopo</strong> il primo cambio di base</em>:
+</p><ul><li>variabili in base: x52, x51, x62
+</li><li>vincoli attivi: acqua, area B, area A
+</li></ul><p class='vspace'>In pratica abbiamo iniziato a coltivare il cereale 6 sul terreno B.
+</p>
+<p class='vspace'><em>Situazione <strong>prima</strong> del terzo cambio di base</em>:
+</p><ul><li>variabili in base: x52, x51, x62 (tutte strettamente positive)
+</li><li>vincoli attivi: acqua, area B, area A
+</li></ul><p><em>Situazione <strong>dopo</strong> il primo cambio di base</em>:
+</p><ul><li>variabili in base: slack 4, x51, x62
+</li><li>vincoli attivi: area B, area A
+</li></ul><p class='vspace'>Il che significa che stiamo coltivando tutto il campo A col cereale 1 e tutto il campo B col cereale 6. L'acqua è diventata ora un vincolo strettamente positivo, ridondante, dunque non più attivo. Fino a quest’ultimo cambio di base era lei l'elemento vincolante, ovvero decideva lei cosa era realmente conveniente coltivare e cosa no; da ora non più.
+</p>
+<p class='vspace'>Infine, breve considerazione sul <em>prezzo duale</em>. Il prezzo duale indica di quanto aumenta la funzione obiettivo a seconda del termine noto; da un punto di vista grafico corrisponde al coefficiente angolare, ed infatti l’ultimo segmento della nostra curva ha coefficiente 0, parallela all’asse.
+</p>
+<p class='vspace'>Dall’analisi di sensitività sapevamo che l’acqua rimaneva una variabile scarsa da 400 a 1033.33, ora sappiamo cosa succede anche dopo.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RO-Es2)</span></div>
+  </div>
+</body>
+</html>

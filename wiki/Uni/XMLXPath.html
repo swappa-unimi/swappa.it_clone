@@ -1,0 +1,573 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Tecnologie Web - XPath </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.XMLXPath' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Tecnologie Web - XPath
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXPath?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXPath?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='XMLXPath-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXPath?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXPath?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Tecnologie Web - XPath was last modified on February 25, 2009, at 07:24 PM'>
+							<span style='display:none;'>Tecnologie Web - XPath</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Tecnologie Web ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>XPath</strong></span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Introduzione</a>
+</li><li><a href='#s2'>Location Path</a>
+</li><li><a href='#s3'>Location Path Compositi</a>
+</li><li><a href='#s4'>Predicati</a>
+</li><li><a href='#s5'>Location Path non abbreviati</a>
+</li><li><a href='#s6'>Espressioni XPath generali</a>
+</li><li><a href='#s7'>Funzioni XPath</a>
+</li></ol><div class='vspace'></div></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>Introduzione</h2>
+<p><strong>XPath</strong> è una sintassi che consente di riferirsi a parti di documenti XML associati ad un DTD o ad un XML Schema. Un descrittore XPath è pensato per essere inserito in un documento XML, in particolare come valore di un attributo.<br />XPath è in grado di indicare i nodi in base alla loro posizione assoluta o relativa, al loro tipo, al loro contenuto ed in base ad altri criteri. Le espressioni XPath sono anche in grado di rappresentare numeri, stringhe o valori booleani, in modo da permettere ai fogli di stile XSLT di svolgere operazioni aritmetiche per numerare elementi o gestire riferimenti incrociati.<br /><br />
+XPath vede un documento XML come un <strong>albero di nodi</strong> e il suo scopo è proprio quello di individuare nodi e insiemi di nodi all'interno di questo albero:
+</p><ul><li><ins>nodo radice</ins><br />Il nodo radice dell'albero non è lo stesso elemento radice del documento infatti il nodo radice dell'albero contiene l'intero documento(compreso l'elemento radice; i commenti; le istruzioni di elaborazione presenti prima del tag iniziale o dopo il tag finale), quindi ha come figlio l'intero documento e non ha padre.<br />
+</li><li><ins>nodi elemento</ins><br />ha come padre il nodo radice o un altro nodo elemento. Come figli ha eventuali sottonodi, testo e istruzioni contenute al suo interno. Gli attributi non sono figli di un nodo elemento.
+</li><li><ins>nodi attributo</ins><br />ha come padre un altro elemento, ma non si considera figlio di quell'elemento. Per accedervi ci vuole una richiesta di attributo.
+</li><li><ins>nodi testo</ins>
+</li><li><ins>nodi di commento</ins>
+</li><li><ins>nodi per le istruzioni di elaborazione</ins>
+</li><li><ins>nodi namespace</ins>
+</li></ul><p class='vspace'>Notiamo che nell'elenco mancano alcune componenti tipiche dei documenti XML, cioè le sezioni CDATA, le referenze a entità e le dichiarazioni del tipo di documento. Però XPath è in grado di identificare qualsiasi valore al loro interno.
+</p>
+<p class='vspace'><strong>NOTA</strong>:<br />Gli esempi sottostanti si rifanno a questo documento XML:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE racconti SYSTEM "racconti.dtd"&gt;
+
+&lt;racconti&gt;
+&lt;!-- Questo commento lo inserisco
+perché mi serve provare il rilevamento dei commenti di XPath :P --&gt;
+
+  &lt;racconto autore="Howard Phillips Lovecraft"&gt;
+    &lt;titoloItaliano&gt;L'estraneo&lt;/titoloItaliano&gt;
+    &lt;titoloOriginale&gt;The Outsider&lt;/titoloOriginale&gt;
+    &lt;notaIntroduttiva&gt;
+     The Outsider è considerato uno degli esempi più palesi 
+     dell'influsso che lo stile e le tematiche di Edgar Allan
+     Poe hanno esercitato su Lovecraft.
+     La storia ha una sottintesa nota autobiografica. Nel 
+     protagonista, che cresce solo in una grande casa, 
+     nutrendo la sua cultura di vecchi libri, è facile 
+     riconoscere l'infanzia solitaria dello stesso Lovecraft.
+     L'invocazione finale all'oblio di fronte agli orrori 
+     dell'esistenza da "estraneo" proiettato nel mondo comune
+     si ripeterà continuamente nella sua opera, soprattutto 
+     quella poetica, nella quale si riflettono più chiaramente
+     le angosce dell'anima.
+    &lt;/notaIntroduttiva&gt;
+    &lt;frammento&gt;
+     Infelice chi dell'infanzia ha soltanto memorie di paura
+     e tristezza. Sventurato chi, volgendosi indietro, non vede
+     che ore solitarie trascorse in sale vaste e malinconiche 
+     tappezzate di lugubri tendaggi e file esasperanti di libri
+     antichi, o in desolate veglie in boschi crepuscolari fitti
+     di immensi alberi grotteschi coperti da erbe, che agitano
+     silenziosi in alto i rami contorti...
+    &lt;/frammento&gt;
+  &lt;/racconto&gt;
+
+  &lt;racconto autore="Edgar Allan Poe"&gt;
+    &lt;titoloItaliano&gt;La mascherata della Morte Rossa&lt;/titoloItaliano&gt;
+    &lt;titoloOriginale&gt;The Mask of the Red Death&lt;/titoloOriginale&gt;
+    &lt;frammento&gt;
+     La settima stanza era pesantemente avvolta in panneggi
+     di velluto nero che pendevano ovunque dal soffitto e 
+     dalle pareti, ricadendo in pesanti pieghe su un tappeto
+     della stessa stoffa e colore. In quest'unica stanza pero'
+     la tinta delle finestre non corrispondeva alle decorazioni.
+     Le vetrate erano di colore scarlatto, di un cupo color
+     sangue. Ora in nessuna di quele sette stanze vi era una 
+     sola lampada o candelabro, pur tra la profusione di ornamenti
+     dorati sparsi qua e la' o pendenti dai soffitti.
+    &lt;/frammento&gt;
+  &lt;/racconto&gt;
+
+  &lt;racconto autore="Howard Phillips Lovecraft"&gt;
+    &lt;titoloItaliano&gt;La musica di Erich Zann&lt;/titoloItaliano&gt;
+    &lt;titoloOriginale&gt;The Music of Erich Zann&lt;/titoloOriginale&gt;
+    &lt;notaIntroduttiva&gt;
+     Quando il saggista francese Jacques Bergier chiese a Lovecraft
+     se avesse mai visitato Parigi, per averne descritto così bene
+     l'atmosfera di certi quartieri, Lovecraft gli rispose:"certo
+     che l'ho visitata. Con Poe, in sogno".
+     Malgrado l'apparenza onirica non è tratta da un unico sogno;
+     tuttavia ho sognato spesso di strade tortuose come la
+     Rue d'Auseil.
+    &lt;/notaIntroduttiva&gt;	
+    &lt;frammento&gt;
+     Riuscii invece a sentire la musica del vecchio muto: prima
+     salendo in punta di piedi fino al quinto piano, poi trovando
+     il coraggio necessario per inerpicarmi su per l'ultima rampa
+     scricchiolante che conduceva alla mansarda di Zann. E lì,
+     nell'angusto pianerottolo davanti alla porta sprangata e col 
+     buco della serratura tappato, più volte udii suoni che mi
+     colmarono di un terrore indefinibile, un terrore di occulti
+     prodigi e celati misteri.
+    &lt;/frammento&gt;
+    &lt;/racconto&gt;
+
+&lt;/racconti&gt;
+
+</pre>
+</div>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Location Path</h2>
+<p>Location Path letteralmente significa percorso di locazione e identifica un insieme di nodi di un documento tramite un location step(passo di locazione). L'insieme di nodi può essere vuoto, contenere un singolo nodo o numerosi nodi; ogni nodo può rappresentare uno degli elementi presenti nell'albero dei nodi, quindi: un elemento, un attributo, un namespace, un testo, un commento, un'istruzione di elaborazione, il nodo radice o una combinazione di questi.<br />
+</p><h3>Root Location Path</h3>
+<p>Il Root Location Path corrisponde al carattere: <strong>/</strong> e ha lo scopo di selezionare il nodo radice del documento.<br />/ rappresenta un location path <em>assoluto</em>, perché la posizione identificata è indipendente dal contesto del nodo ed è sempre il nodo radice del documento.
+</p>
+<div class='vspace'></div><h3>Location Step degli elementi figli</h3>
+<p>Questo location path coincide con il nome di un singolo elemento e il suo scopo è quello di selezionare tutti gli elementi figli il cui nome coincida con quello specificato.<br />Questo location path è un XPath <em>relativo</em>, in quanto gli elementi individuati dipendono da quale sia il nodo corrente(il contesto).
+</p>
+<p class='vspace'><ins>Esempio:</ins>
+</p>
+<p class='vspace'>Inserendo in XPath il comando:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+/racconti/racconto
+
+</pre>
+</div>
+<p class='vspace'>otteniamo:
+</p><div><img src='../uploads/Uni/XMLXPathes1.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Location Step degli Attributi</h3>
+<p>Gli attributi degli elementi possono essere selezionati tramite XPath utilizzando il carattere <strong>@</strong> seguito dal nome dell'attributo.
+</p>
+<p class='vspace'><ins>Esempio:</ins>
+</p>
+<p class='vspace'>Inserendo in XPath il comando:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+/racconti/racconto/@autore
+
+</pre>
+</div>
+<p class='vspace'>otteniamo:
+</p><div><img src='../uploads/Uni/XMLXPathes2.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Nodi di: namespace, testo, istruzioni di elaborazione, commenti</h3>
+<p>Per poter individuare i nodi di commento, di testo e istruzioni di elaborazione dobbiamo utilizzare rispettivamente:
+</p><ul><li><strong>comment()</strong><br />trova una corrispondenza in qualsiasi nodo di commento che è figlio diretto del nodo di contesto.
+</li></ul><p class='vspace'><ins>Esempio:</ins>
+</p>
+<p class='vspace'>Inserendo in XPath il comando:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+/racconti/comment()
+
+</pre>
+</div>
+<p class='vspace'>otteniamo:
+</p><div><img src='../uploads/Uni/XMLXPathes3.jpg' alt='' title='' /></div>
+<div class='vspace'></div><ul><li><strong>text()</strong><br />trova una corrispondenza in qualsiasi nodo di testo che è figlio diretto del nodo di contesto.
+</li></ul><p class='vspace'><ins>Esempio:</ins>
+</p>
+<p class='vspace'>Inserendo in XPath il comando:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+/racconti/racconto/notaIntroduttiva/text()
+
+</pre>
+</div>
+<p class='vspace'>otteniamo:
+</p><div><img src='../uploads/Uni/XMLXPathes4.jpg' alt='' title='' /></div>
+<div class='vspace'></div><ul><li><strong>processing-instruction()</strong>
+<ul><li>senza argomenti: seleziona tutte le istruzioni di elaborazione che sono figlie dirette del nodo di contesto.
+</li><li>con argomenti: seleziona le istruzioni di elaborazione il cui target corrisponde a quello indicato come argomento.
+</li></ul></li></ul><div class='vspace'></div><h3>Caratteri Jolly</h3>
+<p>Esistono tre tipi di caratteri Jolly che permettono di trovare una corrispondenza con differenti tipi di elementi e nodi.
+</p><ul><li>asterisco <strong>*</strong><br />corrisponde a qualsiasi nodo di elemento, indipendentemente dal tipo. E' però anche possibile anteporre all'asterisco un prefisso di namespace con lo scopo di selezionare solo gli elementi che appartengono a quel namespace.<br />L'asterisco non può essere utilizzato per cercare corrispondenze con attributi, nodi di testo, nodi di commento o istruzioni di elaborazione.
+</li></ul><p class='vspace'><ins>Esempio:</ins>
+</p>
+<p class='vspace'>Inserendo in XPath il comando:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+/racconti/racconto/*
+
+</pre>
+</div>
+<p class='vspace'>otteniamo:
+</p><div><img src='../uploads/Uni/XMLXPathes5.jpg' alt='' title='' /></div>
+<div class='vspace'></div><ul><li><strong>node()</strong><br />corrisponde a qualsiasi tipo di nodo: nodi di elemento, nodi di testo, nodi di attributo, nodi di istruzioni di elaborazioni, nodi di namespace, nodi di commento.
+</li></ul><p class='vspace'><ins>Esempio:</ins>
+</p>
+<p class='vspace'>Inserendo in XPath il comando:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+/racconti/racconto/node()
+
+</pre>
+</div>
+<p class='vspace'>otteniamo:
+</p><div><img src='../uploads/Uni/XMLXPathes6.jpg' alt='' title='' /></div>
+<div class='vspace'></div><ul><li><strong>@*</strong><br />corrisponde a tutti i nodi degli attributi. Anche in questo caso è possibile anteporre un prefisso di namespace per poter selezionare solo gli attributi che appartengono al namespace indicato.
+</li></ul><p class='vspace'><ins>Esempio:</ins>
+</p>
+<p class='vspace'>Inserendo in XPath il comando:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+/racconti/racconto/@*
+
+</pre>
+</div>
+<p class='vspace'>otteniamo:
+</p><div><img src='../uploads/Uni/XMLXPathes7.jpg' alt='' title='' /></div>
+<p class='vspace'>In questo caso abbiamo ottenuto lo stesso risultato di <em>/racconti/racconto/@autore</em> perché nel documento XML ho inserito un unico tipo di attributo, se ce ne fossero stati degli altri il comando li avrebbe visualizzati.
+</p>
+<div class='vspace'></div><h3>Corrispondenze Multiple</h3>
+<p>Una corrispondenza multipla consiste nella corrispondenza tra più tipi di elementi o attributi e si ottiene utilizzando il carattere <strong>|</strong>, che permette appunto di combinare location step individuali.<br />
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Location Path Compositi</h2>
+<p>I location path compositi consistono nella combinazione dei singoli location step visti fino ad ora.<br />Ci sono quattro tipi di location path compositi:
+</p><ul><li><strong>/</strong><br />ogni step del path è relativo rispetto a quello precedente. 
+<div class='vspace'></div></li><li><strong>//</strong><br />seleziona tutti i discendenti del nodo di contesto, oltre al nodo di contesto stesso. Quindi se inserita all'inizio di un'espressione XPath seleziona tutti i discendenti del nodo root.
+<div class='vspace'></div></li><li><strong>..</strong><br />indica il padre del nodo corrente.
+<div class='vspace'></div></li><li><strong>.</strong><br />indica il nodo corrente. Serve per recuperare il valore dell'elemento corrente.
+</li></ul><p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>Predicati</h2>
+<p>I predicati entrano in gioco quando ci interessa selezionare solo alcuni nodi all'interno dell'insieme dei nodi rintracciati.<br />Ogni step di un location path può contenere un predicato che effettui una selezione dalla lista di nodi che risultino essere correnti in quel determinato step dell'espressione. I predicati possono essere utilizzati in una combinazione qualsiasi dei location step che compongono un location path.<br />I predicati contengono un'espressione booleana che viene verificata per ognuno dei nodi contenuti nella lista dei nodi di contesto correnti; se l'espressione ha valore falso il nodo corrispondente viene cancellato dalla lista, altrimenti rimane nella lista.<br />I predicati possono anche non avere valore booleano, in questo caso si converte il tipo differente in un valore booleano in questo modo: 
+</p><ul><li>i predicati che hanno <em>valore numerico</em> sono considerati veri se corrispondono alla posizione del nodo corrente, falsi altrimenti. 
+</li><li>i predicati che indicano un <em>insieme di nodi</em> sono considerati veri se l'insieme di nodi non è vuoto, falsi in caso contrario.
+</li><li>i valori di tipo <em>stringa</em> sono anch'essi considerati veri se la stringa non è vuota, falsi altrimenti.<br /><br />
+</li></ul><p>XPath supporta gli operatori relazionali classici: =, &lt;, &gt;, &lt;=, &gt;=, !=. Gli operatori &lt; e &lt;= se si trovano in un documento XML è necessario utilizzare le referenze a entità <em>&lt;</em>, infatti anche le espressioni XPath devono rispettare le regole di ben formazione tipiche dei documento XML.<br />XPath supporta anche gli operatori booleani: <em>or</em> e <em>and</em> per poter combinare logicamente più espressioni.
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h2>Location Path non abbreviati</h2>
+<p>Tutti i location path visti fino ad ora erano location path abbreviati, ma esistono anche i location path non abbreviati più complessi da scrivere ma più flessibili.<br />Ogni location step di un location path è composto da tre porzioni:
+</p><ul><li><strong>axis(asse)</strong>: indica in quale direzione spostarsi a partire dal nodo di contesto per cercare i nodi dello step successivo. 
+<div class='vspace'></div></li><li><strong>node test(test di nodo)</strong>: indica quali nodi includere lungo l'asse specificato e i predicati effettuano una scelta tra i nodi rintracciati sulla base di un'espressione.
+<div class='vspace'></div></li><li><strong>predicati</strong>: porzione opzionale.
+</li></ul><p class='vspace'>Nella forma abbreviata l'asse e il test di nodo sono combinati, mentre nella forma non abbreviata sono separati da due caratteri due punti <strong>::</strong><br /><br />
+La sintassi abbreviata permette di muoversi solo lungo gli assi <em>child</em>(figli), <em>parent</em>(padre), <em>self</em>(se stesso), <em>attribute</em>(attributo), <em>descendant-of-self</em>(discendenti o se stesso), mentre la sintassi non abbreviata aggiunge altri otto assi lungo i quali è possibile muoversi:
+</p>
+<div class='vspace'></div><ul><li><strong>antenati</strong>(ancestor axis): tutti i nodi di elemento che contengono, direttamente o indirettamente, il nodo di contesto: cioè il nodo padre, il padre del padre, il padre del padre del padre e così fino al nodo radice, seguendo questo ordine.
+<div class='vspace'></div></li><li><strong>fratelli successivi</strong>(following-sibling axis): tutti i nodi che seguono il nodo di contesto e sono contenuti nello stesso nodo elemento padre, nell'ordine in cui appaiono nel documento.
+<div class='vspace'></div></li><li><strong>fratelli precedenti</strong>(preceding-sibling axis): tutti i nodi che precedono il nodo di contesto e sono contenuti nello stesso nodo elemento padre, nell'ordine inverso rispetto a quello in cui appaiono nel documento.
+<div class='vspace'></div></li><li><strong>successivi</strong>(following axis): tutti i nodi che seguono il nodo di contesto, nell'ordine in cui appaiono nel documento.
+<div class='vspace'></div></li><li><strong>precedenti</strong>(preceding axis): tutti i nodi che precedono il nodo di contesto, nell'ordine inverso rispetto a quello in cui appaiono nel documento.
+<div class='vspace'></div></li><li><strong>namespace</strong>(namespace axis): tutti i namespace che abbiano influenza sul nodo di contesto, indipendentemente dal fatto che siano stati dichiarati in tale nodo o in uno dei suoi antenati.
+<div class='vspace'></div></li><li><strong>discendenti</strong>(descendant axis): tutti i discendenti del nodo di contesto, escluso il nodo di contesto stesso.
+<div class='vspace'></div></li><li><strong>antenati o se stessi</strong>(ancestor-or-self axis): tutti gli antenati del nodo di contesto più il nodo di contesto stesso.
+</li></ul><p class='vspace'><a name='s6' id='s6'></a>
+</p><h2>Espressioni XPath generali</h2>
+<p>Le espressioni XPath, oltre ai location path, possono anche restituire numeri, valori booleani e stringhe che sono ammissibili per fornire valori dell'attributo <em>select</em> degli elementi <em>xsl:value-of</em> e all'interno dii predicati di location path.
+</p>
+<div class='vspace'></div><ul><li><strong>numeri</strong>: tutti i numeri in XPath sono floating point doubles a otto byte, quindi non esistono numeri interi puri.<br />I cinque operatori aritmetici di base sono: <strong>+</strong>; <strong>-</strong>; <strong>*</strong>; <strong>div</strong>; <strong>mod</strong>.
+<div class='vspace'></div></li><li><strong>stringhe</strong>: le stringhe in XPath sono sequenze ordinate di caratteri Unicode che possono essere racchiuse tra apici singoli e doppi indifferentemente. L'unica restrizione consiste nell'impossibilità di utilizzare all'interno della stringa il delimitatore(" ') utilizzato.<br />Per verificare l'uguaglianza tra due stringhe si possono utilizzare gli operatori: <strong>=</strong>; <strong>!=</strong>
+<div class='vspace'></div></li><li><strong>booleani</strong>: un valore booleano può assumere solo due valori, <em>true</em> e <em>false</em>.
+</li></ul><p class='vspace'><a name='s7' id='s7'></a>
+</p><h2>Funzioni XPath</h2>
+<p>Le funzioni XPath sono chiamate che manipolano gli oggetti selezionati, ritornando un valore. Tutte le funzioni restituiscono uno dei quattro tipi di dato seguenti:
+</p><ul><li>booleano
+</li><li>stringa
+</li><li>insieme di nodi
+</li><li>numero
+</li></ul><p class='vspace'>Notiamo quindi che le funzioni XPath non possono restituire <em>void</em>.<br />XPath non è un linguaggio fortemente tipizzato come Java quindi è possibile utilizzare qualsiasi tipo(dei quattro previsti) come argomento della funzione, indipendentemente dal tipo di dato che ci si aspetta di ricevere; l'elaboratore infatti cercherà di convertirlo nel tipo desiderato.<br />Le funzioni sono riconoscibili dalla presenza di due parentesi tonde alla fine, all'interno delle quali è possibile inserire eventuali argomenti.<br /><br />
+XPath mette a disposizione molte funzioni utili, che ovviamente non possiamo analizzare tutte in dettaglio, però ne vediamo qualcuna:
+</p>
+<div class='vspace'></div><ul><li><strong>number last()</strong>: 
+<div class='vspace'></div></li><li><strong>number position()</strong>: 
+<div class='vspace'></div></li><li><strong>number count(node-set)</strong>: ritorna il numero di nodi dell'argomenti node-set.
+<div class='vspace'></div></li><li><strong>node-set id(object)</strong>: seleziona gli elementi in base al loro ID univoco, come dichiarato nel DTD.
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: February 25, 2009, at 07:24 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXPath?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXPath?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

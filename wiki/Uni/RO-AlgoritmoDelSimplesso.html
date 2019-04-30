@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ricerca Operativa - Algoritmo del simplesso </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RO-AlgoritmoDelSimplesso' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ricerca Operativa - Algoritmo del simplesso
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AlgoritmoDelSimplesso?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AlgoritmoDelSimplesso?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RO-AlgoritmoDelSimplesso-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AlgoritmoDelSimplesso?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AlgoritmoDelSimplesso?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ricerca Operativa - Algoritmo del simplesso was last modified on March 29, 2009, at 08:12 PM'>
+							<span style='display:none;'>Ricerca Operativa - Algoritmo del simplesso</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ricerca Operativa - Algoritmo del simplesso ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Alcune immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='GiovanniRighini.html'>Giovanni Righini</a>
+</p></div>
+<div class='vspace'></div><h2>Forma canonica di un problema di PL</h2>
+<p>Nella <a class='wikilink' href='RO-ProgrammazioneLineare.html'>scorsa lezione</a> abbiamo visto cosa sono i problemi di programmazione lineare e abbiamo anticipato che per darli in pasto all'algoritmo del simplesso dobbiamo scriverli in <strong>forma canonica</strong>. Vediamo come ottenerla a partire dalla forma standard.
+</p>
+<div class='vspace'></div><table cellpadding='8' >
+<tr ><td bgcolor='#f2f6f9'  valign='top'><strong>1</strong>
+</td><td bgcolor='#f2f6f9'  valign='top'>Forma standard.
+<p class='vspace'>Notare che non importa se stiamo minimizzando o massimizzando, la funzione obiettivo è indicata con la notazione generica <code class='escaped'>opt</code>
+</p></td><td bgcolor='#f2f6f9'  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROformaCan1.jpg' alt='' title='' /></span>
+</td></tr><tr ><td  valign='top'><strong>2</strong>
+</td><td  valign='top'>Scegliamo una base e dividiamo il problema in "parte in base" (indicata in verde) e "parte fuori base" (indicata in rosso). In altre parole dobbiamo dividere la matrice <strong>A</strong> in due matrici <strong>B</strong> ed <strong>N</strong>, e il vettore <strong>x</strong> in <strong>x<sub>B</sub></strong> e <strong>x<sub>N</sub></strong>.
+</td><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROformaCan2.jpg' alt='' title='' /></span>
+</td></tr><tr ><td bgcolor='#f2f6f9'  valign='top'><strong>3</strong>
+</td><td bgcolor='#f2f6f9'  valign='top'>Moltiplichiamo a sinistra per <strong>B<sup>-1</sup></strong>.
+</td><td bgcolor='#f2f6f9'  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROformaCan3.jpg' alt='' title='' /></span>
+</td></tr><tr ><td  valign='top'><strong>4</strong>
+</td><td  valign='top'>Sostituiamo tutto in <strong>z</strong> ottenendo finalmente la forma canonica.
+</td><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROformaCan4.jpg' alt='' title='' /></span>
+</td></tr></table>
+<p class='vspace'>A cosa serve tutto questo? A far vedere che una volta azzerate le variabili fuori base x<sub>N</sub> ottengo che:<br /> <strong>z = z<sub>B</sub></strong> e <strong>x<sub>B</sub> = b (segnato)</strong>.
+</p>
+<p class='vspace'>Avremo intuito che esistono tante forme canoniche quanti sono i modi in cui posso dividere le variabili di base da quelle fuori base, o analogamente, tante quanto sono le sue basi.
+</p>
+<p class='vspace'>Formalmente, un problema è in forma canonica se e solo se:
+</p><ol><li>i coefficienti delle x<sub>B</sub> nel sistema dei vincoli formano una matrice identità <code class='escaped'>I</code>
+</li><li>le x<sub>B</sub> non compaiono nella funzione obiettivo <code class='escaped'>z</code>
+</li></ol><p>Inoltre si dice che la forma canonica è <em>forte</em> se e solo se i termini noti (b segnato) sono non negativi, altrimenti è detta debole. Quindi se ho una forma canonica forte avrò una serie di soluzioni di base ammissibili, mentre se ho una forma canonica debole saranno non ammissibili.
+</p>
+<div class='vspace'></div><h2>Algoritmo del simplesso</h2>
+<p>L' <strong>algoritmo del simplesso</strong> garantisce l'ottimalità attraverso un processo iterativo di miglioramento che si sposta da un vertice all'altro. Ciò vuol dire che ad ogni iterazione la soluzione o viene lasciata invariata o viene migliorata, e dato che il poliedro è convesso non si può che terminare nella soluzione ottima. Non è polinomiale (nel caso peggiore ha complessità esponenziale), ma nella pratica - anche grazie a costanti raffinamenti - si dimostra più efficiente di questa classe di algoritmi. <br />Eccolo qui:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROalgSimplesso.jpg' alt='' title='' /></div>
+<p class='vspace'>Affronteremo i vari passi via via nel corso del capitolo.
+</p>
+<div class='vspace'></div><h2>Tableau</h2>
+<p>La struttura dati che rappresenta la forma canonica su cui lavora l'algoritmo del simplesso si chiama <strong>tableau</strong> ed è una matrice.<br />Facciamo un esempio di derivazione di un tableau da un problema già espresso in forma canonica. In particolare le variabili di slack in base (B = {x<sub>3</sub>,x<sub>4</sub>,x<sub>5</sub>}) saranno scritte in verde, mentre quelle fuori base (N = {x<sub>1</sub>,x<sub>2</sub>}) in rosso.
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROtableau1.jpg' alt='' title='' /></div>
+<p class='vspace'>Facciamo qualche considerazione sul tableau:
+</p><ul><li>nella posizione (0,0) si mette il termine noto della funzione obiettivo. Per convenzione il problema si esprime sempre in forma di minimo, quindi se sto massimizzando devo invertire i segni (come andrà fatto in questo caso)
+</li><li>la riga 0 è quella dei <strong>coefficienti di costo ridotto</strong>, ovvero i coefficienti delle x che compaiono nella funzione obiettivo. Il perché del loro nome lo capiremo poi
+</li><li>sulla colonna 0 si mettono i vari termini noti <code class='escaped'>b</code>
+</li><li>in tutte le altre righe si mettono i coefficienti delle x che compaiono nei vincoli
+</li></ul><div class='vspace'></div><h2>Test di ottimalità</h2>
+<p>Guardando l'algoritmo del simplesso osserviamo che una volta posto il problema in forma canonica forte ci chiediamo se la soluzione è ottima o no. Come posso rispondere a questa domanda? Con il <strong>test di ottimalità</strong>.
+</p>
+<p class='vspace'>Ricordiamo anzitutto che:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROtestOtt.jpg' alt='' title='' /></div>
+<p>, dove i coefficienti di costo ridotto C<sub>N</sub> indicano di quanto cambierebbe la funzione obiettivo <code class='escaped'>z</code> se il valore delle variabili fuori base x<sub>N</sub> passasse da 0 a un numero positivo.
+</p>
+<p class='vspace'>A questo punto possiamo distinguere due <em>test di ottimalità</em> a seconda della direzione di ottimizzazione:
+</p><ul><li>se stiamo massimizzando, allora siamo all'ottimo quando ho i coefficienti di costo ridotto minori o uguali a 0
+</li><li>se stiamo minimizzando, allora siamo all'ottimo quando ho i coefficienti di costo ridotto maggiori o uguali a 0
+</li></ul><p>In entrambi i casi non sarà possibile migliorare ulteriormente la soluzione <code class='escaped'>z</code> corrente, il che significa che è quella ottima.
+</p>
+<p class='vspace'>Ci ricordiamo il discorso sulla <em>degenerazione</em>? Avevamo detto che era una situazione critica ma non ne avevamo spiegato bene i motivi. Ora però sappiamo che dato che a una soluzione degenere possono corrispondere tante basi diverse, le condizioni di ottimalità non valgono più, e quindi ci potremmo trovare nella situazione in cui siamo già all'ottimo ma non riusciamo ad accorgercene. In questi casi ci vorranno diverse iterazioni in più del necessario per rendersi conto che magari siamo alla soluzione ottima già da un po', ed è tutto tempo computazionale buttato alle ortiche.
+</p>
+<div class='vspace'></div><h2>Pivoting</h2>
+<p>Passiamo alla parte divertente.<br />Come si fa a cambiare base? Come si passa da una forma canonica all'altra?
+A queste domande - peraltro equivalenti - si risponde con la tecnica del <strong>pivoting</strong>.
+</p>
+<p class='vspace'>Facciamo un esempio commentato.
+</p>
+<div class='vspace'></div><table cellpadding='8' width='80%' >
+<tr ><td bgcolor='#f2f6f9'  valign='top'><strong>1</strong>
+</td><td bgcolor='#f2f6f9'  valign='top'>Forma iniziale.
+</td><td bgcolor='#f2f6f9'  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROpivoting1.jpg' alt='' title='' /></span>
+</td></tr><tr ><td  valign='top'><strong>2</strong>
+</td><td  valign='top'>Scegliere da una delle colonne fuori base un elemento positivo, che chiameremo <strong>pivot</strong>. Nel nostro caso quello sulla riga 1 e colonna 2.
+<p class='vspace'>Il perché deve essere positivo lo vedremo poi, per ora ci basti sapere che è un requisito per mantenere l'ammissibilità.
+</p></td><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROpivoting2.jpg' alt='' title='' /></span>
+</td></tr><tr ><td bgcolor='#f2f6f9'  valign='top'><strong>3</strong>
+</td><td bgcolor='#f2f6f9'  valign='top'>Dividere la riga (<code class='escaped'>r</code>) che contiene il pivot per il valore del pivot stesso.
+</td><td bgcolor='#f2f6f9'  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROpivoting3.jpg' alt='' title='' /></span>
+</td></tr><tr ><td  valign='top'><strong>4</strong>
+</td><td  valign='top'>Tenetevi forte: sottrarre ad ogni riga <code class='escaped'>i</code> diversa da <code class='escaped'>r</code> (quella del pivot) il valore della riga del pivot moltiplicata per l'elemento di <code class='escaped'>i</code> sulla stessa colonna del pivot.
+<p class='vspace'>Facciamo prima con un esempio:<br />riga 0: si sottrae (-2) * (riga del pivot)<br />riga 2: si sottrae (1) * (riga del pivot)<br />riga 3: si sottrae (0) * (riga del pivot)
+</p></td><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROpivoting4.jpg' alt='' title='' /></span>
+</td></tr></table>
+<p class='vspace'>Come risultato avremo ancora una forma canonica, ma abbiamo fatto entrare in base la colonna del pivot e fatto uscire quella che aveva il valore 1 sulla sua riga (in corrispondenza delle variabili in base). Ovviamente non è questo l'unico risultato, ma possiamo osservare che la funzione obiettivo è migliorata: <strong>z<sub>ott</sub> = - z<sub>B</sub> = -8</strong>.
+</p>
+<p class='vspace'>Ok, funziona, ma che significato hanno questa serie di operazioni? Rivediamo lo stesso esempio in un altro modo, così da poterne osservare meglio le corrispondenze.
+</p>
+<div class='vspace'></div><table cellpadding='10' cellspacing='10' width='80%' >
+<tr ><td width='49%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROpivotingSP1.jpg' alt='' title='' /> <br /><strong>Problema in forma canonica</strong></div>
+</td><td align='center'  valign='top'><span style='font-size:120%'><code class='escaped'>-&gt;</code></span><br /><strong>pivot</strong><br /><span style='font-size:120%'><code class='escaped'>-&gt;</code></span>
+</td><td width='49%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROpivotingSP2.jpg' alt='' title='' /> <br /><strong>Lo stesso problema riscritto esprimendo le variabili in base in funzione di quelle non in base</strong></div>
+</td></tr></table>
+<p class='vspace'>Questo problema ha lo stesso tableau che abbiamo usato sopra come esempio. Se facciamo pivot sull'elemento in riga 1 e colonna 2, faremo entrare in base x<sub>2</sub> e uscire x<sub>3</sub>. Dovremo quindi aggiornare le equazioni del sistema, esprimendo stavolta x<sub>2</sub>, x<sub>4</sub> e x<sub>5</sub> in funzione di x<sub>1</sub> e x<sub>3</sub>. Ciò che otteniamo è riportato nella figura sotto.
+</p>
+<div class='vspace'></div><table cellpadding='10' cellspacing='10' width='80%' >
+<tr ><td width='46%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROpivotingSP2.jpg' alt='' title='' /> <br /><strong>Sistema prima del cambio basi</strong></div>
+</td><td align='center'  valign='top'><span style='font-size:120%'><code class='escaped'>-&gt;</code></span><br /><strong>pivot</strong><br /><span style='font-size:120%'><code class='escaped'>-&gt;</code></span>
+</td><td width='46%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROpivotingSP3.jpg' alt='' title='' /> <br /><strong>Sistema dopo il cambio basi</strong></div>
+</td></tr></table>
+<p class='vspace'>Se proviamo a fare il tableau di questo nuovo sistema otteniamo esattamente quello che prima avevamo ricavato con la tecnica del pivoting. 
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/ROpivotingGeom.jpg' alt='' title='' /></span></div>
+<p>Per capire cosa succede da un punto di vista geometrico facciamo riferimento al grafico riportato a destra (che corrisponde al problema in esame). <br />Un iterazione di pivoting consiste nello spostarci da un vertice del poliedro (ad esempio <code class='escaped'>A</code>), che sappiamo corrispondere a una soluzione di base ammissibile, ad un altro vertice (ad esempio <code class='escaped'>B</code>). <br />Tutto qui? Tutto qui.
+</p>
+<p class='vspace'>Si noti che quando diciamo che le variabili di base in <code class='escaped'>A</code> sono x<sub>3</sub>, x<sub>4</sub> e x<sub>5</sub>, il vertice corrispondente è quello dato dall'intersezione dei vincoli attivi, e quindi x<sub>1</sub> e x<sub>2</sub>.<br />Stesso ragionamento per <code class='escaped'>B</code>: le variabili di base sono x<sub>2</sub>, x<sub>4</sub> e x<sub>5</sub>, quindi il vertice corrispondente è dato dall'intersezione di x<sub>1</sub> e x<sub>3</sub>.
+<br clear='all' />
+</p>
+<p class='vspace'>Ricapitolando, a quanto pare a seconda della scelta del pivot otteniamo una soluzione diversa, migliore o peggiore. Ma come facciamo a scegliere quello giusto? I prossimi due capitoli ci daranno una risposta.
+</p>
+<div class='vspace'></div><h3>Scelta della riga del pivot</h3>
+<p>Attraverso la scelta della riga del pivot determiniamo la variabile di base che deve uscire, quindi dobbiamo fare in modo di garantire l'ammissibilità della soluzione. Andando per tentativi provando su tutte le righe posso verificare l'ammissibilità controllando se le coordinate <em>(termine noto riga pivot; coefficiente funzione obiettivo colonna pivot)</em> ottenute alla fine del pivoting individuano effettivamente un vertice del poliedro o se si trovano al di fuori della regione ammissibile.
+</p>
+<p class='vspace'>Per fortuna esiste una regolina che ci evita l'imbarazzo di andare a tentoni, e consiste nello scegliere la riga - tra tutte quelle in cui il pivot è strettamente positivo - che minimizza il rapporto tra termine noto e pivot. Seguire questo metodo ci permetterà di spostarci sulla prima soluzione di base che incontriamo nella direzione scelta, il che implica la garanzia di ammissibilità.
+</p>
+<div class='vspace'></div><h3>Scelta della colonna del pivot</h3>
+<p>Per quanto riguarda la scelta della colonna del pivot dobbiamo riprendere in considerazione il <em>test di ottimalità</em>, che ricordiamo ci permette di conoscere (grazie ai coefficienti di costo ridotto) di quanto varierebbe la funzione obiettivo se le variabili fuori base non valessero 0 ma un qualsiasi numero positivo. Grazie a questo test possiamo scoprire se esistono delle direzioni ammissibili di miglioramento della soluzione oppure no. In particolare, nella scelta della colonna del pivot potremo scegliere quella che ha il coefficiente di costo ridotto che fa fallire il test di ottimalità:
+</p><ul><li>valore positivo se il problema è di massimizzazione
+</li><li>valore negativo se è di minimizzazione (il caso più frequente, dato che per convenzione si trasformano tutti i problemi in ottimizzazioni di questo tipo)
+</li></ul><div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/ROpivoting1.jpg' alt='' title='' /></span></div>
+<p>Nel nostro esempio (vedi figura accanto) entrambi i coefficienti di costo ridotto sono sbagliati, perché stiamo minimizzando e loro sono entrambi negativi. <br />Facendo riferimento all'aspetto grafico del problema, se faccio entrare in base la variabile x<sub>1</sub> avrò uno spostamento della soluzione verso destra (verso <code class='escaped'>C</code>); mentre se faccio entrare in base x<sub>2</sub>, la soluzione si sposta verso l'alto (verso <code class='escaped'>A</code>). In entrambi i casi la situazione migliora.
+<br clear='all' />
+</p>
+<p class='vspace'>Ma che fare se stiamo minimizzando ed abbiamo più di una colonna con costo ridotto negativo? Abbiamo diverse strategie:
+</p><ul><li>scegliere quella con minimo costo ridotto
+</li><li>scegliere la prima da sinistra
+</li><li>scegliere a caso
+</li><li>utilizzare metodi di scelta come quello di Bland
+</li><li>scegliere la colonna che produce il massimo miglioramento della soluzione
+</li></ul><p class='vspace'>Ora sappiamo tutto quello che ci serve per individuare riga e colonna del pivot. Abbiamo inoltre capito che la scelta della riga garantisce l'ammissibilità della soluzione, mentre quella della colonna l'ottimalità.
+</p>
+<div class='vspace'></div><h2>Test di illimitatezza</h2>
+<p>Concludiamo i nostri approfondimenti sulle varie fasi dell'algoritmo del simplesso andando a vedere il <strong>test di illimitatezza</strong>, ovvero il test grazie al quale l'algoritmo capisce che non esiste una soluzione ottima perché il problema è illimitato. <br />Il test di illimitatezza è molto semplice: se le colonne del tableau che hanno costo ridotto negativo (quelle che fanno fallire il test di ottimalità) non hanno nemmeno un elemento positivo, allora il problema è illimitato.
+</p>
+<p class='vspace'>Quando l'algoritmo riconosce questa situazione si blocca ed esce dal processo risolutivo.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 29, 2009, at 08:12 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AlgoritmoDelSimplesso?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AlgoritmoDelSimplesso?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

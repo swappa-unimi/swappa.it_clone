@@ -1,0 +1,547 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Dispense Tetty - Integrazione MIXAL </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.TettyMixal' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Dispense Tetty - Integrazione MIXAL
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyMixal?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyMixal?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='TettyMixal-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyMixal?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyMixal?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Dispense Tetty - Integrazione MIXAL was last modified on October 25, 2010, at 05:22 PM'>
+							<span style='display:none;'>Dispense Tetty - Integrazione MIXAL</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Integrazione: Istruzioni e direttive MIXAL ::</strong>
+</p>
+<div class='vspace'></div><h3>Indice</h3>
+<p>1 <a href='#cm1'>Elementi di base</a>
+</p><div class='indent'>1.1 Com'è composta la macchina MIX
+</div><div class='indent'>1.2 Com'è composta un'istruzione
+</div><p>2 <a href='#cm2'>Istruzioni e direttive MIXAL</a>
+</p><div class='indent'><a href='#cm21'>2.1 Direttive MIXAL</a>
+</div><div class='indent'><a href='#cm22'>2.2 Operatori di caricamento</a>
+</div><div class='indent'><a href='#cm23'>2.3 Operatori di storing</a>
+</div><div class='indent'><a href='#cm24'>2.4 Operatori aritmetici</a>
+</div><div class='indent'><a href='#cm25'>2.5 Operatori di trasferimento di indirizzo</a>
+</div><div class='indent'><a href='#cm26'>2.6 Operatori di comparazione</a>
+</div><div class='indent'><a href='#cm27'>2.7 Operatori di salto</a>
+</div><div class='indent'><a href='#cm28'>2.8 Operatori di shift</a>
+</div><div class='indent'><a href='#cm29'>2.9 Operatori vari</a>
+</div><div class='indent'><a href='#cm210'>2.10 Operatori di input / output</a>
+</div><div class='indent'><a href='#cm211'>2.11 Operatori di conversione</a>
+</div><div class='vspace'></div><hr />
+<p class='vspace'><a name='cm1' id='cm1'></a>
+</p><h3>1. Elementi di base</h3>
+<p>Il MIXAL è l'assembler della macchina immaginaria MIX, inventata da Donald E. Knuth. 
+</p>
+<p class='vspace'>Nella macchina MIX il <em>byte</em> è composto da 6 bit, ovvero 64 valori possibili per byte. 
+</p>
+<p class='vspace'>Una <em>parola di memoria</em> è definita come un insieme di 5 byte più un bit di segno. E' possibile individuare sottoparole scrivendo una <em>specifica di campo</em> della forma (L:R), dove L è l'indice del primo byte ed R dell'ultimo (estremi inclusi). Ad esempio: (0:0) individua il solo segno; (3:5) individua gli ultimi tre byte. La specifica di campo è rappresentata internamente come risultato dell'operazione "8L + R". Ad esempio: (3:4) = 3*8 + 4 = 28 (che è sempre delle dimensioni di un byte).
+</p>
+<p class='vspace'>La macchina MIX dispone di <em>nove registri</em>:
+</p><ul><li><strong>rA</strong>, <em>registro A</em>. Contiene una parola, generalmente l'operando di un'operazione aritmetica o di scrittura della memoria;
+</li><li><strong>rX</strong>, <em>registro X</em>. Contiene una parola ed è generalmente usato come estensione a destra di rA;
+</li><li><strong>rJ</strong>, <em>registro di salto</em>. Contiene due byte (il segno è sempre positivo) che rappresentano l'indirizzo della cella a cui il programma deve saltare;
+</li><li><strong>rI<sub>n</sub></strong> (dove n = 1, 2, ... , 6), sei <em>registri indice</em>. Contengono due byte più segno, usati per mantenere degli indici per il calcolo degli indirizzi effettivi delle celle di memoria. 
+</li></ul><p class='vspace'>Vi sono inoltre:
+</p><ul><li>l' <em>indicatore di overflow</em> <strong>OV</strong>, che indica il superamento della capacità di un registro. Può avere valore "on" o "off";
+</li><li>l' <em>indicatore di confronto</em> <strong>CM</strong>, che può valere <strong>&gt;</strong> (o <em>G</em>), <strong>=</strong> (o <em>E</em>) e <strong>&lt;</strong> (o <em>L</em>);
+</li><li>ventuno <em>dispositivi di input / output</em> denotati con le sigle <strong>u<sub>0</sub></strong>, <strong>u<sub>1</sub></strong>, ..., <strong>u<sub>20</sub></strong>, grazie ai quali la macchina MIX comunica con l'esterno. Per convenzione il dispositivo <em>u<sub>19</sub></em> è la console del calcolatore. 
+</li></ul><p class='vspace'>La macchina MIX ha infine <em>4000 celle di memoria</em>, ognuna delle quali ha le dimensioni di una parola ed è caratterizzata da un indirizzo. 
+</p>
+<div class='vspace'></div><h4>1.2 Com'è composta un'istruzione</h4>
+<p>Le istruzioni della macchina MIX sono parole così strutturate:
+</p>
+<div class='vspace'></div><table align='center' width='50%' >
+<tr ><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>0</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>1</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>2</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>3</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>4</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>5</strong>
+</td></tr><tr ><td align='center'  valign='top'>+ / -
+</td><td colspan='2' align='center'  valign='top'>INDIRIZZO
+</td><td align='center'  valign='top'>INDICE
+</td><td align='center'  valign='top'>MOD
+</td><td align='center'  valign='top'>COD.OP.
+</td></tr></table>
+<p class='vspace'>dove:
+</p><ul><li>INDIRIZZO dà appunto l'indirizzo della parola;
+</li><li>INDICE è il modificatore dell'indirizzo. Se vale 0 non modifica nulla, mentre se è un numero compreso tra 1 e 6 indica uno dei sei registri indice, il cui contenuto andrà sommato a INDIRIZZO;
+</li><li>MOD. è il modificatore dell'operatore, di solito una specifica di campo (L:R). Quando è omesso, generalmente significa che l'istruzione associata si applica alla parola intera; 
+</li><li>COD.OP. è il codice operativo che identifica l'istruzione vera e propria da eseguire. Ha come sintassi generale: MNEMONICO INDIRIZZO,INDICE(MOD) , dove MNEMONICO è il nome dell'istruzione.
+</li></ul><p class='vspace'>Alcune notazioni:
+</p><ul><li>con M s'intende l'indirizzo di memoria ottenuto sommando a INDIRIZZO il contenuto del registro indice specificato da INDICE. Essendo 4000 le celle di memoria della macchina MIX, potrà avere un valore compreso tra 0 e 3999;
+</li><li>con V ci si riferisce al valore della sottoparola indicata da MOD. nella cella di memoria di indirizzo M;
+</li><li>per riferirsi al valore contenuto in un registro o in una parola di memoria di cui si conosce solo l'indirizzo, si mette il suo nome tra parentesi quadre. Ad esempio il valore contenuto nel registro rA si richiama con [rA], mentre ad esempio [1234] indica il valore contenuto alla cella di memoria con indirizzo 1234;
+</li><li>con X &#8592; Y si intende che X (un registro, una parola di memoria, ecc.) assumerà il valore di Y (un registro, una parola di memoria, ecc.) come effetto dell'esecuzione dell'istruzione.
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm2' id='cm2'></a>
+</p><h3>2. Istruzioni e direttive MIXAL</h3>
+<p>Abbiamo già detto che il MIXAL è l'assembler della macchina MIX, il cui compito è quello di assemblare il suo codice in una sequenza di istruzioni direttamente eseguibili dalla macchina. 
+</p>
+<p class='vspace'>Un programma MIXAL può contenere istruzioni o direttive. Le istruzioni sono quelle componenti del programma che vengono tradotte in istruzioni macchina, mentre le direttive sono quelle parti del codice che, pur non essendo direttamente tradotte in istruzioni, influenzano il modo in cui l'assemblatore effettua il suo compito.
+Sia le istruzioni che le direttive hanno il seguente formato: 
+</p>
+<div class='vspace'></div><div class='indent'><em>Etichetta MNEMONICO Operando Commento</em>
+</div><p class='vspace'>dove:
+</p><ul><li>l'etichetta è un simbolo alfanumerico che identifica la locazione corrente e che può essere utilizzato per riferirsi ad essa;
+</li><li>lo MNEMONICO è il nome dell'istruzione. Di seguito verrà chiamato “operatore”;
+</li><li>i commenti al codice, automaticamente ignorati dall'assemblatore, necessari come documentazione interna. Si scrivono a destra dell'operatore e dell'eventuale operando, oppure cominciando una linea di programma con un asterisco. 
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm21' id='cm21'></a>
+</p><h4>2.1 Direttive Mixal</h4>
+<p>Le direttive MIXAL sono le seguenti:
+</p>
+<p class='vspace'><em>ORIG xxxx</em><br />specifica che l'assemblatore dovrà cominciare a inserire le istruzioni macchina in memoria a partire dalla cella di indirizzo xxxx. Ad esempio ORIG 1000 fissa l'indirizzo di partenza del caricamento del programma nella cella 1000;
+</p>
+<p class='vspace'><em>EQU</em><br />definisce un simbolo e gli assegna un valore numerico. Ad esempio: GIORNO EQU 23 significa che GIORNO varrà 23 nell'assemblatore;
+</p>
+<p class='vspace'><em>ALF abcde</em><br />mette il codice dei cinque caratteri “abcde” nella locazione corrente di memoria. Ad esempio: ALF GATTO;
+</p>
+<p class='vspace'><em>END locazione</em><br />segnala la fine delle righe del programma. “locazione” è l'indirizzo da cui dovrebbe iniziare l'esecuzione una volta caricato il codice in memoria. Esempio: END INIZIO.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm22' id='cm22'></a>
+</p><h4>2.2 Operatori di caricamento</h4>
+<p>Gli operatori di caricamento sono i seguenti:
+</p>
+<p class='vspace'><em>LDA</em><br />"load A". Rimpiazza il contenuto di rA (o parte di rA) con [M], ovvero V. Riempie i campi di rA a partire da destra;
+</p>
+<p class='vspace'><em>LDX</em><br />"load X". Si comporta come sopra, ma carica in rX;
+</p>
+<p class='vspace'><em>LDi</em>	(LD1, LD2, LD3, LD4, LD5, LD6)<br />si comporta come sopra, ma carica in rIi. Dal momento che rI ha due byte e non cinque, si assume che i byte 1, 2 e 3 siano a zero;
+</p>
+<p class='vspace'><em>LDAN - LDXN - LDiN</em><br />si comportano come sopra, ma invertendo il segno.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm23' id='cm23'></a>
+</p><h4>2.3 Operatori di storing</h4>
+<p>Gli operatori di storing sono i seguenti:
+</p>
+<p class='vspace'><em>STA</em><br />"store A". Rimpiazza [M] con il contenuto di rA (o parte di rA). I campi di rA che vengono usati sono presi a partire da destra, quindi se ad esempio stabilissi che MOD. = (2:3) , il campo 2 della cella M conterrà il campo 4 di rA, ed il campo 3 di M conterrà il campo di 5 di rA;
+</p>
+<p class='vspace'><em>STX</em><br />“store X”. Si comporta come sopra, ma per rX;
+</p>
+<p class='vspace'><em>STi</em>	(ST1, ST2, ST3, ST4, ST5, ST6)<br />si comporta come sopra, ma per rIi. Dal momento che rI ha due byte e non cinque, si assume che i byte 1, 2 e 3 siano a zero;
+</p>
+<p class='vspace'><em>STJ</em><br />salva il contenuto del registro di salto nei primi due bytes di V, quelli riservati all'indirizzo. Ha quindi (0:2) come campo di specifica di default;
+</p>
+<p class='vspace'><em>STZ</em><br />azzera la cella M nei campi specificati.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm24' id='cm24'></a>
+</p><h4>2.4 Operatori aritmetici</h4>
+<p>Gli operatori aritmetici hanno MOD. (0:5) di default, e sono:
+</p>
+<p class='vspace'><em>ADD</em><br />aggiunge V al contenuto del registro rA. Utilizzando le specifiche di campo è possibile individuare un particolare byte di V da aggiungere ad rA. Se il valore ottenuto è troppo grande per rA, si accenderà la spia dell'overflow. Alcuni esempi: ADD 2000, ADD 1500(4:4), ADD 3000(1:1);
+</p>
+<p class='vspace'><em>SUB</em><br />sottrae V al contenuto del registro rA, o meglio, aggiunge “-V” ad rA;
+</p>
+<p class='vspace'><em>MUL</em><br />moltiplica V al contenuto del registro rA e scrive il risultato su rA ed rX (modificando di conseguenza il segno di entrambi i registri);
+</p>
+<p class='vspace'><em>DIV</em><br />divide il valore di rA con V e scrive il quoziente in rA ed il resto in rX. Se il divisore V è uguale a 0 o se il quoziente non ci sta in 5 byte, rA ed rX vengono riempiti con valori spazzatura e si accende la spia di overflow.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm25' id='cm25'></a>
+</p><h4>2.5 Operatori di trasferimento di indirizzo</h4>
+<p>Gli operatori di trasferimento di indirizzo trattano M come numero con segno, e sono:
+</p>
+<p class='vspace'><em>ENTA</em><br />carica la quantità M in rA. Se M è uguale a 0 ne carica solo il segno;
+</p>
+<p class='vspace'><em>ENTX - ENTi</em><br />si comportano come sopra ma rispettivamente con rX ed rIi;
+</p>
+<p class='vspace'><em>ENNA - ENNX - ENNi</em><br />si comportano come sopra ma caricando il segno opposto;
+</p>
+<p class='vspace'><em>INCA</em><br />aggiunge M ad rA. Ad esempio: INCA 0,1 significa che viene sommato al registro rA il valore M (che ha in questo caso INDIRIZZO 0 e INDICE 1);
+</p>
+<p class='vspace'><em>INCX</em><br />aggiunge M ad rX;
+</p>
+<p class='vspace'><em>INCi</em><br />aggiunge M ad rIi. Se il risultato di “M+rIi” non è rappresentabile in due bytes, non verrà definito;
+</p>
+<p class='vspace'><em>DECA - DECX - DECi</em><br />sottraggono M rispettivamente ad rA, rX ed rIi.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm26' id='cm26'></a>
+</p><h4>2.6 Operatori di comparazione</h4>
+<p>Gli operatori di comparazione confrontano il contenuto di un registro con il contenuto di una cella. Il risultato viene riportato nell'identificatore di confronto. <br />Gli operatori di comparazione sono:
+</p>
+<p class='vspace'><em>CMPA</em><br />confronta il campo specificato di rA con lo stesso campo di [M]. Se il segno non è specificato nel MOD., entrambi i valori sono presi come positivi;
+</p>
+<p class='vspace'><em>CMPX</em><br />si comporta come sopra ma con rX;
+</p>
+<p class='vspace'><em>CMPi</em><br />si comporta come sopra ma con rIi. Dal momento che rI ha due byte e non cinque, si assume che i byte 1, 2 e 3 siano a zero.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm27' id='cm27'></a>
+</p><h4>2.7 Operatori di salto</h4>
+<p>Ogni volta che si salta, l'istruzione successiva a quella del salto viene salvata in rJ. Ma se i salti sono più di uno occorre salvare rJ da qualche parte in memoria. <br />Gli operatori di salto sono i seguenti: 
+</p>
+<p class='vspace'><em>JMP</em><br />salto incondizionato all'istruzione M;
+</p>
+<p class='vspace'><em>JSJ</em><br />salto incondizionato all'istruzione M, ma senza modificare rJ;
+</p>
+<p class='vspace'><em>JOV - JNOV</em><br />rispettivamente, saltano ad M se c'è stato o se non c'è stato un overflow;
+</p>
+<p class='vspace'><em>JL - JE - JG - JGE - JNE - JLE</em><br />rispettivamente, saltano ad M se l'identificatore di confronto indica: L (minore), E (uguale), G (maggiore), “maggiore o uguale”, “diversi”, “minore o uguale”. Da notare che tali istruzioni non modificano lo stato dell'identificatore;
+</p>
+<p class='vspace'><em>JAN - JAZ - JAP - JANN - JANZ - JANP</em><br />rispettivamente, saltano ad rA se l'operatore è: “negativo”, “zero”, “positivo”, “non negativo”, “non zero”, “non positivo”;
+</p>
+<p class='vspace'><em>JXN - JXZ - JXP - JXNN - JXNZ - JXNP</em><br />si comportano come sopra, ma saltando ad rX;
+</p>
+<p class='vspace'><em>JiN - JiZ - JiP - JiNN - JiNZ - JiNP</em><br />si comportano come sopra, ma saltando ad rIi.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm28' id='cm28'></a>
+</p><h4>2.8 Operatori di shift</h4>
+<p>Negli shift M indica il numero di byte da shiftare. Il segno non viene mai toccato. <br />Gli operatori di shift sono: 
+</p>
+<p class='vspace'><em>SLA</em><br />shifta rA a sinistra di M bytes;
+</p>
+<p class='vspace'><em>SRA</em><br />shifta rA a destra di M bytes;
+</p>
+<p class='vspace'><em>SLAX - SRAX</em><br />trattano rA ed rX come se fossero un unico registro, con rX a destra di rA. SLAX shifta a sinistra di M bytes, mentre SRAX a destra;
+</p>
+<p class='vspace'><em>SLL - SRC</em><br />trattano rA ed rX come se fossero un unico registro, ma unito circolarmente (ciò che esce da un lato rientra dall'altro). SLL shifta a sinistra, SRC a destra.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm29' id='cm29'></a>
+</p><h4>2.9 Operatori vari</h4>
+<p><em>MOVE </em><br />il campo MOD. indica quante parole si vogliono spostare a partire dalla locazione M fino alla locazione specificata dal contenuto di rI1. <br />Se ad esempio ho il registro rI1 = 800 ed ho l'istruzione “MOVE 1000,3” , il contenuto della cella 1000 viene spostato alla cella 800, quello della cella 1001 nella 801 e quello della cella 1002 in 802, per un totale di 3 parole spostate;
+</p>
+<p class='vspace'><em>NOP</em><br />“no operation”, ovvero nessuna operazione;
+</p>
+<p class='vspace'><em>HLT</em><br />“halt”, ferma la macchina.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm210' id='cm210'></a>
+</p><h4>2.10 Operatori di input / output</h4>
+<p>Generalmente un'istruzione di input / output coinvolge una parola alla volta. La macchina MIX ha però 20 unità I/O, e ognuna di esse ha uno specifico numero di parole che può spostare in un'unica operazione (block size). Ad esempio il block size dell'unità 19, corrispondente al terminale, vale 14. <br />Gli operatori di input / output sono i seguenti:
+</p>
+<p class='vspace'><em>IN</em><br />riceve dati dall'unità input specificata dal MOD., e sposta un certo numero di celle (che dipende dal block size) in locazioni consecutive a partire dalla cella di memoria con indirizzo M;
+</p>
+<p class='vspace'><em>OUT</em><br />il contrario di prima, restituisce un output sull'unità specificata dal MOD.;
+</p>
+<p class='vspace'><em>IOL</em><br />attende che l'unità indicata dal MOD. sia libera, quindi esegue un controllo;
+</p>
+<p class='vspace'><em>JRED</em><br />effettua un salto se l'unità indicata dal MOD. è ready;
+</p>
+<p class='vspace'><em>JBUS</em><br />effettua un salto se l'unità indicata dal MOD. è busy.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='cm211' id='cm211'></a>
+</p><h4>2.11 Operatori di conversione</h4>
+<p>Gli operatori di conversione sono:
+</p>
+<p class='vspace'><em>NUM</em><br />converte da carattere a numero. Prende i 10 bytes concatenati di rA e rX considerando ognuno come se fosse un numero e li codifica secondo la tabella dei caratteri. Quindi, senza toccare i segni, rimette i singoli numeri in rA ed rX;
+</p>
+<p class='vspace'><em>CHAR</em><br />converte il valore di rA in codici carattere e li rimette in rA ed rX.
+</p>
+<p class='vspace'>Sia NUM che CHAR ignorano l'eventuale operando M.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: October 25, 2010, at 05:22 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyMixal?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyMixal?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

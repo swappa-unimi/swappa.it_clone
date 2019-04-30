@@ -1,0 +1,560 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Socket Library </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SocketLibrary' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Socket Library
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SocketLibrary?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SocketLibrary?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SocketLibrary-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SocketLibrary?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SocketLibrary?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Socket Library was last modified on March 17, 2009, at 06:42 PM'>
+							<span style='display:none;'>Socket Library</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Socket Library ::</strong>
+</p>
+<p class='vspace'>Data la noiosità della materia trattata, l'esposizione dei contenuti sarà intervallata ad immagini di donne in pose discinte (uomini solo a richiesta).
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 270px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Introduzione</a>
+</li><li><a href='#s2'>Come avviene la comunicazione</a>
+</li><li><a href='#s3'>Creare un socket</a>
+</li><li><a href='#s4'>Codifica degli indirizzi</a>
+</li><li><a href='#s5'>Funzione bind</a>
+</li><li><a href='#s6'>Creazione della connessione</a>
+</li><li><a href='#s7'>Funzione connect</a>
+</li><li><a href='#s8'>Funzione listen</a>
+</li><li><a href='#s9'>Funzione accept</a>
+</li><li><a href='#s10'>Gestione delle richieste</a>
+</li><li><a href='#s11'>Chiusura del socket</a>
+</li><li><a href='#s12'>Funzione select</a>
+</li><li><a href='#s13'>Funzione send</a>
+</li><li><a href='#s14'>Funzione recv</a>
+</li></ol></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h3>Introduzione</h3>
+<div><span class='frame rfloat'><img src='http://images.askmen.com/galleries/celeb-profiles-actress/donna-feldman/pictures/donna-feldman-picture-2.jpg' alt='' title='' /></span></div>
+<p>In soldoni, perché due processi residenti su macchine diverse possano comunicare tra loro, è necessario:
+</p><ol><li>verificare che le macchine siano in rete
+</li><li>creare un canale di comunicazione
+</li></ol><p class='vspace'>I socket sono i due capi di tale canale, che forniscono l'interfaccia tra i programmi applicativi e il livello di trasporto (TCP, UDP, ...).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h3>Come avviene la comunicazione</h3>
+<p>Cosa siano client e server lo sappiamo tutti (no? Leggi <a class='wikilink' href='Ceravolo.html#s2'>qua</a>), come comunichino (in generale) tramite socket è presto detto:
+</p>
+<div class='vspace'></div><ol><li>ho un programma X che gira su un server, ed è associato a una certa porta tramite il socket "s1"
+</li><li>il server continua ad ascoltare su "s1", aspettando che qualche client richieda la connessione
+</li><li>quando questa arriva, se è tutto ok il server accetta la connessione e crea un nuovo socket "s2" su una nuova porta
+</li><li>il servizio chiamato dal client viene gestito dal server sul socket "s2" (che verrà poi chiuso una volta soddisfatta la richiesta)
+</li><li>mentre viene eseguito il punto 4, il server è tornato ad ascoltare su "s1" eventuali chiamate da altri client.
+</li></ol><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h3>Creare un socket</h3>
+<p>La funzione necessaria per creare un socket è, manco a dirlo, <em>socket</em>.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>sockid = socket (pf, type, protocol)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>pf</strong> specifica la famiglia di protocolli da usare con il socket, che si rifletterà sul modo in cui verranno interpretati gli indirizzi forniti. Ogni famiglia è rappresentata da una costante intera, alla quale è associato un nome simbolico per facilitare la memorizzazione e aumentare la chiarezza. Per convenzione questi nomi iniziano per <em>PF_</em> (Protocol Family) o <em>AF_</em> (Address Family), la cui scelta <em>nella pratica</em> è del tutto equivalente. Ad esempio: PF_INET (per il TCP/IP) o PF_UNIX (per il file system UNIX).
+</li><li><strong>type</strong> consente la scelta del tipo di comunicazione, che dipende dal protocollo utilizzato tra quelli disponibili nella famiglia scelta sopra. Ogni tipo ha un valore intero, anche in questo caso rappresentato da costanti. Ad esempio:
+<ul><li><em>SOCK_STREAM</em>: fornisce un canale di trasmissione bidirezionale, sequenziale e affidabile. Il nome <em>stream</em> deriva dal fatto che i dati vengono trattati come un flusso continuo di byte. Il SOCK_STREAM della PF_INET è TCP;
+</li><li><em>SOCK_DGRAM</em>: usato per trasmettere pacchetti di dati (<em>datagram</em>) senza connessione e con trasmissione non affidabile. Il SOCK_DGRAM della PF_INET è UDP;
+</li><li><em>SOCK_RAW</em>: dà accesso di basso livello ai protocolli di rete e alle varie interfacce. Riservato all'uso di sistema. Il SOCK_RAW della PF_INET è IPv4.
+</li></ul></li></ul><div class='vspace'></div><div class='indent'><span style='font-size:83%'><strong>Nota</strong>: da notare che non tutte le combinazioni "famiglia di protocolli"-"tipo di socket" sono valide (ad esempio la PF_UNIX non ha SOCK_RAW).</span>
+</div><div class='vspace'></div><ul><li><strong>protocol</strong>, il protocollo. Essendo in genere indicato implicitamente nel parametro <em>type</em>, ha quasi sempre valore 0.
+</li></ul><div class='vspace'></div><div><span class='frame rfloat'><img src='http://dr.buzzenstein.com/wp-content/uploads/2007/07/lingeriebowl.jpg' alt='' title='' /></span></div>
+<p>La funzione <em>socket</em> ritorna un intero positivo in caso di successo (che diventerà il descrittore del socket) e <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'>Esempio: <strong>sd = socket (AF_INET, SOCK_STREAM, 0);</strong>
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h3>Codifica degli indirizzi</h3>
+<p>Avrete notato che la funzione <em>socket</em> si disinteressa completamente degli indirizzi che identificano i due punti finali della comunicazione, occupandosi solo di specificare il tipo di famiglia dei protocolli da utilizzare. E' solo attraverso le altre funzioni di gestione del socket (bind, listen, ...) che vengono manipolati gli indirizzi, sotto forma di strutture (passate sempre per riferimento, tramite puntatori).
+</p>
+<p class='vspace'>La struttura generica è la seguente:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+struct sockaddr { 
+   u_short sa_family; // Address Family
+   char sa_data[14];  // Indirizzo (la cui forma dipende dall'AF scelta)
+}; 
+</pre>
+<p class='vspace'>Va da sé che ogni famiglia di protocolli implementerà in modo diverso questa struttura generica, dal momento che ognuna di esse ha forme di indirizzamento specifiche e distinte. I nomi di tutte queste strutture iniziano per <em>sockaddr_</em> più un suffisso finale che indica la famiglia di appartenenza.
+</p>
+<p class='vspace'>Vediamo ad esempio la <em>sockaddr_in</em>, ovvero la sockaddr specifica per IP.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+struct sockaddr_in { 
+   short sin_family;  // Valore: AF_INET
+   u_short sin_port;  // Numero di porta. Valore: 0 - 65535
+   struct in_addr sin_addr;  // sin_addr è l'indirizzo IP
+   char sin_zero[8];  // inutilizzato
+}; 
+</pre>
+<p class='vspace'>Importante sottolineare come i bit degli indirizzi e dei numeri di porta possano essere ordinati in modo diverso a seconda dell'hardware degli host. Si parla di ordinamento <em>big-endian</em> quando si parte dai bit più significativi (adottato ad esempio da IBM, Sun, Motorola), <em>little-endian</em> quando parte da quelli meno significativi (es. Intel). Questo comporta la necessità di eseguire delle apposite routine di verifica dell'ordinamento ed eventuale riconversione per garantire la portabilità del codice.
+</p>
+<p class='vspace'>Un'altra cosa da ricordare è che se specifico <em>sin_port</em> = 0, il sistema mi troverà la prima porta disponibile in automatico.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h3>Funzione bind</h3>
+<p>Abbiamo visto che nel momento della loro creazione i socket non sono associati a nessun indirizzo (IP o di porta). Se lato client non è sempre necessario conoscere l'indirizzo locale, lato server è spesso importante specificare la porta in ascolto di connessione. Ecco dunque lo scopo della funzione <em>bind</em>: assegnare un indirizzo locale ad un socket.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>status = bind (sockid, &amp;localaddr, addrlen)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>sockid</strong> è il descrittore intero del socket da collegare all'indirizzo, quello ottenuto come valore di ritorno dalla funzione <em>socket</em>;
+</li><li><strong>localaddr</strong> è la struttura che contiene l'indirizzo locale del socket (indirizzo IP più porta). Per specificare un indirizzo generico si usa il valore INADDR_ANY, che ha valore 0;
+</li><li><strong>addrlen</strong> è un intero che indica la dimensione dell'indirizzo in byte.
+</li></ul><p class='vspace'>La funzione <em>bind</em> restituisce 0 in caso di successo e <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s6' id='s6'></a>
+</p><h3>Creazione della connessione</h3>
+<p>Introduciamo le prossime funzioni di gestione del socket descrivendo le varie fasi di connessione che caratterizzano il protocollo TCP. Le due figure che entrano in gioco sono il <em>partecipante passivo</em> (un server), in fiduciosa attesa che qualcuno gli richieda la connessione, e un <em>partecipante attivo</em> (il client) che effettua tale richiesta.
+</p>
+<p class='vspace'>Ecco in pratica cosa succede:
+</p><ol><li>(<em>lato passivo</em>) Il server esegue l'apertura passiva del socket, attraverso le funzioni <em>socket</em>, <em>bind</em> e <em>listen</em>;
+</li><li>(<em>lato attivo</em>) Il client richiede l'inizio della connessione (apertura attiva) usando la funzione <em>connect</em>;
+</li><li>(<em>lato passivo</em>) Il server accetta la connessione tramite la funzione <em>accept</em> e la sposta su un nuovo socket;
+</li><li>(<em>lato passivo e attivo</em>) Invio e ricezione dei dati.
+</li></ol><p class='vspace'>Da notare che tutto ciò accade solo su quei socket che supportano la connessione, come ad esempio SOCK_STREAM. Per il SOCK_DGRAM (tipico delle UDP), ad esempio, non accade nulla di tutto questo.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s7' id='s7'></a>
+</p><h3>Funzione connect</h3>
+<p>Se la <em>bind</em> permetteva a un server di assegnare una porta ad un socket, la <em>connect</em> è la funzione che consente ad un client di collegarsi a quella porta specifica, ponendo un socket nello <em>stato connesso</em>.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>status = connect (sockid, &amp;destaddr, addrlen)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>sockid</strong> è il descrittore intero del socket da connettere;
+</li><li><strong>destaddr</strong> è la struttura che contiene l'indirizzo di destinazione cui il socket si dovrà collegare (indirizzo IP più porta);
+</li><li><strong>addrlen</strong> è un intero che indica la dimensione dell'indirizzo in byte.
+</li></ul><p class='vspace'>La funzione <em>connect</em> restituisce 0 in caso di successo e <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'>La <em>connect</em> è inoltre <em>bloccante</em>, ovvero ritorna solo quando la connessione è stabilita o quando si è verificato un errore. Se ciò non avviene, il codice non va avanti.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s8' id='s8'></a>
+</p><div><span class='frame rfloat'><img src='http://www.yandy.com/Images/Products/4507Full585381127.jpg' alt='' title='' /></span></div>
+<h3>Funzione listen</h3>
+<p>Una volta che il socket è stato creato e assegnato a una porta locale, al server per completare la procedura di <em>apertura passiva</em> non rimane altro che eseguire la funzione <em>listen</em>, che mette il socket in modalità passiva e specifica una lunghezza della coda per le richieste di connessione.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>status = listen (sockid, queuelen)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>sockid</strong> è il descrittore intero del socket pronto per essere usato dal server;
+</li><li><strong>queuelen</strong> è il numero massimo di partecipanti attivi che possono attendere una connessione. Quando il limite viene raggiunto, le richieste di connessione successive vengono ignorate e scartate.
+</li></ul><p class='vspace'>La funzione <em>listen</em> restituisce 0 in caso di successo e <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'>La <em>listen</em> è <em>non-bloccante</em>, ovvero ritorna subito, e può essere usata solo per socket che supportano le connessioni.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s9' id='s9'></a>
+</p><h3>Funzione accept</h3>
+<p>Completata l'apertura passiva, grazie alla funzione <em>accept</em> il server blocca tutto e si mette in attesa di richieste di connessione.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>s = accept (sockid, &amp;addr, &amp;addrlen)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>sockid</strong> è il descrittore intero del socket su cui il server ascolta le richieste di connessione;
+</li><li><strong>addr</strong> è l'indirizzo del client che ha richiesto la connessione (tale campo viene dunque riempito solo a richiesta avvenuta);
+</li><li><strong>addrlen</strong> è un intero che indica la dimensione di <em>addr</em> in byte.
+</li></ul><p class='vspace'>La funzione <em>accept</em> restituisce un intero positivo in caso di successo (il descrittore del nuovo socket) in caso di successo e <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'>Vediamo passo passo cosa succede:
+</p><ol><li>la <em>accept</em> estrae da <em>sockid</em> la prima richiesta di connessione che attende in coda. Se non sono presenti, si blocca finché non ne arriva una;
+</li><li>la chiamata della funzione viene completata riempendo l'argomento <em>addr</em> con l'indirizzo del client richiedente e l'argomento <em>addrlen</em> calcolato di conseguenza;
+</li><li>viene creato un nuovo socket con le stesse caratteristiche di <em>sockid</em>, la cui destinazione è connessa al client chiamante. Il descrittore del nuovo socket è quello restituito dalla <em>accept</em>;
+</li><li>viene ritornato il descrittore del nuovo socket al client richiedente.
+</li></ol><p class='vspace'>Mentre vengono eseguiti i punti 3 e 4, il socket <em>sockid</em> originale non viene toccato e resta nello stato di <em>listen</em>.
+</p>
+<p class='vspace'>La funzione <em>accept</em>, lo abbiamo visto, è decisamente <em>bloccante</em>.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s10' id='s10'></a>
+</p><h3>Gestione delle richieste</h3>
+<p>Una volta accettata una connessione, il server ha due approcci diversi per gestire le richieste:
+</p><ul><li><strong>interattivamente</strong>. Il server gestisce direttamente la richiesta, chiude il nuovo socket e richiama quindi la <em>accept</em> per passare alla richiesta di connessione successiva;
+</li><li><strong>simultaneamente</strong>. Il server crea un processo secondario che eredita una copia del nuovo socket, e gli delega la gestione della richiesta. Una volta evasa, il modulo secondario chiude il socket e termina. Nel frattempo il processo server principale chiude la sua copia del socket dopo aver attivato quello secondario, e chiama <em>accept</em> per passare alla richiesta di connessione successiva.<br />La chiamata di sistema <em>fork()</em> consente di creare processi secondari, anche detti <em>processi figli</em> per distinguerli dai <em>processi padri</em> di cui sono una copia. L'unica differenza tra i due è il valore di ritorno della stessa <em>fork</em>, che vale 0 nel processo figlio ed un numero positivo nel processo padre (che sarebbe poi l'identificativo del figlio) se l'operazione è andata a buon fine. 
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s11' id='s11'></a>
+</p><h3>Chiusura del socket</h3>
+<p>Abbiamo parlato più di una volta di <em>chiusura</em> del socket senza spiegare come si fa. E' presto detto:
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>status = close (sockid)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>sockid</strong> è il descrittore intero del socket da chiudere.
+</li></ul><p class='vspace'>La funzione <em>close</em> restituisce 0 in caso di successo e <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'>Tre precisazioni: 
+</p><ol><li>se più di un processo ha lo stesso socket aperto, questo non verrà chiuso finché non sarà invocata una <em>close</em> su ognuno di essi;
+</li><li>se un processo termina per una qualsiasi ragione, tutti i socket che utilizzava saranno chiusi automaticamente dal sistema;
+</li><li>una volta chiuso il socket, la porta che utilizzava diventa di nuovo disponibile.
+</li></ol><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s12' id='s12'></a>
+</p><h3>Funzione select</h3>
+<p>Se per programmi semplici il fatto di avere funzioni bloccanti (come la connect o la accept) può essere utili, per quelli più complessi aumentano i problemi. Ad esempio, come saranno gestite le connessioni multiple? E cosa succederà nel caso di connessioni simultanee? Si finirà irrimediabilmente per saturare la coda dei client in attesa, continuando a scartare nuove richieste.
+</p>
+<p class='vspace'>Un sistema per risolvere il problema l'abbiamo già visto con la <em>fork()</em> e quindi con la gestione simultanea delle richieste. Un altro è fare in modo che uno stesso processo possa attendere delle connessioni su più di un socket. Questo sistema avviene utilizzando la funzione <em>select</em>.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>status = select (nfds, &amp;readfds, &amp;writefds, &amp;exceptfds, &amp;timeout)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>nfds</strong> è il numero dei descrittori da esaminare (che vanno da 2 a <em>nfds-1</em>);
+</li><li><strong>readfds</strong> è l'elenco dei descrittori da controllare perchè pronti alla lettura;
+</li><li><strong>writefds</strong> è l'elenco dei descrittori da controllare perchè pronti alla scrittura;
+</li><li><strong>exceptfds</strong> è l'elenco dei descrittori da controllare perchè si è verificata un’eccezione;
+</li><li><strong>timeout</strong> specifica un tempo massimo di attesa prima che la funzione ritorni. Se è impostato a NULL (tempo infinito), la funzione attende indefinitamente; se è 0, significa che la chiamata blocca l'esecuzione finché un descrittore non è pronto.
+</li></ul><p class='vspace'>La funzione <em>select</em> restituisce i descrittori dell'insieme dei descrittori dei socket che sono pronti, o <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'>Generalmente viene usata quando il numero dei socket da gestire è basso.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s13' id='s13'></a>
+</p><h3>Funzione send</h3>
+<p>Ora che sappiamo come creare e gestire le connessioni, vogliamo anche farci qualcosa. Per inviare dati posso utilizzare la funzione <em>send</em>.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>count = send (sockid, &amp;buf, len, flags)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>sockid</strong> è il descrittore del socket da utilizzare;
+</li><li><strong>buf</strong>, sta per buffer, è la stringa dei caratteri che devono essere inviati;
+</li><li><strong>len</strong> è un intero che indica la dimensione di <em>buf</em> in byte;
+</li><li><strong>flags</strong> è un intero che consente al mittente di specificare alcune opzioni speciali di invio. Viene generalmente lasciato a 0.
+</li></ul><p class='vspace'>La funzione <em>send</em> restituisce il numero dei byte trasmessi, o <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'>La <em>send</em> è <em>bloccante</em>, ovvero non ritorna finché non vengono immessi dei dati nel buffer.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s14' id='s14'></a>
+</p><h3>Funzione recv</h3>
+<p>A che serve mandare dati con la <em>send</em> se poi non abbiamo modo di riceverli? Ecco a cosa serve la <em>recv</em>.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>count = recv (sockid, &amp;buf, len, flags)
+</p>
+<p class='vspace'>, dove:
+</p><ul><li><strong>sockid</strong> è il descrittore del socket da utilizzare;
+</li><li><strong>buf</strong> specifica l'indirizzo di memoria in cui va memorizzato il messaggio;
+</li><li><strong>len</strong> è un intero che indica la dimensione di <em>buf</em> in byte;
+</li><li><strong>flags</strong> è un intero che consente al chiamante di controllare la ricezione. Anche in questo caso viene generalmente lasciato a 0.
+</li></ul><p class='vspace'>La funzione <em>recv</em> restituisce il numero dei byte ricevuti, o <em>-1</em> in caso di errore.
+</p>
+<p class='vspace'>La <em>recv</em> è <em>bloccante</em>, ovvero non ritorna finché non vengono ricevuti dei dati.
+</p>
+<p class='vspace'>Da notare infine che sia la <em>send</em> che la <em>recv</em> sono pensate per socket che supportano le connessioni. I SOCK_DGRAM, ad esempio, utilizzeranno altre funzioni come ad esempio la <em>sendto</em> e la <em>recvto</em> in cui verranno specificati anche gli indirizzi di destinazione/partenza.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 17, 2009, at 06:42 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SocketLibrary?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SocketLibrary?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

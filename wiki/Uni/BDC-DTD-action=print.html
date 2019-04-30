@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Basi di Dati - Complementi - Document Type Definition</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='BDC-DTD.html' title='Basi di Dati - Complementi - Document Type Definition'>Basi di Dati - Complementi - Document Type Definition</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Document Type Definition</strong></span>
+</p>
+<div class='vspace'></div><h3>Cos'è</h3>
+<p>Il <strong>Document Type Definition</strong> (<strong>DTD</strong>) è una specifica della struttura di documenti XML: se il documento rispetta tale specifica si dice <em>valido</em> rispetto ad essa. Il suo utilizzo è opzionale e può essere specificato sia all'interno del documento XML (generalmente all'inizio) che in un documento separato cui fa riferimento con una particolare direttiva (<code class='escaped'>&lt;!DOCTYPE root-element SYSTEM "filename"&gt;</code>).
+</p>
+<p class='vspace'>E' costituito da un insieme di regole, che possono essere di due tipi: 
+</p><ul><li>regole che definiscono gli <em>elementi</em> XML ammissibili e il loro contenuto
+</li><li>regole che specificano gli <em>attributi</em> degli elementi XML, il loro tipo e i vincoli sul loro valore
+</li></ul><div class='vspace'></div><h3>Sintassi</h3>
+<h4>Elementi</h4>
+<p>Per definire gli <strong>elementi</strong> leciti all'interno del documento si utilizza la seguente sintassi:
+</p>
+<p class='vspace'  style='text-align: center;'><code class='escaped'>&lt;! ELEMENT nomeElemento (modelloDiContenuto)&gt;</code>
+</p>
+<p class='vspace'>Il <strong>modello di contenuto</strong> può essere di vari tipi:
+</p>
+<div class='vspace'></div><ul><li>se l'elemento <em>ne contiene altri annidati</em>:<br /><code class='escaped'>&lt;! ELEMENT nomeElemento (nomeElementoAnnidato1, nomeElementoAnnidato2, ...)&gt;</code>
+<div class='vspace'></div></li><li>se l'elemento <em>ha contenuto testuale</em>:<br /><code class='escaped'>&lt;! ELEMENT nomeElemento (#PCDATA)&gt;</code>
+<div class='vspace'></div></li><li>se l'elemento <em>ha contenuto misto</em> si utilizza il simbolo <strong>|</strong> come separatore:<br /><code class='escaped'>&lt;! ELEMENT nomeElemento (#PCDATA | nomeElementoAnnidato)&gt;</code>
+<div class='vspace'></div></li><li>se l'elemento <em>non è sicuramente vuoto, ma non se ne conosce il modello di contenuto</em>:<br /><code class='escaped'>&lt;! ELEMENT nomeElemento ANY&gt;</code>
+<div class='vspace'></div></li><li>se l'elemento <em>è vuoto</em>:<br /><code class='escaped'>&lt;! ELEMENT nomeElemento EMPTY&gt;</code>
+</li></ul><p class='vspace'>Ogni elemento può avere diversi <strong>indicatori di occorrenza</strong> per i suoi sotto-elementi, quindi diversa cardinalità:
+</p>
+<div class='vspace'></div><ul><li>se ho <em>una sola occorrenza</em>, non ho indicatori<br /><code class='escaped'>&lt;! ELEMENT nomeElemento (nomeElementoAnnidato)&gt;</code>
+</li><li>se l'occorrenza è <em>facoltativa</em> (0 o 1 volta), si indica col simbolo <strong>?</strong><br /><code class='escaped'>&lt;! ELEMENT nomeElemento (nomeElementoAnnidato?)&gt;</code>
+</li><li>se l'occorrenza è <em>obbligatoria e ripetibile</em> (1 o più volte), si indica col simbolo <strong>+</strong><br /><code class='escaped'>&lt;! ELEMENT nomeElemento (nomeElementoAnnidato+)&gt;</code>
+</li><li>se l'occorrenza è <em>facoltativa e ripetibile</em> (0 o più volte), si indica col simbolo <strong>*</strong><br /><code class='escaped'>&lt;! ELEMENT nomeElemento (nomeElementoAnnidato*)&gt;</code>
+</li></ul><div class='vspace'></div><h4>Attributi</h4>
+<p>Gli <strong>attributi</strong> forniscono informazioni aggiuntive sugli elementi, e per definire quelli leciti all'interno del documento si utilizza la seguente sintassi:
+</p>
+<div class='vspace'></div><pre class='escaped'>          &lt;!ATTLIST nomeElemento
+          nomeAttributo1 (tipo) valoriPredefiniti
+          nomeAttributo2 (tipo) valoriPredefiniti
+          ...             ...   ...&gt;</pre>
+<p class='vspace'>I <strong>tipi</strong> sono fondamentalmente tre:
+</p><ul><li><em>stringhe</em>, indicate dalla parola chiave <strong>CDATA</strong>
+</li><li><em>token</em>, che limitano i valori permessi sull'attributo. Un esempio è <strong>ID</strong> che identifica in modo univoco un elemento
+</li><li><em>enumerazioni</em>, che specificano una serie di valori permessi indicati tra parentesi tonde e separate da <strong>|</strong>. Ad esempio:<br /><pre class='escaped'>&lt;!ATTLIST messaggio
+  Avviso ( basso | normale | urgente) “basso”&gt;</pre>
+Ho tre valori permessi (basso, normale, urgente) di cui basso è quello predefinito.
+</li></ul><p class='vspace'>Per quanto riguarda i <strong>valori predefiniti</strong> degli attributi, su essi possono essere imposti alcuni vincoli:
+</p><ul><li>se l'attributo è <em>obbligatorio</em>, si indica col simbolo <strong>#REQUIRED</strong>
+</li><li>se l'attributo è <em>facoltativo</em>, si indica col simbolo <strong>#IMPLIED</strong>
+</li><li>se all'attributo <em>deve essere associato un valore costante</em>, si indica col simbolo <strong>#FIXED "valore"</strong>
+</li><li>per dare un <em>valore di default</em> all'attributo, basta metterlo tra virgolette. Es: "valore1"
+</li></ul><div class='vspace'></div><h3>Esempio</h3>
+<p>Documento XML di partenza:
+</p><pre class='escaped'>&lt;elenco&gt;
+  &lt;prodotto codice="123"&gt;
+    &lt;descrizione&gt; libro &lt;/descrizione&gt;
+    &lt;prezzo&gt; 50 &lt;/prezzo&gt;
+  &lt;/prodotto&gt;
+  &lt;prodotto codice="456"&gt;
+    &lt;descrizione&gt; penna stilo &lt;/descrizione&gt;
+  &lt;/prodotto&gt;
+&lt;/elenco&gt;</pre>
+<p class='vspace'>DTD risultante:
+</p><pre class='escaped'>(1) &lt;!ELEMENT ELENCO (PRODOTTO+)&gt;
+(2) &lt;!ELEMENT PRODOTTO (DESCRIZIONE, PREZZO?)&gt;
+(3) &lt;!ATTLIST PRODOTTO codice ID #REQUIRED&gt;
+(4) &lt;!ELEMENT DESCRIZIONE (#PCDATA)&gt;
+(5) &lt;!ELEMENT PREZZO (#PCDATA)&gt;</pre>
+<p class='vspace'>Commenti punto per punto:
+</p><ul><li>(1) l'elemento ELENCO contiene altri elementi di tipo PRODOTTO. In particolare ne deve avere obbligatoriamente almeno 1
+</li><li>(2) l'elemento PRODOTTO contiene altri due elementi: DESCRIZIONE (che può avere un'unica occorrenza) e PREZZO, la cui presenza è facoltativa
+</li><li>(3) l'elemento PRODOTTO <em>deve</em> avere come attributo il suo codice identificativo
+</li><li>(4) e (5) gli elementi DESCRIZIONE e PREZZO sono stringhe di testo
+</li></ul><div class='vspace'></div><h3>Limiti</h3>
+<p>Il <em>Document Type Definition</em> è molto semplice da scrivere e questo ha un prezzo:
+</p><ul><li>gli unici tipi di dati ammessi sono quelli testuali (niente numeri interi o reali, booleani, ecc)
+</li><li>possono esprimere un numero di vincoli sugli attributi molto limitato
+</li><li>non sono estendibili
+</li><li>non gestiscono <em>namespace</em>
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+<div class='vspace'></div>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/BDC-DTD)</span></div>
+  </div>
+</body>
+</html>

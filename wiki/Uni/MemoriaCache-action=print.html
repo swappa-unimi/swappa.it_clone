@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Architettura degli elaboratori - Memoria cache</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='MemoriaCache.html' title='Architettura degli elaboratori - Memoria cache'>Architettura degli elaboratori - Memoria cache</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ArchitetturaDegliElaboratori.html'>Torna alla pagina di Architettura degli elaboratori</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Architettura degli elaboratori - Memoria cache ::</strong>
+</pre><div class='vspace'></div><h2>Principio di località</h2>
+<p>Se all'istante t la CPU genera l'indirizzo di memoria xNNNN, è molto probabile che nell'immediato futuro generi di nuovo lo stesso indirizzo xNNNN o indirizzi vicini ("locali") all'indirizzo xNNNN. <br />Ci sono due tipi di località:
+</p><ul><li><em>Località spaziale</em>. Il fetch delle istruzioni procede normalmente per celle consecutive quindi se al istante t abbiamo fatto fetch dell'istruzione all'indirizzo xNNNN è molto probabile che al prossimo passo si vada al istruzione situata nella cella immediatamente successiva. Inoltre i programmi (soprattutto quelli di una certa dimensione) sono organizzati in moduli, in procedure e le variabili del singolo modulo sono tipicamente memorizzate in spazi di memoria vicini;
+</li><li><em>Località temporale</em>. L'essenza della programmazione sono i cicli: l’esistenza di gruppi di istruzioni che vengono scritte dal programmatore o dal traduttore automatico una volta ed eseguite ripetutamente centinaia, migliaia di volte dal calcolatore; questo significa che le istruzioni e le variabili usate nei cicli vengono "ripassate" ripetutamente a ogni iterazione del ciclo. 
+</li></ul><p class='vspace'>Dal momento che il principio di località è sicuramente una verità universale per il calcolatore, va sfruttato. Lavorando su base statistica: quando la CPU genera un indirizzo di memoria portiamo il contenuto della cella richiesta del CU e un certo numero di celle vicine (blocco) in una memoria (R/W). Questa sarà decisamente più veloce della DRAM, ma anche più piccola (perché a parità di bit costa molto di più). Chiamiamo questa memoria <strong>memoria cache</strong>, per derivazione dalla parola francese <em>cache</em> (nascosto); l’esistenza di questa memoria infatti non è nota né al programmatore né alla CPU, ma serve solo a velocizzare gli accessi a memoria.
+</p>
+<p class='vspace'>Grazie alla località degli accessi a memoria da parte della CPU possiamo copiare in una memoria ad alte prestazioni (cache) le celle richieste, che hanno maggiore probabilità di essere usate di nuovo.
+</p>
+<div class='vspace'></div><h2>Funzionamento della cache</h2>
+<p>L’utilità della memoria cache nasce dal fatto che sebbene il processore abbia velocità di elaborazione molto elevata (dell'ordine dei GHz, quella del clock), la memoria di sistema ed i bus di trasferimento lavorano con velocità inferiore. Quando la veloce CPU è chiamata ad elaborare dati è quindi costretta ad aspettare che questi arrivino dai suoi bus e dalla sua memoria esterna di sistema; in questo modo le prestazioni complessive degradano inevitabilmente.<br />Per questo è stata inventata la memoria cache, che trova posto tra il processore e la memoria RAM. Si tratta di una memoria di piccole dimensioni ma particolarmente veloce; la sua velocità può variare infatti da quella di clock (se di primo livello) a valori comunque superiori a quella del bus.  In questo modo, almeno nell'immediato e con sufficiente probabilità, la CPU troverà in essa anche i dati necessari in seguito, senza dover attendere troppo.  <br />Fin dalle prime architetture è stata prevista la presenza di cache tra CPU e memoria, direttamente sulla scheda madre e, data la grande efficienza di questo meccanismo, ben presto si è pensato di introdurre parte di essa addirittura dentro il processore. Per velocizzare lo scambio di dati tra memoria e processore sono oggi disponibili: 
+</p><ul><li>cache L1 (di primo livello) - qualche KB.<br />La frequenza del processore è però cresciuta ancora, e la sua differenza rispetto alla DRAM si è enfatizzata;
+</li><li>cache L2 (di secondo livello) esterna al processore - qualche centinaio di KB. <br />E se le cose degenerano...: 
+</li><li>cache L3 (di terzo livello) esterna al processore - qualche decina di MB!
+</li></ul><p class='vspace'>Grazie alla località degli accessi a memoria da parte della CPU: 
+</p><ul><li>possiamo copiare in una memoria ad alte prestazioni (cache) le celle richieste, che hanno maggiore probabilità di essere usate di nuovo; 
+</li><li>possiamo creare una gerarchia di cache via via più grandi e più lente man mano che ci allontaniamo dalla CPU e ci avviciniamo alla memoria di lavoro; 
+</li><li>le celle con probabilità maggiore di riutilizzo sono ricopiate nella cache a bordo della CPU; 
+</li><li>tutte le celle disponibili sono presenti in memoria di lavoro. 
+</li></ul><div class='vspace'></div><h2>Politica Tag Associative</h2>
+<p>La politica Tag Associative definisce a priori una corrispondenza univoca fra gruppo di blocchi in memoria di lavoro (MdL) e blocco di possibile destinazione di ciascuno dei blocchi di quel gruppo in cache (MC). <br />Per esempio l'indirizzo generato dalla CPU (16 bit) ha la seguente struttura: 
+</p><ul><li>i 4 bit meno significativi ci dicono a quale parola del blocco siamo interessati
+</li><li>i 7 bit immediatamente più significativi ci dicono a quale unita di gruppo l’unità centrale vuole fare riferimento 
+</li><li>i 5 bit più significativi dei 16 ci dicono il numero di blocco nel gruppo, quindi a quale dei 32 blocchi(5 bit -&gt; 25=32) che ci sono in ogni gruppo l’unità centrale intende accedere. 
+</li></ul><p class='vspace'>La Tag Associative è una politica semplice. Il blocco richiesto dalla CPU può infatti trovarsi solo in un blocco di cache, e quindi la scoperta se abbiamo fatto HIT/MIST è rapida e priva di problemi. Basta infatti andare a leggere il Tag associato all'unico blocco di cache dove può trovarsi il blocco di MDL richiesta dall'unità centrale; la risposta è una lettura dal tag che ci dà si/no, e quindi scoprire HIT/MISS è un unico accesso alla memoria di tag.<br />In caso di MISS il blocco richiesto può essere ricopiato in un'unica posizione quindi non ci sono particolari gradi di libertà o particolari scelte da fare: dobbiamo sostituire il blocco che non ci interessa con il blocco interessato. Purtroppo è una politica non ottimizzata, infatti ogni blocco di MC ottimizza solo localmente l'accessibilità ai blocchi di MDL cui è collegato, ovvero ai blocchi di MDL associato a tale blocco di memoria cache. In ogni blocco di memoria cache c’è il blocco del gruppo associato a tale blocco di cache più recentemente richiesto da parte dell’unità 
+centrale. Lo sfruttamento dei blocchi di MC non è uniforme. 
+</p>
+<div class='vspace'></div><h2>Politica Fully Associative</h2>
+<p>Per rimuovere l’ipotesi di allocazione fissa di blocchi di memoria di lavoro in cache (che è il problema della poca efficienza della politica Tag Associative), la politica Fully Associative prevede un accoppiamento libero. Qualsiasi blocco di memoria di lavoro può andare a finire in qualsiasi blocco di cache, questo significa che sparisce il concetto di gruppo e i blocchi di memoria di lavoro non sono più raggruppati in gruppi aventi la proprietà di condividere uno stesso possibile blocco di destinazione in cache. Per esempio l'indirizzo generato dalla CPU (16 bit) ha la seguente struttura: sparisce la distinzione tra bit di gruppo e bit di blocco; tutti i 12 bit che non indicano una parola all'interno del blocco, cioè tutti tranne i 4 meno significativi, ci dicono il numero di blocco in memoria di lavoro NBMdl, quindi a quale dei 12 bit -&gt; 212=4096 blocchi di memoria di lavoro l’unità centrale è interessata.
+</p>
+<p class='vspace'>Per poter verificare rapidamente se il blocco richiesto è in cache: 
+</p><ul><li>memoria dei tag deve essere ad accesso associativo: 
+<ul><li>presentare il valore cercato; 
+</li><li>ottenere in un tempo di accesso l'indirizzo della cella che lo contiene (oppure segnalazione di assenza).
+</li></ul></li><li>per poter decidere dove scrivere il blocco cercato se non è presente si usa la politica LRU (Least Recently Used); 
+</li><li>un contatore a saturazione per ogni blocco di MC: 
+<ul><li>viene azzerato quando si accede al blocco associato; 
+</li><li>incrementato di 1 se si accede a un altro blocco; 
+</li><li>almeno un contatore sempre saturo (11...11). 
+</li></ul></li></ul><p class='vspace'>Le celle della memoria sono realizzate con una rete combinatoria basata su porte OR esclusive seguite da negatori e porte AND che propagano il confronto tra il contenuto del singolo bit e il contenuto dell' <em>associative register</em>, ogni bit del registro associativo viene distribuito in parallelo a tutta la colonna di celle e quindi ogni cella può iniziare a confrontare i propri bit con i bit del registro associativo e propagare l’esito di questi confronti. Le reti combinatorie compaiono a 0 se il contenuto della cella non corrisponde al registro associativo 1 se c’è invece corrispondenza. 
+</p>
+<p class='vspace'>Caratteristiche della politica Fully Associative:
+</p><ul><li>è senz'altro una politica ottimizzata, perché i blocchi presenti in cache sono sempre quelli che nel recente passato sono stati i più richiesti dalla CPU;
+</li><li>permette di ottenere una ottimizzazione globale dello sfruttamento dei blocchi di cache omogeneamente utilizzati da tutti i blocchi di memoria di lavoro più recentemente richiesti e con maggiore probabilità di riutilizzo a breve;
+</li><li>è una politica complessa e costosa: la ricerca del blocco richiesto e la verifica se si trova in cache implica il ricorso a memoria associativa per i tag;
+</li><li>permette di implementare la politica di last recently used di eliminazione del blocco non usato da più tempo;
+</li><li>prevede l’uso dei contatori a saturazione che devono anch’essi essere accessibili in modo associativo.
+</li></ul><div class='vspace'></div><h2>Confronto tra politica store in e store thru</h2>
+<p>Di seguito faremo un confronto fra politica <em>store in</em> e politica <em>store thru</em> nella realizzazione di memorie cache. 
+</p>
+<p class='vspace'>La politica store thru fa una memorizzazione attraversando la cache "come se non ci fosse" e quindi modificando il dato non solo in cache ma anche in Mdl. Questa politica privilegia la semplicità, le informazioni in Mdl e le loro copie in cache rimangono sempre congruenti. Non si hanno ulteriori complessità a livello hardware: ogni sostituzione di un blocco in cache con un altro blocco non crea nessun problema perché il blocco in cache non contiene nulla di diverso dall’originale. È una politica non ottimizzata, infatti gli accessi in memoria non vengono velocizzati dalla presenza della cache. Possiamo considerarla una politica accettabile solo perché gli accessi in scrittura sono decisamente meno di quelli in lettura: per produrre un risultato servono in genere più operandi. Infine, va detto che nella politica store thru ci sono tutte le fasi di fetch.
+</p>
+<p class='vspace'>La politica store in fa una memorizzazione in cache e quindi modifica il dato soltanto in MC. Privilegia l’ottimizzazione dato che anche gli accessi in scrittura vengono velocizzati se trovano la cella desiderata in cache. <br />È una politica più complessa perché tra MC e MdL si crea incongruenza. Se la copia aggiornata è in cache:
+</p><ul><li>si potrebbe riscrivere il blocco da MC a MdL prima di eliminarlo, ma se i due blocchi sono uguali si perde tempo; 
+</li><li>si introduce un bit di modifica M (per ogni blocco di MC) che viene settato a ogni scrittura. Se il blocco da sostituire ha M=1, lo si riscrive in MdL.
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='ArchitetturaDegliElaboratori.html'>Torna alla pagina di Architettura degli elaboratori</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/MemoriaCache)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ricerca Operativa - Analisi post-ottimale </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RO-AnalisiPost-Ottimale' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ricerca Operativa - Analisi post-ottimale
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AnalisiPost-Ottimale?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AnalisiPost-Ottimale?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RO-AnalisiPost-Ottimale-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AnalisiPost-Ottimale?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AnalisiPost-Ottimale?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ricerca Operativa - Analisi post-ottimale was last modified on March 31, 2009, at 04:27 PM'>
+							<span style='display:none;'>Ricerca Operativa - Analisi post-ottimale</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ricerca Operativa - Analisi post-ottimale ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Quasi tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='GiovanniRighini.html'>Giovanni Righini</a>
+</p></div>
+<div class='vspace'></div><h2>Cos'è</h2>
+<p>Il nome lascia poco all'immaginazione: l' <strong>analisi post-ottimale</strong> viene effettuata solo dopo aver trovato la soluzione ottima. Ma se l'abbiamo già trovata che altro dobbiamo calcolare a fare? Perché prima di tradurre la soluzione ottima in una decisione (assumendoci dunque una responsabilità) è opportuno studiare la <em>robustezza del modello</em>, ovvero valutare quanto cambierebbero i risultati se cambiassero i dati. Ricordiamo infatti che questi ultimi derivano da misurazioni, stime o previsioni, che dunque nel tempo potrebbero diventare più accurate o rivelarsi errate. I dati sono la matrice <code class='escaped'>A</code>, il vettore dei termini noti <code class='escaped'>b</code> e i coefficienti di costo ridotto C<sup>T</sup>.
+</p>
+<p class='vspace'>Andando al sodo, quello che vogliamo studiare con l'analisi post-ottimale sono gli intervalli di variazione dei costi ridotti <em>c<sub>j</sub></em> o dei termini noti <em>b<sub>i</sub></em> entro cui la soluzione ottima rimane tale. Questo studio prende il nome di <strong>analisi di sensitività</strong>.<br />Perché la soluzione rimanga ottima dobbiamo garantire due condizioni:
+</p><ul><li><em>ammissibilità</em> (variabili di base non negative). Dipende solo dai termini noti <code class='escaped'>b</code>
+</li><li><em>ottimalità</em> (costi ridotti opposti in segno alla direzione di ottimizzazione). Dipende solo dai costi ridotti <code class='escaped'>c</code>
+</li></ul><div class='vspace'></div><h2>Esempio</h2>
+<p>Consideriamo il seguente problema:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROanalisiSens.jpg' alt='' title='' /></div>
+<p class='vspace'>Cambiamo uno dei coefficienti della funzione obiettivo e facciamolo variare finché non cambia la base ottima <code class='escaped'>B = {1,2,3}</code>. Interveniamo ad esempio sul "<code class='escaped'>2</code>" di x<sub>1</sub>, portandolo progressivamente a "<code class='escaped'>2,1</code>", "<code class='escaped'>2,2</code>", "<code class='escaped'>2,3</code>", e così via. La prima cosa che notiamo è che i valori dei coefficienti non influenzano in alcun modo il sistema dei vincoli, mentre hanno grande impatto sull'orientamento delle curve di livello: se il valore aumenta la curva ruota in senso orario, e viceversa. <br />Tornando al nostro caso, potremo continuare ad incrementare il coefficiente di x<sub>1</sub> finché ci pare, dato che all'infinito la curva di livello assume una posizione verticale e dunque la base non cambia (il vincolo di x<sub>4</sub> è infatti leggermente inclinato verso destra). Nota bene però: la base ottima e le x non cambiano, ma la soluzione sì! Non dimentichiamo che stiamo modificando i coefficienti della funzione obiettivo!<br />Continuiamo a considerare il coefficiente di x<sub>1</sub> e proviamo stavolta a diminuirlo. Possiamo andare avanti finché vogliamo? No, perché ruotando in senso antiorario arriveremo ad un punto in cui le curve di livello diventeranno parallele al vincolo di x<sub>5</sub> (esattamente quando C<sub>1</sub> = 1), e se ruotassero anche solo di un millimetro la base cambierebbe perché diventerebbe ottimo il vertice in alto.
+</p>
+<div class='vspace'></div><h2>Variazione dei costi ridotti</h2>
+<p>Distinguiamo ora le conseguenze della variazione dei costi ridotti e di quelle dei termini noti. Cominciamo dai primi.<br />Se <em>j</em> appartiene alla base <code class='escaped'>B</code>, allora la variazione dei valori del coefficiente C<sub>j</sub> è compresa tra i valori minimi e massimi riportati nella seguente formula:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROvariazCoeff.jpg' alt='' title='' /></div>
+<p>Dove:
+</p><ul><li>i valori con asterisco sono quelli che si leggono dal tableau corrispondente alla soluzione ottima
+</li><li>r<sub>j</sub> indica la riga su cui è in base la variabile j
+</li><li>la parte sinistra della formula concorre a definire il valore minimo, e considera solo le colonne che hanno coefficiente strettamente positivo
+</li><li>la parte destra concorre invece a definire il valore massimo, e considera solo le colonne con coefficienti strettamente negativi
+</li></ul><p class='vspace'>Riportiamo l'esempio presente sulle slide:
+</p><table cellpadding='10' cellspacing='10' width='80%' >
+<tr ><td width='49%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROvariazCoeffEs1.jpg' alt='' title='' /></div>
+</td><td align='center'  valign='top'><span style='font-size:120%'><code class='escaped'>-&gt;</code></span><br /><strong>tableau</strong><br /><span style='font-size:120%'><code class='escaped'>-&gt;</code></span>
+</td><td width='49%' align='center' valign='middle' bgcolor='#f9f9f9' >
+<div><img src='../uploads/Uni/ROvariazCoeffEs2.jpg' alt='' title='' /></div>
+</td></tr></table>
+<p class='vspace'>Cosa succede quando cambiamo x<sub>1</sub>?<br />Ragioniamo: j = 1 appartiene a B? No! Quindi &#916;c<sub>1</sub> &lt;= 7/8.
+</p>
+<p class='vspace'>Cosa succede se invece provo a cambiare il coefficiente di x<sub>2</sub>?<br />j = 2 appartiene a B? Sì, e in particolare r<sub>j</sub> = 2.<br />Quali sono i coefficienti strettamente positivi della riga 2 delle colonne fuori base?<br /><img src='../uploads/Uni/ROvariazCoeffEs3.jpg' alt='' title='' /><br />Nessuno.
+<br clear='all' />
+E quali sono invece i coefficienti strettamente negativi della riga 2 delle colonne fuori base?<br /><img src='../uploads/Uni/ROvariazCoeffEs4.jpg' alt='' title='' /><br />Solo l'elemento della quinta colonna, che ha valore -1.
+</p>
+<p class='vspace'>Quindi ho scoperto che:<br /><img src='../uploads/Uni/ROvariazCoeffEs5.jpg' alt='' title='' /><br />cioè che il coefficiente di x<sub>2</sub> può decrescere finché vuole, ma può aumentare al massimo fino a 3/4 se non vogliamo cambiare basi.
+</p>
+<div class='vspace'></div><h2>Variazione del termine noto</h2>
+<p>Considerando il seguente caso di riferimento:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROvariazTermini.jpg' alt='' title='' /></div>
+<p class='vspace'>Da un punto di vista geometrico, cambiare il termine noto b<sub>3</sub> significa traslare il vincolo x<sub>3</sub> verso il basso o verso l'alto a seconda che - rispettivamente - diminuiamo o aumentiamo il suo valore. La base ottima rimane sempre nell'intersezione tra i vincoli x<sub>4</sub> e x<sub>5</sub>, ma spostando il vincolo 3 spostiamo anche lei, che continua a rimanere ottima finché non incontriamo una nuova intersezione.<br />Nell'esempio: se b<sub>3</sub> diminuisce, il vincolo 3 trasla verso il basso finché non incontra l'intersezione tra l'asse x e il vincolo di x<sub>2</sub>, facendo diventare quest'ultimo attivo. Se invece b<sub>3</sub> aumenta, allora il vincolo 3 trasla verso l'alto finché non si arriva all'intersezione tra x<sub>2</sub> e x<sub>1</sub>, attivando quest'ultimo.
+</p>
+<p class='vspace'>Per quanto riguarda i valori, nel nostro caso la base rimane ottima per 8 &lt;= b<sub>3</sub> &lt;= 24, ma la soluzione ottima cambia e insieme ad essa anche il sistema dei vincoli, quindi la regione ammissibile.
+</p>
+<p class='vspace'>Spostando questi ragionamenti nel tableau otterremo qualcosa di simile a quanto avevamo visto per le variazioni dei costi ridotti. Abbiamo due casi: o spostiamo un vincolo che in quel momento è attivo, o ne spostiamo un altro che in quel momento non lo è. Consideriamoli separatamente:
+</p><ul><li>se b<sub>i</sub> non è attivo, allontanandolo dalla regione ammissibile non cambia nulla, mentre se lo avviciniamo a un certo punto diventerà attivo. In formule:
+</li></ul><div  style='text-align: center;'><img src='../uploads/Uni/ROvariazTerminiNA.jpg' alt='' title='' /></div>
+<p>dove c<sub>i</sub> è la colonna della variabile di slack del vincolo i su cui sto facendo l'analisi
+</p><ul><li>se b<sub>i</sub> è attivo avrò che:
+</li></ul><div  style='text-align: center;'><img src='../uploads/Uni/ROvariazTerminiA.jpg' alt='' title='' /></div>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/ROvariazCoeffEs2.jpg' alt='' title='' /></span></div>
+<p>Partiamo dallo stesso tableau di prima:
+</p><ul><li>consideriamo la riga 3. La variabile di slack della riga è x<sub>6</sub>, che è in base e dunque il vincolo non è attivo. Per capire di quanto posso variarlo senza che diventi attivo devo guardare il valore della variabile, quindi &#916;b<sub>3</sub> &gt;= -2
+</li><li>consideriamo ora il primo vincolo, che corrisponde alla variabile di slack x<sub>4</sub>. Essendo questa fuori base allora il vincolo è attivo, quindi per avere informazioni sulle variazioni permesse noti dovrò guardare sulla quarta colonna gli elementi positivi e negativi del tableau:
+</li></ul><div class='indent'><img src='../uploads/Uni/ROvariazTerminiA2.jpg' alt='' title='' />
+</div><div class='vspace'></div><h2>Analisi parametrica</h2>
+<p>L'analisi di sensitività ci dice qual è il range di variazione di coefficienti o termini noti entro cui non varia la base ottima, ma come facciamo a sapere cosa succede al di fuori di tale intervallo? Eseguiamo un' <strong>analisi parametrica</strong>, che ci permette di calcolare quanto varia il valore ottimo della funzione obiettivo al variare dei dati. Il risultato di questa attività è quasi sempre una funzione che lega il valore ottimo a un termine noto o a un coefficiente di costo ridotto. Con l'analisi parametrica potremo perciò identificare e modificare un vincolo e osservare come cambia la soluzione.
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/ROanalisiParam.jpg' alt='' title='' /><br /><em>v(i) è il vincolo che stiamo facendo variare; z* è l'ottimo</em></span></div>
+<p class='vspace'>Come è fatta la funzione? Dato che il legame tra soluzione e coefficienti è di tipo lineare e che rimane tale indipendentemente dalla base, ne ricaviamo che a ogni range corrisponde un segmento di retta e quindi la funzione sarà lineare a tratti.
+</p>
+<p class='vspace'>Altre due considerazioni sulla funzione:
+</p><ul><li>ha la concavità rivolta sempre dalla stessa parte, proprio per come è realizzato il poliedro
+</li><li>la proiezione di ogni tratto sull'asse x ha una sua base ottima, sempre diversa dalle altre
+</li></ul><p class='vspace'>Ovviamente anche l' <strong>analisi parametrica</strong> è un tipo di analisi post-ottimale
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 31, 2009, at 04:27 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AnalisiPost-Ottimale?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-AnalisiPost-Ottimale?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

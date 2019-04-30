@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Inoperativi - Lezione del 3 marzo 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri3Marzo2008.html' title='Sistemi Inoperativi - Lezione del 3 marzo 2008'>Sistemi Inoperativi - Lezione del 3 marzo 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Inoperativi - Lezione del 3 marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Inoperativi</a>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Modulo 2 - Lezione 1 - Funzioni del sistema operativo</strong></span>
+</p>
+<p class='vspace'>Astraiamo un po' dalla macchina di Fonnoiman. A parte i sistemi embedded, in genere non si sa che tipo di applicativi gireranno su una data macchina, a meno che non sia quella di <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Rasputin'>Rasputin</a>, per cui ci saranno istruzioni ottimizzate MMX (Multi-hand Masturbation eXtension).
+</p>
+<p class='vspace'>Occorre fare però in modo che ogni appli pensi che tutto il sistema sia lì per lei. Ciò si chiama <strong>virtualizzazione</strong>, e consiste nel dare l'illusione ad ogni programma che il sistema gli sia dedicato. Questo fa sì che le applicazioni possano essere scritte e possano funzionare senza curarsi delle altri: ci pensa il SO a illudere ciascuna. Senza la virtualizzazione, occorrerebbe scrivere e compilare applicazioni apposta non solo per ogni macchina, ma per ogni tipo di utilizzo della macchina stessa.
+</p>
+<p class='vspace'>Da notare che, comunque, se un'applicazione chiede risorse che il sistema non può dare, non c'è virtualizzazione che tenga.
+</p>
+<p class='vspace'>Al fine di offire la virtualizzazione alle applicazioni, il SO va organizzato in un certo modo a livello logico. Bisogna gestire in modo opportuno <strong>processore</strong>, <strong>memoria centrale</strong> e <strong>I/O</strong>, così che ogni processo veda sotto di sé l'intera Fonnoiman.
+Nella fattispecie:
+</p><ul><li>processore: ogni applicazione vede il processore tutto per sé
+</li><li>memoria centrale: ogni appli vede tutta la memoria per sé
+</li><li>I/O: ogni appli vede le periferiche tutte per sé.
+</li></ul><p class='vspace'>Il SO genera immagini astratte e semplificate di questi tre componenti. Sopra alla virtualizzazione però c'è ancora qualcosa: c'è il <strong>file system</strong>, che se ci pensate a noi fa vedere nomi di files e cartelle, mentre lavora con cilindri e testine e settori.
+</p>
+<div class='vspace'></div><h3>Gestione del processore</h3>
+<p>Vuol dire saper gestire i processi, ovvero crearli, farli finire, sospenderli e riattivarli, schedularli (scegliere il giusto ordine di esecuzione dei processi per ottimizzare le risorse, ma anche la percezione di un sistema fluido da parte dell'utente), sincronizzarli, evitare i deadlock e farli comunicare.
+Non è poca roba.
+</p>
+<p class='vspace'>Nota: un deadlock si ha quando un processo attende una risorsa, che è impegnata da un altro processo, il quale a sua volta attende una risorsa che è impegnata dal primo. L'uno aspetta l'altro, e nessuno fa un passo avanti.
+</p>
+<div class='vspace'></div><h3>Gestione della memoria centrale</h3>
+<p>I processi sono mantenuti in memoria centrale, come sostiene la multiprogrammazione. Ogni processo ha quindi la sua parte di memoria allocata e protetta da interferenze altrui.
+</p>
+<div class='vspace'></div><h3>Gestione delle periferiche</h3>
+<p>Le periferiche, oltre ad essere configurate ed inizializzate, vanno anche gestite. Le appli devono poter accedere in modo omogeneo a tutte le periferiche. Inoltre, occorre fare lo scheduling degli accessio I/O, e ottimizzare un po' le cose con buffering e caching.
+</p>
+<div class='vspace'></div><h3>File System</h3>
+<p>I file e le directory (a me direttorio non piace proprio, fa un po' <a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Rivoluzione Francese</a> e un po' fascista) devono poter essere creati, cancellati etc. Poi ci sono tutte le operazioni di copia, di ricerca, di protezione, di sicurezza, accounting e così via.
+</p>
+<div class='vspace'></div><h3>Gestione dell'interfaccia utente</h3>
+<p>In cima a tutto, si deve comunicare con l'utente. L'utente deve poter interagire coi processi. Questo aspetto ha due facce: da un lato l'utente deve poter colloquiare con i processi, dall'altro i processi devono poter colloquiare col sistema operativo.
+Per quanto riguarda il colloqui tra utente e processo, ci sono interpreti di linea di comando e GUI. Per l'altro aspetto, c'è tutta la faccenda delle funzioni del sistema operativo, rese disponibili in qualche modo ai processi.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2 - Architetture dei SO</strong></span>
+</p>
+<div class='vspace'></div><h3>Sistema monolitico</h3>
+<p>Vecchio modo di affrontare le questioni. Oltre alle scimmie che intorno ad esso scoprivano la civiltà, siamo alla faccenda dei job eseguiti uno dopo l'altro, con le funzioni interne senza nessun ordine che tanto le periferiche sono poche e i programmi sono scritti appositamente per la macchina. Da mantenere è difficile soprattutto quando si cresce in dimensioni.
+</p>
+<div class='vspace'></div><h3>Sistema con struttura gerarchica</h3>
+<p>Per aumentare la mantenibilità della base di codice del SO, si è pensato di organizzare le funzioni del SO in modo gerarchico. Quelle di un certo livello possono vedere solo quelle di livello inferiore. Le eventuali modifiche richiedono la palpugnazione di relativamente poche funzioni, perché bene o male si sa chi chiama cosa. Ma non c'è distinzione tra gli ambiti delle funzioni.
+</p>
+<div class='vspace'></div><h3>Sistema stratificato</h3>
+<p>Le procedure che riguardano un certo strato sono confinate all'interno di quello strato. Bello: però poco efficiente, perché per accedere a strati lontani dal mio devo passare attraverso innumerevoli chiamate.
+</p>
+<div class='vspace'></div><h3>Sistema a microkernel</h3>
+<p>Il SO viene diviso in 2 aspetti. Da una parte c'è l'hardware e le operazioni elementari che posso compiere su di esso, come spegnerlo e versarci il caffé sopra. Dall'altra ci sono le politiche, ovvero le regole, per utilizzare l'hardware: <strong>meccanismi</strong> VS <strong>politiche</strong>, uno scontro virulento.
+Il microkernel realizza i meccanismi, e le politiche sono realizzate altrove. Quindi, la manutenzione è facile. L'efficienza però può risentirne.
+</p>
+<div class='vspace'></div><h3>Sistema a moduli funzionali</h3>
+<p>C'è un nucleo centrale che realizza le funzioni di base, e poi altri moduli che si connettono ad esso.
+</p>
+<div class='vspace'></div><h3>Sistema a macchine virtuali</h3>
+<p>Nacque dall'esigenza di installare più sistemi operativi di tipo batch su una macchina, così che venisse sfruttata di più. L'idea era di offrire ad ogni SO una replica della macchina sottostante. Poi si è pensato di poter offrire ste macchine virtuali anche a SO diversi.
+</p>
+<div class='vspace'></div><h3>Programmi di sistema</h3>
+<p>Oltre a come realizzo il mio SO internamente, occorre cmq tutta una serie di programmi per mantenerlo, per gestire i processi, e così via.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3 - Generazione e avvio di un SO</strong></span>
+</p>
+<p class='vspace'>Per scrivere un SO, dobbiamo sapere innanzitutto a che cosa servirà, e su che macchina dovrà girare, perché questo influenzerà le scelte di design. Più il SO è generico, e meno sarà efficiente (grosso modo).
+</p>
+<p class='vspace'>I fattori da tenere in conto sono:
+</p><ul><li>applicazioni che vi gireranno
+</li><li>utenti
+</li><li>carico di lavoro
+</li></ul><p class='vspace'>In genere è l'esperienza che dice come configurare i parametri del sistema operativo in funzione del carico di lavoro.
+</p>
+<div class='vspace'></div><h2>Avvio di un SO</h2>
+<p>Il <strong>bootstrap</strong> è la procedura di avvio del sistema operativo. Può essere eseguito in <strong>1 passo</strong>, <strong>2 passi</strong>, <strong>3 passi</strong>.
+</p>
+<div class='vspace'></div><h3>Bootstrap ad 1 passo</h3>
+<p>Avviene quando il SO risiede in una ROM. Viene copiato in una RAM ed entra nel sonno REM, dopo aver bevuto del RUM. Alla fine rimane RIMbambito.
+Il processore piglia semplicemente la pima istruzione del SO, e la esegue. Per pigliarla, viene hard-coded da qualche parte l'indirizzo della prima istruzione. Chiaramente stiamo parlando di sistemi embedded o simili.
+</p>
+<div class='vspace'></div><h3>Bootstrap in 2 passi</h3>
+<p>Il primo passo viene eseguito da un programma risiedente in una ROM. Questo programma è il <strong>caricatore</strong> del sistema operativo, ovvero si occupa di pescare da una posizione nota (in genere il primo settore del primo disco fisso) la prima istruzione del nostro SO.
+</p>
+<p class='vspace'>Il secondo passo consiste nel cedere il controllo, da parte del nostro caricatore, al SO che è appena stato caricato in memoria dalla posizione nota di cui sopra, in un'altra posizione nota in memoria centrale.
+</p>
+<div class='vspace'></div><h3>Bootstrap in 3 passi</h3>
+<ul><li>Passo 1: il caricatore elementare viene caricato in memoria ed eseguito. Si trova da qualche parte in ROM.
+</li><li>Passo 2: il caricatore elementare carica in memoria il caricatore complesso, NON il SO. Questo è il cosiddetto <strong>loader di 2° livello</strong>. Questo loader può cercare SO ovunque nei dischi, non è limitato al primo settore del primo disco o cose simili
+</li><li>Passo 3: infine il caricatore del SO si preoccupa di avviare il SO stesso, ed è possibile passargli parametri per caricare moduli opzionali o simili.
+</li></ul><p class='vspace'>Si usa questo sistema per dare l'opportunità di caricare più sistemi operativi, magari da un menu, o anche quando un SO è abbastanza grande da non starci nel settore iniziale di un disco. Ecco perché serve un caricatore secondario.
+Il caricatore secondario può anche offrire un'interfaccia all'utente, come LILO o GRUB.
+</p>
+<p class='vspace'>Da notare che non è necessario, per avere l'opzione di bootare più sistemi operativi sulla stessa macchina, avere un bootloader in 3 passi. Un bootloader caricato in ROM ed opportunamente programmato può offrire la stessa funzionalità.
+</p>
+<div class='vspace'></div><h3>Passi multipli</h3>
+<p>Questa dicitura si riferisce al procedimento di caricare rapidamente in memoria la parte essenziale del SO, e caricare il resto a tornate successive, possibilmente con un alto grado di configurabilità.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Inoperativi</a>
+</p>
+<div class='vspace'></div>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri3Marzo2008)</span></div>
+  </div>
+</body>
+</html>

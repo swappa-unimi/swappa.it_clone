@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: LPS - Macchine di stato UML </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.LPSUML' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				LPS - Macchine di stato UML
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LPSUML?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LPSUML?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='LPSUML-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LPSUML?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LPSUML?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='LPS - Macchine di stato UML was last modified on November 18, 2008, at 10:43 PM'>
+							<span style='display:none;'>LPS - Macchine di stato UML</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: LPS - Macchine di stato UML ::</strong>
+</pre><div class='vspace'></div><h2>Che cosa sono</h2>
+<p>Si tratta di una delle molteplici parti di UML, e consentono la modellazione del comportamento di un sistema.
+</p>
+<p class='vspace'>UML è basato sul presupposto della programmazione ad oggetti, e quindi anche le macchine di stato UML vanno inserite in questo contesto. Ecco come:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/LPSUML-001.png' alt='' title='' /></div>
+<p class='vspace'>Occorre infatti considerare che un oggetto è un'istanza di una classe, e che quindi la classe è il tipo dell'oggetto. Le classi sono modellate tramite il diagramma delle classi. L'oggetto è modellato tramite la macchina di stato UML. Ma, proprio per via del legame tra oggetto e classe, anche la macchina di stato UML è legata all'esistenza di una classe di cui è istanza.
+</p>
+<p class='vspace'>UML utilizza la notazione di Harel, che prende l'avvio dalle FSM (nodi = stati, archi = transizioni), ma la espande.
+</p>
+<p class='vspace'>Lo <strong>stato</strong>, al solito, è una certa configurazione in cui la macchina si trova in un certo istante di tempo. Lo stato cambia quando
+</p><ul><li>accade un evento (esterno)
+</li><li>esegue azioni o attività (interne)
+</li></ul><p>Nel caso di azioni o attività, quando esse vengono terminate l'oggetto cambia di stato.
+</p>
+<p class='vspace'>Azioni ed attività non sono la stessa cosa:
+</p><ul><li><strong>azione</strong> = qualcosa che l'oggetto fa in modo atomico
+</li><li><strong>attività</strong> = richiede invece un certo tempo per essere eseguita
+</li></ul><p class='vspace'>Si assume che accada un solo evento alla volta, e che gli eventi non abbiano durata.
+</p>
+<div class='vspace'></div><h3>Lo stato</h3>
+<div><span class='frame lfloat'><img src='../uploads/Uni/LPSUML-002.png' alt='' title='' /></span></div>
+<p>Ecco come è fatto in generale uno stato.
+</p><ul><li><strong>entry</strong> = quello che lo stato fa non appena la macchina vi entra. È un'azione, e non un'attività, quindi viene eseguita tutta in un colpo, e viene eseguita ogni volta che la macchina entra o rientra nello stato
+</li><li><strong>exit</strong> = quello che lo stato fa appena prima di uscire
+</li><li><strong>do</strong> = l'attività che lo stato esegue
+</li><li><strong>evento[cond]/azione</strong> = altre cose che lo stato può fare, dopo il verificarsi dell'espressione booleana contenuta in <strong>cond</strong>
+</li></ul><p class='vspace'>Lo stato iniziale è segnato con un cerchio pieno, mentre quello finale da un cerchio contenente un cerchietto più piccolo pieno.
+</p>
+<p class='vspace'><br clear='all' />
+</p><h3>Le transizioni</h3>
+<p>La freccia uscente dallo stato qui sopra è una <strong>transizione</strong>: nelle transizioni non ci possono andare attività, ma solo azioni. La sintassi generale è
+</p><pre> evento(parametri)[condizione]/azione|target.messaggio(parametri)
+</pre><p class='vspace'>I <strong>parametri</strong> sono da pensare come i parametri delle funzioni. La <strong>condizione</strong> è una condizione. Quando è verificata, possiamo
+</p><ul><li>eseguire un'azione, oppure
+</li><li>chiamare un metodo di un altro oggetto
+</li></ul><p class='vspace'>Come dicevamo sopra, UML parte dalla programmazione ad oggetti. Chiamare il metodo di un oggetto equivale a mandargli un <strong>messaggio</strong>. Siccome è possibile inviare messaggi anche ad altri oggetti, è possibile specificare il <strong>target</strong>. Nel caso dell'invio di un messaggio a se stesso, si usa <strong>self</strong> come target.
+</p>
+<p class='vspace'>Ovviamente, le transizioni scattano quando avviene un certo evento, e quando la condizione è soddisfatta.
+</p>
+<p class='vspace'>Quando ci sono transizioni che partono da più stati e vanno a finire tutte nello stesso stato, è possibile usare le <strong>transizioni di gruppo</strong>, che si ottengono raggruppando gli stati di partenza interessati in un rettangolo, e facendo partire una freccia da questo rettangolo, invece che farne partire  una per ogni stato.
+</p>
+<div class='vspace'></div><h3>Attività</h3>
+<p>Le <strong>attività</strong> attivano un thread concorrente, che viene eseguito finché non occorre una delle due seguenti condizioni:
+</p><ul><li>l'attività termina per conto suo
+</li><li>si cambia stato
+</li></ul><p class='vspace'>Un esempio di attività può essere <strong>do/while(true) alarm.ring()</strong>, e vuol dire che mentre la condizione è <strong>true</strong>, si manda il messaggio <strong>ring</strong> all'oggetto <strong>alarm</strong>.
+</p>
+<p class='vspace'>Per segnare il passaggio da uno stato all'altro al termine di un'attività, si mette una freccia senza nessuna etichetta.
+</p>
+<div class='vspace'></div><h3>Tipi di evento</h3>
+<p>Ci sono tre tipi principali di evento:
+</p><ul><li>interazione tra oggetti
+</li><li>occorrenza di istanti temporali
+</li><li>cambiamento di valore
+</li></ul><p class='vspace'><strong>Istanti temporali</strong>: sono robe del tipo "dopo 5 secondi, esplode tutto". Si segnano con scritture come <strong>after(10 seconds)/...</strong>
+</p>
+<p class='vspace'>Il <strong>cambiamento di valore</strong> si ha quando un oggetto modifica il valore dei propri attributi. Quando invece chiama un metodo di un altro oggetto, siamo nel caso dell<strong>'interazione tra oggetti</strong>.
+</p>
+<p class='vspace'>I tipi di interazione tra oggetti sono il <strong>call event</strong>, in cui si invoca un metodo, oppure <strong>signal event</strong>, che indica la ricezione di un segnale da parte di un altro oggetto. I segnali vengono indicati nelle transizioni con la sintassi <strong>&lt;&lt;signal&gt;&gt;nome del segnale</strong>. I cambiamenti invece si scrivono <strong>when(condizione)/...</strong>
+</p>
+<div class='vspace'></div><h3>Scelte</h3>
+<p>Quando si passa da uno stato ad un altro stato, con lo stesso evento ma con condizioni diverse, si utilizza la notazione del <strong>junction pseudostate</strong> oppure del <strong>choice pseudostate</strong>.
+</p>
+<p class='vspace'>Il <strong>junction pseudostate</strong> è segnato come un pallino nero a cui si arriva con una transizione. Dal pallino poi partono diverse strade, a seconda delle condizioni che vengono verificate. Le condizioni devono essere statiche, ovvero non dipendere da calcoli vari.
+</p>
+<p class='vspace'>Il <strong>choice pseudostate</strong> si segna con un pallino vuoto, ed è la stessa roba del junction, solo che la condizione è valutata non su un valore statico, ma su un valore che viene calcolato da qualcuno o da qualcosa.
+</p>
+<p class='vspace'>Da notare che i rami che partono dagli pseudostate portano la dicitura della condizione che li attiva tra parentesi quadre [].
+</p>
+<p class='vspace'>Vedi l'<a class='wikilink' href='LPSUMLEx.html'>esempio</a> della ditta che offre seminari per un <strong>junction pseudostate</strong>.
+</p>
+<div class='vspace'></div><h3>Stati sequenziali composti</h3>
+<p>Gli <strong>stati sequenziali composti</strong> sono praticamente delle macchine a se stanti, che vengono inglobate in uno stato, il quale stato fa parte di una macchina più grande. Essendo macchine a se stanti, devono avere un punto d'ingresso ed uno di uscita.
+</p>
+<p class='vspace'>Le transizioni che portano da e verso gli stati composti:
+</p><ul><li>possono andare fino al limite dello stato composto, cioè lo "statone" che contiene la macchina, e in questo caso lo stato composto inizia dal suo punto di inizio
+</li><li>possono andare fino ad uno stato particolare all'interno dello stato composto
+</li><li>possono partire dal limite dello stato composto, e ciò significa che, in qualsiasi stato interno ci si trova, con quell'evento si esce
+</li><li>possono partire da un singolo stato all'interno dello stato composto.
+</li></ul><p class='vspace'>Ecco un esempio, che rappresenta il cambio automatico di una macchina. Se dalla folle si preme la <strong>leva F</strong>, si entra nello stato sequenziale <strong>Marcia Avanti</strong>. Da questo stato si esce, in qualsiasi punto ci si trovi, quando si agisce su <strong>leva N</strong>.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/LPScambioautomatico.png' alt='' title='' /></div>
+<div class='vspace'></div><h3>Transizioni di completamento</h3>
+<p>Le <strong>transizioni di completamento</strong> sono quelle su cui la macchina va quando viene terminata un'attività, cioè una roba con <strong>do qualcosa</strong>. Sono le transizioni che non hanno etichette segnate.
+</p>
+<div class='vspace'></div><h3>Stati composti paralleli</h3>
+<p>Finora, le nostre macchine di stato UML erano sequenziali, cioè passavano da uno stato all'altro in sequenza: non era possibile modellare azioni concorrenti, così come eravamo riusciti a fare con le FSM di comunicazione.
+</p>
+<p class='vspace'>Per supplire a ciò, occorre introdurre gli <strong>stati composti paralleli</strong>, che sono stati normali ma divisi in più "sezioni" da una linea tratteggiata. Ogni sezione contiene una macchina a se stante, che viene avviata assieme alle sue sorelle. Quando tutte le macchine contenute terminano, allora anche lo stato termina. Rappresentano quindi l'esecuzione di thread paralleli.
+</p>
+<p class='vspace'>Qui sotto c'è un esempio: un sistema che può trovarsi nello stato <strong>normale</strong> oppure in <strong>manutenzione</strong>. Se è in manutenzione, avvengono 2 attività parallele:
+</p><ol><li>il testing dei devices, seguito dalla diagnosi
+</li><li>il controllo contemporaneo dei 3 comandi del sistema
+</li></ol><p>Dopo la manutenzione il sistema torna ad essere normale.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/LPSmanutenzione.png' alt='' title='' /></div>
+<p class='vspace'>Da notare che la transizione che da <strong>manutenzione</strong> porta a <strong>normale</strong> non è etichettata perché si tratta di una transizione di completamento.
+</p>
+<div class='vspace'></div><h2>Comunicazione tra macchine</h2>
+<p>Anche se le macchine vengono eseguite in parallelo, esse non si parlano. Occorre un modo per farle dialogare, e UML ce ne fornisce ben 3:
+</p><ol><li>le condizioni, o variabili, condivise;
+</li><li>gli stati di sincronizzazione
+</li><li>la sincronizzazione tramite eventi
+</li></ol><div class='vspace'></div><h3>Condizioni condivise</h3>
+<p>La cosa è molto semplice: quando si scrive la <strong>guardia</strong>, cioè la condizione, di una transizione o di un'attività, semplicemente quella guardia fa riferimento a proprietà di un<strong>'altra</strong> macchina.
+</p>
+<p class='vspace'>Siccome UML è legato alla programmazione ad oggetti, per indicare le proprietà di una macchina si usa la notazione <strong>nomemacchina.proprietà</strong>.
+</p>
+<p class='vspace'>Ad esempio, una transizione nella macchina <strong>fornello</strong> potrebbe essere guardata dalla condizione <strong>serbatoio.stato == pieno</strong>, che fa riferimento alla proprietà <strong>stato</strong> della macchina <strong>serbatoio</strong>.
+</p>
+<div class='vspace'></div><h3>Stati di sincronizzazione</h3>
+<p>Si tratta di stati particolari, che si mettono al confine tratteggiato tra alcune macchine parallele, e che vengono collegati a partire da <strong>sbarre di sincronizzazione</strong>, che sono quelle più spesse.
+</p>
+<p class='vspace'>Una sbarra di sincronizzazione è tale che si passa da un suo lato all'altro quando arrivano tutti gli eventi in ingresso; quando una sbarra viene passata, partono eventi per tutte le transizioni che da essa si diramano.
+</p>
+<p class='vspace'>Ecco un esempio di stati di sincronizzazione, che è abbastanza autoesplicativo:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/LPSstatisincronizzazione.png' alt='' title='' /></div>
+<div class='vspace'></div><h3>Sincronizzazione tramite eventi</h3>
+<p>È simile alle condizioni condivise, solamente che qui si mette come <strong>conseguenza</strong> di una transizione il nome di un evento, e quello stesso evento con lo stesso nome viene usato da un'altra macchina per causare una transizione.
+</p>
+<p class='vspace'>Ecco un esempio: il <strong>capomafia</strong> vuole punire chi non lo paga. Se non arrivano i soldi, dà l'ordine al <strong>picciotto</strong>, e quello va ed esegue.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/LPScapomafia.png' alt='' title='' /></div>
+<p class='vspace'><a class='wikilink' href='LinguaggiProgrammazioneSicurezza.html'>Torna alla pagina di LPS</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: November 18, 2008, at 10:43 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LPSUML?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LPSUML?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

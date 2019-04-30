@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Deadlock </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-Deadlock' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Deadlock
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Deadlock?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Deadlock?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-Deadlock-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Deadlock?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Deadlock?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Deadlock was last modified on April 09, 2008, at 10:20 PM'>
+							<span style='display:none;'>Sistemi Operativi - Deadlock</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Deadlock</span>
+</p>
+<div class='vspace'></div><h2>Introduzione</h2>
+<p>In sistemi multiprogrammati è comune che <a class='wikilink' href='SO-Processi.html'>processi</a> e <a class='wikilink' href='SO-Thread.html'>thread</a> diversi competano per l'accesso ad un numero limitato di risorse, ognuna delle quali può mettere a disposizione un certo numero di istanze identiche che soddisferanno le richieste allo stesso modo. Da questa situazione possono scaturire problemi di uso scorretto e inconsistente delle risorse, cui si fa fronte con politiche di <a class='wikilink' href='SO-Sincronizzazione.html'>sincronizzazione</a>. Quindi, perché un processo possa utilizzare una risorsa dovrà effettuare le seguenti operazioni in sequenza:
+</p><ul><li><em>richiesta</em>, che se non può essere soddisfatta immediatamente impone che il richiedente attenda il suo turno
+</li><li><em>uso</em>
+</li><li><em>rilascio</em>, passo essenziale, in cui il processo libera la risorsa
+</li></ul><p class='vspace'>Questa soluzione non è priva di problemi, dal momento che può portare a due tipi di situazioni deleterie: lo <em>starvation</em> e il <em>deadlock</em>. Del primo si è già parlato abbondantemente nel capitolo sulla <a class='wikilink' href='SO-Schedulazione.html'>schedulazione</a>, ora invece tratteremo del secondo caso.
+</p>
+<div class='vspace'></div><h2>Deadlock</h2>
+<p>Un gruppo di processi si dice in uno stato di <strong>deadlock</strong> (o <em>stallo</em>) quando <em>ogni</em> processo del gruppo sta aspettando un evento che può essere generato soltanto da un altro processo del gruppo. Gli eventi in questione possono essere di vario tipo, nel nostro caso l'acquisizione e il rilascio delle risorse, che queste siano fisiche (componenti e periferiche) o logiche (ad esempio, file, semafori, ecc). Nella condizione di <em>deadlock</em> i processi non terminano mai la loro esecuzione e le risorse di sistema a loro assegnate rimangono bloccate, impedendone l'accesso agli altri processi.<br />Formalmente, ho una condizione di deadlock <strong>se e solo se</strong> si verificano <em>simultaneamente</em> quattro condizioni:
+</p><ul><li><strong>mutua esclusione</strong> (<em>mutual exclusion</em>), ovvero almeno una risorsa deve essere usata in un modo non condivisibile: se due processi chiedono l'accesso a una risorsa, uno dei due deve essere messo in attesa. E' intuibile che se non avessi risorse per cui competere allora non ci sarebbe nemmeno deadlock
+</li><li><strong>possesso e attesa</strong> (<em>hold &amp; wait</em>), in cui un processo che possiede già almeno una risorsa, per terminare la computazione deve attendere che se ne liberino altre occupate
+</li><li><strong>nessun rilascio anticipato</strong> (<em>no pre-emption</em>), perché se lo consentissi non si potrebbe mai bloccare l'accesso a una risorsa dato che chi la utilizza verrebbe forzatamente terminato
+</li><li><strong>attesa circolare</strong> (<em>circular wait</em>). Se ad esempio ho tre processi P1, P2 e P3, ho una situazione di attesa circolare se P1 attende il rilascio di una risorsa occupata da P2, anche lui in attesa di una risorsa associata a P3, il quale aspetta il rilascio di quella allocata a P1. Notare come questa condizione implichi anche il <em>possesso e attesa</em>
+</li></ul><div class='vspace'></div><h2>Grafo di allocazione delle risorse</h2>
+<p>Per verificare con precisione la sussistenza di un deadlock si utilizza il <strong>grafo di allocazione delle risorse</strong>, ovvero un grafo costituito da un insieme di nodi che rappresentano sia i processi P<sub>i</sub> che le risorse R<sub>i</sub> del sistema, e di archi che si suddividono in <em>archi di richiesta</em> (che vanno da P ad R) e <em>archi di assegnazione</em> (da R a P). Se ho quindi un arco uscente da una risorsa ed entrante in un nodo, significa che quella risorsa è assegnata a quel nodo; se ho invece un arco uscente da un nodo ed entrante in una risorsa significa che quel nodo ha fatto richiesta di quella risorsa.<br />Per convenzione, i nodi P<sub>i</sub> sono rappresentati graficamente con dei cerchi e le risorse R<sub>i</sub> con dei rettangoli, all'interno dei quali possono esserci più puntini che rappresentano le istanze (nessun puntino -&gt; un'unica istanza). Peculiarità degli archi è che mentre quelli di richiesta non devono indicare un'istanza in particolare, quelli di assegnazione sì. Data questa definizione, si può dimostrare che se il grafo non contiene cicli allora nessun processo del sistema è in deadlock; se invece contiene un ciclo allora ci può essere una situazione di stallo. Bisogna infatti verificare che tra le risorse coinvolte nel ciclo ci sia almeno un'istanza in più disponibile, altrimenti ho il deadlock.
+</p>
+<p class='vspace'>Di seguito tre esempi:
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/grafoAll1.jpg' alt='' title='' /></span></div>
+<p>Abbiamo tre processi (P1, P2, P3) e quattro risorse (R1, R2, R3, R4). R1 ed R3 hanno un'unica istanza, mentre R2 ne ha due ed R4 tre.
+</p>
+<p class='vspace'>In particolare:
+</p><div class='indent'>Il processo P1 ha richiesto R1 che però è già stato assegnato a P2, quindi rimane in attesa.
+</div><div class='indent'>La risorsa R2 mette a disposizione due istanze, che pur essendo identiche possono essere usate in parallelo. Non ho conflitti dato che il principio di mutua esclusione si applica solo sulla stessa istanza.
+</div><div class='indent'>Il processo P3 spezza la possibilità di formare un'attesa circolare, non avendo richieste pendenti su altre risorse già occupate. Una volta che ha terminato l'utilizzo di R3, lo rilascia sbloccando P2 (e per propagazione anche P1).
+</div><p class='vspace'>Non ho quindi deadlock.
+<br clear='all' />
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/grafoAll2.jpg' alt='' title='' /></span></div>
+<p>Come prima abbiamo tre processi (P1, P2, P3) e quattro risorse (R1, R2, R3, R4). R1 ed R3 hanno un'unica istanza, mentre R2 ne ha due ed R4 tre.
+</p>
+<p class='vspace'>In particolare:
+</p><div class='indent'>Il processo P1 ha richiesto R1 che però è già stato assegnato a P2, quindi rimane in attesa.
+</div><div class='indent'>La risorsa R2 mette a disposizione due istanze, che pur essendo identiche possono essere usate in parallelo. Non ho conflitti dato che il principio di mutua esclusione si applica solo sulla stessa istanza.
+</div><div class='indent'>Il processo P3 richiedendo la risorsa R2 che non ha istanze disponibili, si mette in attesa
+</div><p class='vspace'>Si sono creati così due cicli:
+</p><div class='indent'>P1 -&gt; R1 -&gt; P2 -&gt; R3 -&gt; P3 -&gt; R2 -&gt; P1
+</div><div class='indent'>P2 -&gt; R3 -&gt; P3 -&gt; R2 -&gt; P2
+</div><p class='vspace'>I processi P1, P2 e P3 sono in deadlock. Il processo P2 sta infatti aspettando la risorsa R3 che è tenuta dal processo P3, il quale sta aspettando che P1 o P2 rilascino un'istanza di R2. In più il processo P1 sta aspettando che P2 liberi R1. I processi potrebbero rimanere in questo stato di attesa indefinitamente.
+<br clear='all' />
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/grafoAll3.jpg' alt='' title='' /></span></div>
+<p>Abbiamo quattro processi (P1, P2, P3, P4) e due risorse (R1, R2) ognuna delle quali con due istanze.
+</p>
+<p class='vspace'>In particolare:
+</p><div class='indent'>Esiste un ciclo tra P1 -&gt; R1 -&gt; P3 -&gt; R2 -&gt; P1.
+</div><div class='indent'>Ho due processi P2 e P4 che non sono coinvolti nel ciclo.
+</div><p class='vspace'>Questa situazione dimostra che se le risorse hanno più istanze, posso avere dei casi in cui ho cicli ma non deadlock. In questo caso, P2 e P4 prima o poi termineranno la loro computazione e rilasceranno un'istanza, che potrà essere utilizzata da P1 e P3 per superare lo stallo.
+<br clear='all' />
+</p>
+<div class='vspace'></div><h2>Metodi di gestione del deadlock</h2>
+<p>Esistono diversi metodi di gestione degli stalli, ognuno dei quali coporta un diverso carico di lavoro sul processore. Bisogna dunque scegliere quello che si rivela il miglior compromesso tra "uso di risorse di calcolo" e "criticità della presenza del deadlock" nel sistema.
+</p>
+<p class='vspace'>Le principali strategie di gestione sono le seguenti:
+</p>
+<div class='vspace'></div><ul><li><strong>ignorare</strong> del tutto il problema e fingere che i deadlock non si presentino mai nel sistema. Posso permettermi di adottare tale metodo quando l'eventualità che accadano stalli sia rarissima, ad esempio legata ad un errore hardware o software che avviene con frequenza molto bassa. Questa politica normalmente consente all'utente che non vede progredire il suo processo di abortirlo o riavviare tutto il sistema. In questo modo, essendo di per sé raro il fenomeno di stallo, sarà difficile che si ripresentino nello stesso ordine le richieste alle risorse che avevano condotto al deadlock precedente. Può sembrare strano, ma questa soluzione è quella usata dalla maggior parte dei sistemi operativi, Unix e Windows compresi. Perfino la Java Virtual Machine non gestisce deadlock, viene lasciato tutto al programmatore
+<div class='vspace'></div></li><li><strong>prevenzione</strong> del deadlock (<em>deadlock prevention</em>), che garantisce <em>a priori</em>, nel momento in cui vengono fatte le richieste, che queste non generino situazioni di stallo. Consiste in un insieme di metodi atti ad accertarsi che almeno una delle condizione necessarie viste prima non possano verificarsi
+<div class='vspace'></div></li><li><strong>evitare</strong> il deadlock (<em>deadlock avoidance</em>), che non impedisce ai processi di effettuare le richieste, ma se queste potrebbero causare stalli le blocca. Richiede che i processi forniscano al sistema operativo delle informazioni supplementari su quali e quante risorse chiederà nell'evoluzione della sua computazione
+<div class='vspace'></div></li><li><strong>rilevazione e recupero</strong> del deadlock (<em>deadlock detection &amp; recovery</em>), che non applica nessuna tecnica per impedire l'occorrere di una situazione di stallo, ma fornisce degli algoritmi per la sua rilevazione ed eliminazione
+</li></ul><p class='vspace'>E se nessuna di queste strategie ha successo? Il sistema si arenerebbe nello stato di deadlock, con un conseguente progressivo deterioramento delle prestazioni dovuto al blocco indefinito delle risorse che impediscono l'evoluzione dei processi. Spesso in questi casi l'unica soluzione è il riavvio manuale del sistema operativo.<br />Vediamo ora più in dettaglio le varie strategie di gestione.
+</p>
+<div class='vspace'></div><h2>Prevenzione del deadlock</h2>
+<p><em>Prevenire il deadlock</em> significa fare in modo che almeno una delle quattro condizioni per cui si verifica sia soddisfatta. Studiamo i casi separatamente.
+</p>
+<p class='vspace'>Bisogna anzitutto verificare che il principio di <em>mutua esclusione</em> sia applicato solo su quelle risorse intrinsecamente non condivisibili, come ad esempio una stampante; estenderlo anche a risorse condivisibili aumenta solo il rischio di insorgere in situazioni di stallo. Un esempio di risorse intrinsecamente condivisibili sono i file in sola lettura, cui l'accesso simultaneo può tranquillamente essere garantito a tutti i processi che ne avessero bisogno.
+</p>
+<p class='vspace'>Per evitare invece la condizione di <em>possesso e attesa</em> si deve fare in modo che ogni volta che un processo chiede risorse non ne possegga già qualcun'altra. A tale scopo si possono usare due tecniche:
+</p><ul><li>un processo chiede e ottiene tutte le risorse prima di iniziare l'esecuzione. Se ad esempio un processo deve modificare mille file e infine stamparli, accederà a tutte le risorse all'avvio (stampante compresa) e ne manterrà il possesso per tutta la durata della computazione e solo quando termina le rilascerà. Se il sistema operativo non riesce a dargli tutti gli accessi, il processo non viene nemmeno attivato. Lo svantaggio di questa soluzione non è da poco. Può infatti passare molto (troppo) tempo prima che il processo usi tutte le risorse da lui bloccate all'apertura, manentendo inutilmente altri processi in attesa rallentando di conseguenza il parallelismo del sistema
+</li><li>un processo che possiede alcune risorse e vuole chiederne altre deve prima rilasciare tutte quelle che già detiene, quindi richiedere l'accesso a quelle che gli servono più quelle che aveva già. Una volta ottenute, il processo esegue le computazioni opportune e quindi le rilascia a disposizione di altri. Pur guadagnando in parallelismo rispetto alla soluzione precedente, il limite di tale tecnica è che bisogna strutturare opportunamente il programma tenendo conto che una risorsa (e il suo contenuto) terminato l'uso possa essere modificata da altri processi, e questo per un programmatore non è un compito banale
+</li></ul><p>In entrambi i casi ho un basso utilizzo delle risorse, che possono essere assegnate ma rimanere inutillizzate per un periodo lungo; talmente lungo che potrebbe avvenire una starvation.
+</p>
+<p class='vspace'>Se <em>non applicare la pre-emption</em> soddisfa una delle quattro condizioni di deadlock, imporla ove possibile scongiura gli stalli. Quando è possibile? Quando il rilascio anticipato non crea problemi di consistenza delle informazioni.<br />Come nel caso precedente, possiamo utilizzare due tecniche:
+</p><ul><li>se un processo detiene delle risorse e ne chiede altre per le quali deve attendere, allora deve rilasciare anticipatamente tutte le risorse possedute, che vengono aggiunte in una lista di tutte quelle per cui il processo sta aspettando. Il processo sarà fatto ripartire solo quando potrà ottenere tutte le risorse, vecchie e nuove. Siamo sostanzialmente nello stesso approccio dell' <em>hold &amp; wait</em>, con la differenza che qui non devo attendere il termine d'uso della risorsa da parte del processo dato che gli viene imposto
+</li><li>se un processo chiede risorse si verifica prima di tutto che siano disponibili, nel qual caso gli viene dato l'accesso. Altrimenti se sono già associate a un altro processo che però non le usa perché sta attendendo altre risorse, viene imposto a quest'ultimo di rilasciarle anticipatamente e vengono aggiunte alla lista delle risorse per cui il processo richiedente è in attesa. Se invece le risorse sono già associate a un altro processo che le sta usando, deve attendere che questi le rilasci. Riassumendo, si applica la pre-emption solo su processi in attesa di altre risorse, altrimenti no.
+</li></ul><p>Va considerato che questi protocolli non possono essere applicati indistintamente su tutti i tipi di risorse, ad esempio sarebbero impensabili su stampanti o unità nastro.
+</p>
+<p class='vspace'>Quarta e ultima condizione da scongiurare per prevenire il deadlock è l' <em>attesa circolare</em>. La tecnica per prevenirlo è forse la più contorta vista finora, e richiede che sia dato un ordinamento globale univoco su tutti i tipi di risorsa R<sub>i</sub>, in modo che sia sempre possibile sapere se una è maggiore o minore di un'altra rispetto all'indice <em>i</em>'. Tale indice è un numero naturale che dovrebbe essere assegnato con un certo criterio, rispettando i comuni ordini d'uso delle risorse; ad esempio è plausibile che un file sia utilizzato prima di una stampante, dunque ha senso che il suo indice sia inferiore a quello della periferica.<br />L'ordinamento di per sé non previene il deadlock, bisogna applicare la seguente politica, divisa in due punti:
+</p><ul><li>se un processo chiede un certo numero di istanze della risorsa R<sub>j</sub> e detiene solo risorse R<sub>i</sub> con i&lt;j, se le istanze sono disponibili gli vengono assegnate, altrimenti dovrà attendere; 
+</li><li>se invece richiede istanze della risorsa R<sub>j</sub> e detiene risorse R<sub>i</sub> con i&gt;j, allora il processo dovrà prima rilasciare tutte le sue risorse R<sub>i</sub>, quindi richiederle tutte, vecchie e nuove comprese.
+</li></ul><p>Ad esempio se il processo P detiene la risorsa R<sub>25</sub>, potrà chiedere solo risorse indicizzate da R<sub>26</sub> in su, e non da R<sub>25</sub> in giù, a meno che non rilasci tutte quelle che ha già. Questa tecnica impedisce che più processi possano attendersi l'un l'altro: gli indici lo impediscono.
+</p>
+<p class='vspace'>Normalmente applicare questi protocolli di controllo è responsabilità degli sviluppatori di applicazioni, ma esistono alcuni software che svolgono il lavoro per loro. Questi programmi sono noti come <em>Witness</em>.
+</p>
+<div class='vspace'></div><h2>Evitare il deadlock</h2>
+<p>La <em>deadlock prevention</em> applica alcune regole su come devono essere fatte le richieste di accesso alle risorse, garantendo che almeno una delle quattro condizioni perché si abbiano stalli non sia verificata. Il problema è che sono regole molto restrittive, che determinano un basso rendimento del sistema e di utilizzo delle periferiche. Una possibile alternativa è verificare a priori se la sequenza di richieste e rilasci di risorsi effettuate da un processo porta a stalli, tenendo conto delle sequenze dei processi già accettati nel sistema. Ciò significa <strong>evitare il deadlock</strong>, e richiede che i processi forniscano al sistema operativo alcune informazioni sul loro comportamento futuro, così che questo possa sapere in qualsiasi momento:
+</p><ul><li>il numero massimo di risorse per ogni processo
+</li><li>quante risorse sono assegnate e quante sono disponibili
+</li><li>la sequenza delle richieste e dei rilasci da parte di un processo
+</li></ul><p>Una volta ottenute queste informazioni, il che non è sempre semplice, bisognerà implementare un algoritmo che ne tenga conto e metta in moto una serie di procedure perché il sistema non entri mai in uno stato di deadlock. Introduciamo a tal proposito il concetto di <strong>stato sicuro</strong>.
+</p>
+<p class='vspace'>Uno stato si dice <em>sicuro</em> se il sistema operativo può allocare le risorse richieste da ogni processo in un certo ordine, <em>garantendo</em> che non si verifichi deadlock. Attenzione però, essere in uno stato <em>non sicuro</em> non significa essere certi di arrivare in una situazione di stallo in futuro, ma non poter assicurare il contrario; tanto basta perché sia considerato non sicuro. Più formalmente, uno stato è sicuro soltanto se esiste una <strong>sequenza sicura</strong>, ovvero una sequenza di processi P<sub>1</sub>, P<sub>2</sub>, ... , P<sub>n</sub> tale che le richieste che ogni processo P<sub>i</sub> può fare possono essere soddisfatte dalle risorse attualmente disponibili più tutte le risorse detenute dai processi P<sub>j</sub>,  con j&lt;i. In altre parole, è una sequenza di processi tale che le richieste di ognuno possono essere soddisfatte con le risorse già disponibili o in via di rilascio dai processi precedenti ad ogni singolo processo i-esimo. Si tratta quindi di un ordine con cui andare a considerare le richieste dei processi, garantendo così di non avere attese circolari.<br />Facciamo un esempio. Se ho un processo P<sub>i</sub> che ha bisogno di alcune risorse che non sono immediatamente disponibili, dovrà attendere che tutti i P<sub>j</sub> che vengono prima di lui abbiano rilasciato le proprie. Quando ciò accade, P<sub>i</sub> può ottenere finalmente tutte le risorse necessarie, completare la sua esecuzione e infine rilasciarle. Una volta terminato P<sub>i</sub>, il processo P<sub>i+1</sub> potrà ottenere le sue risorse e così via. Se si soddisfa tale sequenza, lo stato del sistema è sicuro.<br />Compito degli algoritmi che si occupano di evitare situazioni di stallo è continuare ad accertarsi che il sistema, all'avvio nativamente in stato sicuro, permanga in tale stato ad ogni richiesta di allocazione delle risorse. Dato che ciò può comportare una maggiore tempo di attesa per i processi, lo sfruttamento delle risorse potrebbe essere più basso del suo potenziale.<br />Studiamo ora due possibile tecniche per implementarlo.
+</p>
+<div class='vspace'></div><h3>Variante del grafo di allocazione delle risorse</h3>
+<p>Se abbiamo un sistema di allocazione delle risorse con un'unica istanza per risorsa, per individuare i deadlock si può utilizzare una versione modificata del <em>grafo di allocazione delle risorse</em>, in cui oltre agli archi di richiesta e assegnazione c'è anche l' <strong>arco di prenotazione</strong>. Rappresentato come una freccia tratteggiata, indica quali risorse saranno prima o poi necessarie ad un processo perché possa portare avanti la propria computazione; quest'informazione deve essere data prima che inizi l'esecuzione. Rilevare un ciclo sugli archi di prenotazione significa che un processo in futuro potrebbe fare una richiesta che porta il sistema in una situazione di stallo, il che va evitato.
+</p>
+<p class='vspace'>Esempio:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/grafoPre.jpg' alt='' title='' /></div>
+<p>Nel grafo di allocazione delle di risorse di sinistra notiamo come sia P1 che P2 prenotino entrambi la risorsa R2, che mette un'unica istanza a disposizione. Se, come vediamo nel grafo di destra, R2 concede l'accesso a P2 cadiamo in uno stato non sicuro, dal momento che basta che P1 faccia anche lui richiesta ad R2 perché si chiuda il ciclo e si abbia una situazione di stallo. La richiesta di P2 deve dunque essere rifiutata dal sistema.
+</p>
+<div class='vspace'></div><h3>Algoritmo del banchiere</h3>
+<p>Il limite del grafo di allocazione delle risorse è che non può essere usato se ho risorse con istanze multiple, perché l'esistenza di un ciclo non implica necessariamente un deadlock. L' <strong>algoritmo del banchiere</strong> permette invece di gestire tali situazioni, pur essendo in media meno efficiente data la sua maggiore complessità computazionale. L'idea che sta dietro l'algoritmo è che il sistema operativo prima di concedere delle risorse a un processo, gli chiede il numero massimo di istanze di cui avrà bisogno; se verifica che l'allocazione lo lascia in uno stato sicuro, allora la concede, altrimenti il processo dovrà attendere finché il sistema non ritenga di avere abbastanza risorse per farlo progredire. Bisogna dunque che siano soddisfatte due ipotesi iniziali: 
+</p><ul><li>ogni processo deve dichiarare a priori il numero massimo di istanze di cui avrà bisogno, o il sistema gli rifiuta la richiesta. Proprio come un banchiere, che deve sapere quanti soldi dare a un cliente
+</li><li>ogni processo dovrà resistuire in un tempo finito le risorse utilizzate. Poi della durata del processo in sé all'algoritmo del banchiere non importa nulla, l'importante è che prima o poi rilasci le risorse. Che ci metta molto o ci metta poco, nemmeno questo importa: l'unica cosa che si vuole è evitare il deadlock, a qualunque prezzo.
+</li></ul><p class='vspace'>Una delle maggiori complessità dell'algoritmo del banchiere è che deve gestire parecchie strutture dati. Dati <strong>m</strong> numero delle risorse ed <strong>n</strong> numero dei processi, avrò:
+</p><ul><li><strong>available[1..m]</strong>, le risorse disponibili. Ogni i-esima posizione indica il numero di istanze di tipo i disponibili
+</li><li><strong>max[1..n, 1..m]</strong>, una matrice che definisce il numero massimo di risorse che un processo può chiedere. Se <code class='escaped'>max[i][j]</code> è uguale a <em>k</em>, allora il processo P<sub>i</sub> può chiedere al  più <em>k</em> istanze di risorse del tipo R<sub>j</sub>
+</li><li><strong>allocation[1..n, 1..m]</strong>, una matrice che dice il numero di risorse di ogni tipo attualmente assegnate a  ogni processo. Se <code class='escaped'>allocation[i][j]</code> è uguale a <em>k</em>, allora il processo P<sub>i</sub> detiene attualmente <em>k</em> istanze di risorse del tipo R<sub>j</sub>
+</li><li><strong>need[1..n, 1..m]</strong>', una matrice che specifica il numero di risorse che il processo dovrà ancora richiedere nella sua vita. In particolare, <code class='escaped'>need[i][j] = max[i][j] - allocation[i][j]</code>
+</li></ul><p>Queste strutture possono variare nel tempo sia in dimensione che in valore.
+</p>
+<p class='vspace'>L'algoritmo di distingue in due parti, una che verifica la sicurezza ed uno per la richiesta delle risorse.<br />L'algoritmo <strong>di sicurezza</strong> consiste nella verifica dello stato sicuro, deve cioè trovare - se esiste - una sequenza sicura. Di seguito lo pseudocodice, coi commenti <em>sotto</em> ogni passo:
+</p>
+<p class='vspace'><strong>Work[1..m]</strong><br /><em>\\ un vettore che rappresenta quali sono le richieste di risorse</em><br /><strong>Finish[1..n]</strong><br /><em>\\ un vettore che rappresenta quali processi hanno completato la computazione, e quindi hanno rilasciato a un certo punto le risorse</em>
+</p><ol><li><strong>Work = Available; Finish[i] = false per i = 0, 1, ... , n-1</strong><br /><em>\\ fase di inizializzazione: segno come disponibili gli elementi del vettore delle risorse, e assegno valore negativo per ogni processo del vettore Finish (dato che non hanno ancora terminato la computazione)</em>
+</li><li><strong>Si cerca i tale che</strong>
+<ul><li><strong>Finish[i]==false</strong>
+</li><li><strong>Need<sub>i</sub> &lt;= Work</strong>
+</li></ul><strong>Se non esiste tale i, vai al passo 4</strong><br /> <em>\\scandisco Finish finché trovo un processo non ancora terminato e che richiede un numero di risorse inferiore a quelle indicate nel vettore Work</em>
+</li><li><strong>Work = Work + Allocation[i]; Finish[i] = true</strong><br /><strong>Vai al passo 2</strong><br /><em>\\ rappresenta il caso in cui posso soddisfare la richiesta. Una volta che il processo ha terminato la computazione e rilasciato le risorse, andrò ad aggiornare il vettore delle allocazioni disponibili, sommandogli le risorse che erano state assegnate al processo i-simo (ormai rilasciate)</em>
+</li><li><strong>Se, per ogni i, Finish[i]==true, allora lo stato è sicuro</strong><br /><em>\\ notare che l'algoritmo può richiedere m x n<sup>2</sup> operazioni prima di arrivare a questo passo</em>
+</li></ol><p class='vspace'>Fatta questa verifica, l'algoritmo prosegue con la gestione delle richieste. Come prima, lo pseudocodice è commentato <em>sotto</em> i vari passi.
+</p>
+<p class='vspace'><strong>Request[i]</strong><br /><em>\\ rappresenta la richiesta del processo Pi in un certo momento</em>
+</p><ol><li><strong>Se Request[i]&lt;=Need[i], vai al passo 2</strong><br /><strong>Altrimenti solleva errore: il processo ha ecceduto il numero massimo di richieste</strong><br /><em>\\ se il numero di richieste è minore (o al più uguale) al numero massimo di richieste che saranno effettuate da i, allora vai al passo 2. Se lo supera, allora il processo aveva cannato a fornire al sistema il numero massimo di richieste che avrebbe chiesto</em>
+</li><li><strong>Se Request[i]&lt;=Available, vai al passo 3</strong><br /><strong>Altrimenti Pi deve attendere: risorse non disponibili</strong><br /><em>\\ se il numero di richieste è minore o uguale a quelle disponibili in quel momento, allora posso passare al passo 3, in cui tali richieste saranno soddisfatte.</em>
+</li><li><strong>Si ipotizzi di stanziare le risorse richieste</strong>
+<ul><li><strong>3.1 Available = Available - Request[i]</strong>
+</li><li><strong>3.2 Allocation[i] = Allocation[i] + Request[i]</strong>
+</li><li><strong>3.3 Need[i] = Need[i] - Request[i]</strong>
+</li></ul><strong>Se lo stato risultante è sicuro, al processo Pi vengono confermate le risorse assegnate. Altrimenti Pi deve aspettare per le richieste Request[i] e viene ristabilito il vecchio stato di allocazione delle risorse.</strong><br /><em>\\la sicurezza dell'assegnamento viene valutata in tre punti: in 3.1 viene diminuito il numero di risorse disponibili in base alle richieste del processo; in 3.2 viene incrementanto il numero di risorse assegnate al processo; in 3.3 viene decrementato il numero di risorse del processo che ancora devono essere soddisfatte. Se queste allocazioni mi lasciano in uno stato sicuro (e lo verifico con l'algoritmo di verifica visto prima) confermo tutto, altrimenti non posso dare le risorse al processo perché entrerei in uno stato non sicuro. In questo secondo caso riporto tutto alla situazione precedente all'allocazione e lascio che il processo attenda.</em>
+</li></ol><div class='vspace'></div><h2>Rilevazione e ripristino del deadlock</h2>
+<p>Senza algoritmi per prevenzione o evitare il deadlock, tale situazione può verificarsi. Sistemi di questo tipo devono mettere a dispozione algoritmi per <em>rilevarne la presenza dopo che sono avvenuti</em>, e per <em>ripristinare una situazione di corretto funzionamento</em> eliminando lo stallo. Vedremo come questi requisiti possano adattarsi a sistemi con istanze singole o multiple delle risorse. 
+</p>
+<div class='vspace'></div><h3>Rilevazione</h3>
+<p>Abbiamo già imparato che nel caso in cui tutte le risorse abbiano un'unica istanza, il grafo di allocazione delle risorse ci torna sempre molto utile. Utilizzeremo in questo caso una variante ridotta, il <strong>grafo di attesa</strong> (o <em>wait for</em>), dal quale sono stati rimossi tutti i nodi che rappresentavano le risorse e gli archi si trovano ora a collegare due processi. La loro nuova interpretazione è che un certo processo P<sub>i</sub> richiederà una risorsa posseduta da un altro processo P<sub>j</sub>, quale risorsa non ci interessa. Ad esempio nel <em>grafo di attesa</em> seguente il processo P1 vuole accedere a qualche risorsa detenuta da P2.
+</p><div  style='text-align: center;'><img src='../uploads/Uni/grafoAttesa.jpg' alt='' title='' /></div>
+<p>Il sistema dovrà dunque mantenere aggiornato il grafo di attesa dei suoi processi ed eseguire periodicamente l'algoritmo di rilevazione di eventuali cicli, che segnalano l'occorrenza di un deadlock. Cosa si intende per periodicamente? Si può decidere di farlo partire ogni volta che un processo chiede una risorsa e scopre che è occupata, ma data la frequenza dell'evento avrei un overhead troppo elevato. Un'altra soluzione potrebbe essere far partire l'algoritmo ad intervalli di tempo prefissati; è vero che tra un intervallo e l'altro potrebbero essersi verificati degli stalli, ma è sicuramente meno costoso che eseguirlo ad ogni richiesta fallita.
+</p>
+<p class='vspace'>Se invece nel sistema sono presenti risorse con istanze multiple, bisogna cambiare il tipo di algoritmo di rilevamento, molto simile a quello del banchiere.
+</p>
+<p class='vspace'><strong>Work[1..m]</strong><br /><strong>Finish[1..n]</strong>
+</p><ol><li><strong>Work = Available; per i = 0, 1, ... , n-1</strong>
+</li></ol><div class='indent'>se Allocation[i] != 0, allora Finish[i] = false;
+</div><div class='indent'>altrimenti Finish[i] = true;
+</div><ol><li><strong>Si cerca i tale che</strong>
+<ul><li><strong>Finish[i] == false</strong>
+</li><li><strong>Request<sub>i</sub> &lt;= Work</strong>
+</li></ul><strong>Se non esiste tale i, vai al passo 4</strong>
+</li><li><strong>Work = Work + Allocation[i]; Finish[i] = true</strong><br /><strong>Vai al passo 2</strong>
+</li><li><strong>Se Finish[i] == false per qualche i, con 0 = i &lt; n, allora si ha deadlock</strong><br /><strong>Inoltre, se Finish[i] == false, allora il processo P<sub>i</sub> è in deadlock</strong>
+</li></ol><p class='vspace'>Vanno fatte anche in questo caso le considerazioni sulla frequenza di esecuzione dell'algoritmo di rilevamento viste prima per i grafi d'attesa.
+</p>
+<div class='vspace'></div><h3>Ripristino</h3>
+<p>Quando un algoritmo di rilevazione riscontra effettivamente una situazione di stallo, può comportarsi in due modi: informa l'utente della situazione e lascia a lui il compito di gestirla manualmente, oppure fa in modo che sia il sistema operativo ad occuparsi del ripristino automatico. Quest'ultimo può adottare come soluzione la <em>terminazione forzata di un processo</em> o il <em>rilascio anticipato delle risorse</em>, che andremo a vedere maggiormente in dettaglio.
+</p>
+<p class='vspace'>Esistono due strategie per ripristinare il sistema dal deadlock <strong>terminando</strong> i processi coinvolti, entrambe che comportano il rilascio delle risorse assegnate ai processi abortiti. Esse sono
+</p><ul><li><em>abortire tutti i processi in deadlock</em>, che interromperà sì il deadlock, ma a caro prezzo dato che vengono persi tutti i risultati parziali che i processi terminati avevano calcolato fino a quel punto. R' funzionale, ma comporta uno spreco consistente di risorse computazionali
+</li><li><em>abortire un processo alla volta fino a eliminare il ciclo di deadlock</em>, che causa per contro un overhead considerevole, dal momento che ad ogni processo abortito sarà da eseguire l'algoritmo di rilevazione del deadlock (per capire quando fermarsi). A ogni modo, esistono diversi criteri su cui basarsi per scegliere l'ordine di eliminazione dei processi. Ad esempio potrei considerare le loro priorità, da quanto tempo sono in esecuzione o quanto tempo gli manca perché terminino, quante e quali tipi di risorse stanno usando o devono ancora richiedere, quanti processi devono essere terminati o ancora se il processo è interattivo o no.
+</li></ul><p class='vspace'>Se invece si volesse eliminare il deadlock usando il <strong>rilascio anticipato delle risorse</strong>, bisognerebbe deallocare forzatamente certe risorse a determinati processi, passandone poi l'accesso ad altri, e continuare a farlo fino a quando viene superata la situazione di stallo. Perché ciò avvenga senza problemi, si devono tener conto di tre aspetti fondamentali:
+</p><ul><li><em>scelta della vittima</em>, ovvero quali risorse e quali processi devono essere interrotti. Anche in questo caso vengono considerati diversi criteri per la selezione, molto simili a quelli visti per la terminazione
+</li><li><em>rollback</em>. Se si forza un processo a rilasciare le risorse che sta usando, ovviamente non lo si mette più nelle condizioni di continuare la sua normale esecuzione. Bisognerebbe quindi riportarlo (<em>rollback</em>) ad un certo stato sicuro e farlo ricominciare da lì. Ciò implica che il sistema operativo debba tener traccia di più informazioni sui processi, e questo non accade molto spesso. Per questo motivo molto spesso il rollback è <em>totale</em>, ovvero abortisce il processo e lo fa ripartire dall'inizio
+</li><li><em>starvation</em>. Dato che la selezione della vittima è basata soprattuto su fattori costo, può succedere che in caso di deadlock sia sempre lo stesso processo ad essere abortito. Non potendo progredire si arena in una situazione di <em>starvation</em>, risolvibile considerando nel fattore costo anche il numero di rollback imposti.
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 09, 2008, at 10:20 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Deadlock?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Deadlock?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

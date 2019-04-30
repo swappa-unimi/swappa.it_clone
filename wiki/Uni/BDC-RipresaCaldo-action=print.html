@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Basi di Dati - Complementi - Esercizi: Ripresa a caldo</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='BDC-RipresaCaldo.html' title='Basi di Dati - Complementi - Esercizi: Ripresa a caldo'>Basi di Dati - Complementi - Esercizi: Ripresa a caldo</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Esercizi: Ripresa a caldo</strong></span>
+</p>
+<div class='vspace'></div><h2>Cos'è</h2>
+<p>Una base di dati non è <a target='_blank'  class='urllink' href='http://www.reelmovienews.com/images/gallery/indiana-jones-picture.jpg' title='' rel='nofollow'>incorruttibile ed eterna</a>, ma è soggetta a guasti di vario tipo e gravità. Il modello che si applica per la loro gestione è il cosiddetto <em>fail-stop</em>, che interrompe ogni transazione e provvede al ripristino del database fino a uno stato considerato sicuro. Se il guasto è riconducibile al sistema, ovvero viene perso solo il contenuto della memoria centrale e non di quelle di massa, avviene poi la cosiddetta <em>ripresa a caldo</em>, che rende di nuovo utilizzabile la base di dati.
+</p>
+<div class='vspace'></div><h2>Cosa fare</h2>
+<p>Assumiamo che già conosciate il significato dei simboli dei record che compongono il file di <em>log</em>. 
+</p>
+<div class='vspace'></div><h4>Passo 1</h4>
+<p>Generalmente nell'esercizio viene fornita una porzione di un log, in particolare quella che termina con un guasto del sistema. Come prima cosa va ricercato il simbolo del <em>checkpoint</em> (<strong>CK()</strong>), ovvero quell'operazione attivata dal gestore dell'affidabilità che ha il compito di tener memoria delle transazioni attive. Se tra parentesi non sono indicate le transazioni attive, ma dei puntini di sospensione, bisogna ricavarsele ripercorrendo il log dall'inizio e considerando solo le operazioni di <em>begin</em>
+</p>
+<div class='vspace'></div><h4>Passo 2</h4>
+<p>Ora bisogna compilare un elenco delle transazioni da rifare (REDO) e da disfare (UNDO), riportandole in una tabella così strutturata:
+</p>
+<div class='vspace'></div><table align='center' width='400px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RECORD</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>UNDO</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>REDO</strong>
+</td></tr><tr ><td  valign='top'>...
+</td><td  valign='top'>...
+</td><td  valign='top'>...
+</td></tr></table>
+<p class='vspace'>Nella colonna <em>Record</em> andranno inserite solo quelle operazioni che indicano l'inizio (<em>begin</em>) o termine con successo (<em>commit</em>) di una transazione; gli <em>abort</em> non devono essere presi in considerazione.<br />Nella colonna <em>UNDO</em> e <em>REDO</em> devono essere riportate rispettivamente le transazioni da disfare e rifare, aggiornate per ogni record della prima colonna.
+</p>
+<p class='vspace'>Per compilare la prima riga della tabella, si parte dal primo record di <em>checkpoint</em> partendo dal fondo e si riporta:
+</p><ul><li>campo RECORD: CK( <em>insieme delle transazioni attive</em> )
+</li><li>campo UNDO: { <em>insieme delle transazioni attive</em> }
+</li><li>campo REDO: {}
+</li></ul><p class='vspace'>Si percorre quindi il log in avanti, e per ogni <em>begin</em> o <em>commit</em> si aggiorna la tabella.
+</p>
+<p class='vspace'>Se ho una <em>begin</em>:
+</p><ul><li>campo RECORD: B( <em>nome nuova transazione</em> )
+</li><li>campo UNDO: { <em>transazioni già presenti + nome nuova transazione</em> }
+</li><li>campo REDO: { <em>transazioni già presenti</em> }
+</li></ul><p>Se ho una <em>commit</em>:
+</p><ul><li>campo RECORD: C( <em>nome transazione</em> )
+</li><li>campo UNDO: { <em>transazioni già presenti - nome transazione</em> }
+</li><li>campo REDO: { <em>transazioni già presenti + nome transazione</em> }
+</li></ul><div class='vspace'></div><h4>Passo 3</h4>
+<p>Si termina l'esercizio riportando la sequenza delle operazioni da eseguire per ripristinare il sistema a prima del guasto (la ripresa a caldo vera e propria).<br />Si considera l'ultima riga della tabella realizzata al passo precedente e si distinguono due insiemi: quello delle transazioni nella colonna UNDO, e quelle nella colonna REDO. Per ognuno di essi verrà costruita una tabella che conterrà le istruzioni da eseguire per disfarne (o rifarne) le operazioni. Le due tabelle hanno la stessa struttura, ovvero:
+</p>
+<div class='vspace'></div><table align='center' width='400px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RECORD</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>AZIONE</strong>
+</td></tr><tr ><td  valign='top'>...
+</td><td  valign='top'>...
+</td></tr></table>
+<p class='vspace'>Prima di vedere come riempire le tabelle, ricordiamo che le uniche operazioni da tenere in considerazione, e quindi riportare nella colonna <em>Record</em>, sono quelle di <em>insert</em>, <em>update</em> e <em>delete</em>.
+</p>
+<p class='vspace'>Per compilare la tabella dell'UNDO si ripercorre il log <em>all'indietro partendo dal fondo</em>, e si considerano solo l'inseme delle transazioni che hanno operazioni da disfare. In particolare, se:
+</p><ul><li>campo RECORD = D(T, 0, B)<br />allora nel campo AZIONE andrà scritto = <em>insert O := B</em>
+</li><li>campo RECORD = I(T, 0, A)<br />allora nel campo AZIONE andrà scritto = <em>delete O</em>
+</li><li>campo RECORD = U(T, 0, B, A)<br />allora nel campo AZIONE andrà scritto = <em>O := B</em><br />Notare che in questo caso di assegna all'oggetto il valore precedente (<em>before</em>, B).
+</li></ul><p class='vspace'>Per compilare la tabella del REDO si percorre il log <em>in avanti partendo dall'inizio</em>, e si considerano solo l'inseme delle transazioni che hanno operazioni da risfare. In particolare, se:
+</p><ul><li>campo RECORD = D(T, 0, B)<br />allora nel campo AZIONE andrà scritto = <em>delete O</em>
+</li><li>campo RECORD = I(T, 0, A)<br />allora nel campo AZIONE andrà scritto = <em>insert O := A</em>
+</li><li>campo RECORD = U(T, 0, B, A)<br />allora nel campo AZIONE andrà scritto = <em>O := A</em><br />Notare che in questo caso di assegna all'oggetto il valore successivo (<em>after</em>, A).
+</li></ul><div class='vspace'></div><h2>Esercizio svolto</h2>
+<p>Considerando il seguente log di un sistema di gestione di basi di dati, illustrare dettagliatamente i passi da compiere per effettuare la ripresa a caldo.
+</p>
+<p class='vspace'>B(T1), B(T2), I(T1,O1,A1), D(T2,02,B2), B(T3), B(T4) U(T3,O3,B3,A3), C(T2), CK(...), U(T1,O4,B4,A4), A(T3), B(T5), D(T4,05,B5), C(T1), C(T4), I(T5,O6,A6), GUASTO
+</p>
+<p class='vspace'><strong>Soluzione</strong>
+</p>
+<div class='vspace'></div><ul><li>Passo 1: <em>individuare le transazioni attive al checkpoint</em><br /><br />Considerando i seguenti record antecedenti il checkpoint: B(T1), B(T2), B(T3), B(T4), C(T2)<br />deduco che le transazioni attive sono: T1, T3 e T4
+<div class='vspace'></div></li><li>Passo 2: <em>compilare l'elenco delle transazioni da disfare e rifare</em>
+</li></ul><div class='vspace'></div><table align='center' width='400px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RECORD</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>UNDO</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>REDO</strong>
+</td></tr><tr ><td  valign='top'>CK(T1,T3,T4)
+</td><td  valign='top'>T1, T3, T4
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>B(T5)
+</td><td  valign='top'>T1, T3, T4, T5
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>C(T1)
+</td><td  valign='top'>T3, T4, T5
+</td><td  valign='top'>T1
+</td></tr><tr ><td  valign='top'>C(T4)
+</td><td  valign='top'>T3, T5
+</td><td  valign='top'>T1, T4
+</td></tr></table>
+<div class='vspace'></div><ul><li>Passo 3: <em>ripristinare il sistema</em><br /><br />Le transazioni da disfare sono T3 e T5, mentre quelle da rifare sono T1 e T4.<br />Riempio la tabella delle UNDO partendo dal fondo e considerando le operazioni di T3 e T5:
+</li></ul><div class='vspace'></div><table align='center' width='400px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RECORD</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>AZIONE</strong>
+</td></tr><tr ><td  valign='top'>I(T5,O6,A6)
+</td><td  valign='top'>delete O6
+</td></tr><tr ><td  valign='top'>U(T3,O3,B3,A3)
+</td><td  valign='top'>O3 := B3
+</td></tr></table>
+<div class='vspace'></div><dl><dd><div class='indent'>Riempio infine la tabella delle REDO partendo dall'inizio e considerando le operazioni di T1 e T4:
+</div></dd></dl><div class='vspace'></div><table align='center' width='400px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RECORD</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>AZIONE</strong>
+</td></tr><tr ><td  valign='top'>I(T1,O1,A1)
+</td><td  valign='top'>insert O1 := A1
+</td></tr><tr ><td  valign='top'>U(T1,O4,B4,A4)
+</td><td  valign='top'>O4 := A4
+</td></tr><tr ><td  valign='top'>D(T4,O5,B5)
+</td><td  valign='top'>delete O5
+</td></tr></table>
+<div class='vspace'></div><h2>Nota sulla ripresa a freddo</h2>
+<p>La <em>ripresa a freddo</em> viene messa in atto quando al guasto del sistema si aggiunge il guasto del dispositivo. Viene realizzata in tre fasi:
+</p><ol><li>si accede al <em>dump</em> più recente, ovvero alla copia completa della base di dati memorizzata su qualche supporto stabile, e si ricopia la parte danneggiata del database
+</li><li>si ripercorre il log in avanti ripetendo le operazioni residenti nella porzione deteriorata, quindi riportandosi nella situazione precedente al guasto
+</li><li>si fa una ripresa a caldo
+</li></ol><div class='vspace'></div><hr />
+<p><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/BDC-RipresaCaldo)</span></div>
+  </div>
+</body>
+</html>

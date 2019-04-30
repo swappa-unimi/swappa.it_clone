@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Algoritmi e strutture dati - Specifiche: Alberi binari </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.AlSp-AlberiBinari' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Algoritmi e strutture dati - Specifiche: Alberi binari
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-AlberiBinari?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-AlberiBinari?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='AlSp-AlberiBinari-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-AlberiBinari?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-AlberiBinari?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Algoritmi e strutture dati - Specifiche: Alberi binari was last modified on October 20, 2007, at 04:51 PM'>
+							<span style='display:none;'>Algoritmi e strutture dati - Specifiche: Alberi binari</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e strutture dati - Specifiche ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Alberi</span>
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h3>Sintassi</h3>
+<ul><li><strong>creabinalbero: <span  style='color: #4169E1;'>() -&gt; binalbero</strong><br /><em>Crea ed inizializza un albero binario vuoto.</em></span>
+</li><li><strong>binalberovuoto: <span  style='color: #4169E1;'>(binalbero) -&gt; booleano</strong><br /><em>Restituisce vero o falso a seconda che l'albero binario sia vuoto o no.</em></span>
+</li><li><strong>binradice: <span  style='color: #4169E1;'>(binalbero) -&gt; nodo</strong><br /><em>Accede direttamente alla radice.</em></span>
+</li><li><strong>binpadre: <span  style='color: #4169E1;'>(nodo, binalbero) -&gt; nodo</strong><br /><em>Accede al padre di un nodo.</em></span>
+</li><li><strong>cancsottobinalbero: <span  style='color: #4169E1;'>(nodo, binalbero) -&gt; binalbero</strong><br /><em>Cancella un sottoalbero binario.</em></span>
+</li><li><strong>legginodo: <span  style='color: #4169E1;'>(nodo, binalbero) -&gt; tipoelem</strong><br /><em>Legge il valore contenuto in un nodo.</em></span>
+</li><li><strong>scrivinodo: <span  style='color: #4169E1;'>(tipoelem, nodo, binalbero) -&gt; binalbero</strong><br /><em>Cambia il valore memorizzato in un nodo.</em></span>
+</li><li><strong>figliosinistro: <span  style='color: #4169E1;'>(nodo, binalbero) -&gt; nodo</strong><br /><em>Accede al figlio sinistro di un nodo.</em></span>
+</li><li><strong>figliodestro: <span  style='color: #4169E1;'>(nodo, binalbero) -&gt; nodo</strong><br /><em>Accede al figlio destro di un nodo.</em></span>
+</li><li><strong>sinistrovuoto: <span  style='color: #4169E1;'>(nodo, binalbero) -&gt; booleano</strong><br /><em>Restituisce vero o falso a seconda che il nodo a sinistra sia vuoto o no.</em></span>
+</li><li><strong>destrovuoto: <span  style='color: #4169E1;'>(nodo, binalbero) -&gt; booleano</strong><br /><em>Restituisce vero o falso a seconda che il nodo a destra sia vuoto o no.</em></span>
+</li><li><strong>costrbinalbero: <span  style='color: #4169E1;'>(binalbero, binalbero) -&gt; binalbero</strong><br /><em>Crea un albero binario.</em></span>
+</li></ul><div class='vspace'></div><h3>Semantica</h3>
+<ul><li><span  style='color: #4169E1;'><strong>creabinalbero() = <em>T' </em> </strong></span><br /><strong>Post:</strong> T' = &#923;
+</li><li><span  style='color: #4169E1;'><strong>binalberovuoto(<em>T</em>) = b</strong></span><br /><strong>Post:</strong> b = vero, se T = &#923;; b = falso altrimenti
+</li><li><span  style='color: #4169E1;'><strong>binradice(<em>T</em>) = <em>u</em> </strong></span><br /><strong>Pre:</strong> T &#8800; &#923;<br /><strong>Post:</strong> <em>u</em> = <em>r</em>
+</li><li><span  style='color: #4169E1;'><strong>binpadre(<em>u</em>,<em>T</em>) = <em>v</em> </strong></span><br /><strong>Pre:</strong> T &#8800; &#923;, <em>u</em> nodo in <em>T</em>, <em>u</em> &#8800; <em>r</em><br /><strong>Post:</strong> <em>u</em> = <em>r</em>
+</li><li><span  style='color: #4169E1;'><strong>cancsottobinalbero(<em>u</em>, <em>T</em>) = <em>T' </em> </strong></span><br /><strong>Pre:</strong> <em>T</em> &#8800; &#923;, <em>U</em> &#8800; &#923;, <em>u</em> nodo in <em>T</em><br /><strong>Post:</strong> <em>T' </em> ottenuto da <em>T</em> eliminando sottoalbero binario di radice <em>u</em>; <em>T</em> = &#923; se <em>u</em> = <em>r</em>
+</li><li><span  style='color: #4169E1;'><strong>legginodo(<em>u</em>, <em>T</em>) = <em>a</em> </strong></span><br /><strong>Pre:</strong> <em>T</em> &#8800; &#923;, <em>u</em> nodo in <em>T</em><br /><strong>Post:</strong> <em>a</em> è valore memorizzato in <em>u</em>
+</li><li><span  style='color: #4169E1;'><strong>scrivinodo(<em>a</em>, <em>u</em>, <em>T</em>) = <em>T' </em> </strong></span><br /><strong>Pre:</strong> <em>T</em> &#8800; &#923;, <em>u</em> nodo in <em>T</em><br /><strong>Post:</strong> <em>T' </em> è ottenuto da <em>T</em> scrivendo il valore <em>a</em> nel nodo <em>u</em>
+</li><li><span  style='color: #4169E1;'><strong>figliosinistro(<em>u</em>, <em>T</em>) = <em>v</em> </strong></span><br /><strong>Pre:</strong> <em>T</em> &#8800; &#923;, <em>u</em> nodo in <em>T</em>, <em>u</em> ha un figlio sinistro<br /><strong>Post:</strong> <em>v</em> è il figlio sinistro di <em>u</em> in <em>T</em>
+</li><li><span  style='color: #4169E1;'><strong>figliodestro(<em>u</em>, <em>T</em>) = <em>v</em> </strong></span><br /><strong>Pre:</strong> <em>T</em> &#8800; &#923;, <em>u</em> nodo in <em>T</em>, <em>u</em> ha un figlio destro<br /><strong>Post:</strong> <em>v</em> è il figlio destro di <em>u</em> in <em>T</em>
+</li><li><span  style='color: #4169E1;'><strong>sinistrovuoto(<em>u</em>, <em>T</em>) = b </strong></span><br /><strong>Pre:</strong> <em>T</em> &#8800; &#923;, <em>u</em> nodo in <em>T</em><br /><strong>Post:</strong> b = vero, se <em>u</em> non ha figlio sinistro; b = falso, altrimenti
+</li><li><span  style='color: #4169E1;'><strong>destrovuoto(<em>u</em>, <em>T</em>) = b </strong></span><br /><strong>Pre:</strong> <em>T</em> &#8800; &#923;, <em>u</em> nodo in <em>T</em><br /><strong>Post:</strong> b = vero, se <em>u</em> non ha figlio destro; b = falso, altrimenti
+</li><li><span  style='color: #4169E1;'><strong>costrbinalbero(<em>T</em>, <em>U</em>) = <em>T' </em> </strong></span><br /><strong>Post:</strong> <em>T' </em> è ottenuto introducendo un nuovo nodo <em>u</em>, che diventa la radice di <em>T' </em>, che ha come sottoalbero sinistro <em>T</em> e come sottoalbero destro <em>U</em>:
+<ul><li>se <em>T</em> = &#923;, <em>u</em> non fa figlio sx
+</li><li>se <em>U</em> = &#923;, <em>u</em> non fa figlio dx
+</li></ul></li></ul><div class='vspace'></div><h3>Implementazione in C++</h3>
+<pre class='escaped'>
+typedef struct _bincella {
+   tipoelem valore;
+   struct _bincella *sx, *dx, *padre;
+} bincella;
+
+typedef *bincella binalbero;
+typedef *bincella nodo;
+
+binalbero T;</pre>
+<div class='vspace'></div><ul><li><span  style='color: #4169E1;'><strong>creabinalbero</strong>: <br /></span><pre class='escaped'>
+
+void creabinalbero (binalbero T) {
+   T = NULL;
+}
+</pre>
+<div class='vspace'></div></li><li><span  style='color: #4169E1;'><strong>binalberovuoto</strong>: <br /></span><pre class='escaped'>
+
+void binalberovuoto (binalbero T) {
+   return (T == NULL);
+}
+</pre>
+<div class='vspace'></div></li><li><span  style='color: #4169E1;'><strong>binradice</strong>: <br /></span><pre class='escaped'>
+
+void binradice (binalbero T) {
+   if (!binalberovuoto(T))
+      return (T);
+}
+</pre>
+<div class='vspace'></div></li><li><span  style='color: #4169E1;'><strong>binpadre</strong>: <br /></span><pre class='escaped'>
+
+void binpadre (nodo u, binalbero T) {
+   if (!binalberovuoto(T))
+      return (u-&gt;padre);
+}
+</pre>
+<div class='vspace'></div></li><li><span  style='color: #4169E1;'><strong>figliosinistro</strong>: <br /></span><pre class='escaped'>
+
+void figliosinistro (nodo u, binalbero T) {
+   if (!binalberovuoto(T))
+      return (u-&gt;sx);
+}
+</pre>
+<div class='vspace'></div></li><li><span  style='color: #4169E1;'><strong>figliodestro</strong>: <br /></span><pre class='escaped'>
+
+void figliodestro (nodo u, binalbero T) {
+   if (!binalberovuoto(T))
+      return (u-&gt;dx);
+}
+</pre>
+<div class='vspace'></div></li><li><span  style='color: #4169E1;'><strong>sinistrovuoto</strong>: <br /></span><pre class='escaped'>
+
+void sinistrovuoto (nodo u, binalbero T) {
+   if (!binalberovuoto(T))
+      return (u-&gt;sx == NULL);
+}
+</pre>
+<div class='vspace'></div></li><li><span  style='color: #4169E1;'><strong>destrovuoto</strong>: <br /></span><pre class='escaped'>
+
+void destrovuoto (nodo u, binalbero T) {
+   if (!binalberovuoto(T))
+      return (u-&gt;dx == NULL);
+}
+</pre>
+<div class='vspace'></div></li><li><span  style='color: #4169E1;'><strong>costrbinalbero</strong>: <br /></span><pre class='escaped'>
+
+void costrbinalbero (binalbero T, binalbero U) {
+   nodo u;
+   u = malloc (sizeof(bincella));
+   u-&gt;padre = NULL;
+   u-&gt;sx = T;
+   u-&gt;dx = U;
+   if (!binalberovuoto(T))
+      T-&gt;padre = u;
+   if (!binalberovuoto(U))
+      U-&gt;padre = u;
+   return (u);
+}
+</pre>
+</li></ul><div class='vspace'></div><h2>Binvisite</h2>
+<p>Ci sono tre tipi di visita, che corrispondono alle 3 corrispondenti visite degli alberi. Il codice delle 3 binvisite è <em>lo stesso</em>, cambia solo il punto in cui si esegue l'esame del nodo. La loro complessità è O(n). Questo sotto è rigorosamente pseudocodice. Si tratta di una funzione ricorsiva.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ void binvisita (nodo u, binalbero T) {
+   // Qui ci va l'esame anticipato del nodo u per la previsita
+   if (!sinistrovuoto(u, T)) 
+     binvisita (figliosinistro(u, T), T);
+
+   // Qui ci va l'esame simmetrico del nodo per l'invisita
+
+   if (!destrovuoto(u, T))
+     binvisita(figliodestro(u, T), T);
+
+   // Qui ci va l'esame differito del nodo per la postvisita
+ }
+</pre>
+<div class='vspace'></div><h2>Binvisite non ricorsive</h2>
+<p>È possibile anche visitare un albero binario tramite visite <em>non ricorsive</em>, cioè <em>iterative</em>, utilizzando la struttura dati <em>pila</em> che già dovremmo conoscere. In generale, è sempre possibile passare da una ricorsione ad un'iterazione con una pila, ed in effetti nei calcolatori le ricorsioni sono implementate tramite lo stack, che è una pila.
+</p>
+<p class='vspace'>La differenza con la binvisita ricorsiva, oltre che nel sistema di visita, sta anche nel fatto che per le tre diverse visite ci sono tre diverse implementazioni.
+</p>
+<div class='vspace'></div><h3>Visita anticipata</h3>
+<p>Il sistema che si utilizza qui è quello di mettere il primo nodo nella pila, e finché la pila non è vuota, estrarne il primo elemento e, nell'ordine, infilare nella pila i suoi figli prima destro e poi sinistro. Perché prima il destro e poi il sinistro? Perché la pila è una struttura <em>LIFO</em>: l'ultimo che ho inserito sarà il primo ad uscire. Quindi, se voglio analizzare prima il figlio sinistro, deve essere l'ultimo a venir impilato.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ void binvisitaIterativa (nodo u, binalbero T) {
+   nodo v;
+
+   creapila (P);
+   inpila (u, P);
+
+   while (!pilavuota(P)) {
+     //Le due righe seguenti estraggono il primo elemento della pila
+     v = leggipila (P);
+     fuoripila(P);
+
+     //Esame del nodo v testé estratto
+
+     if (!destrovuoto(v,T))
+       inpila (figliodestro(v,T), P);
+
+     if (!sinistrovuoto(v,T))
+       inpila (figliosinistro(v,T), P);
+   }
+</pre>
+<p class='vspace'>L'algoritmo è di complessità ottima O(n) perché esamina tutti i nodi una e una sola volta.
+</p>
+<div class='vspace'></div><h3>Visita differita</h3>
+<p>Il problema della visita differita è che devo analizzare i nodi a partire dall'ultimo. Come faccio con una pila? Come faccio a sapere quando ho finito i nodi? Il sistema adottato è quello di utilizzare 2 pile: una che si comporta come la pila dell'esercizio precedente: quando è vuota, vuol dire che ho terminato l'albero. L'altra pila invece viene riempita <em>esattamente</em> come la pila dell'esercizio precedente, ma a differenza di quella, <em>non</em> viene mai svuotata all'inizio del while. In sostanza, in questa seconda pila infiliamo tutti i valori dal primo all'ultimo, e in un secondo momento li estrarremo, trattandosi di una pila, dall'ultimo al primo.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ void binvisitaIterativa (nodo u, binalbero T) {
+   nodo v;
+
+   creapila (P); //La pila per sapere quando ho finito i nodi
+   creapila (Q); //La pila per l'effettivo esame del nodo
+
+   inpila (u, P);
+   inpila (u, Q);
+
+   while (!pilavuota(P)) {
+     //Le due righe seguenti estraggono il primo elemento dalla
+     //pila P, ma NON dalla pila Q
+     v = leggipila (P);
+     fuoripila(P);
+
+     //Esame del nodo v testé estratto
+
+     if (!destrovuoto(v,T))
+       inpila (figliodestro(v,T), P);
+       inpila (figliodestro(v,T), Q); //Metto il nodo anche nell'altra pila
+
+     if (!sinistrovuoto(v,T))
+       inpila (figliosinistro(v,T), P);
+       inpila (figliosinistro(v,T), Q);
+   }
+
+   //OK: ora ho tutti i nodi belli e impilati in Q. Non ci resta che 
+   //estrarli da Q uno alla volta ed esaminarli
+
+   while (!pilavuota(Q)) {
+     v = leggipila(Q);
+     fuoripila(Q);
+
+     //esame del nodo v;
+   }
+ }
+</pre>
+<p class='vspace'>La complessità di questo algoritmo è, parimenti, ottima, cioè O(n). Questo perché entrambi i while compiono l'operazione n volte. Quindi n + n = 2n, e l'asintoto è n =&gt; O(n).
+</p>
+<div class='vspace'></div><h3>Visita simmetrica</h3>
+<p>Ahi ahi, qui sono dolori. Innanzitutto definiamo che cos'è una visita simmetrica: supponendo un padre e due figli, la visita simmetrica esamina <em>prima</em> il figlio sinistro, <em>poi</em> il padre, <em>infine</em> il figlio destro. Se uno qualsiasi dei figli di questo padre è padre a sua volta, allora si esegue una visita simmetrica anche su di esso, il che vuol dire che esaminerò il suo figlio sx, poi lui, poi quello dx etc. etc. ricorsivamente.
+</p>
+<p class='vspace'>Come uscire dalla ricorsione con la pila? Ebbene, qui sotto c'è la soluzione. Il ciclo termina quando una flag booleana viene impostata a vera, perché la pila può svuotarsi da un momento all'altro senza implicare che siano finiti i nodi da esaminare. Inoltre, assumiamo la realizzazione con puntatori padre e figlio. Quando un puntatore non punta a niente, il suo valore è NULL. Equivale a dire che non ha un figlio in quella posizione.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ void binvisitaIterativa (nodo u, binalbero T) {
+   creapila(P);
+   boolean finito = false;
+
+   while (!false) {
+     if (u != null) {
+       inpila (u, P);
+       u = figliosinistro(u, T);
+     } 
+     else 
+     {
+       if (!pilavuota(P)) {
+         u = leggipila(P);
+         fuoripila(P);
+
+         //Esame del nodo
+
+         u = figliodx(u, T);
+     }
+     else fatto = true;
+   }
+</pre>
+<p class='vspace'>Ecco come funziona. <strong>u</strong> è il mio nodo, che viene passato come parametro alla funzione. Il primo controllo che si fa all'interno del <em>while</em> è che <strong>u</strong> esista: certo non è il caso iniziale, ma nel codice sottostante può accadere (ci arriviamo subito).
+</p>
+<p class='vspace'>Se <strong>u</strong> esiste, lo inpilo, e vado al suo figlio sinistro (<strong>u</strong> ora <em>punta</em> al suo sinistro figlio). Vado avanti così finché trovo figli sinistri da <del>impalare</del> inpilare.
+</p>
+<p class='vspace'>Nel caso che <strong>u</strong> non abbia un figlio sinistro, il suo puntatore sarebbe <strong>null</strong>, e quindi <strong>u</strong> stesso sarebbe <strong>null</strong>. Ecco quindi che la prima condizione (<em>if (u != null) ...</em>) si è verificata. In questo caso, finché la pila non è vuota, estraggo l'ultimo elemento, lo esamino, e vado al suo figlio destro, e ritorno da capo. Qui sta il nocciolo: ho messo in pila <strong>u</strong>. Non ha figli sinistri, quindi l'ultimo nodo nella pila è lui. Lo esamino, lo tolgo dalla pila e vado al figlio destro. Se il figlio destro esiste, sarà inpilato ed esaminato, altrimenti sarà estratto dalla pila, esaminato, e si ritornerà al nodo di lui padre. Fate uno schemino a mano e vedrete che sarà più chiaro:)
+</p>
+<p class='vspace'>Quando arriverò ad avere <strong>u</strong> = <strong>null</strong> e la pila vuota, uscirò dal ciclo.
+</p>
+<p class='vspace'>Ad occhio e croce, l'algoritmo é ottimo perchè visita tutti i nodi una e una sola volta: O(n).
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: October 20, 2007, at 04:51 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-AlberiBinari?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-AlberiBinari?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

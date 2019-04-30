@@ -1,0 +1,576 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Lezione del 21 aprile 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Piuri21Aprile2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Lezione del 21 aprile 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri21Aprile2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri21Aprile2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Piuri21Aprile2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri21Aprile2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri21Aprile2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Lezione del 21 aprile 2008 was last modified on June 08, 2008, at 05:19 PM'>
+							<span style='display:none;'>Sistemi Operativi - Lezione del 21 aprile 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Lezione del 21 aprile 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Tecniche di allocazione dei frame</strong></span>
+</p>
+<p class='vspace'>Come decidere di allocare i frame? Senza fare riferimenti ai segmenti, ma parlando solo di pagine, vediamo un po' quante pagine dare ad un processo.
+</p>
+<div class='vspace'></div><ul><li>Poche pagine = tanti probabili page fault
+</li><li>Tante pagine = meno pagefault, e tempo di accesso medio inferiore
+</li></ul><p class='vspace'>Da notare, che anche se do TUTTA la memoria fisica ad un processo, non è detto che non avrò pagefault, per il semplice motivo che se lo spazio di indirizzamento del processo è superiore alla memoria installata, ovviamente non ci starà:)
+</p>
+<p class='vspace'>Quindi, al solito occorre trovare la risposta giusta ad una domanda: quanti frame allocare ad un processo?
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<p>Dobbiamo tenere presente alcuni vincoli, prima di decidere i numeri. Uno di questi deriva dall'architettura del computer, che riguarda anche le dimensioni dele pagine: si tratta del vincolo di <strong>numero minimo di frames</strong> da attribuire ad un processo.
+</p>
+<p class='vspace'>Perché dipende dall'architettura? Il motivo è che i processori hanno delle istruzioni che permettono di specificare degli indirizzi. Se qualcuno si ricorda i gloriosi tempi dell' LC-2, ricorderà anche che:
+</p><ul><li>posso specificare un'indirizzo direttamente
+</li><li>posso specificare un'indirizzo di una cella la quale contiene l'indirizzo che voglio
+</li><li>etc.
+</li></ul><p>Queste robe sono dette <strong>livelli di indirezione</strong>. Se un'architettura di CPU prevede 2 livelli di indirezione, vuol dire che per arrivare ad 1 dato mi occorrono 3 accessi: 1 per leggere l'istruzione, 2 per arrivare alla cella che contiene l'indirizzo, 3 per pescare il valore effettivo nell'indirizzo finalmente recuperato. Questo vuol dire che nel peggiore dei casi mi servono 3 frames diversi: ecco spiegato il numero minimo di frames.
+</p>
+<p class='vspace'>Poi, devo tenere conto anche della <strong>condivisione</strong>
+</p><pre> f<sub>i</sub> = numero di frames allocati al processo P<sub>i</sub>
+ f<sub>j</sub> = numero di frame utlizzati dal gruppo di processi G<sub>j</sub>
+ d = frame disponibili
+ &#931;<sub>i</sub>f<sub>i</sub> - &#931;<sub>j</sub>f<sub>j</sub> &lt;= d
+</pre><p class='vspace'>Il gruppo di processi è composto da processi che condividono dei frame, per i motivi che abbiamo visto nelle pagine precedenti.
+</p>
+<p class='vspace'>Ho due strategie per andare a prendere i frame da allocare:
+</p><ol><li><strong>globale</strong> = tutti i frame liberi sono a disposizione di qualsiasi processo
+</li><li><strong>locale</strong> = un processo ha a disposizione un tot di frame e basta
+</li></ol><div class='vspace'></div><h4>Allocazione omogenea</h4>
+<p>Ogni processo ha la stessa quantità di frame di ogni altro processo correntemente in memoria
+</p><pre> m = numero totale di frame
+ n = numero di processi
+ f<sub>i</sub> = frame del processo P<sub>i</sub>
+ f<sub>i</sub> = m /n
+</pre><p class='vspace'>In questo modello, anche il SO ha lo stesso numero di frame dei processi normali. Al massimo pretenderà un trattamento migliore.
+</p>
+<p class='vspace'>Più ho processi in memoria, meno pagine posso dare al singolo processo. Ciò vuol dire che c'è un limite alla multiprogrammazione. Allo stesso tempo, se ho pochi processi in memoria, ne ho al converso tanti nello spazio di swap che non avanzano pur magari potendolo fare.
+</p>
+<p class='vspace'>L'idea sarebbe allora di tenere in memoria i processi ready e quelli che <strong>presumo</strong> lo saranno a breve. Come fare ciò, è un mistero...
+</p>
+<div class='vspace'></div><h4>Allocazione proporzionale alla dimensione</h4>
+<p>Consideriamo questi due casi:
+</p><ul><li>programmi con tanti dati = accedono a strutture dati ciccione, e quindi spantegate in diverse pagine
+</li><li>programmi con codice ampio = hanno routine qua e là per tutto lo spazio di indirizzamento
+</li></ul><p class='vspace'>L'allocazione omogenea tratterebbe molto male questi processi. Per migliorarla, si è pensato di allocare tanti frame quanto più un processo è grosso:
+</p><pre> s<sub>i</sub> = dimensione dello spazio virtuale occupato dal processo P<sub>i</sub>
+ f<sub>i</sub> = m * S<sub>i</sub> / &#931;<sub>i</sub>s<sub>i</sub>
+</pre><div class='vspace'></div><h4>Allocazione proporzionale alla priorità</h4>
+<p>Finora, ho trattato tutti i processi come se fossero uguali dal punto di vista del processore. Però, ho scenari in cui i processi hanno priorità diverse, e sembra allora giusto poter dar loro più frame così che perdano meno tempo a caricare roba dal disco.
+</p>
+<p class='vspace'>Ecco perché parla di <strong>allocazione proporzionale alla priorità</strong>.
+</p><pre> f<sub>i</sub> = m * p<sub>i</sub> / &#931;<sub>i</sub>p<sub>i</sub>
+</pre><p class='vspace'>Ocio: questa formula è scritta con il presupposto che p alto = priorità alta. Non sempre è così (eg Unix).
+</p>
+<p class='vspace'>Generalizzando, posso decidere di allocare in modo proporzionale a qualsiasi parametro che più mi garba.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 4 - Thrashing</strong></span>
+</p>
+<p class='vspace'>Se un processo ha poche pagine in memoria, passa più tempo a caricare e scambiarle col disco fisso che nemmeno a progredire. Questo è ciò che si dice <strong>thrashing</strong>, ovvero paginazione della spazzatura.
+</p>
+<p class='vspace'>Le cause del thrashing sono l'elevata multiprogrammazione, e il fatto che lo scheduler a lungo termine introduca in memoria molti processi per tenere occupato il processore.
+</p>
+<p class='vspace'>Per evitare il thrashing, devo avere:
+</p><ul><li>una <strong>politica di schedulazione</strong> che eviti il thrashing, cioè che limiti la multiprogrammazione arrivati ad una certa soglia
+</li><li>una <strong>politica di allocazione dei frame</strong> che riduca il numero dei frame che possono essere tolti dalla memoria
+</li></ul><p class='vspace'>Per ottenere il secondo punto, serve una <strong>allocazione locale</strong>. Un processo ha un numero minimo di frame, sotto al quale non deve scendere. Quando devo scegliere la vittima, la scelgo tra i frame dello stesso processo che ne ha bisogno, così che i suoi bisogni non vadano a thrashare gli altri processi: al massimo ci smena soltanto lui, piuttosto che l'intero sistema.
+</p>
+<div class='vspace'></div><h3>Prevenzione del thrashing</h3>
+<p>I programmi hanno una piacevole caratteristica, detto <strong>principio di località di esecuzione</strong>.
+</p>
+<p class='vspace'>Questa proprietà mi dice che, nell'intorno di un certo istante di tempo, un processo accederà tipicamente solo a certe zone del suo spazio di indirizzamento, e non ad altre. Poi, dopo un po' cambierà zone, poi ancora etc., ma in ognuna di queste diverse <strong>configurazioni</strong> ci passerà un po' di tempo.
+</p>
+<p class='vspace'>Come è possibile sta magia? È possibile per via di come sono scritti i programmi. Se uso tecniche di buona programmazione, e ancor meglio se uso linguaggi di alto livello, tendenzialmente scriverò codice raggruppato in moduli, che il compilatore ed il linker metteranno in zone attigue della memoria.
+</p>
+<p class='vspace'>Se riesco a sfruttare questo principio, riduco il numero di page fault. Ma come, visto che non ho nessuna sfera di cristallo? Posso <strong>approssimare</strong> con 2 tecniche:
+</p><ul><li>il <strong>working set</strong>
+</li><li>la <strong>page-fault frequency</strong>
+</li></ul><div class='vspace'></div><h4>Working Set</h4>
+<p>Nella mia stringa di riferimento, definisco una finestra di dimensione <strong>&#916;</strong>, che contiene quindi un certo numero di pagine precedenti a quella in cui mi trovo in un dato istante. Questo insieme di pagine nella finestra &#916; è detto appunto <strong>working set</strong>, cioè insieme di lavoro.
+</p>
+<p class='vspace'>Man mano che procedo nella stringa di riferimento, il WS si sposta, e i frame che stanno prima della finestra sono passibili di scalzamento.
+</p>
+<p class='vspace'>La formuletta magica è 
+</p><pre> f<sub>i</sub> = max<sub>t</sub> (ws<sub>i</sub>(t))
+</pre><p class='vspace'>Più &#916; è grande, più frame un processo ha in memoria, meno pagefault ho.
+</p>
+<p class='vspace'>Se invece capita che 
+</p><pre> &#931;<sub>k</sub> f<sub>k</sub> &gt; m
+</pre><p>dove m è il numero di pagine disponibili, allora scelgo una vittima e la scarico.
+</p>
+<p class='vspace'>Il brutto è che devo avere una stringa di riferimento per poter usare il WS, e la stringa non ce l'ho finché non è un po' che eseguo il programma...
+</p>
+<div class='vspace'></div><h4>Page fault frequency</h4>
+<div><span class='frame lfloat'><img src='../uploads/Uni/robinhood.jpg' alt='' title='' /><br /><strong>Round-Robin Hood</strong></span></div>
+<p>Se ho poche miss, sto usando troppe pagine per il processo.<br />Se ho poche pagine, posso rischiare il thrashing.
+</p>
+<p class='vspace'>Allora, in medio stat virtus, e cerco di far sì che ogni processo si mantenga ad un certo livello di frequenza di page fault, così da evitare le due situazioni estreme.
+</p>
+<p class='vspace'>I processi ricchi di pagine vengono depauperati, quelli poveri arricchiti. Esattamente come faceva Robin Hood.
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 5 - Ottimizzazione delle prestazioni</strong></span>
+</p>
+<div class='vspace'></div><h4>Prepaginazione</h4>
+<p>Sceglo prima quali pagine caricare, prevedendo magicamente quali pagine il processo utilizzerà. Il problema è che non ho in anticipo la stringa di riferimento.
+</p>
+<p class='vspace'>Un processo, comunque, ha la sua frequenza massima di page fault quando viene avviato (perché non ha ancora caricato niente) e quando viene riattivato, perché deve riguadagnarsi lo spazio.
+</p>
+<p class='vspace'>Almeno nel secondo caso, quando riattivo un processo, carico anche tutto il WS precedente, così da cercare di ottimizzare un po' l'uso delle pagine.
+</p>
+<div class='vspace'></div><h4>Dimensione della pagina</h4>
+<p>La dimensione della pagina ideale dipende da alcuni fattori.
+</p>
+<p class='vspace'>Se ho pagine grandi, ho queste conseguenze:
+</p><ul><li>uso meno pagine =&gt; tabella piccola
+</li><li>frammentazione interna (pagine poco sfruttate) e spreco di memoria
+</li><li>tempi di s/caricamento minore
+</li><li>minore risoluzione (il programma è spezzettato in un minor numero di pagine)
+</li><li>possibili più page fault, perché carico roba per meno processi in memoria, avendo le pagine grosse.
+</li></ul><p class='vspace'>Se ho invece pagine piccole:
+</p><ul><li>più pagine
+</li><li>tabella più grossa
+</li><li>minore frammentazione interna e meno spreco
+</li><li>più tempo per s/caricamento (tempo totale, perché lo faccio più volte)
+</li><li>più località
+</li><li>più risoluzione
+</li><li>possibile minor numero di page fault
+</li></ul><div class='vspace'></div><h4>TLB</h4>
+<p>Vedi le lezioni precedenti per sapere che cosa è. 
+</p>
+<div class='vspace'></div><h4>Tabella invertita delle pagine</h4>
+<p>Anche per questa, vedi le lezioni precedenti
+</p>
+<div class='vspace'></div><h4>Strutturazione del programma</h4>
+<p>È quello che dicevamo prima, con l'aggiunta che le strutture dati usate influenzano la "resa" del programma.
+</p>
+<p class='vspace'>Infatti, se devo accedere ad una matrice per righe, è meglio salvare per righe, così è più facile che ci stia una riga in una pagina. Se salvassi per colonne, potrei invece dover saltare di pagina in pagina per ogni colonna.
+</p>
+<div class='vspace'></div><h4>Pagine residenti per dispositivi di I/O</h4>
+<p>I buffer dei dispositivi I/O li lascio in memoria, marcandoli come <strong>residenti</strong>. Il motivo è questo: quando un processo aspetta dati provenienti da una periferica, tipicamente avrà una sua zona di memoria destinata a riceverli. Le I/O ci mettono un po' di tempo: se PRIMA che arrivino quei dati, quella pagina che dovrebbe contenerli è stata swappata, succede un macello.
+</p>
+<p class='vspace'>Le soluzioni sono le seguenti:
+</p><ul><li>usare solo la memoria del SO per le operazioni I/O
+</li><li>impedire di swappare le pagine destinate all'I/O
+</li></ul><p class='vspace'>La prima soluzione è poco conveniente, perché pur evitando il problema impone una copia successiva dei dati dalla memoria del SO alla memoria del processo. Quindi, si usa la seconda soluzione.
+</p>
+<div class='vspace'></div><h4>Pagine residenti per processi in tempo reale</h4>
+<p>Così non perdono tempo a caricare dal disco. Abbiamo visto prima che il tempo di accesso alla memoria, nel caso della memoria virtuale, dipende dalla <strong>probabilità</strong>. Ma un SO real time vuole tempi certi, non probabilistici. Ecco perché memoria virtuale e real time vanno d'accordo come Denis e lo Svizzero.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: I/O ::</strong>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Struttura e funzioni dei sottosistemi I/O</strong></span>
+</p>
+<p class='vspace'>Posso dividere i sottosistemi di I/O in base a diverse caratteristiche.
+</p>
+<div class='vspace'></div><h4>Direzione dell'I/O</h4>
+<ul><li>sola lettura
+</li><li>sola scrittura
+</li><li>lettura e scrittura
+</li></ul><div class='vspace'></div><h4>Condivisione</h4>
+<ul><li>periferica dedicata
+</li><li>periferica condivisibile
+</li></ul><div class='vspace'></div><h4>Metodo di accesso</h4>
+<ul><li>sequenziale
+</li><li>diretto (in inglese <strong>random</strong>, non perché sia casuale, ma semplicemente perché un dato accesso è in linea teorica slegato dagli accessi precedenti e da quelli futuri)
+</li></ul><div class='vspace'></div><h4>Modo di trasferimento dei dati</h4>
+<ul><li>a carattere
+</li><li>a blocchi
+</li></ul><div class='vspace'></div><h4>Schedulazione del trasferimento</h4>
+<ul><li>sincrono
+</li><li>asincrono
+</li></ul><div class='vspace'></div><h4>Velocità del dispositivo</h4>
+<ul><li>latenza
+</li><li>tempo di ricerca
+</li><li>tempo di trasferimento
+</li><li>ritardo tra le operazioni
+</li></ul><p class='vspace'>La velocità influenza anche come sarà trattato il processo che ne farà uso: quanto resterà bloccato in I/O, e quindi quando sarà schedulato.
+</p>
+<div class='vspace'></div><h3>Software di gestione delle periferiche</h3>
+<p>Lo scopo è quello di avere un<strong>'interfaccia software omogenea</strong>, che è facile da gestire per il programmatore, in quanto standardizzata.
+</p>
+<p class='vspace'>Dovrei avere una visione omogenea di tutte le periferiche, a prescindere dal tipo di periferica, e dal modello di periferica.
+</p>
+<p class='vspace'>Per ottenere questo, devo <strong>strutturare</strong> il software di gestione in questo modo:
+</p><ul><li>gestione del canale di comunicazione
+</li><li>device dependent driver
+</li><li>device independent driver
+</li></ul><p>e questi tre strati sono uno sopra l'altro: lo strato sopra vede solo quello che lo strato sotto gli dice di vedere, e non altro.
+</p>
+<p class='vspace'>Lo strato <strong>device independent driver</strong> mostra <strong>tutte</strong> le periferiche allo stesso modo, senza distinguere tra schede video, modem, webcam o quello che è.
+</p>
+<p class='vspace'>Lo strato <strong>device dependent driver</strong> mostra <strong>tutte</strong> le periferiche dello stesso <strong>tipo</strong> allo stesso modo, senza differenze di modelli etc. Ad esempio, tutte le schede video, indipendentemente da chi le fa, vanno "esibite" allo stesso modo.
+</p>
+<div class='vspace'></div><h3>Gestione del canale di comunicazione</h3>
+<p>Il gestore del canale di comunicazione deve nascondere le modalità specifiche di gestione del canale di comunicazione. Robe come mappatura in memoria, attesa attiva, interruzione e DMA devono scomparire alla vista del programmatore.
+</p>
+<div class='vspace'></div><h3>Device Dependent Driver</h3>
+<p>Tutte le periferiche dello stesso tipo devono essere viste come uguali, soprattutto nel modo di essere comandate, e nel modo di gestione degli errori.
+</p>
+<div class='vspace'></div><h3>Device Independent Driver</h3>
+<p>Tutte le periferiche vanno trattate allo stesso modo, sia che esse utilizzino buffer, cache, spooling, che vedremo qui sotto.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Realizzazione sottosistema I/O</strong></span>
+</p>
+<p class='vspace'>Il sottosistema I/O è quella parte del kernel che si occupa di gestire l'I/O, e fa quindi da ponte tra l'utente del SO e l'hardware sottostante.
+</p>
+<div class='vspace'></div><h3>Schedulazione richieste I/O</h3>
+<p>Ogni periferica ha la sua coda, e va gestita secondo le politiche che più ci aggradano per ottimizzarne l'uso.
+</p>
+<div class='vspace'></div><h3>Bufferizzazione</h3>
+<p>Posso dover adottare la bufferizzazione in due casi:
+</p><ul><li>le velocità della sorgente e della destinazione non coincidono
+</li><li>le dimensioni dei blocchi della sorgente e della destinazione non coincidono
+</li><li>ottenere la semantica della copia
+</li></ul><p class='vspace'>Nel primo caso, ho ad esempio una periferica lente, a fronte di un processo che spara fuori tanti dati in un secondo. Il buffer serve per ammortizzare questa differenza: il SO mette a disposizione un'area di memoria (che rimane sempre del SO) sulla quale il processo scriverà.
+</p>
+<p class='vspace'>Il processo non deve sapere se sta scrivendo realmente sulla periferica o sul buffer: deve solo poter scrivere, e avere magari il vantaggio di non bloccarsi anche se la periferica è più lenta di lui.
+</p>
+<p class='vspace'>Questo però si basa sul presupposto che prima o poi il processo si fermerà, nella sua opera di creazione di dati da inviare alla periferica, altrimenti non c'è buffer che tenga: non posso infatti farlo crescere all'infinito...
+</p>
+<p class='vspace'>Il secondo caso, quello della differenza tra dimensioni dei blocchi, si ha per esempio quando ho un terminale a caratteri, ma un processo che invia blocchi di dati. Ci deve pensare il SO, e NON il programmatore, a prendere ogni singolo carattere del blocco e ad inviarlo al terminale.
+</p>
+<p class='vspace'>Una cosa da tenere a mente è che il buffer è come se fosse la periferica, dal punto di vista del processo. Se scrivo un certo dato in un certo punto, invio le istruzioni relative a quest'operazione al buffer. Se poi, mentre queste istruzioni sono ancora nel buffer in attesa di essere eseguite, invio altri comandi sullo STESSO dato, il buffer deve fregarsene: scrive quello che gli è arrivato primo, per primo, il resto poi.
+</p>
+<p class='vspace'>Questa faccenda, ovvero il processo che scrive sul buffer senza saperlo, e così dal suo punto di vista la I/O è durata poco, si chiama <strong>semantica della copia</strong>.
+</p>
+<div class='vspace'></div><h3>Caching</h3>
+<p>Conservo una copia dei dati letti di recente da una periferica per riuso rapido.
+</p>
+<p class='vspace'>Soprattutto se ho periferiche lente, il primo accesso sarà lento. Ma il secondo sarà rapido perché userà la cache, se sfruttata bene, e quindi in media guadagno in tempo di accesso.
+</p>
+<div class='vspace'></div><h3>Spooling</h3>
+<p>Se ho periferiche molto lente e/o condivise, posso usare questa tecnica per supplire.
+</p>
+<p class='vspace'>Un processo che utilizzasse una di queste periferiche potrebbe ritrovarsi bloccato per molto tempo in attesa del suo turno. Pensiamo alla stampante: devo aspettare che il processo che è arrivato prima di me termini la sua stampa prima del mio turno.
+</p>
+<p class='vspace'>Serve ancora un buffer, ma date le dimensioni dei dati in ballo - diversi mega -, il buffer lo si realizza non in memoria centrale, ma in memoria di massa.
+</p>
+<p class='vspace'>C'è una cartella in cui ogni processo scrivente scriverà un file, marchiato con un time stamp.
+</p>
+<p class='vspace'>C'è poi <strong>1 solo</strong> processo che può accedere effettivamente alla periferica, ed è detto <strong>spooler</strong>. Esso prenderà i file scritti nella cartella in ordine di tempo, e pian piano li manda alla periferica. Il fatto che siano marchiati col tempo garantisce la mutua esclusione.
+</p>
+<p class='vspace'>Gli altri processi non accedono <strong>mai</strong> direttamente alla periferica, ma passano sempre attraverso il controllo dello spooler. E hanno anche il vantaggio di non venire rallentati dalla periferica lenta.
+</p>
+<div class='vspace'></div><h3>Locking</h3>
+<p>Per usare una periferica in modo esclusivo. Per pietà non fatemi ripetere niente sull'argomento lock!:)
+</p>
+<div class='vspace'></div><h3>Gestione degli errori</h3>
+<p>Gli errori si possono catalogare in due tipi:
+</p><ul><li>guasti permanenti
+</li><li>malfunzionamenti transitori
+</li></ul><p class='vspace'>Se un guasto è transitorio, deve pensarci il driver a "riprovare" più tardi. Nell'altro caso, non c'è SO che tenga.
+</p>
+<div class='vspace'></div><h3>Strutture dati del kernel</h3>
+<p>Il processo ha, nella sua PCB, la lista dei files/periferiche da lui aperte. Esse sono indicate da un <strong>descrittore</strong>.
+</p>
+<p class='vspace'>All'interno del SO, ogni descrittore rappresenta una periferica o un file, e il SO ha la tabella di tutti i files/periferiche aperti nel sistema.
+</p>
+<p class='vspace'>All'interno di questa tabella, ogni file/periferica ha un puntatore alle routine che lo devono gestire, così da permettere un rapido accesso alle funzioni di gestione.
+</p>
+<div class='vspace'></div><h3>Prestazioni dell'I/O</h3>
+<p>L'I/O è quella parte del computer che più ne influenza le prestazioni.
+</p>
+<p class='vspace'>Per migliorarle, dovrei
+</p><ul><li>ridurre i cambi di sistema
+</li><li>ridurre la copia dei dati qua e là nella memoria
+</li><li>ridurre la frequenza degli interrupt
+</li><li>aumentare la concorrenza, così più processi evolvono
+</li><li>gestire le periferiche a livello HW in modo decente
+</li><li>equilibrare il tutto
+</li></ul><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 08, 2008, at 05:19 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri21Aprile2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri21Aprile2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

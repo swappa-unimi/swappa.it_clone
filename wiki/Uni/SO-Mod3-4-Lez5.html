@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Appunti caotici </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-Mod3-4-Lez5' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Appunti caotici
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Mod3-4-Lez5?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Mod3-4-Lez5?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-Mod3-4-Lez5-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Mod3-4-Lez5?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Mod3-4-Lez5?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Appunti caotici was last modified on March 25, 2008, at 11:39 PM'>
+							<span style='display:none;'>Sistemi Operativi - Appunti caotici</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti caotici ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 5</span>
+<span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Comunicazione con Mailbox</span>
+</p>
+<div class='vspace'></div><h2>Pag 2</h2>
+<h4>Modello della comunicazione con mailbox</h4>
+<p>Con questa tecnica il processo mittente genera il messaggio senza sapere chi sarà il ricevente; si tratta quindi di comunicazione indiretta. 
+</p>
+<p class='vspace'>Il messaggio viene depositato in una <strong>mailbox</strong> (detta anche <em>porta</em>), una struttura dati presente nel sistema operativo, caratterizzata da un nome cui si farà riferimento per accedere ai messaggi da lei contenuta. Il processo ricevente prelevererà il messaggio accedendo ad essa.
+</p>
+<div class='vspace'></div><h4>Messaggi</h4>
+<p>Il messaggio può contenere diverse informazioni, come:
+</p><ul><li>Identità del processo mittente;
+</li><li>Mailbox destinataria;
+</li><li>Informazioni da trasmettere;
+</li><li>Eventuali altre informazioni di supporto relative alla gestione della mailbox, ad esempio se vanno tolti messaggi con deadline scaduta o come ordinare i messaggi.
+</li></ul><p class='vspace'>I messaggi possono avere dimesione <em>Fissa</em> o ''Variabile.
+</p>
+<div class='vspace'></div><h2>Pag 3</h2>
+<h4>Mailbox</h4>
+<p>Va anzitutto ricordato che non stiamo assegnando i messaggi ad una coppia di processi, ma li stiamo inserendo in una struttura accessibile (teoricamente) da tutti. Certo, esisteranno comunque delle politiche di accesso: solo e tutti quei processi che avranno ottenuto dal sistema operativo i diritti di lettura potranno leggere i messaggi.
+</p>
+<p class='vspace'>La mailbox può avere capacità:
+</p><ul><li><em>Illimitata:</em> possono essere immessi un numero illimitati di messaggi;
+</li><li><em>Limitata:</em> c'è un numero limitato di messaggi che possono essere immessi;
+</li><li><em>Nulla:</em> nessun messaggio può essere posto nella mailbox.
+</li></ul><div class='vspace'></div><h4>Funzioni (1)</h4>
+<p>La mailbox prima di essere utilizzata deve essere creata, e se in un secondo momento non serve più la si può cancellare. Vengono quindi messe a disposizione delle funzioni che permettono tali operazioni:
+</p><ul><li><em>create(M)</em>: crea la mailbox, M è il nome simbolico della mailbox che si vuole creare;
+</li><li><em>delete(M)</em>: cancella la mailbox M.
+</li></ul><div class='vspace'></div><h2>Pag 4 </h2>
+<h4>Funzioni (2)</h4>
+<p>Vengono fornite anche delle funzioni apposite per l'invio e la ricezioni di messaggi.
+</p>
+<p class='vspace'><strong>Invio:</strong> <em>send(M, messaggio)</em>
+</p>
+<p class='vspace'>Questa funzione deposita i messaggi nella mailbox e risulta bloccante in base alla capacità della mailbox:
+</p><ul><li><em>Capacità illimitata:</em> funzione non bloccante, il processo mittente depositerà sempre il suo messaggio dato che non troverà mai la mailbox piena. Per realizzarla potrei utilizzare ad esempio una lista a puntatori espliciti, quindi con uno spazio allocato dinamicamente. Bisogna precisare tuttavia che il termine "illimitato" è teorico, dal momento che potrei comunque esaurire lo spazio di memoria del sistema. Se quindi da un punto di vista fisico potrebbe risultare (caso limite) bloccante, dal punto di vista logico non lo è mai;
+</li><li><em>Capacità limitata:</em> la funzione può essere bloccante se la mailbox è piena, quindi costringe il processo mittente ad aspettare che nella mailbox si liberi spazio per far depositare il suo messaggio;
+</li><li><em>Capacità nulla:</em> la funzione è bloccante se non c'è un processo in ricezione.
+</li></ul><div class='vspace'></div><h4>Funzioni(3)</h4>
+<p><strong>Ricezione:</strong> ''receive(M, messaggio).
+</p>
+<p class='vspace'>Tale funzione consente di ricevere il messaggio dalla mailbox. Risulta bloccante se non c'è almeno un messaggio da ricevere.
+</p>
+<p class='vspace'>E' solo in fase di ricezione che si completa l'identificazione delle identità da parte dei processi.
+</p>
+<div class='vspace'></div><h2>Pag 5</h2>
+<h4>Funzioni(4)</h4>
+<p>Ci sono anche delle funzioni di invio e di ricezione condizionale.
+</p>
+<p class='vspace'><strong>Invio Condizionale:</strong> <em>cond_send(M, messaggio): error_status</em>
+</p>
+<p class='vspace'>Questa funzione deposita il messaggio nella mailbox solo se trova spazio al suo interno. Tale funzione quindi non è bloccante, se non trova spazio non costringe il processo a rimanere in attesa che si liberi spazio sufficiente nella mailbox per poter depositare il messaggio. Viene quindi introdotto una condizione, che mi ritorna errore nel caso il processo non riesca a depositare il messaggio.
+</p>
+<div class='vspace'></div><h4>Funzioni(5)</h4>
+<p><strong>Ricezione Condizionale:</strong> <em>cond_receive(M, messaggio): error_status</em>
+</p>
+<p class='vspace'>Tale funzione riceve un messaggio solo se ce ne è almeno uno nella mailbox. In caso contrario ritorna la condizione di errore, non bloccando di conseguenza il processo ricevente.  
+</p>
+<div class='vspace'></div><h2>Pag 6</h2>
+<h4>Sincronizzazione</h4>
+<p>Le politiche di sincronizzazione sono stabilite sempre in base alla capacità della mailbox:
+</p><ul><li><em>Illimitata:</em> ho una comunicazioe <em>Asincrona</em>, ovvero il mittente depone il suo messaggio indipendentemente dallo stato di computazione del processo ricevente;
+</li><li><em>Nulla</em>: ho una comunicazione <em>Sincrona</em>. Ho infatti un processo mittente che non trova spazio per deporre il suo messaggio, ed è dunque obbligato a mettersi in attesa. Quando un processo Q invocherà una <em>receive</em>, lo troverà ancora in quello stato, e a questo punto i due processi cominceranno a passarsi l'informazione direttamente in modo sincrono. Questo meccanismo prende il nome di <em>rendez-vou</em>, ed implica che P sappia a che punto della computazione si trovi il processo ricevente quando richiede la comunicazione;
+</li><li><em>Limitata</em>: comunicazione bufferizzata.
+</li></ul><div class='vspace'></div><h4>Caratteristiche e problemi</h4>
+<p>Una caratteristica di questa tecnica è che non ho un'indentificazione dei processi che comunicano, quindi ho una comunicazione indiretta. La sincronizzazione è gestita in maniera automatica da parte del sistema operativo.
+</p>
+<div class='vspace'></div><h2>Pag 7</h2>
+<h4>Ordinamento delle code dei messaggi e dei processi in attesa</h4>
+<p>Ci sono varie tecniche di ordinamento dei messaggi all'interno della mailbox, tali tecniche si riferiscono anche ai processi che sono in attesa. Tali tecniche sono:
+</p><ul><li><em>FIFO:</em> First In Firt Out, ovvero il primo messaggio che entra sarà il primo ad uscire, lo stesso per i processi;
+</li><li><em>Priorità:</em> viene stabilita una priorità dei messaggi, coloro che hanno priorità più alta saranno i primi ad essere prelevati. Avviene lo stesso per i processi che devono depositare dei messaggi, coloro che hanno priorità più alta depositano per primi i messaggi;
+</li><li><em>Scadenza:</em> un'altra tecnica per stabilire l'ordinamento con cui i mesaggi potranno essere prelevati è utilizzando un tempo massimo di attesa. Il problema che potrebbe sorgere con la priorità è che un messaggio (o precesso) con priorità bassa potrebbe rimanere indefinitivamente in attesa fin tanto che c'è un messaggio (o processo) con priorità più alta.
+</li></ul><div class='vspace'></div><h4>Proprietà della mailbox</h4>
+<p>Dato che la mailbox non è proprietà del processo ma bensì del sistema operativo (ricordiamo che è nel suo spazio di indirizzamento!), posso stabilire delle proprietà su di essa. Posso attribuire la mailbox ad un processo proprietario, l'unico a poter ricevere messaggi, mentre tutti gli altri processi possono solo inviarli. Se il processo proprietario scompare, la mailbox scompare con esso.
+</p>
+<div class='vspace'></div><h2>Pag 8</h2>
+<h4>Comunicazione con molti possibili processi mittenti o riceventi</h4>
+<p>Ci possono essere comunicazioni con molti possibili mittenti o riceventi. Ogni comunicazione coinvolgerà sempre minimo due processi, ma la struttura della mailbox consente che ci siano più processi mittenti e più processi riceventi che possono partecipare nella comunicazione. La struttura della mailbox non mi consente però di sapere a priori chi siano tali processi.
+</p>
+<p class='vspace'>Notare anche come la struttura dati mailbox disgiunga naturalmente il processo mittente dal ricevente.
+</p>
+<div class='vspace'></div><h4>Comunicazione molti a uno</h4>
+<p>Una differenza sostanziale nella comunicazione molti a uno rispetto a quella precedente è che ho un solo processo di servizio (S, nello schema). Nel caso un cui il processo di servizio schiatti, il sistema operativo può farlo ripartire eseguendone una copia (a cui cambierà l'id). I richiedenti non si accorgono di nulla, tranne quello che S stava servendo nel momento in cui è esploso (il nuovo servizio non sa che c'era una richiesta pendente).
+</p>
+<div class='vspace'></div><h2>Pag 9</h2>
+<h4>Comunicazioni uno a molti</h4>
+<p>Una struttura uno a molti mi consente di avere più processi di servizio ed un unico processo richiedente, che verrà sempre servito per quanto possa rompere con le sue richieste. 
+</p>
+<p class='vspace'>I processi che si occuperanno del servizio saranno delle copie dello stesso processo, pronte a servire ognuna una richiesta di entrata spacifica. Ciò è reso possibile dal fatto che si da per assunto che tali processi serventi compino operazioni di I/O, così che abbiano tempi morti nello sfruttamento del processore, durante i quali possa avvenire la turnazione.
+</p>
+<p class='vspace'>Questa tecnica è auspicabile quando ho un singolo processo che ha più richieste e che vuole vengano soddisfatte contemporaneamente.
+</p>
+<div class='vspace'></div><h4>Comunicazione molti a molti</h4>
+<p>In questa tecnica ho più processi di servizio e più processi che effettuano richieste. Nel metodo uno a molti potevo soddisfare in parallelo più richieste effetuate da un singolo processo, potevo però avere momenti in cui alcuni processi di servizio rimanevano in stato di attesa. Con questo metodo ottimizzo quei tempi morti soddisfacendo richieste effettuate da altri processi.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 25, 2008, at 11:39 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Mod3-4-Lez5?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Mod3-4-Lez5?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

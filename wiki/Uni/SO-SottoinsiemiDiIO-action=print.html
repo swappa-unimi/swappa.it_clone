@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Sottoinsiemi di I/O</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SO-SottoinsiemiDiIO.html' title='Sistemi Operativi - Sottoinsiemi di I/O'>Sistemi Operativi - Sottoinsiemi di I/O</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Sottoinsiemi di I/O</span>
+</p>
+<div class='vspace'></div><h2>Panoramica</h2>
+<p>Il corretto controllo dei dispositivi di I/O è uno dei compiti principali di un sistema operativo, e data l'estrema eterogeneità delle periferiche sono necessari diversi sistemi di gestione, il cui insieme va a formare il <strong>sottosistema di I/O</strong> del kernel. 
+</p>
+<div class='vspace'></div><h2>L'hardware di I/O </h2>
+<p>I computer utilizzano molti tipi diversi di periferiche, la maggior parte delle quali rientra in tre categorie: <em>memorizzazione</em>, <em>trasmissione</em> e <em>interfaccia</em>. 
+</p>
+<p class='vspace'>In generale una periferica comunica con un computer inviando segnali via cavo o via etere attraverso un punto di connessione detto <strong>porta</strong>. <br />Se uno o più dispositivi condividono lo stesso insieme di cavi e di protocolli per la comunicazione, questa connessione prende il nome di <strong>bus</strong>. Sono molto comuni nelle architetture hardware.<br />I <strong>controller</strong> sono invece dei componenti elettronici che possono operare su una porta, un bus o una periferica ed hanno alcune responsabilità di gestione su esse. A seconda dalla loro complessità possono essere singoli chip o circuiti separati (come per l'hard disk). 
+</p>
+<p class='vspace'>In che modo il processore invia comandi e dati al controller per eseguire un trasferimento di I/O? Un primo sistema è fornire ad esso una serie di <em>registri</em> dedicati, quali:
+</p><ul><li><strong>registro di stato della periferica</strong>, che può essere letto dal computer e che notifica ad esempio un'avvenuta esecuzione, la disponibilità di byte per la lettura, errori, ecc
+</li><li><strong>registro di controllo</strong> o <strong>di comando</strong>, che viene scritto dal computer per lanciare un comando o cambiare le modalità di una periferica
+</li><li><strong>registro di dati in ingresso</strong> e <strong>registro dei dati in uscita</strong>. A questi dure registri possono essere associati dei chip FIFO integrati per estendere di parecchi byte la capacità del controller 
+</li></ul><p class='vspace'>Un altro sistema è il <strong>mappaggio dell'I/O in memoria</strong>, con la CPU che esegue le richieste di I/O utilizzando le istruzioni standard di trasferimento dati in memoria centrale. Offre maggiore facilità di lettura e viene utilizzata comunemente con le schede video.
+</p>
+<div class='vspace'></div><h3>Attesa attiva </h3>
+<p>Il protocollo per l'interazione tra computer e controller si basa sulla nozione di <em>handshaking</em>. Sostanzialmente ciò che accade è questo: 
+</p><ol><li>il controller indica il suo stato per mezzo del bit <em>busy</em>, che il computer continua a leggere finché non lo trova sul valore 0 (disponibile)
+</li><li>il processore specifica il comando nel registro di controllo e setta il bit <em>command-ready</em> su 1, così che la periferica se ne accorga e lo esegua
+</li><li>terminata l'esecuzione vengono azzerati entrambi i bit.
+</li></ol><p class='vspace'>La lettura del bit busy da parte della CPU prende il nome di <strong>attesa attiva</strong> perché è un'attesa che presuppone comunque un controllo. Se diventa estremamente lunga e dispendiosa le si preferisce il <em>meccanismo degli interrupt</em>, in cui è la periferica stessa che notifica la propria disponibilità al computer.
+</p>
+<div class='vspace'></div><h3>Interrupt </h3>
+<p>Il meccanismo base degli <strong>interrupt</strong> è il seguente: la CPU ha una connessione chiamata <em>linea di richiesta di interrupt</em> che viene verificata dopo l'esecuzione di ogni istruzione. Quando il processore si accorge che un controller le ha mandato un segnale, salva il valore corrente del program counter e passa immediatamente alla procedura di gestione dell'interrupt memorizzata in un preciso indirizzo di memoria; una volta eseguita, la CPU viene ritornata allo stato precedente.
+</p>
+<p class='vspace'>Esistono alcuni raffinamenti a questo meccanismo, che nelle moderne architetture vengono coadiuvati dai <em>controller degli interrupt</em>. Vediamone alcune:
+</p><ul><li>possibilità di differire la gestione delle interruzioni durante le elaborazioni critiche distinguendo tra <em>interrupt mascherabili</em> e <em>non</em>, i secondi dei quali gestiscono procedure che non si possono interrompere
+</li><li>interrupt rinviati nel caso di esecuzione di un processo critico
+</li><li>utilizzo di un sistema efficiente per recapitare un segnale d'interruzione al corretto gestore. A tal fine si mantiene un <em>vettore degli interrupt</em> che contiene gli indirizzi di memoria dei gestori appropriati. Inoltre con la tecnica dell'interrupt chaining ("prova una procedura finché non trovi quella giusta") si possono migliorare ulteriormente i tempi di risposta
+</li><li>introdurre il concetto di livello di priorità tra interrupt
+</li></ul><p class='vspace'>Gli interrupt sono usati anche per realizzare <strong>trap</strong> (interruzioni software) alle procedure del kernel in modalità supervisore, quindi per l'implementazione delle chiamate di sistema.
+</p>
+<div class='vspace'></div><h3>Accesso diretto alla memoria</h3>
+<p>I trasferimenti che coinvolgono grosse entità di dati non sono efficienti se effettuati un singolo bit alla volta come abbiamo visto finora, ma è meglio affidarli a processori specifici detti controller di <strong>accesso diretto alla memoria</strong> (<strong>DMA</strong>). Un blocco di comandi DMA contiene un puntatore alla sorgente del trasferimento, uno alla destinazione e un contatore col numero dei byte da trasferire. Il controller DMA opera dunque direttamente sul bus di memoria senza alcun intervento della CPU, salvo poi lanciarle un interrupt a trasferimento compiuto.
+</p>
+<p class='vspace'>Alcune architetture usano indirizzi fisici per il DMA, altre invece accessi diretti in memoria virtuale (DVMA) che permettono ad esempio di trasferire dati tra due periferiche senza l'intervento del processore.
+</p>
+<div class='vspace'></div><h2>Le interfacce di I/O per le applicazioni</h2>
+<p>Per far sì che un sistema operativo tratti le periferiche allo stesso modo la risposta è l'astrazione, l'incapsulamento e la stratificazione del software; si cerca cioè di isolare le differenze tra i dispositivi I/O individuandone pochi tipi generali. A ciascuno di questi tipi si accede tramite un insieme standard di funzioni che ne costituiscono l' <strong>interfaccia</strong>, mentre le differenze sono incapsulate in moduli del kernel detti <strong>driver del dispositivo</strong>. Internalmente i driver sono specifici per una particolare periferica, mentre all'esterno comunicano con perfetta integrazione all'interfaccia standard.
+</p>
+<p class='vspace'>Lo strato di <em>device driver</em> nasconde perciò le differenze tra i controller delle periferiche al sottosistema di I/O del kernel, rendendo più semplice il lavoro sia ai programmatori di sistemi operativi che ai costruttori hardware. Se però questi ultimi da un lato sanno già che tipo di interfacce offrono i sistemi, dall'altro hanno il dramma che ogni sistema operativo ha le proprie. 
+</p>
+<p class='vspace'>La migliore strutturazione del software di gestione dell'I/O è la seguente:
+</p><ul><li><em>gestione del canale di comunicazione</em>, che deve rendere trasparente il modo in cui viene gestito il flusso di informazione tra calcolatore e periferiche
+</li><li><em>device dependent driver</em>, che rende omogenea la visione dei diversi modelli delle periferiche di uno stesso tipo (ad esempio, tutti i mouse)
+</li><li><em>device independent driver</em>, che dà invece una visione omogenea di tutti i tipi di dispositivi
+</li></ul><p class='vspace'>Le periferiche possono differire per diversi aspetti:
+</p><ul><li>trasferimento sincrono o asincrono
+</li><li>periferica condivisibile o dedicata
+</li><li>velocità di elaborazione (latenza, tempo di ricerca, velocità di trasferimento, attesa tra le operazioni)
+</li><li>direzione di I/O (lettura, scrittura, lettura-scrittura)
+</li><li>metodo d'accesso, se sequenziale o diretto
+</li><li>modo di trasferimento dei dati, se a caratteri o a blocchi
+</li></ul><p class='vspace'>Molte di queste differenze saranno comunque nascoste dal sistema operativo.
+</p>
+<p class='vspace'>Ultima cosa da ricordare sono le funzioni di <em>controllo diretto</em> delle periferiche, dette <em>escape</em> o <em>back door</em>, che permettono il passaggio trasparente di comandi direttamente dalle applicazioni ai driver dei dispositivi.
+</p>
+<div class='vspace'></div><h3>Dispositivi con trasferimento dei dati a caratteri e a blocchi</h3>
+<p>L'interfaccia dei dispositivi con trasferimento dei dati a blocchi si occupa di tutti gli aspetti necessari per accedere ai drive di disco e ad altre periferiche a blocchi. Le periferiche dovrebbero prevedere comandi come <code class='escaped'>read()</code> <code class='escaped'>write()</code> o <code class='escaped'>seek()</code> per l'accesso diretto.
+</p>
+<p class='vspace'>Gli accessi stessi da parte del sistema operativo e delle applicazioni possono sfruttare le interfacce del file system o considerare le periferiche a blocchi come semplici array lineari di blocchi. In questo secondo caso si parla di <em>I/O grezzo</em>.<br />Se invece l'accesso avviene per mappaggio in memoria, l'interfaccia deve fornire l'accesso alla memoria secondaria tramite un array di byte posto in memoria centrale; è quello che succede anche per l'accesso del kernel nell'area di swap.
+</p>
+<p class='vspace'>Le periferiche con trasferimento dati a caratteri sono ad esempio tastiere mouse e modem, che producono dati in ingresso sottoforma di flussi sequenziali di byte in modo non predicibile dalle applicazioni. Sono tipici anche di schede audio e stampanti.
+</p>
+<div class='vspace'></div><h3>Le periferiche di rete</h3>
+<p>Le prestazioni e le caratteristiche di indirizzamento di una rete informatica sono molto diverse da quelle delle operazioni di I/O su disco, dunque la maggior parte dei sistemi operativi fornisce interfacce I/O di rete differenti da quelle viste finora. Tra quelle più diffuse in sistemi come UNIX e Windows c'è quella del <em>socket di rete</em>.
+</p>
+<div class='vspace'></div><h3>Orologi e temporizzatori</h3>
+<p>Nella maggior parte dei sistemi vengono utilizzati <em>orologi</em> (<em>clock</em>) e <em>temporizzatori</em> (<em>timer</em>) per tener traccia dell'ora corrente, del tempo trascorso, o ancora - è il caso del <em>timer programmabile</em> - per impostare un certo intervallo prima di scatenare un interrupt. Quest'ultima funzione può essere utilizzata con profitto per implementare ad esempio il round-robin tra processi, o per svuotare periodicamente la cache del buffer, o per interrompere le operazioni di rete che ci stanno mettendo troppo tempo.
+</p>
+<div class='vspace'></div><h3>I/O bloccante e non bloccante</h3>
+<p>Le operazioni di <strong>I/O bloccanti</strong> sospendono l'esecuzione dell'applicazione, che viene spostata nella coda di quelle in attesa finché la chiamata di sistema non è stata completamente eseguita; solo a qual punto l'applicazione potrà tornare nella coda dei processi pronti. <br />Gli <strong>I/O non bloccanti</strong> non prevedono tale sospensione e sono tipici delle interfacce utente d'ingresso (tastiera, mouse).
+</p>
+<div class='vspace'></div><h2>Il sottosistema di I/O del kernel</h2>
+<p>Molti servizi di I/O sono messi a disposizione dal sottostistema di I/O del kernel e montati direttamente sull'hardware e sull'infrastruttura dei driver delle periferiche.
+</p>
+<div class='vspace'></div><h3>Schedulazione dell'I/O</h3>
+<p>Schedulare una serie di richieste di I/O significa trovare un buon ordine di esecuzione delle richieste stesse, il che migliora certamente le prestazioni globali del sistema dato che l'ordine dettato dalle applicazioni è raramente lungimirante. La schedulazione viene implementata mantenendo una coda di richieste per ogni periferica e facendovi operare uno schedulatore dedicato.
+</p>
+<div class='vspace'></div><h3>Buffering</h3>
+<p>Il <strong>buffer</strong> è una zona di memoria in cui vengono memorizzati temporaneamente i dati mentre vengono trasferiti tra due periferiche o tra periferiche e applicazioni. Si usano principalmente per tre motivi:
+</p><ol><li>appianano la differenza di velocità tra mittente e destinatario di un flusso di dati
+</li><li>fungono da adattatori tra periferiche con blocchi di dimensioni diverse
+</li><li>supportano la <em>semantica della copia</em>, che garantisce che la versione dei dati scritta su un dispositivo sia la stessa versione presente in memoria al momento della chiamata di sistema dell'applicazione.
+</li></ol><div class='vspace'></div><h3>Caching</h3>
+<p>La <strong>cache</strong> è una zona di memoria veloce che conserva copie dei dati così che l'accesso ad essi sia più veloce che su disco. La differenza col buffer è che in questi ultimi è presente la sola copia esistente di un certo dato; ciò nonostante alcune regioni di memoria possono essere utilizzate per entrambi gli scopi.
+</p>
+<div class='vspace'></div><h3>Spooling e prenotazione dei dispositivi</h3>
+<p>Lo <strong>spool</strong> è un buffer su memoria di massa che conserva l'output per una periferica che non può accettare flussi di dati da più processi contemporaneamente, come ad esempio le stampanti. Lo <em>spooler</em> è l'unico programma che ha accesso diretto alla periferica, e gestisce il buffer offrendo agli utenti alcune operazioni aggiuntive come la visualizzazione della coda di attesa dei processi o la cancellazione/sospensione di uno di essi. 
+</p>
+<p class='vspace'>Un'altra tecnica che consente di coordinare quelle periferiche che non possono gestire in modo efficace le richieste di I/O da parte di applicazioni concorrenti è la <strong>prenotazione</strong> (<em>locking</em>) delle stesse, così da ottenere l'accesso esclusivo ad esse per poi renderle di nuovo disponibili una volta terminata l'operazione.
+</p>
+<div class='vspace'></div><h3>Gestione degli errori</h3>
+<p>Esistono molti tipi di errori hardware ed i sistemi operativi possono (e devono) far fronte alla maggior parte di essi in modo efficace attraverso opportune procedure di segnalazione dell'errore. Queste fanno uso di bit di informazione o di variabili integrali addizionali, che se ben realizzate potranno dare un grado di dettaglio dell'errore sorprendentemente alto.
+</p>
+<div class='vspace'></div><h3>Strutture dati del kernel</h3>
+<p>Il mantenimento continuo di informazioni di stato per l'uso di componenti di I/O da parte del kernel è realizzato attraverso un certo numero di strutture dati interne ad esso, come ad esempio la tabella dei file aperti.
+</p>
+<div class='vspace'></div><h2>Trasformazione dell'I/O in operazioni hardware</h2>
+<div  style='text-align: center;'><img src='../uploads/Uni/IOtoHW.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h2>Le prestazioni</h2>
+<p>La gestione degli I/O è il fattore di maggiore importanza per le prestazioni di un sistema in quanto sottopone la CPU a pesanti requisiti: eseguire il codice dei driver delle periferiche, schedulare i processi, effettuare i cambi di contesto dovuti agli interrupt, copiare i dati tra memorie cache e buffer.
+</p>
+<p class='vspace'>Ci sono diverse strade per migliorare le prestazioni del sistema aumentando l'efficienza dell'I/O:
+</p><ul><li>ridurre il numero dei cambi di contesto
+</li><li>ridurre il numero di copie nel passaggio tra dispositivi e applicazioni
+</li><li>ridurre la frequenza degli interrupt usando grandi trasferimenti e controller capaci
+</li><li>aumentare la concorrenza con DMA
+</li><li>spostare le primitive di gestione delle periferiche nell'hardware, a livello più basso
+</li><li>equilibrare le prestazioni del sistema, dato che un sovraccarico di un componente comporta il rallentamento <strong>di tutta la baracca</strong>.
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SO-SottoinsiemiDiIO)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Matematica del discreto - Guida agli esercizi 2°Parte </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.MDD-EserciziSecondaParte' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Matematica del discreto - Guida agli esercizi 2°Parte
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziSecondaParte?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziSecondaParte?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='MDD-EserciziSecondaParte-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziSecondaParte?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziSecondaParte?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Matematica del discreto - Guida agli esercizi 2°Parte was last modified on January 26, 2011, at 12:00 AM'>
+							<span style='display:none;'>Matematica del discreto - Guida agli esercizi 2°Parte</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='MatematicaDelDiscreto.html'>Torna alla pagina di Matematica del discreto</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Matematica del discreto - Guida agli esercizi 2°Parte ::</strong>
+</pre><div class='vspace'></div><h3>Autovalori, autovettori e diagonalizzazione</h3>
+Prendiamo ad esempio la matrice di ordine n=3,<br /><pre class='escaped'>| 7  0  0|
+| 1  9  0|
+|-1 16  7|</pre><br />devo calcolare le soluzioni del polinomio caratteristico che è dato da <strong>det(A-hI)=0</strong>. A è la matrice data, I è la matrice identità:<br /><pre class='escaped'>
+    |1 0 0|
+I = |0 1 0|
+    |0 0 1|</pre>
+<div class='vspace'></div>Il polinomio caratteristico sarà quindi così:<br /><pre class='escaped'>
+|(7-h)   0     0  |
+|  1   (9-h)   0  |
+| -1    16   (7-h)|</pre><br />e il suo determinante sarà dato da <strong>(7-h)<sup>2</sup>(9-h)=0</strong><br />In questo modo ho trovato gli autovalori 7 e 9, ossia le soluzioni dell'equazione.<br />La molteplicità algebrica ma di 9 è 1, poiché l'esponente di (9-h) è appunto 1.<br />La molteplicità algebrica ma di 7 è 2.
+<p class='vspace'>Ci sono due possibilità per capire se una matrice è diagonalizzabile.
+</p><ol><li>La somma delle molteplicità algebriche degli autovalori di A è uguale all'ordine di A
+</li><li>Gli autovalori di A sono tutti regolari, ossia ma(h)=mg(h)
+</li></ol><p>È sufficiente una di queste due condizioni affinchè la matrice sia diagonalizzabile.<br /><strong>N.B.</strong> Se gli autovalori sono distinti la matrice è sempre diagonalizzabile!<br />La molteplicità geometrica di A è pari alla dimensione dell'autospazio relativo all'autovalore A, in particolare <em>m<sub>g</sub>=n-rK(A-AI)</em>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+                       |(7-9)   0     0  |    |-2  0  0|
+m_a(9)=1  m_g(9)= 3-rk |  1   (9-9)   0  |  rk| 1  0  0| = 2 m_g(9)=3-2=1
+                       | -1    16   (7-9)|    |-1 16 -2|
+
+                       |(7-7)   0     0  |    | 0  0  0|
+m_a(7)=2  m_g(7)= 3-rk |  1   (9-7)   0  |  rk| 1  2  0| = 2 m_g(7)=3-2=1
+                       | -1    16   (7-7)|    |-1 16  0|</pre>
+<p class='vspace'><strong>N.B:</strong> Controllare che se m<sub>a</sub>(h<sub>1</sub>)+m<sub>a</sub>(h<sub>2</sub>)+...+m<sub>a</sub>(hn)=n è diagonalizzabile, in caso contrario devo confrontare ma e mg dei rispettivi autovalori.
+</p>
+<div class='vspace'></div>Per calcolare gli autovettori:<br />imposto il sistema Av=hv, dove v è un vettore di 3 componenti (x,y,z)<br /><pre class='escaped'>
+    |(7-h)   0   0 |      |x|
+A = |  1     9   0 |  v = |y|
+    | -1    16   7 |      |z|</pre><br />l'autovettore relativo ad h=9 è dato da A(x,y,z)=9(x,y,z) che dà luogo al sistema:<br /><pre class='escaped'>
+  | 7x = 9x                  | x = 0                              | 0|
+ &lt;  x + 9y = 9y         =&gt;  &lt;  y = y  =&gt;  l'autovettore relativo  | y|
+  | -x + 16y + 7z = 9z       | z = 8y     all'autovalore 9 è ...  |8y| </pre><br />Per l'autovalore 7:<br /><pre class='escaped'>
+  | 7x = 7x                  | x = x                                      |0|
+ &lt;  x + 9y = 7y         =&gt;  &lt;  y = -x/2  =&gt;  l'autovettore relativo a 7 è |0|
+  | -x + 16y + 7z = 7z       | z = 0                                      |z| </pre>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h3>Unione, intersezione e somma di sottospazi</h3>
+<p>La dimensione di una base è data dal numero di vettori da cui è composta.<br /><strong>N.B</strong>: Sia V uno spazio vettoriale di dimensione n su K e siano S e T due suoi sottospazi.
+</p><div class='indent'><em>dim(S+T)=dim(S)+dim(T)-dim(S&#8745;T)</em>
+</div><p class='vspace'>Es: in R<sup>3</sup> si considerino i due sottospazi S e T definiti nel modo seguente.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/esMDDsottospazi1.gif' alt='' title='' /></div>
+<p class='vspace'>Dopo aver determinato una base per S e T, determinare la dimensione e una base per S&#8745;T e S+T.<br />Si può esprimere il generico vettore di S come:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/esMDDsottospazi2.gif' alt='' title='' /></div>
+<p class='vspace'>quindi la dimensione di S è 2. (per trovare i due vettori della base di S occorre
+semplicemente assegnare dei valori “comodi” ad a e b)
+</p>
+<p class='vspace'>Per quanto riguarda T una base sono i due vettori che lo generano:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/esMDDsottospazi3.gif' alt='' title='' /></div>
+<p class='vspace'>quindi anche in questo caso la dimensione è 2.<br />Quindi, dato che S+T è contenuto in R<sup>3</sup>, la dimensione massima sarà 3:
+</p>
+<div class='vspace'></div><table align='center' cellpadding='10' border='2' bordercolor='white' bgcolor='#E0EBF4' >
+<tr ><td  valign='top'><strong>dim(S+T)=</strong>
+</td><td  valign='top'><strong>dim(S)+</strong>
+</td><td  valign='top'><strong>dim(T)</strong>
+</td><td  valign='top'><strong>-dim(S&#8745;T</strong>
+</td></tr><tr ><td  valign='top'>3=
+</td><td  valign='top'>2+
+</td><td  valign='top'>2
+</td><td  valign='top'>-1
+</td></tr><tr ><td  valign='top'>2=
+</td><td  valign='top'>2+
+</td><td  valign='top'>2
+</td><td  valign='top'>-1
+</td></tr></table>
+<div class='vspace'></div>Calcolo S&#8745;T. Il generico vettore di T:<br /><pre class='escaped'>
+|(h+2k)|
+|  k   |
+| -h   |</pre><br />sta in S se le sue componenti soddisfano la relazione che definisce i vettori di S:
+<pre class='escaped'>
+                                     | 0|    |0|
+(h+2k)+2k+h = 0 =&gt; 2h+4k=0 =&gt; h = 2k | k| = k|1|
+                                     |2k|    |2|</pre><br />quindi la dimensione di (S&#8745;T)=1, quindi S+T=R , quindi una sua base è la canonica di R<sup>3</sup>.
+<p class='vspace'>,.--.,,.--.,
+</p>
+<p class='vspace'>Es2: si consideri il sottospazio di R<sup>3</sup>:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/esMDDsottospazi4.gif' alt='' title='' /></div>
+<p class='vspace'>a) determinare la dimensione e una base per X<br />b) determinare due diversi sottospazi complementari di X in R<sup>3</sup>
+</p>
+<div class='vspace'></div><strong>DimX = 2</strong>, infatti una base è:<br /><pre class='escaped'>
+|-2c|    |0|    |-2|
+| b | = b|1| + c| 0|
+| c |    |0|    | 1|</pre><br />Gli spazi generati rispettivamente da un vettore qualsiasi che completi la base di X, ad esempio da i oppure da k, sono spazi complementari.
+<div class='vspace'></div><h3>Omomorfismi, nucleo e immagine</h3>
+<p>(Teorema importante) <strong>Teorema di nullità più rango</strong>:
+</p><dl><dd><div class='indent'><em>Se dimV=n, dimV = dim Ker</em>f<em> +dim f(v)</em>
+</div></dd></dl><p class='vspace'>Es: Si dimostri che esiste uno ed un solo omomorfismo f:R<sup>3</sup> &#57484; R<sup>3</sup> tale che:
+</p><pre class='escaped'>
+ |1|   |3|    |0|   |0|    |0|   | 3|
+f|2| = |6| , f|1| = |4| , f|2| = | 3| 
+ |0|   |0|    |1|   |4|    |0|   |-4|</pre>
+<div class='vspace'></div>Il teorema di determinazione di un omomorfismo garantisce la proprietà se i tre vettori<br /><pre class='escaped'>
+|1|   |0|   |0|
+|2| , |1| , |2|
+|0|   |0|   |0|</pre><br />sono una base, e infatti:<br /><pre class='escaped'>
+   |1 0 0|
+det|2 1 2| = -2 != 0
+   |0 1 0|</pre>
+<p class='vspace'>I vettori sono una base perchè il determinante è diverso da zero, quindi l'omomorfismo c'è ed è unico.
+</p><ul><li>Per sapere se è un immagine devo prendere i vettori e farne la combinazione lineare.<br />(a*v<sub>1</sub>+b*v<sub>2</sub>+c*v<sub>3</sub>+...=Immagine)
+</li><li>Per trovare la base dell'immagine, faccio la canonica dei vettori, tengo solo quelli indipendenti (det&#8800;0) e l'immagine è tutto il codominio.
+</li><li>Se ho due vettori base e un immagine “presunta” come prima faccio a*v<sub>1</sub>+b*v<sub>2</sub>=Immagine; se a e b esistono allora esiste anche l'immagine, altrimenti
+</li></ul><p>vuol dire che l'immagine “presunta” non appartiene al codominio (non è immagine).
+</p>
+<div class='vspace'></div><h3>Omomorfismi e matrici</h3>
+<p>Dati i vettori faccio la canonica di ogni vettore e trovo la matrice associata.
+</p>
+<p class='vspace'>Es: Si consideri l'omomorfismo
+</p><div  style='text-align: center;'><img src='../uploads/Uni/esMDDomomorf1.gif' alt='' title='' /></div>
+<p>determinare la matrice <strong>A</strong> associata ad <em>f</em> rispetto alla base canonica di R<sup>3</sup>.<br />Risulta:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/esMDDomomorf2.gif' alt='' title='' /></div>
+<p class='vspace'>Per trovare il nucleo devo mettere le equazioni uguali a zero (attenzione però a non eliminare le incognite!)
+</p><div  style='text-align: center;'><img src='../uploads/Uni/esMDDomomorf3.gif' alt='' title='' /></div>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='MatematicaDelDiscreto.html'>Torna alla pagina di Matematica del discreto</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 26, 2011, at 12:00 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziSecondaParte?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/MDD-EserciziSecondaParte?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

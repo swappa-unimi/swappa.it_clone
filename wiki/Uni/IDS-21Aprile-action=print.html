@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ingegneria del Software - Appunti del 21 Aprile 2009</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IDS-21Aprile.html' title='Ingegneria del Software - Appunti del 21 Aprile 2009'>Ingegneria del Software - Appunti del 21 Aprile 2009</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - Appunti del 21 Aprile 2009 ::</strong>
+</pre><div class='vspace'></div><h2>OOA e OOP</h2>
+<p>LA OOA è la fase di progettazione che arriva fino al tracciamento dei diagrammi delle classi, di sequenza ed eventualmente quelli di stati/transizioni. Siamo ancora in fase di analisi, e il nostro lavoro è language independent.
+</p>
+<p class='vspace'>Dal momento in cui dobbiamo andare a specificare gli <a class='wikilink' href='IDS-20Aprile.html'>attributi di relazione</a>, invece, entriamo nella fase di OOP, e questa fase è purtroppo language dependent. Vedremo in lezioni future come implementare gli attributi di relazioni con diversi linguaggi.
+</p>
+<p class='vspace'>I diagrammi che vedremo in questa lezione sono anch'essi language-dependent, o meglio, dipendono dall'architettura software che abbiamo deciso di utilizzare.
+</p>
+<div class='vspace'></div><h2>Diagramma dei componenti</h2>
+<p>L'idea di questo diagramma è quella di passare da una visione monolitica, in cui l'unica suddivisione è quella tra le classi, ma tutte le classi sono infilate nello stesso eseguibile, ad un software diviso in <strong>componenti</strong> comunicanti.
+</p>
+<p class='vspace'>Il vantaggio di dividere il software in componenti è che si possono installare su una macchina solamente i componenti necessari, ed è possibile riutilizzare gli stessi componenti per programmi diversi.
+</p>
+<p class='vspace'>Gli svantaggi invece risiedono nel fatto che il componente installato su di una macchina potrebbe non essere esattamente quello di cui ho bisogno, vanificando quindi l'utilità di cui sopra. Inoltre, se un componente condiviso apre una falla di sicurezza, questa verrebbe automaticamente estesa anche al mio software, e spesso non c'è modo di verificare l'affidabilità di componenti realizzati da terzi.
+</p>
+<p class='vspace'>Ricapitolando, l'unità di progetto del software sono le classi, ma l'unità di rilascio sono i componenti, ovvero insiemi di più classi omogenee dal punto di vista degli obiettivi o di altre caratteristiche funzionali.<br />Gli stereotipi sono in un certo senso dei componenti, dato che rappresentano categorie di classi che realizzano un certo aspetto applicativo.
+</p>
+<div class='vspace'></div><h3>Interfaccia di un componente</h3>
+<p>L'interfaccia di una classe sappiamo tutti che cos'è: è l'insieme dei metodi che la classe rende pubblici.
+</p>
+<p class='vspace'>L<strong>'interfaccia di un componente</strong> sarà quindi l'insieme delle funzioni che il componente esporrà, e questo insieme deve essere un sottinsieme di tutte le interfacce delle classi contenute nel componente.
+</p>
+<p class='vspace'>Se vediamo un componente come un contenitore di classe, è lecito aspettarci che tutte i metodi pubblici di queste classi siano visibili anche all'esterno del componente. In realtà ciò non è desiderabile: se ho riunito queste classi in un unico componente, è perché voglio che il componente esponga una sua interfaccia, e poi sia lui a giostrarsi con le classi che contiene in modo a me trasparente.
+</p>
+<p class='vspace'>Dobbiamo quindi introdurre il <strong>grado di coesione</strong> di un componente: è il numero di metodi pubblici delle classi interne che sono visibili all'esterno del componente. Quanto più questo numero è <strong>basso</strong>, tanto più il mio componente è <strong>coeso</strong>; l'ideale sarebbe avere un unico metodo pubblico di interfaccia a cui poi collaborano tutti gli altri metodi interni.
+</p>
+<p class='vspace'>Quando si raggruppano classi in componenti, pertanto, si persegue l'obiettivo di avere una grande coesione, cioè far sì che sia visibile il numero più basso possibile di metodi pubblici delle classi.
+</p>
+<p class='vspace'>Il motivo è che, in teoria, le classi vengono raggruppate in un componente secondo un principio di collaborazione: le classi che collaborano le metto in un componente, e io dall'esterno faccio "partire" la loro complessa collaborazione con la semplice chiamata di un metodo. Se alla fine salta fuori che il mio componente è poco coeso, allora scoprirei che in realtà le classi che ci ho infilato dentro non stanno affatto collaborando.
+</p>
+<div class='vspace'></div><h3>Criteri di raggruppamento</h3>
+<p>Come faccio a distinguere le mie classi in componenti?
+</p>
+<p class='vspace'>Posso <strong>utilizzare gli stereotipi</strong>. Se riesco a dare a tutte le mie classi un'etichetta di uno stereotipo, allora potrebbe essere sensato infilare tutte le classi con lo stesso stereotipo in un componente separato.
+</p>
+<p class='vspace'>Oppure, come dicevamo sopra, posso utilizzare un <strong>criterio basato sulla coesione</strong>: me ne infischio dello stereotipo e delle funzionalità della classe, e metto nello stesso componente le classi che collaborano spesso. Ovviamente il grado di coesione non potrà mai essere al 100%, ma ci si può avvicinare.
+</p>
+<p class='vspace'>Pertanto, per ogni componente dobbiamo essere in grado di dire:
+</p><ul><li>che classi contiene
+</li><li>la metrica di coesione
+</li><li>la sua interfaccia pubblica
+</li></ul><p class='vspace'>Il <strong>come</strong> saranno realizzati sti componenti dipende poi dall'architettura che abbiamo scelto (dll, EJB, etc.).
+</p>
+<div class='vspace'></div><h3>Dipendenza</h3>
+<p>Quando un componente chiama un altro componente, si crea una relazione di <strong>dipendenza</strong> del primo rispetto al secondo.
+</p>
+<p class='vspace'>Nel diagramma dei componenti la dipendenza viene indicata con una freccia che parte dal primo ed arriva al secondo. Ovviamente questa dipendenza deve essere anche possibile: se chiamo un certo metodo di una classe di un componente, devo anche garantire che quel metodo faccia parte dell'interfaccia pubblica del componente stesso.
+</p>
+<div class='vspace'></div><h2>Diagramma della messa in opera (deployment)</h2>
+<p>Giunge infine l'ora di dover installare il nostro software nel mondo fisico. Questo diagramma rappresenta un <strong>mapping</strong> tra l'architettura software e quella hardware. Nel caso più semplice, non ce n'è bisogno: copio l'eseguibile e via.
+</p>
+<p class='vspace'>Ma in generale è possibile anche avere diversi diagrammi di deployment. Infatti, è pienamente possibile avere i componenti del nostro software divisi su diverse macchine e accessibili in rete, e pertanto il diagramma di deployment deve tenere in conto questa distribuzione dei compiti tra diverse macchine. A seconda poi della configurazione di rete dove andremo ad installare, dovremo fare scelte diverse rispetto al deployment. Di solito si parla con il responsabile della rete, si sentono i suoi pareri relativi all'aprire servizi qui e porte là, e poi si decide come installare.
+</p>
+<p class='vspace'>Possiamo vedere questo diagramma come una sorta di istruzioni da dare all'installatore finale, a differenza del diagramma dei componenti che può essere visto come l'insieme delle istruzioni da dare a chi realizza il CD di installazione del nostro software o la cartella di download.
+</p>
+<p class='vspace'>Nel diagramma di deployment i <strong>cubi</strong> rappresentano nodi della rete, e non componenti software; sono quindi le locazioni su cui andrò ad installare il mio programma. Le linee tra cubi sono semplicemente delle possibilità di comunicazione tra quei due nodi. Si vede anche qui che la configurazione della rete è un limite alle scelte di deployment: non si può deployare in un modo che non è supportato da quella rete.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IDS-21Aprile)</span></div>
+  </div>
+</body>
+</html>

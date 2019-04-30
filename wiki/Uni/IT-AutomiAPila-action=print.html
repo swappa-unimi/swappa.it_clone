@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Informatica Teorica - Automi a pila </title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IT-AutomiAPila.html' title='Informatica Teorica - Automi a pila '>Informatica Teorica - Automi a pila </a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Automi a pila ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 14 Aprile</span>
+</p>
+<div class='vspace'></div><h2>Concetti iniziali</h2>
+<p>Nel <a class='wikilink' href='IT-LinguaggiLiberiDalContesto.html'>capitolo precedente</a> abbiamo imparato che una CFG è in grado di costruire un linguaggio libero dal contesto (da ora, anche CFL). Ora introduciamo un nuovo tipo di modello computazionale che si occupa di riconoscere i linguaggi, ovvero l' <strong>automa a pila</strong> (<strong>PDA</strong>, <em>Push-Down Automata</em>).<br />L'automa a pila è molto simile agli automi non deterministici, ma ha un optional che tutti gli NFA gli invidiano: lo <strong>stack</strong>, che fornisce memoria aggiuntiva al PDA, permettendogli di riconoscere anche i linguaggi non regolari. <br />Dato che l'automa a pila ha la stessa potenza descrittiva di una CFG, potremo usarlo per dimostrare che un certo linguaggio è libero dal contesto. E' un'equivalenza importante, perché alcuni linguaggi sono più semplici da descrivere in termini di riconoscimento che di generazione.
+</p>
+<p class='vspace'>Ecco un confronto tra gli schemi di un NFA e un PDA:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-nfa-pda.gif' alt='' title='' /></div>
+<p class='vspace'>Lo <em>state control</em> rappresenta gli stati e le funzioni di transizione, il nastro rappresenta le stringhe in ingresso, mentre le frecce rappresentano la <em>testina</em> dell'ingresso, che punta al prossimo simbolo che deve essere letto. Nel PDA fa la sua bella comparsa anche lo stack, su cui il PDA può scrivere e leggere simboli in modalità "last in, first out". La scrittura sullo stack è chiamata <strong>pushing</strong>, e consiste nell'inserimento di un nuovo simbolo nella posizione in cima alla pila, spingendo giù tutti gli altri di una posizione; la lettura invece è detta <strong>popping</strong> e consiste nell'estrazione del simbolo in prima posizione, che viene appunto letto e rimosso. Si noti che lo stack può contenere una quantità illimitata di informazioni, quindi ad esempio sarà in grado di riconoscere un linguaggio non regolare come: {0<sup>n</sup>1<sup>n</sup>|n&gt;=0}. Come? Basterà leggere un simbolo da input e <em>pushare</em> ogni 0 letto nello stack (che è illimitato); quando poi arriveremo agli 1, farà il <em>popping</em> di uno 0 per ogni 1 letto, e se alla fine dei giochi lo stack è vuoto allora l'ingresso sarà accettato.
+</p>
+<p class='vspace'>Concludiamo la panoramica iniziale sottolineando che l'automa a pila può essere sia deterministico che <code class='escaped'>n.d.</code>, che non sono equivalenti in termini di potenza: il PDA <code class='escaped'>n.d.</code> riconosce molti più linguaggi dell'altro.
+</p>
+<div class='vspace'></div><h2>Definizione formale di automa a pila</h2>
+<p>La definizione formale di automa a pila è molto simile a quella dell'automa a stati finiti, con l'unica eccezione della presenza dello stack, che può avere un alfabeto diverso rispetto a quello d'ingresso.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un <strong>automa a pila</strong> è una 6-upla (Q,&#931;,&#915;,&#948;,q<sub>0</sub>,F), dove:
+</p><ul><li>Q è l'insieme finito degli stati dell'automa
+</li><li>&#931; è l'alfabeto (insieme finito) dei simboli in ingresso
+</li><li>&#915; è l'alfabeto (insieme finito) dello stack
+</li><li>&#948;: Q × &#931;<sub>&#949;</sub> × &#915;<sub>&#949;</sub> &#8594; P(Q × &#915;<sub>&#949;</sub>) è la funzione di transizione. &#931;<sub>&#949;</sub> e &#915;<sub>&#949;</sub> stanno a significare che consideriamo l'unione tra gli insiemi &#931; e &#915; con l'elemento {&#949;}
+</li><li>q<sub>0</sub> &#8712; Q è lo stato iniziale dell'automa
+</li><li>F &#8838; Q è l'insieme finito degli stati accettanti 
+</li></ul></div>
+<div class='vspace'></div><h3>Definizione formale di computazione</h3>
+<p>Siano dati:
+</p><ul><li>un automa a pila M=(Q,&#931;,&#915;,&#948;,q<sub>0</sub>,F)
+</li><li>una stringa di ingresso <em>w</em> tale che <em>w = w<sub>1</sub>w<sub>2</sub>..w<sub>m</sub></em> , dove ogni w<sub>i</sub> fa parte dell'alfabeto &#931;<sub>&#949;</sub>
+</li><li>una stringa <em>s</em> tale che <em>s = s<sub>1</sub>s<sub>2</sub>..s<sub>m</sub></em> , dove ogni s<sub>i</sub> appartiene allo stack
+</li></ul><p class='vspace'>Diciamo allora che M accetta <em>w</em> se esiste una sequenza di stati <em>r<sub>0</sub>r<sub>1</sub>..r<sub>m</sub></em> in Q che rispettino tre condizioni:
+</p><ol><li><em>r<sub>0</sub> = q<sub>0</sub></em> e <em>s<sub>0</sub> = &#949;</em> (la macchina parte dallo stato iniziale e con lo stack vuoto);
+</li><li>per ogni i = 0, .. , m-1, abbiamo che <em>(r<sub>i+1</sub>,b)</em> &#8712; <em>&#948;(r<sub>i</sub>,w<sub>i+1</sub>,a)</em>, dove <em>s<sub>i</sub>=at</em> e <em>s<sub>i+1</sub>=bt</em> per qualche <em>a</em> e <em>b</em> che appartengono a &#915;<sub>&#949;</sub> e con <em>t</em>&#8712; &#915;* (lo stato futuro di M dipende dallo stato attuale, dal simbolo in ingresso e dall stack);
+</li><li>r<sub>m</sub> &#8712; F (la macchina accetta l'ingresso se l'ultimo stato in cui finisce è tra quelli finali). 
+</li></ol><div class='vspace'></div><h3>Esercizietto</h3>
+<p>Dare la definizione formale del PDA che riconosce il linguaggio {0<sup>n</sup>1<sup>n</sup>|n&gt;=0}.
+</p>
+<p class='vspace'><strong>Soluzione</strong>
+</p>
+<p class='vspace'>Qualche riga fa avevamo fatto una descrizione alla buona di come avrebbe dovuto comportarsi un automa a pila per riconoscere il linguaggio. Cerchiamo ora di dare una spiegazione più seria. <br />La lettura dei simboli in ingresso da parte del PDA può essere distinta in due fasi:
+</p><ol><li>finché il simbolo letto è uno 0, verrà messo in cima allo stack;
+</li><li>quando il simbolo letto diventa un 1, verrà fatto il pop di uno 0 dallo stack per ogni simbolo 1 letto.
+</li></ol><p>Se la lettura della stringa in ingresso finisce in concomitanza con lo svuotamento completo dello stack, allora la stringa è accettata; altrimenti è rifiutata.
+</p>
+<p class='vspace'>Cominciamo ora con le definizioni formali.<br />Sia dato un automa a pila M=(Q,&#931;,&#915;,&#948;,q<sub>1</sub>,F), dove:
+</p><ul><li>Q = {q<sub>1</sub>, q<sub>2</sub>, q<sub>3</sub>, q<sub>4</sub>}
+</li><li>&#931; = {0,1}
+</li><li>&#915; = {0,$} (dove il simbolo di $ ci servirà per capire se lo stack è vuoto)
+</li><li>q<sub>1</sub> è lo stato iniziale
+</li><li>F = {q<sub>1</sub>,q<sub>4</sub>} (anche q<sub>1</sub> è stato finale perché potremmo passare all'automa una stringa vuota)
+</li><li>&#948; è data dalla seguente tabella:
+</li></ul><div class='vspace'></div><table align='center' width='60%' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'>Input:
+</td><td bgcolor='#d4e1f0' colspan='3' align='center'  valign='top'>0
+</td><td bgcolor='#d4e1f0' colspan='3' align='center'  valign='top'>1
+</td><td bgcolor='#d4e1f0' colspan='3' align='center'  valign='top'>&#949;
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>Stack:
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>0
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>$
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>&#949;
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>0
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>$
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>&#949;
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>0
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>$
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>&#949;
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>q<sub>1</sub>
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'><code class='escaped'>{(</code>q<sub>2</sub>,$<code class='escaped'>)}</code>
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>q<sub>2</sub>
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'><code class='escaped'>{(</code>q<sub>2</sub>,0<code class='escaped'>)}</code>
+</td><td align='center'  valign='top'><code class='escaped'>{(</code>q<sub>3</sub>,&#949;<code class='escaped'>)}</code>
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>q<sub>3</sub>
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'><code class='escaped'>{(</code>q<sub>3</sub>,&#949;<code class='escaped'>)}</code>
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'><code class='escaped'>{(</code>q<sub>4</sub>,&#949;<code class='escaped'>)}</code>
+</td><td align='center'  valign='top'>0
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>q<sub>4</sub>
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>0
+</td></tr></table>
+<p class='vspace'>Il comportamento di questo PDA si capisce meglio rappresentandolo con un più familiare diagramma degli stati:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-pdaDiag.gif' alt='' title='' /></div>
+<p class='vspace'>Come interpretare le frecce? Ad esempio, <em>a,b -&gt; c</em> va letto come: quando l'automa legge il simbolo <em>a</em> dall'ingresso, dovrà sostituire il simbolo <em>b</em> che si trova in cima allo stack con il simbolo <em>c</em>. In pratica <em>b</em> si riferisce a un pop e <em>c</em> a un push.<br />Riferendoci al diagramma degli stati, vediamo come si comporta l'automa:
+</p><ul><li>da q<sub>1</sub> a q<sub>2</sub>: <em>&#949;,&#949;-&gt;$</em><br />Prima di leggere qualsiasi simbolo della stringa, pushiamo nello stack vuoto il simbolo $ (presto capiremo perché)
+</li><li>da q<sub>2</sub> a q<sub>2</sub>: <em>0,&#949;-&gt;0</em><br />Rimaniamo in q<sub>2</sub> finché leggiamo il simbolo 0 dalla stringa in ingresso. Per ognuna di queste letture inseriamo uno 0 in cima allo stack (senza sostituirlo con niente)
+</li><li>da q<sub>2</sub> a q<sub>3</sub>: <em>1,0-&gt;&#949;</em><br />Quando ci arriva il primo 1, passiamo dallo stato q<sub>2</sub> al q<sub>3</sub>. Per quanto riguarda lo stack facciamo un pop del primo 0 e non ci scriviamo niente
+</li><li>da q<sub>3</sub> a q<sub>3</sub>: <em>1,0-&gt;&#949;</em><br />Rimaniamo in q<sub>3</sub> finché leggiamo il simbolo 1 dalla stringa in ingresso. Per ognuna di queste letture facciamo un pop di uno 0 dallo stack
+</li><li>da q<sub>3</sub> a q<sub>4</sub>: <em>&#949;,$-&gt;&#949;</em><br />Quando finiamo i simboli da leggere in ingresso, se in cima alla lista ritroviamo il simbolo $ possiamo affermare che lo stack si è svuotato, quindi possiamo passare allo stato finale q<sub>4</sub>
+</li></ul><div class='vspace'></div><h2>Teorema 1 - sull'equivalenza con CFG</h2>
+<p>A inizio capitolo abbiamo detto che l'automa a pila ha la stessa potenza descrittiva di un CFG. Non l'avessimo mai fatto: ora ci tocca dimostrarlo.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio è libero dal contesto se e solo se esiste un automa a pila che lo riconosce.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Il teorema è un "se e solo se", quindi vanno dimostrati entrambi i sensi delle implicazioni. 
+</p>
+<p class='vspace'><strong>(I)</strong> <em>Se un linguaggio è libero dal contesto, allora esiste un PDA che lo riconosce</em>
+</p>
+<p class='vspace'>Dato che per definizione un CFL è generato da una grammatica libera dal contesto, non dobbiamo fare altro che dimostrare che ogni CFG G può essere convertita in un equivalente PDA P. In pratica dobbiamo costruire P in modo che se gli passiamo in ingresso una stringa <em>w</em> generata da G, questi dovrà accettarla. Ma come fa a capire se è davvero generata dalla grammatica a lui equivalente? Dovrà verificare (in modo <code class='escaped'>n.d.</code> se tra tutte le derivazioni possibili della grammatica ne esiste una che dalla variabile iniziale porta a <em>w</em>. <br />Più nel dettaglio, P comincia la sua computazione scrivendo la variabile iniziale sullo stack; poi prosegue attraverso una serie di stringhe intermedie ottenute sostituendo le variabili secondo le regole della grammatica; infine quando arriva a una stringa composta da soli terminali la confronta con <em>w</em>: se corrispondono allora P accetta, altrimenti abbandona quel ramo della computazione.<br />Tutto ciò è molto bello, ma dove le memorizzo le stringhe intermedie? Anche se la tentazione è forte, non posso metterle così come sono nello stack. Se infatti dovessi fare una sostituzione di una variabile in una stringa intermedia e questa non si trova in cima allo stack, dove pensate che la prenderemo? Esatto, proprio là dietro. La soluzione è conservare solo una parte della stringa intermedia nello stack, quella che va dalla prima variabile in poi; tutti i simboli che vengono prima devono corrispondere con la stringa in ingresso, altrimenti buttiamo via tutto.
+</p>
+<p class='vspace'>Siamo pronti.<br />Sia dato l'automa a pila P=(Q,&#931;,&#915;,&#948;,q<sub>1</sub>,F). Per rendere la costruzione più chiara, descriveremo la funzione di transizione con la notazione breve, che permette di scrivere sullo stack una stringa intera con un unico passo della macchina (normalmente invece per scriverci su una stringa di dieci caratteri, ad esempio ACCABANANA, dovremmo fare 10 passi).<br />I tre stati fondamentali di P sono Q={q<sub>start</sub>, q<sub>loop</sub>, q<sub>accept</sub>}, in cui q<sub>start</sub> è quello iniziale e q<sub>accept</sub> l'unico accettato. Diamo ora una descrizione del funzionamento di P:
+</p><ol><li>&#948;(q<sub>start</sub>,&#949;,&#949;)=<code class='escaped'>{(</code>q<sub>loop</sub>,S$<code class='escaped'>)}</code><br />"metti il simbolo $ e la variabile iniziale nello stack, quindi vai in q<sub>loop</sub>";
+</li><li>continua a ripetere i seguenti passi:
+<ol><li>&#948;(q<sub>loop</sub>,&#949;,A)=<code class='escaped'>{(</code>q<sub>loop</sub>,w) | dove A-&gt;<em>w</em> è una regola in R}<br />"se in cima allo stack c'è una variabile <em>A</em>, seleziona in modo non deterministico una delle regole per A e sostituisci A con la stringa che si trova a destra della regola";
+</li><li>&#948;(q<sub>loop</sub>,a,a)=<code class='escaped'>{(</code>q<sub>loop</sub>,&#949;<code class='escaped'>)}</code><br />"se in cima allo stack c'è un simbolo terminale <em>a</em>, leggi il prossimo simbolo dall'ingresso e confrontalo con <em>a</em>. Se corrispondono, ripeti; altrimenti abbandona questo ramo della computazione non deterministica";
+</li><li>&#948;(q<sub>loop</sub>,&#949;,$)=<code class='escaped'>{(</code>q<sub>accept</sub>,&#949;<code class='escaped'>)}</code><br />"se in cima allo stack c'è il simbolo $, entra nello stato di accettazione!" (quando si arriva a $ abbiamo infatti la garanzia di aver letto tutta la stringa <em>w</em>)
+</li></ol></li></ol><p class='vspace'>Ed ecco finalmente il diagramma degli stati di P in tutta la sua fierezza:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-cfg2pda-1.gif' alt='' title='' /></div>
+<p class='vspace'><strong>(II)</strong> <em>Se un PDA riconosce un linguaggio, allora è un linguaggio libero dal contesto</em>
+</p>
+<p class='vspace'>Situazione inversa: abbiamo un PDA P e vogliamo creare un CFG G che generi tutte le stringhe accettate da P. Seguitemi prima con la costruzione, poi verificheremo se ci aiuta a dimostrare l'implicazione (tenetevi pronti: ci sarà un altro "se e solo se" da affrontare).
+</p>
+<p class='vspace'>Come prima cosa, dovremo aggiungere alla nostra grammatica G una variabile <em>A<sub>pq</sub></em> per ogni coppia di stati <em>p</em> e <em>q</em> in P. Non è una variabile a caso, ma quella che genera tutte le stringhe che possono portare il PDA da <em>p</em> a <em>q</em> lasciando lo stack nelle stesse condizioni in cui lo si è trovato (o vuoto o con lo stesso contenuto). Per riuscirci, dobbiamo fornire a P tre nuove caratteristiche:
+</p><ol><li>deve avere un unico stato accettante q<sub>accept</sub>;
+</li><li>deve svuotare il suo stack prima di accettare;
+</li><li>ogni transizione deve consistere o in un'operazione di push o in una di pop, non entrambe (basta dividere la transizione in due).
+</li></ol><p class='vspace'>Qualcosa sul comportamento di P già si capisce da queste caratteristiche: la prima operazione su una qualsiasi stringa x sarà di push, e l'ultima di pop. E le altre? Distinguiamo due casi:
+</p><ul><li>il simbolo estratto dallo stack alla fine della computazione è quello che avevo messo all'inizio, quindi lo stack è vuoto solo in questi due momenti. Simuliamo questa eventualità con la regola:
+<div class='indent'><strong>A<sub>pq</sub>-&gt;aA<sub>rs</sub>b</strong>
+</div></li></ul><div class='indent'>, dove <em>a</em> è il simbolo letto in ingresso al primo passo, <em>b</em> è il simbolo letto in ingresso all'ultimo passo, <em>r</em> è lo stato che segue <em>p</em> ed <em>s</em> è quello che precede <em>q</em>. Aiutiamoci con uno schema:
+</div><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-pda2cfg-1.gif' alt='' title='' /></div>
+<div class='vspace'></div><ul><li>seconda situazione: il simbolo estratto dallo stack alla fine della computazione non è quello che avevo messo all'inizio, quindi lo stack si è svuotato completamente tra <em>p</em> e <em>q</em> almeno una volta, in uno stato che chiameremo <em>r</em>. Per questa eventualità introduciamo la regola:
+<div class='indent'><strong>A<sub>pq</sub>-&gt;A<sub>pr</sub>A<sub>rq</sub></strong>
+</div></li></ul><div class='indent'>Aiutiamoci anche in questo caso con uno schema:
+</div><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-pda2cfg-1.gif' alt='' title='' /></div>
+<p class='vspace'>La costruzione di G termina aggiungendo per ogni <em>p</em> &#8712; Q la regola: <strong>A<sub>pp</sub>-&gt;&#949;</strong>.
+</p>
+<p class='vspace'>La costruzione è questa, ma per dimostrare la seconda implicazione del Teorema 1 (ve lo ricordate ancora?) dovremo dimostrare che A<sub>pq</sub> genera una stringa <em>x</em> se e solo se <em>x</em> può portare P da <em>p</em> con stack vuoto a <em>q</em> con stack vuoto. Distinguiamo ancora i due versi dell'implicazione. 
+</p>
+<p class='vspace'><strong>(II.a)</strong> <em>Se A<sub>pq</sub> genera </em>x<em>, allora </em>x<em> può portare P da </em>p<em> con stack vuoto a </em>q<em> con stack vuoto</em><br />La dimostrazione viene fatta per induzione.
+</p><ul><li><em>passo base</em>:<br />La derivazione ha un solo passo, quindi nella parte destra della regola devono esserci solo terminali. L'unica regola di questo tipo in G è A<sub>pp</sub>-&gt;&#949;, che è verificata perché se non prendo niente in ingresso parto con lo stack vuoto e finisco con lo stack vuoto.
+</li><li><em>passo induttivo</em>:<br />Consideriamo vere le derivazioni con al più k passi, con k&gt;=1, e verifichiamo se sono vere anche per k+1 passi.<br />Supponiamo di avere A<sub>pq</sub>-*-&gt;x ("A<sub>pq</sub> deriva x") in k+1 passi. Come abbiamo visto, nel primo passo di derivazione sono due le regole che possono essere applicate:
+<ol><li>A<sub>pq</sub>-&gt;aA<sub>rs</sub>b<br />Consideriamo una porzione <em>y</em> della <em>x</em> generata da A<sub>rs</sub>, tale che <em>x=ayb</em>. Dato che A<sub>rs</sub>-*-&gt;y in k passi, l'ipotesi induttiva ci dice che P può andare da <em>r</em> con stack vuoto ad <em>s</em> con stack vuoto. Vediamo bene cosa succede: P parte da <em>p</em> con lo stack vuoto, e dopo aver letto <em>a</em> va nello stato <em>r</em> mettendo <em>t</em> in cima allo stack; poi P legge la stringa <em>y</em> che lo porta allo stato <em>s</em> lasciando <em>t</em> lì dov'è; infine P legge <em>b</em> che lo porta allo stato <em>q</em> facendogli fare un pop di <em>t</em> dallo stack. Perfetto: parto e arrivo con lo stack vuoto;
+</li><li>A<sub>pq</sub>-&gt;A<sub>pr</sub>A<sub>rq</sub><br />Consideriamo le porzioni <em>y</em> e <em>z</em> delle <em>x</em> che generano rispettivamente A<sub>pr</sub> e A<sub>rq</sub>, tali che <em>x=yz</em>. Dato che A<sub>pr</sub>-*-&gt;y e A<sub>rq</sub>-*-&gt;z in massimo k passi, l'ipotesi induttiva ci dice che <em>y</em> può portare P da <em>p</em> ad <em>r</em> con lo stack vuoto all'inizio e alla fine; stessa cosa per <em>z</em> che porta P da <em>r</em> a <em>q</em>. Quindi, sommando gli effetti, <em>x</em> può portare P dallo stato <em>p</em> con stack vuoto allo stato <em>q</em> con stack vuoto. Perfetto, abbiamo completato il passo induttivo!
+</li></ol></li></ul><p class='vspace'><strong>(II.b)</strong> <em>Se </em>x<em> può portare P da </em>p<em> con stack vuoto a </em>q<em> con stack vuoto, allora A<sub>pq</sub> genera </em>x''<br />Anche in questo caso la dimostrazione va fatta per induzione.
+</p><ul><li><em>passo base</em>:<br />La computazione ha 0 passi, quindi stato iniziale e stato finale coincidono. Chiamiamo <em>p</em> questo stato, per cui vale la regola A<sub>pp</sub>-*-&gt;x. Ma dato che in 0 passi P può leggere solo la stringa vuota, allora x=&#949;; sostituiamo il valore di <em>x</em> nella regola di prima e otteniamo A<sub>pp</sub>-&gt;&#949;, che è una regola di G per costruzione! La base è provata!
+</li><li><em>passo induttivo</em>:<br />Consideriamo vere le computazioni con al più k passi, con k&gt;=0, e verifichiamo se sono vere anche per k+1 passi.<br />Se supponiamo che P abbia una computazione in cui <em>x</em> porta <em>p</em> a <em>q</em> con stack vuoto in k+1 passi, i casi sono due:
+<ol><li>"lo stack è vuoto solo all'inizio e alla fine della computazione"<br />Chiamiamo <em>t</em> il simbolo che metto in cima allo stack alla prima mossa e che tolgo solo all'ultima. Sia <em>a</em> l'ingresso letto al primo passo, <em>b</em> quello letto all'ultimo, <em>r</em> lo stato in cui vado dopo la prima mossa, ed <em>s</em> lo stato che precede l'ultima. Abbiamo quindi che &#948;(p,a,&#949;) contiene (r,t) e &#948;(s,b,t) contiene (q,&#949;), perciò la regola A<sub>pq</sub>-&gt;aA<sub>rs</sub>b è in G.<br />Se adesso chiamiamo <em>y</em> la parte di <em>x</em> priva dei simboli <em>a</em> e <em>b</em> (dove <em>x=ayb</em>), l'ingresso <em>y</em> può portare P dallo stato <em>r</em> ad <em>s</em> senza andare a toccare il simbolo <em>t</em> nello stack; in altre parole se diamo <em>y</em> in ingresso a P, questo può andare da <em>r</em> con lo stack vuoto ad <em>s</em> con lo stack vuoto. Evitando di considerare <em>a</em> e <em>b</em> abbiamo rimosso due passaggi dai <em>k+1</em> necessari per la computazione di <em>x</em>, quindi <em>y</em> richiede <em>k-1</em> passi. Non chiedetemi perché, ma era proprio quello che volevamo sentirci dire! Grazie all'ipotesi induttiva possiamo infatti affermare che A<sub>rs</sub>-*-&gt;y, e di conseguenza che A<sub>pq</sub>-*-&gt;x!
+</li><li>"lo stack è vuoto all'inizio e alla fine della computazione, e anche in un altro punto"<br />Sia <em>r</em> lo stato, diverso da quello iniziale e finale, in cui lo stack è vuoto; quindi le parti di computazione che vanno da <em>p</em> ad <em>r</em> e da <em>r</em> a <em>q</em> impiegano al massimo k passi. Chiamiamo ora <em>y</em> l'ingresso letto da P nella prima parte <em>z</em> quello letto nella seconda. L'ipotesi induttiva ci dice che A<sub>pr</sub>-*-&gt;y e che A<sub>rq</sub>-*-&gt;z. Ma dato che la regola A<sub>pq</sub>-&gt;A<sub>pr</sub>A<sub>rq</sub> è in G, A<sub>pq</sub>-*-&gt;x, e quindi abbiamo completato il passo induttivo.
+</li></ol></li></ul><p class='vspace'><span style='font-size:173%'>Quindi</span>, ricapitoliamo. Dovevamo dimostrare questo teorema:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio è libero dal contesto se e solo se esiste un automa a pila che lo riconosce.
+</p></div>
+<p class='vspace'>Avendo dimostrato tutti i possibili "se e solo se" nei casi (I), (II.a) e (II.b), possiamo <strong>finalmente</strong> dire che 'sto teorema immondo è dimostrato!
+</p>
+<div class='vspace'></div><h2>Corollario al Teorema 1</h2>
+<p>Ebbene sì, quell'incubo aveva anche un corollario:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Ogni linguaggio regolare è libero dal contesto.
+</p></div>
+<p class='vspace'>Esticazzi.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IT-AutomiAPila)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Conditional Markup </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='PmWiki.ConditionalMarkup' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				ConditionalMarkup
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/ConditionalMarkup?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/ConditionalMarkup?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/ConditionalMarkup?action=print' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/ConditionalMarkup?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/ConditionalMarkup?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> Tools
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Cal/Cal'>Calendario</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Gruppi'>Gruppi</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Categorie'>Categorie</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/WikiSandbox'>WikiSandbox</a>
+</li></ul><p class='vspace sidehead'> Categorie
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>UniCrema</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Guide'>Guide</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Qultura'>Qultura</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Recensioni'>Recensioni</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Imperdibili'>Imperdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Perdibili'>Perdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/LoschiIndividui'>Loschi individui</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/CaGate'>caGate</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringWiki'>Touring Wiki</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringBar'>Touring Bar</a>
+</li></ul><p class='vspace sidehead'> Help
+</p><ul><li><a class='urllink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki' title='' rel='nofollow'>Guide interne wiki</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><p class='vspace'  style='text-align: right;'> <span style='font-size:83%'><a class='wikilink' href='http://www.swappa.it/wiki/Site/SideBar?action=edit'>edit SideBar</a></span>
+</p>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Conditional Markup was last modified on June 10, 2010, at 11:05 AM'>
+							<span style='display:none;'>Conditional Markup</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='InterMap.html'>InterMap</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation Index</a> | <a class='wikilink' href='PageVariables.html'>Page variables</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' ><span class='frame rfloat' style='font-size: smaller; background-color: #ffffcc;'>authors, admins (advanced) </span>
+</div>
+<h2>Using the (:if:) Directive</h2>
+<p>The <code class='escaped'>(:if:)</code> directive allows portions of a page to be included or 
+excluded from rendering.  The generic forms of the <code class='escaped'>(:if:)</code> directive are
+</p>
+<div class='vspace'></div><div class='indent'><code class='escaped'>(:if cond param:) body (:ifend:)</code>
+</div><div class='indent'><code class='escaped'>(:if cond param:) body (:else:) body (:ifend:)</code>
+</div><div class='indent'><code class='escaped'>(:if cond param:) body (:elseif cond param:) body (:ifend:)</code>
+</div><p class='vspace'>where "cond" names a condition to be tested, and "param" is a parameter or other argument to the condition.
+</p>
+<p class='vspace'><em>Note that <code class='escaped'>(:if:)</code> without parameters and <code class='escaped'>(:ifend:)</code> are identical. Also note that <code class='escaped'>(:if cond:)</code> automatically closes a previous conditional. For nested multiple levels, see <a href='#nested-conditions'>Nested conditionals</a>.</em>
+</p>
+<div class='vspace'></div><h2>Built-in Conditions <a name='built-in-conditions' id='built-in-conditions'></a></h2>
+<p>The built-in conditions include:
+</p>
+<div class='vspace'></div><table class='indent' border='0' cellpadding='0' cellspacing='0' valign='top' >
+<tr ><td  valign='top'><code class='escaped'>(:if name PAGENAME:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>current page is named "<code class='escaped'>PAGENAME</code>"
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if group GROUPNAME:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>current group is named "<code class='escaped'>GROUPNAME</code>"
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if auth LEVEL PAGENAME:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>viewer is authorized - meaning "what they are allowed to do" - matches a "<code class='escaped'>LEVEL</code>" where <code class='escaped'>LEVEL</code> can be: <code class='escaped'>read</code>, <code class='escaped'>edit</code>, <code class='escaped'>upload</code>, <code class='escaped'>attr</code> or <code class='escaped'>admin</code>; <code class='escaped'>PAGENAME</code> is optional.
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if authid:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>current viewer is authenticated - meaning they have proven who they are via login - to use this the wiki must include recipe <a class='wikilink' href='AuthUser.html'>AuthUser</a> or others which set the <code class='escaped'>$AuthId</code> variable.
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if enabled InvalidLogin:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>username and password not authenticated. To use this the wiki must include recipe AuthUser.
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if true:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>always include text
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if false:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>always exclude text (same as a comment)
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if attachments:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>current page has one or more attachments
+<p>If used in a sidebar, header, or footer the condition applies to the main page.
+</p></td></tr><tr ><td  valign='top'><code class='escaped'>(:if date DATE VALUE:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'><code class='escaped'>DATE</code> may be year-month.  year-month-day is optional.  
+<p>Evaluates to true if <code class='escaped'>VALUE</code> is within <code class='escaped'>DATE</code> ("now" or "today" is assumed if VALUE is omitted, as in the following examples.)  (Note that <code class='escaped'>VALUE</code> can be a recognizable date via strtotime() whereas DATE [or DATE1 and DATE2 below] have a more fixed format which explicitly must exclude spaces.  Any spaces in DATE1 or DATE2 cause unpredictable results.)
+</p></td></tr><tr ><td  valign='top'><code class='escaped'>(:if date DATE.. VALUE:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if <code class='escaped'>VALUE</code> (or current date if omitted) is <code class='escaped'>DATE</code> or later (unlimited)
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if date ..DATE VALUE:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if <code class='escaped'>VALUE</code> (or current date if omitted) is <code class='escaped'>DATE</code> or earlier (unlimited)
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if date DATE1..DATE2 VALUE:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if <code class='escaped'>VALUE</code> (or current date if omitted) is in range <code class='escaped'>DATE1</code> to <code class='escaped'>DATE2</code> (inclusive) 
+<p><span  style='color: green;'><span style='font-size:83%'><em>dates are in <a style='color: green' target='_blank'  class='urllink' href='http://w3.org/QA/Tips/iso-date' title='' rel='nofollow'>standard</a> format yyyy-mm-dd or yyyymmdd or yyyymmddThhmm (note the "T" between the date and the hour, and also see comment above on format of VALUE).</span></em></span>
+<br clear='all' /><span style='font-size:83%'>Note the ".." cannot have leading or trailing spaces.</span>
+</p></td></tr><tr ><td  valign='top'><code class='escaped'>(:if enabled VAR:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if PHP VAR is true
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if enabled AuthPw:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if user has entered any password during the current browser session.
+<p>- This does not mean the user has entered the correct password, just that they entered one.
+</p></td></tr><tr ><td  valign='top'><code class='escaped'>(:if equal STRING1 STRING2:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if <code class='escaped'>STRING1</code> equals <code class='escaped'>STRING2</code>, use quotes if the string or string variable contains spaces, eg <code class='escaped'>"MY STRING"</code>
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if match REG_EXPRESSION:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if current page name matches the regular expression
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if exists PAGENAME:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if the page <em>pagename</em> exists
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if ontrail WikiTrailPage ThisPage:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>true if ThisPage is in a list used as a <a class='wikilink' href='WikiTrails.html'>trail</a> on WikiTrailPage
+</td></tr></table>
+<p class='vspace'>The name and group conditionals will work even for an included page, as the "name" and "group" conditionals always check the currently displayed page, as opposed to the page that the markup appears in.
+</p>
+<p class='vspace'><strong>Note</strong>: Although there is no built-in conditional markup to test ?action=, you can use  <code class='escaped'>(:if equal {$Action} ACTION:)</code>
+to test what the current action being requested is.
+</p>
+<div class='vspace'></div><h2>Negated Conditions</h2>
+<p>Negated forms of conditions also work:
+</p>
+<div class='vspace'></div><table class='indent' border='0' cellpadding='0' cellspacing='0' valign='top' >
+<tr ><td  valign='top'><code class='escaped'>(:if !attachments:)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>this page has no attachments
+</td></tr><tr ><td colspan='3'  valign='top'>&nbsp;
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if ! name PAGENAME:)</code>
+</td><td rowspan='3'  valign='top'>
+</td><td rowspan='3' valign='middle' >current page is NOT named "<code class='escaped'>PAGENAME</code>"
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if name -PAGENAME :)</code>
+</td><td  valign='top'>
+</td></tr></table>
+<div class='vspace'></div><h2>Nesting Conditions <a name='nested-conditions' id='nested-conditions'></a></h2>
+<p>Note that <code class='escaped'>(:if cond:)</code> automatically closes a previous conditional. Thus, the following two examples have identical meaning:
+</p><ul><li><code> (:if cond1:) cond1 is true (:if cond2:) cond2 is true (:ifend:)</code>
+</li><li><code> (:if cond1:) cond1 is true <span  style='background-color: #fcc;'>(:ifend:)</span>(:if cond2:) cond2 is true (:ifend:)</code>
+</li></ul><p class='vspace'>Conditions can be nested from 2.2.beta 66. To have nested conditionals you need to number the if, and the matching else/ifend:
+</p><div class='indent'><pre class='escaped'>
+(:if cond1:)
+  cond1 is true
+  (:if2 cond2:)
+     cond1 and cond2 are true
+  (:else2:)
+     cond1 is true, cond2 is not
+  (:if2end:)
+(:else:)
+  cond1 is false, cond2 testing was ignored
+(:ifend:)
+</pre>
+</div><p><span style='font-size:83%'><em>Spaces were added for better readability.</em></span>
+</p>
+<div class='vspace'></div><h2>Using wildcard placeholders</h2>
+<p>The character <code class='escaped'>*</code> can be used as a wildcard to represent any character, zero, one, or multiple times.<br />The character <code class='escaped'>?</code> can be used as a wildcard to represent any character exactly once.<br />Wildcard characters (<code class='escaped'>*</code> and <code class='escaped'>?</code>) can be used with the <em>name</em> and <em>group</em> conditional markups, thus:
+</p>
+<div class='vspace'></div><table class='indent' border='0' cellpadding='0' cellspacing='0' valign='top' >
+<tr ><td  valign='top'><code class='escaped'>(:if name PmCal.2005* :)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>current page is in group PmCal and begins with 2005
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if group PmWiki* :)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>current page is in group PmWiki or a group beginning with PmWiki
+</td></tr><tr ><td  valign='top'><code class='escaped'>(:if name Profiles.*,-Profiles.Profiles :)</code>
+</td><td  valign='top'>&nbsp;-&nbsp;
+</td><td  valign='top'>current page is in group <code class='escaped'>Profiles</code> but not <code class='escaped'>Profiles.Profiles</code>
+</td></tr></table>
+<div class='vspace'></div><h2>Using <a class='wikilink' href='PageTextVariables.html'>page text variables</a>, <a class='wikilink' href='PageVariables.html'>page variables</a> and <a class='wikilink' href='MarkupExpressions.html'>markup expressions</a></h2>
+<p>Page text variables (PTVs), page variables (PVs) and markup expressions can be used in conditional markup. They will be assigned/evaluated before the condition(s). 
+</p>
+<p class='vspace'><a name='combiningconditions' id='combiningconditions'></a>
+</p><h2>Combining conditions</h2>
+<p>Conditions (as previously defined) may be combined into more complex conditional expressions using one of these three equivalent forms:
+</p>
+<div class='vspace'></div><div class='indent'><pre class='escaped'>
+(:if expr EXPRESSION :)
+(:if [ EXPRESSION ] :)
+(:if ( EXPRESSION ) :)</pre>
+</div><p class='vspace'>Conditions are combined into expressions with boolean operators and brackets. In the next table, A and B are either regular conditions or (round-)bracketed sub-expressions of regular conditions:
+</p>
+<div class='vspace'></div><div  style='margin-left: 2em;' > 
+<table border='1' cellpadding='2' cellspacing='0' ><tr ><th  align='center'>Expression</th><th  align='center'>Operator</th><th  align='center'>Result</th></tr>
+<tr ><td  align='center'><code class='escaped'>A and B</code></td><td  align='center'>And</td><td >TRUE if both A and B are TRUE.</td></tr>
+<tr ><td  align='center'><code class='escaped'>A or B</code></td><td  align='center'>Or</td><td >TRUE if either A or B is TRUE.</td></tr>
+<tr ><td  align='center'><code class='escaped'>A xor B</code></td><td  align='center'>Xor</td><td >TRUE if either A or B is TRUE, but not both.</td></tr>
+<tr ><td  align='center'><code class='escaped'>! A</code></td><td  align='center'>Not</td><td >TRUE if A is not TRUE.</td></tr>
+<tr ><td  align='center'><code class='escaped'>A &amp;&amp; B</code></td><td  align='center'>And</td><td >TRUE if both A and B are TRUE.</td></tr>
+<tr ><td  align='center'><code class='escaped'>A || B</code></td><td  align='center'>Or</td><td >TRUE if either A or B is TRUE.</td></tr>
+</table></div>
+<p class='vspace'>Example
+</p><div class='indent'><pre class='escaped'>
+(:if [ name SomePage and group SomeGroup ]:)    equivalent to (:if name SomeGroup.SomePage:)</pre>
+</div><p class='vspace'><strong>Important Notes:</strong>
+</p><ul><li>Spaces are <em>required</em> around operators and brackets.
+</li><li>No specific feedback is given for syntax errors or unbalanced brackets.
+</li><li>Use round brackets (not square) for nested expressions.
+</li></ul><p class='vspace'>Thus, the following is a valid way of building an expression that shows the following contents only when the user is either the administrator, or is logged in and the time is later than the given date:
+</p>
+<div class='vspace'></div><div class='indent'><code class='escaped'>(:if [ auth admin || ( authid &amp;&amp; date 2006-06-01.. ) ] :)</code>
+</div><p class='vspace'>Nesting with square brackets will silently fail to work as expected:
+</p>
+<div class='vspace'></div><div class='indent'><code class='escaped'>(:if [ auth admin || [ authid &amp;&amp; date 2006-06-01 ] ] :) </code>&nbsp;&nbsp;&nbsp;<span  style='color: red;'>NOTE: Doesn't Work!</span>
+</div><p class='vspace'>A common use of these complex tests are for expressions like:
+</p>
+<div class='vspace'></div><div class='indent'><code class='escaped'>(:if expr auth admin || auth attr || auth edit :)</code>
+</div><div class='indent'><code class='escaped'>[[Logout -&gt; {$Name}?action=logout]]</code>
+</div><div class='indent'><code class='escaped'>(:ifend:)</code>
+</div><p class='vspace'>which provides a <em>logout</em> link only when the browser has admin, attr, or edit permissions.
+</p>
+<p class='vspace'><span class='frame rfloat' style='font-size: smaller; background-color: #ffffcc;'> admins (advanced)</span>
+</p><h2>Creating new conditions</h2>
+<p>See <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/ConditionalMarkupSamples' title='' rel='nofollow'>Cookbook:ConditionalMarkupSamples</a>.
+</p>
+<p class='vspace'>See also <a class='wikilink' href='PageVariables.html#specialreferences'>special references</a> for the use of {*$Variables}.
+</p>
+<div class='vspace'></div><div class='faq' > <a name='faq' id='faq'></a> 
+<p> 
+</p></div><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='InterMap.html'>InterMap</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation Index</a> | <a class='wikilink' href='PageVariables.html'>Page variables</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+<br clear='all' />
+</p><div  style='background-color: #ffe; border-top: 1px solid black; font-size: .8em;' > 
+<p>This page may have <span class='commentout-pmwikiorg'> a more recent version on <a class='urllink' href='http://www.pmwiki.org' title='' rel='nofollow'>pmwiki.org</a>: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/ConditionalMarkup' title='' rel='nofollow'>PmWiki:ConditionalMarkup</a>, and </span> a talk page: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/ConditionalMarkup-Talk' title='' rel='nofollow'>PmWiki:ConditionalMarkup-Talk</a>.
+</p></div>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/RecentChanges'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 10, 2010, at 11:05 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/ConditionalMarkup?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/ConditionalMarkup?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

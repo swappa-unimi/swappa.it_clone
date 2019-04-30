@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Riassunto del libro di Sistemi Operativi - Capitolo 7: Sincronizzazione dei processi </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SOcap7' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Riassunto del libro di Sistemi Operativi - Capitolo 7: Sincronizzazione dei processi
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap7?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap7?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SOcap7-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap7?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap7?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Riassunto del libro di Sistemi Operativi - Capitolo 7: Sincronizzazione dei processi was last modified on April 05, 2008, at 09:28 PM'>
+							<span style='display:none;'>Riassunto del libro di Sistemi Operativi - Capitolo 7: Sincronizzazione dei processi</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Capitolo 7: Sincronizzazione dei processi ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'>Processo che coopera = influenza e/o è influenzato da altri processi.<br />Accesso concorrente a dati condivisi = possibile inconsistenza
+</p>
+<div class='vspace'></div><h2>7.1 Il problema della sincronizzazione</h2>
+<p><strong>Race condition</strong> = <strong>corsa critica</strong>: più thread leggono e manipolano gli stessi dati in modo concorrente =&gt; il risultato dipende dall'ordine dell'esecuzione dei thread =&gt; per evitare le corse critiche, i thread vanno sincronizzati.
+</p>
+<div class='vspace'></div><h2>7.2 Il problema della sezione critica</h2>
+<p><strong>Sezione critica</strong> = sezione di codice in cui un thread modifica variabili comuni =&gt; se un thread esegue quel codice, nessun altro può eseguirlo.
+</p>
+<p class='vspace'>L'esecuzione delle sezioni critiche è <strong>mutuamente esclusiva</strong>.
+</p>
+<p class='vspace'>Per risolvere il problema delle sezioni critiche, vanno soddisfatte 3 condizioni:
+</p><ol><li>Mutua esclusione
+</li><li>Progresso: solo chi NON sta eseguendo la propria sezione critica, può concorrere con gli altri per accedervi, e la scelta non può durare indefinitamente
+</li><li>Attesa limitata: un thread ha un limite di attesa massimo prima di entrare nella sezione critica
+</li></ol><div class='vspace'></div><h2>7.3 Soluzioni per 2 processi</h2>
+<p>Negli algoritmi qui sotto proposto, un thread deve prima usare il metodo <strong>entraSezioneCritica</strong> dal quale non uscirà finché non saranno soddisfatte le condizioni.
+</p>
+<div class='vspace'></div><pre> entraSezioneCritica(mioPid);
+ // Codice critico
+ esciSezioneCritica(mioPid);
+</pre><p class='vspace'>Gli algoritmi hanno indice 0 e 1, perché sono solo 2.
+</p>
+<div class='vspace'></div><h3>7.3.1 Algoritmo 1</h3>
+<p>La variabile turno è condivisa. Il thread T<sub>i</sub> esegue la sua sezione critica solo se è il suo turno.
+</p>
+<div class='vspace'></div><pre> inizializza() {
+    turno = 0;
+ }
+
+ entraSezioneCritica(int pid) {
+    while (turno != pid) {
+       Thread.yield(); // faccio riposare il mio thread
+    }
+ }
+
+ esciSezioneCritica(int pid) {
+    turno = 1 - pid,
+ }
+</pre><p class='vspace'>Questo algo assicura che solo un thread alla volta entri nella sezione critica =&gt; niente progresso, perché impone stretta alternanza: il turno cambia dopo ogni utilizzo, quindi anche se un thread non usa la sezione critica, l'altro non può rientrare subito dopo la sua.
+</p>
+<div class='vspace'></div><h3>7.3.2 Algoritmo 2</h3>
+<p>Per ovviare a questo problema si introducono le variabili <strong>flag0</strong> e <strong>flag1</strong> che indicano se il thread è pronto ad entrare nella sezione critica.
+</p>
+<div class='vspace'></div><pre> boolean flag0, flag1;
+
+ inizializza() {
+   flag0 = false;
+   flag1 = false;
+ }
+
+ entraSezioneCritica(int pid) {
+   if (pid == 0) {
+     flag0 = true;
+     while (flag1 == true) {
+       Thread.yield();
+     }
+   }
+   else {
+     flag1 = true;
+     while (flag0 = true) {
+       Thread.yield();
+     }
+   }
+ }
+
+ esciSezioneCritica(int pid) {
+   if (pid == 0) flag0 = false; 
+   else flag1 = false;
+ }
+</pre><p class='vspace'>Problema: se prima del <strong>while</strong> in <strong>entraSezioneCritica</strong> avviene un cambio di contesto, il secondo thread potrebbe eseguire la stessa chiamata. I thread si bloccherebbero indefinitamente =&gt; condizione di progresso non rispettata.
+</p>
+<div class='vspace'></div><h3>7.3.3 Algoritmo 3</h3>
+<p>Un thread mette a <strong>true</strong> il proprio flag, e mette come turno il turno dell<strong>'altro</strong>processo. Se anche i due processi concorrono, la variabile <strong>turn</strong> sarà impostata o a 1, o a 0 =&gt; uno dei due sicuramente partirà.
+</p>
+<div class='vspace'></div><pre> entraSezioneCritica(int pid) {
+   int altro = 1 - t;
+   turno = altro;
+   if (pid == 0) {
+     flag0 = true;
+     while ((flag1) &amp;&amp; (turno = altro)) {
+       Thread.yield();
+     }
+   }
+   else {
+     flag1 = true;
+     while((flag0) &amp;&amp; (turno = altro)) {
+       Thread.yield();
+     }
+   }
+ }
+</pre><div class='vspace'></div><h2>7.4 Hardware per la sincronizzazione</h2>
+<p>Ambiente monoprocessore: se blocco gli interrupt quando una variabile condivisa viene acceduta, impedisco le corse critiche.
+</p>
+<p class='vspace'>Ambiente multiprocessore: bloccare gli interrupt richiede più tempo (ogni processore deve farlo) =&gt; ritardo.
+</p>
+<p class='vspace'>I calcolatori moderni offrono in HW la possibilità di controllare e modificare in modo <strong>atomico</strong> una certa parola di memoria.<br /><strong>Atomico</strong> = non interrompibile. Le istruzioni singole sono per definizioni atomiche, ma il controllo e la modifica in generale richiedono più istruzioni =&gt; una sequenza =&gt; interrompibili.<br />L'istruzione si chiama <strong>test_and_set</strong>.
+</p>
+<div class='vspace'></div><h2>7.5 Semafori</h2>
+<p>Usare istruzione HW <strong>test_and_set</strong> = pericoloso e difficile per un programmatore. Inoltre potrebbe non avere i privilegi, in modalità utente, per usarla.
+</p>
+<p class='vspace'><strong>Semaforo</strong> = variabile intera cui si può accedere solo con 2 operazioni: <strong>acquire</strong> e <strong>release</strong>, dopo che è stata inizializzata.<br />Le modifiche al valore della variabile devono essere atomiche.
+</p>
+<div class='vspace'></div><h3>7.5.1 Impiego</h3>
+<p><strong>Semaforo generalizzato</strong> = variabile in un dominio senza restrizioni.<br /><strong>Semaforo binario</strong> = variabile a 2 valori.<br /><strong>Mutex lock</strong> = sinonimo di semaforo binario.
+</p>
+<p class='vspace'>Utilizzo generale, in cui <strong>S</strong> è il semaforo, condiviso da tutti i thread:
+</p><pre> acquire(S);
+ sezioneCritica();
+ release(S);
+</pre><p class='vspace'>Semaforo generalizzato = si usa per un numero finito di istanze della risorsa:
+</p><ul><li>viene inizializzato al numero di istanze disponibili
+</li><li>acquire = decremento
+</li><li>release = incremento
+</li><li>acquire possibile finché non è 0
+</li></ul><div class='vspace'></div><h3>7.5.2 Implementazione</h3>
+<p>Problema dell'algoritmo 3: <strong>busy wait</strong> = un ciclo che continuamente controlla le variabili = spreco di cicli CPU.
+</p>
+<p class='vspace'>Un semaforo che fa questo effetto è detto <strong>spinlock</strong>.
+</p>
+<p class='vspace'>Per evitare lo spinlock:
+</p><ul><li>il processo che non riesce ad acquirare si <strong>blocca</strong>
+</li><li>il processo che releasa <strong>sveglia</strong> (wakeup) i dormienti in attesa del semaforo
+</li></ul><p>Il semaforo mantiene una lista di processi in coda per esso, gestita in un qualunque modo.
+</p>
+<p class='vspace'>Problema: le op. di <strong>acquire</strong> sono comunque corse critiche =&gt; non dovrebbe essere permesso a 2 processi di eseguire una <strong>acquire</strong> contemporaneamente.
+</p>
+<p class='vspace'>=&gt; Come prima, posso fermare gli interrupt in un sistema monoprocessore, o usare l'algoritmo 3 in un sistema multiprocessore =&gt; riemerge ancora l'attesa attiva per l<strong>'acquire</strong>, ma in questo caso è molto breve (max 10 istruzioni prima di mettere il processo che ha chiesto l'acquire in lista di attesa).
+</p>
+<div class='vspace'></div><h3>7.5.3 Stall e starvation</h3>
+<p><strong>Stallo</strong> = <strong>deadlock</strong>
+</p>
+<p class='vspace'>Un insieme di processi è in stallo quando tutti attendono una risorsa che può essere liberata solo da uno dei processi dell'insieme.
+</p>
+<p class='vspace'><strong>Starvation</strong> = blocco indefinito: avviene quando un processo attende indefinitamente nella coda del semaforo, se questa è gestita male.
+</p>
+<div class='vspace'></div><h2>7.6 Problemi classici di sincronizzazione</h2>
+<p>Usati per verificare i vari algoritmi.
+</p>
+<div class='vspace'></div><h3>7.6.1 Il problema del buffer limitato</h3>
+<p>Produttore = mette nel buffer con <strong>insert</strong><br />Consumatori = rimuovono con <strong>remove</strong>
+</p>
+<p class='vspace'>Occorre un semaforo per garantire mutua esclusione nell'accesso al buffer
+</p>
+<div class='vspace'></div><h3>7.6.2 Il problema dei lettori-scrittori</h3>
+<p>Dati condivisi:
+</p><ul><li>alcuni vogliono scrivere
+</li><li>alcuni vogliono solo leggere
+</li></ul><p class='vspace'>2 lettori in contemporanea non fanno danni. Basta però uno scrittore a generare pericoli di incoerenza =&gt; gli scrittori devono avere accesso esclusivo ai dati.
+</p>
+<p class='vspace'>Primo problema dei lettori-scrittori: nessun lettore dovrebbe attendere la fine di un altro lettore solo perché c'è uno scrittore in attesa.
+</p>
+<p class='vspace'>Secondo problema dei lettori-scrittori: se uno scrittore è in attesa del lock, nessun lettore può passargli davanti
+</p>
+<p class='vspace'>Una soluzione ad entrambi i problemi porta alla starvation: nel primo caso la starvation la subiscono gli scrittori; nel secondo i lettori.
+</p>
+<div class='vspace'></div><h3>7.6.3 Il problema del pranzo dei filosofi</h3>
+<p>Ci sono 5 filosofi attorno ad un tavolo
+</p><ul><li>al centro del tavolo c'è il riso
+</li><li>un filosofo o mangia o pensa
+</li><li>per mangiare occorrono 2 bacchette
+</li><li>ci sono 5 bacchette per tavolo
+</li><li>viene presa una bacchetta alla volta
+</li><li>vengono lasciate le bacchette solo dopo aver mangiato
+</li><li>le bacchette non possono essere rubate a chi ce l'ha già in mano
+</li></ul><p class='vspace'>Se un filosofo ha fame prende una bacchetta alla volta. Quando ne ha 2, mangia. Quando ha finito di mangiare, posa le bacchette e torna a pensare.
+</p>
+<p class='vspace'>Occorre risolvere il problema senza che nessuno muoia di fame.
+</p>
+<p class='vspace'>Eg: se tutti hanno fame nello stesso istante, ed ognuno prende una bacchetta, non ce ne saranno più per gli altri =&gt; nessuno si sblocca.
+</p>
+<div class='vspace'></div><h2>7.7 Monitor</h2>
+<p>Semafori = c'è il problema che vanno chiamate le funzioni <strong>acquire</strong> e <strong>release</strong> nell'ordine giusto, pena deadlock.
+</p>
+<p class='vspace'>Il <strong>monitor</strong> affronta questo problema.<br />È un tipo di dati astratto =&gt; l'accesso alle risorse condivise viene "filtrato" dai metodi esposti pubblicamente =&gt; protetti da accesso concorrente.
+</p>
+<p class='vspace'>Ci sono delle <strong>condizioni</strong> che ogni thread che vuole accedere ai dati condivisi deve vedere soddisfatte, prima di poter operare.<br />Un thread è associato ad una o più di queste condizioni. Se sono verificabili, prosegue, altrimenti chiama <strong>wait</strong> e si mette in attesa.<br />Un thread che controlla le stesse condizioni e finisce le sue operazioni deve segnalare con <strong>signal</strong> il fatto che ha finito =&gt; risveglia i thread in attesa.
+</p>
+<p class='vspace'>Il thread che chiama <strong>signal</strong> lascia il monitor, e quello in attesa viene risvegliato subito.
+</p>
+<p class='vspace'>Il problema sta nel segnale, che dovrebbe essere inviato a tutti quelli che sono in attesa, così da poter concorrere tra loro per avere il monitor.
+</p>
+<div class='vspace'></div><h2>7.8 La sincronizzazione in Java</h2>
+<p>...
+</p>
+<div class='vspace'></div><h2>7.9 Esempi di sincronizzazione</h2>
+<p>...
+</p>
+<div class='vspace'></div><h2>7.10 Transazioni atomiche</h2>
+<p>Sezioni critiche eseguite in mutua esclusione =&gt; in certi casi (basi di dati) è preferibile che le operazioi siano compiute del tutto, o non compiute affatto.
+</p>
+<div class='vspace'></div><h3>7.10.1 Modello del sistema</h3>
+<p><strong>Transazione</strong> = insieme di operazioni che eseguono un'unica funzione logica =&gt; il problema è preservare l'atomicità nonostante i guasti.
+</p>
+<p class='vspace'>Transazione: composta da <strong>read</strong> e <strong>write</strong>, e seguita da <strong>commit</strong> o <strong>abort</strong>.
+</p>
+<p class='vspace'>Una transazione abortita può aver modificato dei dati =&gt; <strong>rollback</strong> ad uno stato consistente precedente.
+</p>
+<p class='vspace'>Le periferiche di archiviazione sono classificate, rispetto a questa visione, in:
+</p><ul><li>archivio volatile
+</li><li>archivio non volatile
+</li><li>archivio stabile = astrazione, ovviamente nella realtà non si può dare niente per scontato
+</li></ul><div class='vspace'></div><h3>7.10.2 Recupero basato sui log</h3>
+<div><span class='frame lfloat'><img src='../uploads/Uni/log2.jpg' alt='' title='' /><br /><strong>The Log Lady</strong></span></div>
+<p><strong>Log</strong> = registro in cui sono registrate tutte le modifiche effettuate; salvato in memoria stabile.
+</p>
+<p class='vspace'>Ogni record nel log descrive un'operazione di scrittura e ha i seguenti campi:
+</p><ul><li>nome della transazione
+</li><li>nome dell'oggetto modificato
+</li><li>vecchio valore
+</li><li>nuovo valore
+</li></ul><p class='vspace'>Esistono poi diversi tipi di record:
+</p><ul><li>inizio transazione
+</li><li>commit della transazione
+</li></ul><p class='vspace'><strong>Write-ahead logging</strong> = prima di eseguire una scrittura, modifico il log.
+</p>
+<p class='vspace'>Con il log si possono ripristinare tutti i dati:
+</p><ul><li>undo(Ti) = ripristina tutte le cose modificate dalla transazione Ti
+</li><li>redo(Ti) = ripete tutte le cose fatte dalla transazione Ti
+</li></ul><p><strong>Undo</strong> e <strong>redo</strong> sono <strong>idempotenti</strong> = più esecuzioni della stessa operazione devono dare luogo allo stesso risultato.
+</p>
+<p class='vspace'>Se una transazione fa <strong>abort</strong>, si esegue <strong>undo(Ti)</strong>.
+</p>
+<p class='vspace'>Se c'è un guasto, le transazioni vengono messe in 2 gruppi:
+</p><ul><li>se la transazione <strong>i</strong> ha un <strong>begin</strong> nel log, ma non un <strong>commit</strong>, faccio l<strong>'undo</strong>
+</li><li>se la transazione <strong>i</strong> ha un <strong>begin</strong> ed un <strong>commit</strong>, faccio il <strong>redo</strong>
+</li></ul><div class='vspace'></div><h3>7.10.3 Punti di verifica</h3>
+<p>Quando c'è un guasto, non parto dall'inizio del log, ma dall'ultimo <strong>punto di verifica</strong> = <strong>checkpoint</strong>.
+</p>
+<p class='vspace'>Checkpoint = eseguito periodicamente. Salva nel log:
+</p><ul><li>scrive i record del log ancora in memoria volatile, in memoria stabile
+</li><li>scrive tutti i dati modificati in memoria volatile
+</li><li>scrive un record <strong>&lt;checkpoint&gt;</strong> nel log
+</li></ul><p class='vspace'>Quando accade un guasto:
+</p><ul><li>si torna all'ultimo checkpoint
+</li><li>trovo:
+<ul><li>l'ultima transazione che è iniziata ma non committata prima del checkpoint
+</li><li>tutte le operazioni iniziate dopo il checkpoint
+</li></ul></li><li>faccio il <strong>redo</strong> di tutte le transazioni che hanno un commit nel log dopo il checkpoint
+</li><li>faccio l<strong>'undo</strong> di tutte le transazioni che non hanno un commit nel log dopo il checkpoint
+</li></ul><div class='vspace'></div><h3>7.10.4 Transazioni atomiche concorrenti</h3>
+<p><strong>Serializzabilità</strong> = l'esecuzione concorrente di un gruppo di transazioni deve essere equivalente all'esecuzione delle stesse transazioni in un qualsiasi ordine seriale.
+</p>
+<p class='vspace'>Gli algoritmi di <strong>controllo della concorrenza</strong> si occupano di questa proprietà.
+</p>
+<div class='vspace'></div><h4>7.10.4.1 Serializzabilità</h4>
+<p><strong>Schedulazione</strong> = sequenza di esecuzione di transazioni.<br /><strong>Schedulazione seriale</strong> = sequenza di istruzioni di varie transazioni, in cui le istruzioni di una transazione appaiono insieme.
+</p>
+<p class='vspace'>=&gt; n transazioni =&gt; n! schedulazioni seriali valide.
+</p>
+<p class='vspace'>Una schedulazione non seriale non è necessariamente non corretta, ma deve essere equivalente ad una schedulazione seriale per essere corretta.
+</p>
+<p class='vspace'>Per verificare ciò, uso il concetto di <strong>conflitto tra operazioni</strong> = due operazioni sono in conflitto se
+</p><ul><li>appartengono a transazioni diverse
+</li><li>accedono allo stesso dato
+</li><li>almeno una delle due è una scrittura
+</li></ul><p class='vspace'>Una schedulazione non seriale è equivalente ad una schedulazione seriale se presenta gli stessi conflitti =&gt; è valida = <strong>conflict serializable</strong>.
+</p>
+<div class='vspace'></div><h4>7.10.4.2 Protocollo di lock</h4>
+<p>Si associa a ciascun dato un <strong>lock</strong> e ogni transazione deve rispettare il <strong>protocollo di lock</strong>.
+</p>
+<p class='vspace'>Su di un dato, una transazione può ottenere:
+</p><ul><li><strong>lock condiviso</strong> (<strong>S</strong> = shared) = può leggere ma non scrivere
+</li><li><strong>lock esclusivo</strong> (<strong>X</strong> = exclusive) = può leggere e scrivere
+</li></ul><p>Se il lock chiesto è disponibile, viene concesso, altrimenti la transazione aspetta.
+</p>
+<p class='vspace'>Il <strong>protocollo di lock a 2 fasi</strong> prevede che le richieste di lock e gli unlock siano eseguiti in 2 fasi distinte:
+</p><ul><li><strong>fase di crescita</strong> = una transazione ottiene lock ma non può rilasciarli
+</li><li><strong>fase di contrazione</strong> = una transazione può rilasciare i lock ma non può ottenerne di nuovi.
+</li></ul><p>Quando una transazione rilascia il primo lock, entra nella fase di contrazione e non può richiederne altri, anche su altri dati.
+</p>
+<p class='vspace'>Il protocollo di lock a 2 fasi assicura serializzabilità ma non l'assenza di stalli.
+</p>
+<div class='vspace'></div><h3>7.10.4.3 Protocolli basati su marche di tempo</h3>
+<p>Si assegna una <strong>marca di tempo</strong> = <strong>timestamp</strong> unica e fissa ad ogni transazione, in ordine crescente (le si possono ricavare dal clock del computer o da un contatore).
+</p>
+<p class='vspace'>Ciascun dato possiede due marche di tempo:
+</p><ul><li><strong>WTM</strong> = la marca di tempo più elevata tra quelle delle transazioni che hanno eseguito scritture sul dato
+</li><li><strong>RTM</strong> = la marca di tempo più elevata tra quelle delle transazioni che hanno eseguito letture sul dato
+</li></ul><p class='vspace'>Le operazioni di read e write devono rispettare le marche di tempo:
+</p><ul><li><strong>read</strong>
+<ul><li>se il ts della transazione che vuole leggere è inferiore al WTM, viene rifiutata perché troppo vecchia
+</li><li>se no viene accettata, e l'RTM viene aggiornato al maggiore tra il ts di questa transazione ed il valore precedente
+</li></ul></li><li><strong>write</strong>
+<ul><li>se il ts della transazione che vuole scrivere è inferiore al WTM o al RTM, viene rifiutata perché troppo vecchia
+</li><li>viene aggiornato il WTM
+</li></ul></li></ul><p class='vspace'>Garantisce serializzabilità, anche se in modo più restrittivo rispetto al lock a 2 fasi (alcune schedulazioni accettat dal lock a 2 fasi sono rifiutate dal protocollo basato sui timestamp).
+</p>
+<p class='vspace'>Inoltre, assicura anche l'assenza di stalli.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 05, 2008, at 09:28 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap7?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap7?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

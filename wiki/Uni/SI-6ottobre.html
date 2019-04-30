@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Intelligenti - Appunti del 6 Ottobre </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SI-6ottobre' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Intelligenti - Appunti del 6 Ottobre
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-6ottobre?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-6ottobre?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SI-6ottobre-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-6ottobre?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-6ottobre?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Intelligenti - Appunti del 6 Ottobre was last modified on October 08, 2009, at 04:32 PM'>
+							<span style='display:none;'>Sistemi Intelligenti - Appunti del 6 Ottobre</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Intelligenti - Appunti del 6 Ottobre ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>La lezione di oggi è stata tenuta - in via del tutto eccezionale - dal prof Ferrari.
+</p></div>
+<div class='vspace'></div><h2>Introduzione alle reti neurali</h2>
+<p>Le <strong>reti neurali</strong> sono un paradigma (strumento) matematico che mima il comportamento del cervello umano, considerato <em>intelligente</em>. Un dispositivo si definisce intelligente quando recepisce segnali dall'esterno e si adatta alla situazione per svolgere al meglio la propria missione. I concetti chiave sono quindi l' <em>apprendimento</em> e l' <em>adattamento</em> all'ambiente circostante una volta data una direttiva principale.<br />Un esempio illuminante: la vespa è un insetto premuroso, e vuole che le sue uova si schiudano in un ambiente sicuro e funzionale. Per questo motivo ispeziona accuratamente tutti i cunicoli della nursery, predispone le cibarie per la prole, e così via, ripetendo queste azioni in modo ossessivo e per niente adattivo tutte le volte che nota un minimo cambiamento nell'ambiente. Un comportamento che può sembrare intelligente (volto alla tutela delle uova) è dunque applicato in modo molto poco furbo: se la vespa nota mille volte di fila lo stesso cambiamento, partirà mille volte di fila con l'ispezione completa. E allora sei de coccio.
+</p>
+<div class='vspace'></div><h2>Reti neurali naturali</h2>
+<p>Le <em>reti neurali naturali</em> - o biologiche - sono il modello cui si ispirano quelle artificiali, e per questo motivo è importante capire come funzionano. Per ovvie ragioni semplificheremo al massimo i concetti.
+</p>
+<p class='vspace'>Il sistema nervoso centrale è costituito da moltissime cellule chiamate <strong>neuroni</strong> collegate tra loro. Ciò che fanno è ascoltare i loro vicini, elaborare i messaggi e inviarli agli altri neuroni ad essi collegati, il tutto attraverso lo scambio di segnali elettrici.
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/neurone.gif' alt='' title='' /></span></div>
+<p>Nella figura a destra uno schemino su come è fatto un neurone.<br />I <em>dendriti</em> sono praticamente delle periferiche di input, che attraverso le <em>sinapsi</em> alle loro estremità ricevono gli impulsi inviati dai neuroni vicini.<br />Il<em> soma</em> si occupa invece dell'elaborazione dei segnali, ovvero: somma, sogliatura (valutazione del superamento di un certo valore soglia), generazione di impulsi.<br />Questi ultimi sono trasmessi ai vicini attraverso l<em>'assone</em> del neurone.
+</p>
+<p class='vspace'>La potenza di calcolo del cervello è legata non tanto alle performance dei singoli soma, e nemmeno al numero di neuroni (che per la cronaca sono stimati intorno ai 100 miliardi, 10<sup>11</sup>), ma piuttosto al numero di collegamenti. Questi dipendono dal numero totale di sinapsi, ovvero circa 10<sup>14</sup>.
+</p>
+<p class='vspace'>Prima abbiamo parlato di adattamento, come è "implementato" biologicamente dal sistema nervoso? Cambiando la struttura della rete neurale attraverso modifiche di alcune caratteristiche del singolo neurone, in particolare intervenendo sulla plasticità sinaptica (che permette di modulare gli impulsi ricevuti, così da inibire o favorire un certo collegamento) e sulla permeabilità della membrana (che interviene sulla soglia di reazione del neurone).
+</p>
+<p class='vspace'>Ribadiamo che stiamo semplificando al massimo, nella realtà i neuroni non sono isolati ma raccolti in gruppetti con funzionalità omogenee, i collegamenti avvengono con modalità leggermente diverse, gli impulsi non coinvolgono solo segnali elettrici ma anche reazioni chimiche, eccetera eccetera. Amen, sappiamo già abbastanza per elaborare una rete neurale artificiale più che soddisfacente, chi se ne frega se si tratta della semplificazione di un modello già semplificato!
+</p>
+<div class='vspace'></div><h2>Formalizzazioni di McCulloch e Pitts</h2>
+<p>La prima formalizzazione matematica del comportamento di un neurone è stata proposta da McCulloch e Pitts nei primi anni '40. Il loro modello si componeva di due elementi, uno che fa la somma dei segnali in ingresso ed uno che fa la sogliatura che genera la risposta. Ecco lo schema:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/McCulloch-Pitts.gif' alt='' title='' /></div>
+<p class='vspace'>Breve legenda:
+</p><ol><li>ingressi, quindi altri neuroni dello stesso tipo. Vale <strong>1</strong> quando il collegamento è attivato, <strong>0</strong> quando non lo è
+</li><li>pesi applicati agli ingressi, che rappresentano la plasticità sinaptica. Possono avere tre valori: <strong>+1</strong> quando l'ingresso va premiato, <strong>-1</strong> quando va inibito, <strong>0</strong> se il collegamento tra due neuroni non esiste
+</li><li>somma pesata degli ingressi, chiamata anche <em>potenziale di attivazione</em>. Si tratta in pratica della sommatoria dei prodotti di ciascun segnale di ingresso per il peso del collegamento che lo trasmette
+</li><li>sogliatura della somma in base a un certo valore &#952;
+</li><li>uscita del neurone, sparato ai vicini. Se l'ingresso è maggiore della soglia allora la risposta sarà <strong>1</strong>, altrimenti <strong>0</strong>. In alcune varianti (che vedremo poi) si preferisce utilizzare come valori <strong>-1</strong> e <strong>1</strong>
+</li></ol><p class='vspace'>Il modello matematico seguente è la <em>funzione di attivazione</em> del neurone artificiale, ed è una formalizzazione di quanto visto finora:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/McCulloch-Pitts-Modello.gif' alt='' title='' /></div>
+<p class='vspace'>I tipi di funzioni calcolabili dipenderanno dal numero di neuroni, dalle loro connessioni e dai pesi dati agli ingressi. Questi ultimi sono dei veri e propri parametri, dunque si presenta il problema di scegliere il valore corretto da dargli. Una tecnica potrebbe essere fare un mega sistemone che tenga conto di tutti i neuroni, quindi tutti gli ingressi, tutte le uscite, tutti i pesi, insomma qualcosa di estremamente complesso; l'alternativa è farsi furbi e adottare degli stratagemmi, magari proprio gli stessi utilizzati dalle reti neurali naturali.
+</p>
+<p class='vspace'>Esistono diverse varianti del modello di McCulloch e Pitts, che differiscono in particolare per la loro funzione di attivazione. Tra le principali alternative proposte alla funzione originale a gradino, citiamo ad esempio:
+</p><ul><li><em>sigmoide</em>, dove S<sub>i</sub> = 1 / (1 + e<sup>-x_</sup>) . In questo caso avremo agli estremi valori molto netti, e nel mezzo comportamenti intermedi 
+</li><li><em>a simmetria radiale</em> (Radial basis functions), in cui la risposta a uno stimolo dipende dalla distanza dell'ingresso rispetto ad un certo parametro detto "centro". Questo parametro è individuato da un punto nello spazio degli ingressi, ed è caratteristico di ogni neurone
+</li></ul><div class='vspace'></div><h2>Applicazioni</h2>
+<p>Le reti neurali sono particolarmente potenti per tutti quei problemi non lineari per i quali si hanno a disposizione un gran numero di esempi di comportamento atteso. <br />Elenchiamo qualche applicazione concreta:
+</p><ul><li><em>approssimazione di funzioni</em>, chiamata con termini statistici <em>regressione</em>
+</li><li><em>ricostruzione delle serie temporali</em>, ovvero quelle sequenze di valori che descrivono un fenomeno che ha una ciclicità difficilmente individuabile. Più terra terra, sono quei fenomeni che si sa cosa faranno ma non si sa quando; ad esempio previsioni meteo o andamento della borsa
+</li><li><em>classificazione</em>, che avendo una certa conoscenza di come un fenomeno può andare a strutturarsi, sa capire in che categoria mettere un nuovo evento quando questo accade. Un'applicazione classica si ha per la medicina, in cui si è in grado di stabilire se un paziente è sano o malato a seconda dei risultati delle sue analisi
+</li><li><em>clustering</em>, molto simile alla classificazione, ma in questo caso le categorie non sono note a priori: le varie classi sono completamente individuate dalla rete neurale a partire dall'insieme degli esempi che gli fornisco
+</li><li><em>data processing</em> o <em>elaborazione dei segnali</em>, come ad esempio il filtraggio del rumore (che può essere comunque riconducibile al concetto di approssimazione)
+</li><li><em>memoria associativa</em>, che potrebbe rientrare nella categoria "classificazione", ma che è abbastanza importante da meritarsi un punto elenco a parte.  Si tratta di una caratteristica importante degli organismi intelligenti, ed è la capacità di ricordare qualcosa per associazione. Due esempi: stiamo ascoltando una canzone (sensazione sonora) e ci viene in mente la scena di un film (sensazione visiva); stiamo guardando una foto in cui il viso di una persona è nascosto da qualcosa, ma noi lo riconosciamo e riusciamo comunque a ricostruire il suo volto.
+</li></ul><div class='vspace'></div><h2>Rete di Hopfield</h2>
+<p>Il modello di rete che meglio realizza l'applicazione di memoria associativa è la <strong>rete di Hopfield</strong>. I neuroni sono completamente connessi tra loro, così che ognuno trasmetta (riceva) ogni singolo segnale a (da) tutti gli altri.
+</p>
+<div class='vspace'></div><table cellpadding='5' cellspacing='5' border='0' >
+<tr ><td  valign='top'><img src='../uploads/Uni/Hopfield.gif' alt='' title='' />
+</td><td  valign='top'>Ad ogni connessione sono assegnati due pesi, uno per ogni direzione di percorrenza. Il tutto è facilmente rappresentabile con una matrice.
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/Hopfield-matrice.gif' alt='' title='' /></div>
+<p class='vspace'>Anche in questo caso il singolo neurone ha un comportamento a soglie, ma le risposte possono avere valore <strong>1</strong> o <strong>-1</strong>. Entra inoltre in gioco il fattore tempo, e di conseguenza il concetto di <em>stato</em> della rete.
+</p></td></tr></table>
+<p class='vspace'>La formalizzazione matematica della funzione di attivazione è:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/Hopfield-Modello.gif' alt='' title='' /></div>
+<p class='vspace'>Da un punto di vista temporale, possiamo possiamo dire che:
+</p><ul><li>in t<sub>0</sub> vengono pompati gli ingressi nei neuroni
+</li><li>in t<sub>1</sub> avviene la valutazione descritta nella funzione di attivazione
+</li><li>negli istanti successivi c'è una continua evoluzione, che può convergere a un certo stato o ciclarne un insieme
+</li></ul><p class='vspace'>La configurazione della rete neurale prende il nome di <strong>addestramento</strong>, preferendo a un termine freddo e tecnico uno che mantenga la metafora biologica della materia. L'idea di fondo è sottoporre alla rete un insieme di esempi specifici, che si spera sarà poi in grado di generalizzare ad ogni situazione.<br />Vediamo in particolare l'apprendimento <strong>Hebbiano</strong> (dal nome dell'ideatore, Hebb), in cui le connessioni tra due neuroni vicini si rinforzano se essi danno risposte simili agli stessi stimoli, e si indeboliscono altrimenti. Ciò si traduce dicendo che se il comportamento di due neuroni è simile allora il peso della loro connessione aumenta. In formula: <strong>&#8710;w<sub>ij</sub> = S<sub>i</sub> * S<sub>j</sub></strong> . E' facile notare che se i segni dei fattori son discordi la variazione sarà negativa, e viceversa.
+</p>
+<p class='vspace'>Abbiamo iniziato il capitoletto dicendo che la rete di Hopfield riesce a simulare una memoria associativa. E' infatti verificabile che lo stato a cui eventualmente converge è molto simile (in toto o in parte) a quello con cui è stato configurato in partenza.
+</p>
+<div class='vspace'></div><h2>Reti feed-forward e reti ricorrenti</h2>
+<p>Nelle <strong>reti feed-forward</strong> la rete neurale è organizzata in strati detti <em>layer</em>, e l'informazione passa da uno all'altro secondo un'unica direzione. Questa caratteristica è senz'altro una forzatura che non trova corrispondenze biologiche, ma rende la rete molto più semplice da implementare garantendo al tempo stesso la capacità di risolvere la totalità dei problemi. Attenzione però: il fatto che sia più semplice da realizzare non implica che sia poco costosa!
+</p>
+<div class='vspace'></div><table cellpadding='5' cellspacing='5' border='0' width='80%' >
+<tr ><td  valign='top'>Dallo schema accanto possiamo notare che ogni neurone di un layer è connesso ad ogni neurone dello strato successivo, ma per eliminare un collegamento basta assegnargli peso 0. A proposito dei pesi, anche in questo caso la loro rappresentazione diventa molto più semplice con le matrici.
+</td><td  valign='top'><span class='frame rfloat'><img src='../uploads/Uni/feed-forward.gif' alt='' title='' /></span>
+</td></tr><tr ><td  valign='top'>Se ad una feed-forward aggiungiamo le retroazioni otteniamo una <strong>rete ricorrente</strong>, un tipo di modello particolarmente adatto per le serie temporali, e quindi per cercare di fare buone previsioni basandoci sul passato.
+<p class='vspace'>Lo Z<sup>-1</sup> in basso nello schema è il ritardatore, nel cui apice viene indicato il numero di passi che saranno ritardati.
+</p></td><td  valign='top'><span class='frame rfloat'><img src='../uploads/Uni/retiRicorrenti.gif' alt='' title='' /></span>
+</td></tr></table>
+<div class='vspace'></div><h2>Reti competitive</h2>
+<p>L'ultima famiglia di reti neurali che vedremo oggi sono le <strong>reti competitive</strong>, così dette perché i loro elementi costitutivi sono messi tra loro in competizione durante l'apprendimento. Tipicamente non sono usate per calcolare funzioni, ma per implementare l'apprendimento non supervisionato.
+</p>
+<p class='vspace'>Il nuovo concetto da introdurre per capirle è quello di <strong>spazio delle caratteristiche</strong> o <em>ufficio</em>, ovvero lo spazio in cui sono definiti gli esempi e per cui vale la proprietà che più due elementi sono simili e minore sarà la distanza tra le loro coordinate. Ciò che andrà fatto è configurare la rete in modo che la densità dei neuroni collocati in tale spazo sia proporzionale alla probabilità di occorrenza degli esempi.<br />Durante l'addestramento il neurone può - e deve - cambiare la sua posizione nello spazio delle caratteristiche, cercando di minimizzare la sua distanza dagli esempi competendo con tutti gli altri per accaparrarsi il posto migliore.
+</p>
+<p class='vspace'>Un esempio di rete competitiva è la <em>Self Organising Maps</em> (SOM), ovvero "mappe auto-adattanti". Il nome è dovuto al fatto che i neuroni non solo competono per la loro posizione nello spazio delle caratteristiche, ma cercano anche di mantenere una struttura propria tra loro, tipicamente a maglia.
+</p>
+<div class='vspace'></div><h2>Strategie di apprendimento</h2>
+<p>Concludiamo con una carrelata sulle possibili strategie di apprendimento:
+</p><ul><li>non supervisionata, ovvero ci limitiamo a dare alla rete solo l'insieme degli esempi e lasciamo che si organizzi da sola. Nota: l'insieme degli esempi potrebbe benissimo essere un file che contiene un elenco di coordinate bidimensionali, non immaginiamoci chissà sola
+</li><li>supervisionata, in cui non solo forniamo gli ingressi, ma diciamo anche cosa vogliamo in risposta. Questa strategia è quella adottata generalmente per l'approssimazone di funzioni e per le classificazioni. E' ad esempio implementata nelle reti feed-forward
+</li><li>apprendimento Hebbiano, di cui abbiamo parlato prima
+</li><li><em>reinforcement learning</em>, basato sul principio di "premio e punizione". E' un tipo di apprendimento supervisionato ma non troppo, in cui si introduce la valutazione della risposta della rete premiandola quando il risultato si avvicina a quello attesa, e punendola viceversa. Si usa quando non è semplicissimo quantificare l'entità dell'errore
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: October 08, 2009, at 04:32 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-6ottobre?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-6ottobre?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

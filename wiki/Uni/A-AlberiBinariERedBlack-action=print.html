@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Algoritmi e strutture dati - Alberi binari e Red-Black</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='A-AlberiBinariERedBlack.html' title='Algoritmi e strutture dati - Alberi binari e Red-Black'>Algoritmi e strutture dati - Alberi binari e Red-Black</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e strutture dati - Alberi binari e Red-Black ::</strong>
+</pre><div class='vspace'></div><h3>Alberi binari di ricerca</h3>
+<p>Gli <strong>alberi binari di ricerca</strong> sono strutture dati che possono eseguire molte operazioni su insiemi dinamici come: SEARCH, MINIMUM, MAXIMUM, PREDECESSOR, SUCCESSOR, INSERT, DELETE.<br />Possono essere utilizzati sia come dizionario, sia come coda di priorità.<br />Il tempo per le operazioni di base è proporzionale all'altezza dell'albero.
+</p>
+<p class='vspace'>In un <strong>albero binario</strong> ogni nodo può avere al più due figli e viene rappresentato da record. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-esAlberoBinario.gif' alt='' title='' /></div>
+<p class='vspace'>Un albero binario di ricerca viene rappresentato da una struttura dati concatenata in cui ogni nodo è un oggetto.<br />In un albero binario di ricerca ogni nodo contiene i seguenti campi:
+</p><ul><li>key;
+</li><li>dati satellite;
+</li><li>left;
+</li><li>right;
+</li><li>p.
+</li></ul><p>Se manca un figlio o il padre i rispettivi campi assumono il valore NIL.<br />La radice è l'unico nodo ad avere p = NIL.
+</p>
+<p class='vspace'>In questi alberi la memorizzazione delle chiavi deve soddisfare le proprietà degli alberi binari di ricerca:
+</p><ul><li>tutti i valori dei nodi del sottoalbero sinistro sono minori della radice;
+</li><li>tutti i valori dei nodi del sottoalbero destro sono maggiori della radice.
+</li></ul><p>Questa proprietà permette di visualizzare ordinatamente tutte le chiavi di un albero binario di ricerca con un semplice algoritmo di ricorsione di <strong>attraversamento simmetrico di un albero (inorder)</strong>. Questo algoritmo permette di visualizzare la radice fra i valori del suo sottoalbero sinistro e destro.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-attrAlbBin1.gif' alt='' title='' /></div>
+<p class='vspace'>L'algoritmo di <strong>attraversamento anticipato di un albero (preorder)</strong> invece permette di visualizzare la radice prima dei valori dei suoi sottoalberi.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-attrAlbBin2.gif' alt='' title='' /></div>
+<p class='vspace'>L'algoritmo di <strong>attraversamento posticipato di un albero (postordine)</strong> visualizza la radice dopo i valori dei suoi sottoalberi.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-attrAlbBin3.gif' alt='' title='' /></div>
+<p class='vspace'>La procedura INORDER – TREE - WALK (ROOT [T]) stampa i nodi in ordine nel tempo O(n) con n nodi. La procedura TREE – SEARCH dato un puntatore alla radice e una chiave k, restituisce un puntatore a un nodo con chiave k se esiste, altrimenti restituisce il valore NIL. Tempo O(h).<br />Con la procedura TREE – MINIMUM si seguono i puntatori left dei figli a sinistra, fino a quando viene incontrato NIL. Restituisce un puntatore all'elemento minimo del sottoalbero con radice in un nodo x.<br />TREE – MAXIMUM equivale al TREE – MINIMUM. Tempo O(h).<br />TREE – SUCCESSOR: il successore di un nodo x è il nodo con la più piccola chiave che è maggiore di key[x]. Restituisce il successore di un nodo x in un albero binario di ricerca, se esiste, o NIL se x ha la chiave massima nell'albero. TREE – PREDECESSOR è analogo. Tempo O(h).<br />La TREE – INSERT riceve un nodo z per il quale key[z] = v, left[z] = NIL e right[z] = NIL; modifica l'albero di ricerca T e qualche campo di z in modo che z sia inserito in una posizione appropriata nell'albero.<br />Inizia dalla radice dell'albero e segue un percorso verso il basso. Tempo O(h).<br />La TREE – DELETE richiede come argomento un puntatore al nodo z da cancellare.<br />Se:
+</p><ul><li>z non ha figli, il padre p[z] viene modificato per sostituire z con NIL come suo figlio;
+</li><li>z ha un figlio solo, tolgo z creando un nuovo collegamento tra suo figlio e suo padre;
+</li><li>z ha due figli, si crea un nuovo collegamento per rimuovere il suo successore y che non ha un figlio sinistro, poi si sostituisce la chiave e i dati satelliti di z con la chiave e i dati satelliti di y.
+</li></ul><p>Tempo O(h).
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-esVisAmpAB.gif' alt='' title='' /></div>
+<div class='vspace'></div><h3>Alberi Red-Black</h3>
+<p>Gli <strong>alberi di ricerca Rosso–Neri</strong> sono alberi binari che utilizzano un bit in più di memoria per ogni nodo per identificare il nodo ovvero il <strong>colore</strong> associato a quel determinato nodo: <strong>Rosso</strong> o <strong>Nero</strong>.<br />Questi alberi sono approssimativamente bilanciati: assegnando vincoli al modo in cui possono essere colorati i nodi, garantisce che nessun percorso sia più di due volte più lungo di qualsiasi altro.<br />Ogni nodo contiene i seguenti campi:
+</p><ul><li><strong>parent</strong>: puntatore al genitore;
+</li><li><strong>left, right</strong>: puntatore ai figli;
+</li><li><strong>color</strong>: colore del nodo;
+</li><li><strong>key, data</strong>: chiave e dati.
+</li></ul><p class='vspace'>Un albero di ricerca per essere Rosso – Nero deve soddisfare le seguenti proprietà:
+</p><ol><li>il nodo radice è sempre NERO;
+</li><li>i valori NIL sono NERI;
+</li><li>se un nodo padre è rosso, allora entrambi i suoi figli devono essere ROSSI;
+</li><li>per ogni nodo, tutti i percorsi da quel nodo fino alle foglie discendenti contengono lo stesso numero di nodi neri.
+</li></ol><p class='vspace'>I nodi NIL vengono rappresentati da una sola <em>sentinella</em> che semplifica gli alberi rosso – neri. Questo nodo sentinella evita di trattare diversamente i puntatori ai nodi dai puntatori nil. Al posto di un puntatore nil, si usa un puntatore ad un nodo nil.
+</p>
+<p class='vspace'>Definiamo <strong>altezza nera</strong> di un nodo x, indicata da <strong>bh(x)</strong>, il <strong>numero di nodi neri</strong> lungo un percorso che inizia dal nodo x (ma non lo include) e finisce in una foglia. Per la proprietà 4, tutti i percorsi da un nodo hanno lo stesso numero di nodi neri.<br />Per definizione: l'altezza nera di un albero è l'altezza nera della sua radice.<br />Tutte le operazioni effettuate (ricerca, massimo, minimo, precedente e successivo) su di un albero Rosso-Nero, hanno una complessità pari all'altezza dell'albero stesso ovvero h = O(log n).<br />Le operazioni di inserimento e cancellazione anche anch'essa questa complessità però dato che modificano l'albero potrebbero violare le proprietà degli alberi Rosso-Neri con la necessità quindi di ripristinare queste proprietà.<br />Per ripristinare queste proprietà occorre modificare il colore di alcuni nodi e modificare la struttura dei puntatori. Per modificare la struttura dei puntatori occorre fare delle rotazioni verso destra o sinistra.
+</p>
+<div class='vspace'></div><h5>ROTAZIONI PER L'INSERIMENTO O(log n)</h5>
+<p><strong>Caso 1</strong>: lo zio y di z è rosso.<br /><strong>Caso 2</strong>: lo zio di z è nero e z è un figlio destro.<br /><strong>Caso 3</strong>: lo zio di z è nero e z è un figlio sinistro.
+</p>
+<div class='vspace'></div><h5>ROTAZIONI PER LA CANCELLAZIONE O(log n)</h5>
+<p>La procedura RB – DELETE rimuove un nodo e successivamente chiama la RB – DELETE – FIXUP che cambia i colori e fa delle rotazioni per ripristinare le proprietà red – black.
+</p>
+<p class='vspace'>Se il nodo y rimosso è nero:
+</p><ul><li>se y era la radice e un figlio rosso di y diventa la nuova radice si viola la proprietà 1;
+</li><li>se x e p[y] (ora anche p[x]) erano rossi, allora si viola la proprietà 3;
+</li><li>se qualsiasi percorso che conteneva y ha un nodo nero in meno, la proprietà 4 è violata da qualsiasi antenato di y. Si corregge dicendo che x ha un nodo nero extra.
+</li></ul><p class='vspace'>L'obbiettivo è di spostare il nero extra in alto nell'albero finchè:
+</p><ul><li>x punta a un nodo rosso e nero e di allora coloro di nero x;
+</li><li>x punta alla radice e allora il nero extra può essere rimosso;
+</li><li>vengono fatte rotazioni e ricolorazioni.
+</li></ul><p class='vspace'><strong>Caso 1:</strong> il fratello w di x è rosso<br />Dato che w deve avere figli neri possiamo cambiare i colori di w e p[x] e fare una rotazione sinistra di p[x]. Il nuovo fratello di x, adesso è nero, quindi si trasforma il caso 1 nel caso 2, 3 o 4.
+</p>
+<p class='vspace'><strong>Caso 2</strong>: il fratello w di x è nero ed entrambi i figli di w sono neri<br />Dato che anche w è nero, tolgo un nero sia da x che da w, lasciando x con un solo nero e w rosso. Poi aggiungo un nero extra a p[x] per compensare la mancanza del nero. Il nuovo nodo x viene colorato di nero.
+</p>
+<p class='vspace'><strong>Caso 3</strong>: il fratello w di x è nero, il figlio sinistro di w è rosso e il figlio destro di w è nero<br />Possiamo scambiare i colori di w e di suo figlio sinistro left[w] e poi effettuare una rotazione destra di w. Il nuovo fratello w di x ora è nero con un figlio destro rosso, quindi abbiamo trasformato il caso 3 nel caso 4.
+</p>
+<p class='vspace'><strong>Caso 4</strong>: il fratello w di x è nero e il figlio destro di w è rosso<br />Si cambia qualche colore e si fa una rotazione sinistra di p[x], si rimuove il nero extra da x rendendolo singolarmente nero.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/A-AlberiBinariERedBlack)</span></div>
+  </div>
+</body>
+</html>

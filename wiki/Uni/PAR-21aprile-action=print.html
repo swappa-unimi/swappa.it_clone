@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Protocolli avanzati di rete - Appunti del 21 Aprile</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='PAR-21aprile.html' title='Protocolli avanzati di rete - Appunti del 21 Aprile'>Protocolli avanzati di rete - Appunti del 21 Aprile</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 21 Aprile ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>Tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='Damiani.html'>Damiani</a>
+</p></div>
+<div class='vspace'></div><h2>HSPA</h2>
+<p>I protocolli HSPA sono un'evoluzione dell'UMTS, che in termini di prestazioni apportano miglioriea quelle introdotte dall'EDGE sullo standard GPRS.
+</p>
+<p class='vspace'>Se un utente vuole collegarsi  con il protocollo HSPA a questo viene assegnata una portante.<br />Se i soggetti sono due, entrambi vengono collegati alla stessa portante. Quando effettuano delle richieste le informazioni di risposta vengono mandate in broadcast ma ogni utente sa filtrare le proprie perchè è in possesso di una <strong>parola</strong> ossia una sequenza di bit univoca per ogni utente che permette di filtrare i dati a lui indirizzato, ignorando tutto il resto del traffico.<br />Detto ciò il problema della collisione in questo ambito non sussiste più.<br />Se un'antenna si trova nei pressi di una città, quindi con un gran numero di utenti, userà <strong>parole</strong> piuttosto vicine tra di loro per garantire a tutti una connessione; viceversa un'antenna che fornisce servizi a pochi utenti userà <strong>parole</strong> più distanti.<br />Questo discorso sarà molto importante più avanti.
+</p>
+<div class='vspace'></div><h2>Modulazioni</h2>
+<p>Sulle reti wireless locali è possibil fare FDM puro. Si arriverà però ad un punto in cui tutte le portanti sono state assegnate.Come risolvere il problema?<br />Con la <em>MODULAZIONE</em>.<br />La modulazione è un'operazione mediante la quale il segnale contenente l'informazione (modulante) viene moltiplicato per un secondo segnale chiamato <strong>portante</strong> avente le caratteristiche adatte alla trasmissione.<br /> La banda occupata originariamente dal segnale è detta banda base, mentre la banda occupata dal segnale modulato è detta banda traslata (ossia spostata nel tempo)<br /><br />
+Le ragioni che giustificano l'utilizzo delle operazioni di modulazione e demodulazione (l'operazione inversa)sono molteplici; le più importanti sono le seguenti:
+</p><ul><li>grazie alla traslazione di banda è possibile ottenere, attraverso la modulazione, l'adattamento del segnale alla banda passante del canale
+</li><li>la modulazione consente di trasmettere contemporaneamente attraverso lo stesso supporto fisico segnali che, se trasmessi in banda base, risulterebbero avere spettri<br />!!!Metodi di modulazione
+</li></ul><p>La formula per la conversione del segnale da analogico a digitale è:<br /><span  style='color: red;'>A(t)cos(wt+&#952;), </span><span  style='color: black;'> dove w=2&#960;f<br />Dalla formula si evince che gli elemnti che possono essere cambiati sono</span>
+</p><ul><li>ampiezza
+</li><li>frequenza
+</li><li>fase
+</li></ul><p><br />Se si cambia...<br />
+</p><ul><li><span  style='color: green;'>Ampiezza</span>
+</li></ul><p><strong>ASK</strong> (Amplitude Shift Keying) modifica l'ampiezza e lo fa utilizzando ON/OFF per rappresentare 1/0
+<br /><br />
+</p><ul><li><span  style='color: green;'>Frequenza</span>
+</li></ul><p><strong>FSK</strong> (Frequncy Shift Keying) interviene sulla frequenza in cui 1/0 sono rappresentati da due frequenze diverse separate da una certa distanza
+</p><div  style='text-align: center;'><img src='../uploads/Uni/FSK.jpg' alt='' title='' /></div>
+<ul><li><span  style='color: green;'>Fase</span>
+</li></ul><p><br /><br />
+<strong>BPSK</strong> (Binary Phase Shift Keying)
+Utilizza un'onda sinusoidale ribaltata di 180° per codificare i bit. Una transizione codifica un bit. Semplice da implementare, molto affidabile e usato prevalemtemente nelle comunicazioni satellitari
+</p><div  style='text-align: center;'><img src='../uploads/Uni/BPSK.jpg' alt='' title='' /></div>
+<p><br /><br /><strong>QPSK</strong> (Quaternary Phase Shift Keying): è una modulazione multi-livello in cui si utilizzano 2 bit per simbolo. Avremo un ricevitore più complesso ma più efficente spettralmente perchè ogni transizione codifica ben 2 bit
+</p><div  style='text-align: center;'><img src='../uploads/Uni/QPSK.jpg' alt='' title='' /><br /><br />Esistono poi altri metodi come il QPSK sfasato di &#960;/4 usati nei sistemi di seconda generazione</div>
+<hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/PAR-21aprile)</span></div>
+  </div>
+</body>
+</html>

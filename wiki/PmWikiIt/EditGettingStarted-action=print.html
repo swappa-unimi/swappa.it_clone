@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : PmWikiIt / Introduzione al Markup (per principianti)</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/PmWikiIt' title='Pm Wiki It Home'>Pm Wiki It</a> /
+    <a href='EditGettingStarted.html' title='Introduzione al Markup (per principianti)'>Introduzione al Markup (per principianti)</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right;' >
+</div>
+<p><a class='wikilink' href='../PmWiki/PmWiki.html'>PmWiki</a> dà agli autori molti modi per cambiare il modo in cui viene visualizzato ciò che essi scrivono.  Per fare questo, gli autori aggiungono <em>markup</em> -- cioè testo con un significato speciale -- nel contenuto della pagina.  Qui si introducono alcuni dei markup di uso più comune, e si indicano anche opzioni più avanzate. La pagina <a class='wikilink' href='MarkupMasterIndex.html'>Indice principale markup</a> elenca tutti i markup possibili.
+</p>
+<div class='vspace'></div><h2>Markup per carattere</h2>
+<p>Il markup di carattere consiste in sequenze di apertura e chiusura, che vengono inserite attorno al testo selezionato. Sono combinazioni di caratteri che non si trovano in un testo di prosa ordinario. Quando il wiki incontra queste sequenze, cambia il modo in cui il testo viene visualizzato.
+</p>
+<div class='vspace'></div>
+<table width='auto' ><tr ><th  align='left'>markup</th><td  align='center'>&nbsp;&nbsp;&rarr;&nbsp;&nbsp;</td><th  align='left'>risultato</th></tr>
+<tr ><td  align='left'>''testo corsivo''</td><td  align='center'>&rarr;</td><td  align='left'><em>testo corsivo</em></td></tr>
+<tr ><td  align='left'>'''testo grassetto'''</td><td  align='center'>&rarr;</td><td  align='left'><strong>testo grassetto</strong></td></tr>
+<tr ><td  align='left'>'''''testo corsivo grassetto'''''</td><td  align='center'>&rarr;</td><td  align='left'><strong><em>testo corsivo grassetto</em></strong></td></tr>
+<tr ><td  align='left'>[+grande+] o [++più grande++]</td><td  align='center'>&rarr;</td><td  align='left'><span style='font-size:120%'>grande</span> o <span style='font-size:144%'>più grande</span></td></tr>
+<tr ><td  align='left'>[-piccolo-] o [--più piccolo--]</td><td  align='center'>&rarr;</td><td  align='left'><span style='font-size:83%'>piccolo</span> o <span style='font-size:69%'>più piccolo</span></td></tr>
+</table>
+<p class='vspace'>Altri markup per carattere permettono di formattare testo monospaziato, apice, pedice, sottolineato e barrato. Per ulteriori informazioni si veda la pagina <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/CharacterMarkup?action=edit'>CharacterMarkup</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/CharacterMarkup?action=edit'>?</a>.
+</p>
+<div class='vspace'></div><h2>Markup di linea</h2>
+<p>Gli autori hanno a disposizione una serie di markup <em>ad inizio linea</em> per definire paragrafi, liste e altre strutture. I caratteri che si possono usare sono spazi (" "), punti esclamativi ("!"), asterischi ("*") e cancelletti ("#"). Questi caratteri, se inseriti all'inizio di un paragrafo, influenzano la formattazione del testo che segue. Se usati altrove, invece, non hanno nessun significato particolare, ma vengono semplicemente visualizzati.
+</p>
+<p class='vspace'>Se non è presente nessun markup ad inizio linea, allora il testo viene formattato come un paragrafo tradizionale. Per dividere il testo in più paragrafi, bisogna separare questi ultimi da una linea vuota.
+</p>
+<p class='vspace'>Per inserire un <em>titolo</em>, iniziare la linea con uno o più punti esclamativi ("!").
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>!! Intestazione superiore
+!!! Intestazione inferiore
+</pre></td><td 
+        class='markup2' valign='top'><h2>Intestazione superiore</h2>
+<h3>Intestazione inferiore</h3>
+</td></tr></table>
+<p class='vspace'>Per creare un elenco puntato, ogni linea deve iniziare con un asterisco.
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>* Fat Freddy's Drop
+* Phoenix Foundation
+* Trinity Roots
+</pre></td><td 
+        class='markup2' valign='top'><ul><li>Fat Freddy's Drop
+</li><li>Phoenix Foundation
+</li><li>Trinity Roots
+</li></ul>
+</td></tr></table>
+<p class='vspace'>Per creare un elenco numerato, ogni linea deve iniziare con un cancelletto.
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre># Kauri
+# Totara
+# Rimu
+</pre></td><td 
+        class='markup2' valign='top'><ol><li>Kauri
+</li><li>Totara
+</li><li>Rimu
+</li></ol>
+</td></tr></table>
+<p class='vspace'>Per indentare il testo senza che faccia parte di un elenco, le linee devono iniziare con -&gt;
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>-&gt;The World's Fastest Indian
+</pre></td><td 
+        class='markup2' valign='top'><div class='indent'>The World's Fastest Indian
+</div>
+</td></tr></table>
+<p class='vspace'>Per ulteriori informazioni, si veda <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/LineMarkup?action=edit'>Line Markup</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/LineMarkup?action=edit'>?</a>.
+</p>
+<div class='vspace'></div><h2>Link</h2>
+<p>Il markup [[ ... ]] trasforma il testo racchiuso in un link.  Attraverso l'inserimento di link ad altre pagine o siti, gli autori rendono più facile l'esplorazione di un sito. PmWiki organizza le pagine in <em>gruppi</em> -- il nome completo di questa pagina è PmWikiIt.EditGettingStarted; <em>PmWikiIt</em> è il gruppo e  <em>EditGettingStarted</em> è il nome della pagina. Per inserire un collegamento a un'altra pagina, è necessario conoscerne il nome.
+</p>
+<div class='vspace'></div><h3>Pagine nello stesso gruppo</h3>
+<p>Per inserire un collegamento a una pagina che si trova nello stesso gruppo della pagina corrente, come <a class='wikilink' href='DocumentationIndex.html'>Documentation Index</a>, bisogna scrivere [[Documentation Index]].  Molti autori preferiscono usare lettere maiuscole per le pagine, ma non sono fondamentali: [[documentation index]] funziona altrettanto bene: <a class='wikilink' href='DocumentationIndex.html'>documentation index</a>.
+</p>
+<div class='vspace'></div><h3>Pagine in altri gruppi</h3>
+<p>Per inserire un collegamento a una pagina che si trova in un altro gruppo, come la <a class='wikilink' href='../Main/HomePage.html'>Main.Home Page</a>, bisogna scrivere [[Main.Home Page]]. Per nascondere il gruppo nel testo del collegamento, come in <a class='wikilink' href='../Main/HomePage.html'>Home Page</a>, bisogna scrivere [[Main/Home Page]].
+</p>
+<div class='vspace'></div><h3>Pagine su altri siti</h3>
+<p>Per inserire un collegamento ad una pagina di un altro sito, come <a class='urllink' href='http://example.com' title='' rel='nofollow'>http://example.com</a>, bisogna scrivere [[http://example.com]]. Ma funziona anche solo <a class='urllink' href='http://example.com' title='' rel='nofollow'>http://example.com</a> .
+</p>
+<div class='vspace'></div><h3>Testo dei collegamenti</h3>
+<p>Per inserire un link ad un <a class='urllink' href='http://example.com' title='' rel='nofollow'>esempio</a> anziché a <a class='urllink' href='http://example.com' title='' rel='nofollow'>http://example.com</a>, bisogna scrivere 
+[[http://example.com | esempio]]. Il markup [=[[nome del link | testo del link]] funziona per tutti i tipi di collegamenti; perciò [[Main.HomePage | Introduction]] diventa <a class='wikilink' href='../Main/HomePage.html'>Introduction</a>.
+</p>
+<div class='vspace'></div><h3>Altri collegamento</h3>
+<p>Per ulteriori informazioni, si veda <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/LinkMarkup?action=edit'>LinkMarkup</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/LinkMarkup?action=edit'>?</a>.
+</p>
+<div class='vspace'></div><h2>Markup di blocco</h2>
+<p>Alcuni markup influenzano più linee di testo -- o blocchi di testo. Si veda <a class='wikilink' href='BlockMarkup.html'>Markup per blocchi</a>. 
+</p>
+<div class='vspace'></div><h2>Ulteriori informazioni</h2>
+<p>Gli autori possono provare questi e altri esempi nella <a class='wikilink' href='WikiSandbox.html'>sandbox</a>. Altre pagine interessanti sono <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/SimpleTables?action=edit'>SimpleTables</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/SimpleTables?action=edit'>?</a>, <a class='wikilink' href='Images.html'>Immagini</a>, <a class='wikilink' href='WikiStyles.html'>Stili wiki</a>, <a class='wikilink' href='ListStyles.html'>Stili per gli elenchi</a>, <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/PageLists?action=edit'>PageLists</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/PageLists?action=edit'>?</a> e <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/Directives?action=edit'>Directives</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/Directives?action=edit'>?</a>.
+<a name='trailend' id='trailend'></a>
+</p>
+<div class='vspace'></div><hr />
+<p  style='color: #060; background-color: #cf9; border: 1px solid #060; padding: 3px; font-size: smaller;'> 
+Pagina originale: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWikiIt.EditGettingStarted' title='' rel='nofollow'>PmWikiIt.EditGettingStarted</a> -
+<a class='wikilink' href='A-action=search&amp;q=link=PmWikiIt.EditGettingStarted&amp;fmt=title.html'>Backlinks</a><br />
+Ultime modifiche:<br /><a class='selflink' href='EditGettingStarted.html'>PmWikiIt.EditGettingStarted</a>: December 11, 2007, at 11:39 PM<br />
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/PmWikiIt/EditGettingStarted)</span></div>
+  </div>
+</body>
+</html>

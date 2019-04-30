@@ -1,0 +1,628 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Tecnologie Web - Laboratorio 8 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.TWLab08' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Tecnologie Web - Laboratorio 8
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab08?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab08?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='TWLab08-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab08?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab08?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Tecnologie Web - Laboratorio 8 was last modified on June 23, 2009, at 09:06 AM'>
+							<span style='display:none;'>Tecnologie Web - Laboratorio 8</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio 8 ::</strong>
+</pre><div class='vspace'></div><h2>Esercizio 1</h2>
+<p><strong>Sulla base degli esempi  visti a lezione, preparare un file XML contenente una serie di informazioni di vostro interesse, ed un file di trasformazione XSLT che permetta di visualizzare in forma tabellare le informazioni del documento XML.<br />Verificare che funzionino, richiamando i due file da un file JSP.<br />Provare anche la versione in cui il file XML ed il file XSLT sono contenuti all’interno dello stesso file.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Di seguito mostriamo solo la soluzione con i file separati.<br />Il file <strong>cinema.xml</strong>:<br /><br />
+</p><pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="cinema.xsl"?&gt;
+
+&lt;cinema&gt;
+  &lt;film&gt;
+    &lt;titolo&gt; Shining &lt;/titolo&gt;
+    &lt;regista&gt; Stanley Kubrick  &lt;/regista&gt;
+  &lt;/film&gt;
+
+  &lt;film&gt;
+    &lt;titolo&gt; Apocalypse Now &lt;/titolo&gt;
+    &lt;regista&gt;  Francis Ford Coppola &lt;/regista&gt;
+  &lt;/film&gt;
+
+  &lt;film&gt;
+    &lt;titolo&gt; Gothic &lt;/titolo&gt;
+    &lt;regista&gt; Ken Russell &lt;/regista&gt;
+  &lt;/film&gt;
+
+&lt;/cinema&gt;
+</pre>
+<p class='vspace'>Il file <strong>cinema.xsl</strong> che permette di trasformare il file XML in un file HTML con tabella.<br /><br />
+</p><pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet version="1.0" xmlns:"http://www.w3.org/1999/XSL/Transform"&gt;
+
+&lt;xsl:template match="/"&gt;
+
+&lt;html&gt;
+&lt;head&gt; &lt;title&gt; Collezione Film &lt;/title&gt; &lt;/head&gt;
+
+&lt;body&gt;
+  &lt;table border="1"&gt;
+    &lt;tr&gt; 
+      &lt;td&gt; Titolo &lt;/td&gt;
+      &lt;td&gt; Regista  &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;xsl:for-each select="cinema/film"&gt;
+    &lt;tr&gt;
+      &lt;td&gt;  &lt;xsl:value-of select="titolo"&gt; &lt;/td&gt;
+      &lt;td&gt;  &lt;xsl:value-of select="regista"&gt; /td&gt;
+    &lt;/tr&gt;
+    &lt;/xsl:for-each&gt;
+  &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+<p class='vspace'>Il file <strong>cinema.jsp</strong> che unisce i due file precedenti:<br /><br />
+</p><pre class='escaped'>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt;
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x"%&gt;
+
+&lt;c:import var="codiceXML" url="cinema.xml" /&gt;
+&lt;c:import var="codiceXSL" url="cinema.xslt" /&gt;
+
+&lt;x:transform doc="${codiceXML}" xslt="${codiceXSL}" /&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p><strong>Scrivete un file XML in cui siano presenti una serie di libri (nodo radice: libreria). Per ogni libro riportare le seguenti informazioni: autore, genere, trama, numero di pagine, prezzo.  Scrivete poi il codice di una JSP che permetta di effettuare diversi tipi di query sul documento XML. Per esempio:</strong>
+</p><ul><li><strong>si vogliano visualizzare tutti i libri di un determinato genere</strong>
+</li><li><strong>si vogliano visualizzare tutti i libri con prezzo &lt; 20 euro.</strong>
+</li></ul><p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><strong>libreria.xml</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;libreria&gt;
+&lt;libro&gt;
+  &lt;autore&gt;Stephen King&lt;/autore&gt;
+  &lt;titolo&gt;Al crepuscolo&lt;/titolo&gt;
+  &lt;genere&gt;Narrativa&lt;/genere&gt;
+  &lt;trama&gt;racconti vari&lt;/trama&gt;
+  &lt;npag&gt;400&lt;/npag&gt;
+  &lt;prezzo&gt;16&lt;/prezzo&gt;
+&lt;/libro&gt;
+&lt;libro&gt;
+  &lt;autore&gt;Sophie&lt;/autore&gt;
+  &lt;titolo&gt;Sai tenere un segreto&lt;/titolo&gt;
+  &lt;genere&gt;Horror&lt;/genere&gt;
+  &lt;trama&gt;bla...bla...&lt;/trama&gt;
+  &lt;npag&gt;350&lt;/npag&gt;
+  &lt;prezzo&gt;25&lt;/prezzo&gt;
+&lt;/libro&gt;
+&lt;libro&gt;
+  &lt;autore&gt;Roberto Re&lt;/autore&gt;
+  &lt;titolo&gt;Leader di Te Stesso&lt;/titolo&gt;
+  &lt;genere&gt;PNL&lt;/genere&gt;
+  &lt;trama&gt;PNL&lt;/trama&gt;
+  &lt;npag&gt;180&lt;/npag&gt;
+  &lt;prezzo&gt;9.90&lt;/prezzo&gt;
+&lt;/libro&gt;
+&lt;libro&gt;
+  &lt;autore&gt;HP Lovecraft&lt;/autore&gt;
+  &lt;titolo&gt;Le montagne della follia&lt;/titolo&gt;
+  &lt;genere&gt;Horror&lt;/genere&gt;
+  &lt;trama&gt;follia&lt;/trama&gt;
+  &lt;npag&gt;100&lt;/npag&gt;
+  &lt;prezzo&gt;6&lt;/prezzo&gt;
+&lt;/libro&gt;
+&lt;/libreria&gt;
+</pre>
+<p class='vspace'><strong>libreria.jsp</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x" %&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Set Examples&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;c:import var="libri" url="libreria.xml" /&gt;
+    &lt;x:parse var="doc" xml="${libri}" /&gt;  
+ &lt;table border="1"&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;Libri di genere Horror&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;x:forEach select="$doc/libreria/libro[genere='Horror']"&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;x:out select="titolo" /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/x:forEach&gt;
+    &lt;/table&gt;
+&lt;/br&gt;
+    &lt;table border="1"&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;b&gt;Libri al di sotto dei 20 euro&lt;/b&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;x:forEach select="$doc/libreria/libro[prezzo&lt;20]"&gt;
+&lt;tr&gt;
+&lt;td&gt;
+&lt;x:out select="titolo" /&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/x:forEach&gt;
+    &lt;/table&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p><strong>In questo esercizio utilizzeremo un database per memorizzare le preferenze relative alla visualizzazione di una pagina da parte di un utente. Per prima cosa preparare una pagina JSP (mioTesto.jsp) che contenga un titolo, un breve testo ed una form in cui l'utente possa inserire il colore dello sfondo preferito e la dimensione del font utilizzato nel testo.<br />Per un aiuto sui tag HTML potete consultare: "The Bare Bones Guide to HTML" (<a class='urllink' href='http://werbach.com/barebones/barebones.html' title='' rel='nofollow'>http://werbach.com/barebones/barebones.html</a>).<br />La pagina utilizza dei valori di default che sono memorizzati in una tabella del database. (inizialenomecognome_preferenze). La tabella deve contenere almeno due campi, relativi al colore dello sfondo ed alla dimensione del font. Create la tabella con phpMyAdmin e impostate dei valori iniziali. mioTesto.jsp legge i valori da utilizzare nel database.<br />La form deve puntare alla JSP, memorizzaSQL.jsp. La pagina deve leggere i parametri inviati dall'utente e salvarli opportunamente nel database, quindi deve richiamare la pagina iniziale mioTesto.jsp.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>File iniziale che contiene la form: <strong>miotesto.jsp</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%&gt;
+&lt;%@ taglib prefix="sql" uri="http://java.sun.com/jstl/sql" %&gt;
+
+&lt;sql:setDataSource
+      url="jdbc:mysql://localhost/tecweb"
+      driver="com.mysql.jdbc.Driver"
+      user="****"
+      password="****"/&gt;
+
+&lt;sql:query  var="pref"&gt;
+  SELECT color, size FROM db_preferenze
+&lt;/sql:query&gt;
+
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt; Lettura del DB &lt;/title&gt;&lt;/head&gt;
+  &lt;body bgcolor = '&lt;c:forEach var="row" items="${pref.rows}"&gt;
+                   &lt;c:out value="${row.color}"/&gt;
+                   &lt;/c:forEach&gt;'
+  &gt;
+  &lt;font size= '&lt;c:forEach var="row" items="${pref.rows}"&gt;
+               &lt;c:out value="${row.size}"/&gt;
+               &lt;/c:forEach&gt;'
+  &gt;
+    &lt;h1&gt;Lettura dei dati in un database&lt;/h1&gt;
+
+    &lt;p&gt;&lt;strong&gt;SWAPPA COLOR&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;Scrivi le tue preferenze:  &lt;/p&gt;
+
+    &lt;form id="form1" name="form1" method="post" action="memorizzaSQL.jsp"&gt;
+
+      &lt;p&gt;
+      Colore Sfondo
+      &lt;input type="text" name="colore" /&gt;
+
+      &lt;br&gt;
+
+      Dimensione Font 
+      &lt;input type="text" name="size" /&gt;
+      &lt;/p&gt;
+
+      &lt;p&gt;
+      &lt;input type="submit" name="submit" value="Invia" /&gt;
+      &lt;/p&gt;
+
+    &lt;/form&gt;
+
+  &lt;/font&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</pre>
+<p class='vspace'>File <strong>memorizzaSQL.jsp</strong> che inserisce i valori, inseriti nella form precedente, nel database creato.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %&gt;
+&lt;%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%&gt;
+
+&lt;sql:setDataSource
+      url="jdbc:mysql://localhost/tecweb"
+      driver="com.mysql.jdbc.Driver"
+      user="****"
+      password="****"/&gt;
+
+&lt;sql:update&gt;
+  UPDATE db_preferenze
+  SET color = ?, size = ?
+  WHERE id = '1'
+  LIMIT 1;
+  &lt;sql:param value="${param.colore}"/&gt;
+  &lt;sql:param value="${param.size}"/&gt;
+&lt;/sql:update&gt;
+
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;operazione&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;form action="miotesto.jsp" method="post"&gt;
+    &lt;h3&gt;L'operazione è andata a buon fine.
+      Clicca per visualizzare le modifiche &lt;/br&gt;
+
+    &lt;input type="submit" value="visualizza"&gt;
+    &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'>In questo esercizio c'è un problemino con la dimensione del font, nel senso che rileva correttamente il dato inserito dall'utente, ma poi fa una conversione gigantesca che non comprendo, anche specificando il formato <em>px</em> nel campo <em>font</em>.
+</p>
+<div class='vspace'></div><h2>Esercizio 4</h2>
+<p><strong>Ora invece, il nostro obiettivo è quello di utilizzare un file XML di configurazione locale.<br />Modificare i files preparati nell'esercizio precedente in modo che invece di utilizzare un database, utilizzino un file XML. Per leggere il file utilizzare la libreria JSTL xml.<br />Scrivere il file non è possibile direttamente con JSTL. Dobbiamo utilizzare una scriptlet (o meglio una servlet) Java. Ecco come aprire uno stream su file e scrivere una parola.<br /><em>File mioFileXml = new File("configurazioni.xml");</em><br /><em>PrintWriter mioStreamXml = new PrintWriter(new FileWriter(mioFileXml));</em><br /><br /><em>mioStreamXml.println("parola");</em><br /><br /><em>mioStreamXml.close();</em><br />Utilizzate la direttiva <em>&lt;%@ page import="java.io.*"%&gt; nella pagina JSP.</strong></em>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Il file <strong>preferenze.jsp</strong> che legge le preferenze e permette di specificare le nuove è il seguente:<br /><br />
+</p><pre class='escaped'>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x" %&gt;
+
+&lt;c:import var="pref" url="preferenze.xml" /&gt;
+&lt;x:parse var="doc" xml="${pref}" /&gt;  
+
+
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Colore e dim&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body bgcolor='&lt;x:out select="$doc/preferenze/preferenza/colore" /&gt;'&gt;
+&lt;font size='&lt;x:out select="$doc/preferenze/preferenza/size" /&gt;'&gt;    
+&lt;h1&gt;Lettura dei dati&lt;/h1&gt;
+
+    &lt;p&gt;&lt;strong&gt;SWAPPA COLOR&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;Scrivi le tue preferenze:  &lt;/p&gt;
+
+    &lt;form id="form1" name="form1" method="post" action="memorizzaXML.jsp"&gt;
+
+      &lt;p&gt;
+      Colore Sfondo
+      &lt;input type="text" name="colore" /&gt;
+
+      &lt;br&gt;
+
+      Dimensione Font 
+      &lt;input type="text" name="size" /&gt;
+      &lt;/p&gt;
+
+      &lt;p&gt;
+      &lt;input type="submit" name="submit" value="Invia" /&gt;
+      &lt;/p&gt;
+
+    &lt;/form&gt;
+
+  &lt;/font&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'>Il file <strong>memorizzaXML.jsp</strong> che memorizza nel file xml le nuove preferenze, per poi essere rilette dalla pagina precedente, è:<br /><br />
+</p><pre class='escaped'>
+&lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %&gt;
+&lt;%@ taglib uri="http://java.sun.com/jstl/xml" prefix="x" %&gt;
+&lt;%@ page import="java.io.*"%&gt;
+&lt;%
+try{
+File mioFileXml = new File(getServletContext().getRealPath("/")+"preferenze.xml");
+PrintWriter mioStreamXml = new PrintWriter(new FileWriter(mioFileXml));
+String colore = request.getParameter("colore");
+String dim = request.getParameter("size");
+mioStreamXml.println("&lt;?xml version='1.0' encoding='ISO-8859-1'?&gt;");
+mioStreamXml.println("&lt;preferenze&gt;");
+mioStreamXml.println("&lt;preferenza&gt;");
+mioStreamXml.println("&lt;colore&gt;");
+mioStreamXml.print(colore);
+mioStreamXml.println("&lt;/colore&gt;");
+mioStreamXml.println("&lt;size&gt;");
+mioStreamXml.print(dim);
+mioStreamXml.println("&lt;/size&gt;");
+mioStreamXml.println("&lt;/preferenza&gt;");
+mioStreamXml.println("&lt;/preferenze&gt;");
+mioStreamXml.close();
+}catch (Exception e){
+out.write("errore ");
+}
+%&gt;
+&lt;html&gt;
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 23, 2009, at 09:06 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab08?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab08?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

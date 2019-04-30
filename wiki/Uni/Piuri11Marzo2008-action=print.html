@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Lezione dell'11 marzo 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri11Marzo2008.html' title='Sistemi Operativi - Lezione dell'11 marzo 2008'>Sistemi Operativi - Lezione dell'11 marzo 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Lezione dell'11 marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Modulo 5 - Lezione 1 - Scheduling</strong></span>
+</p>
+<p class='vspace'>Nota: quanto segue si applica sia ai processi che ai thread, con le dovute differenze. Ma i principi rimangono uguali.
+</p>
+<p class='vspace'>Noi vedremo lo scheduling dei processi che sono nello stato <strong>ready to run</strong>, anche se si possono schedulare processi anche in altri stati.
+</p>
+<p class='vspace'>L'obiettivo dello scheduling è stabilire in che ordine eseguire i processi. L'ordine di esecuzione può prefiggersi diversi scopi, a seconda che lo voglia stabilire nel <strong>breve, medio o lungo termine</strong>.
+Da notare che lo scheduling a lungo termine non riguarda solo i processi in memoria centrale, ma anche quelli ancora da caricare dalla memoria centrale. Si parla quindi di uno spazio di memoria astratto, tutto quello che il gestore della memoria mi può dare in pasto.
+</p>
+<div class='vspace'></div><h3>Short term scheduler (CPU scheduler)</h3>
+<p>Obiettivo: ordinare i processi già in memoria centrale, che si trovano nello stato ready-to-run, ovvero hanno tutte le risorse disponibili tranne il processore.
+</p>
+<p class='vspace'>Questo scheduler viene eseguito molto spesso, eg ogni 100 ms. Deve quindi essere rapido, e quindi in favore della rapidità si può anche sacrificare un po' la ricerca dell'ottimo, altrimenti va a finire che passo più tempo a schedularli che nemmeno ad eseguirli, i processi, e a quel punto tanto valeva eseguirli in un ordine casuale.
+</p>
+<div class='vspace'></div><h3>Long term scheduler</h3>
+<p>Ordina i processi presenti nel sistema, sia in memoria centrale che altrove, cioè tutti quelli attivati.
+</p>
+<p class='vspace'>L'obiettivo è sfruttare al massimo la CPU, senza cadere nel solito errore di consegnare il processore in mano ai CPU-bound che se lo terrebbero tutto per loro.
+Nel long term scheduler entrano quindi anche i lavori batch.
+</p>
+<p class='vspace'>Ci sono anche sistemi che non hanno questo scheduler, eg quelli embedded, perché non ne ha affatto bisogno.
+</p>
+<p class='vspace'>Siccome questo scheduler viene eseguito molto meno frequentemente, ci si può permettere di usare algoritmi più lenti e complessi, anche perché così in genere si ottengono migliori risultati.
+Poi, siccome devo caricare anche processi dai dischi, non posso certo permettermi di farlo ogni 100 ms, perché il tempo di caricamento in genere è di qualche ordine di grandezza in più.
+</p>
+<div class='vspace'></div><h3>Mid term scheduler</h3>
+<p>Questo scheduler si applica quando c'è troppa concorrenza tra i processi, quando non c'è bilanciamento tra CPU-bound e I/O-bound, se la memoria centrale si esaurisce.
+</p>
+<p class='vspace'>Insomma, viene usato per ottimizzare le cose in situazioni un po' critiche. Modifica ciò che è già presente in memoria, a cui si è arrivati tramite le scelte degli altri due scheduler, e di fatto corregge queste scelte qualora si siano rivelate inadatte. Infatti, nessuno scheduler può prevedere il futuro.
+</p>
+<p class='vspace'>Le operazioni che fa si chiamano <strong>swapping out</strong> e <strong>swapping in</strong>. Swapping out vuol dire rimuovere processi dalla memoria centrale e adagiarli nei dischi. Lo swapping in è il contrario.
+</p>
+<p class='vspace'>Nota: non usare il termine <em>swappare</em> in presenza del professore.
+</p>
+<div class='vspace'></div><h2>Attivare le schedule</h2>
+<p>Ok, ho stabilito il mio schedule, ovvero la tabella di marcia. Quand'è che effettivamente applico la turnazione?
+</p>
+<p class='vspace'>Ci sone due strategie, quelle <strong>preemptive</strong> e quelle <strong>non-preemptive</strong>.
+</p>
+<p class='vspace'>Le strategie non preemptive avvengono in modo <strong>sincrono</strong> rispetto all'evoluzione dello stato della computazione del processo. I casi in cui si sospende un processo per attivare il prossimo in modo implicito esplicito sono i seguenti:
+</p><ul><li>il processo fa una richiesta I/O;
+</li><li>il processo attende la terminazione di un figlio;
+</li><li>il processo rilascia volontariamente il processore;
+</li><li>il processo finisce.
+</li></ul><p class='vspace'>Se avviene uno di questi casi, il SO passa il pallino al prossimo processo in lista. Quindi possiamo dire che <em>gli effetti dello scheduling non-preemptive sono sincroni con l'evoluzione dello stato della computazione</em>. Sempre, quando accade una di ste cose, si cambia processo.
+</p>
+<div class='vspace'></div><h3>Preemptive scheduling</h3>
+<p>Quando scade il quanto di tempo assegnato ad un processo (la sua <strong>time slice</strong>), il processo viene cambiato. È quindi un avvenimento <strong>asincrono</strong> rispetto all'evoluzione bla bla.
+Questo è ciò che accde nei sistemi time-sharing.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2 - Criteri di schedulazione</strong></span>
+</p>
+<p class='vspace'>Posso valutare uno scheduling in base a diversi criteri, tra cui possiamo citare:
+</p><ul><li>utilizzo del processore;
+</li><li>throughput = frequenza di completamento;
+</li><li>tempo di completamento;
+</li><li>tempo di attesa;
+</li><li>tempo di risposta.
+</li></ul><p class='vspace'><strong>Throughput</strong> = truput = quanti processi vengono eseguiti nell'unità di tempo, ovvero quanti utenti riesco a soddisfare in un dato intervallo di tempo.
+</p>
+<p class='vspace'><strong>Tempo di completamento</strong> = quanto tempo un processo passa nel processore prima di essere sostituito. Può darsi che un processo di per sé ci metta meno tempo se sta di più nel processore, ma magari ci sono altri processi che per via di esigenze particolari devono arrivare in fondo prima di altri.
+</p>
+<p class='vspace'><strong>Tempo di risposta</strong> = quanto tempo passa tra l'arrivo di un evento e la sua gestione da parte del SO. Se i quanti di tempo, eg, sono grandi, il tempo di risposta può essere alto.
+</p>
+<p class='vspace'><strong>Tempo di attesa</strong> = tempo da attendere tra la creazione di un processo e la sua attivazione.
+</p>
+<p class='vspace'>Devo valutare un po' il <strong>carico applicativo</strong> del mio sistema, e in base a questo (e a tanta esperienza...) decidere che mix di criteri usare per schedulare bene. Può darsi infatti che se ottimizzo da una parte, peggioro dall'altra e così via. Eg, un server può aver bisogno di quanti di tempo lunghi, perché non deve essere interattivo ma avere tanto truput. Un sistema desktop invece può anche permettersi di essere meno performante alla lunga, ma deve reagire istantaneamente alle bizzarrie dell'utente.
+</p>
+<p class='vspace'>Ho diversi metodi per valutare se i miei criteri sono stati raggiunti. Posso infatti vare <strong>valutazioni analitiche</strong>, ovvero deterministiche, oppure <strong>statistiche</strong>.
+</p>
+<div class='vspace'></div><h3>Valutazione analitica</h3>
+<p>Creo un modello matematico e deterministico del mio sistema, e gli do in pasto le mie schedulazioni. Vedo quindi rapidamente quanto il sistema renderà.
+</p>
+<p class='vspace'>Ma 1) non è semplice da realizzare; 2) l'input dato a tali equazioni deve essere esatto, perché minime variazioni possono dare luogo a risultati ben diversi tra di loro.
+</p>
+<div class='vspace'></div><h3>Valutazione statistica</h3>
+<p>Nel modello <strong>a reti di code</strong>, visualizzo il sistema come una macchina che offre servizi diversi, eg disco, memoria, tastiera e così via. Ogni servizio ha una sua coda, e statisticamente vedo un po' quanto tempo il processo passa in una coda e in un'altra.
+</p>
+<p class='vspace'>Un <strong>servizio</strong> ha una coda di processi che vogliono utilizzarlo.
+Un <strong>processo</strong> vuole una certa sequenza di servizi, magari prima la tastiera, poi il disco, poi il video e così via.
+</p>
+<p class='vspace'>Nella sua evoluzione, un processo passa da una coda all'altra, e la statistica di Babbo Gianini ci permetterà di stabilire bene o male quanto tempo un processo passerà in una coda e quanto ne passerà invece in un'altra.
+</p>
+<p class='vspace'>Naturalmente, parlando di statistica, vuol dire che si semplifica la realtà.
+</p>
+<p class='vspace'>Un altro sistema statistico è quello della <strong>simulazione</strong>: realizzo un software che simula il mio sistema con un certo grado di aderenza alla realtà, e vedo in media come si comporta.
+</p>
+<div class='vspace'></div><h3>Implementazione</h3>
+<p>Un altro sistema per vedere se il mio scheduling funziona è, banalmente, quello di realizzare il sistema e vedere come si comporta nella realtà!
+Ovviamente il costo di realizzare sto sistema dal vero non è per niente leggero, e poi occorre che gli utenti lo sappiano e lo utilizzino etc. etc.
+</p>
+<p class='vspace'>Infine, teniamo in conto che magari il mio sistema riceve carichi diversi a seconda del momento della giornata, e quindi potrebbe aver bisogno di scheduling diversi, e a questo punto occorre valutare se usare il trend medio oppure adattarsi ogni volta alla nuova situazione.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3 - Politiche di scheduling</strong></span>
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/settenani.jpg' alt='' title='' /><br /><strong>I processi allegramente in coda.</strong></span></div>
+<h3>First Come, First Served</h3>
+<p>Il primo che arriva meglio alloggia. Però vediamo subito che è non preemptive, ed è piuttosto barbaro nei confronti dell'interazione!
+</p>
+<div class='vspace'></div><h3>Shortest Job First</h3>
+<p>È un buon sistema: il processo che ci mette meno tempo per finire viene eseguito per primo, e gli altri vengono eseguiti poi in sequenza.
+</p>
+<p class='vspace'>Posso averlo sia preemptive che non preemptive, e in genere la versione preemptive rende meglio.
+Se è preemptive, vuol dire che non appena mi arriva un processo che ha un tempo di esecuzione più basso di quello attualmente in esecuzione, allora faccio lo swap asincrono con quello nuovo.
+</p>
+<p class='vspace'>Questa politica però è basata sull'assunto di conoscere il tempo che ciascun processo ci metterà. Nel caso dei lavori batch, posso anche indovinarlo e saperlo con certezza, ma in generale è una conoscenza difficile da ottenere, e se faccio delle medie ricavate chissà come, e poi sbaglio, l'efficienza garantita da sto scheduler diventa nulla. Altrimenti perderei tempo a decidere lo scheduler e non a eseguire i processi, e allora tanto valeva eseguirli in un ordine casuale.
+</p>
+<div class='vspace'></div><h3>Priorità</h3>
+<p>Un processo ha una priorità che lo distingue dagli altri.
+</p>
+<p class='vspace'>OCIO: in alcuni SO priorità alta = indice alto, in altri indice basso, quindi non facciamo assunti sull<em>'indice numerico</em> della priorità.
+</p>
+<p class='vspace'>Il processo prioritario viene eseguito prima dei processi non prioritari. Anche qui, se uso la versione preemptive, un processo con bassa priorità appena arrivato può interrompere asincronicamente il processo attualmente in esecuzione.
+</p>
+<p class='vspace'>Problema: i processi con priorità bassa potrebbero attendere mille anni prima di trovare posto tra tanti processi ad alta priorità che li precedono! Si chiama <strong>starvation</strong>, ovvero <strong>blocco indefinito</strong>.
+</p>
+<p class='vspace'>E allora si stabilisce che dopo un po' di tempo un processo <strong>invecchia</strong> (<strong>aging</strong>), e guadagna in priorità, e ad un certo punto ovviamente potrà competere con processi che in partenza erano più prioritari e prepotenti di lui.
+</p>
+<div class='vspace'></div><h3>Round Robin</h3>
+<p>Nella sua forma originale, il round robin dà a tutti i processi lo stesso peso, e li esegue uno dopo l'altro scambiandoli quando scade il quanto di tempo.
+</p>
+<p class='vspace'>Se il quanto è lungo, diventa in pratica un FCFS (First Come First Served), perché il primo che arriva si piglia il quantone grosso.
+Se il quanto è corto, perdo troppo tempo a gestire la faccenda del context switch.
+E allora cerco di usare un quanto abbastanza lungo così da soddisfare la maggior parte delle mie richieste medie.
+</p>
+<div class='vspace'></div><h3>Coda a più livelli (C+L)</h3>
+<p>Creo divere categorie, ognuna con la sua specificità (eg la categoria dei processi I/O bound, quella dei processi batch, quelli interattivi e così via).
+Ogni categoria ha la sua coda, e ogni coda il suo algo di scheduling.
+Poi, ogni tanto faccio il mix di queste code e ne traggo il mio scheduling. Wow!
+</p>
+<div class='vspace'></div><h3>Coda a più livelli con retroazione (C+LR)</h3>
+<p>Come quella sopra, ma permette a dei processi di migrare da una coda all'altra, sia per <strong>guadagnare</strong> in priorità, che per <strong>perderne</strong> e dare agli altri un po' di tempo processore.
+</p>
+<div class='vspace'></div><h2>Sistemi multiprocessore</h2>
+<p>Se ho più processore, i processori possono essere <strong>omogenei</strong>, ovveri tutti equipollenti, opppure <strong>eterogenei</strong>, ovvero un processore è specializzato in una cosa e l'altro in un'altra etc.
+</p>
+<p class='vspace'>Inoltre, la memoria tra i processori può essere condivisa, oppure ognuno ha la sua e guai a chi la tocca.
+</p>
+<p class='vspace'>Infine, anche le periferiche possono essere accessibili indistintamente a tutti i processori, oppure alcuni sì ed altri no.
+</p>
+<p class='vspace'>Se ho processori <strong>omogenei</strong> e tutto il resto <strong>condiviso</strong>, allora mantengo una coda per tutti, e mando i processi in coda sul primo processore che si libera. Si chiama <strong>load sharing</strong>. Il problema è che il bus della memoria può subire tracolli visto che tutti i processori leggono dalla stessa memoria.
+</p>
+<p class='vspace'>Posso fare <strong>load sharing</strong> anche con <strong>memoria locale</strong> per ogni processore. Se sposto un processo da un processore all'altro, sposto anche il suo spazio di indirizzamento da un processore all'altro. Devo però tenere in conto il costo di trasferimento dello spazio di indirizzamento, che nel caso della memoria condivisa non c'è
+</p>
+<p class='vspace'>Se ho tutto condiviso ma <strong>le periferiche no</strong>, devo creare una coda in ogni processore, relativa alla periferica che solo quel processore ha disponibile.
+</p>
+<p class='vspace'>Se invece ho processori <strong>omogenei</strong> e <strong>memoria e periferiche locali</strong>, devo avere una coda per ogni cosa e smazzarmi il casino di gestirne mille.
+</p>
+<p class='vspace'>Nel caso dei <strong>processori eterogenei</strong>, c'è una coda per ogni processore, e sopra di esse una coda per ogni gruppo di processori omogenei.
+</p>
+<p class='vspace'><strong>Multiprocessamento</strong> vuol dire che c'è un processore che fa scheduling per tutti, in modo quindi asimmetrico.
+Altrimenti, se voglio seguire un sistema simmetrico, ogni processore ha il suo sistema operativo e fa la sua parte schedulando i processi a lui assegnati.
+E queste due suddivisioni sono trasversali alla distinzione tra processori omogenei ed eterogenei.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 4: scheduling per sistemi Real Time</strong></span>
+</p>
+<div class='vspace'></div><h3>Hard Real Time</h3>
+<p>Tutto quanto è in real time, ovvero un processo deve avere la garanzia di terminare entro un tempo massimo a partire dalla sua attivazione.
+</p>
+<p class='vspace'>Il SO può usare diverse tecniche di scheduling.
+</p>
+<p class='vspace'>Una piuttosto radicale è questa: <strong>se posso garantire al processo il tempo massimo di esecuzione</strong>, allora lo accetto. Se no, non lo accetto.
+Naturalmente devo poter fare stime del tempo di esecuzione, e non è semplice. E poi devo poter prenotare le risorse <em>prima</em> che il processo arrivi, se no addio tempi stretti.
+Se il processo è stato accettato, entrerà a far parte dei Sette Nani.
+</p>
+<p class='vspace'>Posso usare il sistema dei <strong>processi periodici</strong>, in cui i miei processi hanno una scadenza <strong>d</strong>, ovvero  una frequenza <strong>1/p</strong>. Vuol dire che i processi vanno eseguiti ogni tot e metterci tat, e la cosa bella è che lo so prima. Ad esempio, lo scheduling dei processi audio può essere fatto così: so che ogni 5 millisecondi devo inviare i dati audio alla scheda audio, e tutti i processi realtime che producono o processano l'audio vengono eseguiti periodicamente entro i 5 ms.
+</p>
+<p class='vspace'>Lo <strong>scheduling a frequenza monotòna</strong> (notare l'accento sulla terza O) è un caso specifico dei processi periodici visti qui sopra, con l'aggiunta della preemption. Stabilisco per ogni processo una priorità in base al periodo (ovvero la frequenza), oppure priorità statiche, e un processo con priorità alta ne può scalzare un altro.
+</p>
+<p class='vspace'>La politica <strong>earliest deadline first (EDF)</strong> mi dice che i processi, periodici o anche no, che hanno il tempo di scadenza più vicino vengono eseguiti per primi. Quindi la priorità potrebbe essere vista come <strong>1/d</strong>, dove d è la deadline, cioè la scadenza.
+</p>
+<div class='vspace'></div><h3>Soft Real Time</h3>
+<p>Non tutti i processi sono critici, e quindi quelli che hanno prerogative real time possono avere la precedenza su quelli non real time.
+Posso ad esempio stabilire che i processi realtime abbiano una priorità statica, mentre quelli non critici ne abbiano una dinamica.
+</p>
+<p class='vspace'>E si può anche decidere di interrompere le chiamate di sistema: ciò vuol dire che anche il kernel può essere interrotto, e lo diciamo in aperto contrasto con l'assunzione fatta qualche tempo fa che in modalità supervisore il kernel blocca le interruzioni. Anche il kernel quindi può essere vittima di preemption.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri11Marzo2008)</span></div>
+  </div>
+</body>
+</html>

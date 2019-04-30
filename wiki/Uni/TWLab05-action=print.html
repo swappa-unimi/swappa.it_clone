@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Tecnologie Web - Laboratorio 5</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TWLab05.html' title='Tecnologie Web - Laboratorio 5'>Tecnologie Web - Laboratorio 5</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio 5 ::</strong>
+</pre><div class='vspace'></div><h2>Esercizio 0</h2>
+<p>In questo esempio vediamo come sia possibile scrivere un semplice programma sia sotto forma di Servlet che sotto forma di Jsp. Questo serve per vedere che il risultato ottenuto è del tutto equivalente e che le Jsp sono più semplici sia per quanto riguarda la scrittura che per quanto riguarda il Deployment.<br /><br />
+</p>
+<p class='vspace'><strong>SERVLET</strong>:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class MostraCheck extends HttpServlet {
+
+  public void doPost(HttpServletRequest request, HttpServletResponse response)
+    throws IOException, ServletException {
+
+    response.setContentType("text/html");
+    PrintWriter out = response.getWriter();
+    out.println("&lt;html&gt;");
+    out.println("&lt;head&gt;");
+    out.println("&lt;title&gt;Checkbox multipli&lt;/title&gt;");
+    out.println("&lt;/head&gt;");
+    out.println("&lt;body&gt;");
+    out.println("&lt;h3&gt;L'elenco dei linguaggi di programmazione che conosci è:&lt;/h3&gt;");
+    String[] elencoLinguaggi = request.getParameterValues("linguaggioConosciuto");
+    for(int i=0; i&lt;elencoLinguaggi.length; i++) {
+    	if(elencoLinguaggi[i].equals("HTML")) 
+    		out.print("[HTML? non è un linguaggio di programmazione ma di markup!]");
+    	else
+    		out.print(elencoLinguaggi[i]);
+    	out.println("&lt;br /&gt;");
+    }
+    out.println("&lt;/body&gt;");
+    out.println("&lt;/html&gt;");
+  }
+}
+</pre>
+</div>
+<p class='vspace'><strong>JSP</strong>:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+&lt;title&gt;Checkbox multipli&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h3&gt;L'elenco dei linguaggi di programmazione che conosci è:&lt;/h3&gt;
+
+&lt;%
+String[] elencoLinguaggi = request.getParameterValues("linguaggioConosciuto");
+for(int i=0; i&lt;elencoLinguaggi.length; i++) {
+    if(elencoLinguaggi[i].equals("HTML")) {
+%&gt;
+
+HTML? non è un linguaggio di programmazione ma di markup!
+
+&lt;%  
+    } 
+    else {
+%&gt;      
+
+&lt;%=elencoLinguaggi[i] %&gt;
+
+&lt;br /&gt;
+
+&lt;%
+    }
+}
+%&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+<p class='vspace'>Nel caso della JSP è sufficiente caricare i file sul server nella stessa cartella, mentre se utilizziamo la Servlet dobbiamo aggiornare il file <em>web.xml</em> in quanto dobbiamo inserire i dati relativi alla Servlet e bisogna riavviare Tomcat.<br />Ovviamente nel file HTML varia il campo <em>action</em> in base alla scelta effettuata: avremo infatti un'estenzione <strong>.do</strong> nel caso della Servlet ed estensione <strong>.jsp</strong> nel caso della Jsp.
+</p>
+<div class='vspace'></div><h2>Esercizio 1</h2>
+<p><strong>Scrivere il codice di una pagina JSP che legga da una form due numeri interi e produca come risultato la somma dei due numeri.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><em><ins>File HTML</ins>:</em>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;html&gt;
+&lt;head&gt;
+ &lt;title&gt;Somma di Interi&lt;/title&gt;
+&lt;/head&gt;
+ &lt;body&gt;
+  &lt;h3&gt;Inserisci due Numeri interi:&lt;/h3&gt;
+   &lt;form action="somma.jsp" method="POST"&gt;
+    Inserisci il primo numero
+     &lt;input type="textbox" name="n1"/&gt;&lt;br /&gt;
+    Inserisci il secondo numero
+     &lt;input type="textbox" name="n2"/&gt;&lt;br /&gt;
+
+&lt;br /&gt;
+    &lt;input type="submit" value="somma!!"&gt;
+   &lt;/form&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'><em><ins>File JSP</ins>:</em>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+
+&lt;html&gt;
+
+  &lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+  &lt;title&gt;la somma dei numeri&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    La somma dei numeri che hai inserito è
+    &lt;%
+    int numero1 = Integer.parseInt(request.getParameter("n1"));
+    int numero2 = Integer.parseInt(request.getParameter("n2"));
+    int ris= numero1 + numero2;
+    %&gt;
+    &lt;%= ris%&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p><strong>Scrivere una pagina JSP che contenga una form in cui si chiede all'utente che colore desideri per lo sfondo della pagina. Come action della form selezionare la pagina stessa. Per cambiare colore utilizzare in HTML: &lt;body bgcolor="nomeColore"&gt;. Ricordare che i valori dei parametri passati dall'utente sono uno dei campi della variabile implicita request e che potete accedervi con il metodo String request.getParameter(String "nomeParametro").</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+
+&lt;html&gt;
+  &lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+  &lt;title&gt;Coloro Sfondo&lt;/title&gt;&lt;/head&gt;
+
+  &lt;%
+  String Colore = request.getParameter("coloreScelto");
+
+  if(Colore == null) {
+    Colore = "white";
+  }
+  %&gt;
+
+  &lt;body bgcolor="&lt;%= Colore%&gt;"&gt;
+
+  &lt;b&gt;Scegli il colore dello sfondo ! !&lt;/b&gt;
+
+  &lt;form action="colore.jsp" method="POST"&gt;
+    &lt;input type="radio" name="coloreScelto" value="white"&gt;Bianco&lt;br /&gt;
+    &lt;input type="radio" name="coloreScelto" value="red"&gt;Rosso&lt;br /&gt;
+    &lt;input type="radio" name="coloreScelto" value="green"&gt;Verde&lt;br /&gt;
+    &lt;input type="radio" name="coloreScelto" value="yellow"&gt;Giallo&lt;br /&gt;
+    &lt;input type="radio" name="coloreScelto" value="pink" checked="checked"&gt;Rosa&lt;br /&gt;
+
+    &lt;br /&gt;
+    &lt;input type="submit" value="Colora!!"&gt;
+  &lt;/form&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'>In questo esercizio il controllo IF iniziale serve perché la prima volta che la pagina viene caricata l'utente non ha ancora fatto nessuna scelta e quindi la stringa <em>Colore</em> vale <strong>NULL</strong> mostrando in output lo sfondo tutto nero, per evitare ciò poniamo lo sfondo bianco.
+</p>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p><strong>Scrivere il codice per una semplice form HTML che chieda all'utente di autenticarsi con username e password. Verificare se lo username e la password coincidono con quelli "giusti" (confrontateli con due stringhe a vostro piacimento). Se coincidono, visualizzare un messaggio di benvenuto, seguito da nome e cognome letto (es. Benvenuto Paolo Rossi); altrimenti viene visualizzato il messaggio “Username o password errati”.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><em><ins>File HTML</ins>:</em>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;html&gt;
+&lt;head&gt;
+ &lt;title&gt;Autenticazione&lt;/title&gt;
+&lt;/head&gt;
+ &lt;body&gt;
+  &lt;h3&gt;Inserimento dei dati&lt;/h3&gt;
+   &lt;form action="aut.jsp" method="POST"&gt;
+    Inserisci lo &lt;i&gt;user&lt;/i&gt;
+    &lt;input type="textbox" name="user"/&gt;&lt;br /&gt;
+
+    Inserisci la &lt;i&gt;password&lt;/i&gt;
+    &lt;input type="password" name="pw"/&gt;&lt;br /&gt;
+
+&lt;br /&gt;
+    &lt;input type="submit" value="accedi"&gt;
+   &lt;/form&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'><em><ins>File JSP</ins>:</em>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%&gt;
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"&gt;
+
+&lt;html&gt;
+
+  &lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt;
+  &lt;title&gt;Autenticazione&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+
+  &lt;%
+   String user = request.getParameter("user");
+   String pw = request.getParameter("pw");
+    if (user.equals("denis") &amp;&amp; pw.equals("te"))
+     { 
+     %&gt;
+     &lt;h1&gt;Benvenuto &lt;b&gt;&lt;%= user%&gt;&lt;/b&gt;&lt;/h1&gt;
+     &lt;%
+     }
+      else {
+      %&gt;Username o Password sbagliati!
+      &lt;%}%&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TWLab05)</span></div>
+  </div>
+</body>
+</html>

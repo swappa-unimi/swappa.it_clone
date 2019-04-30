@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Lezione del 14.04.2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri14Aprile2008.html' title='Sistemi Operativi - Lezione del 14.04.2008'>Sistemi Operativi - Lezione del 14.04.2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Lezione del 14.04.2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Paginazione</strong></span>
+</p>
+<p class='vspace'>Lo swapping costa molto, per l'utilizzo della memoria secondaria. Caricare tutto il processo è inutile. L'overlaying è a carico del programmatore e non va bene.
+</p>
+<p class='vspace'>Insomma, con la paginazione voglio risolvere questi problemi, con i seguenti obiettivi:
+</p><ul><li>caricare e scaricare solo piccole porzioni di memoria, per evitare l'overhead dello swapping
+</li><li>mantenere in memoria solo le parti che mi servono
+</li><li>non sprecare spazio, per quanto possibile
+</li><li>poter utilizzare anche porzioni di memoria non contigue per lo stesso programma
+</li><li>e tutto ciò indipendentemente dal programmatore
+</li></ul><div class='vspace'></div><h3>Paginazione</h3>
+<p>Facciamo qualche definizione:<br /><strong>FRAME</strong> = pagina fisica della memoria, ovvero una ripartizione arbitraria dello spazio di indirizzamento. Tutti i frame hanno le stesse dimensioni.<br /><strong>PAGINA LOGICA</strong> = suddivisione dello spazio di indirizzamento di un processo, di dimensioni uguali a quelle del frame.
+</p>
+<p class='vspace'>Avendo la stessa dimensione, non ci sono problemi di spreco nel caricare le pagine nei frames.
+</p>
+<p class='vspace'>Ogni processo ha la sua tabella delle pagine, per mappare le sue pagine logiche nelle pagine fisiche. Gli indirizzi logici e fisici sono dati da:
+</p><pre> p = numero di pagina logica
+ d = offset nella pagina logica
+ f = tabella[p]
+ =&gt; da logico a fisico sarebbe p + d = tabella[p] + d
+</pre><p class='vspace'>Metto in memoria centrale le pagine che mi servono nell'immediato futuro, per i processi <strong>ready</strong>. Avendo la tabella, non ho più l'obbligo della continuità in memoria. Le pagine che non servono stanno nell'area di swap.
+</p>
+<p class='vspace'>Il SO fa tutto in modo automatico, sceglie chi caricare e chi no, ed esegue da solo l'operazione. 
+</p>
+<p class='vspace'>Quando un processo chiede un certo suo indirizzo logico, il SO vede subito, tramite la tabella, se quella pagina è correntemente in memoria. Se non lo è, avviene un <strong>page fault</strong>, e il SO dovrà provvedere a caricare la pagina corretta e a metterla su.
+</p>
+<p class='vspace'>Questo riconoscimento non è fatto in software, bensì in hardware, se no sarebbe troppo lento. Ci deve pensare una <strong>MMU</strong> che sappia gestire le pagine di memoria, e per ogni processo la MMU deve essere caricata con la tabella di quel processo.
+</p>
+<p class='vspace'>Se le tabelle sono troppo grosse, non è fattibile copiarle ogni volta nella MMU. Pertanto, le lascio in memoria centrale, anche se poi raddoppio gli accessi in memoria per ogni indirizzo (uno lo fa la tabella per verificarlo, e poi lo fa il SO per caricare effettivamente il dato).
+</p>
+<p class='vspace'>Posso anche fare in modo di spezzare la tabella in parti più piccole, così che ci stiano in una MMU. Ci sono alcune tecniche che fanno ciò.
+</p>
+<div class='vspace'></div><h4>Memoria ausiliaria di traduzione (Transition Look-Aside Buffer, TLB)</h4>
+<div><span class='frame lfloat'><img src='../uploads/Uni/miss.jpg' alt='' title='' /><br /><strong>Una miss</strong></span></div>
+<p>Tiene un elenco di pagine più frequentate, e controlla per prima cosa in questo elenco. Come per la cache, ci saranno gli <strong>hit</strong> e i <strong>miss</strong>. Se c'è un miss, allora ricorro al tabellone in memoria centrale, e metto quella pagina nel TLB ad uso futuro, eventualmente cacciando una pagina già presente se non c'è più posto.
+</p>
+<p class='vspace'>Ma allora, non posso più usare il numero di pagina direttamente come indice per trovare, nella tabella, il frame. Infatti, se NON ho tutte le pagine caricate in memoria, ma solo alcune, come faccio a distinguerle? Quindi, nel TLB devo salvare la coppia pagina-frame, così quando scandisco per una ricerca ho subito il nome del frame accanto.
+</p>
+<p class='vspace'>Il TLB viene realizzato in hardware tramite una particolare memoria detta <strong>associativa</strong>, a cui non si accede per indirizzo, ma dandogli il nome di una sua riga. Se ce l'ha, la restituisce, se no nisba.
+</p>
+<div class='vspace'></div><h4>Tabella gerarchica delle pagine</h4>
+<p>In memoria centrale ho la Gran Tabella. Nella MMU invece metto una tabella esterna. E che me ne faccio? Beh, raggruppo le pagine in gruppi, e nella tabella esterna metto il nome dei gruppi. Se cerco una pagina, la tabella in MMU mi dice a quale gruppo appartiene, e poi ricorro alla memoria centrale per trovare il frame effettivo.
+</p>
+<p class='vspace'>Se uso questo sistema, l'indirizzo logico deve contenere il numero di pagina esterno, quello interno e l'offset:
+</p><pre> p1 + p2 + d
+</pre><p>dove
+</p><pre> p1 = pagina esterna
+ p2 = pagina interna
+ d = offset
+</pre><div class='vspace'></div><h4>Tabella delle pagine con hashing</h4>
+<p>Avendo il <strong>p</strong> e il <strong>d</strong> di un indirizzo, li do in pasto ad una funzione di <strong>hashing</strong>, che me li trasforma in una cifra più corta. Poi nella MMU salvo queste cifre corte, che occupano meno spazio, e vedo subito se l'indirizzo c'è o non c'è.
+</p>
+<p class='vspace'>Trattandosi di una restrizione di dominio, può accadere che 2 indirizzi diversi, dati in pasto alla stessa funzione di hashing, possano dare luogo allo stesso valore di hash. Ecco quindi che per ogni valore ripetuto occorre che la tabella si estenda in orizzontale. Faccio un esempio:
+</p>
+<div class='vspace'></div><pre> hash  frame
+ 1010  A23F
+ 1100  B001
+ 1001  C345
+ 1110  B456 FCA2 AA34
+ 1111  ABCD
+</pre><p class='vspace'>Se il mio indirizzo genera un hash 1110, a quella riga ho diversi indirizzi che hanno generato lo stesso hash. Provo col primo, poi col secondo etc. finché non trovo il mio. La funzione di hash deve essere quindi ben fatta.
+</p>
+<div class='vspace'></div><h4>Tabella invertita delle pagine</h4>
+<p>Finora ho mantenuto l'idea di avere una tabella per processo. Se il processo ha uno spazio di indirizzamento ciccio, allora la tabella diventa ciccia a sua volta.
+</p>
+<p class='vspace'>Invertendo la prospettiva, mi metto dal pdv della memoria centrale e creo una tabella indicizzata con le <strong>pagine logiche</strong>. Un processo vuole una certa pagina logica? Scandisco la tabella, e se c'è, lo mando al frame, se no la carico.
+</p>
+<p class='vspace'>Sappiamo che lo spazio di indirizzamento dei processi viene diviso in pagine logiche: pagina 0, 1, 2 etc. Quello che succede è che tutti i processi avranno la pagina logica 0, etc. etc. Quindi quando faccio la ricerca nella tabella qui sopra, devo salvare ogni riga con le informazioni sul <strong>pid</strong>, <strong>p</strong> e <strong>d</strong>, dove <strong>pid</strong> è l'id del processo.
+</p>
+<div class='vspace'></div><h4>Protezione</h4>
+<p>La paginazione garantisce implicitamente la protezione della memoria, tramite appunto queste tabelle. 
+</p>
+<p class='vspace'>Per andare oltre, e garantire correttezza al programma, potrei segnare alcune pagine con dei bit che mi dicano se a quella pagina si può accedere in read/write, read only o se la pagina contiene solo codice (execute).
+</p>
+<p class='vspace'>In questo modo impedisco che un programma, accidentalmente o maliziosamente, vada a modificare se stesso o cose del genere.
+</p>
+<div class='vspace'></div><h4>Condivisione delle pagine</h4>
+<p>Tramite questo accorgimento, posso anche condividere le pagine. Se due processi usano la stessa porzione di codice, semplicemente nella tabella faccio puntare le pagine dei diversi processi allo stesso frame. Se poi marco quel frame come solo eseguibile, ecco che nessuno dei due potrà modificarlo, pur condividendolo.
+</p>
+<div class='vspace'></div><h3>Happy Ending</h3>
+<p>La paginazione è cosa quasi del tutto buona e giusta. Un processo ha a disposizione uno spazio logico ben più grande dello spazio fisici effettivamente a lui assegnato: ha virtualmente l'intero spazio di indirizzamento del processore, e ci pensa poi il SO ad illuderlo mandandolo qua e là. È gestita in modo automatico dal SO, ed è efficiente perché sposta piccole pagine di memoria.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Segmentazione</strong></span>
+</p>
+<p class='vspace'>I problemi che voglio risolvere sono sempre i soliti, citati all'inizio della pagina. Inoltre, osserviamo che la paginazione tratta tutte le pagine come sostanzialmente simili, dal punto di vista funzionale. Certo, posso usare il bit di protezione per stabilire che qui si può scrivere, là no e così via. Ma il SO non può capire da solo dove stia il codice e dove i dati e quindi quali pagine condividere (il che sarebbe cosa ottima).
+</p>
+<p class='vspace'>E allora, per condividere bene, abbandono la pretesa di avere frame di dimensioni uguali tra di loro.
+</p>
+<p class='vspace'>Lo spazio di un processo viene diviso in <strong>segmenti logici</strong>, raggruppati per <strong>tipo</strong>. Posso avere quindi, ad esempio, il segmento dello stack, quello del codice, quello della tabella dei simboli e così via. Questi segmenti vengono generati dal compilatore, e non dall'utente, a scanso di equivoci.
+</p>
+<p class='vspace'>Quando carico un segmento, il SO gli assegna un frame delle stesse dimensioni, che abbiamo visto non essere più necessariamente uguali. E per ripescare il tutto, uso una <strong>tabella dei segmenti</strong>.
+</p>
+<p class='vspace'>Un indirizzo è composto dal numero di segmento e dallo spiazzamento. Per distinguere i frame fisici, non posso usare semplicemente il numero di segmento, perché qui il numero non c'è, c'è solo il tipo. Devo quindi salvare, per ogni segmento, l<strong>'indirizzo di base</strong> in cui esso si trova in memoria, e devo anche salvare la <strong>dimensione</strong> del frame, così so dove finisce e so riconoscere gli accessi illeciti (basta vedere se l'offset è superiore alla dimensione del frame...).
+</p>
+<p class='vspace'>Al solito, in memoria centrale stanno solo segmenti usati nell'immediato futuro etc. etc. E occorre una MMU che sappia gestire i segmenti.
+</p>
+<div class='vspace'></div><h4>Condivisione</h4>
+<p>Visto che sono divisi per tipo, la condivisione è nativa e funzionante.
+</p>
+<div class='vspace'></div><h4>Problemi</h4>
+<p>Il problema che nasce è quello della frammentazione esterna della memoria. Mi spiego con un esempio.
+</p>
+<p class='vspace'>All'indirizzo 100 carico il segmento A lungo 130. All'indirizzo 230 carico il segmento B lungo 70. Poi per qualche motivo devo togliere il segmento A dalla memoria, e al suo posto carico il segmento C che è lungo 100. Ho quindi:
+</p><pre> 100: inizia C
+ 200: finisce C
+ 230: inizia B
+ 300: finisce B
+</pre><p class='vspace'>E lo spazio tra 200 e 230? Ecco, questa è la frammentazione. Dopo un po' che tolgo e levo, mi rimangono degli sfridi (il prof li chiama così) che alla lunga possono diventare tanti ed ingombranti.
+</p>
+<p class='vspace'>Mi serve un <strong>garbage collector</strong>, che si metta a fare la <strong>rilocazione</strong> della memoria per riorganizzare i segmenti, un po' come il defrag di uinzozz.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Segmentazione con paginazione</strong></span>
+</p>
+<p class='vspace'>Il passo successivo è mettere insieme le buone idee viste prima, e ottenere il non plus ultra: segmentazione con paginazione. Della paginazione usa i frame uguali per dimensione alle pagine. Della segmentazione sfrutta la tipizzazione dei segmenti e la condivisione.
+</p>
+<p class='vspace'>I segmenti vengono divisi a loro volta in pagine logiche, della stessa dimensione dei frame in cui è divisa la memoria centrale. L'indirizzo logico è composto da
+</p><pre> s = segmento
+ p = pagina logica
+ d = offset
+</pre><p>e quello fisico da 
+</p><pre> f = frame
+ d = offset
+</pre><p class='vspace'>Partendo dal segmento e dall'offset, ricavo la mia pagina logica, e dalla pagina logica ricavo il frame.
+</p>
+<p class='vspace'>Quindi evito anche la frammentazione esterna, quella vista sopra.
+</p>
+<p class='vspace'>Rimanne la frammentazione interna, ovvero: se i segmenti non hanno dimensioni che sono multipli delle dimensioni delle pagine, posso avere pagine non completamente sfruttate. Ma tanto se sono piccole è poca roba, quindi va tutto bene:)
+</p>
+<div class='vspace'></div><h3>Generazione furba degli indirizzi</h3>
+<p>Piccola nota. Se uso una dimensione delle pagine abbastanza furba, ho dei vantaggi. In particolare, se uso potenze di due, le moltiplicazioni avvengono semplicemente con degli shift, a cui concatenerò poi l'offset. Va beh niente di che.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Concetti e tecniche fondamentali</strong></span>
+</p>
+<p class='vspace'>Tutto quanto abbiamo visto finora ci serve per creare la Chimera: la <strong>memoria virtuale</strong>!<br />Quello che io voglio è:
+</p><ul><li>multiprogrammazione
+</li><li>condivisione della memoria con protezione
+</li><li>efficienza nell'assegnamento della memoria
+</li><li>efficienza nel time-sharing
+</li></ul><p class='vspace'>La memoria virtuale è <strong>astratta</strong>, perché è più grande di quella fisica, indipendente, da essa ed efficiente. Inoltre, la <strong>virtualizzazione</strong> mi permette di dare ad un processo tutto lo spazio di indirizzamento che vuole, ignorando bellamente gli altri processi e i loro spazi di indirizzamento.
+</p>
+<p class='vspace'>Nota sulla dimensione della memoria fisica: se ho un processore a 32 bit, esso può gestire al massimo 2<sup>32</sup> indirizzi diversi, ovvero 4.294.967.296. Ma in una macchina ho installata RAM che rende disponibili molti indirizzi in meno.
+</p>
+<p class='vspace'>La memoria virtuale è un insieme di meccanismi e politiche che ci permettono le astrazioni di cui parlavo prima. Divido lo spazio di indirizzamento del processo in porzioni, e poi mappo queste porzioni nei frame. Solo le porzioni che mi servono vengono caricate, le altre rimangono nello swap (al solito).
+</p>
+<p class='vspace'>E sempre come al solito ho una tabella che mi dice quale parte della memoria centrale è associata all'indirizzo virtuale. Se non c'è in tabella quella porzione, vuol dire che devo pescarla dall'area di swap.
+</p>
+<p class='vspace'>Ne deduco quindi che per realizzare la memoria virtuale mi serve una delle tre tecniche viste sopra, ovvero paginazione, segmentazione o segmentazione con paginazione. Mi servono poi sia politiche che meccanismi per rilevare il frame mancante, scegliere quale caricare e quali sostituire.
+</p>
+<div class='vspace'></div><h3>Tecniche di sostituzione della pagina</h3>
+<h4>Caricamento della pagina</h4>
+<p>L'ideale sarebbe sapre prima le pagine a cui il processo accederà nel futuro. Ma questo purtroppo non posso saperlo in modo deterministico. Mantengo però una <strong>stringa di riferimento</strong>, che contiene la storia delle pagine a cui il processo ha acceduto nel passato. Poi vediamo come usarla.
+</p>
+<p class='vspace'>In generale, tuttavia, dobbiamo dire che il <strong>tempo di accesso effettivo</strong> ad una pagina non è deterministico, anzi, è probabilistico: dipende dalla probabilità di avere una pagina già in memoria centrale o no.
+</p><pre> p = probabilità che manchi la pagine =&gt; 1 - p = probabilità che la pagina ci sia
+ ma = tempo di accesso alla memoria centrale
+ spf = gestione della trap (un segnale di page fault è una trap)
+ tempo di accesso effettivo = (1 - p) * ma + p * spf
+</pre><p>e la cosa triste è che spf è molto grande, rispetto a ma, e quindi la probabilità che manchi una pagina ha molto più peso rispetto alla probabilità che la pagina ci sia.
+</p>
+<p class='vspace'>Nel mondo della felicità, p è un valore basso.
+</p>
+<div class='vspace'></div><h4>Scaricamento</h4>
+<p>Un frame che non è stato modificato viene scartato e amen.
+</p>
+<p class='vspace'>Un frame modificato invece posso:
+</p><ul><li>salvarlo nello swap, e poi scartarlo dalla memoria
+</li><li>salvarlo nel buffer delle pagine, e poi scartarlo dalla memoria 
+</li></ul><p class='vspace'>Questo secondo punto va interpretato così: un SO mantiene un gruppo di frames liberi. Ho selezionato un frame vittima: se PRIMA di scrivere quel frame su disco, carico il frame nuovo in uno di questi frames liberi, il processo può partire anche prima di completare la scrittura su disco.<br />Quello che succede dopo è che il frame vittima viene scritto su disco in un momento opportuno, e va a infoltire la schiera dei frames liberi. La furbata qui è salvare, per questo frame, il numero della pagina e del processo a cui apparteneva: in questo modo, se quello stesso processo vuole quella stessa pagina, non devo star lì a caricarla, ma ce l'ho già in memoria.<br />Più difficile da spiegare che da capire, mi sa...
+</p>
+<p class='vspace'>Ho inoltre dei frame che marco come <strong>residenti</strong>: questi vengono usati frequentemente, e quindi è bene che non vengano mai tolti. Un esempio sono i frame assegnati al kernel.
+</p>
+<div class='vspace'></div><h4>Sostituzione della pagina</h4>
+<p>Quando devo mettere in memoria una pagina, ma non ci sta, devo scegliere una <strong>vittima</strong>.
+</p>
+<p class='vspace'>Posso seguire 2 strategie:
+</p><ul><li>la scelgo tra le pagine dello stesso processo che richiede la pagina nuova
+</li><li>la scelgo tra tutte le pagine in memoria, anche se appartengono ad altri processi
+</li></ul><div class='vspace'></div><h3>Politiche per la sostituzione</h3>
+<p>Come al solito, devo scegliere la vittima ideale, e ho diverse politiche in proposito.
+</p>
+<div class='vspace'></div><h4>FIFO</h4>
+<p>Il più vecchio frame (First In) viene scartato (First Out). Come faccio ad identificare il più vecchio? Come dicevo sopra, se ho la <strong>stringa di riferimento</strong>, con la storia di tutte le pagine accedute, parto dall'inizio della stringa e levo la prima pagina che è ancora presente.
+</p>
+<p class='vspace'>Si intuisce subito che non sia il massimo della furbizia, cmq.
+</p>
+<div class='vspace'></div><h4>Sostituzione Ottima</h4>
+<p>Scarico il frame che non sarà usato per il più lungo periodo di tempo.
+</p>
+<p class='vspace'>In attesa di ottenere i poteri di Hiro Nakamura, vado a cercare nella mia stringa il frame il cui periodo di utilizzo è il più lungo, in rapporto alla mia posizione attuale nella stringa stessa.
+</p>
+<p class='vspace'>Tutto ciò si basa sul presupposto che "i conti tornano", ovvero che un processo si comporta più o meno sempre allo stesso modo. Fa una cosa, poi l'altra, poi l'altra in sequenza e poi riprende da capo.
+</p>
+<div class='vspace'></div><h4>Least Recently Used (LRU)</h4>
+<p>Scarico il frame meno usato recentemente. Nella stringa, attacco ad ogni numero di frame un contatore o un orario. Quando accedo ad una pagina, aggiorno il suo contatore, e quindi scarico quella con il contatore più basso o la data più vecchia.
+</p>
+<div class='vspace'></div><h4>Reference Bits (RB)</h4>
+<p>Ogni frame ha un bit, e quando vi accedo quel bit si accende. Periodicamente azzero i bit. Scelgo la pagina con questo bit a 0.
+</p>
+<p class='vspace'>Posso anche estendere questa idea carina, usando più bit, e periodicamente facendo lo shift in modo da diminuire il numero.
+</p>
+<p class='vspace'>Ciò vuol dire che, se ho l'RB a 1110, dopo un po' vado a 0111, poi a 0011, 0001 ed infine 0000. Al contrario, se ho un accesso incremento. Questo processo di decrementazione avviene periodicamente.
+</p>
+<p class='vspace'>In questo modo vedo subito qual'è la pagina che è stata usata meno negli ultimi tempi, cioè nella sua storia recente.
+</p>
+<div class='vspace'></div><h4>Second Chance</h4>
+<p>Uso due bit. Quando ho necessità di togliere una pagina, imposto a 1 il bit che dice "da rimuovere in futuro", ma non la rimuovo. Se successivamente ho necessità di togliere un'altra pagina, metto a 1 anche il secondo bit. Al terzo giro, se ha entrambi i bit a 1, è una vittima.
+</p>
+<p class='vspace'>Se invece vi accedo, tolgo un bit alla volta.
+</p>
+<div class='vspace'></div><h4>Least Frequently Used (LFU)</h4>
+<p>Ho un contatore di accessi, e scarto il frame con questo contatore basso.
+</p>
+<p class='vspace'>Qual'è il problema? Il problema è che se all'inizio dell'esecuzione di un processo uso tanto un frame, quello accumulerà tanti punti, e poi non viene più tolto. È un po' come vincere tutte le prime gare del campionato, e perdere la seconda metà, ma arrivare comunque in zona Champions senza merito.
+</p>
+<p class='vspace'>Per ovviare, periodicamente divido per due questo punteggio, così penalizzo i vecchi.
+</p>
+<div class='vspace'></div><h4>Most Frequently Used (MFU)</h4>
+<p>Scarto la pagina più usata. Perché? Perché se l'ho usata già tanto, probabilmente in futuro non la userò poi così molto.
+</p>
+<div class='vspace'></div><h3>Politiche di selezione delle pagine da caricare</h3>
+<p>L'idea è di caricare le pagine che userò in futuro, così sono già belle in memoria. Posso:
+</p><ul><li>scegliere le n pagine successive
+</li><li>scegliere le n pagine che seguono la pagina che devo caricare attualmente nella mia stringa di riferimento.
+</li></ul><p class='vspace'>n è un valore così.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri14Aprile2008)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Cifrario Playfair</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='CifrarioPlayfair.html' title='Cifrario Playfair'>Cifrario Playfair</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Cifrario Playfair ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<div class='vspace'></div><h2>Che cos'è</h2>
+<p>Il cifrario Playfair è un cifrario a sostituzione che opera su bigrammi. In questo modo nel testo cifrato è possibile nascondere la frequenza delle singole lettere, ma non quella dei bigrammi: in altre parole, la struttura del testo rimane identica, e quindi un attacco statistico è valido contro Playfair.
+</p>
+<div class='vspace'></div><h2>Come funziona</h2>
+<p>Occorre innanzitutto creare una <strong>griglia 5 * 5</strong> comprendente tutte le lettere dell'alfabeto. Sono 26: e infatti la <strong>i</strong> e la <strong>j</strong> vengono accorpate in un'unica casella.
+</p>
+<p class='vspace'>Per creare sta griglia, occorre la <strong>chiave</strong>. Se la chiave, poniamo, è <strong>gatto</strong>, allora la griglia è composta così:
+</p>
+<div class='vspace'></div><pre> G A T O B
+ C D E F H
+ I K L M N
+ P Q R S U
+ V W X Y Z
+</pre><p class='vspace'>Come vedete, ho scritto GATTO nella prima riga. Siccome la T è doppia, l'ho scritta una volta sola. Poi, dopo aver scritto GATTO, ho messo tutte le altre lettere (in ordine riga per riga) partendo dall'inizio dell'alfabeto e stando attento a non mettere in griglia le lettere già messe! Per intenderci, visto che la A l'avevo già messa, dopo GATO ho messo B.
+</p>
+<p class='vspace'>Come dicevo sopra, si cifrano i <strong>bigrammi</strong>, cioè le coppie di lettere. Se ho un bigramma composto da lettere uguali, ad esempio <strong>BB</strong>, allora lo devo spezzare usando qualche altra lettera, ad esempio <strong>BXB</strong>.<br />Inoltre, siccome cifro i bigrammi, occorre che il numero di lettere del testo in chiaro sia PARI. Se non lo è, aggiungo una lettera alla fine, ad esempio la solita X o la Q o qualche altra lettera che compare poco frequentemente in italiano.
+</p>
+<p class='vspace'>Bene. Ecco ora le regole:
+</p><ul><li>Inviduo le due lettere del mio bigramma nella mia griglia: esse definiranno un <strong>rettangolo</strong>, in cui una lettera sta in un angolo e l'altra nell'angolo opposto. Devo prendere, per ogni lettera del bigramma, quella che sta all'altra estremità del lato orizzontale del quadrato (l'esempio sotto chiarificherà, è più facile mostrarlo che nemmeno spiegarlo)
+</li><li>due lettere che stanno sulla stessa riga verranno sostituite dalle lettere che stanno immediatamente a destra rispetto ad ognuna di esse, e ocio che se si esce a destra si rientra da sinistra, sempre sulla stessa riga
+</li><li>due lettere che stanno sulla stessa colonna verranno sostituite dalle lettere che stanno immediatamente sotto, e anche qui se si esce da sotto si rientra da sopra nella stessa colonna
+</li></ul><p class='vspace'>Per esempio, per cifrare MA con la griglia:
+</p><pre> G <strong>A</strong> T O B
+ C D E F H
+ I K L <strong>M</strong> N
+ P Q R S U
+ V W X Y Z
+</pre><p class='vspace'>Come vedete, si forma un quadrato tra M ed A:
+</p><ul><li>la M viene cifrata con la lettera che sta lungo il suo lato orizzontale, sotto la A: in questo caso, la <strong>K</strong>
+</li><li>la A viene cifrata con la lettera che sta lungo il suo lato orizzontale, sopra la M, ovvero la <strong>O</strong>
+</li></ul><p>Quindi: <strong>MA</strong> =&gt; <strong>KO</strong>
+</p>
+<p class='vspace'><strong>ATTENZIONE!</strong> Devo rispettare l<strong>'ordine</strong> delle lettere nel bigramma: ciò vuol dire che il bigramma <strong>AM</strong> viene cifrato come <strong>OK</strong>.
+</p>
+<p class='vspace'>Voglio cifrare <strong>OB</strong>
+</p><pre> G A T <strong>O B</strong>
+ C D E F H
+ I K L M N
+ P Q R S U
+ V W X Y Z
+</pre><p>Vedete che <strong>T</strong> e <strong>O</strong> stanno sulla stessa riga. Secondo le regole esposte sopra, devo sostituirle con le lettere che stanno rispettivamente a destra:
+</p><ul><li>a destra della O c'è la B
+</li><li>a destra della B c'è il nulla =&gt; giro intorno, e capito alla G
+</li></ul><p>Quindi, OB =&gt; BG
+</p>
+<p class='vspace'>Voglio cifrare <strong>QW</strong>. Avrete capito che devo andare giù: la Q diventa W, e la W diventa A.
+</p>
+<p class='vspace'>La <strong>decifratura</strong> avviene al contrario:
+</p><ul><li>le lettere sulla stessa riga vengono sostituite dalle lettere che stanno a sinistra
+</li><li>le lettere sulla stessa colonna vengono sostituite dalle lettere che stanno sopra
+</li><li>le lettere che formano un quadrato vengono sostituite dalle lettere all'altro estremo del lato orizzontale del quadrato su cui si trova la lettera.
+</li></ul><p class='vspace'>Non faccio esempio che tanto è facile!:)
+</p>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/CifrarioPlayfair)</span></div>
+  </div>
+</body>
+</html>

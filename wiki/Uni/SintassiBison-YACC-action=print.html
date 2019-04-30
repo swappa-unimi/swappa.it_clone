@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sintassi Bison - YACC</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SintassiBison-YACC.html' title='Sintassi Bison - YACC'>Sintassi Bison - YACC</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='Traduttori.html'>Torna alla pagina di Traduttori</a>
+</p>
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong> Sintassi Bison - YACC</strong>
+</p>
+<p class='vspace'>La sintassi per segnare commenti etc. è simile a quella di flex:
+</p><pre> definizioni
+ 
+ regole
+ 
+ subroutine
+</pre><p>Qui, avremo regole diverse e sub obbligatorie diverse:
+</p><ul><li>main()
+</li><li>yyerror()
+</li></ul><p>Al solito, o le definiamo noi, oppure linkiamo con <strong>-ly</strong>, anche se qui in laboratorio non si riesce.
+</p>
+<div class='vspace'></div><h2>Regole</h2>
+<p>L'idea è simile: si scrive la regola e poi segue l'azione.
+</p>
+<p class='vspace'>Ad esempio, vogliamo scrivere le regole di una grammatica così:
+</p><pre> A-&gt; &#945;B&#947; | &#948;&#956;&#947;
+</pre><p class='vspace'>Si traduce in questo modo:
+</p><pre> A: &#945; B &#947; { action }
+    | &#948; &#956; &#947;
+    ;
+</pre><div class='vspace'></div><h2>Generare un parser</h2>
+<p>Non è obbligatorio scrivere un programma da Flex-are per poter poi usarlo col parser: sono due cose indipendenti, anche se poi sarà più comodo usare uno scanner generato da flex piuttosto che scriverlo noi.
+</p>
+<p class='vspace'>In input ho:
+</p><pre> bim bum bam
+</pre><p>e tradurlo in
+</p><pre> qui quo qua
+</pre><p class='vspace'>La prima sezione è scritta così:
+</p><pre> %start frase
+</pre><p>Il simbolo <code class='escaped'>%</code> viene usato per dare comandi a Bison, e in questo caso il comando<code class='escaped'>%start</code> dice qual'è il simbolo iniziale della grammatica. Non è necessario scriverlo: Bison sceglie automaticamente la prima regola.
+</p>
+<p class='vspace'>Vogliamo riconoscere solo <strong>bim bum bam</strong> e NON <strong>bam bum bim</strong> o altre combinazioni. Certo, banalmente posso fare un riconoscitore che riconosca direttamente la stringa (frase : bim bum bam), ma sarebbe stata una regola lessicale e non sintattica. Invece noi vogliamo usare i token.
+</p>
+<p class='vspace'>La frase ha quindi un inizio ed una fine, separati da uno spazio vuoto. Andando avanti, definisco come sono fatti sti token.
+</p>
+<div class='vspace'></div><pre> 
+ frase    : inizio ' ' ultimo {printf("\nAssioma riconosciuto:
+                                         la frase fa parte del linguaggio\n");}
+
+ inizio   : primo ' ' medio
+          ;
+
+ primo    : bim
+          ;
+
+ medio    : bum
+          ;
+
+ ultimo   : bam
+          ;
+
+ bim      : 'b' 'i' 'm' {printf("qui");}
+
+ bum      : 'b' 'u' 'm' {printf("quo");}
+
+ bam      : 'b' 'a' 'm' {printf("qua");}
+
+ 
+
+ int yylex()
+ {
+   char ch = getchar();
+   return (int) ch;
+ }
+
+ int yyerror (char*s)
+ {
+   printf("\n %s \n", s);
+   return 1;
+ }
+
+ int main()
+ {
+   yyparse();
+   return 0;
+ }
+</pre><p class='vspace'>Le ultime funzioni serve per far sì che il programma funzioni anche senza tirare in ballo i files generati da Flex. <strong>yylex</strong> viene chiamata automaticamente da <strong>yyparse</strong>, la quale è chiamata automaticamente dalle librerie di Bison. La <strong>yyerror</strong> server per quando viene trovato un errore sintattico. Le viene passato il carattere reo.
+</p>
+<p class='vspace'>Per compilare:
+</p><pre> bison file.y
+</pre><p>Poi si compila con gcc.
+</p>
+<p class='vspace'>Quando viene eseguito il parser, prima riconosce (o no) il tutto, e alla fine te lo dice.
+</p>
+<div class='vspace'></div><h2>Eserczio</h2>
+<p>Vogliamo che riconosca anche stringhe con più spazi tra una parola e l'altra. Senza usare la sintassi di Flex, scrivo una regola ricorsiva che possa riconoscere più spazi.
+</p>
+<div class='vspace'></div><pre> frase : inizio spazio ultimo
+ ...
+ spazi : ' '
+       | spazi ' '
+</pre><p class='vspace'>Ocio: qui ho definito il token <strong>spazi</strong>. Se per caso in <strong>frase</strong> non avessi scritto quello che ho scritto sopra, ma avessi scritto questo:
+</p><pre> frase : inizio ' ' ultimo
+</pre><p>avrei avuto la regola <strong>spazi</strong> irraggiungibile. Bison però è un bravo ragazzo: compilando, mi direbbe che c'è un non terminale inutile, e due regole inutili (infatti <strong>spazi</strong> ha una <strong>|</strong> in mezzo).
+</p>
+<p class='vspace'>Se poi a Bison do l'opzione <strong>-v</strong>, diventa verboso e mi dice tutto. Crea un file con estensione <strong>.output</strong> che contiene tutto quello che mi serve, compreso l'automa che ha generato.
+</p>
+<p class='vspace'>Per evitare di scrivere i simboli terminali nelle regole, li posso far leggere al mio scanner. In questo caso, si tratta della funzione <strong>yylex</strong>.<br />Ad esempio, una regola sarebbe:
+</p><pre> primo : BIM
+</pre><p>con BIM definito nelle dichiarazioni:
+</p><pre> %token BIM BUM BAM
+</pre><p class='vspace'>Nella <strong>yylex</strong>, avrei cose come:
+</p><pre> int yylex()
+ {
+  char str[255];
+  int t;
+  t = scanf("%s", str);
+
+  if (t != 1) return 0;
+
+  if (strcmp(str, "bim") == 0)
+    return BIM
+
+  else if (strcmp(str, "bum") == 0)
+    return BUM
+
+  else if (strcmp(str, "bam") == 0)
+    return BAM
+ }
+</pre><p class='vspace'>La dichiarazione <strong>%token</strong> crea dei <strong>#define</strong> automatici, che associano dei numeri a <strong>BIM</strong>, <strong>BUM</strong> e <strong>BAM</strong>, e li mette in un <strong>.h</strong>.
+</p>
+<p class='vspace'>Per compilare, stavolta utilizzo l'opzione <strong>-d</strong>. Quando compilo con gcc, viene usato anche il <strong>.h</strong> in cui i token sono stati definiti.
+</p>
+<div class='vspace'></div><h3>Combinare Flex e Bison</h3>
+<p>Nel file di Flex, devo semplicemente mettere, nelle dichiarazioni, l<strong>'#include</strong> necessario:
+</p>
+<div class='vspace'></div><pre> %{
+ #include "parserblabla.tab.h"
+ }%
+ 
+ "bim"   { return BIM; }
+ 
+ int yywrap()
+ {
+   return 1;
+ }
+</pre><p class='vspace'>Ovviamente, il main dei due files deve essere unico, e sarà quello del parser. Infatti è il parser che chiama il lexer, e non viceversa. Inoltre, nel file di Bison non occorre più mettere la <strong>yylex</strong>, perché viene generata automaticamente da Flex.
+</p>
+<p class='vspace'>Per riconoscere spazi multipli, adesso posso ricorrere a Flex. Flex di default quando trova un match lo stampa nell'output. Ma posso scrivere una regola così:
+</p><pre> [ ]+ ;
+</pre><p>che vuol dire che non ritorno nulla a Bison.
+</p>
+<div class='vspace'></div><h2>Riconoscere un linguaggio</h2>
+<p>Vogliamo riconoscere un linguaggio semplice, con poche parole chiave, che rappresenta il controller di un termostato. Accetta solo ste robe:
+</p><pre> heat on
+ heat off
+ target temperature value
+</pre><p>dove <strong>valure</strong>  è il valore numerico della temperatura.
+</p>
+<p class='vspace'>Distinguiamo regole lessicali da regole sintattiche, usando Flex e Bison e combinandoli.
+</p>
+<div class='vspace'></div><h2>Regole lessicali</h2>
+<p>Le parole heat, on, off, target, temperature, numero sono gli unici lessemi validi. L'analisi lessicale dovrà riconoscere solo queste parole.
+</p>
+<p class='vspace'>Per questo scopo, utilizzo Flex. Ogni volta che trovo una parola valida, devo ritornare un token.
+</p><pre> {%
+ #include "header di bison.h"
+ %}
+ 
+
+ [0-9]+      return NUMBER;
+ heat        return TOKHEAT;
+ on|off      return STATE;
+ target      return TOKTARGET;
+ temperature return TOKTEMPERATURE;
+ \n       ;
+ [ \t]+   ;
+
+ 
+ int yywrap()
+ {
+   return 1;
+ }
+</pre><div class='vspace'></div><h2>Regole sintattiche</h2>
+<p>Si occupa di come le robe lette siano ben combinate secondo le regole sintattiche del mio linguaggio.
+</p>
+<div class='vspace'></div><pre> %{
+ #include "stdio.h"
+ #include "string.h"
+ }%
+
+ %token NUMBER TOKHEAT TOKSTATE TOKTARGET TOKTEMPERATURE
+ 
+
+ commands : /* vuota! */
+          | commands command
+          ;
+
+ command  : heat_switch
+          | target_set
+          ;
+
+ heat_switch : TOKHEAT STATE { printf("Heat turned on or off\n"); }
+          ;
+
+ target_set : TOKTARGET TOKTEMPERATURE NUMBER
+            {
+               printf("Temperature set\n");
+            }
+            ;
+
+ 
+ void yyerror (const char * str)
+ {
+    fprintf(stderr, "%s", str);
+ }
+
+ int main()
+ {
+    yyparse();
+    return 0;
+ }
+</pre><div class='vspace'></div><h3>Compilare il tutto</h3>
+<p>Do in input a Flex il suo <strong>.l</strong>. A Bison do il <strong>.y</strong>, aggiungendo l'opzione <strong>-d</strong> così che mi generi il <strong>.h</strong> necessario. Poi compilo con gcc:
+</p><pre> gcc termostato.tab.c lex.yy.c -o termostato.exe
+</pre><div class='vspace'></div><h2>Esercizio</h2>
+<p>Se scrivo <strong>heat on</strong>, voglio che mi dica "hai ACCESO", se scrivo <strong>heat off</strong> deve dirmi "hai SMORSATO"
+Devo avere come minimo due token, TOKON e TOKOFF, e quindi modificare l'analizzatore lessicale, e poi anche quello sintattico. In Flex avrò:
+</p>
+<div class='vspace'></div><pre> on return STATEON;
+ off return STATEOFF;
+</pre><p class='vspace'>e sintatticamente avrò:
+</p><pre> % token ... TOKON TOKOFF ...
+
+ 
+ ...
+ heat_switch : TOKHEAT TOKON { ... } | TOKHEAT TOKOFF { ... };
+</pre><p class='vspace'>Ma c'è un'altra via: alla fine, al parser non interessa sapere l'esatta sequenza di comandi, ma solo l'istruzione "accendi" o "spegni". Posso sfruttare il fatto che Flex e Bison possono comunicare tramite la variabile <strong>yylval</strong>.
+</p>
+<p class='vspace'>In Flex:
+on|off yylval = strcmp(yytext, "off"); return STATE;
+</p>
+<p class='vspace'>Infatti, la strcmp ritorna 0 se le stringhe sono uguali.
+</p>
+<p class='vspace'>In Bison:
+</p><pre> heat_switch : TOKHEAT STATE 
+             {
+               if ($2) printf ("Heat ON\n");
+               else printf("Heat OFF\n");
+             };
+</pre><p class='vspace'>Perché $2? Perché il valore che mi interessa è quello che viene ritornato dal SECONDO token, che è appunto STATE.
+</p>
+<p class='vspace'>Allo stesso modo, posso recuperare, nel parser, la temperatura:
+</p>
+<div class='vspace'></div><pre> target_set : TOKTARGET TOKTEMPERATURE NUMBER
+            {
+
+               printf("Impostata la temperatura a %d\n", $3):
+            };
+</pre><p class='vspace'>avendo avuto cura, in Flex, di avere una regola così:
+</p><pre> [0-9]+   { return atoi(yytext); }
+</pre><p>che appunto converte la variabile <strong>yytext</strong>, che ricordiamo essere la stringa matchata, in numero.
+</p>
+<p class='vspace'>Attenzione la notazione $i conta, nella parte destra della regola, sia i terminali che i non terminali! Ad esempio:
+</p><pre> (TOKEN)
+</pre><p>vuol dire:
+</p><ol><li>$1 = (
+</li><li>$2 = TOKEN
+</li><li>$3 = )
+</li></ol><div class='vspace'></div><h2>Esercizio</h2>
+<pre> Frase = Soggetto  Verbo  Complemento
+ Soggetto = articolo [nome comune | nome proprio]
+</pre><hr />
+<p><a class='wikilink' href='Traduttori.html'>Torna alla pagina di Traduttori</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SintassiBison-YACC)</span></div>
+  </div>
+</body>
+</html>

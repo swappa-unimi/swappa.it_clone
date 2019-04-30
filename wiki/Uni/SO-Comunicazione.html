@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Comunicazione tra processi </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-Comunicazione' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Comunicazione tra processi
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Comunicazione?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Comunicazione?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-Comunicazione-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Comunicazione?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Comunicazione?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Comunicazione tra processi was last modified on April 09, 2008, at 09:38 PM'>
+							<span style='display:none;'>Sistemi Operativi - Comunicazione tra processi</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Comunicazione tra processi</span>
+</p>
+<div class='vspace'></div><h2>Processi cooperanti</h2>
+<p>Un <a class='wikilink' href='SO-Processi.html'>processo</a> che non condivide dati con altri processi è detto <strong>indipendente</strong>, e la sua evoluzione non può influenzare o essere influenzata da alcuno. Da notare che ciò non implica che non abbiano risorse condivise (sarebbe impensabile, dal momento che almeno il processore deve essere accessibile a tutti), l'importante è che nessuno acceda alle informazioni dell'altro. I processi <strong>cooperanti</strong> sono invece l'esatto contrario e, pur svolgendo ognuno un compito ben definito, le loro computazioni concorrono all'adempimento di uno scopo applicativo congiunto. Stessa distinzione può essere operata sui <a class='wikilink' href='SO-Thread.html'>thread</a>.
+</p>
+<p class='vspace'>Alcuni dei vantaggi della cooperazione sono:
+</p><ul><li><em>condivisione delle informazioni</em>, poiché molti utenti potrebbero essere interessati a stessi dati e/o risorse
+</li><li><em>parallelizzazione</em>, che sfrutta in modo nativo l'eventuale disponibilità di più processori, velocizzando la computazione
+</li><li><em>modularità</em>, che consente di progettare l'applicazione un aspetto per volta, per poi mettere insieme in modo opportuno i moduli che implementano tali aspetti
+</li><li><em>scalabilità</em>, che permette di ampliare le capacità operative dell'applicazione aggiungendo semplicemente nuove istanze dello stesso processo (ad esempio utile per un server web)
+</li><li><em>specializzazione</em>, grazie alla quale è possibile assegnare la realizzazione dei processi che si occupano dei vari aspetti (ad esempio controllo, acquisizione, interfaccia, ecc) ad esperti specializzati in quell'ambito di programmazione
+</li><li><em>qualità del progetto e della realizzazione</em>, perché sviluppando ogni aspetto in modo separato posso raggiungere qualità elevata.
+</li></ul><p class='vspace'>Perché tutto ciò sia possibile occorre che tali processi possano scambiarsi informazioni e coordinarsi, o meglio, che possano <strong>comunicare</strong> e <strong>sincronizzarsi</strong>. I processi indipendenti si limitano invece alla sola <a class='wikilink' href='SO-Sincronizzazione.html'>sincronizzazione</a>, per regolamentare l'accesso alle risorse condivise.
+</p>
+<div class='vspace'></div><h2>Comunicazione</h2>
+<p>Il processo di comunicazione comporta la descrizione di politiche e meccanismi che permettano ai processi di scambiarsi informazioni per operare in modo cooperativo. Anzitutto vanno definite le entità coinvolte, quindi il processo mittente (P) produttore dell'informazione, il processo ricevente (Q) utilizzatore della stessa, e il canale di comunicazione (mono o bidirezionale) attraverso cui farla fluire. Per decidere poi quale tipo di comunicazione è meglio adottare in una specifica situazione, bisognerà tener conto di alcune caratteristiche. Di seguito riportiamo le più importanti, alcune delle quali dovrebbero sempre essere garantite:
+</p><ul><li><em>quantità di informazioni da trasmettere</em>. Se avessi ad esempio grosse quantità di informazioni, potrebbe essere poco conveniente copiarle in memoria centrale (sprecherei molto tempo)
+</li><li><em>velocità di esecuzione</em>
+</li><li><em>scalabilità</em>, descritta prima. Bisognerebbe infatti garantire in modo semplice la possibilità di aumentare i processi che concorrono alla comunicazione, cercando di non far lievitare la complessità totale
+</li><li><em>semplicità di uso nelle applicazioni</em>
+</li><li><em>omogeneità delle comunicazioni</em>, dato che non avrebbe senso adottare <em>n</em> modi diversi di effettuare una comunicazione, col conseguente incremento delle complessità di gestione e quindi di commettere errori
+</li><li><em>integrazione nel linguaggio di programmazione</em>, che garantisce la portabilità. E' sempre consigliabile utilizzare le tecniche di comunicazione definite nel linguaggio di programmazione utilizzato, o sarei costretto ad usare librerie che potrebbero cambiare di sistema in sistema
+</li><li><em>affidabilità</em>
+</li><li><em>sicurezza</em>
+</li><li><em>protezione </em>
+</li></ul><p class='vspace'>Prima di elencarne le principali implementazioni, distinguiamo le due modalità di realizzazione:
+</p><ul><li><strong>Comunicazione diretta</strong>, in cui ogni processo che voglia comunicare deve conoscere esplicitamente il nome del destinatario o del mittente della comunicazione. Notare come tra ogni coppia di processi possa sussistere un'unica connessione, e come si presupponga che P e Q siano entrambi vivi e attivi per tutta la durata della comunicazione (il che rappresenta spesso un grosso limite)
+</li><li><strong>Comunicazione indiretta</strong>, in cui mittente e ricevente non si conoscono e la comunicazione avviene su punti noti a entrambi (i canali) sfruttando una struttura dati passiva per contenere l'informazione. Se il problema della modalità diretta era che se una delle entità in gioco veniva a mancare durante la comunicazione nessun altro poteva accedere all'informazione, nella modalità indiretta (essendo il canale in comune) ci sarebbe sempre qualche processo in grado di raccogliere l'informazione.
+</li></ul><div class='vspace'></div><h2>Implementazioni</h2>
+<h3>Con memoria condivisa</h3>
+<p>E' una modalità di comunicazione diretta e può essere realizzata attraverso l'uso di <em>variabili globali</em> o <em>buffer</em>.
+</p>
+<p class='vspace'>Nella <strong>condivisione di variabili globali</strong> ho due processi con una porzione del loro spazio di indirizzamento (le variabili globali, appunto) che si sovrappone. Pur essendo un sistema molto rapido, avere porzioni di memoria in comune implica dei problemi, come la possibilità di compiere operazioni inconsistenti. Se ad esempio un processo richiede la lettura di un'informazione in corso di modifica dall'altro processo, leggerebbe qualcosa di obsoleto e dunque errato. La situazione è però facilmente risolvibile attuando meccanismi di sincronizzazione per l'accesso in mutua esclusione all'area dati comune per le operazioni non compatibili (come ad esempio lettura e scrittura contemporanea). Inoltre sono in qualche modo tutelato dal fatto che essendo i due processi cooperanti non hanno alcun interesse a danneggiare l'altro, dal momento che indirettamente danneggerebbero sé stessi. Ho due meccanismi per realizzarla.<br />Il primo è fare in modo che l' <em>area comune sia copiata dal sistema operativo</em>, che crea l'illusione della condivisione spostando l'informazione in due tempi: 1. la copia dall'area condivisa del processo mittente al proprio spazio di indirizzamento (in una porzione di memoria grande abbastanza) 2. da qui la copia nell'area condivisa del ricevente. Ricordiamo che il sistema operativo può penetrare ovunque, quindi non ha alcun problema ad accedere agli spazi di indirizzamento riservati dei processi. Il limite di questo meccanismo è proprio che l'operazione di copiatura si fa in due passaggi, il che su grandi porzioni di memoria rallenterebbe sensibilmente il sistema; soprattutto se si considera il fatto che anche se un processo modifica solo una minima parte dell'area condivisa, il sistema operativo non ne conosce l'entità e quindi trasferisce tutto anche se non sarebbe necessario.<br />Un secondo meccanismo è la <em>realizzazione con area comune fisicamente condivisa</em>, in cui il sistema operativo garantisce che l'area comune appartenga contemporaneamente agli spazi di indirizzamento di entrambi i processi. Lo spazio rimane comunque logicamente separato e garantito protetto dal sistema operativo, anche se alcune porzioni sono residenti fisicamente negli stessi indirizzi. E' piuttosto semplice da realizzare e supera tutti i limiti della soluzione precedente, bisogna solo fare in modo che non avvengano operazioni inconsistenti (basta utilizzare politiche di sincronizzazione).
+</p>
+<p class='vspace'>Nella <strong>condivisione di buffer</strong> ciò che cambia rispetto a prima è l'utilizzo di un buffer. La comunicazione rimane diretta, ma il processo mittente scriverà stavolta le sue informazioni all'interno del buffer dal quale poi il processo ricevente andrà a recuperarle. Anche in questo caso con la sincronizzazione è possibile imporre gli accessi in mutua esclusione così da garantire la consistenza.<br />I meccanismi con cui realizzarli sono del tutto simili a quelli precedenti, ovvero <em>buffer con copiatura gestita dal sistema operativo</em> e <em>buffer in memoria fisicamente condivisa</em>.<br />Notare infine come i buffer siano significativamente più piccoli delle porzioni di memoria centrale condivisa, quindi le operazioni di copiatura sono molto più veloci.
+</p>
+<div class='vspace'></div><h3>Con scambio di messaggi</h3>
+<p>La <strong>comunicazione con scambio di messaggi</strong> è diretta e prevede che l'informazione viaggi incapsulata all'interno di messaggi. Oltre ad essa, i messaggi contengono l'identità del processo mittente e ricevente, ed eventuali altre informazioni relative alla gestione dello scambio.<br />I messaggi vengono memorizzati in buffer che il sistema operativo può assegnare esplicitamente ad ogni coppia di processi, o predisporne un certo numero di uso generale che mette a disposizione di chiunque ne abbia bisogno. Tale quantità può essere:
+</p><ul><li><em>illimitata</em>: il processo mittente appena possiede un messaggio lo deposita immediatamente nel buffer. Non è mai bloccante;
+</li><li><em>limitata</em>: il processo mittente potrebbe aspettare prima di depositare il messaggio nel caso in cui non ci siano buffer liberi. Risulta quindi bloccante se manca spazio disponibile;
+</li><li><em>nulla</em>: il processo mittente non può depositare alcun messaggio dato che non ci sono buffer disponibili in cui deporlo. E' sempre bloccante. Da notare che in questo scenario il processo ricevente non troverà il messaggio, ma il mittente in attesa di deporlo; ciò permetterà l'avvio di una comunicazione diretta 
+</li></ul><p class='vspace'>Le funzioni messe a disposizione per la gestione dei messaggi sono quelle per l' <em>invio</em> e la <em>ricezione</em>, eventualmente condizionali:
+</p>
+<div class='vspace'></div><ul><li><strong>Invio</strong>: <em>send(proc_ricevente, messaggio)</em>.<br />Deposita il messaggio in un buffer libero. La funzione è bloccante, ovvero blocca il processo mittente nel caso in cui non ci fosse spazio disponibile. Una volta liberato un buffer, la funzione completa la comunicazione con il destinatario e sblocca il mittente.
+</li><li><strong>Invio condizionale</strong>: <em>cond_send(proc_ricevente, messaggio): error status</em>.<br />A differenza della funzione di invio precedente, non è bloccante. Se al momento di depositare il messaggio non è presente alcun buffer libero, ritornerà un messaggio di errore e il messaggio non sarà più depositato. Sarà responsabilità del mittente decidere se rimandarlo o meno. 
+</li><li><strong>Ricezione</strong>: <em>receive(proc_mittente, messaggio)</em>.<br />Riceve il messaggio presente nel buffer. E' bloccante, ovvero blocca il destinatario fino a quando non c'è un messaggio nel buffer da leggere.
+</li><li><strong>Ricezione condizionale</strong>: <em>con_receive(proc_mittente, messaggio): error status</em>.<br />Il processo ricevente preleverà il messaggio dal buffer; se non ci sono messaggi ritornerà una condizione di errore, senza bloccare il destinatario. 
+</li></ul><p class='vspace'>La comunicazione tramite buffer in generale è <em>asincrona</em>, ovvero il mittente può spedire il messaggio in qualsiasi momento della computazione senza preoccuparsi se c'è qualche ricevente in grado di raccoglierlo. In una comunicazione <em>sincrona</em> lo scambio delle informazioni avviene invece solo quando entrambi gli interlocutori sono pronti. Si può ottenere utilizzando un buffer di dimensione nulla, così che tutte le operazioni di scrittura diventino bloccanti, obbligando di fatto i processi a scrivere e leggere nello stesso momento. E' molto interessante poi osservare che tale politica può essere facilmente adottata per modalità di comunicazione diretta o indiretta. Nel primo caso si parla di <em>comunicazione simmetrica</em> e prevede ovviamente che mittente e destinatario siano sempre univocamente identificati. Nel secondo caso otteniamo invece una <em>comunicazione asimmetrica</em>, in cui l'accesso ad un buffer in scrittura non è limitato ad un processo solo, ma ad un gruppo di processi che possono a loro volta decidere di far leggere il loro messaggio a tutti quelli che ascoltano o solo ad uno di essi. 
+</p>
+<p class='vspace'>Dal momento che la sincronizzazione per l'accesso ai messaggi viene gestita implicitamente dal sistema operativo, i buffer vengono implementati direttamente all'interno del suo spazio di indirizzamento. In questo modo viene risolto anche il problema dell'identificazione dei processi che inviano informazione, dato che è sufficiente vedere qual è il processo attivo (se ha effettuato una richiesta è evidentemente nello stato di running). I messaggi vengono normalmente smaltiti in modalità <em>FIFO</em>, ma potrebbero essere previste politiche di altro tipo (ad esempio con priorità, deadline, ecc).
+</p>
+<div class='vspace'></div><h3>Comunicazione con mailbox</h3>
+<p>La <strong>comunicazione con mailbox</strong> è un sistema indiretto, in cui non c'è conoscenza esplicita tra i processi che comunicano. Se nella <em>comunicazione asimmetrica</em> vista in precedenza non era necessaria la conoscenza esplicita dei processi, ma era sufficiente l'identificativo dei gruppi, questo sistema è invece completamente anonimo. Il messaggio viene depositato in una <strong>mailbox</strong> (detta anche <em>porta</em>), una struttura dati presente nel sistema operativo caratterizzata da un nome cui si farà riferimento per accedere ai messaggi in essa contenuta. Questi contengono, oltre all'informazione da trasmettere, anche l'identità del processo mittente, il nome della mailbox destinataria ed eventuali altre informazioni di supporto alla gestione dei messaggi nella mailbox (ad esempio se vanno tolti messaggi con deadline scaduta o come ordinare i messaggi). Va ricordato che non stiamo assegnando i messaggi ad una coppia di processi, ma li stiamo inserendo in una struttura accessibile (teoricamente) da tutti; eventuali restrizioni potranno essere applicate con delle politiche di accesso stabilite dal sistema operativo.<br />In generale la mailbox non è proprietà del processo, ma del sistema operativo (ricordiamo che è nel suo spazio di indirizzamento). Esistono però delle procedure per attribuirle ad un processo proprietario, al quale il sistema può dare il diritto esclusivo di ricezione. In questo caso, quando il processo proprietario termina, la mailbox viene deallocata con esso.
+</p>
+<p class='vspace'>Similmente al buffer, la mailbox può avere una capienza limitata illimitata o nulla, indipendentemente dal numero di processi che la utilizzano e con le stesse conseguenze viste prima. Anche le funzioni sono simili:
+</p>
+<div class='vspace'></div><ul><li><strong>Invio</strong>: <em>send(M, messaggio)</em><br />Deposita il messaggio nella mailbox indicata da parametro. 
+</li><li><strong>Invio condizionale</strong>: <em>cond_send(M, messaggio): error status</em>
+</li><li><strong>Ricezione</strong>: <em>receive(M, messaggio)</em>
+</li><li><strong>Ricezione condizionale</strong>: <em>con_receive(M, messaggio): error status</em>
+</li></ul><p class='vspace'>e in più abbiamo
+</p>
+<div class='vspace'></div><ul><li><em>create(M)</em><br />Crea la mailbox con M nome simbolico associato
+</li><li><em>delete(M)</em><br />Cancella la mailbox indicata
+</li></ul><p class='vspace'>Come per i buffer, le politiche di sincronizzazione delle mailbox dipendono dalla loro capacità. Se è illimitata ho una comunicazione asincrona, ovvero il mittente depone il suo messaggio indipendentemente dallo stato di computazione del processo ricevente. Se invece è nulla quella che ottengo è un comunicazione sincrona. Ho infatti un processo mittente che non trova spazio per deporre il suo messaggio, ed è dunque obbligato a mettersi in attesa. Quando un processo Q invocherà una <code class='escaped'>receive()</code>, lo troverà ancora in quello stato, e a questo punto i due processi cominceranno a passarsi l'informazione direttamente in modo sincrono. Questo meccanismo prende il nome di <em>rendez-vou</em>, ed implica che P sappia a che punto della computazione si trovi il processo ricevente quando richiede la comunicazione. Se infine la capacità è limitata, la comunicazione verrà <em>bufferizzata</em>, ovvero passerà un po' di tempo prima che il messaggio inviato venga ricevuto.<br />Per quanto riguarda l'ordinamento delle code dei messaggi all'interno delle mailbox, può essere applicato un qualsiasi algoritmo di <a class='wikilink' href='SO-Schedulazione.html'>schedulazione</a>.
+</p>
+<p class='vspace'>La <em>comunicazione con mailbox</em> è particolarmente adatta per i seguenti scenari:
+</p><ul><li><em>comunicazioni molti a uno</em>, dove l'unico processo che può leggere dalla mailbox è detto <em>processo di servizio</em> (o <em>server</em>) e tutti i richiedenti sono i <em>client</em>. Nel caso un cui il server abortisca, il sistema operativo ne esegue immediatamente una copia diversa solo per l'identificatore. Nessun client si accorge della situazione, tranne quello eventualmente in comunicazione col processo di servizio originale quando era terminato. Il nuovo server non è infatti messo a conoscenza delle richieste pendenti
+</li><li><em>comunicazioni uno a molti</em>, con più processi di servizio che soddisfano le richieste di un unico mittente. Per quanto questo possa produrre messaggi, ci sono buone possibilità che trovi sempre un ricevente disponibile. Questa tecnica è auspicabile quando ho un singolo processo che ha più richieste che vuole siano soddisfatte contemporaneamente
+</li><li><em>comunicazione molti a molti</em>, in cui diversi processi di servizio comunicano con diversi processi client. 
+</li></ul><div class='vspace'></div><h3>Comunicazione con file</h3>
+<p>Distinguiamo due implementazioni, quella con <em>file condivisi</em> e quella mediante <em>pipe</em>.
+</p>
+<p class='vspace'>La <strong>comunicazione mediante file condivisi</strong> rappresenta una diretta estensione della comunicazione con le mailbox: se quella faceva uso di strutture dati realizzate in memoria centrale condivisa, i file sono invece memorizzati in memoria di massa. La sua gestione sarà al solito demandata al sistema operativo, che garantirà che le operazioni di accesso siano fatte in modo corretto e solo dai processi autorizzati. 
+</p>
+<p class='vspace'>La <strong>comunicazione mediante pipe</strong> impiega invece l'utilizzo dei <em>pipe</em> come strutture di appoggio, una struttura dati di tipo <em>FIFO</em> residente in memoria centrale e che condivide coi file molte delle loro funzioni. 
+</p>
+<p class='vspace'>Utilizzo per entrambi le stesse funzioni viste per le mailbox, delle quali ereditano anche gli stessi problemi (e soluzioni) di sincronizzazione e ordinamento.
+</p>
+<div class='vspace'></div><h3>Comunicazione con socket</h3>
+<p>La <strong>comunicazione con socket</strong> è dal punto di vista concettuale una generalizzazione in rete delle <em>pipe</em>, anche se dal punto di vista realizzativo è ovviamente qualcosa di molto più complesso. In sostanza ho il sistema operativo che virtualizza la comunicazione tra macchine diverse utilizzando una pipe spezzata in due porzioni, ognuna residente sulla memoria centrale delle macchine coinvolte.<br />L'architettura che sta dietro a tale modalità di comunicazione è di tipo client-server, ovvero ho un client che inoltra una richiesta ad una porta specifica su cui un server è in ascolto per la loro evasione. L'identificazione del server avviene tramite la coppia di identificatori <em>indirizzo:porta</em>. 
+</p>
+<p class='vspace'>I messaggi possono avere dimensione fissa o variabile a seconda delle applicazioni che le utilizzano, e sono ordinati in modalità <em>FIFO</em> (così come i processi in attesa). I socket si possono creare o distruggere, e si può leggerci o scriverci sopra tramite due canali mono-direzionali. Ciò significa che nel momento in cui una connessione via socket viene accettata, è possibile sia per il server che per il client comunicare su due canali separati. Per evitare che i client trovino la porta di ascolto del server chiusa mentre sta servendo un altro processo, il client chiamante fa in modo di segnalare al server una nuova porta su cui spostare la comunicazione per la gestione della risposta.<br />Infine, la connessione può essere con gestione del sistema operativo o senza, in cui ogni messaggio viene trasmesso in modo individuale. Questa seconda modalità è ovviamente la più semplice da realizzare, dal momento che non viene fornita alcuna informazione su come il sistema dovrà trattare i messaggi. C'è poi un'ultima tecnica di connessione, che è il multicast.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 09, 2008, at 09:38 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Comunicazione?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Comunicazione?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

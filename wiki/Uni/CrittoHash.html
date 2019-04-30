@@ -1,0 +1,399 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Funzioni hash </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.CrittoHash' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Funzioni hash
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoHash?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoHash?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='CrittoHash-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoHash?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoHash?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Funzioni hash was last modified on February 10, 2009, at 10:34 PM'>
+							<span style='display:none;'>Funzioni hash</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Funzioni hash ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<div class='vspace'></div><h2>Che cosa sono</h2>
+<p>Le funzioni hash sono delle funzioni che, preso in pasto un input di lunghezza arbitraria (comunque finita), producono un output di lunghezza fissa che dipende dall'input.<br />L'output di questa funzione è detto <strong>fingerprint</strong>, <strong>digest</strong> oppure <strong>hash</strong> del messaggio M.
+</p>
+<div class='vspace'></div><h2>A che cosa servono</h2>
+<p>Gli scopi delle funzioni hash sono essenzialmente 3:
+</p><ul><li>firma digitale
+</li><li>integrità dei dati
+</li><li>certificazione del tempo
+</li></ul><p class='vspace'>Per quanto riguarda la <strong>firma digitale</strong>, il procedimento è in genere di calcolare l'hash di un messaggio e trasmetterlo in modo sicuro al destinatario, in genere tramite cifrature asimmetriche, così che il destinatario è in grado di verificare che il messaggio proviene proprio da chi dice di mandarlo.
+</p>
+<p class='vspace'>L<strong>'integrità dei dati</strong>, parimenti, si ha quando genero un hash a partire da un messaggio M. L'hash è unico per ogni messaggio M (sotto vedremo meglio). Il <strong>mittente</strong>, che scrive il messaggio M, allega al messaggio anche l<strong>'hash</strong> del messaggio, che è unico. Il <strong>destinatario</strong> riceve il messaggio e anche l'hash: deve quindi calcolare in proprio l'hash del messaggio, e vedere se corrisponde all'hash che il mittente ha inviato. Se sì, allora il messaggio è arrivato integro. Se no, vuol dire che qualcuno ha modificato il messaggio.
+</p>
+<p class='vspace'>La <strong>certificazione del tempo</strong> la ottengo generando l'hash del messaggio <strong>unito</strong> alla data di creazione. Se qualcuno modifica la data, anche l'hash cambierà, e il destinatario se ne accorge.
+</p>
+<div class='vspace'></div><h2>Proprietà delle funzioni hash</h2>
+<p>Tutte le cose viste qui sopra sono dovute a tre proprietà:
+</p><ul><li><strong>one-wayness</strong>
+</li><li><strong>weak collision resistance</strong>
+</li><li><strong>strong collision resistance</strong>
+</li></ul><div class='vspace'></div><h3>One-wayness</h3>
+<p>La proprietà di <strong>one-wayness</strong> mi dice che è <strong>impossibile</strong> risalire da un valore hash al messaggio che l'ha generato.
+</p>
+<p class='vspace'>Ciò vuol dire che se ho il messaggio <strong>M</strong>, ed il suo hash è <strong>h(M)</strong>, io, avendo il solo <strong>h(M)</strong>, non so dire niente del messaggio M.
+</p>
+<p class='vspace'>Sopra abbiamo detto che le funzioni hash prendono in input un messaggio di lunghezza arbitraria, e generano un output di lunghezza fissa, che supponiamo essere di <strong>n</strong> bit.<br />Questo vuol dire che tutti gli infiniti messaggi vengono <strong>mappati</strong> dalla funzione hash in "soli" <strong>2<sup>n</sup></strong> valori.
+</p>
+<p class='vspace'>Ciò sta a significare che è perfettamente plausibile che due messaggi diversi possano <strong>avere lo stesso hash</strong>, e infatti sotto vedremo come sfruttare questa proprietà.
+</p>
+<p class='vspace'>Ciononostante, la <strong>one-wayness</strong> mi garantisce che, dato un <strong>hash</strong>, non so dire niente a proposito del messaggio che lo origina. Infatti, ci saranno <strong>infiniti</strong> messaggio che vengono mappati nello stesso valore hash, proprio per il fatto che l'hash ha una dimensione finita.
+</p>
+<div class='vspace'></div><h3>Weak collision resistance</h3>
+<p>La <strong>weak collision resistance</strong> mi dice che, se ho un messaggio <strong>M</strong> ed il corrispondente valore hash <strong>h(M)</strong>, non sono in grado di calcolare in qualche modo un messaggio <strong>Z</strong> tale che <strong>h(Z) = h(M)</strong>.
+</p>
+<p class='vspace'>In pratica, non so trovare un messaggio che dia come valore hash lo stesso hash di un messaggio che ho già in mano. La <strong>collisione</strong> si ha quando due messaggi diversi hanno lo stesso hash.
+</p>
+<div class='vspace'></div><h3>Strong collision resistance</h3>
+<p>La <strong>strong collision resistance</strong> è una proprietà per cui non sono in grado di calcolare ex-novo due messaggi, <strong>M</strong> e <strong>Z</strong>, che diano lo stesso hash.
+</p>
+<p class='vspace'>Da notare la differenza con la <strong>weak</strong>: la <strong>weak</strong> parte dal presupposto che HO GIÀ un M e il suo hash. Qui invece parto da 0: non ho in mano niente, e voglio fare il "miracolo" di generare con un algoritmo due valori x e y che diano lo stesso hash.
+</p>
+<div class='vspace'></div><h3>Relazioni tra queste proprietà</h3>
+<p>Le proprietà si implicano a vicenda: strong -&gt; weak -&gt; one-wayness. 
+</p>
+<div class='vspace'></div><h2>Il paradosso del compleanno</h2>
+<p>Il <strong>paradosso del compleanno</strong> recita così: quante persone devo scegliere, a caso, affinché io abbia la probabilità maggiore di 0,5 che due compiano gli anni lo stesso giorno?
+</p>
+<p class='vspace'>La risposta è che basta scegliere 23 persone, per avere probabilità maggiore di 0.5 che due di esse compiano gli anni lo stesso giorno, non importa quale. Per avere la certezza, dovrei avere 366 persone. Ma già con 23 so che 50% due compiono gli anni lo stesso giorno.
+</p>
+<p class='vspace'>Torniamo alle proprietà delle nostre funzioni hash: quanti messaggi casuali devo generare per trovarne due che hanno lo stesso hash, cioè avere una <strong>collisione</strong>?
+</p>
+<p class='vspace'>La risposta è che devo generare in media <strong>2<sup>n/2</sup></strong> messaggi, dove <strong>n</strong> è la lunghezza in bit dell'output della funzione hash. Se una funzione hash ha un'output di 64 bit, vuol dire che devo generare 2<sup>32</sup> messaggi in media per avere una collisione: con la tecnologia odierna, tutti i calcoli che sono inferiori asintoticamente a <strong>2^'80^'0</strong>' sono potenzialmente insicuri =&gt; una funzione hash con un output di 64 bit è altamente insicura!
+</p>
+<p class='vspace'>Ecco perché le funzioni hash moderne hanno output di <strong>almeno 160 bit</strong>.
+</p>
+<div class='vspace'></div><h3>Attacco a compleanno</h3>
+<p>Come Cattivo può sfruttare questa proprietà a suo vantaggio?
+</p>
+<p class='vspace'>Supponiamo che Alice debba firmare, con una funzione hash, un certo messaggio, ad esempio: "Alice ha un credito di 1000 dollari con Bob. Firmato, Alice". Alice prende il suo messaggio, genera l'hash, e lo invia a Bob con la chiave pubblica di Bob, così Bob riceve il messaggio, ne calcola l'hash, e verifica che sia uguale a quello che Alice gli ha inviato. Se sì, vuol dire che il messaggio è arrivato integro.
+</p>
+<p class='vspace'>L'attaccante Cattivo può fare questo: può generare un certo numero di <strong>variazioni</strong> del messaggio originale M. Ad esempio, una variazione può essere "Alice è in attesa di 1000 dollari da Bob", oppure "Bob deve 1000 dollari ad Alice" e cose del genere.
+</p>
+<p class='vspace'>Poi, deve generare un certo numero di <strong>messaggi fraudolenti</strong>, ovvero messaggi che dicono quello che Cattivo vuole far dire ad Alice: "Alice ha un DEBITO di 1000 dollari con Bob" e via dicendo.<br />In particolare, Cattivo genererà <strong>variazioni del messaggio fraudolento</strong>, in modo che <strong>l'hash della variazione del messaggio fraudolento sia uguale all'hash di una delle variazioni del messaggio originale</strong>.
+</p>
+<p class='vspace'>Quello che deve fare, alla fine, è far firmare ad Alice una delle <strong>variazioni del messaggio originale</strong>, ma poi inviare a Bob il messaggio fraudolento che ha lo stesso hash della variazione appena firmata. Se ha lo stesso hash, significa che la firma sarà <strong>identica</strong>: Alice firma una cosa, ma questa firma è al 100% valida anche per un messaggio che dice l'esatto opposto.
+</p>
+<p class='vspace'>Il problema qui è: quante <strong>variazioni</strong> deve generare Cattivo prima di avere una collisione?<br />Il punto è che io voglio che una variazione del messaggio "Alice ha un credito" e una variazione del messaggio "Alice ha un debito" <strong>abbiano lo stesso hash</strong>.
+</p>
+<p class='vspace'>Per avere collisioni, abbiamo visto sopra che è necessario, in media, calcolare <strong>2<sup>n/2</sup></strong> messaggi, il che non è affatto improponibile come sembra.
+</p>
+<div class='vspace'></div><h2>Alcune funzioni hash</h2>
+<p>Le funzioni hash che studiamo sono derivate di MD4, e ne condividono la struttura di base
+</p>
+<div class='vspace'></div><h3>MD5</h3>
+<ul><li>Input: testo di 2<sup>64</sup> bit
+</li><li>Output: 128 bit
+</li></ul><p class='vspace'>La prima cosa da fare è il <strong>padding</strong>, ovvero sistemare la lunghezza del messaggio originale. Siccome la funzione lavora su blocchi di 512 bit, occorre che il messaggio sia lungo esattamente un multiplo di 512 bit.<br />Per avere ciò, lavoro in 2 passi:
+</p><ol><li>al messaggio appendo un <strong>1</strong> seguito da tanti <strong>0</strong> fino a quando non ho una lunghezza che è congruente a 448 modulo 512
+</li><li>avanzano 64 bit: in questi 64 bit metto la lunghezza del messaggio 
+</li></ol><p class='vspace'>C'è un buffer di 4 word da 32 bit ciascuna: A, B, C e D. Queste 4 word vengono inizializzate con certi valori.<br />Ci sono 4 fasi di 16 passi ciascuna, che prendono in input il blocco del messaggio, il buffer e delle costanti da una tabella (16 * 4 = 64 voci in tabella), spaciugano il tutto e come risultato modificano il buffer.
+</p>
+<p class='vspace'>Ogni fase ha una sua particolare <strong>operazione primitiva</strong>: le fasi hanno la stessa forma, ma cambia l'operazione che ciascuna fase esegue.
+</p>
+<p class='vspace'>Alla fine, l'output è dato dal contenuto del buffer.
+</p>
+<div class='vspace'></div><h3>MD4</h3>
+<ul><li>3 fasi di 16 passi
+</li><li>Output di 128 bit
+</li><li>a differenza di MD5 (MD4 è il predecessore di MD5) non si usano costanti nella prima fase, e il valore di un passo non dipende dal valore del passo precedente della stessa fase
+</li></ul><div class='vspace'></div><h3>SHA-1</h3>
+<ul><li>Input: 2<sup>64</sup>
+</li><li>Output: 160 bit
+</li><li>4 fasi di 20 passi ciascuna =&gt; ho una tabella con 80 voci (4 * 20)
+</li><li>Il buffer è composto da 5 word di 32 bit: A, B, C, D, E
+</li></ul><p class='vspace'>Anche questa è come MD5, per il resto.
+</p>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: February 10, 2009, at 10:34 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoHash?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoHash?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

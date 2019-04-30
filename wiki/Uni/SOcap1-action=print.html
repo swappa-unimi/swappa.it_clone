@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Riassunto capitolo 1</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SOcap1.html' title='Sistemi Operativi - Riassunto capitolo 1'>Sistemi Operativi - Riassunto capitolo 1</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Riassunto capitolo 1::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<div class='vspace'></div><h2>Introduzione</h2>
+<p>Sistema operativo = insieme di programmi che gestiscono l'hw del computer. Fornisce una base agli applicativi e fa da intermediario tra utente e hw.
+</p>
+<div class='vspace'></div><h2>1.1 Che cosa fanno i SO?</h2>
+<p>Elaborazione dell'info = divisibile in 4 parti:
+</p><ol><li>hardware
+<ul><li>cpu
+</li><li>memoria
+</li><li>I/O
+</li></ul></li><li>Sistema Operativo
+</li><li>Programmi applicativi
+</li><li>Utenti
+</li></ol><p class='vspace'>Sistema Operativo = non agisce per sé, ma crea un ambiente utile agli altri per lavorare.
+</p>
+<div class='vspace'></div><h3>1.1.1 Il punto di vista dell'utente</h3>
+<p>PC: Scopo del SO = facilitare l'uso del computer. Non si tiene in genere conto dell'utilizzo delle risorse, perché sebbene le prestazioni contino, per l'utente, le richieste inviate al computer sono limitate.
+</p>
+<p class='vspace'>Mainframe o minicomputer: Scopo del SO = massimizzare l'uso delle risorse, così ogni utente al terminale è trattato equamente.
+</p>
+<p class='vspace'>Workstation: Scopo del SO = compromesso tra uso di risorse individuali e condivise.
+</p>
+<p class='vspace'>Palmare: Scopo del SO = utilizzo individuale; risparmiare batteria.
+</p>
+<p class='vspace'>Embedded: Scopo del SO = fare il suo mestiere, non c'è intervento dell'utente.
+</p>
+<div class='vspace'></div><h3>1.1.2 Il pdv del computer</h3>
+<p>SO = distributore di risorse.
+</p>
+<p class='vspace'>SO = programma di controllo che gestisce i dispositivi di I/O e controlla che i programmi non vengano eseguiti in modo improprio.
+</p>
+<div class='vspace'></div><h3>1.1.3 Definizione di sistema operativo</h3>
+<p>In generale, non c'è una definizione totalmente adeguata.
+</p>
+<p class='vspace'>Hardware = costruito per risolvere problemi. Non è facile da usare direttamente =&gt; il SO controlla e distribuisce le risorse hw.
+</p>
+<p class='vspace'>Altra definizione: SO = l'unico programma che è sempre in funzione (il kernel, e non aMule). Tutto il resto sono programmi di sistema o applicativi.
+</p>
+<div class='vspace'></div><h3>1.1.4 Scopi di un sistema operativo</h3>
+<p>Scopo primario:
+</p><ul><li>PC: essere conveniente per l'utente
+</li><li>Sistemi condivisi: far operare efficientemente il computer.
+</li></ul><p class='vspace'>Nel passato contava di più l'efficienza =&gt; la maggior parte della teoria sui SO riguarda l'efficienza e non l'usabilità.
+</p>
+<div class='vspace'></div><h2>1.2 Sistemi mainframe</h2>
+<p>Primi sistemi informatici per gestire appli commerciali e scientifiche.
+</p>
+<div class='vspace'></div><h3>1.2.1 Sistemi a lotti</h3>
+<p>Utente = non interagisce, ma prepara un lavoro (<strong>job</strong>) composto da programma + dati, e lo invia all'operatore (eg schede perforate). Dopo un po' arrivava l'esito.
+</p>
+<p class='vspace'>=&gt; SO semplice: deve solo trasferire il controllo da un job all'altro.
+</p>
+<p class='vspace'>Per velocizzare sto trasferimento, si organizzano i job in <strong>lotti</strong> (<strong>batch</strong>) =&gt; programmi con esigenze simili nello stesso lotto.
+</p>
+<p class='vspace'>La CPU riposa spesso perché è più veloce dell'I/O meccanico.
+</p>
+<div class='vspace'></div><h3>1.2.2 Sistemi multiprogrammati</h3>
+<p>Multiprogrammazione = mantenere più job in memoria. Se uno attende, il SO commuta e usa un altro job.
+</p>
+<p class='vspace'>Primo caso in cui il SO deve decidere qualcosa al posto dell'utente.
+</p>
+<p class='vspace'>Tanti job =&gt; organizzarli = <strong>scheduling</strong> dei job, eg quelli lunghi di notte.
+</p>
+<p class='vspace'>Tanti job già pronti =&gt; quale eseguire? =&gt; CPU scheduling.
+</p>
+<div class='vspace'></div><h3>1.2.3 Sistemi time-sharing</h3>
+<p>Sistemi a lotti = 0 interazione con l'utente.
+</p>
+<p class='vspace'><strong>Multitasking</strong> = far evolvere in apparente simultaneità più programmi
+</p>
+<p class='vspace'>=&gt; <strong>Time-sharing</strong> = la CPU esegue parecchi programmi commutando tra di essi molto velocemente, e a noi sembrano paralleli.
+</p>
+<p class='vspace'>Time-sharing:
+</p><ul><li>occorre <strong>sistema operativo interattivo</strong> per far comunicare computer e utente =&gt; <strong>tempo di risposta</strong> tra comando e risultato.
+</li><li>più utenti possono usare contemporaneamente il computer: ognuno ha il suo processo. Il SO commuta processi quando accade in I/O perché è lento rispetto alla CPU
+</li><li>più complessi rispetto ai sistemi multiprogrammati =&gt; eg ricorso a memoria virtuale
+</li><li>devono fornire un filesystem
+</li><li>devono sincronizzare e far comunicare processi
+</li></ul><div class='vspace'></div><h2>1.3 Sistemi desktop</h2>
+<p>...
+</p>
+<div class='vspace'></div><h2>1.4 Sistemi multiprocessore</h2>
+<p>Vantaggi:
+</p><ol><li>Più elaborazione (N processori non vuol dire però che sono N volte più veloci di 1, perché vanno sincronizzati)
+</li><li>Economia di scala: tanti processori costano meno di tanti computer
+</li><li>Aumento di affidabilità: ne muore uno, gli altri in teoria vanno avanti =&gt; <strong>degradazione progressiva</strong> = <strong>tolleranza ai guasti</strong>
+</li></ol><p class='vspace'><strong>SMP</strong> = sistema multiprocessore simmetrico, tutti i processori sono equivalenti tra loro.
+<strong>Asimmetrico</strong> = processori che fanno robe diverse.
+</p>
+<div class='vspace'></div><h2>1.5 Sistemi distribuiti</h2>
+<p>Reti di computer =&gt; processori che non condividono né memoria né orologio.
+</p>
+<p class='vspace'>Collegati con linee di comunicazione, eg bus ad alta velocità o linee telefoniche.
+</p>
+<div class='vspace'></div><h3>1.5.1 Reti di computer</h3>
+<p>Rete = struttura di comunicazione tra due o più sistemi.
+</p>
+<p class='vspace'>I mezzi fisici usati sono vari.
+</p>
+<div class='vspace'></div><h3>1.5.2 Sistemi client-server</h3>
+<p><strong>Server</strong> = erogano servizi
+<strong>Client</strong> = fanno richieste ai server e ne ricevono i risultati
+</p>
+<p class='vspace'>Tipi di server:
+</p><ul><li>server di calcolo = eseguono le richieste di computazione che i client fanno (basi di dati)
+</li><li>server per i file = interfaccia per gestire i file da parte dei client (web)
+</li></ul><div class='vspace'></div><h3>1.5.3 Sistemi punto-a-punto</h3>
+<p>Peer 2 Peer: client e server non sono distinguibili.
+</p>
+<p class='vspace'>Nei sistemi client-server, il server è collo di bottiglia. Qui invece i servizi sono offerti da tutti.
+</p>
+<p class='vspace'>Per partecipare ad un sistema distribuito P2P occorre associarsi a quella rete, e poi scoprire quali servizi essa eroga.
+Per scoprire servizi, 2 modi:
+</p><ol><li>ogni client nuovo che si connetti comunica i suoi servizi al registro centralizzato. Se voglio un servizio, consulto questo registro.
+</li><li>il client nuovo deve scoprire chi fornisce il servizio facendo domanda a tutti i nodi della rete =&gt; occorre un protocollo di scoperta per scoprire i servizi che i nodi offrono.
+</li></ol><p class='vspace'>Nota mnemonica: sostituite "servizi" con "mp3".
+</p>
+<div class='vspace'></div><h3>1.5.4 Sistemi operativi distribuiti</h3>
+<p>Sistema operativo di rete = ha uno schema di comunicazione che permette a processi su computer differenti di scambiarsi messaggi.
+</p>
+<p class='vspace'>I SO dei vari computer comunicano abbastanza strettamente, per dare l'illusione che un solo sistema operativo controlli la rete.
+</p>
+<div class='vspace'></div><h2>1.6 Sistemi cluster</h2>
+<p>Come i sistemi paralleli, usano contemporaneamente diverse CPU, ma in computer diversi. Condividono memoria di massa e sono strettamente collegati tramite LAN.
+</p>
+<p class='vspace'>Cluster = servizio ad alta disponibilità: se qualcuno viene a mancare, gli altri suppliscono.
+</p>
+<p class='vspace'>Cluster asimmetrico = uno esegue, l'altro è in attesa a caldo, e sostituisce chi viene a mancare.
+</p>
+<p class='vspace'>Cluster simmetrico = 2 macchine eseguono le appli e si controllano a vicenda (più efficiente).
+</p>
+<p class='vspace'>Accesso condiviso ai dati =&gt; gestore del blocco distribuito per lock etc.
+</p>
+<div class='vspace'></div><h2>1.7 Sistemi in tempo reale</h2>
+<p>Vincoli di tempo: il processo deve essere completato entro i termini imposti, se no fallisce. Risultato corretto entro il tempo stabilito.
+</p>
+<p class='vspace'>SO hard real-time: garantisce che i compiti critici siano eseguiti in tempo =&gt; tutti i processi sono limitati nel tempo.
+</p>
+<p class='vspace'>SO soft real-time: ci sono processi critici e processi normali, e quelli critici hanno la priorità. Non hanno tempo massimo entro cui eseguire processi, pena il fallimento.
+</p>
+<div class='vspace'></div><h2>1.8 Sistemi palmari</h2>
+<p>PDA, telefoni cellulari.
+Piccoli =&gt; processori piccolo e lenti; schermi piccoli.
+Appli e SO non devono penalizzare il processore, e non usare troppo le batterie.
+</p>
+<div class='vspace'></div><h2>1.9 Migrazione delle caratteristiche</h2>
+<p>Le caratteristiche che solo i mainframe di una volta avevano sono arrivate fino ai PC di adesso.
+</p>
+<div class='vspace'></div><h2>1.10 Ambienti di elaborazione</h2>
+<p>Come i sistemi appena visti vengono usati in diversi ambienti di elaborazione.
+</p>
+<div class='vspace'></div><h3>1.10.1 Elaborazione tradizionale</h3>
+<p>Una volta: ufficio con pochi PC in rete; server centrale con files e stampanti.
+</p>
+<p class='vspace'>Ora: portali di accesso, computer di rete, palmari, wireless.
+</p>
+<div class='vspace'></div><h3>1.10.2 Elaborazione basata sul Web</h3>
+<p>Web = ubiquo, c'è dappertutto =&gt; un computer è client e server contemporaneamente.
+</p>
+<div class='vspace'></div><h3>1.10.3 Elaborazione embedded</h3>
+<p>Lettori DVD, macchine del caffé, lavatrici, centraline delle macchine.
+</p>
+<div class='vspace'></div><h3>1.10.4 Elaborazione multimediale</h3>
+<p>MP3, video, webcam etc. =&gt; vincoli di potenza di elaborazione (eg. riprodurre ad un certo frame rate) e di trasmissione in rete (banda).
+</p>
+<p class='vspace'>Appli multimediali: eseguite ormai dappertutto.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SOcap1)</span></div>
+  </div>
+</body>
+</html>

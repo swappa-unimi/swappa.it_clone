@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / RSA </title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='CrittoRSA.html' title='RSA '>RSA </a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: RSA ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 215px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#g0'>Che cos'è</a>
+</li><li><a href='#g1'>Generazione dei parametri</a>
+</li><li><a href='#g2'>Dimostrazione</a>
+</li><li><a href='#g3'>Sicurezza</a>
+</li><li><a href='#g4'>Ottimizzazioni</a>
+</li><li><a href='#g5'>Firma digitale</a>
+</li><li><a href='#g6'>Calcolo di potenze con modulo</a>
+</li></ol><div class='vspace'></div></div>
+<p class='vspace'><a name='g0' id='g0'></a>
+</p><h2>Che cos'è</h2>
+<p>RSA è un cifrario asimmetrico, che basa la propria sicurezza sulla difficoltà della fattorizzazione di un numero n.
+</p>
+<p class='vspace'><a name='g1' id='g1'></a>
+</p><h2>Generazione dei parametri</h2>
+<p>Si devono scegliere <strong>p</strong> e <strong>q</strong>, due numeri primi.<br /> <strong>n</strong> = <strong>pq</strong>
+</p><pre> <strong>&#966;(n)</strong> = (p-1)(q-1)
+ Scelgo un numero <strong>e</strong> con queste proprietà:
+ * e &lt; &#966;(n)
+ * e coprimo con &#966;(n)
+ Scelgo un numero <strong>d</strong> tale che <strong>ed</strong> = 1 mod &#966;(n)
+</pre><p class='vspace'>Chiave privata: <strong>n</strong>, <strong>d</strong><br />Chiave pubblica: <strong>n</strong>, <strong>e</strong>
+</p>
+<p class='vspace'>Crittografia: per crittografare un messaggio <strong>M</strong>, avendo a disposizione la chiave pubblica dell'utente, devo fare
+</p><pre> <strong>C</strong> = M<sup>e</sup> mod n
+</pre><p class='vspace'>Decrittografia: per decrittografare C, faccio:
+</p><pre> M = C<sup>d</sup> mod n
+</pre><p class='vspace'><a name='g2' id='g2'></a>
+</p><h2>Dimostrazione</h2>
+<p>Il <strong>teorema di Eulero</strong> dice che <strong>a<sup>&#966;(n)</sup> = 1 mod n</strong>.<br />Un corollario dice che <strong>a<sup>&#966;(n)+1</sup> = a mod n</strong>.<br />
+Adesso vediamo un po' i miei numeri <strong>e</strong> e <strong>d</strong>. Come ho scritto sopra, devo avere <strong>ed = 1 mod &#966;(n)</strong>. Questo vuol dire che <strong>ed</strong> sono nella forma <strong>k&#966;(n) + 1</strong>.<br />Perché? Se ci pensate, il motivo è semplice: se <strong>ed</strong> è congruo a 1 in modulo &#966;(n), vuol dire che posso scrivere il numero <strong>ed</strong> come un multiplo di &#966;(n), il che sarebbe congruo a 0, a cui aggiungo 1. Ecco perché <strong>ed = k&#966;(n) + 1</strong>.
+</p>
+<p class='vspace'>Il teorema di Eulero visto sopra (deriva dal teorema di Fermat) mi dice che <strong>a<sup>&#966;(n)+1</sup> = a mod n</strong>. Prendiamo ora <strong>C = M<sup>e</sup> mod n</strong>. Come dicevo sopra, per decrittografare, faccio <strong>M = C<sup>d</sup> mod n</strong>.<br />Sviluppiamo i conti:
+</p><pre> M = C<sup>d</sup> mod n = (M<sup>e</sup>)<sup>d</sup> mod n = M<sup>ed</sup> mod n
+</pre><p>Siccome sappiamo che <strong>ed = k&#966;(n) + 1</strong>, allora
+</p><pre> M<sup>ed</sup> mod n = M<sup>k&#966;(n) + 1</sup> = M
+</pre><p>per via del teorema di Eulero visto sopra!
+</p>
+<p class='vspace'><a name='g3' id='g3'></a>
+</p><h2>Sicurezza</h2>
+<p>Dobbiamo distinguere due tipi di sicurezza: una relativa alla chiave, l'altra relativa alla cifratura stessa
+</p>
+<div class='vspace'></div><h3>Sicurezza della chiave</h3>
+<p>Avere la chiave sicura vuol dire: se ho la chiave pubblica di un tizio, ovvero <strong>{e, n}</strong>, so ricavare la chiave privata, ovvero <strong>{d, n}</strong>?
+</p>
+<p class='vspace'>La risposta è: sì, se sono in grado di <strong>fattorizzare n</strong>, ovvero trovare quei numeri <strong>p</strong> e <strong>q</strong> che so essere i fattori di n. Infatti, <strong>n = pq</strong>. Se so p e q, so anche dire quanto vale &#966;(n), che in questo caso è (p-1)(q-1). Se so quanto vale &#966;(n), so anche calcolare l'inverso di un numero in quel modulo, ovvero, so calcolare <strong>d</strong> a partire da <strong>e</strong>: se <strong>ed = 1 mod &#966;(n)</strong>, vuol dire che <strong>e</strong> e <strong>d</strong> sono inversi moltiplicativi in modulo &#966;(n). L'inverso di un numero è quell'altro numero che, moltiplicato per il primo, mi dà il <strong>neutro</strong> dell'operazione. Il neutro della moltiplicazione è 1, quindi <strong>e</strong> e <strong>d</strong> sono inversi in modulo &#966;(n): <strong>e = d<sup>-1</sup> mod &#966;(n)</strong>.
+</p>
+<p class='vspace'>Il problema, dentro qui, è che dato un numero <strong>n</strong> abbastanza grande, trovarne i fattori diventa una cosa molto ma molto lunga: siamo nell'ordine degli anni-macchina! Ovviamente, la potenza dei computer cresce di anno in anno, e ogni tanto si scoprono algoritmi un po' più efficienti per fattorizzare un numero, però, se devo crackare la chiave privata di un tizio, e ci metto 1 anno a scoprirla, che me ne faccio?
+</p>
+<div class='vspace'></div><h3>Sicurezza della cifratura</h3>
+<p>Qui la domanda è: se ho C, so ricavare M senza sapere la chiave?
+</p>
+<p class='vspace'>La risposta è: BO! Nel senso che non si sa se ciò sia equivalente a fattorizzare n. Comunque non c'è ancora arrivato nessuno.
+</p>
+<p class='vspace'>Ma ci sono anche altri attacchi, che ora vedremo.
+</p>
+<div class='vspace'></div><h4>Chosen Ciphertext Attack</h4>
+<p>Sono nello scenario <strong>chosen ciphertext</strong>, il che vuol dire che l'attaccante può farsi decifrare un testo a sua scelta.
+</p>
+<p class='vspace'>Orbene: se <strong>M</strong> è il messaggio, l'attaccante si fa cifrare il messaggio <strong>C * x<sup>e</sup></strong>, ed è in grado di ottenere la decifratura di M.
+</p>
+<p class='vspace'>Infatti, decifrando <strong>C * x<sup>e</sup></strong> avrei:
+</p><pre> M = (C * x<sup>e^)'^d</sup> = M<sup>ed</sup>*x<sup>ed</sup> = M * x mod n
+</pre><p>Quindi, avendo in mano Mx mod n, divido per x (ovvero moltiplico per x<sup>-1</sup>, e lo so fare perché conosco x e n) e ottengo M a partire dalla sua cifratura.
+</p>
+<div class='vspace'></div><h4>Common Modulus Attack</h4>
+<p>Se ci sono due persone, la cui chiave contiene lo STESSO n, e ad entrambe viene inviato lo STESSO messaggio M, allora un attaccante è in grado di risalire ad M senza avere la chiave, ma avendo solo i due messaggi cifrati C1 e C2.
+</p>
+<p class='vspace'>Quello che ha in mano è:
+</p><pre> C<sub>1</sub> = M<sup>e1</sup> mod n
+ C<sub>2</sub> = M<sup>e2</sup> mod n
+</pre><p>dove C<sub>1</sub> e C<sub>2</sub> sono i cifrati mandati al primo e al secondo personaggio, rispettivamente, e <strong>e1</strong> ed <strong>e2</strong> sono la loro chiave pubblica: {e1, n}, {e2, n}. Abbiamo infatti detto qui sopra che siamo nel caso in cui due persone abbiano la stessa <strong>n</strong>.
+</p>
+<p class='vspace'>Quindi, tramite l<strong>'algoritmo di Euclide esteso</strong> (è esteso l'algoritmo, non Euclide!) l'attaccante è in grado di calcolare due numeri <strong>r</strong> ed <strong>s</strong> che abbiano la seguente proprietà:
+</p><pre> e1*r + e2*s = 1 mod n
+</pre><p class='vspace'>Euclide esteso calcola ciò in un botto solo.
+</p>
+<p class='vspace'>Con in mano questi valori, si fa poi:
+</p><pre> C<sub>1</sub><sup>r</sup> * C<sub>2</sub><sup>s</sup>= (M<sup>e1</sup>)<sup>r</sup> * (M<sup>e2</sup>)<sup>s</sup> = M<sup>e1r + e2s'^ mod n = M'^1</sup> = M mod n
+</pre><p>Infatti, abbiamo detto sopra che <strong>e1*r + e2*s = 1 mod n</strong>.
+</p>
+<div class='vspace'></div><h4>Low Exponent Attack</h4>
+<p>Questo è invece il caso in cui diverse chiavi pubbliche hanno lo stesso valore <strong>e</strong>, e hanno le rispettive <strong>n</strong> prime tra di loro. Occorre poi che lo stesso messaggio M venga inviato ai vari utenti.
+</p>
+<p class='vspace'>Utilizzando il <strong>teorema cinese del resto</strong> è possibile risolvere questo sistema:
+</p><pre> x = C<sub>1</sub> mod n<sub>1</sub>
+ x = C<sub>2</sub> mod n<sub>2</sub>
+ x = C<sub>3</sub> mod n<sub>3</sub>
+
+ x = M<sup>3</sup> mod n<sub>1</sub>n<sub>2</sub>n<sub>3</sub> =&gt; poi calcolo M = x<sup>1/3</sup>
+</pre><p class='vspace'>Non sto qui a dimostrare perché funziona, perché dovrei conoscere il teorema cinese del resto, ma si dà il caso che non lo conosca:)
+</p>
+<div class='vspace'></div><h4>Informazioni parziali</h4>
+<p>La domanda è: guardando C, sono in grado di dire qualcosa su di M?
+</p>
+<p class='vspace'>Ci sono due cose che sarebbe interessante sapere: se M è più lungo o più corto della metà di n (ricordo che comunque M &lt; n), oppure se è pari o no.
+</p>
+<p class='vspace'>Ebbene, è stato dimostrato che calcolare queste due cose, ovvero rispondere con un SI o con un NO alle domande qui sopra, è equivalente a invertire RSA, cioè fattorizzare n, quindi computazionalmente impossibile.
+</p>
+<div class='vspace'></div><h4>Attacchi ad implementazioni</h4>
+<p>Sono due attacchi particolari, che riguardano le implementazioni di RSA in hardware.
+</p>
+<p class='vspace'>Il primo attacco è detto <strong>timing attack</strong>: se un attaccante è in grado di osservare quanto tempo ci mette un calcolatore di velocità nota a produrre i risultati quando calcola i vari valori di RSA, è in grado di risalire alla chiave privata.
+</p>
+<p class='vspace'>Lo stesso avviene per il <strong>power attach</strong>: se l'attaccante è in grado di monitorare il consumo di corrente di un processore che calcola RSA (ricordando che per calcoli complessi l'uso di corrente sale), allora può risalire alla chiave privata.
+</p>
+<p class='vspace'>Per proteggersi da ciò basta introdurre dei calcoli casuali qua e là per sbarellare le osservazioni.
+</p>
+<p class='vspace'><a name='g4' id='g4'></a>
+</p><h2>Ottimizzazioni</h2>
+<p>Il calcolo <strong>x<sup>y</sup> mod z</strong> è molto ma molto oneroso, perché sia x che y sono numeroni. È il calcolo che si fa sia in crittografia che in decrittografia:
+</p><pre> C = M<sup>e</sup> mod n
+ M = C<sup>d</sup> mod n
+</pre><p class='vspace'>Per velocizzare un po' le cose, ricordiamo la rappresentazione binaria di <strong>y</strong>:
+</p><pre> y = y<sub>0</sub>*2<sup>0</sup> + y<sub>1</sub>2<sup>1</sup> y<sub>2</sub>2<sup>2</sup> + ... + y<sub>n</sub>2<sup>n</sup>
+</pre><p class='vspace'>Infatti, ogni bit di un numero binario rappresenta una potenza di 2. Spero non ci siano dubbi riguardo a questo per gli studenti di informatica:D
+</p>
+<p class='vspace'>Saltando a pié pari le dimostrazioni (le metto solo a richiesta, se no divento matto con apici e pedici) si può osservare che
+</p>
+<div class='vspace'></div><pre> x<sup>y</sup> = x elevato a y<sub>0</sub>*2<sup>0</sup> + y<sub>1</sub>2<sup>1</sup> y<sub>2</sub>2<sup>2</sup> + ... + y<sub>n</sub>2<sup>n</sup>
+</pre><p class='vspace'>L'ottimizzazione <strong>left-to-right</strong> riconduce tutto ciò alla forma:
+</p><pre> (x<sup>y0</sup>(x<sup>y1</sup>(x<sup>yn</sup>)<sup>2</sup>)<sup>2</sup>)<sup>2</sup>
+</pre><p class='vspace'>L'ottimizzazione <strong>right-to-left</strong> invece riconduce il tutto alla forma:
+</p><pre> (x)<sup>y0</sup>(x<sup>2</sup>)<sup>y1</sup>(x<sup>4</sup>)<sup>y2</sup>(x<sup>8</sup>)<sup>y3</sup>
+</pre><p class='vspace'>A che serve tutto ciò? Se dovessi fare il calcolo <strong>x<sup>y</sup> mod z</strong> nel metodo intuitivo, farei x*x mod z un numero y di volte. Se y è un numero gigantesco, il tempo che ci metto è gigantesco, perché faccio un numero spropositato di operazioni.
+</p>
+<p class='vspace'>Invece, col metodo <strong>left-to-right</strong>, se guardate bene vedete che il numero di operazioni che devo fare è lo stesso numero dei bit che compongono y. Quindi, se y è un numero di 512 bit, allora eseguo 512 operazioni, e non 2<sup>512</sup>! Con <strong>right-to-left</strong> il numero di operazioni che eseguo è polinomiale nella lunghezza in bit di y.
+</p>
+<p class='vspace'>Ora, prendiamo un y di questa forma binaria: y = 1000000001.<br />Vuol dire che
+</p><pre> y<sub>0</sub> = 1
+ y<sub>1</sub> = 0
+ y<sub>2</sub> = 0
+ ...
+ y<sub>9</sub> = 1
+</pre><p class='vspace'>Questo vuol dire che, quando vado ad utilizzare il metodo left-to-right o right-to-left, non solo faccio meno operazioni, ma posso vedere subito che diverse esponenti sono facili da calcolare, perché il relativo y<sub>n</sub> è 0! È un bel vantaggio!
+</p>
+<p class='vspace'><a name='g5' id='g5'></a>
+</p><h2>Firma digitale</h2>
+<p>RSA può essere usato anche per la firma digitale.
+</p>
+<p class='vspace'>Notiamo innanzitutto che c'è una sorta di "reversibilità" nell'algoritmo. Se, infatti, <strong>C = M<sup>e</sup> mod n</strong>, e per decrittare faccio <strong>M = C<sup>d</sup> mod n</strong>, è anche vero che posso fare tranquillamente <strong>F = M<sup>d</sup> mod n</strong>, e decritto con <strong>M = F<sup>e</sup> mod n</strong>.
+</p>
+<p class='vspace'>Quello che accade è che uso la <strong>chiave privata</strong> per crittare M, e generare il valore di firma F. Il destinatario riceve F, e tramite la <strong>chiave pubblica</strong> è in grado di verificare che la firma corrisponda al messaggio.
+</p>
+<p class='vspace'>Una delle condizioni è che <strong>M &lt; n</strong>. Nel caso di messaggi lunghi, capita più che spesso che <strong>M &gt; n</strong>, e non posso firmare direttamente.<br />L<strong>'alternativa 1</strong> è quella di dividere il messaggio in tanti <strong>m<sub>i</sub></strong> e crittarli singolarmente. Ma se il messaggio è lungo, gli <strong>m<sub>i</sub></strong> diventano tanti, e già la crittografia RSA è lenta, e non si finisce più.<br />Quello che si fa in concreto è allora <strong>firmare con RSA l'<a class='wikilink' href='CrittoHash.html'>hash</a> del messaggio</strong>.
+</p>
+<p class='vspace'><a name='g6' id='g6'></a>
+</p><h2>Calcolo di potenze con modulo</h2>
+<p>Premessa: magari è cosa nota, ma io non sapevo nulla di quello che tra poco vi rivelerò. Spero quindi di fare cosa gradita e che possa essere utile a qualcuno.
+</p>
+<p class='vspace'>Può capitare di dover calcolare potenze del tipo 20<sup>53</sup> mod 77, ed io durante l'esame non ricordandomi nulla di matematica del discreto ho tentato di risolvere il tutto con la calcolatrice, ovviamente con pessimi risultati.<br />Studiando (pazzesco!) a casa ho poi scoperto di questa proprietà dell'aritmetica modulare: <br />(a x b) mod n = ((a mod n) x (b mod n)) mod n <br />Come usarla nel nostro caso? Semplicemente immaginando 20<sup>53</sup> come il prodotto di 20<sup>10</sup> x 20<sup>10</sup> x 20<sup>10</sup> x 20<sup>10</sup> x 20<sup>10</sup> x 20<sup>3</sup>. Così facendo possiamo facilmente calcolare che 20<sup>10</sup> mod 77 = 1, 20<sup>3</sup> mod 77 = 69 e riportarci alla forma:<br />(1 x 1 x 1 x 1 x 1 x 69) mod 77 = 69 mod 77 = 69.<br />Infatti come mi conferma Maple 20^53 mod 77 = 69; ovviamente si possono scegliere le potenze che più ci aggradano (purchè in questo caso la loro somma faccia 53), semplificando ulteriormente i calcoli.
+</p>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/CrittoRSA)</span></div>
+  </div>
+</body>
+</html>

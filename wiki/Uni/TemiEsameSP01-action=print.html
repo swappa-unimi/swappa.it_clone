@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Tema d'Esame di Sicurezza e Privatezza - 12/09/2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TemiEsameSP01.html' title='Tema d'Esame di Sicurezza e Privatezza - 12/09/2008'>Tema d'Esame di Sicurezza e Privatezza - 12/09/2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Sicurezza &amp; Privatezza</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appello d'esame di Sicurezza e Privatezza - 12/09/2008 ::</strong>
+</pre><div class='vspace'></div><h2>Domande</h2>
+<p><strong>Rispondere brevemente ma in modo completo alle seguenti domande.</strong>
+</p>
+<div class='vspace'></div><ol><li><strong>Descrivere a quale possibile attacco è vulnerabile la tecnica di autenticazione basata sul meccanismo di challenge-response. La risposta deve essere ben motivata fornendo anche un esempio.</strong>
+</li><li><strong>Nell’ambito del modello a matrice di accesso, fornire la definizione di stato di protezione e descrivere i comandi primitivi che possono essere usati per cambiare lo stato.</strong>
+</li><li><strong>Descrivere la politica low-water mark per soggetti e per oggetti ed i loro svantaggi.</strong>
+</li><li><strong>Descrivere lo smurf attack.</strong>
+</li><li><strong>Nell’ambito delle politiche di risoluzione dei conflitti, descrivere le politiche most-specific-takes-precedence (mstp) e most-specific-along-a-path-takes-precedence (msaptp). Si richiede inoltre di fornire un unico esempio di gerarchia utenti-gruppi con relative autorizzazioni e che illustri che per l’utente Alice non c'è una autorizzazione vincente (deve rimane un conflitto +/-) sia quando si applica la politica mstp sia quando si applica la politica msaptp.</strong>
+</li><li><strong>Descrivere le informazioni che un firewall di tipo packet filterig può analizzare per filtrare i pacchetti. Questi firewall sono in grado di tracciare delle correlazioni tra i pacchetti di una trasmissione?</strong>
+</li><li><strong>Nell’ambito di PGP, descrivere il processo combinato di segretezza ed autenticazione.</strong>
+</li><li><strong>Descrivere le caratteristiche principali ed i vantaggi e svantaggi di un sistema IDS di tipo misuse detection.</strong>
+</li></ol><p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><strong>1.</strong><br />La tecnica di autenticazione basata sul meccanismo di <em>challenge-response</em> è vulnerabile ad attacchi attivi, ad esempio <strong>man in the middle attack</strong>.<br />In questo scenario l'avversario si dichiara al posto del token nei confronti del server e si mostra come server nei confronti del token, questo gli permette di autenticarsi utilizzando la risposta corretta generata direttamente dal token.<br />Immagine chiarificatrice:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TemiEsameSP01Ex1.jpg' alt='' title='' /></div>
+<p>dove <strong>R</strong> = response del token al server<br /><strong>C</strong> = challenge del server al token<br />e l'avversario è ovviamente Babbo Natale.
+</p>
+<p class='vspace'><strong>2.</strong><br />Lo stato di protezione è definito dalla <strong>tripla (s,o,a)</strong> dove:
+</p><ul><li><strong>S: insieme dei soggetti</strong> (righe della matrice)
+</li><li><strong>O: insieme degli oggetti</strong> (colonne della matrice)
+</li><li>A: matrice di accesso formata dai soggetti e dagli oggetti e dove <strong>A[s,o]</strong> indica le azioni del soggetto <em>s</em> sull'oggetto <em>o</em>.
+</li></ul><p class='vspace'>Lo stato di protezione può essere modificato tramite dei <strong>comandi primitivi</strong>:
+</p><ul><li>enter r into A[s,o]
+</li><li>delete r from A[s,o]
+</li><li>create subject S'
+</li><li>destroy subject S'
+</li><li>create object O'
+</li><li>destroy object O'
+</li></ul><p class='vspace'><strong>3.</strong><br />Politica <strong>low-water mark per soggetti</strong>:
+</p><ul><li>il soggetto S può scrivere un oggetto O se e solo se: &#955;(s) &gt; &#955;(o)
+</li><li>il soggetto S può leggere qualsiasi oggetto, però questo va a modificare la sua affidabilità: &#955;(s) = glb{&#955;(s),&#955;(o)}
+</li></ul><p class='vspace'><strong>Svantaggio</strong>: l'ordine delle operazioni modifica i privilegi del soggetto. Infatti abbiamo visto che il soggetto può leggere qualsiasi cosa, però questo va a modificare la sua classe d'integrità, cioè la sua affidabilità. Quindi può capitare che un soggetto S, che prima poteva scrivere un determinato oggetto O, non sia più in grado di farlo dopo aver letto un altro oggetto che ha fatto diminuire la sua classe di integrità.
+</p>
+<p class='vspace'>Politica <strong>low-water mark per oggetti</strong>:
+</p><ul><li>il soggetto S può leggere un oggetto O se e solo se: &#955;(o) &gt; &#955;(s)
+</li><li>il soggetto S può scrivere qualsiasi oggetto, però questo va a modificare l'oggetto stesso: &#955;(o) = glb{&#955;(s),&#955;(o)}
+</li></ul><p class='vspace'><strong>Svantaggio</strong>: non protegge l'integrità, ma si limita a segnalare che è stata compromessa.<br /><br />
+<strong>4.</strong><br />Nello smurf attack l'attaccante intasa la vittima sfruttando il protocollo ICMP. Infatti invia una <strong>ICMP Echo Req</strong> con <em>fonte</em>: indirizzo vittima e <em>destinazione</em>: indirizzo broadcast(quindi tutti gli host della rete locale). Quindi tutte le macchine che ricevono la richiesta generano una <strong>ICMP Echo Reply</strong> diretta alla vittima, così facendo le risposte generate intaseranno la vittima.<br />Slide chiarificatrice:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TemiEsameSP01Dom4.jpg' alt='' title='' /></div>
+<p class='vspace'><strong>5.</strong><br />La politica mstp(most specific takes precedence) comporta che vince l'autorizzazione più specifica rispetto a tutto lo schema.
+La politica msaptp(most specific along a path takes precedence) invece comporta che vince l'autorizzazione più specifica rispetto ad un cammino. L'autorizzazione più specifica vince sui cammini che passano dall'autorizzazione.
+</p>
+<p class='vspace'>Esempio utenti-gruppi:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TemiEsameSP01Dom1.5.jpg' alt='' title='' /></div>
+<p class='vspace'><strong>6.</strong><br />Un firewall di tipo packet filtering analizza i pacchetti solo sulla base delle informazioni dell'header:
+</p><ul><li>indirizzo sorgente
+</li><li>indirizzo destinazione
+</li><li>porta sorgente
+</li><li>porta destinazione
+</li><li>tipo di protocollo
+</li><li>opzioni di protocollo
+</li></ul><p class='vspace'>Il <em>packet filtering</em> non è in grado di tracciare delle correlazioni tra i pacchetti di una trasmissione, mentre lo <em>stateful packet filtering</em> si.
+</p>
+<div class='vspace'></div><h2>Esercizio 1</h2>
+<p>Si consideri un sistema UNIX con:<br />
+</p><ul><li>utente <em>alice</em>, membro dei gruppi <em>alice</em> (gruppo principale) e <em>spdp</em>;<br />
+</li><li>utente <em>bob</em>, membro del gruppo <em>bob</em>;<br />
+</li><li>directory <em>/users/alice/myfile</em> contenente i seguenti file
+</li></ul><div class='vspace'></div><div><img src='../uploads/Uni/TabUtenti.png' alt='' title='' /></div>
+<p class='vspace'>dove l'esegubile <em>mygame.x</em> crea un file <em>mygameres.dat</em> che può essere letto e scritto dal suo proprietario e letto dal suo gruppo e da tutti gli altri utenti; l'eseguibile <em>frog.x</em> crea un file <em>out.dat</em> che può essere letto dal suo proprietario e dal suo gruppo.<br />Si suppone che <em>alice</em> esegue un programma <em>mygame.x</em> e <strong>successivamente</strong> <em>bob</em> esegue il programma <em>frog.x</em>. Rispondere alle domande specificate.
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><strong>1.</strong> Elencare i file che alice può leggere:<br />
+</p>
+<div class='vspace'></div><ul><li><strong>Algo.tex</strong> -&gt; Si applicano i permessi del proprietario (che è appunto alice), ove è presente il <strong>r</strong>;<br />
+</li><li><strong>mygame.x</strong> -&gt; Si applicano i permessi per gli <em>altri</em> (terza tripletta dei permessi), ove è presente il <strong>r</strong>;<br />
+</li></ul><p class='vspace'><strong>2.</strong> Elencare i file che il processo corrispondente all'esecuzione del file <em>mygame.x</em> da parte di alice può scrivere:<br />
+</p>
+<p class='vspace'>Prima di tutto si verifica se effettivamente alice possa eseguire il programma. Alice può eseguirlo in quanto nei permessi del file <em>mygame.x</em> esiste il permesso di esecuzione per gli <em>altri</em>, in quanto non si applicano né quelli del proprietario, né quelli del gruppo. I file che alice può scrivere dunque sono:<br />
+</p><ul><li><strong>Algo.tex</strong> -&gt; Si applicano i permessi per il proprietario, dove è presente il <strong>w</strong>;<br />
+</li><li><strong>result.txt</strong> -&gt; Si applicano i permessi del gruppo, dove è presente il <strong>w</strong><br />
+</li></ul><p class='vspace'><strong>3.</strong> Indicare il proprietario ed il gruppo del file <em>mygamesres.dat</em> (può essere letto e scritto dal proprietario e letto dal gruppo):<br />
+Il proprietario è <strong>alice</strong>. Ad un oggetto non si associa mai più di un gruppo, in questo caso avendo alice due gruppi (quello di alice e spdp), all'oggetto si associa sempre quello principale dunque il gruppo alice.<br />
+</p>
+<p class='vspace'><strong>4.</strong> Elencare i file che bob può leggere:<br />
+</p>
+<div class='vspace'></div><ul><li><strong>mygame.x</strong> -&gt; Si applicano i permessi del proprietario (che in questo caso è proprio bob) dove è presente il <strong>r</strong>.<br />
+</li></ul><p class='vspace'><strong>5.</strong> Elencare i file che il processo corrispondente alla esecuzione  di <em>frog.x</em> (da parte di bob <strong>DOPO</strong> che alice ha eseguito mygame.x) può leggere:<br />
+</p>
+<p class='vspace'>Il significato del <strong>DOPO</strong> è che oltre ai file presenti nella tabella dobbiamo aggiungere  <em>mygameref.dat</em><br />
+</p>
+<div class='vspace'></div><table border='1' width='80%' >
+<tr ><td style='padding:5px;'  valign='top'>
+<p><strong>Permessi</strong>
+</p></td><td style='padding:5px;'  valign='top'>
+<p><strong>Owner</strong>
+</p></td><td style='padding:5px;'  valign='top'>
+<p><strong>Gruppo</strong>
+</p></td><td style='padding:5px;'  valign='top'>
+<p><strong>Nome file</strong>
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>rw- r-- r--
+</p></td><td style='padding:5px;'  valign='top'>
+<p>alice
+</p></td><td style='padding:5px;'  valign='top'>
+<p>alice
+</p></td><td style='padding:5px;'  valign='top'>
+<p>mygameref.dat
+</p></td></tr></table>
+<p class='vspace'>Come detto nel testo dell'esercizio alice esegue il file <em>mygame.x</em>, il quale genere appunto il nostro <em>mygameref.dat</em>. Dato che bob lancia questo file l'UserID e il GroupID del file variano :<br />
+</p>
+<div class='vspace'></div><ul><li>UserID: <em>bob</em><br />
+</li><li>GroupID: <em>root</em><br />
+</li></ul><p class='vspace'>I file che il processo può leggere sono:<br />
+</p>
+<div class='vspace'></div><ul><li><strong>mygame.x</strong> -&gt; Si applicano i permessi del proprietario;<br />
+</li><li><strong>frog.x</strong> -&gt; Si applicano i permessi del gruppo;<br />
+</li><li><strong>webconf.c</strong> -&gt; Si applicano i permessi del gruppo.<br />
+</li></ul><p class='vspace'>Come detto prima oltre ai file della tabella dobbiamo verificare se il processo può leggere anche il file <em>mygameref.dat</em>. Per questo file non si applicano i permessi di proprietario, né tanto meno quelli del gruppo e per gli altri non è presente il <strong>r</strong>, dunque il processo non potrà leggere questo file.
+</p>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p>Si consideri un Web server Apache e si supponga che l'utente Alice abbia creato nella sua directory www il file .htaccess riportato sotto. Per ogni richiesta di accesso specificata nella tabella sottostante, indicare se la richiesta viene accettata o rifiutata (permit o deny) e motivare la risposta.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TemiEsameSP01Ex2.jpg' alt='' title='' /></div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><table border='1' cellspacing='0' >
+<tr ><td align='left'  valign='top'>
+<p><strong>Richiesta di accesso</strong>
+</p></td><td align='center'  valign='top'>
+<p><strong>Decisione (permit/deny)</strong>
+</p></td><td align='center'  valign='top'>
+<p><strong>Motivazione</strong>
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p>Da Bob su file myserver.log e proveniente dalla macchina 156.124.1.5
+</p></td><td align='center'  valign='top'>
+<p>deny
+</p></td><td align='center'  valign='top'>
+<p>Il file finisce in <em>.log</em>, dobbiamo quindi applicare le regole di &lt;Files&gt;. La richiesta di accesso viene negata perché si applica la <em>Deny from all</em>, che si applica a tutte le richieste di accesso.
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p>Da Carol su file index.html e proveniente da mymachine.othernet.com.
+</p></td><td align='center'  valign='top'>
+<p>permit
+</p></td><td align='center'  valign='top'>
+<p>La richiesta viene permessa per via del <em>Satisfy any</em>(è sufficiente che la richiesta sia permessa da una parte sola, non per forza ovunque) e della presenza di Carol in <em>Require user</em> cioè nell'autorizzazione user_based.
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p>Da Elen su file contact.html e proveniente dalla macchina 186.154.21.1.
+</p></td><td align='center'  valign='top'>
+<p>permit
+</p></td><td align='center'  valign='top'>
+<p>La richiesta viene permessa perché Elen fa parte del gruppo <em>SPDP</em>, quindi viene concessa per l'autorizzazione user_based ed è sufficiente per la <em>Satisfy any</em>.
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p>Da Frank su file admin.php e proveniente dalla macchina 155.231.1.3.
+</p></td><td align='center'  valign='top'>
+<p>deny
+</p></td><td align='center'  valign='top'>
+<p>La richiesta viene negata perché non ci sono autorizzazioni user_based che la consentono. Frank infatti non fa parte di SPDP e degli user.
+</p>
+<div class='vspace'></div></td></tr></table>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p><strong>Si consideri l’insieme di livelli di segretezza L = {Stricly Confidential (SC), Medium Confidential (MC), Confidential (C), Low Confidential (LC) e Public (P)}, dove SC &gt; MC &gt; C &gt; LC &gt; P, e l’insieme di categorie Cat = {Medical (M), Financial (F), Security (S)}. Rispondere alle domande elencate nella tabella allegata, supponendo di applicare una politica mandatoria per la segretezza.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><table border='1' cellspacing='0' >
+<tr ><td align='left'  valign='top'>
+<p><strong>1. Numero delle classi di sicurezza nel reticolo.</strong>
+</p></td><td align='center'  valign='top'>
+<p>5*2<sup>3</sup> = 40
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p><strong>2. Elemento bottom (&#8869;) del reticolo.</strong>
+</p></td><td align='center'  valign='top'>
+<p>&lt;P,{}&gt;
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p><strong>3. Elemento top (&#932;) del reticolo.</strong>
+</p></td><td align='center'  valign='top'>
+<p>&lt;SC,{m,f,s}&gt;
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p><strong>4. lub(&lt;MC, {M,F}&gt;, &lt;C, {S}&gt;)</strong>
+</p></td><td align='center'  valign='top'>
+<p>&lt;MC,{m,f,s}&gt;
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p><strong>5. glb(&lt;SC, {F}&gt;, &lt;P, {F,S}&gt;)</strong>
+</p></td><td align='center'  valign='top'>
+<p>&lt;P,{f}&gt;
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p><strong>6. Elencare le classi di sicurezza che un utente con clearance &lt;LC, {F,S}&gt; può usare per collegarsi al sistema.</strong>
+</p></td><td align='center'  valign='top'>
+<p>&lt;LC,{f,s}&gt;, &lt;P,{f,s}&gt;<br />&lt;LC,{s}&gt;, &lt;P,{s}&gt;<br />&lt;LC,{f}&gt;, &lt;P,{f}&gt;<br />&lt;LC,{}&gt;, &lt;P,{}&gt;<br />
+</p></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p><strong>7. Elencare le classi di sicurezza degli oggetti che possono essere scritti da un soggetto di classe &lt;MC, {M}&gt; (se non esiste nessuna classe scrivere nessuna)</strong>
+</p></td><td align='center'  valign='top'>
+<p>&lt;MC,{m}&gt;, &lt;SC,{m}&gt;<br />&lt;MC,{m,s}&gt;, &lt;SC,{m,s}&gt;<br />&lt;MC,{m,f}&gt;, &lt;SC,{m,f}&gt;<br />&lt;MC,{m,s,f}&gt;, &lt;SC,{m,s,f}&gt;<br />
+</p></td></tr><tr ><td width='50%' align='left'  valign='top'>
+<p><strong>8. Elencare le classi di sicurezza degli oggetti che possono essere letti da un soggetto di classe &lt;LC, {M}&gt;(se non esiste nessuna classe scrivere nessuna)</strong>
+</p></td><td align='center'  valign='top'>
+<p>&lt;LC,{m}&gt;, &lt;P,{m}&gt;<br />&lt;LC,{}&gt;, &lt;P,{}&gt;<br />
+</p></td></tr><tr ><td width='50%' rowspan='2' align='left'  valign='top'>
+<p><strong>9. Siano s1 e s2 due soggetti con classe &#955;(s1) = &lt;MC, {M,F}&gt; e &#955;(s2) = &lt;SC, {M}&gt;. Elencare le classi di sicurezza degli oggetti che possono essere usati per trasferire informazioni da s1 a s2 (s1 &#8594; s2) e da s2 a s1 (s2 &#8594; s1).(se non esiste nessuna classe scrivere nessuna)</strong>
+</p></td><td align='center'  valign='top'>
+<p>s1 &#8594; s2<br />nessuna
+</p></td></tr><tr ><td align='center'  valign='top'>
+<p>s2 &#8594; s1<br />nessuna
+</p>
+<div class='vspace'></div></td></tr><tr ><td width='50%' rowspan='2' align='left'  valign='top'>
+<p><strong>10. Siano s1 e s2 due soggetti con classe &#955;(s1) = &lt;SC, {F,S}&gt; e &#955;(s2) = &lt;P, {S}&gt;. Elencare le classi di sicurezza degli oggetti che possono essere usati per trasferire informazioni da s1 a s2 (s1 &#8594; s2) e da s2 a s1 (s2 &#8594; s1).(se non esiste nessuna classe scrivere nessuna)</strong>
+</p></td><td align='center'  valign='top'>
+<p>s1 &#8594; s2<br />nessuna
+</p></td></tr><tr ><td align='center'  valign='top'>
+<p>s2 &#8594; s1<br />&lt;SC,{f,s}&gt;, &lt;SC,{s}&gt;<br />&lt;MC,{s}&gt;, &lt;MC,{s}&gt;<br />&lt;C,{f,s}&gt;, &lt;C,{s}&gt;<br />&lt;LC,{f,s}&gt;, &lt;LC,{s}&gt;<br />&lt;P,{f,s}&gt;, &lt;P,{s}&gt;
+</p>
+<div class='vspace'></div></td></tr></table>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Sicurezza &amp; Privatezza</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TemiEsameSP01)</span></div>
+  </div>
+</body>
+</html>

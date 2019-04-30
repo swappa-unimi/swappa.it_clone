@@ -1,0 +1,451 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Basi di Dati - Complementi - Lezione del 18 marcio 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.BDC18marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Basi di Dati - Complementi - Lezione del 18 marcio 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC18marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC18marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='BDC18marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC18marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC18marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Basi di Dati - Complementi - Lezione del 18 marcio 2008 was last modified on March 19, 2008, at 05:45 PM'>
+							<span style='display:none;'>Basi di Dati - Complementi - Lezione del 18 marcio 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi - Lezione del 18 marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di BDC</a>
+</p>
+<div class='vspace'></div><h3>Timestamp multiversione</h3>
+<p>C'è un altro tipo di timestamp, quello <strong>multiversione</strong>.
+La differenza con il timestamp <strong>monoversione</strong> è che questo mantiene 1 sola copia (versione) di un oggetto. Il multiversione invece ne mantiene di più, e questo rende possibile l'accettazione di più operazioni di lettura rispetto al monoversione.
+</p>
+<p class='vspace'>Infatti, ogni volta che c'è una scrittura su di un oggetto, salvo la nuova versione, contrassegnata con WTM e RTM della trans che ha eseguito l'operazione.
+Quindi, se scrivo 10 volte su <strong>x</strong>, avrò 10 versioni diverse di <strong>x</strong>.
+</p>
+<p class='vspace'>Le letture quindi se arrivano in ritardo rispetto al timestamp dell'ultima versione di un oggetto, non le mando a casa: invece, vado a cercare nelle versioni precedenti il timestamp più grande tra quelli minori della lettura che sto analizzando adesso.
+</p>
+<p class='vspace'>Per intenderci, se ho 10 versioni di x, ognuna con timestamp crescente (1, 2 ... 10), e dopo la 10<sup>a</sup> scrittura arriva un read con timestamp 4, allora il mio sistema multiversione va a recuperare il più grande valore tra quelli minori di 4, in questo caso 3, e darà questo come risposta alla lettura.
+</p>
+<div class='vspace'></div><pre> <strong>read(x, ts)</strong>
+</pre><p class='vspace'>Sempre accettata. Restituisce la versione con WTM massimo tra quelli minori di ts.
+Poi aggiorno l'RTM di <strong>quella</strong> versione, mettendoci ts.
+</p>
+<div class='vspace'></div><pre> <strong>write(x, ts)</strong>
+</pre><p class='vspace'>Trovo la versione con WTM massimo tra quelli &lt;= ts. Sarebbe in pratica la copia su cui la mia trans attuale avrebbe dovuto scrivere.
+</p><ul><li>RTM &gt; ts: NO, perché quella versione è già stata letta da qualcuno più giovane di me;
+</li><li>altrimenti, creo una nuova versione con i miei RTM e WTM.
+</li></ul><p class='vspace'>Dal punto di vista dell'accettazione di schedule diversi, il timestamp è un po' più ristretto rispetto a 2PL.
+</p>
+<p class='vspace'>Vediamo una bella tabellina che mi dice come stanno i rapporti tra 2PL e TS.
+</p>
+<div class='vspace'></div><table width='45%' border='0' cellpadding='5' cellspacing='0' >
+<tr ><td bgcolor='#d9e4f2' colspan='3' align='center'  valign='top'> <strong>Comparazione scheduler</strong>
+</td></tr><tr ><td  valign='top'>
+</td><td bgcolor='#f5f9fc' valign='middle' > <strong>2PL</strong>
+</td><td bgcolor='#f5f9fc' valign='middle' > <strong>TS</strong>
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' > <strong>Trans. rifiutate</strong>
+</td><td  valign='top'> messe in attesa
+</td><td  valign='top'> uccise
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' > <strong>Ordine di serializzazione:</strong>
+</td><td  valign='top'> imposto dai conflitti
+</td><td  valign='top'> imposto dal ts
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' > <strong>Attesa per commit:</strong>
+</td><td  valign='top'> Sì
+</td><td  valign='top'> bufferizzazione del write
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' > <strong>Deadlock:</strong>
+</td><td  valign='top'> Sì
+</td><td  valign='top'> No
+</td></tr></table> <br />
+<p>2PL non uccide sempre, mette in coda in attesa di condizioni migliori. Invece TS accoppa le trans che sgarrano.
+2PL ha i deadlock, TS no perché non usa proprio i lock. Per evitare i lock, 2PL deve essere attivato nella sua versione conservativa (vedi la <a class='wikilink' href='BDC17marzo2008.html'>lezione precedente</a>).
+Il problema del TS è che uccidere le trans e farle ripartire è più costoso che nemmeno metterle in attesa: ecco perché i DBMS commerciali generalmente usano 2PL.
+</p>
+<div class='vspace'></div><h2>Gestione dei lock</h2>
+<p>Se uso i lock, devo anche gestirli, e chi lo fa è un'entità fantasiosamente chimata <strong>gestore dei lock</strong>.
+Le richieste che possono arrivare da parte di una trans possono essere:
+</p><ul><li>r_lock (T, x, errcode, timeout)
+</li><li>w_lock (T, x, errcode, timeout)
+</li><li>unlock (T, x)
+</li></ul><p class='vspace'>Il timeout serve per non attendere indefinitamente: se dopo un certo tempo la trans non è ancora stata servita completamente, la accoppo perché è scaduta, faccio il rollback e la riprendo.
+</p>
+<p class='vspace'>Il lock a 3 stati necessita di 3 bit per risorsa, e c'è una tabella che memorizza i lock per ogni risorsa. Siccome vi si accede di frequente, questa tabella è tenuta in memoria centrale.
+</p>
+<div class='vspace'></div><h2>Lock gerarchico</h2>
+<p>Per rendere le cose più razionali, si è deciso di rendere possibile un lock a diversi livelli. Dal livello più alto a quello più basso, troviamo il DB, la tabella, il frammento di tabella e la singola tupla.
+Il motivo dietro a ciò è che se devo modificare una tupla, non dovrei lockare totalmente l'intero DB.
+</p>
+<p class='vspace'>I <strong>tipi</strong> di lock gerarchico sono i seguenti:
+</p><ul><li><strong>X</strong> = esclusivo
+</li><li><strong>S</strong> = shared
+</li><li><strong>I</strong> = intenzionale
+</li></ul><p class='vspace'>Il lock <strong>esclusivo</strong> è quello che esclude tutti dall'accesso all'oggetto. È il tipo del w_lock.
+Il lock <strong>shared</strong> invece è il tipo del r_lock.
+Il lock <strong>intenzionale</strong> invece dice che ho l'intenzione di lockare una risorsa che gerarchicamente è più in basso rispetto al mio nodo.
+</p>
+<p class='vspace'>Ecco le vario "combo":
+</p><ul><li><strong>XL</strong> = esclusivo (il w_lock)
+</li><li><strong>SL</strong> = shared (r_lock)
+</li><li><strong>ISL</strong> = Intentional Shared Lock
+</li><li><strong>IXL</strong> = Intentional eXclusive Lock
+</li><li><strong>SIXL</strong> = Shared Intentional-Exclusiove Lock: voglio un lock shared sul nodo corrente, e manifesto anche l'intenzione di lockare più in basso nella gerarchia.
+</li></ul><p class='vspace'>Se voglio un nodo basso in gerarchia, devo cominciare a cercare lock intenzionali partendo dall'alto. Quando poi li rilascio, li rilascio partendo dal basso.
+</p>
+<p class='vspace'>Posso chiedere SL o ISL su di un nodo solo se ho ISL o IXL sul nodo genitore, e non è una cosa strana perché concorda con quanto detto qui sopra.
+Allo stesso modo, posso chiedere IXL, XL o SIXL solo se ho SIXL o IXL sul genitore.
+I lock di tipo <strong>X</strong> infatti "inglobano" i lock di tipo <strong>S</strong>, ecco perché se voglio una <strong>S</strong> su di un nodo posso avere <strong>S</strong> o <strong>X</strong> sul genitore, ma se voglio <strong>X</strong> devo per forza avere una <strong>X</strong> nel genitore.
+</p>
+<p class='vspace'>La <strong>granularità</strong> è la dimensione della scala gerarchica. Posso farla fine (tanti livelli) o spessa (pochi livelli). Si cerca di raggiungere un compromesso, perché se è troppo fine diventa costosa, se è troppo grossa anche se costa meno produce più attese inutili.
+</p>
+<p class='vspace'>In SQL 99, le transazioni sono state classificate in 2 tipi:
+</p><ul><li><strong>Read Only</strong>, che non modificando niente non chiedono i lock di tipo <strong>X</strong>;
+</li><li><strong>Read Write</strong>, che è il tipo di default.
+</li></ul><p class='vspace'>Se riandiamo coi ricordi alle proprietà <strong>ACID</strong>, vediamo che la proprietà <strong>I</strong> di <strong>isolamento</strong> si riferisce proprio alla possibilità di isolare le azioni in un ambiente di esecuzione parallela.
+SQL ci permette di dare ad una transazione uno tra 4 possibili livelli di isolamento, dal più lasco al più stretto:
+</p><ul><li><strong>read uncommitted</strong>: leggo solamente <em>senza chiedere lock</em>, e non mi preoccupo di leggere solo da trans che hanno committato. Mi espongo quindi volontariamente al rischio di letture inconsistenti, ma so che sarò molto veloce.
+</li><li><strong>read committed</strong>: chiede lock per leggere. Non garantisce però la serializzabilità.
+</li><li><strong>repeatable read</strong>: fa lock a livello di tupla, eliminando tutte le anomalie <em>tranne</em> l'inserimento fantasma.
+</li><li><strong>serializable</strong>: evita tutte le anomalie, ed è la scelta di default.
+</li></ul><p class='vspace'>Per poter funzionare a dovere, questi livelli presuppongono che il DBMS utilizzi il 2PL.
+Ma c'è una cosa in più: per evitare anomalie, servono anche i cosiddetti <strong>lock di predicati</strong>, che sono aggiuntivi rispetto ai lock sulle risorse. Infatti, se i lock delle risorse permetterebbero delle operazioni da parte di altre trans, ci sono però certi costrutti SQL come gli operatori aggregati che funzionerebbero male in certi casi, con i soli lock. Quindi, occorre che il DBMS imposti anche un lock di predicato, per evitare del tutto anomalie di questo tipo.
+</p>
+<div class='vspace'></div><h2>Deadlock</h2>
+<p>Si tratta di una mutua attesa:
+</p><pre> T1 vuole <strong>x</strong>, ma <strong>x</strong> ce l'ha T2;
+ T2 vuole <strong>y</strong>, ma <strong>y</strong> ce l'ha T1.
+</pre><p class='vspace'>L'uno aspetta l'altro, e siccome nessuna può mollare il lock perché, secondo le regole, una volta che mollo un qualsiasi lock non posso più richiederne nessun altro, non se ne esce più.
+</p>
+<p class='vspace'>Per scoprire se le nostre trans vanno in deadlock, si costruisce un <strong>grafo di attesa</strong>, con le risorse per ogni trans, e gli archi che vanno da una trans che vuole una risorsa alla trans da cui la riceverà.
+Se ci sono cicli, ci saraanno anche deadlock.
+</p>
+<div class='vspace'></div><h3>Risolvere i deadlock</h3>
+<p>Posso usare il <strong>timeout</strong>: se dopo un po' di tempo non ottengo la risorsa, muoio, e mollo quindi tutte le mie risorse lockate.
+</p>
+<p class='vspace'>Quanto deve essere lungo il timeout? Se è troppo lungo, non si va più avanti. Se è troppo corto troppa gente morirebbe presto inutilmente =&gt; solito compromesso. Però è semplice da implementare, e quindi molto utilizzato.
+</p>
+<p class='vspace'>Se no, disegno il <strong>grafo delle attese</strong> di cui sopra, rilevando il deadlock, e decido a posteriori chi eliminare. Problema: ogni quanto creo il grafico e lo controllo?
+</p>
+<p class='vspace'>Posso decidere di <strong>prevenire</strong> il problema, e fare in modo che le richieste che potrebbero causare deadlock vengano rifiutate in partenza. Un po' drastico perché si fanno processi in base a sospetti, però funziona, anche se è difficile sapere in partenza che cosa una trans vuole.
+</p>
+<p class='vspace'>Un altro sistema è quello di introdurre un <strong>ordinamento totale</strong> tra i miei oggetti. L'ordinamento non deve rispettare qualche norma, purché sia totale, ovvero tutti gli oggetti siano ordinati.
+Il comportamento che forzo poi è che i lock vanno richiesti seguendo questo ordine: se chiedo il lock su di una risorsa, non posso chiedere il lock di risorse precedenti ma solo di risorse seguenti.
+Così evito in partenza le situazioni in cui due vogliono cose mutue: non può accadere semplicemente per via dell'ordinamento, perché se io voglio l'oggetto <strong>c</strong>, concorrerò solo per gli oggetti da <strong>d</strong> in poi, ma non potrò contestare quelli prima di <strong>c</strong>, e quindi si tratta di semplice concorrenza senza deadlock, risolta da uno scheduler qualsiasi.
+Il problema è che tutto ciò è difficile da realizzare.
+</p>
+<div class='vspace'></div><h3>Uccisione delle trans</h3>
+<p>Abbiamo appena visto che prevengo l'insorgere di deadlock quando scopro in partenza che potrebbero esserci. Ma poi, quale delle due (o più) trans coinvolte vado ad uccidere? Bella domanda.
+</p>
+<p class='vspace'>Se scelgo una strategia <strong>preemptive</strong>, uccido chi HA in quel momento la risorsa.
+Al contrario, una strategia <strong>non preemptive</strong> uccide chi fa la richiesta di una risorsa che causerebbe deadlock.
+</p>
+<p class='vspace'>Se uso il <strong>timestamp</strong>, devo confrontare il timestamp delle due transazioni.
+Prendiamo il caso in cui
+</p><pre> <strong>ti</strong> vuole lock su <strong>x</strong>
+ <strong>tj</strong> ha il lock su <strong>x</strong>
+</pre><p class='vspace'>La strategia <strong>wait-die</strong> è di tipo <strong>non preemptive</strong>, e si comporta così:
+</p><ul><li>se <strong>ti</strong> &lt; <strong>tj</strong>, allora <strong>ti</strong> è più vecchio e ha la precedenza lui.
+</li><li>se no, uccido <strong>ti</strong> e lo riavvio ma con lo STESSO timestamp.
+</li></ul><p class='vspace'>Perché tengo lo stesso timestamp? Perché in questo modo quando lo riavvio si troverà ad essere una delle più vecchie tra le trans che concorreranno in futuro, e da vecchia avrà la precedenza sui govani.
+</p>
+<p class='vspace'>Invece la strategia <strong>wound-wait</strong> agisce così:
+</p><ul><li>se <strong>ti</strong> &gt; <strong>tj</strong>, allora <strong>ti</strong> è giovane e lo metto in attesa di essere ripescato poi.
+</li><li>se no, abortisco <strong>tj</strong> e lo faccio resuscitare con lo stesso timestamp per i motivi spiegati qui sopra.
+</li></ul><p class='vspace'>Dobbiamo però sapere che in generale i sistemi commerciali <strong>non</strong> usano la prevenzione, perché questa andrebbe ad uccidere trans che solo in potenza avrebbero causato danni, e nella pratica i deadlock non sono moltissimi.
+</p>
+<p class='vspace'>In mancanza di timestamp posso usare altre maniere, di cui una piuttosto grezza è la <strong>no waiting</strong>: accoppo il richiedente e lo faccio rinascere più tardi.
+</p>
+<p class='vspace'>Il <strong>cautious waiting</strong> va a vedere se <strong>tj</strong>, che ha il lock desiderato, è a sua volta in attesa di altri. Se la risposta è <strong>sì</strong>, vuol dire che ci sono potenziali deadlock (in quanto potrebbe aspettare risorse da qualcuno legato a <strong>ti</strong>), e quindi uccido il richiedente, <strong>ti</strong>. Se <strong>tj</strong> invece <strong>non</strong> aspetta nessuno, metto <strong>ti</strong> in dolce attesa.
+</p>
+<div class='vspace'></div><h3>Problemi coi lock</h3>
+<p>Sono essenzialmente di due tipi:
+</p>
+<p class='vspace'><strong>Livelock</strong>: una trans attende un lock che non le arriva mai per via delle priorità.
+</p>
+<p class='vspace'><strong>Starvation</strong>: una trans viene sempre uccisa per qualche motivo, e ciò accade quando i timestam sono gestiti male. È proprio per evitare le starvations che uso i ts vecchi quando resuscito una trans.
+</p>
+<p class='vspace'><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di BDC</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 19, 2008, at 05:45 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC18marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC18marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

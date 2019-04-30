@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Algoritmi e strutture dati - Risposte Esami 2010 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.ALG-Risposte2010' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Algoritmi e strutture dati - Risposte Esami 2010
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2010?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2010?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='ALG-Risposte2010-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2010?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2010?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Algoritmi e strutture dati - Risposte Esami 2010 was last modified on January 24, 2011, at 08:50 PM'>
+							<span style='display:none;'>Algoritmi e strutture dati - Risposte Esami 2010</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e strutture dati - Risposte Esami 2010 ::</strong>
+</pre><div class='vspace'></div><h2>17 Febbraio 2010</h2>
+<p><a class='urllink' href='http://ananke.crema.unimi.it/~decapita/Algoritmi/Esami/2010-02-17.pdf' title='' rel='nofollow'>Testo dell'esame dal sito del docente</a> (.PDF)
+</p>
+<div class='vspace'></div><h4>Risposta 1</h4>
+<p>Il problema dell'ordinamento si propone di trovare algoritmi come soluzione di problemi
+computazionali, dove in input sono presenti un numero qualsiasi di elelmenti e in output la permutazioni di tali elementi ordinati in ordine crescente.
+</p>
+<p class='vspace'><strong>Radix Sort</strong>:<br />Assumiamo che i valori degli elementi dell'array siano interi rappresentabili con al più d cifre in una certa base b. Per ordinare l'array si usa d volte un algoritmo di ordinamento stabile (come CountingSort) per ordinare l'array rispetto a ciascuna delle d cifre partendo dalla meno significativa.
+</p>
+<p class='vspace'><em>Pseudocodice</em>:
+</p><div class='indent'><em>RadixSort(A,n)</em>
+<div class='indent'><em>for j=1 to d do</em>
+<div class='indent'><em>"usa un algoritmo stabile per ordinare A[1..n] rispetto alla j-esima cifra"</em>
+</div></div></div><div class='indent'><em>(A[1 .. n] è permutazione ordinata di a<sub>1</sub>,...,a<sub>n</sub>)</em>
+</div><p class='vspace'><em>Complessità</em>:
+</p><div class='indent'>Teta(d(n+k))
+</div><p class='vspace'><strong>BucketSort</strong>:<br />Assume che i valori da ordinare siano numeri reali in un intervallo sempiaperto [a,b) che per semplicità di esposizione assumiamo sia l'intervallo [0,1). Per ordinare un array A[1..n] divide l'intervallo in n parti uguali e usa un array B[0..n-1] di liste (i bucket) mettendo in B[k] gli A[i] che cadono nella k-esima parte dell'intervallo. Dopo di che riordina ciascuna lista e infine ricopia in A tutti gli elementi delle liste.
+</p>
+<p class='vspace'><em>Pseudocodice</em>:
+</p><div class='indent'><em>BucketSort(A)</em>
+<div class='indent'><em>n=length(A)</em>
+</div><div class='indent'><em>for i=1 to n do</em>
+<div class='indent'><em>"inserisci A[i] nella lista B<code class='escaped'>[[</code>nA[i]<code class='escaped'>]]</code>"</em>
+</div></div><div class='indent'><em>(a1,...,an sono stati tutti inseriti nelle liste B[0..n-1] e gli elementi in una lista B[i] sono minori degli elementi nella lista successiva B[i+1])</em>
+</div><div class='indent'><em>for i=0 to n-1 do</em>
+<div class='indent'><em>"ordina la lista B[i] con insertion sort"</em>
+</div></div><div class='indent'><em>"concatena ordinatamente le liste B[0],B[1],...,B[n-1]"</em>
+</div><div class='indent'><em>(A[1..n] è una permutazione ordinata di a<sub>1</sub>,...,a<sub>n</sub>)</em>
+</div></div><p class='vspace'><em>Complessità</em>:
+</p><div class='indent'>Caso peggiore: Teta(n^2)
+</div><div class='indent'>Caso migliore: Teta(n)
+</div><div class='indent'>Caso medio: Teta(n)
+</div><div class='vspace'></div><h4>Risposta 2.1</h4>
+<p>Le strutture dati per insiemi disgiunti servono a mantenere una collezione 
+<code class='escaped'>S = {S1,S2,...,Sk}</code> di insiemi disgiunti. Ogni insieme della collezione è individuato da un rappresentante che è un particolare elemento dell'insieme.<br />Operazioni sugli insiemi disgiunti:
+</p><ol><li>Make-Set(x): aggiunge alla struttura dati un nuovo insieme contenente solo l'elemento x (x non deve comparire in nessun altro insieme della struttura).
+</li><li>Find-Set(x): ritorna il rappresentante dell'insieme che contiene x.
+</li><li>Union(x,y): unisce i due insiemi contenenti x ed y in un'unico insieme.
+</li></ol><p class='vspace'>Rappresentazione con foreste:<br />Ogni insieme è rappresentato con un albero i cui nodi, oltre al campo info hanno soltanto un campo parent che punta al padre. <br />Euristica dell'unione per rango:<br />Per ogni nodo x manteniamo un campo rank che è un limite superiore all'altezza del
+sottoalbero di radice x.<br />Union mette la radice con rango minore come figlia di quella di rango maggiore.
+</p>
+<div class='vspace'></div><h4>Risposta 2.2</h4>
+<p>Un sottografo del grafo G=(V,E) è un grafo G'=(V',E') tale che V'DV e E'DE. Il sottografo di G=(V,E) indotto da V'DV è il grafo G'=(V',E') tale che: <br />E' = {uv: uv &#8712; E e u, v &#8712; V'}
+</p>
+<div class='vspace'></div><h4>Risposta 2.3</h4>
+<p>Gli alberi binari di ricerca sono strutture dati che possono eseguire molte operazioni su insiemi dinamici come: SEARCH, MINIMUM, MAXIMUM, PREDECESSOR, SUCCESSOR, INSERT, DELETE. Possono essere utilizzati sia come dizionari che come code di priorità. Il tempo delle operazioni è proporzionale all'altezza dell'albero. Ogni nodo può aver al massimo due figli rappresentati da record. Un albero binario di ricerca è  rappresentato da una struttura dati concatenata in cui ogni nodo è un oggetto. Ogni nodo ha i seguenti campi: puntatore al padre, figlio sx e dx, chiave e dati. La mancanza di un figlio è rappresentata con puntatore a NIL. La radice è l'unico nodo ad avere puntatore al padre NIL.<br />Le proprietà da rispettare sono: tutti i valori dei nodi del sottoalbero sinistro sono minori della radice mentre quelli del sottoalbero destro sono maggiori della radice. La visita si può esegue in profondità con uno dei 3 algoritmi di ricorsione: preordine, inordine, postordine.<br />La cancellazione ha come argomento il puntatore al nodo z da cancellare e ci sono 3 casi:
+</p><ol><li>Z non ha figli quindi il puntatore a z del padre si sostituisce con NIL.
+</li><li>Z ha un solo figlio. Il puntatore al padre di z punterà al figlio di z.
+</li><li>Z ha due figli, si crea un nuovo collegamento per rimuovere il suo successore y che
+</li></ol><p>non ha un figlio sinistro, poi si sostituiscono i dati di z con quelli di y.
+</p>
+<div class='vspace'></div><h4>Risposta 2.4</h4>
+<p>La tecnica divide-et-impera è una tecnica ricorsiva che divide il problema in sotto problemi dipendenti e li risolve ricorsivamente (approccio top-down). Non si utilizza con problemi che non sono indipendenti perchè possono venire risolti più volte.<br />La tecnica di programmazione dinamica è una tecnica iterativa che si utilizza quando ci sono sottoproblemi in comune. La soluzione viene costruita a partire da più sotto-problemi non indipendenti potenzialmente ripetuti (approccio bottom-up).<br />Si applica quando:<br />Sottostruttura ottimale: E' possibile combinare soluzioni di sottoproblemi per trovare la soluzione di un problema più grande.<br />Sottoproblemi ripetuti: Un sottoproblema può occorrere più volte.<br />Spazio dei sottoproblemi: Deve essere polinomiale.<br />Le fasi della programmazione dinamica sono:<br />* Fase 1: Definire la struttura di una soluzione ottima. Mostrare che una soluzione ottima si ottiene da soluzioni ottime di sottoproblemi.
+</p><ul><li>Fase 2: Definire ricorsivamente la soluzione ottima. La soluzione ottima contiene le soluzioni ottime ai sottoproblemi.
+</li><li>Fase 3: Calcolare il valore di una soluzione ottima con strategia bottom up.
+</li><li>Fase 4: Costruzione di una soluzione ottima a partire dalle informazioni calcolate.
+</li></ul><div class='vspace'></div><h4>Risposta 2.6</h4>
+<p>Una componente fortemente connessa di un grafo G è un insieme U di vertici contenuto in V tale che per ogni u,v appartente a U esiste un cammino da u a v e da v a u.<br />Dato un grafo orientato G, il grafo delle componenti fortemente connesse di G è H ed ha come vertici le componenti fortemente connesse di G e un arco da un cfc C ad una cfc C' se e solo se in G c'è un arco che connette un vertice di C ad un vertice di C'.<br />Per calcolare le componenti fortemente connesse di un grafo ci sono tre fasi:
+</p><ol><li>Si usa la visita in profondita su G per ordinare i vertici in ordine decrescente di completamento.
+</li><li>Si calcola il grafo trasposto di G.
+</li><li>Si esegue la visita in profondita sul grafo trasposto usando l'ordine dei vertici calcolato nella prima fase.
+</li></ol><p class='vspace'>Gli alberi della visita in profondità nel grafo trasposto rappresentano le componenti
+fortemente connesse.
+</p>
+<div class='vspace'></div><h2>27 Gennaio 2010</h2>
+<p><a class='urllink' href='http://ananke.crema.unimi.it/~decapita/Algoritmi/Esami/2010-01-27.pdf' title='' rel='nofollow'>Testo dell'esame dal sito del docente</a> (.PDF)
+</p>
+<div class='vspace'></div><h4>Risposta 2.1</h4>
+<p>L'ordinamento topologico di un grafo orientato è un ordinamento lineare dei suoi vertci tale che:
+</p><ol><li>Per ogni arco uv appartenenti a E il vertice u precede il vertice v.
+</li><li>Per transtitività, se u è raggiungibile da v allora u viene prima di v nell'ordinamento.
+</li></ol><p class='vspace'>L'ordinamento topologico è utilizzato per determinare l'ordine di esecuzione di un insieme di attività in presenza di vincoli di precedenza.<br />La soluzione diretta consiste nelle seguenti fasi:
+</p><ol><li>Si cercano tutti i vertici che non hanno archi incidenti in ingresso.
+</li><li>Si stampa il verticie e si elimina il vertice con i suoi archi.
+</li><li>Si ripete la procedura fino a che non ci sono più vertici.
+</li></ol><div class='vspace'></div><h4>Risposta 2.5</h4>
+<p>Tecnica divide et impera: E' una tecnica ricorsiva dove il problema viene diviso in sotto problemi indipendenti che vengono risolti ricorsivamente (strategia top-down). E' utile solo quando i sottoproblemi sono indipendenti altrimenti gli stessi sottoproblemi possono venire risolti più volte.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 24, 2011, at 08:50 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2010?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2010?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Scambio di chiavi Diffie-Hellman</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='CrittoDH.html' title='Scambio di chiavi Diffie-Hellman'>Scambio di chiavi Diffie-Hellman</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Scambio di chiavi Diffie-Hellman ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di crittografia</a>
+</p>
+<div class='vspace'></div><h2>Che cos'è</h2>
+<p>Alice e Bob vogliono comunicarsi un segreto, in questo caso un numero segreto. Ma il canale su cui parlano non è sicuro. Come faranno i nostri eroi?
+</p>
+<div class='vspace'></div><h2>Come funziona</h2>
+<p>Devo calcolare due parametri iniziali
+</p><pre> <strong>p</strong> = un numero primo
+ <strong>g</strong> = un numero generatore di Z<sub>p</sub><sup>*</sup>
+</pre><p class='vspace'>e questi due numeri sono diffusi pubblicamente.
+</p>
+<p class='vspace'>Alice e Bob NON SANNO all'inizio quale chiave si scambieranno: entrambi la scopriranno alla fine!
+</p>
+<p class='vspace'>Ad ogni modo, ecco quello che succede:
+</p><ul><li>Alice calcola un <strong>x</strong> a caso, ed invia a Bob il valore <strong>g<sup>x</sup> mod p</strong>
+</li><li>Bob calcola un <strong>y</strong> a caso, ed invia ad Alice il valore <strong>g<sup>y</sup> mod p</strong>
+</li></ul><p class='vspace'>Il segreto è dato da <strong>g<sup>xy</sup> mod p</strong>
+</p><ul><li>Alice riceve <strong>g<sup>y</sup></strong> e conosce <strong>x</strong>: è quindi in grado di fare <strong>(</strong>g<sup>y</sup><strong>)<sup>x</sup> mod p</strong>
+</li><li>Bob riceve <strong>g<sup>x</sup></strong> e conosce <strong>y</strong>: è quindi in grado di fare <strong>(</strong>g<sup>x</sup><strong>)<sup>y</sup> mod p</strong>
+</li></ul><p class='vspace'>Ricordo che <strong>g<sup>xy</sup></strong> è uguale a <strong>g<sup>yx</sup></strong>.
+</p>
+<div class='vspace'></div><h2>Perché è sicuro</h2>
+<p>È sicuro perché un attaccante che vede transitare il valore <strong>g<sup>x</sup></strong> o <strong>g<sup>y</sup></strong> non è in grado di ricavare, da esso, la <strong>x</strong> o la <strong>y</strong>.
+</p>
+<p class='vspace'>O meglio, <em>sarebbe</em> in grado, ma il problema è calcolare il <strong>logaritmo discreto</strong>:<br />
+g<sup>x</sup> = a mod p<br />Conosco <strong>x</strong>, <strong>a</strong> e <strong>p</strong>: so calcolare qual'è quel numero <strong>x</strong> tale che, se elevo <strong>g</strong> alla <strong>x</strong>, ottengo <strong>a mod p</strong>?
+</p>
+<p class='vspace'>Ci vuole molto ma molto tempo di calcolo, ecco perché è un problema difficile!
+</p>
+<div class='vspace'></div><h2>Che cos'è il generatore?</h2>
+<p>Il generatore, o radice primitiva, di Z<sub>p</sub><sup>*</sup>, è quel numero appartenente all'insieme Z<sub>p</sub><sup>*</sup>, il quale, elevato a potenza per ciascuno degli elementi di Z<sub>p</sub><sup>*</sup>, mi dà a sua volta tutti gli elementi di Z<sub>p</sub><sup>*</sup>, in un qualche ordine.
+</p>
+<p class='vspace'>Per capirci subito, prendiamo il campo Z<sub>11</sub> e il numero 2, che evidentemente appartiene a Z<sub>11</sub>.
+</p><pre> 2<sup>1</sup> = <strong>2</strong> mod 11
+ 2<sup>2</sup> = <strong>4</strong> mod 11
+ 2<sup>3</sup> = <strong>8</strong> mod 11
+ 2<sup>4</sup> = 16 = <strong>5</strong> mod 11
+ 2<sup>5</sup> = 32 = <strong>10</strong> mod 11
+ 2<sup>6</sup> = 64 = <strong>9</strong> mod 11
+ 2<sup>7</sup> = 128 = <strong>7</strong> mod 11
+ 2<sup>8</sup> = 256 = <strong>3</strong> mod 11
+ 2<sup>9</sup> = 512 = <strong>6</strong> mod 11
+ 2<sup>10</sup> = 1024 = <strong>1</strong> mod 11
+</pre><p class='vspace'>Vedete quindi che, in un qualsiasi ordine, le potenze di 2 mod 11 generano tutti i valori di Z<sub>11</sub>. Capito che cos'è il generatore?
+</p>
+<div class='vspace'></div><h2>Come faccio a calcolare il generatore di un certo Z<sub>p</sub>?</h2>
+<p>L'idea banale è: prendo tutti i possibili g, e faccio tutte le potenze finché non ne trovo uno che soddisfa la proprietà citata qui sopra.
+</p>
+<p class='vspace'>Il problema ovviamente nasce quando p è molto ampio, e calcolare tutte le potenze di un numero diventa una cosa mostruosa.
+</p>
+<p class='vspace'>Allora, uso il seguente sistema:
+</p><ul><li>Trovo la fattorizzazione di <strong>p-1</strong>: sarà una cosa del tipo <strong>p1<sup>e1</sup>p2<sup>e2</sup>...pn<sup>en</sup></strong>, in cui i vari <strong>p<sup>i</sup></strong> sono i fattori di <strong>p-1</strong>, e i vari <strong>e<sub>i</sub></strong> sono i relativi esponenti.
+</li><li>Scelgo un numero <strong>g</strong> a caso, minore di <strong>p</strong>
+</li><li>Vedo se questo numero <strong>g</strong> rispetta il seguente sistema:
+</li></ul><div class='vspace'></div><pre> g<sup>(p-1) / p1</sup> != 1 mod p
+ g<sup>(p-1) / p2</sup> != 1 mod p
+ ...
+ g<sup>(p-1) / pn</sup> != 1 mod p
+</pre><p class='vspace'>Se per tutte le congruenze, <strong>g<sup>(p-1) / pn</sup> != 1</strong>, allora quel <strong>g</strong> è generatore di Z<sub>p</sub>
+</p>
+<p class='vspace'>Facciamo un esempio, con p = 11 e g = 3.<br />Se p = 11, allora <strong>p-1<em> = 10, che si fattorizza come </strong>10 = 2 * 5</em>'.<br />Il sistema diventa:
+</p><pre> 3<sup>(10) / 2</sup> != 1 mod 11 
+ 3<sup>(10) / 5</sup> != 1 mod 11
+</pre><p class='vspace'>È vero che <strong>3<sup>(10) / 2</sup> != 1 mod p </strong>? <strong>3<sup>5</sup> mod 11 = 1</strong> quindi NO!<br />Ciò vuol dire che 3 <strong>non è</strong> un generatore di Z<sub>11</sub>.
+</p>
+<p class='vspace'>Prendiamo invece <strong>g = 2</strong>:
+</p><pre> 2<sup>(10) / 2</sup> != 1 mod 11 
+ 2<sup>(10) / 5</sup> != 1 mod 11
+</pre><p class='vspace'>2'^5^ = 10 mod 11<br />2'^2'^ = 4 mod 11<br />Questo vuol dire che il sistema è rispettato, e 2 è generatore di Z<sub>11</sub>.
+</p>
+<div class='vspace'></div><h2>Generalizzazione per 3 persone</h2>
+<p>Se sono 3 persone a volersi mettere d'accordo, cioè Alice, Bob e Charlie, il procedimento è semplice: ognuno dei tre si inventa un valore, <strong>x</strong>, <strong>y</strong> o <strong>z</strong>, e il segreto sarà composto da <strong>g<sup>xyz</sup></strong>.
+</p>
+<div class='vspace'></div><h2>Attacco man in the middle</h2>
+<p>Se un attaccante riesce ad impossessarsi del canale sul quale Alice e Bob comunicano, può giocare un bello scherzetto ad entrambi. Si presuppone che il Cattivo sia in grado di intercettare tutti i messaggi provenienti da Alice o Bob, e reinviarli senza che questi si accorgano di nulla.
+</p>
+<p class='vspace'>Come dicevamo all'inizio, i valori <strong>p</strong> e <strong>g</strong> sono pubblici. Quindi, quando Alice <strong>crede</strong> di comunicare con Bob, in realtà comunica con Cattivo, e quello che succede è che crea un segreto tra lei e Cattivo! Alice crede di condividerlo con Bob, invece lo condivide con Cattivo.<br />Allo stesso tempo, Cattivo si spaccia per Alice e comunica a Bob un valore <strong>g<sup>c</sup></strong>, e in pratica concorda con Bob un'altra chiave.<br />Quello che succede è che Alice manda un messaggio a Cattivo, con la chiave concordata con Cattivo, mentre lei è invece convinta di mandare un messaggio a Bob con la chiave concordata con Bob. Idem per quest'ultimo.<br />Cattivo prende il messaggio da Alice, lo guarda tranquillamente, e lo reimpacchetta con la chiave di Bob, il quale è convinto di ricevere roba da Alice.
+</p>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di crittografia</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/CrittoDH)</span></div>
+  </div>
+</body>
+</html>

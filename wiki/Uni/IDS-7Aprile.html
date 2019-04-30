@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ingegneria del Software - Appunti del 7.4.09 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IDS-7Aprile' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ingegneria del Software - Appunti del 7.4.09
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-7Aprile?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-7Aprile?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IDS-7Aprile-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-7Aprile?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-7Aprile?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ingegneria del Software - Appunti del 7.4.09 was last modified on April 07, 2009, at 09:14 PM'>
+							<span style='display:none;'>Ingegneria del Software - Appunti del 7.4.09</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ingegneria del Software - Appunti del 7.4.09 ::</strong>
+</p>
+<p class='vspace'>Lezione tenuta da Fulvio Frati. La presentazione (dell'anno scorso) <a class='urllink' href='http://ra.crema.unimi.it/turing/MATERIALE/Admin/corsi/ingSW/M1/UniDida4/UML.ppt' title='' rel='nofollow'>si trova qui</a>.
+</p>
+<p class='vspace'>Per chiedere informazioni su Bouml, o chiedergli informazioni sul progetto che si dovrà portare a complemento dell'esme di IDS, o cose del genere, <a class='urllink' href='mailto:fulvio.frati@unimi.it' title='' rel='nofollow'>questa è l'email</a>. Accetta anche appuntamenti per discutere di questi temi.
+</p>
+<div class='vspace'></div><h2>Bouml</h2>
+<p><a class='urllink' href='http://bouml.free.fr/' title='' rel='nofollow'>Bouml</a> è un software che permette di tracciare tutti i tipi di diagrammi UML. La versione che si trova in <code class='escaped'>\\titano</code> è la 4.3.qualcosa, mentre lo sviluppo è arrivato alla 4.12.1. La motivazione ufficiale è che pare che gli antivirus rilevino del software malevolo all'interno degli zip della distribuzione di Bouml, e quindi per precauzione, anche se probabilmente si tratta di un falso allarme, in laboratorio è presente solo la 4.3. È possibile decomprimere la cartella direttamente sul drive Z: e divertirsi da lì.
+</p>
+<div class='vspace'></div><h2>Casi d'uso</h2>
+<p>Facciamo un po' di ripasso sui casi d'uso.
+</p>
+<p class='vspace'>Gli attori sono rappresentati da <strong>omini</strong>, e si possono definire gerarchie di attori. Il caso d'uso in sé è invece indicato da <strong>palle gialle</strong>. Ogni palla rappresenta una specifica funzionalità del caso d'uso, e le palle sono collegate da frecce.
+</p>
+<p class='vspace'>Le frecce possono avere una semantica differente:
+</p><ul><li><strong>&lt;&lt;include&gt;&gt;</strong> = mostra il <strong>comportamento comune</strong> a uno o più casi d'uso. Eg: <strong>identificarsi al bancomat</strong> include sia <strong>prelevare</strong> che <strong>saldo</strong>. Vuol dire che sia <strong>prelevare</strong> che <strong>saldo</strong> avranno comportamenti comuni, ovvero <strong>identificarsi al bancomat</strong>. E' un esempio di <strong>riutilizzo</strong> del software, perché la procedura di autenticazione viene scritta una volta sola ed usata in diversi punti..
+</li><li><strong>&lt;&lt;extend&gt;&gt;</strong> = mostra  il <strong>comportamento opzionale</strong> (alternativo o relativo al trattamento di condizioni anomale).
+</li></ul><div class='vspace'></div><h3>Esercizio</h3>
+<p>Dobbiamo modellare un Sistema Bancomat. L'utente può prelevare, visualizzare  il saldo e depositare (da quando al bancomat si deposita?).
+</p>
+<p class='vspace'>In Bouml, scegliamo <strong>Project | New</strong> e diamo il nome del file da salvare. Fatto questo, occorre selezionare dal menu <strong>Language</strong> il linguaggio di programmazione del progetto, nel nostro caso Java. A seconda del linguaggio scelto alcune opzioni saranno diverse.
+</p>
+<p class='vspace'>Per creare il diagramma dei casi d'uso, si clicca col destro sul progetto e si sceglie <strong>New use case view</strong>. Poi, su questa vista, si clicca ancora col destro e si sceglie <strong>New use case</strong>.
+</p>
+<p class='vspace'>In generale, con Bouml occorre <strong>prima</strong> creare una vista, e <strong>poi</strong> un diagramma collegato a quella vista.
+</p>
+<p class='vspace'>Doppio clic sul caso d'uso, e compare una finestra in cui possiamo spaciugare.
+</p>
+<p class='vspace'>Le relazioni sono frecce. Quella senza nome è la relazione standard. Quindi, disegniamo un attore, una palla chiamata <strong>preleva</strong> e tiriamo la freccia.
+</p>
+<p class='vspace'>Siccome il nostro Bancomat prevede anche di poter stampare una ricevuta, creiamo un'altra palla chiamata "preleva con ricevuta". Scegliamo la <strong>freccia tratteggiata</strong> e la facciamo andare da <strong>preleva con ricevuta</strong> a <strong>preleva</strong>. Poi, si fa doppioclic sulla freccia tratteggiata, e nel menu contestuale che appare si sceglie, nel campo <strong>stereotype</strong>, scegliamo <strong>extend</strong>, e automaticamente Bouml mette l'etichetta <strong>extend</strong> sulla freccia. Abbiamo scelto <strong>extend</strong> perché il prelievo con stampa della ricevuta è una specializzazione del prelievo semplice.
+</p>
+<p class='vspace'>Ricordiamo che le frecce di <strong>estensione</strong> vanno dal caso esteso al caso base, mentre le frecce di <strong>inclusione</strong> vanno dal caso che include al caso incluso.
+</p>
+<p class='vspace'>Per aggiungere etichette arbitrarie, si usa il pulsante <strong>ABC</strong> e si mette il testo che vogliamo. Invece, il pulsante con il rettangolino di carta permette di inserire <strong>note</strong>. La differenza è che le etichette vengono visualizzate come semplici scritte, mentre le note sono racchiuse in un quadratino azzurro.
+</p>
+<div class='vspace'></div><h2>Diagramma delle classi</h2>
+<p>Le <strong>classi</strong> hanno le seguenti proprietà:
+</p><ul><li><strong>nome</strong>: il nome della classe di solito è maiuscolo, ma non è obbligatorio.
+</li><li><strong>attributi</strong>: identificano lo stato del nostro oggetto. Quando avremo più oggetti istanziati, il valore degli attributi ci permetterà di distinguere un oggetto da un altro. Per consuetudine, iniziano con una lettera minuscola.
+</li><li><strong>operazioni/metodi</strong>: funzionalità che esprimono il comportamento di un oggetto, ovvero l'interfaccia che esso espone all'esterno.
+</li></ul><p>Nel rettangolo simboleggiante la classe gli attributi occupano la sezione immediatamente sotto il nome, mentre quella ancora più in basso contiene le operazioni.
+</p>
+<p class='vspace'>Un<strong>'associazione</strong> è una correlazione fra classi. Nel caso generico è rappresentata da una linea continua tracciata tra due classi.La molteplicità dice il numero di oggetti che, da una parte o dall'altra, partecipano all'associazione. Possono essere 1..*,1, n, etc.
+</p>
+<p class='vspace'>Ci sono due diversi tipi di associazione: l<strong>'aggregazione</strong> e la <strong>composizione</strong>:
+</p><ul><li><strong>aggregazione</strong>: esprime  il concetto <strong>è parte di</strong>, che si ha quando un insieme è relazionato con le sue parti.
+</li><li><strong>composizione</strong>: la classe componente è parte integrante della parte composta, la quale non potrà quindi esistere senza questo componente.
+</li></ul><p class='vspace'>Per fare un esempio della differenza tra aggregazione e composizione, prendiamo un'automobile. Essa è un insieme di parti, e quindi ci aspettiamo che la classe Automobile sia un aggregato di Motore, Sedili, Ruote, Telaio. Tuttavia, una di queste parti è fondamentale, ed è il Telaio, perché senza di esso non ho nemmeno l'automobile. Il Motore ed il resto li posso cambiare, ma il Telaio, con il suo codice seriale unico, distingue univocamente la mia macchina da tutte le altre.
+</p>
+<p class='vspace'>La relazione di <strong>ereditarietà</strong> è rappresentate da una freccia con un triangolo vuoto. Sta a significare che la classe ereditante ha tutti gli attributi ed i metodi della classe da cui eredita, anche se ovviamente può specificarnee di nuovi. La classe da cui si eredità è chiamata anche <strong>superclasse</strong>.
+</p>
+<div class='vspace'></div><h3>Esercizio</h3>
+<p>Struttura universitaria: ci sono Persone, Docenti, Studenti, Frequenze, Esami, Corsi.
+</p>
+<p class='vspace'>Persone è generico: simboleggia un individuo, che può essere Docente o Studente.
+</p><ul><li>Esami: sostenuti da uno studente.
+</li><li>Corsi: frequentati da uno studente e tenuti da un professore.
+</li><li>Frequenze: associazione tra Esami e Corsi.
+</li></ul><p class='vspace'>Per ottenere un diagramma delle classi in Bouml, si clicca col tasto destro su progetto e si sceglie <strong>New class view</strong>. Poi, ancora tasto destro sulla vista appena creata, e si seleziona <strong>New class diagram</strong>. Doppio clic sul class diagram, comparso nella colonna a sinistra, e si aprirà la vista di questo diagramma.
+</p>
+<p class='vspace'>Il primo pulsante della barra strumenti di questa finestra crea una classe.  Premendo col destro su di una classe appare un menu contestuale che ci permette di aggiungere attributi o metodi. Ogni volta che aggiungiamo un attributo o un metodo possiamo scegliere tipo, parametri in ingresso, etc. Avendo scelto come linguaggio Java, pertanto tutte queste scelte saranno Javose.
+</p>
+<p class='vspace'>Aggiungiamo le classi Docente e Studente. In Studente mettiamo l'attributo <strong>matricola</strong>, e assegniamogli un tipo, se vogliamo.
+</p>
+<p class='vspace'>L'associazione tra Studente e Persona è la freccia con triangolo vuoto: c'è ereditarietà. In Bouml si chiama <strong>generalization</strong>
+</p>
+<p class='vspace'>Creiamo il Corso. La relazione tra docente e corso è generica, e quindi per rappresentarla ci basta la linea nera senza frecce. Facendo doppio clic su questa linea appare un menu contestuale in cui possiamo specificare il tipo di relazione per ogni capo della freccia: in questo caso, avremo due parti nel menu contestuale: una sezione <strong>in Docente</strong>, e una sezione <strong>in Corso</strong>. Dal lato del Docente, la relazione è <strong>insegna</strong>, mentre dal lato del corso la relazione è <strong>tenutoDa</strong>. Scegliamo anche la molteplicità, che che in questo caso è 1 dalla parte del Docente, e 1..* dalla parte del Corso (vuol dire che 1 docente può tenere uno o più corsi).
+</p>
+<div class='vspace'></div><h2>Sequence diagram</h2>
+<p>I <strong>sequence diagram</strong> evidenziano la sequenza temporale delle azioni, ma non le relazioni tra oggetti.
+</p>
+<p class='vspace'>Gli <strong>oggetti</strong> si rappresentano con dei box, disegnati in alto, con il nome sottolineato e opzionalmente anche il nome della classe di cui è istanza. Sotto di essi parte una <strong>linea di vita</strong>, che rappresenta il tempo che scorre, nel quale l'oggetto prenderà vita e morirà.
+</p>
+<p class='vspace'>Lungo la linea di vita si mettono dei box rettangolari che rappresentano l'intervallo di tempo in cui l'oggetto sarà esistente. In questo modo è possibile vedere subito a che punto della storia un oggetto prende vita, e quando se ne va.
+</p>
+<p class='vspace'>X = quando il nostro oggetto viene cancellato dalla memoria (???)
+</p>
+<p class='vspace'>Il <strong>messaggio</strong> è una freccia etichettata che esce dal box vitale di un oggetto, e si può dirigere verso un altro box verticale, oppure  tornare su se stesso. Ci sono due tipi di messaggi:
+</p><ul><li>messaggio <strong>sincrono</strong>: rappresentato da una freccia continua etichettata con il nome dell'operazione che viene chiamata, indica che il chiamante rimane in attesa della risposta da parte del chiamato
+</li><li>messaggio <strong>asincrono</strong>: indicato con una freccia tratteggiata, significa che il chiamante continua nella sua esecuzione anche se il chiamato non ha risposto.
+</li></ul><p>Nel caso dei messaggi asincroni l'eventuale messaggio di risposta viene esplicitamente segnato con una freccia che va dall'oggetto chiamato all'oggetto chiamante. I messaggi sincroni invece non obbligano a tracciare anche la relativa risposta, perché la si assume come scontata (teniamo conto che al 99% rappresentano chiamate di funzioni, e quindi ritornano sicuramente).
+</p>
+<p class='vspace'>L'etichetta posta sopra queste frecce contiene il nome dell<strong>'operazione</strong> che il chiamante vuole far fare al chiamato. Come dicevamo sopra in merito al diagramma delle classi, l'operazione fa parte dell'interfaccia pubblica di un oggetto. Dal momento che questo diagramma e quelli che seguono vengono generati a partire dalla stessa vista, la <strong>Class View</strong> che abbiamo visto sopra, Bouml terrà in memoria la descrizione di ogni oggetto, e ci fornirà degli hint ogni qualvolta faremo appello a operazioni o attributi o classi o oggetti già disegnati in qualche altro diagramma della stessa vista.
+</p>
+<p class='vspace'>Un messaggio può anche avere una <strong>condizione</strong>, che viene scritta tra parentesi quadre. Significa che il messaggio sottostante viene generato solo se quella condizione è soddisfatte.
+</p>
+<div class='vspace'></div><h3>Bouml</h3>
+<p>Vogliamo specificare un servizio in cui un utente manda un Ordine verso un sistema di vendita online. L'Ordine è composto da varie Linee di prodotti, e ogni Linea controlla il proprio Articolo. Se questo è disponibile in magazzino, l'ordine può essere spedito, altrimenti automaticamente il sistema provvede a procurarsene uno dal fornitore.
+</p>
+<p class='vspace'>Per creare una diagramma di sequenza, si clicca sul destro sulla <strong>Class View</strong> creata prima, e si sceglie <strong>New Sequence Diagram</strong>.
+</p>
+<p class='vspace'>Nella finestra del diagramma di sequenza, il terzo pulsante della barra degli strumenti è "Add Instance", e ci permette di aggiungere un'istanza di una classe (si diceva prima dello stretto legame tra diagrammi diversi all'interno dello stesso progetto). Bouml creerà automaticamente il quadrato e le linee verticali.
+</p>
+<p class='vspace'>Le frecce di messaggi sono le freccie piene: partono da una linea del tempo ed arrivano ad un'altra. Bouml crea automaticamente anche i box di vita, i quali si possono ridimensionare a dispiacimento. Un doppio clic sulla linea ci permette di specificarne le proprietà. Dato che le linee rappresentano richieste di operazioni chiamate, se queste non sono già state specificate in qualche altro diagramma occorre cliccare, nel menu contestuale appena apparso, sul pulsante <strong>Message</strong> e scegliere <strong>Create operation and choose it</strong>. Questa operazione sarà poi visibile anche altrove, in relazione alla stessa classe.
+</p>
+<p class='vspace'>Le condizioni, nella versione di Bouml provata in classe, non sono esprimibili direttamente: suppliamo a questa carenza utilizzando il pulsante <strong>ABC</strong> e creando una label con opportune parentesi quadre, posizionandola accortamente sopra i messaggi.
+</p>
+<div class='vspace'></div><h2>Collaboration Diagram</h2>
+<p>È un altro modo di specificare il Sequence Diagram, in cui però gli oggetti non sono più rappresentati nel tempo ma solo collegati da frecce. Si modella quindi solo la sequenza dei messaggi, e proprio per questo i messaggi sono numerati nell'ordine della loro apparizione temporale. Sono un po' meno espliciti dei diagrammi di sequenza, ed in effetti se faccio un diagramma di sequenza quello di collaborazione spesso non è affatto necessario.
+</p>
+<p class='vspace'>In Bouml, per creare un nuovo Collaboration Diagram si crea un <strong>New Communication Diagram</strong> (ocio: communication, non collaboration) cliccando col destro sulla mia <strong>Class View</strong>.
+</p>
+<p class='vspace'>Anche qui si inseriscono nuovi oggetti premendo il pulsante con due linee in mezzo. Per ricreare la situazione dell'esercizio precedente, creiamo un ClientWeb, un Ordine, una LineaOrdine e un Articolo.
+</p>
+<p class='vspace'>I link si rappresentano con le linee continue. Doppiocliccando su una linea posso aggiungere <strong>messaggi</strong>, indicando anche la loro direzione. Con l'archetto si  introducono auto-messaggi. Nell'esempio dell'Ordine si usa un loop per modellare il fatto che, se manca un articolo, questo va comprato automaticamente dal fornitore.
+</p>
+<p class='vspace'>Bouml mette automaticamente i numeri man mano che creiamo operazioni. Siccome abbiamo già creato il Class Diagram, avremo già gli hint per i nomi delle classi e delle operazioni.
+</p>
+<div class='vspace'></div><h2>Activity Diagram</h2>
+<p>Modellano il workflow dei processi in caso di computazione parallela. Questi diagrammi sono stati inseriti in UML 2.0, e sono simili agli automi a stati. Una loro descrizione completa è stata affrontata nel <a class='wikilink' href='LPSUML.html'>corso di Linguaggi di Programmazione per la Sicurezza</a>.
+</p>
+<p class='vspace'>Il componente principale è l<strong>'attività</strong>, il "fare qualcosa", che modella qualsiasi cosa il nostro sistema faccia. Un'attività è un ovaloide, nel diagramma.
+</p>
+<p class='vspace'>Le <strong>transizioni</strong> ci permettono di passare da un'attività ad un'altra. Si attivano quando tutto ciò che l'attività comporta è stato completato, e pertanto si dice che le transizioni scattano con il <strong>completion event</strong>.
+</p>
+<p class='vspace'>L'Activity Diagram è una modellazione concettuale, e per questo motivo può essere usato per modellare un po' tutto: il workflow all'interno di una singola classe, il workflow di un processo, il piano segreto per l'eliminazione della spia russa e così via.
+</p>
+<p class='vspace'>Lo <strong>stato iniziale</strong> è il pallino nero. Lo <strong>stato finale</strong> è il pallino nero cerchiato da una corona.
+</p>
+<p class='vspace'>Le <strong>branch</strong> sono suddivisioni logiche del nostro processo. Si disegnano con dei rombi, e ogni ramo uscente è etichettato con una condizione. Il processo seguirà il ramo la cui condizione è soddisfatta. Non possono pertanto esistere condizioni che siano valide entrambe contemporanemanete, nello stesso rombo. Dopo il branch, occorre un <strong>merge</strong> (un altro rombo), il quale serve per riunificare il mio processo.
+</p>
+<p class='vspace'>Il <strong>fork</strong> permette l'esecuzione parallela: una linea nera spessa con una linea entrante e più linee uscenti mi dice che in quel punto il mio processo attiva diverse sottoprocessi paralleli. Il <strong>join</strong> invece deve sempre corrispondere ad una fork, e indica il ricongiungimento dei sottoprocessi nel flusso principale.<br />Attenzione: ad ogni fork deve sempre corrispondere un join! Inoltre, il join farà proseguire il processo solo quando tutti i sottoprocessi entranti saranno terminati.
+</p>
+<p class='vspace'>Il problema di questi diagrammi è che dicono COSA succede, ma non CHI lo fa. Si creano allora le <strong>swimlanes</strong>, che sono linee verticali che assomigliano alle corsie delle piscine. Sono etichettate con il nome di un attore, e servono per specificare la responsabilità delle varie azioni all'interno di un processo. I vari fork etc. porteranno ad una sequenza in un'altra swimlanes. Nelle <a class='wikilink' href='LPSUML.html'>pagine di LPS</a> sono spesso indicati con linee orizzontali tratteggiate, e sono state fatte osservazione in merito alla possibilità di sincronizzare questi processi paralleli.
+</p>
+<div class='vspace'></div><h3>Bouml</h3>
+<p>Si crea una "New state machine" dalla solita <strong>Class View</strong>, ma poi occorre ancora usare il tasto destro per creare un <strong>New State Diagram</strong>.
+</p>
+<p class='vspace'>A quanto pare non è possibile creare swimlanes con Bouml.
+</p>
+<div class='vspace'></div><h2>Presentare il progetto</h2>
+<p>Per presentare il progetto di IDS, occorre usare un tool come appunto Bouml, e presentare tutti i diagrammi. Se in Bouml clicco col destro sul foglio di lavoro di un qualsiasi diagramma, posso salvare quell'immagine nel formato che vogliamo, oppure salvarla negli appunti, e riutilizzarla quindi per comporre la relazione.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 07, 2009, at 09:14 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-7Aprile?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-7Aprile?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

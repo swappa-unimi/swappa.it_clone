@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Processi</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SO-Processi.html' title='Sistemi Operativi - Processi'>Sistemi Operativi - Processi</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Processi</span>
+</p>
+<div class='vspace'></div><h2>Il multi-tasking</h2>
+<p>I primi computer permettevano di eseguire un solo programma alla volta, cedendo a esso il controllo completo del sistema. Ciò comportava uno scarso sfruttamento del processore a causa dei tempi morti per l'attesa del completamento delle operazioni di I/O. Della multiprogrammazione, ovvero avere più programmi caricati contemporaneamente in memoria, non venivano dunque sfruttate le intrinseche potenzialità computazionali.
+</p>
+<p class='vspace'>Il passo successivo non poteva che essere quello di utilizzare questi tempi morti di attesa per eseguire più programmi, almeno apparentemente, in parallelo. Il <strong>multi-tasking</strong> garantisce proprio questo, gestendo la turnazione dei programmi sul processore quando il programma in esecuzione è in attesa della risposta delle periferiche. La multiprogrammazione rimane ovviamente una condizione necessaria, e in particolare sarebbe preferibile avere tra tutti i programmi caricati in memoria almeno uno che dia qualcosa da fare al processore, o il multi-tasking non sarebbe sfruttato. Chiaro che ciò non può avvenire sempre, l'importante è che accada il più spesso possibile.
+</p>
+<div class='vspace'></div><h2>I processi</h2>
+<p>I <em>programmi in esecuzione</em> di cui abbiamo appena parlato sono i <strong>processi</strong>, l'unità di lavoro nei moderni sistemi a condivisione di tempo (time-sharing). Sono composti dal <strong>codice del programma</strong> (anche detto <em>sezione di codice</em>) e dai <strong>dati del programma</strong>, che a loro volta si suddividono in:
+</p><ul><li><em>variabili globali</em>, allocate in memoria centrale nell'area dati globali
+</li><li><em>variabili locali e non locali</em> delle procedure del programma, memorizzate in uno <em>stack</em>
+</li><li><em>variabili temporanee introdotte dal compilatore</em>, tra cui ricordiamo il <em>program counter</em>, caricate nei registri del processore
+</li><li><em>variabili allocate dinamicamente</em> durante l'esecuzione, memorizzate in uno <em>heap</em>
+</li></ul><p class='vspace'>Importantissimo sottolineare che <strong>i programmi non sono processi</strong>. I primi sono infatti entità passive, una sequenza di istruzioni contenute in un file sorgente salvato su disco. I processi sono invece entità attive, con un program counter che specifica l'istruzione successiva da eseguire, un gruppo di istruzioni in uso e una particolare istanza dei dati su cui era stato mandato in esecuzione il programma. E' per questo che posso benissimo avere due processi associati allo stesso programma, verranno comunque considerati come istanze di esecuzione distinte dello stesso codice. Ad esempio, posso aprire due finestre di <em>Firefox</em> e gestirle separatamente: il loro sorgente è uguale, la sezione dati è differente.
+</p>
+<p class='vspace'>Un altro modo di pensare i processi è come flussi di esecuzione della computazione. Indipendentemente da cosa fanno o rappresentano, possiamo intuitivamente sostenere che se due flussi sono separati, anche i processi lo sono, e che in questo caso potrebbero evolversi coordinandosi (<em>processi sincronizzati</em>) o in modo assolutamente autonomo (<em>processi indipendenti</em>).<br />In base ai flussi posso inoltre distinguere due modelli di computazione, il <em>processo monolitico</em> e quello <em>cooperativo</em>. Nel primo vengono eseguite tutte le istruzioni del programma in un'unico flusso dall'inizio alla fine; mentre nel secondo vengono generati una serie di processi concorrenti che lavorano (a livello logico) in parallelo per conseguire lo stesso scopo. Da notare come i processi monolitici siano tra loro indipendenti, mentre i vari processi che computano a livello cooperativo interagiscono tra loro (ad esempio condividendo i risultati, sincronizzandosi, ecc). La realizzazione di tale modelli di computazione può dunque essere di tre tipi: programma monolitico eseguito come tale, programma monolitico che genera processi cooperanti, programmi separati eseguiti come cooperanti.
+</p>
+<div class='vspace'></div><h2>Evoluzione della computazione</h2>
+<p>Lo <em>stato di evoluzione della computazione</em> può essere considerata una terza componente dei processi, ed indica a che punto è arrivata la loro esecuzione. Tali stati fotografano istante per istante le istruzioni eseguite e il valore dei dati del processo, permettendoci di prevedere come evolverà il programma semplicemente conoscendo l'istruzione successiva indirizzata.
+</p>
+<p class='vspace'>Si parla di <em>evoluzione</em> perché durante l'esecuzione del processo avviene una trasformazione delle informazioni. Lo si può dunque immaginare come una funzione, in cui su valori iniziali vengono eseguite delle operazioni che produrranno un risultato finale, o come una macchina a stati finiti, dove gli stati sono le informazioni su cui opera e le transizioni le istruzioni che li modificano.
+</p>
+<p class='vspace'>Ricapitolando, lo stato di evoluzione della computazione di un processo è l'insieme dei valori di tutte le informazioni da cui dipende l'evoluzione della computazione del processo. Non si limita quindi al solo valore corrente del program counter, ma anche al contenuto delle variabili utilizzate dal programma, dato che una loro eventuale modifica potrebbe portare ad esiti diversi della computazione. Da qui l'importanza che l'esecuzione di un processo non alteri quella di un altro, o riscontrerei evoluzioni diverse da quelle corrette: applicare le stesse operazioni su dati diversi, può non condurre agli stessi risultati.
+</p>
+<div class='vspace'></div><h2>Stato dei processi</h2>
+<p>Un processo in esecuzione può assumere diversi stati rispetto all'uso della CPU. Notare bene che non si sta più parlando di stati di computazione, ma <em>stati di uso del processore da parte di un processo</em>, o in breve <strong>stati del processo</strong>, che rappresentano la modalità di uso corrente del processore e delle risorse da parte del processo.
+</p>
+<p class='vspace'>Ciascun processo può trovarsi in uno dei seguenti stati:
+</p><ul><li><strong>new</strong> (<em>nuovo</em>), se è stato appena creato e inizializzato
+</li><li><strong>running</strong> (<em>in esecuzione</em>), se le istruzioni sono eseguite regolarmente e la computazione evolve effettivamente. In ogni istante, solo un processo per processore può essere in questo stato
+</li><li><strong>waiting</strong> (<em>in attesa</em>), se il processo sta aspettando il verificarsi di qualche evento, ad esempio che gli vengano assegnate delle risorse o il completamento di un'operazione di I/O
+</li><li><strong>ready-to-run</strong> (<em>pronto all'esecuzione</em>), se ha tutte le risorse necessarie allo svolgimento delle sue attività, eccetto la CPU da cui aspetta di essere chiamato. La computazione potrebbe dunque evolvere, ma non lo fa perché le istuzioni non possono essere eseguite dal processore
+</li><li><strong>terminated</strong> (<em>terminato</em>), se ha terminato l'esecuzione e sta aspettando che il sistema operativo rilasci le risorse che utilizzava e lo rimuova dalla memoria (il che non avviene sempre immediatamente).
+</li></ul><p class='vspace'>I nomi dei vari stati non sono definiti univocamente e infatti possono cambiare a seconda del sistema operativo; ciò che rappresentano è invece comune a tutti i sistemi, che al più potranno introdurne altri.
+</p>
+<p class='vspace'>Il diagramma degli stati dei processo è un grafo orientato che rappresenta l'insieme degli stati del processo (i nodi) e le transizioni tra essi (gli archi).
+</p><div  style='text-align: center;'><img src='../uploads/Uni/diagrammaStati.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h2>Process control block</h2>
+<p>Il sistema operativo rappresenta i processi in una struttura dati nota come <strong>process control block</strong> (PCB, <em>blocco di controllo del processo</em>) o <em>task control block</em> in cui ne vengono memorizzate le principali informazioni. Tra queste, che potrebbero variare a seconda dei sistemi, ricordiamo:
+</p><ul><li><em>identificatore del processo</em>, un numero unico e univoco
+</li><li><em>stato del processo</em>, considerato in questo caso come stato di uso del processore da parte del processo
+</li><li><em>program counter</em>
+</li><li><em>registri della CPU</em>, che variano per numero e tipo a seconda dell'architettura del computer. Sono ad esempio i registri indice e altri registri di uso generico
+</li><li>lo <em>stack pointer</em>
+</li><li><em>informazioni per la schedulazione della CPU</em>, che specifica quali tecniche e criteri di schedulazione dovrà operare il processore sul processo
+</li><li><em>informazioni per la gestione della memoria centrale</em>
+</li><li><em>informazioni per l'accounting</em>
+</li><li><em>informazioni sullo stato dell'I/O</em>, che riportano la lista dei file e delle periferiche associate al processo
+</li></ul><p class='vspace'>Non tutte le informazioni sono strettamente necessarie come supporto della gestione del processore, ma vengono comunque inglobate per avere un'unica tabella omogenea a livello di contenuto.
+</p>
+<p class='vspace'>Le PCB relative a ogni singolo processo si riveleranno fondamentali nell'implementazione del multi-tasking.
+</p>
+<div class='vspace'></div><h2>Cambio di contesto</h2>
+<p>Se il mio obiettivo è realizzare un sistema multi-tasking, far passare la CPU da un processo all'altro richiede il salvataggio dello stato di evoluzione della computazione del vecchio processo e il caricamento dello stato di esecuzione di quello nuovo, questo perché bisogna garantire che il processo si evolva come se fosse l'unico eseguito dal processore, quindi che nessun altro processo si permetta di toccare le informazioni che definiscono lo stato di evoluzione della computazione. Questa fase è nota come <strong>cambio di contesto</strong> (<em>context switch</em>), dove per contesto di un processo si intendono alcune informazioni contenute nel suo specifico PCB, come il valore dei registri, il suo stato, lo stack pointer, ecc.
+</p>
+<p class='vspace'>Per quanto riguarda il salvataggio dello stato di evoluzione della computazione, si deve tener conto che:
+</p><ul><li>di codice del programma, dati del programma, heap e stack possiamo anche non preoccuparci, dato che il sistema operativo garantirà che non vengano toccati da nessun altro processo
+</li><li>i registri vengono invece utilizzati da tutti i processi, quindi occorre salvarne da qualche parte (generalmente nello stack) il contenuto per poi recuperarli. Salvo tutti i registri o solo quelli che potrebbero essere modificati? Li salvo tutti, per tre buoni motivi:
+<ul><li>per sapere quali registri saranno utilizzati dal processo successivo bisognerebbe eseguirlo, ed eseguendolo perderei tutto, non risolvendo nulla
+</li><li>anche se fosse possibile conoscere i registri che saranno modificati, ci vorrebbe troppo tempo per copiare uno alla volta quelli necessari (ogni copia corrisponde ad un ciclo <em>fetch-decode-execute</em>). Il tempo perso per il salvataggio dei registri utili va poi moltiplicato per tutte le volte che effettuo una turnazione dei processi in esecuzione, ottenendo rallentamenti spropositati
+</li><li>la maggior parte dei processori hanno un'istruzione PUSH ALL, che salva in una volta sola i valori di tutti i registri
+</li></ul></li><li>lo stack pointer non può essere ovviamente salvato nello stack, o otterrei un salvataggio ricorsivo (per memorizzare l'indirizzo della sua cima deve scrivere in cima, ottenendo un nuovo indirizzo della cima da memorizzare, che... ecc). E' per questo motivo che, come abbiamo visto prima, il suo valore viene memorizzato nel <em>process control block</em> associato al processo
+</li></ul><p class='vspace'>Quando la CPU dovrà riattivare un dato processo, cercherà il suo stack pointer nel PCB relativo e da lì recupererà i valori dei registri e del program counter, così da poter riprendere l'esecuzione da dove l'aveva interrotta.
+</p>
+<p class='vspace'>Per alcuni processi questo sistema può essere critico, a causa dei tempi di gestione delle turnazioni, la cui velocità varia da macchina a macchina (dipende da vari fattori, quali la velocità della memoria, il numero di registri da copiare, ...). I processi in questione sono proprio quelli non performanti per il multi-tasking, ovvero quelli che gestiscono sistemi in tempo reale o che comunque non gradiscono il time sharing.
+</p>
+<div class='vspace'></div><h2>Sospensione e riattivazione dei processi</h2>
+<p>Sospendere e riattivare i processi è l'anima del multi-tasking, il cui obiettivo - ricordiamolo - è consentirne la turnazione sul processore massimizzandone lo sfruttamento. Ciò viene realizzato secondo una precisa metodologia:
+</p><ul><li><em>sospensione del processo in esecuzione</em>, salvando in modo sicuro lo stato di evoluzione della computazione in modo tale da poter tornare ad eseguire il processo dallo stesso punto in cui l'avevo lasciato
+</li><li><em>ordinamento dei processi in stato di pronto</em> (scheduling), per stabilire quale deve essere eseguito per primo
+</li><li><em>selezione del processo in stato di pronto da mettere in esecuzione</em> (dispatching), il passo logico successivo allo scheduling
+</li><li><em>riattivazione del processo selezionato</em>
+</li></ul><p class='vspace'>Tali operazioni devono tener conto del comportamento dei processi rispetto all'uso delle risorse fisiche, in base al quale li distinguiamo in:
+</p><ul><li><em>I/O-bound</em>, che effettuano più I/O che computazioni
+</li><li><em>CPU-bound</em>, che effettuano principalmente computazioni (in casi limite potrebbero anche non avere alcuna I/O)
+</li></ul><p class='vspace'>Il sistema che implementerà il multi-tasking dovrà dunque tener conto delle classi dei processi, bilanciandoli opportunamente. Ad esempio, eseguire pochi processi I/O-bound non sfrutterebbe al meglio il processore, dandogli poco e niente da computare; eseguire troppi CPU-bound invece, pur assicurando un uso intensivo della CPU, rallenterà drasticamente il sistema (il processo monopolizza il processore e tutti gli altri non potranno evolvere). Quindi non basta massimizzare lo sfruttamento della CPU, occorre anche che l'evoluzione dei programmi in esecuzioni appaia fluida e parallela all'utente.
+</p>
+<p class='vspace'>Come realizzare allora il sistema? Dobbiamo distinguere tra <strong>politiche</strong> ("<em>che cosa fare</em>") e <strong>meccanismi</strong> ("<em>come sarà fatto</em>"). Le prime sono le regole, che sono indipendenti da come verranno poi implementate. Nel nostro caso definiscono quando un processo debba essere sospeso, e con quale criterio si dovrà ordinare la coda dei processi pronti. I meccanismi sono invece l'insieme delle operazioni che realizzeranno la politica.<br />Più in dettaglio, la politica di sospensione dei processi stabilisce che un processo in esecuzione può essere sospeso in modo <em>implicito</em>, ovvero ad opera dell'ambiente operativo, o <em>esplicito</em>, in cui è il processo stesso che richiama volontariamente l'operazione di rilascio del processore.<br />Appartengono alla sospensione implicita i seguenti casi:
+</p><ul><li>quando viene effettuata una richiesta di I/O. E' tipica di tutti i sistemi operativi, e tiene conto dei tempi di attesa legati ai tempi elettro-meccanici di esecuzione della chiamata I/O richiesta
+</li><li>quando dopo aver creato un sottoprocesso ne attendo la terminazione
+</li></ul><p class='vspace'>Ultima considerazione è che sia la sospensione implicita che quella esplicita sono sincrone rispetto la computazione, con la differenza che la prima avviene in stato supervisor (essendo legata a chiamate di sistema, sarà il sistema operativo a gestirla), mentre la seconda in modalità utente (magari attivata con una trap). Si possono avere anche casi di sospensione asincrona rispetto la computazione, ovvero ad esempio allo scadere del quanto di tempo nei sistemi time sharing, un concetto che affronteremo nel capitolo successivo.
+</p>
+<p class='vspace'>Vediamo ora i meccanismi. La sospensione del processo in esecuzione avviene in due passaggi: l'attivazione della procedura di sospensione (tra quelle elencate prima) ed il salvataggio del contesto di esecuzione, ovvero tutti i registri del processore nello stack e lo stack pointer nel Process Control Block. La riattivazione del processo avviene intuitivamente seguendo la procedura inversa, con il ripristino del contesto di esecuzione.<br />Il <em>context switching</em> visto nel capitolo precedente è dunque composto da queste due "macro-operazioni" di sospensione del processo in esecuzione e riattivazione del processo da mettere in esecuzione.
+</p>
+<p class='vspace'>Da notare infine che alcuni processori (ad esempio gli x86) possono farlo anche in hardware (c'è un'istruzione apposita che salva il contesto dove indicato), ma a volte farlo in software risulta più veloce. 
+</p>
+<div class='vspace'></div><h2>Time Sharing</h2>
+<p>Una buona definizione di sistema <strong>time sharing</strong> è <em>sistema multi-tasking a condivisione di tempo</em>. Ha come obiettivo quello di gestire la turnazione dei processi sul processore in modo da creare l'illusione di evoluzione contemporanea delle computazioni, come se ogni processo avesse tutta la CPU per sé. Fin qui nulla di nuovo rispetto al comune multi-tasking; la differenza sta nell'introduzione del concetto di <strong>quanto di tempo</strong> e <strong>pre-emption</strong>. Il <em>quanto di tempo</em> (<em>time slice</em>) è l'intervallo di tempo massimo di uso consecutivo del processore consentito a ciascun processo, così che si abbia una equa ripartizione della CPU; la <em>pre-emption</em> è invece il rilascio forzato del processore, con la sospensione del processo in esecuzione. Ho quindi più processi da eseguire caricati in memoria, la cui turnazione è soggetta alle stesse politiche viste per il multi-tasking con l'aggiunta della possibilità di sospensione asincrona alla computazione, dovuta allo scadere del quanto di tempo.
+</p>
+<p class='vspace'>Il dispositivo che rende possibile la sospensione di un processo ancora in esecuzione allo scadere del time slice, è il <strong>Real-time clock</strong> (<em>RTC</em>). Esso non è altro che un chip impiantato sulla scheda madre contenente un cristallo di quarzo che viene fatto oscillare in modo estremamente stabile con segnali elettrici. Tali oscillazioni (i cui valori dovrebbero essere riportati sul manuale del calcolatore, e in alcuni casi sono anche programmabili) scandiscono il tempo generando periodicamente delle interruzioni da inviare al sistema operativo.<br />Il periodo dell'RTC è molto piccolo, e se usassi direttamente il suo valore come time slice il sistema perderebbe più tempo a gestire gli interrupt che ad eseguire i processi (questo fenomeno prende il nome di <em>sovraccarico di gestione dell'interruzione</em>). La soluzione è moltiplicarlo per un opportuno fattore <em>k</em>, così che solo un'interruzione ogni <em>k</em> verrà considerata come termine del quanto di tempo. Il fattore dovrà tener conto di un aspetto importante degli interrupt, cioè che quando il processore ne gestisce uno disabilita la ricezione degli altri. Quindi potrebbe succedere che durante la gestione dell'interruzione di altre periferiche arrivi il segnale RTC ed il processore non se ne accorga. Basterebbe però mantenere il valore dell'intervallo di tempo un po' più basso di quanto si vorrebbe, così da aumentare la frequenza degli interrupt e ridurre statisticamente l'incidenza del problema.
+</p>
+<div class='vspace'></div><h2>Accenni di schedulazione</h2>
+<p>Se con la multiprogrammazione è possibile avere più processi caricati in memoria, è grazie al multi-tasking e alla gestione time-sharing che essi possono alternarsi nell'utilizzo della CPU, così che la loro evoluzione possa essere portata avanti in parallelo. 
+</p>
+<p class='vspace'>Se ho un unico processore, il sistema non potrà mai avere più di un processo in esecuzione, ed ho quindi bisogno di qualcosa che selezioni i processi pronti all'esecuzione per eseguirli effettivamente sulla CPU, lasciando i rimanenti in attesa. Questo componente prende il nome di <strong>schedulatore dei processi</strong> (o <em>scheduler</em>), e le strutture da cui acquisisce informazioni sui processi e i lori stati si chiamano <em>code di schedulazione</em>.
+</p>
+<p class='vspace'>Tra le code di schedulazione ricordiamo:
+</p><ul><li>la <em>coda di lavori</em> (<em>job queue</em>), in cui vengono inseriti tutti i processi del sistema al momento della loro creazione
+</li><li>la <em>coda dei processi pronti</em> (<em>ready queue</em>), in cui risiedono i processi caricati in memoria centrale che si trovano nello stato <em>ready-to-run</em>. Vi usciranno solo quando saranno selezionati dallo scheduler per l'esecuzione (operazione di <em>dispatching</em>)
+</li><li>la <em>coda delle periferiche di I/O</em> (<em>device queue</em>), dove vengono inseriti i processi in attesa di una particolare periferica di I/O
+</li></ul><p class='vspace'>Tali code vengono rappresentate con il diagramma delle code, in cui ciascun rettangolo rappresenta una coda, i cerchi le risorse che li servono e le frecce il flusso dei processi nel sistema.
+</p><div  style='text-align: center;'><img src='../uploads/Uni/diagrammaCode.jpg' alt='' title='' /></div>
+<p>Si può osservare come un processo venga inizialmente messo nella coda dei processi pronti, finché non viene selezionato per l'esecuzione. A questo punto può terminare, o effettuare una richiesta di I/O e spostarsi nella relativa coda, o creare un nuovo processo e attendere che termini, o attendere un interrupt. Quando viene terminato viene rimosso da tutte le code e il suo PCB e le sue risorse vengono deallocate.
+</p>
+<div class='vspace'></div><h2>Creazione dei processi</h2>
+<p>Se durante la sua esecuzione un processo volesse creane uno nuovo, può farlo attraverso una chiamata di sistema per la sua creazione e attivazione. Il processo generante prende il nome di <em>padre</em> e quello generato <em>figlio</em>, che a sua volta può generare nuovi figli andando a formare un <em>albero</em> di processi.
+</p>
+<p class='vspace'>Ci sono due considerazioni da fare. La prima è che in seguito alla creazione esistono due possibilità per l'esecuzione dei processi: il padre continua la sua computazione in modo concorrente ai figli, oppure attende che tutti o parte di essi siano terminati. La seconda considerazione riguarda invece la concessione delle risorse ai figli, ovvero decidere se condividerle (tutte o in parte) col padre, fare in modo che siano ottenute direttamente dal sistema operativo, o passare dei dati in input che la inizializzino dopo la creazione.
+</p>
+<p class='vspace'>Prima di vedere come implementare tale funzione nei sistemi Unix, anticipiamo brevemente il concetto di <strong>spazio di indirizzamento</strong>, cioè quella porzione di memoria centrale riservata al processo dal sistema operativo, alla quale nessun altro processo può accedere (salvo eventuali <a class='wikilink' href='SO-Sincronizzazione.html'>sincronizzazioni</a>, che per ora non interessano). E' al suo interno che vengono memorizzati il codice e i dati, questi ultimi residenti nelle strutture dati opportune che abbiamo visto nei capitoli precedenti.
+</p>
+<p class='vspace'>Possiamo finalmente vedere la chiamata di sistema per la creazione di un nuovo processo nei sistemi Unix: <strong>fork()</strong>. Essa produce una copia <em>distinta</em> dello spazio di indirizzamento del padre, ovvero stesso codice del programma e stessi dati <em>al momento della creazione</em>. Il meccanismo di comunicazione tra padre e figlio è particolarmente semplice, ed è reso possibile dal codice di ritorno della funzione <code class='escaped'>fork()</code>, che per il padre è l'identificatore del figlio (il <em>pid</em>, un numero intero maggiore di 0), mentre per quest'ultimo è proprio 0. Di seguito un esempio di codice:
+</p>
+<div class='vspace'></div><pre class='escaped'>int valore = fork();
+
+if (valore == 0) 
+{
+  printf("Sono il figlio!\n");
+  return (0);
+}
+else 
+{
+  printf("Sono il padre!\n");
+  return (0);
+}</pre>
+<p class='vspace'>Ma se il processo figlio è una copia esatta del padre (più esattamente, è un duplicato distinto del suo spazio di indirizzamento), come si può allora generare processi indipendenti? Unix mette a disposizione un'ulteriore chiamata di sistema, la <strong>exec()</strong>, che permette di caricare un nuovo programma nello spazio di memoria del processo che la esegue. Il padre dovrà in pratica lanciare all'interno del processo figlio (quindi, dopo la <code class='escaped'>fork()</code>) una <code class='escaped'>exec()</code> specificando da quale porzione di memoria andare a caricare il nuovo codice e i nuovi dati da sovrascrivere agli attuali.
+</p>
+<p class='vspace'>Pur essendo piuttosto comune che a una <code class='escaped'>fork()</code> segua una <code class='escaped'>exec()</code>, le due funzioni vengono mantenute comunque separate perché potrebbero essere utilizzate singolarmente per altri scopi diversi dalla creazione dei processi. Ad esempio con una <code class='escaped'>exec()</code> potrei cambiare il codice dello stesso processo in esecuzione semplicemente per svolgere attività di tipo diverso.
+</p>
+<div class='vspace'></div><h2>Terminazione dei processi</h2>
+<p>Un processo normalmente termina dopo l'esecuzione della sua ultima istruzione, quando chiede al sistema operativo di rimuoverlo tramite la chiamata <strong>exit()</strong>. Per rimozione dal sistema si intende la deallocazione di tutte le risorse in uso, ovvero le porzioni di memoria occupate, i file aperti e i buffer di I/O. La <code class='escaped'>exit()</code> restituisce un valore di ritorno (tipicamente un intero) dal quale si capisce se l'operazione è andata a buon fine o se ho riscontrato errori.
+</p>
+<p class='vspace'>Esistono altri due motivi per i quali può terminare un processo, entrambi che coinvolgono il padre dello stesso. In un caso ho la cosiddetta <em>terminazione diretta</em>, col padre che decide di interrompere l'esecuzione di un suo figlio per vari motivi (perché ha ecceduto nell'uso delle risorse concesse, perché i suoi servizi non sono più necessari, ...) attraverso la funzione <code class='escaped'>abort()</code>. L'altro prende invece il nome di <em>terminazione a cascata</em>, è messa in esecuzione da alcuni sistemi operativi e consiste nella terminazione forzata di tutti i figli di un processo che (in modo normale o anormale) ha finito la sua computazione. Altri sistemi invece, come ad esempio l'Unix, nel caso in cui un processo termini, assegnerebbero tutti i suoi figli al processo <em>init</em> (il primo processo che il kernel manda in esecuzione dopo aver terminato il bootstrap) così che possano continuare la loro evoluzione.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SO-Processi)</span></div>
+  </div>
+</body>
+</html>

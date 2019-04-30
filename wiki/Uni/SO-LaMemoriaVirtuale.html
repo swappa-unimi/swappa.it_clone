@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - La memoria virtuale </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-LaMemoriaVirtuale' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - La memoria virtuale
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LaMemoriaVirtuale?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LaMemoriaVirtuale?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-LaMemoriaVirtuale-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LaMemoriaVirtuale?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LaMemoriaVirtuale?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - La memoria virtuale was last modified on September 12, 2009, at 05:39 PM'>
+							<span style='display:none;'>Sistemi Operativi - La memoria virtuale</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>La memoria virtuale</span>
+</p>
+<p class='vspace'>La <strong>memoria virtuale</strong> è una tecnica che consente l'esecuzione dei processi che non sono completamente in memoria, astraendo la memoria centrale in un vettore di memorizzazione molto più grande e uniforme. Essa consente inoltre di condividere facilmente porzioni di memoria e semplifica la creazione dei processi. Per contro è piuttosto difficile da implementare e può rallentare il sistema se progettata e adoperata con poca attenzione.
+</p>
+<div class='vspace'></div><h2>Ambiente</h2>
+<p>Le istruzioni dei processi per poter essere eseguite devono risiedere in memoria centrale, con le limitazioni sulle dimensioni che ne conseguono. Spesso è però inutile caricare tutto il codice, o perché contiene procedure che si usano raramente (ad esempio gestione degli errori), o perché si alloca più memoria del necessario per array o liste, o ancora perché è difficile che diverse porzioni del programma servano contemporaneamente. L'esecuzione di un programma caricato solo parzialmente in memoria ha invece diversi vantaggi, dato che non è più vincolato alla dimensione della memoria centrale e permette il caricamento di più processi aumentando così il livello di multiprogrammazione (dunque lo sfruttamento della CPU).
+</p>
+<p class='vspace'>La memoria virtuale comporta la netta separazione tra memoria logica e fisica. Il programmatore non dovrà più preoccuparsi della quantità di memoria fisica disponibile o di quale codice dovrà collegare nell'overlay, ma potrà concentrarsi sul programma con soddisfazione di tutti. Lo <em>spazio di indirizzamento virtuale</em> è in sostanza quello logico di cui si parlava nel <a class='wikilink' href='SO-GestioneDellaMemoriaCentrale.html'>capitolo precedente</a>, dunque deve essere mappato sulla memoria fisica dalla <strong>MMU</strong>. La mappatura può essere contigua o più spesso sparsa, quest'ultima con importanti benefici come una maggiore semplicità di gestione di heap e stack, e la condivisione di librerie o altri oggetti. 
+</p>
+<div class='vspace'></div><h2>Richiesta di paginazione</h2>
+<p>La memoria virtuale viene implementata in genere con la <strong>richiesta di paginazione</strong> (per la cronaca, esiste ovviamente anche una <em>richiesta di segmentazione</em>, ma è più complessa a causa delle dimensioni variabili dei segmenti). Tale sistema è simile alla paginazione con swap, ma gli scambi di memoria dei processi non avvengono sull'intero codice e vengono attuati da uno <em>scambiatore pigro</em> che non swappa mai una pagina in memoria a meno che non sia assolutamente necessaria. Definirlo quindi <strong>paginatore</strong> è più appropriato, dato che tratta le singole pagine.
+</p>
+<div class='vspace'></div><h3>Concetti fondamentali</h3>
+<p>Il paginatore porta in memoria solo quelle pagine che ipotizza saranno necessarie. Per distinguere le pagine caricate da quelle che non lo sono si utilizza il bit di <em>validità/non validità</em>, che indica rispettivamente se la pagina è legale e caricata in memoria centrale o viceversa; quest'informazione è ovviamente riportata nella <em>tabella delle pagine</em>. Se con un'attenta paginazione si riesce a indovinare e caricare tutte e sole quelle pagine che saranno richieste, è come se fosse stato caricato l'intero processo dato che una pagina non richiesta anche se non valida non provocherà alcun effetto sull'esecuzione. <br />E se invece il processo cerca di accedere proprio a una pagina non valida? In questo caso scatta una <em>trap di mancanza di pagina</em> (<strong>page fault</strong>) che mette in moto la seguente routine:
+</p><ol><li>si ricontrolla la tabella delle pagine del processo per verificare che la pagina richiesta non sia effettivamente valida
+</li><li>se la pagina non è legale si termina il processo, altrimenti bisogna paginarla
+</li><li>si cerca un frame libero
+</li><li>si schedula un'operazione su disco per leggere la pagina voluta nel frame appena allocato
+</li><li>a operazione terminata si aggiorna la tabella delle pagine
+</li><li>si fa ripartire l'istruzione che era stata interrotta dalla trap
+</li></ol><p class='vspace'>Il caso limite è far partire un processo senza aver caricato nessuna parte del suo codice in memoria: si avranno una novena di page fault finché non riuscire a funzionare normalmente. Questo sistema si chiama <strong>richiesta pura di paginazione</strong> e garantisce che venga caricato il minimo numero indispensabile di pagine. Ovviamente troppi page fault appesantiscono il sistema, ma vedremo come limitarne l'occorrenza con alcuni accorgimenti e osservazioni, come quelle sulla <em>località dei riferimenti</em>.
+</p>
+<div class='vspace'></div><h3>Prestazioni della richiesta di paginazione</h3>
+<p>Il tempo di accesso effettivo per una memoria a una richiesta di paginazione coincide pressapoco al tempo di accesso (da 10 a 200 ns) in mancanza di page fault, altrimenti aumenta proporzionalmente al loro numero. La gestione di un page fault abbiamo infatti visto che è piuttosto onerosa (si arriva anche a centinaia di istruzioni).<br />Se chiamiamo <em>p</em> la probabilità di riscontrare un page fault, avremo che il<br /><code class='escaped'>tempo di accesso effettivo = (1-p) x ma + p x tpf</code><br />, dove ma è il tempo di accesso alla memoria e tpf il tempo di servizio di un page fault.
+</p>
+<div class='vspace'></div><h2>Copia durante la scrittura</h2>
+<p>Un nuovo processo viene generato con la chiamata di sistema <code class='escaped'>fork()</code>, che nella sua implementazione originale provoca una duplicazione dello spazio di indirizzamento del padre che sarà assegnata al figlio. Dato però che molti processi eseguono una <code class='escaped'>exec()</code> subito dopo la creazione (modificando così il proprio codice di partenza), la copia completa degli spazi di indirizzamento è spesso uno spreco di tempo e spazio. <br />Una tecnica alternativa è la <strong>copy-on-write</strong>, che permette ai processi padri e figli di condividere inizialmente le stesse pagine (opportunamente contrassegnate), e se poi uno dei due ne vuole modificare una ne viene generata una copia che sarà mappata nello spazio logico di quel processo. Tutte le pagine non modificate o marcate come non modificabili (ad esempio quelle contenenti il codice) sono condivise con considerevole risparmio. Le copie generate durante una copy on write vengono allocate in pagine libere facenti parte di un pool appositamente mantenuto, su cui vengono applicati dei meccanismi <em>zero-fill-on-demand</em>, ovvero vengono azzerate le pagine (cancellando tutto il loro contenuto) prima di essere allocate.
+</p>
+<div class='vspace'></div><h2>Associazione dei file alla memoria</h2>
+<p>.....
+</p>
+<div class='vspace'></div><h2>Sostituzione della pagina</h2>
+<p>Abbiamo visto come il non allocare tutte le pagine di un processo possa aumentare il livello di multiprogrammazione, ma si potrebbe incorrere in un nuovo problema: la <em>sovra-allocazione</em>. Se infatti il processo (che ricordiamo condivide la memoria centrale anche con i buffer di I/O) improvvisamente ha bisogno di allocare tutte le sue pagine e non ci sono più frame a disposizione che si fa? Terminarlo non è saggio, lo swap lo vedremo poi, vada per la <strong>sostituzione delle pagine</strong>!
+</p>
+<div class='vspace'></div><h3>Sostituzione di base della pagina</h3>
+<p>Di seguito illustreremo i passi della sostituzione di base della pagina:
+</p><ol><li>trovare la posizione della pagina desiderata su disco
+</li><li>trovare un frame libero
+<ul><li>se c'è, usarlo
+</li><li>se non c'è, selezionare un frame vittima
+</li><li>scrivere quest'ultimo su disco e aggiornare la tabella delle pagine e quella dei frame
+</li></ul></li><li>leggere la pagina desiderata nel frame libero e aggiornare le tabelle
+</li><li>riprendere il processo
+</li></ol><p class='vspace'>Notare che in mancanza di frame liberi si rende necessario il trasferimento di due pagine, una verso il disco e l'altra verso la memoria centrale. Con un semplice accorgimento hardware, il <em>bit di modifica</em>, si riesce però a fare in modo di evitare che siano trasferite su disco le pagine non modificate o non modificabili.
+</p>
+<p class='vspace'>La sostituzione di base della pagina garantisce la separazione tra memoria fisica e virtuale, ed il suo algoritmo implementativo assieme a quello per l'allocazione dei frame deve essere oggetto di scrupolosa attenzione dato che piccoli miglioramenti su di essi comportano notevoli guadagni sull'intero sistema. Questi algoritmi vengono valutati facendoli operare su <strong>stringhe di riferimento</strong>, ovvero stringhe degli identificatori delle pagine richieste, generate casualmente o prese direttamente dall'esecuzione di un sistema reale. Vediamo ora alcuni algoritmi di sostituzione.
+</p>
+<div class='vspace'></div><h3>Sostituzione FIFO della pagina</h3>
+<p>Quello <strong>FIFO</strong> è l'algoritmo di sostituzione più facile da capire e programmare, e consiste nella sostituzione della pagina più vecchia (calcolata con un timestamp o grazie a una coda FIFO). 
+</p>
+<p class='vspace'>Le sue prestazioni non sono notevoli dato che l'idea di fondo "le pagine richieste tempo fa non saranno più necessarie" non regge con quelle usate molto frequentemente. Inoltre essendo possibile la sostituzione di una pagina attiva, il numero di page fault può aumentare sensibilmente.<br />Inoltre l'algoritmo FIFO soffre dell' <strong>anomalia di Belady</strong>, ovvero il suo tasso di mancanza di pagina all'aumentare del numero di frame può aumentare invece che diminuire come ci si aspetterebbe.
+</p>
+<div class='vspace'></div><h3>Sostituzione ottimale della pagina</h3>
+<p>L'algoritmo <strong>ottimale di sostituzione</strong> della pagina è quello col più basso tasso di page fault e che non soffre dell'anomalia di Belady. E' anche chiamato <em>OPT</em> o <em>MIN</em> ed è definito così: viene sostituita la pagina che non sarà usata per il più lungo periodo di tempo. 
+</p>
+<p class='vspace'>Non è implementabile dato che implica la conoscenza aprioristica della stringa di riferimento, il che è praticamente impossibile. Viene tuttavia utilizzato come termine di paragone.
+</p>
+<div class='vspace'></div><h3>Sostituzione LRU della pagina</h3>
+<p>La <strong>sostituzione LRU</strong> (<em>Least-Recently-Used</em>) ha come politica quella di sostituire la pagina che non è stata usata per il periodo di tempo più lungo. Se la OPT rappresenta l'algoritmo ottimale tra quelli che guardano in avanti nella stringa di riferimento, la LRU è quella ottimale tra quelli che guardano indietro. E' considerata in genere molto buona, seppur richieda un notevole supporto hardware e non tutti i sistemi operativi potrebbero tollerare un simile appesantimento della gestione della memoria
+</p>
+<p class='vspace'>Per determinare qual è la pagina che non è stata usata per il periodo di tempo più lungo sono percorribili due strade:
+</p><ul><li><em>contatori</em>, che si aggiungono come nuovo campo per ogni elemento della tabella delle pagine e che vengono incrementati per ogni nuovo riferimento ad esse
+</li><li><em>stack</em>, ogni volta che si fa riferimento a una pagina questa viene rimossa dallo stack e messa in cima. In questo modo tutte le pagine usate più di recente sono nella parte alta
+</li></ul><p class='vspace'>E' dimostrabile che gli algoritmi LRU non soffrono dell'anomalia di Belady.
+</p>
+<div class='vspace'></div><h3>Sostituzione della pagina con approssimazione dell'algoritmo LRU</h3>
+<p>Per quei sistemi che non sono in grado di utilizzare l'algoritmo di sostituzione LRU sono possibili un certo numero di approssimazioni, spesso realizzate utilizzando un bit di riferimento associato a ogni pagina (e riportato nella solita tabella delle pagine) che dice se questa è stata referenziata o meno. <br />Vediamoli.
+</p>
+<div class='vspace'></div><h4>Algoritmo dei bit di riferimento addizionali</h4>
+<p>Ad ogni pagina è associato un byte di 8 bit. Ad intervalli regolari il sistema operativo provvede a inserire il bit di riferimento della pagina nella cifra più significativa del byte, shiftando tutte le altre cifre a destra. In questo modo si può stabilire che quella usata meno di recente è la pagina col byte più basso. Se le pagine vittima individuate sono poi più di una, si possono sostituire entrambe o applicare una FIFO.
+</p>
+<div class='vspace'></div><h4>Algoritmo della seconda possibilità</h4>
+<p>Si basa sul FIFO, con la differenza che quando una pagina viene selezionata si controlla il suo bit di riferimento: se è 0 si sostituisce, altrimenti lo si azzera e gli si dà una seconda possibilità passando all'elemento successivo. E' anche detto <em>algoritmo dell'orologio</em> e può essere implementato con una coda circolare delle pagine. Notare che se una pagina viene utilizzata abbastanza spesso può non essere mai sostituita, e che l'algoritmo degenera in FIFO se tutti gli elementi sono settati a 1.
+</p>
+<div class='vspace'></div><h4>Algoritmo della seconda possibilità migliorato</h4>
+<p>In questo algoritmo si utilizzano come chiavi sia il bit di riferimento che quello di modifica. Possiamo dunque individuare quattro classi di pagine col seguente ordinamento:
+</p><ol><li>(0,0): pagina non usata di recente e non modificata, la migliore da sostituire
+</li><li>(0,1): pagina non usata di recente recente ma modificata, meno preferibile dato che dovrà essere scritta completamente prima della sostituzione
+</li><li>(1,0): pagina usata di recente non modificata
+</li><li>(1,1): pagina usata di recente e modificata
+</li></ol><p class='vspace'>Si sostituisce quindi la prima pagina incontrata con l'ordine più basso, così da ridurre il numero di chiamate I/O richieste.
+</p>
+<div class='vspace'></div><h3>Sostituzione della pagina basata su conteggio</h3>
+<p>Si tiene traccia del  numero di riferimenti di ogni pagina e si può scegliere tra due politiche da applicare:
+</p><ul><li>l'algoritmo di <em>sostituzione delle pagine usate meno di frequente</em>, che sostituisce le pagine col conteggio più basso basandosi sull'idea che le pagine attive avranno valori alti. Ma che fare se ad esempio una pagina viene usata pesantemente in un limitato intervallo di tempo e poi non è mai più richiesta? In questo caso una possibile soluzione è far decadere il valore del contatore a intervalli regolari
+</li><li>l'algoritmo di <em>sostituzione delle pagine più frequentemente usate</em>, la cui idea di fondo è che probabilmente se una pagina ha conteggio basso è perché deve ancora essere utilizzata
+</li></ul><div class='vspace'></div><h3>Algoritmo per l'uso del buffer delle pagine</h3>
+<p>Agli algoritmi di sostituzione si affiancano altre procedure che ottimizzano ulteriormente le prestazioni. Ad esempio il sistema operativo mantiene un certo numero di frame liberi nei quali verrà scritta la pagina richiesta prima che la vittima venga salvata fuori dalla memoria centrale. In questo modo il processo potrà ricominciare il prima possibile dopo un page fault senza dover aspettare che la vittima venga salvata.<br />Un'altra procedura utile è fare in modo che quando il paginatore è a riposo provveda a scrivere su disco le pagine con bit di modifica settata a 1, così che non dovranno essere riscritte al momento della sostituzione.
+</p>
+<div class='vspace'></div><h3>Le applicazioni e la sostituzione delle pagine</h3>
+<p>Ci sono alcune applicazioni che hanno prestazioni peggiori con la memoria virtuale a causa della gestione particolare che essi fanno della memoria stessa, profondamente differente da quella convenzionale del file system. Stiamo parlando ad esempio dei database. Per queste applicazioni possono essere previste aree di memoria grezze, da utilizzare come se fossero una grande successione sequenziale di blocchi logici, in cui è assente una qualsiasi struttura dati.
+</p>
+<div class='vspace'></div><h2>Allocazione dei frame</h2>
+<p>La paginazione pura che abbiamo visto qualche capitolo fa è una possibile tecnica per l' <strong>allocazione dei frame</strong>. Inizialmente tutti i frame disponibili vengono messi nella lista dei frame liberi, e saranno occupati man mano che l'esecuzione di un processo genererà una sequenza di page fault. Quando il processo termina i frame tornano ad essere disponibili.<br />Sono possibili dei miglioramenti, ad esempio far rientrare nelle pagine libere anche alcune di quelle riservate al sistema operativo, o sfruttare lo swap, o riservare alcuni frame da mantenere sempre liberi per la paginazione.
+</p>
+<div class='vspace'></div><h3>Numero minimo di frame</h3>
+<p>Qual è il numero di frame da associare a un processo? Esiste una regola generale?<br />In realtà ogni sistema ha una propria politica, ma tutti devono rispettare un limite superiore e uno inferiore. Quello superiore è ovviamente la quantità di memoria fisica disponibile, mentre quello inferiore dipende dall'architettura del computer. Più il numero minimo di frame è piccolo maggiore è la probabilità che si abbiano page fault, quindi va stabilito con attenzione. Altro fattore critico è la possibilità di avere sistemi che consentono <em>livelli multipli di indirezione</em>, ovvero istruzioni che fanno riferimento ad indirizzi indiretti. In questi scenari la memoria fisica richiesta per una singola istruzione potrebbe coinvolgere un gran numero di frame, dunque è opportuno fissare un limite al numero di livelli.
+</p>
+<div class='vspace'></div><h3>Algoritmi di allocazione</h3>
+<p>L' <strong>allocazione omogenea</strong> è l'algoritmo più semplice da applicare per ripartire i frame tra i vari processi, dandone a ognuno la stessa quantità; quelli che avanzano vengono tenuti da parte come frame liberi. Si dimostra poco soddisfacente nel caso in cui un processo debba accedere spesso a grosse strutture dati o a numerose porzioni di codice.
+</p>
+<p class='vspace'>Un'alternativa è l' <strong>allocazione proporzionale</strong>, che assegna la memoria in base alle dimensioni del processo. Definendo <strong>S = &#8721;s<sub>i</sub> </strong>, con <em>s<sub>i</sub></em> memoria virtuale del processo <em>p<sub>i</sub></em>, allora se il numero totale di frame disponibili è <em>m</em> vengono allocati <em>a<sub>i</sub></em> frame al processo, dove <em>a<sub>i</sub></em> è definito come: <strong>a<sub>i</sub> = (s<sub>i</sub>/ S) x m</strong> . Nella maggior parte dei casi si dimostra la soluzione migliore. Una variante prevede l'utilizzo della priorità come fattore di proporzionalità.
+</p>
+<p class='vspace'>Che sia proporzionale o omogenea, l'allocazione dei singoli processi cambia a seconda del livello di multiprogrammazione perché ci saranno più o meno processi a contendersi i frame.
+</p>
+<div class='vspace'></div><h3>Confronto tra le allocazioni con sostituzione locale e globale</h3>
+<p>Una classificazione degli algoritmi di sostituzione delle pagine prevede la distinzione tra <strong>sostituzioni locali</strong> e <strong>globali</strong>. Queste ultime consentono a un processo di selezionare la vittima considerando tutti i frame, compresi quelli allocati ad altri processi. La sostituzione locale richiede invece che ogni processo attui la scelta solo tra i frame ad esso allocati.
+</p>
+<p class='vspace'>Il vantaggio della tecnica globale è che ogni processo può aumentare il numero di frame assegnati, ma ha per contro l'impossibilità di controllare il proprio tasso di page fault dal momento che dipende da altri processi. E' comunque l'algoritmo che dà risultati migliori ed è il più usato.
+</p>
+<div class='vspace'></div><h2>Thrashing</h2>
+<p>Se i frame assegnati a un processo scendono al di sotto del numero minimo definito dall'architettura (ad esempio nello scenario di un'allocazione proporzionale basata sulla priorità), il processo deve essere sospeso e la memoria da lui allocata va liberata. Se fosse andato avanti con un numero insufficiente di frame sarebbe presto andato incontro a un page fault, che avrebbe richiesto una sostituzione di pagine tra quelle ancora attive, il che avrebbe causato un altro page fault, e così via. Quest'alta attività di paginazione prende il nome di <strong>thrashing</strong>, ed il processo che ne soffre spenderà più tempo a paginare che a proseguire nell'esecuzione.
+</p>
+<div class='vspace'></div><h3>Cause del thrashing</h3>
+<p>Consideriamo questa situazione: il sistema operativo controlla l'utilizzo della CPU e se questo è troppo basso aumenta il livello di multiprogrammazione introducendo un nuovo processo. Con un algoritmo di sostituzione globale ci saranno più processi a concorrere per gli stessi frame, e rubandoseli a vicenda faranno più richieste al paginatore. L'attesa dei processi in questa coda farà diminuire ulteriormente l'utilizzo del processore, che reagirà al solito attivando un nuovo processo alimentando la spirale. Si arriverà a un punto in cui l'attività produttiva del sistema crolla mentre aumenta a dismisura il tasso dei page fault.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/thrashing.gif' alt='' title='' /></div>
+<p class='vspace'>Questo è il classico esempio di <em>thrashing</em>, da cui si può uscire soltanto diminuendo il livello di multiprogrammazione. Si può limitarne gli effetti col rimpiazzamento locale (o a priorità) imponendo che un processo in thrashing non possa richiedere frame da altri ma se la cavi con i suoi. Questa non è una vera soluzione dal momento che il processo occuperà comunque per moltissimo tempo la coda di paginazione.<br />Per risolvere completamente il problema bisognerebbe invece sapere a priori di quanti frame avrà bisogno un processo, un numero che può essere approssimato applicando il <strong>modello di località</strong> di esecuzione. Questo modello afferma che durante la sua esecuzione il processo si sposta da una località di memoria all'altra, ovvero in gruppi di pagine (che possono anche sovrapporsi) che vengono usate insieme. La loro esistenza è diretta conseguenza della programmazione strutturata di programmi e basi di dati.
+</p>
+<div class='vspace'></div><h3>Il modello working set</h3>
+<p>Il <strong>modello working set</strong> è un'approssimazione di quello delle località e fa uso del parametro <strong>&#916;</strong> per definire la <em>finestra</em> del working set, ovvero l'insieme dei riferimenti più recenti esaminati. Se una pagina è attiva sarà sicuramente nel working set, mentre se non è più in uso ne uscirà dopo &#916; unità di tempo dal suo ultimo utilizzo. Si intuisce dunque che la precisione del modello dipende da &#916;: se è troppo piccolo non rappresenterà la località in modo adeguato, se è troppo grande si sovrapporrà ad altre località (troppe).
+</p>
+<p class='vspace'>Indicando con <strong>wss</strong> la dimensione del working set calcolata per ogni processo <em>p<sub>i</sub></em> del sistema, diremo che <strong>D = &#8721; wss</strong>, dove <strong>D</strong> è la richiesta totale di frame. Se D è maggiore del numero di frame disponibili si avrà il thrashing.
+</p>
+<p class='vspace'>Il sistema operativo controlla il working set di ogni processo assegnandogli frame sufficienti: se ce ne sono abbastanza fa partire un nuovo processo, ma se D supera il numero di frame disponibili allora farà in modo di sostituire le pagine inattive. In questo modo si previene il thrashing mantenendo il livello di multiprogrammazione il più alto possibile.
+</p>
+<p class='vspace'>La difficoltà del modello è tener traccia del working set, per questo viene generalmente approssimato utilizzando un <em>interrupt di un temporizzatore a intervalli fissi di tempo</em> e un <em>bit di riferimento</em>.
+</p>
+<div class='vspace'></div><h3>Frequenza delle mancanze di pagina</h3>
+<p>Il modello working set è efficace per controllare il working set (ovviamente) e si rivela utile anche per la <em>prepaginazione</em>, ma non affronta il problema del thrashing in modo diretto quanto la strategia di <strong>controllo della frequenza delle mancanze di pagina</strong> (<em>Page-Fault Frequency</em>, <strong>PFF</strong>). Il principio è questo: si sa che il thrashing ha un alto tasso di page fault, dunque è possibile fissare un limite superiore a tale tasso superato il quale si assegna al processo un nuovo frame. Si fissa inoltre un limite inferiore per evitare che un processo abbia inutilmente più frame del necessario, sceso al di sotto del quale gliene vengono tolti uno o più. Ciò che avviene è un bilanciamento dinamico del numero dei frame assegnato ai processi in base alla situazione attuale, senza sapere a priori quanti gliene servono davvero.<br />Come per il working set, anche con questa tecnica può essere necessario sospendere qualche processo finché non ci sono abbastanza frame disponibili; in questo caso i frame liberati vengono distribuiti tra i processi che hanno frequenza di mancanze di pagina maggiore.
+</p>
+<div class='vspace'></div><h2>File mappati in memoria</h2>
+<p>Normalmente ogni accesso al file richiede una chiamata di sistema e un accesso al disco. Si può in alternativa usare le tecniche di accesso alla memoria virtuale per trattare le chiamate I/O al file come se fossero accessi alle procedure di gestione della memoria. Questo metodo è noto come <strong>mappatura in memoria di un file</strong>, ed associa logicamente un file a una parte dello spazio degli indirizzi virtuali.
+</p>
+<div class='vspace'></div><h2>Altre considerazioni</h2>
+<h3>Prepaginazione</h3>
+<p>La più evidente caratteristica della pura richiesta di paginazione è il grande numero di page fault riscontrati all'avvio del processo o alla sua ripresa dopo la sospensione. La <strong>prepaginazione</strong> è un sistema che ha come obiettivo quello di ridurre il numero elevato di richieste di paginazione, caricando contemporaneamente in memoria tutte quelle pagine che crede saranno necessarie nell'immediato futuro. Ad esempio nel modello working set al momento di sospendere un processo potrà tenere traccia delle pagine che fanno parte della sua finestra, così che al momento della riattivazione potrà caricarle contemporaneamente prevenendo la richiesta. 
+</p>
+<p class='vspace'>Le intenzioni della prepaginazione sono buone, bisogna però fare in modo che le pagine prepaginate non siano tra quelle che non verranno mai usate dal processo, o i vantaggi svanirebbero.
+</p>
+<div class='vspace'></div><h3>La dimensione della pagina</h3>
+<p>Come si sceglie la dimensione della pagina? Vanno considerati diversi fattori, ad esempio con pagine molto piccole si utilizzerà meglio la memoria minimizzando le frammentazioni, ma si avranno tabelle delle pagine molto più grandi.<br />Per quanto riguarda le operazioni di I/O sulle pagine va considerato che spesso i tempi di latenza e di ricerca superano quelli effettivi di trasferimento, il che sembrerebbe avvantaggiare le pagine più grandi. Allo stesso tempo però pagine più piccole accentuerebbero le località, migliorando così la risoluzione e dunque permettendo di isolare esclusivamente le aree di memoria realmente necessarie. Inoltre per pagine grandi una minuscola modifica comporterebbe comunque il trasferimento dell'intero blocco.
+</p>
+<p class='vspace'>Il problema non ha dunque una risposta migliore in assoluto, anche se storicamente si sta tendendo a preferire pagine con dimensioni più grandi.
+</p>
+<div class='vspace'></div><h3>Estensione della TLB</h3>
+<p>L' <strong>estensione della TLB</strong> è una misurazione data dalla dimensione della pagina moltiplicata per il numero di elementi nella tabella.  Maggiore è il suo valore e minore è il tasso di page fault ed il tempo di accesso medio alla memoria. Si può dunque tentare di intervenire sull'estensione della TLB aumentando il numero di elementi o la dimensione delle pagine, magari usandone di dimensioni diverse.
+</p>
+<div class='vspace'></div><h3>Tabella delle pagine invertita</h3>
+<p>La <strong>tabella delle pagine invertita</strong> riduce la quantità di memoria fisica necessaria per la traduzione da indirizzo logico a fisico, ma non ha alcune informazioni necessarie alla paginazione. Per questo motivo vengono mantenute tabelle esterne delle pagine referenziate quando c'è un page fault.
+</p>
+<div class='vspace'></div><h3>Struttura del programma</h3>
+<p>Abbiamo visto che i page fault possono essere ridotti se il programma ha una forte località, che può essere ottenuta perseguendo una buona strutturazione del programma, quindi applicando le modularità, studiando attentamente le figure strutturali ed analizzando quali strutture dati sono più adeguate per il problema. In questo modo compilatori e linker produrranno codici decisamente più efficienti sotto il profilo della paginazione.
+</p>
+<div class='vspace'></div><h3>Blocco dei dispositivi di I/O</h3>
+<p>Un'operazione di I/O prevede l'utilizzo di un certo numero di frame, e bisogna fare in modo che non avvenga alcuna sostituzione globale su di essi prima che l'I/O non sia concluso, o la risposta sarebbe ricevuta dal processo sbagliato. Una soluzione è fare in modo che i buffer I/O siano nello spazio di indirizzamento del sistema operativo (il risultato andrà poi però copiato nella memoria del processo, con un conseguente appesantimento del sistema), un'altra è bloccare tali pagine adoperando un <em>bit di blocco</em>.
+</p>
+<div class='vspace'></div><h3>Elaborazione in tempo reale</h3>
+<p>La memoria virtuale può introdurre dei ritardi inaspettati nella computazione a causa dei tempi di gestione della paginazione, una caratteristica incompatibile con i processi in tempo reale, per i quali il fattore critico è proprio il tempo.<br />Una soluzione potrebbe essere fare in modo che i processi in real time possano dire al sistema operativo quali sono per loro le pagine critiche, così che possano essere precaricate ed eventualmente anche bloccate. In caso di abuso tutti gli altri processi potrebbero essere sospesi: priorità massima al processo in tempo reale.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: September 12, 2009, at 05:39 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LaMemoriaVirtuale?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LaMemoriaVirtuale?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

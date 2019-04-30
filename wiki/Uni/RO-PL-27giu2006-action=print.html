@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - PL - Vigneto - 27.06.06</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RO-PL-27giu2006.html' title='Ricerca Operativa - PL - Vigneto - 27.06.06'>Ricerca Operativa - PL - Vigneto - 27.06.06</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PL - Vigneto - 27.06.06 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>Un’azienda vinicola possiede un dato appezzamento di terreno e deve suddividerlo in zone coltivate con diversi tipi di vitigni. Di ogni tipo è noto quanti litri di vino rende per ogni metro quadrato coltivato e quale è il suo prezzo di vendita stimato.<br />L’azienda vuole ovviamente massimizzare i propri profitti, ma nel rispetto di alcuni vincoli. Anzitutto tutti i tipi di vitigno devono essere coltivati e per ciascuno di essi esiste una quantità minima di produzione di vino che deve essere assicurata comunque. Esiste anche un limite massimo di produzione per ogni tipo. Inoltre esistono dei vincoli nei rapporti tra i diversi vitigni: in particolare il rapporto tra le aree coltivate con tipi di vitigno diversi non deve superare il limite di 3:1. Anche il rapporto tra le quantità di vini di diverso tipo che vengono prodotti non deve superare il rapporto di 4:1.<br />Formulare il problema, classificarlo e risolverlo con i dati del file VIGNETO.TXT.
+</p>
+<div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+Ci sono 5 tipi di vitigno: Silvaner, Riesling, Pinot, Mueller-Thurgau, Merlot.
+
+=====================================================
+
+Tabella 1: Resa della superficie coltivata (litri/mq)
+
+Vitigno      Resa
+
+Silvaner      1.2
+Riesling      0.9
+Pinot         1.0
+Mueller-T.    0.8
+Merlot        1.4
+
+=====================================================
+
+Tabella 2: Prezzo di vendita (Euro/litro)
+
+Vitigno      Prezzo
+
+Silvaner      4.50
+Riesling      5.00
+Pinot         4.00
+Mueller-T.    3.00
+Merlot        3.50
+
+=====================================================
+
+Tabella 3: Limiti minimi e massimi di quantità di vino prodotta (litri)
+
+Vitigno      Minimo   Massimo
+
+Silvaner     150000   1500000
+Riesling     200000   1200000
+Pinot        100000    950000
+Mueller-T.   150000    800000
+Merlot       100000   1500000
+
+=====================================================
+
+Tabella 4: Coltivazione attuale (ettari)
+
+Silvaner     95
+Riesling    125
+Pinot        95
+Mueller-T.  100
+Merlot       85
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<ul><li><strong>v = 5</strong> (numero vitigni)
+</li><li><strong>resa<sub>i</sub></strong> (resa del vitigno i=1..5 sulla superficie coltivata) [litri/mq]
+</li><li><strong>pr<sub>i</sub></strong> (prezzo di vendita stimato del vitigno i=1..5) [€/litro]
+</li><li><strong>qmin<sub>i</sub></strong> (quantità minima di vino i=1..5 prodotto) [litri]
+</li><li><strong>qmax<sub>i</sub></strong> (quantità massima di vino i=1..5 prodotto) [litri]
+</li><li><strong>sup = 500</strong> (superficie appezzamento di terreno) [ettari]<br />
+</li></ul><p>Nota: 500 ettari = 500 * 10000 [mq]
+</p>
+<div class='vspace'></div><h3>Variabili</h3>
+<ul><li><strong>x<sub>i</sub> &gt;= 0</strong> (quantità di vino i=1..5 da produrre) [litro]
+</li><li><strong>y<sub>i</sub> &gt;= 0</strong> (superficie coltivata con il vino i=1..5) [ettari]
+</li></ul><p class='vspace'>Le variabili sono continue e non negative.
+</p>
+<div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p><strong>max (somma)<sub>i</sub> pr<sub>i</sub> * x<sub>i</sub></strong> [€/litro]
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<ul><li>vincolo su quantità minime di vino prodotto:<br /><strong>x<sub>i</sub> &gt;= qmin<sub>i</sub></strong> (per ogni i) [litri]
+</li><li>vincolo su quantità massime di vino prodotto:<br /><strong>x<sub>i</sub> &lt;= qmax<sub>i</sub></strong> (per ogni i) [litri]
+</li><li>vincolo sulla massima superficie coltivabile:<br /><strong>(somma)<sub>i</sub> y<sub>i</sub> = sup</strong> [ettari]
+</li><li>vincolo che lega le superfici con la quantità:<br /><strong>x<sub>i</sub> = y<sub>i</sub> * resa<sub>i</sub> * 10000</strong> [litri]
+</li><li>vincolo che limita la superficie di ogni vitigno rispetto agli altri:<br /><strong>y<sub>i</sub> &lt;= 3 y<sub>j</sub></strong> (per ogni i=1..5 e j=1..5, con i&lt;&gt;j) [ettari]
+</li><li>vincolo che limita la quantità di vino prodotto rispetto agli altri:<br /><strong>x<sub>i</sub> &lt;= 4 x<sub>j</sub></strong> (per ogni i=1..5 e j=1..5, con i&lt;&gt;j)	[litri]
+</li></ul><div class='vspace'></div><h2>Lindizzazione del problema</h2>
+<pre class='escaped'>
+! esercizio - Vigneto
+
+! variabili: x(i) = quantità di vino i da produrre [litri]
+! 		 y(i) = superficie coltivata con il vino i [ettari]
+! le variabili sono continue e non negative
+
+! funzione obiettivo;
+max 4.5 x1 + 5 x2 + 4 x3 + 3 x4 + 3.5 x5
+
+st
+
+! vincoli su quantità minime e massime di vino prodotto;
+qMin1) x1 &gt;= 150000
+qMin2) x2 &gt;= 200000
+qMin3) x3 &gt;= 100000
+qMin4) x4 &gt;= 150000
+qMin5) x5 &gt;= 100000
+
+qMax1) x1 &lt;= 1500000
+qMax2) x2 &lt;= 1200000
+qMax3) x3 &lt;=  950000
+qMax4) x4 &lt;=  800000
+qMax5) x5 &lt;= 1500000
+
+! vincolo su massima superficie coltivabile;
+maxSup) y1 + y2 + y3 + y4 + y5 = 500
+
+! vincoli che legano le superfici con le quantità;
+supQua1) x1 - 12000 y1 = 0
+supQua2) x2 - 9000 y2 = 0
+supQua3) x3 - 10000 y3 = 0
+supQua4) x4 - 8000 y4 = 0
+supQua5) x5 - 14000 y5 = 0
+
+! vincoli che limitano la superfice di ogni singolo vitigno;
+limSu12) y1 - 3 y2 &lt;= 0
+limSu13) y1 - 3 y3 &lt;= 0
+limSu14) y1 - 3 y4 &lt;= 0
+limSu15) y1 - 3 y5 &lt;= 0
+limSu21) y2 - 3 y1 &lt;= 0
+limSu23) y2 - 3 y3 &lt;= 0
+limSu24) y2 - 3 y4 &lt;= 0
+limSu25) y2 - 3 y5 &lt;= 0
+limSu31) y3 - 3 y1 &lt;= 0
+limSu32) y3 - 3 y2 &lt;= 0
+limSu34) y3 - 3 y4 &lt;= 0
+limSu35) y3 - 3 y5 &lt;= 0
+limSu41) y4 - 3 y1 &lt;= 0
+limSu42) y4 - 3 y2 &lt;= 0
+limSu43) y4 - 3 y3 &lt;= 0
+limSu45) y4 - 3 y5 &lt;= 0
+limSu51) y5 - 3 y1 &lt;= 0
+limSu52) y5 - 3 y2 &lt;= 0
+limSu53) y5 - 3 y3 &lt;= 0
+limSu54) y5 - 3 y4 &lt;= 0
+
+! vincoli che limitano la quantità di vino prodotto;
+limVi12) x1 - 4 x2 &lt;= 0
+limVi13) x1 - 4 x3 &lt;= 0
+limVi14) x1 - 4 x4 &lt;= 0
+limVi15) x1 - 4 x5 &lt;= 0
+limVi21) x2 - 4 x1 &lt;= 0
+limVi23) x2 - 4 x3 &lt;= 0
+limVi24) x2 - 4 x4 &lt;= 0
+limVi25) x2 - 4 x5 &lt;= 0
+limVi31) x3 - 4 x1 &lt;= 0
+limVi32) x3 - 4 x2 &lt;= 0
+limVi34) x3 - 4 x4 &lt;= 0
+limVi35) x3 - 4 x5 &lt;= 0
+limVi41) x4 - 4 x1 &lt;= 0
+limVi42) x4 - 4 x2 &lt;= 0
+limVi43) x4 - 4 x3 &lt;= 0
+limVi45) x4 - 4 x5 &lt;= 0
+limVi51) x5 - 4 x1 &lt;= 0
+limVi52) x5 - 4 x2 &lt;= 0
+limVi53) x5 - 4 x3 &lt;= 0
+limVi54) x5 - 4 x4 &lt;= 0
+
+end
+</pre>
+<div class='vspace'></div><h2>Altre domande</h2>
+<h3>Si conosce la suddivisione operata attualmente dall’azienda vinicola: si vuole sapere (a) se è ammissibile, (b) se è ottima, (c) di quanto può essere migliorata nel caso non sia ottima.</h3>
+<p>La suddivisione attuale è quella riportata nella tabella 4 dei dati. E' ammissibile, ma non è ottima: quella calcolata col nostro programma ha valore 22630950, mentre quella con i dati attuali è pari a 21120000 (per calcolarla basta fissare le x<sub>i</sub> nel modello ai valori dati nel testo e risolvere il problema).
+</p>
+<div class='vspace'></div><h3>Indicare quali vincoli sono attivi e quale sarebbe il miglioramento percentuale ottenibile in termini di profitti (a) se non esistessero i vincoli sui rapporti tra le aree, (b) se non esistessero i vincoli sui rapporti tra le quantità di vini prodotte, (c) se non esistessero né gli uni né gli altri.</h3>
+<p>Per vedere quali vincoli sono attivi all'ottimo basta osservare il report:
+</p>
+<div class='vspace'></div><pre class='escaped'> ROW   SLACK OR SURPLUS     DUAL PRICES
+    QMIN1)   1350000.000000          0.000000
+    QMIN2)   1000000.000000          0.000000
+    QMIN3)    776488.125000          0.000000
+    QMIN4)    225000.000000          0.000000
+    QMIN5)   1400000.000000          0.000000
+    QMAX1)         0.000000          0.666667
+    QMAX2)         0.000000          0.555556
+    QMAX3)     73511.906250          0.000000
+    QMAX4)    425000.000000          0.000000
+    QMAX5)         0.000000          0.642857
+   MAXSUP)         0.000000      40000.000000
+  SUPQUA1)         0.000000          3.333333
+  SUPQUA2)         0.000000          4.444445
+  SUPQUA3)         0.000000          4.000000
+  SUPQUA4)         0.000000          5.000000
+  SUPQUA5)         0.000000          2.857143
+  LIMSU12)       275.000000          0.000000
+  LIMSU13)       137.946426          0.000000
+  LIMSU14)        15.625000          0.000000
+  LIMSU15)       196.428574          0.000000
+  LIMSU21)       241.666672          0.000000
+  LIMSU23)       129.613098          0.000000
+  LIMSU24)         7.291667          0.000000
+  LIMSU25)       188.095245          0.000000
+  LIMSU31)       287.351196          0.000000
+  LIMSU32)       312.351196          0.000000
+  LIMSU34)        52.976189          0.000000
+  LIMSU35)       233.779755          0.000000
+  LIMSU41)       328.125000          0.000000
+  LIMSU42)       353.125000          0.000000
+  LIMSU43)       216.071426          0.000000
+  LIMSU45)       274.553558          0.000000
+  LIMSU51)       267.857147          0.000000
+  LIMSU52)       292.857147          0.000000
+  LIMSU53)       155.803574          0.000000
+  LIMSU54)        33.482143          0.000000
+  LIMVI12)   3300000.000000          0.000000
+  LIMVI13)   2005952.375000          0.000000
+  LIMVI14)         0.000000          0.500000
+  LIMVI15)   4500000.000000          0.000000
+  LIMVI21)   4800000.000000          0.000000
+  LIMVI23)   2305952.500000          0.000000
+  LIMVI24)    300000.000000          0.000000
+  LIMVI25)   4800000.000000          0.000000
+  LIMVI31)   5123512.000000          0.000000
+  LIMVI32)   3923512.000000          0.000000
+  LIMVI34)    623511.875000          0.000000
+  LIMVI35)   5123512.000000          0.000000
+  LIMVI41)   5625000.000000          0.000000
+  LIMVI42)   4425000.000000          0.000000
+  LIMVI43)   3130952.500000          0.000000
+  LIMVI45)   5625000.000000          0.000000
+  LIMVI51)   4500000.000000          0.000000
+  LIMVI52)   3300000.000000          0.000000
+  LIMVI53)   2005952.375000          0.000000
+  LIMVI54)         0.000000          0.000000</pre>
+<p class='vspace'>I vincoli attivi sono dunque: quelli sulle quantità massime dei vini 1, 2, 5; quelli sui rapporti (4:1) tra quantità dei vini 1 e 4, e 5 e 4.<br />Se non esistessero i vincoli dei rapporti tra le aree non cambierebbe nulla dato che nessuno di questi vincoli è attivo; se invece non esistessero quelli dei rapporti tra quantità la soluzione migliorerebbe assestandosi a 22671070 euro. Se non esistessero entrambi la soluzione migliorerebbe ulteriormente: perché? Perché eliminando i vincoli dei rapporti tra quantità si attiva un vincolo di rapporto tra aree, ma se ignoriamo anche quest'ultimo lasciamo che il valore ottimo aumenti indisturbato.
+</p>
+<div class='vspace'></div><h3>Un podere confinante, attualmente incolto, può essere acquistato per allargare il vigneto dell’azienda, al prezzo di 3 Euro/mq ma in tal caso deve essere acquistata un’area di almeno 10 ettari. Dire se è conveniente acquistare ulteriore area coltivabile, in che misura e con quali conseguenze.</h3>
+<p>Per rispondere a questa domanda dobbiamo fare l'analisi parametrica sul vincolo relativo alla superficie totale disponibile, impostandolo ad esempio (abbondando) a 1000.
+</p>
+<div class='vspace'></div><pre class='escaped'>RIGHTHANDSIDE PARAMETRICS REPORT FOR ROW: MAXSUP
+
+    VAR       VAR    PIVOT    RHS       DUAL PRICE      OBJ
+    OUT       IN      ROW     VAL      BEFORE PIVOT     VAL
+
+                            500.000       40000.0      0.226310E+08
+ SLK    9  SLK   40    11   507.351       40000.0      0.229250E+08
+ SLK   10  ART         10   560.476       24000.0      0.242000E+08
+                            1000.00       -INFINITY   INFEASIBLE</pre>
+<p class='vspace'>Osserviamo che fino ai 507.351 ettari il valore della superficie è pari a 40000 euro/ettaro, e che il valore ottimo aumenta a 22925000 euro; oltre quella soglia il valore della superficie scende a 25000 euro/ettaro.<br />Se acquistiamo 10 ettari (per un totale di 510) calcoleremo il valore ottimo come:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+22925000 [euro]  +  (25000 [euro/ettaro] * (510 - 507.351) [ettari]) =
+= 22925000 [euro]  +  66225 [euro]  =  22991225 [euro]
+  ---------------    -------------
+  contributo fino     contributo
+  a 507.351 ettari   oltre i 507.351
+                       ettari</pre>
+<p class='vspace'>Abbiamo perciò un incremento del valore ottimo di 22991225 - 22631000 = 360225 [euro]. La spesa è di 3 [euro/mq] * 100000 [mq] = 300000 [euro], quindi i ricavi superano i costi, quindi ci conviene acquistare quei 10 ettari.
+</p>
+<p class='vspace'>Acquistarne di più non ci conviene, perché il prezzo duale della risorsa è 25000 [euro/ettaro], quindi 2.5 [euro/mq]. Dato che un metro quadrato ci costa 3 euro, non conviene.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RO-PL-27giu2006)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sicurezza nelle Reti - Prova scritta - Gennaio 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SNR-PS-Gennaio2008.html' title='Sicurezza nelle Reti - Prova scritta - Gennaio 2008'>Sicurezza nelle Reti - Prova scritta - Gennaio 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sicurezza nelle Reti - Prova scritta - Gennaio 2008 ::</strong>
+</pre><div class='vspace'></div><h2>Esercizio 1</h2>
+<p><em>Spiegare in sintesi ma con precisione in cosa consiste la tecnica di ARP Poisoning</em>.
+</p>
+<p class='vspace'>Innanzitutto, qualche richiamo sull'ARP. ARP è un protocollo che si usa su un segmento di rete locale, e serve per richiedere quale sia il MAC di una scheda di rete associata ad un certo IP. I dati che pervengono in seguito a queste risposte vengono mantenuti in una cache detta <strong>ARP Table</strong>.
+</p>
+<p class='vspace'>L'ARP Poisoning consiste nell'alterazione maliziosa di queste tabelle di ARP. L'idea è che, in seguito ad una richiesta da parte di un host di sapere il MAC di un certo IP, la risposta non venga inviata dal legittimo proprietario dell'IP, ma da un host malizioso. In questo modo la tabella ARP del cliente viene "avvelenata", ed i pacchetti verranno inviati tranquillamente a questo host cattivo.<br />È un classico attacco del tipo <em>man in the middle</em>, in cui due stanno comunicando, ma non sanno che in mezzo c'è il cattivone che intercetta tutte le comunicazioni.
+</p>
+<p class='vspace'>La criticità di questo tipo di attacco è molto alta, perché non c'è modo di stabilire se ci sia un man in the middle o no. Tuttavia, la sua incidenza è molto limitata perché occorre la presenza fisica dell'host cattivo all'interno del segmento di rete.
+</p>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p><em>Analizzare, in sintesi, il seguente annuncio di vulnerabilità:</em>
+</p><ul><li><em>motivare il livello di criticità attribuito;</em>
+</li><li><em>proporre soluzioni possibili.</em>
+</li></ul><p class='vspace'><strong>Level</strong>: CRITICAL: yaSSL Multiple Vulnerabilities
+</p>
+<p class='vspace'><strong>Affected</strong>: yaSSL versions 1.7.5 and prior
+</p>
+<p class='vspace'><strong>Description</strong>: YaSSL is an open source implementation of the Secure Socket Layer (SSL) and Transport Layer Security (TLS) standars, used for adding authentication and encryption to network traffic. It contains multiple vulnerabilities in its handling of SSL streams. A specially crafted request from a clinet could exploit one of these vulnerabilities, and allow an attacker to execute arbitrary code with the privileges of the vulnerable process using the library. Full technical details and proofs-of-concept are publicly available for these vulnerabilities. Note that the popular MySQL database server uses yaSSL: if SSL support is enabled on MySQL, it has been confirmed that it is vulnerable to a pre-authentication code execution attack. A proof-of-concept for the MySQL vulnerability is also publicly available.
+</p>
+<p class='vspace'><strong>Status</strong>: YaSSL has not confirmed, no updates available
+</p>
+<p class='vspace'>Qui la criticità è detta <strong>CRITICAL</strong>, cioè la più alta possibile. I motivi sono i seguenti:
+</p><ul><li>esistono documentazioni pubbliche su come sfruttare la vulnerabilità
+</li><li>permette l'esecuzione di codice con i privilegi dell'utente che usa la libreria. Siccome è una libreria usata da processi con alti privilegi (eg MySQL), potenzialmente i danni saranno molto ciccioni
+</li><li>è incorporata in MySQL, che è molto diffuso
+</li><li>non ci sono updates disponibili, e coinvolge tutte le versioni di YaSSL precedenti alla 1.7.5
+</li></ul><p class='vspace'>La possibile soluzione è disabilitare il supporto SSL per MySQL, nel caso questo sia stato attivato.
+</p>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p>Si consideri la rete aziendale mostrata nello schema allegato. Compaiono 4 firewall:
+</p><ul><li>FW1: eth0, eth1, eth2
+</li><li>FW2: eth0, eth1, eth2
+</li><li>FW3: eth0, eth1
+</li><li>FW4: eth0, eth1
+</li></ul><p class='vspace'>Si assuma che tali fw siano di tipo Static Packet Filter.
+</p>
+<p class='vspace'>Si definiscano:
+</p><ul><li>tutte le variabili, con nomi significativi, necessarie e sufficienti a configurare sorgenti e destinatari delle regole dei fw (nelle politiche non dovranno essere usati indirizzi IP ma solo variabili). Assegnare a tali variabili valori realistici (VARIABILE:=INDIRIZZO IP o INDIRIZZO SUBNET) facendo particolare attenzione alla definizione delle sottoreti.
+</li><li>le politiche di sicurezza, necessarie e sufficienti, dei firewall, per gestire i seguenti servizi/connessioni:
+</li></ul><ol><li>la sottorete <em>Mirror DMZ</em> è un mirror della DMZ. Tutti i contenuti presenti sui sistemi della DMZ devono essere replicati via FTP PASSIVO (20-21 tcp) sui corrispondenti sistemi della Mirror DMZ.
+</li><li>L'Host1 genera un heartbeat verso l'Host2 via UDP (2222/udp)
+</li><li>La sottorete Partner riceve segnalazioni dal Virtualization Server via SMTP (25/TCP)
+</li><li>Host1 e Host2 accedono a DB3 via SSH (22/tcp)
+</li><li>Si vogliono impedire eventuali diffusioni di malware dalla sottorete DMZ e Mirror DMZ verso il resto della rete aziendale. A tal fine viene utilizzata una variabile <em>blacklist</em> che include un numero (non predeterminato) di porte applicative destinatarie TCP e UDP che si vogliono inibire
+</li><li>Ogni altra comunicazione tra le reti non esplicitamente prevista dai punti precedenti deve essere impedita (scrivere regole)
+</li></ol><div class='vspace'></div><div><img src='../uploads/Uni/SNR-ReteGennaio2008.jpg' alt='' title='' /></div>
+<p class='vspace'>Per quanto riguarda le variabili, esse sono già state scritte nello schema, quindi non sto ad inventarne di nuove. Per inventarmi la definizione, io direi:
+</p><ul><li>DMZ:=192.168.10.0/24
+</li><li>MirrorDMZ:=192.168.20.0/24
+</li><li>ServiceNW:=192.168.1.0/24
+</li><li>ManagementNW:=192.168.100.0/24
+</li><li>Partner:=10.1.0.0/16 (immagino che sia su un'altra rete locale, ma con tanti indirizzi, per questo uso la classe 10.1.0.0/16)
+</li><li>Per i singoli nodi, va beh sbizzarritevi:)
+</li></ul><div class='vspace'></div><h3>Firewall 1</h3>
+<p>IN: eth2<br />OUT: eth1
+</p>
+<div class='vspace'></div><table border='0' cellpadding='5' cellspacing='0' align='center' >
+<tr ><td  valign='top'> <strong>Num regola</strong>
+</td><td  valign='top'><strong>Dir</strong>
+</td><td  valign='top'><strong>Prot</strong>
+</td><td  valign='top'><strong>IP sorg</strong>
+</td><td  valign='top'><strong>PORT sorg</strong>
+</td><td  valign='top'><strong>IP dest</strong>
+</td><td  valign='top'><strong>PORT dest</strong>
+</td><td  valign='top'><strong>Flag ACK</strong>
+</td><td  valign='top'><strong>Azione</strong>
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 0
+</td><td  valign='top'> OUT
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> Blacklist
+</td><td  valign='top'> Any
+</td><td  valign='top'> DENY
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 1
+</td><td  valign='top'> OUT
+</td><td  valign='top'> TCP
+</td><td  valign='top'> Host1
+</td><td  valign='top'> &gt; 1023
+</td><td  valign='top'> Host2
+</td><td  valign='top'> 21
+</td><td  valign='top'> 1/0
+</td><td  valign='top'> PERMIT
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 2
+</td><td  valign='top'> IN
+</td><td  valign='top'> TCP
+</td><td  valign='top'> Host2
+</td><td  valign='top'> 21
+</td><td  valign='top'> Host1
+</td><td  valign='top'> &gt; 1023
+</td><td  valign='top'> 1
+</td><td  valign='top'> PERMIT
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 3
+</td><td  valign='top'> OUT
+</td><td  valign='top'> TCP
+</td><td  valign='top'> DB1
+</td><td  valign='top'> &gt; 1023
+</td><td  valign='top'> DB2
+</td><td  valign='top'> 21
+</td><td  valign='top'> 1/0
+</td><td  valign='top'> PERMIT
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 4
+</td><td  valign='top'> IN
+</td><td  valign='top'> TCP
+</td><td  valign='top'> DB2
+</td><td  valign='top'> 21
+</td><td  valign='top'> DB1
+</td><td  valign='top'> &gt; 1023
+</td><td  valign='top'> 1
+</td><td  valign='top'> PERMIT
+<div class='vspace'></div></td></tr><tr ><td colspan='9'  valign='top'> <em>Le regole da 5 a 8 sono repliche delle regole precedenti, per permettere la connessione da porta alta del client a porta 20 del server, per lo scambio di dati</em>
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 9
+</td><td  valign='top'> OUT
+</td><td  valign='top'> UDP
+</td><td  valign='top'> Host1
+</td><td  valign='top'> 2222
+</td><td  valign='top'> Host2
+</td><td  valign='top'> 2222
+</td><td  valign='top'> **
+</td><td  valign='top'> PERMIT
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 10
+</td><td  valign='top'> OUT
+</td><td  valign='top'> TCP
+</td><td  valign='top'> Host1
+</td><td  valign='top'> &gt; 1023
+</td><td  valign='top'> DB3
+</td><td  valign='top'> 22
+</td><td  valign='top'> 1/0
+</td><td  valign='top'> PERMIT
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 11
+</td><td  valign='top'> IN
+</td><td  valign='top'> TCP
+</td><td  valign='top'> DB3
+</td><td  valign='top'> 22
+</td><td  valign='top'> Host1
+</td><td  valign='top'> &gt; 1023
+</td><td  valign='top'> 1
+</td><td  valign='top'> PERMIT
+<div class='vspace'></div></td></tr><tr ><td  valign='top'> 12
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> Any
+</td><td  valign='top'> DENY
+<div class='vspace'></div></td></tr></table> <br />
+<p>Ecco la spiegazione:
+</p><ul><li>la regola 0 serve per implementare la politica 5, che dice di impedire la connessione DA DMZ al resto della rete aziendale sulle porte specificate da <em>Blacklist</em>. Siccome questa lista può essere aggiornata e includere eventualmente anche porte precedentemente aperte, deve essere messa prima di tutte le altre.
+</li><li>Le regole da 1 a 8 implementano FTP passivo per il mirror sulla <em>Mirror DMZ</em>'
+</li><li>La regola 9 implementa la politica 2, quella dell'Heartbeat. Assumo che non ci siano risposte da parte di Host2...
+</li><li>Le regole 10 e 11 implementano la politica 4, cioè la connessione via SSH a DB3
+</li><li>Le ultime due regole sono il DEFAULT DENY
+</li></ul><p class='vspace'>Occorrono anche le tabelle per le coppie ETH0-ETH1 e ETH0-ETH2. In accordo alla politica 6, dovremmo proibire qualsiasi connessione da e verso l'esterno su queste interfacce, perché non è scritto da nessuna parte che qualche parte della rete aziendale possa uscire su Internet.
+</p>
+<div class='vspace'></div><h3>Firewall 2, 3 e 4</h3>
+<p>Le cose sono simili al FW 1, non mi pare ci sia niente di strano qui.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SicurezzaNelleReti.html'>Torna alla pagina di SnR</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SNR-PS-Gennaio2008)</span></div>
+  </div>
+</body>
+</html>

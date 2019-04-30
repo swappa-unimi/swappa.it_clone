@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ingegneria del software - Appunti del 3 Marzo</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IDS-3Marzo.html' title='Ingegneria del software - Appunti del 3 Marzo'>Ingegneria del software - Appunti del 3 Marzo</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del software</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del software - Appunti del 3 Marzo ::</strong>
+</pre><div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 230px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#i1'>Il modello iterativo</a>
+</li><li><a href='#i2'>Le attività del ciclo iterativo</a>
+</li><li><a href='#i3'>Ingegneria dei requisiti</a>
+</li><li><a href='#i4'>I requisiti</a>
+</li></ol></div>
+<p class='vspace'><a name='i1' id='i1'></a>
+</p><h2>Il modello iterativo</h2>
+<p>Se sto producendo un software e voglio dare la possibilità al committente di vedere e commentare ciò che sto facendo, non posso fare altro che <em>iterare</em> alcune fasi del modello waterfall. In questo modo avremo infatti l'occasione di raccogliere l'approvazione o la bocciatura degli ultimi progressi del prodotto da parte dell'utente, ma anche critiche suggerimenti e variazioni dei requisiti, e tenerne conto alla prossima iterazione.
+</p>
+<p class='vspace'>Il <strong>prototipo</strong> è il prodotto di ogni passaggio iterativo e non è altro che il modello approssimato dell'applicazione che si sta sviluppando, seppur con funzionalità parziali. Nel capitolo sul waterfall della <a class='wikilink' href='IDS-2Marzo.html#i3'>lezione del 2 Marzo</a> abbiamo anticipato due tecniche di gestione dei prototipi durante l'iterazione: la prima era la <em>throw away</em> che ne prevedeva la riscrittura da zero ad ogni passaggio, la seconda era la <em>onion skin</em> che invece ottimizzava e ampliava il lavoro parziale.
+</p>
+<p class='vspace'>Contrariamente a quanto detto sulle slide, le iterazioni non hanno sempre la stessa durata, ma c'è una certa accelerazione man mano che ci avviciniamo alla fine del processo produttivo dato che i requisiti da verificare sono sempre meno.
+</p>
+<p class='vspace'>Il <strong>RUP</strong> (<em>Rational Unified Process</em>) è un particolare tipo di modello iterativo, non orientato al ciclo di vita. Se ad esempio lo adottassimo per sviluppare un word processor, potremmo fare nello stesso momento sia la progettazione delle nuove caratteristiche che l'implementazione di quelle già consolidate (i.e. la gestione dei file, magari riciclata da un altro progetto).
+</p>
+<p class='vspace'>Fissiamo bene i concetti.<br />Se un'azienda usa il waterfall ogni fase le prenderà il 100% del tempo e delle energie, ne consegue una rigidità nell'acquisizione delle nuove caratteristiche.<br />Se un'azienda usa il modello iterativo seguirà più mini waterfall da iterare, e ad ogni iterazione avrà la possibilità di considerare nuove caratteristiche e funzionalità.<br />Se un'azienda usa il RUP e mi dice che è in fase di <em>construction</em>, significa che sta facendo per l'80% codifica e per il 20% pianificazione; se invece mi dice che è in fase di <em>elaboration</em>, significa che sta facendo per l'80% pianificazione e 20% codifica. In altre parole, vengono sempre portate avanti parallelamente diverse fasi del processo produttivo, così da spezzare la rigidità tipica del waterfall.
+</p>
+<p class='vspace'>Le caratteristiche del ciclo di vita iterativo sono la pianificazione preventiva, la possibilità di gestire variazione dei requisiti in corso d'opera (così da far valutare i vari prototipi al committente), il coinvolgimento degli utenti e - soprattutto - la <strong>gestione del rischio</strong>. Il <em>rischio</em> è lo spazio di eventi non desiderati e sfavorevoli, valutato come il prodotto tra la probabilità che tali eventi si verifichino e l'impatto (soprattutto economico) che comporterebbero. Si tratta quindi di una grandezza numerabile, misurata in euro. Si parla di spazio di eventi perché è qualcosa di più di un semplice insieme, dato che ad ogni elemento è associato un valore di probabilità; ai nostri fini però li possiamo chiamare in entrambi i modi. 
+</p>
+<p class='vspace'>Con l'introduzione del concetto di rischio sarà possibile effettuare l'iteration planning basandola sulla <em>risk analysis</em>, facendo cioè in modo che tenga conto di interrogativi come: cosa succederebbe se una certa funzione del software non funzionasse? quale sarebbe l'impatto del suo fallimento? qual è la probabilità che fallisca lei piuttosto che un'altra?<br />In questo modo potremo fissare delle priorità su quali funzionalità portare avanti per prime e quali per ultime. Notare che in questo modo non avranno più importanza fattori come la complessità, ma altri come l'importanza che riveste quella funzione per il committente (magari a lui preme di più avere lo sfondo blu piuttosto che la facilità di utilizzo) o la capacità e l'esperienza dei programmatori che ho a disposizione.<br />Una volta prioritizzate le funzionalità potrei scegliere di affrontare per prime quelle con rischio più alto trascurando tutto il resto, ma è infinitamente più saggio - e spesso necessario - tenere conto di più fattori di scenario, volontà del committente comprese.
+</p>
+<p class='vspace'>Ricapitolando, con il modello iterativo ho un'aggressione del rischio diluita nel tempo perché riesco a ridurlo progressivamente ad ogni iterazione grazie al feedback del cliente. Si dice che la riduzione avviene "a scalini" perché ogni passaggio iterativo elimina il fattore di rischio legato a una certa funzionalità del software. Con il metodo waterfall invece il rischio si abbatte in modo drastico solo alla fine, perché è solo in quel momento che il prototipo viene mostrato al committente: ci si gioca il tutto per tutto a prodotto finito.
+</p>
+<p class='vspace'><a name='i2' id='i2'></a>
+</p><h2>Le attività del ciclo iterativo</h2>
+<p>Un processo software è suddiviso in varie attività dette <em>task</em>. Quelle del modello iterativo sono:
+</p>
+<div class='vspace'></div><ol><li><em>pianificazione dell'iterazione</em> (iteration planning). Ad esempio dico "in questa iterazione mi dedicherò a questa funzionalità, durerà tot settimane di cui almeno una di analisi e le altre di codifica e testing, e al suo termine avremo una <strong>milestone</strong> da valutare". La milestone è una verifica del work product della fase di codifica, e prevede il suo confronto con i requisiti stabiliti durante l'analisi. Può essere effettuata anche da un reviewer esterno, non necessariamente interno al team. In particolare se l'azienda è certificata ISO 9000 è obbligata a sottoporre i prodotti a un controllo di qualità da parte di gente qualificata. Infine, per quanto riguarda le durate di ogni fase, di solito si adotta la tecnica del <code class='escaped'>2-4-2</code> (2 settimane di analisi, 4 di codifica, 2 di testing), con relativi multipli e sottomultipli
+</li><li><em>rilevazione dei requisiti</em>
+</li><li><em>progetto</em>
+</li><li><em>implementazione</em>
+</li><li><em>test</em>
+</li><li><em>rilascio</em> (o demo)
+</li></ol><p class='vspace'>In particolare le attività che vanno dalla 2 alla 5 sono quelle costitutive del mini waterfall.
+</p>
+<p class='vspace'><a name='i3' id='i3'></a>
+</p><h2>Ingegneria dei requisiti</h2>
+<p>L'attività di raccolta dei requisiti non è sempre prevista o obbligatoria in tutti i processi software, tuttavia è molto importante conoscerla, presto sapremo perché.
+</p>
+<p class='vspace'>L<strong>'ingegneria dei requisiti</strong> è il processo sistematico della messa a punto dei requisiti, ed è fondamentale per il successo dei progetti software. Chiedersi quali caratteristiche dovrà avere il software è infatti un punto chiave, ma anche critico dato che richiede abilità di comprensione e pianificazione che non devono necessariamente far parte el bagaglio di un programmatore. Storicamente questa attività era affidata agli <em>analisti</em> (generalmente laureati in economia e commercio), che sapevano come parlare la lingua dei clienti da un lato e quella dei tecnici dall'altro.
+</p>
+<p class='vspace'>E' assodato che il 73% dei progetti software che falliscono è perché non rispondono alle aspettative dei committenti a causa di requisiti errati. Esistono diversi casi di studio, tra cui quello del servizio di prenotazione integrato CONFIRM (causa: non aver tenuto conto dell'avanzata del web) o quello di CorelOffice (causa: non era possibile stampare da stampanti locali, ma solo da quelle in rete).<br />Va inoltre considerato che meglio si mappano i requisiti e minore sarà l'impatto economico delle fasi successive, in particolar modo della manutenzione che è di gran lunga la più costosa.
+</p>
+<p class='vspace'>Esistono linguaggi specifici per descrivere i requisiti, che hanno la caratteristica di non essere ambigui e di essere interpretabili dai calcolatori. Ad esempio la frase "una vecchia porta la sbarra" può significare sia che una anziana signora sta trasportando una sbarra, che una vecchia porta sta sbarrando il passaggio a qualuna. Questo è un caso detto di doppio parser, e non è accettabile per una macchina. <br />Su questi argomenti ci torneremo nel prossimo capitolo.
+</p>
+<p class='vspace'>Andiamo sul pratico: devo raccogliere i requisiti, con chi devo parlare? Con gli <strong>stakeholder</strong>, ovvero con qualsiasi soggetto a cui interessa che il progetto software abbia buon esito; quindi non solo col cliente (colui che finanzia), ma anche con gli utilizzatori futuri. Se ad esempio sto sviluppando un software per un ospedale dovrò consultare anche medici e infermieri, poiché saranno loro che prima o poi dovranno utilizzarlo. Si considerano stakeholder anche i cosiddetti <em>esperti di dominio</em>, ovvero persone che conoscono bene il dominio applicativo del progetto e che possono fornire consigli e pareri sul programma anche se non ci avranno mai nulla a che fare.<br />Bene, ora che so a chi chiedere i requisiti, come gli parlerò? Da un punto di vista di forma dipende dal tipo di relazione esistente tra produttore e consumatore (vedi riepilogo alla fine di <a class='wikilink' href='IDS-2Marzo.html#i2'>questo capitolo</a>), mentre in generale dovrò fare una serie di domande utili al maggior numero possibile di stakeholder, raccogliendo le risposte e cercando e facendo notare ai clienti eventuali incongruenze.<br />Una volta eliminate le contraddizioni (requisiti che dicono l'opposto) mi resta un elenco più o meno corposo di requisiti scritti in linguaggio naturale, quindi soggetto ad ambiguità, cioè che può essere interpretato in due o più modi diversi. Nella prossima lezione vedremo come ovviare a questo problema.
+</p>
+<p class='vspace'><a name='i4' id='i4'></a>
+</p><h2>I requisiti</h2>
+<p>I <strong>requisiti</strong> indicano cosa un prodotto software deve fare e non come deve implementarlo, anche se non è sempre facile scindere il cosa dal come.
+</p>
+<p class='vspace'>Per capire a livello globale quali sono i requisiti è opportuno operare una classificazione:
+</p><ul><li><strong>requisiti funzionali</strong>, che specificano una funzione che il sistema deve compiere. Qui mi aspetto di trovare più o meno tutti i comandi che compariranno nel menu del software
+</li><li><strong>requisiti non funzionali</strong>, che tengono conto di altre caratteristiche come ad esempio le prestazioni (magari in termini di tempo), affidabilità, efficienza, portabilità (su quale sistema operativo devono poter girare), ...
+</li><li><strong>requisiti inversi</strong>, che indicano cosa il software non deve fare, ad esempio non esaurire mai la memoria virtuale. In genere sono relativi a obiettivi di sicurezza, come il garantire la segretezza delle informazioni. Per questi requisiti i test sono molto più difficili da realizzare e documentare rispetto alle altre classi, quindi sono più critici
+</li><li><strong>requisiti tecnologici</strong>, che rientrano sempre tra quelli non funzionali, ma che sono talmente importanti che è utile metterli in rilievo. Un requisito tecnologico potrebbe essere quello di dover scrivere un software in Java piuttosto che in C++
+</li></ul><p class='vspace'>Una volta che ho partizionato e classificato i requisiti, li prioritizzo secondo questa scala di priorità:
+</p><ul><li><code class='escaped'>Must</code>: requisiti a massimo impatto, senza i quali il software è inaccettabile per il committente
+</li><li><code class='escaped'>Should</code>: se presenti aumentano il gradimento, se assenti il committente se ne lamenta
+</li><li><code class='escaped'>May</code>: se presenti aumentano il gradimento, se assenti non fa niente
+</li></ul><p class='vspace'>Quando finisco di classificare e prioritizzare i requisiti li riscrivo in linguaggio semi-formale per eliminare le contraddizioni e li sottopongo al controllo degli stakeholder. Al termine della negoziazione con questi ultimi avrò il via libera per la fase di successiva di formalizzazione in linguaggi ancora più formali e controllati. Uno di questi è il <em>control English</em>, che elimina le ambiguità utilizzando la seguente sintassi per ogni requisito: <code class='escaped'>soggetto + verbo + complemento</code>, in cui il soggetto è l'attore, il verbo è l'azione e il complemento è la risorsa su cui quest'ultima si compie. Ad esempio "l'utente stampa i file" è accettato perché la sintassi rispetta tutti i vincoli; invece "invia i file alla stampante quando l'utente clicca su stampa" non è accettato a causa delle evidenti inadempienze sintattiche. Nascono ambiguità anche quando si utilizzano i pronomi, ad esempio "il software confronta il file col template e lo salva su disco" non va bene perché deve essere specificato a quale complemento si riferisce il "lo". Quest'ultimo requisito per essere espresso in control English dovrà dunque essere diviso in due parti.
+</p>
+<p class='vspace'>Dal control English si passa poi ad altri linguaggi ancora più formali (ad esempio i diagrammi), dopodiché andrà fatta l'importantissima <strong>analisi delle dipendenze</strong> che li collegherà a coppie per segnalare quale requisito dipende da chi. Una rappresentazione grafica di questa analisi si ha con il <em>grafo delle dipendenze</em>, che tratteremo nelle prossime lezioni.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del software</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IDS-3Marzo)</span></div>
+  </div>
+</body>
+</html>

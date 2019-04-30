@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Lezione del 19 Maggio 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Piuri19Maggio2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Lezione del 19 Maggio 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri19Maggio2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri19Maggio2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Piuri19Maggio2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri19Maggio2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri19Maggio2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Lezione del 19 Maggio 2008 was last modified on May 21, 2008, at 05:19 PM'>
+							<span style='display:none;'>Sistemi Operativi - Lezione del 19 Maggio 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Lezione del 19 Maggio 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Sistemi Distribuiti</strong></span>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 1 - Obiettivi &amp; funzioni</strong></span>
+</p>
+<p class='vspace'>Nei sistemi distribuiti, abbiamo diverse macchine connesse, con almeno 1 processore per sistema. La memoria è locale ad ogni sistema, e le periferiche possono essere:
+</p><ul><li>una per sistema, ma usabili in rete
+</li><li>una per sistema, ma NON condivisibili in rete
+</li><li>globali, in rete
+</li><li>la rete stessa (eh sì è periferica anche lei)
+</li></ul><p class='vspace'>Once upon a time, le reti erano composte da macchine e in generale hw tutto della stessa marca, a volte addirittura dello stesso modello.<br />Ai giorni nostri, invece, si tende a mettere insieme macchine eterogenee, perché le aziende si espandono e man mano comprano cose differenti. Per fortuna ci sono gli standard che ci permettono di far dialogare macchine e sistemi diversi.
+</p>
+<p class='vspace'>Vediamo un po' di concetti:
+</p><ul><li><strong>sito</strong> = una locazione geografica, connessa da altri siti
+</li><li>a sua volta, il sito è composto da <strong>host|nodi|macchine|computer</strong> o qualche altro sinonimo, e questi possono essere:
+<ul><li>server
+</li><li>client
+</li><li>entrambe le cose
+</li></ul></li></ul><p class='vspace'>Ecco invece i vantaggi di avere architetture distribuite:
+</p><ul><li>posso usare macchine già esistenti per diverse funzioni (<strong>integrare sottosistemi</strong>)
+</li><li>condivisione delle risorse
+</li><li>parallelismo della computazione, in modo meno costoso rispetto all'aumentare la potenza di un singolo mainframe
+</li><li>interazione con l'utente: porto la potenza di calcolo sulla scrivania dell'utente, e non viceversa
+</li><li>riduzione complessità e costo: invece di aggiornare macchinone grosse, ne prendo altre e le metto in rete (downsizing)
+</li><li>reliability, fault tolerance, dependability (= aumento della disponibilità). Paroloni che tuttavia assumo siano noti
+</li><li>scalability
+</li></ul><div class='vspace'></div><h2>Sistemi Operativi per architetture di elaborazione distribuite</h2>
+<p>Così come il SO dovrebbe astrarre dalla macchina sottostante, anche i SO per archi distr dovrebbere permettere di astrarre dalla rete sottostante, e mostrarne le grazie al processo come tutte allocate a lui.
+</p>
+<p class='vspace'>Ma dobbiamo distinguere tra due gradi di virtualizzazione:
+</p>
+<p class='vspace'><strong>Network Operating System</strong> = la struttura della rete è visibile. Il processo non si occupa dei dettagli della comunicazione, ma comunque la rete non è trasparente.
+</p>
+<p class='vspace'><strong>Distributed Operating System</strong> = è tutto trasparente all'utente.
+</p>
+<div class='vspace'></div><h3>Network Operating System</h3>
+<p>L'obiettivo di un NetSO è quello di permettere l'accesso alle risorse sulle varie macchine. Esse devono essere innanzitutto collegate, in qualche modo:
+</p><ul><li>telnet
+</li><li>socket
+</li><li>RPC o RMI
+</li></ul><p class='vspace'>Come vedremo poi, RPC <strong>non è</strong> un metodo per la comunicazione tra processi.
+</p>
+<p class='vspace'>Per <strong>trasferire i files</strong> tra una macchina e l'altra, posso usare il protocollo applicativo <strong>FTP</strong> oppure un <strong>fileserver remoto</strong>.
+</p>
+<div class='vspace'></div><h3>Distributed Operating System</h3>
+<p>In questo modello, vogliamo che tutte le risorse siano accessibili come se fossero locali. A questo scopo, non basta montare il FS remoto: occorre che tutto, quindi compreso anche il FS locale, sia uguale per tutte le macchine della rete.
+</p>
+<p class='vspace'>Questo deve potermi permettere di <strong>migrare i dati</strong> da una macchina all'altra, e di <strong>migrare processi</strong> da una macchina all'altra. Non si tratta di roba da poco, in effetti.
+</p>
+<div class='vspace'></div><h4>Migrazione dei dati</h4>
+<p>Posso ottenere questa virtualizzazione in diversi modi:
+</p><ul><li><strong>copia - lavoro - salvataggio</strong>: si copia in locale il file remoto, lo si spaciuga, e poi lo si risalva in remoto. Ovviamente tutto questo deve essere ignoto all'utente, ad esempio tramite <strong>FTP automatizzato</strong>.
+</li><li>copio <strong>parti di files</strong> e metto il lock su di esse.
+</li></ul><p class='vspace'>Comune ad entrambe le modalità sono
+</p><ol><li>il problema dei lock distribuiti
+</li><li>la compatibilità tra le rappresentazioni dei dati su macchine con architetture hw diverse
+</li></ol><p class='vspace'>Il punto <strong>2</strong> mi dice, ad esempio, che una macchina <strong>little-endian</strong> dovrà lavorare in modo diverso sugli stessi dati, rispetto ad una macchina <strong>big-endian</strong>. Deve però pensarci il SO, e non l'utente, in modo trasparente (aggettivo quanto mai abusato...).
+</p>
+<div class='vspace'></div><h4>Migrazione della computazione</h4>
+<p>Ci sono due tipi di migrazione, per quanto riguarda la computazione: far <strong>migrare una procedura</strong> oppure <strong>un processo</strong>.
+</p>
+<p class='vspace'>La <strong>migrazione di procedura</strong> consiste nell'RPC, o nell'RMI. Invio parametri ad una procedura, che viene eseguita su di un'altra macchina.
+</p>
+<p class='vspace'>A che pro?
+</p><ul><li>la macchina remota può avere caratteristiche hw o sw più adatte per quel particolare calcolo
+</li><li>devo lavorare su dati disponibili fisicamente su quella macchina, e invece di copiarli tutti da me per spaciugarli, è meglio far eseguire laggiù i miei conti.
+</li></ul><p class='vspace'>Per <strong>migrare il processo</strong>, devo essere in grado di congelare l'evo della comp di un processo, copiarlo su un'altra macchina e ripartire da là senza che il processo se ne accorga, oppure usare dei misteriosi - finora - <strong>agenti mobili</strong>, che sono progettati apposta per andare in giro per il sistema.
+</p>
+<p class='vspace'>Anche qui, le motivazioni che inducono a migrare i processi sono le stesse della migrazione delle procedure, con quest'aggiunta:
+</p><ul><li>necessità di bilanciare il carico tra diverse macchine
+</li><li>velocità di elaborazione
+</li></ul><p class='vspace'>Inoltre, il <strong>DistroSO</strong> deve avere anche un <strong>file server distribuito</strong>, al solito TRASPARENTE!!!
+</p>
+<div class='vspace'></div><h3>Robustezza</h3>
+<p>Possono accadere guasti o malfunzionamenti, ma lo show deve andare avanti come se nulla fosse. Ecco quindi che il sistema distribuito deve, in qualche modo:
+</p><ul><li>rilevare i guasti
+</li><li>mascherarli
+</li><li>riconfigurare il sistema
+</li><li>ripristinare il sistema com'era prima del danno
+</li></ul><div class='vspace'></div><h4>Rilevamento dei guasti</h4>
+<p>Come si ottiene?
+</p>
+<p class='vspace'>Potrei <strong>monitorare periodicamente</strong> le macchine, facendosi scambiare tra di loro dei protocolli di handshaking, così che si accorgano se un'altra sta soffrendo o no.
+</p>
+<p class='vspace'>Posso implementare un <strong>timeout</strong>: se una macchina non risponde a certe sollecitazioni dopo un certo timeout, posso assumere che sia giù.
+</p>
+<p class='vspace'>Posso, ancora, <strong>duplicare la computazione</strong>: ad esempio, faccio eseguire lo stesso compito a due macchine diverse, e confronto i risultati. Se qualcosa non coincide, è sintomo di qualche malfunzionamento. Infatti, è ben poco probabile che due macchine diverse presentino lo stesso problema, che conduca allo stesso tipo di guasto.
+</p>
+<div class='vspace'></div><h4>Mascherare gli errori</h4>
+<p>Gli errori non devono essere visibili, perché tutto deve procedere come se nulla fosse. Come faccio?
+</p>
+<p class='vspace'>Posso <strong>replicare la computazione un numero dispari di volte</strong>. Basandomi sulla statistica presentata qui sopra, è improbabile che tutte le macchine presentino lo stesso problema. Inoltre, essendo in dispari, scelgo il risultato che la maggioranza mi dà, e sono praticamente certo che il calcolo è esatto.
+</p>
+<p class='vspace'>Posso <strong>duplicare le risorse</strong>: raddoppio tutto, così ho abbastanza ridondanza da poter mascherare ogni cosa.
+</p>
+<div class='vspace'></div><h4>Riconfigurazione</h4>
+<p>Se cade un collegamento, o va giù una macchina, devo semplicemente togliere dalle tabelle di routing quella destinazione e/o percorso. Poi ci penserà qualcuno a rimettere in sesto il tutto.
+</p>
+<div class='vspace'></div><h4>Ripristino</h4>
+<p>Dopo aver riparato il guasto, le tabelle di instradamento vanno ripristinate, magari con l<strong>'handshaking</strong> di cui parlavo prima si informano le altre macchine del ritorno in vita, e si reinvia la posta arretrata (fondamentale...).
+</p>
+<div class='vspace'></div><h3>Aspetti progettuali</h3>
+<p>Quando si progetta un SO distribuito, occorre tenere a mente le seguenti cose:
+</p><ul><li>garantire la trasparenza di allocazione delle risorse: processori, dichi, periferiche, files
+</li><li>garantire la mobilità di utenti, computazione e dati
+</li><li>garantire la tolleranza ai guasti
+</li><li>garantira scalabilità estensiva ed intensiva (al momento non ricordo la distinzione:D)
+</li></ul><p class='vspace'>Quindi, occorre scrivere il tutto in <strong>MIXAL</strong>.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 1 (ancora?) - Gestione della comunicazione in rete</strong></span>
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><span  style='color: yellow;'><strong>OCCHIO: tutto ciò che segue è roba damianesca. Inoltrarsi a proprio rischio e pericolo nella lettura. Eh, i bei tempi di quando i protocolli di rauting variavano di giorno in giorno...</strong></span>
+</p>
+<div class='vspace'></div><h3>Nomi e risoluzione dei nomi</h3>
+<p>Devo dare nomi univoci alle risorse (informative o fisiche), e ai processi, così che li so pescare in tutta la rete.
+</p>
+<p class='vspace'>Devo quindi
+</p><ol><li>individuare la macchina
+</li><li>individuare la risorsa su quella macchina
+</li></ol><p class='vspace'>In astratto, è così:
+</p><pre> &lt;nome host, identificatore&gt;
+</pre><p class='vspace'>Per quanto riguarda il <strong>nome host</strong>, posso usare gli indirizzi IP numerici, oppure i nomi logici ad essi associati.
+</p>
+<p class='vspace'>La <strong>risoluzione dei nomi</strong> è quella branca della scienza che si occupa di collegare un nome ad un indirizzo. Le alternative, in questo campo, sono fondamentalmente 2:
+</p><ol><li>mantenere a mano una tabella per ogni computer
+</li><li>appoggiarmi ai <strong>domain name server</strong> che ci pensano loro, tramite un protocollo apposta, a trovare le cose nella rete.
+</li></ol><p class='vspace'>I DNS partono dal concetto di <strong>dominio</strong>, che è una suddivisione arbitraria della rete. Il protocollo DNS è distribuito: ogni server conosce i dettagli del proprio dominio, e sa solo a grandi linee dove andare a chiedere per il resto.
+</p>
+<p class='vspace'>Sono organizzati in modo gerarchico: ci sono server sempre più dettagliati a partire dai dominî più generali. Ad esempio, www.swappa.it si raggiunge prima attraverso il DNS che gestisce tutti i <strong>.it</strong>, e poi tramite il DNS che gestisce <strong>swappa</strong>.
+</p>
+<p class='vspace'>Per <strong>ottimizzare le prestazioni</strong>, i server DNS mantengono una cache delle informazioni richieste di recente, così che quando arriva una richiesta ad una stessa risorsa non devono chiedere ancora in rete. Ovviamente questa cache va tenuta aggiornata, e quindi rinfrescata ogni tanto.
+</p>
+<div class='vspace'></div><h3>Strategie di instradamento</h3>
+<p>Devo trovare un percorso da A a B. Se esiste un solo percorso, non ho scelta: uso quello. Se ne ho diversi, invece, devo scegliere quello che rende di più.
+</p>
+<p class='vspace'>Ci sono 3 tipi di instradamento: <strong>statico</strong>, <strong>virtuale</strong> e <strong>dinamico</strong>.
+</p>
+<div class='vspace'></div><h4>Instradamento statico</h4>
+<p>Il percorso A-B è definito a priori, e non lo cambio più.
+</p><ul><li>non si cerca niente in rete
+</li><li>ma se ci sono errori o se il carico su rete varia, mi arrangio
+</li></ul><div class='vspace'></div><h4>Instradamento virtuale</h4>
+<p>Il percorso A-B è scelto <strong>per ogni sessione</strong>. Per tutta la sessione di comunicazione, si usa quel percorso. È possibile che alla sessione successiva il percorso sia diverso.
+</p><ul><li>si cerca l'instradamento solo all'inizio della sessione
+</li><li>non si adatta a variazioni di carico o a guasti durante la sessione: occorre aspettare la sessione successiva
+</li></ul><div class='vspace'></div><h4>Instradamento dinamico</h4>
+<p>Il percorso A-B è scelto per ogni messaggio, e si adatta a qualsiasi tipo di danno e variazione di carico.
+</p>
+<p class='vspace'>Nei primi due tipi di instradamento, <strong>statico</strong> e <strong>virtuale</strong>, i messaggi vengono inviati in un certo ordine, e ricevuti nello <strong>stesso</strong> ordine.
+</p>
+<p class='vspace'>Con l'instradamento dinamico, invece, <strong>no</strong>, perché è possibile che un messaggio spedito dopo abbia scelto una strada che lo fa arrivare prima a destinazione, rispetto alle strade scelte dai messaggi precedenti.
+</p>
+<p class='vspace'>Ecco quindi che occorre gestire la faccenda di ricostruire i messaggi nell'ordine in cui sono stati spediti originariamente, anche se arrivano in ordine sparso.
+</p>
+<div class='vspace'></div><h4>Gateway</h4>
+<p>Serve per mettere in comunicazione 2 reti, anche se usano un protocollo diverso.
+</p>
+<p class='vspace'>Per andare da <strong>host a gateway</strong>, in genere si usa l'instradamento statico. Infatti, il gateway difficilmente cambierà indirizzo in una rete. La dinamicità qui è inutile.
+</p>
+<p class='vspace'>Al contrario, da <strong>gateway a host</strong> serve instradamento dinamico, perché se la rete è grossa è impensabile che il gateway conosca tutte le macchine della rete.
+</p>
+<div class='vspace'></div><h4>Rùter</h4>
+<p>Il <strong>rùter</strong>, a differenza del <strong>rauter</strong> di damianesca memoria, gestisce l'instradamento, ed è quindi più complesso di un gateway.
+</p>
+<div class='vspace'></div><h3>Strategie di pacchetto</h3>
+<p>Finora abbiamo parlato della strada che i <strong>messaggi</strong> devono prendere per arrivare a destinazione. Ma il messaggio può avere <strong>lunghezza variabile</strong>. E più è lungo, più è probabile che un'interferenza o un disturbo lo alterino.
+</p>
+<p class='vspace'>La soluzione è dividerlo in <strong>pacchetti</strong> di dimensione fissa. Questi pacchetti in realtà hanno nomi diversi a seconda del protocollo che sto usando:
+</p><ul><li>packet
+</li><li>datagram
+</li><li>frame
+</li></ul><p class='vspace'>I pacchetti vengono inviati in ordine, e poi vanno riassemblati nel giusto ordine anche se arrivano sparsi. Devo poi saper gestire anche i reinvii, nel caso che un pacchetto arrivi errato o non arrivi del tutto. Come dicevamo prima, se il pacchetto è piccolo è meno probabile che sia soggetto a difetti di trasmissione.
+</p>
+<div class='vspace'></div><h3>Strategie di connessione</h3>
+<p>L'obiettivo è far parlare 2 processi che stanno a distanza. Come diavolo faccio? Devo creare un canale tra di essi, e ho 3 strategie diverse:
+</p><ul><li>commutazione di circuito
+</li><li>commutazione di messaggio
+</li><li>commutazione di pacchetto
+</li></ul><div class='vspace'></div><h4>Commutazione di circuito</h4>
+<p>I 2 processi definiscono un percorso fisico tra di essi, e questo percorso rimane bloccato per tutta la sessione, e nessun altro lo può usare.
+</p>
+<p class='vspace'>Le caratteristiche sono:
+</p><ul><li>tanto tempo per l'attivazione
+</li><li>spreco eventuale di banda
+</li><li>facile però da gestire
+</li></ul><p class='vspace'>E' quello che succede con la linea telefonica: si crea un circuito fisico tra la mia cornetta e quella dell'ascoltatore.
+</p>
+<div class='vspace'></div><h4>Commutazione di messaggi</h4>
+<p>Il collegamento tra i 2 processi rimane in vigore per tutta la durata dell'invio del messaggio. Il canale viene quindi creato dinamicamente, e c'è però un po' più overhead di gestione, perché per ogni messaggio devo creare il canale.
+</p>
+<div class='vspace'></div><h4>Commutazione di pacchetto</h4>
+<p>Ogni pacchetto segue una sua connessione. Qui la faccenda si fa complicata, perché è possibile che i pacchetti, come dicevamo prima, arrivino in ordine sparso e sia necessario ricomporli. Però uso al meglio la banda.
+</p>
+<div class='vspace'></div><h3>Gestione dei conflitti</h3>
+<p>Che conflitti?
+</p>
+<p class='vspace'>I conflitti si hanno quando più macchine vogliono usare lo stesso canale di comunicazione.
+</p>
+<div class='vspace'></div><h4>Bus multi-accesso</h4>
+<p>E' in sostanza il cavo di rete.
+</p>
+<p class='vspace'>Se ricordate dal Damiani, le collisioni sono autorilevate tramite il controllo: se quello che ricevo è uguale a quello che invio, allora tutto ok, se no c'è stato un errore. Le varie periferiche sanno gestire autonomamente questi casi, tramite il reinvio dopo un tempo più o meno casuale dei messaggi.
+</p>
+<p class='vspace'>Per evitare troppe collisioni, devo porre un limite al numero di nodi.
+</p>
+<div class='vspace'></div><h4>Rete ad anello</h4>
+<p>C'è un token che gira per le macchine: quando una macchina riceve il token, manda i suoi messaggi, poi passa il token ad altri.
+</p>
+<p class='vspace'>Occorre avere strategie per recuperare nel caso in cui i token si perdano o si rovini. In genere si usa un timeout: se entro tot tempo il token non riappare, viene dato per morto e si riparte.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2 - Protocolli di comunicazione</strong></span>
+</p>
+<p class='vspace'>I <strong>driver del SO</strong> devono, purtroppo per loro, occuparsi dell'implementazione dei protocolli di comunicazione. Ecco perché ci occorre sapere <strong>come</strong> sono fatti sti protocolli, per poterli implementare...
+</p>
+<p class='vspace'>I problemi che devo affrontare sono questi:
+</p><ul><li>comunicazioni asincrone
+</li><li>possibilità di errori nella  comunicazione
+</li><li>macchine eterogenee
+</li></ul><p class='vspace'>E al solito, voglio un ambiente <strong>omogeneo</strong> e <strong>astratto</strong> rispetto a tutto sto casino. In altre parole, voglio realizzare una <strong>virtualizzazione</strong> della comunicazione: non devo vedere tutti i canali e i messaggi etc., voglio solo che i 2 processi vedano un canale virtuale, con i dettagli scabrosi nascosti.
+</p>
+<p class='vspace'>Il modello astratto che si segue è quello <strong>ISO / OSI</strong>, composto da diversi strati:
+</p><ol><li><strong>strato fisico</strong> = come trasmettere i bit: dettagli meccanici ed elettrici, come connettori, portante etc.
+</li><li><strong>data link</strong> = gestire invio e ricezione del singolo pacchetto, con rilevazione di eventuali errori
+</li><li><strong>strato di rete</strong> = gestisce la connessione, l'instradamento in uscita e in entrata (l'IP)
+</li><li><strong>strato di trasporto</strong> = gestisce la partizione dei messaggi in pacchetti, li riassembla, ne controlla il flusso e gli errori (TCP)
+</li><li><strong>strato di sessione</strong> = realizza l'instradamento tra 2 processi
+</li><li><strong>strato di presentazione</strong> = converte i dati nella forma adatta alle varie macchine; gestisce la duplex-icità dei flussi (invio e ricezione contemporanei)
+</li><li><strong>strato di applicazione</strong> = i vari protocolli applicativi: ftp, smtp, http, puputp, hellokittytp etc.
+</li></ol><p class='vspace'>ISO / OSI è una pila (scarica:)). I vari strati, a partire da quello più alto, <strong>aggiungono</strong> info per trasformare il messaggio in qualcosa di accettabile. Se lo vedo al contrario, invece, a partire dal basso i dati vengono <strong>incapsulati</strong> in strutture più grandi per renderli appetibili agli strati superiori.
+</p>
+<p class='vspace'>Quindi, un messaggio parte dallo strato di applicazione, si inciccisce e divide etc. fino a diventare bit, e dall'altro lato fa la strada inversa, dimagrendo fino a tornare quello che era.
+</p>
+<p class='vspace'>I <strong>modelli reali</strong> si discostano un po' da questo modello teorico, perché
+</p><ol><li>è complicato
+</li><li>è stato inventato <strong>dopo</strong> che i modelli reali erano già stati implementati:)
+</li></ol><p class='vspace'>Tanto per ricordare, il TCP realizza le connessioni, ed è affidabile (se c'è un errore, si cerca di rimediare). Invece UDP non realizza connessioni ed è inaffidabile.
+</p>
+<p class='vspace'>I <strong>driver di rete</strong> sono quei software che nel mio SO realizzano questi protocolli di comunicazione in rete, siano essi ISO / OSI o altra roba.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Computazione distribuita</strong></span>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 1 - Distribuzione della computazione</strong></span>
+</p>
+<p class='vspace'>Quello che voglio è sfruttare, finalmente, questo benedetto parallelismo tra macchine diverse. E poi, siccome ho i dati spantegati su varie macchine, sarebbe bello se il mio processo andasse in esecuzione proprio su quella macchina, così che i dati li ha subito disponibili.
+</p>
+<p class='vspace'>In generale, dovrei poter spostare la computazione sulla macchina che ha le risorse adatte per quel tipo di processo. Risorse intese in astratto: CPU, memoria, dotazione HW e SW.
+</p>
+<p class='vspace'>Per supportare la computazione distribuita, mi serve poter
+</p><ul><li>comunicare
+</li><li>sincronizzare
+</li></ul><p>i processi distribuiti.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2 - Chiamata di procedura remota (RPC)</strong></span>
+</p>
+<p class='vspace'>L'idea è di eseguire la procedura laddove essa può essere eseguita meglio. Il resto del processo rimane altrove.
+</p>
+<p class='vspace'>In questo scenario, l<strong>'entità attiva</strong> è il processo chiamante, mentre quella <strong>passiva</strong> è la procedura chiamata, che "dorme" finché non viene risvegliata da qualcuno.
+</p>
+<p class='vspace'>Il processo chiamante deve avere disponibile uno <strong>stub</strong>, cioè un abbozzo di come è fatta la procedura remota, di quali parametri vuole etc. etc. Ha quindi una <strong>rappresentazione</strong> della procedura.
+</p>
+<p class='vspace'>Deve però poi essere il SO ad inoltrare la richiesta ad un <strong>demone</strong> che è in attesa sulla macchina remota. Il demone ascolta la richiesta del nostro processo, esegue quello che deve eseguire, e ritorna i risultati indietro per la rete.
+</p>
+<div class='vspace'></div><h3>Realizzazione</h3>
+<p>Ogni procedura, per essere chiamata, deve avere il suddetto <strong>stub</strong>.
+</p>
+<p class='vspace'>Il demone di cui sopra, quando riceve la richiesta di esecuzione di una procedura, deve innanzitutto controllare se questa procedura, effettivamente, c'è. Lo scambio di messaggio per la rete è gestito in automatico dal SO, il programmatore non deve preoccuparsene.
+</p>
+<p class='vspace'>Da notare che la RPC <strong>non serve</strong> per trasmettere messaggi. Al contrario, sono i messaggi ad essere usati dalla RPC. La RPC non manda dati ad un processo remoto, al fine di mettersi in comunicazione con quel processo. No: manda solo i parametri che servono, e attende dei risultati. Per ottenere questo risultato, usa i messaggi, ma non viceversa.
+</p>
+<p class='vspace'>Problema: le varie macchine possonon avere un modo diverso di rappresentare i dati. Pensiamo a little-endian, big-endian etc. Ecco allora che si è inventato lo standard <strong>XDR</strong> per trasmettere i dati in un modo univoco per la rete. Poi ci pensa la macchina locale a convertire da XDR nel formato locale.
+</p>
+<p class='vspace'>Certo, se le due macchine in rete usano la stessa rappresentazione dei dati, convertira da e verso XDR è uno spreco di tempo. Però, non si sa mai chi ci sarà di là ad ascoltare, quindi meglio farlo sempre.
+</p>
+<p class='vspace'>Un altro problema è: quante volte viene eseguita la mia procedura, remotamente? Ricordiamoci infatti che si passa attraverso una rete, che è inaffidabile, può non vedere pacchetti, può vederseli arrivare doppi ed altre stranezze.
+</p>
+<p class='vspace'>Qui, dipende dalla politica di implementazione:
+</p><ul><li><strong>al più 1 volta</strong>: se non ci sono errori, ok, altrimenti pace, non ritorna risultati
+</li><li><strong>esattamente una volta</strong>: se c'è un errore, ripeto. Se arriva 2 volte la stessa richiesta, la seconda va scartata. Si vede subito che è più compless della prima.
+</li></ul><p class='vspace'>Un'applicazione delle RPC è il FS distribuito, in cui le chiamate per accedere ai files vengono inviate in modo trasparente (sigh) a un qualche demone RPC, che poi risponderà bla bla bla.
+</p>
+<div class='vspace'></div><h3>RMI</h3>
+<p>RMI = Remote Method Invocation, ed è una tecnologia Java. In sostanza, si estende il concetto di procedura remota alla tecnologia ad oggetti.
+</p>
+<p class='vspace'>Un oggetto è una struttura contentente dati e metodi, ovvero procedure che lavorano su quei dati. Le RMI mi permettono di interagire con oggetti posti su macchine virtuali Java (JVM) remote.
+</p>
+<p class='vspace'>Per JVM remota si intende una qualsiasi JVM che NON sia quella del mio processo. Posso eg avere 2 JVM sulla stessa macchina, ma l'una rispetto all'altra è sempre remota.
+</p>
+<p class='vspace'>Il cliento ha lo <strong>stub</strong>, il server lo <strong>skeleton</strong>, e l'ambiente Java fa tutto lui in modo <strong>TRASPARENTE</strong> al programmatore.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 21, 2008, at 05:19 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri19Maggio2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri19Maggio2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

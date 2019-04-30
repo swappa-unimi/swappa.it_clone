@@ -1,0 +1,359 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Protocolli avanzati di rete - Appunti del 17 Marzo </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.PAR-17Marzo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Protocolli avanzati di rete - Appunti del 17 Marzo
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-17Marzo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-17Marzo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='PAR-17Marzo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-17Marzo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-17Marzo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Protocolli avanzati di rete - Appunti del 17 Marzo was last modified on March 19, 2009, at 11:55 AM'>
+							<span style='display:none;'>Protocolli avanzati di rete - Appunti del 17 Marzo</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 17 Marzo ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>Tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='Damiani.html'>Damiani</a>
+</p></div>
+<div class='vspace'></div><h2>Frame SONET/SDH</h2>
+<p>Come abbiamo già anticipato nella <a class='wikilink' href='PAR-10Marzo.html'>lezione del 10 marzo</a> il <strong>frame</strong> in una linea <em>STS-1</em> SONET/SDH è costituito da 810 byte trasmessi ogni 125 microsecondi con una velocità di banda di 51,84 Mbps. La trama è suddivisa in 9 righe di 90 byte l'una, trasmesse consecutivamente partendo dalla riga più in alto e proseguendo da sinistra a destra. I primi tre byte di ogni riga sono di <em>overhead</em> e contengono informazioni di servizio; nelle prime tre righe si trova l' <strong>SOH</strong>, mentre dalle righe seguenti si ricava l' <em>overhead di linea</em> (<strong>LOH</strong>) e <em>di percorso</em> (<strong>POH</strong>). Tutto il resto è il <em>payload</em>, che nell'immagine seguente è la parte in grigio scuro:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/frameSDH.jpg' alt='' title='' /></div>
+<p class='vspace'>Nota di folklore: lo chiamiamo frame ma sarebbe più corretto chiamarlo <strong>trama</strong>. O almeno questa è la versione del 17 Marzo.
+</p>
+<p class='vspace'>Dell'SOH abbiamo già parlato il 10 Marzo, consideriamo ora gli altri due.<br />L' <strong>LOH</strong> è il <em>line overhead</em> e consiste in 18 byte prodotti, modificabili e terminabili solo dai line terminator (LT), ovvero i dispositivi di sessione come i cross connect. Tra i byte dell'LOH segnaliamo:
+</p><ul><li>tre byte per i puntatori al payload, che indicano al dispositivo successivo da che punto iniziare a leggerlo. I LT possono dunque "spostare" il payload nella trama, un'operazione completamente sconosciuta nelle reti private dove al più veniva modificato l'header
+</li><li>un byte per l'indicatore di tempo per il <code class='escaped'>sync</code>, molto importante dal momento che è necessario trasmettere un segnale di sincronismo per smistare i canali TDM all'arrivo. Viene inviato come se fosse un clock
+</li><li>un byte per affrontare il problema del <code class='escaped'>voice craft</code>, di cui già abbiamo parlato nell'SOH. Se però a livello di sezione si interveniva riducendo l<em>'echo</em>, a livello di linea si cerca di eliminare il cosiddetto <em>crosstalk</em> utilizzando anche in questo caso dei filtri digitali
+</li></ul><p class='vspace'>Abbiamo infine il <em>path overhead</em> (<strong>POH</strong>) formato da 9 byte, quindi una colonna della trama. Anche se può essere processato in tutti i punti della linea, viene inizializzato nel PT e mai più modificato se non negli LT che spostano i puntatori al payload.
+</p>
+<p class='vspace'>Ricapitolando, una trama STS-1 è composta da cinque elementi: il payload, l'SOH, l'LOH, il POH e l' <strong>SPE</strong> (<em>Synchronous Payload Envelope</em>). L'SPE è una sorta di contenitore che traporta sia il path overhead che i dati dell'utente. Notare che non solo può occupare vari frame, ma può - anzi, deve! - indicare quante sono le trame necessarie per trasportare interamente il payload (almeno una); se ad esempio sono una sorgente molto veloce come una DS3 una trama sola non mi basterà quando arriverà il mio turno di utilizzare il canale. Un'altra caratteristica dell'SPE è che posso modificarne alcuni bit per definire il particolare tipo di payload che sto trasmettendo. Tra quelli già definiti abbiamo:
+</p><ul><li>tributari virtuali, per DS1 (1 frame) e DS2 (2 frame)
+</li><li>DS3 (3 frame)
+</li><li><em>SMDS</em>
+</li><li><em>ATM</em>, che fa livello 2 su livello 2 sia su rete privata che su rete pubblica
+</li><li><strong>PPP</strong> (<em>Point-to-Point Protocol</em>), un tipico esempio di layering di IP su SDH. Il fatto di avere un header <code class='escaped'>IP + PPP</code> ha due conseguenze: la prima è che i PT devono necessariamente essere punti di autenticazione TCP/IP, la seconda è che rimane poco spazio per il payload e quindi utilizziamo più banda per via della frammentazione.
+</li></ul><p class='vspace'>Gli ultimi tre payload occupano tutti una sola trama e sono associati ad un protocollo.
+</p>
+<div class='vspace'></div><h2>WDM</h2>
+<p>Cominciamo subito con due schemi (presi sempre dalle slide di Damiani) che dovrebbero illuminarci sul <em>time division multiplexing</em> (<strong>TDM</strong>) se stiamo ancora brancolando nel buio.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/schemaTDM1.jpg' alt='' title='' /></div>
+<p class='vspace'>Lo schema che segue illustra invece il concetto della gerarchia sincrona: abbiamo 4 sorgenti da 2.5 Gb l'una, otteniamo una sola linea da 10 Gb.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/schemaTDM2.jpg' alt='' title='' /></div>
+<p class='vspace'>Ci basta la banda di cui abbiamo a disposizione? Ovviamente no, dato che vogliamo portare più trasmissioni su IP e vogliamo estendere le potenzialità dell'ADSL. Come facciamo allora ad aumentarla? Ci sono tre strategie, vediamo i pro e i contro di ognuna:
+</p><ol><li>aumentare il numero di fibre. Il grosso problema è che posare la fibra costa (intorno ai 70mila dollari per miglio), e comprarla da altri che non la usano non è così semplice per almeno due motivi: in primo luogo perché poi avremmo pochissimi margini di guadagno, in secondo luogo perché probabilmente per completare la tratta che ci interessa dovremmo comprarla da più proprietari ("provateci voi")
+</li><li>aumentare il bitrate per ogni singola fibra, passare cioè alla gerarchia superiore (DS1-&gt;DS2-&gt;DS3-&gt;...). Questo passaggio comporta però un aumento incrementale delle apparecchiature e quindi dei costi, dato che più sono i bit e maggiori sono gli effetti della dispersione ottica (siamo in un mondo reale, e le fibre e i generatori di laser non sono perfetti), dunque saranno necessari più rigeneratori di segnale.<br />Nota di folklore: nei laboratori sono arrivati a bitrate di 100 Gb/s! Pare però che ci siano spiacevoli effetti quantistici che forse è meglio se ignoriamo
+</li><li>trasmettere segnali diversi su diverse lunghezze d'onda: il <strong>WDM</strong> (<em>Wavelenght Division Multiplexing</em>) di cui abbiamo già abbondantemente parlato nelle lezioni precedenti
+</li></ol><p class='vspace'>Dato però che il prof dice che l'internet del futuro viaggerà su un livello 2 multi-&#955; (quindi sempre su dorsali fisse), vediamo qualcosina in più sul WDM. Intanto ricordiamo che si tratta di un multiplexing nel dominio delle frequenze e non del tempo, che riesce a trasmettere più segnali con diverse &#955; su un'unica fibra ottica e che questo ci fa risparmiare un bel po' di soldi. Questa tecnologia supporta inoltre la trasmissione contemporanea di segnali con codifiche diverse ed è la più ufficiente su questo tipo di mezzo trasmissivo.
+</p>
+<p class='vspace'>Concludiamo la parte sul WDM (tra l'altro, pare che Damiani abbia saltato la lezione successiva che parlava del DWDM.. chissà se la riprenderà) facendo un esempio su come possono essere identificate quattro portanti nella banda che abbiamo a disposizione:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/portantiWDM1.jpg' alt='' title='' /></div>
+<p class='vspace'>E' uno spettro ottico, e come si può notare le portanti sono scelte a seconda della &#955; e non della frequenza. Per ogni portante è indicato inoltre il suo posizionamento sullo spettro.
+</p>
+<div class='vspace'></div><h2>Elementi architetturali</h2>
+<p>Diamo ora uno sguardo più ravvicinato ai vari dispositivi che compongono l'infrastruttura di una rete ottica.
+</p>
+<div class='vspace'></div><h3>OADM (Optical Add Drop Multiplexer)</h3>
+<p>Se ci troviamo su una fibra mono-&#955; il suo compito è occupare o liberare canali facendo una trasduzione elettro/ottica e intervenendo sul contenuto del canale in TDM; se invece si trova in un ambiente multi-&#955; aggiunge o toglie direttamente le &#955;.
+</p>
+<div class='vspace'></div><h3>OXC (Optical Cross Connect)</h3>
+<p>Il <em>cross connect ottico</em> smista o raccoglie le &#955;, reindirizzando quelle che si trovano sulle porte in entrata su opportune porte di uscita. Sono le apparecchiature più importanti e complesse e lavorano a livello puramente ottico: tutto ciò che fanno è spostare le &#955; mantenendone intatte le proprietà spettrali, cioè senza intervenire sul contenuto. <br />La circuiteria non è così complessa da capire, e la matrice di instradamento delle &#955; per ora si regola col cacciavite, quindi a livello fisico. In realtà si stanno affermando e diffondendo alcuni protocolli di <code class='escaped'>Traffic engeneering</code> che rendono possibile la manutenzione e regolazione anche da remoto.
+</p>
+<div class='vspace'></div><h3>Topologie di rete</h3>
+<p>Vediamo una semplice topologia di rete, che connette due ring tra di loro utilizzando un optical cross connect. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/topologiaRing.jpg' alt='' title='' /></div>
+<p class='vspace'>In questo modo riusciamo ad estendere la portata di un anello su più ring attraverso la condivisione della stessa &#955;.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 19, 2009, at 11:55 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-17Marzo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-17Marzo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

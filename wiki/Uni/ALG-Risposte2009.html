@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Algoritmi e strutture dati - Risposte Esami 2009 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.ALG-Risposte2009' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Algoritmi e strutture dati - Risposte Esami 2009
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2009?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2009?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='ALG-Risposte2009-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2009?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2009?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Algoritmi e strutture dati - Risposte Esami 2009 was last modified on January 19, 2011, at 10:23 PM'>
+							<span style='display:none;'>Algoritmi e strutture dati - Risposte Esami 2009</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e strutture dati - Risposte Esami 2009 ::</strong>
+</pre><div class='vspace'></div><h2>2 Novembre 2009</h2>
+<p><a class='urllink' href='http://ananke.crema.unimi.it/~decapita/Algoritmi/Esami/2009-11-02.pdf' title='' rel='nofollow'>Testo dell'esame dal sito del docente</a> (.PDF)
+</p>
+<div class='vspace'></div><h4>Risposta 3.1</h4>
+<p>I codici di Huffman vengono utilizzati per comprimere i file. Consentono di risparmiare uno spazio che va dal 20% al 90% in base al tipo di file. Si basano sulla frequenza delle lettere nel file che permettono la costruzione di un codice ottimo. Ogni carattere ha associata una parola codice che può essere di lunghezza fissa o variabile.<br />Utizza dei codici prefissi che è un codice in cui nessuna parola è prefisso di un altra.<br />La decodifica avviene in quattro fasi:
+</p><ul><li>Fase 1: Viene trovata la prima parola nel file codificato.
+</li><li>Fase 2: Viene tradotta la parola e scritta nel file di decodifica.
+</li><li>Fase 3: Viene eliminata la parola dal file di codificato.
+</li><li>Fase 4: Si ripete fino a che non è stato decodificato l'intero file.
+</li></ul><p class='vspace'>Dato un file F, un codice C è ottimo per F se non esiste nessun altro codice che permette di risparmiare più spazio. Possono esistere più codici ottimi e sono rappresentato con un albero binario in cui ogni nodo interno ha due figli.<br />Il principio del codice di Huffman è il seguente: Deve minimizzare la lunghezza del codice delle parole più frequenti e assegnare ai caratteri con meno frequenza i codici corrispondenti ai percosi più lunghi all'interno dell'albero.<br />Ogni codice è progettato per uno specifico file e le fasi sono le seguenti:
+</p><ul><li>Fase 1: Si ottengono le frequenze dei caratteri.
+</li><li>Fase 2: Si costruisce il codice ottimo.
+</li><li>Fase 3: Si rappresenta il file tramire il codice ottimo.
+</li><li>Fase 4: Si aggiunge al file una rappresentazione del codice ottimo.
+</li></ul><p class='vspace'>L'algoritmo di Huffman è gready perchè ad ogni passo costruisce il nodo interno avente la frequenza minima possibile.
+</p>
+<div class='vspace'></div><h4>Risposta 3.3</h4>
+<p>Una componente fortemente connessa in un grafo orientato è un insieme massimale di
+vertici U contenuti in V. Per ogni vertice u,v appartentente a U esiste un cammino che va da u a v e uno che va da v a u.<br />Si calcola in tre fasi:
+</p><ul><li>Fase 1: Si usa la visita in profondità in G per ordinare i vertici in ordine di tempo di completamento f decrescente.
+</li><li>Fase 2: Si calcola il grafo trasposto G' di G.
+</li><li>Fase 3: Si esegue la visita in profondità su G' usando l'ordine dei vertici calcolato nella prima fase.
+</li></ul><p class='vspace'>Gli alberi della vista in profondità del grafo trasposto rappresentano le componenti
+fortemente connesse di G.
+</p>
+<div class='vspace'></div><h2>21 Settembre 2009</h2>
+<p><a class='urllink' href='http://ananke.crema.unimi.it/~decapita/Algoritmi/Esami/2009-09-21.pdf' title='' rel='nofollow'>Testo dell'esame dal sito del docente</a> (.PDF)
+</p>
+<div class='vspace'></div><h4>Risposta 3.3</h4>
+<p>L'ordinamento topologico di un grafo orientato è un ordinamento lineare dei suoi vertci tale che:
+</p><ol><li>Per ogni arco uv appartenenti a E il vertice u precede il vertice v.
+</li><li>Per transtitività, se u è raggiungibile da v allora u viene prima di v nell'ordinamento.
+</li></ol><p class='vspace'>L'ordinamento topologico è utilizzato per determinare l'ordine di esecuzione di un insieme di attività in presenza di vincoli di precedenza.<br />Si può utilizzare la visita in profondità e per ordinare i vertici in ordine di tempo decrescente f di completamento oppure la soluzione diretta.<br />La soluzione diretta consiste nelle seguenti fasi:
+</p><ol><li>Si cercano tutti i vertici che non hanno archi incidenti in ingresso.
+</li><li>Si stampa il verticie e si elimina il vertice con i suoi archi.
+</li><li>Si ripete la procedura fino a che non ci sono più vertici.
+</li></ol><div class='vspace'></div><h2>20 Luglio 2009</h2>
+<p><a class='urllink' href='http://ananke.crema.unimi.it/~decapita/Algoritmi/Esami/2009-07-20.pdf' title='' rel='nofollow'>Testo dell'esame dal sito del docente</a> (.PDF)
+</p>
+<div class='vspace'></div><h4>Risposta 3.3</h4>
+<p>La visita in ampiezza BFS permette di visitare il grafo a partire da un vertice s detto sorgente e visita sistematicamente tutto il grafo per scoprire tutti i vertici raggiungibili da s. Calcola le distanze minime di ogni vertice da s. Produce anche un albero i cui rami sono cammini di lunghezza minima. La visita espande uniformemente la frontiera tra i vertici scoperti e quelli non ancora scoperti.<br />L'algoritmo funziona nel seguente modo: assume che il grafo sia rappresentato con liste di adiacenze. Tutti i nodi adiacenti ad un nodo, sono aggiunti ad una coda Q di tipo FIFO che memorizza la frontiera.<br />Descrizione:
+</p><ol><li>All'inizio dell'algoritmo tutti i vertici sono bianchi tranne la sorgente da cui parte
+</li></ol><p>l'esecuzione dell'algoritmo.
+</p><ol><li>Con l'andare avanti nella visita i vertici del grafo vengono colorati di grigio, ed
+</li></ol><p>inseriti nella coda, che in ogni istante conterrà tutti i nodi colorati di grigio, ma dei quali ancora non sono stati visitati gli adiacenti.
+</p><ol><li>Quando tutti i nodi adiacenti ad un nodo grigio sono stati visitati e quindi colorati di grigio, il nodo verrà colorato di nero e rimosso da Q.
+</li></ol><p>Il tempo di esecuzione di questo algoritmo è O(V+E).
+</p>
+<div class='vspace'></div><h4>Risposta 3.4</h4>
+<p>Tecnica divide et impera: E' una tecnica ricorsiva dove il problema viene diviso in sotto problemi indipendenti che vengono risolti ricorsivamente (strategia top-down). E' utile solo quando i sottoproblemi sono indipendenti altrimenti gli stessi sottoproblemi possono venire risolti più volte. Un algoritmo che ne fà utilizzo è il merge-sort.
+</p>
+<div class='vspace'></div><h2>17 Giugno 2009</h2>
+<p><a class='urllink' href='http://ananke.crema.unimi.it/~decapita/Algoritmi/Esami/2009-06-17.pdf' title='' rel='nofollow'>Testo dell'esame dal sito del docente</a> (.PDF)
+</p>
+<div class='vspace'></div><h4>Risposta 2</h4>
+<p>Ci sono due tecniche per visitare i grafi la DFS (visita in profondità) e la BFS (visita in ampiezza).<br />La visita in ampiezza BFS permette di visitare il grafo a partire da un vertice s detto sorgente e visita sistematicamente tutto il grafo per scoprire tutti i vertici raggiungibili da s. Calcola le distanze minime di ogni vertice da s. Produce anche un albero i cui rami sono cammini di lunghezza minima. La visita espande uniformemente la frontiera tra i vertici scoperti e quelli non ancora scoperti. L'algoritmo funziona nel seguente modo: assume che il grafo sia rappresentato con liste di adiacenze. Tutti i nodi adiacenti ad un nodo, sono aggiunti ad una coda Q di tipo FIFO che memorizza la frontiera.<br />Descrizione:
+</p><ol><li>All'inizio dell'algoritmo tutti i vertici sono bianchi tranne la sorgente da cui parte l'esecuzione dell'algoritmo.
+</li><li>Con l'andare avanti nella visita i vertici del grafo vengono colorati di grigio, ed
+</li></ol><p>inseriti nella coda, che in ogni istante conterrà tutti i nodi colorati di grigio, ma dei quali ancora non sono stati visitati gli adiacenti.
+</p><ol><li>Quando tutti i nodi adiacenti ad un nodo grigio sono stati visitati e quindi colorati di grigio, il nodo verrà colorato di nero e rimosso da Q.
+</li></ol><p class='vspace'>Il tempo di esecuzione di questo algoritmo è O(V+E).
+</p>
+<p class='vspace'>La visita in profondità DFS esplora il grafo partendo da un vertice s detto sorgente. Si esplorano gli archi uscenti dal vertice u raggiunto per ultimo. Se viene scoperto un nuovo vertice ci si sposta su tale vertice. Se tutti gli archi uscenti da u portano a vertici già scoperti si torna indietro e si riprende esplorando archi uscenti dal vertice cui u è stato scoperto. Il procedimento continua fino a che sono stati scoperti tutti i vertici raggiungibili dal vertice s iniziale scelto. Se non sono stati tutti scoperti si ripete il procedimento partendo da un vertice non ancora raggiunto (si sceglie una nuova sorgente).<br />Si utilizzano due marcatempi:
+</p><ol><li>d[u] che registra quando è stato scoperto un vertice e colorato di grigio.
+</li><li>f[u] che registra quando il vertice è stato completamente visitato e viene colorato di nero.
+</li></ol><p class='vspace'>Pseudocodice DFS:
+</p>
+<p class='vspace'><em>DFS(G)</em>
+</p><div class='indent'><em>for ogni vertice u in V[G]</em>
+<div class='indent'><em>do color[u] &#8592; WHITE</em>
+<div class='indent'><em>&#960;[u] &#8592; NIL</em>
+</div></div></div><div class='indent'><em>time &#8592; 0</em>
+</div><div class='indent'><em>for ogni vertice u in V[G]</em>
+<div class='indent'><em>do if color[u] = WHITE</em>
+<div class='indent'><em>then DFS-Visit(u)</em>
+</div></div></div><p class='vspace'><em>DFS-Visit(u)</em>
+</p><div class='indent'><em>color[u] &#8592; GREY</em>
+<div class='indent'><em>for ogni v in Adj[u]</em>
+<div class='indent'><em>do if color[v] = WHITE</em>
+<div class='indent'><em>then &#960;[v] &#8592; u</em>
+<div class='indent'><em>DFS-Visit(v)</em>
+</div></div></div></div></div><div class='indent'><em>color[u] BLACK</em>
+</div><div class='indent'><em>f[u] &#8592; time &#8592; time + 1</em>
+</div><p class='vspace'>Il tempo di esecuzione di questo algoritmo è O(|V|+|E|)
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 19, 2011, at 10:23 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2009?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ALG-Risposte2009?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

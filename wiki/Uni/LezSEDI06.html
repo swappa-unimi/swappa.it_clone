@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi per l'elaborazione delle informazioni - Lezione 5 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.LezSEDI06' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi per l'elaborazione delle informazioni - Lezione 5
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI06?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI06?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='LezSEDI06-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI06?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI06?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi per l'elaborazione delle informazioni - Lezione 5 was last modified on March 17, 2009, at 06:34 PM'>
+							<span style='display:none;'>Sistemi per l'elaborazione delle informazioni - Lezione 5</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi per l'elaborazione delle informazioni ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 15 Ottobre 2007</span>
+</p>
+<p class='vspace'><strong>NOTA</strong>: questa pagina in realtà sfora un po', nel senso che contiene anche roba che è stata affrontata in lezioni diverse. Però non era carino dividere il materiale, quindi è tutto qui dentro.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 290px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>ARP</a>
+</li><li><a href='#s2'>Condizione d'integrità e frammentazione</a>
+</li><li><a href='#s3'>Le backbone</a>
+</li><li><a href='#s4'>Sottoreti</a>
+<ul><li><a href='#s41'>Le classi</a>
+</li><li><a href='#s42'>Ok, dov'è il problema</a>
+</li><li><a href='#s43'>Multicast e Unicast</a>
+</li><li><a href='#s44'>Quali indirizzi usare?</a>
+</li><li><a href='#s45'>Classful e classless</a>
+</li><li><a href='#s46'>Quanti host ho alla fine?</a>
+</li><li><a href='#s47'>Ampliamo il discorso</a>
+</li><li><a href='#s48'>VLSM</a>
+</li><li><a href='#s49'>Configurare le sottoreti</a>
+</li></ul></li><li><a href='#s5'>DHCP</a>
+</li><li><a href='#s6'>Classi di indirizzi privati</a>
+</li><li><a href='#s7'>Zeroconf</a>
+</li></ol></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>ARP</h2>
+<p><strong>ARP</strong> sta per <em>Address Resolution Protocol</em>. È un sistema tramite il quale un host che per la prima volta si affaccia ad una rete recupera i MAC associati ad un certo IP. <strong>ARP</strong> è limitato ad una singola rete. Una macchina invia in broadcast un messaggio, e solo la macchina interessata gli risponde. Ecco che quindi posso costruirmi la mia tabella ARP con tutti i MAC corrispondenti agli IP sulla mia stessa rete.
+</p>
+<p class='vspace'>Gli indirizzi IP, così come sono stati pensati in origine, permettono già nel guardarli di determinare se un indirizzo appartiene ad una rete o no. Ogni macchina fa questo controllo, prima di inviare un pacchetto. Se si accorge che l'Ip appartiene alla sua stessa rete, ma non ha il suo MAC, lo chiede tramite ARP. Se invece si accorge che l'IP appartiene ad un'altra rete, allora invia il pacchetto al <em>gateway predefinito</em>, il quale poi ci penserà lui a smistarlo dove deve.
+</p>
+<p class='vspace'>In questo caso, com'è fatto lo header IP? Siamo nel caso in cui A vuole parlare con C che sta su una rete diversa. Il mittente è ancora A. Il destinatario IP è ancora C. Il destinatario MAC invece è il Gateway. Il default Gateway prende il pacchetto, e mette al posto del suo MAC il MAC di C. Detto così sembra un ballo di sigle e lettere ma in realtà è facile.
+</p>
+<p class='vspace'>Inoltre, la tabella ARP che ogni host si crea è transitoria. Infatti, può benissimo darsi che dopo un po' un certo host si disconnetta dalla rete, e come facciamo a saperlo? Ethernet non ci aiuta, perché non garantisce la consegna di un frame. Semplicemente, il pacchetto gira a vuoto per poi scomparire nel nulla cosmico.
+</p>
+<p class='vspace'>Quindi, dopo circa 20 minuti, la cache ARP viene rigenerata tramite il solito procedimento
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Condizione d'integrità e frammentazione</h2>
+<p>Tutto il bel parlare fatto finora si basa su di un presupposto: se A vuole mandare un messaggio a C che sta su di un'altra rete, il suo pacchetto deve poter cambiare di rete. Se A sta su una Ethernet e C su una FDDI, allora anche il formato del frame cambierà. E il pacchetto che ci stava nei frame della Ethernet di A <em>deve</em> starci anche nel frame della FDDI, altrimenti non è possibile la comunicazione.
+</p>
+<p class='vspace'>Questa è la famosa <em>condizione d'integrità</em>: il frame della rete sottostante deve essere grosso almeno quanto l'header IP, altrimenti non sarà possibile trasportare nessun payload.
+</p>
+<p class='vspace'>Quindi, il gateway può trovarsi nella situazione di dover frammentare in modo diverso il bel pacchetto che A ha inviato a C, perché i frame della rete su cui si trova A sono diversi dai frame della rete su cui si trova C.
+</p>
+<p class='vspace'>Un bell'esercizio potrebbe essere questo: <em>il frame della rete 1 è 1500 byte, il frame della rete 2 è 500 byte. Il pacchetto è di 3000 byte. Scrivere i vari header IP con gli offset etc. etc. etc.</em>. Divertitevi.
+</p>
+<p class='vspace'>Nel caso contrario, ovvero che un pacchetto va da una rete con frame piccolo ad una rete con frame grande, il gateway non si preoccupa di riassemblarlo. O meglio, ci sono anche gateway che lo fanno, ma in genere non è proprio così.
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Le Backbone</h2>
+<p>Le backbone già sappiamo che cosa sono. Collegano reti diverse. Ma per essere veloci, spesso non sono Ethernet, né tantomento Fast Ethernet. Sappiamo anche noi che una Fast Ethernet ha una lunghezza massima dei cavi che è risibile. Se devo collegare la sede della RaimonDigital di Mozzanica con gli uffici di Somaglia, mi occorre un bel fibrone ottico di quelli massicci, per inviare tutti i video porno in tempo utile. Per esempio, la Telecom mi affitta una SONET. Ma la SONET non è Ethernet, usa tecnologie diverse, come faccio io, povero studente di Crema, a sapere come far funzionare una SONET? A malapena so districarmi in un frame Ethernet...
+</p>
+<p class='vspace'>La soluzione è presto servita: ci sono apparecchi che fanno uno sporco lavoro chiamato <strong>adaptation</strong>, ovvero SIMULANO una Ethernet. In pratica metto un computer all'estremità della mia sede di Mozzanica, il quale da un lato funziona come un Gateway Ethernet, e dall'altro invece converte tutto in SONET. Nella sede di Somaglia faccio la stessa cosa, e agli occhi della mia rete la SONET in mezzo appare come un altro frammento di Ethernet.
+</p>
+<p class='vspace'>L'Adaptation è quindi il mettere insieme payload di diversi livelli 2, facendo sì che alle estremita ricompaia automagicamente un pacchetto di livello 3 accettabile. In questo caso, le macchine che fanno l'Adaptation mi vengono fornite in comodato dalle società che mi offrono la fibra ottica, e ci pensano loro a frammentare, non la mia rete.
+</p>
+<p class='vspace'>Un altro scenario è quello in cui ho diverse reti locali, e devo collegarle insieme. In questo caso è utile avere Gateway diversi. Ci sono i gateway ai capi di ciascuna rete locale, i quali poi inoltrano i pacchetti che vanno alle altre reti ad un Gateway centrale, che poi li smista alla sottorete adatta. Questi Gateway costituiscono tra di loro delle reti interne per questo scopo.
+</p>
+<p class='vspace'>E qui introduciamo la vera e propria gioia del corso di Sistemi: le sottoreti!
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>Sottoreti</h2>
+<p>Quando Internet veniva progettata, venne una bella idea ai suoi ideatori. Come accennavo qui sopra, un indirizzo deve sapermi dire <em>subito</em> se quell'host appartiene alla mia rete o meno. In pratica, l'indirizzo non è solo il <em>nome</em> di un host, ma è anche la <em>via</em> per raggiungerlo. Avendo stabilito di usare 32 bit per gli indirizzi, si è pensato di creare diverse <strong>classi</strong> che utilizzano più o meno bit per l'identificatore di rete, e i bit restanti per l'identificatore di host. Quando mando un pacchetto, confronto l'identificatore di sottorete del mio destinatario: se è uguale al mio, spedisco quel pacchetto sulla mia rete locale. Se non lo è, lo mando al Gateway di default e si arrangerà lui.
+</p>
+<p class='vspace'><a name='s41' id='s41'></a>
+</p><h3>Le classi</h3>
+<p>Nell'innocenza dei primi tempi, si era pensato a dividere i vari indirizzi possibili in 5 classi, che pensavano sarebbero bastate. E invece no. Ma cmq ve le presento, con le loro sequenze di bit.
+</p>
+<div class='vspace'></div><ul><li><strong>Classe A</strong>: 0 | 7 bit di net ID | 24 bit di host ID 
+</li><li><strong>Classe B</strong>: 10| 14 bit di net ID | 16 bit di host ID
+</li><li><strong>Classe C</strong>: 110 | 21 bit di net ID | 8 bit di host ID
+</li><li><strong>Classe D</strong>: 1110 | 28 bit di indirizzo multicast
+</li><li><strong>Classe E</strong>: 1111 | riservato per uso futuro.
+</li></ul><p class='vspace'>Lo dico subito: delle classi D e E non ce ne frega niente.
+</p>
+<p class='vspace'>Oltre all'assonanza con i modelli della Mercedes, ecco le caratteristiche delle nostre classi.
+</p>
+<p class='vspace'>Gli indirizzi di classe A, vanno da 1.0.0.0 fino a 126.0.0.0, identificano quindi 127 reti diverse, ciascuna delle quali può avere 2^24 host, ovvero 16.777.216. Tantini, eh?
+</p>
+<p class='vspace'>La classe B va da 128.1.0.0 fino a 191.255.0.0. Ci sono quindi (191 - 128) * 255 = 16.065 reti diverse, ognuna con 2^16 = 65.536 host diversi.
+</p>
+<p class='vspace'>La classe C va da 192.0.1.0 a 223.255.255.0, quindi con tante tante reti, ma 2^8 = 256 host ciascuna.
+</p>
+<p class='vspace'>Per essere veramente fighi, occorre saper riconoscere la classe d'appartenenza di un indirizzo al volo.
+</p>
+<p class='vspace'><a name='s42' id='s42'></a>
+</p><h3>Ok, dov'è il problema?</h3>
+<p>Il problema balza all'occhio. Innanzitutto, essendo gli IP non solo il nome dell'host ma anche la via per raggiungerlo, quando un computer cambia rete deve anche cambiare host. Questo è ciò che accade comunemente.
+</p>
+<p class='vspace'>Ma c'è dell'altro: se compro un indirizzo classe C, potrò avere al max 256 computer collegati in rete. Se compro un classe B ne avrò 256*256. Un classe A 256*256*256. Insomma, non ci sono molte vie di mezzo. Nel momento in cui la RaimonDigital passa da 256 computer a 257, dovrà passare dal suo classe C ad un classe B, e saranno dolori per gli amministratori di rete, e ci saranno tanti tanti tanti host sprecati. Insomma, così non va. Vedremo poi come risolvere queste imbarazzanti situazioni.
+</p>
+<p class='vspace'><a name='s43' id='s43'></a>
+</p><h3>Multicast e Unicast</h3>
+<p>Internet lavora essenzialmente in Unicast. Ovvero mando un pacchetto ad uno e un solo destinatario, contrassegnato dal suo IP. Devo mandare lo stesso pacchetto a 2 destinatari? Lo replico. Se devo mandarlo a 1000 destinatari, lo replico 1000 volte.
+</p>
+<p class='vspace'>Problema: se devo mandare in rete la trasmissione di un filmato, e ho 1000 utenti che me la stanno guardando, dovrò inviare 1000 pacchetti contemporaneamente. Ci sto dietro? Probabilmente sì. Ma se gli utenti sono 10.000? Allora la mia rete non ce la farà mai più.
+</p>
+<p class='vspace'>Ecco che viene in soccorso il multicast: invio pacchetti a certi host, i quali poi rigirano agli host che si appoggiano a loro. In questo modo, se mando 1000 pacchetti a 1000 host, e ognuno regge altri 1000 host, trasmetterò a 1000*1000 spettatori. La classe D serve a questo, e non ci è dato sapere altro:)
+</p>
+<p class='vspace'><a name='s44' id='s44'></a>
+</p><h3>Quali indirizzi usare?</h3>
+<p>Se la mia rete rimane isolata, posso usare gli indirizzi che voglio. A parte quelli con tutti 0 o tutti 1 nei vari campi net id o host id, che non dovrebbero usarsi (anche se adesso li si usano e basta), posso dare ai miei host gli indirizzi che voglio.
+</p>
+<p class='vspace'>Però, che cosa succede se do ad un mio host l'indirizzo 72.14.253.104? Succede che tutte le volte che vado in Internet e vado su www.google.it, sarò reindirizzato al mio host, perché l'indirizzo di Google in rete è proprio 72.14.253.104! Ciò vuol dire che finché la mia rete è isolata posso usare gli indirizzi che voglio. Il problema nasce quando devo andare in Internet, perché gli indirizzi sono già stati usati.
+</p>
+<p class='vspace'>Chi da via gli indirizzi? La IETF. Per esempio, gli indirizzi che vanno da 9.0.0.0 a 9.255.255.255 (che classe è? Una A) sono di IBM. 12.0.0.0 è di AT&amp;T. 13.0.0.0 è di Xeros Palo Alto Research Center, 17.0.0.0 è proprietà di Apple Computer, Inc. Se volete scoprire di chi è un certo sito, oppure viceversa a chi appartiene un certo IP, <a class='urllink' href='http://www.who.is' title='' rel='nofollow'>http://www.who.is</a> è quello che fa per voi.
+</p>
+<p class='vspace'><a name='s45' id='s45'></a>
+</p><h3>Classful e classless</h3>
+<p>L'indirizzamento Classful è quello che abbiamo illustrato qui sopra: usa le classi. L'indirizzamento Classless invece fa a meno delle classi, o meglio, trasforma una classe in qualcosa di più utilizzabile.
+</p>
+<p class='vspace'>Innanzitutto, dobbiamo vedere <em>come</em> fa un computer a stabilire se un IP è sulla sua stessa rete o no. Prendiamo un classe B 180.23.45.70. Devo inviare messaggi a 180.23.60.90. È sulla mia stessa rete o no? La risposta è sì, perché un classe B usa i primi 2 ottetti per identificare la rete, e in questo caso sono uguali. 
+</p>
+<p class='vspace'>Il sistema che usa il computer è il seguente: so che è un classe B, quindi so che deve avere i primi 16 bit di net id. Prendo quindi una <em>maschera</em>, cioè una stringa di bit. In questo caso la mia maschera avrà 16 bit tutti a 1, e 16 bit tutti a 0: 11111111 11111111 00000000 00000000.
+</p>
+<p class='vspace'>Perché? Perché so che il mio indirizzo è un classe B, quindi ha 16 bit di net id (l'ho detto qui sopra). Ma perché 1? Presto detto. Se faccio un AND logico tra i bit del mio indirizzo e quelli della maschera, esce una cosa così:
+</p>
+<p class='vspace'>180.23.45.70 diventerebbe 10110100.00010111.00101101.01000110.
+180.23.45.90 diventa invece 10110100.00010111.00101101.01011010.
+</p>
+<p class='vspace'>Adesso faccio l'AND logico del mio indirizzo e di quello della maschera di sottorete, ovvero 255.255.0.0 = 11111111.11111111.00000000.00000000
+</p>
+<div class='vspace'></div><pre class='escaped'>
+10110100.00010111.00101101.01000110 &amp;
+11111111.11111111.00000000.00000000 =
+------------------------------------
+10110100.00010111.00000000.00000000
+</pre>
+<p class='vspace'>Ora faccio l'AND logico dell'indirizzo di destinazione e di quello della maschera.
+</p><pre class='escaped'>
+10110100.00010111.00101101.01011010 &amp;
+11111111.11111111.00000000.00000000 =
+-------------------------------------
+10110100.00010111.00000000.00000000
+</pre>
+<p class='vspace'>I primi 16 bit (sono su un classe B, quindi mi interessano solo quelli) corrispondono? SÌ =&gt; 180.23.45.90 è sulla mia stessa rete, quindi lo invio in locale.
+</p>
+<p class='vspace'>Se invece NON corrispondevano, allora mandavo il pacchetto al default gateway, secondo la procedura descritta sopra. Ecco quindi come fanno i computer a stabilire se un host è sulla mia stessa rete o no.
+</p>
+<p class='vspace'>Il trucco ora comincia a diventare chiaro. Se invece della maschera normale che dovrei avere ne uso un'altra, che cosa succederebbe? Mi spiego: i classe A hanno come maschera 255.0.0.0, i classe B hanno 255.255.0.0, e i classe C hanno 255.255.255.0. Ogni host fa il controllo spiegato qui sopra, e si vede subito se l'IP appartiene alla mia rete o no.
+</p>
+<p class='vspace'>Ma mettiamo il caso di avere comprato un classe C, e di volerlo usare per tutti i computer, di cui alcuni al piano di sopra e alcuni al piano di sotto. Per evitare che tutti i pacchetti girino per la casa inutilmente, ho deciso di creare due reti distinte, una per il piano di sopra, e una per il piano di sotto. Entrambe sono collegate ad un gateway piazzato sul pianerottolo delle scale, il quale poi è connesso anche ad Internet. I computer che ho al primo piano comunicano spesso tra di loro, e raramente con quelli del piano di sotto. Quelli del piano di sotto comunicano, allo stesso modo, spesso tra di loro e raramente con quelli di sopra. Mi sembra quindi ovvio avere due sottoreti distinte.
+</p>
+<p class='vspace'>Come faccio a distinguere due sottoreti, avendo una gamma <em>continua</em> di indirizzi che va da 220.82.10.0 fino a 220.82.10.255? Il sistema che adotto è quello di configurare i miei host <strong>non</strong> con la maschera che sarebbe normale con un classe C, ovvero 255.255.255.0, ma con una maschera diversa, più lunga. 
+</p>
+<p class='vspace'>Se usassi la maschera normale, tutti i pacchetti girerebbero per tutta la rete, perché ovviamente tutti i computer di casa mia appartengono alla <em>stessa</em> sottorete chiamata 220.82.10.x. E questo è ciò che voglio evitare.
+</p>
+<p class='vspace'>Allora faccio così: la mia maschera di default sarebbe 11111111.11111111.11111111.00000000. Bene, decido di usare un bit in più per maschera: 11111111.11111111.11111111.10000000. Che cosa succede? Succede che usando questa maschera, tutti i computer che hanno un indirizzo il cui primo bit del quarto ottetto è a 0, si vedranno su di una rete locale. Idem per tutti i computer che hanno il primo bit del quarto ottetto a 1. Quando un computer che ha il primo bit a 0 vuole comunicare con un computer che ha il primo bit a 1, si accorge che <em>non</em> è nella sua stessa sottorete, e invia il pacchetto al Gateway.
+</p>
+<p class='vspace'>Traducendo dal binario all'italiano, la maschera da 255.255.255.0 diventa 255.255.255.128. Il quarto ottetto è 128 perché 10000000 in binario è 128. Le mie sottoreti sono fatte così:
+</p><ol><li>va da 220.82.10.0 fino a 220.82.10.127
+</li><li>va da 220.82.10.128 fino a 220.82.10.255
+</li></ol><p class='vspace'>Usando quindi una maschera non standard, ho utilizzato un bit in più del dovuto (nessuno me lo impedisce) per creare due sottoreti ad uso e consumo della disposizione dei computer in casa mia.
+</p>
+<p class='vspace'><a name='s46' id='s46'></a>
+</p><h3>Quanti host ho, alla fine?</h3>
+<p>Come disse Pier Damiani, gli host (e i net id) con tutti 0 non si usano. Nel mio caso, 220.92.10.0 NON lo uso, così come NON posso usare 220.92.10.127, 220.82.10.128 e 220.82.10.255. I due .0 e .255 li posso capire, ma perché non posso usare nemmeno i .127 e i .128? Il motivo è che, avendo usato un bit in più per la sottorete, l'effettivo host id di questi due computer in binario sarebbe 11011100.01011100.00001010.0<strong>1111111</strong>. In grassetto ho messo l'host ID. Siccome ho usato 25 bit per l'indirizzo di RETE, i rimanenti 7 bit sono l'indirizzo di HOST =&gt; 127 in binario si scrive <strong>01111111</strong> (se uso 8 bit) =&gt; tolgo il primo =&gt; mi rimane <strong>1111111</strong> e per la regola enunciata sopra gli host id tutti a 1 NON li uso.
+</p>
+<p class='vspace'>Stesso discorso per 220.92.10.280: sarebbe 11011100.01011100.00001010.1<strong>0000000</strong> con in grassetto l'host id, e l'host id tutto a 0 non posso usarlo. Quindi, in totale spreco 4 host, ma ho due sottoreti con un unico classe C.
+</p>
+<p class='vspace'><a name='s47' id='s47'></a>
+</p><h3>Ampliamo il discorso</h3>
+<p>Voglio quattro sottoreti con un classe C? Pronti: uso <strong>2 bit</strong> del quarto ottetto. La maschera da 255.255.255.0 (in binario 11111111.11111111.11111111.00000000) diventa 255.255.255.192 (in binario 11111111.11111111.1111111.11111111.11000000), e spreco 8 host. Voglio otto sottoreti? Uso 3 bit, la maschera diventa 255.255.255.224 e spreco 16 host etc. etc. etc. Tutto questo discorso si chiama <strong>FLSM</strong>, ovvero <em>Fixed Length Subnet Mask</em>: la maschera di sottorete che uso per <em>tutti</em> i miei host è sempre la stessa.
+</p>
+<p class='vspace'>C'è da fare un'altra osservazione: prima ho scritto che NON si possono usare i prefissi di rete tutti a 0 o tutti a 1. Nella divisione che ho fatto sopra, ho 2 sottoreti, una il cui prefisso è proprio 0, e l'altra il cui prefisso è proprio 1. A parte il fatto che non è vero che non si possono usare ste sottoreti, se l'esercizio lo chiede, per avere 2 sottoreti devo crearne in realtà 4, e non usare le due sottoreti che stanno all'estremo. Spreco quindi degli host, per rispettare questo risibile standard.
+</p>
+<p class='vspace'>La cosa è ammissibile e fattibile, ma c'è un limite, che si incontra abbastanza rapidamente. A parte il fatto che spreco host, va beh, non sono poi molti. Ma supponiamo di volere 4 sottoreti. Quanti host possono avere al massimo le mie 4 sottoreti? Ho detto che per avere 4 sottoreti uso 2 bit del 4° ottetto. Mi rimangono 6 bit, quindi 2^6 = 64 possibili host per rete. Tolgo i 2 estremi, e ho 62 host per ogni sottorete.
+</p>
+<p class='vspace'>Ma se ho 4 sottoreti, di cui una da 80 host, e le altre da 20? Posso farlo con questo sistema? La risposta è evidente: NO. Non ci sto dentro, semplicemente: se divido un classe C in 4 sottoreti con questo sistema, le reti possono arrivare a 62 host ciascuna, non di più, quindi o compro un classe B (sprecando centinaia di host) oppure escogito qualche altro sistema.
+</p>
+<p class='vspace'><a name='s48' id='s48'></a>
+</p><h3>VLSM</h3>
+<p><strong>VLSM</strong> sta per <em>Variable Length Subnet Mask</em>. Vuol dire che il trucchetto che ho appena usato per creare sottoreti a partire da un indirizzo lo estendo: per alcune sottoreti uso un bit in più, per altre ne uso 2 etc.
+</p>
+<p class='vspace'>Sempre rimanendo nell'ipotesi di poter usare anche i net id tutti 0 o tutti 1, se ho una situazione con 3 sottoreti da 80, 20 e 30 pc ciascuna, ecco come posso fare:
+</p><ul><li>la rete da 80 la metto con maschera 255.255.255.128, e attribuisco indirizzi da .0 a .127.
+</li><li>le altre reti avranno invece come maschera 255.255.255.225: una con indirizzi da .128 a .192, l'altra da .192 a .256. 
+</li></ul><p class='vspace'>Per quanto riguarda i Gateway, ne metto uno a capo di ciascuna rete, e un altro che butta su Internet, collegato a ciascuno dei miei 3 gateway interni.
+</p>
+<p class='vspace'>Semplice, no? La cosa si complica quando devo stare attento a non usare i famosi tutti 0 e tutti 1 etc. etc. Però in questo modo sono un po' più flessibile che nemmeno col sistema precedente.
+</p>
+<p class='vspace'><a name='s49' id='s49'></a>
+</p><h3>Configurare le sottoreti</h3>
+<p>Dopo queste spiegazioni, ecco che possiamo scoprire quali parametri servono per configurare un qualsiasi host collegato in rete:
+</p><ul><li>indirizzo IP
+</li><li>indirizzo IP del default Gateway
+</li><li>maschera di sottorete
+</li></ul><p class='vspace'>Con queste tre cose ben configurate, si viaggia alla grande:) Vai zio!
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h3>DHCP</h3>
+<p>Supponiamo di avere in casa 300 computer, e un classe C. Un classe C ovviamente non basta, però so anche che contemporaneamente non avrò mai più di 200 computer accesi. Quindi, che faccio? Mi occorrerebbe un sistema per dare un indirizzo IP valido solo ai computer effettivamente accesi.
+</p>
+<p class='vspace'>Ebbene, quel sistema c'è e si chiama <strong>DHCP</strong>, che vuol dire <em>Dynamic Host Configuration Protocol</em>. Ha avuto dei predecessori, che si chiamavano RARP e BOOTP, ma chi se ne frega. 
+</p>
+<p class='vspace'>Funziona così: un computer che è stato configurato per usare DHCP, quando si connette in rete broadcasta un messaggio che implora un indirizzo. Il server DHCP lo sente, e in base alla sua configurazione gli assegna un indirizzo valido. 
+</p>
+<p class='vspace'>La configurazione di un server DHCP è tale per cui posso stabilire il range di indirizzi da attribuire (eg, da 192.168.1.100 fino a 192.168.1.200), e il tempo di <em>LEASE</em>, ovvero quanto a lungo l'indirizzo rimane assegnato a quella macchina. Scaduto il tempo, la macchina deve richiederlo nuovamente. La faccenda del leasing serve perché se gli IP vengono assegnati con durata di 1 giorno, per esempio, e io sto connesso solo 2 ore e poi me ne vado col mio portatile, quell'IP non sarà più utilizzabile per il resto della giornata. Assieme all'IP naturalmente il DHCP dà via anche il default gateway e la maschera di sottorete.
+</p>
+<p class='vspace'>Inoltre è possibile configurare un server DHCP in modo che assegni sempre lo stesso indirizzo a certi host. Per esempio, la mia stampante laser è una stampante di rete, solo che non è in grado di tenere in memoria il suo indirizzo IP. Ho quindi configurato il mio DHCP in modo che ogni volta che la stampante cerca un indirizzo col suo MAC, il server controlla, vede che il MAC deve corrispondere ad un certo indirizzo, e quindi assegna alla mia stampante sempre lo stesso indirizzo 192.168.0.100. Altrimenti ogni volta che la accendo dovrei configurare i driver sui computer su di un nuovo indirizzo.
+</p>
+<p class='vspace'><a name='s6' id='s6'></a>
+</p><h3>Classi di indirizzi privati</h3>
+<p>Le autorità di Internet, visto il mezzo pasticcio che hanno combinato con le classi, hanno pensato di ovviare in qualche modo alla situazione. In effetti, perché mai dovrei comprare indirizzi classe C per andare su Internet quando ho 10 computer e basta! Al giorno d'oggi, i vari provider hanno un range di indirizzi, e quando uno si connette ne riceve uno da quelli disponibili. E se voglio una rete in casa?
+</p>
+<p class='vspace'>IETF ha riservato alcuni indirizzi all'uso privato: vuol dire che non possono esistere sulla Internet pubblica host con questo indirizzo.
+</p><ul><li>classe A privato: 10.0.0.0 ~ 10.255.255.255
+</li><li>classe B privato: 172.16.0.0 ~ 172.32.255.255 (ho 16 classe B contigui)
+</li><li>classe C privato: 192.168.0.0 ~ 192.168.255.255 (ho 255 classe C contigui)
+</li></ul><p class='vspace'>Tutti i router sono configurati per NON inviare su Internet questi pacchetti, che possono quindi essere usati felicemente all'interno di ogni rete. Poi posso subnettare a volontà queste sottoreti, come più mi piace e pare.
+</p>
+<p class='vspace'><a name='s7' id='s7'></a>
+</p><h3>Zeroconf</h3>
+<p>C'è un ulteriore modo per ottenere indirizzi. Se all'avvio non riesco a contattare nessun server DHCP, se uso la configurazione Zeroconf allora mi <em>autoassegno</em> un indirizzo che va da 169.254.1.0 a 169.254.254.255. Me lo autoassegno con una procedura pseudocasuale. In caso qualcun altro sta usando il mio stesso indirizzo zeroconf sulla mia stessa rete, ne creo un altro.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 17, 2009, at 06:34 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI06?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI06?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

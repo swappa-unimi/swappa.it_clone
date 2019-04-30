@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Breve guida per scrivere pagine </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Main.BreveGuida' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Breve guida per scrivere pagine
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Main/BreveGuida?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Main/BreveGuida?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='BreveGuida-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Main/BreveGuida?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Main/BreveGuida?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> Tools
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Cal/Cal'>Calendario</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Gruppi'>Gruppi</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Categorie'>Categorie</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/WikiSandbox'>WikiSandbox</a>
+</li></ul><p class='vspace sidehead'> Categorie
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>UniCrema</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Guide'>Guide</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Qultura'>Qultura</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Recensioni'>Recensioni</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Imperdibili'>Imperdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Perdibili'>Perdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/LoschiIndividui'>Loschi individui</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/CaGate'>caGate</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringWiki'>Touring Wiki</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringBar'>Touring Bar</a>
+</li></ul><p class='vspace sidehead'> Help
+</p><ul><li><a class='urllink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki' title='' rel='nofollow'>Guide interne wiki</a>
+</li><li><a class='wikilink' href='FAQ.html'>FAQ</a>
+</li></ul><p class='vspace'  style='text-align: right;'> <span style='font-size:83%'><a class='wikilink' href='http://www.swappa.it/wiki/Site/SideBar?action=edit'>edit SideBar</a></span>
+</p>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Breve guida per scrivere pagine was last modified on September 18, 2009, at 03:30 PM'>
+							<span style='display:none;'>Breve guida per scrivere pagine</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'>  <strong>:: Breve Guida ::</strong>
+</pre><p class='vspace'>Ciao a tutti! Il principale ostacolo all'utilizzo attivo del wiki è il non saper come fare a mettere su le pagine. Certo, c'è la <a class='wikilink' href='../PmWiki/DocumentationIndex.html'>documentazione</a>,  ma qui voglio riassumere tutto quello che serve.
+</p>
+<div class='vspace'></div><hr />
+<p><br clear='all' />
+</p><div  style='text-align: left; background-color: #f5f9fc; width: 215px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#g0'>Prima di tutto...</a>
+</li><li><a href='#g1'>Creazione di pagine</a>
+</li><li><a href='#g2'>I link</a>
+</li><li><a href='#g3'>Le categorie</a>
+</li><li><a href='#g4'>Un po' di formattazione</a>
+</li><li><a href='#g5'>Immagini</a>
+</li><li><a href='#g6'>Video</a>
+</li><li><a href='#g7'>Caricare roba sul sito</a>
+</li><li><a href='#g8'>Varie ed eventuali</a>
+</li></ol></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='g0' id='g0'></a>
+</p><h2>Prima di tutto...</h2>
+<p>... occorre sapere come è organizzato il Wiki.
+</p>
+<p class='vspace'>Ci sono 3 gruppi: il gruppo <a class='wikilink' href='HomePage.html'>Main</a>, il gruppo <a class='wikilink' href='../Uni/Uni.html'>Uni</a> e il gruppo <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Utenti'>Utenti</a>.
+</p>
+<div class='vspace'></div><h3>Main</h3>
+<p>Il gruppo <a class='wikilink' href='HomePage.html'>Main</a> contiene questa pagina, e altre pagine di servizio. Viene usato per fini "comunitari", come possono esserlo la creazione di pagine che servano da <a class='wikilink' href='Modello.html'>modello</a> agli altri, o cose simili.
+</p>
+<div class='vspace'></div><h3>Uni</h3>
+<p><a class='wikilink' href='../Uni/Uni.html'>Questo gruppo</a> contiene in sé tutte le pagine che sono relative all'Università di Crema. Questo vuol dire che ci vanno dispense dei corsi, esercizi, trucchi, materiale scolastico e robe così. 
+</p>
+<div class='vspace'></div><h3>Utenti</h3>
+<p><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Utenti'>Quest'ultimo gruppo</a> infine è a completa disposizione degli Utenti, cioè noi, compreso tu che stai leggendo. Qui ci vanno le nostre pagine personali, pagine che riguardano robe stupide o poco serie, pagine riguardanti progetti nostri, canzoni, insomma tutto. Non ci sono limiti, e basta dare un'occhiata al <em>tipo</em> di pagine per rendersene conto subito.
+</p>
+<p class='vspace'>Una sola nota, riguardante l'intero Wiki: nell'esprimerci, usiamo il buon senso. Le opinioni sono liberamente esprimibili, ma in modo civile e non offensivo.
+</p>
+<div class='vspace'></div><h3>Accesso libero</h3>
+<p>Sì, l'accesso è libero a tutti. Il nome utente per poter modificare le pagine (quelle non protette, cioè la stragrande maggioranza) è <em>studente</em>, e la password è <em>unicrema</em>.
+</p>
+<p class='vspace'>Durante la modifica della pagina, è possibile modificare il campo <em>Author:</em> mettendoci il vostro nome. Se volete un nome utente e una password personalizzati fatevi sentire sul <a class='urllink' href='http://www.swappa.it/forum' title='' rel='nofollow'>forum</a> o registratevi sulla <a class='wikilink' href='Registrazione.html'>pagina apposita</a>.
+</p>
+<p class='vspace'>Sarebbe bello se ogni utente mettesse nel suo profilo qualche informazione che lo riguarda, come per esempio una foto e il nome, così se ci si incontra per i corridoi ci si può salutare.
+</p>
+<p class='vspace'>Inoltre, ogni utente è caldamente invitato a crearsi una homepage nel gruppo <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Utenti'>Utenti.</a> e metterci quello che vuole:)
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='g1' id='g1'></a>
+</p><h2>Creazione di pagine</h2>
+<p>La creazione di una pagina nuova è semplicissima, anche se un po' inusuale: occorre innanzitutto aprire una qualsiasi pagina già esistente, come le varie Sandbox, e metterci un link alla nuova pagina, in questo modo: <code class='escaped'>[[nome nuova pagina]]</code>.<br />Anche se ci sono gli spazi in mezzo, non fa niente, poi ci pensa il wiki a sistemare le cose.
+</p>
+<p class='vspace'>Per i più esigenti esiste un <a class='wikilink' href='http://www.swappa.it/wiki/Main/TutorialSCre'>tutorial</a> che ti mostrerà un esempio di creazione pagina passaggio per passaggio.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='g2' id='g2'></a>
+</p><h2>I link</h2>
+<p>I link si creano quindi così: <code class='escaped'>[[testo -&gt; indirizzo]]</code>. La parte <em>testo</em> indica quello che viene scritto sulla pagina, mentre la parte <em>indirizzo</em> indica il collegamento effettivo.<br />Quindi, un link fatto così <code class='escaped'>[[Il Dario -&gt; Utenti.Dario]]</code> apparirà in questo modo: <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Dario'>Il Dario</a> e porterà alla pagina di <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Dario'>Utenti.Dario</a>. Se non metto la parte <em>testo</em> quello che scrivo tra le <code class='escaped'>[[</code> e le <code class='escaped'>]]</code> è direttamente il link.<br />Si possono ovviamente linkare anche pagine esterne:
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>[[esempio -&gt; http://www.google.it]]
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><p><a class='urllink' href='http://www.google.it' title='' rel='nofollow'>esempio</a>
+</p>
+</td></tr></table>
+<p class='vspace'>Per le pagine appartenenti allo stesso gruppo della pagina che si sta modificando, non è necessario mettere il prefisso, come ho fatto prima con <code class='escaped'>[[Utenti.Dario]]</code>.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='g3' id='g3'></a>
+</p><h2>Le categorie</h2>
+<p>Le categorie servono per catalogare le pagine, in modo da essere reperibili tramite i menu come quelli che ci sono nella sidebar qui a sinistra.<br />Per far appartenere una pagina ad una categoria, occorre semplicemente mettere un link formattato in questo modo: <code class='escaped'>[[!Nome Categoria]]</code> ed ecco che magicamente quella pagina apparterrà alla categoria di nome <em>Nome Categoria</em>.
+</p>
+<p class='vspace'>Se quella Categoria non esiste, verrà creata.<br />Se viene creata una nuova pagina di Categoria, la pagina a cui vi porterà il link sarà vuota. Per far sì che la pagina di una categoria contenga la lista di tutte le pagine che appartengono a quella categoria, occorre editarla e aggiungere la riga<br /><code class='escaped'>(:pagelist link=Category.LoschiIndividui list=normal:)</code>.<br />Nella pagina dei <a class='urllink' href='../index.php-n=Category.LoschiIndividui.html' title='' rel='nofollow'>Loschi Individui</a>, cliccando su Edit, potrete vedere questo principio all'opera.
+</p>
+<div class='vspace'></div><h3>Problema</h3>
+<p>Come si fa a creare un collegamento alla pagina della categoria?<br />Questa domanda nasce dal fatto che se in qualsiasi pagina metto un link a categoria, cioè un <code class='escaped'>[[!Categoria]]</code>, quella pagina automaticamente appartiene alla Categoria.<br />Per creare un collegamento e basta, cioè mandare la gente alla pagina della categoria ma non far appartenere la pagina a cui state lavorando alla Categoria, occorre un link di questo genere:<br /><code class='escaped'>[[Loschi Individui -&gt;</code><br /><code class='escaped'>http://www.swappa.it/wiki/index.php?n=Category.LoschiIndividui]]</code>
+</p>
+<div class='vspace'></div><h2>Link e categorie</h2>
+<p>È importante mettere una pagina in quante più categorie possibile, come illustrato qui sopra. Ciò serve per trovare rapidamente pagine simili. 
+</p>
+<p class='vspace'>Inoltre, si dovrebbe cercare di mettere direttamente in pagina anche dei link alle pagine più o meno inerenti a quell'argomento.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='g4' id='g4'></a>
+</p><h2>Un po' di formattazione</h2>
+<h3>Il titolo</h3>
+<p>Il titolo della pagina si indica in questa forma:<br /><code class='escaped'>(:title Titolo della Pagina:)</code><br />ed è quello che appare in cima.
+</p>
+<p class='vspace'>È già disponibile una direttiva per dare una forma simile a tutti i titoli delle pagine: è meglio usarla nella sezione Uni per dare alle pagine un aspetto coerente, gli utenti sono più liberi:)
+</p>
+<p class='vspace'>Si può scrivere <code class='escaped'>%titolo% :: Un titolo :: </code> seguito dal nome della pagina per ottenere questo:
+</p>
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> :: Un titolo ::
+</p>
+<div class='vspace'></div><h3>Intestazioni</h3>
+<p>Le intestazioni di primo livello si fanno così:
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>!! Le categorie
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><h2>Le categorie</h2>
+</td></tr></table>
+<p class='vspace'>mentre quelle di secondo livello si fanno così:
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>!!! Problema
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><h3>Problema</h3>
+</td></tr></table>
+<div class='vspace'></div><h3>Enfasil</h3>
+<p>Per dare enfasil alle parole, le si circondano da apici.<br />Per il corsivo: 
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>''enfasil''
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><p><em>enfasil</em>
+</p>
+</td></tr></table> 
+<p class='vspace'>Per il grassetto:
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>'''enfasil'''
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><p><strong>enfasil</strong>
+</p>
+</td></tr></table>
+<div class='vspace'></div><h3>Liste</h3>
+<p>Le liste puntate si creano scrivendo semplicemente delle righe precedute da un asterisco:
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>* elemento
+* altro elemento
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><ul><li>elemento
+</li><li>altro elemento
+</li></ul>
+</td></tr></table>
+<p class='vspace'>Le liste numerate invece si fanno con un <code class='escaped'>#</code> davanti alla riga, ed escono così:
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre># Lipton Ice Tea, per me, il numero 1.
+# Estathé
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><ol><li>Lipton Ice Tea, per me, il numero 1.
+</li><li>Estathé
+</li></ol>
+</td></tr></table>
+<div class='vspace'></div><h3>Andare a capo etc.</h3>
+<p>Alla fine di una riga si mettono due <code class='escaped'>\\</code> e si va<br />a capo.<br /><br />Se ne metto 3, <code class='escaped'>\\\</code>mi lascia anche<br /><br />una riga vuota.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='g5' id='g5'></a>
+</p><h2>Immagini</h2>
+<p>Mettere le immagini è semplice: basta scriverne l'indirizzo: 
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>http://www.swappa.it/wiki/uploads/Utenti/CubaLibre1.jpg
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><div><img src='../uploads/Utenti/CubaLibre1.jpg' alt='' title='' /></div>
+</td></tr></table>
+<p class='vspace'>Se si vuole fare una cosa carina, si può circondare l'immagine con una cornice, e metterci una didascalia.<br />Per ottenere ciò si fa in questo modo:
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>%lframe%http://www.swappa.it/wiki/uploads/Utenti/CubaLibre1.jpg|Cuba Libre
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><div><span class='frame lfloat'><img src='../uploads/Utenti/CubaLibre1.jpg' alt='' title='' /><br />Cuba Libre</span></div>
+</td></tr></table>
+<p class='vspace'>Posso usare <code class='escaped'>%rframe%</code> per creare una cornice a destra.
+</p>
+<p class='vspace'><br clear='all' />
+</p><h3>Uploadare immagini</h3>
+<p>Se voglio invece uploadare immagini, devo usare la direttiva <code class='escaped'>Attach:</code>. Per visualizzare un'immagine, scrivo semplicemente <code class='escaped'>Attach:http://indirizzo/immagine.jpg</code> o quello che è.
+</p>
+<p class='vspace'>Se voglio un <em>link</em> a quell'immagine, uso la sintassi <code class='escaped'>[[Attach:http://indirizzo/immagine.jpg]]</code>, e infine se voglio che il link appaia senza la scritta <code class='escaped'>Attach:</code>, uso questa sintassi: <code class='escaped'>[[(Attach:)http://indirizzo/immagine.jpg]]</code>.
+</p>
+<p class='vspace'>Un'immagine già uploadata è facilmente accessibile: <code class='escaped'>Attach:PaginaDoveSiTrovaLImmagine/nomeimmagine.jpg</code>. Le immagini uploadate da altri gruppi sono altrettanto facilmente accessibili: <code class='escaped'>Attach:NomeGruppo/NomePagine/Immagine.jpg</code>.
+</p>
+<p class='vspace'>Più difficile dirlo che farlo...
+<br clear='all' />
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='g6' id='g6'></a>
+</p><h2>Video</h2>
+<p>Per inserire nella pagina filmati presi da YouTube (e solo da YouTube) dovete scrivere <code class='escaped'>(:youtube [codice]:)</code>, dove per <em>[codice]</em> si intende ciò che è scritto nell'url della pagina dopo il "<em>/watch?v=</em>". 
+</p>
+<p class='vspace'>Ad esempio, se l'url della pagina di YouTube col video che vi interessa è<br /><code class='escaped'>http://it.youtube.com/watch?v=OadLXlaDQt4</code><br />sul wiki dovrete scrivere <code class='escaped'>(:youtube OadLXlaDQt4:)</code>.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='g7' id='g7'></a>
+</p><h2>Uploadare files</h2>
+<p>Funziona esattamente come per le immagini... <code class='escaped'>Attach:nomefile.estensione</code>.
+</p>
+<p class='vspace'>Se il file esiste già, nessun problema, altrimenti apparirà un link dal quale potrete uploadare il vostro file e dargli l'estensione che volete. La dimensione massima degli upload è 1MB.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='g8' id='g8'></a>
+</p><h2>Varie ed eventuali</h2>
+<p>Per mandare tutto a capo dopo un'immagine o qualcosa del genere, si usa il tag <code class='escaped'>[[&lt;&lt;]]</code>.
+</p>
+<p class='vspace'>Infine c'è la direttiva <code class='escaped'>%warning%</code> per gli avvisi:)
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'> Danger! Keep out!
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='categorylink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne wiki</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: September 18, 2009, at 03:30 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Main/BreveGuida?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Main/BreveGuida?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

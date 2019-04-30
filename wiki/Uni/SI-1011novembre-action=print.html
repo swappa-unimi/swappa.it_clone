@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Intelligenti - Appunti del 10 e 11 Novembre</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SI-1011novembre.html' title='Sistemi Intelligenti - Appunti del 10 e 11 Novembre'>Sistemi Intelligenti - Appunti del 10 e 11 Novembre</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Intelligenti - Appunti del 10 e 11 Novembre ::</strong>
+</pre><div class='vspace'></div><h2>Fuzzy logic</h2>
+<p>Se ci chiedono che tempo fa, di solito rispondiamo che c'è sole, fa caldo, piove, fa freddo. Difficilmente risponderemo che il valore di irradianza solare è pari a 1,66 Watt<sub>eff</sub>/m<sup>2</sup>, che la temperatura è di 24°C o che l'umidità è del 78% (se rispondete così avete dei problemi). L'espressione "quest'aula è calda" è quindi qualcosa di soggettivo, espresso con un aggettivo che difficilmente può essere quantificato in modo univoco con dei valori numerici. <br />Scopo della <strong>logica fuzzy</strong> è assecondare questa tendenza dell'uomo di non esprimersi sempre in modo preciso (<em>crisp</em>), ma riuscire a gestire processi ed elaborazioni logiche in cui è ammesso un certo livello di vaghezza (<em>fuzzy</em>). Va inoltre tenuto conto che molte situazioni hanno un grado di imprecisione intrinseca nella definizione delle loro caratteristiche, e perdere tempo ed energie per trattarle secondo la logica tradizionale è spesso improbo. L'alternativa è catturare questa vaghezza e avere gli strumenti per trattarla con le stesse (o simili) manipolazioni offerte dalle altre logiche.<br />Stando a quanto detto, la logica fuzzy può essere considerata una generalizzazione di quella classica booleana.
+</p>
+<div class='vspace'></div><h2>Esempio</h2>
+<p>Il problema da risolvere è definire se un uomo è alto. Consideriamo alta una persona tra i 5 e i 7 piedi (da circa 150 cm a circa 213).
+</p>
+<div class='vspace'></div><h3>Approccio crisp</h3>
+<p>Associamo ad ogni uomo l'appartenenza (<em>membership</em>) o meno all'insieme "alto" se la sua altezza è compresa tra i 5 e i 7 piedi, estremi inclusi. Se soddisfano questo requisito il loro valore di membership è 1, altrimenti vale 0.<br />Possiamo quindi dire che l'"appartenenza dell'elemento di un universo a un dato insieme" viene verificata andando a vedere il valore della caratteristica in funzione 
+della quale sto misurando l'appartenenza.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/approccioCrisp.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Approccio fuzzy</h3>
+<p>Non ci interessa se uno è un po' più alto o un po' più basso di un certo valore di altezza (ad esempio 6). La vaghezza è ammessa perché nell'intorno del valore non è necessaria rigidezza di appartenenza, ma è consentita una certa sfumatura. In questo caso la funzione di membership non descrive più un gradino, ma ha quest'aspetto:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/approccioFuzzy.jpg' alt='' title='' /></div>
+<p class='vspace'>Notiamo che l'inclinazione cattura la vaghezza.
+</p>
+<div class='vspace'></div><h2>E ora?</h2>
+<p>A che ci serve tutto questo? A rendere più semplice a livello linguistico la descrizione di sistemi complessi in cui non è banale definire tutti gli aspetti/caratteristiche con valori matematici o comunque crisp. Ricordiamo infatti che in alcuni casi è quasi impossibile generare modelli matematici del sistema, o collezionare sufficienti esempi da sottoporre a una rete neurale. O ancora, magari è anche possibile realizzare una caratterizzazione precisa del sistema da un punto di vista astratto, ma dato che poi è prevista un'interazione umana col software dovrò fare in modo che sia tollerata una certa vaghezza.
+</p>
+<p class='vspace'>La fuzzy logic è utilizzata per moltissime applicazioni, anche molto diverse tra loro. Scaricatevi <a class='urllink' href='http://www.intelligent-systems.info/classes/ee509/1.pdf' title='' rel='nofollow'>questa slide</a> (pdf), e guardate da pagina 4.
+</p>
+<div class='vspace'></div><h2>Concetti base della logica fuzzy</h2>
+<p>Un <strong>insieme fuzzy</strong> è un insieme con i confini sfumati, non netti; in altre parole l'elemento di un insieme fuzzy può appartenere anche parzialmente ad esso. Le funzioni di membership permettono di mappare l'appartenenza degli oggetti nei vari insiemi.<br />Definizione formale: definiamo insieme universo un insieme X non vuoto. Un insieme fuzzy sottoinsieme di tale universo è caratterizzato dalla funzione di membership: <br />&#956;<sub>A</sub>: X -&gt; [0,1]<br />, dove &#956;<sub>A</sub> è il grado di appartenenza di x all'insieme A. Se &#956;<sub>A</sub>(x) è maggiore di 0 e minore o uguale a 1, allora x appartiene ad A; se invece &#956;<sub>A</sub>(x)=0 allora x non gli appartiene.<br />Considerando solo gli estremi dell'intervallo precedente, quindi 0 e 1, otteniamo un sottoinsieme molto piccolo che corrisponde alla funzione di membership di un sistema booleano classico. Ecco un'ulteriore dimostrazione che la logica booleana è un caso particolare di quella fuzzy, che la generalizza. Questo concetto è molto utile, poichè in alcuni casi specifici ciò che possiamo dedurre da applicazioni della logica fuzzy possiamo dedurli anche dalla (o per la) logica classica.
+</p>
+<p class='vspace'>Un altra definizione ancora più formale di un insieme fuzzy è: l'insieme fuzzy A può essere rappresentanto come l'insieme delle coppie ordinate: <br />A = {(x,&#956;<sub>A</sub>(x))|x &#1028; X}<br />ovvero "gli elementi che appartengono al nostro insieme tali per cui la funzione di membership è maggiore di 0"
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Le immagini che seguono sono prese dal pdf "Basic concept" del Dr. Edward Sazonov (<a class='urllink' href='http://www.intelligent-systems.info/classes/ee509/2.pdf' title='' rel='nofollow'>scarica</a>)
+</p></div>
+<p class='vspace'>Quella che segue è la rappresentazione di un possibile insieme fuzzy:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/esinsiemefuzzy.jpg' alt='' title='' /></div>
+<p class='vspace'>Distinguiamo le varie zone:
+</p><ul><li><strong>core</strong>, rappresenta il sottoinsieme crisp del mio insieme fuzzy, in cui la funzione di membership vale 1
+</li><li><strong>boundary</strong>, la zona di confine, in cui la funzione di membership restituisce valori compresi tra 0 e 1
+</li><li><strong>support</strong>, è l'insieme di tutti i valori della grandezza che stiamo osservando e che hanno funzione di membership maggiore di 0
+</li></ul><p class='vspace'>L' <strong>altezza</strong> di un insieme fuzzy è il valore massimo della funzione di membership. Un insieme A è chiamato <em>normale</em> se ha altezza 1, e <em>subnormale</em> se ha altezza inferiore di 1. 
+</p>
+<p class='vspace'>..to be continued
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SI-1011novembre)</span></div>
+  </div>
+</body>
+</html>

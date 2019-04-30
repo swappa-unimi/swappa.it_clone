@@ -1,0 +1,652 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Tecnologie Web - Laboratorio 3</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TWLab03.html' title='Tecnologie Web - Laboratorio 3'>Tecnologie Web - Laboratorio 3</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio 3 ::</strong>
+</pre><div class='vspace'></div><h2>Esercizio 1</h2>
+<p><strong>Consideriamo il seguente file xml <em>checkbook.xml</strong></em>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; 
+
+&lt;checkbook&gt; 
+
+  &lt;deposit type="direct-deposit"&gt; 
+    &lt;payor&gt;Bob's Bolts&lt;/payor&gt; 
+    &lt;amount&gt;987.32&lt;/amount&gt; 
+    &lt;date&gt;21-6-2009&lt;/date&gt; 
+    &lt;description category="income"&gt;Paycheck&lt;/description&gt; 
+  &lt;/deposit&gt; 
+
+  &lt;payment type="check" number="980"&gt; 
+    &lt;payee&gt;Kimora's Sports Equipment&lt;/payee&gt; 
+    &lt;amount&gt;132.77&lt;/amount&gt; 
+    &lt;date&gt;23-6-2009&lt;/date&gt; 
+    &lt;description category="entertainment"&gt;kendo equipment&lt;/description&gt; 
+  &lt;/payment&gt; 
+
+  &lt;payment type="atm"&gt; 
+    &lt;amount&gt;40.00&lt;/amount&gt; 
+    &lt;date&gt;24-6-2009&lt;/date&gt; 
+    &lt;description category="cash"&gt;pocket money&lt;/description&gt; 
+  &lt;/payment&gt; 
+
+  &lt;payment type="debit"&gt; 
+    &lt;payee&gt;Lone Star Cafe&lt;/payee&gt; 
+    &lt;amount&gt;36.86&lt;/amount&gt; 
+    &lt;date&gt;26-6-2009&lt;/date&gt; 
+    &lt;description category="food"&gt;lunch with Greg&lt;/description&gt; 
+  &lt;/payment&gt; 
+
+  &lt;payment type="check" number="981"&gt; 
+    &lt;payee&gt;Wild Oats Market&lt;/payee&gt; 
+    &lt;amount&gt;47.28&lt;/amount&gt; 
+    &lt;date&gt;29-6-2009&lt;/date&gt; 
+    &lt;description category="food"&gt;groceries&lt;/description&gt; 
+  &lt;/payment&gt; 
+
+  &lt;payment type="debit"&gt; 
+    &lt;payee&gt;Barnes and Noble&lt;/payee&gt; 
+    &lt;amount&gt;58.79&lt;/amount&gt; 
+    &lt;date&gt;30-6-2009&lt;/date&gt; 
+    &lt;description category="work"&gt;O'Reilly Books&lt;/description&gt; 
+  &lt;/payment&gt; 
+
+  &lt;payment type="check" number="982"&gt; 
+    &lt;payee&gt;Old Man Ferguson&lt;/payee&gt; 
+    &lt;amount&gt;800.00&lt;/amount&gt; 
+    &lt;date&gt;31-6-2009&lt;/date&gt; 
+    &lt;description category="misc"&gt;a 3-legged antique credenza that once 
+    belonged to Alfred Hitchcock&lt;/description&gt; 
+  &lt;/payment&gt; 
+
+&lt;/checkbook&gt;
+</pre>
+</div>
+<p class='vspace'><strong>Creiamo un file xsl per formattare l’output del file xml. Prima di tutto, creiamo un template che imposti la struttura della pagina HTML.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;xsl:template match="checkbook"&gt; 
+  &lt;html&gt; 
+    &lt;head/&gt; 
+    &lt;body&gt; 
+              &lt;!-- page content goes here --&gt; 
+    &lt;/body&gt; 
+  &lt;/html&gt; 
+&lt;/xsl:template&gt;
+</pre>
+</div>
+<p class='vspace'><strong>Colleghiamo il file xml al file checkbook.xsl con l’istruzione.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml-stylesheet type="text/xsl" href="checkbook.xsl"?&gt;
+</pre>
+</div>
+<p class='vspace'><strong>Aggiungiamo una sezione che riassuma le entrate (income).</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;xsl:template match="checkbook"&gt; 
+  &lt;html&gt; 
+    &lt;head/&gt; 
+    &lt;body&gt;  
+      &lt;!-- income information --&gt; 
+      &lt;h3&gt; 
+        &lt;xsl:text&gt;Income from &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[1]/date"/&gt; 
+        &lt;xsl:text&gt; until &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[last()]/date"/&gt; 
+        &lt;xsl:text&gt;:&lt;/xsl:text&gt; 
+      &lt;/h3&gt; 
+      &lt;xsl:apply-templates select="deposit"/&gt; 
+
+    &lt;/body&gt; 
+  &lt;/html&gt; 
+&lt;/xsl:template&gt;
+</pre>
+</div>
+<p class='vspace'><strong>Aggiungiamo una sezione per descrivere le uscite dal conto, ordinando le transazioni avvenute in ordine decrescente rispetto al valore amount.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;xsl:template match="checkbook"&gt; 
+  &lt;html&gt; 
+    &lt;head/&gt; 
+    &lt;body&gt; 
+
+      &lt;!-- income information --&gt; 
+      &lt;h3&gt; 
+        &lt;xsl:text&gt;Income from &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[1]/date"/&gt; 
+        &lt;xsl:text&gt; until &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[last()]/date"/&gt; 
+        &lt;xsl:text&gt;:&lt;/xsl:text&gt; 
+      &lt;/h3&gt; 
+      &lt;xsl:apply-templates select="deposit"/&gt; 
+
+      &lt;!-- payment information --&gt; 
+      &lt;h3&gt; 
+        &lt;xsl:text&gt;Expenditures from &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[1]/date"/&gt; 
+        &lt;xsl:text&gt; until &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[last()]/date"/&gt; 
+        &lt;xsl:text&gt;, ranked from highest to lowest:&lt;/xsl:text&gt; 
+      &lt;/h3&gt; 
+      &lt;xsl:apply-templates select="payment"&gt; 
+        &lt;xsl:sort data-type="number" order="descending" 
+                  select="amount"/&gt; 
+      &lt;/xsl:apply-templates&gt; 
+
+    &lt;/body&gt; 
+  &lt;/html&gt; 
+&lt;/xsl:template&gt;
+</pre>
+</div>
+<p class='vspace'><strong>Infine, visualizziamo il bilancio del conto. Sono necessari due termini sum(): uno per i pagamenti totali e uno per le entrate totali. Per chiarire se l’utente è in debito o credito, coloriamo il risultato e visualizziamo un warning se negativo.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;xsl:template match="checkbook"&gt; 
+  &lt;html&gt; 
+    &lt;head/&gt; 
+    &lt;body&gt; 
+      &lt;!-- income information --&gt; 
+      &lt;h3&gt; 
+        &lt;xsl:text&gt;Income from &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[1]/date"/&gt; 
+        &lt;xsl:text&gt; until &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[last()]/date"/&gt; 
+        &lt;xsl:text&gt;:&lt;/xsl:text&gt; 
+      &lt;/h3&gt; 
+      &lt;xsl:apply-templates select="deposit"/&gt; 
+
+      &lt;!-- payment information --&gt; 
+      &lt;h3&gt; 
+        &lt;xsl:text&gt;Expenditures from &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[1]/date"/&gt; 
+        &lt;xsl:text&gt; until &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[last()]/date"/&gt; 
+        &lt;xsl:text&gt;, ranked from highest to lowest:&lt;/xsl:text&gt; 
+      &lt;/h3&gt; 
+      &lt;xsl:apply-templates select="payment"&gt; 
+        &lt;xsl:sort data-type="number" order="descending" 
+                  select="amount"/&gt; 
+      &lt;/xsl:apply-templates&gt; 
+
+      &lt;h3&gt;Balance&lt;/h3&gt; 
+      &lt;p&gt; 
+        &lt;xsl:text&gt;Your balance as of &lt;/xsl:text&gt; 
+        &lt;xsl:value-of select="child::*[last()]/date"/&gt; 
+        &lt;xsl:text&gt; is &lt;/xsl:text&gt; 
+        &lt;tt&gt;&lt;b&gt; 
+          &lt;xsl:choose&gt; 
+            &lt;xsl:when test="sum( payment/amount ) 
+                         &gt; sum( deposit/amount )"&gt; 
+              &lt;font color="red"&gt; 
+                &lt;xsl:text&gt;$&lt;/xsl:text&gt; 
+                &lt;xsl:value-of select="sum( deposit/amount ) 
+                                    - sum( payment/amount )"/&gt; 
+              &lt;/font&gt; 
+            &lt;/xsl:when&gt; 
+            &lt;xsl:otherwise&gt; 
+              &lt;font color="blue"&gt; 
+                &lt;xsl:text&gt;$&lt;/xsl:text&gt; 
+                &lt;xsl:value-of select="sum( deposit/amount ) 
+                                    - sum( payment/amount )"/&gt; 
+              &lt;/font&gt; 
+            &lt;/xsl:otherwise&gt; 
+          &lt;/xsl:choose&gt; 
+        &lt;/b&gt;&lt;/tt&gt; 
+      &lt;/p&gt; 
+      &lt;xsl:if test="sum( payment/amount )&gt; sum( deposit/amount )"&gt; 
+        &lt;p&gt; 
+          &lt;font color="red"&gt; 
+            &lt;xsl:text&gt;DANGER! Deposit money quick!&lt;/xsl:text&gt; 
+          &lt;/font&gt; 
+        &lt;/p&gt; 
+      &lt;/xsl:if&gt; 
+    &lt;/body&gt; 
+  &lt;/html&gt; 
+&lt;/xsl:template&gt; 
+</pre>
+</div>
+<p class='vspace'><strong>Verificare come viene visualizzato adesso il contenuto del file xml. Modificare il file xml in modo che non ci sia debito per vedere come viene visualizzato il risultato.</strong>
+</p>
+<p class='vspace'><strong>A questo punto, occorre aggiungere delle regole per gestire i pagamenti (payment) e i depositi (deposit).</strong>
+</p>
+<p class='vspace'><strong>Attenzione! Notare che nel documento xml, il pagamento con type=”atm” non ha la descrizione del payee. Dunque per questo caso serve una regola speciale, leggermente diversa da quella per tutti gli altri pagamenti, che potrebbe essere la seguente:</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;xsl:template match="payment[@type='atm']"&gt; 
+  &lt;p&gt; 
+    &lt;xsl:value-of select="position()"/&gt; 
+    &lt;xsl:text&gt;. On &lt;/xsl:text&gt; 
+    &lt;xsl:value-of select="date"/&gt; 
+    &lt;xsl:text&gt;, you withdrew &lt;/xsl:text&gt; 
+    &lt;tt&gt;&lt;b&gt; 
+      &lt;xsl:text&gt;$&lt;/xsl:text&gt; 
+      &lt;xsl:value-of select="amount"/&gt; 
+    &lt;/b&gt;&lt;/tt&gt; 
+    &lt;xsl:text&gt; from an ATM for &lt;/xsl:text&gt; 
+    &lt;xsl:value-of select="description"/&gt; 
+    &lt;xsl:text&gt;.&lt;/xsl:text&gt; 
+  &lt;/p&gt; 
+&lt;/xsl:template&gt;
+</pre>
+</div>
+<p class='vspace'><strong>Completare il file xsl aggiungendo i template per <em>payment</em> e <em>deposit</em>, in modo che l’output finale sia come quello mostrato in figura.</strong>
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TW03es1.jpg' alt='' title='' /></div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Le due parti mancanti che devono trattare <em>payment</em> e <em>deposit</em> saranno:
+</p>
+<p class='vspace'>PAYMENT:
+</p><pre class='escaped'>
+&lt;xsl:template match="deposit"&gt;
+ &lt;p&gt;
+  &lt;xsl:value-of select="position()"/&gt;
+  &lt;xsl:text&gt;. On &lt;/xsl:text&gt;
+  &lt;xsl:value-of select="date"/&gt;
+  &lt;xsl:text&gt;,&lt;/xsl:text&gt;
+   &lt;tt&gt;
+    &lt;b&gt;
+     &lt;xsl:text&gt;$&lt;/xsl:text&gt;
+     &lt;xsl:value-of select="amount"/&gt;
+    &lt;/b&gt;
+   &lt;/tt&gt;
+  &lt;xsl:text&gt;was deposited into your account by&lt;/xsl:text&gt;
+   &lt;i&gt;
+    &lt;xsl:value-of select="payor"/&gt;
+   &lt;/i&gt;
+  &lt;xsl:text&gt;.&lt;/xsl:text&gt;
+ &lt;/p&gt;
+&lt;/xsl:template&gt;
+</pre>
+<p class='vspace'>DEPOSIT:
+</p><pre class='escaped'>
+&lt;xsl:template match="payment"&gt;
+ &lt;p&gt;
+  &lt;xsl:value-of select="position()"/&gt;
+  &lt;xsl:text&gt;. On &lt;/xsl:text&gt;
+  &lt;xsl:value-of select="date"/&gt;
+  &lt;xsl:text&gt;, you paid &lt;/xsl:text&gt;
+   &lt;tt&gt;
+    &lt;b&gt;
+     &lt;xsl:text&gt;$&lt;/xsl:text&gt;
+     &lt;xsl:value-of select="amount"/&gt;
+    &lt;/b&gt;
+   &lt;/tt&gt;
+  &lt;xsl:text&gt; to &lt;/xsl:text&gt;
+   &lt;i&gt;
+    &lt;xsl:value-of select="payee"/&gt;
+   &lt;/i&gt;
+  &lt;xsl:text&gt;for &lt;/xsl:text&gt;
+  &lt;xsl:value-of select="description"/&gt;
+ &lt;/p&gt;
+&lt;/xsl:template&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p><strong>Considerate il seguente codice:</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0"?&gt; 
+
+&lt;agenzia&gt; 
+
+ &lt;viaggio codice="0001" tipo="sano"&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Moena&lt;/luogo&gt; 
+   &lt;giorni&gt;1&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Merano&lt;/luogo&gt; 
+   &lt;giorni&gt;3&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Bolzano&lt;/luogo&gt; 
+   &lt;giorni&gt;3&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Moena&lt;/luogo&gt; 
+   &lt;giorni&gt;1&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;durata&gt;8&lt;/durata&gt; 
+  &lt;costo&gt;1000&lt;/costo&gt; 
+  &lt;descrizione&gt;Monti, Arrampicate e Passeggiate&lt;/descrizione&gt; 
+ &lt;/viaggio&gt; 
+
+ &lt;viaggio codice="0002" tipo="avventuroso"&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Harlem&lt;/luogo&gt; 
+   &lt;giorni&gt;1&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Caracas&lt;/luogo&gt; 
+   &lt;giorni&gt;1&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Sing Sing&lt;/luogo&gt; 
+   &lt;giorni&gt;2&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;durata&gt;4&lt;/durata&gt; 
+  &lt;costo&gt;321&lt;/costo&gt; 
+  &lt;descrizione&gt;Rischio e Pericolo&lt;/descrizione&gt; 
+ &lt;/viaggio&gt; 
+
+ &lt;viaggio codice="0003" tipo="oriente"&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Filippine&lt;/luogo&gt; 
+   &lt;giorni&gt;4&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Indonesia&lt;/luogo&gt; 
+   &lt;giorni&gt;2&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Sing Sing&lt;/luogo&gt; 
+   &lt;giorni&gt;4&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;durata&gt;4&lt;/durata&gt; 
+  &lt;costo&gt;1254&lt;/costo&gt; 
+  &lt;descrizione&gt;Bellezze orientali&lt;/descrizione&gt; 
+ &lt;/viaggio&gt; 
+
+ &lt;viaggio codice="0004" tipo="culturale"&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Parma&lt;/luogo&gt; 
+   &lt;giorni&gt;2&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Cesena&lt;/luogo&gt; 
+   &lt;giorni&gt;1&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Bertinoro&lt;/luogo&gt; 
+   &lt;giorni&gt;2&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;tappa&gt; 
+   &lt;luogo&gt;Cento&lt;/luogo&gt; 
+   &lt;giorni&gt;2&lt;/giorni&gt; 
+  &lt;/tappa&gt; 
+  &lt;durata&gt;7&lt;/durata&gt; 
+  &lt;costo&gt;3412&lt;/costo&gt; 
+  &lt;descrizione&gt;Gastronomia nostrana&lt;/descrizione&gt; 
+ &lt;/viaggio&gt; 
+
+ &lt;prenotazione codice="0004" &gt; 
+  &lt;cliente&gt; 
+   &lt;cognome&gt;Ghini&lt;/cognome&gt; 
+   &lt;nome&gt;Vittorio&lt;/nome&gt; 
+  &lt;/cliente&gt; 
+  &lt;data&gt;11&lt;/data&gt; 
+ &lt;/prenotazione&gt; 
+
+ &lt;prenotazione codice="0001" &gt; 
+  &lt;cliente&gt; 
+   &lt;cognome&gt;Ghini&lt;/cognome&gt; 
+   &lt;nome&gt;Vittorio&lt;/nome&gt; 
+  &lt;/cliente&gt; 
+  &lt;data&gt;19&lt;/data&gt; 
+ &lt;/prenotazione&gt; 
+
+ &lt;prenotazione codice="0002" &gt; 
+  &lt;cliente&gt; 
+   &lt;cognome&gt;Sicuro&lt;/cognome&gt; 
+   &lt;nome&gt;Laura&lt;/nome&gt; 
+  &lt;/cliente&gt; 
+  &lt;data&gt;5&lt;/data&gt; 
+ &lt;/prenotazione&gt; 
+
+ &lt;prenotazione codice="0003" &gt; 
+  &lt;cliente&gt; 
+   &lt;cognome&gt;Clinton&lt;/cognome&gt; 
+   &lt;nome&gt;Bill&lt;/nome&gt; 
+  &lt;/cliente&gt; 
+  &lt;data&gt;6&lt;/data&gt; 
+ &lt;/prenotazione&gt; 
+
+ &lt;prenotazione codice="0003" &gt; 
+  &lt;cliente&gt; 
+   &lt;cognome&gt;Flowers&lt;/cognome&gt; 
+   &lt;nome&gt;Jennifer&lt;/nome&gt; 
+  &lt;/cliente&gt; 
+  &lt;data&gt;6&lt;/data&gt; 
+ &lt;/prenotazione&gt; 
+
+ &lt;prenotazione codice="0003" &gt; 
+  &lt;cliente&gt; 
+   &lt;cognome&gt;Jackson&lt;/cognome&gt; 
+   &lt;nome&gt;Michael&lt;/nome&gt; 
+  &lt;/cliente&gt; 
+  &lt;data&gt;6&lt;/data&gt; 
+ &lt;/prenotazione&gt; 
+
+&lt;/agenzia&gt; 
+</pre>
+</div>
+<p class='vspace'><strong>Scrivere delle espressioni Xpath per trovare:</strong>
+</p><ol><li><strong>l’elenco di tutti i viaggi</strong>
+</li><li><strong>l’elenco dei viaggi ti tipo avventuroso</strong>
+</li><li><strong>il viaggio che passa per l’Indonesia</strong>
+</li><li><strong>i viaggi con più di tre tappe</strong>
+</li><li><strong>chi fa viaggi di tipo oriente</strong>
+</li></ol><p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><ol><li>/child::agenzia/descendant::viaggio
+</li><li>/child::agenzia/descendant::viaggio<code class='escaped'>[@</code>tipo="avventuroso"]
+</li><li>/child::agenzia/ child::viaggio[child::tappa/child::luogo="Indonesia"]
+</li><li>/child::agenzia/ child::viaggio[count(child::tappa)&gt;3]
+</li><li>/child::agenzia/child::prenotazione[attribute::codice=/child::agenzia<br />/child::viaggio[attribute::tipo="oriente"]/attribute::codice]/child::cliente
+</li></ol><div class='vspace'></div><h2>Esercizio 3</h2>
+<p><strong>Considerate il seguente pezzo di codice.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; 
+
+&lt;bookstore&gt; 
+
+&lt;book category="COOKING"&gt; 
+  &lt;title lang="en"&gt;Everyday Italian&lt;/title&gt; 
+  &lt;author&gt;Giada De Laurentiis&lt;/author&gt; 
+  &lt;year&gt;2005&lt;/year&gt; 
+  &lt;price&gt;30.00&lt;/price&gt; 
+&lt;/book&gt; 
+
+&lt;book category="CHILDREN"&gt; 
+  &lt;title lang="en"&gt;Harry Potter&lt;/title&gt; 
+  &lt;author&gt;J K. Rowling&lt;/author&gt; 
+  &lt;year&gt;2005&lt;/year&gt; 
+  &lt;price&gt;29.99&lt;/price&gt; 
+&lt;/book&gt; 
+
+&lt;book category="WEB"&gt; 
+  &lt;title lang="en"&gt;XQuery Kick Start&lt;/title&gt; 
+  &lt;author&gt;James McGovern&lt;/author&gt; 
+  &lt;author&gt;Per Bothner&lt;/author&gt; 
+  &lt;author&gt;Kurt Cagle&lt;/author&gt; 
+  &lt;author&gt;James Linn&lt;/author&gt; 
+  &lt;author&gt;Vaidyanathan Nagarajan&lt;/author&gt; 
+  &lt;year&gt;2003&lt;/year&gt; 
+  &lt;price&gt;49.99&lt;/price&gt; 
+&lt;/book&gt; 
+
+&lt;book category="WEB"&gt; 
+  &lt;title lang="en"&gt;Learning XML&lt;/title&gt; 
+  &lt;author&gt;Erik T. Ray&lt;/author&gt; 
+  &lt;year&gt;2003&lt;/year&gt; 
+  &lt;price&gt;39.95&lt;/price&gt; 
+&lt;/book&gt; 
+
+&lt;/bookstore&gt;
+</pre>
+</div>
+<p class='vspace'><strong>Eseguire una XQuery per:</strong> 
+</p><ol><li><strong>visualizzare i titoli di ogni elemento del documento</strong>
+</li><li><strong>i titoli di tutti gli elementi con prezzo minore di 30</strong>
+</li><li><strong>ripetere la query del punto 2, utilizzando una espressione FLWOR</strong>
+</li><li><strong>con una  FLWOR, ordinare il risultato della query precedente</strong>
+</li><li><strong>stampare i titoli dei libri in base all’ordine alfabetico del nome del primo autore</strong>
+</li></ol><p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><ol><li>doc("book.xml")/bookstore/book/title
+</li><li>doc("books.xml")/bookstore/book[price&lt;30]
+</li><li>for $b in doc("book.xml")/bookstore/book<br />where $b/price &lt; 30<br />return $b/title
+</li><li>for $b in doc("book.xml")/bookstore/book<br />where $b/price &lt; 30<br />order by $b/price<br />return $b/title
+</li><li>bla
+</li></ol><div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TWLab03)</span></div>
+  </div>
+</body>
+</html>

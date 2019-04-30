@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Tecnologie Web - Laboratorio 2 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.TWLab02' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Tecnologie Web - Laboratorio 2
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab02?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab02?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='TWLab02-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab02?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab02?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Tecnologie Web - Laboratorio 2 was last modified on June 02, 2009, at 04:37 PM'>
+							<span style='display:none;'>Tecnologie Web - Laboratorio 2</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio 2 ::</strong>
+</pre><div class='vspace'></div><h2>Esercizio 1</h2>
+<p><strong>Verificare che il documento sia valido.<br />Modificare il documento in modo che non sia valido e verificare la non validità.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt; 
+
+&lt;!DOCTYPE PROTEIN-SET [ 
+&lt;!ELEMENT PROTEIN-SET (PROTEIN+)&gt; 
+&lt;!ELEMENT PROTEIN (ACCESSION, ENTRY-NAME, PROTEIN-NAME, GENE-
+NAME+, ORGANISM, COMMENT*, KEYWORD*)&gt; 
+&lt;!ELEMENT ACCESSION (#PCDATA)&gt; 
+&lt;!ELEMENT ENTRY-NAME (#PCDATA)&gt; 
+&lt;!ELEMENT PROTEIN-NAME (#PCDATA)&gt; 
+&lt;!ELEMENT GENE-NAME (#PCDATA)&gt; 
+&lt;!ELEMENT COMMENT (#PCDATA)&gt; 
+&lt;!ELEMENT KEYWORD (#PCDATA)&gt; 
+&lt;!ELEMENT ORGANISM (#PCDATA)&gt; 
+&lt;!ATTLIST ORGANISM taxonomyid NMTOKEN #REQUIRED&gt; 
+]&gt; 
+
+&lt;PROTEIN-SET&gt; 
+&lt;PROTEIN&gt; 
+&lt;ACCESSION&gt;P26954&lt;/ACCESSION&gt; 
+&lt;ENTRY-NAME&gt;IL3B-MOUSE&lt;/ENTRY-NAME&gt; 
+&lt;PROTEIN-NAME&gt;Interleukin-3 receptor class  II beta chain [Precursor] &lt;/PROTEIN-
+NAME&gt; 
+&lt;GENE-NAME&gt;CSF2RB2&lt;/GENE-NAME&gt; 
+&lt;GENE-NAME&gt;AI2CA&lt;/GENE-NAME&gt; 
+&lt;GENE-NAME&gt;IL3RB2&lt;/GENE-NAME&gt; 
+&lt;GENE-NAME&gt;IL3R&lt;/GENE-NAME&gt; 
+&lt;ORGANISM taxonomyid="10090"&gt;Mus musculus&lt;/ORGANISM&gt;
+
+&lt;COMMENT&gt;Function: in mouse there are two classes of ...&lt;/COMMENT&gt; 
+&lt;COMMENT&gt;Subunit: Heterodimer of an alpha and a beta chain.&lt;/COMMENT&gt; 
+&lt;COMMENT&gt;Subcellular location: Type I membrane protein.&lt;/COMMENT&gt; 
+&lt;COMMENT&gt;Similarity: belongs to the .. &lt;/COMMENT&gt; 
+&lt;KEYWORD&gt;Receptor&lt;/KEYWORD&gt; 
+&lt;KEYWORD&gt;Glycoprotein&lt;/KEYWORD&gt; 
+&lt;KEYWORD&gt;Signal&lt;/KEYWORD&gt; 
+&lt;/PROTEIN&gt; 
+&lt;/PROTEIN-SET&gt;
+</pre>
+</div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Dando in pasto il codice ad un validatore online risulta VALIDO!<br /><br />
+Per rendere il documento <em>non-valido</em> è sufficiente omettere un elemento che deve comparire necessariamente, ad esempio <em>organism</em>; oppure non rispettare l'ordine degli elementi presente del DTD, quindi andare a scrivere gli elementi in un ordine diverso rispetto a come sono dichiarati nel DTD.
+</p>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p><strong>Scrivere un documento XML  (con DOCTYPE PROGRAMMAZIONE) valido rispetto al seguente DTD.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;!ELEMENT PROGRAMMAZIONE (CANALE+)&gt; 
+&lt;!ELEMENT CANALE (NOME, GIORNO+)&gt; 
+&lt;!ELEMENT NOME (#PCDATA)&gt; 
+&lt;!ELEMENT GIORNO (DATA, SLOT_PROGRAMMA+)+&gt; 
+&lt;!ELEMENT DATA (#PCDATA)&gt; 
+&lt;!ELEMENT SLOT_PROGRAMMA (ORA, TITOLO, DESCRIZIONE?)&gt; 
+&lt;!ELEMENT ORA (#PCDATA)&gt; 
+&lt;!ELEMENT TITOLO (#PCDATA)&gt; 
+&lt;!ELEMENT DESCRIZIONE (#PCDATA)&gt; 
+
+&lt;!ATTLIST PROGRAMMAZIONE NOME CDATA #REQUIRED&gt; 
+&lt;!ATTLIST CANALE NUMERO CDATA #REQUIRED&gt; 
+&lt;!ATTLIST SLOT_PROGRAMMA VTR CDATA #IMPLIED&gt; 
+&lt;!ATTLIST TITOLO RATING CDATA #IMPLIED&gt; 
+&lt;!ATTLIST TITOLO LINGUA CDATA #IMPLIED &gt; 
+</pre>
+</div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;PROGRAMMAZIONE NOME="P1"&gt;
+ &lt;CANALE NUMERO="1"&gt;
+  &lt;NOME&gt;CANALE 5 &lt;/NOME&gt;
+  &lt;GIORNO&gt;
+   &lt;DATA&gt; 01 APRILE &lt;/DATA&gt;
+   &lt;SLOT_PROGRAMMA VTR="ACASO"&gt;
+    &lt;ORA&gt;23&lt;/ORA&gt;
+    &lt;TITOLO RATING="R1"&gt;THE PRESTIGE&lt;/TITOLO&gt;
+   &lt;/SLOT_PROGRAMMA&gt;
+ &lt;/GIORNO&gt;
+ &lt;/CANALE&gt;
+&lt;/PROGRAMMAZIONE&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p><strong>Definire una DTD che renda valido il seguente documento.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;address_book&gt; 
+ &lt;entry&gt; 
+  &lt;name&gt; 
+   &lt;fname&gt; John &lt;/fname&gt; 
+   &lt;lname&gt; Doe &lt;/lname&gt; 
+  &lt;/name&gt; 
+  &lt;address&gt; 
+      &lt;street&gt; 34 Square Plaza &lt;/street&gt; 
+      &lt;state&gt; OH &lt;/state&gt; 
+      &lt;zip&gt;459856&lt;/zip&gt; 
+      &lt;locality&gt; Cincinnati &lt;/locality&gt; 
+      &lt;country&gt; US &gt;/country&gt; 
+  &lt;/address&gt; 
+  &lt;tel&gt; 4569 458962&lt;/tel&gt; 
+  &lt;email&gt; john@emailaddress.com &lt;/email&gt; 
+ &lt;/entry&gt; 
+
+&lt;entry&gt; 
+  &lt;name&gt; 
+   &lt;fname&gt; Jane &lt;/fname&gt; 
+   &lt;lname&gt; Potter &lt;/lname&gt; 
+  &lt;/name&gt; 
+  &lt;address&gt; 
+      &lt;street&gt; 24 Money Street &lt;/street&gt; 
+      &lt;postal_code&gt; 5000&lt;/postal_code&gt; 
+      &lt;locality&gt; Cincinnati &lt;/locality&gt; 
+      &lt;country&gt; US &gt;/country&gt; 
+  &lt;/address&gt; 
+  &lt;email&gt; jane@emailaddress.com &lt;/email&gt; 
+ &lt;/entry&gt; 
+
+&lt;entry&gt; 
+  &lt;name&gt; 
+   &lt;fname&gt; Oliver &lt;/fname&gt; 
+   &lt;lname&gt; Twist &lt;/lname&gt; 
+  &lt;/name&gt; 
+  &lt;email&gt; john@emailaddress.com &lt;/email&gt; 
+ &lt;/entry&gt; 
+
+&lt;/address_book&gt; 
+
+</pre>
+</div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;!DOCTYPE address_book [
+&lt;!ELEMENT address_book (entry+)&gt;
+&lt;!ELEMENT entry (name, address?, tel?, email)&gt;
+&lt;!ELEMENT name (fname, lname)&gt;
+&lt;!ELEMENT fname (#PCDATA)&gt;
+&lt;!ELEMENT lname (#PCDATA)&gt;
+&lt;!ELEMENT address (street, postal_code?, state?, zip?, locality, country)&gt;
+&lt;!ELEMENT street (#PCDATA)&gt;
+&lt;!ELEMENT state (#PCDATA)&gt;
+&lt;!ELEMENT zip (#PCDATA)&gt;
+&lt;!ELEMENT locality (#PCDATA)&gt;
+&lt;!ELEMENT country (#PCDATA)&gt;
+&lt;!ELEMENT postal_code (#PCDATA)&gt;
+&lt;!ELEMENT tel (#PCDATA)&gt;
+&lt;!ELEMENT email (#PCDATA)&gt;
+]&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 4</h2>
+<p><strong>1- Verificare la validità del seguente documento xml rispetto allo schema.<br />2- Provare poi a modificare il file.xml (per esempio cancellare l’attributo orderid) e verificarne la non validità.<br />3- Modificare lo schema in modo da rendere valido il file .xml senza l’attributo orderid.</strong>
+</p>
+<p class='vspace'><strong>Shiporder.xml</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt; 
+
+&lt;shiporder orderid="889923" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="shiporder.xsd"&gt; 
+
+ &lt;orderperson&gt;John Smith&lt;/orderperson&gt; 
+ &lt;shipto&gt; 
+  &lt;name&gt;Ola Nordmann&lt;/name&gt; 
+  &lt;address&gt;Langgt 23&lt;/address&gt; 
+  &lt;city&gt;4000 Stavanger&lt;/city&gt; 
+  &lt;country&gt;Norway&lt;/country&gt; 
+ &lt;/shipto&gt; 
+ &lt;item&gt; 
+  &lt;title&gt;Empire Burlesque&lt;/title&gt; 
+  &lt;note&gt;Special Edition&lt;/note&gt; 
+  &lt;quantity&gt;1&lt;/quantity&gt; 
+  &lt;price&gt;10.90&lt;/price&gt; 
+ &lt;/item&gt; 
+ &lt;item&gt; 
+  &lt;title&gt;Hide your heart&lt;/title&gt; 
+  &lt;quantity&gt;1&lt;/quantity&gt; 
+  &lt;price&gt;9.90&lt;/price&gt; 
+ &lt;/item&gt; 
+&lt;/shiporder&gt; 
+</pre>
+</div>
+<p class='vspace'><strong>shiporder.xsd</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt; 
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt; 
+
+&lt;xs:element name="shiporder"&gt; 
+ &lt;xs:complexType&gt; 
+  &lt;xs:sequence&gt; 
+   &lt;xs:element name="orderperson" type="xs:string"/&gt; 
+   &lt;xs:element name="shipto"&gt; 
+    &lt;xs:complexType&gt; 
+     &lt;xs:sequence&gt; 
+      &lt;xs:element name="name" type="xs:string"/&gt; 
+      &lt;xs:element name="address" type="xs:string"/&gt; 
+      &lt;xs:element name="city" type="xs:string"/&gt; 
+      &lt;xs:element name="country" type="xs:string"/&gt; 
+     &lt;/xs:sequence&gt; 
+    &lt;/xs:complexType&gt; 
+   &lt;/xs:element&gt; 
+   &lt;xs:element name="item" maxOccurs="unbounded"&gt; 
+    &lt;xs:complexType&gt; 
+     &lt;xs:sequence&gt; 
+      &lt;xs:element name="title" type="xs:string"/&gt; 
+      &lt;xs:element name="note" type="xs:string" minOccurs="0"/&gt; 
+      &lt;xs:element name="quantity" type="xs:positiveInteger"/&gt; 
+      &lt;xs:element name="price" type="xs:decimal"/&gt; 
+     &lt;/xs:sequence&gt; 
+    &lt;/xs:complexType&gt; 
+   &lt;/xs:element&gt; 
+  &lt;/xs:sequence&gt; 
+  &lt;xs:attribute name="orderid" type="xs:string" use="required"/&gt; 
+ &lt;/xs:complexType&gt; 
+&lt;/xs:element&gt; 
+
+&lt;/xs:schema&gt; 
+</pre>
+</div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>1- Il documento è valido in quanto rispetta le regole definite nel XML Schema.<br /><br />
+2- Se togliamo l'attributo <em>orderid</em> dal file XML il programma restituisce il seguente errore <em>Attribute 'orderid' must appear on element 'shiporder'.</em> avvisando ovviamente che il documento non è valido.<br /><br />
+3- Quindi se andiamo a togliere dal file XML l'attributo <em>orderid</em>, lo Schema corrispondente deve diventare(semplicemente andare a togliere la riga dove era dichiarato l'attributo):
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+ &lt;xs:element name="shiporder"&gt;
+  &lt;xs:complexType&gt;
+   &lt;xs:sequence&gt;
+    &lt;xs:element name="orderperson" type="xs:string"/&gt;
+    &lt;xs:element name="shipto"&gt;
+     &lt;xs:complexType&gt;
+      &lt;xs:sequence&gt;
+       &lt;xs:element name="name" type="xs:string"/&gt;
+       &lt;xs:element name="address" type="xs:string"/&gt;
+       &lt;xs:element name="city" type="xs:string"/&gt;
+       &lt;xs:element name="country" type="xs:string"/&gt;
+      &lt;/xs:sequence&gt;
+     &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+   &lt;xs:element name="item" maxOccurs="unbounded"&gt;
+    &lt;xs:complexType&gt;
+     &lt;xs:sequence&gt;
+      &lt;xs:element name="title" type="xs:string"/&gt;
+      &lt;xs:element name="note" type="xs:string" minOccurs="0"/&gt;
+      &lt;xs:element name="quantity" type="xs:positiveInteger"/&gt;
+      &lt;xs:element name="price" type="xs:decimal"/&gt;
+     &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+   &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+ &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 5</h2>
+<p><strong>Creare uno Schema XML che descriva la struttura di un documento  dizionario, che rispetti i seguenti vincoli:</strong>
+</p><ul><li> <strong>L'elemento dizionario deve contenere zero o più elementi termine.</strong>
+</li><li> <strong>L'elemento  termine è costituito dagli elementi  parola,  pronuncia e almeno un'occorrenza dell'elemento significato.</strong>
+</li><li> <strong>L'elemento  significato è costituito dagli elementi  definizione ed  esempio (l'elemento esempio può, comparire zero o più volte).</strong>
+</li></ul><p><strong>Gli elementi parola, pronuncia, definizione e esempio sono di dipo stringa.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1" ?&gt;
+&lt;xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+
+&lt;xs:element name="dizionario"&gt;
+ &lt;xs:complexType&gt;
+  &lt;xs:sequence&gt;
+   &lt;xs:element name="termine" minOccurs="0"&gt;
+    &lt;xs:complexType&gt;
+     &lt;xs:sequence&gt;
+      &lt;xs: element name="parola" type="xs:string"/&gt;
+      &lt;xs: element name="pronuncia" type="xs:string"/&gt;
+      &lt;xs: element name="significato" minOccurs="1"&gt;
+       &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+         &lt;xs: element name="definizione" type="xs:string"/&gt;
+         &lt;xs: element name="esempio" type="xs:string" minOccurs="0"/&gt;
+        &lt;/xs:sequence&gt;
+       &lt;/xs:complexType&gt;
+     &lt;/xs:sequence&gt;
+    &lt;/xs:complexType&gt;
+  &lt;/xs:sequence&gt;
+ &lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 6</h2>
+<p><strong>Creare un documento istanza XML valido rispetto allo schema precedente.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;
+&lt;dizionario
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="dizionario.xsd"&gt;
+&lt;termine&gt;
+  &lt;parola&gt;rosa&lt;/parola&gt;
+  &lt;pronuncia&gt;rosammmmm!&lt;/pronuncia&gt;
+  &lt;significato&gt;
+    &lt;definizione&gt;colore prefetito dalle barbaroglu &lt;/definizione&gt;
+    &lt;esempio&gt; mmmmmm, rosa!!! &lt;/esempio&gt;
+  &lt;/significato&gt;
+&lt;/termine&gt;
+&lt;/dizionario&gt;
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 02, 2009, at 04:37 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab02?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab02?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

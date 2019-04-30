@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Basi di Dati - Complementi - Lezione del 3 marzo 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.BDC3marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Basi di Dati - Complementi - Lezione del 3 marzo 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC3marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC3marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='BDC3marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC3marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC3marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Basi di Dati - Complementi - Lezione del 3 marzo 2008 was last modified on January 08, 2011, at 09:58 AM'>
+							<span style='display:none;'>Basi di Dati - Complementi - Lezione del 3 marzo 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi - Lezione del 3 marzo 2008 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Appunti Glamour</strong></span>
+</p>
+<p class='vspace'><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Gestione delle transazioni</strong></span>
+</p>
+<p class='vspace'>La <strong>transazione</strong> è un'unità elementare di lavoro che deve avere certe caratteristiche:
+</p><ul><li><strong>correttezza</strong>
+</li><li><strong>robustezza</strong>
+</li><li><strong>isolamento</strong>
+</li></ul><p class='vspace'>Un <strong>sistema transazionale</strong> è il meccanismo che definisce ed esegue transazioni da parte di più applicazioni concorrenti. Garantisce il corretto comportamento del sistema, secondo le proprietà qui sopra citate.
+</p>
+<p class='vspace'>La sintassi <em>(in SQL???)</em> è la seguente:
+</p>
+<div class='vspace'></div><pre> begin transaction
+ ...
+ [lista operazioni]
+ ...
+ [commit | abort]
+ end transaction
+</pre><p class='vspace'>Le operazioni sono scritture, letture etc. etc., mentre la parte interessante è alla fine, il <strong>commit</strong> e l<strong>'abort</strong>.
+Il commit lo si ha quando tutto va OK, e la transazione è completata con successo.
+L'abort invece vuol dire che si è verificata qualche condizione di fallimento, e le operazioni vengono tutte annullate con un <strong>undo</strong>: si attua un <strong>rollback</strong>.
+</p>
+<p class='vspace'>In una <strong>transazione ben formata</strong>, alla fine ci può essere solo uno dei due: o commit, o abort. E dopo questo, non ci deve essere nessun'altra operazione.
+</p>
+<div class='vspace'></div><h2>Proprietà delle transazioni</h2>
+<p>L'acronimo è <strong>ACID</strong>:
+</p><ul><li>Atomicità
+</li><li>consistenza
+</li><li>Isolamento
+</li><li>Durabilità = persistenza
+</li></ul><div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/complementi1.jpg' alt='' title='' /><br /><strong>Immagine accattivante per studenti</strong></span></div>
+<div class='vspace'></div><h3>Atomicità</h3>
+<p>Una transazione è un'unità atomica, il che vuol dire che o l'eseguo tutta, o non eseguo niente. Non esistono stati intermedi. Un po' come i quanti della fisica. Se ci si ferma a metà, si disfa tutto e si fa l<strong>'UNDO</strong> di quanto già fatto. Se si ferma <em>DOPO</em> il commit, si fa il <strong>REDO</strong>.
+</p>
+<p class='vspace'>Di solito invece funziona egregiamente e si va al commit felicemente.
+I casi di fallimento invece si possono distinguere in due tipi, amorevolmente così chiamati:
+</p><ol><li>suicidio: è l'applicazione che decide il rollback
+</li><li>omicidio: il rollback è deciso dal sistema
+</li></ol><p class='vspace'>Tra aborti, suicidi ed omicidi, i Complementi di Basi di Dati sembrano più che altro Complementi di Genocidio di Massa. Potevano scegliere un linguaggio un po' meno cruento...
+</p>
+<p class='vspace'>Quando le cose non vanno a buon fine, non deve rimanere nessun effetto di ciò che è andato male: questa è l'atomicità.
+</p>
+<div class='vspace'></div><h3>Consistenza</h3>
+<p>Una transazione non deve violare i vincoli di integrità.
+</p>
+<p class='vspace'>I vincoli li posso controllare durante la transazione, o alla fine della stessa. Le due cose NON sono equivalenti. Basti pensare infatti ad una transazione in cui i valori, durante l'esecuzione, sforano temporaneamente i vincoli di integrità, per poi ritornare nella norma alla fine della transazione.
+</p>
+<div class='vspace'></div><h3>Isolamento</h3>
+<p>L'esecuzione di una transazione deve essere indipendente dalle altre transazioni eseguite contemporaneamente. Vuol dire che il risultato deve essere lo stesso sia nell'eseguire le trans in sequenza, che eseguirle in parallelo.
+</p>
+<div class='vspace'></div><h3>Durabilità = persistenza</h3>
+<p>Gli effetti di una transazione non devono andare persi. Se una trans arriva al commit, è come quando il faraone ha parlato.
+</p>
+<div class='vspace'></div><h3>Chi garantisce ACID?</h3>
+<p>Queste simpatiche proprietà sono garantite dai moduli del DBMS, cioè parti del sistema informativo che presiedono al rispetto di ACID.
+</p>
+<div class='vspace'></div><ul><li><strong>Gestore dell'affidabilità</strong>: si prende cura di A e P
+</li><li><strong>Compilatore DDL</strong>: C
+</li><li><strong>Gestore della concorrenza</strong>: I
+</li></ul><p class='vspace'>Nota sul Compilatore DDL. DDL = Data Description Language, ovvero il linguaggio che uso per descrivere i dati. Quando descrivo i miei bei dati, il compilatore provvede ad inserire dei controlli sui miei vincoli di integrità.
+</p>
+<div class='vspace'></div><h3>Gestore Affidabilità</h3>
+<p>Si occupa di A e C. Esegue i <em>comandi transazionali</em>: <strong>B</strong> (begin), <strong>C</strong> (commit) e <strong>A</strong> (abort).
+</p>
+<p class='vspace'>Se qualcosa non va, deve garantire (ancora questo verbo...) che il sistema venga ripristinato al suo stato corretto. E come faccio? Semplice, uso la <strong>MEMORIA STABILE</strong>!
+</p>
+<p class='vspace'>Non che esista, ed infatti è un'astrazione: si tratta di quella memoria il cui contenuto non viene mai perso. Per approssimarsi a questa astrazione, si ricorre a vari metodi, tra cui quello di duplicare i dati in posti diversi, in modi diversi etc. così da minimizzare la probabilità che tutto vada perduto. La memoria stabile è quindi resa <strong>resistente ai guasti</strong>. Un guasto alla memoria stabile viene detto <strong>catastrofico</strong>, nonché definito <strong>impossibile</strong>. 
+</p>
+<p class='vspace'>Il Gestore dell'Affidabilità mantiene un log con su scritto tutto quanto fa. Questo log risiede in memoria stabile per resistere alla jella più nera e alle plugin più osé. Si tratta di un file in cui si tiene traccia di tutto quello che viene fatto dal DBMS, in ordine cronologico. Siccome tiene traccia di tutto, rende possibile il REDO e l'UNDO (vedremo poi).
+</p>
+<p class='vspace'>Il log contiene 2 tipi di record: 
+</p><ul><li>record di <strong>transazione</strong>, che contiene i comandi <strong>begin, insert, delete, update, commit, abort</strong>;
+</li><li>record di <strong>sistema</strong>, che contiene i comandi <strong>dump</strong> e <strong>checkpoint</strong>. Il DUMP fa il backup completo del database, mentre il CHECKPOINT tiene traccia di tutte le transazioni in esecuzione in un dato istante di tempo.
+</li></ul><p class='vspace'>Ma non registra solo il comando, bensì anche lo stato delle cose PRIMA (<strong>before state</strong>) e DOPO (<strong>after state</strong>) l'esecuzione del comando.
+Questo vuol dire che registra le transazioni non in modo relativo, ma in modo assoluto. Per intenderci, non scrive 
+</p><pre> x = 100
+ x = x + 100
+</pre><p>ma
+</p><pre> x = 100
+ x = 200
+</pre><p>Salvandole in modo assoluto è possibile ripeterle o annullarle senza perdere informazioni.
+</p>
+<p class='vspace'>Quando si vuola fare l'UNDO di un'azione che agisce su un oggetto O, si guarda il log di quell'azione:
+</p><ul><li>UNDO di un UPDATE: copio il BS dell'azione nell'oggetto modificato
+</li><li>UNDO di un DELETE: ripristino O con il valore BS
+</li><li>UNDO di un insert: cancello O
+</li></ul><p class='vspace'>Per il REDO:
+</p><ul><li>REDO di un UPDATE: copio AS in O
+</li><li>REDO di un DELETE: cancello O
+</li><li>REDO di un INSERT: reinserisco O
+</li></ul><p class='vspace'>Sia UNDO che REDO godono della proprietà di <strong>idempotenza</strong>, ovvero fare UNDO(A) (dove A è un'azione) per 1 volta o per 1000 volte è la stessa cosa. Uguale discorso per REDO(A): farlo 1 o 100 volte è uguale, il risultato non cambierà mai. Questa proprietà è resa possibile dal fatto che salvo i valori assoluti delle operazioni, e non quelli relativi.
+</p>
+<div class='vspace'></div><h3>Checkpoint e Dump</h3>
+<p>Il checkpoint si fa periodicamente, e consiste nel bloccare tutte le operazioni in corse e proibirne l'accettazione di nuove. Nel log scrivo il record di checkpoint, in cui annoto tutte le operazioni in corso in quell'istante, e poi riprendo.
+</p>
+<p class='vspace'>Il dump invece è una copia di tutta la base di dati, e quando la si fa, si ferma il tutto.
+</p>
+<div class='vspace'></div><h3>Regole di scrittura dei record dei log</h3>
+<p>I record dei log vanno scritto rispettando 2 regole: <strong>write-ahead log</strong> e <strong>commit-precedenza</strong>.
+</p>
+<p class='vspace'><strong>Write-ahead log</strong> vuol dire che il BS va scritto PRIMA di effettuare le operazioni. Ciò permette l'UNDO in caso di rollback. Se scrivessi dopo, non avrebbe senso.
+</p>
+<p class='vspace'><strong>Commit-precedenza</strong> vuol dire invece che AS va scritto PRIMA di fare il commit, così è possibile fare il REDO.
+</p>
+<p class='vspace'>Viene registrato anche il commit, nel suo bel record di commit così, grazie a queste regole, se c'è un guasto appena prima di esso, faccio un REDO. Se c'è un guasto dopo, faccio un UNDO grazie ai miei AS e BS.
+</p>
+<p class='vspace'>Un altro problema che insorge è se attuare le operazioni sulla base di dati prima o dopo il commit.
+Se prima opero e poi committo, non serve il REDO. Se prima committo e poi opero, non serve UNDO. Ma se lavoro un po' così e un po' cosà allora servono sia REDO che UNDO.
+</p>
+<div class='vspace'></div><h3>Guasti</h3>
+<p>Sono di due tipi:
+</p><ul><li>di sistema: è un bug del software, salta la corrente o cose del genere. I miei dispositivi di memorizzazione non vengono rovinati.
+</li><li>di dispositivo: si sfasciano i dispositivi che ospitano i miei dati, e qui è più brutta.
+</li></ul><p class='vspace'>Il log serve appunto per riparare i guasti di sistema, tramite un procedimento detto <strong>ripresa a caldo</strong>. Se invece ho un guasto di sistema, si attua la <strong>ripresa a freddo</strong>.
+</p>
+<p class='vspace'>Il modello che si segue come reazione ai guasti si chiama <strong>fail-stop</strong>: se c'è un guasto o un errore, fermo tutto, avvio le procedure di ripristino, e se queste vanno bene riparto con l'attività normale. Se invece le procedure di ripristino non vanno a buon fine, torno nella fase di stop, e ripeto finché le cose non funzionano.
+</p>
+<div class='vspace'></div><h3>Ripresa a caldo</h3>
+<p>Ecco quello che succede in una ripresa a caldo.
+</p><ol><li>Ripercorro il file di log all'indietro fino all'ultimo checkpoint effettuato
+</li><li>Creo due insiemi: l'insieme REDO e l'insieme UNDO.
+<ul><li>L'insieme REDO all'inizio è vuoto
+</li><li>L'insieme UNDO viene riempito con tutte le transazioni che il checkpoint mi indica come attive
+</li></ul></li><li>Percorro il log dal checkpoint in avanti, ed eseguo una di queste tre operazioni:
+<ul><li>tutte le transazioni che iniziano ma non hanno un commit le metto nell'insieme UNDO
+</li><li>sposto da UNDO a REDO tutte le transazioni di cui trovo il commit
+</li><li>metto nell'insieme REDO tutte le transazioni iniziate dopo il checkpoint e che hanno il commit registrato prima del crash
+</li></ul></li><li>Vado nel log al BOT (Begin Of Transaction) della transazione più vecchia che ho nei due insiemi REDO e UNDO
+</li><li>Vado verso la fine del log ed eseguo tutte le operazioni delle transazioni che compaiono nei miei due insiemi.
+</li></ol><div class='vspace'></div><h3>Ripresa a freddo</h3>
+<ol><li>Vado all'ultimo DUMP e ripristino tutto il database copiandocelo sopra
+</li><li>Vado indietro nel log fino al record dell'ultimo DUMP ed eseguo tutte le azioni indicate
+</li><li>Eseguo una ripresa a caldo
+</li></ol><p class='vspace'><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+<div class='vspace'></div>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 08, 2011, at 09:58 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC3marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC3marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

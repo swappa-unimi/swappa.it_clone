@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Lezione mattutina del 18 marzo 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri18Marzo2008Mattina.html' title='Sistemi Operativi - Lezione mattutina del 18 marzo 2008'>Sistemi Operativi - Lezione mattutina del 18 marzo 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi operativi - Lezione mattutina del 18 marzo 2008 ::</strong>
+</pre><p class='vspace'>OCIO: siccome il pomeriggio non c'ero, non ho preso appunti e non posso quindi scriverli! Fate quindi riferimento a quelli che Lara Rossa e Teto e Guido hanno pubblicato sulla <a class='wikilink' href='SistemiOperativi.html'>pagina di SO</a>.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 1 - Processi concorrenti</strong></span>
+</p>
+<p class='vspace'>Abbiamo visto sinora la cooperazione tra processi, ora vediamo la <strong>concorrenza</strong>, che si ha quando si vuole accedere a risorse condivise, usabili solo in mutua esclusione.
+</p>
+<p class='vspace'>Posso ammettere 2 processi alla stessa risorsa solo se le operazioni che vogliono compiervi NON sono in contrasto tra di loro, come ad esempio 2 letture da un file. Le risorse di cui occorre sincronizzare l'uso possono essere fisiche o informative.
+</p>
+<div class='vspace'></div><h3>Corsa critica</h3>
+<p>C'è una zona di memoria condivisa, un buffer, che da qualche parte ha segnato il numero di messaggi che contiene. Un processo scrivente scrive fino a che ci sono messaggi disponibili. Un processo leggente legge finché ci sono messaggi. Se i processi non vengono sincronizzati, può darsi che la variabile che contiene il numero di messaggi nel buffer non sia corretta. Ad esempio, lo scrittore scrive solo se il buffer è vuoto. Ora il buffer è pieno, quindi non può scrivere, ma il processo che legge diventa attivo. Il processo che legge DIMINUISCE la variabile che indica la dimensione del buffer, ma prima di leggere EFFETTIVAMENTE, il SO lo sospende e riattiva lo scrittore. Lo scrittore vede che c'è ancora spazio per un messaggio, e scrive, di fatto sovrascrivendo il messaggio precedente.
+</p>
+<p class='vspace'>Questi problemi si chiamano <strong>corsa ritica</strong> delle operazioni su una variabile condivisa, e la <strong>sezione critica</strong> è la sezione di codice che può generare corse critiche se eseguita in modo concorrente. Può, non è che deve, e in effetti potrebbe non accadere mai, ma quella volta che succede sono dolori.
+</p>
+<p class='vspace'>Le sezioni critich di codice quindi devono avere accesso esclusivo alle variabili condivise, e devono spicciarsela in modo rapido perché se no gli altri che attendono quella stessa risorsa non arrivano più.
+</p>
+<p class='vspace'>2 processi cooperanti si possono invece sincronizzare: l'uno dà il via libera all'altro, e l'altro non parte finché non riceve il via libera, e quindi le loro evoluzioni sono sincronizzate.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2 - Le variabili di lock</strong></span>
+</p>
+<p class='vspace'>Vediamo qui un po' di tipi di variabili di lock.
+</p>
+<div class='vspace'></div><h2>Variabile di turno</h2>
+<p>È una variabile condivisa tra i processi che vogliono la risorsa, e dice QUALE processo può usare la risorsa in quel turno. È quindi un accesso in mutua esclusione (d'ora in poi abbrevio con mutex).
+</p>
+<div class='vspace'></div><h3>Algoritmo 1</h3>
+<p>Ho due processi, 0 e 1. Ho una variabile all'inizio messa a 0, e indica che è il turno di 0. Finché la variabile turno è diversa dal mio pid, io attendo. Controllo la variabile turno PRIMA di entrare nella sezione critica. Quando ho finito la sezione critica, lascio il mio turno e lo faccio diventare quello dell'altro.
+</p>
+<p class='vspace'>Ecco un po' di pseudo-java.
+</p>
+<div class='vspace'></div><pre> inizializza() {
+    turno = 0;
+ }
+
+ entraSezioneCritica(int pid) {
+    while (turno != pid) {
+       Thread.yield(); // faccio riposare il mio thread
+    }
+ }
+
+ esciSezioneCritica(int pid) {
+    turno = 1 - pid,
+ }
+</pre><p class='vspace'>Il codice <strong>1 - t</strong> realizza il trucchetto: se sono 0, turno diventa 1, e viceversa.
+</p>
+<p class='vspace'>Il codice che chiama farà così:
+</p>
+<div class='vspace'></div><pre> entraSezioneCritica(mioPid);
+ // Codice critico
+ esciSezioneCritica(mioPid);
+</pre><p class='vspace'>Se è il suo turno, esegue, altrimenti attenderà durante la chiamata di <strong>entraSezioneCritica(pid)</strong>.
+Questo sistema garantisce la mutex, ma non garantisce il progresso, perché i processi sono sempre alternati, e un processo lento rallenta quello veloce, che è obbligato ad aspettare il suo turno.
+</p>
+<div class='vspace'></div><h3>Algoritmo 2</h3>
+<p>Imposto due flag a <strong>false</strong> all'inizio, ognuna associata ad un processo. Quando entro nella sezione critica la mia flag viene messa a <strong>true</strong>, e attendo che anche l'altra flag venga messa a <strong>false</strong>. Quando esco, metto la mia flag a <strong>false</strong>
+</p>
+<div class='vspace'></div><pre> boolean flag0, flag1;
+
+ inizializza() {
+   flag0 = false;
+   flag1 = false;
+ }
+
+ entraSezioneCritica(int pid) {
+   if (pid == 0) {
+     flag0 = true;
+     while (flag1 == true) {
+       Thread.yield();
+     }
+   }
+   else {
+     flag1 = true;
+     while (flag0 = true) {
+       Thread.yield();
+     }
+   }
+ }
+
+ esciSezioneCritica(int pid) {
+   if (pid == 0) flag0 = false; 
+   else flag1 = false;
+ }
+</pre><p class='vspace'>Qui accade che prenoto il mio accesso, e quando l'altro ha finito tocca a me. Quindi non c'è alternanza stretta tra processi, come nell'Algoritmo 1. Tuttavia, il progresso dei processi qui non è garantito perché il processo lento comunque fa durare a lungo il suo turno.
+</p>
+<div class='vspace'></div><h3>Algoritmo 3</h3>
+<p>Ho due flag, più la variabile di turno. Le flag sono inizializzate a 0, e il turno a turno_0.
+La variabile <strong>turno</strong> serve per dire a chi tocca. La flag è invece la prenotazione. È un po' la combo dei due precedenti algoritmi.
+Devo controllare se l'altro NON ha prenotato, e che NON sia il suo turno.
+</p>
+<div class='vspace'></div><pre> entraSezioneCritica(int pid) {
+   int altro = 1 - t;
+   turno = altro;
+   if (pid == 0) {
+     flag0 = true;
+     while ((flag1) &amp;&amp; (turno = altro)) {
+       Thread.yield();
+     }
+   }
+   else {
+     flag1 = true;
+     while((flag0) &amp;&amp; (turno = altro)) {
+       Thread.yield();
+     }
+   }
+ }
+</pre><p class='vspace'>Questo sistema garantisce mutex e progresso, perché non rimane bloccato a causa di prenotazioni, grazie alla doppia condizione del while.
+</p>
+<div class='vspace'></div><h2>Variabile di lock</h2>
+<p>È un cambio di punto di vista rispetto alla variabile di turno: non sono i processi ad alternarsi, ma è la risorsa stessa a dire se è disponibile o no.
+</p>
+<p class='vspace'>Una variabile di lock assume due valori: <strong>0</strong> se è libera, <strong>1</strong> se è occupata.
+Per acquisire una risorsa, devo seguire questi passi:
+</p><ul><li>disabilitare le interruzioni
+</li><li>leggere il lock: se è 0 lo metto a 1 e spaciugo io, e riabilito le interruzioni
+</li><li>se è a 1 riabilito le interruzioni e aspetto
+</li><li>per rilasciare la risorsa, metto il lock a 0
+</li></ul><p class='vspace'>Le interruzioni vanno bloccate perché le operazioni di lettura ed eventuale scrittura di un lock sono realizzate con più di una singola istruzione in linguaggio macchina. Dalle prime lezioni sappiamo che la singola istruzione macchina è atomica, cioè non può essere interrotta, ma una sequenza di istruzioni invece sì. Quindi, trattandosi qui di una sequenza di istruzioni, può capitare che qualche processo si infili in mezzo e legga la mia stessa variabile di lock.
+</p>
+<p class='vspace'>C'è anche dell'hardware che è stato progettato in modo tale da scrivere variabili di lock con un'istruzione sola, la <strong>test-and-set</strong> che fa tutto in automatico.
+</p>
+<p class='vspace'>Il problema di questo approccio è che il programmatore deve mettersi a spaciugare con gli int, e ciò non è una cosa buona e giusta.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3 - I Semafori</strong></span>
+</p>
+<p class='vspace'>Per evitare di fare affidamento sui programmatori, occorre che sia il SO a gestire sto ambaradan dei lock, che sappiamo che si comporta bene. In caso contrario occorrerebbe dare ai singoli programmi il permesso di gestire le interruzioni, ma non è una cosa positiva.
+</p>
+<p class='vspace'>Inoltre, le variabili di turno, come abbiamo visto sopra, devono essere inizializzate e gestite a seconda del numero di processi che accedono alla stessa risorsa, e nella grande maggioranza dei casi questo numero non è predicibile a priori. I lock invece scalano benissimo, perché non importa quanti sono i processi che vogliono quella risorsa, che tanto il lock è sempre o lbero od occupato.
+</p>
+<p class='vspace'>Ecco quindi che si inventano i <em>'semafori</em>, ovvero un meccanismo scalabile per separare i processsi dalla risorsa che vogliono, e spostando la gestione dei lock dal programmatore al SO, il quale so che non dovrebbe fare pasticci.
+</p>
+<div class='vspace'></div><h3>Semaforo binario</h3>
+<p>Può assumere due valori, che per convenzione sono l'inverso di quelli del lock: <strong>1</strong> = libero (verde, se preferite), <strong>2</strong> = in uso.
+</p>
+<p class='vspace'>Il semaforo si manipola con le chiamate <strong>acquire(S)</strong> e <strong>release(S)</strong>. Sono chiamate di sistema, quindi per definizione atomiche (a meno di kernel realtime etc. etc. ma è un'altra faccenda).
+Se un processo vuole entrare in una sezione critica, chiama la <strong>acquire(S)</strong>, esegue e poi chiama la <strong>release(S)</strong>. Ci pensa il SO a ordinare le priorità e così via, in caso siano supportate (e in questo caso andranno passate come parametro alle <strong>acquire(S)</strong>).
+</p>
+<div class='vspace'></div><h3>Implementazione</h3>
+<p>Si potrebbe pensare di mettere il processo in attesa attiva, quando ha trovato il semaforo rosso e aspetta quello verde. Ma c'è un problema, e il problema è che il processo dovrebbe continuare, al suo turno, a controllare se il semaforo ha cambiato finalmente colore, e quindi consumerebbe CPU.
+</p>
+<p class='vspace'>Si preferisce quindi mettere il processo che ha trovato rosso in una coda dei processi relativa alla risorsa in oggetto.
+</p>
+<div class='vspace'></div><h3>Semaforo generalizzato</h3>
+<p>Posso avere una variabile <strong>S = n</strong>, che mi dice che ho <strong>n</strong> risorse di quel tipo libere. Ogni volta che qualcuno fa una <strong>acquire(S)</strong>, scalo la variabile <strong>n</strong>. Quando arriva a 0, la <strong>acquire(S)</strong> si blocca.
+</p>
+<p class='vspace'>Ciò garantisce la mutex e il progresso, ma cmq è lasciato al programmatore il compito di ricordarsi di chiamare i semafori.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di SO</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri18Marzo2008Mattina)</span></div>
+  </div>
+</body>
+</html>

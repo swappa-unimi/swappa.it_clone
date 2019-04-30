@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - Programmazione lineare</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RO-ProgrammazioneLineare.html' title='Ricerca Operativa - Programmazione lineare'>Ricerca Operativa - Programmazione lineare</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ricerca Operativa - Programmazione lineare ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='GiovanniRighini.html'>Giovanni Righini</a>
+</p></div>
+<div class='vspace'></div><h2>Programmazione matematica</h2>
+<p>Breve introduzione. La <em>programmazione matematica</em> è uno dei metodi più importanti della Ricerca Operativa, l'altro è la simulazione. Si basano entrambi su modelli matematici, ma mentre quest'ultima procede per tentativi, la programmazione matematica si propone di calcolare direttamente la soluzione migliore per ottenere ciò che si è prefissata. I suoi elementi essenziali sono:
+</p><ul><li><em>dati</em>, tutte le informazioni sul problema di cui disponiamo. In essi si concentra gran parte del lavoro, poiché "la loro raccolta e preparazione è un bagno di sangue" (sic)
+</li><li><em>variabili</em>, grandezze senza un valore già definito ma che dovremo calcolare noi. Rappresentano la nostra libertà decisionale, ovvero le alternative che abbiamo di fronte
+</li><li><em>vincoli</em>, equazioni e/o disequazioni che rappresentano ciò che non possiamo fare
+</li><li><em>funzione obiettivo</em>, il criterio in base al quale stabiliamo che una soluzione è migliore di un'altra. Non è detto che ce ne sia solo una
+</li></ul><p>Per l'algoritmo risolutivo del problema la soluzione corrisponde a un assegnamento di valori alle variabili. Notare che questi valori possono essere ammissibili o non ammissibili a seconda che rispettino o meno i vincoli dati.<br />Nei problemi di esistenza il nostro unico scopo è trovare soluzioni ammissibili, mentre nei problemi di ottimizzazione vogliamo trovare una <strong>soluzione ottima</strong>, cioè quella che massimizza o minimizza la funzione obiettivo.<br />Bene, ora abbiamo tutto ciò che ci serve per cominciare a parlare della <em>programmazione lineare</em>.
+</p>
+<div class='vspace'></div><h2>Programmazione lineare (PL)</h2>
+<p>La <strong>programmazione lineare</strong> (<strong>PL</strong>) si occupa di problemi decisionali, e si ha quando sia la funzione obiettivo che i vincoli sono funzioni lineari delle variabili. Esistono quattro forme per rappresentare tali problemi, iniziamo da quella <strong>generale</strong>:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROformaGenerale.jpg' alt='' title='' /></div>
+<p class='vspace'>Gli altri elementi che non sono direttamente spiegati in figura sono:
+</p><ul><li><strong>C<sup>T</sup></strong>, vettore di coefficienti trasposto, così da diventare un vettore riga
+</li><li><strong>x</strong>, vettore di variabili
+</li><li><strong>s.t.</strong>, sta per "subject to", cioè "soggetto a" quella serie di vincoli indicati alla sua destra
+</li><li><strong>A</strong>, matrice dei coefficienti delle variabili
+</li><li><strong>b</strong>, termini noti
+</li></ul><p class='vspace'>Questa forma è la più grezza e generale possibile (da cui il nome), ed è opportuno applicarvi alcune correzioni. In primo luogo si osservi che avere vincoli di uguaglianza è come dire che ci sono gradi di libertà in meno, cioè è sempre possibile ricavare una variabile in funzione delle altre per poi sostituirla ed eliminarla. Per questo motivo tutti i vincoli di uguaglianza di possono togliere, e ad ogni vincolo tolto corrisponde una variabile in meno.<br />In secondo luogo possiamo eliminare anche le variabili libere dato che possiamo vederle come differenza di variabili non negative. Se ad esempio abbiamo una variabile libera <strong>x</strong>, scrivendo che <code class='escaped'>x = y - z</code> otteniamo un numero positivo se <code class='escaped'>y&gt;z</code> e un numero negativo se <code class='escaped'>z&gt;y</code>. Riscrivendo in questo modo le variabili libere potremo gestire solo quelle non negative, guadagnando sicuramente in semplicità ma aggiungendo però una variabile al totale.
+</p>
+<p class='vspace'>Dall'applicazione di queste correzioni si arriva alla <strong>forma alle disuguaglianze</strong>:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROformaDisug.jpg' alt='' title='' /></div>
+<p>Tutti i vincoli sono in forma di disequazioni, e per quanto riguarda il segno si adottano le seguenti convenzioni:
+</p><ul><li>se la funzione obiettivo chiede di massimizzare, si pongono i vincoli come &lt;=
+</li><li>se la funzione obiettivo chiede di minimizzare, si pongono i vincoli come &gt;=
+</li></ul><div class='vspace'></div><h2>Interpretazione geometrica della PL</h2>
+<p>La programmazione lineare ha un'interpretazione geometrica, utile da conoscere poiché molto intuitiva: la soluzione di un problema di PL è un punto in uno spazio ad <em>n</em> dimensioni (<em>R<sup>n</sup></em>), dove n è il numero di variabili. Per punto si intende quell'insieme di valori che diamo alle variabili, quindi ha precise coordinate nello spazio; in particolare lo spazio è continuo (essendo definito in R), dunque le variabili possono assumere tutti i valori reali.<br />L'interpretazione geometrica di un vincolo di uguaglianza è un <em>iperpiano</em> (che per due dimensioni è una retta, per tre una superficie piatta, per quattro o più prende il nome generico di iperpiano), mentre un vincolo di disuguaglianza è un <em>semispazio</em> (l'insieme di tutti i punti che stanno da una certa parte rispetto a un iperpiano).<br />L'intero sistema dei vincoli (quindi sia di uguaglianza che di disuguaglianza)  di un problema di programmazione lineare è dato dall'intersezione dei corrispondenti iperpiani e semispazi. Dato però che convertiremo tutti i vincoli di uguaglianza in vincoli di disuguaglianza, tutti gli iperpiani spariscono e ci rimangono semispazi, la cui intersezione è un <strong>poliedro</strong>.<br />I semispazi hanno un'altra caratteristica, ovvero sono <em>convessi</em>: presi due punti qualsiasi che apparentengono al semispazio e collegandoli con un segmento, tutti i punti che fanno parte di quel segmento appartengono anch'essi allo stesso semispazio. Poiché l'intersezione di insiemi convessi è convessa, ne deduciamo che anche il poliedro è convesso.
+</p>
+<p class='vspace'>Nella figura successiva saranno riassunti tutti i concetti visti finora, e in particolare chiameremo il poliedro <strong>regione ammissibile</strong>:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROinterprGeom.jpg' alt='' title='' /></div>
+<p class='vspace'>Vediamo alcuni casi particolari di poliedro:
+</p><table align='center' cellspacing='5' >
+<tr ><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROpolLim.jpg' alt='' title='' /> Poliedro <strong>limitato</strong></span>
+</td><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROpolIllim.jpg' alt='' title='' /> Poliedro <strong>illimitato</strong>. Si ha quando muovendosi in una certa direzione si arriva all'infinito.</span>
+</td><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROpolVuoto.jpg' alt='' title='' /> Poliedro <strong>vuoto</strong>. Si ha quando dall'intersezione dei vincoli dati non si definisce alcuna regione ammissibile.</span>
+</td></tr></table>
+<p>Un poliedro limitato e non vuoto è chiamato <strong>politopo</strong>.
+</p>
+<p class='vspace'>La funzione obiettivo è rappresentata geometricamente con le <strong>curve di livello</strong> e la <strong>direzione di ottimizzazione</strong>. Le curve di livello sono l'insieme di quel luogo di punti che soddisfano l'equazione <code class='escaped'>C * x  = z</code>, quindi un insieme di rette (o nel caso generale, di interpiani). Perché parliamo di insieme e non di un'unica retta? Perché al variare del risultato <em>z</em> della funzione obiettivo, la <em>C</em> rimane invariata e quindi si ottiene una retta parallela alla precedente. Avremo in questo modo un fascio di rette parallele (le <em>curve di livello</em>) che si muovono da una parte verso la massimizzazione della funzione obiettivo, e dall'altro verso la minimizzazione. Questa direzione perpendicolare alle rette è chiamata <em>direzione di ottimizzazione</em>, ed è indicata graficamente con una freccia.
+</p>
+<p class='vspace'>Abbiamo finalmente tutti gli strumenti e le conoscenze necessarie per rappresentare geometricamente un problema di programmazione lineare. Inoltre per la convessità del poliedro che rappresenta la regione ammissibile e per la linearità delle curve di livello che rappresentano la funzione obiettivo, possiamo affermare che la soluzione ottima:
+</p><ul><li>o non esiste, se il poliedro è vuoto
+</li><li>o è illimitata, se il poliedro è illimitato nella direzione di ottimizzazione
+</li><li>o è in un vertice del poliedro, se questo è un politopo
+</li></ul><p class='vspace'>Vediamo un esempio riassuntivo:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROsolGeom.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h2>Forma standard</h2>
+<p>Ritorniamo ora a vedere il problema da un punto di vista algebrico. La <strong>forma standard</strong> di un problema di programmazione lineare prevede la ritrasformazione di tutti i vincoli di disuguaglianza in vincoli di uguaglianza, e l'introduzione di nuove variabili. Tali variabili sono chiamate <strong>variabili di scarto</strong> (<strong>slack</strong>) o <strong>di surplus</strong> a seconda di come sono girati i vincoli. Iniziamo a considerare quelle di surplus facendo un esempio:
+</p><table cellspacing='5' width='60%' >
+<tr ><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROsurplus.jpg' alt='' title='' /></span>
+</td><td  valign='top'>La figura a sinistra mostra il passaggio da forma alle disuguaglianze a forma standard. 
+<p class='vspace'>Notare la moltiplicazione delle variabili di surplus per una matrice identità <code class='escaped'>I</code>, operazione necessaria dato che abbiamo tante variabili di surplus quanti sono i vincoli.
+</p></td></tr></table>
+<p class='vspace'>Facciamo ora un esempio di utilizzo di variabili di scarto: 
+</p><table cellspacing='5' width='60%' >
+<tr ><td  valign='top'><span class='frame lfloat'><img src='../uploads/Uni/ROslack.jpg' alt='' title='' /></span>
+</td><td  valign='top'>La figura a sinistra mostra il passaggio da forma alle disuguaglianze a forma standard. 
+<p class='vspace'>Con questa forma invece di dire che <code class='escaped'>A*x</code> è minore di <code class='escaped'>b</code>, diremo che la quantità che devo sommare ad <code class='escaped'>A*x</code> perché sia uguale a <code class='escaped'>b</code> è <code class='escaped'>I*x^</code>. Capiamo bene che è la stessa cosa.
+</p></td></tr></table>
+<p class='vspace'>Tirando le somme, passeremo da un problema con <code class='escaped'>n</code> variabili ed <code class='escaped'>m</code> vincoli di disuguaglianza a un problema con <code class='escaped'>n+m</code> variabili ed <code class='escaped'>m</code> vincoli di uguaglianza. Quindi passando dalla forma alle disuguaglianze a quella standard abbiamo ottenuto un sistema di equazioni con sole condizioni di non negatività.
+</p>
+<p class='vspace'>Breve inciso su una proprietà che si rivelerà fondamentale per i discorsi a venire: ad una variabile nulla corrisponde un <em>vincolo attivo</em>. Un vincolo si dice attivo quando, mentre stiamo ottimizzando, abbiamo raggiunto la frontiera della regione ammissibile ed il vincolo ci sta impedendo di superarla; in altre parole ci troviamo proprio sui suoi punti.
+</p>
+<p class='vspace'>Riprendiamo il discorso di prima: con la forma standard abbiamo raggiunto un sistema ad <code class='escaped'>m</code> equazioni lineari ed <code class='escaped'>n+m</code> incognite, a meno che non abbiamo vincoli ridondanti. Questo significa che avremo - se esiste - esattamente un'unica soluzione solo se riusciremo ad eliminare gli <code class='escaped'>n</code> gradi di libertà, ovvero la differenza tra il numero di variabili ed il numero di vincoli. Per riuscirci possiamo dividere le nostre variabili in due sottoinsiemi, dicendo che ci sono <code class='escaped'>m</code> variabili <em>in base</em> ed <code class='escaped'>n</code> <em>fuori base</em>. Anche la matrice dei vincoli <code class='escaped'>A'</code> (che ha una colonna per ogni variabile) può essere divisa in due sottomatrici, una con le variabili di base e l'altra per quelle fuori base; stesso discorso vale per il vettore <code class='escaped'>x</code> delle variabili.
+</p><div  style='text-align: center;'><img src='../uploads/Uni/RObase-fuoribase.jpg' alt='' title='' /></div>
+<p class='vspace'>Possiamo dire che una <strong>base</strong> è un sottoinsieme delle colonne della matrice dei vincoli <code class='escaped'>A'</code>, linearmente indipendenti tra loro, che formano una matrice di dimensioni <code class='escaped'>m x m</code> non singolare chiamata <strong>B</strong>. Le variabili <em>fuori base</em> sono i rimanenti gradi di libertà.<br />Possiamo perciò riscrivere il sistema dei vincoli come: <strong>B x<sub>B</sub> + N x<sub>N</sub> = b</strong> ((colonne di base per variabili di base) + (colonne fuori base per variabili fuori base) = vettore dei termini noti)
+</p>
+<p class='vspace'>Se riuscissimo a fissare il valori delle <strong>x<sub>N</sub></strong>, e quindi di quegli <em>n</em> valori che ho in più, ciò che ci resta avrebbe una soluzione univocamente determinata. In altre parole, se tratto gli x<sub>N</sub> come dati del problema ottengo:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROxb.jpg' alt='' title='' /></div>
+<p>Notare che nella parte destra dell'equazione ho solo dati!
+</p>
+<p class='vspace'>Tutto ciò è molto bello, ma che valori scegliamo per x<sub>N</sub>? Beh, intanto osserviamo che per ogni scelta che faremo staremo definendo un punto, dal momento che ciò che ci rimane del problema avrà esattamente una soluzione. Noi però stiamo cercando l'ottimalità, quindi non ci interessano tutti i punti ma solo quelli in cui gli <code class='escaped'>n</code> vincoli di disuguaglianza sono attivi, cioè i vertici del poliedro. Avevamo detto infatti che a ogni vincolo attivo corrisponde una variabile nulla, e quali sono quei punti in cui le variabili sono azzerate? Proprio i vertici del poliedro! Le soluzioni ottenute ponendo x<sub>N</sub> = 0 sono chiamate <strong>soluzioni di base</strong> e si ottengono come: <strong>x<sub>B</sub> = B<sup>-1</sup> b</strong>.<br />Attenzione però! Dobbiamo distinguere tra soluzioni di base <em>ammissibili</em>, quelle che si trovano sui vertici del poliedro, e soluzioni di base <em>non ammissibili</em>, che sono sì originate dall'intersezione di vincoli ma che si trovano al di fuori del poliedro. Graficamente è immediato distinguere una dalle altre, mentre a livello algebrico basta verificare che tutte le variabili di base associate a quella soluzione siano non negative.
+</p>
+<div class='vspace'></div><h2>Degenerazione</h2>
+<p>Consideriamo questo caso particolare: può capitare che per un vertice di un poliedro passino più di <em>n</em> vincoli, e quindi si avrebbe almeno un vincolo attivo in più rispetto a quelli che ho attivato io azzerando le variabili fuori base. Questa situazione in cui abbiamo una variabile di base nulla (proprio perché corrisponde a un vincolo attivo) si chiama <strong>degenerazione</strong>, e si dice che la soluzione è <strong>degenere</strong>.
+</p>
+<p class='vspace'>Il problema di una soluzione degenere è che possiamo ottenerla con basi diverse, perché avremo almeno una variabile in più rispetto a quelle fuori base che ha valore 0. Consideriamo ad esempio una soluzione che ha questo vettore delle x = [<strong>2 3 0</strong> 0 0] , dove in grassetto sono indicate le variabili basiche; abbiamo almeno tre basi diverse che permettono di ottenere la soluzione, ovvero: {1,2,3} {1,2,4} {1,2,5}.
+</p>
+<p class='vspace'>Quando parleremo dell'algoritmo del simplesso nelle [[prossime lezioni-&gt;RO-Algoritmo del simplesso] capiremo perché la degenerazione è cosa negativa e da evitare. Per ora ci basti sapere che comporta uno spreco di computazione.
+</p>
+<div class='vspace'></div><h2>Teorema fondamentale della PL</h2>
+<p>Quanto abbiamo appreso finora è più che sufficiente per enunciare il <strong>teorema fondamentale della programmazione lineare</strong>: dato un problema lineare in forma standard, quindi {min C<sup>T</sup>x : Ax = b, x&gt;=0 }, con A di rango <code class='escaped'>m</code> (quindi senza vincoli ridondanti):
+</p><ol><li>se esiste una soluzione ammissibile (il poliedro non è vuoto) allora esiste anche una soluzione di base ammissibile (il poliedro deve avere almeno un vertice)
+</li><li>se esiste una soluzione ammissibile ottima (il poliedro non è illimitato) allora esiste anche una soluzione ammissibile ottima di base
+</li></ol><p class='vspace'>Che conseguenze ha questo teorema? Che il problema lineare non impossibile o illimitato può essere risolto considerando solo le soluzioni di base, quindi solo un numero finito di punti che appartengono al poliedro; passiamo così da un problema continuo a uno di tipo di combinatorio, che pur essendo di dimensioni molto più contenute cresce comunque rapidamente all'aumentare di vincoli e variabili.
+</p>
+<div class='vspace'></div><h2>Soluzioni algoritmiche</h2>
+<p>Ora che sappiamo tutto ciò che dovevamo sapere sulla programmazione lineare, che algoritmo possiamo utilizzare per risolvere questo tipo di problemi? Noi studieremo l' <em>algoritmo del simplesso</em>, inventato da Dantzig nel 1947, sicuramente il più importante da un punto di vista storico anche se non l'unico.
+</p>
+<p class='vspace'>Qualche anticipazione. L'algoritmo del simplesso garantisce l'ottimalità attraverso un processo iterativo di miglioramento che si sposta da un vertice all'altro. Ciò vuol dire che ad ogni iterazione la soluzione o viene lasciata invariata o viene migliorata, e dato che il poliedro è convesso non si può che terminare nella soluzione ottima. Non è polinomiale (nel caso peggiore ha complessità esponenziale), ma nella pratica - anche grazie a costanti raffinamenti - si dimostra più efficiente di questa classe di algoritmi. Infine, un prerequisito che impareremo a conoscere nella <a class='wikilink' href='RO-AlgoritmoDelSimplesso.html'>prossima lezione</a> è che il problema deve essere espresso in <strong>forma canonica</strong>. La spieghiamo ora? Ovviamente no, così aumenta la suspance. E che suspance.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RO-ProgrammazioneLineare)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / LPS - JML</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LPSJML.html' title='LPS - JML'>LPS - JML</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: LPS - JML ::</strong>
+</pre><div class='vspace'></div><h2>Che cos'è JML</h2>
+<p>JML è un'estensione del linguaggio Java, in esso integrabile sotto forma di commenti ai programmi, che permette l'implementazione dei principi di <em>design by contract</em> in modo semplice e conciso.
+</p>
+<p class='vspace'>I tipi di espressioni JML sono:
+</p><ul><li>invarianti a livello di attributi
+</li><li>pre e post a livello di segnatura di metodi
+</li><li>assert all'interno del corpo di un metodo
+</li></ul><div class='vspace'></div><h2>Invarianti</h2>
+<p>Sono quelle condizioni che devono rimanere invariate durante tutta l'esistenza di una classe. Si segnano così:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ /*@ invariant &lt;espressione&gt;; *@/
+</pre>
+<div class='vspace'></div><h2>Precondizioni</h2>
+<p>Sono precedute da <strong>requires</strong>. Esempio:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+/*@requires amount &gt;= 0@*/
+</pre>
+<div class='vspace'></div><h2>Postcondizioni</h2>
+<p>Sono segnate con <strong>ensures</strong>. Se non ce ne sono, si può scrivere <strong>ensures true</strong>:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+/*@ensures true;@*/
+</pre>
+<div class='vspace'></div><h2>Espressioni booleane in JML</h2>
+<p>Si può usare solo l'operatore <strong>&lt;==&gt;</strong> che è il <strong>se e solo se</strong> della logica.
+</p>
+<p class='vspace'>Ad esempio, se un metodo restituisce <strong>true</strong> solo se <strong>j &lt; n</strong>, avrei
+</p>
+<div class='vspace'></div><pre class='escaped'>
+boolean minore(int j, int n) { return j &lt; n};
+</pre>
+<p class='vspace'>Si tratterebbe di una postcondizione JML, e viene scritta così:
+</p><pre class='escaped'>
+//@ ensures \result &lt;==&gt; j &lt; n;
+</pre>
+<p class='vspace'>e vuol dire: <strong>restituisci true se e solo se j è strettamente minore di n</strong>. Da notare che l'operatore &lt;==&gt; non esiste in Java.
+</p>
+<div class='vspace'></div><h3>Quantificatori</h3>
+<p>Esistono i quantificatori
+</p><ul><li>universali: \forall
+</li><li>esistenziali: \exists
+</li><li>generali: \sum \product \min \max
+</li><li>numerici: \num_of
+</li></ul><p class='vspace'>Per tutti sti quantificatori, la sintassi è:
+</p><pre class='escaped'>
+&lt;quant&gt; &lt;tipo&gt; &lt;var&gt;; &lt;range predicate&gt;; &lt;espressione&gt;
+</pre>
+<p>dove
+</p><ul><li>var è la variabile che uso per scansionare la collezione di oggetti (iteratore)
+</li><li>range predicate è il predicato che deve essere soddisfatto per gli elementi della collezione
+</li></ul><p class='vspace'>Ad esempio, possiamo volere che tutti gli oggetti contenuti nella Collection <strong>juniors</strong> abbiano un <strong>advisor</strong>, che viene ottenuto dal metodo getAdvisor().<br />In JML scriverei quindi:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+(\forall Student s; juniors.contains(s); s.getAdvisor() |= null)
+</pre>
+<div class='vspace'></div><ul><li><strong>\forall Student s;</strong>  = quantificatore, tipo, variabile
+</li><li><strong>juniors.contains(s);</strong> = range predicate
+</li><li><strong>s.getAdvisor() |= null</strong> = espressione
+</li></ul><p class='vspace'>Questa roba corrisponde alla scrittura logica <em>per ogni s = Student in juniors, tale che s.getAdvisors() è diverso da null</em>.
+</p>
+<p class='vspace'>Altro esempio: abbiamo un metodo che restituisce il minimo elemento di un array. Il metodo si chiama <strong>int find_min(int[])</strong>.
+</p>
+<p class='vspace'>Precondizione: l'array a non è null, e contiene almeno un elemento:
+</p><pre class='escaped'>
+requires a != null &amp;&amp; a.length &gt;= 1;
+</pre>
+<p>E' importante dire che a != null, perché se a fosse null, non saprei nemmeno che cosa restituire.
+</p>
+<p class='vspace'>Postcondizione: l'elemento restituito deve essere effettivamente minore di tutti gli elementi nell'array:
+</p><pre class='escaped'>
+ensures (\forall int i; 0 &lt;= i &amp;&amp; i&lt; a.length; \result &lt;= a[i]);
+</pre>
+<p class='vspace'>Il range è <strong>0 &lt;= i &amp;&amp; i&lt; a.length;</strong>. Voglio verificare che il valore restituito dal metodo sia <strong>&lt;= a[i]</strong>, ed è la condizione espress da <strong>\result</strong>.
+</p>
+<p class='vspace'>Ma questa post è debole: il metodo potrebbe sì restituire un numero inferiore a tutti gli elementi dell'array, ma non appartenente all'array stesso. Per rafforzare la post occorre un doppio quantificatore, che ci dica che l'elemente deve sia essere minore che appartenente all'array: esiste un elementi in a che è uguale a result.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ensures (\forall int i; 0 &lt;= i &amp;&amp; i &lt; a.length; \result &lt;= a[i])
+&amp;&amp; (\exists int i; 0 &lt;= i &amp;&amp; i &lt; a.length; \result == a[i]
+</pre>
+<p class='vspace'>Ho aggiunto il quantificatore <strong>exists</strong>, la cui condizione <strong>\result == a[i]</strong> è che l'elemento appartenga all'array.
+</p>
+<div class='vspace'></div><h3>non_null</h3>
+<p>Questo operatore serve per asserire che i riferimenti agli oggetti non siano nulli. Serve in diversi punti: attributi e alori di ritorno dai metodi.
+</p>
+<p class='vspace'>Ad esempio:
+</p><pre class='escaped'>
+private /*@ non_null @*/ File[] files;
+</pre>
+<p class='vspace'>la posizione di <strong>non_null</strong> deve stare appena dopo la visibilità del metodo.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+void createSubdir (/*@non_null@*/ String name) {...}
+
+Directory /*@ non_null @*/ getParent() {...}
+</pre>
+<p class='vspace'>In questo caso, il <strong>non_null</strong> è applicato al valore di ritorno del metodo.
+</p>
+<p class='vspace'>Non ha senso applicare il <strong>non_null</strong> a tipi che non siano oggetti, cioè primitivi.
+</p>
+<div class='vspace'></div><h3>old(VARIABILE)</h3>
+<p>Si usa per accedere al valore che una variabile aveva PRIMA dell'esecuzione del metodo.
+</p>
+<p class='vspace'>Esempio:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+public class Contatore {
+  int n;
+  //@ ensures n == \old(n) + 1
+  public void incrementa() {n ++; }
+...
+}
+</pre>
+<p class='vspace'>La post ci dice che il valore di n deve essere uguale al vecchio valore di n (indicato con <strong>\old(n)</strong> a cui incremento 1.
+</p>
+<div class='vspace'></div><h3>pure</h3>
+<p>Le espressioni JML vengono formata a partire da operatori Java più qualche cosa di aggiuntivo. Gli operandi di queste espressioni sono o attributi della classe, o argomenti dei metodi della classe, oppure valori restituiti dai metodi stessi, ma per accedere a questi devo dichiararli come <strong>pure</strong>, cioè puri. Un metodo puro è tale se è considerato senza side effect, cioè  non causa effetti collaterali.
+</p>
+<p class='vspace'>Esempio:
+</p><pre class='escaped'>
+static /*@ pure @*/ int abs (int x) {
+  if (x &gt;= 0) return x; else return -x;
+}
+</pre>
+<p class='vspace'>Dichiarandolo <strong>pure</strong>, dichiaro che <strong>abs</strong> può essere usato come operando all'interndo di espressioni JML.
+</p>
+<div class='vspace'></div><h3>Regole di visibilità</h3>
+<p>Sono simili a quelle di Java.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+public class Bag {
+  private int n;
+ //@ requires n &gt; 0;
+ public int extractMin() {...}
+...
+}
+</pre>
+<p class='vspace'>Questa roba darebbe errore, perché la pre è relativa ad un metodo <strong>public</strong>, ma la variabile su cui lavora è <strong>private</strong>.
+</p>
+<p class='vspace'>Per risolvere questo problema, uso la dicitura
+</p><pre class='escaped'>
+private /*@ spec public @*/ int n;
+//@ requires n &gt; 0;
+</pre>
+<p class='vspace'>e in questo modo, posso usare la public n anche per il metodo privato.
+</p>
+<p class='vspace'>In alternativa, posso usare i metodi accessori <strong>get...()</strong> (proprietà) dichiarati come <strong>pure</strong>. Ad esempio:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ public /*@pure@*/ int getN() { return n; }
+</pre>
+<div class='vspace'></div><h3>Ereditarietà</h3>
+<p>Abbiamo una superclasse sui cui è espressa una specifica. Estendiamo poi questa classe: la classe derivata erediterà anche la stessa specifica JML?
+</p>
+<p class='vspace'>Ecco le regole:
+</p><ul><li>le precondizioni della sottoclasse vengono legate alle precondizioni della superclasse con un <strong>or</strong> disgiunto.
+</li><li>le postcondizioni della sottoclasse vengono legate a quelle della superclasse con un <strong>and</strong> (eredito le condizioni della superclasse)
+</li><li>anche gli invarianti vengono legati da <strong>and</strong>
+</li></ul><p class='vspace'>Per evitare la specifica della superclasse, si usa la parola chiave <strong>also</strong>.
+</p>
+<div class='vspace'></div><h3>assert</h3>
+<p>Si può specificare un <strong>assert</strong> all'interno del corpo di un metodo.<br />La sintassi è 
+</p><pre class='escaped'>
+ assert &lt;condizione&gt;;
+</pre>
+<p class='vspace'>Esempio:
+</p><pre class='escaped'>
+if (i&lt;=0 || j &lt; 0) {
+...
+} else if (j &lt; 5) {
+   //@ assert i &gt; 0 &amp;&amp; 0 &lt;=  &amp;&amp; j &lt; 5;
+   ...
+} else {
+   //@ assert i &gt; 0 &amp;&amp; 0 &lt;=  &amp;&amp; j &gt; 5;
+   ...
+}
+</pre>
+<p class='vspace'>Gli <strong>assert</strong> nelle branch dell<strong>'if</strong> controllano che le variabili assumano effettivamente il valore che io voglio.
+</p>
+<p class='vspace'>Da Java 1.4 c'è un <strong>assert</strong> inserito nel linguaggio, che ha le stesse funzionalità. Ma quello di JML
+</p>
+<p class='vspace'>Ad esempio, per controllare che un array non contenga elementi nulli, con l<strong>'assert</strong> di Java scriverei:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ for (n = 0; n &lt; a.length; n++) assert (a[n] != null);
+</pre>
+<p class='vspace'>Con l<strong>'assert</strong> di JML scriverei invece:
+</p><pre class='escaped'>
+/*@ assert (\forall int i; 0 &lt;= i &amp;&amp; i &lt; n; a[i] != null) ;@*/
+</pre>
+<p class='vspace'>La stessa espressione è più concisa e delimitata dai <strong>/*@...@*/</strong>.
+</p>
+<p class='vspace'>Se compilo attivando il controllo run time, il check dell'assert JML viene eseguito: per fare ciò devo compilare con la flag <strong>-ea</strong>.
+</p>
+<div class='vspace'></div><h2>Esempione</h2>
+<pre class='escaped'>
+public class Person {
+private /*@ spec_public non_null@*/ String name;
+private /*@spec_public non_null@*/ int weight;
+
+//@ invariant !name.equals("") &amp;&amp; weight &gt;= 0;
+
+@// also ensures \result != null;
+public String toString();
+
+//@ ensures \result == weight;
+public int getWeight();
+
+</pre>
+<div class='vspace'></div><ul><li><strong>//@ invariant !name.equals("") &amp;&amp; weight &gt;= 0;</strong> = voglio asserire che il nome non sia la stringa vuota. <strong>equals</strong> è un metodo della classe String e serve per verificare l'uguaglianza tra due oggetti (in questo caso stringhe). Inoltre voglio che il peso sia maggiore o uguale a 0.
+</li><li><strong>@// also ensures \result != null;</strong> = uso <strong>also</strong> perché sto overridando il metodo <strong>toString</strong>, a cui voglio aggiungre l'asserzione qui scritta: il risultato non deve essere null. E' legato alla specifica sull'attributo <strong>name</strong>
+</li><li><strong>//@ ensures \result == weight;</strong> = voglio che il risultato sia uguale a <strong>weight</strong>. <strong>getWeight()</strong> è un metodo accessorio, che serve per recuperare il valore della variabile private weight. Potrei anche dichiararlo <strong>pure</strong> e non forzare, sopra, la <strong>spec_public</strong>
+</li></ul><div class='vspace'></div><pre class='escaped'>
+/*@
+@ requires kgs &gt;= 0;
+@ ensures weight == \old(kgs + weight);
+@*/
+public void addKgs()(int kgs);
+</pre>
+<p class='vspace'>Queste condizioni sono molteplici. In particolare, con <strong>old</strong> controlliamo che il peso, alla fine del metodo, sia uguale a quello di partenza (che appunto old recupera) a cui è stato sommato il valore di <strong>kgs</strong>.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+/*@
+@ requires !n.equals("");
+@ ensures n.equals(name) &amp;&amp; weight == 0;
+@*/
+public Person (/*@ non_null@*/ String n);
+}
+</pre>
+<p class='vspace'>Questo è il costruttore. come invariante di classe, avevamo detto che il campo <strong>name</strong> doveva essere diverso dalla stringa vuota, e che il peso doveva essere non negativo. Come precondizione del costruttore, richiediamo che il parametro passato al costruttore, e che servirà per inizializzare proprio <strong>name</strong>, sia diverso dalla stringa vuota. Inoltre, richiediamo che il riferimento alla variabile n non sia <strong>null</strong>, tramite l'operatore <strong>non_null</strong>. Da notare che il fatto che n sia null e che sia la stringa vuota sono due cose diverse. Inoltre, specifico in che modo va inizializzato il campo <strong>name</strong>.
+</p>
+<div class='vspace'></div><h2>Tool per JML</h2>
+<p><strong>JML compiler</strong>:<br /><strong>jmlc</strong> è il compilatore jml: compila i file java e crea dei <strong>.class</strong> instrumentati in modo che controllino le asserzioni
+</p>
+<p class='vspace'><strong>JML/Java interpreter</strong>:<br /><strong>jmlrac</strong> è l'interprete Java che esegue il controllo di tutte le asserzioni JML, e se non vengono rispettate solleva eccezioni.
+</p>
+<p class='vspace'>Altri tools (che non useremo) sono:
+</p><ul><li><strong>escjava2</strong>: controlla staticamente il codice per la prova di correttezza
+</li><li><strong>jmlunit</strong>: fa l'unit test con JML
+</li><li><strong>jmldoc</strong>: genera documentazione html a partire da espressioni JML
+</li></ul><div class='vspace'></div><h3>jmlc</h3>
+<p>C'è la versione da linea di comando:
+</p><pre class='escaped'>
+ jmlc file.java
+</pre>
+<p>produce il <strong>.class</strong>. Se ci sono più files, posso fare:
+</p><pre class='escaped'>
+ jmlc -Q *.java
+</pre>
+<p class='vspace'>Se voglio spostare il file generato da qualche parte:
+</p><pre class='escaped'>
+ jmlc -d ../bin file.java
+</pre>
+<p class='vspace'>C'è anche un'interfaccia grafica: <strong>jml-release.jar</strong>. Permette di selezionare due cose:
+</p><ul><li><strong>jml checker</strong> = controlla la sintassi ma non genera il .class
+</li><li><strong>jmlc</strong> = controlla e compila
+</li></ul><p class='vspace'>Dopo aver generato il .class, la si esegue con il <strong>jmlrac</strong> che è uno script che fa tutto automatico. Il motivo è che le classi di runtime di JML, contenute in <strong>jmlruntime.jar</strong>, devono entrare nel classpath di Java. Lo script <strong>jmlrac</strong> lo fa in automatico:
+</p><pre class='escaped'>
+ jmlrac PersonMain
+</pre>
+<p class='vspace'>Il parametro è il nome del .class che contiene il main.
+</p>
+<div class='vspace'></div><h3>Esercitazioni</h3>
+<p>Si trovano, dal laboratorio, su <strong>Titano</strong> a questo indirizzo:
+</p><pre class='escaped'>
+ \\Titano\Public\Linguaggi di programmazione per la sicurezza
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='LinguaggiProgrammazioneSicurezza.html'>Torna alla pagina di LPS</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LPSJML)</span></div>
+  </div>
+</body>
+</html>

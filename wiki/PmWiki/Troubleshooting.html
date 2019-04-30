@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Troubleshooting </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='PmWiki.Troubleshooting' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Troubleshooting
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Troubleshooting?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Troubleshooting?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Troubleshooting?action=print' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Troubleshooting?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Troubleshooting?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> Tools
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Cal/Cal'>Calendario</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Gruppi'>Gruppi</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Categorie'>Categorie</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/WikiSandbox'>WikiSandbox</a>
+</li></ul><p class='vspace sidehead'> Categorie
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>UniCrema</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Guide'>Guide</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Qultura'>Qultura</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Recensioni'>Recensioni</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Imperdibili'>Imperdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Perdibili'>Perdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/LoschiIndividui'>Loschi individui</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/CaGate'>caGate</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringWiki'>Touring Wiki</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringBar'>Touring Bar</a>
+</li></ul><p class='vspace sidehead'> Help
+</p><ul><li><a class='urllink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki' title='' rel='nofollow'>Guide interne wiki</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><p class='vspace'  style='text-align: right;'> <span style='font-size:83%'><a class='wikilink' href='http://www.swappa.it/wiki/Site/SideBar?action=edit'>edit SideBar</a></span>
+</p>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Troubleshooting was last modified on February 01, 2010, at 01:57 PM'>
+							<span style='display:none;'>Troubleshooting</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='FAQ.html'>Frequently answered questions</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation Index</a> | <a class='wikilink' href='AvailableActions.html'>Available actions</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' ><span class='frame rfloat' style='font-size: smaller; background-color: #ffffcc;'>administrators </span>
+</div>
+<p class='vspace'>Pmwiki is pretty robust and can automatically adapt to a very wide variety of environments.  
+However, sometimes things don't go as we expect, so we're cataloging common errors and their fixes here.
+</p>
+<div class='vspace'></div><h2>Troubleshooting Frequently Asked Questions</h2>
+<div class='indent'><span  style='font-style: italic; color: green;'> Note: This page on pmwiki.org is probably not the best place to post questions.  Consider <a style='color: green' class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/HowToGetAssistance' title='' rel='nofollow'>seeking assistance</a> from the pmwiki-users <a style='color: green' class='wikilink' href='MailingLists.html'>mailing list</a>, or post your question on the <a style='color: green' class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Questions' title='' rel='nofollow'>PmWiki:Questions</a> page.</span>
+</div><div class='vspace'></div><div class='faq' > <a name='faq' id='faq'></a> 
+<p class='question'> Why am I seeing strange errors after <a class='wikilink' href='Upgrades.html'>upgrading</a>?</p>
+<p> Make sure all of the files were updated, in particular <em>pmwiki.php</em>.
+</p>
+<p class='vspace'> This question sometimes arises when an administrator hasn't
+followed the advice, which used to be less prominent, on the
+<a class='wikilink' href='Installation.html#notes'>installation</a> and
+<a class='wikilink' href='InitialSetupTasks.html#dontmodify'>initial setup tasks</a> pages and has renamed
+<em>pmwiki.php</em> instead of creating an <em>index.php</em> wrapper script.
+If you have renamed <em>pmwiki.php</em> to <em>index.php</em>, then the upgrade procedure
+won't have updated your <em>index.php</em> file.  Delete the old version and
+create a wrapper script so it won't happen again.
+</p>
+<p class='vspace'> Sometimes an FTP or other copy program will fail to transfer all of the
+files properly.  One way to check for this is by comparing file sizes.
+</p>
+<p class='vspace'> Be sure all of the files in the <em>wikilib.d/</em> directory
+were also upgraded.  Sometimes it's a good idea to simply delete the <em>wikilib.d/</em>
+directory before upgrading.  (Local copies of pages are stored in <em>wiki.d/</em> and not <em>wikilib.d/</em>.)
+</p>
+<p class='vspace'> If you use a custom pattern for <a class='varlink' href='BasicVariables.html#GroupPattern'><code class='varlink'>&#36;GroupPattern</code></a> make sure that it includes Site (<a class='varlink' href='BasicVariables.html#SiteGroup'><code class='varlink'>&#36;SiteGroup</code></a>) and since PMWiki 2.2 also SiteAdmin (<a class='varlink' href='BasicVariables.html#SiteAdminGroup'><code class='varlink'>&#36;SiteAdminGroup</code></a>).
+Otherwise migration may fail (e.g. missing SiteAdmin for PMWiki 2.2 and later) and/or login does not work.<br />Additionally Main (<a class='varlink' href='BasicVariables.html#DefaultGroup'><code class='varlink'>&#36;DefaultGroup</code></a>) should be included too.
+</p>
+<p class='vspace'><a name='flock' id='flock'></a>
+</p><p class='question'> I'm suddenly getting messages like "<code>Warning: fopen(wiki.d/.flock): failed to open stream: Permission denied...</code>" and <code>Cannot acquire lockfile</code>"... what's wrong?</p>
+<p class='vspace'> Something (or someone) has changed the <a class='wikilink' href='FilePermissions.html'>permissions</a> on the <em>wiki.d/.flock</em> file or the <em>wiki.d/</em> directory such that the webserver is no longer able to write the lockfile.  The normal solution is to simply delete the <em>.flock</em> file from the <em>wiki.d/</em> directory  -- PmWiki will then create a new one.  Also be sure to check the permissions on the <em>wiki.d/</em> directory itself. (One can easily check and modify permissions of the <em>wiki.d/</em> directory in <a target='_blank'  class='urllink' href='http://filezilla-project.org/' title='' rel='nofollow'>FileZilla</a> (open-source FTP app) by right-clicking on the file &gt; File attributes)
+</p>
+<p class='vspace'><a name='sidebar' id='sidebar'></a>
+</p><p class='question'> My links in the sidebar seem to be pointing to non-existent pages, even though I know I created the pages.  Where are the pages?</p>
+<p class='vspace'> Links in the sidebar normally need to be qualified by a <a class='wikilink' href='WikiGroup.html'>WikiGroup</a> in order to work properly (use [[Group.Page]] instead of [[Page]]).<br />Also: Make sure you type Side<strong>B</strong>ar with a capital B.
+</p>
+<p class='vspace'><a name='headers' id='headers'></a>
+</p><p class='question'> Why am I seeing "<code>Warning: Cannot modify header information - headers already sent ...</code>" messages at the top of my page.</p>
+<p class='vspace'> If this is the first or only error message you're seeing, it's usually an indication that there are blank lines or spaces before the <code class='escaped'>&lt;?php</code> or after the <code class='escaped'>?&gt;</code> in a <a class='wikilink' href='LocalCustomizations.html'>local customization</a> file.  Double-check the file and make sure there aren't any blank lines or spaces before the initial <code class='escaped'>&lt;?php</code>.  It's often easiest and safest to eliminate any closing <code class='escaped'>?&gt;</code> altogether.  On Windows, it may be necessary to use a hex editor to convert LFCR line endings to LF line endings in the local\config.php file.
+</p>
+<p class='vspace'> If the warning is appearing after some other warning or error message, then resolve the other error and this warning may go away.
+</p>
+<p class='vspace'><a name='session_write_close_error' id='session_write_close_error'></a>
+</p><p class='question'> How do I make a PHP Warning about <code>function.session-write-close</code> go away?</p>
+<p class='vspace'> If you are seeing an error similar to this
+</p>
+<div class='vspace'></div><div class='indent'><pre class='escaped'>
+Warning: session_write_close() [function.session-write-close]:
+open(/some/filesystem/path/to/a/directory/sess_[...]) failed: No such file
+or directory (2) in /your/filesystem/path/to/pmwiki.php on line NNN
+</pre>
+</div><p class='vspace'>PmWiki sometimes does session-tracking using PHP's
+<a class='urllink' href='http://php.net/session' title='' rel='nofollow'>session-handling functions</a>.
+For session-tracking to work, some information needs to be written
+in a directory on the server.  That directory needs to exist and
+be writable by the webserver software.  For this example, the
+webserver software is configured to write sessions in this
+directory
+</p>
+<div class='vspace'></div><div class='indent'><code class='escaped'>/some/filesystem/path/to/a/directory/</code>
+</div><p class='vspace'>but the directory doesn't exist.  The solution is to do at least one
+of these:
+</p><ul><li>Create the directory and make sure it's writable by the webserver software
+</li><li>Provide a session_save_path value that points to a directory that is writable by the server, e.g.
+</li></ul><div class='vspace'></div><div class='indent'><code class='escaped'>session_save_path('/home/someuser/tmp/sessions');</code>
+</div><p class='vspace'><a name='multiplepwprompts' id='multiplepwprompts'></a>
+</p><p class='question'> Why is PmWiki prompting me multiple times for a password I've already entered?</p>
+<p class='vspace'> Usually this is an indication that the browser isn't accepting cookies, or that PHP's session handling functions on the server aren't properly configured.  If the browser is accepting cookies, then try setting <a class='varlink' href='DebugVariables.html#EnableDiag'><code class='varlink'>&#36;EnableDiag</code></a>=1; in <em>local/config.php</em>, run PmWiki using <code class='escaped'>?action=phpinfo</code>, and verify that sessions are enabled and that the session.save_path has a reasonable value.  Note that several versions of PHP under Windows require that a session_save_path be explicitly set (this can be done in the <em>local/config.php</em> file).  You might also try setting session.auto_start to 1 in your php.ini.
+</p>
+<p class='vspace question'> I edited <em>config.php</em>, but when I look at my wiki pages, all I see is "<code>Parse error: parse error, unexpected T_VARIABLE in <em>somefile</em> on line <em>number</em>.</code>"</p>
+<p class='vspace'> You've made a mistake in writing the PHP that goes into the <em>config.php</em> file. The most common mistake that causes the T_VARIABLE error is forgetting the semi-colon (;) at the end of a line that you added. The line number and file named are where you should look for the mistake.
+</p>
+<p class='vspace question'> Searches and pagelists stopped working after I upgraded -- no errors are reported, but links to other pages do not appear (or do not appear as they should) -- what gives?</p>
+<p class='vspace'> Be sure all of the files in the <em>wikilib.d/</em> directory
+were also upgraded.  In particular, it sounds as if the Site.PageListTemplates page is either missing (if no links are displayed) or is an old version (if the links do not appear as they should). Allso make sure that read-permissions (attr) are set for the pages Site.PageListTemplates and Site.Search.
+</p>
+<p class='vspace'><a name='mod_security' id='mod_security'></a>
+</p><p class='question'> Some of my posts are coming back with "403 Forbidden" errors, "Not Acceptable", or "Internal Server Error".  This happens with some posts but not others.</p>
+<p class='vspace'> Your webserver probably has <a class='urllink' href='http://modsecurity.org' title='' rel='nofollow'>mod_security</a> enabled.  The mod_security "feature" scans all incoming posts for forbidden words or phrases that might indicate someone is trying to hack the system, and if any of them are present then Apache returns the 403 Forbidden error.  Common phrases that tend to trigger mod_security include "curl ", "wget", "file(", and "system(", although there are many others.
+</p>
+<p class='vspace'>Since mod_security intercepts the requests and sends the "forbidden"
+message before PmWiki ever gets a chance to run, it's not a bug in PmWiki, and
+there's little that PmWiki can do about it.  Instead, one has to alter the
+webserver configuration to disable mod_security or reconfigure it to allow
+whatever word it is forbidding.  Some sites may be able to disable mod_security
+by placing <code class='escaped'>SecFilterEngine off</code> in a <em>.htaccess</em> file.
+</p>
+<p class='vspace question'> I get the following message when attempting to upload an image, what do I do?</p>
+<p><span style='font-size:83%'><code><strong>Warning</strong>: move_uploaded_file(): SAFE MODE Restriction in effect. The script whose uid is 1929 is not allowed to access /home/onscolre/public_html/pmwikiuploads/Photos owned by uid 33 in <strong>/home/onscolre/public_html/pmwiki/scripts/upload.php</strong> on line <strong>198</strong></code></span>
+</p>
+<p class='vspace'><code><strong>PmWiki can't process your request</strong></code>
+</p>
+<p class='vspace'><span style='font-size:83%'><code>?cannot move uploaded file to /home/onscolre/public_html/pmwikiuploads/Photos/FoundationPupilsIn1958.jpeg</code></span>
+</p>
+<p class='vspace'><span style='font-size:83%'><code>We are sorry for any inconvenience.</code></span>
+</p>
+<p class='vspace'> Your server is configured with PHP <a class='urllink' href='http://php.net/manual/en/features.safe-mode.php' title='' rel='nofollow'>Safe Mode</a> enabled.  Configure your wiki to use a <a class='wikilink' href='UploadsAdmin.html#sitewideprefix'>site-wide uploads prefix</a>, then create the <em>uploads/</em> directory manually and set 777 permissions on it (rather than letting PmWiki create the directory).
+</p>
+<p class='vspace'><a name='TableRowIndexMax' id='TableRowIndexMax'></a> <a name='divisionbyzero' id='divisionbyzero'></a>
+</p><p class='question'> I'm starting to see "Division by zero error in pmwiki.php..." on my site.  What's wrong?</p>
+<p class='vspace'> It's a bug in PmWiki that occurs only with the <a class='wikilink' href='Tables.html'>tables</a> markup and only for versions of PHP &gt;= 4.4.6 or &gt;= 5.2.0.  Often it seems to occur "out of nowhere" because the server administrator has upgraded PHP.  Try <a class='wikilink' href='Upgrades.html'>upgrading</a> to a later version of PmWiki to remove the error, or try setting the following in <em>local/config.php</em>:
+</p>
+<div class='vspace'></div><pre>    <a class='varlink' href='LayoutVariables.html#TableRowIndexMax'><code class='varlink'>&#36;TableRowIndexMax</code></a> = 1;
+</pre><p class='vspace question'> I have to log in twice <span style='font-size:83%'>(two times) (2 times)</span>.  -or- My password is not being required even though it should.  -or- I changed the password but the old password is still active. -or- My config.php password is not over-riding my farmconfig.php password.</p>
+<p> It could happen if (farm)config.php, or an included recipe, directly calls the functions CondAuth(), or RetrieveAuthPage(), PageTextVar(), PageVar() and possibly others, before defining all passwords and before including AuthUser (if required).  
+</p>
+<p class='vspace'>The <a class='wikilink' href='LocalCustomizations.html#configphp-order'>order of config.php</a> is very significant.
+ 
+</p></div><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='FAQ.html'>Frequently answered questions</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation Index</a> | <a class='wikilink' href='AvailableActions.html'>Available actions</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+<br clear='all' />
+</p><div  style='background-color: #ffe; border-top: 1px solid black; font-size: .8em;' > 
+<p>This page may have <span class='commentout-pmwikiorg'> a more recent version on <a class='urllink' href='http://www.pmwiki.org' title='' rel='nofollow'>pmwiki.org</a>: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Troubleshooting' title='' rel='nofollow'>PmWiki:Troubleshooting</a>, and </span> a talk page: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Troubleshooting-Talk' title='' rel='nofollow'>PmWiki:Troubleshooting-Talk</a>.
+</p></div>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: February 01, 2010, at 01:57 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Troubleshooting?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Troubleshooting?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: ESP - Lezione del 5 fiorile 216 (24 aprile 2008) </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.ESP24aprile2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				ESP - Lezione del 5 fiorile 216 (24 aprile 2008)
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP24aprile2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP24aprile2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='ESP24aprile2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP24aprile2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP24aprile2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='ESP - Lezione del 5 fiorile 216 (24 aprile 2008) was last modified on April 24, 2008, at 09:15 PM'>
+							<span style='display:none;'>ESP - Lezione del 5 fiorile 216 (24 aprile 2008)</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: ESP - Lezione del 5 fiorile 216 (24 aprile 2008) ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di ESP</a>
+</p>
+<div class='vspace'></div><h3>Apache</h3>
+<p>Vediamo ora come si gestisce la sicurezza nel webserver Apache.
+</p>
+<p class='vspace'>In ogni cartella che il server servirà può essere contenuto un file <strong>.htaccess</strong> (sì, c'è un puntino davanti, che vuol dire che è un file nascosto). Questo file fa testo per la dir in cui è contenuto. Altrimenti, si usa l'.htaccess della cartella superiore etc.
+</p>
+<p class='vspace'>Il modulo <strong>mod-access</strong> supporta sia i permessi (<strong>allow</strong>) che le negazioni (<strong>deny</strong>). Permessi o negazioni possono essere supportati da direttive <strong>host-based</strong>, cioè che si applicano a tutto il sito, oppure a direttive <strong>user-based</strong>, ovvero basate sull'utente che si identifica.
+</p>
+<div class='vspace'></div><h4>Host-based</h4>
+<ul><li>allow from <em>host-or-network</em>/<em>all</em>
+</li><li>deny from <em>host-or-network</em>'/<em>all</em>
+</li></ul><p class='vspace'>Al posto di <em>host-or-network</em> devo mettere gli indirizzi di chi voglo alloware o denyare. Posso usare tutte le simpatiche forme che abbiamo visto con il Damiani: CIDR, maschere e così via.
+</p>
+<p class='vspace'>Altrimenti, posso usare le forme
+</p><ul><li>allow from env = <em>env-variable</em>
+</li><li>deny from env = <em>env-variable</em>
+</li></ul><p><em>env-variable</em> è una variabile che viene recuperata dall'header http. Il modulo <strong>mod-setenvif</strong> è in grado di controllare queste variabili.
+</p>
+<p class='vspace'>Per esempio:
+</p><pre> SetEnvIf Referer www.swappa.it internal_site
+ Allow from env = internal_site
+</pre><p class='vspace'>Queste due righe mi dicono
+</p><ol><li>che considero <strong>www.swappa.it</strong> come <strong>internal_site</strong> quando appare nel campo <strong>referer</strong> dell'header http
+</li><li>che tutti quelli in cui env = internal_site sono allowati
+</li></ol><p class='vspace'>Il referer, nella fattispecie, è la pagina da cui sono arrivato alla pagina attuale. Questo vuol dire che se accedo da www.swappa.it, ok, altrimenti no.
+</p>
+<div class='vspace'></div><h4>User-based</h4>
+<p>Sono di 3 tipi:
+</p><ul><li>require user <em>username</em> <em>username</em> ...
+</li><li>require group <em>group</em> <em>group</em> ...
+</li><li>require valid-user
+</li></ul><p class='vspace'>Nel primo caso, richiedo che l'utente sia uno che compare nella mia lista.<br />Nel secondo, voglio che il gruppo dell'utente compaia nella lista.<br />Nel terzo caso, voglio che l'utente si sia loggato con successo nel sistema.
+</p>
+<div class='vspace'></div><h4>Satisfy &amp; order</h4>
+<p>Comunque le direttive host- e user-based non sono mutuamente esclusive. Anzi, la direttiva <strong>satisfy</strong> mi serve per stabilire come queste debbano interagire
+</p><ul><li>satisfy all = tutte due devono essere soddisfatte
+</li><li>satisfy any = almeno una deve essere soddisfatta
+</li></ul><p class='vspace'>Inoltre, c'è la direttiva <strong>order</strong> che dice l'ordine di valutazione di allow e deny
+</p><ul><li>order deny, allow = prima valuto le deny, poi le allow =&gt; realizzo di fatto una politica aperta
+</li><li>order allow, deny = prima allow, poi deny =&gt; politica chiusa
+</li><li>order mutual-failure = una richieste deve NON soddisfare deny, e SODDISFARE allow: in pratica non sono ammessi conflitti, se ci sono non va bene e non permetto l'accesso.
+</li></ul><div class='vspace'></div><h4>Granularità</h4>
+<p>La granularità mi dice a che livello di risorse controllo gli accessi. Posso controllare a livello di file o di metodo.
+</p>
+<p class='vspace'>Il controllo a <strong>livello di file</strong> imposta direttive su un singolo file:
+</p><pre> &lt;FileMatch reg-exp&gt;
+ ...direttive...
+ &lt;/FileMatch&gt;
+</pre><p class='vspace'>Quello che succede è che tutti i file il cui nome soddisfa l'espressione regolare (reg-exp) indicata, saranno soggetti alle direttive scritte in mezzo.
+</p>
+<p class='vspace'>A <strong>livello di metodo</strong>, invece, controllo in base a quale metodo l'utente utilizza. I metodi sono i vari GET, POST, PUT etc. di HTTP.
+</p><pre> &lt;limit GET POST PUT&gt;
+  ...direttive...
+ &lt;/limit&gt;
+</pre><div class='vspace'></div><h4>Gerarchia di controllo</h4>
+<p>Come dicevamo all'inizio, posso mettere un file <strong>.htaccess</strong> in ogni dir, e farà testo per il contenuto di quella dir. Se non è presente, ci si rifà alla dir superiore e così via.
+</p>
+<p class='vspace'>In pratica si applica una politica <strong>mstp</strong>, in cui si parte dalla directory principale che ospita il server, e si scende via via fino a trovare l'elemento più specifico vicino all'oggetto che voglio controllare.
+</p>
+<div class='vspace'></div><h3>Linux</h3>
+<p>Adesso vediamo invece come è gestita la sicurezza in Linux e, più in generale, nei sistemi Unix-based.
+</p>
+<p class='vspace'>Ogni utente ha un <strong>UID</strong> e un <strong>GID</strong>. Lo <strong>UID</strong> è un numero intero univoco per ogni utente, mentre il <strong>GID</strong> è un numero che indica un gruppo. Un utente appartiene come minimo ad un gruppo che porta il suo stesso nome (eg. l'utente Patrizia farà parte del gruppo Patrizia), ma può anche appartenere ad altri gruppi.
+</p>
+<p class='vspace'>Il file che contiene le associazioni tra nome utente e password è <strong>/etc/shadow</strong>,  mentre per i gruppi c'è il file <strong>/etc/group</strong> che ha una lista di gruppi, e per ogni gruppo ha scritto accanto chi ne fa parte.
+</p>
+<p class='vspace'>I <strong>file</strong> invece sono assegnati ad un UID e ad un GID, in genere quelli dell'utente che li ha creati. Posso cambiare proprietario e gruppo con i comandi <strong>chown</strong> e <strong>chgrp</strong>.
+</p>
+<p class='vspace'>Ogni file ha una lista di <strong>9 privilegi</strong>, divisi in 3 parti. La <strong>prima parte</strong> riguarda i privilegi che il proprietario del file ha sul file. La <strong>seconda parte</strong> contiene i privilegi dei membri del gruppo cui appartiene il file, mentre la <strong>terza parte</strong> contiene i privilegi di tutti gli altri.
+</p>
+<p class='vspace'>I privilegi sono di tre tipi: <strong>r</strong> = read, <strong>w</strong> = write e <strong>x</strong> = execute. Ecco un esempio di stringa dei privilegi:
+</p><pre> rwxr-xr--
+</pre><p class='vspace'>Questa stringa la dividiamo in tre parti: rwx, r-x, r--
+</p><ul><li>rwx = è la parte relativa al proprietario, che ha i 3 permessi r, w ed x
+</li><li>r-x = è la parte relativa ai membri del gruppo del file. Il - vuol dire che NON c'è il permesso w, ma solo r ed x, che infatti sono indicati
+</li><li>r-- = è la parte relativa a tutti gli altri, che qui hanno solo il permesso r
+</li></ul><p class='vspace'>L'esempio dovrebbe aver chiarificato la cosa. I permessi possono anche essere rappresentati in binario o in ottale, e si cambiano con <strong>chmod</strong>.
+</p>
+<p class='vspace'>Ci sono anche i <strong>privilegi addizionali</strong>:
+</p><ul><li><strong>sticky bit</strong> = si applica solo a dir. Dice che solo il proprietario del file E della dir può rimuovere o rinominare i files contenuti in quella dir
+</li><li><strong>setuid</strong> = lo UID del processo che esegue il file eseguibile NON è più l'UID dell'utente che lo lancia, ma è l'UID del PROPRIETARIO del file. Poi spieghiamo meglio.
+</li><li><strong>setgid</strong> = come setuid, ma per i gruppi.
+</li></ul><div class='vspace'></div><h4>setuid e setgid</h4>
+<p>Ecco come funziona.
+</p>
+<p class='vspace'>I programmi sono dei file nel computer, e come tutti gli altri file hanno dei permessi, un proprietario e così via.
+</p>
+<p class='vspace'>Supponiamo di avere un programma di sistema, come <strong>ctslt</strong> che sta per <strong>cancella tutto senza lasciare traccia</strong>. E il proprietario di <strong>ctslt</strong> è <strong>root</strong>, cioè l'amministratore.
+</p>
+<p class='vspace'>Se io, utente Dario, eseguo il programma, il processo che ne deriva funzionerà, ma avrà solo i miei permessi. Ciò vuol dire che posso cancellare tutto senza lasciare traccia, ma solo se i files sono accessibili a ME.
+</p>
+<p class='vspace'>Se invece imposto setuid, allora la riga dei permessi cambia:
+</p><pre> rwxr-x--- diventa rwxr-x---
+</pre><p class='vspace'>C'è una <strong>s</strong> minuscola nella parte relativa agli altri utenti: ciò vuol dire che posso eseguirlo come se avessi i privilegi del proprietario.
+</p>
+<p class='vspace'>Questo vuol dire che posso fare come se fossi root, con quel processo, e quindi è una cosa rischiosa e apre potenziali falle di sicurezza.
+</p>
+<p class='vspace'>Il setgid funziona allo stesso modo, ma per i gruppi.
+</p>
+<p class='vspace'>Se imposto il setuid, o il setgid, ma il file NON è eseguibile, allora invece di una s minuscola esce una S maiuscola.
+</p>
+<div class='vspace'></div><h4>Determinazione dei privilegi</h4>
+<p>I privilegi vengono controllati prima in base all'identità dell'utente, poi in base al suo gruppo, ed infine in base ai permessi relativi a tutti gli altri.
+</p>
+<p class='vspace'><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di ESP</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 24, 2008, at 09:15 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP24aprile2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP24aprile2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: I chatbot </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name='MSSmartTagsPreventParsing' content='true' />
+        <link rel="stylesheet" type="text/css" href="../pub/skins/spinotto/spinotto.css">
+
+
+  <link rel='icon' href='../pub/skins/spinotto/sticaicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/spinotto/sticaicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/spinotto/stica.css.html' type='text/css' />
+  
+</head>
+
+<body>
+
+	<!--PageHeaderFmt-->
+        <table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center' >
+		<tr>
+			<td><IMG src="../pub/skins/spinotto/logo.jpg" width="960"></td>
+
+		</tr>
+
+        </table>
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center' >
+		<tr>
+			<td id='headlogo' title='Swappa Home' width='180'>
+				<a href='../index.html'>Swappa</a> ::  
+			</td>
+			<td id='pagetitle' width='780'>
+				I chatbot
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Spin8.Chatbot' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td colspan='2' id='riemp1'></td></tr>
+		<tr>
+			<td colspan='2' id='siteheadcmds'>
+			<table width='945' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+					<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+				<td id='riemp3'></td>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Spin8/Chatbot?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Spin8/Chatbot?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Chatbot-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar' >
+                        <ul><li><a class='wikilink' href='Spin8.html'>Spin8</a>
+</li></ul><hr />
+<ul><li><a class='wikilink' href='Appunti.html'>Appunti</a>
+</li><li><a class='wikilink' href='Esercizi.html'>Esercizi</a>
+</li><li><a class='wikilink' href='Riassunti.html'>Riassunti</a>
+</li><li><a class='wikilink' href='Link.html'>Link</a>
+</li></ul><hr />
+<ul><li><a class='wikilink' href='Lara.html'>Lara</a>
+</li><li><a class='wikilink' href='Patrizia.html'>Patrizia</a>
+</li><li><a class='wikilink' href='Monica.html'>Monica</a>
+</li></ul><hr />
+<ul><li><a class='wikilink' href='GianniDegliAntoni.html'>GianniDegliAntoni</a>
+</li></ul><hr />
+<ul><li><a class='urllink' href='http://doppioclic.altervista.org/wiki/' title='' rel='nofollow'>Doppioclic</a>
+</li></ul><hr />
+<ul><li><a class='urllink' href='http://doppioclic.altervista.org/wiki/pmwiki.php?n=Spin8.SideBar?action=edit' title='' rel='nofollow'>Modifica la sidebar</a>
+</li></ul>
+
+			
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp2'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='I chatbot was last modified on September 14, 2007, at 10:55 AM'>
+							<span style='display:none;'>I chatbot</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<h2>I chatbot</h2>
+<p>I chatbot sono dei programmi che simulano una conversazione tra robot e essere umano. Questi programmi funzionano o come utenti stessi delle chat o come persone che rispondono alle FAQ (frequent asked question) delle persone che accedono al sito. Il loro sviluppo è ad uno stadio bassissimo.<br />La loro capacità di colloquiare in modo lineare e congruo è limitata.
+Tuttavia il loro impiego risulta già da ora più che utile. 
+Fin dai primi sviluppi della scienza informatica, in collaborazione con altre discipline gli studiosi hanno cercato di riprodurre attraverso l’ausilio di macchine processi cognitivi tipicamente umani.
+L’opinione più diffusa in ambito scientifico è che il processo di apprendimento, comprensione e formulazione del linguaggio avvenga in modo per lo più a noi ignoto, soprattutto innato. Se così fosse, la riproduzione del linguaggio attraverso un robota sarebbe un passo troppo grande per le attuali conoscenze. 
+Gli studi sull’infanzia, sull’educazione, sul contesto culturale, sulla memoria… hanno prodotto tantissimi dati importanti come la quantità di vocaboli memorizzabili in un determinato lasso di tempo (capacità mnemonica e apprendimento infantile), la predisposizione all’utilizzo di termini in base al contesto sociale e geografico (pensiamo alla parola “neve” che nelle lingue del nord europa possiede moltissimi sinonimi capaci di descrivere piccole sfumature del fenomeno), gli studi sull’attenzione (la cui soglia di attivazione interverrebbe in modo imprevedibile e soprattutto soggettivo).<br /><br />Il risultato ad ora si sintetizza in una affermazione che credo condivisibile:
+Il processo linguistico avviene attraverso svariati schemi coesistenti e cooperanti, in gran parte da scoprire. Quindi è ovvio che non è possibile parlare in maniera soddisfacente con un chatbot, poiché non è in grado di riprodurre tutto quello che noi possediamo, probabilmente come bagaglio innato.
+Una volta sviluppato uno schema un robota può eseguirlo e mostrarci il suo funzionamento. 
+Infatti essi esprimono il massimo della riproducibilità del linguaggio.
+Fondamentalmente sono dotati di svariati contenitori etichettati (etichettabili) nei quali memorizzare i dati.
+Un maggior numero di stimoli produce una maggior quantità di risposte.Qual è il limite?<br />Non sono in grado di seguire uno sviluppo semantico complesso.
+Non possono avventurarsi in dialoghi metaforici, per esempio.<br /><br />Ecco un esempio di conversazione con un chatbot. Il presupposto era semplice: date le conoscenze di una lingua, doveva poter creare un legame almeno letterale con i nuovi termini indicati. Risultato:<br />Human: hello<br />ALICE: Hi there!<br />Human: do you speak italian?<br />ALICE: Yo no parlo l’Italiano.<br />Human: do you want to learn italian?<br />ALICE: Yes I am trying to learn as much as possible.<br />Human:”ciao” means hello<br />ALICE: I will say CIAO then.<br />Human: yes<br />ALICE: Wow!<br />Human: ciao!<br />ALICE: Does CIAO mean hello or goodbye?<br />1 - Human: It means hello<br />ALICE: Hi there!<br />2 - Human: ciao means hello<br />ALICE: I will say CIAO then.<br />Cos’è successo?<br />Ovviamente nulla.<br />Nel primo caso ALICE si confonde e crede che si stia ricominciando la conversazione e saluta nuovamente.
+Nel secondo caso entra in loop e torna a proporre l’ottava riga.
+Abbiamo appreso che Alice non è in grado di automodificarsi.<br /><br />Affinché possa imparare veramente qualcosa dovrebbe intervenire alla sesta riga e autonomamente creare una categoria che contenga l’informazione desiderata. I chatbot possono essere anche di grandissima utilità.
+Il corpo dei Carabinieri ha reso ad esempio reso disponibile sul proprio sito un agente virtuale in grado di svolgere operazioni elementari, ma di grandissima utilità.
+L’atto di chiedere ed ottenere informazioni può diventare una problema eseguibile da un robota.
+Può essere un buon metodo per snellire alcuni aspetti burocratici.
+Ma non possiamo assolutamente riconoscere in un chatbot una forma di intelligenza artificiale
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Esercizi.html'>Torna agli esercizi</a><br /><a class='wikilink' href='Spin8.html'>Torna a Spin8</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='3' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: September 14, 2007, at 10:55 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Spin8/Chatbot?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Spin8/Chatbot?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

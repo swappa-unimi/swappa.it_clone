@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Protocolli avanzati di rete - Appunti del 20 Aprile</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='PAR-20Aprile.html' title='Protocolli avanzati di rete - Appunti del 20 Aprile'>Protocolli avanzati di rete - Appunti del 20 Aprile</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 20 Aprile ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>Tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='Damiani.html'>Damiani</a>
+</p></div>
+<div class='vspace'></div><h2>Introduzione alle reti wireless</h2>
+<p>Per trasmettere dati con tecniche ad onda libera bisogna accordarsi sia sulle modulazioni che sul <em>processo di riserva</em> della banda, ovvero sulle modalità di occupazione delle frequenze. Vale la pena ricordare che queste ultime vanno intese come risorse pubbliche la cui distribuzione è regolamentata da organismi più o meno istituzionali. In particolare è previsto che per utilizzare una portante fino ai 2 MHertz (esclusi) di frequenza bisogna avere una concessione che mi autorizzi, mentre da quel valore in su non è più richiesta. La fregatura sta nel fatto che oltre i 2 MHz non ho più nessuna garanzia sulla portante, cioè non ho la certezza di trovarla sempre disponibile. Ricapitolando, il wireless dati di una rete telefonica è messo a disposizione da un operatore che ha comprato una licenza e che mi dà garanzie sulla trasmissione, mentre quello di una rete privata è confinato in locale (su un'area ristretta) ed è ad esempio il mio router o il cordless di casa.<br />La porzione di banda libera delle concessioni è molto grande, anche se molte "fette" sono tuttora occupate da apparati di telecomunicazione militare in dismissione. Notare che non si tratta sempre delle stesse bande, ma la loro entità varia da nazione in nazione.
+</p>
+<p class='vspace'>Prima di arrivare alla parte che ci interessa, citiamo almeno lo standard <strong>infrarossi</strong>. Gli infrarossi rappresentano l'estremo superiore della banda utilizzabile senza concessioni, e la tecnologia che li utilizza è molto semplice ma ha un limitato raggio di azione ed è molto sensibile alla temperatura. Questo tipo di trasmissione è infatti <strong>LOS</strong> (<em>Line Of Sight</em>), cioè richiede che non ci siano ostacoli tra i dispositivi comunicanti, o in altre parole che si possa tirare una retta immaginaria che li unisca.
+</p>
+<p class='vspace'>Per quanto riguarda le modulazioni abbiamo le tre solite: 
+</p><ul><li>modulazione in ampiezza, che è quella usata sull'ultimo miglio, come ad esempio per l'ADSL
+</li><li>modulazione in frequenza, molto usata nelle reti locali
+</li><li>modulazione in fase, tipica delle reti ottiche
+</li></ul><p class='vspace'>Ok, è tutto molto bello, ma quando passiamo alla parte utile? Ora.
+</p>
+<div class='vspace'></div><h2>Microwave band</h2>
+<p>La <strong>microwave band</strong> (banda delle microonde) è quella più sfruttata, e si divide in quella con licenza (che serve cellulari, PCS, ...) e quella senza licenza o <strong>UMB</strong>. Noi ci concentreremo prevalentemente sulla seconda, nella quale ci sono le portanti utilizzate dagli standard di rete locale in onda libera. Il fatto che il suo bacino di utenza potenziale sia molto più alto rispetto alla sua corrispondente con licenza, rende necessario prendere precauzioni contro le interferenze delle apparecchiature di terzi che operano nelle vicinanze. Nota di folklore: la UMB è chiamata anche banda <strong>ISM</strong>, perché inizialmente era usata per fini "<em>Industrial, Scientific and Medical</em>".
+</p>
+<p class='vspace'>Perché si raggiunga una buona qualità di trasmissione bisogna dunque fare un minimo di <em>ingegneria spettrale</em>, che si basa in genere sullo <strong>spread spectrum</strong>: estendo, spalmo, distribuisco lo spettro su un intervallo più grande di frequenza. Dobbiamo quindi intervenire sul segnale a livello fisico (agli altri livelli non frega assolutamente niente dei problemi spettrali), la sola modulazione non basta a risolvere la questione.<br />Il problema dell'onda libera è che la sua qualità dipende molto dalle condizioni ambientali (rumore di fondo) e dalle interferenze con altre sorgenti. Rappresentiamo il tutto in un grafico <code class='escaped'>ampiezza-frequenze</code> in scala logaritmica:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/PAR-segnaleInferferenza.jpg' alt='' title='' /></div>
+<p class='vspace'>Alcune osservazioni:
+</p><ul><li>il rumore termico di fondo è una variabile casuale distribuita in modo uniforme e che dipende fortemente dalla temperatura
+</li><li>la parte colorata rappresenta la potenza del rumore
+</li><li>un indicatore importante del rumore è l' <strong>SNR</strong>, ovvero il rapporto tra la potenza del segnale e quello del rumore
+</li></ul><p class='vspace'>L'ingegneria dello spettro deve minimizzare la sovrapposizione del rumore, e ovviamente non può intervenire su altro che il segnale. Come? Abbiamo due tecniche: l' <strong>FHSS</strong> e il <strong>DSSS</strong>. Vediamole bene.
+</p>
+<div class='vspace'></div><h2>FHSS</h2>
+<p>La maggior parte delle reti locali wireless usano la banda UMB come utenti secondari, quindi per non subire le interferenze dei primari devono adottare tecniche di <code class='escaped'>Spread Spectrum</code>. Con la <strong>FHSS</strong> (<em>Frequency Hopping Spread Spectrum</em>) abbiamo a disposizione un certo numero di portanti, e noi dobbiamo codificare una sequenza con cui utilizzarle nel tempo. In altre parole vogliamo fare in modo che il dispositivo cambi istante per istante la frequenza con cui sta inviando informazioni, con un ordine che possiamo stabilire e che lo identificherà. Perché fare tutto questo? Perché cambiando portante spostiamo incessantemente lo spettro, riducendo così la probabilità che esso interferisca con quello delle altre sorgenti. Ecco dunque perché si parla di <em>spread spectrum</em>: sto estendendo lo spettro su un intervallo più grande di frequenze. Evidentemente questa tecnica non ha nessuna utilità per limitare le interferenze con il rumore termico, dato che quest'ultimo è uguale ovunque. 
+</p>
+<p class='vspace'>La sequenza con cui passo da una portante all'altra costituisce la <strong>chiave</strong> (o <em>parola</em>) del canale, e come abbiamo già anticipato sarà una caratteristica che lo identificherà.
+</p>
+<p class='vspace'>La banda destinata all'UMB è di 80 MHz ed ogni portante è separata dall'altra da 1 MHz, quindi se la matematica non è un'opinione ho a disposizione 80 portanti. Una cosa molto importante da capire è che FHSS non fa Frequency Division Multiplexing. Se infatti stessi facendo FDM potrei servire solo 80 apparecchi, mentre con la <em>Frequency Hopping</em> molti di più.<br />Con 15 canali FHSS i nostri trasmettitori continueranno a saltare in uno spazio di 1/80 con un ciclo di frequenza pari a 15. 
+</p>
+<p class='vspace'>Consideriamo il seguente scenario, in cui abbiamo due utenti primari oltre ai normali secondari:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/FHSSscenario.jpg' alt='' title='' /></div>
+<p class='vspace'>Le righe orizzontali rappresentano il fatto che due dispositivi stanno occupando tutta la banda su una portante. Contrariamente a quanto si possa pensare ciò non interferisce più di quel tanto con gli altri: noi per loro disturbiamo per 1/15 della nostra potenza di segnale; loro ci disturbano quel poco che ci fa perdere i 2/80 di throughput (in percentuale).
+</p>
+<div class='vspace'></div><h2>DSSS</h2>
+<p>La tecnica <strong>DSSS</strong> (<em>Direct Sequence Spread Spectrum</em>) mira ad effettuare un condizionamento della modulante, così che lo spettro modulato cambi struttura. Se infatti alziamo in frequenza la modulante, che quindi avrà un maggior numero di variazioni e di armoniche, otterrò un segnale modulato con uno spettro più basso e più largo. Tutto ciò riduce sicuramente l'area di intersezione con gli altri segnali, ma aumenta quella con il rumore termico, che per sua stessa natura è basso e largo; ne consegue che il DSSS funziona bene in ambienti con basso rumore.
+</p>
+<p class='vspace'>Come si interviene sulla struttura del modulato? Mettendo il segnale di ingresso in <strong>XOR</strong> (<a target='_blank'  class='urllink' href='http://it.wikipedia.org/wiki/Disgiunzione_esclusiva' title='' rel='nofollow'>vedi qui</a>) con una <code class='escaped'>parola</code> che aumenti il numero medio di transizioni per secondo; una tipica parola utilizzata è quella di Barker.
+</p><div  style='text-align: center;'><img src='../uploads/Uni/DSSSpremod.jpg' alt='' title='' /></div>
+<p class='vspace'>Un'attività di questo tipo può essere considerata come <em>premodulazione</em>.
+</p>
+<p class='vspace'>Devo usare sempre la stessa parola o devo usare parole diverse? Beh, in uno scenario come quello che abbiamo studiato prima (più portanti utilizzate in un ambiente limitato da dispositivi primari o secondari) una parola è più che sufficiente. Se invece dobbiamo gestire un protocollo UMTS o HDSPA, una tecnica di ricerca prevede di dare la stessa portante a più apparecchi, ma fornire ad ognuno di essi parole diverse con la garanzia che siano il più diverse possibile dalle altre. In questo modo ci saranno sicuramente delle sovrapposizioni, ma avendo ogni segnale una forma diversa non saranno mai totali. Questa tecnica sfrutta l'effetto cocktail party.
+</p>
+<div class='vspace'></div><h2>Degradazioni</h2>
+<p>Come degradano le prestazioni a livello fisico? Dipende dalla tecnica spread spectrum che abbiamo adottato.
+</p>
+<p class='vspace'>La degradazione nel DSSS è non lineare, perché se aumento il numero di sorgenti di interferenza arriverò ad una soglia in cui avviene il <em>crollo</em>, cioè perderò praticamente del tutto il mio segnale.
+</p><div  style='text-align: center;'><img src='../uploads/Uni/degradazioneDSSS.jpg' alt='' title='' /></div>
+<p class='vspace'>Il FHSS ha invece un legame lineare con le sorgenti di interferenza, dunque anche il suo degradamento sarà lineare.
+</p><div  style='text-align: center;'><img src='../uploads/Uni/degradazioneFHSS.jpg' alt='' title='' /></div>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/PAR-20Aprile)</span></div>
+  </div>
+</body>
+</html>

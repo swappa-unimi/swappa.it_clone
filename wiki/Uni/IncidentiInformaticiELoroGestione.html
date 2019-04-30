@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Incidenti informatici e loro gestione </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IncidentiInformaticiELoroGestione' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Incidenti informatici e loro gestione
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IncidentiInformaticiELoroGestione?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IncidentiInformaticiELoroGestione?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IncidentiInformaticiELoroGestione-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IncidentiInformaticiELoroGestione?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IncidentiInformaticiELoroGestione?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Incidenti informatici e loro gestione was last modified on January 18, 2009, at 10:15 PM'>
+							<span style='display:none;'>Incidenti informatici e loro gestione</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Incidenti informatici e loro gestione ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Ove non meglio specificato, tutti i testi tra virgolette vanno intesi come citazioni letterali dalle slide del prof <a class='wikilink' href='DarioForte.html'>Dario Forte</a>, 2008.
+</p></div>
+<div class='vspace'></div><h2>Definizione di incidenti informatici di sicurezza</h2>
+<p>Per <strong>incidente informatico</strong> si intende una classe generale di imprevisti e malfunzionamenti (anche accidentali) hardware o software. Nel corso di questa materia tratteremo in particolare gli <strong>incidenti informatici di sicurezza</strong>, definiti nel glossario della <a class='wikilink' href='RFC2350.html'>RFC 2350</a> come eventi negativi che compromettono alcuni aspetti del computer, della rete o della sicurezza. Potrebbero essere ad esempio violazioni delle politiche di sicurezza aziendali, l'infrangimento di alcune leggi, o più in generale un qualsiasi evento che mini la stabilità del sistema.
+</p>
+<p class='vspace'>Gli incidenti informatici di sicurezza possono essere classificati in base a diversi parametri: gli <em>asset</em>, i <em>livelli di pericolosità</em> (ad esempio assegnandogli un valore da 0 a 5) e il <em>tipo di supporto richiesto</em> (se legale e/o organizzativo). <br />Gli <strong>asset</strong> sono i beni nell'ambito aziendale, e possono essere materiali (come sedie, tavoli, computer, ...) o immateriali (software, politiche, procedure, brevetti, progetti, ...); i secondi sono chiamati <em>asset informativi</em> e sono tra i principali obiettivi di violazione. In base agli asset gli incidenti informatici si possono suddividere in:
+</p><ul><li><em>singoli</em>, che coinvolgono un unico asset. Sono ormai molto rari, trattati esclusivamente a livello accademico
+</li><li><em>strutturati</em>, che compromettono più asset e su più perimetri (ovvero gli ambiti che coinvolgono)
+</li></ul><p>E' fondamentale tenere in alta considerazione gli asset perché hanno a che fare coi soldi, e i soldi sono il primo interesse di una qualsiasi azienda o attività. Vedi esempio del prof: in un convegno importantissimo che riguardava grossi investimenti su asset aziendali, un relatore che non ha saputo rispondere alla domanda su quanto costa un pc ha perso immediatamente l'interesse di buona parte degli investitori.
+</p>
+<p class='vspace'>Di qualsiasi tipo siano, la regola numero uno da seguire nella gestione di un incidente informatico è <code class='escaped'>trattarlo come un potenziale sbocco giudiziario</code>, anche se nel momento in cui si agisce non è ancora previsto di arrivare in tribunale. Tutto ciò che si fa deve essere quindi documentabile e documentato perché potrebbe essere usato contro di noi. Va inoltre tenuto conto del decreto legge n.231 dell'8 giugno 2001, che introduce l'obbligo di dover rispondere come persona giuridica per i reati commessi all'interno della propria struttura.
+</p>
+<div class='vspace'></div><h3>Esempi di incidenti informatici</h3>
+<p>Vedremo ora una serie di esempi di incidenti informatici di sicurezza, i primi dei quali riguardano violazioni del paradigma C.I.A. (Confidentiality, Integrity, Availibility).
+</p>
+<div class='vspace'></div><h4>Confidentiality</h4>
+<p>La <em>confidentiality</em> (segretezza) è strettamente correlata alle operazioni di lettura, e prevede che un'informazione possa essere rilasciata - direttamente o indirettamente - solo agli utenti autorizzati a conoscerla. Vediamo due esempi di violazione:
+</p><ul><li><em>furto di informazioni dai computer portatili</em>. Sembrerà assurdo ma la maggior parte degli incidenti di questo tipo è dovuto alla sbadataggine di alcuni manager che lasciano il proprio laptop in giro (un classico è dimenticarlo nei pub), così che altri possano accedere a eventuali dati aziendali sensibili. Un'altra occasione di danno si ha quando gli stessi manager usano il portatile a casa e navigano su siti pericolosi che compromettono la macchina, così che quando l'indomani si riconnettono alla rete aziendale producono conseguenze disastrose;
+</li><li><em>installazione di programmi</em> (un esempio su tutti, Skype) potenzialmente dannosi e che compromettono la segretezza dei dati sulla macchina e sulla rete aziendale.
+</li></ul><div class='vspace'></div><h4>Integrity</h4>
+<p>L' <em>integrity</em> riguarda le operazioni di scrittura e stabilisce che le informazioni e le risorse non possano essere modificate, cancellate o distrutte in modo non autorizzato o improprio. Un incidente informatico può compromettere l'integrità di diverse entità:
+</p><ul><li><em>dati</em>, che dopo essere stati modificati smettono di essere attendibili
+</li><li><em>sistema</em>, di cui non è più possibile garantire il funzionamento una volta alterato 
+</li><li><em>servizi</em>, che smettono di funzionare correttamente
+</li></ul><div class='vspace'></div><h4>Availability</h4>
+<p>L' <em>availability</em> (disponibilità) si riferisce al fatto che le risorse devono essere sempre disponibili agli utenti autorizzati; per risorse si intende informazioni, applicazioni, servizi, sistemi e reti. Un esempio tipico di incidente informatico che inficia l'availability sono gli attacchi <em>Denial of Service</em> (DoS) e <em>Distributed DoS</em> (DDoS).
+</p>
+<div class='vspace'></div><h4>Reconnaissance</h4>
+<p>La <em>Reconnaissance</em> (ricognizione) consiste nell'attività di ricerca di informazioni utili da parte degli attaccanti per portare a termine l'attacco stesso. Tali informazioni possono essere recuperate ad esempio con il <em>port scanning</em>, ovvero la ricerca di servizi in esecuzione sul computer remoto (molto semplice e frequente), oppure con il <em>vulnerability scanning</em> che prevede una ricerca specifica delle vulnerabilità dei servizi stessi (più invasivo). Difficilmente un'azienda considera il port scanning un evento da riportare sotto l'ambito della gestione degli incidenti informatici, tuttavia viene trattato come segnale precursore di un potenziale attacco.
+</p>
+<div class='vspace'></div><h4>Virus e worm</h4>
+<p>I <strong>virus</strong> e i <strong>worm</strong> sono codici malevoli che compromettono l&#8217;integrità dei dati presenti sul PC della vittima.
+</p>
+<div class='vspace'></div><h4>Accessi non autorizzati</h4>
+<p>Gli <em>accessi non autorizzati</em> possono essere sia logici che fisici, e sono ovviamente portati a termine da utenti che non hanno il permesso di accedere a una risorsa. Possono essere di diversi tipi (elenchiamo dalle slide di Dario Forte, 2008):
+</p><ul><li>"compromissione da remoto"
+</li><li>"defacing di siti web"
+</li><li>"copiare dati sensibili presenti all&#8217;interno di DB"
+</li><li>"accesso remoto tramite modem non autorizzati alla rete"
+</li></ul><p class='vspace'>Concludiamo osservando che se un amministratore di sistema abusa dei suoi privilegi per effettuare accessi non autorizzati, la sua stessa posizione rappresenterà un aggravante in sede legale.
+</p>
+<div class='vspace'></div><h4>Utilizzo inappropriato</h4>
+<p><em>Utilizzo inappropriato</em> è il termine generale per indicare le violazioni alle politiche interne dell'azienda. Possono essere di molti tipi diversi, vediamone alcuni esempi:
+</p><ul><li>download di software non consentito
+</li><li>accesso a siti pornografici o non inerenti l'attività aziendale, non tanto perché rappresentano in sé attività legalmente perseguibili, ma perché potrebbero compromettere uno degli aspetti <code class='escaped'>C.I.A. </code>
+</li><li>utilizzo di programmi di file sharing, tra cui si inserisce concettualmente anche Skype
+</li><li>diffusione volontaria di informazioni sensibili
+</li><li>utilizzo dei sistemi aziendali per attaccarne altri
+</li></ul><div class='vspace'></div><h2>Incident management</h2>
+<p>L' <strong>Incident Management</strong> è l'insieme di <em>politiche</em> e <em>procedure</em> di risposta all'incidente informatico di sicurezza. Definiamo i concetti di politica e procedura:
+</p><ul><li>la politica è un insieme di linee guida ad alto livello, espressione delle volontà aziendali. Ad esempio potrebbero essere il divieto di navigare su siti web non inerenti l'attività lavorativa. Quando si lavora è sempre bene chiedersi se esistono politiche di sicurezza sufficienti o se ce ne sono altre che è opportuno proporre
+</li><li>la procedura è invece il documento attuativo della politica, la parte pratica di più basso livello
+</li></ul><p class='vspace'>La gestione dell'incidente informatico prevede diverse attività, tra cui:
+</p>
+<div class='vspace'></div><ul><li><em>Incident Response</em>: l'insieme di operazioni da svolgere subito dopo il rilevamento dell'incidente (risposta e ripristino); 
+</li><li><em>Digital Investigation</em>: le attività di recupero delle informazioni da portare come prove; 
+</li><li><em>Legal Assesment</em>: la serie di processi per verificare il distacco (<em>gap</em>) tra il reale stato aziendale e quello che dovrebbe essere secondo la legge. E' generalmente compiuto da avvocati esperti; 
+</li><li><em>Damage and Risk Assesment</em>: quantifica il danno economico generato dall'incidente informatico. 
+</li></ul><div class='vspace'></div><h3>Framework di incident management</h3>
+<p>Il <strong>framework di incident management</strong> è così strutturato:
+</p><ul><li><em>pre-incident preparation</em>
+</li><li><em>incident detection</em>
+</li><li><em>risposta iniziale all'incidente</em>
+</li><li><em>formulazione di una strategia di response</em>
+</li><li><em>investigazione dell'incidente</em>
+</li><li><em>reporting</em>
+</li><li><em>risoluzione dell'incidente</em>
+</li></ul><p class='vspace'>Studiamoli ora nei particolari.
+</p>
+<div class='vspace'></div><h4>Pre-incident preparation</h4>
+<p>La <strong>pre-incident preparation</strong> comprende tutta quella serie di operazioni di tipo preparativo finalizzate alla prevenzione e alla reazione dell'incidente informatico in ambito aziendale. Dato che la durata della fase di preparazione è inversamente proporzionale al tempo di risoluzione del problema, è molto utile consultare l'amministratore per velocizzarla. <br />Entrando più nello specifico, andrebbero pianificate:
+</p><ul><li>le procedure da seguire in caso di incidente per continuare a garantire il servizio (pensate a quanto ciò sia importante per i servizi bancari, i router o i web server)
+</li><li>stabilire chi sono i <em>Point Of Contact</em> (<strong>P.O.C.</strong>), ovvero i contatti da interpellare in caso di incidente. Possono essere sia interni (personale interno all'azienda, ad esempio l'amministratore del servizio informatico) che esterni (libere categorie come Polizia Giudiziaria, Legali, CERT, eccetera)
+</li><li>deinifire i ruoli e le responsabilità all'interno del team di risposta
+</li><li>fare un <em>Hands On</em> sulla log analysis e sull'esame forense così da cercare il maggior numero di punti di correlazione possibile sulle varie fonti. Per <em>log analysis</em> non si intende banalmente solo l'analisi dei log, ma anche la ricostruzione dell'incidente basandosi sul contenuto delle prove. L' <em>esame forense</em> è invece l'esame delle <em>evidence</em> (le prove), ed è eseguita con strumenti di computer forensics che possono essere standalone o distribuiti
+</li><li>decidere le linee guida da seguire per garantire la sicurezza del sistema
+</li><li>scegliere le risorse da utilizzare per l'analisi
+</li></ul><p class='vspace'>Questa fase non è assolutamente da sottovalutare: Dario Forte insegna che<br />"<code class='escaped'>più siamo preparati e meno impiegheremo nell'analisi</code>".
+</p>
+<div class='vspace'></div><h4>Incident Detection</h4>
+<p>Con <strong>incident detection</strong> si intende la rilevazione e il riconoscimento dell'incidente informatico. Pur essendo particolarmente complessa, questa fase è assolutamente necessaria: solo scoprendo cosa e come è successo si potrà evitare che quell'incidente si verifichi di nuovo.
+</p>
+<p class='vspace'>Per l'incident detection ci possiamo avvalere di strumenti tecnologici come ad esempio l' <em>Intrusion Detection System</em> (<strong>IDS</strong>), i <em>log correlator</em>, i <em>firewall</em> e gli <em>antivirus</em>; inoltre si può fare affidamento sulle segnalazioni degli utenti e di terze parti coinvolte nell'incidente (Autorità Giudiziaria compresa). 
+</p>
+<p class='vspace'>Le difficoltà di questa fase non dipendono solo dalla complessità del caso in esame, ma anche dalle conoscenze tecniche di chi conduce l'indagine e dalle prestazioni dei sistemi che gestiscono le informazioni (che possono dover arrivare a lavorare su terabyte di dati).
+</p>
+<div class='vspace'></div><h4>Risposta iniziale all'incidente</h4>
+<p>La <strong>risposta iniziale all'incidente</strong> avviene con la formazione dello <strong>CSIRT</strong> (<em>Computer Security Incident Response Team</em>) e con la raccolta delle fonti di prova iniziali, anche dette <em>digital evidence</em>. Per quanto riguarda gli CSIRT vale la pena consultare la <a class='wikilink' href='RFC2350.html'>RFC 2350</a> o i capitoli successivi, mentre per le fonti di prova la <a class='wikilink' href='RFC3227.html'>RFC 3227</a>.
+</p>
+<p class='vspace'>La raccolta delle evidence avviene con l'acquisizione delle immagini disco e dei log, e con l'elaborazione di tali informazioni. In particolare, l'acquisizione delle immagini disco deve essere fatta con programmi appositi come <code class='escaped'>DD</code> che effettuano una copia approfondita bit-by-bit (dal cluster 0 all'ultimo) dei dati contenuti sul disco, indipendentemente dal fatto che siano integri, cancellati o modificati.
+</p>
+<p class='vspace'>Anticipiamo qui che l'analisi andrebbe fatta sempre sulle copie (dette per questo motivo <em>copie forensi</em>), così da non compromettere mai gli originali ed esserne sempre sicuri dell'autenticità. 
+</p>
+<div class='vspace'></div><h4>Strategia di risposta all'incidente</h4>
+<p>In base alle politiche aziendali e ad eventuali necessità va a questo punto formulata una <strong>strategia di incident response</strong>. Vediamone alcuni tipi:
+</p><ul><li><em>strategia di contenimento</em>: in caso di attacco si cerca di limitare il danno sia in termini economici che di sicurezza; ad esempio in caso di corruzione di una macchina questa viene messa in quarantena e tenuta sotto controllo
+</li><li><em>raccolta e gestione delle evidence</em>: si raccolgono tutte le possibili fonti di prova seguendo un modello investigativo che sarà illustrato nei prossimi appunti
+</li><li><em>identificazione dell'attaccante</em>: si correlano le varie informazioni raccolte così da capire come ha agito, da dove, e possibilmente chi è
+</li><li>"ripresa del servizio"
+</li><li>"utilizzo di strumenti di Incident Response (Helix, IRItaly, Live CD)"
+</li></ul><p class='vspace'>In questa fase vanno prese inoltre <em>decisioni informative</em> e <em>di interazione con l'opinione pubblica</em> (public relation). Le decisioni informative pianificano le modalità con cui si informano ed eventualmente si richiedono autorizzazioni all'Autorità Giudiziaria per utilizzare in tribunale fonti di prova raccolte in modo non lecito, ad esempio quelle che hanno violato la legge sulla privacy.
+</p>
+<div class='vspace'></div><h4>Investigazione dell'incidente</h4>
+<p>Per quanto riguarda l' <strong>investigazione dell'incidente</strong> andrebbero sempre seguite alcune semplici regole:
+</p>
+<div class='vspace'></div><ul><li>rispettare l'ordine di volatilità dei dati: la RAM è più volatile dei Log che sono a loro volta più volatili del Disco, quindi alcune componenti andrebbero acquisite ed investigate prima di altre
+</li><li>dato che in ambienti molto estesi l'attività di acquisizione è estremamente lunga, essendo il tempo un fattore critico si fa in modo che il recupero delle informazioni avvenga in parallelo in modo distribuito (in questo modo la copia di 1000/2000 macchine può avvenire in poche ore)
+</li><li>validare le prove utilizzando più fonti, cercando sempre più punti di correlazione possibile
+</li><li>dal momento che è molto probabile che a un incidente ne segua un altro a catena, è molto utile fare <em>snapshot</em> (backup) incrementali del sistema così da capire cosa è successo o cosa sta succedendo
+</li><li>mettere la preservazione dei dati originali in primo piano, indipendentemente che si stia compiendo una <em>Live System Analysis</em> o un esame <em>Post Mortem</em>
+</li><li>"<code class='escaped'>log analysis</code>"
+</li><li>"<code class='escaped'>correlazione degli eventi</code>"
+</li><li>artifact analysis
+</li><li>tenere conto del fatto che i risultati ottenuti dall'investigazione devono essere riproducibili (metodo scientifico)
+</li></ul><div class='vspace'></div><h4>Reporting</h4>
+<p>Il <strong>reporting</strong> è la documentazione e presentazione delle informazioni raccolte nei vari momenti dell'indagine, dunque va fatta sempre e non solo a questo punto del framework. Nella stesura dei report bisogna tener conto del tempo a disposizione per la sua redazione, del metodo di diffusione che verrà usato e delle conseguenze di eventuali violazioni delle policy.<br />Tra le figure a cui vanno presentati i report vi sono sicuramente il management aziendale, il reparto legale, altri CSIRT e in alcuni casi anche le forze dell'ordine o le autorità giudiziarie.
+</p>
+<div class='vspace'></div><h4>Risoluzione dell'incidente</h4>
+<p>La fase di <strong>risoluzione dell'incidente</strong> è quella che comprende tutte le operazioni atte a risolvere l'incidente informatico, ripristinare il sistema (ad esempio con backup o reinstallazioni) e capire cosa sia effettivamente successo per evitare che il problema si ripresenti in futuro. Limitarsi a ripristinare il sistema allo stato precedente l'incidente non è altro che un palliativo, dal momento che la vulnerabilità che era stata sfruttata in passato potrebbe essere riusata in futuro. Bisogna quindi fare tesoro delle lezioni apprese affinché non si verifichi lo stesso incidente, attività questa che prende il nome di <em>lesson learned</em> e che purtroppo è spesso sottovalutata.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 18, 2009, at 10:15 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IncidentiInformaticiELoroGestione?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IncidentiInformaticiELoroGestione?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

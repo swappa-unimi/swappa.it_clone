@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Lezione del 4 marzo 2008 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Piuri4Marzo2008' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Lezione del 4 marzo 2008
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri4Marzo2008?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri4Marzo2008?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Piuri4Marzo2008-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri4Marzo2008?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri4Marzo2008?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Lezione del 4 marzo 2008 was last modified on March 13, 2008, at 10:39 PM'>
+							<span style='display:none;'>Sistemi Operativi - Lezione del 4 marzo 2008</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi operativi - Lezione del 4 marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di SO</a>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 4: interfacce dei SO</strong></span>
+</p>
+<p class='vspace'>Le interfacce per l'utente possono essere grafiche o testuali, e in questo ultimo caso c'è spesso una <strong>shell</strong>, ovvero un interprete dei comandi. Sono basate sullo stesso sistema <em>fetch, decode, execute</em> che caratterizza il flusso operativo del processore: infatti le interfacce fetchano l'input dell'utente, lo decodificano e eseguono ciò che viene loro ordinato (di solito).
+</p>
+<div class='vspace'></div><h3>Interfacce programmative</h3>
+<p>Sono le interfacce al SO, ma accessibili tramite la programmazione.
+</p>
+<p class='vspace'>Hanno diversi nomi, che sono sì sinonimi, ma che mettono in rilievo un aspetto diverso della faccenda:
+</p><ul><li><strong>system call</strong> = chiamate di sistema
+</li><li><strong>supervisor call</strong> = chiamate a supervisore
+</li><li><strong>monitor call</strong> = chiamate a monitor
+</li></ul><p class='vspace'>Il SO può essere visto come colui che supervisiona tutti i suoi bravi figliuoli, ovvero i processi che tanta parte avranno tra poco tempo:)
+</p>
+<p class='vspace'>Queste system call devono proteggere il nostro SO, garantire l'integrità dei dati, l'esecuzione delle procedure e l'esecuzione dei controlli. Le risorse vanno gestite bene, e a questo scopo è importante cercare di proibire ad un programmatore di bypassare il SO per accedere direttamente all'hardware.
+</p>
+<p class='vspace'>I vantaggi di chiamare il SO invece di accedere direttamente all'hardware sono molteplici:
+</p><ul><li>il programmatore non deve occuparsi dei dettagli di 1000 tipi di hardware diverso;
+</li><li>non si devono reimplementare ogni volta le stesse funzioni;
+</li><li>se le funzioni sono complesse, si può sbagliare a scriverle, se non si è esperti in quel ramo.
+</li></ul><p class='vspace'>Le chiamate di sistema non sono normali chiamate di procedura, anche se concettualmente lo sono. Ogni volta che ne viene fatta una, si controllano ben bene i permessi di chi le sta chiamando.
+Per evitare che il programmatore possa mettersi a fare CALL a indirizzi arbitrari della memoria riservata al sistema operativo (e quindi esporre lo stesso a grandi rischi), bisogna che non si usi una semplice call.
+</p>
+<p class='vspace'>A questo scopo, si usa il meccanismo delle <strong>TRAP</strong>. È un meccanismo che genera interruzioni via software, del tutto simili alle interruzioni che arrivano al processore dalle periferiche hardware. Per scoprire chi ha chiamato la TRAP, si controlla lo stack delle chiamate.
+Il sistema operativo espone i nomi di funzioni e li associa agli indirizzi delle trap, ma non espone direttamente l'indirizzo del codice delle funzioni che espone.
+Trattandosi di interruzioni software sono sincrone con l'evoluzione della computazione, al contrario delle interruzioni hardware che sono asincrone per natura.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Modulo 3 - Lezione 1: i processi</strong></span>
+</p>
+<p class='vspace'><strong>Multitasking</strong> = è un passo oltre alla multiprogrammazione (avere più programmi contemporaneamente in memoria). Il multitasking vuol dire che quando un programma attende l'I/O da qualcosa, viene messo in pausa e viene chiamato un altro dei programmi che sono in ballo in quel momento, altrimenti detti <strong>processi</strong>.
+</p>
+<p class='vspace'>Un <strong>processo</strong> è composto da <strong>codice</strong>, <strong>dati</strong> e <strong>stato di evoluzione della computazione</strong>.
+Lo stato di evoluzione della computazione è il valore del program counter e delle variabili in un dato istante. Esso mi dice a che punto dell'esecuzione del codice di quel processo siamo arrivati.
+</p>
+<p class='vspace'>OCIO: programma != processo. Un programma è un'entità passiva, una lista di istruzioni. Un processo è un'entità attiva, con delle risorse in uso e delle variabili con certi valori. Il programma non è legato ad una particolare istanza dei suoi dati in input; il processo sì.
+</p>
+<p class='vspace'>OCIO BIS: lo stato di evoluzione della computazione NON È lo stato del processo! Lo stato del processo è un'altra cosa che vedremo più in là!
+</p>
+<p class='vspace'>Si può anche vedere il processo come una funzione: in input ci sono dei dati, e lui produce dell'output. È anche immaginabile come un automa a stati finiti, in cui le transizioni tra gli stati (le frecce del pallograma di scarabottoliana memoria) sono dovute alle istruzioni che modificano le info.
+</p>
+<p class='vspace'>Ricapitolando, lo <em>stato di evo della computazione</em>' è l'insieme dei valori di tutte le informazioni da cui dipende l'esito della computazione del processo. Se modifico sti valori, l'esito finale cambia (a meno che, ovviamente, il mio programma non usi i dati in input, ma allora la sua utilità sarebbe quantomeno dubbia:).
+</p>
+<p class='vspace'>Se il mio obiettivo è realizzare il multitasking, serve che, quando salto da un processo all'altro, lo stato di evo della comp. di ciascun processo venga salvato e ripristinato successivamente quando ritorno allo stesso processo. Come si fa?
+Beh, la memoria di ciascun processo abbiamo detto che è stata assegnata a lui e il SO non permette a nessun altro di toccarla, quindi di quella possiamo anche non preoccuparci.
+I registri invece vengono usati da tutti, quindi occorre salvarli da qualche parte per poi recuperarli. In genere i processori hanno delle istruzioni di PUSH ALL che salvano in un botto solo tutti i registri (anche quelli che il mio processo non usa, perché tanto ci metto meno a salvarli tutti che a star lì a decidere quali sì e quali no, e lo faccio con 1 solo fetch).
+</p>
+<p class='vspace'>Lo stack pointer non può essere salvato nello stack, perché punterebbe a se stesso. Va salvato quindi in una particolare tabella mantenuta dal SO.
+</p>
+<p class='vspace'>Se voglio riattivare quel dato processo, cerco lo stack pointer nella mia tabella, e da lì recupero i valori dei registri e del program counter, e riparto da dove mi ero fermato prima.
+</p>
+<div class='vspace'></div><h2>Uso del processore da parte del processo</h2>
+<p>Il processo, rispetto al processore, può trovarsi in uno di questi stati:
+</p><ol><li>può usarlo;
+</li><li>può attendere perché il processore è impegnato;
+</li><li>è costretto a rimandare perché non ha tutte le risorse che gli servono.
+</li></ol><p class='vspace'>Ecco che vediamo che lo <strong>stato del processo</strong> è <strong>lo stato di uso del processore da parte del processo</strong>, e formalmente è uno di questi:
+</p><ul><li><strong>new</strong>: è stato creato e inizializzato;
+</li><li><strong>running</strong>: sta andando regolarmente;
+</li><li><strong>waiting</strong>: è in attesa delle risorse che vorrebbe
+</li><li><strong>ready to run</strong>: ha tutte le risorse, e aspetta di essere chiamato;
+</li><li><strong>terminated</strong>: lui ha finito, spetta al SO liberare le risorse che utilizzava e rimuoverlo dalla memoria (non sempre immediatamente).
+</li></ul><p class='vspace'>Per distinguere un processo dagli altri, si usa una roba chiamata <strong>Process Control Block</strong>, che tiene traccia di diverse cose relative al processo:
+</p><ul><li>il suo id;
+</li><li>lo stato;
+</li><li>il program counter;
+</li><li>i registro;
+</li><li>le info per lo scheduling (che è? vedremo...);
+</li><li>i confini della memoria riservata al processo;
+</li><li>lo stato di I/O;
+</li><li>l'accounting (i vari permessi).
+</li></ul><p class='vspace'>Cmq non tutti i SO tengono traccia di tutte ste cose per ogni processo.
+</p>
+<p class='vspace'>Quando un processo è pronto, è nella coda dei processi pronti, che in base allo scheduling (che vedremo poi) viene svuotata. Ma in generale se un processo ha bisogno di un certo I/O, può far parte anche della coda dell'I/O. Il SO deve quindi gestire queste code in modo efficiente.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di SO</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 13, 2008, at 10:39 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri4Marzo2008?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Piuri4Marzo2008?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

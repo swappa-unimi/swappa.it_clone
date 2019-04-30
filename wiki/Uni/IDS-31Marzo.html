@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ingegneria del Software - Appunti del 31 Marzo 2009 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IDS-31Marzo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ingegneria del Software - Appunti del 31 Marzo 2009
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-31Marzo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-31Marzo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IDS-31Marzo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-31Marzo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-31Marzo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ingegneria del Software - Appunti del 31 Marzo 2009 was last modified on May 04, 2009, at 12:46 PM'>
+							<span style='display:none;'>Ingegneria del Software - Appunti del 31 Marzo 2009</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - Appunti del 31 Marzo 2009 ::</strong>
+</pre><div class='vspace'></div><h2>Pattern Architetturali</h2>
+<p>Un <strong>design pattern</strong> è un modo formale per documentare la soluzione ad un problema di un certo tipo. Un tale si è accorto che i problemi che si presentavano scrivendo software erano più o meno raggruppabili in certe categorie, e quindi avevano una soluzione più o meno simile. Quindi, se uno si è trovato in un certo problema e ha redatto un pattern (una sorta di modus operandi per disegnare il sw), e io mi trovo in un problema simile, posso prendere il suo pattern e adattarlo al mio caso.
+</p>
+<p class='vspace'>Ovviamente non è obbligatorio utilizzare pattern quando si programma, però ci facilitano di molto la vita dato che sono soluzioni riconosciute e sperimentate. Ricordiamo comunque che il pattern non è LA soluzione, ma è la forma-base del design, il che vuol dire che il codice lo devo scrivere lo stesso. In altre parole, un pattern è una <strong>soluzione parzialmente specificata</strong>. Quella totalmente specificata è il nostro software finito, mentre il pattern mi dà una base per poi lavorarci sopra.
+</p>
+<p class='vspace'>Una particolarità del mondo dei pattern è che spesso lo stesso pattern viene presentato con nomi diversi da autori diversi.
+</p>
+<p class='vspace'>Inoltre, se nel progetto da portare all'esame saremo in grado di identifcare un pattern, il professore ne sarà contento.
+</p>
+<div class='vspace'></div><h3>Layering</h3>
+<p>Il <strong>layering</strong> è il primo pattern della storia (?) e lo si trova praticamente ovunque. L'idea è quella di <strong>dividere il software in strati</strong>, ognuno dei quali ha precise responsabilità, e ogni strato parla solamente con lo strato sopra e quello sotto. In questo modo so esattamente a chi rivolgermi e con che semantica, e non devo tenere conto di variazioni di componenti lontani da me dei quali non dovrebbe interessarmi nulla.
+</p>
+<p class='vspace'>Un esempio noto di layering è lo stack ISO/OSI, che ad esempio disaccoppia il DNS dal livello IP mettendoci di mezzo il protocollo TCP (o UDP). Tanto per non farci mancare un po' di sigle.
+</p>
+<p class='vspace'>Nota di folklore: il sistema operativo DOS non adottava il layering ma ricercava un'alta intradipendenza tra componenti; UNIX invece lo persegue strettamente.
+</p>
+<div class='vspace'></div><h3>Documentare un pattern</h3>
+<p>Come si fa a documentare un pattern, cioè a "scriverlo giù" in modo che sia recuperabile, riconoscibile e riutilizzabile in futuro?
+</p>
+<p class='vspace'>In genere si utilizzano i <strong>diagrammi di collaborazione</strong> e i <strong>diagrammi di sequenza</strong>. Vedi la <a class='wikilink' href='IDS-7Aprile.html'>lezione su UML</a> o quella del <a class='wikilink' href='IDS-30Marzo.html'>30 Marzo</a> per capire un po' che cosa sono.
+</p>
+<div class='vspace'></div><h3>Model-View-Controller</h3>
+<p>Questo è il pattern più famoso, nato insieme ai primi linguaggi ad oggetti (ad esempio SmallTalk), e in diverse salse salta fuori sempre.
+</p>
+<p class='vspace'>L'idea di fondo è che si vogliono dividere le responsabilità tra:
+</p><ul><li>interfaccia (view, cioè la GUI)
+</li><li>modello (business logic)
+</li><li>comunicazione tra i due (controller)
+</li></ul><p class='vspace'>Il <strong>modello</strong> è il pezzo di sw che risolve effettivamente il mio problema, ad esempio la quadratura del cerchio.
+</p>
+<p class='vspace'>L<strong>'interfaccia (view)</strong> è il pezzo di software che si preoccupa di mostrare al mio utente i parametri per configurare il modello, e visualizzarne l'elegante soluzione.
+</p>
+<p class='vspace'>Il <strong>controller</strong> è il disaccoppiatore tra l'interfaccia ed il modello.
+</p>
+<p class='vspace'>Perché mai mi serve un disaccoppiatore? Il motivo è che se cambio l'interfaccia, questo non deve riguardare in nessun modo il modello. Con un disaccoppiatore in mezzo, riesco a tenere distinte le cose (al viewer non frega niente se il modello gli passa il risultato della query sbagliato). E se ci fate caso, è una variazione sul tema del layering...
+Notate che il disaccoppiatore può essere scritto anche solo con due righe di codice, non deve essere necessariamente complesso.
+</p>
+<p class='vspace'>Il funzionamento del software sarà quindi scomposto nei seguenti momenti:
+</p><ol><li>l'utente mette nella GUI i suoi dati, e preme il pulsante "Calcola"
+</li><li>la GUI passa i dati al controller
+</li><li>il controller li passa al modello
+</li><li>il modello fa i conti e ritorna un risultato alla GUI
+</li></ol><p class='vspace'>Se domani decido che il mio modello è sbagliato, e ne scrivo un altro con un'altra interfaccia pubblica, la GUI posso riutilizzarla: dovrò solo aggiornare il lato del Controller che ha a che fare con il modello.
+</p>
+<p class='vspace'>Vediamo il diagramma sequenziale: 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/mvc.jpg' alt='' title='' /></div>
+<p class='vspace'>Dal diagramma osserviamo che il disaccoppiamento funziona solo da sinistra a destra, con il controller che non fa conoscere i dettagli del modello alla view, ma non il viceversa: M deve restituire alla V quello che lei si aspetta o che comunque sarà in grado di gestire.
+</p>
+<div class='vspace'></div><h3>Model-View-Presenter</h3>
+<p>L'idea dell'MVC è buona, ma il disaccoppiamento può essere reso ancora più efficace facendo in modo che lavori in full duplex: la GUI comunica solo con il Controller, e idem per il modello. In questo modo Modello e GUI rimangono ben distanti, così come deve essere.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/mvp.jpg' alt='' title='' /></div>
+<p class='vspace'>A questo punto però il Controller non si chiama più controller, bensì <strong>Presenter</strong>, ma la differenza è solo quella citata sopra. Anzi, il MVP è una variante talmente popolare di quella originale che spesso viene chiamata MVC al posto dell'altra.
+</p>
+<p class='vspace'>Vediamo due esempi illuminanti sull'utilità di questo pattern.<br />Primo esempio: gestire la navigazione web da telefono e da PC. Abbiamo due interfacce, una per il telefono e una per il computer, ma il modello sotto rimane sempre lo stesso: il presenter non solo disaccoppia, ma smista al modello giusto.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/es1mvp.jpg' alt='' title='' /></div>
+<p class='vspace'>Secondo esempio: abbiamo un software che gestisce funzioni matematiche, e che può avere moduli diversi a seconda del ramo in cui è specializzato (aritmetica, algebra, ...). A seconda di quello che vuole l'utente, il presenter smisterà la richiesta al modello responsabile.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/es2mvp.jpg' alt='' title='' /></div>
+<p class='vspace'>Notiamo per inciso che questa è la dimostrazione che il computer e l'uomo sono molto, molto diversi. La necessità di disaccoppiamento nello scrivere software decente ha la stessa importanza della necessità di accoppiamento che caratterizza l'essere umano. Noi e le macchine non andremo mai d'accordo.
+</p>
+<div class='vspace'></div><h3>Observer-Notifier</h3>
+<p>Consideriamo ora un altro pattern, che non sia solo orientato alle funzioni ma anche alle performance, ovvero che ottimizzi le risorse e prenda le decisioni (parallelizzare le attività, concentrarle o distribuirle su più componenti, ...) più adatte a limitare gli sprechi e aumentare le prestazioni. Ha diversi nomi:
+</p><ul><li><strong>Observer-Notifier</strong> (quello più usato)
+</li><li>Observer-Observed
+</li><li>Listener
+</li></ul><p class='vspace'>Quale che sia il nome, il problema cui si pone come soluzione è quello in cui alcuni componenti siano costretti ad attendere il risultato di componenti più lenti.
+</p>
+<p class='vspace'>Ci sono due soluzioni semplici, che ovviamente non vanno bene:
+</p><ol><li>l'Osservatore si connette all'Osservato e attende finché non arrivano notizie
+</li><li>L'Osservatore si connette a intervalli regolari all'Osservato e chiede se ci sono notizie
+</li></ol><p class='vspace'>Perché non vanno bene? Nel caso 1 il problema è che se non succede niente, io rimango tutto il giorno ad aspettare. Nel caso 2 è che potenzialmente posso passare il giorno a fare polling (estrarre campionamenti ogni tot tempo) sull'Osservato, senza ottenere comunque nulla, oppure perdermi dei passaggi intermedi se faccio polling con una frequenza troppo bassa. Inoltre, in entrambi i casi potrei perdere tempo ad attendere un evento che non mi interessa nulla, solo per non dovermi perdere l'evento successivo che invece mi interessa molto.
+</p>
+<p class='vspace'>Soluzione: si crea un servizio intermedio, detto <strong>notifier</strong>, che fa da servizio di allerta.
+</p>
+<p class='vspace'>Il Notifier si connette all'Osservato, e si fa dire tutto sempre. Poi, l'Osservatore a sua volta si registra presso il Notificatore, e gli dice di quali e quanti eventi dell'Osservato desidera essere messo a conoscenza. Quando il Notificatore rileva eventi nell'Osservato, guarda la sua lista di Osservatori e decide a quali di essi inviare l'esempio.
+</p>
+<p class='vspace'>Caricare tutto sul Notifier non è come spostare il problema dall'Observer su di lui, perché avrà sì lo stesso carico di lavoro, ma distribuito su più clienti. Se infatti non è giustificato che l'osservatore sia impegnato full time in attesa di un evento, la cosa ha senso per un processo come il notifier.
+</p>
+<p class='vspace'>Anche questa è una variazione sul tema del layering.
+</p>
+<div class='vspace'></div><h2>Da Casi d'Uso a Diagramma delle Classi</h2>
+<p>Dai CdU siamo già in grado (più o meno) di tirare fuori il diagramma di collaborazione e il diagramma di sequenza. Adesso è giunto il momento di tirare fuori da questi il <strong>diagramma delle classi</strong>.
+</p>
+<p class='vspace'>Prendiamo l'ultimo pattern che abbiamo visto, quello del Notifier. Avrò sicuramente tre classi:
+</p><ol><li>Observer
+</li><li>Notifier
+</li><li>Observed
+</li></ol><p class='vspace'>Nel diagramma di sequenza avrò delle frecce che rappresentano le chiamate. Ebbene: ogni freccia <strong>verso</strong> una classe rappresenta un metodo pubblico di <strong>quella classe</strong>.
+</p>
+<p class='vspace'>C'è anche un'altra cosa da notare. Supponiamo che la classe Observer voglia modificare qualche attributo della classe Notifier, ad esempio "Frequenza Di Polling". In un ipotetico linguaggio di programmazione, basterebbe scrivere in un metodo qualsiasi di Observer:
+</p><pre> Notifier myNotifier;
+ myNotifier.PollingFrequency = 10
+</pre><p class='vspace'>Questo modo di modificare i parametri altrui non è molto bello, per questi motivi:
+</p><ol><li>non c'è modo di tracciarlo in nessun diagramma UML
+</li><li>avviene all'insaputa del legittimo possessore dell'attributo PollingFrequency
+</li></ol><p class='vspace'>Per quanto riguarda il punto 2, se Notifier è stato scritto presupponendo che PollingFrequency non superasse mai il valore 10, il poter modificare questo attributo alla carlona dall'esterno è veramente pericoloso.
+</p>
+<p class='vspace'>Il punto 1 invece mi dice che nella mia progettazione non ho alcuno modo di scrivere, e quindi tener conto, dell'eventualità della modifica del valore di PollingFrequency da parte di qualcuno. Non lo posso diagrammare, quindi lo lascio alla libera iniziativa del programmatore etc. etc.
+</p>
+<p class='vspace'>Pertanto, tutti gli attributi di una classe che possono essere modificati dall'esterno NON devono essere accessibili direttamente al pubblico, ma devono essere modificati tramite dei metodi scritti apposta, i cosiddetti <strong>check</strong> e <strong>set</strong>.
+</p>
+<p class='vspace'>Ad esempio, la classe Notifier potrebbe avere dei metodi così:
+</p>
+<div class='vspace'></div><pre> public int checkPollingFrequency() {
+    return this.PollingFrequency;
+ }
+
+ public bool setPollingFrequency(int newValue) {
+    if (newValue &gt; 0) &amp;&amp; (newValue &lt;= 10) {
+       this.PollingFrequency = newValue;
+       return true;
+    } else {
+       return false;:
+    }
+ }
+</pre><p class='vspace'>Quindi, se qualcuno dall'esterno vuole modificare il valore di PollingFrequency, da un lato non potrà farlo impunemente, e dall'altro, dovendo ricorrere ad un metodo, il suo tentativo sarà ben segnalato nel diagramma delle sequenze.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 04, 2009, at 12:46 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-31Marzo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-31Marzo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

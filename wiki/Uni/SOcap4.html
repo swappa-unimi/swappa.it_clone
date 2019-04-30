@@ -1,0 +1,570 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Riassunto del libro di Sistemi Operativi - Capitolo 4: i processi </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SOcap4' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Riassunto del libro di Sistemi Operativi - Capitolo 4: i processi
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap4?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap4?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SOcap4-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap4?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap4?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Riassunto del libro di Sistemi Operativi - Capitolo 4: i processi was last modified on April 07, 2008, at 12:54 PM'>
+							<span style='display:none;'>Riassunto del libro di Sistemi Operativi - Capitolo 4: i processi</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Riassunto capitolo 4: I processi ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'>Processo = unità di lavoro dei sistemi time-sharing.
+</p>
+<p class='vspace'>SO = insieme di processi: quelli di SO, e quelli utente.
+</p>
+<div class='vspace'></div><h2>4.1 Il concetto di processo</h2>
+<h3>4.1.1 I processi</h3>
+<p>Livello informale: processo = programma in esecuzione
+</p>
+<p class='vspace'>Processo &gt; codice del programma, perché include
+</p><ul><li>program counter = attività corrente
+</li><li>valore dei registri
+</li><li>stack proprio
+</li><li>sezione dati
+</li><li>heap (spazio dinamico, non obbligatorio)
+</li></ul><p class='vspace'>Programma = entità passiva
+Processo = entità attiva
+</p>
+<p class='vspace'>2 processi possono essere associati al medesimo programma =&gt; ma sono sempre 2 diverse istanze di esecuzione dello stesso codice.
+</p>
+<div class='vspace'></div><h3>4.1.2 Lo stato dei processi</h3>
+<p>Stato del processo = rispetto all'uso del computer =&gt; la modalità del processo in rapporto all'uso del processore e delle risorse.
+</p>
+<div class='vspace'></div><ul><li><strong>nuovo</strong> = processo appena creato
+</li><li><strong>in esecuzione</strong> = le istruzioni vengono eseguite
+</li><li><strong>in attesa</strong> = attende qualche eventi, eg I/O, segnali da altri processi, risorse
+</li><li><strong>ready</strong> = ha tutto quello che gli serve, tranne la CPU
+</li><li><strong>terminato</strong> = ha finito la sua esistenza
+</li></ul><p class='vspace'>Ocio: sono termini arbitrari, e molti SO ne hanno di diversi o di più numerosi.
+</p>
+<p class='vspace'>OCIO: nel singolo istante <strong>un solo</strong> processo è in esecuzione, mentre molti altri sono <strong>in attesa</strong> o <strong>pronti</strong>.
+</p>
+<div class='vspace'></div><h3>4.1.3 Il blocco di controllo del processo</h3>
+<p>Processo = rappresentato nel SO dal <strong>Process Control Block</strong> (PCB).
+</p>
+<p class='vspace'>Contiene:
+</p><ul><li>Stato del processo
+</li><li>Program Counter
+</li><li>Registri della CPU
+</li><li>Info per la schedulazione sulla CPU (eg priorità o altri parametri richiesti)
+</li><li>Info per la gestione della memoria centrale (registri base e limite, tabelle dei segmenti =&gt; a seconda del sistema usato dal SO)
+</li><li>Info per l'accounting = quantità di CPU e di tempo usati, limiti di tempo
+</li><li>Informazioni sullo stato dell'I/O = lista dei dispositivi di I/O allocati al processo (file aperti etc.)
+</li></ul><div class='vspace'></div><h3>4.1.4 I thread</h3>
+<p>Finora, 1 programma istanziato = 1 processo = 1 flusso di controllo di esecuzione = <strong>1 thread</strong>.
+</p>
+<p class='vspace'>Ma nel capitolo 5 vedremo bla bla.
+</p>
+<div class='vspace'></div><h2>4.2 Schedulazione dei processi</h2>
+<p>Multiprogrammazione = più processi caricati in memoria per eseguirli "contemporaneamente" =&gt; lo <strong>schedulatore</strong> decide quale mettere in esecuzione.
+</p>
+<p class='vspace'>1 processore = 1 processo in esecuzione nel singolo istante
+2+ processori = 1 processo per processore.
+</p>
+<div class='vspace'></div><h3>4.2.1 Le code di schedulazione</h3>
+<p>Processo creato =&gt; infilato in una <strong>coda di lavori</strong> = contiene tutti i processi del sistema.
+</p>
+<p class='vspace'>Processo ready =&gt; infilato nella <strong>Coda dei processi pronti</strong>
+</p>
+<p class='vspace'>Ci sono anche altre code, eg una <strong>coda</strong> per ogni <strong>dispositivo I/O</strong>.
+</p>
+<p class='vspace'>Quando viene selezionato per l'esecuzione dallo schedulatore, il processo viene <strong>dispatched</strong> ed è messo in esecuzione sulla CPU.
+</p>
+<p class='vspace'>Quando è in esecuzione, può accadere che:
+</p><ul><li>il processo chiede I/O =&gt; messo nella corrispondente coda I/O
+</li><li>il processo crea un sottoprocesso e ne attende la terminazione
+</li><li>il processo viene rimosso forzatamente dalla CPU eg per un interrupt, e quindi rimesso in coda
+</li></ul><p class='vspace'>In pratica passa da una coda all'altra finché non termina.
+</p>
+<div class='vspace'></div><h3>4.2.2 Gli schedulatori</h3>
+<p>Selezionare quale processo mettere in CPU = compito dello <strong>schedulatore</strong>.
+</p>
+<p class='vspace'><strong>Schedulatore a lungo termine</strong> = <strong>job scheduler</strong> = usato nei sistemi a lotti: sceglie tra tutti i processi quelli da eseguire dalla periferica di archiviazione.
+</p>
+<p class='vspace'><strong>Schedulatore a breve termine</strong> = <strong>CPU scheduler</strong> = sceglie tra i processi in memoria centrale, pronti per l'esecuzione, e alloca la CPU ad uno di essi.
+</p>
+<p class='vspace'>Differenze tra i due:
+Lungo termine = eseguito raramente <strong>VS</strong> breve termine = eseguito spesso (eg 100 ms)
+</p>
+<p class='vspace'>Processi = in un dato momento possono essere:
+</p><ul><li><strong>CPU-bound</strong> = passa il tempo a computare
+</li><li><strong>I/O-bound</strong> = richiede I/O
+</li></ul><p>=&gt; lo schedulatore a lungo termine deve scegliere un buon compromesso tra processi I/O- e CPU-bound, se no la CPU rimane inutilizzata troppo a lungo o male.
+</p>
+<p class='vspace'>In alcuni sistemi lo schedulatore a lungo termine è <strong>assente</strong> o <strong>minimale</strong> =&gt; UNIX e Windows: tutti i processi sono gestiti dallo scheduler a breve termine
+=&gt; ci pensa l'utente: se le prestazioni calano troppo perché ci sono troppi processi, l'utente ne accopperà qualcuno.
+</p>
+<p class='vspace'><strong>Schedulatore a medio termine</strong>: introdotto in alcuni SO.
+=&gt; a volte è utile <strong>ridurre</strong> il grado di multiprogrammazione (quanti processi sono attualmente in memoria)
+</p>
+<p class='vspace'>=&gt; <strong>swapping</strong> è spostare un processo da memoria centrale a memoria di massa (<strong>swapped out</strong>), o viceversa (<strong>swapped in</strong>).
+</p>
+<p class='vspace'>Utile ad esempio per bilanciare tra troppi I/O- o CPU-bound.
+</p>
+<div class='vspace'></div><h3>4.2.3 Il cambio di contesto</h3>
+<p><strong>Contesto</strong> di un processo = stato di esecuzione
+</p>
+<p class='vspace'>=&gt; <strong>cambio di contesto</strong> = <strong>context switch</strong> = salvare lo stato di esecuzione di un processo nella PCB e caricare dalla stessa PCB il contesto di un altro processo, ed eseguirlo.
+</p>
+<p class='vspace'>Può essere realizzato in HW o in SW.
+</p>
+<p class='vspace'>È tempo di gestione di sistema: quando si cambia il contesto, il SO non fa niente per l'evoluzione dei processi.
+</p>
+<p class='vspace'>È anche lento =&gt; si usano i thread per cercare di velocizzarlo o evitarlo del tutto.
+</p>
+<div class='vspace'></div><h2>4.3 Operazioni sui processi</h2>
+<p>Ci sono SO in cui i processi sono creati e distrutti dinamicamente, ed eseguiti in modo concorrente =&gt; occorre un meccanismo per creare e terminare i processi.
+</p>
+<div class='vspace'></div><h3>4.3.1 Creazione dei processi</h3>
+<p>Un processo chiama il SO per creare un nuovo processo =&gt; diventa il <strong>padre</strong> di un processo <strong>figlio</strong> =&gt; se il figlio a sua volta genera, ho un <strong>albero</strong> di processi.
+</p>
+<p class='vspace'>Processo = ha bisogno di risorse:
+</p><ul><li>gliele può dare il SO
+</li><li>gliene dà alcune, o tutte, il padre
+</li></ul><p class='vspace'>Se gliele dà il padre, il SO "respira" meglio.
+</p>
+<p class='vspace'>Dati di inizializzazione: il padre può passarne quanti ne vuole al figlio, per inizializzarlo come preferisce.
+</p>
+<p class='vspace'>Creazione di figli: 2 possibilità:
+</p><ol><li>il padre ed il figlio sono concorrenti
+</li><li>il padre aspetta che il figlio (o tutti i figli) termini e poi riprende
+</li></ol><p class='vspace'>Spazio di indirizzamento del processo figlio: 2 possibilità:
+</p><ol><li>il figlio è un duplicato del padre =&gt; stesso programma, stessi dati
+</li><li>il figlio ha un nuovo programma nel suo spazio privato.
+</li></ol><p class='vspace'>Esempio di UNIX:
+</p><ol><li>il padre fa una fork
+</li><li>il figlio fa una exec e sostituisce i suoi dati con quelli del programma che chiama con la exec
+</li></ol><div class='vspace'></div><h3>4.3.2 Terminazione dei processi</h3>
+<p>Terminazione <strong>normale</strong>: un processo arriva alla sua fine naturale e dice al SO di riprendersi le risorse: chiamata <strong>exit</strong>.
+</p>
+<p class='vspace'>Terminazione <strong>anormale</strong>: per errori vari <strong>il padre</strong> chiama l<strong>'abort</strong> su di un figlio:
+</p><ul><li>il figlio sta usando risorse che non dovrebbe
+</li><li>il figlio non serve più
+</li><li>il padre sta terminando e il SO non permette che un processo figlio esista se il padre non esiste più = <strong>terminazione a cascata</strong>
+</li></ul><p class='vspace'>Un'alternativa a quest'ultimo punto è che a un processo orfano viene assegnato come padre il processo <strong>init</strong>, che è sempre in esecuzione =&gt; il figlio sa quindi dove mandare i suoi dati in output.
+</p>
+<div class='vspace'></div><h2>4.4 Processi cooperanti</h2>
+<ul><li>Processo <strong>indipendente</strong> = non può influenzare o essere influenzato da altri processi in esecuzione.
+</li><li>Processo <strong>cooperante</strong> = invece sì.
+</li></ul><p class='vspace'>A che serve la cooperazione:
+</p><ul><li>Condivisione delle info tra processi
+</li><li>Velocizzazione della computazione = divido un compito in sottocompiti, e li eseguo in modo parallelo (occorre però HW parallelo)
+</li><li>Modularità
+</li><li>Convenienza = un utente può fare cose in parallelo (eg scrivere e stampare)
+</li></ul><p class='vspace'>Esecuzione concorrente =&gt; <strong>meccanismi</strong> per <strong>comunicare</strong> e <strong>sincronizzare</strong> i processi.
+</p>
+<p class='vspace'>Esempio di comunicazione con spazio di memoria condiviso: un <strong>buffer</strong> riempito da un processo, e svuotato da un altro processo =&gt; vanno sincronizzati per evitare che il consumatore consumi oggetti non ancora prodotti.
+</p>
+<p class='vspace'><strong>Buffer illimitato</strong> = il produttore scrive quanto gli pare; il consumatore legge e si ferma solo se il buffer è vuoto.
+</p>
+<p class='vspace'><strong>Buffer limitato</strong> = il produttore scrive e si blocca quando non c'è più spazio nel buffer: il consumatore legge e si ferma se il buffer è vuoto.
+</p>
+<p class='vspace'>Buffer = o viene fornito dal SO, o si programma una zona di memoria condivisa tra processi.
+</p>
+<div class='vspace'></div><h2>4.5 Comunicazione tra processi</h2>
+<p>Servono <strong>meccanismi di comunicazione tra processi</strong> = InterProcess Communication (<strong>IPC</strong>).
+</p>
+<p class='vspace'>IPC = meccanismi per comunicare e sincronizzarsi senza condividere lo spazio di indirizzamento =&gt; miglior modo per ottenere ciò è usare il <strong>passaggio di messaggi</strong>.
+</p>
+<div class='vspace'></div><h3>4.5.1 Lo scambio di messaggi</h3>
+<p>Due operazioni:
+</p><ul><li><strong>send(messaggio)</strong>
+</li><li><strong>receive(messaggio)</strong>
+</li></ul><p class='vspace'>Messaggi: dimensione fissa o variabile.
+</p>
+<p class='vspace'>È necessario un <strong>canale di comunicazione</strong> tra i due processi =&gt; la realizzazione <strong>fisica</strong> del canale non ci interessa, invece guardiamo alla realizzazione <strong>logica</strong>.
+</p>
+<p class='vspace'>Metodi per implementare logicamente le send/receive:
+</p><ul><li>comunicazione diretta <strong>VS</strong> comunicazione indiretta
+</li><li>comunicazione sincrona <strong>VS</strong> comunicazione asincrona
+</li><li>bufferizzazione automatica <strong>VS</strong> bufferizzazione esplicita
+</li></ul><div class='vspace'></div><h3>4.5.2 La denominazione dei processi</h3>
+<p>I processi che vogliono comunicare devono potersi identificare: in modo <strong>diretto</strong> o <strong>indiretto</strong>.
+</p>
+<div class='vspace'></div><h4>4.5.2.1 La comunicazione diretta</h4>
+<p>Ogni processo comunicante conosce <strong>esplicitamente</strong> l'altro.
+</p>
+<p class='vspace'>Quindi, le primitive diventano:
+</p><ul><li><strong>send(processo, messaggio)</strong>
+</li><li><strong>receive(processo, messaggio)</strong>
+</li></ul><p class='vspace'>Il <strong>canale</strong> che si forma in questo modo ha le seguenti proprietà:
+</p><ul><li>connessione automatica fra processi, una volta che sanno le rispettive identità
+</li><li>connessione associata esattamente a 2 processi
+</li><li>fra ogni coppia di processi esiste esattamente 1 connessione
+</li></ul><p class='vspace'>=&gt; <strong>indirizzamento simmetrico</strong> = ogni processo usa il nome dell'altro per comunicare.
+</p>
+<p class='vspace'>Variante = <strong>indirizzamento asimmetrico</strong> = il mittente conosce il destinatario, ma il destinatario non conosce il mittente.
+</p>
+<p class='vspace'>Svantaggi (sia simmetrico che asimmetrico): se cambio l'id di un processo, devo rifare il canale di comunicazione da capo.
+</p>
+<div class='vspace'></div><h4>4.5.2.2 La comunicazione indiretta</h4>
+<p>I messaggi sono mandati attraverso <strong>mailbox</strong> o <strong>porte</strong>.
+</p>
+<p class='vspace'><strong>Mailbox</strong> = struttura in cui oggetti vengono depositato da qualcuno e prelevati da altri. Ogni mailbox ha il suo id.
+</p>
+<p class='vspace'>Le primitive diventano:
+</p><ul><li><strong>send(mailbox, messaggio)</strong>
+</li><li><strong>receive(mailbox, messaggio)</strong>
+</li></ul><p class='vspace'>Proprietà del canale così creato:
+</p><ul><li>connessione tra due processi solo se hanno una mailbox condivisa
+</li><li>connessiona associabile a più di 2 processi
+</li><li>fra ogni coppia di processi può esserci più di una connessione, e ciascuna connessione corrisponde ad una mailbox diversa
+</li></ul><p class='vspace'>Se ci sono più processi che eseguono una <strong>receive</strong> da una mailbox, chi leggerà?
+</p><ul><li>posso proibire che più di 2 processi siano associati ad una mailbox
+</li><li>posso permettere solo ad un processo alla volta di fare la <strong>receive</strong>
+</li><li>posso far decidere arbitrariamente al sistema quale dei processi in ascolto (ma non tutti, solo uno) leggerà il messaggio.
+</li></ul><p class='vspace'>Proprietà della mailbox:
+</p><ul><li>del SO
+</li><li>di un processo
+</li></ul><p class='vspace'>Mailbox del SO:
+</p><ul><li>indipendente dai processi
+</li><li>il SO deve offrire meccanismi per creare, mandare e inviare, distruggere una mailbox
+</li></ul><p class='vspace'>Mailbox del processo:
+</p><ul><li>un processo ne è il proprietario
+</li><li>altri sono gli utenti
+</li></ul><p>=&gt; il proprietario è unico =&gt; non c'è confusione su chi dovrebbe leggere.
+</p>
+<p class='vspace'>Le proprietà su una mailbox possono cmq essere trasferite ad altri processi.
+</p>
+<div class='vspace'></div><h3>4.5.3 La sincronizzazione</h3>
+<p>Comunicazione <strong>sincrona</strong> = <strong>bloccante</strong>
+Comunicazione <strong>asincrona</strong> = <strong>non bloccante</strong>
+</p>
+<p class='vspace'><strong>Invio bloccante</strong> = il mittente si blocca finché un ricevente non legge.
+</p>
+<p class='vspace'><strong>Invio non bloccante</strong> = il mittente invia e torna a lavorare
+</p>
+<p class='vspace'><strong>Ricezione bloccante</strong> = il ricevente si blocca finché non arriva un messaggio
+</p>
+<p class='vspace'><strong>Ricezione non bloccante</strong> = il ricevente o acquisisce un messaggio, oppure acquisisce null, senza bloccarsi in attesa.
+</p>
+<p class='vspace'>Se sia la <strong>send</strong> che la <strong>receive</strong> sono bloccate =&gt; c'è un <strong>rendezvous</strong> tra 2 processi.
+</p>
+<div class='vspace'></div><h3>4.5.4 La bufferizzazione</h3>
+<ul><li><strong>Buffer di capacità 0</strong> = sincronia forzata
+</li><li><strong>Capacità limitata</strong> = sincronia eventuale
+</li><li><strong>Capacità illimitata</strong> = asincronia
+</li></ul><div class='vspace'></div><h3>4.5.5 Esempio di produttore - consumatore</h3>
+<p>...
+</p>
+<div class='vspace'></div><h3>4.5.6 Un esempio: Mach</h3>
+<p>...
+</p>
+<div class='vspace'></div><h3>4.5.7 Un esempio: Windows XP</h3>
+<p>...
+</p>
+<div class='vspace'></div><h2>4.6 La comunicazione in sistemi client-server</h2>
+<h3>4.6.1 I socket</h3>
+<p><strong>Socket</strong> = il capo estremo di un canale di comunicazione.
+</p>
+<p class='vspace'>Socket = identificato da
+</p><ul><li>IP
+</li><li>numero di porta
+</li></ul><p class='vspace'>I <strong>server</strong> ascoltano su di un certo IP, ad una certa porta.
+</p>
+<p class='vspace'><strong>Client</strong>: quando inizia la connessione, il suo SO gli assegna una porta casuale (&gt; 1024) =&gt; la comunicazione consiste nella coppia di socket:
+</p><ul><li>IP e porta del client
+</li><li>IP e porta del server
+</li></ul><p class='vspace'><strong>TCP</strong> = socket orientati alla <strong>connessione</strong>
+<strong>UDP</strong> = socket senza connessione.
+</p>
+<div class='vspace'></div><h3>4.6.2 La chiamata di procedura remota</h3>
+<p>...
+</p>
+<div class='vspace'></div><h3>4.6.3 La chiamata di metodo remoto</h3>
+<p>...
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 07, 2008, at 12:54 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap4?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap4?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ingegneria del Software - Appunti del 24 Marzo 2009</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IDS-24Marzo.html' title='Ingegneria del Software - Appunti del 24 Marzo 2009'>Ingegneria del Software - Appunti del 24 Marzo 2009</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - Appunti del 24 Marzo 2009 ::</strong>
+</pre><div class='vspace'></div><h3>Ancora sulle transizioni</h3>
+<p>Come dicevamo nella lezione precedente, una transizione "sposta" i token da una parte all'altra della rete, seguendo la <strong>regola di scatto</strong>, e quindi fa mutare lo stato della nostra rete di Petri, rappresentato dalla <strong>marcatura</strong>.
+</p>
+<p class='vspace'>Le transizioni sono considerate operazioni <strong>atomiche</strong>: lo spostamtento dei token da una parte all'altra avviene in un colpo solo, e non ci sono eventi che avvengono nel frattempo.
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/IDS1tokensolo.png' alt='' title='' /></span></div>
+<p>Inoltre, anche se in un dato istante ci può essere più di una transizione abilitata, solamente una può scattare alla volta. Quale delle due? Eeeh bel problema:) Nella rete qui in figura, il token è pronto per scattare in una transizione, ma non c'è modo per distinguere l'una dall'altra... questo vuol dire che, in questo caso, il comportamento della rete è <strong>non deterministico</strong>.
+</p>
+<p class='vspace'>Se invece avessi avuto <strong>due</strong> token nel posto in mezzo, allora avrei avuto un comportamento deterministico: entrambe le transizioni sarebbero scattate.
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+<div class='vspace'></div><h2>Esempio: semafori</h2>
+<table >
+<tr ><td  valign='top'>
+<div><span class='frame lfloat'><img src='../uploads/Uni/IDS1semaforo.png' alt='' title='' /><br /><strong>Semaforo singolo</strong></span></div>
+</td><td  valign='top'>Proviamo a modellare un semaforo: questo va dallo stato <strong>rosso</strong> a quello <strong>verde</strong>, a quello <strong>arancio</strong> e poi ancora <strong>rosso</strong>. Qui a sinistra c'è la sua piccola rete.
+<p class='vspace'>Ma pensiamo invece di voler avere due semafori. Con gli automi avrei dovuto far proliferare gli stati per combinare in un automa solo due automi diversi. Con le reti di Petri, invece, avendo a disposizione i token, posso usare due token al posto di uno, et voilà!
+</p>
+<p class='vspace'>In questo caso, quello che a me interessa è avere una cosa del tipo <strong>semaforo1 OR semaforo2</strong>: la combinazione tra i due semafori avviene tramite un <strong>OR</strong> logico, e a questo scopo è sufficiente mettere un token in più. Siccome in questa rete le transizioni sono abilitate da un token solo, basta che uno solo dei due token si muova per far mutare lo stato alla rete.
+</p>
+<p class='vspace'>Notiamo che la possibilità di combinare in modo semplice, tramite <strong>AND</strong> e <strong>OR</strong>, due reti di Petri, esiste solo se le reti sono pure.
+</p></td><td  valign='top'><span class='frame rfloat'><img src='../uploads/Uni/IDS2semafori.png' alt='' title='' />|<strong>Due semafori</strong></span>
+</td></tr></table>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><span  style='color: white;'><strong>La combinazione tra reti è un argomento non ancora ben elaborato dal professore...</strong></span>
+</p>
+<div class='vspace'></div><h3>Due semafori ad un incrocio</h3>
+<div><span class='frame lfloat'><img src='../uploads/Uni/IDS2semaforisincro.png' alt='' title='' /><br /><strong>Due semafori sincronizzati</strong></span></div>
+<p>Cambiamo ora lo scenario: sono ad un incrocio, e voglio avere due semafori gestiti da un solo software, tali che se uno diventa verde, l'altro deve essere rosso etc.
+</p>
+<p class='vspace'>Qui a sinistra c'è la soluzione a questo problema: il riquadro azzurro rappresenta un semaforo, e quello rosa l'altro semaforo. Tra i due c'è uno stato aggiuntivo, con un token aggiuntivo. In questo modo, le transizioni che portano al <strong>verde</strong> hanno due frecce entranti, e pertanto devono avere due token: se il token centrale va a sinistra, non può andare a destra, e viceversa. Così facendo ho reso mutuamente esclusivo il funzionamento del semaforo.
+</p>
+<p class='vspace'>Si dice che due transizioni che hanno delle precondizioni in comune abbiano un<strong>'interferenza</strong>: i loro insiemi di precondizioni non sono disgiunti.
+</p>
+<p class='vspace'>Ma non siamo del tutto felici: quando il token centrale è disponibile, andrà a destra o a sinistra? Come abbiamo detto prima, la risposta è <strong>boh</strong> perché si tratta di un comportamento non deterministico! All'atto pratico avremmo una coppia di semafori in cui uno va avanti sempre e l'altro rimane sempre rosso etc.
+</p>
+<p class='vspace'>Per risolvere questo problema, come dicevamo sopra, potrei <strong>colorare</strong> i token, oppure complicare la rete. Personalmente, credo che avrei optato per una rete lineare in cui un posto non rappresenta solo uno stato di un semaforo, ma una coppia di stati: rosso di qui e verde di là, per esempi. Non sarà elegante, ma rende l'idea di "complicare" la rete.
+</p>
+<p class='vspace'>Dal punto di vista operativo, in generale si provvede prima a disegnare una rete di Petri non deterministica ma corretta (come può esserlo? Mah!) e poi si aggiungono i colori per forzare il comportamento che vogliamo. In altre parole: non vale la pena angustiarsi per creare una rete di Petri che abbia solo il comportamento giusto, ma creiamo prima una che non lo contenga esclusivamente e individuiamolo solo dopo con i colori.
+</p>
+<p class='vspace'>C'è un'osservazione da fare relativa alla rete dei due semafori sincronizzati. Dovendo realizzare le loro matrici <strong>I</strong>, <strong>O</strong> e <strong>C</strong> dovremo stare attenti a quanti token passano per le frecce.<br />Prendiamo ad esempio la transizione che si trova in cima ai semafori, quella che precede lo stato <strong>verde</strong>. Ha <strong>due</strong> frecce entranti, il che vuol dire che necessiterà di <strong>due</strong> token per essere attivata. Ma la sua freccia uscente non ha marcata una capacità di due! Dicevamo nella lezione scorsa che le frecce sono etichettate con la loro capacità. Qui invece <strong>no</strong>, per qualche oscura convenzione o distrazione, e allora bisogna ricordarsi che se in una transizione entrano due token, due devono uscirne: il numero di token complessivo in una rete è sempre uguale. Se scrivendo matrici vi accorgeste che passando da una marcatura all'altra i token sono scomparsi, sarebbe chiaro indizio di un errore.
+</p>
+<p class='vspace'>Graficamente, posso avere:
+</p><ul><li>un arco con un'etichetta numerica
+</li><li>più archi uscenti, ciascuno recante 1 token solo
+</li></ul><p>In questo modo possiamo dire che la capacità degli archi è equivalente al numero di archi uscenti.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IDS-24Marzo)</span></div>
+  </div>
+</body>
+</html>

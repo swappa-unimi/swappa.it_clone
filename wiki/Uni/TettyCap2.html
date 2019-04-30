@@ -1,0 +1,673 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Dispense Tetty - Capitolo 2 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.TettyCap2' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Dispense Tetty - Capitolo 2
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyCap2?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyCap2?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='TettyCap2-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyCap2?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyCap2?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Dispense Tetty - Capitolo 2 was last modified on October 11, 2010, at 04:50 PM'>
+							<span style='display:none;'>Dispense Tetty - Capitolo 2</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p><hr />
+<p><a name='su' id='su'></a>
+</p>
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Capitolo 2: Programmazione elementare ::</strong>
+</p>
+<div class='vspace'></div><h3>Indice</h3>
+<p>1 <a href='#c21'>Informazione e rappresentazione</a>
+</p><div class='indent'>1.1 Misura dell'informazione
+</div><div class='indent'>1.2 Rappresentazione dell'informazione
+</div><div class='indent'>1.3 Rappresentazione di dati numerici
+</div><div class='indent'>1.4 Rappresentazione di dati simbolici
+</div><div class='indent'>1.5 Rappresentazione di dati alfanumerici
+</div><p>2 <a href='#c22'>Un linguaggio assembly</a>
+</p><div class='indent'>2.1 La macchina MIX
+</div><div class='indent'>2.2 L'insieme delle istruzioni della macchina MIX
+</div><div class='indent'>2.3 Struttura di un programma MIXAL
+</div><div class='indent'>2.4 Programma "Hello world" in MIXAL
+</div><p>3 <a href='#c23'>Organizzazione dei dati</a>
+</p><div class='indent'>3.1 La mappa della memoria
+</div><div class='indent'>3.2 Il concetto di variabile
+</div><div class='indent'>3.3 Tabelle
+</div><div class='indent'>3.4 Strutture dati dinamiche
+</div><p>4 <a href='#c24'>Sottoprogrammi</a>
+</p><div class='indent'>4.1 Chiamata di sottoprogramma
+</div><div class='indent'>4.2 Lo stack
+</div><div class='indent'>4.3 Chiamata di sottoprogrammi basata sullo stack su MIX
+</div><p>5 <a href='#c25'>Ricorsione</a>
+</p><div class='indent'>5.1 Ricorsione e induzione
+</div><div class='indent'>5.2 "Divide et impera"
+</div><div class='indent'>5.3 Ricorsione strutturale
+</div><div class='vspace'></div><hr />
+<p class='vspace'><a name='c21' id='c21'></a>
+</p><h3>1. Informazione e rappresentazione</h3>
+<p>Partendo dall'assunto che gli elaboratori elettronici sono <em>macchine per trattare l'informazione</em>, non ci soffermeremo sulla definizione stessa di <em>informazione</em>, ma passeremo oltre studiandone solo ciò che può tornarci utile nell'ambito della programmazione.
+</p>
+<div class='vspace'></div><h4>1.1 Misura dell'informazione</h4>
+<p>L'unità di misura dell'informazione è il <em>bit</em>, definito come la quantità di informazione necessaria per decidere tra due alternative equiprobabili. Un bit è dunque sufficiente per rappresentare gli esiti del lancio di una moneta (testa o croce), o se un dispositivo è funzionante o guasto, o ancora se GDA è vivo o morto.
+</p>
+<p class='vspace'><span  style='color: red;'>Se invece le alternative equiprobabili non fossero solo 2, ma un generico numero <em>n</em>, allora la quantità di informazione necessaria a rappresentarle sarebbe pari a <em>log<sub>2</sub><strong><em>n</em></strong></em> bit.</span> Ad esempio, i bit necessari per rappresentare i possibili esiti del lancio di un dado sono pari a log<sub>2</sub>6 bit. E' importante osservare come <em>n</em> sia pari ad <em>1/<strong><em>p</em></strong></em>, dove <em>p</em> non è altro che la probabilità che avvenga un particolare evento. 
+</p>
+<p class='vspace'>La grandezza che mi dà una stima dell'incertezza di un certo numero di alternative è l' <em>entropia</em>, ovvero la misura dell'informazione media di un insieme di alternative tra loro mutualmente esclusive (se è vera una le altre sono false) e che coprono tutte le possibilità. 
+</p>
+<div class='vspace'></div><h4>1.2 Rappresentazione dell'informazione</h4>
+<p>In un elaboratore elettronico tutte le informazioni vengono rappresentate come configurazioni di cifre binarie. La numerazione binaria sembra fatta apposta, dal momento che ha solo due simboli (<strong>0</strong> ed <strong>1</strong>) equiprobabili e completamente compatibili con la logica a due stati (<em>acceso</em> e <em>spento</em>) dei componenti elettrici del calcolatore. <span  style='color: red;'>Ad esempio, quattro cifre binarie contengono 4 bit di informazione.</span>
+</p>
+<p class='vspace'>Dato che ogni cifra binaria trasporta esattamente un bit come quantità di informazione, spesso i due concetti vengono ingenuamente confusi, ma senza gravi conseguenze. 
+</p>
+<p class='vspace'>Cosa si intende esattamente per <em>informazione</em> in un calcolatore? Bisogna distinguere due entità:
+</p><ul><li>i <em>programmi</em>, ovvero sequenze di istruzioni;
+</li><li>i <em>dati</em> su cui i programmi operano, ovvero numeri, simboli, testi, immagini, video, ...
+</li></ul><div class='vspace'></div><h4>1.3 Rappresentazione di dati numerici</h4>
+<p>Esistono diversi tipi di rappresentazione di dati numerici, a seconda della loro natura.
+</p>
+<p class='vspace'><em>Rappresentazione binaria diretta</em><br />E' la più semplice possibile, e consiste nella mera rappresentazione del valore numerico nel sistema binario. <span  style='color: red;'>Ad esempio <em>5</em> (sistema decimale) vale 101</span>, <em>C1A0</em> (sistema esadecimale) vale 1100000110100000.
+</p>
+<p class='vspace'><em>Rappresentazione in formato fisso</em><br />Rappresenta gli interi utilizzando un numero fisso di cifre binarie. Esiste quindi un limite alla quantità di numeri che è possibile rappresentare (e in effetti un elaboratore elettronico non ha risorse infinite), che se superato dà origine al fenomeno dell’ <em>overflow</em>. <span  style='color: red;'>Per overflow (traboccamento) si intende la condizione in cui il risultato di un'operazione sia un numero troppo grande per essere rappresentato. </span>
+</p>
+<p class='vspace'><em>Rappresentazione in complemento a uno</em><br />Permette la rappresentazione di numeri interi con segno. Si ottiene rappresentando i numeri positivi in modo diretto, mentre quelli negativi con il loro complemento, ovvero sostituendo tutti gli <em>0</em> con gli <em>1</em> e viceversa. In questo modo la cifra più significativa degli interi positivi sarà <em>0</em>, mentre sarà <em>1</em> per quelli negativi. <span  style='color: red;'>Ad esempio <em>-5</em> (sistema decimale) vale 1010, ma anche 11010 o 11111010</span> (non importa il numero degli <em>1</em> a sinistra, è come dire che ho 23 anni o 023 anni o 0023 anni, ecc).
+</p>
+<p class='vspace'><em>Rappresentazione in complemento a due</em><br />Permette anch'essa la rappresentazione di numeri interi con segno, ma superando alcuni limiti del complemento a uno, quali il fatto che lo 0 fosse rappresentato in due modi diversi (0000 e 1000, ad esempio) e l'impossibilità di effettuare direttamente alcune operazioni tra interi con segno diverso. Come si ottiene la rappresentazione in complemento a 2? Complementando a uno il numero intero e sommando quindi <em>1</em>. Anche in questo caso il segno è reso evidente dalla cifra più significativa. <span  style='color: red;'>Ad esempio <em>-5</em> (sistema decimale) vale 1011 (o 11011, 11111011, ...).</span>
+</p>
+<p class='vspace'><em>Rappresentazione a virgola fissa</em><br />Il modo più semplice per rappresentare un numero reale è la rappresentazione a virgola fissa, che prende un numero intero e pone una virgola in un punto convenzionale (stabilito più o meno liberamente) tra le cifre della sua rappresentazione binaria. Ha due limiti principali: l'esistenza di un rigido intervallo di rappresentazione e una perdita di precisione nella divisione tra numeri grandi.
+</p>
+<p class='vspace'><em>Rappresentazione a virgola mobile</em><br /><span  style='color: red;'>La rappresentazione a virgola mobile prevede l'utilizzo di tre elementi: il <em>segno</em>, la <em>mantissa</em> (ovvero le cifre significative del numero) e l’ <em>esponente</em> (cioè la potenza della base per cui deve essere moltiplicata la mantissa).</span> Ad esempio <em>-1984,309</em> in virgola mobile diventa <em>-1,984309 x 10<sup>3</sup></em>, dove 1.984309 è la mantissa, 3 è l'esponente ed il segno è negativo. <br /><span  style='color: red;'>Il formato standard per questa rappresentazione è l’IEEE 754, che può essere a precisione singola - 32 bit - o doppia - 64 bit - così ripartiti: </span>
+</p>
+<div class='vspace'></div><table align='center' width='50%' >
+<tr ><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>Precisione</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>Segno</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>Esponente</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>Mantissa</strong>
+</td></tr><tr ><td align='center'  valign='top'><em>Singola</em>
+</td><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>8
+</td><td align='center'  valign='top'>23
+</td></tr><tr ><td align='center'  valign='top'><em>Doppia</em>
+</td><td align='center'  valign='top'>1
+</td><td align='center'  valign='top'>11
+</td><td align='center'  valign='top'>52
+</td></tr></table>
+<p class='vspace'>Visto che in un sistema binario la mantissa non può che avere un <em>1</em> prima della virgola, lo si omette e si passa direttamente a rappresentare le seguenti cifre frazionarie. (Affermazione da controllare: e se volessi scrivere 9999999 come farei? ci sarebbe un 9 prima della virgola giusto? (sarebbe<em>+9,999999 x 10<sup>6</sup></em> sbaglio?))
+</p>
+<p class='vspace'>Lo standard IEEE 754 riserva alcune configurazioni per i cosiddetti valori speciali:
+</p><ul><li><em>0</em>, con esponente e mantissa composti di soli zeri (esiste un <em>+0</em> e un <em>-0</em>, considerati uguali). <span  style='color: red;'>Lo <em>0</em> è dunque un valore speciale con una rappresentazione ad hoc;</span>
+</li><li><span  style='color: red;'><em>&#8734;</em>, rappresentato da un campo esponente di soli 1 e di una mantissa di soli 0. Il campo segno distingue tra +&#8734; e -&#8734;;</span>
+</li><li>NaN, con un esponente composto di soli 1 e una mantissa non tutta di 0, così da poter ottenere diverse configurazioni di NaN, ognuna con un significato ben preciso.
+</li></ul><p class='vspace'><span  style='color: red;'>Da evidenziare il fatto che a rigore non è possibile rappresentare i numeri reali, poiché i numeri irrazionali non ammettono una rappresentazione finita.</span>
+</p>
+<div class='vspace'></div><h4>1.4 Rappresentazione di dati simbolici</h4>
+<p>Un <em>simbolo</em> è un’entità il cui unico scopo è quello di rimandare a qualche altra cosa, reale o fittizia che sia. Va dunque da sé che il simbolo sia una rappresentazione, dato che per sua stessa natura rappresenta qualcos'altro.
+</p>
+<p class='vspace'>I simboli vengono massicciamente impiegati per rendere le informazioni comprensibili e manipolabili dall'elaboratore elettronico. Operativamente, questa operazione di "conversione" avviene in due passaggi:
+</p><ol><li>la definizione di un repertorio appropriato di unità simboliche;
+</li><li>la definizione di una codifica appropriata per ciascuna unità simbolica.
+</li></ol><p class='vspace'>Ognuna di queste <em>unità simboliche</em> può essere di due tipi:
+</p><ul><li><em>atomica</em> (o semplice), che non deriva da una combinazione di altre unità simboliche. Viene codificata mettendola in relazione biunivoca con l’insieme dei numeri naturali (ad ogni unità viene associato un numero progressivo, per permettere al calcolatore di distinguerla dalle altre in modo univoco);
+</li><li><em>complessa</em>, generata da una combinazione di unità atomiche. Viene rappresentata con opportune combinazioni delle rappresentazioni delle unità simboliche di cui è costituita.
+</li></ul><p class='vspace'>La rappresentazione da scegliere deve essere ovviamente quella più conveniente, anche se spesso non è possibile effettuare tale scelta né in modo arbitrario, né a priori.
+</p>
+<div class='vspace'></div><h4>1.5 Rappresentazione di dati alfanumerici</h4>
+<p>I <em>dati alfanumerici</em> sono fondamentalmente testi, quindi sequenze di caratteri, quindi insiemi di simboli. Ne consegue che i testi verranno codificati come sequenza di caratteri, mentre i singoli caratteri verranno rappresentati per mezzo di una codifica che assegna a ciascuno un numero progressivo.
+</p>
+<p class='vspace'>Un primo tipo di codifica è stato il <span  style='color: red;'>codice <em>ASCII</em>, che rappresenta in 7 bit</span> tutti i caratteri della tastiera americana più alcuni caratteri speciali e di controllo. Ma davanti al vasto repertorio di lettere accentate e caratteri speciali delle varie lingue, l'ASCII non fu più sufficiente. Nacque così la necessità di adottare un nuovo standard di codifica testuale, più ampio e internazionale. Oggi quello più utilizzato è lo <em>Unicode</em>, ormai supportato dalla maggior parte dei sistemi operativi e delle applicazioni recenti. Inizialmente solo a 16 bit, <span  style='color: red;'>lo standard Unicode supporta oggi tre forme di codifica: UTF-8, UTF-16 e UTF-32.</span>
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c22' id='c22'></a>
+</p><h3>2. Un linguaggio assembly</h3>
+<p>L' <em>assembly</em> è il linguaggio di programmazione più vicino al linguaggio macchina vero e proprio. In questo capitolo verrà preso in considerazione il <em>MIXAL</em>, l'assembler della macchina immaginaria <em>MIX</em>, inventata da Donald E. Knuth.
+</p>
+<p class='vspace'>MIX e MIXAL sono semplificazioni dell'architettura dei microprocessori CISC e relativi assembler, ma pur essendo dei modelli ne forniscono una buona e potente approssimazione.
+</p>
+<div class='vspace'></div><h4>2.1 La macchina MIX</h4>
+<p>Nella <em>macchina MIX</em> <span  style='color: red;'>il byte è composto da 6 bit</span>, ovvero 64 valori possibili per byte. Essi rappresentano l'unità base di immagazzinamento delle informazioni.
+</p>
+<p class='vspace'><span  style='color: red;'>Una <em>parola di memoria</em> è definita come un insieme di 5 byte più un bit di segno.</span> I byte sono numerati da 1 a 5, mentre il bit di segno ha indice <em>0</em>:
+</p>
+<div class='vspace'></div><table align='center' width='50%' >
+<tr ><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>0</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>1</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>2</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>3</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>4</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>5</strong>
+</td></tr><tr ><td align='center'  valign='top'>+ / -
+</td><td align='center'  valign='top'>1 byte
+</td><td align='center'  valign='top'>1 byte
+</td><td align='center'  valign='top'>1 byte
+</td><td align='center'  valign='top'>1 byte
+</td><td align='center'  valign='top'>1 byte
+</td></tr></table>
+<p class='vspace'><span  style='color: red;'>In questo modo è possibile individuare sottoparole scrivendo una <em>specifica di campo</em> della forma (L:R), dove L è l'indice del primo byte ed R dell'ultimo (estremi inclusi).</span> Ad esempio: (0:0) individua il solo segno; (3:5) individua gli ultimi tre byte. Da notare come la specifica di campo venga rappresentata internamente come risultato dell'operazione "8L + R". Ad esempio: (3:4) = 3*8 + 4 = 28 (la dimensione rimane sempre di un byte).
+</p>
+<p class='vspace'>La macchina MIX dispone di <em>nove registri</em>:
+</p><ul><li><strong>rA</strong>, <em>registro A</em>, o accumulatore. Contiene una parola, generalmente l'operando di un'operazione aritmetica o di scrittura della memoria;
+</li><li><strong>rX</strong>, <em>registro X</em>, o extension. Contiene una parola ed è generalmente usato come estensione a destra di rA. <span  style='color: red;'>Da notare come il registro <em>rAX</em> preso nel suo insieme contenga 10 byte più un solo bit di segno;</span>
+</li><li><strong>rJ</strong>, <em>registro di salto</em>. Contiene due byte (il segno è sempre positivo) che rappresentano l'indirizzo della cella a cui il programma deve saltare;
+</li><li><strong>rI<sub>n</sub></strong> (dove n = 1, 2, ... , 6), sei <em>registri indice</em>. Contengono due byte più segno, usati per mantenere degli indici per il calcolo degli indirizzi effettivi delle celle di memoria. 
+</li></ul><p class='vspace'>Vi sono inoltre:
+</p><ul><li>l' <em>indicatore di overflow</em> <strong>OV</strong>, che indica il superamento della capacità di un registro. Può avere valore "on" o "off";
+</li><li>l' <em>indicatore di confronto</em> <strong>CM</strong>, che può valere <strong>&gt;</strong> (o <em>G</em>), <strong>=</strong> (o <em>E</em>) e <strong>&lt;</strong> (o <em>L</em>);
+</li><li>ventuno <em>dispositivi di input / output</em> denotati con le sigle <strong>u<sub>0</sub></strong>, <strong>u<sub>1</sub></strong>, ..., <strong>u<sub>20</sub></strong>, grazie ai quali la macchina MIX comunica con l'esterno. Per convenzione il dispositivo <em>u<sub>19</sub></em> è la console del calcolatore. 
+</li></ul><p class='vspace'>La macchina MIX ha infine <em>4000 celle di memoria</em>, ognuna delle quali ha le dimensioni di una parola ed è caratterizzata da un indirizzo. 
+</p>
+<div class='vspace'></div><h4>2.2 L'insieme delle istruzioni della macchina MIX</h4>
+<p>Le <em>istruzioni</em> della macchina MIX sono parole così strutturate:
+</p>
+<div class='vspace'></div><table align='center' width='50%' >
+<tr ><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>0</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>1</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>2</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>3</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>4</strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong>5</strong>
+</td></tr><tr ><td align='center'  valign='top'>+ / -
+</td><td colspan='2' align='center'  valign='top'>INDIRIZZO
+</td><td align='center'  valign='top'>INDICE
+</td><td align='center'  valign='top'>MOD
+</td><td align='center'  valign='top'>COD.OP.
+</td></tr></table>
+<p class='vspace'>dove:
+</p><ul><li><em>INDIRIZZO</em> dà appunto l'indirizzo della parola;
+</li><li><em>INDICE</em> è il modificatore dell'indirizzo. Se vale <em>0</em> non modifica nulla, mentre se è un numero compreso tra <em>1</em> e <em>6</em> indica uno dei sei registri indice, il cui contenuto andrà sommato a <em>INDIRIZZO</em>;
+</li><li><em>MOD.</em> è il modificatore dell'operatore, di solito una specifica di campo (L:R). Quando è omesso, generalmente significa che l'istruzione associata si applica alla parola intera; 
+</li><li><em>COD.OP.</em> è il codice operativo che identifica l'istruzione vera e propria da eseguire. Ha come sintassi generale: <code class='escaped'>MNEMONICO INDIRIZZO,INDICE(MOD)</code> , dove <em>MNEMONICO</em> è il nome dell'istruzione.
+</li></ul><p class='vspace'>Alcune notazioni:
+</p><ul><li>con <strong>M</strong> s'intende l'indirizzo di memoria ottenuto sommando a <em>INDIRIZZO</em> il contenuto del registro indice specificato da <em>INDICE</em>. Essendo 4000 le celle di memoria della macchina MIX, potrà avere un valore compreso tra 0 e 3999;
+</li><li>con <strong>V</strong> ci si riferisce al valore della sottoparola indicata da <em>MOD.</em> nella cella di memoria di indirizzo <em>M</em>;
+</li><li>per riferirsi al valore contenuto in un registro o in una parola di memoria di cui si conosce solo l'indirizzo, basta mettere il suo nome tra parentesi quadre. Ad esempio il valore contenuto nel registro <em>rA</em> si richiama con <strong>[rA]</strong>, mentre ad esempio <strong>[1234]</strong> indica il valore contenuto alla cella di memoria con indirizzo <em>1234</em>;
+</li><li>con <strong>X &#8592; Y</strong> si intende che <em>X</em> (un registro, una parola di memoria, ecc.) assumerà il valore di <em>Y</em> (un registro, una parola di memoria, ecc.) come effetto dell'esecuzione dell'istruzione.
+</li></ul><div class='vspace'></div><h4>2.3 Struttura di un programma MIXAL</h4>
+<p>Abbiamo già detto che il <em>MIXAL</em> è l'assembler della macchina MIX, il cui compito è quello di assemblare il suo codice in una sequenza di istruzioni direttamente eseguibili dalla macchina. 
+</p>
+<p class='vspace'>Un programma MIXAL può contenere <em>istruzioni</em> o <em>direttive</em>, una per linea di codice. <span  style='color: red;'>Le istruzioni sono quelle componenti del programma che vengono tradotte in istruzioni macchina, mentre le direttive sono quelle parti del codice che, pur non essendo direttamente tradotte in istruzioni, influenzano il modo in cui l'assemblatore effettua il suo compito. </span>Sia le istruzioni che le direttive hanno il seguente formato: 
+</p>
+<div class='vspace'></div><div class='indent'><code class='escaped'>Etichetta MNEMONICO Operando Commento</code>
+</div><p class='vspace'>dove:
+</p><ul><li>l' <em>etichetta</em> è un simbolo alfanumerico che identifica la locazione corrente e che viene utilizzato per riferirsi ad essa. <span  style='color: red;'>Può essere usata anche prima di essere stata definita;</span>
+</li><li>lo <em>MNEMONICO</em> è il nome dell'istruzione, anche chiamato <em>operatore</em>. Un elenco esaustivo di mnemonici e relative istruzioni potrete trovarlo sulla pagina <a class='wikilink' href='TettyMixal.html'>TettyMixal</a>;
+</li><li>i <em>commenti</em> al codice, automaticamente ignorati dall'assemblatore e necessari come documentazione interna, Si scrivono a destra dell'operatore e dell'eventuale operando, oppure cominciando una linea di programma con un asterisco. 
+</li></ul><p class='vspace'>Le <em>direttive</em> MIXAL sono le seguenti:
+</p><ul><li><strong><em>ORIG xxxx</em></strong>, specifica che l'assemblatore dovrà cominciare a inserire le istruzioni macchina in memoria a partire dalla cella di indirizzo xxxx. Ad esempio ORIG 1000 fissa l'indirizzo di partenza del caricamento del programma nella cella 1000;
+</li><li><span  style='color: red;'><strong><em>EQU</em></strong>, definisce un simbolo e gli assegna un valore numerico (assegna un valore numerico a un'etichetta).</span> Ad esempio: GIORNO EQU 23 significa che GIORNO varrà 23 nell'assemblatore;
+</li><li><strong><em>CON</em></strong>, copia nella locazione di memoria corrente il risultato di un'espressione data (permettendo così di specificarne il contenuto);
+</li><li><strong><em>ALF abcde</em></strong>, mette il codice dei cinque caratteri “abcde” nella locazione corrente di memoria. Ad esempio: ALF GATTO;
+</li><li><strong><em>END locazione</em></strong>, segnala la fine delle righe del programma. “locazione” è l'indirizzo da cui dovrebbe iniziare l'esecuzione una volta caricato il codice in memoria. Esempio: END INIZIO.
+</li></ul><div class='vspace'></div><h4>2.4 Programma "Hello world" in MIXAL</h4>
+<p>Di seguito, il listato di un programma in MIXAL che visualizza come output il messaggio "<em>Hello.world!!</em>":
+</p>
+<div class='vspace'></div><table align='center' width='100%' >
+<tr ><td align='center' bgcolor='#e6e6f6'  valign='top'><strong><em>Etichetta</em></strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong><em>Mnemonico</em></strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong><em>Operando</em></strong>
+</td><td align='center' bgcolor='#e6e6f6'  valign='top'><strong><em>Commento</em></strong>
+</td></tr><tr ><td  valign='top'>TERM
+</td><td  valign='top'>EQU
+</td><td  valign='top'>19
+</td><td  valign='top'>Definisce il simbolo TERM e gli dà valore 19
+</td></tr><tr ><td  valign='top'>
+</td><td  valign='top'>ORIG
+</td><td  valign='top'>1000
+</td><td  valign='top'>Definisce la cella di indirizzo 1000 come la prima da cui verranno caricate
+</td></tr><tr ><td  valign='top'>*
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>le istruzioni
+</td></tr><tr ><td  valign='top'>INIZIO
+</td><td  valign='top'>OUT
+</td><td  valign='top'>MSG(TERM)
+</td><td  valign='top'>Scrive i dati dalla cella MSG sul dispositivo definito da TERM (quindi, il 19)
+</td></tr><tr ><td  valign='top'>
+</td><td  valign='top'>HLT
+</td><td  valign='top'>
+</td><td  valign='top'>Arresta l'esecuzione
+</td></tr><tr ><td  valign='top'>MSG
+</td><td  valign='top'>ALF
+</td><td  valign='top'>HELLO
+</td><td  valign='top'>Prima cella di MSG, contiene i caratteri "<em>HELLO</em>"
+</td></tr><tr ><td  valign='top'>
+</td><td  valign='top'>ALF
+</td><td  valign='top'>.WORL
+</td><td  valign='top'>Seconda cella di MSG, contiene i caratteri "<em>.WORL</em>"
+</td></tr><tr ><td  valign='top'>
+</td><td  valign='top'>ALF
+</td><td  valign='top'>D!!
+</td><td  valign='top'>Ultima cella di MSG, contiene i caratteri "<em>D!!  </em>"
+</td></tr><tr ><td  valign='top'>
+</td><td  valign='top'>END
+</td><td  valign='top'>INIZIO
+</td><td  valign='top'>Segnala la fine del programma e indica la locazione INIZIO come quella di
+</td></tr><tr ><td  valign='top'>*
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>inizio esecuzione
+</td></tr></table>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c23' id='c23'></a>
+</p><h3>3. Organizzazione dei dati</h3>
+<h4>3.1 La mappa della memoria</h4>
+<p>La <em>mappa della memoria</em> è una lista di tutte le locazioni di memoria (celle di memoria + registri) disponibili. È un passo obbligato per il programmatore di linguaggi di basso livello, in quanto l'organizzazione dei dati deve essere pianificata prima della vera e propria fase di codifica del programma. 
+</p>
+<p class='vspace'>Tracciare la mappa della memoria significa inoltre indicare quali zone riservare ai dati di ingresso e di uscita (già noti grazie alle specifiche), più quelli intermedi necessari per il corretto funzionamento del programma.
+</p>
+<p class='vspace'><span  style='color: red;'>Obiettivo della mappatura è associare ad ogni dato un <em>indirizzo</em>, ovvero il numero della cella di memoria da cui inizia la zona ad esso riservata dal programmatore.</span>
+</p>
+<div class='vspace'></div><h4>3.2 Il concetto di variabile</h4>
+<p><span  style='color: red;'>La <em>variabile</em> è un nome simbolico associato ad una precisa zona di memoria allocata per contenere un dato</span> di un certo tipo (un intero, un reale, una stringa, ...). È un elemento molto importante della programmazione, in quanto consente di assegnare agli indirizzi dei vari dati allocati in memoria delle etichette facili da ricordare e comprendere.
+</p>
+<p class='vspace'>Se ad esempio si volesse creare un programma che prevede l'utilizzo di una data, sarebbe comodo creare tre variabili per memorizzare il giorno, il mese e l'anno. In MIXAL, per crearle rispettivamente agli indirizzi 1000, 1001 e 1002, dovremo scrivere:
+</p>
+<p class='vspace'>GIORNO	EQU	1000<br />MESE	EQU	1001<br />ANNO	EQU	1002
+</p>
+<p class='vspace'>Per inserire o sostituire i valori delle variabili si useranno le istruzioni <em>ENTA</em> e <em>STA</em>. La prima copia nel registro <em>rA</em> il particolare valore specificato dall'operando, la seconda copia nella variabile il contenuto del registro <em>rA</em>. Se ad esempio volessi assegnare il valore 30 alla variabile GIORNO dovrei scrivere:
+</p>
+<p class='vspace'>ENTA	30<br />STA	GIORNO
+</p>
+<div class='vspace'></div><h4>3.3 Tabelle</h4>
+<p>Le <em>tabelle</em> sono delle strutture costituite da dati dello stesso tipo, e allocate in una determinata zona di memoria in modo tale che le singole componenti siano disposte in sequenze ad intervalli regolari. Con il termine generale "tabelle" si intendono <em>vettori</em>, <em>matrici</em>, <em>liste</em>, <em>elenchi</em>, <em>insiemi</em>, ...
+</p>
+<p class='vspace'>Guardiamo ora nello specifico come viene allocata una tabella monodimensionale. <br /><span  style='color: red;'>Supponendo che <em>x</em> sia l'indirizzo della tabella e che il suo dato di base occupi <em>s</em> celle di memoria, l'indirizzo del primo elemento sarà <em>x</em>, quello del secondo <em>x + s</em>, quello dell' <em>i</em>esimo elemento sarà <strong>x + is</strong></span>. Ad esempio, se l'indirizzo della tabella è 1000 ed ogni suo dato occupa 3 celle di memoria, il quarto elemento della tabella avrà indirizzo <em>1000 + 4*3 = 1012</em>.
+</p>
+<p class='vspace'>Come vengono gestite le tabelle con più dimensioni?<br /><span  style='color: red;'>Semplice, ogni tabella ad <em>n</em> dimensioni viene vista come una tabella unidimensionale di tabelle a <em>d - 1</em> dimensioni. La dimensione di una tabella di dimensioni <em>n<sub>1</sub> x n<sub>2</sub> x ... x n<sub>d</sub></em> è pari a: <em>s x n<sub>1</sub> x n<sub>2</sub> x ... x n<sub>d</sub></em>, dove <em>s</em> è lo spazio occupato dal dato di base.</span>
+</p>
+<p class='vspace'>Ora, per quanto riguarda il processo di allocazione, <em>supponendo che</em>:
+</p><ul><li><em>x</em> sia l'indirizzo di una tabella a <em>d</em> dimensioni, 
+</li><li>il suo dato di base occupi <em>s</em> celle di memoria e 
+</li><li>la tabella sia di dimensioni <em>n<sub>1</sub> x n<sub>2</sub> x ... x n<sub>d</sub></em>, 
+</li></ul><p><em>allora</em> l'indirizzo dell'elemento x<sub>j1,j2,...,jd</sub> sarà:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/allocazioneTabella.jpg' alt='' title='' /></div>
+<p class='vspace'><span  style='color: red;'>Quindi, nel caso di una tabella bidimensionale <em>n x m</em> (ad esempio 3 x 5), l'indirizzo dell'elemento x<sub>ij</sub> (ad esempio x<sub>23</sub>) sarà dato da <strong>x + s(im + j)</strong> (quindi, se x = 1000 e s = 3: 1000 + 3*(2*5 + 3) = 1039).</span>
+</p>
+<div class='vspace'></div><h4>3.4 Strutture dati dinamiche</h4>
+<p>Capita spesso di non poter conoscere a priori la quantità di dati che conterranno le tabelle, con la conseguenza di essere costretti a crearne di sovradimensionate per evitare che venga richiesta più memoria di quella riservata durante l'allocazione. Ciò comporta nella maggior parte dei casi solo uno spreco di risorse, già molto limitate nella macchina MIX. <span  style='color: red;'>Un'ottima alternativa è sfruttare <em>strutture dati dinamiche</em>, allocate dinamicamente durante l'esecuzione in un'area di memoria chiamata <em>heap</em>.</span>
+</p>
+<p class='vspace'><span  style='color: red;'>Un esempio di struttura dati dinamica è la <em>lista collegata</em> (<em>linked list</em>), composte da unità fondamentali detti <em>nodi</em>. Ogni nodo contiene il valore del dato più un collegamento al nodo successivo, ovvero un <em>puntatore</em> all'indirizzo di memoria in cui si trova l'elemento seguente.</span> Una lista collegata termina quando il puntatore dell'ultimo elemento punta ad un particolare indirizzo di memoria rappresentante il puntatore nullo (generalmente l'indirizzo 0). 
+</p>
+<p class='vspace'>La gestione dello heap da parte della lista collegata è semplice e intuitiva, basata sul costante aggiornamento di una <em>lista delle aree libere di memoria</em>. Ognuna di queste aree è caratterizzata dall'indirizzo della prima cella, dal numero di celle che essa contiene (quindi dalla sua dimensione) e dal puntatore all'area libera successiva. 
+</p>
+<p class='vspace'>All'inizio dell'esecuzione, l'heap sarà un'unica vasta area libera, con dimensione coincidente allo heap stesso e puntatore nullo. Se poi bisogna allocare un'area di memoria di <em>n</em> celle, si percorre dall'inizio la lista delle aree libere finché non se ne trova una di dimensione maggiore o uguale ad <em>n</em>. Allocati i nuovi spazi, si provvede subito a toglierli dalla lista e ad inserire al loro posto l'eventuale avanzo. Quando poi un'area allocata non serve più, la si può <em>deallocare</em> reinserendola nella lista delle aree libere, in modo che possa essere riutilizzata.
+</p>
+<p class='vspace'>I linguaggi di programmazione di alto livello forniscono la gestione automatica dello heap.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c24' id='c24'></a>
+</p><h3>4. Sottoprogrammi</h3>
+<p>Se un programma deve svolgere lo stesso compito più di una volta e in diversi punti del listato, non è molto pratico riscrivere ogni volta le istruzioni per realizzarlo. Il <em>sottoprogramma</em> è un codice che viene scritto una volta sola e poi "richiamato" in tutti quei punti del programma in cui si richiede la sua esecuzione.
+</p>
+<p class='vspace'>L'utilizzo dei sottoprogrammi comporta una serie di vantaggi, quali:
+</p><ul><li>facilitare la comprensione della struttura di un programma lungo e articolato;
+</li><li>fornire una segmentazione logica del problema complessivo (strizzando l'occhio all'approccio <em>top-down</em>);
+</li><li>facilitare la correzione o la modifica del programma (si modifica il codice una volta sola per tutte le sue istanze);
+</li><li>permettere il riuso del software, ovvero la possibilità di riciclare alcuni sottoprogrammi in altri programmi che risolvono un problema diverso.
+</li></ul><p class='vspace'><span  style='color: red;'>I sottoprogrammi rendono quindi un programma più compatto, ma ne rallentano leggermente l'esecuzione.</span>
+</p>
+<div class='vspace'></div><h4>4.1 Chiamata di sottoprogramma</h4>
+<p><span  style='color: red;'>La <em>chiamata di un sottoprogramma</em> ha modalità diverse a seconda del linguaggio di programmazione utilizzato, ma ha sempre tre elementi comuni:</span>
+</p><ul><li>il <em>punto di chiamata</em>, ovvero il punto del programma principale in cui viene richiesta l'esecuzione del sottoprogramma;
+</li><li>il <em>punto d'ingresso</em> del sottoprogramma, cioè quello a cui si riferisce il punto di chiamata;
+</li><li>il <em>punto di uscita</em> del sottoprogramma, che restituisce il controllo al programma principale dopo aver eseguito tutte le istruzioni del suo blocco, saltando all'istruzione immediatamente successiva a quella di chiamata.
+</li></ul><p class='vspace'>Perché questo passaggio di controllo sia possibile, è necessario che il programma memorizzi da qualche parte le informazioni di salto necessarie. I programmi scritti per la macchina MIX possono ad esempio utilizzare il registro <em>rJ</em>, scrivendo prima l'indirizzo del punto di ingresso e poi sovrascrivendoci quello di ritorno. Questo sistema ha però tre grandi limiti:
+</p><ol><li>per essere applicato deve modificare il codice del programma durante l'esecuzione, e quindi non può risiedere su aree di memoria non modificabili come le ROM o le EPROM;
+</li><li>non può realizzare sottoprogrammi <em>ricorsivi</em> (cioè che richiamano sé stessi), perché sovrascriverebbe l' <em>indirizzo di ritorno al punto di chiamata del sottoprogramma</em> sopra all' <em>indirizzo di ritorno al punto di chiamata del programma principale</em> (e quindi continuerebbe a richiamare sé stesso senza mai restituire il controllo al programma);
+</li><li>non può funzionare su macchine <em>multitasking</em> (cioè con più programmi in esecuzione). Ad esempio, mettiamo che un programma A chiami un sottoprogramma SA e scriva le informazioni di salto opportune su rJ; se durante l'esecuzione di SA parte un altro programma B che invoca un suo sottoprogramma SB, le informazioni necessarie per A saranno sovrascritte (e quindi perse) da quelle di B.
+</li></ol><p class='vspace'>Come superare questi limiti? Con lo <em>stack</em>.
+</p>
+<p class='vspace'><a name='stack' id='stack'></a>
+</p><h4>4.2 Lo stack</h4>
+<p><span  style='color: red;'>Lo <em>stack</em>("pila") è una struttura dati di tipo <em>LIFO</em> (<em>Last in, first out</em> = "l'ultimo a entrare è il primo ad uscire), che impila letteralmente i dati uno sull'altro. Sono consentite due sole operazioni: </span>
+</p><ul><li><em>PUSH</em>, che aggiunge un nuovo dato sopra quelli già presenti;
+</li><li><em>POP</em>, che toglie il dato in cima alla pila.
+</li></ul><p class='vspace'>Rivediamo la chiamata di un sottoprogramma con l'utilizzo di uno stack, opportunamente allocato in memoria. Quando il programma principale chiama il sottoprogramma, aggiunge (POP) allo stack l'indirizzo dell'istruzione successiva al punto di chiamata, quindi salta al punto di entrata del sottoprogramma stesso. Una volta che questo arriva al suo punto di uscita, toglie dallo stack (PUSH) l'indirizzo a cui deve ritornare e quindi vi salta.
+</p>
+<p class='vspace'>Osserviamo come questo metodo superi tutti i limiti del sistema di chiamata precedente:
+</p><ol><li>non importa se il programma risiede su una ROM o una EPROM, dal momento che lo stack può essere allocato in un'altra area di memoria modificabile;
+</li><li>nei programmi ricorsivi, l'indirizzo di ritorno al punto di chiamata del sottoprogramma non viene sovrascritto a quello del programma principale, ma viene scritto su un punto diverso della pila (più interno rispetto al secondo);
+</li><li>per le macchine multitasking è sufficiente che ad ogni processo venga associato uno stack "personale" in un'area di memoria privata, così che le informazioni a lui utili non vengano sovrascritte da altri processi.
+</li></ol><div class='vspace'></div><h4>4.3 Chiamata di sottoprogrammi basata sullo stack su MIX</h4>
+<p><span style='font-size:83%'>...ovvero: "come si simula l'esistenza di uno stack sulla macchina MIX?"</span><br /><span  style='color: red;'>Per simulare uno stack su macchina MIX bisogna subito stabilire due cose, ovvero <em>(1)</em> dove far risiedere lo stack e <em>(2)</em> come riferirci ai suoi elementi.</span>
+</p>
+<p class='vspace'><em>(1)</em> Dal momento che su una macchina MIX i programmi vengono convenzionalmente caricati nella parte bassa della memoria (dall'indirizzo 0 in su) e i dati prodotti dinamicamente occupano la memoria libera immediatamente successiva, ha senso far coincidere la base dello stack con l'ultima cella di memoria (la 3999) e farlo crescere 
+all'indietro. 
+</p>
+<p class='vspace'><em>(2)</em> <span  style='color: red;'>Per riferirci all'ultimo elemento di uno stack bisognerà utilizzare un puntatore ad esso (<em>stack pointer</em>), scrivendone l'indirizzo da qualche parte e mantenendolo costantemente aggiornato.</span> Per convenzione viene utilizzato il registro indice <em>rI6</em>, in cui non si scrive direttamente l'indirizzo dello stack pointer, ma lo spostamento relativo (quindi un numero negativo) rispetto alla base dello stack. In pratica:
+</p><ul><li>all'avvio del programma lo stack sarà vuoto ed <em>rI6</em> conterrà uno 0;
+</li><li>l'aggiunta (PUSH) di un indirizzo di ritorno sullo stack comporta il decremento di 1 di <em>rI6</em>;
+</li><li>la rimozione (POP) di un indirizzo di ritorno dallo stack comporta l'incremento di 1 di <em>rI6</em>.
+</li></ul><p class='vspace'>Quando si scrive un programma in MIXAL che prevede la chiamata di sottoprogrammi con l'utilizzo di uno stack, bisogna dunque sempre ricordarsi di decrementare rI6 nel punto di ingresso, e ad aggiungergli 1 nel punto di uscita.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c25' id='c25'></a>
+</p><h3>5. Ricorsione</h3>
+<p><span  style='color: red;'>La <em>ricorsione</em> è un modo di definire un'entità in termini di sé stessa, ma non in modo circolare</span>: istanze più complesse di un'entità vengono definite a partire da istanze più semplici della stessa entità, e solo le istanze elementari vengono date esplicitamente. 
+</p>
+<p class='vspace'>E' composta da due elementi:
+</p><ol><li><span  style='color: red;'>la <em>base della ricorsione</em>, che prevede la definizione di un caso elementare di un dato processo di cui dà anche la soluzione esplicita</span>. Costituisce la condizione di terminazione, senza la quale la ricorsione non avrebbe senso in quanto andrebbe avanti all'infinito (<em>in modo circolare</em>);
+</li><li><span  style='color: red;'>il <em>passo ricorsivo</em>, che scompone la definizione di un dato processo come combinazioni di parti più semplici.</span> E' il momento in cui effettivamente avviene la ricorsione.
+</li></ol><div class='vspace'></div><h4>5.1 Ricorsione e induzione</h4>
+<p><span  style='color: red;'>Il concetto di ricorsione nella programmazione è strettamente collegato a quello di <em>induzione</em> nella matematica.</span> Vediamo un esempio classico, quello dei numeri di Fibonacci (<em>1, 1, 2, 3, 5, 8, 13, 21, ...</em>, dove ogni numero è somma dei due precedenti).
+</p>
+<p class='vspace'>Il numero di Fibonacci <strong>F(<strong><em>n</em></strong>)</strong> di un numero naturale <em>n</em> è:
+</p><ul><li><strong>0</strong>, se <em>n=0</em>;
+</li><li><strong>1</strong>, se <em>n=1</em>;
+</li><li><strong>F(n-1) + F(n-2)</strong>, se <em>n&gt;1</em>.
+</li></ul><p>Come si può osservare, il punto 1 e il punto 2 costituiscono <em>la base della ricorsione</em>, che stabilisce il caso elementare; mentre il punto 3 è il <em>passo ricorsivo</em>, ovvero la soluzione del problema in funzione dei passi precedenti.
+</p>
+<p class='vspace'>Un algoritmo ricorsivo per realizzare la serie di Fibonacci potrebbe essere:
+</p>
+<p class='vspace'><code class='escaped'>FIBONACCI(n), dove ''n'' è un numero naturale</code>
+</p><ol><li>se <em>n&lt;2</em>, termina restituendo il risultato <em>n</em>;
+</li><li>F<sub>1</sub> &#8592; FIBONACCI(<em>n-1</em>);
+</li><li>F<sub>2</sub> &#8592; FIBONACCI(<em>n-2</em>);
+</li><li>termina restituendo il risultato F<sub>1</sub> + F<sub>2</sub>
+</li></ol><div class='vspace'></div><h4>5.2 "Divide et impera"</h4>
+<p><span  style='color: red;'><em>Divide et impera</em></span> (pronuncia <em>/divìde et ìmpera/':) era il sistema che Giulio Cesare adottava per sconfiggere i Galli. </em>Divide<em> sta per </em>dividi<em>, cioè fare in modo che cadessero le alleanze fra le varie tribù galliche, per indebolirle. </em>Impera<em> sta per </em>comandare'': una volta che le tribù fossero indebolite, era facile dominarle.<br /><br />
+Lo stesso sistema si utilizza nella programmazione: <span  style='color: red;'>prendo un problema, lo divido in sottoproblemi, più semplici da risolvere, e domino questi sottoproblemi per poi dominare il problemone principale.<br /><br /></span>
+Le funzioni e le procedure ricorsive vengono utilizzate nell'applicazione del <em>divide et impera</em>. Si può dimostrare che il concetto matematico di ricorsione (una funzione che chiama se stessa) si può trasformare in un programma <em>per computer</em> iterativo (cioè un programma che esegue a ripetizione un gruppo di operazioni) tramite l'utilizzo di uno <em>stack</em> (vedi <a href='#stack'>altrove</a> per la sua definizione) che serve per tenere traccia dei parametri e delle chiamate alla funzione che viene ripetuta.<br /><br />
+Un'applicazione di questo teorema si è vista (?) nella realizzazione in MIXAL di un programma ricorsivo: per ottenere la ricorsione, occorre appunto inventarsi uno stack ed utilizzarlo! A dire il vero, se voglio trasformare una funzione matematica ricorsiva in un programma <em>per computer</em> ricorsivo, devo per forza usare uno stack, perché tutte le chiamate a funzione nei linguaggi di programmazione vengono implementate tramite uno stack, il quale tuttavia rimane nascosto al programmatore!<br /><br />
+L'iterazione abbiamo gà visto che cos'è, e la ricorsione è stata spiegata adesso. Ci sono alcuni linguaggi di programmazione logica o funzionale che <em>non hanno</em> l'iterazione in stile <code class='escaped'>while</code> o <code class='escaped'>for</code>, ma permettono al programmatore di utilizzare solo la ricorsione.<br /><br />
+Una cosa importante da tenere a mente, che magari in questi paragrafi potrebbe aver creato dei dubbi, è questa: un linguaggio di programmazione è un linguaggio <em>astratto</em>, e posso farlo astratto quanto voglio. A <em>questo</em> livello posso avere i cicli <code class='escaped'>for</code> o le ricorsioni obbligatorie del Prolog, gli <code class='escaped'>int</code>, le <code class='escaped'>printf</code> e così via.<br />Ma tutti i linguaggi sono alla fin fine trasformati in qualche cosa di basso livello, e a <em>questo</em> livello tutto quello che noi scriviamo con le belle paroline tipo <code class='escaped'>int main() {...}</code> e simili viene trasformato in roba tipo linguaggio MIX. A <em>questo</em> livello, c'è solo lo <em>stack</em> per tenere a mente le chiamate a funzione, ricorsive o no. Quindi, un linguaggio di quelli che non hanno le strutture iterative ma solo le ricorsioni, e un linguaggio che invece ha anche le strutture iterative (come il C), si traducono bene o male allo stesso modo.<br /><br />
+Un'altra caratteristica della ricorsione è che è legata al concetto di calcolabilità di una funzione. Esse sono, a livello teorico, la stessa cosa. Una funzione è calcolabile se posso esprimerla ricorsivamente (secondo tutte le regole della ricorsione, tra cui anche quella che prevede che ci sia una condizione che faccia terminare la ricorsione).<br />Abbiamo visto che le funzioni ricorsive possono essere implementate in un calcolatore: ciò vuol dire che tutte le funzioni calcolabili possono essere implementate da un calcolatore (a patto che ci sia memoria etc. e senza dire niente del <em>tempo</em>, ma sono altri discorsi). Questo vuol dire che il calcolatore di per sé è una macchina universale, che in potenza può calcolare tutte le funzioni calcolabili. In pratica invece c'è windows.
+</p>
+<div class='vspace'></div><h4>5.3 Ricorsione strutturale</h4>
+<p>Prima vediamo che cosa è un <em>albero</em>. Si tratta di una struttura dati, cioè di un sistema per organizzare un certo numero di dati, che richiama da vicino la forma di un albero. C'è un nodo principale, da cui si diramano dei rami, e alla fine di questi rami ci sono degli altri nodi, dai quali si possono diramare altri rami e così via.<br />Un nodo che ha dei rami si chiama <em>antenato</em> dei nodi che si trovano sui rami che nascono da lui, mentre questi sono i suoi figli.<br />Il primo nodo si chiama <em>nodo radice</em>, gli ultimo nodi in basso che non hanno figli sono i nodi <em>foglia</em>.<br />Graficamente, si rappresenta il nodo radice in alto, e si scende verso il basso, esattamente al contrario di quello che accade con gli alberi veri.<br />Gli alberi si utilizzano, ad esempio, per rappresentare le informazioni organizzate gerarchicamente (come l'albero delle classi e delle loro dipendenze in <a class='wikilink' href='TettyJAVA.html'>Java</a>).<br /><br />
+La ricorsione si applica a questi nodi. Come? Supponiamo di voler applicare una trasformazione ad ogni nodo. Devo partire alla radice e percorrere tutta la pianta. La radice si dirama in due rami: scelgo quello di destra, poi anche lui si dirama, e scelgo uno dei suoi rami etc. Poi devo tornare indietro all'ultimo bivio che ho percorso, e prendere l'altra strada e così via.<br />Ecco, questo è un tipico problema da affrontare con una funzione ricorsiva, e si chiama <em>ricorsione strutturale</em>.<br /><br />
+Va notato che a seconda del tipo di ricorsione che uso per affrontare i nodi, posso avere alla fine un albero diverso da quello che avrei ottenuto utilizzando un altro tipo di ricorsione.<br /><br />
+<a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: October 11, 2010, at 04:50 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyCap2?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TettyCap2?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

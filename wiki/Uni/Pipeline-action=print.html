@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Architettura degli elaboratori - Pipeline</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Pipeline.html' title='Architettura degli elaboratori - Pipeline'>Architettura degli elaboratori - Pipeline</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ArchitetturaDegliElaboratori.html'>Torna alla pagina di Architettura degli elaboratori</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Architettura degli elaboratori - Pipeline ::</strong>
+</pre><p class='vspace'>Una <strong>pipeline</strong> si può efficacemente immaginare come una catena di montaggio, attraverso la quale le istruzioni vengono processate per essere eseguite. Ogni istruzione, cioè, viene scomposta in operazioni più semplici, eseguibili dai vari stadi della pipeline, e dunque percorre tutta la “catena di montaggio” fino alla sua completa esecuzione. Il vantaggio di tutto ciò è che una volta che un’istruzione abbandona uno stadio della pipeline, tale stadio può occuparsi dell’istruzione successiva, la quale dunque verrà completata dopo la precedente in un tempo sensibilmente inferiore a quello della sua completa esecuzione. Una struttura a catena di montaggio (pipeline) e un ottimo approccio per velocizzare l’esecuzione non tanto della singola istruzione quanto del numero di istruzioni in corso di lavorazione e quindi che verranno completate per unita di tempo con un incremento netto del <code class='escaped'>[MIPS]</code> che la nostra macchina è in grado di portare a termine.
+</p>
+<div class='vspace'></div><h2>CPU pipeline</h2>
+<p>La CPU pipeline è una CPU che ha una struttura a catena di montaggio, cioè formata da stadi che operano in parallelo in modo tale di consentire di velocizzare l’esecuzione e aumentare il numero di istruzioni macchina completate per unità di tempo. Riesce quindi a completare un’istruzione ad ogni ciclo di clock. Gli stadi di cui è formata sono quattro:
+</p><ul><li><em>fetch</em>: prelievo dell’istruzione dalla memoria da parte del processore;
+</li><li><em>decode</em>: l’istruzione viene esaminata e decodificata (in base all’operando);
+</li><li><em>execute</em>: viene effettuata l’esecuzione delle istruzioni;
+</li><li><em>writeback</em>: il risultato dell’istruzione viene copiato in un registro del processore o memorizzato.
+</li></ul><p class='vspace'>Tra uno stadio e l’altro vi è un registro intermedio chiamato buffer o registro di buffer, poiché ciascuno stadio passa informazioni allo stadio consecutivo, le informazioni vengono scritte nel buffer dallo stadio precedente per permettere allo stadio successivo di utilizzarle. E’ formata da memoria cache.
+</p>
+<p class='vspace'>L’incremento delle prestazioni è dovuto tipicamente ed esclusivamente ad un intervento architetturale: la tecnologia di realizzazione dell’integrato circuito CPU e quindi la sua frequenza di lavoro non deve cambiare. A parità di tecnologia un approccio architetturale pipeline consente guadagni di prestazione di un fattore da 2 a 8.
+</p>
+<p class='vspace'>I problemi nell’adozione di un modello a pipeline sono legati in generale alle cosiddette <em>dipendenze</em> (<em>dependencies</em>), cioè al fatto che durante l'esecuzione di programmi da parte di una CPU pipeline ci sono relazioni di dipendenza fra le diverse istruzioni del programma o fra le diverse risorse che il programma richiede di utilizzare che comportano conflitti nella catena di montaggio nella pipeline e quindi rallentamento della sua attività con perdita di efficacia. Vediamone alcune:
+</p><ul><li><em>Control dependency</em>, il flusso di esecuzione delle istruzioni che interrompe il normale comportamento sequenziale;
+</li><li><em>Data dependency</em>, due istruzioni vicine utilizzano uno stesso dato;
+</li><li><em>Resource dependency</em>, due istruzioni entrano in conflitto per una risorsa del sistema.
+</li></ul><p class='vspace'>I legami fra le istruzioni in esecuzione e i loro conflitti di accesso alle risorse possono provocare rallentamenti della pipeline dovuti a:
+</p><ul><li>control dependencies;
+</li><li>data dependencies;
+</li><li>resource dependencies.
+</li></ul><p class='vspace'>Si riesce a ridurre le inefficienze ricorrendo a soluzioni architetturali anche complesse:
+</p><ul><li>branch prediction;
+</li><li>data forwarding;
+</li><li>CPU con cache di primo livello separata per istruzioni e variabili (macchina di Harvard).
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='ArchitetturaDegliElaboratori.html'>Torna alla pagina di Architettura degli elaboratori</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Pipeline)</span></div>
+  </div>
+</body>
+</html>

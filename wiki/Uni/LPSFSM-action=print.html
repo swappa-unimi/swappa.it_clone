@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / LPS - Macchine a stati finiti</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LPSFSM.html' title='LPS - Macchine a stati finiti'>LPS - Macchine a stati finiti</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: LPS - Macchine a stati finiti ::</strong>
+</pre><div class='vspace'></div><h2>Che cosa sono</h2>
+<p>Si tratta di uno strumento <strong>formale</strong> ed <strong>operazionale</strong> di modellizzazione. Questi termini hanno un preciso significato: operazionale è contrapposto a dichiarativo, mentre formale è opposto sia a informale che a semiformale. Vediamo un po'.
+</p>
+<div class='vspace'></div><ul><li><strong>informale</strong> = una specifica descritta secondo il linguaggio naturale, quindi poco chiaro, confuso
+</li><li><strong>semiformale</strong> = una cosa come UML, possibilmente con l'ausilio di grafici
+</li><li><strong>formale</strong> = una specifica ben precisa che può essere <strong>operazionale</strong> oppure <strong>dichiarativa</strong>.
+</li></ul><p class='vspace'>Ecco qual'è la differenza:
+</p><ul><li><strong>operazionale</strong> = descrivo il sistema in base al suo comportamento
+</li><li><strong>dichiarativo</strong> = descrivo il sistema in base alle sue proprietà
+</li></ul><p class='vspace'>Per esempio, una definizione operazionale di un cerchio è "insieme dei punti equidistanti da un centro". La definizione dichiarativa è invece "insieme dei punti tali che XO = c, dove X sono le coordinate del punto e O quelle del centro".
+</p>
+<p class='vspace'>Una FSM può essere rappresentata in modo equivalente da una notazione formale, oppure da un grafo opportunamente disegnato. I <strong>nodi</strong> equivalgono agli stati del sistema, mentre gli <strong>archi</strong> sono le transizioni di stato, e le <strong>etichette degli archi</strong> sono le modalità di transizione.
+</p>
+<p class='vspace'>Di base, le FSM ricevono input. Se producono output, sono dette <strong>macchine di Mealy</strong> o <strong>Moore</strong>, di scarabottoliana memoria. Si possono usare per modellare tanta roba, ma hanno anche dei limiti: ad esempio, non sono in grado di modellare requisiti basati sul tempo o sulle performance, e non si possono comporre. Tutto questo sarà più chiaro in seguito.
+</p>
+<div class='vspace'></div><h2>Definizione matematica</h2>
+<p>Una FSM è una tripla (S, I , &#948;), dove:
+</p><ul><li><strong>S</strong> = insieme di stati
+</li><li><strong>I</strong> = insieme degli eventi di input
+</li><li><strong>&#948;</strong> = funzione di transizione <strong>f:S x I -&gt; S</strong>. Vuol dire che parte dal prodotto cartesiano di S per I, e porta a S: in altre parole, da uno stato, per via di un certo input, arriva in un altro stato.
+</li></ul><p class='vspace'>Come dicevo sopra, la notazione grafica e quella matematica sono equivalenti. Il grafo è un grafo orientato, perché gli archi hanno una direzione.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/lps-fsm-esempio.png.jpeg' alt='' title='' /></div>
+<p class='vspace'>Le etichette degli archi, nel grafo, rappresentano gli <strong>input</strong>.
+</p>
+<p class='vspace'>Per quanto riguarda &#948;, va notato che queste due scritture sono equivalenti:
+</p><pre> &#948;(s<sub>1</sub>, i) = s<sub>2</sub> <strong>=</strong>  &#948;(s<sub>1</sub>, i, s<sub>2</sub>)
+</pre><p class='vspace'>Ed ecco un esempio di una FSM in cui l'"orientatezza" del grafo si nota di più:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/lps-fsm-esempio2.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h2>FSM di Mealy e di Moore</h2>
+<p>Una <strong>macchina di Mealy</strong> è una FSM che, per ciascuna transazione, produce un output. Una <strong>macchina di Moore</strong> invece è una FSM che produce output per ciascuno stato. Vediamo di tuplizzare anche codeste robe:
+</p>
+<div class='vspace'></div><h3>Macchina di Moore</h3>
+<p><strong>Macchina di Moore</strong> = tupla (S, I, O, &#948;, &#955;, F), dove
+</p><ul><li>S: insieme finito di stati
+</li><li>I: insieme finito di eventi di input
+</li><li>O: insieme finito di eventi di output
+</li><li>&#948;: S x I -&gt; S : funzione di transizione
+</li><li>&#955;: S -&gt; O: funzione di output
+</li><li>F incluso in S: insieme di stati finali
+</li></ul><div class='vspace'></div><h3>Macchina di Mealy</h3>
+<p><strong>Macchina di Mealy</strong> = tupla (S, I, O, &#948;, &#955;), dove
+</p><ul><li>S: insieme finito di stati
+</li><li>I: insieme finito di eventi di input
+</li><li>O: insieme finito di eventi di output
+</li><li>&#948;: S x I -&gt; S : funzione di transizione
+</li><li>&#955;: S -&gt; O: funzione di output
+</li></ul><p class='vspace'>Di solito nelle macchine di Mealy si indica anche lo stato iniziale s<sub>0</sub>, appartenente ad S.
+</p>
+<p class='vspace'>I diagrammi che rappresentano le macchine di Mealy hanno gli archi etichettati da <strong>i/o</strong>, dove <strong>i</strong> è l'evento di input, e <strong>o</strong> è l'evento di output. Gli eventi di output possono anche essere azioni che la macchina compie.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/lps-esempio3.png' alt='' title='' /></div>
+<p class='vspace'>È inoltre comodo vedere una FSM di Mealy come una tupla (S, I, O, T), dove, oltre alle solite cose, ho <strong>T</strong> che è l'insieme delle transizioni.<br />Le transizioni sono, a loro volta, una tupla (s, i, o, s'):
+</p><ul><li>s = stato sorgente
+</li><li>i = evento di input
+</li><li>o = eventi di output
+</li><li>s' = stato target
+</li></ul><p class='vspace'>D'ora in poi noi useremo FSM di Mealy, e le chiameremo solo FSM, con buona pace di Mealy.
+</p>
+<div class='vspace'></div><h2>Limiti delle FSM</h2>
+<p>Si può solo rappresentare un numero finito di stati: i pallogrammi infiniti non sono pratici. Per questo motivo, non è modellabile il <strong>tempo continuo</strong> come input: essendo continuo, non discreto, ed infinito, dovrei avere uno stato per ogni infinitesimo istante.
+</p>
+<p class='vspace'>L'altro limite è che <strong>non sono composizionali</strong>. Vuol dire che quando metto insieme due macchine, una con un numero <strong>n</strong> di stati, e l'altra con <strong>m</strong> stati, avrò una FSM con <strong>n*m</strong> stati, e non <strong>n+m</strong> come potrei supporre.
+</p>
+<p class='vspace'>Questo limite viene a galla quando si cerca di modellare tramite FSM dei sistemi distribuiti o a componenti, in cui ogni componente va per la sua strada, e comunica con gli altri componenti. Dovrei avere uno stato per ogni associazione di stati di un componente con ognuno degli stati dell'altro componente, e così via.
+</p>
+<div class='vspace'></div><h3>Esempio di composizione di FSM</h3>
+<p>Ho un Produttore, un Consumatore ed un Magazzino con capienza di 2 unità.
+</p>
+<p class='vspace'>Il Produttore ha due stati: va dall'uno all'altro prima producendo qualcosa, e poi depositandolo nel magazzino.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/lps-produttore.png' alt='' title='' /></div>
+<p class='vspace'>Il Consumatore ha due stati: va dall'uno all'altro prima prendendo qualcosa dal magazzino, e poi utilizzandolo.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/lps-consumatore.png' alt='' title='' /></div>
+<p class='vspace'>Il Magazzino ha tre stati, se lo immaginiamo con capienza di 2 oggetti. C'è lo stato in cui è vuoto, quello in cui ha 1 oggetto, e quello in cui ne ha 2, e relative transazioni legate al fatto che il Produttore deposita e il Consumatore preleva.
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/lps-magazzino.png' alt='' title='' /></div>
+<p class='vspace'>Orbene: se volessi comporre queste FSM, quanti stati ottengo? Forse 2 + 2 + 3 = 7? No: in realtà ne ottengo 12 = 2 * 2 * 3. Infatti, devo avere queste combinazioni
+</p><ul><li>produttore produce, magazzino vuoto, consumatore consuma
+</li><li>produttore produce, magazzino vuoto, consumatore preleva
+</li><li>produttore deposita, magazzino 1, consumatore consuma
+</li><li>produttore deposita, magazzino 1, consumatore preleva
+</li><li>produttore produce, magazzino 2, consumatore consuma
+</li></ul><p>etc. etc. Uno stato rappresenta uno stato della macchina: se la macchina ha tanti componenti, allora ho tanti stati, che rappresentano tutte le combinazioni di modi in cui i componenti possono trovarsi tra di loro.
+</p>
+<p class='vspace'>Per oltrepassare questo limite, occorrono altre macchine, che vedremo poi, dette <strong>macchine di comunicazione</strong>.
+</p>
+<div class='vspace'></div><h2>Proprietà delle FSM</h2>
+<p>Adesso segue una bella lista di proprietà relative alle FSM
+</p>
+<div class='vspace'></div><h3>Equivalenza di stati</h3>
+<p>Due stati di una FSM sono equivalenti se, per ogni sequenza di input, le sequenze di output provenienti dai due stati sono le stesse.
+</p>
+<p class='vspace'>Vuol dire che devo avere due transizioni così:
+</p><ul><li>(s1, a, 0, s3)
+</li><li>(s2, a, 0, s3)
+</li></ul><div class='vspace'></div><div><img src='../uploads/Uni/lps-statieq.png' alt='' title='' /></div>
+<p class='vspace'>Se 2 stati non sono equivalenti, allora sono <strong>distinguibili</strong>. Se una macchina non ha coppie di stati equivalenti, è detta <strong>minimizzata</strong> o <strong>ridotta</strong>. Ci sono degli algoritmi che individuano le coppie di stati equivalenti e li fanno collassare in un unico stato.
+</p>
+<p class='vspace'>Inoltre, se due macchine hanno gli stati "accoppiabili", sono equivalenti. Per essere precisi, se ho una macchina M1 ed una M2, per essere equivalenti:
+</p><ul><li>per ogni stato s di M1 deve esistere uno stato s' di M2 tale che s ed s' siano equivalenti
+</li><li>per ogni stato s di M2 esiste uno stato s' di M1 tale che s' e s sono equivalenti
+</li></ul><p class='vspace'>Se 2 macchine non sono equivalenti, sono distinguibili.
+</p>
+<div class='vspace'></div><h3>K-equivalenza</h3>
+<p>2 stati sono k-equivalenti se, per ogni sequenza di input di lunghezza k, le sequenze di output dei 2 stati sono le stesse. Si può anche definire la k-distinguibilità allo stesso modo, ed estendere la definizione alle macchine k-equivalenti.
+</p>
+<p class='vspace'>La sequenza di input la si deve vedere così: parto da uno stato e applico quella sequenza di input. Ogni passo di questa sequenza attiverà una transizione che mi porterà o nello stesso stato, o in altri stati etc e produrrà un certo output. Se la stessa sequenza, fatta a partire da un altro stato, mi produce lo stesso output, allora i due stati sono k-equivalenti, con k che è la lunghezza di tale sequenza di input.
+</p>
+<div class='vspace'></div><h3>FSM completamente specificata</h3>
+<p>Una FSM è completamente specificata se, per ogni stato e per ogni input, c'è una transizione che comprende questa accoppiata. Ciò vuol dire che, se ho 3 stati e 4 input, tutti e tre gli stati devono saper gestire i 4 input diversi, per poter definire la macchina come completamente specificata.
+</p>
+<p class='vspace'>In generale, però, le macchine con cui abbiamo a che fare NON sono completamente specificate. La cosa è anche intuitiva: è un po' inutile specificare che cosa succede quando premo l'acceleratore elettronico di un'automobile spenta, per intenderci.
+</p>
+<p class='vspace'>Ci sono anche dei sistemi per ottenere una macchina completamente specificata a partire da una macchina non completamente specificata.
+</p>
+<div class='vspace'></div><h4>Metodo delle transazioni implicitamente definite</h4>
+<p>Aggiungo agli stati dei loop, con output <strong>null</strong> oppure '''error',, in corrispondenza con gli input precedentemente non gestiti.
+</p>
+<p class='vspace'>Ad esempio, se dei 3 input un certo stato ne gestisce solo 2, il terzo lo metto in una transizione di loop e ne etichetto l'output come <strong>null</strong> oppure '''errore'.
+</p>
+<div class='vspace'></div><h4>Metodo delle transazioni indefinite per default</h4>
+<p>Questo è veramente balordo. Ad uno stato a cui manchi la gestione di qualche  input, devo aggiungere tante transizioni quanti sono (input)x(output)x(stati)!
+</p>
+<p class='vspace'>Per capire la follia di questo sistema, se ho 3 stati, 4 input e 2 output, e il mio stato (il numero 1) gestisce solo 2 input, devo aggiungere una transazione che porta ad ogni stato (anche transazioni di loop) mancante per ogni input, per ogni output: mi mancano 2 input, ho 3 stati e 2 output =&gt; 2 * 3 *2 = 12 transazioni.
+</p>
+<p class='vspace'>Un'assurdità.
+</p>
+<div class='vspace'></div><h4>Metodo della transazione proibita</h4>
+<p>Semplicemente, scrivo da qualche parte che "non si può applicare questi input allo stato s<sub>i</sub>"...
+</p>
+<div class='vspace'></div><h3>FSM deterministica</h3>
+<p>Una FSM è deterministica se, dato uno stato ed un input, il passo che può fare è determinato. Questo significa che, se ho un certo input che arriva in uno stato, il passo successivo è solo 1. Se ne ho 2 diversi, allora non è deterministica, perché non saprei determinare con esattezza quale passo fare. Deve esserci quindi una sola uscita per ogni input.
+</p>
+<div class='vspace'></div><h3>FSM fortemente connessa</h3>
+<p>Una FSM è fortemente connessa se, per ogni coppia di stati, c'è una sequenza di input che li congiunge.
+</p>
+<p class='vspace'>La sequenza di input, come dicevamo prima per la k-equivalenza, viene applicata a partire dal primo stato. Questo stato reagirà in modi diversi: dopo tot input saremo finiti in un certo punto. 
+</p>
+<div class='vspace'></div><h3>FSM inizializzata</h3>
+<p>Una FSM è inizializzata se esiste uno stato <strong>s<sub>init</sub></strong> segnato come stato iniziale.
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'> <span  style='color: yellow;'><strong>ATTENZIONE  LA LEZIONE 10 NON E' PIU' OGGETTO D'ESAME QUEST'ANNO</strong></span>
+</p>
+<p class='vspace'>Le FSM che considereremo nei vari esercizi etc., sono da considerarsi:
+</p><ul><li>minimizzate
+</li><li>completamente specificate
+</li><li>deterministiche
+</li><li>inizializzate
+</li></ul><div class='vspace'></div><h2>Sequenze particolari</h2>
+<p>Adesso vediamo alcune sequenze di input che hanno delle proprietà particolari. Queste sequenze hanno un senso in un particolare contesto, che viene indicato per ogni sequenza.
+</p>
+<div class='vspace'></div><h3>Sequenze di sincronizzazione</h3>
+<p>Il problema è: non so qual'è lo stato iniziale, e voglio mandare in input una sequenza di input tale che lo stato finale sia noto.
+</p>
+<p class='vspace'>Una sequenza è una <strong>synchronizing sequence</strong> se, applicata a partire da uno qualunque degli stati, essa conduce sempre allo stesso stato finale. Da notare che non ci interessa l'output, ma solo lo stato finale.
+</p>
+<div class='vspace'></div><h3>Homing sequences</h3>
+<p>Anche qui, non so quale sia lo stato iniziale, ma voglio conoscere lo stato finale osservando l'output.
+</p>
+<p class='vspace'>Una sequenza di input è <strong>homing</strong> se, dopo averla applicata, siamo in grado di determinare lo stato finale osservando la sequenza degli eventi di output. Una sequenza di sincronizzazione è anche homing, ma non il contrario (synchronizing)&#8834;(homing)
+</p>
+<div class='vspace'></div><h3>Distinguishing sequence</h3>
+<p>Non so quale sia lo stato iniziale, ma, osservando l'output, voglio scoprire quale sia. Se sono in grado di farlo, applicando una certa sequenza di input, allora quella sequenza di input è detta <strong>distinguishing</strong>. Alla fine della sequenza so con certezza in quale stato ero alla partenza.
+</p>
+<div class='vspace'></div><h3>State verification - Unique Input/Output (UIO) sequence</h3>
+<p>Non conosco lo stato iniziale, e voglio stabilire se un certo stato è iniziale osservando l'output.
+</p>
+<p class='vspace'>Una sequenza è <strong>UIO</strong> se, dopo averla applicata in input, posso determinare se lo stato iniziale fosse un particolare s<sub>n</sub> oppure no; in caso negativo potrei non sapere in quale stato mi trovi.
+</p>
+<div class='vspace'></div><h2>Macchine a stati finiti estese</h2>
+<p>Le macchine che abbiamo visto finora non sono in grado di modellare la memoria interna, perché sanno gestire solo input e output. La memoria non è né input né output. Pertanto, per poterla modellare occorre estendere le FSM con il concetto di <strong>variabile</strong>.
+</p>
+<p class='vspace'>La definizione matematica di una macchina a stati finiti estesa (<strong>EFSM</strong>) è la seguente: una tupla (S, I, O, V, T), dove S, I, O sono le solite cose; V è l'insieme della variabili, e T quello delle transizioni.
+</p>
+<p class='vspace'>Le transizioni, a loro volta, sono definite così: (s, i, o, g, a, s') dove:
+</p><ul><li>s = stato iniziale
+</li><li>i = input
+</li><li>o = output
+</li><li>g = guardia
+</li><li>a = assegnamento ad una variabile
+</li><li>s' = stato finale
+</li></ul><p class='vspace'>Le cose nuove sono la <strong>guardia</strong> e l<strong>'assegnamento</strong> ad una variabile. L'assegnamento va beh, si capisce: se la variabile si chiama <strong>x</strong> e voglio assegnarle il valore 3, faccio <strong>x:= 3</strong>.
+</p>
+<p class='vspace'>Per quanto riguarda la guardia, invece, si tratta di una condizione booleana che fa sì che la operazione sulla variabile sia eseguita o no. Il fatto che sia booleana ci dice che questa condizione o è verificata, o non lo è. Se è verificata, l'operazione <strong>a</strong> viene eseguita. Altrimenti, non viene eseguita. Inoltre, la guardia <strong>g</strong> è definita sulla variabile, e non su input o output.
+</p>
+<p class='vspace'>Per fare un esempio, se scrivo una transizione così: (s1, tasto +, scrivi numero, var &gt;= 0, a:=a + 1, s2), vuol dire che vado dallo stato s1 all's2 quando arriva l'input "tasto +", producendo l'output "scrivi numero", e che la variabile <strong>a</strong> viene incrementata di 1 solo se la variabile <strong>var</strong> è &gt;= 0.
+</p>
+<p class='vspace'>La guardia può anche non esserci: in questo caso, l'operazione viene eseguita sempre.
+</p>
+<div class='vspace'></div><h3>Stato globale</h3>
+<p>Lo <strong>stato globale</strong> è definito come una tupla <strong>(s, &#963;)</strong>, in cui:
+</p><ul><li><strong>s</strong> è uno stato
+</li><li><strong>&#963;</strong> è una valutazione su V
+</li></ul><p class='vspace'>Essendo V l'insieme delle variabili, questa definizione vuol dire semplicemente che lo stato globale è una fotografia dello stato della macchina in un certo istante. In quell'istante, la macchina sarà in un certo stato <strong>s</strong>, e le sue variabili avranno un certo valore. La situazione in cui le variabili hanno un certo valore la definisco con la <strong>&#963;</strong> (sigma).
+</p>
+<p class='vspace'>Ad esempio, se ho 3 variabili <strong>a</strong>, <strong>b</strong> e <strong>c</strong>, e la situazione è:
+</p><ul><li>stato = s1
+</li><li>a = 3
+</li><li>b = 2
+</li><li>c = 100
+</li></ul><p>allora lo stato globale è (s1, &#963; = (a = 3, b = 2, c = 100)).
+</p>
+<div class='vspace'></div><h3>Transizione globale</h3>
+<p>Dopo lo stato globale, c'è anche la <strong>transizione globale</strong>, che è una tupla in cui si definisce uno stato globale iniziale, uno finale, e dell'i/o in mezzo.
+</p>
+<p class='vspace'>La def è la seguente: ((s, &#963;), i, o, (s',&#963;')), dove
+</p><ul><li>(s, &#963;) = stato globale iniziale
+</li><li>i, o = input e output
+</li><li>(s', &#963;') = stato globale finale
+</li></ul><p class='vspace'>Questa tupla è una transizione globale se esiste una transazione, definita come (s, i, o, g, a, s'), in cui
+</p><ul><li>&#963; soddisfa la g
+</li><li>&#963;'(v) = &#963;(exp), dove <strong>a</strong> è definita come <strong>v:=exp</strong>
+</li></ul><p class='vspace'>Nell'esempio del salvadanaio elettronico (da inserire...), una transizione ((empty, coin=0), inc, red, (not empty, coin = 1)) è una transizione globale, perché la valutazione sulle variabili <strong>&#963;</strong> qui specificata, cioè <strong>coin = 0</strong>, soddisfa la guarda che, nella macchina, porta dallo stato <strong>empty</strong> allo stato <strong>non empty</strong>. Idem per la <strong>&#963;</strong>'.
+</p>
+<p class='vspace'>Invece, ((non emtpy, coin = 5), inc, red, (non empty, coin = 7)) <strong>non è</strong> una transizione globale, perché, se anche <strong>&#963;</strong> soddisfa la guardia, la <strong>&#963;</strong>' non la soddisfa affatto: nella mia macchina se incremento vado da 5 a 6, e non a 7.
+</p>
+<div class='vspace'></div><h3>Grafo di raggiungibilità</h3>
+<p>Un <strong>grafo di raggiungibilità</strong> lo creo stabilendo che i nodi sono stati globali, e gli archi sono transazioni globali.
+</p>
+<p class='vspace'>Quindi, avrò uno stato per ogni combinazione di stato e di memoria, e archi tante quante le combinazioni tra transizioni "normali" e stato di memoria.
+</p>
+<p class='vspace'>In particolare, se la memoria è finita, allora anche la combinazione tra stati e memoria sarà un numero finito; idem per la combinazione tra transizioni e stati di memoria. E allora, in queste condizioni è possibile trasformare una EFSM in una FSM semplice, in cui ho tanti stati quante sono le combinazioni tra stati della EFSM e stati in cui la memoria può trovarsi in EFSM.
+</p>
+<p class='vspace'>Se ho per esempio 3 stati, e una variabile che può assumere 5 valori, posso ipotizzare che avrò 3*5 stati:
+</p><ul><li>s1, v = 0
+</li><li>s1, v = 1
+</li><li>s1, v = 2
+</li></ul><p>...
+</p>
+<p class='vspace'>Se invece la variabile ha un range infinito, allora la FSM avrebbe un numero infinito di stati, e non sarebbe più una macchina a stati finiti...
+</p>
+<div class='vspace'></div><h2>Macchine di comunicazione</h2>
+<p>Sopra si parlave delle <strong>macchine di comunicazione</strong> come del sistema per ovviare la triste proprietà delle FSM standard quando vengono composte. Le macchine di comunicazione aggiungono al modello delle macchine il concetto di <strong>canale di comunicazione</strong>. Tramite questo canale le varie FSM possono scambiarsi messaggi per agire come un sistema unico.
+</p>
+<div class='vspace'></div><h3>Definizione matematica</h3>
+<p>Una CFSM è una coppia (C, P) dove C è un insieme di canali, e P un insieme di processi.
+</p>
+<p class='vspace'>Il <strong>processo</strong> è una tupla (S, I, O, T):
+</p><ul><li>S = stati
+</li><li>I = input
+</li><li>O = output
+</li><li>T = transizioni
+</li></ul><p class='vspace'>La <strong>transizione</strong> a sua volta è una tupla che può assumere una di queste tre forme:
+</p><ul><li>(s, null, s')
+</li><li>(s, c?i, s')
+</li><li>(s, c!o, s')
+</li></ul><p class='vspace'>E adesso vediamo di fare un po' di ordine.
+</p>
+<p class='vspace'>Il processo, come si sarà capito, è l'equivalente della singola FSM. Lo chiamo processo perché il fatto che possa comunicare con altre FSM lo rende in grado di essere eseguito indipendentemente, ma sincronizzandosi in qualche modo con le altre FSM.
+</p>
+<p class='vspace'>Per quanto riguarda le transizioni, invece, la parte in mezzo, (quella che è <strong>null</strong>, <strong>c?i</strong> oppure <strong>c!o</strong>) ha a che fare con la capacità del processo di inviare messaggi sul canale. Il canale è indicato da <strong>c</strong>, l'azione che esegue sul canale può essere una <strong>?</strong> o una <strong>!</strong>, e ciò che deriva da quest'azione è <strong>i</strong> oppure <strong>o</strong>. Ed ecco la spiegazione:
+</p><ul><li><strong>null</strong> = in questa transizione il processo se ne frega dei canali
+</li><li><strong>c?i</strong> = il processo <strong>legge</strong> dal canale <strong>c</strong> e memorizza quello che legge nella variabile <strong>i</strong>
+</li><li><strong>c!o</strong> = il processo <strong>scrive</strong> sul canale <strong>c</strong> ciò che è contenuto nella variabile <strong>o</strong>
+</li></ul><p class='vspace'>Quando si rappresenta una CFSM, occorre scrivere prima lo schema della CFSM intera, con i vari processi ed i canali <strong>direzionati</strong> tramite cui parlano. I canali hanno il loro nome, e questo è univoco per tutti i processi.<br />Poi, i singoli processi vanno scritto come le solite FSM.
+</p>
+<div class='vspace'></div><h3>CFSM Estese</h3>
+<p>Facendo un po' il mix di tutto, mi invento a questo punto le <strong>CFSM estese</strong>, in cui aggiungo ai canali la faccenda delle guardie, delle variabili e delle azioni. Le cose quindi si complicano un po'.
+</p>
+<p class='vspace'>I <strong>processi</strong> sono definiti come tuple (S, I, O, V, T), dove <strong>V</strong> sono le variabili.
+</p>
+<p class='vspace'>Anche le <strong>transizioni</strong> si fanno complicate, perché assumono una di queste tre forme:
+</p><ul><li>(s, g, a, s')
+</li><li>(s, g, c?i, s')
+</li><li>(s, g, c!o, s')
+</li></ul><p class='vspace'>Si tratta praticamente di una fusione tra le transizioni delle EFSM e quelle delle CFSM: infatti ho le guardie, le azioni sulle variabili e le azioni sul canale.
+</p>
+<div class='vspace'></div><h3>Estensione temporale delle CFSM estese</h3>
+<p>Non siamo ancora soddisfatti, e vogliamo espandere ulteriormente le CFSM estese appena viste, indicando nelle transazioni anche l'intervallo temporale in cui l'azione può avvenire.
+</p>
+<p class='vspace'>Le transazioni assumono quindi la forma (s, g, a|i/o, s'. [t1, t2]) in cui:
+</p><ul><li><strong>a|i/o</strong> è l'azione: o agisco sulle variabili (<strong>a</strong>), oppure agisco sull'i/o
+</li><li><strong>[t1, t2]</strong> è l'intervallo temporale in cui può avvenire suddetta azione.
+</li></ul><div class='vspace'></div><h3>Transizioni e stati globali</h3>
+<p>Possiamo applicare anche qui il concetto di transizione globale. Una coppia ((&#952;, &#963;), (&#952;', &#963;')) è detta <strong>transazione globale</strong> se, per ogni processo <strong>P</strong>
+</p><ul><li><strong>&#952;</strong> = &lt;s<sub>1</sub>, s<sub>2</sub>, ..., s<sub>n</sub>&gt; con s<sub>1..n</sub> stati dei vari processi P
+</li><li><strong>&#963;</strong> = una valutazione su C (l'insieme dei canali di comunicazione)
+</li></ul><p class='vspace'>In pratica, le &#952; sono gli stati dei vari processi, mentre &#963; mi dice come stanno i canali. La &#963; è triforme (che aggettivo è?), così come sono 3 le operazioni relative ai canali:
+</p><ul><li>transizioni con azione <strong>null</strong>
+</li><li>transizioni con lettura da un canale
+</li><li>transizioni con scrittura su un canale
+</li></ul><p class='vspace'>Allo stesso modo, lo <strong>stato globale</strong> è una fotografia del sistema in un certo istante di tempo, ed è composto da una bella combinazione di tutti gli stati, dei canali etc. etc.
+</p>
+<p class='vspace'>Il <strong>grafo di raggiungibilità</strong> lo si ottiene mettendo gli stati globali come nodi, e le transizioni globali come archi. Come avevamo visto prima, posso arrivare ad ottenere una FSM di base. Ovviamente, dipende anche dalla quantità di memoria dei vari processi: processi con memoria infinita non sono rappresentabili con macchine a stati finiti.
+</p>
+<p class='vspace'><a class='wikilink' href='LinguaggiProgrammazioneSicurezza.html'>Torna alla pagina di LPS</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LPSFSM)</span></div>
+  </div>
+</body>
+</html>

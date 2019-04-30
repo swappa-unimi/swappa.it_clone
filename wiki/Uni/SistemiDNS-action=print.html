@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi - DNS</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SistemiDNS.html' title='Sistemi - DNS'>Sistemi - DNS</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Sistemi - DNS ::</strong>
+</p>
+<div class='vspace'></div><h2>Un po' di teoria sui DNS</h2>
+<p>Il DNS è Domain Name System, ed è un sistema per associare a nomi di dominio delle informazioni (non solo l'IP).
+</p>
+<div class='vspace'></div><h3>Domain Name Space</h3>
+<p>E' lo spazio dei nomi di dominio. Si tratta di un albero in cui ogni nodo ha associato dei <strong>Resource Records</strong>, detti anche <strong>RR</strong>.
+</p>
+<p class='vspace'>Questo albero è diviso in zone, ognuna capeggiata da un DNS server detto <strong>authoritative DNS server</strong>, il quale ha la responsabilità per il suo dominio.
+</p>
+<p class='vspace'>Il <strong>nome di dominio</strong> è composto da <strong>etichette</strong> unite da punti. Un esempio è <em>www.babaoglu.com</em>. La parte più a destra del nome di dominio è detta <strong>top level</strong>, mentre tutto il resto è detto <strong>sub domain</strong>. Ogni etichetta può avere al massimo 63 caratteri. Ci possono essere al massimo 127 livelli. In totale un nome di dominio può essere lungo 255 caratteri.
+</p>
+<p class='vspace'>Il <strong>nome di host</strong> è un nome di dominio al quale è stato associato <em>1 o più IP</em>. 
+</p>
+<p class='vspace'>I server autoritativi hanno le info per tutti i server che stanno nel loro dominio. In cima alla gerarchia invece ci sono i <strong>root nameservers</strong>, che sono quelli che gestiscono lo smistamento del top-level, ovvero i .com, .it e così via.
+</p>
+<p class='vspace'>Il <strong>resolver</strong> è colui (programma o chi per esso) che cerca info associate ad un nodo. Sa come comunicare ad un DNS server facendogli delle query:
+</p><ul><li>query non ricorsive = sono quelle standard. Se un server DNS non sa esattamente l'info richiesta, risponde parzialmente
+</li><li>query ricorsive = un server DNS fa delle query a sua volta per investigare sulle info richieste.
+</li></ul><p class='vspace'>La risoluzione è diretta quando a partire da un nome voglio l'IP, inversa se faccio il contrario. Il meccanismo di risoluzione è semplice, <em>in teoria</em>:
+</p><ul><li>chiedo al root nameserver
+</li><li>questi mi indirizza ad un sottoserver
+</li><li>questi mi indirizza ad un sottoserver etc. etc.
+</li><li>finché non arrivo al server che sa qualcosa
+</li></ul><p class='vspace'>Ci possono essere problemi di ricorsività in questa ricerca, perché un DNS mi dà il NOME dell'altro DNS presso cui cercare. Ma quindi devo trovare l'IP anche di questo secondo DNS, e se sono messi male, un DNS chiede all'altro, che chiede al primo etc. e non ne esco più. Pertanto a volte viene passato direttamente l'IP di un DNS.
+</p>
+<div class='vspace'></div><h3>In pratica</h3>
+<p>In pratica sta storia di chiedere tutto al root e di farsi reindirizzare da questi non funziona, perché i root nameserver sarebbero sommersi da mgliaia di miliardi di richieste al giorno.
+Quindi ogni DNS mantiene una <em>cache</em> delle query, ovvero delle richieste già fatte, e ogni voce della query ha un suo <em>TTL</em>, cioè Time To Live. Se una seconda richiesta alla stessa voce viene fatta entro il TTL, allora il DNS risponde con la voce che ha in cache, senza andare a scomodare qualcun altro.
+Questo è il motivo per cui spesso un aggiornamento ad un nome di dominio non viene rispecchiato subito da tutti i  DNS server: infatti questi aspettano che le cache finiscano il TTL prima di aggiornarle. Il TTL va da 0 a 68 anni (!!).
+</p>
+<p class='vspace'>Inoltre, un singolo nome di dominio può essere associato allo stesso IP. Ciò accade quando:
+</p><ul><li>ho diversi servizi sulla stessa macchina, eg un server http e uno ftp. L'IP è lo stesso (non la porta, ma ciò non importa), ma ad esempio i due url sono diversi: <em>ftp.babaoglu.com<strong> e </strong>www.babaoglu.com</em>'
+</li><li>ci sono i <em>virtual server</em>: un server http offre pagine diverse a seconda del fatto che vi ho acceduto con un nome o con un altro. Eg, può darsi che su altervista siamo tutti sullo stesso server, ma se accediamo con <strong>doppioclic.altervista.org</strong> veniamo inviati ad uno spazio diverso rispetto a <strong>babaoglu.altervista.org</strong>.
+</li></ul><p class='vspace'>Il DNS serve anche ai programmi di posta per trovare i server di posta. Questo è il famigerato record <strong>MX</strong>, che sta per <strong>Mail eXchange</strong>, e se lo interpello riguardo ad un nome come <strong>babaoglu.com</strong> mi dice dove è il server di posta di quel dominio.
+</p>
+<div class='vspace'></div><h3>Dettagli del protocollo</h3>
+<p>La porta usata è la 53. Si usa UDP, in genere fino a risposte inferiori ai 512 byte. Per dimensioni superiori si usa TCP. Cmq diverse implementazioni usano TCP per tutto.
+</p>
+<p class='vspace'>Ecco qui i record principali:
+</p><ul><li><strong>A record</strong> = address record, contiene l'IPv4 dell'hostname in questione (32 bit)
+</li><li><strong>AAAA record</strong> = address record di IPv6, 128 bit
+</li><li><strong>CNAME</strong> = canonical name, l'alias di un nome
+</li><li><strong>MX</strong> = mail exchange server (ce ne può essere una lista)
+</li><li><strong>PTR</strong> = il nome di un IP
+</li><li><strong>NS</strong> = mappa un dominio ad una lista di DNS server autoritativi per quel dominio
+</li><li><strong>SOA</strong> = start of authority, mi dice qual'è il server autoritativo per quel dominio, l'email dell'amministratore del dominio, il numero di serie del dominio, e dei timer sconosciuti
+</li><li><strong>SRU</strong> = service location record. Boh!
+</li><li><strong>TXT</strong> = del testo arbitrario a discrezione del proprietario del dominio
+</li></ul><p class='vspace'>Ogni record è salvato secondo la struttura specificata dalla <strong>RFC 1035</strong>:
+NAME - TYPE - CLASS - TTL - RDLENGTH - RDATA
+</p>
+<p class='vspace'>Il set dei caratteri è una versione ridotta della tabella ASCII, quindi non ci sono caratteri strani etc.
+</p>
+<div class='vspace'></div><h3>Problemi di sicurezza</h3>
+<p><strong>DNS cache poisoning</strong>: sputtano la cache del DNS, dandogli delle info false che magari reindirizzano tutte le richieste a www.paypal.it al mio server, con un TTL di 68 anni, così che non cambieranno mai.
+</p>
+<p class='vspace'>Inoltre ci sono problemi perché non c'è niente di crittografato, quindi la sicurezza non c'è.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SistemiDNS)</span></div>
+  </div>
+</body>
+</html>

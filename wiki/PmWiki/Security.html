@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Security </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='PmWiki.Security' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Security
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Security?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Security?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Security?action=print' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Security?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Security?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> Tools
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Cal/Cal'>Calendario</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Gruppi'>Gruppi</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Categorie'>Categorie</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/WikiSandbox'>WikiSandbox</a>
+</li></ul><p class='vspace sidehead'> Categorie
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>UniCrema</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Guide'>Guide</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Qultura'>Qultura</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Recensioni'>Recensioni</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Imperdibili'>Imperdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Perdibili'>Perdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/LoschiIndividui'>Loschi individui</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/CaGate'>caGate</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringWiki'>Touring Wiki</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringBar'>Touring Bar</a>
+</li></ul><p class='vspace sidehead'> Help
+</p><ul><li><a class='urllink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki' title='' rel='nofollow'>Guide interne wiki</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><p class='vspace'  style='text-align: right;'> <span style='font-size:83%'><a class='wikilink' href='http://www.swappa.it/wiki/Site/SideBar?action=edit'>edit SideBar</a></span>
+</p>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Security was last modified on February 03, 2010, at 10:59 AM'>
+							<span style='display:none;'>Security</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='UploadsAdmin.html'>Uploads administration</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation Index</a> | <a class='wikilink' href='CustomInterMap.html'>Custom inter map</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' >
+</div>
+<p>Aspects of PmWiki security are found on the following pages:
+</p>
+<p class='vspace'>Pages distributed in a PmWiki release:
+</p><ul><li><a class='wikilink' href='Passwords.html'>Passwords</a> General use of passwords
+</li><li><a class='wikilink' href='PasswordsAdmin.html'>Passwords Admin</a> More password options for the administrator
+</li><li><a class='wikilink' href='AuthUser.html'>AuthUser</a> Authorization system that uses usernames and passwords
+</li><li><a class='wikilink' href='UrlApprovals.html'>Url Approvals</a> Require approval of Url links
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Site%20Analyzer' title='' rel='nofollow'>Site Analyzer</a> 
+</li><li><a class='wikilink' href='Blocklist.html'>Blocklist</a> Blocking IP addresses, phrases, and expressions to counteract spam and vandalism.
+</li><li><a class='wikilink' href='Notify.html'>Notify</a> Allows a site administrator to configure PmWiki to send email messages whenever pages are changed on the wiki site
+</li><li><a class='wikilink' href='SecurityVariables.html'>Security variables</a> variables crucial for site security
+</li></ul><p class='vspace'><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook//' title='' rel='nofollow'>Cookbook</a> Pages
+</p>
+<div class='vspace'></div><ul><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Cookbook#Security' title='' rel='nofollow'>Cookbook index for Security recipes</a>
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/HtpasswdForm' title='' rel='nofollow'>Cookbook:HtpasswdForm</a> Form based management of users and passwords using .htpasswd/.htgroup files
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Secure%20attachments' title='' rel='nofollow'>Cookbook:Secure attachments</a> Protecting uploaded attachments
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Web%20server%20security' title='' rel='nofollow'>Cookbook:Web server security</a> Making the server more secure with .htaccess
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Farm%20security' title='' rel='nofollow'>Cookbook:Farm security</a> Making Farm installations secure
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/DeObMail' title='' rel='nofollow'>Cookbook:DeObMail</a> Hide e-mail address
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Protect%20email' title='' rel='nofollow'>Cookbook:Protect email</a> Obfusticate email addresses
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Audit%20images' title='' rel='nofollow'>Cookbook:Audit images</a> Check to see what images have been uploaded to your wiki.
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Private%20groups' title='' rel='nofollow'>Cookbook:Private groups</a> Create and secure private groups on a public wiki
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Only%20one%20login' title='' rel='nofollow'>Cookbook:Only one login</a> Only allow 1 login at the same time for a username
+</li><li><a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Session%20guard' title='' rel='nofollow'>Cookbook:Session guard</a> Protects against Session Theft
+</li></ul><div class='vspace'></div><div class='faq' > <a name='faq' id='faq'></a> 
+<p class='vspace question'> How do I report a possible security vulnerability of PmWiki?</p>
+<p class='vspace'> <a class='urllink' href='http://www.pmichaud.com' title='' rel='nofollow'>Pm</a> wrote about this in <a class='urllink' href='http://pmichaud.com/pipermail/pmwiki-users/2006-September/031793.html' title='' rel='nofollow'>a post to pmwiki-users from September 2006</a>. In a nutshell he differentiates two cases:
+</p><dl><dd><ol><li>The possible vulnerability isn't already known publicly: In this case please contact Pm by private mail.
+</li><li>The possible vulnerability is already known publicly: In this case feel free to discuss the vulnerability in public (e.g. on <a class='urllink' href='http://www.pmichaud.com/mailman/listinfo/pmwiki-users' title='' rel='nofollow'>pmwiki-users</a>).
+</li></ol></dd></dl><p>See <a class='urllink' href='http://pmichaud.com/pipermail/pmwiki-users/2006-September/031793.html' title='' rel='nofollow'>his post mentioned above</a> for details and rationals.
+</p>
+<p class='vspace question'> What about the botnet security advisory at <a target='_blank'  class='urllink' href='http://isc.sans.org/diary.php?storyid=1672' title='' rel='nofollow'>http://isc.sans.org/diary.php?storyid=1672</a>?</p>
+<p class='vspace'> Sites that are running with PHP's <em>register_globals</em> setting set to "On" and versions of PmWiki prior to 2.1.21 may be vulnerable to a botnet exploit that is taking advantage of a bug in PHP.  The vulnerability can be closed by turning <em>register_globals</em> off, upgrading to PmWiki 2.1.21 or later, or upgrading to PHP versions 4.4.3 or 5.1.4.  <br clear='all' />In addition, there is a test at <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/SiteAnalyzer' title='' rel='nofollow'>PmWiki:SiteAnalyzer</a> that can be used to determine if your site is vulnerable.
+</p>
+<p class='vspace'><a name='wikivandalism' id='wikivandalism'></a>
+</p><h2>Wiki Vandalism</h2>
+<dl><dt>Assumptions</dt><dd> you are using a <a class='wikilink' href='Blocklist.html'>Blocklist</a> and <a class='wikilink' href='UrlApprovals.html'>Url approvals</a>.
+</dd><dt> </dt><dd>You don't want to resort to <a class='wikilink' href='Passwords.html'>password</a> protecting the entire wiki, that's not the point after all.
+</dd><dt> </dt><dd>Ideally these protections will be invoked in <code>config.php</code>
+</dd></dl><p class='vspace question'> How do I stop pages being <a class='wikilink' href='DeletingPages.html'>deleted</a>, eg password protect a page from deletion?</p>
+<p> Use <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/DeleteAction' title='' rel='nofollow'>Cookbook:DeleteAction</a> and password protect the page deletion <a class='wikilink' href='AvailableActions.html'> action</a> by adding <code class='escaped'>$DefaultPasswords['delete'] = '*';</code> to <code>config.php</code> or password protect the action with <code><a class='varlink' href='SecurityVariables.html#HandleAuth'><code class='varlink'>&#36;HandleAuth</code></a>['delete'] = 'edit';</code>
+</p><div class='indent'>or <code><a class='varlink' href='SecurityVariables.html#HandleAuth'><code class='varlink'>&#36;HandleAuth</code></a>['delete'] = 'admin';</code> to require the edit or admin password respectively.
+</div><p class='vspace question'> How do I stop pages being replaced with an empty (all spaces) page?</p>
+<p> Add <code class='escaped'>block: /^\s*$/</code> to your <a class='wikilink' href='Blocklist.html'>blocklist</a>.
+</p>
+<p class='vspace question'> how do I stop pages being completely replaced by an inane comment such as <em>excellent site</em>, <em>great information</em>, where the content cannot be blocked?</p>
+<p> Try using the newer <a class='wikilink' href='Blocklist.html#automaticblocklists'>automatic blocklists</a> that pull information and IP addresses about known wiki defacers.
+</p>
+<p class='vspace'> (OR) Try using <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Captchas' title='' rel='nofollow'>Cookbook:Captchas</a> or <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Captcha' title='' rel='nofollow'>Cookbook:Captcha</a> (note these are different).
+</p>
+<p class='vspace'> (OR) Set an edit password, but make it publicly available on the <a class='wikilink' href='../Site/AuthForm.html'>Site.AuthForm</a> template.
+</p>
+<p class='vspace question'> How do I password protect all common pages in all groups such as recent changes, search, group header, group footer, and so on?</p>
+<p> Insert the following lines into your local/config.php file. Editing these pages then requires the admin password.
+</p><div class='indent'><pre class='escaped'>
+## Require admin password to edit RecentChanges (etc.) pages.
+if ($action=='edit'
+    &amp;&amp; preg_match('/\\.(Search|Group(Header|Footer)|(All)?RecentChanges)$/', $pagename))
+  { $DefaultPasswords['edit'] = crypt('secret&amp;nbsp;phrase'); }
+</pre>
+</div><p class='vspace'>Note that all GroupAttributes pages are protected by the attr password.
+</p>
+<p class='vspace'><strong>Alternative:</strong> you can require 'admin' authentication for these pages:
+</p><div class='indent'><pre class='escaped'>
+## Require admin password to edit RecentChanges (etc.) pages.
+if ($action=='edit' 
+    &amp;&amp; preg_match('(Search|Group(Header|Footer)|(All)?RecentChanges)', $pagename))
+  { $HandleAuth['edit'] = 'admin'; }
+</pre>
+</div><p class='vspace question'> How do I password protect the creation of new groups?</p>
+<p> See <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Limit%20Wiki%20Groups' title='' rel='nofollow'>Cookbook:Limit Wiki Groups</a> 
+</p>
+<p class='vspace question'> How do I password protect the creation of new pages?</p>
+<p> See <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Limit%20new%20pages%20in%20Wiki%20Groups' title='' rel='nofollow'>Cookbook:Limit new pages in Wiki Groups</a> 
+</p>
+<p class='vspace question'> How do I take a whitelist approach where users from known or trusted IP addresses can edit, and others require a password?</p>
+<p> Put these lines to local/config.php:
+</p><pre class='escaped'>
+## Allow passwordless editing from own turf, pass for others.
+if ($action=='edit'
+ &amp;&amp; !preg_match("/^90\\.68\\./", $_SERVER['REMOTE_ADDR']) )    
+ { $DefaultPasswords['edit'] = crypt('foobar'); }
+</pre>
+<p>Replace 90.68. with the preferred network prefix and foobar with the default password for others.
+</p>
+<p class='vspace question'> How do I password protect <a class='wikilink' href='AvailableActions.html'>page actions</a>?</p>
+<p> See <a class='wikilink' href='Passwords.html'>Passwords</a> for setting in config.php  
+</p><div class='indent'><code><a class='varlink' href='SecurityVariables.html#HandleAuth'><code class='varlink'>&#36;HandleAuth</code></a>['<em>pageactionname</em>'] = 'pageactionname'; # along with :</code>
+</div><div class='indent'><code><a class='varlink' href='SecurityVariables.html#DefaultPasswords'><code class='varlink'>&#36;DefaultPasswords</code></a>['<em>pageactionname</em>'] = crypt('secret&nbsp;phrase');</code>
+</div><p> or 
+</p><div class='indent'><code><a class='varlink' href='SecurityVariables.html#HandleAuth'><code class='varlink'>&#36;HandleAuth</code></a>['<em>pageactionname</em>'] = 'anotherpageactionname';</code>
+</div><p class='vspace question'> How to make a rule that allows only authors to edit their own wiki page in <a class='wikilink' href='http://www.swappa.it/wiki/Profiles/Profiles'>Profiles</a> group?</p>
+<p> Add this to your <em>local/config.php</em>
+</p>
+<div class='vspace'></div><div class='indent'><code>$name = PageVar($pagename, '$Name');</code>
+</div><div class='indent'><code>$group = PageVar($pagename, '$Group');</code>
+</div><div class='indent'><code>if($group=='Profiles') <a class='varlink' href='SecurityVariables.html#DefaultPasswords'><code class='varlink'>&#36;DefaultPasswords</code></a>['edit'] = 'id:'.$name;</code>
+</div><p class='vspace question'> How do I moderate all postings?</p>
+<p> Enable <a class='wikilink' href='Drafts.html'>PmWiki.Drafts</a>
+</p><ul><li>Set <a class='varlink' href='EditVariables.html#EnableDrafts'><code class='varlink'>&#36;EnableDrafts</code></a>, this relabels the "Save" button to "Publish" and a "Save draft" button appears. 
+</li><li>Set &#36;EnablePublish, this adds a new "publish" authorization level to distinguish editing from publishing.
+</li></ul><p class='vspace question'> How do I make a read only wiki?</p>
+<p> In config.php <a class='wikilink' href='PasswordsAdmin.html'>set</a> an "edit" password.
+</p>
+<p class='vspace question'> How do I restrict access to <a class='wikilink' href='Uploads.html'>uploaded attachments</a>?</p>
+<p> See
+</p><ul><li><a class='wikilink' href='UploadsAdmin.html#direct_download'>instructions</a> for denying  public access to the uploads directory
+</li><li>see <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Secure%20attachments' title='' rel='nofollow'>Cookbook:Secure attachments</a> 
+</li></ul><p class='vspace'> 
+</p></div><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='UploadsAdmin.html'>Uploads administration</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation Index</a> | <a class='wikilink' href='CustomInterMap.html'>Custom inter map</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+<br clear='all' />
+</p><div  style='background-color: #ffe; border-top: 1px solid black; font-size: .8em;' > 
+<p>This page may have <span class='commentout-pmwikiorg'> a more recent version on <a class='urllink' href='http://www.pmwiki.org' title='' rel='nofollow'>pmwiki.org</a>: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Security' title='' rel='nofollow'>PmWiki:Security</a>, and </span> a talk page: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Security-Talk' title='' rel='nofollow'>PmWiki:Security-Talk</a>.
+</p></div>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: February 03, 2010, at 10:59 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Security?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Security?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

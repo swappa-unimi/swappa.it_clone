@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Traduttori - Lezione del 5 marzo 2009</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Trad050309.html' title='Traduttori - Lezione del 5 marzo 2009'>Traduttori - Lezione del 5 marzo 2009</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Traduttori - Lezione del 5 marzo 2009 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Traduttori.html'>Torna alla pagina di Traduttori</a>
+</p>
+<div class='vspace'></div><h3>Il simbolo</h3>
+<p>Il simbolo è un'entità atomica non ulteriormente indivisibile. Non vuol dire che sia composto da un singolo carattere, ma che dal pdv della sintassi, sotto al simbolo non si scende.<br />L'analizzatore lessicale prende i vari caratteri del testo, e li raggruppa in simboli, i quali poi saranno l'unità di base del passo succesivo.
+</p>
+<div class='vspace'></div><h3>L'alfabeto</h3>
+<p>L'alfabeto è un insieme finito di simboli, e soprattutto non vuoto (mmm). Si indica con la lettera &#931; (sigma).
+</p>
+<div class='vspace'></div><h3>La stringa</h3>
+<p>Una stringa è invece una sequenza finita o nulla di simboli presi da &#931;.<br />La stringa vuota si indica con &#949; (epsilon).
+</p>
+<p class='vspace'>Per fare un esempio, supponiamo di avere un alfabeto così:
+</p><pre> &#931; = {+, -, *, /, (, ), n}
+</pre><p>in cui n è un intero generico.
+</p>
+<p class='vspace'>Stringhe valide potrebbero essere
+</p><pre> n + (n / n)
+ (n + n)
+ n + + -
+</pre><p class='vspace'>Stringhe non valide invece
+</p><pre> n * [a + c]
+</pre><p>perché le parentesi quadre, <strong>a</strong> e <strong>c</strong> non fanno parte di &#931;.
+</p>
+<div class='vspace'></div><h2>Il linguaggio</h2>
+<p>Un linguaggio L, definito su di un alfabeto &#931;, è un sottinsieme di tutte le stringhe <em>finite</em> ottenibili dall'alfabeto &#931;.<br />Da notare che può anche essere un sottinsieme <em>infinito</em>, anche se i suoi elementi sono stringhe <em>finite</em>. In effetti, basta pensare a tutti i possibili programmi che si possono scrivere in C: le stringhe sono di lunghezza finita, ma tutti i possibili programmi sono in numero infinito.
+</p>
+<div class='vspace'></div><h3>Specificare un linguaggio</h3>
+<p>Come già dicevamo nella lezione del <a class='wikilink' href='Trad030309.html'>3 marzo</a>, ci sono diversi approcci nei confronti di un linguaggio. Per specificare un linguaggio, ovvero stabilire che cosa fa parte di un linguaggio e che cosa no, ci sono diversi metodi:
+</p>
+<div class='vspace'></div><ul><li>enumerazione: semplicemente faccio la lista di che cosa è ammesso e di che cosa no. Ovviamente non è una cosa molto furba...
+</li><li>teoria degli insiemi: definisco un linguaggio mediante un'espressione della teoria degli insiemi, ad esempio: <em>L = {xy | x = 0<sup>n</sup>, y = 1<sup>n</sup>, n&gt;= 0}</em>, che definisce tutte le stringhe composte da un certo numero di 0 seguiti dallo stesso numero di 1. Il problema è che questa definizione è difficilmente implementabile come algoritmo.
+</li><li>mediante una grammatica: la grammatica definisce in modo intelligente un linguaggio.
+</li></ul><p class='vspace'>La <strong>cardinalità</strong> di un linguaggio è il numero di elementi che lo costituisce. Si indica così: <strong>|L|</strong>, ed è quindi il numero di stringhe che contiene. Come abbiamo visto sopra, può anche essere infinita.<br />Se invece la cardinalità è 0, allora si indica con la lettera phi: &#934;, che  indica  il linguaggio vuoto. OCIO: se è vuoto vuol dire che non contiene NEANCHE la stringa vuota: sarebbe già contenere qualcosa.
+</p>
+<div class='vspace'></div><h3>Operazioni su stringhe</h3>
+<p>Vediamo un po' di operazioni che si possono fare sulle stringhe.
+</p>
+<p class='vspace'>La <strong>concatenazione</strong> consiste nel mettere il contenuto di una stringa dopo un'altra (uuuh). Si segna così: <strong>xy</strong>.<br />Se <strong>x = soma</strong> e <strong>y = rone</strong>, allora <strong>xy = "somarone"</strong>.
+</p>
+<p class='vspace'>Il neutro dell'operazione di concatenazione è &#949;, perché è la stringa vuota:
+</p><pre> x&#949; = &#949;x = x
+</pre><p class='vspace'>La <strong>potenza n-esima</strong> di una stringa consiste nella concatenazione di x con n volte se stessa. Ad esempio, <strong>x<sup>3</sup> = xxx</strong>.<br />Invece, <strong>x<sup>0</sup> = &#949;</strong>.
+</p>
+<p class='vspace'>Una stringa è detta <strong>prefisso</strong> di un'altra stringa quando... è un prefisso:) Idem per il <strong>suffisso</strong>.<br />Per esempio, <strong>w = xyz</strong> ha come prefisso <strong>x</strong>, e come suffisso <strong>z</strong>. Inoltre, sia <strong>x</strong> che <strong>y</strong> che <strong>z</strong> sono <strong>sottostringhe</strong> di <strong>w</strong>.<br />La stringa vuota &#949; è prefisso, suffisso e sottostringa di ogni stringa.<br />Una stringa <strong>x</strong> è prefisso, suffisso e sottostringa di se stessa.
+</p>
+<p class='vspace'>Due stringhe sono dette <strong>uguali</strong> se contengono gli stessi simboli, in egual numero, ordinati allo stesso modo. Vabeh non mi dilungo troppo...
+</p>
+<div class='vspace'></div><h3>Operazioni su linguaggi</h3>
+<p>Allo stesso modo con cui si eseguono operazioni su stringhe, si possono anche eseguire operazioni su linguaggi. Dato che si tratta di insiemi, le loro operazioni sono di tipo insiemistico.
+</p>
+<p class='vspace'>L<strong>'unione</strong> di due linguaggi si segna <strong>L<sub>1</sub> U L<sub>2</sub></strong>. Il risultante è un insieme contenente tutte le stringhe di L<sub>1</sub> e le stringhe di L<sub>2</sub>. Ocio che le stringhe in comune vengono contate una volta sola, perché un insieme non ammette ripetizioni.<br />Il linguaggio vuoto è l'unità rispetto all'unione:
+</p><pre> L U &#934; = &#934; U L = L
+</pre><p class='vspace'>L<strong>'intersezione</strong> è l'intersezione tra insiemi.
+</p>
+<p class='vspace'>La <strong>differenza</strong> consiste nel prendere tutte le stringhe che appartengono ad un insieme ma non all'altro.
+</p>
+<p class='vspace'>L<strong>'uguaglianza</strong> è l'uguaglianza.
+</p>
+<p class='vspace'><strong>Concatenare</strong> due linguaggi vuol dire ottenere un linguaggio che contiene tutte le stringhe ottenute concatenando ogni stringa del primo linguaggio con ogni stringa del secondo linguaggio.<br />Ecco un esempio:
+</p><pre> L<sub>1</sub> = {a,b,c}
+ L<sub>2</sub> = {1,2,3}
+ L<sub>1</sub>L<sub>2</sub> = {a1, a2, a3, b1, b2, b3, c1, c2, c3}
+</pre><p>Ocio che L<sub>1</sub>L<sub>2</sub> non è uguale a L<sub>2</sub>L<sub>1</sub>.<br />Il linguaggio vuoto &#934; è l'elemento 0 rispetto alla concatenazione:
+</p><pre> &#934;L = L&#934; = &#934;
+</pre><p>Elemento 0 vuol dire che annulla tutto: infatti, come dicevamo sopra, &#934; non contiene nulla, nemmeno la stringa vuota, la quale sarebbe già qualcosa. È come lo 0 nella moltiplicazine.<br />Invece, la stringa vuota &#949; è l'elemento unità, cioè si comporta come l'1 nella moltiplicazione:
+</p><pre> L{&#949;} = {&#949;}L = L
+</pre><p>Metto la &#949; tra parentesi graffe per indicare che sto descrivendo un linguaggio in modo enumerativo.
+</p>
+<p class='vspace'>La <strong>potenza n-esima</strong> di un linguaggio consiste, come per le stringhe, nella concatenazione con se stesso n volte. Inoltre, L<sup>0</sup> = {&#949;}.
+</p>
+<p class='vspace'>La <strong>chiusura di Kleene</strong> si indica con <strong>L<sup>*</sup></strong>, ed è definita come l'unione di tutte le potenze i-esime di L, con i &gt;= 0. Si tratta quindi di L<sup>0</sup> U L<sup>1</sup> U L<sup>2</sup> U ... U L<sup>i</sup>.
+</p>
+<p class='vspace'>La <strong>chiusura positiva</strong> è la chiusura di Kleene, ma <strong>senza</strong> L<sup>0</sup>, ovvero senza la stringa vuota.
+</p>
+<div class='vspace'></div><h3>Osservazioni sui linguaggi</h3>
+<p>L<sup>*</sup> si chiama chiusura, anche se sembra una cosa così open, perché ogni linguaggio che si può ottenere da L, unendo o concatenando le sue stringhe, è contenuto in L<sup>*</sup>, che quindi racchiude tutto.
+</p>
+<p class='vspace'>Possiamo anche vedere l<strong>'alfabeto</strong> come  un <strong>linguaggio</strong>, trattandosi infatti di un insieme di simboli: in questo caso, le <strong>stringhe</strong> sono di lunghezza 1, perché composte da un solo simbolo. Ricordo ancora che della lunghezza del simbolo in caratteri non diciamo niente: può essere lungo 1 o 10 caratteri, ma sempre atomico è. Pertanto, se dico "stringhe di lunghezza 1", mi riferisco alla loro lunghezza in simboli, non a quella effettiva in caratteri.<br />&#931;<sup>*</sup> è il linguaggio universale su &#931;: essendo l'insieme di tutte le concatenazioni possibili di simboli di &#931;, allora conterrà anche tutte le stringhe generate con elementi di &#931;. Posso anche dire che tutti i linguaggi costruiti su &#931; sono sottinsiemi di &#931;<sup>*</sup>.<br />E allo stesso modo definisco &#931;<sup>k</sup> come l'insieme di tutte le stringhe di lunghezza k (lunghezza sempre intesa come lunghezza in simboli).
+</p>
+<div class='vspace'></div><h2>Rappresentazione dei linguaggi</h2>
+<ul><li>rappresentazione generativa sintetica: L è l'insieme delle stringhe ottenute da una struttura finita detta <strong>grammatica</strong>
+</li><li>rappresentazione riconoscitivo-analitica: L è l'insieme delle stringhe che vengono riconosciute (o accettate) da un automa
+</li><li>rappresentazione algebrica: L è la soluzione di un sistema di relazioni algebriche.
+</li></ul><p class='vspace'>Anche qui salta fuori ancora la grammatica. Il primo punto usa esplicitamente una grammatica, perché la usa per <em>produrre</em> un linguaggio. Ma anche al secondo punto si usa una grammatica: viene usata per <em>riconoscere</em> un linguaggio.
+</p>
+<div class='vspace'></div><h3>La grammatica</h3>
+<p>La grammatica è la descrizione dei modi di comporre frasi senza alcun riferimento all'informazione che portano. Vuol dire che definisco delle categorie sintattiche, e le relazioni tra di esse.
+</p>
+<p class='vspace'>A <em>livello lessicale</em> sono interessato a stabilire relazioni tra i simboli per ottenere lessemi.<br />A <em>livello sintattico</em> invece mi interessa stabilire relazioni tra lessemi per ottenere frasi "buone". Prendo i lessemi, e li faccio appartenere ad una categoria.
+</p>
+<p class='vspace'>La definizione formale di grammatica dice che una grammatica <strong>G</strong> è una <strong>quadrupla (NT, T, S, P)</strong> dove:
+</p><ul><li>NT = insieme di simboli non terminali, indicati con lettere maiuscole A, B, ...
+</li><li>T = insieme di simboli terminali, indicati con lettere minuscole: a, b, ...
+</li><li>S = simbolo iniziale della grammatica
+</li><li>P = regole di produzione
+</li></ul><p>T deve essere un sottinsieme dell'alfabeto V, mentre S deve essere appartenente all'insieme NT dei simboli non terminali.
+</p>
+<p class='vspace'>L'idea di fondo è che ho dei simboli non terminali, e in particolare uno da cui parto. Applicando le regole di produzione P, sono in grado di sostituirli man mano e di arrivare fino ad avere una frase composta da soli simboli terminali.
+</p>
+<p class='vspace'>Le regole di produzione P sono della forma:
+</p><pre> P : &lt;&#945;<sub>1</sub>, &#946;<sub>1</sub>&gt;, ..., &lt;&#945;<sub>n</sub>, &#946;<sub>n</sub>&gt;
+</pre><p>in cui:
+</p><ul><li>&#945; e &#946; sono stringhe miste, cioè sono composte un po' da simboli terminali e simboli non terminali
+</li><li>&#945;<sub>1</sub> contiene almeno un simbolo non terminale
+</li><li>si scrivono come &#945; -&gt; &#946;
+</li></ul><p class='vspace'>Alla fine di tutto, ho <strong>T</strong>, che è l'insieme delle stringhe finali accettate dalla mia grammatica (e il verbo accettare ci fa ricordare gli automi di cui sopra).
+</p>
+<div class='vspace'></div><h3>Esempio</h3>
+<p>Supponiamo di voler scrivere una grammatica che mi permetta di definire le stringhe palindrome, ovvero quelle che si possono leggere allo stesso modo a partire ad entrambe le estremità, ad esempio abba, aca, a, bb e così via.
+</p>
+<div class='vspace'></div><ul><li>l'alfabeto è composto da {a, b, c}.
+</li><li>NT = {S}
+</li><li>T =  {a, b, c}
+</li><li>P = {S -&gt; aSa, S-&gt; bSb, S -&gt; cSc, S -&gt; a, S -&gt; b, S -&gt; c, S -&gt; &#949;}
+</li></ul><p class='vspace'>Il simbolo iniziale è sempre S, e non lo scriviamo per semplicità. Inoltre, diciamo subito che possiamo scrivere le regole di produzione anche in questo modo:
+</p><pre> S -&gt; a|b|c
+</pre><p>in cui le barre verticali | indicano che si è in presenza di un'alternativa.
+</p>
+<p class='vspace'>La soluzione è quella di sopra, ma perché è corretta? Innanzitutto, si parte sempre da una stringa contenente il simbolo non terminale di partenza, cioè la S.<br />Poi, si eseguono le <strong>derivazioni</strong>: si prende un simbolo non terminale e lo si sostituisce con la sua "definizione" data nella lista delle regole di produzione.
+</p>
+<p class='vspace'>In questo caso, posso ad esempio decidere di sostituire S con aSa, perché così sta scritto nelle regole di produzione. Poi vado avanti: sostituisco i simboli non terminali con le loro regole di produzione e così via finché non finisco:
+</p><pre> 1) S
+ 2) S -&gt; aSa: aSa
+ 3) S -&gt; bSa: abSba
+ 4) S -&gt; c:   abcba
+</pre><p>Come si può vedere, la derivazione si applica alla stringa prodotta al passo precedente, così che la stringa finale man mano si crea. Al passo 3), per esempio, ho sostituito S con bSb Siccome S nella stringa precedente si trovava in mezzo alle due a, ho semplicemente messo bSb al posto della S: abSba.
+</p>
+<div class='vspace'></div><h3>La derivazione</h3>
+<p>Abbiamo già visto che cos'è la derivazione nell'esempio pratico: è la ripetuta applicazione di regole della grammatica.
+</p>
+<p class='vspace'>Una stringa di simboli che è coinvolta nella derivazione viene detta <strong>forma di frase</strong>, oppure anche <strong>forma sentenziale</strong>.<br />Se invece una forma di frase contiene solo simboli terminali, la chiamo solamente <strong>frase</strong>.
+</p>
+<p class='vspace'>Nell'esempio di sopra, i passi 1, 2 e 3 contenevano forme sentenziali, mentre l'ultimo passo mi ha dato una frase. Il passaggio dalle forme sentenziali alla frase è appunto la derivazione.
+</p>
+<p class='vspace'>La derivazione non è il singolo passaggio, ma è tutta l'applicazione dal passo 1 al passo finale. Quindi, avremmo potuto anche scrivere così:
+</p><pre> S -&gt;<sup>*</sup> abcba
+</pre><p>il che vuol dire che siamo in grado,  in uno o più passi, di andare da S alla mia frase abcba. La scrittura <strong>-&gt;<sup>*</sup></strong> si chiama <strong>chiusura transitiva di -&gt;</strong>.
+</p>
+<p class='vspace'>Supponiamo che in una frase ci siano più simboli non terminali:
+</p><pre> aBcdAfgC
+</pre><p>(ricordo che le minuscole sono simboli terminali, mentre le maiuscole sono non terminali).<br />La derivazione viene eseguita un passo alla volta. Quale scelgo tra A, B e C?
+</p><ul><li>se scelgo il NT più a sinistra, uso una regola LEFTMOST
+</li><li>se scelgo il NT più a destra, uso una regola RIGHTMOST
+</li><li>ma posso anche scegliere altri NT:)
+</li></ul><p>La Leftmost e la Rightmost sono dette <strong>derivazioni canoniche</strong>.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Traduttori.html'>Torna alla pagina di Traduttori</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Trad050309)</span></div>
+  </div>
+</body>
+</html>

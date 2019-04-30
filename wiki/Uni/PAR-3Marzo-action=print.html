@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Protocolli avanzati di rete - Appunti del 3 Marzo</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='PAR-3Marzo.html' title='Protocolli avanzati di rete - Appunti del 3 Marzo'>Protocolli avanzati di rete - Appunti del 3 Marzo</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 3 Marzo ::</strong>
+</pre><div class='vspace'></div><h2>Telefonia analogica</h2>
+<p>La <strong>comunicazione analogica</strong> prevede che la voce, quindi una grandezza fisica, venga <em>trasdotta</em> in un'altra più adatta alla trasmissione a distanza, ad esempio in una tensione elettrica. Obiettivo della trasduzione sarà ottenere una forma d'onda che mantenga le caratteristiche del segnale vocale, cercando di deformandolo il meno possibile. Ai suoi tempi il buon Meucci riuscì a realizzare questo fenomeno convertendo la forma d'onda della pressione sui granuli di carbone (presenti nel microfono) in un'altra analoga ma sottoforma di tensione. Notare che il segnale trasdotto può essere trasmesso così com'è oppure può essere usato per modulare una portante.
+</p>
+<p class='vspace'>La telefonia analogica rimane fino agli anni '70, oggi è stato digitalizzato tutto tranne il tratto dal telefono alla centralina. Perché non convertire anche questo allora? Perché la maggior parte dei telefoni delle nostre case sono ancora analogici, quindi è più conveniente effettuare la digitalizzazione nelle centraline e lasciare tutto il resto così com'è.
+</p>
+<p class='vspace'>Il principale problema della telefonia è stato trovare una soluzione per il collegamento degli utenti, e in particolare come fare in modo che su uno stesso mezzo di comunicazione (il cavo telefonico) possano coesistere più chiamate tra abbonati diversi. Una prima soluzione è stata la <strong>commutazione di circuito</strong> (<em>circuit switching</em>), che prevede la creazione di un percorso fisico temporaneo tra mittente e ricevente; è il tipico caso delle centraliniste dei film dell'antiguerra che collegando opportunamente degli spinotti riescono a mettere in comunicazione due persone. La seconda soluzione è l<strong>'FDM</strong>, ovvero la <em>Frequency Division Multiplexing</em> che permette la comunicazione per portanti differenti. Ad essa è associato il concetto di <em>forchetta telefonica</em>, ovvero le tre portanti utilizzate in multiplexing per ogni comunicazione telefonica: una per l'invio, una per la ricezione ed una per il <strong>signaling</strong>, ovvero quell'insieme di operazioni orientate alla gestione della comunicazione stessa (ad esempio il segnale di hang up che indica il termine della telefonata)
+</p>
+<div class='vspace'></div><h2>Telefonia digitale</h2>
+<p>Nella <strong>telefonia digitale</strong> la forma d'onda del segnale vocale viene <em>campionata</em> in un flusso di numeri binari grazie ad un convertitore analogico-digitale ad 8 bit. In generale la <em>frequenza di campionamento</em> dipende da quanto cambia il segnale nel tempo, ma grazie al <em>teorema di Nyquist</em> sappiamo che deve essere almeno il doppio della frequenza della componente armonica più alta del segnale. Dopo una serie di prove di laboratorio si è scelto di utilizzare una frequenza di campionamento di 8KHz per la voce umana; in realtà era sufficiente la metà per la comprensione, ma meglio abbondare.
+</p>
+<p class='vspace'>Il campionamento prevede la definizione di alcuni <em>canali di quantizzazione</em>, ovvere un intervallo di valori analogici a cui è associato un numero digitale di 8 bit. E' facile immaginare cosa sia il <em>rumore di quantizzazione</em>, ovvero quel fenomeno per il quale in seguito al campionamento non riesco più a distinguere due o più punti distinti del segnale che però appartengono allo stesso canale. Si tratta quindi di un errore, e il suo valore medio si calcola come &#916;/2 , dove &#916; è l'ampiezza della banda. <br />Quale sarà il <em>bitrate</em> (bit per secondo) di un canale audio? Facile: <code class='escaped'>8 bit * 8KHz = 64 Kbps</code>.<br />Ovviamente in tutto questo discorso ci stiamo riferendo allo spettro confinato del segnale, ovvero lo spettro reale tagliato almeno del 90%. Sarebbe infatti impensabile utilizzarlo per intero dato che per definizione è infinito. 
+</p>
+<div class='vspace'></div><h2>PSTN</h2>
+<p>La <strong>PSTN</strong> (<em>Public Service Telephone Network</em>) è la rete telefonica pubblica ed è formata da: 
+</p><ul><li>apparati terminali analogici (telefoni), che effettuano la trasduzione e la modulazione del sognale vocale. Ognuno di essi ha una sua forchetta telefonica, e nulla vieta che possa averla uguale a quella di un altro telefono
+</li><li>collegamenti terminali-centrali chiamati <em>local loop</em>, ovvero la linea che va da casa mia alla centralina
+</li><li>collegamenti condivisi centrale-centrale chiamati <em>trunk</em>. Oggi sono realizzati in digitale, ma quando una volta c'era solo l'analogico erano implementati grazie all'FDM
+</li><li>apparecchiature di commutazione, come ad esempio gli <em>switch</em>. Sono i dispositivi che rendono possibile la realizzazione di livelli gerarchici (ad esempio città-&gt;provincia-&gt;regione-&gt;nazioni), fondamentali per evitare il collasso della rete su larga scala. Le gerarchie non hanno standard, ma dipendono dalle caratteristiche della rete; ad esempio in una realtà molto piccola non ha senso avere più di un livello
+</li><li>rete di controllo
+</li></ul><p class='vspace'>Tutti questi elementi funzionano insieme per consentire a ogni abbonato di chiamare chiunque. Supponiamo che Piero abbia bisogno di parlare con sua moglie che ora si trova in ufficio circa i suoi problemi di incontinenza. Compone il numero 0373 123455.
+Sulla singaling parte un pacchetto diretto alla centrale più vicina e che contiene il numero da chiamare. La centralina guarda il prefisso per capire di che zona si tratta e passa il pacchetto alla centrale competente (nel nostro caso quella cremasca). Questa centrale guarda le prime due cifre del numero per capire di quale paese si tratta (ad esempio a crema cominciano tutti con 12 o 13) e invia il pacchetto alla centrale responsabile. Quest'ultima localizza l'abbonato grazie alle cifre rimanenti e costruisce la comunicazione con un'operazione di <em>buildering</em> trasmessa sempre sulla sinaling. La comunicazione ha così finalmente inizio e vengono conteggiati gli scatti per calcolare il costo della telefonata. Intuitivamente, più l'abbonato da chiamare è lontano e più centraline troveremo nel percorso.
+</p>
+<p class='vspace'>In generale la situazione è questa:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/sistTelef.jpg' alt='' title='' /></div>
+<p class='vspace'>Dove:
+</p><ul><li><strong>E</strong> è l<em>'end office</em>, la centralina connessa al telefono tramite il local loop. Tutto ciò che conoscono è l'indirizzo della centrale di switching più vicina, alla quale sono collegate mediante trunk. Notare che per legge ogni compagnia telefonica ha diritto di installare i propri switch nelle centraline di zona, così da garantire un minimo di concorrenza contro il colosso Telecom
+</li><li><strong>T</strong> è il <em>toll office</em> che tra le altre cose tengono traccia della durata della conversazione (<code class='escaped'>metering</code>) così da poter compilare i tabulati telefonici dell'utenza ed effettuare il calcolo della bolletta. Quest'ultima operazione non è così semplice e lineare, dato che dipende da moltissimi fattori
+</li><li><strong>I</strong> è l<em>'intermediate switching office</em>, collegato ai toll per mezzo di cavi ad altissima banda. Questo switch guarda solo i prefissi per poter instradare la chiamata alla centrale di zona
+</li><li>gli end e i toll office a destra della I guardano varie porzioni del numero rimanente per localizzare l'utente e fargli ricevere la telefonata
+</li></ul><p class='vspace'>Abbiamo già detto che il segnale di signaling è quello che si occupa della gestione della comunicazione telefonica. L<strong>'SS7</strong> (Signaling System 7) è uno standard internazionale ed è un protocollo di signaling che viaggia sul livello 2; a onor di cronaca, quello che gira sulla rete IP si chiama <em>SIP</em>. L'SS7 prevede una segnalazione out-band, cioè al di sopra della normale rete telefonica, mentre nelle vecchie comunicazioni per pacchetti il signaling viaggiava in-band, ad esempio negli header. Inutile dire che mantenerli separati aumenta la sicurezza.
+</p>
+<p class='vspace'>Nella PSTN si farà quindi <em>circuit-switching</em> e le intere informazioni di signaling saranno raccolte e inviate all'inizio; bisognerà dunque aspettare un tempo di latenza (dovuto proprio al <code class='escaped'>circuit setup</code>) e poi più niente per tutta la comunicazione. Se invece ci troviamo ad utilizzare un protocollo di <em>frame-switching</em> (come <code class='escaped'>Ethernet</code>) avremmo avuto l'invio di informazioni di switching e signaling ad ogni frame.
+</p>
+<p class='vspace'>Concludiamo segnalando il <strong>PBX</strong> (<em>Private Branch Exchange</em>), uno switch privato che consente l'accesso indiretto anche alla rete PSTN (ad esempio premendo il pulsante 0). Possono essere sia reali che virtuali, anche se questi ultimi rappresentano la maggior parte dei casi.
+</p>
+<div class='vspace'></div><h2>Rete mobile</h2>
+<p>Da un punto di vista infrastrutturale la rete mobile era stata studiata già dagli anni '50, non è poi così recente. Inoltre è evidente dall'età che il suo sviluppo è del tutto indipendente da quello di internet e dell'informatica.
+</p>
+<p class='vspace'>L'antenato del cellulare nasce nel 1946 nei Laboratori Bell ed era ovviamente analogico. Poi nel 1968 gli stessi laboratori propongono il loro concetto di telefonia cellulare, riassumibile con questo schema psichedelico (dagli appunti del prof Damiani):
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/telefCell.jpeg' alt='' title='' /></div>
+<p class='vspace'>Abbiamo tante celle esagonali, ognuna delle quali è gestita da un'antenna con un proprio "pettine" di portanti traslato in frequenza rispetto alle celle adiacenti, così che non possano esistere sovrapposizioni di comunicazioni. Per il teorema dei quattro colori (vedi <a target='_blank'  class='urllink' href='http://it.wikipedia.org/wiki/Teorema_dei_quattro_colori' title='' rel='nofollow'>wikipedia</a>) è dimostrabile che bastano un numero finito di portanti per non avere sovrapposizioni. <br />Prima nota di folklore: si chiama pettine perché è questo l'aspetto che assumono gli spettri dei segnali.
+</p>
+<p class='vspace'>Quando un cellulare sta per effettuare una chiamata si connette all'antenna più vicina, che ha una portante di servizio per il signaling che mi assegna una seconda portante da usare per la comunicazione. Abbiamo quindi una FDM iniziale, ma con le portanti assegnate dinamicamente. <br />Seconda nota di folklore: le forma delle celle dipende dalla geometria dell'antenna, che di fatto influenza le superfici equipotenziali (quelle cioè che ricevono allo stesso potenziale); se ad esempio l'antenna è puntiforme la cella sarà sferica.
+</p>
+<p class='vspace'>Ma cosa succede se mentre sto parlando mi muovo da una cella all'altra? Evidentemente cambia l'antenna che mi sta servendo, e quella nuova mi butterà giù la vecchia chiamata e provvederà a crearne un'altra assegnandomi una nuova portante a lei compatibile. Questo fenomeno è chiamato <strong>handover</strong> e dovrebbe essere gestito in modo trasparente all'utente, così che non si renda conto del passaggio. La gestione diventa più critica quando invece della telefonia consideriamo la comunicazione dati via telefoni mobili, perché questi ritardi (inferiori al secondo) influenzano il <em>round-trip-time</em> dei pacchetti del protocollo TCP, con gli smarrimenti e mancate sincronizzazioni conseguenti. Si noti infine che col protocollo di telefonia mobile UMTS è possibile implementare il meccanismo del <em>Soft Handover</em>, che prevede la connessione contemporanea del mobile a più stazioni radio (maggior impiego di risorse, ma notevole guadagno in termini di qualità del servizio).
+</p>
+<p class='vspace'>Per stabilire una comunicazione tra telefoni fissi e cellulari, questi ultimi devono poter collegarsi alla rete PSTN attraverso le stazioni <strong>MTSO</strong> (<em>Mobile Telephone Switching Office</em>), ovvero delle schede che si mettono in certe centraline della telefonia mobile e fissa e che consentono l'interfacciamento. Ecco spiegato perché chiamare un fisso da cellulare costa più che chiamarne un altro: bisogna pagare anche il transito sulla rete fissa al gestore/proprietario della stessa.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/PAR-3Marzo)</span></div>
+  </div>
+</body>
+</html>

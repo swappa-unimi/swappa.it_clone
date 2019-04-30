@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Domande e Risposte Basi di Dati</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Domanderisposte.html' title='Domande e Risposte Basi di Dati'>Domande e Risposte Basi di Dati</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='BasiDiDati.html'>Torna alla pagina di Basi di Dati</a>
+</p><hr />
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 14pt; padding: 5px;'> <strong>:: Basi di dati - Domande e Risposte ::</strong>
+</pre><p><a name='top' id='top'></a>
+</p><table cellpadding='5' cellspacing='5' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><a target='_blank'  class='urllink' href='../uploads/Uni/risposte4.pdf' title='' rel='nofollow'><strong>Scarica in PDF</strong></a>
+</td></tr></table>
+<p class='vspace'><strong>Nell’ambito del controllo dell’accesso in SQL, indicare il significato e l’utilizzo dei <em>references</em>.</strong>
+</p>
+<p class='vspace'>Il costrutto <em>references</em> nel controllo dell' accesso in SQL,  permette che venga fatto riferimento alla risorsa nell’ ambito della definizione dello schema di una tabella.
+La sua utilità si manifesta nel momento in cui le politiche di reazione di un vincolo di integrità referenziale vengono messe in atto con la possibilità di un' effetto sulle tabelle esterne.
+</p>
+<p class='vspace'><strong>Con riferimento al modello ER, spiegare il concetto di entità debole e fornirne un esempio.</strong>
+</p>
+<p class='vspace'>L' entità debole è quell' entità la cui chiave contiene attributi che non appartengono all' entità stessa ma ad un' altra a cui è legata tramite una relazione.<br />Esempio:<br /><strong>AZIENDA</strong>(<ins>NomeAzienda</ins>, NrDipendenti)<br /><strong>DIPENDENTE</strong>(<ins>CodiceDip</ins>, <ins>NomeAzienda</ins>, Nome, Cognome, Mansione)<br />NomeAzienda compare nella chiave di DIPENDENTE la quale quindi è un' entità debole.
+</p>
+<p class='vspace'><strong>Con riferimento a SQL, spiegare il significato delle funzioni <em>coalesce</em> e <em>nullif</em> e fornire un esempio per ognuna.</strong>
+</p>
+<p class='vspace'>Le funzioni <em>coalesce</em> e <em>nullif</em> vengono utilizzate in SQL come funzioni condizionali per eseguire delle selezione su campi che possono assumere il valore NULL.
+In particolare la funzione <em>coalesce</em> restituisce il valore specificato negli argomenti ogni volta che incontra il valore NULL.
+la funzione <em>nullif</em> invece, restituisce il valore NULL quando incontra il valore specificato altrimenti restituisce il valore dell' espressione.<br />Esempio:
+</p><pre class='escaped'>select Matr,Cognome,Nome,coalesce(CdL,‘non ins.’)
+from Studenti</pre>
+<p>La funziona restituirà il valore "non ins." ogni volta che incontra il valore NULL. 
+</p><pre class='escaped'>select Matr,Cod-corso,Data,nullif(Voto,‘ritirato’)
+from Esami</pre>
+<p>Utilizza il valore NULL in caso il campo Voto della tupla valga "ritirato".
+</p>
+<p class='vspace'><strong>Nell’ambito del linguaggio di interrogazione SQL, dire se esistono viste non modificabili, spiegando il perchè fornendo, se esiste, un esempio.</strong>
+</p>
+<p class='vspace'>Si esistono perché non è sempre possibile determinare un modo univoco in cui la modifica sulla vista possa essere riportata sulle tabelle di base; infatti si incontrano grossi problemi quando la vista è definita tramite join di due tabelle.
+Lo standard SQL permette che una vista sia aggiornabile solo quando le sue righe corrispondono alla tabella di base. Per modificare solo la vista, senza intaccare le tabelle di base, si usa il comando check option.
+Nel caso di viste ottenute da altre viste, esistono le due opzioni [local | cascade]: local effettua un controllo solo sull’ultimo livello delle viste mentre cascade effettua un controllo su tutti i livelli di definizione delle viste.
+</p>
+<p class='vspace'><strong>Dire cosa si intende per componente intensionale e componente estensionale di una base di dati.</strong> 
+</p>
+<p class='vspace'>Lo schema di una Base di Dati è considerata la componente intensionale e costituisce la struttura che descrive i dati e le loro relazioni; l'istanza di una Base di Dati è la componente estensionale e costituisce ilo valore dei dati contenuti nella Base di Dati in un determinato momento. 
+</p>
+<p class='vspace'><strong>Nell’ambito del modello relazionale, elencare e descrivere le politiche di relazione che possono essere associate al vincolo di integrità referenziale in SQL.</strong>
+</p>
+<div class='vspace'></div><ul><li><strong>Vincolo INTRARELAZIONALE</strong> (soddisfatto da singole relazioni)
+</li><li><strong>Vincolo di Tupla</strong> (valutato su ciascuna tupla indipendentemente dalle altre)
+</li><li><strong>Vincolo di Dominio</strong> (deve rientrare in un range di valori) 
+</li><li><strong>Vincolo Interrelazionale</strong> (se coinvolge più relazioni) 
+</li></ul><p class='vspace'><strong>Nell’ambito del modello E-R, definire il concetto di identificatore esterno spiegando quando questo è necessario.</strong> 
+</p>
+<p class='vspace'>L'identificatore esterno è utilizzato quando si vuole identificare una certa entità attraverso un'altra entità esterna: ad 
+esempio se vogliamo identificare uno studente tramite l'attributo Matricola e l'entità UNIVERSITA dobbiamo utilizzare 
+un identificatore esterno; in questo modo quello studente potrà anche avere la stessa matricola registrata in più 
+università. 
+</p>
+<p class='vspace'><strong>Dire se la rappresentazione ER è sufficiente per rappresentare tutti i vincoli di una Base di Dati. In caso di risposta negativa, illustrare un esempio di vincolo non rappresentabile.</strong>
+</p>
+<p class='vspace'>Lo schema ER non è sufficente perchè alcuni vincoli non possono essere espressi tramite lo schema: solitamente si 
+ricorre ad una descrizione letterale allegata come documentazione aggiuntiva allo schema. Un esempio potrebbe 
+essere l'attributo stipendio sull'entità OPERAIO che deve essere minore di quello dell'entità CAPO REPARTO: 
+inesprimibile con un grafico ER. 
+</p>
+<p class='vspace'><strong>Spiegare il concetto di integrità referenziale e fornire un esempio.</strong>
+</p>
+<p class='vspace'>Per Integrità referenziale si intende che X attributi di una relazione R1 siano chiave primaria nella relazione R2, ovvero le due relazioni siano collegate tramite questi attributi in maniera univoca. 
+Un esempio potrebbe essere “Anagrafica Cittadino” con “Città italiane” collegate ad esempio tramite il campo CAP della città .
+</p>
+<p class='vspace'><strong>Definire i concetti di chiave, superchiave e chiave primaria (formalizzazione e spiegazione concisa).</strong> 
+</p>
+<p class='vspace'>La chiave è un attributo di una entità ( un campo sul database ) che identifica una determinata entità in base al suo 
+valore. Se l'entità viene identificata solo tramite un campo si parla di chiave primaria e il valore di quel campo è 
+assoluto ed unico solo per quella entità: nessun altro avrà lo stesso valore su quel campo. 
+Una superchiave è un insieme di K attributi che identificano quell'oggetto e come insieme di valori sono unici per 
+identificare univocamente quellì'oggetto. Potremmo anche parlare di Superchiave Minimale se la superchiave non 
+contiene sottoinsieme di chiavi primarie, ovvero se gli attributi della superchiave non rappresentano già una chiave 
+primaria. 
+</p>
+<p class='vspace'><strong>Cosa è l'occorrenza di una entità?</strong>
+</p>
+<p class='vspace'>È un oggetto della classe che l'Entità rappresenta, ad esempio Milano, Roma, Palermo sono occorrenze della entità 
+Città; non bisogna fare l'errore di considerarlo come un valore che identifica l'oggetto, ma è l'oggetto stesso. 
+L'occorrenza Milano avrà un campo ID='Milano' che identifica l'istanza dell'occorrenza. 
+</p>
+<p class='vspace'><strong>Illustrare l’architettura ANSI/SPARC indicando il significato dei diversi livelli.</strong>
+</p>
+<p class='vspace'>Architettura standardizzata (ANSI/SPARC) per DBMS fa riferimento a tre livelli (ognuno con un proprio schema): 
+</p><ul><li><strong>Schema esterno</strong>: descrizione, per mezzo del modello logico, di una porzione della base di dati di interesse (riflette la vista sui dati di un particolare utente o gruppo di utenti) 
+</li><li><strong>Schema logico</strong>: descrizione dell’intera base di dati per mezzo del modello logico 
+</li><li><strong>Schema interno</strong>: rappresentazione dello schema logico per mezzo di strutture fisiche di  memorizzazione 
+</li></ul><p class='vspace'><strong>Nell’ambito del modello Entità-Relazione, definire il concetto di entità debole.</strong>
+</p>
+<p class='vspace'>Un’entità debole è una entità la cui chiave include riferimenti ad altre entità tramite relazioni. 
+Esempio:
+<em>la voce di fattura è identificata dalla fattura che la contiene e dalla posizione della voce stessa nella fattura.</em>
+</p>
+<p class='vspace'><strong>Illustrare e commentare brevemente le diverse fasi del ciclo di vita di una base di dati, specificando cosa ogni singola fase prende in ingresso e cosa produce. Nella descrizione, discutere anche i diversi passi della progettazione.</strong> 
+</p>
+<p class='vspace'>Durante la prgettazione di una base di dati è importante tener conto del ciclo di vita di un sistema informativo, composto da: 
+</p><ul><li><strong>Studio di fattibilità</strong>: si prendono in considerazione tutte le possibili implementazioni realizzabili, si calcolano  i relativi costi implementativi e si danno priorità alle varie fasi di sviluppo; 
+</li><li><strong>Raccolta e analisi dei dati</strong>: si prendono in considerazione tutti i dati che dovranno essere gestiti e come e quali utenti dovranno accedere agli stessi; in questa fase si produce anche uno schema astratto della base di dati. Vengono inoltre stabiliti i requisiti HW e SW del sistema informativo. 
+</li><li><strong>Progettazione</strong>: in prima analisi dei dati, ovvero si progetta la componente intensionale della base di dati; in  seconda analisi si progettano i programmi applicativi che andranno ad interagire con i dati. 
+</li><li><strong>Implementazione</strong>: viene creato il database su un server di Database e viene scritto il codice dei programmi applicativi. 
+</li><li><strong>Validazione e Collaudo</strong>: viene testato il funzionamento del sistema informativo ed in caso di bug vengono subito cercate delle soluzioni. 
+</li><li><strong>Funzionamento</strong>: il sistema informativo viene utilizzato per il suo scopo originale ed in caso di corretto funzionamento necessita solo di azioni di gestione e mantenimento. 
+</li></ul><p class='vspace'><strong>Spiegare i concetti di Indipendenza dei dati fisica e logica.</strong>
+</p>
+<div class='vspace'></div><ul><li><strong>Indipendenza fisica</strong>: il livello esterno e logico sono indipendenti dal livello fisico del database; modifiche fisiche di allocazione e memorizzazione non influiscono sulle applicazioni che fanno riferimento al modello logico ( grazie al DBMS ). Modifiche alle strutture dei dati non influiscono gli utenti del database. 
+</li><li><strong>Indipendenza Logica</strong>: permetter di aggiungere o modificare gli schemi esterni senza modificare lo schema logico; permette inoltre di modificare lo schema logico mantenendo inalterati gli schemi esterni visibili agli utenti. 
+</li></ul><p class='vspace'><strong>Descrivere le varie Strategie di progetto (Concettuale)</strong>
+</p>
+<p class='vspace'>Lo sviluppo di uno schema concettuale:
+</p><ul><li><strong>Strategia Top-Down</strong>: lo schema concettuale viene prodotto raffinando nel corso del tempo uno schema iniziale con pochi concetti e molto astratti; le trasformazioni da una fase all'altra avvengono tramite le cosiddette primitive di trasformazione top-down; casi in cui potrebbe avvenire è quando da un concetto generale se ne formano 2 specifici. VANTAGGIO: permette di evitare la descrizione dei dettagli nella fase iniziale. 
+</li><li><strong>Strategia Botton-Up</strong>: le specifiche iniziali vengono via via suddivise in componenti sempre più frammentati e piccoli, sino ad arrivare a singoli concetti. VANTAGGIO: si adatta ad una decomposizione del problema in problemi più semplici. 
+</li><li><strong>Strategia Inside-Out</strong>: è una particolare estensione del metodo botton-up, perchè partendo da solo alcuni concetti iniziali ci si estende a macchia d'olio su tutti i problemi che riguardano il progetto tenendosi comunque in relazione con i concetti iniziali. VANTAGGIO: permette di decomporre il problema esaminando di volta in volta le specifiche progettuali. 
+</li><li><strong>Strategia Mista</strong>: è una strategia di incrocio fra la Botton-Up e la Top-Down (e in parte anche della Inside-Out). VANTAGGIO: è molto flessibile perchè permette di astrarre i componenti principali ma allo stesso tempo di averne uno scheletro descrittivo. 
+</li></ul><p class='vspace'><strong>Descrivere i punti per giudicare la qualità di uno schema concettuale.</strong>
+</p>
+<p class='vspace'>Vanno garantite alcune proprietà e le più importanti sono: 
+</p><ul><li><strong>Correttezza</strong>: quando usa in modo corretto i costrutti messi a disposizione dal modello concettuale utilizzato per la progettazione concettuale (ad esempio del modello E-R). 
+</li><li><strong>Completezza</strong>: quando descrive tutti i dati e tutte le azioni che devono essere eseguite. 
+</li><li><strong>Leggibilità</strong>: quando rappresenta i requisiti in maniera naturale e facilmente comprensibile; lo schema dovrebbe essere autoesplicativo. 
+</li><li><strong>Minimalità</strong>: quando tutte le specifiche sono rappresentate una sola volta nello schema ( non vi è quindi nessuna ripetizione inutile di informazione – assenza di ridondanza ). 
+</li></ul><p class='vspace'><strong>Descrivere una metodologia generale di Progettazione Concettuale.</strong>
+</p>
+<div class='vspace'></div><ol><li><strong>Analisi dei requisiti</strong>: 
+<ul><li>Costruzione di un glossario dei termini 
+</li><li>Analisi dei requisiti ed eliminazione delle ambiguità 
+</li><li>Raggruppamento dei requisiti in gruppi omogenei 
+</li></ul></li><li><strong>Passo base</strong>: 
+<ul><li>Individuazione dei concetti più rilevanti e rappresentazione del loro scheletro 
+</li></ul></li><li><strong>Passo di decomposizione</strong>: 
+<ul><li>Decomposizione dei requisiti con riferimento allo scheletro 
+</li></ul></li><li><strong>Passo iterativo</strong>: 
+<ul><li>Raffina i concetti ed aggiunge nuovi concetti per tutti i sotto-schemi 
+</li></ul></li><li><strong>Passo di integrazione</strong>: 
+<ul><li>Integrazione di tutti i sotto-schemi in uno schema generale 
+</li></ul></li><li><strong>Analisi di qualità</strong>: 
+<ul><li>Si verifica Correttezza, Completezza, Leggibilità e Minimalità dello schema concettuale 
+</li></ul></li></ol><p class='vspace'><strong>Cosa sono gli strumenti CASE? Descriverli.</strong>
+</p>
+<p class='vspace'>Sono dei SW applicativi ( Computer Aided Software Engineering) di ausilio alla ingegnerizzazione del software e 
+forniscono un supporto a tutte le fasi principali dello sviluppo di una base di dati ( Progettazione Concettuale, Logica e 
+Fisica ). Forniscono: 
+</p><ul><li>Interfaccia grafica: modellazione dello schema in formato UML. 
+</li><li>Dizionario dei dati: memorizza informazioni dello schema. 
+</li><li>Strumenti integrati: eseguono automaticamente alcune fasi della progettazione. 
+</li></ul><p>ER-Win è un buon SW per fare queste cose. (Piattaforma Windows). 
+Taylor MDA e fabForce DBDesigner sono programmi equivalenti. (Piattaforma Linux).
+</p>
+<p class='vspace'><strong>Descrivi la progettazione logica.</strong>
+</p>
+<p class='vspace'>La progettazione logica costituisce l'effettiva realizzazione della progettazione concettuale: durante questa fase si 
+devono tener conto delle prestazioni dell'applicazione e quindi sono molto frequenti dei cambiamenti nella struttura e 
+nello schema concettuale della applicazione: 
+</p><ul><li>Ristrutturazione dello schema E-R: si basa sulla ottimizzazione e sulla semplificazione. 
+</li><li>Traduzione verso il modello logico: fa riferimento ad un modello logico (ad esempio il modello relazionale) e può incidere ancora sulla ottimizzazione in base la modello scelto. Si esegue anche la Normalizzazione. 
+</li></ul><p class='vspace'><strong>Descrivere l'Analisi delle prestazioni su schemi E-R</strong>
+</p>
+<p class='vspace'>Abbiamo alcuni parametri da controllare per verificare le prestazioni di uno schema: 
+Costo di una operazione: numero medio delle occorrenze visitate per eseguire una operazione sul db. (Descritto nella Tavola delle Operazioni) 
+</p><ul><li>Occupazione di memoria: numero di byte necessario per memorizzare i dati descritti dallo schema. 
+</li><li>Volume dei dati: numero di occorrenze di ogni entità ed associazione dello schema e dimensione di ciascun 
+</li></ul><p>attributo. (Descritto nella Tavola dei Volumi) 
+</p><ul><li>Caratteristiche delle operazioni: tipo di operazione, frequenza di richiesta, dati coinvolti. (Ognuna descritta opzionalmente negli Schemi di Operazione) 
+</li></ul><p class='vspace'><strong>Cosa è la regola “ottantaventi”?</strong>
+</p>
+<p class='vspace'>È una regola convenzionale utilizzata per verificare l'efficenza di una base di dati, dove l'80% del carico è generato dal 
+20% delle richieste. Se la base di dati rispetta questa regola ha delle prestazioni adeguate. 
+</p>
+<p class='vspace'><strong>Descrivere la ristrutturazione di uno schema E-R.</strong>
+</p>
+<p class='vspace'>La fasi di ristrutturazione sono: 
+</p><ul><li>Analisi delle ridondanze: si decide se mantenere o eliminare eventuali ridondanze nello schema. 
+</li><li>Eliminazione delle generalizzazioni: tutte le generalizzazioni vengono sostituite da altri costrutti. 
+</li><li>Partizionamento / accorpamento di entità ed associazioni: si accorpano o dividono alcuni concetti dello schema se necessario. 
+</li><li>Scelta degli identificatori primari: si seleziona un identificatore per quelle entità che ne hanno più di uno. 
+</li></ul><p class='vspace'><strong>Descrivere la progettazione fisica della base di dati.</strong>
+</p>
+<p class='vspace'>Utilizzando lo schema logico prodotto, le caratteristiche del sistema scelto e le previsioni sul carico applicativo viene 
+prodotto lo schema fisico della base di dati (usando ad esempio le Create Table SQL su un server di Database). 
+</p>
+<p class='vspace'><strong>Perché la Normalizzazione è necessaria su una base di dati?</strong>
+</p>
+<p class='vspace'>Perché decentralizza le informazioni aumentando anche inutilmente la ridondanza dei dati: ciò potrebbe causare delle 
+incompatibilità sui dati, incoerenze, durante le fasi di aggiornamento dei dati o di cancellazione dei dati. Lo scopo della 
+normalizzazione è quello di avere un dato in una sola locazione a cui eventuali altre entità sono collegate tramite delle 
+relazioni. 
+</p>
+<p class='vspace'><strong>Spiegare il concetto di dipendenza funzionale e fornire un esempio.</strong>
+</p>
+<p class='vspace'>È un particolare vincolo di integrità per il modello relazionale che descrive i legami funzionali fra gli attributi di una 
+relazione, come ad esempio lo Stipendio sull'entità Impiegato e si indica con: Impiegato -&gt; Stipendio 
+</p>
+<p class='vspace'><strong>Descrivi la forma normale di Boyce e Codd</strong>
+</p>
+<p class='vspace'>La forma normale permette di eliminare i dati duplicati che sono contenuti in tabelle in cui non sono identificati con una 
+chiave: solitamente l'utilizzo di chiavi aiuta nell'eliminare la ridondanza dei dati e a creare relazioni fra le varie tabelle. 
+Queste relazioni sono in forma normale Boyce e Codd se per ogni dipendenza funzionale X -&gt; A definita su di essa, 
+X contiene e una chiave K di r, cioè X è superchiave per r. Anomalie e ridondanze vengono eliminate. 
+</p>
+<p class='vspace'><strong>Su quale concetto si basa la decomposizione nella normalizzazione?</strong>
+</p>
+<p class='vspace'>Si basa sul concetto che se una relazione rappresenta più concetti indipendenti, la relazione deve essere decomposta 
+in relazioni più piccole, una per ogni concetto ( una per ogni dipendenza funzionale ). 
+</p>
+<p class='vspace'><strong>Descrivere le proprietà della decomposizione nella normalizzazione.</strong>
+</p>
+<div class='vspace'></div><ul><li>Decomposizione senza perdita: quando dopo la decomposizione di una relazione r in 2, facendo il join fra le due si riottiene perfettamente la relazione r iniziale. 
+</li><li>Conservazione delle dipendenze: quando nella decomposizione ciascuna delle dipendenze funzionali dello schema originario coinvolge attributi che compaiono tutti insieme in uno degli schemi decomposti. Dire che una decomposizione che soddisfa questa proprietà vuol dire che conserva le dipendenze dello schema originario. 
+</li><li>Qualità delle decomposizioni: sono di qualità sufficiente quelle decomposizioni che soddisfano le precedenti 2 proprietà. 
+</li></ul><p class='vspace'><strong>Parla della Terza Forma Normale.</strong>
+</p>
+<p class='vspace'>Avendo la Forma Normale di Boyce e Codd la limitazione di non poter essere sempre utilizzata: si può allora utilizzare la 
+Terza Forma Normale che può sempre essere applicata, permettendo sempre una Decomposizione senza Perdita e la 
+Conservazione delle dipendenze ma non elimina completamente la ridondanza dei dati; la qualità della Terza Forma 
+Normale è quindi inferiore a quella della Forma Normale di Boyce e Codd ma può essere sempre applicata. 
+Spesso in una decomposizione intesa ad ottenere una Terza Forma Normale si ottiene una Normalizzazione Boyce e 
+Codd: ciò sta ad indicare come le due forme normali siamo simili. 
+</p>
+<p class='vspace'><strong>Descrivere altre forme normali.</strong>
+</p>
+<div class='vspace'></div><ul><li><strong>Prima Forma Normale</strong>: stabilisce una condizione che sta alla base del modello relazionale stesso: gli attributi delle relazioni sono definiti su valori atomici e non su valori complessi quali insiemi o relazioni. 
+</li><li><strong>Seconda Forma Normale</strong>: è una variazione debole della Terza Forma Normale in cui non sono definite dipendenze parziali cioè dipendenze fra un sottoinsieme proprio della chiave e altri attributi. 
+</li><li>Ne esistono anche altre ma quelle finora studiate danno una grande possibilità di giocare sulla Qualità e sulla Semplicità del sistema informativo.
+</li></ul><p class='vspace'><strong>Illustrare cosa vuol dire l' espressione: “Il valore Null è polimorfo”, spiegando i significati che può assumere. Descrivere inoltre, il concetto di logica a tre valori, riportando le tabelle di verità dei connettivi logici AND, OR, NOT tenendo conto del valore nullo.</strong>
+</p>
+<p class='vspace'>Il valore NULL può essere considerato polimorfo in quanto può assumere diversi significati:
+</p><ul><li>esiste ma non è noto
+</li><li>non esiste
+</li><li>non si sa
+</li></ul><p>Introdotta in SQL-2 la logica a tre valori, stabilisce che, in caso di confronto con NULL, il valore restituito sarà <em>unknown</em> (e non <em>false</em> come in SQL-89). Le tabelle di verità dei connettivi logici AND, OR, NOT che considerano anche questa eventualità sono:
+</p>
+<div class='vspace'></div>
+<table width='40%' ><tr ><th >AND</th><th >V</th><th >U</th><th >F</th><th >OR</th><th >V</th><th >U</th><th >F</th><th  colspan='2'>NOT</th></tr>
+<tr ><th >V</th><td >V</td><td >U</td><td >F</td><th >V</th><td >V</td><td >V</td><td >V</td><th >V</th><td >F</td></tr>
+<tr ><th >U</th><td >U</td><td >U</td><td >F</td><th >U</th><td >V</td><td >U</td><td >U</td><th >U</th><td >U</td></tr>
+<tr ><th >F</th><td >F</td><td >F</td><td >F</td><th >F</th><td >V</td><td >U</td><td >F</td><th >F</th><td >V</td></tr>
+</table>
+<p class='vspace'><strong>Illustrare la proprietà di distribuzione della selezione e della proiezione rispetto agli operatori insiemistici indicando per quali operatori la proprietà vale fornendo, inoltre, un esempio di quando vale e di quando non vale.</strong>
+</p>
+<p class='vspace'>La propreità di distribuzione o distributività, è quella proprietà che permette di stabilire un' equivalenza fra una selezione (o proiezione se si tratta dell' unione) applicata ad un' espressione e la stessa applicata ai singoli termini.
+Tale proprietà può essere applicata all' unione U e alla differenza (da cui deriva la distributività rispetto alla selezione anche per &#8745;). Come già detto prima, la distributività rispetto alla proiezione vale solo per l' unione.
+Un semplice esempio può essere:
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>&#963;<sub>(Cognome='Verdi')</sub>(IMPIEGATI &cup; DIRIGENTI)&equiv; &#963;<sub>(Cognome='Verdi')</sub>IMPIEGATI &cup; &#963;<sub>(Cognome='Verdi')</sub> DIRIGENTI
+</p>
+<p class='vspace'>Un' esempio invece, che esprime quando non è possibile applicare tale proprietà è:
+</p>
+<p class='vspace'  style='text-align: center; background-color: #fff0f5; border: 1px solid #cccccc; font-size: 12pt; padding: 3px;'>&prod;<sub>(Cognome)</sub>(IMPIEGATI &cap; DIRIGENTI)&equiv; &prod;<sub>(Cognome)</sub>IMPIEGATI &cap; &prod;<sub>(Cognome)</sub> DIRIGENTI
+</p>
+<p class='vspace'><strong>Nell’ambito del modello relazionale, dire cosa si intende per vincolo di integrità referenziale, spiegare quali controlli vengono eseguiti dal DBMS per verificarne la violazione e il soddisfacimento. Infine, elencare e descrivere le politiche di reazione che possono essere associate al vincolo di integrità referenziale in SQL.</strong>
+</p>
+<p class='vspace'>Nell' ambito del modello relzionale il vincolo di integrità referenziale stabilisce che, se ho 2 relazioni la cui chiave primaria della prima compare nella seconda, ogni tupla della seconda dovrà avere ua corrispondenza nella prima (o al limite avere tale campo inizializzato a NULL).
+Il DBMS andrà a controllare tali vincoli verificando che le condizioni espresse da asserzioni e costrutti check siano soddisfatte. Tale controllo avverrà ad ogni operazione o alla fine della transazione a seconda dell' impostazione (<em>immediate</em> o <em>deferred</em>) associata al vincolo.
+Se tali controlli daranno esito positivo, cioè se i vincoli vengono violati, il DBMS attiverà delle opportune polithce di rezione precedentemente stabilite.
+Queste politiche possono essere associate a una modifica o a una cancellazione e stabiliscono se:
+</p><ul><li>l' azione verrà propagata (<em>cascade</em>)
+</li><li>il valore pendente verrà  impostato a NULL (<em>set null</em>)
+</li><li>il valore pendente verrà impostato al valore di default (<em>set default</em>)
+</li><li>impedisce l' azione (<em>no action</em>)
+</li></ul><p class='vspace'><strong>Con riferimento a SQL, spiegare cosa si intende per variabile, indicando perchè servono e come vengono utilizzate. Fornire, inoltre, un esempio.</strong>
+</p>
+<p class='vspace'>In SQL, le variabili vengono utilizzate per poter effettuare delle query altrimenti impossibili come quelle in cui si incorciano tuple di una stessa tabella.
+Le variabili, consentono infatti di creare un alias per le tabelle da interrogare che si potrà utilizzare anche per svolgere delle query nidificate.
+Un' esempio di utilizzo di variabili può essere il seguente:
+</p><pre class='escaped'>select C1.Nome, C1.Cognome, C2.Nome, C2.Cognome
+from CITTADINI as C1 inner join CITTADINI as C2
+on C1.CFConiuge=C2.CF
+where CFConiuge&lt;&gt;NULL and Sesso=”M”</pre>
+<p class='vspace'><strong>Con riferimento a SQL, spiegare la differenza fra: inner join, left-outer join e right-outer join, spiegando perch &#769; ciascuno di essi serve ed illustrandone un esempio.</strong>
+</p>
+<p class='vspace'>L' operazione di <em>inner join</em> si differenzia dalla <em>left outer join</em> e dalla <em>right outer join</em> in quanto non mantiene le tuple senza una corrispondenza.
+Queste ultime 2 varianti della join infatti, incrociano le tuple dopodichè mantengono anche quelle senza corrispondenza a seconda dell' orientamento della join, ovvero se ad esemipo eseguo una left outer join verranno mantenute le tuple senza corrispondenza della tabella a sinistra della join impostando a NULL i campi pendenti.
+</p>
+<p class='vspace'><strong>Data una interrogazione SQL che includa le clausole SELECT, FROM, WHERE, GROUP BY, HAVING e ORDER BY dire come viene eseguita (specificare come ed in che ordine vengono eseguite le clausole). Illustrare anche un esempio di query e il suo processo di esecuzione da parte del DBMS.</strong>
+</p>
+<p class='vspace'>Le clausole presenti nell' interrogazione vengono eseguite nel seguente ordine: FROM, WHERE, GROUP BY, HAVING, SELECT, ORDER BY. [<em>da completare</em>]
+</p>
+<p class='vspace'>(L'interrogazione SQL per essere eseguita viene passata all'ottimizzatore di interrogazioni (query optimizer), un  componente del DBMS il quale analizza l'interrogazione e formula a partire da questa un'interrogazione equivalente nel linguaggio procedurale interno del sistema di gestione di basi di dati.) [<em>Ho trovato solo questo sul libro, cerco e ricerco ma sull'esecuzione di interrogazioni da parte del DBMS niente, ma si può sapere cosa vuole che scriviamo?</em>]
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='BasiDiDati.html'>Torna alla pagina di Basi di Dati</a>-<a href='#top'>Torna in Alto</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Domanderisposte)</span></div>
+  </div>
+</body>
+</html>

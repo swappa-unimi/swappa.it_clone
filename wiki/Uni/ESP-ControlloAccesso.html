@@ -1,0 +1,624 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Elementi di Sicurezza e Privatezza - Controllo dell'accesso </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.ESP-ControlloAccesso' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Elementi di Sicurezza e Privatezza - Controllo dell'accesso
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP-ControlloAccesso?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP-ControlloAccesso?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='ESP-ControlloAccesso-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP-ControlloAccesso?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP-ControlloAccesso?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Elementi di Sicurezza e Privatezza - Controllo dell'accesso was last modified on February 05, 2009, at 02:02 PM'>
+							<span style='display:none;'>Elementi di Sicurezza e Privatezza - Controllo dell'accesso</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Elementi di sicurezza e privatezza</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Controllo dell'accesso ::</strong>
+</pre><div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 200px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#c1'>Introduzione</a>
+</li><li><a href='#c2'>Politiche discrezionarie</a>
+</li><li><a href='#c3'>Politiche mandatorie</a>
+</li><li><a href='#c4'>Politiche amministrative</a>
+</li><li><a href='#c5'>DAC Avanzate</a>
+</li><li><a href='#c6'>Chinese wall</a>
+</li><li><a href='#c7'>Politiche basate sui ruoli</a>
+</li><li><a href='#c8'>Apache</a>
+</li><li><a href='#c9'>Linux</a>
+</li></ol></div>
+<p class='vspace'><a name='c1' id='c1'></a>
+</p><h2>Introduzione</h2>
+<p>Nel capitolo sull'<a class='wikilink' href='ESP-Autenticazione.html'>Autenticazione</a> abbiamo visto che il <strong>controllo dell'accesso</strong> è quel modulo del sistema che valuta le richieste di accesso a servizi o dati e decide se permetterle o negarle, in base all'identità dell'utente e ai permessi accordatigli. Questo genere di attività sono particolarmente importanti in quei sistemi in cui deve essere assicurata l' <strong>accountability</strong>, ovvero esiste l'esigenza di sapere chi ha fatto cosa e quando, per stabilire le responsabilità.
+</p>
+<p class='vspace'>Distinguiamo <strong>politiche</strong> e <strong>meccanismi</strong> del controllo dell'accesso, le prime che definiscono le linee guida per realizzare la sicurezza del sistema, i secondi che le implementano a livello hardware e software. Mantenere questi due aspetti separati ha un certo numero di vantaggi, dal momento che posso concentrarmi su uno trascurando momentaneamente l'altro. Ad esempio potrò confrontare diverse politiche d'accesso tra loro indipendentemente dai meccanismi per realizzarle, e viceversa; in particolare potrò sviluppare meccanismi in grado di implementare più linee guida.<br />I meccanismi sono basati sulla definizione di un <em>reference monitor</em>, un modulo del sistema di cui bisognerebbe garantire alcune proprietà:
+</p><ul><li>nessuno può modificarlo (<em>tamper proof</em>)
+</li><li>deve essere <em>non-bypassabile</em>, ovvero non esiste accesso al sistema che non passi per lui
+</li><li>va confinato in una parte sicura del sistema operativo (<em>security kernel</em>)
+</li><li>deve avere dimensioni limitate per poter essere verificato con metodi rigorosi e formali
+</li><li>deve essere resistente al covert channel
+</li></ul><p class='vspace'>Il passaggio da politiche a meccanismi avviene attraverso la progettazione e la realizzazione di un <em>modello</em>, che consente di definire formalmente le specifiche e l'esecuzione del controllo dell'accesso. Proprio perché formale, deve racchiudere tutti i requisiti di sicurezza della mia politica (<em>completezza</em>) e in più deve essere <em>consistente</em>, ovvero non può avere contraddizioni. L'introduzione del modello fa parte dell'approccio <em>multi-fase</em> alla progettazione, e facilita la costruzione di un sistema sicuro. Se infatti il modello è completo e consistente, allora è anche sicuro; se poi il sistema viene implementato con meccanismi che rispettano le sue direttive, il sistema stesso è sicuro (rispetto al progetto, non in assoluto).<br />Il modello di sicurezza definisce dunque formalmente il sistema, e lo fa attraverso tre entità:
+</p><ul><li><em>soggetti</em>, ovvero chi può accedere alle risorse
+</li><li><em>oggetti</em>, le risorse da proteggere
+</li><li><em>azioni</em>, cioè le operazioni che possono essere eseguite sulle precedenti entità
+</li></ul><p>Altri due concetti importanti sono quello di <em>stato di autorizzazione</em> (o <em>di protezione</em>), ovvero l'insieme dei permessi accordati o negati ad ogni utente, e le <em>regole di identificazione</em>, cioè gli assiomi che devono essere soddisfatti perché i permessi siano concessi.
+</p>
+<p class='vspace'>Studieremo ora in maggior dettaglio alcune politiche di sicurezza, quelle per il controllo dell'accesso e quelle di amministrazione. Le <em>politiche per il controllo dell'accesso</em> stabiliscono chi può/non può accedere alle risorse, e possono essere di tre tipi:
+</p><ul><li><strong>DAC</strong>, politiche discrezionarie
+</li><li><strong>MAC</strong>, politiche mandatorie
+</li><li><strong>RAC</strong>, politiche basate sui ruoli
+</li></ul><p>Le <em>politiche di amministrazione</em> definiscono invece chi può stabilire le regole che governano il controllo dell'accesso.
+</p>
+<p class='vspace'><a name='c2' id='c2'></a>
+</p><h2>Politiche discrezionarie</h2>
+<p>Le <strong>politiche discrezionarie</strong> controllano l'accesso sulla base dell'identità degli utenti che lo richiedono e di regole che stabiliscono chi può o non può eseguire azioni sulle risorse. Si chiamano discrezionarie perché ciascun utente del sistema può decidere a propria discrezione a chi passare i propri privilegi.
+</p>
+<p class='vspace'>Un primo modello che le rappresenta è il <strong>modello a matrice di accesso</strong>, inventato da Lampson nel 1971 ed esteso e formalizzato negli anni successivi da altri studiosi. Lo stato di protezione è definito da una tripla <strong>(S,O,A)</strong>, dove <strong>S</strong> è l'insieme dei soggetti, <strong>O</strong> degli oggetti ed <strong>A</strong> è la matrice di accesso che dà il nome al modello. Le righe della matrice rappresentano i soggetti, mentre le colonne corrispondono agli oggetti. La notazione <code class='escaped'>A[s,o]</code> indica i privilegi, dunque le azioni, del soggetto <code class='escaped'>s</code> sull'oggetto <code class='escaped'>o</code>. Un esempio di matrice di accesso:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/matrAcc.jpg' alt='' title='' /></div>
+<p class='vspace'>Prima di vedere come implementarla, elenchiamo brevemente i comandi necessari per modificare lo stato di protezione, alla cui esecuzione segue un aggiornamento della matrice:
+</p><ul><li><code class='escaped'>enter r into A[s,o]</code> , inserisce il privilegio <code class='escaped'>r</code> nella cella indicata
+</li><li><code class='escaped'>delete r from A[s,o]</code> , toglie il privilegio <code class='escaped'>r</code> dalla cella indicata
+</li><li><code class='escaped'>create subject S'</code> , crea un nuovo soggetto S'
+</li><li><code class='escaped'>destroy subject S'</code> , elimina il soggetto S'
+</li><li><code class='escaped'>create object O'</code> , crea un nuovo oggetto O'
+</li><li><code class='escaped'>destroy object O'</code> , elimina l'oggetto O'
+</li></ul><p>Ogni comando può avere una prima parte condizionale, che se verificata permette l'esecuzione delle primitive sopra elencate. Definito <strong>Q</strong>= <code class='escaped'>(S,O,A)</code> lo stato di autorizzazione attuale, l'esecuzione di un qualsiasi sequenza di comandi ne provoca la transizione allo stato <strong>Q</strong>'.
+</p>
+<div class='vspace'></div><h3>Implementazione</h3>
+<p>Data la quantità di soggetti e oggetti che caratterizzano un sistema, è facile immaginare quanto una matrice degli accessi possa diventare vasta. Dato però che la maggior parte delle celle rimarrebbero vuote (non sono definiti privilegi per ogni coppia di entità), memorizzarla come array bidimensionale sarebbe un enorme e sciocco spreco di spazio. Le tecniche implementative più utilizzate sono dunque la <em>tabella di autorizzazione</em>, le <em>Access Control List</em> e le <em>Capability list</em>.<br />Le <strong>tabelle di autorizzazione</strong> memorizzano in una tabella a tre colonne tutte e solo quelle triple <code class='escaped'>(S,O,A)</code> non nulle. Ad esempio:
+</p>
+<div class='vspace'></div><table align='center' width='60%' >
+<tr ><td  valign='top'><strong>Soggetto</strong>
+</td><td  valign='top'><strong>Azione</strong>
+</td><td  valign='top'><strong>Oggetto</strong>
+</td></tr><tr ><td  valign='top'>Ann
+</td><td  valign='top'>own
+</td><td  valign='top'>File1
+</td></tr><tr ><td  valign='top'>Ann
+</td><td  valign='top'>read
+</td><td  valign='top'>File1
+</td></tr><tr ><td  valign='top'>Ann
+</td><td  valign='top'>write
+</td><td  valign='top'>File1
+</td></tr><tr ><td  valign='top'>Ann
+</td><td  valign='top'>read
+</td><td  valign='top'>File2
+</td></tr><tr ><td  valign='top'>Ann
+</td><td  valign='top'>write
+</td><td  valign='top'>File2
+</td></tr><tr ><td  valign='top'>Bob
+</td><td  valign='top'>read
+</td><td  valign='top'>File1
+</td></tr><tr ><td  valign='top'>Bob
+</td><td  valign='top'>read
+</td><td  valign='top'>File2
+</td></tr><tr ><td  valign='top'>...
+</td><td  valign='top'>...
+</td><td  valign='top'>...
+</td></tr></table>
+<p class='vspace'>Nelle <strong>Access Control List</strong> (<em>ACL</em>) la memorizzazione avviene per colonne. Ogni riga rappresenta una risorsa, poi avrò tante colonne quanti sono i soggetti che possono interagirvi, nelle cui celle apparirà la lista dei loro permessi. Una possibile rappresentazione grafica è la seguente:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/ACL.jpg' alt='' title='' /></div>
+<p class='vspace'>Infine le <strong>Capability List</strong> (<em>ticket</em>) memorizzano per riga, ovvero ogni riga rappresenta un utente con una lista di azioni consentite per i vari oggetti. Ad esempio:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/ticket.jpg' alt='' title='' /></div>
+<p class='vspace'>Le ACL sono preferibili per quei sistemi in cui le operazioni per gli oggetti sono prevalenti, dal momento che rendono particolarmente efficiente il controllo dell'accesso su tali entità; per controllare i soggetti dovrei infatti scandire tutti gli elementi della lista. Le capability list al contrario hanno alte prestazioni nel controllo dell'accesso e nella gestione dei soggetti, ma devono garantire la non falsificabilità della lista per garantire la sicurezza, il che non è affatto semplice data la loro lunghezza. Per questo motivo i <em>ticket</em> sono l'implementazione meno diffusa delle matrici d'accesso.
+</p>
+<div class='vspace'></div><h3>Problema della safety e debolezze</h3>
+<p>Abbiamo visto prima che l'esecuzione dei comandi aggiorna lo stato di autorizzazione del sistema, portandolo dopo un certo numero di transizioni al suo stato finale. <br />Il <strong>problema della safety</strong> si pone questo dubbio: è possibile che l'esecuzione di una sequenza di comandi legittimi conduca il sistema in uno stato non lecito per le mie politiche? Sì, è possibile, ma quel che è peggio è che se non vengono fissate alcune limitazioni sui comandi, rilevare a priori quali potrebbero essere quelli che messi in successione riuscirebbero a violare le politiche si rivela un problema <em>non decidibile</em>, che richiede cioè un tempo polinomiale di risoluzione (decisamente oneroso). Lo si può rendere <em>decidibile</em> imponendo alcuni vincoli: i comandi devono essere mono-operazionali (possono eseguire un'unica operazione primitiva), sia i soggetti che gli oggetti devono essere in numero finito.
+</p>
+<p class='vspace'>La principale debolezza delle politiche discrezionarie è che sono in grado di controllare solo gli accessi diretti alle informazioni, mentre non esiste alcun controllo sul come vengono utilizzate una volta rilasciate. Questa caratteristica rende il DAC vulnerabile ai <em>Trojan Horse</em>, che ricordiamo dall'<a class='wikilink' href='ESP-Introduzione.html'>Introduzione</a> essere programmi che violano il sistema insediati all'interno di altri programmi considerati affidabili. i trojan vengono generalmente utilizzati come veicolo di virus e bombe logiche; vediamo un esempio del loro funzionamento.<br />Abbiamo un sistema con un controllo dell'accesso basato su politiche discrezionarie, e abbiamo l'utente <code class='escaped'>Panda</code> legittimo proprietario del file <code class='escaped'>bamboo.txt</code>. Se l'utente <code class='escaped'>Tetty</code> volesse leggere il file in questione pur non avendo permessi in lettura, potrebbe inserire nel sistema un'applicazione utile per tutti (<code class='escaped'>superateIlMioEsame.exe</code>) ma che nasconde due operazioni maliziose:
+</p><ol><li>lettura da <code class='escaped'>bamboo.txt</code>
+</li><li>sua trascrizione sul file <code class='escaped'>copiaBamboo.txt</code> di cui <code class='escaped'>Tetty</code> è proprietario, ma di cui estende l'autorizzazione in scrittura a chiunque esegua il suo programma
+</li></ol><p>Quando <code class='escaped'>Panda</code> esegue il trojan così confezionato, eseguirebbe a sua insaputa prima un'operazione di lettura su  <code class='escaped'>bamboo.txt</code> (che è accordata in quanto egli ne è il legittimo proprietario), poi una trascrizione su <code class='escaped'>copiaBamboo.txt</code>, e il gioco è fatto. Visto che la DAC non prevede alcun controllo sul flusso di informazioni, non si può far nulla per evitare questo furto.
+</p>
+<p class='vspace'><a name='c3' id='c3'></a>
+</p><h2>Politiche mandatorie</h2>
+<p>Se le DAC sono basate sulla definizione di regole nella forma <code class='escaped'>soggetto oggetto azione </code> definite a discrezione degli utenti, nelle <strong>politiche mandatorie</strong> non ci sono regole ma vincoli. Esse impongono infatti delle restrizioni sul flusso di informazioni, operando una distinzione precisa tra utenti e soggetti: i primi sono le persone (fidate), i secondi sono i processi (non fidati) eseguiti nel sistema per conto degli utenti. DAC e MAC non sono mutualmente esclusive, ma le prime possono fornire discrezionalità all'interno dei confini delle seconde.
+</p>
+<p class='vspace'>Le politiche mandatorie si basano sulla classificazione di <strong>soggetti</strong> e <strong>oggetti</strong>, cui viene assegnata un'etichetta composta di due campi:
+</p><ul><li><strong>livello di sicurezza</strong>, cioè un elemento dell'insieme (L) su cui è definito un ordinamento gerarchico totale. Ad esempio potremmo avere tre livelli di segretezza: Segretissimo (S+) &gt; Segreto (S) &gt; Normale (N) . Le etichette dei livelli possono essere chiamate in qualsiasi modo, basta definirle e dargli un nome
+</li><li><strong>categorie</strong>, ovvero un sottoinsieme di un insieme non gerarchico di elementi, su cui cioè non è definita alcuna relazione di ordinamento. Vengono utilizzate per creare <em>domini di competenza</em> (ad esempio suddividere le informazioni di un'azienda nei diversi ambiti: finanziari, anagrafici, responsabilità, ...) o per implementare restrizioni <em>need-to-know</em>. Queste ultime permettono di far accedere a delle informazioni solo se servono all'utente per svolgere un lavoro, così da evitare sconfinamenti di campo e assicurare una gradualità più fine (ad esempio all'utente <code class='escaped'>Cliente</code> impedirò l'accesso ai miei dati sensibili)
+</li></ul><p class='vspace'>Questa etichette rappresentano le <strong>classi di sicurezza</strong> (SC), che sono quindi gli elementi di un insieme parzialmente ordinato definito da una <em>relazione di dominanza</em>. Possono essere utilizzate secondo due politiche:
+</p>
+<div class='vspace'></div><ol><li>politica che assicura la <em>segretezza</em> (modello <strong>Bell LaPadula</strong>) per garantire la confidenza
+</li><li>politica che assicura l' <em>integrità</em> per garantire l'integrità dell'informazione (modello <strong>Biba</strong>) 
+</li></ol><p class='vspace'>Un altro modo di rappresentare la SC è la notazione: &#955;(s) oppure &#955;(o), a seconda che si riferisca a un soggetto o a un oggetto.<br />La <strong>relazione di dominanza</strong> tra classi di sicurezza è così definita: dati <code class='escaped'>(L1,C1)</code> e <code class='escaped'>(L2,C2)</code> due classi di sicurezza, dove L è il livello di sicurezza e C la categoria, si afferma che
+</p><table align='center' width='50%' >
+<tr ><td style='padding:5px;'  valign='top'>
+<p>(L1,C1) &#8805; (L2,C2)
+</p></td><td style='padding:5px;'  valign='top'>
+<p><strong>SE E SOLO SE</strong>
+</p></td><td style='padding:5px;'  valign='top'>
+<p>1. L1 &#8805; L2<br />2. C1 &#8839; C2
+</p></td></tr></table>
+<p>Facciamo un esempio. <br />Abbiamo i seguenti livelli e categorie:<br /><code class='escaped'>L = {TS,S} , dove TS &gt;= S</code><br /><code class='escaped'>C = {C1,C2,C3}</code><br />ed abbiamo due SC: <code class='escaped'>(TS, {C1,C2}) , (S,{C2,C3})</code><br />E' vero che la prima domina la seconda? NO! Perché mentre la prima condizione sui livelli è soddisfatta, quelle sulle categorie no, dato che {C2,C3} non è sottoinsieme di {C1,C2}.
+</p>
+<p class='vspace'>Dato l'elenco dei livelli e delle categorie, tutte le possibili classi di sicurezza generabili formano un <em>reticolo di classificazione</em>, che gode delle seguenti proprietà:
+</p><ul><li><em>riflessività</em>, ogni classe domina sé stessa
+</li><li><em>transitività</em>, se ho tre classi <strong>x</strong>, <strong>y</strong> e <strong>z</strong>, se <strong>x &#8805; y</strong> e <strong>y &#8805; z</strong> allora <strong>x &#8805; z</strong>
+</li><li><em>antisimmetria</em>, se una classe <strong>x</strong> domina <strong>y</strong> e viceversa, allora <strong>x = y</strong>
+</li><li><strong>least upper bound</strong> (<em>LUB</em>), date due SC siamo sicuri che ne esiste solo una che domina entrambe e che è la minore tra tutte quelle che le dominano
+</li><li><strong>greatest lower bound</strong>' (<em>GLB</em>), date due SC siamo sicuri che ne esiste solo una che è dominata da entrambe e che è la maggiore tra tutte quelle che dominano
+</li></ul><p class='vspace'>Il <strong>LUB</strong> e il <strong>GLB</strong> sono di particolare interesse nell'analisi del reticolo, e sono facilmente calcolabili:
+</p><ul><li>il LUB tra (L1,C1) e (L2,C2) è (L3,C3), dove:
+<ul><li>L3 è il maggiore tra L1 e L2
+</li><li>C3 = C1 <code class='escaped'>U</code> C2
+</li></ul></li><li>il GLB tra (L1,C1) e (L2,C2) è (L3,C3), dove:
+<ul><li>L3 è il minore tra L1 e L2
+</li><li>C3 = C1 &#8745; C2
+</li></ul></li></ul><div class='vspace'></div><h3>Controllo di segretezza</h3>
+<p>La <strong>clearance</strong> è la classe di sicurezza assegnata ad ogni utente, che può dunque accedere a tutte quelle classi del sistema dominate dalla sua. In una politica mandatoria per la segretezza una SC associata a un utente riflette il suo livello di fiducia, mentre una SC associata a un oggetto rappresenta la sensibilità dell'informazione in esso contenuta; in particolare, gli oggetti creati ereditano la classificazione del soggetto che li ha creati.
+</p>
+<p class='vspace'>La segretezza viene garantita impedendo flussi di informazione verso classi di accesso più basse o non compatibili. Ciò è assicurato da due proprietà vincolanti:
+</p><ul><li><strong>no write down</strong>, il soggetto <em>s</em> può scrivere solo su oggetti <em>o</em> che hanno SC dominante: &#955;(o) &#8805; &#955;(s). Se è vero che da una parte ciò impedisce l'acquisizione di informazioni riservate da parte di oggetti a cui ne è precluso l'accesso, dall'altra non garantisce l'integrità delle informazioni. Dato però che è la confidenzialità che vogliamo perseguire, ignoriamo questa conseguenza
+</li><li><strong>no read up</strong>, il soggetto <em>s</em> può leggere solo da oggetti <em>o</em> di SC inferiore: &#955;(s) &#8805; &#955;(o)
+</li></ul><p class='vspace'>Quanto detto finora è formalizzabile con il <strong>modello di Bell e LaPadula</strong>, nel quale il sistema viene rappresentato come <em>stati</em> e <em>transizioni di stato</em>. Gli stati <strong>v</strong> sono una tripla ordinata <strong>(b,M,&#955;)</strong>, dove:
+</p><ul><li><strong>b</strong> è l'insieme degli accessi nello stato corrente, ed è quindi una <em>(S,O,A)</em> (soggetto, oggetto, azione)
+</li><li><strong>M</strong> è la matrice di accesso con S righe ed O colonne, che definiscono celle in cui sono specificate le azioni corrispondenti
+</li><li><strong>&#955;</strong> è una funzione che restituisce la classe di sicurezza di soggetti o oggetti
+</li></ul><p class='vspace'>Definito lo stato (b,M,&#955;), si dice che è sicuro se e solo se soddisfa le seguenti proprietà:
+</p><ul><li><strong>simple security property</strong>, che dice che se un soggetto <em>s</em> ha eseguito un'azione di lettura <em>a</em> sull'oggetto <em>o</em>, allora &#955;(s) &#8805; &#955;(o)
+</li><li><strong>*-property</strong> (star property), stabilisce invece che se l'azione <em>a</em> era di scrittura, allora &#955;(o) &#8805; &#955;(s)
+</li></ul><p>Queste due regole sono sostanzialmente la no write down e la no read up, formalizzate stavolta nel contesto del modello di Bell e LaPadula.
+</p>
+<p class='vspace'>Sappiamo ora quando uno stato è sicuro, ma come possiamo dire lo stesso del sistema? Per farlo, utilizziamo il concetto di <strong>funzione di transizione di stato</strong> (<em>T</em>), che applicando <em>R</em> richieste di accesso ad uno stato sicuro di partenza <em>V</em>, lo conduce in un nuovo stato <em>V<strong> anch'esso sicuro. In formula: </strong>T: V * R -&gt; V<strong>'. Possiamo quindi affermare che un sistema </strong>(v<sub>0</sub>,R,T)</em>' è sicuro se e solo se v<sub>0</sub> è sicuro e se anche <em>T(v<sub>0</sub> * R)</em> lo è.
+</p>
+<p class='vspace'>Ricapitoliamo quanto visto finora ed enunciamo il <strong>teorema di sicurezza</strong> del modello Bell e LaPadula.<br /><strong>Un sistema (v<sub>0</sub>,R,T) è sicuro se e solo se</strong>
+</p><ul><li>v<sub>0</sub> è uno stato sicuro
+</li><li>la funzione T è tale che se <code class='escaped'>T(v,r) = v'</code>, dove v=(b,M,&#955;) e v'=(b',M',&#955;'), allora devono essere rispettate le seguenti condizioni:
+<ol><li><strong>(s,o,read) &#8712; b’ e (s,o,read) &#8713; b &#8658; &#955;’(s) &#8805; &#955;’(o)</strong><br />"Se sei arrivato al nuovo stato v' con una nuova tripla, puoi effettuare l'operazione di lettura solo se &#955;’(s) &#8805; &#955;’(o)"
+</li><li><strong>(s,o,read) &#8712; b e &#955;’(s) &lt;= &#955;’(o) &#8658; (s,o,read) &#8805; b’</strong><br />"Se sei arrivato in un nuovo stato dove non è più vero che la SC associata ad s domina quella di o, puoi eseguire l'operazione di lettura solo se (s,o,read) &#8713; b, altrimenti avresti una violazione"
+</li><li><strong>(s,o,write) &#8712; b’ e (s,o,write) &#8713; b &#8658; &#955;’(o) &#8805; &#955;’(s)</strong><br />analoga alla 1
+</li><li><strong>(s,o,write) &#8712; b e &#955;’(o) &#8805; &#955;’(s) &#8658; (s,o,write) &#8713; b’</strong><br />analoga alla 2
+</li></ol></li></ul><p class='vspace'>Ad esempio abbiamo i seguenti livelli: <code class='escaped'>L = {TS,S,C} , dove TS &gt;= S &gt;= C</code><br />e le seguenti SC:<br />&#955;(Sogg1) = TS<br />&#955;(Sogg2) = S<br />&#955;(Ogg1) = TS<br />&#955;(Ogg2) = C<br />Stando a quanto detto finora, Sogg1 può leggere e scrivere da Ogg1 e leggere e basta da Ogg2. Sogg2 non può leggere da Ogg1, ma può scriverci; viceversa non può scrivere su Ogg2, ma può leggerlo.
+</p>
+<p class='vspace'>Per evitare che un soggetto si veda negato l'accesso a una risorsa perché violerebbe la simple security o la *-property, sono stati creati i <strong>System Z</strong>. In questi sistemi la funzione di transizione di stato è fatta in modo tale che se un utente vuole eseguire un'azione non consentita, viene temporaneamente abbassato il livello di sicurezza di tutti i soggetti e di tutti gli oggetti al livello più basso possibile, così da rilasciare l'accesso. Pur rimanendo sicuro rispetto al teorema di sicurezza, non è così sicuro in generale dal momento che vengono cambiate le classi di sicurezza a seconda delle necessità. Per questo motivo ai System Z può essere aggiunta la <em>tranquillity property</em>, che riporta il sistema alla situazione convenzionale, in cui il cambiamento delle classificazioni non è consentito.
+</p>
+<p class='vspace'>Prima di passare al controllo dell'integrità, soffermiamoci sui limiti delle politiche mandatorie in generale. 
+</p><ol><li><em>non sono previste declassazioni delle risorse dopo un certo periodo di tempo, né è tenuto in considerazione il fatto che un processo può produrre dati meno sensibili di quelli a cui accede</em>. Questi requisiti possono essere soddisfatti applicando delle eccezioni alle restrizioni della politica mandatoria, rispettivamente con operazioni di <em>declassificazione</em> e <em>sanitizzazione</em>.
+</li><li><em>la determinazione delle classi di accesso non è sempre facile e immediata</em>. Ad esempio l' <em>associazione</em> di un insieme di proprietà può avere classificazione maggiore delle singole proprietà (la coppia "Nome - Stipendio" ha più valore dei campi considerati singolarmente). O ancora, un'aggregazione di più oggetti può avere una classificazione maggiore dei singoli valori che la compongono (sapere una risposta esatta dell'esame ha valore minore rispetto a saperle tutte).
+</li><li><em>le politiche mandatorie sono vulnerabili ai covert channel, non offrendo nulla per rilevarli o contrastarli</em>.
+</li></ol><div class='vspace'></div><h3>Controllo di integrità</h3>
+<p>La <strong>politica mandatoria per l'integrità</strong> è molto simile a quella per la segretezza, di cui potrebbe essere considerata il complementare. Non abbiamo più <em>classi di segretezza</em> ma <strong>classi di integrità</strong> IC, che riferite all'utente rappresentano il livello di correttezza delle sue informazioni, mentre associate agli oggetti riflettono il grado di fiducia nel contenuto. Anche in questo caso le categorie definiscono le aree di competenza per utenti e oggetti.
+</p>
+<p class='vspace'>Per garantire l'integrità viene impedito il flusso di informazioni verso classi di integrità più alte o non compatibili, quindi dovranno essere applicate le seguenti politiche:
+</p><ul><li><strong>no write up</strong>, il soggetto <em>s</em> può scrivere solo su oggetti <em>o</em> di SC inferiore: &#955;(s) &#8805; &#955;(o)
+</li><li><strong>no read down</strong>, il soggetto <em>s</em> può leggere solo da oggetti <em>o</em> che hanno SC dominante: &#955;(o) &#8805; &#955;(s)
+</li></ul><p class='vspace'>Il <strong>modello di Biba</strong> (si legge "Baiba") è basato sugli stessi principi di Bell e LaPadula, quindi erediterà il concetto di stato e transizioni di stato. In particolare, l'integrità degli stati viene garantita imponendo la:
+</p><ul><li><strong>simple security property</strong>, che dice che se un soggetto <em>s</em> ha eseguito un'azione di lettura <em>a</em> dall'oggetto <em>o</em>, allora &#955;(o) &#8805; &#955;(s) . L'utente non può accedere a informazioni con un livello di correttezza minore del suo
+</li><li><strong>*-property</strong> (star property), stabilisce invece che se l'azione <em>a</em> era di scrittura, allora &#955;(s) &#8805; &#955;(o). L'utente non è dunque autorizzato a modificare informazioni più critiche del livello che gli è stato assegnato
+</li></ul><p class='vspace'>Come abbiamo imparato dal capitolo precedente, garantire la confidenza dell'informazione non ne assicura l'integrità, e viceversa. Nel modello di Biba così descritto, gli utenti potrebbero accedere con facilità alle informazioni con livelli di segretezza più alti dei loro. Il problema viene risolto con l'introduzione dei <strong>low water mark</strong> per soggetti, che lascia sostanzialmente inalterate le condizioni per la scrittura, mentre ne introduce una nuova per le letture: i soggetti possono leggere qualsiasi oggetto, ma subito dopo il loro livello viene declassato a quello inferiore dei due (&#955;(s) = glb{&#955;(s),&#955;(o)} ). Lo svantaggio non indifferente è che l'ordine delle operazioni influenza il risultato.<br />Esiste anche un <em>low water mark</em> per oggetti analogo al precedente, ma causa un'intollerabile violazione dell'integrità (che in una politica mandatoria di questo tipo non è ammissibile).
+</p>
+<p class='vspace'>Un'ultima considerazione è che politiche di segretezza e integrità possono coesistere nello stesso sistema a patto che abbiano classificazione indipendenti (un insieme per le IC e un insieme per le SC).
+</p>
+<p class='vspace'><a name='c4' id='c4'></a>
+</p><h2>Politiche amministrative</h2>
+<p>Le <strong>politiche amministrative</strong> definiscono a chi spetta il compito di concedere e/o revocare le autorizzazioni. Ad esempio nelle politiche mandatorie delegano all'amministratore centrale il compito di assegnare direttamente le classi di sicurezza dei soggetti, il che si traduce in un assegnamento indiretto delle stesse anche agli oggetti creati dagli utenti.<br />Per le DAC esistono invece più politiche amministrative:
+</p><ul><li><strong>amministrazione centralizzata</strong>, dove ho un unico amministratore che controlla il sistema
+</li><li><strong>amministrazione gerarchica</strong>, dove l'amministratore centrale può assegnare responsabilità amministrative ad altri soggetti
+</li><li><strong>amministrazione cooperativa</strong>, in cui coesistono più amministratori che cooperano per la definizione delle autorizzazioni
+</li><li><strong>ownership</strong>, in cui ogni oggetto ha un proprietario che lo amministra e può estendere i propri diritti su di esso anche ad altri
+</li><li><strong>amministrazione decentralizzata</strong>, che introduce flessibilità nella gestione suddividendo l'amministrazione tra più utenti. Assieme all'ownership (cui è spesso associata) è tra le politiche amministrative più diffuse
+</li></ul><p class='vspace'>Il limite dell'amministrazione decentralizzata è la difficoltà nel tener traccia dei permessi (<em>chi può fare cosa</em>) e nel revocare autorizzazioni. Se ad esempio un utente concede i propri privelegi a un altro e questi privilegi gli vengono poi tolti, l'autorizzazione al secondo utente deve rimanere o no? Dipende dall'organizzazione del sistema. Ad esempio i DBMS applicano un'amministrazione decentralizzata, ma il loro linguaggio consente di specificare come devono avvenire le concessioni e le revoche di autorizzazioni in modo più puntuale. Nella fattispecie utilizzano i comandi di <code class='escaped'>grant</code> e <code class='escaped'>revoke</code>, dove quest'ultimo può annullare i permessi solo all'utente specificato o a cascata a tutti gli utenti che aveva autorizzato.
+</p>
+<p class='vspace'><a name='c5' id='c5'></a>
+</p><h2>DAC Avanzate</h2>
+<p>Le <strong>DAC Avanzate</strong> estendono il potere espressivo delle DAC viste finora, introducendo nuove funzionalità. Una è la possibilità di definire delle <strong>autorizzazioni con condizioni</strong> che ne limitano la validità, come il numero di richieste effettuate, la locazione dell'utente, l'ora del giorno, ... Alla classica tripla (Utente,Azione,Oggetto) si aggiunge dunque una condizione, che se non soddisfatta impedisce al sistema di applicare il privilegio sull'oggetto all'utente indicato.
+</p>
+<p class='vspace'>L'estensione fondamentale introdotta con le DAC avanzate è però l' <strong>autorizzazione su/per gruppi</strong>, che fa fronte alla difficoltà di dover gestire ogni entità singolarmente anche in sistemi molto estesi. Ecco dunque che soggetti e oggetti vengono raggruppati in <strong>gerarchie</strong> astratte, tipicamente rappresentate con strutture ad albero. Alcuni esempi: <code class='escaped'>utenti/gruppi</code>, <code class='escaped'>oggetti/classi</code>, <code class='escaped'>file/directory</code>.
+</p>
+<div class='vspace'></div><table border='1' align='center' width='80%' >
+<tr ><td style='padding:5px;'  valign='top'>
+<div><span class='frame lfloat'><img src='../uploads/Uni/gerUG.gif' alt='' title='' /><br /><strong>Gerarchia utenti/gruppi</strong></span></div>
+</td><td style='padding:5px;'  valign='top'>
+<div><span class='frame lfloat'><img src='../uploads/Uni/gerCO.gif' alt='' title='' /><br /><strong>Gerarchia oggetti/classi</strong></span></div>
+</td></tr></table>
+<p class='vspace'>In una simile organizzazione i privilegi potrebbero propagarsi dalla radice ai discendenti, risparmiando all'amministratore l'onere di assegnare singole autorizzazioni. Ma se non volessi applicare questa proprietà su un certo elemento? Ad esempio nei sistemi operativi UNIX non è vero in generale che i privilegi di una directory si propagano automaticamente ai file che contiene. Come faccio?<br />L'autorizzazione su/per gruppi risolve il problema supportando la definizione di <strong>eccezioni</strong> su oggetti o soggetti specifici. Hanno la seguente sintassi:
+</p><ul><li><em>autorizzazione positiva</em>: <code class='escaped'>(Soggetto, Azione, Oggetto, +)</code><br />Ad esempio <code class='escaped'>Studenti, write, swappa.php, +)</code>
+</li><li><em>autorizzazione negativa</em>: <code class='escaped'>(Soggetto, Azione, Oggetto, -)</code><br />Ad esempio <code class='escaped'>(Piera, read, galateo.txt, -)</code>
+</li></ul><p class='vspace'>Le <em>autorizzazioni negative</em> sono utilizzate nelle <strong>politiche aperte</strong>, che seguono il principio per cui il soggetto può fare tutto ciò che eredita dalla sua gerarchia a meno di eccezioni. Le <strong>politiche chiuse</strong> ragionano invece al contrario, negando ogni permesso a meno di eccezioni espresse con <em>autorizzazioni positive</em>.<br />I modelli DAC più recenti cercano di essere flessibili e supportare il maggior numero di politiche differenti, sia quelle sulle autorizzazioni o la propagazione, sia quelle sulla risoluzione dei conflitti che vedremo nel paragrafo successivo.
+</p>
+<div class='vspace'></div><h3>Conflitti e soluzioni</h3>
+<p>I principali problemi legati alle DAC avanzate sono la <em>non completezza</em> e l' <em>inconsistenza</em>.
+</p>
+<p class='vspace'>Le <strong>non completezza</strong> sussiste quando per un elemento non sono definite autorizzazioni positive o negative, dunque il sistema non sa come trattarli. Una soluzione è assumere la completezza e tanti saluti, come fa <em>Orion</em> (in assenza di informazioni più dettagliate da parte della prof, suppongo che <a class='urllink' href='http://en.wikipedia.org/wiki/ORION_network' title='' rel='nofollow'>Orion sia questo</a>); un'altra è invece assumere come default una politica aperta o chiusa, così che le incompletezze vengano automaticamente appianate.
+</p>
+<p class='vspace'>L' <strong>inconsistenza</strong> è invece l'applicazione per uno stesso elemento di autorizzazioni positive e negative. Esistono diverse politiche di risoluzione per risolvere questo conflitto, vediamole una per una ricordando che non ne esiste una migliore dell'altra in generale:
+</p><ul><li>nella <strong>denials-take-precedence</strong> (dtp) le autorizzazioni negative vincono sempre sulle positive, anche se in netta minoranza. E' la duale della <strong>permissions-take-precedence</strong> (ptp), che fa l'esatto contrario
+</li><li>la <strong>most-specific-takes-precedence</strong> (mstp) prevede l'applicazione dell'autorizzazione più specifica in assoluto per un certo elemento, mentre per la <strong>most-specific-along-a-path-takes-precedence</strong> (msaptp) si confrontano le più specifiche su ogni percorso di autorizzazione per vedere chi ha il sopravvento. Pur essendo piuttosto logiche e intuitive, queste due strategie non sempre risolvono i conflitti
+</li><li>il concetto che sta alla base della <strong>strong vs weak</strong> è che ci sono alcune autorizzazioni forti ed altre deboli, e quelle forti vincono sempre su quelle deboli (senza eccezioni). Tra due autorizzazioni deboli viene generalmente applicata la politica del <em>msaptp</em>, ma è tra due forti che sorge il problema: chi sopravvale? Sta dunque all'amministratore distribuire autorizzazioni consistenti, il che significa che nemmeno questa tecnica risolve automaticamente i conflitti
+</li></ul><p class='vspace'>Abbiamo infine quattro possibili politiche di risoluzione basate sulla priorità:
+</p><ul><li>l' <strong>esplicita priorità</strong> è la più difficile da gestire e prevede la distribuzione dei privilegi in modo diretto
+</li><li>la <strong>posizionale</strong> è un raffinamento del caso precedente, in cui le priorità sono assegnate in base al loro ordine di definizione, ovvero la più recente è la più importante. Difficilmente applicabile in contesti decentralizzati
+</li><li>nella <strong>grantor-dependent</strong> la priorità dipende da chi ha rilasciato l'autorizzazione
+</li><li>nella <strong>time-dependent</strong> dipende invece da quando è stata concessa
+</li></ul><p class='vspace'><a name='c6' id='c6'></a>
+</p><h2>Chinese Wall</h2>
+<p>Il <strong>chinese wall</strong> è un altro modello di controllo dell'accesso, in particolare una politica di tipo mandatorio che applica la separazione dinamica dei privilegi per prevenire flussi di informzione che potrebbero causare conflitti di interesse. Lo scenario per cui è pensato è quello in cui ho più organizzazioni che lavorano nello stesso contesto, ma sono in competizione tra loro.
+</p><div  style='text-align: center;'><img src='../uploads/Uni/chineseWall.jpg.gif' alt='' title='' /></div>
+<p>Agli oggetti viene applicata una precisa gerarchia, in cui vengono definiti:
+</p><ul><li><em>basic object</em>: oggetti che contengono informazioni
+</li><li><em>company dataset</em>: gruppo di oggetti che appartengono alla stessa organizzazione
+</li><li><em>classi in conflitto di interesse</em>: insieme dei detaset delle organizzazioni in competizione
+</li></ul><p class='vspace'>Il chinese wall opera attraverso la definizione e l'applicazione di regole non ben formalizzate che controllano gli accessi in modo che un utente non possa accedere a diverse classi in conflitto di interesse. Ciò significa che se inizialmente possono accedere ai company dataset che preferiscono, una volta ottenuta l'autorizzazione l'insieme dei loro privilegi viene aggiornato, in modo che non possa più accedere alle informazioni della concorrenza. Questa situazione è tipica della <strong>separazione dei privilegi dinamica</strong>, in cui in principio non esistono limitazioni per gli utenti, ma i loro privilegi vengono ristretti man mano che compiono operazioni. Al contrario, nella <strong>separazione statica</strong> avviene una distribuzione a priori delle autorizzazioni, in modo che gli utenti non abbiano troppi privilegi fin dall'inizio. Facciamo un esempio.<br />Ho una transazione composta da quattro operazioni (fare l'ordine, spedirlo, registrare la fattura, pagare) e ho quattro persone in grado di eseguirla. Una separazione statica prevede che l'amministratore assegni le operazioni in modo che nessuno possa compiere la transazione da solo. Una possibile separazione dinamica è che ogni persona possa fare qualsiasi operazione ma non possa completare il processo, oppure fare in modo che il sistema rigetti il tentativo da parte di un utente di compierle tutte e quattro da solo.
+</p>
+<p class='vspace'>Il principio che sta dietro la separazione dei privilegi è far sì che nessun utente ne abbia abbastanza da poter abusare del sistema. L'idea è nobile, ma non risolve un certo numero di problemi:
+</p><ul><li>non gestisce la storia degli accessi
+</li><li>non garantisce l'accessibilità, dal momento che se tutti gli utenti volessero accedere allo stesso dataset si bloccherebbe il sistema (nessuno leggerà più dagli altri)
+</li><li>non fornisce procedure per sanitizzare i dati
+</li></ul><p class='vspace'>Tutti questi limiti fanno del chinese wall un sistema poco diffuso.
+</p>
+<p class='vspace'><a name='c7' id='c7'></a>
+</p><h2>Politiche basate sui ruoli</h2>
+<p>Le politiche di controllo degli accessi che abbiamo studiato finora avevano tutte un'idea di base: ho un soggetto che vuole compiere una certa azione su un oggetto, gli do il permesso o glielo nego. Le <strong>politiche basate sui ruoli</strong> rovesciano la prospettiva, basandosi sull'osservazione che spesso il completamento di certe attività richiede il rilascio di più di un privilegio, quindi può rivelarsi più conveniente spostare l'attenzione dal singolo utente all'applicazione (<em>application/task</em>). Vengono così definiti i <strong>ruoli</strong>, ovvero un insieme di privilegi (azioni e responsabilità) legati a una particolare attività lavorativa, definiti come <code class='escaped'>Ruolo = (oggetto,azione)</code>. Possono essere <em>generici</em> se indicano un tipo di lavoro (professore, assistente, ...), <em>specifici</em> se invece si riferiscono a un compito preciso (fare la lezione, preparare gli esami, ...).<br />L'accesso degli utenti agli oggetti è mediato dal ruolo, ottenendo due livelli di privilegi: 
+</p><ul><li><em>gestione della risorse</em> ad opera dei ruoli, gli unici autorizzati ad accedere agli oggetti
+</li><li><em>attivazione della gestione stessa</em> da parte degli utenti, autorizzati ad attivare ruoli e dunque ereditarne i privilegi
+</li></ul><p class='vspace'>Pur rappresentando concetti simili, gruppi e ruoli non vanno confusi.
+</p><ul><li><strong>Gruppi</strong>: insieme di utenti(statici). Statici significa che se un utente fa parte del gruppo, allora può sempre eseguire le operazioni concesse, senza dover attivare nessun ruolo. Quindi la definizione di gruppo non rimane invariata, si possono aggiungere altri utenti.
+</li><li><strong>Ruoli</strong>: insieme di privilegi(dinamici). Dinamici significa che i privilegi dipendono dal ruolo che l'utente ha attivato. 
+</li></ul><p class='vspace'>Generalmente i ruoli vengono organizzati in <em>gerarchie di specializzazione</em>, facilitando così la propagazione delle autorizzazioni. In particolare la propagazione può avvenire da un ruolo a tutti i suoi sottoruoli, o da un ruolo che eredita i privilegi da quelli da cui discende.
+</p>
+<p class='vspace'>Analizziamo ora vantaggi e svantaggi. I vantaggi di una politica basata sui ruoli sono:
+</p><ul><li>la gestione semplificata delle autorizzazioni, dato che non devo più assegnarle per ogni utente, ma solo ai ruoli
+</li><li>posso utilizzare la gerarchia dei ruoli per definire implicazioni
+</li><li>è possibile associare delle restrizioni che pongono dei vincoli ai ruoli, ad esempio sul numero massimo di utenti che possono attivarne uno, o il numero massimo di ruoli attivabili in una sessione, ecc
+</li><li>il <em>least privilege</em>, cioè la possibilità di associare ad ogni ruolo il numero minimo indispensabile di privilegi per compiere determinate operazioni in modo efficiente. Si contrastano così l'occorrenza di abusi danni o violazioni
+</li><li>la separazione dei privilegi, che abbiamo meglio spiegato sopra
+</li></ul><p class='vspace'>Gli svantaggi:
+</p><ul><li>le propagazioni basate sulle gerarchie non sono sempre volute, spesso anzi contrastano il principio del <em>least privilege</em>
+</li><li>servono anche politiche amministrative
+</li><li>gli utenti che appartengono allo stesso gruppo sono di fatto indistinguibili
+</li></ul><p class='vspace'>Le politiche basate sui ruoli sono state standardizzate nel 2004 dall'ANSI, che ha approvato lo standard <strong>RBAC</strong> (Role Based Access Control). Ha quattro componenti principali, di cui solo il primo è fondamentale:
+</p><ul><li><em>core RBAC</em>, che include i concetti base della politica, ovvero: gli utenti sono assegnati a ruoli da cui acquisiscono privilegi, gli assegnamenti utenti-ruoli e permessi-ruoli possono essere molti-a-molti. L'attivazione e la disattivazione selettiva di un ruolo da parte di un utente è rappresentata col concetto di <em>sessione</em>
+</li><li><em>gerarchia dei ruoli</em>, generali (arbitrarie, non necessariamente ad albero) o limitate
+</li><li><em>separazione statica dei privilegi</em> e
+</li><li><em>separazione dinamica dei privilegi</em>, entrambe indipendenti dalla presenza di gerarchie
+</li></ul><p class='vspace'><a name='c8' id='c8'></a>
+</p><h2>Apache</h2>
+<p>Nei webserver <strong>Apache</strong> la gestione della sicurezza passa attraverso i file di configurazione delle autorizzazioni <strong>.htaccess</strong> ed il modulo <strong>mod_access</strong>.
+</p>
+<p class='vspace'>I primi sono file di testo che contengono le regole di accesso relative alla cartella in cui sono contenuti, e possono definire sia autorizzazioni positive (<em>allow</em>) che negative (<em>deny</em>). Data una richiesta di accesso ad un file, la valutazione del file .htaccess parte dalla directory radice del server e ridiscende lungo il suo percorso valutando ad ogni sottodirectory il suo file di configurazione delle autorizzazioni.
+</p>
+<p class='vspace'>Il modulo <strong>mod_access</strong> supporta invece le direttive <em>host-based</em> o <em>user-based</em> per il controllo dell'accesso.<br />Le direttive <em>host-based</em> si applicano all'intero sito e possono essere definite in base a locazioni o variabili d'ambiente (vedi tabella):
+</p>
+<div class='vspace'></div><table >
+<tr ><td align='center' style='padding:5px;' bgcolor='#d4e1f0'  valign='top'>
+<p><strong>Restrizioni</strong>
+</p></td><td align='center' style='padding:5px;' bgcolor='#d4e1f0'  valign='top'>
+<p><strong>Regole</strong>
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>sulla locazione
+</p></td><td style='padding:5px;'  valign='top'>
+<ul><li><code class='escaped'>Allow from [host-or-network]/all</code>
+</li><li><code class='escaped'>Deny from [host-or-network]/all</code>
+</li></ul><div class='vspace'></div><div class='indent'>Dove [host-or-network] sta per l'indirizzo delle locazioni di cui voglio permettere o impedire l'accesso. Può essere scritto come nome di dominio (www.swappa.it), indirizzo IP, rete o maschera, ...
+</div></td></tr><tr ><td style='padding:5px;' bgcolor='#f2f6f9'  valign='top'>
+<p>su variabili d'ambiente
+</p></td><td style='padding:5px;' bgcolor='#f2f6f9'  valign='top'>
+<ul><li><code class='escaped'>Allow from env = env-variable</code>
+</li><li><code class='escaped'>Deny from env = env-variable</code>
+</li></ul><div class='vspace'></div><div class='indent'>Dove <code class='escaped'>env-variable</code> sono variabili di ambiente basate su attributi delle richieste http. Sono controllate dal modulo <code class='escaped'>mod-setenvif</code>.
+</div></td></tr></table>
+<div class='vspace'></div>Ad esempio:<br /><pre class='escaped'>(1) SetEnvIf Referer www.swappa.it internal_site
+(2) Allow from env = internal_site</pre>
+<p>La riga (1) dice che considero <em>www.swappa.it</em> come <em>internal_site</em> quando appare nel campo <em>referer</em> dell'header http. La riga (2) dice che tutti coloro che hanno <code class='escaped'>env = internal_site</code> hanno l'autorizzazione
+</p>
+<p class='vspace'>Le direttive <em>user-based</em> dipendono invece dall'identità dell'utente, dunque ne presuppongono un'autenticazione. Hanno tre tipi di regole:
+</p><ul><li><code class='escaped'>require user</code> u1 u2 u3 ...<br />dove u<sub>i</sub> sono gli username degli utenti che possono accedere
+</li><li><code class='escaped'>require group</code> g1 g2 g3 ...<br />dove g<sub>i</sub> sono i gruppi che possono accedere
+</li><li><code class='escaped'>require valid_user</code><br />ovvero possono accedere solo gli utenti che si sono autenticati con successo
+</li></ul><p class='vspace'>Le direttive <em>host-based</em> e <em>user-based</em> non sono mutualmente esclusive, ma possono essere usate contemporaneamente. La direttiva <code class='escaped'>satisfy</code> può essere utilizzata per stabilire come devono interagire tra loro:
+</p><ul><li><code class='escaped'>satisfy all</code>, permette l'accesso se entrambe le direttive sono soddisfatte
+</li><li><code class='escaped'>satisfy any</code>, se è soddisfatta almeno una delle due
+</li></ul><p class='vspace'>Si può inoltre utilizzare la direttiva <code class='escaped'>order</code> per stabilire l'ordine di valutazione delle deny e delle allow. Può assumere tre valori:
+</p><ul><li><code class='escaped'>order deny, allow</code>, le direttive deny vengono valutate per prime: <strong>politica aperta</strong>
+</li><li><code class='escaped'>order allow, deny</code>, le direttive allow vengono valutate per prime: <strong>politica chiusa</strong>
+</li><li><code class='escaped'>order mutual-failure</code>, la richiesta non deve soddisfare una certa deny, ma deve soddisfare una certa allow
+</li></ul><p class='vspace'>La <strong>granularità</strong> delle regole di accesso indica il livello delle risorse di cui sto controllando gli accessi, se <em>di file</em> o <em>di metodo</em>. Nel primo caso le direttive vengono applicate su singoli file, quindi su tutti quei file il cui nome corrisponde a quello indicato nel campo <code class='escaped'>reg-exp</code>:
+</p><pre class='escaped'>&lt;FilesMatch reg-exp&gt;
+  direttive
+&lt;/FilesMatch&gt;</pre>
+<p>Nel secondo caso invece il controllo avviene in base al metodo (GET, POST, ...) utilizzato dall'utente:
+</p><pre class='escaped'>&lt;Limit access_method&gt;
+  direttive
+&lt;/Limit&gt;</pre>
+<p class='vspace'><a name='c9' id='c9'></a>
+</p><h2>Linux</h2>
+<p><strong>Linux</strong> è un sistema operativo della famiglia UNIX, la cui politica discrezionaria è basata sull' <em>identificatore utente</em> (<strong>UID</strong>) e l' <em>identificatore gruppo</em> (<strong>GID</strong>).  L'UID è un valore intero univoco assegnato ad ogni utente che si è autenticato, mentre il GID è un intero che rappresenta il gruppo primario di cui l'utente stesso è membro. Le associazioni login-password sono memorizzate nel file <code class='escaped'>/etc/shadow</code>, mentre i gruppi e i loro membri sono definiti nel file <code class='escaped'>/etc/group</code>. Ai file viene assegnato l'UID e il GID del processo che li ha generati, anche se possono poi essere cambiati con i comandi <code class='escaped'>chown</code> e <code class='escaped'>chgrp</code>, rispettivamente.
+</p>
+<p class='vspace'>Ogni file ha associato una lista di <strong>nove privilegi</strong> divisi in tre parti, la prima che si riferisce al proprietario, la seconda ai membri del gruppo del proprietario e la terza a tutti gli altri. I privilegi sono: <strong>r</strong> (read), <strong>w</strong> (write) e <strong>x</strong> (execute). Ad esempio la seguente stringa di privilegi <code class='escaped'>rwxrw-r--</code> stabilisce che il proprietario del file ha tutti i privilegi, gli appartenenti al suo stesso gruppo possono leggerlo e scriverlo ma non eseguirlo, tutti gli altri possono solo leggerlo. Esistono altri modi di rappresentare i privilegi, ad esempio con cifre in base 8 o in binario.<br />Esistono altri <em>privilegi addizionali</em>, ovvero:
+</p><ul><li><strong>sticky bit</strong>, indica che solo il proprietario del file e della direcyory può rimuovere o rinominare i file contenuti nella cartella
+</li><li><strong>setuid</strong>, l'UID del processo che esegue un file non è più quello dell'utente che lo lancia, ma quello del proprietario del file
+</li><li><strong>setgid</strong>, analogo al <em>setuid</em> ma per il GID
+</li></ul><p class='vspace'><em>Setuid</em> permette ad un utente che già possiede privilegi di esecuzione su un file di eseguirlo anche con i privilegi dell'utente proprietario. Si rappresenta con una <strong>s</strong> minuscola se si vuole concedere tale privilegio su un file eseguibile, <strong>S</strong> maiuscola altrimenti. Il <em>setgid</em> funziona allo stesso modo, ma opera sui gruppi.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Elementi di sicurezza e privatezza</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: February 05, 2009, at 02:02 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP-ControlloAccesso?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ESP-ControlloAccesso?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

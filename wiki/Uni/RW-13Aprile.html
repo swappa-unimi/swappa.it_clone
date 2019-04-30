@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Reti wireless - Zigbee </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RW-13Aprile' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Reti wireless - Zigbee
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-13Aprile?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-13Aprile?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RW-13Aprile-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-13Aprile?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-13Aprile?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Reti wireless - Zigbee was last modified on June 14, 2010, at 02:55 PM'>
+							<span style='display:none;'>Reti wireless - Zigbee</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='RetiWireless.html'>Torna alla pagina di Reti wireless</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Reti wireless - Zigbee ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti del 13 e 16 Aprile</span>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='GiovanniRapacioli.html'>Rapacioli</a>
+</p></div>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#z1'>Introduzione</a>
+</li><li><a href='#z2'>ZigBee Alliance</a>
+</li><li><a href='#z3'>Livello fisico</a>
+</li><li><a href='#z4'>Livello datalink</a>
+</li><li><a href='#z5'>ZigBee stack architecture</a>
+</li><li><a href='#z6'>Tipi di dispositivo</a>
+</li><li><a href='#z7'>Topologie della rete ZigBee</a>
+</li><li><a href='#z8'>Join in una rete</a>
+</li><li><a href='#z9'>Cluster</a>
+</li><li><a href='#z10'>Comparative</a>
+</li></ol><div class='vspace'></div></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='z1' id='z1'></a>
+</p><h2>Introduzione</h2>
+<p><strong>ZigBee</strong> è un protocollo di comunicazione di alto livello, basato sullo standard wireless IEEE 802.15.4. E' stato standardizzato principalmente per l'automazione e la sensoristica, quindi per soluzioni che prevedono la creazione di Wireless Personal Area Network (WPAN) a basso costo e a basso consumo e con un alto numero di nodi. La lunga autonomia dei dispositivi è legata al bassissimo data rate delle trasmissioni (da 20 a 250 Kb/s), che rimane comunque sufficiente per gestire i loro modesti volumi di traffico.
+</p>
+<p class='vspace'>Prima di addentrarci nell'argomento, vediamo quali sono le principali applicazioni del protocollo:
+</p><ul><li><em>building automation</em> (sistemi intelligenti di illuminazione, controllo avanzato del riscaldamento/condizionamento, ...);
+</li><li><em>consumer electronics</em> (per TV, lettori DVD/CD, ...) e PC &amp; peripherals (per mouse, tastiere o joystick wireless, ...). Hanno poco senso perché ci sono già il Bluetooth e l'IrDA che funzionano benissimo;
+</li><li><em>home control</em> (rilevatori di fumo o incendi, elettrodomestici intelligenti, sistemi di sicurezza e di controllo degli accessi tramite badge o sistemi biometrici, ...);
+</li><li><em>telecom services</em> (monitoraggio e controllo dei servizi mobili, teleassistenza, ...);
+</li><li><em>industrial control</em> (controllo dei processi, gestione degli asset, gestione ambientale o energetica, ...);
+</li><li><em>personal health care</em> (ad esempio il monitoraggio dei parametri vitali dei pazienti). Queste due ultime applicazioni sono le più interessanti su cui investire (almeno per la società del prof Rapacioli).
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z2' id='z2'></a>
+</p><h2>ZigBee Alliance</h2>
+<p>La <strong>ZigBee Alliance</strong> è un'organizzazione formatasi nel 2002 con l'obiettivo di sviluppare e promuovere il protocollo ZigBee (dal livello MAC in su). 
+L'utilizzo del protocollo per fini non commerciali è consentito a tutti (qui le specifiche <a class='urllink' href='http://www.zigbee.org/Products/DownloadZigBeeTechnicalDocuments.aspx' title='' rel='nofollow'>http://www.zigbee.org/Products/DownloadZigBeeTechnicalDocuments.aspx</a>), mentre se vuoi vendere prodotti col marchio ZigBee devi seguire una strada un po' più tortuosa. Prima di tutto devi iscriverti alla ZigBee Alliance (la sottoscrizione base costa 3500$ all'anno), che ti fornirà un id industriale per le tue soluzioni e ti schiuderà le porte dell'assistenza e delle specifiche più fighe ed utili. Per questo motivo quando dall'Alliance dicono che il protocollo è open, al nostro amico GNU gli girano le corna (la licenza GPL dice ben altro). <br />Ora che sei membro della ZigBee Alliance (come Adopter, Participant o Promoter), devi decidere che profilo dare alla tua applicazione, ovvero definire il ruolo e le funzioni dei dispositivi della tua rete ZigBee. Fondamentalmente puoi scegliere tra due tipi di profili:
+</p><ul><li>pubblico (standard): sviluppato e certificato dalla ZigBee Alliance per garantire l'interoperabilità tra dispositivi di diversi produttori. E' sufficiente essere iscritti per iniziare a sviluppare il tuo prodotto, a patto di inviare tutti i tuoi moduli e codici sorgenti. Ad esempio mantenere privato un protocollo per gestire l'accensione di una lampadina sarebbe folle, perché pochi produttori di lampadine si uniformerebbero al mio sistema e io avrei fatto un protocollo che non saprebbe usare nessuno;
+</li><li>proprietario (privato): sviluppato dal produttore per applicazioni in cui l'interoperabilità non è un requisito. Bisogna pagare una certa somma per ogni modulo sviluppato, ed in cambio l'Alliance ti fornisce un id profiles univoco e la certificazione ZigBee, che garantisce la coesistenza del tuo prodotto con tutti gli altri.
+</li></ul><p class='vspace'>Ci sono però due fregature: la prima è che ogni due mesi questi qua fanno uscire una versione nuova del protocollo, non necessariamente retrocompatibile, e se vuoi mantenere il marchio ZigBee sei costretto a ricertificarti (pagando di nuovo); la seconda è che se per il nostro prodotto dobbiamo utilizzare moduli certificati di terze parti, anche noi dovremo iscriverci alla ZigBee Alliance e ricertificarli!<br />Come alternativa alla certificazione (che dovrebbe costare sui 20-25mila euro per ogni modulo) si può commercializzare il proprio prodotto come comune protocollo wireless, rinunciando all'attestato di garanzia ZigBee.
+</p>
+<p class='vspace'>Bei tempi quelli del Modbus, in cui dovevi limitarti a seguire le specifiche (pubbliche) del protocollo e vivere felice.
+</p>
+<p class='vspace'>Se scegliamo di adottare un profilo pubblico per il nostro prodotto, possiamo scegliere tra i seguenti <em>Application Profiles</em> definiti dalla ZigBee Alliance, ognuno dei quali ha una propria chiave:
+</p><ul><li>Automated Metering Infrastructure (AMI), applications for two-way communications of metering data and energy management to provide more efficient and reliable energy usage;
+</li><li>Home Automation (HA), applications for the residential automation market;
+</li><li>Commercial Building Automation (CBA), applications targeted at a commercial building environment;
+</li><li>Personal Home and Hospital Care (PHHC), used by all the devices which jointly cooperate to fulfil the requirements of a non-invasive health care application;
+</li><li>Telecom Applications (TA);
+</li><li>Wireless Sensor Application (WSA).
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z3' id='z3'></a>
+</p><h2>Livello fisico</h2>
+<p>Il livello fisico è quello dello standard 802.15.4, che tra i vari compiti ha quello della gestione delle frequenze di utilizzo. Dal momento che queste cambiano a seconda dell'area geografica in cui ci si trova, bisognerà settare opportunamente il parametro Country del modulo ZigBee. Le frequenze utilizzate nel mondo sono fondamentalmente tre:
+</p><ul><li>868.3 MHz, per l'Europa;
+</li><li>902-928 MHz, per l'America (915 MHz negli Stati Uniti);
+</li><li>2405-2480 MHz, per tutte le terre emerse, le precedenti comprese. E' il più performante sia in termini di larghezza di banda (max 250 Kb/s) che di numero di canali utilizzabili (max 16). Il fatto che in Europa si possa utilizzare per lo ZigBee anche questa banda di frequenze si rivela però spesso un'arma a doppio taglio, perché va a sovrapporsi con la banda di trasmissione Wi-Fi, con cui possono esserci interferenze (anche se loro dicono di no <a class='urllink' href='http://www.zigbee.org/About/FAQ.aspx#21' title='' rel='nofollow'>http://www.zigbee.org/About/FAQ.aspx#21</a>).
+</li></ul><p class='vspace'>Il rapporto segnale rumore (potenza segnale / potenza rumore nel segnale) è un parametro che dà una stima sulla bontà del segnale: se è molto basso avrò percentuali di fallimento delle trasmissioni trascurabili. Lo ZigBee trasmette usando il metodo <a class='urllink' href='http://en.wikipedia.org/wiki/Code_division_multiple_access' title='' rel='nofollow'>CDMA</a>, che oltre a permettere l'invio in contemporanea da diversi trasmettitori senza provocare collisioni, ha valori più bassi di rapporto segnale rumore (quindi robustezza maggiore) rispetto a Wi-Fi e Bluetooth.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z4' id='z4'></a>
+</p><h2>Livello datalink</h2>
+<p>Dello standard 802.15.4, lo ZigBee eredita le specifiche anche della parte del livello datalink del Medium Access Control (MAC), che fa da tramite tra il livello fisico (che gestisce le potenze e le modalità di connessione-trasmissione della rete) e quello applicativo (che dice cosa posso fare col protocollo). In altre parole il MAC si occupa di rendere il livello applicativo del tutto trasparente alla tecnologia che c'è sotto, sollevandolo da ogni preoccupazione sul tipo di connessione che sto utilizzando (wireless o cablata che sia). 
+Il protocollo MAC supporta fondamentalmente due tipi di rete:
+</p><ul><li><em>beacon-enabled</em>. Lo ZigBee è strutturato in modo da avere un nodo coordinatore e vari altri nodi slave che comunicano con esso e solo con esso. Il beacon è un pacchetto che il modulo master manda a turno a tutti gli slave per dirgli: "io ci sono, se vuoi puoi trasmettermi qualcosa". Se effettivamente qualcuno gli trasmette qualcosa, gestisce la risposta e passa al prossimo. Il beacon è mandato in polling su tutta la rete ogni tot tempo (dai 15,36 millisecondi ai 768,432 secondi), passati i quali il master va in sleep-mode; i consumi di energia si riducono anche per i nodi slave, perché si attivano solo quando ricevono un beacon, quindi per la maggior parte del tempo sono spenti. Questa modalità di funzionamento della rete è più dinamica ma anche più complessa, ed è spesso utilizzata per implementare le reti mesh;
+</li><li><em>non beacon-enabled</em>, definita anche rete attiva. Non mandando beacon, il coordinatore deve rimanere sempre attivo, così da permettere agli slave di comunicare in qualsiasi momento e senza perdere nessun dato. Le conseguenze pratiche sono due: la prima è che l'autonomia del master si riduce drasticamente, e infatti spesso è alimentato; la seconda è che va adottato un meccanismo di accesso al canale di tipo CSMA/CA, quindi con una strategia collision avoidance, per evitare appunto collisioni nelle trasmissioni. Avremo quindi alcuni dispositivi sempre accesi e pronti a ricevere, ed altri che trasmettono solo in presenza di uno stimolo esterno. Ricapitolando, la modalità non beacon-enabled consuma più batteria, è più statica, ma permette agli slave di comunicare in qualsiasi momento ed è molto più semplice da realizzare.
+</li></ul><p class='vspace'>I frame aggiunti al pacchetto dal livello MAC possono essere di quattro tipi: beacon, data, ack (il comune acknowledgement, che dà garanzie sulla ricezione dei dati) e command (per inviare comandi di gestione). Quest'ultimo è mantenuto separato dal frame dei dati così da favorire l'utilizzo da parte di sviluppatori diversi da quelli originari, perché più facilmente individuabile e documentabile.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z5' id='z5'></a>
+</p><h2>ZigBee Stack Architecture</h2>
+<p>Sui due livelli visti finora si appoggia lo Stack ZigBee vero e proprio. Vediamo lo schema complessivo dell'architettura:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-stackZigBee.gif' alt='' title='' /></div>
+<p class='vspace'>La parte in rosa è quella dell'802.15.4, quindi livello fisico e MAC. Si noti che attraverso la configurazione di alcuni parametri è possibile intervenire sui consumi dei moduli. Ad esempio si può aumentare l'autonomia dei device abbassando la potenza di uscita (riducendo di conseguenza il range della rete), o diminuendo la frequenza di invio dei beacon.
+</p>
+<p class='vspace'>La parte in giallo è quella applicativa scritta dal produttore.
+</p>
+<p class='vspace'>La parte in azzurro è quella definita dalla ZigBee Alliance. Vediamo i vari livelli:
+</p><ul><li><em>network</em>, il livello più passo, che può essere paragonato al livello delle direttive ("creami una rete con questi parametri"). Il suo compito è infatti quello di gestire in automatico le direttive applicative col livello MAC (a cui è direttamente interfacciato) e quello fisico, di gestire le connessioni della rete, la sua sicurezza e la sua creazione. Si occupa inoltre del routing dei messaggi e della route discovery &amp; maintenance. Il network è il primo livello in cui vengono aggiunti header e footer al pacchetto per la sua gestione, così da renderlo comprensibile e gestibile dai livelli sottostanti della pila OSI;
+</li><li><em>SSP</em> (Security Service Provider), è il modulo che si occupa della sicurezza del protocollo, un elemento di novità rispetto al Bluetooth o all'IrDA. Si noti che l'SSP non è direttamente collegata agli altri moduli, ma prevede uno scambio di messaggi tra il livello network e quello applicativo; questa scelta progettuale fa sì che l'intero modulo sia facilmente bypassabile nel caso in cui non sia richiesta la sicurezza del protocollo. Tra le funzionalità principali offerte dall'SSP citiamo: gestione della chiave WEP (e nei nuovi standard ZigBee anche WPA e WPA2); crittazione dei dati; anti-replay attack, che impedisce che un modulo possa essere bloccato da un invio incessante di dati (se arrivano richieste molto ravvicinate dallo stesso dispositivo, possiamo decidere se tollerarle o scartarle o inibire il device petulante o malevolo); gestione dei trust center, dispositivi fidati per la distribuzione delle chiavi di sicurezza;
+</li><li><em>ZDO</em> (Zigbee Device Object), in cui vengono salvati tutti i dati di configurazione del dispositivo e della rete, così che quando io slave voglio collegarmi ad essa potrò richiedere le informazioni di questo modulo per sapere tutto ciò che serve per entrare nel giro. Spieghiamo meglio un concetto: ogni device è definito da un profilo ed è implementato come application object; ogni application object è collegato al resto dello stack ZigBee attraverso un endpoint (un componente indirizzabile all'interno del dispositivo). La comunicazione avviene da endpoint a endpoint, e all'interno della rete ne esistono due speciali: 0, usato per la configurazione e la gestione dell'intero dispositivo ZigBee; 255, per la comunicazione in broadcasting;
+</li><li><em>APS</em> (Application Support Sub-layer), che mantiene le tabelle per fare il binding ed inoltra i messaggi tra gli endpoint. I suoi servizi sono usati sia dal modulo ZDO che dall'Application Framework;
+</li><li><em>AF</em> (Application Framework), in cui si trovano gli oggetti proprietari scritti dagli sviluppatori privati. E' gestito dall'interfaccia pubblica dello ZDO.
+</li></ul><p class='vspace'>Concludendo, lo stack ZigBee ha tre tipi di profili:
+</p><ul><li><em>Profilo 0</em>: è quello privato, che può essere usato per qualsiasi uso e che non offre l'interoperabilità con altre reti ZigBee;
+</li><li><em>Profilo 1</em>: lo standard ZigBee Stack Profile;
+</li><li><em>Profilo 2</em>: lo ZigBee Pro Stack Profile, basato sullo stack della versione del 2007, a cui sono state aggiunte molte funzioni sulla sicurezza più altre finezze mostrate nella tabella sotto:
+</li></ul><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-zigbeeVsPro.gif' alt='' title='' /></div>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z6' id='z6'></a>
+</p><h2>Tipi di dispositivo</h2>
+<p>Da un punto di vista logico, i dispositivi ZigBee possono essere di tre tipi: <em>Coordinatore</em>, <em>Router</em> ed <em>End Device</em>.
+</p>
+<div class='vspace'></div><h3>ZigBee Coordinator</h3>
+<p>Lo <strong>ZigBee Coordinator</strong> (ZC) è il dispositivo che crea e configura la rete, cercando un canale radio adatto e definendo tra i parametri operativi il PAN ID, cioè il numero a 16bit usato dai membri della rete per riferirsi ad essa. Una volta avviata la rete si mette in modalità <em>Coordinatore</em>, permettendo (o meno) a Router ed End Device di fare una join alla sua rete. Tra le altre funzioni, agisce come deposito per le chiavi di sicurezza (<em>trust center</em>), ed occasionalmente effettua attività di routing.<br />Lo ZC è unico per ogni rete, ne costituisce la radice e può fare da ponte tra più reti diverse. E' chiaramente un full function device, e dato che non può andare in modalità <em>sleep</em> per ottemperare ai suoi mille doveri, deve essere alimentato da rete elettrica. 
+</p>
+<div class='vspace'></div><h3>ZigBee Router</h3>
+<p>Lo <strong>ZigBee Router</strong> (ZR) permette l'inoltro dei messaggi (aumentando così le distanze di copertura della rete) e ha il potere di accettare o meno richieste di join alla rete da parte di altri device. Ovviamente prima si dovrà unire a una rete già esistente, chiedendo l'autorizzazione al Coordinator o a un altro Router. L'inoltro dei messaggi avviene attraverso il mantenimento di tabelle di routing dinamiche e sempre aggiornate, in cui lo ZR può memorizzare fino a 20 percorsi diversi. <br />Per ogni rete può esserci più di un Router, che però essendo un full function device deve essere alimentato da rete elettrica (uno ZR in frequente sleep mode serve a poco).
+</p>
+<div class='vspace'></div><h3>ZigBee End Device</h3>
+<p>Lo <strong>ZigBee End Device</strong> (ZED) è un <em>reduced function device</em>, perché le sue funzionalità si riducono al dialogare col Coordinatore o col Router (non può trasmettere/ricevere dati a/da altri ZED). Richiede poca memoria, ha bassi consumi (va a batterie) e costi inferiori rispetto agli altri due tipi di dispositivi. <br />Al contrario di ZC e ZR, la loro presenza in una rete ZigBee non è essenziale: si possono benissimo realizzare reti con solo un Coordinatore e uno o più Router (caso tipico: supervisione di macchine industriali, in cui è richiesta massima efficienza e reattività).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z7' id='z7'></a>
+</p><h2>Topologie della rete Zigbee</h2>
+<p>La rete ZigBee può assumere 3 diverse topologie, ognuna con i suoi pregi e difetti. Ecco una semplice legenda per gli schemi che seguiranno:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/RW-zigbee-topology_devices.png' alt='' title='' /></div>
+<p class='vspace'>Alcuni dettagli numerici prima di cominciare:
+</p><ul><li>la massima distanza Router-Router o Coordinatore-Router è 6;
+</li><li>ad ogni ZR o ZC possono essere associati un massimo di 20 dispositivi, di cui al massimo 6 possono essere Router;
+</li><li>facendosi due conti, si può facilmente dedurre che il numero di dispositivi che compongono la rete possono superare di gran lunga le 65000 unità.
+</li></ul><div class='vspace'></div><h3>Topologia a stella</h3>
+<p>La topologia a stella è la topologia più semplice in quanto ogni dispositivo (Router o Device) è collegato direttamente al Coordinator. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-zigbee-star_topology.png' alt='' title='' /></div>
+<p class='vspace'>Questa topologia è indicata per reti con pochi slave, o la sua gestione diventerebbe troppo complessa e il coordinatore sarebbe sommerso da richieste di instradamento. Presuppone inoltre la non dinamicità della rete, dato che si instaurano collegamenti univoci tra i vari ZED e lo ZC.
+</p>
+<p class='vspace'>La topologia a stella non richiede alcun algoritmo di routing in quanto si passa sempre dal coordinatore.
+</p>
+<div class='vspace'></div><h3>Topologia ad albero</h3>
+<p>Questa rete assume le sembianze di un albero radicato nel Coordinator. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-zigbee-tree_topology.png' alt='' title='' /></div>
+<p class='vspace'>Per comunicare tra loro i device fanno risalire le richieste lungo l'albero, fino a trovare un router che abbia come figlio (o discendente) il device con cui si vuole comunicare.
+</p>
+<p class='vspace'>Anche questa topologia non necessita di algoritmi di routing specifici, in quanto si invia il messaggio al padre, unico per ogni dispositivo. Tuttavia è poco affidabile, perché se cade uno dei Router della rete, tutta la sua sottorete sarebbe esclusa dalla comunicazione e dovrebbe ripetere l'operazione di inserimento.
+</p>
+<div class='vspace'></div><h3>Topologia Mesh</h3>
+<p>Questa è la rete che permette la dinamicità maggiore ed è indicata per reti di grosse dimensioni. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-zigbee-mesh_topology.png' alt='' title='' /></div>
+<p class='vspace'>Permettendo il collegamento diretto tra molti Router, la rete consente di migliorare l'invio di messaggi tra dispositivi, in quanto è possibile scegliere tra differenti strade in base al loro carico, alla distanza e ad altri fattori. <br />La rete è inoltre più affidabile: se un Router cade non cade tutta la sua sottorete, ma entrano in gioco algoritmi di re-routing che si accorgono della mancanza di un nodo e ricalcolano il percorso migliore per portare a destinazione il messaggio. Questo rende però necessari algoritmi di routing specifici.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z8' id='z8'></a>
+</p><h2>Join in una rete</h2>
+<p>Esistono due modi in cui un dispositivo si unisce ad una rete Zigbee:
+</p><ul><li>richiedendo la connessione ad un dispositivo noto
+</li><li>richiedendo la connessione ad un qualunque dispositivo
+</li></ul><p class='vspace'>Nel primo caso il Router o Device che si unisce alla rete conosce già l'ID del dispositivo a cui chiedere la connessione (ad esempio può essere impostato fisicamente).<br />Nel secondo caso invece il dispositivo deve ricercare un Router o un Coordinator che gli risponda. Tra i dispositivi che rispondono ne viene scelto uno al quale si richiede la connessione. Se la connessione va a buon fine, il dispositivo che ha chiesto la join riceve il suo indirizzo dal Router con il quale si è collegato.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z9' id='z9'></a>
+</p><h2>Cluster</h2>
+<p>Dalle <a class='urllink' href='http://www.zigbee.org/About/FAQ.aspx' title='' rel='nofollow'>FAQ del protocollo</a>: <em>The ZigBee Cluster Library (ZCL) is a significant addition to revision 1.1. In ZigBee, a cluster is a message or collection of messages pertaining to a given application domain. Some devices (such as on/off switches) have the same definition and functionality whatever application profile is used. The idea behind creating the ZCL was to provide cluster reusability by abstracting clusters across several application domains and placing them in a library organized according to functional domains (e.g., lighting, closures, HVAC).</em>
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-zcl.gif' alt='' title='' /></div>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='z10' id='z10'></a>
+</p><h2>Comparative</h2>
+<p>Vediamo ora le principali differenze tra ZigBee, Wi-Fi e Bluetooth attraverso la seguente tabella:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/RW-tabellaComparativa.gif' alt='' title='' /></div>
+<p class='vspace'>Qualche commento ulteriore sullo ZigBee. Anzitutto la durata delle batterie dipende dal tipo delle batterie stesse: per le normali stilo si parla di anni, mentre per quelle al litio più avanzate si parla tranquillamente di decenni. La dimensione della rete intesa come numero di nodi collegabili è sovradimensionata in modo imbarazzante rispetto alla quasi totalità delle applicazioni. E' supportata l'architettura di rete mesh, che permette l'autocostruzione della rete stessa: il device ne chiede la struttura al coordinatore e vi si adatta. Mentre per rimpiazzare un modulo Bluetooth dovrò rifare l'aggancio al dispositivo, la sostituzione di un modulo ZigBee avviene automaticamente nel modo corretto, perché è tutto demandato a livello applicativo (e non fisico o network come negli altri protocolli).<br />Lo ZigBee cerca quindi di prendere sia i pregi della Wi-Fi che quelli del Bluetooth.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RetiWireless.html'>Torna alla pagina di Reti wireless</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 14, 2010, at 02:55 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-13Aprile?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-13Aprile?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,554 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Intelligenti - Appunti del 21 Ottobre </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SI-21ottobre' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Intelligenti - Appunti del 21 Ottobre
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-21ottobre?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-21ottobre?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SI-21ottobre-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-21ottobre?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-21ottobre?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Intelligenti - Appunti del 21 Ottobre was last modified on November 07, 2009, at 09:24 PM'>
+							<span style='display:none;'>Sistemi Intelligenti - Appunti del 21 Ottobre</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Intelligenti - Appunti del 21 Ottobre ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>La lezione di oggi è stata tenuta in laboratorio dal prof Ferrari.
+</p></div>
+<p class='vspace'>Oggi si lavora un po' su Matlab. Per chi avesse bisogno di un ripassone sull'ambiente e sul linguaggio, su Swappa trovate una guida: <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/IntroduzioneAlMatlab'>Introduzione al Matlab</a>.<br />Useremo in particolare il toolbox "<code class='escaped'>Neural Network Toolbox</code>".
+</p>
+<div class='vspace'></div><h2>Primo programma</h2>
+<p>Con il primo programma cercheremo di approssimare con una funzione il profilo di una persona. Nel dataset che ci viene messo a disposizione avremo un elenco di coordinate cartesiane (ingresso, uscita) che rappresentano i valori noti della nostra funzione.
+</p>
+<p class='vspace'>Il materiale di riferimento è scaricabile da: <a class='urllink' href='http://www.dti.unimi.it/~ferrari/reti_neurali/toolbox_nn/' title='' rel='nofollow'>http://www.dti.unimi.it/~ferrari/reti_neurali/toolbox_nn/</a>
+</p>
+<p class='vspace'>Copiate i file in una cartella e selezionate quest'ultima come "Current Directory" in Matlab. Durante la lezione è saltato fuori che il programma <code class='escaped'>prova_ff.m</code> aveva numerosi comandi ridondanti, che con la versione nuova del toolbox non erano più necessari (si trattava di accorgimenti per mappare gli spazi degli ingressi e delle uscite).<br />Di seguito pubblicherò prima il programma <code class='escaped'>prova_ff.m</code> originale commentato, poi quello che useremo in realtà.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+%prova_ff.m - ORIGINALE, COMMENTATO
+
+load prof1; %carica i dati contenuti nel file prof1.mat
+
+p = X';
+t = Y';
+
+%'mapminmax' prende un insieme di dati (p) e li rimappa sull'intervallo dato,
+%che in questo caso che va da 0 a 1. Questa procedura è utile per normalizzare
+%gli input. Particolarmente utile nelle RBF quando i dati di input sono
+%unidimensionali e le grandezze non sono tra loro confrontabili. La
+%risposta di mapminmax sono i nuovi valori rimappati (p2) e le informazioni
+%necessarie (ps) per invertirlo più avanti verso la fine del codice
+
+%Usiamo quindi mapminmax, rimappando sia gli ingressi..
+[p2,ps] = mapminmax(p, 0, 1);
+%..che le uscite. Operazione questa particolarmente necessaria dato che la 
+%funzione 'tansig' che useremo darà come risposta valori tra -1 e 1 (e non come
+%vogliamo, da 1 a 0)
+[t2,ts] = mapminmax(t, 0, 1);
+
+%'dividevec' prende in ingresso un dataset (p2,t2) (ingresso e uscita), e poi 
+%le percentuali di dataset che andranno a costituire il dataset di 
+%validazione e quello di testing. Quello che produce sono i dati che saranno
+%utilizzati per il training
+[trainV,val,test] = dividevec(p2, t2, 0.20, 0.20);
+
+%'newff' crea una nuova rete feed-forward e mette il risultato nella
+%variabile net.
+%Argomenti di newff:
+%1. stabilisce l'intervallo di funzionamento della rete, in cui cadranno 
+%   gli input. "minmax(p2)" equivale a dire "[min(p2) max(p2)]". Serve 
+%   quindi per l'inizializzazione dei parametri interni. 
+%2. dice che ci sono due strati, nel nostro caso uno di venti unità e l'altro
+%%   di 1
+%3. identificano il tipo di neurone degli strati indicati precedentemente.
+%   'Tansig' è infatti un tipo di funzione di attivazione
+net = newff(minmax(p2), [20 1], {'tansig', 'tansig'});
+
+%net non è solo una matrice, ma è anche una struttura. Uno dei campi più 
+%importanti di net.trainParam è ''epochs'', che permette di configurare il
+%numero di iterazioni che andranno fatte sulla rete net durante l'addestramento
+net.trainParam.epochs = 20;
+
+%'train' fa partire l'addestramento e restituisce la rete addestrata.
+%Argomenti di train che useremo:
+%1. la rete
+%2. il valore di ingresso per l'addestramento
+%3. il valore di uscita per l'addestramento
+%4-5. lasciati vuoti
+%6. i dati che saranno utilizzati per l'addestramento (che serviranno a stimare 
+%   se stiamo procedendo nella direzione desiderata)
+%7. per stimare alla fine dell'addestramento quanto bene la rete è riuscita
+%   ad approssimare i dati in ingresso
+[net,tr]=train(net, trainV.P, trainV.T, [], [], val, test);
+
+%'sim' fa la simulazione a partire dalla rete data e dai dati di input.
+%Gli passeremo la rete già inizializzata ed i valori di ingresso con i quali
+%vogliamo calcolare l'uscita. 
+%a2 è la variabile che conterrà la risposta della rete
+a2 = sim(net, p2);
+
+%applichiamo ad a2 la trasformazione inversa che avevamo applicato ai dati
+%di ingresso della rete (quando abbiamo fatto i mappaggi), così da ottenere 
+%un nuovo vettore a. Questo potrà essere confrontato con la parte dei dati che
+%rappresentavano le uscite desiderate
+a = mapminmax('reverse', a2, ts);
+
+%'postreg' dà una stima della rete di regressione tra i dati di uscita
+%ottenuti e quelli desiderati. Sostanzialmente ci dice quanto è stata brava
+%la rete a stimare le uscite
+[m,b,r] = postreg(a, t);
+
+%ed ora stampo a video i risultati
+figure;
+axis equal;
+hold on
+plot(p,t, '.', 'MarkerSize', 5);
+plot(p,a,'r-', 'LineWidth', 2);
+</pre>
+</div>
+<p class='vspace'>Ricapitolando, i tre comandi fondamentali della toolbox che abbiamo usato sono: <strong>newff</strong>, <strong>train</strong> e <strong>sim</strong>.
+</p>
+<p class='vspace'>Come già detto, la versione attuale di "<code class='escaped'>Neural Network Toolbox</code>" rende superflui e incasinanti i vari accorgimenti sul rimappaggio dei dataset: tutto ciò che chiede sono gli ingressi e le uscite, poi se la vede lui. Ecco quindi il listato del programma modificato e funzionante.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+%prova2_ff.m
+
+load prof1; %carica i dati contenuti nel file prof1.mat
+
+p = X';
+t = Y';
+
+%'newff' crea una nuova rete feed-forward e mette il risultato nella
+%variabile net.
+%Argomenti di newff:
+%1-2. stabiliscono l'intervallo di funzionamento della rete, in cui cadranno 
+%     input e output. Servono all'inizializzazione dei parametri interni. 
+%3. dice che ci sono due strati, nel nostro caso uno di venti unità e l'altro
+%   di 1
+%4. identificano il tipo di neurone degli strati indicati precedentemente.
+%   'Tansig' è infatti un tipo di funzione di attivazione
+net = newff(p, t, [20 1], {'tansig', 'tansig'});
+
+%net non è solo una matrice, ma è anche una struttura. Uno dei campi più 
+%importanti di net.trainParam è ''epochs'', che permette di configurare il
+%numero di iterazioni che andranno fatte sulla rete net durante l'addestramento
+net.trainParam.epochs = 20;
+
+%'train' fa partire l'addestramento e restituisce la rete addestrata.
+%Argomenti di train:
+%1. la rete
+%2. i valori di ingresso per l'addestramento
+%3. i valori di uscita per l'addestramento
+[net,tr]=train(net, p, t);
+
+%'sim' fa la simulazione a partire dalla rete data e dai dati di input.
+%Gli passeremo la rete già inizializzata ed i valori di ingresso con i quali
+%vogliamo calcolare l'uscita. La variabile a contiene la risposta della rete
+a = sim(net, p);
+
+%'postreg' dà una stima della rete di regressione tra i dati di uscita
+%ottenuti e quelli desiderati. Sostanzialmente ci dice quanto è stata brava
+%la rete a stimare le uscite
+[m,b,r] = postreg(a, t);
+
+%ed ora stampo a video i risultati
+figure;
+axis equal;
+hold on
+plot(p,t, '.', 'MarkerSize', 5);
+plot(p,a,'r-', 'LineWidth', 2);
+</pre>
+</div>
+<p class='vspace'>Bene, una volta salvato il programma lo lanciamo nella <em>command window</em> scrivendo il suo nome e premendo INVIO. 
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/neuralNetworkTraining.jpg' alt='' title='' /></span></div>
+<p>Ci apparirà la finestra accanto, che contiene informazioni sull'apprendimento della nostra rete. In particolare notiamo che non è stato fatto con la backpropagation, ma con il metodo Levenberg-Marquardt
+; se infatti forzassimo la rete ad utilizzare la backpropagation, i risultati peggiorerebbero in modo imbarazzante.
+</p>
+<p class='vspace'>Dei tre pulsanti che appaiono in questa finestra citiamo in particolare:
+</p><ul><li><strong>Performance</strong>, permette di ottenere il grafico degli errori (di apprendimento, validazione e test). In particolare, se vediamo che l'errore di training sta sotto quello di validazione potrebbe dire che la rete sta overfittando, oppure che l'insieme di validazione è troppo piccolo. Dal grafico delle performance scopriamo quindi qual è un buon punto in cui fermare l'addestramento per evitare l'overfitting
+</li><li><strong>Regression</strong>, che mostra il rapporto tra risultato ottenuto dalla rete e risultato atteso. I risultati sono divisi in funzione della destinazione degli esempi utilizzati (apprendimento, validazione e test), più un ulteriore caso in cui vengono considerati insieme tutti gli aspetti. In tutti i casi, se il valore di R risulta abbastanza vicino a 1 significa che abbiamo ottenuto una buona stima. In particolare, se nel grafico del training vedessimo molti punti fuori dalla retta (e quindi basso valore di R), otterremo sicuramente una pessima ricostruzione della funzione
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace'>Vediamo ora le altre due finestre che sono apparse con quella appena descritta:
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/SI-Figure1.jpg' alt='' title='' /></span></div>
+<p><strong>Figure 1</strong><br />Si tratta dello stesso grafico che abbiamo visto nel quarto riquadro della finestra "Regression", ed è infatti la rappresentazione grafica del rapporto tra il risultato ottenuto dalla rete (i cerchietti) e il risultato atteso (i punti della retta rossa).<br />Come si può vedere, nel nostro caso abbiamo ottenuto un buon risultato. 
+<br clear='all' />
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/SI-Figure2.jpg' alt='' title='' /></span></div>
+<p><strong>Figure 2</strong><br />La linea spezzata rossa rappresenta l'approssimazione dei dati di esempio (i puntini blu). Avevamo detto che il dataset conteneva informazioni per ottenere il profilo di una persona, e a giudicare dal risultato direi che l'abbiamo approssimato per bene.
+<br clear='all' />
+</p>
+<p class='vspace'>I risultati migliori si possono migliorare andando a giochicchiare coi vari parametri, ovvero:
+</p><ul><li>aumentare o diminuire il numero di epoche. In generale possiamo affermare che maggiore è il numero di epoche e migliori sono i risultati
+</li><li>cambiare il numero di neuroni del primo strato. In questo caso non è detto che aumentando il loro numero il risultato migliori sempre; possiamo però affermare che se lo diminuiamo aumentiamo la capacità di generalizzazione della rete
+</li><li>cambiare il tipo di neuroni utilizzati. Finora abbiamo usato sempre quelli con funzione di attivazione "tansig", ma potremmo utilizzare quelli "logsig" (per i dettagli e le caratteristiche conviene dare un occhio al manuale della Neural Network Toolbox)
+</li><li>cambiare l'algoritmo di apprendimento. Ad esempio per forzare a utilizzare la backpropagation dovremo scrivere:<br /><code class='escaped'>net = newff(p,t,[20 1], {'tansig', 'tansig'}, 'traingd');</code>
+</li></ul><div class='vspace'></div><h2>Secondo programma</h2>
+<p>Nel secondo e ultimo programma cercheremo di approssimare con una funzione il volto in tre dimensioni di un bambolotto. Nel dataset che ci viene messo a disposizione avremo un elenco di coordinate, ricavate da uno scanner 3D.
+</p>
+<p class='vspace'>Il dataset è contenuto nel file di testo <code class='escaped'>doll.txt</code> scaricabile da questa pagina: <a class='urllink' href='http://www.dti.unimi.it/~ferrari/reti_neurali/data/' title='' rel='nofollow'>http://www.dti.unimi.it/~ferrari/reti_neurali/data/</a> <br />Copiatelo in una cartella e selezionate quest'ultima come "Current Directory" in Matlab. A questo punto scriviamo il programma (con i commenti ridotti al minimo, poiché valgono le stesse considerazioni fatte in precedenza):
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+%prova_doll.m
+
+load doll.txt;
+
+%creiamo tre vettori, uno per i valori di ogni dimensione
+X = doll(:,1);
+Y = doll(:,2);
+Z = doll(:,3);
+
+p = [X'; Y'];
+t = Z';
+
+%'newff' crea una nuova rete feed-forward e mette il risultato nella
+%variabile net.
+net = newff(p,t,[40 1], {'tansig', 'tansig'});
+
+%impostiamo le epoche
+net.trainParam.epochs = 200;
+
+%'train' fa partire l'addestramento e restituisce la rete addestrata.
+[net,tr]=train(net,p,t);
+
+%'sim' fa la simulazione a partire dalla rete data e dai dati di input.
+a = sim(net,p);
+
+%'postreg' dà una stima della rete di regressione tra i dati di uscita
+[m,b,r] = postreg(a,t);
+
+%ed ora posso decidere se stampare a video i risultati:
+%1. come un insieme di punti (in caso, decommentate)
+%figure;
+%axis equal;
+%hold on
+%plot3(p(1,:),p(2,:),t, '.', 'MarkerSize', 1);
+%plot3(p(1,:),p(2,:),a, 'r.', 'MarkerSize', 1);
+
+%2. come una superficie
+figure;
+axis equal;
+hold on
+plot3(p(1,:),p(2,:),t, '.', 'MarkerSize', 1);
+plot3(p(1,:),p(2,:),a, 'r.', 'MarkerSize', 1);
+
+xs = min(X):max(X);
+ys = min(Y):max(Y);
+[mx my] = meshgrid(xs,ys);
+
+a = sim(net,[reshape(mx,1,numel(mx)); reshape(my,1,numel(my));]);
+ma = reshape(a, size(mx,1), size(mx,2));
+surfl(mx,my,ma);
+shading interp;
+colormap pink;
+rotate3d
+</pre>
+</div>
+<p class='vspace'>Salvate il programma e lanciatelo nella <em>command window</em> scrivendo il suo nome e premendo INVIO. Ecco la <code class='escaped'>Figura 2</code> ottenuta:
+</p>
+<p class='vspace'>
+<object type='application/x-shockwave-flash' width='425' height='344' data='http://www.youtube-nocookie.com/v/BT9ZvRqd42I?plwidth=480&amp;plheight=385&amp;fs=1&amp;hd=1'>
+  <param name='movie' value='http://www.youtube-nocookie.com/v/BT9ZvRqd42I?plwidth=480&plheight=385&fs=1&hd=1' />
+  <param name='wmode' value='transparent' />
+  <param name='allowFullScreen' value='true' />
+  <param name='allowscriptaccess' value='always' />
+</object>
+</p>
+<p class='vspace'>Si noti che dove non ci sono i dati (come in alto a destra), la rete fa quello che vuole.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: November 07, 2009, at 09:24 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-21ottobre?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SI-21ottobre?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

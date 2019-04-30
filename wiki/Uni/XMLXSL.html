@@ -1,0 +1,812 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Tecnologie Web - XSL </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.XMLXSL' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Tecnologie Web - XSL
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXSL?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXSL?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='XMLXSL-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXSL?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXSL?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Tecnologie Web - XSL was last modified on February 25, 2009, at 01:29 PM'>
+							<span style='display:none;'>Tecnologie Web - XSL</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Tecnologie Web ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>XSL</strong></span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Introduzione</a>
+</li><li><a href='#s2'>Dichiarazione</a>
+</li><li><a href='#s3'>Elementi XSLT</a>
+</li><li><a href='#s4'>XSLT 2.0</a>
+</li><li><a href='#s5'>XSL vs. XQuery</a>
+</li></ol><div class='vspace'></div></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>Introduzione</h2>
+<p><strong>XSL</strong> (<strong>xml stylesheet language</strong>) è uno standard per definire fogli di stile XML in altri formati ed è suddiviso in due parti:
+</p><ul><li><strong>XSLT</strong> (<em>XSL Transformation</em>): è un'applicazione XML che permette di specificare delle regole secondo le quali un documento XML viene trasformato in un altro documento.
+</li><li><strong>XSL-FO</strong> (<em>XSL Formatting Object</em>): applicazione XML che permette di descrivere l'aspetto e la disposizione del testo. E' una soluzione alternativa a CSS.
+</li></ul><p>Noi tratteremo solo XSLT.<br /><br />
+Gli usi possibili di XSL sono:
+</p><ul><li>trasformare documenti XML in documenti XHTML
+</li><li>filtrare ed ordinare dati XML
+</li><li>definire parti di un documento XML
+</li><li>formattare i dati in base al loro valore
+</li></ul><div class='vspace'></div><h3>Funzionamento</h3>
+<p>Un elaboratore XSLT è un programma che legge contemporaneamente un foglio di stile XSLT e un documento XML di input e converte quest'ultimo in un documento di output in base alle istruzioni fornite nel foglio di stile.<br />Il processore XSLT segue la struttura gerarchica di un documento XML, individua ciascun nodo grazie alle istruzioni contenute nel foglio di stile XSLT. Quando trova una corrispondenza, vengono applicate al contenuto dell'elemento XML le regole contenute nel foglio di stile. XSLT utilizza la sintassi XPath per identificare gli elementi per i quali trova una corrispondenza.<br />XSLT lavora su documenti ben formati e non richiede che questi siano per forza documenti validi.
+</p>
+<div class='vspace'></div><h3>SAX vs. DOM</h3>
+<p>Sono due processori XML che servono appunto per la trasformazione dei documenti, hanno anche altri scopi ma non li trattiamo.<br /><strong>DOM (Document Object Model)</strong>: definisce interfacce, proprietà e metodi per manipolare documenti XML.<br /><strong>SAX (Simple API for XML)</strong>: è un’interfaccia per leggere e manipolare file XML. E' un'API basata su eventi per il parsing di documenti XML.<br /><br />
+Differenze:
+</p><ul><li>modalità di interazione tra le API(Application Programming Interface) e l’applicazione che ne fa uso.
+</li></ul><p class='vspace'>In <strong>DOM</strong> è indispensabile leggere e sottoporre a parsing tutto il documento prima che il relativo modello a oggetti possa essere messo a disposizione di un'applicazione DOM. Ciò comporta che l'intero documento venga mantenuto in memoria e questo provoca un overhead non indifferente. Questo aspetto rende DOM poco adatto per applicazioni di trasformazione di documenti o per applicazioni che richiedano il parsing incrementale dei dati, come i protocolli di comunicazione e scambio di messaggi. DOM infatti non fornisce alcun supporto esplicito per effettuare il parsing di documenti o la serializzazione di nuovi documenti verso dispositivi di memorizzazione esterni.<br /><br />
+In <strong>SAX</strong> ogni volta che il parser incontra un tag iniziale, un tag finale, dei dati di tipo carattere oppure un'istruzione di elaborazione, lo comunica direttamente al programma client, di conseguenza non bisogna aspettare che l'intero documento venga letto prima di poter agire sui dati presenti all'inizio del documento, perché il documento stesso viene passato al programma pezzo per pezzo, dall'inizio alla fine. Quindi non è necessario che l'intero documento risieda in memoria (cosa che invece avviene con DOM).<br />Questo comporta - memoria, - tempo di caricamento, + tempo per singolo accesso.
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Dichiarazione</h2>
+<p>Siccome i documenti XSL sono documenti XML, devono iniziare con la solita dichiarazione XML &lt;?xml version=1.0" encoding="ISO-8859-1"?&gt;<br /><br />
+Successivamente va dichiarato che si tratta di un foglio di stile, tramite due tipi di dichiarazioni possibili:
+</p>
+<div class='vspace'></div><pre  style='text-align: center;' class='escaped'>
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3c.org/1999/XSL/Transform"&gt;
+</pre>
+<div class='vspace'></div><pre  style='text-align: center;' class='escaped'>
+&lt;xsl:transform version="1.0" xmlns:xsl="http://www.w3c.org/1999/XSL/Transform"&gt;
+</pre>
+<p class='vspace'>Però è possibile abbreviarle in questo modo:
+</p>
+<div class='vspace'></div><pre  style='text-align: center;' class='escaped'>
+&lt;xsl:stylesheet&gt;
+&lt;xsl:transform&gt;
+</pre>
+<p class='vspace'>NOTA: I due tipi di dichiarazioni sono equivalenti, non esiste nessuna differenza tra di loro ed è quindi possibile sceglierli a piacimento.
+</p>
+<p class='vspace'>Nel file XML solitamente è necessario dichiarare a quale file XSL si fa riferimento(esattamente come avviene per i CSS) tramite la seguente sintassi:
+</p>
+<div class='vspace'></div><pre  style='text-align: center;' class='escaped'>
+&lt;?xml-stylesheet type="text/xsl"
+                 href="nomeFile.xsl"?&gt;
+</pre>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Elementi XSLT</h2>
+<p>Gli elementi sotto indicati servono soprattutto per filtrare e operare sull'output in base alle nostre esigenze.
+</p>
+<p class='vspace'><strong>NOTA</strong>: in tutti gli esempi successivi il file XML di riferimento è il seguente(ovviamente nel campo href ci va il nome del corrispondente foglio di stile xsl):
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?xml-stylesheet type="text/xml" href="OutputFilmApplyTemplate.xsl" ?&gt;
+
+&lt;archivioFilm&gt;
+ &lt;!--elenco dei vari film presenti nell'archivio--&gt;
+
+  &lt;film&gt;
+  &lt;titolo&gt;Apocalipse Now&lt;/titolo&gt;
+  &lt;regista&gt;Francis Ford Coppola&lt;/regista&gt;
+  &lt;anno&gt;1979&lt;/anno&gt;
+  &lt;durata&gt;150&lt;/durata&gt;
+  &lt;genere&gt;Guerra&lt;/genere&gt;
+  &lt;attori&gt;Marlon Brando, Dennis Hopper, Martin Sheen, Robert Duvall&lt;/attori&gt;
+  &lt;trama&gt;
+   A Saigon il cap. Willard dei servizi speciali riceve l'ordine di
+   risalire un fiume della Cambogia, raggiungere il colonnello Kurtz
+   che sta combattendo una sua feroce guerra personale ed eliminarlo.
+  &lt;/trama&gt;
+  &lt;critica&gt;
+   Ispirato alla lontana a Cuore di tenebra (1902) di Joseph 
+   Conrad, sceneggiato da J. Milius, splendidamente fotografato da 
+   V. Storaro, è il più visionario e sovreccitato film sul Vietnam,
+   trasformato in mito. Delirante, eccessivo, diseguale, ricco di 
+   sequenze straordinarie, assai discusso e talvolta estetizzante 
+   nel suo ostentato brio stilistico, nella sua spropositata ambizione
+   di grandiosa complessità. È una riflessione amara, forse disperata,
+   sull'imperialismo USA, erede del colonialismo eurpoeo, sulla follia
+   omicida della civiltà occidentale, sul legno storto dell'umanità.
+  &lt;/critica&gt;
+  &lt;/film&gt;
+
+  &lt;film&gt;
+  &lt;titolo&gt;Qualcuno volò sul nido del cuculo&lt;/titolo&gt;
+  &lt;regista&gt;Milos Forman&lt;/regista&gt;
+  &lt;anno&gt;1975&lt;/anno&gt;
+  &lt;durata&gt;133&lt;/durata&gt;
+  &lt;genere&gt;Drammatico&lt;/genere&gt;
+  &lt;attori&gt;Jack Nicholson, Brad Dourif, Louise Fletcher, Danny DeVito&lt;/attori&gt;
+  &lt;trama&gt;
+   Da un romanzo di Ken Kesey: pregiudicato, trasferito in clinica
+   psichiatrica, smaschera il carattere repressivo e carcerario 
+   dell'istituzione. La rivolta dura poco, ma lascia qualche segno.
+  &lt;/trama&gt;
+  &lt;critica&gt;
+   un film efficacemente e astutamente polemico sul potere che 
+   emargina i diversi e sul fondo razzistico della psichiatria. La 
+   sostanza del romanzo onirico di Kesey, scritto in prima persona, 
+   è depurata e trasformata in allegoria nell'adattamento scenico che
+   ne fece Dale Wasserman e che forma la base della sceneggiatura.
+   (Fu portato in scena nel 1963 da Kirk Douglas che spinse il figlio
+   Michael a produrre il film.) Ottima squadra di attori che comprende
+   anche il pellerossa W. Sampson.
+  &lt;/critica&gt;
+  &lt;/film&gt;
+
+  &lt;film&gt;
+  &lt;titolo&gt;Shining&lt;/titolo&gt;
+  &lt;regista&gt;Stanley Kubrick&lt;/regista&gt;
+  &lt;anno&gt;1980&lt;/anno&gt;
+  &lt;durata&gt;120&lt;/durata&gt;
+  &lt;genere&gt;Horror&lt;/genere&gt;
+  &lt;attori&gt;Jack Nicholson, Shelley Duvall, Danny Lloyd&lt;/attori&gt;
+  &lt;trama&gt;
+   Dal romanzo (1977) di Stephen King: sotto l'influenza malefica
+   dell'Overlook Hotel sulle Montagne Rocciose dove s'è installato come
+   guardiano d'inverno con moglie e figlio, Jack Torrence sprofonda in 
+   una progressiva schizofrenica follia che lo spinge a minacciare di 
+   morte i suoi cari.
+  &lt;/trama&gt;
+  &lt;critica&gt;
+   Più che un film dell'orrore e del terrore, è un thriller fantastico 
+   di parapsicologia che precisa, dopo 2001: odissea nello spazio e Arancia 
+   meccanica, la filosofia di S. Kubrick. L'aneddotica di S. King diventa 
+   fiaba e rilettura di un mito, di molti miti, da quello di Saturno a quello 
+   di Teseo e del Minotauro, per non parlare del tema dell'Edipo. Il prodigioso 
+   brio tecnico-espressivo è al servizio di un discorso sul mondo, sulla società 
+   e sulla storia. Totalmente pessimista, Kubrick nega e fugge la storia, ma 
+   affronta l'utopia riaffermando che le radici del male sono nell'uomo, 
+   animale sociale, ma non negando, anzi esaltando, la possibilità di una 
+   riconciliazione futura, attraverso il bambino e il suo shining (luccicanza) 
+   e quella di una nuova e diversa concordia.
+  &lt;/critica&gt;
+  &lt;/film&gt;
+
+  &lt;film&gt;
+  &lt;titolo&gt;Il cavaliere oscuro&lt;/titolo&gt;
+  &lt;regista&gt;Christopher Nolan&lt;/regista&gt;
+  &lt;anno&gt;2008&lt;/anno&gt;
+  &lt;durata&gt;152&lt;/durata&gt;
+  &lt;genere&gt;Azione&lt;/genere&gt;
+  &lt;attori&gt;Heath Ledger, Christian Bale, Gary Oldman, Michael Caine&lt;/attori&gt;
+  &lt;trama&gt;
+   Il crimine organizzato a Gotham City ha le ore contate. Batman, il 
+   tenente Gordon, il nuovo Procuratore Distrettuale e alcuni improbabili 
+   epigoni dell'Uomo Pipistrello in imbottiture da hockey hanno dichiarato 
+   guerra ai criminali. La loro fortuna e i loro dollari, accumulati in una 
+   banca di massima sicurezza, vengono rubati da Joker, un pagliaccio sadico 
+   e mascherato che getterà la città nel disordine e nell'anarchia. Riempite 
+   le tasche di lame, polvere da sparo e lanugine, Joker sfiderà il cavaliere 
+   oscuro di Bruce Wayne e rivelerà il lato oscuro di Harvey Dent, l'eroe 
+   procuratore che applica la giustizia e agisce a volto scoperto.
+  &lt;/trama&gt;
+  &lt;critica&gt;
+   Quello che conta nel Cavaliere oscuro è l'enigma della psicologia dei 
+   personaggi: i compagni (Harvey e Gordon) di Batman quanto gli antagonisti 
+   (Joker e Due Facce) non sono semplici caratterizzazioni laterali ma diventano 
+   figure malate di un incubo, sistematicamente inquadrate dal basso (soprattutto Joker) 
+   come un insieme ambiguo e incombente. Apparentemente costruito come film sulla 
+   voracità e sul potere distruttivo del denaro (il film si apre con la realizzazione 
+   di un colpo e la liquidazione di tutti gli esecutori materiali della rapina ad opera 
+   di chi l'ha concepita), Il Cavaliere oscuro si rivela opera della paranoia e del 
+   progressivo affondare dell'eroe senza maschera di Aaron Eckhart (Harvey Dent), 
+   risentito coi compagni e attirato verso il basso da un inafferrabile Joker. 
+   Dalla "caduta" muore Harvey e nasce Due Facce, un reduce-sopravvissuto e 
+   psicopatico quanto l'irriducibile clown di Ledger, di cui il regista non rilegge 
+   le origini, perché Joker è figlio del caos e la sua ferita, aperta in un "sorriso", 
+   è figlia di una leggenda declinabile all'infinito.
+  &lt;/critica&gt;
+  &lt;/film&gt;
+
+  &lt;film&gt;
+  &lt;titolo&gt;Il Labirinto del Fauno&lt;/titolo&gt;
+  &lt;regista&gt;Guillermo Del Toro&lt;/regista&gt;
+  &lt;anno&gt;2006&lt;/anno&gt;
+  &lt;durata&gt;112&lt;/durata&gt;
+  &lt;genere&gt;Horror&lt;/genere&gt;
+  &lt;attori&gt;Sergi Lopez, Doug Jones, Maribel Verdù&lt;/attori&gt;
+  &lt;trama&gt;
+   Spagna 1944. L'esercito franchista sta piegando le ultime frange 
+   di resistenza alla "normalizzazione" del paese, ormai quasi totalmente 
+   sotto il controllo di Franco. Carmen, una giovane vedova, ha sposato Vidal, 
+   un capitano dell'esercito, e lo raggiunge assieme alla figlia dodicenne Ofelia. 
+   La bambina soffre per la presenza dell'arrogante patrigno e cerca di aiutare la 
+   madre che sta affrontando una gravidanza difficile. Il suo rifugio è costituito 
+   dal mondo delle fiabe che si materializza con la presenza di un fauno che le 
+   rivela la sua vera identità. Lei è la principessa di un regno sotterraneo. Per 
+   raggiungerlo dovrà superare tre prove pericolose.
+  &lt;/trama&gt;
+  &lt;critica&gt;
+   Senza i mezzi delle megaproduzioni statunitensi ma con un' accuratezza e 
+   sensibilità che spesso a quelle dimensioni produttive finiscono con lo sfuggire, 
+   Del Toro ci parla di soprusi e di innocenza, di ricerca di un mondo 'altro' in cui 
+   trovare la pace senza però rinunciare alla propria integrità di essere umano in 
+   formazione. Un film per giovani-adulti e per adulti-giovani il suo, meno facile 
+   da 'vendere' a un pubblico ben definito ma, anche per questo, più interessante.
+  &lt;/critica&gt;
+  &lt;/film&gt;
+</pre>
+</div>
+<div class='vspace'></div><h3>xsl:template</h3>
+<p>Per operare sull'output in base all'input bisogna introdurre dei modelli nel foglio di stile XSLT. Ogni modello è rappresentato da un elemento <em>&lt;xsl:template&gt;</em> che definisce l'inizio di un template. Ogni elemento &lt;xsl:template&gt; contiene delle regole da applicare quando uno specifico nodo viene trovato.<br />L'attributo <em>match="/"</em> definisce la corrispondenza, cioè è usato per associare il template con uno o più elementi XML.<br />Un modello come risultato dell'output può anche contenere elementi riportati in maniera letterale come ad esempio elementi di <em>markup</em>. La regola fondamentale da rispettare, se si inseriscono markup in output, è che si deve produrre un codice XML ben formato, infatti avevamo visto che anche lo stesso foglio di stile deve essere ben formato. In poche parole se nell'output, creato col foglio di stile, si inseriscono markup questi devono rispettare le regole già viste nelle <a class='urllink' href='XMLNozioniFondamentali.html#s7' title='' rel='nofollow'>nozioni fondamentali</a> legate ai documenti XML ben formati.
+</p>
+<p class='vspace'><ins>Esempio</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+     &lt;xsl:template match="titolo"&gt;
+
+	&lt;html&gt;
+	&lt;head&gt;&lt;title&gt;Esempio TEMPLATE&lt;/title&gt;&lt;/head&gt;
+	     &lt;body&gt;
+	      &lt;b&gt;
+              OGNI VOLTA CHE TROVA UNA CORRISPONDENZA CON "TITOLO" 
+              SCRIVE QUESTA FRASE e tutti i dati che trova
+              &lt;/b&gt;
+             &lt;/body&gt;
+        &lt;/html&gt;
+
+     &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+</div>
+<p class='vspace'><ins>OUTPUT</ins>:<br /><img src='../uploads/Uni/XMLXSLtemplate.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h3>xsl:value-of</h3>
+<p>L'elemento <em>&lt;xsl:value-of&gt;</em> viene utilizzato per estrarre un valore da un elemento XML e aggiungerlo al flusso di output della trasformazione. Il valore dell'elemento corrisponde al contenuto dell'elemento stesso dopo che tutti i tag sono stati rimossi.
+</p>
+<p class='vspace'><ins>Esempio</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:template match="film"&gt;
+
+   &lt;html&gt;
+   &lt;head&gt;&lt;title&gt;Esempio VALUE OF&lt;/title&gt;&lt;/head&gt;
+         &lt;body&gt;
+             &lt;table border="2" cellpadding="3" cellspacing="4"&gt;
+             &lt;tr&gt;&lt;b&gt; &lt;xsl:value-of select="titolo" /&gt; &lt;/b&gt;&lt;/tr&gt;
+             &lt;tr&gt;&lt;i&gt; &lt;xsl:value-of select="regista" /&gt; &lt;/i&gt;&lt;/tr&gt;
+             &lt;/table&gt;
+         &lt;/body&gt;
+   &lt;/html&gt;
+
+  &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+</div>
+<p class='vspace'>NOTA: in questo esempio il value-of restituisce tutti i film presenti in archivio perché ho messo come MATCH l'elemento film, invece dell'elemento radice /. Altrimenti senza un foreach dovrebbe restituire un unico elemento.<br /><br />
+<ins>OUTPUT</ins>:<br /><img src='../uploads/Uni/XMLXSLvalueof.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h3>xsl:for-each</h3>
+<p>L'elemento <em>&lt;xsl:for-each&gt;</em> viene utilizzato per selezionare ogni elemento XML corrispondente ad un dato XPath.
+</p>
+<p class='vspace'><ins>Esempio</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:template match="film"&gt;
+     &lt;html&gt;
+          &lt;head&gt;&lt;title&gt;Esempio FOREACH&lt;/title&gt;&lt;/head&gt;
+          &lt;body&gt;
+
+          &lt;xsl:for-each select="titolo"&gt;&lt;/xsl:for-each&gt;
+          Per ogni elemento "titolo" presente nel file xml scriviamo questa frase!&lt;br/&gt;
+          NOTA: non fa quello che dice il prof nelle slide, non estrae il valore.
+
+          &lt;/body&gt;
+     &lt;/html&gt;
+ &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+</div>
+<p class='vspace'><ins>OUTPUT</ins>:<br /><img src='../uploads/Uni/XMLXSLforeach.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h3>xsl:sort</h3>
+<p>L'elemento <em>&lt;xsl:sort&gt;</em> viene utilizzato per ordinare l'output.
+</p>
+<p class='vspace'><ins>Esempio</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+ &lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+  &lt;xsl:template match="/"&gt;
+    &lt;html&gt;
+         &lt;head&gt;&lt;title&gt;Esempio SORT&lt;/title&gt;&lt;/head&gt;
+         &lt;body&gt;
+
+         Elenchiamo i film presenti in archivio in ordine cronologico!
+         &lt;xsl:for-each select="archivioFilm/film"&gt;
+          &lt;xsl:sort data-type="number" select="anno"/&gt;
+            &lt;table border="2" cellpadding="3" cellspacing="4"&gt;
+             &lt;tr&gt;&lt;b&gt;&lt;xsl:value-of select="titolo"&gt;&lt;/xsl:value-of&gt;&lt;/b&gt;&lt;/tr&gt;
+             &lt;tr&gt;&lt;i&gt;&lt;xsl:value-of select="regista"&gt;&lt;/xsl:value-of&gt;&lt;/i&gt;&lt;/tr&gt;
+             &lt;tr&gt;&lt;th&gt;&lt;xsl:value-of select="anno"&gt;&lt;/xsl:value-of&gt;&lt;/th&gt;&lt;/tr&gt;
+            &lt;/table&gt;
+         &lt;/xsl:for-each&gt;
+         &lt;/body&gt;
+    &lt;/html&gt;
+  &lt;/xsl:template&gt;
+ &lt;/xsl:stylesheet&gt;
+</pre>
+</div>
+<p class='vspace'><ins>OUTPUT</ins>:<br /><img src='../uploads/Uni/XMLXSLsort.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h3>xsl:if</h3>
+<p>L'elemento <em>&lt;xsl:if&gt;</em> contiene una serie di istruzioni che verranno eseguite solo se la condizione specificata è vera. La condizione viene messa sotto forma di attributo.
+</p>
+<p class='vspace'><ins>Esempio</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+ &lt;xsl:template match="/"&gt;
+     &lt;html&gt;
+     &lt;head&gt;&lt;title&gt;Esempio IF&lt;/title&gt;&lt;/head&gt;
+         &lt;body&gt;
+
+         Inseriamo soltanto i film usciti dopo il 2000, elencando titolo, regista e anno!
+          &lt;xsl:for-each select="archivioFilm/film"&gt;
+           &lt;table border="2" cellpadding="3" cellspacing="4"&gt;
+            &lt;xsl:if test="anno &amp;gt; 2000"&gt;
+              &lt;tr&gt;&lt;b&gt;&lt;xsl:value-of select="titolo"&gt;&lt;/xsl:value-of&gt;&lt;/b&gt;&lt;/tr&gt;
+              &lt;tr&gt;&lt;i&gt;&lt;xsl:value-of select="regista"&gt;&lt;/xsl:value-of&gt;&lt;/i&gt;&lt;/tr&gt;
+              &lt;tr&gt;&lt;th&gt;&lt;xsl:value-of select="anno"&gt;&lt;/xsl:value-of&gt;&lt;/th&gt;&lt;/tr&gt;
+            &lt;/xsl:if&gt;
+           &lt;/table&gt;
+          &lt;/xsl:for-each&gt;
+
+         &lt;/body&gt;
+     &lt;/html&gt;		
+ &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+</div>
+<p class='vspace'><ins>OUTPUT</ins>:<br /><img src='../uploads/Uni/XMLXSLif.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h3>xsl:choose / xsl:when / xsl:otherwise</h3>
+<p>L'elemento <em>&lt;xsl:choose&gt;</em> viene utilizzato insieme agli elementi <em>xsl:when</em> e <em>xsl:otherwise</em> per esprimere condizioni multiple.
+</p>
+<p class='vspace'><ins>Esempio</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+   &lt;xsl:template match="/"&gt;
+     &lt;html&gt;
+        &lt;head&gt;&lt;title&gt;Esempio CHOOSE&lt;/title&gt;&lt;/head&gt;
+        &lt;body&gt;
+
+        Elenchiamo i film precedenti al 2000 in blu chiaro, quelli posteriori in verde!
+        &lt;xsl:for-each select="archivioFilm/film"&gt;
+           &lt;xsl:choose&gt;
+
+             &lt;xsl:when test="anno &amp;lt; 2000"&gt;
+              &lt;table border="2" cellpadding="3" cellspacing="4" bgcolor="#3366CC"&gt;
+               &lt;tr&gt;&lt;b&gt;&lt;xsl:value-of select="titolo"&gt;&lt;/xsl:value-of&gt;&lt;/b&gt;&lt;/tr&gt;
+               &lt;tr&gt;&lt;i&gt;&lt;xsl:value-of select="regista"&gt;&lt;/xsl:value-of&gt;&lt;/i&gt;&lt;/tr&gt;
+               &lt;tr&gt;&lt;th&gt;&lt;xsl:value-of select="anno"&gt;&lt;/xsl:value-of&gt;&lt;/th&gt;&lt;/tr&gt;
+              &lt;/table&gt;
+             &lt;/xsl:when&gt;
+
+             &lt;xsl:otherwise&gt;
+              &lt;table border="2" cellpadding="3" cellspacing="4" bgcolor="#009966"&gt;
+               &lt;tr&gt;&lt;b&gt;&lt;xsl:value-of select="titolo"&gt;&lt;/xsl:value-of&gt;&lt;/b&gt;&lt;/tr&gt;
+               &lt;tr&gt;&lt;i&gt;&lt;xsl:value-of select="regista"&gt;&lt;/xsl:value-of&gt;&lt;/i&gt;&lt;/tr&gt;
+               &lt;tr&gt;&lt;th&gt;&lt;xsl:value-of select="anno"&gt;&lt;/xsl:value-of&gt;&lt;/th&gt;&lt;/tr&gt;
+              &lt;/table&gt;
+             &lt;/xsl:otherwise&gt;
+
+           &lt;/xsl:choose&gt;
+        &lt;/xsl:for-each&gt;
+        &lt;/body&gt;
+
+     &lt;/html&gt;
+   &lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+</div>
+<p class='vspace'><ins>OUTPUT</ins>:<br /><img src='../uploads/Uni/XMLXSLchoose.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h3>xsl:apply-templates</h3>
+<p>Per default un elaboratore XSLT legge il documento XML di input dall'alto verso il basso, iniziando cioè dall'elemento radice e discendendo all'interno dell'albero degli elementi. Ciò significa che il modello del nodo padre verrà applicato prima del modello dei relativi figli.<br />L'elemento <em>&lt;xsl:apply-templates&gt;</em> permette di modificare l'ordine secondo il quale vengono attraversati i nodi. Si può anche fare in modo che alcuni elementi non vengano elaborati.<br />Riassumendo quindi l'elemento permette di impostare in maniera esplicita l<em>'ordine di elaborazione</em>.<br />L'attributo <em>select</em> contiene un'espressione XPath che indica all'elaboratore XSLT che le regole verranno applicate solamente ai nodi che corrispondono al valore dell'attributo.<br />NOTA: l'ordine con cui vengono definiti i modelli all'interno del foglio di stile non ha alcuna importanza, conta solamente l'ordine con il quale gli elementi appaiono nel documento di input.
+</p>
+<p class='vspace'><ins>Esempio</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+   &lt;xsl:template match="/"&gt;
+     &lt;html&gt;
+         &lt;head&gt;&lt;title&gt;Esempio APPLY-TEMPLATE&lt;/title&gt;&lt;/head&gt;
+         &lt;body&gt;
+           &lt;xsl:apply-templates/&gt;
+         &lt;/body&gt;
+     &lt;/html&gt;
+   &lt;/xsl:template&gt;
+
+   &lt;xsl:template match="film"&gt;
+     &lt;p&gt;
+     &lt;tr&gt;&lt;b&gt;&lt;u&gt;TITOLO&lt;/u&gt;:
+        &lt;xsl:value-of select="titolo"&gt;&lt;/xsl:value-of&gt;
+     &lt;/b&gt;&lt;/tr&gt;
+
+     &lt;tr&gt;&lt;i&gt;&lt;u&gt;REGISTA&lt;/u&gt;:
+       &lt;xsl:value-of select="regista"&gt;&lt;/xsl:value-of&gt;
+     &lt;/i&gt;&lt;/tr&gt;
+
+     &lt;tr&gt;&lt;u&gt;ANNO&lt;/u&gt;:
+       &lt;xsl:value-of select="anno"&gt;&lt;/xsl:value-of&gt;
+     &lt;/tr&gt;
+
+     &lt;tr&gt;&lt;u&gt;TRAMA:&lt;/u&gt;
+       &lt;xsl:value-of select="trama"&gt;&lt;/xsl:value-of&gt;
+     &lt;/tr&gt;&lt;/p&gt;
+
+   &lt;/xsl:template&gt;
+
+
+   &lt;xsl:template match="archivioFilm"&gt;
+    &lt;h2&gt;Mostriamo una tabella con titolo, regista, anno e trama in ordine cronologico!&lt;/h2&gt;
+     &lt;table border="3" cellpadding="4" cellspacing="5" width="60%"&gt;
+      &lt;xsl:apply-templates select="film"&gt;
+        &lt;xsl:sort data-type="number" order="ascending" select="anno"&gt;&lt;/xsl:sort&gt;
+      &lt;/xsl:apply-templates&gt;
+     &lt;/table&gt;
+   &lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</pre>
+</div>
+<p class='vspace'><ins>OUTPUT</ins>:<br /><img src='../uploads/Uni/XMLXSLapplytemplate.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h3>xsl:call-template</h3>
+<p>L'elemento <em>&lt;xsl:call-template&gt;</em> viene utilizzato per invocare un template identificandolo attraverso un nome, a differenza di apply-templates quindi non cambia il nodo corrente.
+</p>
+<p class='vspace'><strong>Sintassi</strong>:<br />&lt;xsl:call-template name="nome template"&gt;
+</p>
+<div class='vspace'></div><h3>xsl:copy-of</h3>
+<p>L'elemento <em>&lt;xsl:copy-of&gt;</em> viene utilizzato per copiare un insieme di nodi nell'albero risultante senza che vengano applicate conversioni a stringhe come accadrebbe con l'utilizzo dell'elemento xsl:value-of.
+</p>
+<div class='vspace'></div><h3>Riferimenti Incrociati</h3>
+<p>Un sistema per gestire i riferimenti incrociati tra elementi sono le <strong>chiavi XSL</strong>.<br />Ogni chiave è composta dalla tripla:
+</p><ul><li>il nodo che possiede la chiave <em>match</em>
+</li><li>il nome della chiave <em>name</em>
+</li><li>il valore della chiave <em>use</em>
+</li></ul><p class='vspace'>e vengono dichiarate utilizzando la seguente sintassi:
+</p>
+<div class='vspace'></div><pre  style='text-align: center;' class='escaped'>
+&lt;xsl:key name="..." match="..." use="..."/&gt;
+</pre>
+<div class='vspace'></div><h3>Funzione key</h3>
+<p>La funzione key si esprime tramite la seguente sintassi:
+</p>
+<div class='vspace'></div><pre  style='text-align: center;' class='escaped'>
+node-set key(string, object)
+</pre>
+<p class='vspace'>dove:
+</p><ul><li>l'argomento <em>string</em>: è il nome di una chiave definita da un elemento xsl:key
+</li><li>l'argomento <em>object</em>: viene convertito dalla funzione string in valore alfanumerico.
+</li></ul><p class='vspace'>Viene restituito come valore l'insieme dei nodi che hanno una chiave dal valore <em>use</em> uguale al risultato della conversione di <em>object</em>.
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>XSLT 2.0</h2>
+<p>XSLT 2.0 è diventato felicemente recommendation W3C nel Gennaio 2007 ha introdotto tre principali novità:
+</p><ul><li>istruzioni per raggruppare elementi
+</li><li>istruzioni per gestire il testo tramite espressioni regolari
+</li><li>istruzioni per gestire la formattazione di numeri e date
+</li></ul><p class='vspace'><a name='s5' id='s5'></a>
+</p><h2>XSL vs. XQuery</h2>
+<ul><li><strong>XSLT 1.0</strong>: vede XML come strumento per la multicanalità, infatti è possibile effettuare trasformazioni verso diversi formati. 
+<div class='vspace'></div></li><li><strong>XQuery 1.0</strong>: vede XML come strumento per descrivere documenti semistrutturati, infatti è possibile effettuare interrogazioni su frammenti di documenti.
+</li></ul><p class='vspace'>Entrambi permettono di selezionare frammenti di XML e di costruire nuovi output XML.
+</p>
+<p class='vspace'><strong>Differenze</strong>:
+</p><ul><li><ins><em>XSL</em></ins>
+<ul><li>si caratterizza per funzioni che <em>destrutturano e ristrutturano</em> XML, tramite xsl:template
+</li><li>parsa l'albero del documento ad ogni trasformazione
+</li><li>è implementato da <em>browser</em> o <em>server web</em> che sono strumenti di editing e pubblicazione; si concentrano sulla formattazione e composizione di risorse.
+</li></ul><div class='vspace'></div></li><li><ins><em>XQuery</em></ins>
+<ul><li>si caratterizza per funzioni di <em>join</em> e per una <em>tipizzazione forte</em> dei dati
+</li><li>è implementato da <em>Database</em> che sono strumenti di archivio; si concentra quindi sulla sicurezza di gestione e sull'efficienza di interrogazione.
+</li></ul></li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: February 25, 2009, at 01:29 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXSL?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/XMLXSL?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

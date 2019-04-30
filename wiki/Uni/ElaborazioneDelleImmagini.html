@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Elaborazione delle Immagini </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.ElaborazioneDelleImmagini' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Elaborazione delle Immagini
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ElaborazioneDelleImmagini?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ElaborazioneDelleImmagini?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='ElaborazioneDelleImmagini-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ElaborazioneDelleImmagini?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/ElaborazioneDelleImmagini?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Elaborazione delle Immagini was last modified on January 25, 2018, at 11:23 AM'>
+							<span style='display:none;'>Elaborazione delle Immagini</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Elaborazione delle Immagini ::</strong>
+</pre><table align='right' cellpadding='5' cellspacing='15' >
+<tr ><td bgcolor='#f6f6ff'  valign='top'><h5>Quanto ti è piaciuta la materia?</h5>
+<form action='ElaborazioneDelleImmagini.html' method='post'><input type='hidden' name='n' value='Uni.ElaborazioneDelleImmagini' /><input type='hidden' name='action' value='rater' /><input type='hidden' name='rs_id' value='1' /><input type='radio' name='rating_1[]' value='1' id='rating_11' /><label for='rating_11'><span style='font-size:69%'>*</span></label> <input type='radio' name='rating_1[]' value='2' id='rating_12' /><label for='rating_12'><span style='font-size:69%'>**</span></label> <input type='radio' name='rating_1[]' value='3' id='rating_13' /><label for='rating_13'><span style='font-size:69%'>***</span></label> <input type='radio' name='rating_1[]' value='4' id='rating_14' /><label for='rating_14'><span style='font-size:69%'>****</span></label> <input type='radio' name='rating_1[]' value='5' id='rating_15' /><label for='rating_15'><span style='font-size:69%'>*****</span></label> <input type='submit' name='post' value='Vota' class='inputbutton' /><br /><img src='../pub/rater/img/yellow35star.gif' alt='3.5 stars' title='3.5 stars' /> <span style='font-size:83%'>N° voti: 29</span><br /><strong></strong>
+</form>
+
+</td></tr><tr ><td bgcolor='#f6f6ff'  valign='top'><h5>Come ti è sembrato il corso?</h5>
+<form action='ElaborazioneDelleImmagini.html' method='post'><input type='hidden' name='n' value='Uni.ElaborazioneDelleImmagini' /><input type='hidden' name='action' value='rater' /><input type='hidden' name='rs_id' value='2' /><input type='radio' name='rating_2[]' value='1' id='rating_21' /><label for='rating_21'><span style='font-size:69%'>*</span></label> <input type='radio' name='rating_2[]' value='2' id='rating_22' /><label for='rating_22'><span style='font-size:69%'>**</span></label> <input type='radio' name='rating_2[]' value='3' id='rating_23' /><label for='rating_23'><span style='font-size:69%'>***</span></label> <input type='radio' name='rating_2[]' value='4' id='rating_24' /><label for='rating_24'><span style='font-size:69%'>****</span></label> <input type='radio' name='rating_2[]' value='5' id='rating_25' /><label for='rating_25'><span style='font-size:69%'>*****</span></label> <input type='submit' name='post' value='Vota' class='inputbutton' /><br /><img src='../pub/rater/img/yellow35star.gif' alt='3.5 stars' title='3.5 stars' /> <span style='font-size:83%'>N° voti: 26</span><br /><strong></strong>
+</form>
+
+</td></tr><tr ><td  valign='top'><span class='frame rfloat'><img src='../uploads/Uni/ei.jpg' alt='' title='' /> <br />Testo di Riferimento</span>
+</td></tr></table>
+<p class='vspace'><strong>Docente</strong>: <a class='wikilink' href='Sassi.html'>Roberto Sassi</a>
+</p>
+<div class='vspace'></div><h2>Materiale ufficiale</h2>
+<table cellpadding='5' cellspacing='5' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><a target='_blank'  class='urllink' href='http://www.dti.unimi.it/~sassi/EI2009/infocorso.htm' title='' rel='nofollow'><strong>Pagina del corso</strong></a>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><a target='_blank'  class='urllink' href='http://www.dti.unimi.it/~sassi/EI2009/index.htm' title='' rel='nofollow'><strong>Lucidi</strong></a>
+</td></tr></table>
+<div class='vspace'></div><h3>Info</h3>
+<p>L'esame consiste in una prova scritta + prova orale + progetto facoltativo.<br />Il docente consiglia caldamente di utilizzare il libro di testo, quello che vedete nell'immagine, perché è il testo di riferimento per l'elaborazione delle immagini utilizzato in tutta la galassia.
+</p>
+<div class='vspace'></div><h3>Riassunto</h3>
+<p>Il materiale caricato riassume gli argomenti del corso, unendo i contenuti del libro (Elaborazione delle Immagini Digitali - Gonzalez, Woods) con quelli delle slide e Internet. I file sono in <em>.pdf</em>, se a qualcuno interessa il formato <em>.doc</em> può richiederlo tramite il forum.
+</p>
+<div class='vspace'></div><ul><li><a class='urllink' href='../uploads/Uni/Capitolo1.pdf' title='' rel='nofollow'>Capitolo1 - INTRODUZIONE</a>
+</li><li><a class='urllink' href='../uploads/Uni/Capitolo2.pdf' title='' rel='nofollow'>Capitolo2 - FONDAMENTI DELLE IMMAGINI DIGITALI</a>
+</li><li><a class='urllink' href='../uploads/Uni/Capitolo3.pdf' title='' rel='nofollow'>Capitolo3 - TRASFORMAZIONI DI INTENSITA' E FILTRAGGIO SPAZIALE</a>
+</li><li><a class='urllink' href='../uploads/Uni/Capitolo4.pdf' title='' rel='nofollow'>Capitolo4 - FILTRAGGIO NEL DOMINIO DELLA FREQUENZA</a>
+</li><li><a class='urllink' href='../uploads/Uni/Capitolo5.pdf' title='' rel='nofollow'>Capitolo5 - RESTAURO E RICOSTRUZIONE DI IMMAGINI</a>
+</li><li><a class='urllink' href='../uploads/Uni/Capitolo6.pdf' title='' rel='nofollow'>Capitolo6 - ELABORAZIONE DI IMMAGINI A COLORI</a>
+</li><li><a class='urllink' href='../uploads/Uni/Capitolo8.pdf' title='' rel='nofollow'>Capitolo8 - COMPRESSIONE DI IMMAGINI</a>
+</li><li><a class='urllink' href='../uploads/Uni/Capitolo9.pdf' title='' rel='nofollow'>Capitolo9 - LA MORFOLOGIA APPLICATA ALLE IMMAGINI DIGITALI</a>
+</li><li><a class='urllink' href='../uploads/Uni/Capitolo10.pdf' title='' rel='nofollow'>Capitolo10 - SEGMENTAZIONE DI IMMAGINI</a>
+</li></ul><p class='vspace'><span style='font-size:83%'><em>Se trovate delle imprecisioni o degli errori nel riassunto si prega di segnalarli. Grazie</em></span>
+</p>
+<div class='vspace'></div><h3>Laboratorio</h3>
+<p><a class='wikilink' href='EILab0.html'>Laboratorio 0</a>
+</p>
+<div class='vspace'></div><h3>Appelli d'esame</h3>
+<ul><li><a class='wikilink' href='TemiEsameEI01.html'>12/06/2006</a> - <span style='font-size:83%'>Esercizi svolti: 5/5</span>
+</li><li><a class='wikilink' href='TemiEsameEI05.html'>17/07/2006</a> - <span style='font-size:83%'>Esercizi svolti: 5/5</span>
+</li><li><a class='wikilink' href='TemiEsameEI06.html'>11/09/2006</a> - <span style='font-size:83%'>Esercizi svolti: 5/5</span>
+<div class='vspace'></div></li><li><a class='wikilink' href='TemiEsameEI10.html'>22/01/2007</a> - <span style='font-size:83%'>Esercizi svolti: 4/4</span>
+</li><li><a class='wikilink' href='TemiEsameEI08.html'>20/02/2007</a> - <span style='font-size:83%'>Esercizi svolti: 5/5</span>
+</li><li><a class='wikilink' href='TemiEsameEI11.html'>13/06/2007</a> - <span style='font-size:83%'>Esercizi svolti: 5/5</span>
+</li><li><a class='wikilink' href='TemiEsameEI04.html'>11/07/2007</a> - <span style='font-size:83%'>Esercizi svolti: 5/5</span>
+</li><li><a class='wikilink' href='TemiEsameEI07.html'>12/09/2007</a> - <span style='font-size:83%'>Esercizi svolti: 4/5</span>
+<div class='vspace'></div></li><li><a class='wikilink' href='TemiEsameEI09.html'>11/04/2008</a> - <span style='font-size:83%'>Esercizi svolti: 5/5</span>
+</li><li><a class='wikilink' href='TemiEsameEI02.html'>25/06/2008</a> - <span style='font-size:83%'>Esercizi svolti: 4/5</span>
+</li><li><a class='wikilink' href='TemiEsameEI03.html'>16/07/2008</a> - <span style='font-size:83%'>Esercizi svolti: 5/5</span>
+</li></ul><p class='vspace'><br clear='all' />
+</p><hr />
+<p  style='text-align: left; background-color: #d9e4f2; font-size: 10pt; color: black; padding: 5px;'><a style='color: black' class='categorylink' href='../Category/UniCrema.html'><strong>UniCrema</strong></a> | <a style='color: black' class='categorylink' href='../Category/TerzoAnno.html'>Terzo Anno</a> - <a style='color: black' class='categorylink' href='../Category/ComplementariOMagistrale.html'>Complementari o magistrale</a> | <a style='color: black' class='categorylink' href='../Category/Informatica.html'>Informatica</a> - <a style='color: black' class='categorylink' href='../Category/Sicurezza.html'>Sicurezza</a> - <a style='color: black' class='categorylink' href='../Category/TS.html'>TS</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 25, 2018, at 11:23 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ElaborazioneDelleImmagini?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/ElaborazioneDelleImmagini?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

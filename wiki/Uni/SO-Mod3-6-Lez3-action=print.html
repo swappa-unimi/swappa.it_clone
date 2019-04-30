@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Appunti caotici</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SO-Mod3-6-Lez3.html' title='Sistemi Operativi - Appunti caotici'>Sistemi Operativi - Appunti caotici</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti caotici ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 3</span>
+<span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Tecniche per evitare il deadlock</span>
+</p>
+<div class='vspace'></div><h2>Pag 1</h2>
+<h4>Sommario</h4>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 2</h2>
+<h4>Obiettivi</h4>
+<p>...
+</p>
+<div class='vspace'></div><h4>Principio di evitare il deadlock</h4>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 3</h2>
+<h4>Informazioni per evitare il deadlock</h4>
+<p>Necessità di informazioni a priori sul comportamento dei processi:
+</p><ul><li>numero massimo di risorse per ogni accesso
+</li><li>risorse assegnate
+</li><li>risorse disponibili
+</li><li>richieste e rilasci futuri di risorse
+</li></ul><p class='vspace'>Tutto questo serve a vedere se esiste almeno un ordine di richieste e concessioni di risorse che evita di far entrare il sistema in uno stato di deadlock.
+</p>
+<div class='vspace'></div><h4>Stato sicuro (1)</h4>
+<p>Uno stato si dice sicuro se il sistema operativo può allocare le risorse richieste da ogni processo in un certo ordine garantendo che non si verifichi deadlock. 
+</p>
+<p class='vspace'>Se sono in uno stato sicuro sono certo di non essere in stallo e di avere una configurazione delle allocazioni delle risorse ai processi che non mi conduce in una situazione di stallo. Se invece sono in uno stato non sicuro non vuol dire che ho la certezza di avere un deadlock in futuro, ma che non ho la certezza di non averlo. Non potendo garantire tale condizione, tanto basta perché non sia considerato sicuro.
+</p>
+<div class='vspace'></div><h2>Pag 4</h2>
+<h4>Stato sicuro (2)</h4>
+<p>Una sequenza di processi P1, P2, ... , Pn è una sequenza sicura per l'allocazione corrente se le richieste che ogni processo Pi può fare possono essere soddisfatte dalle risorse attualmente disponibili più tutte le risorse detenute dai processi Pj con j &lt; i. Si tratta quindi di un ordine con cui andare a considerare le richieste dei processi, garantendo così di non avere attese circolari.
+</p>
+<p class='vspace'>Uno stato è sicuro se esiste una sequenza sicura
+</p>
+<div class='vspace'></div><h4>Come evitare il deadlock?</h4>
+<p>Bisogna garantire che il sistema passi da uno stato sicuro ad un altro stato sicuro quando un processo chiede una nuova risorsa.
+</p>
+<div class='vspace'></div><ul><li>si parte da uno stato iniziale sicuro (per forza, nessuno ha ancora richiesto risorse!)
+</li><li>una richiesta di risorsa viene soddisfatta se la risorsa è disponibile e se il sistema va in uno stato sicuro
+</li><li>se la risorsa non è disponibile, il processo deve attendere perché non riuscirei a garantire che rimanga in uno stato sicuro.
+</li></ul><div class='vspace'></div><h2>Pag 5</h2>
+<h4>Algoritmo del grafo di allocazione delle risorse (1)</h4>
+<p>L'arco di prenotazione, rappresentato come una freccia tratteggiata, indica quali risorse saranno prima o poi necessarie ad un processo perché possa portare avanti la propria computazione. 
+</p>
+<p class='vspace'>Nel grafo in slide ad esempio so già che P1 e P2 richiederanno prima o poi l'accesso alla risorsa R2.
+</p>
+<div class='vspace'></div><h4>Algoritmo del grafo di allocazione delle risorse (2)</h4>
+<p>Con l'utilizzo degli archi di prenotazione in aggiunta a quelli classici di richiesta. posso prevedere l'eventuale comparsa di condizioni di deadlock.
+</p>
+<p class='vspace'>Nel grafo in slide ho rappresentato uno stato non sicuro. P1 potrebbe infatti effettuare la richiesta della risorsa R2 prima che questa abbia evaso la richiesta di P2, generando quindi una situazione di stallo. Proprio perché non so se questo può accadere o no, considero lo stato non sicuro.
+</p>
+<div class='vspace'></div><h2>Pag 6</h2>
+<h4>Algoritmo del grafo di allocazione delle risorse (3)</h4>
+<p>... 
+</p>
+<div class='vspace'></div><h4>Algoritmo del banchiere (1)</h4>
+<p>L'algoritmo del banchiere opera concedendo le risorse solo se sono certo di non rischiare troppo di andare in stallo. Dovrò quindi verificare se ho risorse a sufficienza per soddisfare le varie richieste, rimanendo sempre in stati sicuri.
+</p>
+<p class='vspace'>In particolare:
+</p><ul><li>gestisce istanze multiple delle risorse (quindi potrei anche avere cicli senza che si presentino deadlock)
+</li><li>è meno efficiente dell'algoritmo del grafo di allocazione delle risorse, essendo più pesante computazionalmente
+</li><li>il numero massimo di istanze delle risorse <em>deve essere dichiarato a priori</em>. Ai processi che non sanno dire di quante istanze hanno bisogno, l'algoritmo rigetta le richieste. Ragiona in questo proprio come un banchiere: deve sapere quanti soldi dare
+</li><li>un processo <em>deve restituire in un tempo finito le risorse utilizzate</em>. Teoricamente il processo potrebbe non finire mai, e non me ne fregherebbe comunque niente, l'importante è che prima o poi rilasci le risorse. Non mi preoccupo minimamente dei tempi d'attesa dei processi: l'unica cosa che voglio è evitare il deadlock, se questo è il prezzo, tebbona.
+</li></ul><div class='vspace'></div><h2>Pag 7</h2>
+<h4>Algoritmo del banchiere (2)</h4>
+<p>... 
+</p>
+<div class='vspace'></div><h4>Algoritmo del banchiere (3)</h4>
+<p>La prima parte dell'algoritmo consiste nella verifica dello stato sicuro, ovvero trovare se esiste un ordine con cui assegnare le risorse richieste senza entrare in stallo.
+</p>
+<p class='vspace'>Di seguito sarà rappresento in grassetto l'algoritmo e subito sotto, in corsivo, i commenti:
+</p>
+<p class='vspace'><strong>Work[1..m]</strong><br /><em>\\ un vettore che rappresenta quali sono le richieste di risorse</em><br /><strong>Finish[1..n]</strong><br /><em>\\ un vettore che rappresenta quali processi hanno completato la computazione, e quindi hanno rilasciato a un certo punto le risorse</em>
+</p>
+<p class='vspace'><strong>1. Work = Available; Finish[i] = false per i = 0, 1, ... , n-1</strong><br /><em>\\ fase di inizializzazione: segno come disponibili gli elementi del vettore delle risorse, e assegno valore negativo per ogni processo del vettore Finish (dato che non hanno ancora terminato la computazione)</em>
+</p>
+<p class='vspace'><strong>2. Si cerca i tale che</strong>
+</p><div class='indent'><strong>- Finish[i]==false</strong>
+</div><div class='indent'><strong>- Need<sub>i</sub> &lt;= Work</strong>
+</div><p><strong>Se non esiste tale i, vai al passo 4</strong><br /><em>\\scandisco Finish finché trovo un processo non ancora terminato e che richiede un numero di risorse inferiore a quelle indicate nel vettore Work</em>
+</p>
+<p class='vspace'><strong>3. Work = Work + Allocation[i]; Finish[i] = true</strong><br /><strong>Vai al passo 2</strong><br /><em>\\ rappresenta il caso in cui posso soddisfare la richiesta. Una volta che il processo ha terminato la computazione e rilasciato le risorse, andrò ad aggiornare il vettore delle allocazioni disponibili, sommandogli le risorse che erano state assegnate al processo i-simo (ormai rilasciate)</em>
+</p>
+<p class='vspace'><strong>4. Se, per ogni i, Finish[i]==true, allora lo stato è sicuro</strong><br />
+</p><h2>Pag 8</h2>
+<h4>Algoritmo del banchiere (4)</h4>
+<p>Ora che so di essere in uno stato sicuro, posso procedere con l'algoritmo di richiesta delle risorse.
+</p>
+<p class='vspace'>Come prima, rappresento in grassetto l'algoritmo e subito sotto, in corsivo, i commenti:
+</p>
+<p class='vspace'><strong>Request[i]</strong><br /><em>\\ rappresenta la richiesta del processo Pi in un certo momento</em>
+</p>
+<p class='vspace'><strong>1. Se Request[i]&lt;=Need[i], vai al passo 2</strong><br /><strong>Altrimenti solleva errore: il processo ha ecceduto il numero massimo di richieste</strong><br /><em>\\ se il numero di richieste è minore (o al più uguale) al numero massimo di richieste che saranno effettuate da i, allora vai al passo 2. Se lo supera, allora il processo aveva cannato a fornire al sistema il numero massimo di richieste che avrebbe chiesto</em>
+</p>
+<p class='vspace'><strong>2. Se Request[i]&lt;=Available, vai al passo 3</strong><br /><strong>Altrimenti Pi deve attendere: risorse non disponibili</strong><br /><em>\\ se il numero di richieste è minore o uguale a quelle disponibili in quel momento, allora posso passare al passo 3, in cui tali richieste saranno soddisfatte.</em>
+</p>
+<p class='vspace'><strong>3. Si ipotizzi di stanziare le risorse richieste</strong>
+</p><div class='indent'><strong>3.1 Available = Available - Request[i]</strong>
+</div><div class='indent'><strong>3.2 Allocation[i] = Allocation[i] + Request[i]</strong>
+</div><div class='indent'><strong>3.3 Need[i] = Need[i] - Request[i]</strong>
+</div><p><strong>Se lo stato risultante è sicuro, al processo Pi vengono confermate le risorse assegnate. Altrimenti Pi deve aspettare per le richieste Request[i] e viene ristabilito il vecchio stato di allocazione delle risorse.</strong><br /><em>\\ la sicurezza dell'assegnamento viene valutata in tre punti: in 3.1 viene diminuito il numero di risorse disponibili in base alle richieste del processo; in 3.2 viene incrementanto il numero di risorse assegnate al processo; in 3.3 viene decrementato il numero di risorse del processo che ancora devono essere soddisfatte. Se queste allocazioni mi lasciano in uno stato sicuro (e lo verifico con l'algoritmo di verifica visto prima) confermo tutto, altrimenti non posso dare le risorse al processo perché entrerei in uno stato non sicuro. In questo secondo caso riporto tutto alla situazione precedente all'allocazione e lascio che il processo attenda.</em>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SO-Mod3-6-Lez3)</span></div>
+  </div>
+</body>
+</html>

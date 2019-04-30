@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: SNR - iptables </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SNRiptables' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				SNR - iptables
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNRiptables?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNRiptables?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SNRiptables-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNRiptables?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNRiptables?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='SNR - iptables was last modified on November 24, 2008, at 10:34 PM'>
+							<span style='display:none;'>SNR - iptables</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: SNR - iptables ::</strong>
+</pre><div class='vspace'></div><h2>Che cos'è</h2>
+<p><strong>iptables</strong> è l'applicazione che serve per modificare i parametri di <strong>netfilter</strong>, che a sua volta è il sistema di gestione dei pacchetti integrato nel kernel di Linux.
+</p>
+<p class='vspace'>Nel corso si <a class='wikilink' href='SicurezzaNelleReti.html'>Sicurezza nelle Reti</a> si impara ad utilizzare <strong>iptables</strong> per configurare un firewall.
+</p>
+<p class='vspace'>Per la sintassi di iptables, è opportuno consultare la pagina <strong>man</strong> relativa. Qui si assume che si sappia come scrivere regole, e si cerca di dare risposte agli esercizi visti in classe.
+</p>
+<div class='vspace'></div><h3>Logging</h3>
+<p>Le regole di <strong>logging</strong> vanno messe prima delle corrispondenti regole bloccanti. Le regole di logging non sono bloccanti: quando vengono interpretate, l'esecuzione della chain non si ferma ma prosegue. Così non avviene per le regole "normali": se una di esse viene soddisfatta, non si prosegue alla regola successiva, ma netfilter si ferma. Per questo motivo vanno scritte prima.
+</p>
+<p class='vspace'>Esempio:
+</p><pre class='escaped'>
+ iptables -A OUTPUT -o eth0 -p tcp -d 192.168.10.3 --dport 80 -j LOG 
+          --log-prefix "Server HTTP:"
+ iptables -A OUTPUT -o eth0 -p tcp -d 192.168.10.3 --dport 80 -j ACCEPT
+</pre>
+<p class='vspace'>La regola di logging è identica, se non per l'azione, che è <strong>LOG</strong> invece che <strong>ACCEPT</strong>.<br />La direttiva <strong>--log-prefix</strong> seguita da una stringa compresa tra virgolette scrive, nel log di sistema, quella stringa prima del log effettivo. Questo è utile ad esempio per poter selezionare in modo automatico le righe interessanti dal log. Ad esempio:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ dmesg|grep "Server HTTP:"
+</pre>
+<p class='vspace'>prenderà dal log di sistema le sole righe che conterranno da qualche parte la scritta <strong>"Server HTTP:"</strong>, che guarda caso è quella che abbiamo inserito noi come prefisso nella regola di logging.
+</p>
+<div class='vspace'></div><h3>Flags</h3>
+<p>Per indicare regole relativa ai flag tcp, si usa la seguente sintassi:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ --tcp-flags SYN,ACK SYN,ACK
+</pre>
+<p class='vspace'>Il significato è il seguente:
+</p><ol><li>le prime due occorrenze di <strong>SYN,ACK</strong> dicono a iptables di controllare, nel pacchetto, i flag <strong>SYN</strong> e <strong>ACK</strong>
+</li><li>le seconde due occorrenze di <strong>SYN,ACK</strong> dicono invece QUALI dei due pacchetti devono essere settati a uno
+</li></ol><p class='vspace'>Per esempio, scrivendo
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ --tcp-flags SYN,ACK SYN
+</pre>
+<p class='vspace'>sto filtrando i pacchetti che hanno SYN a 1 ma ACK a 0. Infatti ACK non compare nella seconda serie di flag. Sembra contorto e probabilmente lo è...:)
+</p>
+<div class='vspace'></div><h3>Stati</h3>
+<p>iptables ha nozione delle connessioni: sa identificare un pacchetto come appartenente o meno ad una connessione. In particolare, i pacchetti possono essere in uno dei seguenti stati:
+</p><ul><li>NEW = è un pacchetto che tenta di iniziare una connessione
+</li><li>ESTABLISHED = il pacchetto appartiene ad una connessione già esistente
+</li><li>RELATED = il pacchetto non fa parte di una connessione, ma la riguarda (ICMP)
+</li></ul><p class='vspace'>Gli stati si usano per evitare di scrivere cose strane con i flag. Per fare un esempio, se vogliamo permettere le connessioni in uscita dalla nostra macchina al server del professore, sulla porta TCP 80, scriveremo:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -A OUTPUT -o eth0 -p tcp -d $PROF --dport 80 -m state 
+          --state NEW,ESTABLISHED -j ACCEPT
+</pre>
+<p class='vspace'>Questa riga significa che i pacchetti che si trovano nello stato <strong>NEW</strong> oppure <strong>ESTABLISHED</strong> andranno accettati. Infatti, se sono io a comunicare con un server, allora farò io i tentativi di connessioni (ecco perché scrivo NEW). Oltre a quelli invierò anche altra roba, legata alla connessione, e questo spiega l'ESTABLISHED.
+</p>
+<p class='vspace'>Lato input, invece, se vogliamo che dalla porta 80 del server arrivino solo risposte a nostre precise interrogazioni, e NON tentativi di nuove connessioni, avremo una regola così:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -A INPUT -i eth0 -p tcp -s $PROF --sport 80 -m state --state ESTABLISHED -j ACCEPT
+</pre>
+<p class='vspace'>che dice a Netfilter di accettare solo quei paccheti che provengono da $PROF:80 e che fanno parte di una connessione già esistente. Se avessimo avuto <strong>-m state --state NEW,ESTABLISHED</strong> nella regola qui sopra, avremmo dato il permesso di connettersi a noi a partire dalla porta 80 della macchina $PROF: grave:)
+</p>
+<p class='vspace'>Ricordiamo che anche per i pacchetti UDP si usano le nozioni di stato: voci divine asseriscono che dimenticare ciò consista in un errore in sede d'esame. E noi che siamo andati avanti per anni a credere che UDP fosse senza connessione...:/
+</p>
+<div class='vspace'></div><h3>Loggare in modo opportuno le connessioni andate a buon fine e quelle rifiutate</h3>
+<p>Prendiamo un tentativo di connessione dalla nostra macchina alla porta 666 di un server. Se quella porta è aperta, ci arriveranno pacchetti in risposta. Se quella porta è chiusa, presumibilmente la connessione verrà terminata subito.
+</p>
+<p class='vspace'>Se c'è la necessità di loggare in modo diverso queste due evenienze, occorre fare così:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -A INPUT -p tcp -s $PROF --sport 666 -m state --state ESTABLISHED 
+          -j LOG --log-prefix "CONN OK"
+ iptables ... --tcp-flags RST,ACK RST,ACK -j LOG --log-prefix "CONN REFUSED"
+</pre>
+<p class='vspace'>Queste righe fanno sì che i pacchetti in arrivo da $PROF:80, con i flag RST e ACK a 1, verranno marcati in modo particolare nel log. Infatti, se una porta è chiusa lo stack TCP comunica l'intenzione di terminare la connessione.
+</p>
+<p class='vspace'>Se si tratta di un tentativo di comunicazione UDP, la mancata consegna di un datagram al server verrà notificata tramite la ricezione di un pacchetto ICMP, che possiamo identificare così:
+</p>
+<div class='vspace'></div><pre class='escaped'> 
+ iptables ... -p icmp --icmp-type 3/3 -j LOG --log-prefix "UDP REFUSED"
+</pre>
+<p class='vspace'>In questa riga si indica il filtro sui pacchetti appartenenti a icmp (<strong>-p icmp</strong>), e di questi pacchetti si filtrano quelli il cui tipo è 3/3, che vuol dire <strong>port unavailable</strong>. Per le associazioni tra tipo e significato, i files sul server del professore in laboratorio saranno d'aiuto.
+</p>
+<p class='vspace'>Ad ogni modo, il comando
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -p icmp -h
+</pre>
+<p class='vspace'>stamperà una bella lista di tutti i tipi di pacchetti icmp disponibili.
+</p>
+<div class='vspace'></div><h3>REJECT</h3>
+<p>L'azione di default che dobbiamo settare di solito è <strong>DROP</strong>. DROP fa morire silenziosamente il pacchetto, e chi ci ha inviato la richiesta non viene a sapere nulla. Per essere più informativi è possibile anche usare l'azione <strong>REJECT</strong>, che si preoccupa di inviare un pacchetto icmp, ed eventualmente specificare quale.
+</p>
+<p class='vspace'>Se usiamo REJECT dobbiamo però anche ricordarci di permettere ai pacchetti icmp di uscire dal sistema, altrimenti non saranno mai consegnati.
+</p>
+<p class='vspace'>Ecco un esempio
+</p>
+<div class='vspace'></div><pre class='escaped'>
+ iptables -A OUTPUT -p icmp -j ACCEPT
+ iptables -A INPUT -i eth0 --dport 80 -j REJECT --reject-with icmp-host-prohibited
+</pre>
+<p class='vspace'>La scelta dei possibili icmp da inviare ci viene data dal man di iptables:
+</p><ul><li>icmp-net-unreachable
+</li><li>icmp-host-unreachable
+</li><li>icmp-port-unreachable
+</li><li>icmp-proto-unreachable
+</li><li>icmp-net-prohibited
+</li><li>icmp-host-prohibited or
+</li><li>icmp-admin-prohibited (solo se è attivata una certa opzione nel kernel)
+</li></ul><p class='vspace'>Il messaggio di default, se non si specifica il <strong>--reject-with</strong>, è <strong>icmp-port-unreacheable</strong>.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SicurezzaNelleReti.html'>Torna alla pagina di SNR</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: November 24, 2008, at 10:34 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNRiptables?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNRiptables?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

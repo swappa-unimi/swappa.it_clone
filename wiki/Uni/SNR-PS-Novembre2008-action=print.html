@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sicurezza nelle Reti - Prova scritta - Novembre 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SNR-PS-Novembre2008.html' title='Sicurezza nelle Reti - Prova scritta - Novembre 2008'>Sicurezza nelle Reti - Prova scritta - Novembre 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sicurezza nelle Reti - Prova scritta - Novembre 2008 ::</strong>
+</pre><div class='vspace'></div><h2>Esercizio 1</h2>
+<p><em>Spiegare in sintesi ma con precisione la vulnerabilità <strong>FTP Bounce Attack</strong> e la modalità di risoluzione appropriata.</em>
+</p>
+<p class='vspace'>La <strong>FTP Bounce Attack</strong> è una vulnerabilità di FTP che si può verificare nel seguente scenario:
+</p><ul><li>è possibile, dall'esterno, connettersi all'FTP interno
+</li><li>è possibile, dall'esterno, connettersi al Web Server interno, il quale ha anche attivo un server Telnet
+</li></ul><p>Quando il client chiede il trasferimento di dati, invia al server FTP il comando <strong>PORT</strong>, il quale ha la seguente sintassi:
+</p><pre class='escaped'>
+PORT h1,h2,h3,h4,p1,p2
+</pre>
+<p>dove:
+</p><ul><li>h1...h4 sono i 4 ottetti dell'indirizzo IP a cui il server FTP deve connettersi per la connessione dati
+</li><li>p1 e p2 si compongono così: p1*256 + p2, e compongono la porta a cui il server FTP deve connettersi
+</li></ul><p class='vspace'>Se il client invia un comando PORT così:
+</p><pre class='escaped'>
+PORT indirizzo,del,server,telnet,0,23
+</pre>
+<p>il server FTP aprirà una connessione dati verso l'host indicato con <strong>indirizzo,del,server,telnet</strong> alla porta 0*256 + 23 = 23, che è la porta di default di telnet.<br />A questo punto il client invia il comando <strong>RETR</strong>, che causa l'apertura di una connessione dal server FTP al server telnet indicato con <strong>PORT</strong>. In questo modo ci si connette tranquillamente al server telnet.
+</p>
+<p class='vspace'>Un firewall stateful non sarebbe in grado di riconoscere ciò, perché una tale connessione non ha niente di sospetto. Da più di 10 anni i server FTP sono configurati in modo da non permettere PORT a host che non siano quelli da cui proviene la connessione. Inoltre, un Proxy messo tra il server e il mondo esterno potrebbe ispezionare i pacchetti e determinare un uso improprio della connessione FTP.
+</p>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p><em>Descrivere il significato dei parametri presenti nella seguente regola di Snort e il tipo di evento anomalo rilevato</em>.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+alert tcp $HOME_NET any -&gt; $EXTERNAL_NET $HTTP_PORTS 
+(msg:"..."; 
+flow:to_server,established;
+uricontent:"/complete/search?";
+uricontent:"output=desktop";
+content:"User-Agent|3A|";
+nocase;
+content:"Google";
+distance:0;
+nocase;
+content:"Desktop";
+distance:0;
+nocase;
+pcre:"/User-Agent\x3A[^\n\r^]+google[^\n\r]+Desktop/smi";
+classtype:policy-violation;
+sid:7860;
+rev:1;)
+</pre>
+<p class='vspace'>Uuuuh quanta bella roba;)<br />Innanzitutto, la prima riga <strong>alert tcp $HOME_NET any -&gt; $EXTERNAL_NET $HTTP_PORTS</strong> è l<strong>'header</strong> della firma, e contiene:
+</p><ul><li><strong>alert</strong> è l'azione da intraprendere, che vuol dire compiere l'azione di alert definita nella configurazione e loggare il tutto
+</li><li><strong>tcp</strong> è il protocollo da analizzare
+</li><li><strong>$HOME_NET any</strong> è l'indirizzo di partenza del pacchetto
+</li><li><strong>$EXTERNAL_NET $HTTP_PORTS</strong> è l'indirizzo di destinazione del pacchetto
+</li></ul><p>Le scritte con un <strong>$</strong> davanti sono variabili, definite nella configurazione di SNORT.
+</p>
+<p class='vspace'>Il resto è il <strong>body</strong> della firma, e i suoi parametri sono:
+</p><ul><li><strong>msg:"..."; </strong>: è il messaggio da inviare con l'alert
+</li><li><strong>flow:to_server,established; </strong>: questo parametro implica che il plugin <strong>Stream4</strong> (quello che permette analisi stateful) sia attivato, e dice di controllare i pacchetti che vengono inviati AL SERVER e appartenenti ad una CONNESSIONE già esistente
+</li><li><strong>uricontent:"..."; </strong>': si cerca la stringa contenuta tra virgolette nell'URI, il quale viene normalizzato per evitare cose strane con slash etc.
+</li><li><strong>content:"..."; </strong>: si cerca la stringa tra virgolette nel contenuto del payload
+</li><li><strong>distance:0; </strong>: questo parametri dice quanti byte aspettare, DOPO che è stata matchata la regola precedente, per iniziare a controllare se la regola attuale matchi
+</li><li><strong>nocase; </strong>: la ricerca nella stringa non è case sensitive
+</li><li><strong>pcre:"..."; </strong>: si cerca nel payload il testo che matcha l'espressione regolare qui indicata
+</li><li><strong>classtype:policy-violation; </strong>: dice di che tipo è questo evento
+</li><li><strong>sid:7860; </strong>: è l'ID di Snort del tipo di violazione
+</li><li><strong>rev:1; </strong>: è la revisione della definizione della firma
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='SicurezzaNelleReti.html'>Torna alla pagina di SnR</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SNR-PS-Novembre2008)</span></div>
+  </div>
+</body>
+</html>

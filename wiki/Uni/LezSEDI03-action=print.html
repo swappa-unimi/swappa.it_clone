@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi per l'elaborazione delle informazioni - Lezione 3</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LezSEDI03.html' title='Sistemi per l'elaborazione delle informazioni - Lezione 3'>Sistemi per l'elaborazione delle informazioni - Lezione 3</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Sistemi per l'elaborazione delle informazioni ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 1 Ottobre 2007</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 290px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Com'è fatto un frame</a>
+</li><li><a href='#s2'>Tempo back to back</a>
+</li><li><a href='#s3'>Collisioni</a>
+</li><li><a href='#s4'>Filtraggio</a>
+</li><li><a href='#s5'>Throughput</a>
+</li><li><a href='#s6'>Il frame ethernet</a>
+</li><li><a href='#s7'>La codifica Manchester</a>
+</li><li><a href='#s8'>CRC</a>
+</li><li><a href='#s9'>Categorie di cablaggio</a>
+<ul><li><a href='#s91'>Dispositivi di interconnessione</a>
+</li></ul></li><li><a href='#s10'>Livello fisico e di Data Link</a>
+</li></ol></div>
+<p class='vspace'>La lezione di oggi inizia con un bel <strong>The page cannot be displayed</strong>. Poi prosegue ricordandoci che le tecniche CSMA risolvono le collisioni NON in modo preventivo, ma dopo che sono avvenute: non fanno niente per evitare che accadano, e quando accadono cercano di porvi rimedio.
+</p>
+<p class='vspace'>Un'importante implicazione di questo modo di rilevare le collisioni è che i messaggi abbiano una lunghezza finita e predeterminata, altrimenti chi si impossessa della rete la invade tutta lui e gli altri collideranno per sempre e taceranno per sempre, con loro somma insoddisfazione.
+</p>
+<p class='vspace'>Inoltre, pensiamo a questa cosa. Supponiamo che A stia inviando messaggi. B sente la rete occupata e aspetta che finisca il messaggio di A, e poi tocca a lui. Non c'è stata nessuna collisione. In effetti, se ognuno aspetta che la rete si liberi, sapendo che ciò prima o poi accadrà perché i pacchetti hanno lunghezza finita e dopo aver inviato un pacchetto una stazione aspetterà un minimo di tempo, perché le collisioni avvengono ugualmente? Com'è possibile che, se una stazione invia messaggi SOLO quando la portante è libera, possa creare collisioni? Una collisione si ha quando due stazioni inviano messaggi contemporaneamente. Ma quando mai due stazioni iniziano nello stesso microtetosecondo ad inviare messagi? Mai.
+</p>
+<p class='vspace'>Eppure le collisioni accadono, ed è un dato di fatto. Occorre quindi tirare in ballo un'altra caratteristica: la posizione reciproca delle stazioni.
+</p>
+<p class='vspace'>Le onde elettromagnetiche che viaggiano nel cavo di rete non hanno velocità infinita, ma prossima ai 2*10^8 m/s. Per andare da un punto ad un altro ci metteranno per forza di cose un tempo, piccolo come vogliamo, ma pur sempre apprezzabile da dispositivi elettronici che lavorano velocissimamente. Quindi è possibilissimo questo scenario: A trasmette il suo messaggio. Prima che il messaggio arrivi a B (B è messo qualche metro più in là lungo il cavo), B tasta la portante e la sente libera: esulta e dice "tocca a me!". Ma dopo aver inviato qualche cosuccia ecco che arriva il segnale di A che mentre B esultava ed inviava percorreva inesorabile il cavo di rete. Ecco come avvengono le collisioni: perché il segnale ha una velocità finita di trasmissione!
+</p>
+<p class='vspace'>Così facendo, il CSMA/CD si accorge della collisione, e A può allora reinviare il suo pacchetto, e B aspettare ancora.
+</p>
+<p class='vspace'>Ma facciamo ancora una considerazione: A e B sono molto, molto lontani. A invia un messaggio lungo la rete, e quando termina di inviare il messaggio, e la portante è ancora libera. Per quanto ne sa, non è accaduta nessuna collisione. Invece, B è così lontana che prima che il messaggio di A arrivi a B, B ha fatto in tempo ad inviare una parte del suo. Questi due messaggi si scontreranno a metà strada. La cosa brutta è che A non si accorgerà minimamente della collisione, perché quando arriveranno i dati mischiati del suo messaggio e di quello di B, lei avrà già finito di trasmettere il suo messaggio, e non starà più rilevando le collisioni su quel messaggio. Capita la faccenda?
+</p>
+<p class='vspace'>Questo è il motivo per cui i cavi di rete Ethernet non hanno lunghezza infinita, e perché Ethernet si chiama rete locale: più in là di certi metri il cavo non può andare, per evitare che accada quanto illustrato nel paragrafo precedente.
+</p>
+<p class='vspace'>A questo punto si instaura nelle nostre menti matematiche un legame tra ampiezza di banda, lunghezza del messaggio e lunghezza del cavo.
+</p>
+<p class='vspace'>L'ampiezza di banda è quanti bit al secondo può trasmettere. Nel mio protocollo di rete la lunghezza del messaggio è di 1000bit. Se supponiamo una larghezza di banda di 100 bit al secondo, vuol dire che per trasmettere 1000 bit mi ci vogliono 1000/100 = 10s. In 10 secondi, quanta strada può fare il mio impulso? Se viaggia a 100 m/s, in 10 secondi ha percorso 100 * 10 = 1000 metri, quindi vuol dire che il computer più lontano dovrà essere al max a 1000 metri. Alles klar, Herr Kommisar?
+</p>
+<p class='vspace'>Ma c'è di più: occorre tenere conto che in un cavo di 1000 metri, il voltaggio che parte all'inizio andrà per la maggior parte a puttane durante alla strada, e magari ora che arriva al millesimo metro è già stato tutto assorbito dalla resistività del filo: occorre tenere a mente anche questo per calcolare la lunghezza massima di un cavo di rete. Nella proposta originale dell'Ethernet, il cavo poteva essere al max lungo 512 metri circa.
+</p>
+<p class='vspace'>Questo serve anche a far capire che Ethernet non è solo CSMA/CD e basta, ci sono tante altre cose da tenere in considerazione, come per esempio le caratteristiche elettriche della portante, i cavi e tutte ste cose materiali.
+</p>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h3>Com'è fatto un frame</h3>
+<p>LLC = Logical Link Control, ed è la parte dello standard Ethernet che mi dice come è strutturato un frame. Il frame è il messaggio che viene inviato tra le NIC (Network Interface Card, ovvero semplicemente schede di rete) in una Ethernet.
+</p>
+<p class='vspace'>Un cavo di rete Ethernet 10Mbit ha bisogno di 50Mhz di banda portante, quindi occorrono la 3a e la 5a armonica della portante. (Non so perché è scritto a questo punto, però va beh).
+</p>
+<p class='vspace'>Un messaggio è composto da <em>Trailer</em>, <em>Payload</em> e <em>Header</em>. Il Trailer è la parte di coda. Il Payload è il carico, ciò che sta in mezzo, e l'Header è la parte di testa, l'intestazione.<br />Il Trailer contiene le informazioni che servono per cercare di correggere un eventuale messaggio corrottosi durante la strada. L'Header contiene invece le informazioni necessarie per recapitare il messaggio stesso: siccome tutte le stazioni collegate al cavo riceveranno quel messaggio, è d'uopo che sappiano quale di loro debba effettivamente leggerlo. Oggi come oggi a dire la verità non si sbaglia mai a trasmettere, quindi il Trailer sarebbe inutile, però lo standard è del 78, quindi in quei tempi preistorici serviva eccome. Sì, sì, anche io sono preistorico.
+</p>
+<p class='vspace'>NOTA: il fatto che tutte sentano lo stesso messaggio, si chiama <em>broadcast</em>, cioè trasmissione, ed è lo stesso termine che si usa per le radio e le televisioni, perché funziona allo stesso modo.
+</p>
+<p class='vspace'>La IEEE fissa gli standard di rete, sia a livello di frame (livello 2) che a livello fisico (livello 1):
+</p><ul><li>802.3 = Ethernet a 2 Mbps (quella originale), Mbps = mega bit per secondo
+</li><li>802.3u = Ethernet 100Mbps
+</li><li>802.3z = Ethernet 1000Mbps (1 Gygabit)
+</li></ul><p class='vspace'>La lunghezza massima è di 2500 metri, ovvero 4 cavi da 500 metri con dei Repeater (amplificatori e ripetitori) tra un cavo e l'altro.
+</p>
+<p class='vspace'>Ci sono due topologie di connessione: BUS e STAR. Per topologia di connessione si intende, per così dire, il disegnino che rappresenta come vengono collegate le stazioni. La topologia BUS vede un bel cavo e tutti che si collegano a questo cavo. La topologia STAR invece vede un nodo centrale e tutti i cavi che si collegano a questo nodo. Una volta si usava la topologia BUS: si prendeva un filo e si tiravano le derivazioni. Adesso invece prevale la topologia STAR: da ogni computer parte un cavo che arriva ad un HUB o SWITCH o quel diavolo che volete, e ci pensa quella macchinetta a smistare l'ambaradan.
+</p>
+<p class='vspace'>Occorre sapere però che, a parte la comodità di tirare i cavi in un modo o nell'altro, tra BUS e STAR non cambia niente. L'HUB dal punto di vista di Ethernet altro non è che un pezzo di cavo, con tante derivazioni racchiuse in pochi centimetri. Invece di tirare un cavo in mezzo al laboratorio e ogni computer si collega direttamente al cavo, si tira un cavo da ogni computer al centro della stanza. Ma la funzione è esattamente la stessa, solo che in molti casi è più comoda.
+</p>
+<p class='vspace'>Lo SWITCH invece è ben altra cosa. Non è semplicemente un cavo. Lo Switch è un dispositivo che realizza FISICAMENTE, cioè con dei contatti, tutte le combinazioni possibili tra le porte. Se ci sono 4 porte, la porta 1 avrà un cammino dedicato alla 2, alla 3 e alla 4. La porta 2 avrà un cammino dedicato alla 1, alla 3 e alla 4 e così via. In termini matematici è un grafo completo, in cui tutti i nodi sono collegati da cammini indipendenti. Finché sono 4 porte va beh, è facile da fare. Ma quando le porte sono di più? In questo caso, non è più possibile tracciare contatti su una singola piastra di silicio, perché ci sarebbero degli accavallamenti: si dice che il grafo non è planare, ovvero non basta un piano (2 dimensioni) ad accoglierlo tutto. Lo switch ha una complessità che cresce più che linearmente nella dimensione delle porte, e così anche il suo costo...
+</p>
+<p class='vspace'>Tutte le schede Ethernet hanno un numero che le contraddistingue. I produttori di schede mondiali si sono messi d'accordo, e hanno fatto in modo che 2 schede prodotte non possano avere lo stesso MAC ADDRESS, perché così si chiama sto numero. Si tratta di un numero di 48 bit, cosicché ci sono 2^48 numeri diversi, e sono tanti. 
+</p>
+<p class='vspace'>Dal punto di vista del protocollo Ethernet, questo numero non dice niente, se non distinguere una scheda da un'altra. Tuttavia, è bene sapere che queste 48 bit, raggruppati in 6 doppie cifre esadecimali, non sono casuali, nel senso che servono per identificare il produttore, il modello etc. della scheda.
+</p>
+<p class='vspace'>Quindi, i frames Ethernet per arrivare a destinazione hanno indicato dentro se stessi questo indirizzo MAC, così che 1 e 1 sola scheda (a meno di pirati) riceverà quel messaggio. Inoltre, nel frame è contenuto anche il MAC Address del mittente, così si può replicare.
+</p>
+<p class='vspace'>Nell'header è contenuto un preambolo, costituito da 7 byte così fatti: 10101010. Si tratta infatti della sequenza col maggior numero di fronti (i fronti sono le variazioni di voltaggio, vedi prima, ma anche dopo. Belli questi rimandi criptici:).<br />Poi ci sono 48 bit di indirizzo del destinatario e 48 bit di indirizzo del mittente.<br />Poi c'è un campo che identifica il tipo di messaggio, in modo tale che il sistema operativo ricevente è in grado di capire a quale suo sottosistema inviarlo.
+</p>
+<p class='vspace'>Se l'indirizzo è FF.FF.FF.FF.FF.FF, vuol dire che si manda il messaggio a tutti gli ascoltatori.
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h3>Tempo Back to Back</h3>
+<p>Il tempo Back to Back è di 9.6 microsecondi, ed è il tempo che ci mette il segnale a propagarsi sulla distanza minima prevista tra stazioni (che non so quale sia, presumo 1 metro o poco più). Una NIC attenderà 9.6 microsecondi da quando avverte la portante libera prima di inviare un nuovo messaggio. Così si cerca di evitare collisioni.
+</p>
+<p class='vspace'>Se invece dopo aver aspettato invio, e ricevo una collisione, ecco che allora entra in campo la strategia di Backoff.<br />Con questa strategia, la prima volta che avverte una collisione la scheda sceglie un numero tra 1 e 4. La seconda volta tra 1 e 8 etc. Questo numero viene moltiplicato per i nostri 9.6 microsec, ed ecco che si ha il tempo random di attesa prima di ritentare l'invio. La probabilità che due schede facciano lo stesso numero è microscopica, soprattutto se si tiene conto che ci sono 10 tiri diversi, ognuno con una potenza di due in più di numeri del precedente. Se dopo il decimo tentativo c'è ancora collisione, la scheda deduce che c'è un malfunzionamento della rete e smette di funzionare.
+</p>
+<p class='vspace'>Questa strategia di Backoff fa parte di Ethernet, non fa parte propriamente di CSMA/CD. In effetti, un'altra implementazione del CSMA/CD potrebbe usare un'altro sistema per sti tempi casuali.
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h3>Collisioni</h3>
+<p>Torniamo al discorso di prima, quello che tirava in ballo la lunghezza del cavo, il tempo di propagazione, la lunghezza del messaggio etc.
+</p>
+<p class='vspace'>Lo standard 802.3 specifica quale deve essere il tempo di scrittura di un pacchetto: 51.2 microsecondi. È un vincolo che è stato dato per tenere sotto controllo gli altri parametri, cioè la banda, la lunghezza del cavo, le dimensioni del frame.
+</p>
+<p class='vspace'>Il caso limite entro il quale occorre stare è il seguente: A invia un messaggio, e il primo bit di questo messaggio è vicinissimo a B quando B a sua volta invia un messaggio egli stesso, prima di accorgersi un istante dopo che la portante non è libera ma occupata. Per B ciò non importa: rileva una collisione, rimanderà il frame più tardi. Ma il problema riguardava A, se ricordate quanto detto prima.
+</p>
+<p class='vspace'>La stazione A deve accorgersi del messaggio di B, ma A deve accorgersene PRIMA di aver inviato tutto il suo messaggio, altrimenti non rileverà mai la collisione.<br />Quindi, vuol dire che 52.6 microsecondi è il tempo che ci vuole per un segnale per partire da A, arrivare a B e tornare indietro. Ed è esattamente quello che succede nel caso peggiore: B invia un messaggio un istante prima che il primo bit del messaggio di A gli arrivi, e il primo bit che B ha inviato deve tornare ad A prima che A termini di scrivere il suo messaggio.
+</p>
+<p class='vspace'>52.6 microsecondi è quindi il tempo per fare due volte la strada. Quindi la strada deve essere percorribile nel tempo massimo di 25.8 microsecondi, ed in base a questo tempo si calcola la lunghezza massima del filo, in base all'ampiezza di banda: 2500 metri, con 4 ripetitori (che servono per amplificare il segnale che, lungo il filo elettrico, si perde).
+</p>
+<p class='vspace'>Questa è la CONDIZIONE DI INTEGRITÀ SULLE COLLISIONI. Se il cavo è più lungo, non c'è garanzia che una stazione si accorga che un suo messaggio ha colliso con quello di qualcun altro.
+</p>
+<p class='vspace'>Il tempo di 51.2 microsecondi è il tempo minimo di scrittura affinché una stazione si possa accorgere di una collisione. Se ci mettessi meno tempo, la condizione di integrità cadrebbe: il primo bit di B arriverebbe a me DOPO che ho già mandato via il mio ultimo bit.
+</p>
+<p class='vspace'>È ovvio che se le schede sono più veloci, il tempo per scrivere i 1500byte del mio messaggio sarà inferiore, e di conseguenza anche la lunghezza del cavo dovrà essere inferiore, per preservare questa condizione di integrità. Quindi, l'Ethernet 100Mb arriva a qualche centinaio di metri, mentre la Gigaethernet arriva a pochi metri.
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h3>Filtraggio</h3>
+<p>Nel protocollo originario, a mandare e ricevere messaggi sono solo le schede. Leggono il destinatario dal frame, e decidono che cosa farne, se è accettabile. Gli indirizzi accettabili sono quelli che indicano un host, un indirizzo di broadcast(tutti 1, vedi sopra) o un indirizzo di multicast (un pacchetto leggibile da più stazioni, un po' in disuso ultimamente).
+</p>
+<p class='vspace'>Bisogna però ricordare che Ethernet è un broadcast: TUTTE le schede ricevono TUTTI i messaggi, quindi ogni scheda fa del filtraggio sui frame che riceve: se le vanno bene, li accetta, se no semplicemente li scarta.
+</p>
+<p class='vspace'>Quando una scheda è in modalità promiscua, invece, legge tutti i pacchetti che le arrivano, anche se non dovrebbero interessarle.
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h3>Throughput</h3>
+<p>Letto <em>truput</em>. Senza switch e con 4 repeater, secondo i progettisti di Ethernet si potrebbe arrivare fino a 1024 host, in realtà si arriva a 200 poi non ce la fa più. Infatti, più aumentano gli host, più aumentano le collisioni.
+</p>
+<p class='vspace'>Se ho pacchetti troppo piccoli, si perde troppo tempo a tirare i dadi per la strategia di backoff. Se ho fili troppo lunghi mi ci vuole troppo tempo per controllare le collisioni.
+</p>
+<p class='vspace'>Insomma, occorre una combinazione ottimale di numero di host, pacchetti sufficientemente grandi e fili abbastanza corti, e ottengo il truput massimo.
+</p>
+<p class='vspace'>Il truput è la capacità effettiva di ricezione di un host. Il truput di una rete è la capacità globale della rete, al netto di tutte queste caratteristiche (cavi, numero host etc.). Ricordo sempre che Ethernet senza switch lavora decentemente fino a che il carico non supera il 30% della banda massima.
+</p>
+<p class='vspace'><a name='s6' id='s6'></a>
+</p><h3>Il Frame Ethernet</h3>
+<p>In uno dei classici corsi e ricorsi delle lezioni del Damiani, ecco che torniamo a parlare del Frame Ethernet! Vi mancava, eh?
+</p>
+<p class='vspace'>È composto dalle seguenti parti:
+</p><ul><li><strong>Preambolo</strong>: 62 bit
+</li><li><strong>SFD</strong>: Start of Frame Delimiter, 2 bit
+</li><li><strong>MAC destinazione</strong>: 48 bit
+</li><li><strong>MAC sorgente</strong>: 48 bit
+</li><li><strong>Tipo</strong>: 2 byte
+</li><li><strong>Dati</strong>: da 46 a 1500 byte
+</li><li><strong>FCS</strong>: Frame Check Sequence, 4 byte per il CRC
+</li></ul><p class='vspace'><a name='s7' id='s7'></a>
+</p><h3>La codifica Manchester</h3>
+<p>Il <em>preambolo</em> è composto da 10101010... etc. e serve per sincronizzare le stazioni a livello di bit. Questo perché Ethernet usa la codifica <em>Manchester</em>: l'1 è rappresentato da un fronte in discesa, lo 0 da un fronte in salita.
+</p>
+<p class='vspace'>Domanda: se ho due 0 di fila, o anche di più, come faccio a rappresentarli? Continuo a salire col voltaggio? No, sarebbe improponibile, perché si arriverebbe in breve a voltaggi mostruosi (se ad ogni 0 salgo di 5 volt, il computer diventa una sedia elettrica).
+</p>
+<p class='vspace'>Occorre quindi discendere ed immediatamente risalire, in un tempo inferiore a quello normale di salita e discesa.
+</p>
+<p class='vspace'>Ecco che entra in campo il nostro vecchio concetto di <em>baud rate</em>. La sequenza 111... o 000... è la sequenza in cui il baudrate della rete ethernet <em>raddoppia</em> rispetto al bitrate. E perché? Perché per ogni cifra devo fare 2 fronti: uno in discesa per l'1, poi risalgo per ridiscendere immediatamente dopo etc. Stesso discorso per lo 0. Se invece ho 101010... il baudrate coincide col bitrate, e viene utilizzata questa proprietà per sincronizzare a livello hardware due schede diverse.
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><strong>WARNING</strong><br />Sta storia del baudrate e del bitrate è una tipica domanda da esame, dice Pier Damiani
+</p>
+<p class='vspace'>L'Ethernet a 100Mbit invece usa la codifica <strong>4B5B</strong>, che però è spiegata sul libro, ed io il libro devo ancora aprirlo.
+</p>
+<p class='vspace'><a name='s8' id='s8'></a>
+</p><h3>CRC</h3>
+<p><em>CRC</em> sta per Controllo Ciclico di Ridondanza. È un concetto che viene dritto dalle simpatiche proprietà dei numeri che studiavamo con la Citrini l'anno scorso.
+</p>
+<p class='vspace'>Si basa su questa visione del frame: immagino ogni singolo frame come composto dai coefficienti di un polinomio: ogni bit è uno di questi coefficienti. Dopodiché, divido questo polinomio ipotetico per un certo polinomio standard, e il resto di questa divisione lo metto nei 4 byte del CRC.
+</p>
+<p class='vspace'>In questo modo, la scheda che invia effettua il calcolo e salva il risultato della divisione. La scheda che riceve esegue lo stesso calcolo (il divisore è un polinomio standard, uguale per tutti) e controlla che il risultato sia uguale. Se lo è, non ci sono stati errori. Altrimenti ce ne sono stati.
+</p>
+<p class='vspace'>Il vantaggio del CRC è che si può effettuare in hardware con delle porte XOR, quindi non è improponibilmente difficile da realizzare tecnicamente.
+</p>
+<p class='vspace'>Il polinomio standard usato come divisore è detto AUTODIN II. Non chiedetemi chi egli sia.
+</p>
+<p class='vspace'>Da notare che il CRC non è un sistema di crittografia valido, perché 1) possono esserci diversi polinomi che generano lo stesso risultato, anche se poco probabile; 2) non è così difficile cambiare il contenuto del frame e aggiungergli il CRC mistificato, visto che è così facile ottenerlo.
+</p>
+<p class='vspace'><a name='s9' id='s9'></a>
+</p><h2>Categorie di cablaggio</h2>
+<p>Le prime reti Eth erano su cavo coassiale. Si tratta di un cavo circondato da una guaina di isolante e poi da un'altra guaina di conduttore. Un esempio di coassiale è il cavo dell'antenna televisiva. C'erano i cavi <em>thicknet</em>, cioè <em>rete cicciona</em>, e i cavi <em>thinnet</em>, cioè <em>rete magrolina</em>. Con ogni evidenza ciò si rifaceva allo spessore del cavo.
+</p>
+<p class='vspace'>Adesso invece si usano i doppini, proprio come i doppini telefonici: 2 (in genere di più, ormai) cavi intrecciati insieme. Questa intrecciatura serve per far sì che gli impulsi casuali generati dalla temperatura in un cavo vengano per la maggior parte annullati dagli impulsi casuali generati dalla temperatura nell'altro cavo.
+</p>
+<p class='vspace'>Ci sono due tipi di doppini:
+</p><ul><li><strong>STP</strong> = Shielded Twisted Pair, doppino schermato
+</li><li><strong>UTP</strong> = Unshielded Twisted Pair, doppino non schermato
+</li></ul><p class='vspace'>Ci sono diverse categorie industriali, eg UTP1 etc. fino a UTP7, che differiscono tra loro per il numero di fili intrecciati e per la loro lunghezza.
+</p>
+<p class='vspace'>I connettori sono i connettori <em>RJ45</em>, che sono i connettori telefonici americani. In effetti assomigliano ai nostri connettori telefonici, ma sono più grossi.
+</p>
+<p class='vspace'>I vecchi cavi invece usavano la <em>BNC</em>, British Navy Connection.
+</p>
+<p class='vspace'><a name='s91' id='s91'></a>
+</p><h3>Dispositivi di interconnessione</h3>
+<p>Oltre ai cavi, ci sono anche degli apparecchi che interconnettono i cavi e le macchine. Qui andiamo a vederli.
+</p>
+<div class='vspace'></div><h3>Repeater</h3>
+<p>È un affare che rigenera il segnale, perché dopo un certo numero di metri il segnale tende a diminuire d'intensità, e il rapporto Segnale / Rumore diventa troppo alto.
+</p>
+<p class='vspace'>Col <em>Repeater</em>, si tende ad evitare questo problema. Serve per collegare i cavi di 500 metri fino ad ottenerne di 2500m.
+</p>
+<div class='vspace'></div><h3>HUB</h3>
+<p>Ai fini della rete è semplicemente un cavo, solo che è rappresentato da un apparecchietto con tante porte. Come ho spiegato più sopra, invece di tirare mille cavi, li tiro tutti verso un punto solo. Lui smista dappertutto i segnali, non fa nessun tipo di filtraggio né niente. È un cavo sotto mentite spoglie.
+</p>
+<div class='vspace'></div><h3>Switch</h3>
+<p>Ho già spiegato sopra che cos'è uno switch e come funziona. Non mi ripeto. Aggiungo solo che ci sono Switch che hanno le porte raggruppate, per risparmiare un po' sui costi.
+</p>
+<p class='vspace'>Ricordo ancora che il CSMA/CD è inutile, in presenza di switch, per motivi già ampiamente illustrati.
+</p>
+<div class='vspace'></div><h3>Bridge</h3>
+<p>Serve per collegare 2 LAN che usano lo <em>stesso</em> protocollo. Copia i frames da una parte all'altra, in modo abbastanza furbo: il Bridge <em>sa</em> quali indirizzi stanno da un lato della rete, e quali dall'altro.
+</p>
+<p class='vspace'><a name='s10' id='s10'></a>
+</p><h2>Livello fisico e di Data Link</h2>
+<p>Come abbiamo visto, ci sono diverse componenti che vanno a specificare il livello fisico di una rete: i connettori, la codifica, il voltaggio, il bitrate, il baudrate etc.
+</p>
+<p class='vspace'>Questo livello è <em>indipendente</em> dal Data Link, ovvero dal formato dei frames che girano per quei connettori. In effetti, posso cambiare un livello in modo del tutto indipendete dall'altro. Il livello di Data Link contiene le specifiche del LLC (composizione del frame) e del CSMA/CD.
+</p>
+<p class='vspace'>Annuncio però già ora 2 cose. La prima è che Ethernet è una rete locale, quindi occorrerà trovare un modo per inviare i frames da una rete all'altra. La seconda è che i livelli specificati all'inizio erano 7, mentre ora si tende ad accorparne un po', e diventano di meno.
+</p><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LezSEDI03)</span></div>
+  </div>
+</body>
+</html>

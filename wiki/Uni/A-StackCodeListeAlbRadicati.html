@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Stack, code, liste concatenate e alberi radicati </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.A-StackCodeListeAlbRadicati' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Stack, code, liste concatenate e alberi radicati
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/A-StackCodeListeAlbRadicati?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/A-StackCodeListeAlbRadicati?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='A-StackCodeListeAlbRadicati-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/A-StackCodeListeAlbRadicati?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/A-StackCodeListeAlbRadicati?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Stack, code, liste concatenate e alberi radicati was last modified on April 14, 2011, at 06:12 PM'>
+							<span style='display:none;'>Stack, code, liste concatenate e alberi radicati</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Stack, code, liste concatenate e alberi radicati ::</strong>
+</pre><p class='vspace'>Una <strong>struttura dati</strong> è un modo per memorizzare i dati, organizzarli e semplificarne l'accesso e la modifica. Di seguito ne vedremo alcuni.
+</p>
+<div class='vspace'></div><h3>Stack e code</h3>
+<p>Gli stack e le code sono insiemi dinamici dove l'elemento rimosso con DELETE è determinato a priori.
+</p>
+<div class='vspace'></div><h5>STACK</h5>
+<p>Con l'operazione DELETE viene eliminato l'elemento inserto per ultimo. Utilizza quindi la politica <strong>LIFO</strong> (Last–In, First–Out).
+</p>
+<p class='vspace'>Con lo stack o pila l'operazione INSERT è chiamata PUSH(S,x) e la DELETE è chiamata POP(S).<br />Lo stack viene implementato con un array S di n elementi: S[1..n]. top[S] è l'indice dell'elemento inserito più di recente. L'array quindi sarà: S[1..top[S]]; dove S[1] è l'elemento in fondo allo stack. S[top[S]] invece è l'elemento in cima. Se top[s] = 0 lo significa che lo stack è vuoto. STACK-EMPTY(S) controlla appunto se lo stack è vuoto e se lo è significa che si è verificato un underflow e quindi un errore.<br />Se top[S] è &gt; n allora si verifica un overflow che però nel codice non viene considerato.<br />La complessità di queste operazioni è <strong>O(1)</strong>.<br /><strong>Ricordiamo che la pila ha una dimensione fissa</strong>.
+</p>
+<div class='vspace'></div><h5>CODA</h5>
+<p>Con l'operazione DELETE viene eliminato l'elemento inserito per primo. Utilizza quindi la politica <strong>FIFO</strong> (First-In, First-Out).
+</p>
+<p class='vspace'>L'operazione di INSERT è chiamata ENQUEUE (Q, x) e quella di DELETE: DEQUEUE(Q).<br />La coda ha un inizio detto <em>head</em> e una fine detta <em>tail</em>.<br />Viene implementata attraverso un array di n-1 elementi al massimo. L'array è Q[1..n].<br /><strong>Head[Q]</strong> punta all'inizio della coda e <strong>tail[Q]</strong> punta alla prossima posizione di inserimento.
+</p>
+<p class='vspace'>Se head[Q] = tail[Q] significa che la coda è vuota e in caso voglia eliminare un elemento che non può esserci allora si verifica un <strong>underflow</strong>.<br />Se head[Q] = tail[Q] + 1 significa che la coda è piena e in caso di un nuovo inserimento si verifica un overflow.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-enqueueDequeue.gif' alt='' title='' /></div>
+<p class='vspace'>LISTE CONCATENATE
+La <strong>lista</strong> è una struttura dati che contiene oggetti disposti in ordine lineare. L'ordine è determinato da un puntatore in ogni oggetto. Questo significa che gli elementi sono collegati da un puntatore.
+</p>
+<p class='vspace'>I campi di una lista possono essere:
+</p><ul><li><strong>key</strong>: campo chiave per la ricerca dei dati;
+</li><li><strong>prev</strong>: puntatore al precedente elemento;
+</li><li><strong>next</strong>: puntatore al prossimo elemento.
+</li></ul><p>Se prev[x] = NIL significa che x non ha un predecessore quindi x è il primo elemento della lista detto head.<br />Se next[x] = NIL significa che x non ha un successore quindi x è l'ultimo elemento della lista detto tail.<br />Se head[L] = NIL significa che la lista è vuota.
+</p>
+<p class='vspace'>Ci sono diversi tipi di liste:
+</p><ul><li><strong>singolarmente concatenate</strong>: hanno i campi key e next;
+</li><li><strong>doppiamente concatenate</strong>: campi key, prev e next;
+</li><li><strong>ordinata</strong>: l'ordinamento lineare della lista corrisponde all'ordinamento lineare delle chiavi memorizzate negli elementi della lista. L'elemento minimo è la testa e quello massimo la coda.
+</li><li><strong>Non ordinata</strong>: gli elementi si possono presentare in qualsiasi ordine.
+</li><li><strong>Circolare</strong>: l'elemento prev della testa punta alla coda; l'elemento next della coda punta alla testa.
+</li></ul><p class='vspace'>Noi considereremo solo le liste <strong>non ordinate</strong> e <strong>doppiamente concatenate</strong>.
+</p>
+<p class='vspace'>Operazioni:
+</p><ul><li><code class='escaped'>LIST–SEARCH(L,x)</code>: trova il primo elemento con chiave = k in L restituendo un puntatore a questo elemento. Se x non c'è restituisce NIL. O(n) nel caso peggiore.
+</li><li><code class='escaped'>LIST–INSERT(L,x)</code>: inserisce x la cui chiave deve essere già stata impostata, davanti alla lista concatenata. O(1)
+</li><li><code class='escaped'>LIST–DELETE(L,x)</code>: deve ricevere linearmente un puntatore a x, poi elimina x e aggiorna i puntatori. O(1).
+</li></ul><p class='vspace'><em>SENTINELLA</em>: serve a rendere la DELETE più semplice. Consiste in un elemento finto sempre presente nella lista (nil[L]). Trasforma una lista doppiamente concatenata in una lista circolare doppiamente concatenata. La sentinella è posta tra la testa e la coda.
+</p>
+<div class='vspace'></div><h3>ALBERO RADICATO</h3>
+<p>Gli elementi di questo <strong>albero</strong> sono dinamici ed hanno una relazione gerarchica. La radice può avere 0 o più alberi collegati.<br />Ogni nodo avrà un campo chiave (key) e puntatori agli altri nodi che variano a seconda del tipo di albero.
+</p>
+<p class='vspace'>I puntatori sono:
+</p><ul><li><strong>p</strong>: puntatore al padre;
+</li><li><strong>left</strong>: puntatore al figlio sinistro;
+</li><li><strong>right</strong>: puntatore al figlio destro.
+</li></ul><p class='vspace'>Se left[x] = NIL significa che non esiste il figlio sinistro e così anche per quello destro. <code class='escaped'>root[T]</code> punta alla radice dell'intero albero T e se è = NIL allora l'albero è vuoto.
+</p>
+<p class='vspace'>La <strong>profondità</strong> o <strong>livello</strong> di un <strong>nodo</strong> è il numero di archi che bisogna attraversare per raggiungerlo dalla radice.<br />L' <strong>altezza</strong> di un albero è la massima profondità a cui si trova una foglia.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-alberoProfAltLiv.gif' alt='' title='' /></div>
+<p class='vspace'><strong>Tecniche di visita degli alberi</strong>
+</p><ul><li><strong>Visita in profondità</strong>: vengono visitati i rami uno dopo l'altro. Tre varianti:
+<ul><li><em>Visita in preordine</em>: si visita prima la radice, poi si fanno le chiamate ricorsive sul figlio sinistro e poi destro.
+</li><li><em>Inordine</em>: si fa prima la chiamata ricorsiva sul figlio sinistro, poi si visita la radice, e poi si fa la chiamata ricorsiva sul figlio destro.
+</li><li><em>Postordine</em>: si fanno prima le chiamate ricorsive sul figlio sinistro e destro e poi si visita la radice.
+</li></ul></li><li><strong>Visita in ampiezza</strong>: a livelli, partendo dalla radice.
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 14, 2011, at 06:12 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/A-StackCodeListeAlbRadicati?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/A-StackCodeListeAlbRadicati?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

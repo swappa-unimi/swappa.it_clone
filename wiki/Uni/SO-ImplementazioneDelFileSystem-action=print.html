@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Implementazione del file system</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SO-ImplementazioneDelFileSystem.html' title='Sistemi Operativi - Implementazione del file system'>Sistemi Operativi - Implementazione del file system</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Implementazione del file system</span>
+</p>
+<div class='vspace'></div><h2>Struttura del file system</h2>
+<p>Il file system risiede permanentemente in un' <em>unità di memorizzazione secondaria</em>, ovvero su un disco in grado di contenere una grande quantità di dati anche in assenza di alimentazione. Su tali supporti è possibile riscrivere i file sempre nella stessa locazione e si può accedere a qualsiasi blocco di informazioni in modo sia sequenziale che diretto. I dischi si dimostrano dunque una scelta particolarmente efficace per la memorizzazione. Per migliorare ulteriormente l'efficienza dell'I/O i trasferimenti tra memoria centrale e secondaria vengono effettuati in <em>blocchi</em> costituiti da più <em>settori</em>. 
+</p>
+<p class='vspace'>Quando si progetta un file system bisogna valutare attentamente come dovrà apparire all'utente e bisogna studiare quali algoritmi e strutture dati si dimostrano più idonei per mappare la struttura logica nei dispositivi fisici.
+</p>
+<p class='vspace'>Il file system è composto da vari livelli, ognuno dei quali sfrutta le funzionalità di quelli sottostanti. Al livello più basso c'è il <strong>controllo I/O</strong>, composto dai <em>driver del dispositivo</em> e dai <em>gestori delle interruzioni</em>. I primi si occupano delle traduzioni delle istruzioni ad alto livello in un linguaggio comprensibile alla macchina, i secondi vengono invece utilizzati per trasferire le informazioni tra memoria centrale e i dispositivi.<br />Abbiamo poi il <strong>file system di base</strong>, che invia comandi generici al dispositivo interessato per leggere e scrivere nei blocchi fisici (identificati con l'indirizzo numerico del disco).<br />Il livello superiore è il <strong>modulo di organizzazione dei file</strong>, che oltre a gestire l'organizzazione dei blocchi fisici in modo da ricostruire ogni file traducendo gli indirizzi si coordina col gestore dello spazio libero.<br />Infine c'è il <strong>file system logico</strong> che si occupa dei <em>metadati</em>, ovvero tutte le strutture del file system eccetto il contenuto dei file. Gestisce la struttura della directory e la struttura di ogni file tramite il <strong>blocco di controllo di file</strong>, ed è responsabile anche della loro protezione e sicurezza.
+</p>
+<div class='vspace'></div><h2>Realizzazione del file system</h2>
+<h3>Panoramica sulla realizzazione del file system</h3>
+<p>Per realizzare un file system vengono utilizzate diverse strutture su disco e in memoria, che possono variare sensibilmente a seconda del sistema operativo. Su disco abbiamo:
+</p><ul><li><strong>blocco di controllo del boot</strong>, tipicamente il primo blocco della partizione, che contiene le informazioni necessarie per avviare il sistema operativo. E' vuoto se sul disco non è presente alcun sistema operativo
+</li><li><strong>blocco di controllo della partizione</strong>, che contiene dettagli sulla partizione: dimensione e numero dei blocchi, contatore e puntatori di quelli liberi, ecc
+</li><li><strong>directory</strong> per raggruppare i file in sottoinsiemi
+</li><li><strong>blocchi di controllo di file</strong> (<strong>FCB</strong>), che contengono informazioni sui file quali proprietà e attributi (proprietario, permessi, numero e dimensione dei blocchi, ...)
+</li></ul><p class='vspace'>Le informazioni in memoria centrale sono usate sia per la gestione del file system che per il miglioramento delle prestazioni tramite la cache. Abbiamo le seguenti strutture:
+</p><ul><li>la <strong>tabella delle partizioni</strong>, che contiene informazioni su ciascuna delle partizioni montate
+</li><li><strong>descrittori delle directory</strong>
+</li><li>la <strong>tabella dei file aperti</strong> di tutto il sistema, che tiene traccia anche del numero di processi che hanno aperto un certo file
+</li><li>la <strong>tabella dei file aperti</strong> per ciascun processo
+</li><li>la <strong>tabella di montaggio del file system</strong>, che serve a costruire un'unica visione del file system anche se la sua struttura è spezzata in volumi logici diversi
+</li></ul><p class='vspace'>Per creare un nuovo file il programma fa una chiamata di sistema al file system logico che, una volta assegnatogli un nuovo descrittore, carica nella memoria centrale la directory appropriata e la aggiorna con il nome e il descrittore del nuovo file. A questo punto riscrive la directory anche in memoria secondaria. 
+</p>
+<p class='vspace'>Per poter essere utilizzato in operazioni di I/O il file deve essere <em>aperto</em> con la <code class='escaped'>open()</code>, che subito verifica se si trova nella tabella dei file aperti di sistema. Se c'è, si crea un puntatore nella tabella del processo a quella generale; altrimenti il file system cerca il file e ne copia il descrittore nella tabella di sistema, che referenzierà con un puntatore nella tabella del processo. Il puntatore con cui vengono effettuate tutte queste operazioni si chiama <strong>descrittore del file</strong> o <strong>file handle</strong>.<br />Quando un processo chiude il file si rimuove l'elemento dalla tabella del processo e viene decrementato di uno il contatore associato al file nella tabella di sistema dei file aperti; in particolare se il valore di tale contatore arriva a 0, si rimuove l'elemento anche dalla tabella generale.
+</p>
+<div class='vspace'></div><h3>Partizioni e montaggio</h3>
+<p>Ogni partizione può essere <em>formattata</em> o <em>grezza</em> a seconda che contenga o meno un file system. Il disco grezzo si usa quando non c'è un file system adatto all'uso che si vuol fare della partizione, ad esempio un'area di swap, o un'area di memoria per un database, o ancora informazioni per dischi RAID, ecc. 
+</p>
+<p class='vspace'>Le informazioni sull'avvio del sistema possono essere mantenute in una partizione separata dato che in quella fase non sono ancora caricati i driver del file system. In questa partizione vengono generalmente mantenute una sequenza di istruzioni sul come caricare il sistema operativo, o più di uno se c'è un loader che permette il dual-boot. <br />La <em>partizione radice</em> (root partition) contiene il kernel del sistema operativo più altri file di sistema e viene montata anch'essa all'avvio; tutte le altre partizioni possono essere montate automaticamente di seguito a queste o manualmente più tardi.
+</p>
+<p class='vspace'>Durante il montaggio viene verificato che il file system sia valido e compatibile, e se non lo è bisogna controllare la coerenza della partizione ed eventualmente correggerla. Se tutto va buon fine non rimane che annotare nella tabella di montaggio in memoria quanti e quali tipi di file system sono presenti. <em>Windows</em> li indica con lettere seguite dal due punti.
+</p>
+<div class='vspace'></div><h3>File system virtuali</h3>
+<p>Come integrare nello stesso sistema file system di tipo diverso in modo trasparente all'utente? Semplice: isolando le funzionalità delle chiamate di sistema dai dettagli di realizzazione, implementando il file system in tre strati principali: <em>interfaccia</em> (con le chiamate open, read, write e close più i descrittori), <em>file system virtuale</em> e quelli <em>locali</em> o <em>remoti</em>.<br />Il <strong>file system virtuale</strong> (<strong>VFS</strong>) ha due funzioni:
+</p><ul><li>separare le operazioni generiche del file system dalla loro realizzazione utilizzando un'interfaccia chiara e semplice. In uno stesso sistema possono coesistere più interfacce
+</li><li>rappresentare i file col meccanismo del <em>vnode</em>, che contiene un identificatore numerico univoco del file in tutta la rete. Il kernel mantiene una struttura vnode per ogni nodo attivo, file o cartella che sia. Permette di vedere il file system come se fosse interamente in locale anche se alcune parti sono remote
+</li></ul><div class='vspace'></div><h2>Realizzazione della directory</h2>
+<h3>Lista</h3>
+<p>Quello della <strong>lista</strong> è il metodo più semplice per realizzare una directory: una lista dei nomi dei file con puntatori ai blocchi dei dati. Lo svantaggio è però la necessità di effettuare una ricerca lineare nella lista quando si vuole trovare un file, o aprirlo o cancellarlo. Questa ricerca implica un costo computazionale non indifferente, riducibile con una cache o ordinando la lista (anche se in questo caso ciò che risparmio nella ricerca lo impegno per l'ordinamento) ma senza risultati entusiasmanti. 
+</p>
+<p class='vspace'>Per gestire gli elementi cancellati dalla lista si può scegliere di marcarli per individuare più facilmente gli spazi disponibili, oppure si può spostare l'ultimo elemento negli spazi liberati così da ottenere le minori dimensioni possibili. 
+</p>
+<div class='vspace'></div><h3>Tabella di hash</h3>
+<p>Alla lista degli elementi di una directory si può affiancare una <strong>tabella di hash</strong>, che permette di ridurre notevolmente i tempi di ricerca prendendo il nome del file e - applicando una funzione - restituendo un puntatore nella lista lineare.
+</p>
+<p class='vspace'>Avendo ridotto il numero di elementi da scandire questa tecnica appare più veloce, ma nasce il rischio di <em>collisioni</em>, cioè due file identificati dalla stessa posizione nella tabella. Per limitarne il numero è possibile aumentare le dimensioni della tabella o estenderla in una <em>tabella di hash a overflow concatenato</em>, in cui le collisioni vengono comunque rappresentate mettendo una lista nella cella anziché un valore unico.
+</p>
+<div class='vspace'></div><h2>Metodi di allocazione</h2>
+<p>Come allocare i file su disco nel modo più efficiente possibile? Abbiamo tre strategie: <em>allocazione contigua</em>, <em>collegata</em> o <em>indicizzata</em>. Qualche sistema le supporta tutte, ad esempio <em>RDOS</em>. Vediamole.
+</p>
+<div class='vspace'></div><h3>Allocazione contigua</h3>
+<p>L' <strong>allocazione contigua</strong> prevede che ogni file occupi un certo numero di blocchi contigui su disco, quindi i loro indirizzi avranno un ordinamento lineare. E' definita dall'indirizzo di inizio (<em>b</em>) sul disco e dalla lunghezza in numero di blocchi.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/alloContigua.jpg' alt='' title='' /></div>
+<p class='vspace'>Offre buone prestazioni e consente sia l'accesso sequenziale che quello diretto, dato che per accedere al blocco <em>i</em> basta puntare al blocco <em>b+i</em>. Uno dei problemi di questo sistema è la difficoltà nel trovare uno spazio disponibile contiguo abbastanza grande da contenere il file, l'altro è che soffre di frammentazione esterna. Va inoltre considerato che non è sempre dato sapere quanto sarà grande un file, quindi può essegrli assegnato un numero di blocchi insufficiente (e se ne chiederà altri bisognerà terminare il programma o copiarlo in uno spazio più grande) o sovrastimato (con gli sprechi che comporta).
+</p>
+<p class='vspace'>Esiste una variante che cerca di superare l'ultimo problema affrontato ed è l' <strong>allocazione contigua modificata</strong>, in cui quando un pezzo di memoria non si dimostra abbastanza grande per contenere il file si aggiunge un'estensione, ovvero un altro spazio di memoria contiguo che andrà collegato al blocco iniziale. Migliora le prestazioni ma vanno tenute sotto controllo le frammentazioni.
+</p>
+<div class='vspace'></div><h3>Allocazione collegata</h3>
+<p>L' <strong>allocazione collegata</strong> supera tutti i problemi di quella contigua eliminando il problema della frammentazione e della crescita del file, facendo in modo che possa essere utilizzato qualsiasi blocco libero della lista dello spazio libero per le allocazioni. Ogni file è infatti una lista collegata di blocchi del disco, ognuno dei quali contiene il puntatore a quello successivo. La directory contiene un puntatore al primo e all'ultimo blocco del file e quindi si dimostra particolarmente adatta all'accesso sequenziale ma inefficiente per quello diretto dato che per trovare l'elemento i-esimo bisognerà scandirli tutti fino ad esso. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/alloCollegata.jpg' alt='' title='' /></div>
+<p class='vspace'>Il puntatore occupa uno spazio di memoria nel blocco che, per quanto piccolo, considerato nell'insieme diventa notevole. Per ridurre tale overhead si possono raggruppare più blocchi in unità dette <strong>cluster</strong>, che mantengono semplice la mappatura dei vari blocchi aumentando il rendimento del disco (meno ricerche) e la percentuale di spazio utilizzato per le informazioni e non per i puntatori. Ha come svantaggio il fatto di aumentare la frammentazione interna, ma questa dei cluster è un'ottima strategia adottata da molti sistemi operativi.
+</p>
+<p class='vspace'>Consideriamo un altro problema, quello dell'affidabilità: cosa succederebbe se un puntatore fosse errato? Possiamo immaginarlo. Possibili soluzioni sono le <em>liste a doppio collegamento</em> o la <em>scrittura del nome del file in ogni blocco</em> (che però comporta maggior overhead).
+</p>
+<p class='vspace'>La soluzione migliore è però un'importante variante dell'allocazione collegata, ed è la <strong>tabella di allocazione dei file</strong> (<strong><a class='urllink' href='http://it.wikipedia.org/wiki/File_Allocation_Table' title='' rel='nofollow'>FAT</a></strong>) che viene memorizzata all'inizio di ogni partizione o in cache. Ha un elemento per ogni blocco ed è indicizzata in base al loro numero. L'elemento della directory contiene il numero di blocco del primo file; in sua corrispondenza è riportato il numero del blocco successivo e così via via fino all'ultimo elemento che ha un valore speciale di <em>end of file</em>. I blocchi liberi hanno invece valore 0. <br />Grazie alla FAT si ha un miglioramento del tempo di accesso diretto perché la testina del disco trova velocemente la locazione di qualsiasi blocco in essa.
+</p>
+<div class='vspace'></div><h3>Allocazione indicizzata</h3>
+<p>L' <strong>allocazione indicizzata</strong> supera il problema di frammentazione esterna e della dichiarazione della dimensione del file introducendo il <strong>blocco indice</strong> (o <em>i-node</em>), cioè un array di indirizzi dei blocchi del file su disco. L'i-esimo elemento del blocco indice punta all'i-esimo blocco del file, mentre la directory contiene l'indirizzo del blocco indice stesso. Quando si crea un file tutti i puntatori sono impostati a <code class='escaped'>nil</code>, e questo valore sarà sostituito man mano che si allocheranno blocchi. A differenza della FAT che era unica per ogni partizione, con l'allocazione indicizzata ogni file ha la propria tabella indice.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/alloIndicizzata.jpg' alt='' title='' /></div>
+<p class='vspace'>L'allocazione indicizzata supporta dunque con semplicità l'accesso diretto senza frammentazione esterna (perché può essere usato qualsiasi blocco) ed è affidabile (perché il malfunzionamento di un blocco non si riflette sulla coda), ma comporta uno spreco di spazio non indifferente dato che l'i-node rappresenta un overhead in generale maggiore di quello dovuto ai puntatori dell'allocazione collegata. Quanto deve essere grande allora? Troppo no o si sprecherebbe spazio, troppo piccolo nemmeno o non si riuscirebbe a contenere abbastanza puntatori per i file grandi. Il problema è risolvibile con tre tecniche diverse:
+</p><ul><li><em>schema collegato</em>: si collegano più blocchi indice tra loro. L'accesso diretto diventa un po' più lento perché bisogna leggere prima un i-node per sapere dove sono gli altri
+</li><li><em>indice multi-livello</em>: realizza un indice del blocco indice (a sua volta indicizzabile e così via), ottenendo così una struttura ad albero. I tempi di accesso si riducono in modo logaritmico
+</li><li><em>schema combinato</em>: adotta entrambe le soluzioni, con alcuni puntatori a blocchi diretti ed altri multilivello
+</li></ul><p class='vspace'>Si può aumentare la prestazione generale dell'allocazione indicizzata spostandone la gestione nelle cache.
+</p>
+<div class='vspace'></div><h3>Prestazioni</h3>
+<p>I criteri da tenere in considerazione per decidere quali tecniche di allocazione adottare sono sostanzialmente l' <em>efficienza di memorizzazione</em> ed il <em>tempo di accesso ai blocchi dati</em>. Va inoltre considerato come avverrà l'accesso, se in modo diretto o sequenziale.
+</p>
+<p class='vspace'>E' possibile combinare diversi tipi di allocazione cercando di sfruttare al meglio i vantaggi di ognuno. Ad esempio si può usare l'allocazione contigua per gli accessi diretti e la collegata per quelli sequenziali; oppure quella contigua per i file piccoli e quella indicizzata per i grandi, una soluzione che si è dimostrata particolarmente vantaggiosa.
+</p>
+<p class='vspace'>Data la disparità crescente tra velocità della CPU e dei dischi si potrebbero sfruttare i tempi di allocazione per far eseguire alla CPU migliaia di istruzioni per ottimizzare i movimenti della testina, accelerando così i tempi.
+</p>
+<div class='vspace'></div><h2>Gestione dello spazio libero</h2>
+<p>Lo spazio su disco è limitato, dunque bisogna riutilizzare quello liberato dai file cancellati. E' necessario perciò mantenere una <strong>lista dello spazio libero</strong> in cui tener traccia di tutti i blocchi disponibili del disco, così da poterla consultare ogni qual volta si dovrà creare un nuovo file. Come implementarla?
+</p>
+<div class='vspace'></div><h3>Vettore di bit</h3>
+<p>La lista dello spazio libero viene spesso realizzata come <strong>mappa di bit</strong> (<em>bit map</em>) o <strong>vettore di bit</strong> (<em>bit vector</em>) in cui ogni blocco è rappresentato da un bit che se è libero vale 1, altrimenti 0. Il vantaggio di questo sistema è la sua semplicità ed efficienza nel trovare il primo blocco libero o <em>n</em> blocchi liberi consecutivi. Per contro si dimostra inefficiente se non è memorizzato in memoria centrale, il che rappresenta un problema per i grossi dischi dato che questi vettori sono piuttosto grandi.
+</p>
+<div class='vspace'></div><h3>Lista collegata</h3>
+<p>Il sistema della <strong>lista collegata</strong> prevede di collegare tutti i blocchi liberi del disco tramite puntatori, e mantenendo un puntatore verso il primo blocco in una locazione speciale del disco  o in una cache. Questo schema non è efficiente per l'attraversamento della lista, ma è piuttosto utile per trovare il primo blocco libero disponibile.
+</p>
+<div class='vspace'></div><h3>Raggruppamento</h3>
+<p>Il <strong>raggruppamento</strong> fa in modo che vengano memorizzati gli indirizzi di <em>n</em> blocchi liberi nel primo blocco libero. L'ultimo degli n blocchi segnalati contiene in realtà gli indirizzi degli n blocchi successivi e così via. Questo sistema permette, a differenza della lista collegata standard, di trovare più rapidamente i blocchi disponibili.
+</p>
+<div class='vspace'></div><h3>Conteggio</h3>
+<p>Col <strong>conteggio</strong> viene tenuta in memoria non solo l'indice del primo blocco libero, ma anche un contatore che indica il numero di blocchi liberi contigui. Ogni elemento richiede dunque più informazioni da registrare come overhead, ma la lista sarà sicuramente più corta.
+</p>
+<div class='vspace'></div><h2>Efficienza e prestazioni</h2>
+<p>Avere un occhio di riguardo per le prestazioni e l'uso efficiente del disco è <strong>fondamentale</strong> dato che stiamo parlando del componente più lento del computer. Bisogna evitare che esso diventi un collo di bottiglia.
+</p>
+<div class='vspace'></div><h3>Efficienza</h3>
+<p>L'uso efficiente dello spazio del disco dipende dagli algoritmi usati per l'allocazione. Ad esempio è conveniente sparpagliare gli <em>inode</em> per la partizione, permettendo così che i blocchi dati di un file abbiano più probabilità di essere vicini al proprio inode riducendo così i tempi di ricerca. 
+</p>
+<p class='vspace'>La frammentazione interna dei cluster si può ridurre facendo in modo che le loro dimensioni si riducano man mano che il file si ingrandisce. Alcuni sistemi operativi applicano questa tecnica.
+</p>
+<p class='vspace'>Altri fattori critici sono le dimensioni di blocchi, puntatori e metadati, il cui valore deve essere valutato in base alla tecnologia adoperata e alla modalità d'uso.
+</p>
+<div class='vspace'></div><h3>Prestazioni</h3>
+<p>Una volte scelte le procedure di base del file system ci sono ancora margini di miglioramento per le prestazioni. Alcune tecniche software sono la progettazione e l'impiego di algoritmi semplici ed efficaci e strutture dati ad accesso veloce. Fare in modo ad esempio che venga messa in memoria centrale la tabella degli inode aumenterà la rapidità di accesso alle sue informazioni.
+</p>
+<p class='vspace'>Esistono poi vari tipi di supporti hardware dedicati all'accesso ai dischi:
+</p><ul><li><em>cache del disco</em>, dove sono mantenuti i blocchi che si suppone verranno presto riusati. Abbassa il tempo di latenza
+</li><li><em>cache delle pagine</em>, che usano le tecniche di memoria virtuale per memorizzare i dati dei file come pagine invece che come blocchi per il file system, aumentando così l'efficienza del sistema. Questo sistema prende il nome di <em>memoria virtuale unificata</em>
+</li><li><em>buffer cache unificata</em>, che risolve il seguente problema della <em>doppia cache</em>: se mappo un file in memoria ed ho un buffer I/O che deve flushare su di lui, ho la riscrittura degli stessi dati su due cache diverse, quella del buffer e quella della memoria virtuale. Con la buffer cache unificata si usa invece la stessa unica cache di pagina
+</li></ul><p class='vspace'>Che stia mettendo in cache blocchi o pagine, l'algoritmo di sostituzione LRU è il più performante. In particolare è cosa ragionevole assegnare alla paginazione la più alta priorità, o in sistemi con alto tasso di I/O la cache sarebbe oberata di richieste di pagina e la paginazione andrebbe a scapito dei processi. La cache usata per le I/O rende tali operazioni più efficienti, soprattutto quando permette di schedulare le richieste in modo da muovere la testina il meno possibile. Comporta però particolare attenzione per le scritture asincrone da cache a disco (quelle più frequenti) perché in caso di guasto del sistema potrebbero esserci processi che non trovano alcuni file che invece in memoria centrale sembrano assegnati. Per alcuni dati critici si può dunque imporre la scrittura sincrona.
+</p>
+<p class='vspace'>Per accessi sequenziali l'algoritmo LRU può dimostrarsi molto poco efficiente e gli si preferiscono le tecniche del <em>free-behind</em> (che rimuove una pagina dal buffer non appena si richiede la successiva) e la <em>read-ahead</em> (che carica in cache la pagina richiesta e parecchie altre tra quelle successive). 
+</p>
+<p class='vspace'>Infine, menzioniamo le <em>RAM-disc</em> o <em>dischi virtuali</em> che vengono gestite come normali file system dall'utente ma risiedono completamente in memoria centrale. Il loro vantaggio è l'indubbia velocità, che si paga con la volatilità dei dati.
+</p>
+<div class='vspace'></div><h2>Recupero del file system</h2>
+<h3>Controllo della coerenza</h3>
+<p>Abbiamo visto che parte delle informazioni delle directory sono memorizzate in cache o memoria centrale per accelerarne l'accesso, dunque queste sono in media più aggiornate di quelle su disco. Cosa accadrebbe se un crash del sistema provocasse la perdita della RAM? Si perderebbe la <strong>coerenza</strong> tra le informazioni nei diversi supporti, con risultati spesso gravi. 
+</p>
+<p class='vspace'>Il <em>controllore della coerenza</em> ha il compito fondamentale di confrontare i dati nelle strutture delle directory e i blocchi di dati su disco: se non corrispondono cerca di ripristinare la situazione in uno stato coerente con delle tecniche che differiscono a seconda del tipo di allocazione adottata dal sistema.
+</p>
+<div class='vspace'></div><h3>Backup e ripristino</h3>
+<p>Poiché i dischi sono soggetti a possibili guasti e contengono una notevole quantità di informazioni, si dovrebbero effettuare periodicamente dei salvataggi di sicurezza (<strong>backup</strong>) dei dati su altri dispositivi di memorizzazione, così che in caso di necessità possano essere ripristinati. 
+</p>
+<p class='vspace'>Per evitare di ricopiare ogni volta anche quei file o cartelle che nel frattempo non sono stati modificati, è possibile consultare prima i descrittori delle directory quindi salvare solo i file effettivamente cambiati.
+</p>
+<p class='vspace'>I backup possono essere <em>completi</em> o  <em>incrementali</em>. E' cosa saggia effettuare a scadenze regolari dei backup completi e custodirli con cura nel caso in cui un utente abbia bisogno di un file molto tempo dopo che si è guastato.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SO-ImplementazioneDelFileSystem)</span></div>
+  </div>
+</body>
+</html>

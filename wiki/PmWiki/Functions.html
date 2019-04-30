@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Functions </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='PmWiki.Functions' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Functions
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Functions?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Functions?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Functions?action=print' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Functions?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Functions?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> Tools
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Cal/Cal'>Calendario</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Gruppi'>Gruppi</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Categorie'>Categorie</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/WikiSandbox'>WikiSandbox</a>
+</li></ul><p class='vspace sidehead'> Categorie
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>UniCrema</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Guide'>Guide</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Qultura'>Qultura</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Recensioni'>Recensioni</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Imperdibili'>Imperdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Perdibili'>Perdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/LoschiIndividui'>Loschi individui</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/CaGate'>caGate</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringWiki'>Touring Wiki</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringBar'>Touring Bar</a>
+</li></ul><p class='vspace sidehead'> Help
+</p><ul><li><a class='urllink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki' title='' rel='nofollow'>Guide interne wiki</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><p class='vspace'  style='text-align: right;'> <span style='font-size:83%'><a class='wikilink' href='http://www.swappa.it/wiki/Site/SideBar?action=edit'>edit SideBar</a></span>
+</p>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Functions was last modified on September 04, 2010, at 07:06 PM'>
+							<span style='display:none;'>Functions</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='Variables.html'>Variables</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation Index</a> | <a class='wikilink' href='PageFileFormat.html'>Page file format</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' ><span class='frame rfloat' style='font-size: smaller; background-color: #ffffcc;'>admins (advanced) </span>
+</div>
+<p class='vspace'>This page describes some of the internal workings of PmWiki by explaining how some of the functions in pmwiki.php work. For a more brief list/overview on functions useful to for instance cookbook writers, see <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Functions' title='' rel='nofollow'>Cookbook:Functions</a>. 
+</p>
+<p class='vspace'>To use this functions you have to make sure that all relevant internal variables have been initialized correctly. See <a class='wikilink' href='CustomMarkup.html'>Custom Markup</a> and <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Custom%20Actions' title='' rel='nofollow'>Custom Actions</a> for more information on how these functions are typically called via <code class='escaped'>Markup()</code> or <code class='escaped'>$HandleActions[]</code>.
+</p>
+<div class='vspace'></div><h2><a name='PSS' id='PSS'></a> <code class='escaped'>PSS($string)</code></h2>
+<p>The PSS() function removes the backslashes that are
+automatically inserted in front of quotation marks by
+the /e option of PHP's preg_replace function.  PSS() is
+most commonly used in replacement arguments to Markup(),
+when the pattern specifies /e and one or more of the 
+parenthesized subpatterns could contain a quote or backslash.  
+("PSS" stands for "PmWiki Strip Slashes".)
+</p><dl><dd><div class='indent'>From PM: PmWiki expects PSS() to always occur inside of double-quoted strings and to contain single quoted strings internally.  The reason for this is that we don't want the $1 or $2 to accidentally contain characters that would then be interpreted inside of the double-quoted string when the PSS is evaluated.
+<div class='indent'><code>Markup('foo', 'inline', '/(something)/e', 'Foo(PSS("$1"))');  # wrong</code>
+</div><div class='indent'><code>Markup('foo', 'inline', '/(something)/e', "Foo(PSS('$1'))");  # right</code>
+</div></div></dd></dl><div class='vspace'></div><h3>Example</h3>
+<p>This is a fictitious example where PSS() should be used.
+Let us assume that you wish to define a directive <code class='escaped'>(:example:)</code>
+such that <code class='escaped'>(:example "A horse":)</code> results in the HTML
+</p><div class='indent'><code class='escaped'>&lt;div&gt;"A horse"&lt;/div&gt;</code>.
+</div><p>Here is how the markup rule can be created:
+</p><div class='indent'><pre class='escaped'>
+Markup('example', 'directives',
+       '/\\(:example\\s(.*?):\\)/e',
+       "Keep('&lt;div&gt;'.PSS('$1').'&lt;/div&gt;')");
+</pre>
+</div><p>We need to use PSS() around the '$1' because the matched text
+could contain quotation marks, and the /e will add backslashes
+in front of them.
+</p>
+<div class='vspace'></div><h2><a name='stripmagic' id='stripmagic'></a> <code class='escaped'>stripmagic($string)</code></h2>
+<p>This function should be used when processing the contents of <code class='escaped'>$_POST</code> or <code class='escaped'>_GET</code> variables when they could contain quotes or backslashes. It verifies <code class='escaped'>get_magic_quotes()</code>, if true,
+strips the automatically inserted escapes from the string.
+</p>
+<div class='vspace'></div><h2><a name='FmtPageName' id='FmtPageName'></a> <code class='escaped'>FmtPageName</code>($fmt, $pagename)</h2>
+<p><a name='FmtPageName-desc' id='FmtPageName-desc'></a>Returns <code class='escaped'>$fmt</code>, with $variable and $[internationalisation] substitutions performed, under the assumption that the current page is <code class='escaped'>pagename</code>. See <a class='wikilink' href='Variables.html'>PmWiki.Variables</a> for an (incomplete) list of available variables, <a class='wikilink' href='Internationalizations.html'>PmWiki.Internationalizations</a> for internationalisation.  Security: not to be run on user-supplied data.
+</p>
+<p class='vspace'>This is one of the major functions in PmWiki, see <a class='wikilink' href='FmtPageName.html'>PmWiki.FmtPageName</a> for
+lots of details.
+</p>
+<div class='vspace'></div><h2><a name='Markup' id='Markup'></a> <code class='escaped'>Markup</code>($name, $when, $pattern, $replace)</h2>
+<p><a name='Markup-desc' id='Markup-desc'></a>Adds a new markup to the conversion table.  Described in greater detail at <a class='wikilink' href='CustomMarkup.html'>PmWiki.CustomMarkup</a>.
+</p>
+<p class='vspace'>This function is used to insert translation rules into the PmWiki's
+translation engine. The arguments to <code class='escaped'>Markup()</code> are all strings, where:
+</p>
+<div class='vspace'></div><dl><dt><code class='escaped'>$name</code></dt><dd> The string names the rule that is inserted.  If a rule of the same name already exists, then this rule is ignored.
+</dd><dt><code class='escaped'>$when</code></dt><dd> This string is used to control <em>when</em> a rule is to be applied relative to other rules.  A specification of "<code class='escaped'>&lt;xyz</code>" says to apply this rule prior to the rule named "xyz", while "<code class='escaped'>&gt;xyz</code>" says to apply this rule after the rule "xyz".  See <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/CustomMarkup' title='' rel='nofollow'>CustomMarkup</a> for more details on the order of rules.
+</dd><dt><code class='escaped'>$pattern</code></dt><dd> This string is a <a class='urllink' href='http://www.php.net/preg_replace' title='' rel='nofollow'>regular expression</a> that is used by the translation engine to look for occurences of this rule in the markup source.
+</dd><dt><code class='escaped'>$replace</code></dt><dd> This string will replace the matched text when a match occurs.
+</dd></dl><p class='vspace'>Also see: <a class='wikilink' href='CustomMarkup.html'>PmWiki.CustomMarkup</a> and <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Functions#Markup' title='' rel='nofollow'>Cookbook:Functions#Markup</a>
+</p>
+<div class='vspace'></div><h2><a name='MarkupToHTML' id='MarkupToHTML'></a> <code class='escaped'>MarkupToHTML</code>($pagename, $str)</h2>
+<p><a name='MarkupToHTML-desc' id='MarkupToHTML-desc'></a> Converts the string <code class='escaped'>$str</code> containing PmWiki markup into the corresponding HTML code, assuming the current page is <code class='escaped'>$pagename</code>.
+</p>
+<p class='vspace'>Also see: <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Functions#MarkupToHTML' title='' rel='nofollow'>Cookbook:Functions#MarkupToHTML</a>
+</p>
+<div class='vspace'></div><h2><a name='mkdirp' id='mkdirp'></a> <code class='escaped'>mkdirp</code>($dir)</h2>
+<p>The function <code class='escaped'>mkdirp</code>($dir) creates a directory, <code class='escaped'>$dir</code>, if it doesn't
+already exist, including any parent directories that might be needed.  For
+each directory created, it checks that the permissions on the directory are
+sufficient to allow PmWiki scripts to read and write files in that
+directory.  This includes checking for restrictions imposed by PHP's
+safe_mode setting.  If <code class='escaped'>mkdirp</code>() is unable to successfully create a
+read/write directory, <code class='escaped'>mkdirp</code>() aborts with an error message telling the
+administrator the steps to take to either create $dir manually or give
+PmWiki sufficient permissions to be able to do it.
+</p>
+<div class='vspace'></div><h2><a name='MakeLink' id='MakeLink'></a> <code class='escaped'>MakeLink</code>($pagename, $target, $txt, $suffix, $fmt)</h2>
+<p>The function <code class='escaped'>MakeLink</code>($pagename, $target, $txt, $suffix, $fmt) returns a ???. Its arguments are as follows:
+</p><pre> $pagename is the source page
+ $target is where the link should go
+ $txt is the value to use for '&#36;LinkText' in the output 
+ $suffix is any suffix string to be added to $txt
+ $fmt is a format string to use
+</pre><p class='vspace'>If $txt is NULL or not specified, then it is automatically computed from $target.
+</p>
+<p class='vspace'>If $fmt is NULL or not specified, then MakeLink uses the default
+format as specified by the type of link.  For page links this
+means the <a class='varlink' href='LinkVariables.html#LinkPageExistsFmt'><code class='varlink'>&#36;LinkPageExistsFmt</code></a> and <a class='varlink' href='LinkVariables.html#LinkPageCreateFmt'><code class='varlink'>&#36;LinkPageCreateFmt</code></a> variables,
+for intermap-style links it comes from either the <a class='varlink' href='LinkVariables.html#IMapLinkFmt'><code class='varlink'>&#36;IMapLinkFmt</code></a>
+array or from <a class='varlink' href='LinkVariables.html#UrlLinkFmt'><code class='varlink'>&#36;UrlLinkFmt</code></a>.  Inside of the formatting strings,
+&#36;LinkUrl is replaced by the resolved url for the link, &#36;LinkText
+is replaced with the appropriate text, and &#36;LinkAlt is replaced
+by any "title" (alternate text) information associated with the
+link.
+</p>
+<p class='vspace'>Also see: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/MakeLink' title='' rel='nofollow'>PmWiki:MakeLink</a> and <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Functions#MakeLink' title='' rel='nofollow'>Cookbook:Functions#MakeLink</a>
+</p>
+<div class='vspace'></div><h2><a name='MakeUploadName' id='MakeUploadName'></a> <code class='escaped'>MakeUploadName</code>($pagename, $x)</h2>
+<p><code>MakeUploadName()</code> simply takes a string <code>$x</code> (representing an attachment's
+name) and converts it to a valid name by removing any unwanted characters.
+It also requires the name to begin and end with an alphanumeric character,
+and as of 2.0.beta28 it forces any file extensions to lowercase.
+This function is defined in <code>scripts/upload.php</code> and only used when uploads
+are enabled.
+</p>
+<div class='vspace'></div><h2><a name='SessionAuth' id='SessionAuth'></a> <code class='escaped'>SessionAuth</code>($pagename, $auth=NULL)</h2>
+<p><code>SessionAuth()</code> manages keeping authentication via cookie-sessions. Session contains
+ever password or vaidated id and associated groups from previous calls.It adds
+elements passed by <code>$auth</code> to session. It also writes every element
+saved in session to <code><a class='varlink' href='BasicVariables.html#AuthPw'><code class='varlink'>&#36;AuthPw</code></a></code>(passwords) and <code>&#36;AuthList</code>(ids and groups).
+</p>
+<div class='vspace'></div><h2><a name='IsAuthorized' id='IsAuthorized'></a> <code class='escaped'>IsAuthorized</code>($chal, $source, &amp;$from)</h2>
+<p><code>IsAuthorized</code> takes a pageattributesstring (e. g. "id:user1 $1&#36;Ff3w34HASH...") in <code>$chal</code>.
+<code>$source</code> is simply returned and used for building the authcascade (pageattributes - groupattributes - 
+<code>&#36;DefaultPassword</code>). <code>$from</code> will be returned if <code>$chal</code> is empty, because it is not checked 
+before calling <code>IsAuthorized()</code>, this is needed for the authcascade. <code>IsAuthorized()</code> returns an array
+with three values: <code>$auth</code> <code>1</code> - authenticated, <code>0</code> - not authenticated, <code>-1</code> - refused; <code>$passwd</code>; 
+<code>$source</code> from the parameter list.
+</p>
+<div class='vspace'></div><h2><a name='CondAuth' id='CondAuth'></a> <code class='escaped'>CondAuth</code> ($pagename, 'auth level')</h2>
+<p><code class='escaped'>CondAuth</code> implements the <a class='wikilink' href='ConditionalMarkup.html'>ConditionalMarkup</a> for <code class='escaped'>(:if auth level:)</code>. For instance <code class='escaped'> CondAuth($pagename,'edit')</code> is true if authorization level is 'edit'. Use inside local configuration files to build conditionals with a check of authorization level, similar to using <code class='escaped'>(:if auth level:)</code> on a wiki page.
+</p>
+<p class='vspace'>Note that CondAuth() should be called after all authorization levels and passwords have been defined. For example, if you use it with <a class='wikilink' href='Drafts.html'>Drafts</a>, you should include the draft.php script before calling CondAuth():
+</p><pre class='escaped'>
+   $EnableDrafts = 1;
+   $DefaultPasswords['publish'] = crypt('secret');
+   include_once("$FarmD/scripts/draft.php");
+   if (! CondAuth($pagename, 'edit')) { /* whatever */ }
+</pre>
+<p>Best is to use CondAuth() near the bottom of your config.php script.
+</p>
+<div class='vspace'></div><h2><a name='RetrieveAuthPage' id='RetrieveAuthPage'></a> <code>RetrieveAuthPage($pagename, $level, $authprompt=true, $since=0)</code></h2>
+<p><span  style='display: none;'> Pm words as said in <a class='urllink' href='http://article.gmane.org/gmane.comp.web.wiki.pmwiki.user/12493/match=retrieveauthpage%25%25' title='' rel='nofollow'>http://article.gmane.org/gmane.comp.web.wiki.pmwiki.user/12493/match=retrieveauthpage%%</a></span>
+where:
+</p>
+<div class='vspace'></div><pre>   $pagename   - name of page to be read
+   $level      - authorization level required (read/edit/auth/upload)
+   $authprompt - true if user should be prompted for a password if needed
+   $since      - how much of the page history to read
+                 0 == read entire page including all of history
+                 READPAGE_CURRENT == read page without loading history
+                 timestamp == read history only back through timestamp
+</pre><p class='vspace'>The $since parameter allows PmWiki to stop reading from a page file
+as soon as it has whatever information is needed -- i.e., if an operation
+such as browsing isn't going to need the page's history, then specifying
+READPAGE_CURRENT can result in a much faster loading time.  (This can be 
+especially important for things such as searching and page listings.)
+</p>
+<p class='vspace'>Use e.g. <code class='escaped'>$page = @RetrieveAuthPage('Main.MyPage', 'read')</code> to obtain a page object that contains all the information of the correspondent file in separate keys, e.g. <code class='escaped'>$page['text']</code> will contain a string with the current wiki markup of Main.MyPage. Use this generally in preference to the alternative function <code class='escaped'>ReadPage($pagename, $since=0)</code> since it respects the authorisation of the user, i.e. it checks the authorisation level before loading the page, or it can be set to do so. <code class='escaped'>ReadPage()</code> reads a page regardless of permission.
+</p>
+<p class='vspace'>Passing 'ALWAYS' as the authorization level (instead of 'read', 'edit', etc.) will cause RetrieveAuthPage to always read and return the page, even if it happens to be protected by a read password.
+</p>
+<div class='vspace'></div><h2><a name='RetrieveAuthSection' id='RetrieveAuthSection'></a> <code>RetrieveAuthSection($pagename, $pagesection, $list=NULL, $auth='read')</code></h2>
+<p>RetrieveAuthSection extracts a section of text from a page. If $pagesection starts with anything other than '#', it identifies the page to extract text from.  Otherwise RetrieveAuthSection looks in the pages given by $list, or in $pagename if $list is not specified. 
+</p><ul><li>The selected page is placed in the global &#36;RASPageName variable. 
+</li><li>The caller is responsible for calling Qualify() as needed.
+</li></ul><p class='vspace'>Provides a way to limit the array that is returned by ReadPage, so that it only pulls the content up to a specific section marker. For example, pulling from start of page to '##blogend':
+</p><div class='indent'><pre class='escaped'>
+function FeedText($pagename, &amp;$page, $tag) {
+  $text = RetrieveAuthSection($pagename, '##blogend');
+  $content = MarkupToHTML($pagename, $text);
+  return "&lt;$tag&gt;&lt;![CDATA[$content]]&gt;&lt;/$tag&gt;";
+}
+</pre>
+</div><p class='vspace'>The '##blogend' argument says to read from the beginning of the page to just before the line containing the <a name='blogend' id='blogend'></a> marker.  See
+<a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/IncludeOtherPages' title='' rel='nofollow'>IncludeOtherPages</a> for more information about the section specifications.
+</p>
+<p class='vspace'>This version won't read text from pages that are read-protected; if you want to get text even from read-protected pages, then 
+</p><div class='indent'><pre class='escaped'>
+  $text = RetrieveAuthSection($pagename, '##blogend', NULL, 'ALWAYS');
+</pre>
+</div><div class='vspace'></div><h2><a name='UpdatePage' id='UpdatePage'></a> <code>UpdatePage($pagename, $old (page object), $new (page object));</code></h2>
+<p><em><a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/UpdatePage' title='' rel='nofollow'>More Technical Notes</a></em>
+</p>
+<p class='vspace'><code class='escaped'>UpdatePage()</code> allows cookbook recipes to mimic the behavior of editing wiki pages via the browser. Internally, PmWiki does several house keeping tasks which are accessible via this function (preserving history/diff information, updating page revision numbers, updating RecentChanges pages, sending email notifications, etc._
+</p><ul><li>"Page object" refers to an array pulled from <code class='escaped'>ReadPage($pagename); </code> Note that $new['text'] should contain all page data for the new version of the page. 
+</li><li>If a page doesn't exist, UpdatePage() will attempt to create it.
+</li><li>Ignoring $old (e.g. <code class='escaped'>UpdatePage($pagename, '', $new);</code>) will erase all historical page data---a <em>tabula rasa</em>.
+</li></ul><p><code>UpdatePage()</code> cannot be called directly from config.php because there are necessary initializations which occur later in pmwiki.php.  It is not enough to just load stdconfig.php.  If you want to use <code>UpdatePage()</code> you will need to do it within a <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/CustomMarkup' title='' rel='nofollow'>custom markup</a>, a <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/MarkupExpressionSamples' title='' rel='nofollow'>custom markup expression</a>, or a <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/CustomActions' title='' rel='nofollow'>custom action</a>.
+ 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='Variables.html'>Variables</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation Index</a> | <a class='wikilink' href='PageFileFormat.html'>Page file format</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+<br clear='all' />
+</p><div  style='background-color: #ffe; border-top: 1px solid black; font-size: .8em;' > 
+<p>This page may have <span class='commentout-pmwikiorg'> a more recent version on <a class='urllink' href='http://www.pmwiki.org' title='' rel='nofollow'>pmwiki.org</a>: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Functions' title='' rel='nofollow'>PmWiki:Functions</a>, and </span> a talk page: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki/Functions-Talk' title='' rel='nofollow'>PmWiki:Functions-Talk</a>.
+</p></div>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/RecentChanges'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: September 04, 2010, at 07:06 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Functions?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWiki/Functions?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

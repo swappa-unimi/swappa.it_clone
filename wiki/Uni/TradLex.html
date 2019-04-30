@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: LEX </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.TradLex' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				LEX
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TradLex?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TradLex?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='TradLex-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TradLex?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TradLex?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='LEX was last modified on May 14, 2009, at 12:34 PM'>
+							<span style='display:none;'>LEX</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='Traduttori.html'>Torna alla pagina di traduttori</a>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: LEX ::</strong>
+</pre><div class='vspace'></div><h2>LEX</h2>
+<pre> definizioni
+ <code class='escaped'>%%</code>
+ regole
+ <code class='escaped'>%%</code>
+ subroutine (codice C dell'utente)
+</pre><p class='vspace'>File minimo:
+</p><pre> <code class='escaped'>%%</code>
+</pre><p>E' solo un separatore. La parte obbligatoria è quella delle regole: le def e le sub sono opzionali. Sarebbe il separatore che introduce la sezione delle regole. Il secondo separatore non è obbligatorio perché le sub non sono obbligatorie.
+</p>
+<p class='vspace'>Se non ci sono regole, allora esegue il comportamento di default: ricopia in output. Per compilare, supponendo di aver salvato in <strong>es1.l</strong>, si fa semplicemente
+</p><pre> flex es1.l
+</pre><p>e salta fuori il file <strong>lex.yy.c</strong> (nome di default) che contiene lo scanner.
+</p>
+<p class='vspace'>Questo file <strong>.c</strong> non contiene il main, perché presuppone di essere chiamato da qualcun altro. Inoltre non contiene la funzione <strong>yywrap</strong> che viene chiamata per sapere se si è raggiunta la fine del file (yywrap restituisce 1, se no restituisce 0 se non si è ancora arrivati alla fine del file.
+</p>
+<p class='vspace'>Per compilare, devo linkare con la libreria di lex che contiene le robe mancanti:
+</p><pre> gcc lex.yy.c -ll
+</pre><p class='vspace'>Oppure, possiamo scriverle direttamente nel file che diamo in pasto a LEX. Nella sezione routine ausiliarie, aggiungiamo
+</p><pre> int yywrap() {
+   return 1;
+ }
+
+ int main() {
+   yylex();
+   return 0;
+ }
+</pre><p class='vspace'>Compilando con
+</p><pre> gcc lex.yy.c
+</pre><p>non è necessario linkare le librerie perché ho già definito le funzioni che servono. Questo "scanner", quando viene eseguito, altro non fa che fare echo di quello che scrivo.
+</p>
+<div class='vspace'></div><h2>Scrivere le regole</h2>
+<p>Nella teoria, le espressioni regolari hanno questi operatori:
+</p><pre> a = carattere semplice
+ a.b = concatenazione
+ a + b = a o b
+ a* = 0 o n ripetizioni di a
+</pre><p class='vspace'>La sezione regole è fatta da una sequenza di regole, sottoforma tabellare, in cui c'è una regexp seguita dall'azione che voglio intraprendere.
+</p><pre> regexp azione
+</pre><p>Le regexp vanno scritte in una certa sintassi (quella di grep). L'azione è invece un'istruzione C. Se è un'istruzione singola, la si scrive direttamente. Se invece è un blocco, allora uso le parentesi graffe. Sono separate da uno spazio
+</p>
+<p class='vspace'>Vediamo di scrivere un traduttore che traduce alcune parole da British English in American English. Ad esempio, in British <strong>colore</strong> si scrive <strong>colour</strong>, mentre negli USA è <strong>color</strong>. <strong>Benzina</strong> = <strong>petrol</strong> in Inghilterra, <strong>gas</strong> in America. <strong>Vasca da bagno</strong> = <strong>bath</strong> in Inghilterra, <strong>bathtub</strong> in America. Quindi, quando legge una di queste parole, deve convertirla in americano.
+</p>
+<div class='vspace'></div><pre> %{ 
+ #include &lt;stdio.h&gt; 
+ %}
+ 
+ colour      printf("color")
+ mechanise   printf("mechanize");
+ petrol      printf("gas")
+ bath        printf("bathtub")
+</pre><div class='vspace'></div><h2>Esercizio</h2>
+<p>Voglio un programma che mi traduca in inglese la seguente frase:
+</p><pre> Io vorrei avere un cane e un gatto.
+
+ 
+ io      printf("I");
+ vorrei  printf("would like");
+ gatto   printf("cat");
+ cane    printf("dog");
+ avere   printf("to have");
+ un      printf("a");
+ e       printf("and");
+</pre><p class='vspace'>Funziona. Se scrivo
+</p><pre> io vorrei      avere un    cane   e  un gatto
+</pre><p>il programma la ricopia direttamente. Se vogliamo invece un po' di formattazione aggiuntiva, mi occorrono alcune regole per definire meglio le espressioni regolari.
+</p><pre> \n   a capo
+ \t   tab
+ \b   backspace
+</pre><p>Le parentesi <code class='escaped'>[]</code> mi rappresentano classi di carattere, di cui deve matcharne uno solo. Ad esempio:
+</p><pre> <code class='escaped'>[0-9]</code>
+</pre><p>mi matcha <strong>un</strong> qualsiasi carattere che va da 0 a 9: la stringa <strong>1</strong> viene riconosciuta come appartenente a quella classe, ma la stringa <strong>11</strong> no.<br />Nelle classi di carattere posso anche mettere uno spazio:
+</p><pre> <code class='escaped'>[ ]</code>
+</pre><p>che serve per riconoscere il singolo spazio, e anche
+</p><pre> <code class='escaped'>[\n]</code>
+</pre><p>che riconosce il singolo "a capo".
+</p>
+<p class='vspace'>Per riconoscere ogni carattere tranne l<strong>'a capo</strong>, uso il <strong>.</strong> (sì, è proprio un punto). Ad esempio, <strong>.*</strong> = una qualsiasi sequenza di caratteri in una riga.
+</p>
+<p class='vspace'>Poi, c'è l'operatore <strong>*</strong> delle regexp standard, che può essere tradotto in modo più potente in LEX:
+</p><ul><li><strong>?</strong> = 0 o 1 occorrenza
+</li><li><strong>+</strong> = 1 o più occorrenze
+</li><li><strong>*</strong> = 0 o più occorrenze
+</li><li><strong>{x,y}</strong>, con <strong>x</strong> minore di <strong>y</strong> = da x a y occorrenze
+</li></ul><p>Questi operatori si applicano al simbolo che li <strong>precede</strong>, che può essere un singolo carattere o qualcosa tra parentesi tonde.
+</p>
+<p class='vspace'>Ad esempio,
+</p><pre> ab?
+</pre><p>matcha con <strong>a</strong> oppure <strong>ab</strong>. Se avessi voluto che matchasse con la stringa vuota oppure con <strong>ab</strong> avrei dovuto scrivere così:
+</p><pre> (ab)
+</pre><p class='vspace'>Se vogliamo che gli spazi vengano levati, aggiungo la regola
+</p><pre> [ ]+   printf(" ");
+</pre><p>oppure
+</p><pre> " "+   printf(" ");
+</pre><p class='vspace'>Ma vogliamo fare ancora meglio. Ad esempio, eliminare gli spazi all'inizio della riga. Occorrono altri operatori per le regexp.<br />
+All'interno delle <code class='escaped'>[]</code> il segno <strong>-</strong> può avre diversi significati:
+</p><ul><li>all'inizio o alla fine della classe, indica semplicemente il segno <strong>-</strong>
+</li><li>se lo uso in mezzo a dei caratteri, allora è un intervallo della codifica ASCII, come in <strong>0-9</strong> oppure <strong>a-b</strong>
+</li></ul><p class='vspace'>Il segno <strong>^</strong> ha significati diversi a seconda che si trovi all'interno delle <code class='escaped'>[ ]</code> oppure fuori:
+</p><ul><li>se si trova all'inizio della <code class='escaped'>[]</code>, vuol dire <strong>nega il resto</strong>
+</li><li>se è al di fuori delle <code class='escaped'>[ ]</code>, ma sempre all'inizio di una regexp, indica <strong>inizio riga</strong>
+</li></ul><p class='vspace'>Il simbolo <strong>$</strong> serve invece per dire <strong>alla fine della riga</strong>, e lo metto alla fine della mia regexp
+</p><pre> ab$
+</pre><p class='vspace'>Quindi, per levare gli spazi all'inizio metterei una regola
+</p><pre> ^" "     printf("");
+</pre><p class='vspace'>Le <strong>alternative</strong> si possono scrivere in due modi:
+</p><ul><li>uno è quello di mettere le alternative all'interno di una classe, perché come dicevamo sopra il match deve avvenire con uno solo dei suoi elementi
+</li><li>l'altro è quello di mettere una <strong>|</strong>: <strong>a|b</strong> vuol dire <strong>a o b</strong>
+</li></ul><p class='vspace'>E' anche possibile costituire delle <strong>costanti</strong> in questo modo:
+</p><pre> {numero}     [0-9]+
+</pre><p>in cui associo la regexp <strong><code class='escaped'>[0-9]+</code></strong> con l'etichetta <strong>{numero}</strong>. Posso poi scrivere regole così:
+</p><pre> {numero}   printf("Brao bao bab");
+</pre><div class='vspace'></div><h3>Altre complicazioni</h3>
+<p>In inglese sia <strong>gatto</strong> che <strong>gatta</strong> si traducono con <strong>cat</strong>. Io vorrei tradurre entrambi gli animali con <strong>cat</strong>. Ecco tre regole alternative ma di pari funzionalità, in base a quello che abbiamo spiegato sopra:
+</p><pre> gatt(a|o)   printf("cat");
+ gatt[ao]    printf("cat");
+ gatta|o     printf("cat");
+</pre><p class='vspace'>Se voglio <strong>cane</strong> e <strong>cagna</strong>, allora metto
+</p><pre> ca(ne|gna)   printf("dog");
+</pre><p class='vspace'>Vogliamo però anche tradurre <strong>il mio</strong> e <strong>la mia</strong> con <strong>my</strong>. Pertanto devo matchare entrambe le cose. Posso scrivere due regole distinte, una per <strong>il mio</strong> e una per <strong>la mia</strong>.<br />Ma c'è anche uno sgamo strano: se nelle azioni metto una <strong>|</strong> dico a LEX che, in caso di match con quella regexp, deve eseguire l'azione della riga successiva. Pertanto, potrei scrivere:
+</p><pre> "il mio"   |
+ "la mia"   printf("my");
+</pre><p class='vspace'>Se voglio invece il tutto in una singola riga, potrei scrivere
+</p><pre> (il)|(la)[ ]+mio|a    printf("my");
+</pre><p>ma non funziona molto bene...
+</p>
+<p class='vspace'>Queste invece funzionano:
+</p><pre> [ \t]+mi(a|o)[ \t]+    |
+ (((I|i)l)|((L|l)a))" "+mi(o|a)    printf("my");
+</pre><div class='vspace'></div><h3>Riassunto degli operatori per le espressioni regolari</h3>
+<ul><li>. = qualsiasi carattere tranne l'a capo
+</li><li>\n = a capo
+</li><li>* = zero o più occorrenze
+</li><li>+ = uno o più
+</li><li>? = zero o uno
+</li><li>^ = inizio linea
+</li><li>$ = fine linea
+</li><li>a|b = alternativa
+</li><li>(ab)+ = raggruppamento (le parentesi tonde)
+</li><li>"a+b" = espressione letterale a+b (il + non viene interpretato)
+</li><li>[] = classe di caratteri. Dentro le quadre, le tonde perdono significato e diventano semplici caratteri. Nelle classi, il ^ diventa una negazione o un letterali.
+<ul><li>[a-z] = un qualsiasi carattere alfabetico
+</li><li>[a\-z] = un carattere tra a, - e z (la \- fa perdere il significato al trattino e lo tratta come letterale)
+</li><li>[A-Za-z0-9] = un qualsiasi alfanumerico
+</li><li>[ \t\n] = uno spazio vuoto
+</li><li>[^ab] = qualsiasi cosa tranne a, b
+</li><li>[a^b] = qui il ^ diventa un letterale, quindi vuol dire: uno qualsiasi tra a, ^, b
+</li><li>[a|b] = uno tra a, |, b (nota la differenza con (a|b), che vuol dire: a o b)
+</li></ul></li></ul><div class='vspace'></div><h3>Regole più complesse</h3>
+<pre> [0-9]+     printf("Ho visto un intero: %s\n", yytext);
+</pre><p class='vspace'>In questa regola d'esempio, stiamo utilizzando una <strong>variabile</strong> che ci viene offerta da Lex. Ce n'è un'altra: <strong>yylength</strong>.
+</p><ul><li>yytext = contiene la stringa che ha appena matchato la mia espressione
+</li><li>yylength = contiene la lunghezza della stringa che ha appena matchato la mia espressione
+</li></ul><div class='vspace'></div><pre> .   /* non fa nulla*/
+</pre><p>Questa regola serve per ignorare i caratteri. Come abbiamo visto all'inizio, se non c'è nessuna regola, LEX fa echo a schermo. Qui la regola per riconoscere i caratteri c'è, ma la sua azione è nulla, quindi non fa niente.
+</p>
+<div class='vspace'></div><pre> [0-9]+ printf("Ho trovato un numero: %s\n", yytext);
+ [a-zA-Z0-9]+ printf("Ho trovato una parola: %s\n", yytext);
+</pre><p>A questo punto, queste due regole sono autoesplicative. Da notare che queste regole riconoscono numeri (interi) e parole, ma i segni di interpunzione vengono echoati perché non c'è nessuna regola che li matcha.
+</p>
+<div class='vspace'></div><h3>Utilizzare costanti</h3>
+<p>Nella parte delle definizioni, posso mettere robe del genere (viste anche prima) per facilitare la scrittura delle espressioni regolari.
+</p>
+<p class='vspace'>Per esempio, abbiamo le seguenti costanti:
+</p><pre> digit [0-9]
+ letter [a-zA-Z]
+</pre><p>vogliamo un lexer che
+</p><ol><li>riconosca gli identificatori (sequenze di caratteri che iniziano con una letter e sono seguiti da letter o digit)
+</li><li>stampi a video l'identificatore
+</li><li>ne stampi il numero alla fine del programma
+</li></ol><p class='vspace'>Ecco la soluzione:
+</p><pre> %{ 
+ #include &lt;stdio.h&gt; 
+
+ int numID = 0;
+
+ %}
+ digit [0-9]
+ letter [a-zA-Z]
+
+ 
+
+ {letter}{letter}*{digit}* {
+				printf("Ho trovato l'identificatore %s\n", yytext);
+				numID ++;
+			  }
+
+ {digit}+ /* non faccio nulla */
+ 
+
+ int yymatch() {
+  printf("YYMATCH: trovati %d identificatori\n", numID);
+  return 0;
+ }
+
+ int yywrap() {
+   return 1;
+ }
+
+ int main() {
+  yylex();
+  printf("MAIN: Numero di identificatori trovati = %d\n", numID);
+  return 0;
+ }
+</pre><div class='vspace'></div><h3>Esercizio</h3>
+<p>Voglio un lexer che, dopo aver letto un file, mi dica semplicemente:
+</p><ol><li>numero di caratteri letti
+</li><li>numero di parole lette
+</li><li>numero di righe lette
+</li></ol><div class='vspace'></div><pre> %{ 
+ #include &lt;stdio.h&gt; 
+ int numChar = 0;
+ int numLines = 0;
+ int numWords = 0;
+ %}
+ digit [0-9]
+ letter [a-zA-Z]
+ 
+ [^ \t\n]+ {
+		    // Numero di caratteri
+		    printf("Trovata parola %s \n", yytext);
+		    //numChar += strlen(yytext);yylength
+		    numChar += yyleng;
+		    // Numero di parole
+                    numWords ++;
+		  }
+
+ \n                {
+                    // Numero di righe
+
+                    numLines ++;
+		  }
+ [ \t\n] {
+          numChar ++;
+        }
+ 
+ int yywrap() {
+   return 1;
+ }
+
+ int main() {
+   yylex();
+   printf("MAIN: Numero di caratteri trovati = %d\n", numChar);
+   printf("MAIN: Numero di parole trovate = %d\n", numWords);
+   printf("MAIN: Numero di righe trovate = %d\n", numLines);
+   return 0;
+ }
+</pre><hr />
+<p><a class='wikilink' href='Traduttori.html'>Torna alla pagina di traduttori</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 14, 2009, at 12:34 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TradLex?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TradLex?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

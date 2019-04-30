@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi: Appunti del 25 febbraio 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri25Febbraio2008.html' title='Sistemi Operativi: Appunti del 25 febbraio 2008'>Sistemi Operativi: Appunti del 25 febbraio 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi: appunti del 25 febbraio 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 1</strong></span>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>La macchina di Von Neumann</strong></span>
+</p>
+<p class='vspace'>Nella macchina di Fonnoiman ci sono tre elementi principali: <strong>processore</strong>, <strong>memoria</strong>, <strong>periferiche</strong>. La caratteristica della memoria è che essa contiene sia i dati che i programmi (ci sono architetture per cui non è così). Le tre componenti sono collegate tramite <strong>bus</strong>.
+</p>
+<p class='vspace'>Un <strong>programma</strong> è un insieme di istruzioni date alla macchina che servono per risolvere un problema. Trasforma la macchina in un automa che risolve istanze di quel problema. Le istanze del problema le si trovano già in memoria, oppure le si recuperano dalle periferiche sarde (anche dette I/O).
+</p>
+<div class='vspace'></div><h3>Il processore</h3>
+<p>Tra le altre cose il processore contiene il registro <strong>PC</strong>, ovvero <strong>Program Counter</strong>, che contiene l'indirizzo di memoria della prossima istruzione che deve eseguire.
+</p>
+<p class='vspace'>Tutto ciò che fa un processore si riassume in queste tre fasi:
+</p><ul><li><strong>fetch</strong>: recupera l'istruzione dall'indirizzo indicato dal PC
+</li><li><strong>decode</strong>: la Control Unit decodifica l'istruzione per vedere se è lecita
+</li><li><strong>execute</strong>: l'istruzione viene eseguita.
+</li></ul><p class='vspace'>Il processore è stupido e sa fare solo queste cose in sequenza, ad alta velocità. Da notare che il principio fetch - decode - execute è generico: un po' dappertutto prima si recupera l'ordine, lo si analizza e lo si esegue (in questa sequenza).
+</p>
+<p class='vspace'>Il PC dopo ogni fetch viene incrementato di uno. Va bene, ma quando devo rappresentare ad un processore un salto come <em>if a &gt; 0 ... else ...</em> come faccio? Occorre far saltare il PC in un'altra posizione della memoria. A questo scopo esistono le istruzioni di <strong>jump</strong>, condizionato o meno, che servono per spostare il PC in una posizione che non è quella successiva alla posizione attuale, come farebbe in automatico.
+</p>
+<p class='vspace'>L'esecuzione delle istruzioni in sequenza o a seguito di salti è detta <strong>sincrona</strong>, perché avviene in continuo secondo il clock del processore. 
+</p>
+<p class='vspace'>Ma i segnali in arrivo da una periferica non possono essere sincroni, perché arrivano quando vogliono. Si chiamano infatti attività <strong>asincrone</strong>. Il processore deve reagire asincronicamente a questi input: succede che le periferiche <strong>interrompono</strong> il normale flusso dell'esecuzione dei comandi per ottenere attenzione. Quando sono soddisfatte, il processore torna a fare quello che faceva prima.
+</p>
+<p class='vspace'>Da notare che la reazione ad un'interruzione NON è istantanea: il processore si accorge del mondo esterno solo nell'intervallo di tempo tra la fase di execute e la fetch successiva. Dopo la execute, il processore vede se qualcuno ha chiesto la sua attenzione, e se ne occupa.
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2</strong></span>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Chiamate di procedura</strong></span>
+</p>
+<p class='vspace'>Che cosa succede in Fonnoiman se chiamo una procedura o rispondo ad un interruzione? Devo smettere di fare quello che stavo facendo, eseguire la procedura, e poi tornare. Adesso vediamo come.
+</p>
+<p class='vspace'>Una procedura ha un certo numero di parametri formali, e una chiamata di procedura è l'atto di chiamare questa procedura con certi valori dei parametri formali. Per permettere l'esistenza di una procedura, occorre il principio dello <strong>stack</strong>, ovvero una pila realizzata in memoria.
+</p>
+<p class='vspace'>Quando viene chiamata una procedura, salvo tutto ciò che ho di interessante nella CPU attualmente (PC, valori dei registri e così via) in cima allo stack. Poi, sempre nello stack trovo dello spazio per contenere i valori della procedura: il suo PC, i suoi parametri etc. In questo modo, conoscendo l'indirizzo in memoria della cima dello stack, il codice della procedura saprà con certezza che, in modo <em>relativo</em> alla cima dello stack, il primo parametro si troverà 1 word dopo, il secondo 2 word dopo, l'indirizzo a cui impostare il PC alla fine della procedura in un certo altro posto e così via. In questo modo, creo il <strong>contesto di attivazione della procedura</strong>, eseguo il suo codice, e sono in grado di tornare poi al codice che ha chiamato la procedura.
+Ovviamente una procedura può chiamarne un'altra etc. etc.
+</p>
+<p class='vspace'>Nel contesto di attivazione viene salvato anche l'indirizzo di partenza della porzione di stack che riguarda chi ha chiamato quella procedura. Questo serve per recuperare le variabili. Infatti, le variabili di una procedura vengono cercate prima nella porzione di stack a me allocata, poi se non le trovo vado nella porzione di stack relativa a chiamato me e le cerco lì, se non le trovo ancora vado nella porzione di stack relativa a chi ha chiamato il chiamante etc. etc.
+</p>
+<p class='vspace'>Le variabili locali scompaiono quando la procedura termina: non servono più, e lo spazio che occupavano deve essere reso nuovamente disponibile.
+</p>
+<p class='vspace'>Alla fine della procedura, poi, si ripristina il contesto di chi l'aveva chiamata: PC, registri e così via.
+</p>
+<p class='vspace'>La differenza tra chiamata di procedura e risposta ad interrupt è la sincronicità. Una procedura viene sempre chiamata con una CALL. La risposta ad un interrupt invece no, non è predicibile quando avverrà (asincrona rispetto al processore). Quando si risponde ad un'interruzione, si salva tutto il contesto locale e si salta ad un indirizzo che era stato precedentemente associato a quella particolare interruzione. Si esegue il codice di quell'indirizzo, e alla fine si ritorna. Siccome non c'è nessuna CALL, durante la risposta ad un interrupt in genere si disabilitano gli interrupt, perché il processore non può rispondervi: non saprebbe più tornare al programma originale se un interruzione viene interrotta ancora una volta, proprio perché nessuna istruzione CALL ha salvato il PC del programma originale, e quindi il processore non saprebbe più ripristinare il contesto originale. Ci sono sistemi che lo fanno, è vero, ma lasciamo perdere questi casi strani.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<div class='vspace'></div>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri25Febbraio2008)</span></div>
+  </div>
+</body>
+</html>

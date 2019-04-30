@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sicurezza nelle reti - tcpdump </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SNR-tcpdump' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sicurezza nelle reti - tcpdump
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNR-tcpdump?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNR-tcpdump?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SNR-tcpdump-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNR-tcpdump?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNR-tcpdump?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sicurezza nelle reti - tcpdump was last modified on January 05, 2009, at 07:34 PM'>
+							<span style='display:none;'>Sicurezza nelle reti - tcpdump</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sicurezza nelle reti - tcpdump ::</strong>
+</pre><div class='vspace'></div><h2>Abstract</h2>
+<p><strong>tcpdump</strong> serve per mettere la scheda di rete in modalità promiscua e catturare il flusso tcp che gli passa davanti, inclusi i pacchetti non destinati a quella scheda di rete.
+</p>
+<div class='vspace'></div><h2>Catturare roba</h2>
+<p>Possiamo decidere di catturare a schermo, oppure catturare su di un file per successive analisi. La seconda cosa è spesso la più intelligente e la più richiesta all'esame, perché possiamo filtrare il contenuto a nostro piacimento in un secondo momento:
+</p>
+<p class='vspace'><code class='escaped'>tcpdump -w nomefile</code>
+</p>
+<p class='vspace'>Il <strong>nomefile</strong> può essere quello che volete, nessuno si fa problemi sull'estensione, tanto è un file binario.
+</p>
+<div class='vspace'></div><h3>Filtro sull'interfaccia</h3>
+<p><code class='escaped'>tcpdump -i eth0 -w braobaobab</code>
+</p>
+<p class='vspace'>dice a tcpdump di catturare il traffico solo su eth0. Lui si mette di default ad ascoltare sulla scheda con il più basso ID, ma se vogliamo specificarne un'altra, eccoci serviti.
+</p>
+<div class='vspace'></div><h3>Evitare la risoluzione dei nomi</h3>
+<p>Per evitare che tcpdump vada a convertire gli ip in nomi, si mette il flag <strong>-n</strong>. 
+</p>
+<div class='vspace'></div><h3>Quanta roba catturare</h3>
+<p>Se stiamo ascoltando una rete affollata, il file si riempirà alla svelta in modo gigantesco. Per limitare il numero di pacchetti che vogliamo ascoltare in modo automatico, usiamo il flag <strong>-c 40</strong> e tcpdump si fermerà dopo aver salvato 40 pacchetti.
+</p>
+<div class='vspace'></div><h2>Analizzare il traffico catturato</h2>
+<p>La prima cosa da fare è dire a tcpdump di non mettersi ad ascoltare sulla scheda di rete, ma di analizzare un file:
+</p>
+<p class='vspace'><code class='escaped'>tcpdump -n -r nomefile.salvato.prima</code>
+</p>
+<p class='vspace'>Le flag specificate sopra sono tuttora valide, la <strong>-n</strong> è sempre consigliata.
+</p>
+<div class='vspace'></div><h3>Filtrare in base all'indirizzo</h3>
+<p>Di solito ci viene chiesto di filtrare il traffico catturato, per mettere in evidenza solo quello che viene scambiato tra due host. Per far filtrare il traffico, si usano le seguenti <strong>espressioni</strong>:
+</p><ul><li><strong>net &lt;rete&gt;</strong>, ad esempio <strong>net 192.168.1</strong> filtra solamente il traffico relativo alla rete 192.168.1.0/24
+<ul><li><strong>src net &lt;rete&gt;</strong> filtra solo il traffico che ha come SORGENTE la rete specificata
+</li><li><strong>dst net &lt;rete&gt;</strong> filtra solo il traffico che ha come DESTINAZIONE la rete specificata
+</li></ul></li><li><strong>host &lt;host&gt;</strong> filtra solo i pacchetti relativi all'host specificato
+<ul><li><strong>src host &lt;host&gt;</strong> e <strong>dst host &lt;host&gt;</strong> filtrano su host sorgente e destinazione
+</li></ul></li></ul><div class='vspace'></div><h3>Filtrare in base al protocollo</h3>
+<p>Per filtrare in base al protocollo, nell'espressione infiliamo semplicemente <strong>tcp</strong>, <strong>udp</strong>, <strong>icmp</strong>.
+</p>
+<div class='vspace'></div><h3>Filtrare in base alle porte</h3>
+<ul><li><strong>port &lt;porta&gt;</strong> filtra solo i pacchetti riguardanti la porta specificata
+</li><li><strong>portrange 10-1000</strong>' filtra solo i pacchetti riguardanti il range di porte specificato
+<ul><li><strong>src port &lt;porta&gt;</strong> e <strong>dst port &lt;porta&gt;</strong> fanno esattamente quello che suggeriscono
+</li><li><strong>src portrange a-b</strong> e <strong>dst portrange a-b</strong> idem
+</li></ul></li></ul><div class='vspace'></div><h3>Filtri sul contenuto binario (leggi FLAG)</h3>
+<p>Qui si va un po' più nel complicato. Possiamo avere l'esigenza di filtrare certi pacchetti in base a come hanno i flag settati. Per dirlo a tcpdump, occorre fare un filtraggio sul contenuto binario.
+</p>
+<p class='vspace'>Consideriamo l'header TCP. Esso è composto da 20 byte, con il primo numerato a partire da 0. I flag si trovano nel <strong>13°</strong> byte, e hanno un bit a testa. Se guardiamo il byte che contiene i flag, le associazioni tra bit e flag sono le seguenti:
+</p><pre class='escaped'>
+&lt;no&gt; &lt;no&gt; URG ACK PSH RST SYN FIN
+</pre>
+<p>I primi 2 bit sono riservati e non si usano. Quando si settano i flag, si portano a 1 i relativi bit. Ad esempio, per avere SYN e ACK settati, avremmo il 13° byte con questa forma:
+<code class='escaped'> 00010010</code>
+il che, in decimale, si traduce con 2<sup>1</sup> + 2<sup>4</sup> = 18.<br />Se invece vogliamo i flag URG, SYN e FIN, avremmo
+<code class='escaped'> 00100011</code>
+Ok che questa combinazione di flag è un po' strana, però sarebbe 2<sup>0</sup> + 2<sup>1</sup> + 2<sup>5</sup> = 35.
+</p>
+<p class='vspace'>Per dire a tcpdump di fare questo tipo di controlli, usiamo l'espressione <strong>tcp[numerobyte] = &lt;valore&gt;</strong>. Ad esempio, <strong>tcp[13] = 35</strong> controllerà URG, SYN e FIN.
+</p>
+<p class='vspace'>Ma tutto questo NON basta. Il controllo fatto qui sopra dice: controlla che i flag siano solo ed esclusivamente quelli. Se controllo quelli con il flag SYN, vuol dire che tutti quelli che hanno il SYN sì settato, ma anche qualcos'altro, non vengono considerati.
+</p>
+<p class='vspace'>Entrano quindi in gioco le <strong>maschere binarie</strong>. Per vedere che cosa sono, occorre sapere che cosa sia l'AND logico. Ecco due esempi chiarificatori:
+</p><pre class='escaped'>
+1) 01010101 AND
+   00000100 =
+   --------
+   00000100
+
+2) 01010101 AND
+   00000010 =
+   --------
+   00000000
+</pre>
+<p class='vspace'>Basta fare l'AND bit a bit, e si ottiene il risultato. Come è noto, solo 1 AND 1 = 1. E a che cosa ci serve? Ecco a cosa ci serve:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+01010101 AND
+00000100 =
+--------
+00000100
+
+00000100 AND
+00000100 =
+--------
+00000100
+
+11111111 AND
+00000100 = 
+--------
+00000100
+</pre>
+<p class='vspace'>Dovrebbe essere autoesplicativo: se sto controllando un singolo bit, non mi importa che cosa valgano gli altri, perché il risultato dell'AND dipende SOLO da quel bit. Quindi, tornando alla nostra voglia di filtrare tutti i pacchetti che hanno sicuramente il SYN settato, e degli altri bit va bene qualsiasi cosa, noi potremmo dire a tcpdump una cosa così: <strong>tcp[13] &amp; 2 != 0</strong>, che tradotto vuol dire:
+</p><ul><li>fai l'AND bit a bit tra il 13° <del>guerriero</del> byte e 2 in binario
+</li><li>il risultato è diverso da 0? Bene! Se no scartalo.
+</li></ul><div class='vspace'></div><h3>ACHTUNG!</h3>
+<p>Per evitare cose strane con i caratteri <strong>&amp;</strong> etc., che la shell può interpretare come vuole, è meglio mettere questo tipo di filtri tra le virgolette, per avere una cosa come
+</p>
+<p class='vspace'><code class='escaped'>tcpdump -n -i eth0 "tcp[13] &amp; 2 != 0 or tcp[13] &amp; 16 != 0" -r file.dump</code>
+</p>
+<p class='vspace'>Notiamo anche che abbiamo combinato più condizioni con l'operatore logico OR. Ci sono anche gli AND etc.
+</p>
+<div class='vspace'></div><h3>Filtro binario su più byte</h3>
+<p>Qui vogliamo arrivare al massimo della figosità. Possiamo dire a tcpdump cose del genere:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+tcp[0:2] = 80
+</pre>
+<p class='vspace'>e quello che fa è controllare i byte che partono da 0. Quanti ne controlla? 2, perché glielo abbiamo detto noi. Ad esempio, <strong>tcp[6:4]</strong> controlla i byte 6, 7, 8 e 9, cioè 4 a partire da 6.
+</p>
+<p class='vspace'>Sta roba serve per andare a controllare altre cose dell'header tcp, ad esempio i flag di frammentazione e roba del genere.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SicurezzaNelleReti.html'>Torna alla pagina di Sicurezza Nelle Reti</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 05, 2009, at 07:34 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNR-tcpdump?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SNR-tcpdump?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Crittografia - Il cifrario di Hill </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.CifrarioDiHill' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Crittografia - Il cifrario di Hill
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CifrarioDiHill?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CifrarioDiHill?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='CifrarioDiHill-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CifrarioDiHill?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CifrarioDiHill?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Crittografia - Il cifrario di Hill was last modified on May 08, 2008, at 08:03 PM'>
+							<span style='display:none;'>Crittografia - Il cifrario di Hill</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Crittografia - Il cifrario di Hill ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Crittografia</strong></span>
+</p>
+<p class='vspace'>Il cifrario di Hill è basato su di un sistema lineare di m equazioni in m incognite, quindi facilmente risolvibile.
+</p>
+<p class='vspace'>A che servono queste equazioni? Servono per produrre m lettere in output a partire da m lettere di testo in chiaro, aumentando quindi la <strong>diffusione</strong>.
+</p>
+<p class='vspace'>Il testo in chiaro lo vediamo come un array di lettere, così indicizzate: <strong>p0, p1, p2 ... pn</strong>.
+</p>
+<p class='vspace'>Il sistema lineare invece è il seguente:
+</p>
+<div class='vspace'></div><pre> c<sub>1</sub> = k<sub>11</sub>p<sub>1</sub> + k<sub>12</sub>p<sub>2</sub> + ... k<sub>1m</sub>p<sub>m</sub> mod 26
+ c<sub>2</sub> = k<sub>21</sub>p<sub>1</sub> + k<sub>22</sub>p<sub>2</sub> + ... k<sub>2m</sub>p<sub>m</sub> mod 26
+ ..............................
+ c<sub>m</sub> = k<sub>m1</sub>p<sub>1</sub> + k<sub>m2</sub>p<sub>2</sub> + ... k<sub>mm</sub>p<sub>m</sub> mod 26
+</pre><p class='vspace'>Questo vuol dire che le lettere da c<sub>1</sub> a c<sub>m</sub> saranno l'output delle lettere da p<sub>1</sub> a p<sub>m</sub>.
+</p>
+<p class='vspace'>Visto che scritto così è caotico, facciamo il caso di <strong>m = 2</strong>:
+</p>
+<div class='vspace'></div><pre> c<sub>1</sub> = k<sub>11</sub>p<sub>1</sub> + k<sub>12</sub>p<sub>2</sub> mod 26
+ c<sub>2</sub> = k<sub>21</sub>p<sub>1</sub> + k<sub>22</sub>p<sub>2</sub> mod 26
+</pre><p class='vspace'>Per rappresentarlo in modo compatto, lo possiamo vedere in forma matriciale:
+</p>
+<div class='vspace'></div><pre> &#9484;          &#9488; &#9484;    &#9488;   &#9484;    &#9488;
+ &#9474; k11  k12 &#9474; &#9474; p1 &#9474;   &#9474; c1 &#9474;
+ &#9474;          &#9474; &#9474;    &#9474; = &#9474;    &#9474; mod 26
+ &#9474; k21  k22 &#9474; &#9474; p2 &#9474;   &#9474; c2 &#9474;
+ &#9492;          &#9496; &#9492;    &#9496;   &#9492;    &#9496;
+</pre><p class='vspace'>Per risolvere codesta cosa, moltiplichiamo il <strong>vettore colonna</strong> per la matrice. Questo vuol dire che, come dicevo sopra, faccio:
+</p><pre> c<sub>1</sub> = k<sub>11</sub>p<sub>1</sub> + k<sub>12</sub>p<sub>2</sub> mod 26
+ c<sub>2</sub> = k<sub>21</sub>p<sub>1</sub> + k<sub>22</sub>p<sub>2</sub> mod 26
+</pre><p class='vspace'>Questo è il modo in cui si segna la moltiplicazione di una matrice per una colonna, ed è il modo con cui si rappresenta sotto forma matriciale un sistema lineare di m equazioni.
+</p>
+<p class='vspace'>In modo <strong>alternativo</strong>, se decido di <strong>non</strong> usare la forma del sistema lineare, posso usare la <strong>matrice trasposta</strong>, ma mettere il testo in chiaro in una matrice <strong>[1 x 2]</strong>.<br />Tradotto graficamente, è così:
+</p>
+<div class='vspace'></div><pre>            &#9484;          &#9488;
+ &#9484;       &#9488;  &#9474; k11  k21 &#9474;   &#9484;       &#9488;
+ &#9474; p1 p2 &#9474;  &#9474;          &#9474; = &#9474; c1 c2 &#9474; mod 26
+ &#9492;       &#9496;  &#9474; k12  k22 &#9474;   &#9492;       &#9496;
+            &#9492;          &#9496; 
+</pre><p class='vspace'>In <strong>questo</strong> caso, con i valori <strong>k</strong> disposti in questo modo, le moltiplicazioni sono sempre le stesse. Da notare quindi che i valori <strong>k</strong> sono stati trasposti, ovvero nella prima <strong>colonna</strong> c'è quella che prima era una riga, ovvero i primi 2 valori di <strong>k</strong>, e nella seconda <strong>colonna</strong> c'è la seconda riga.
+</p>
+<p class='vspace'>Occorre quindi mettersi d'accordo su come è rappresentata la matrice, perché nel primo caso essa è la diretta rappresentazione di un sistema lineare, su cui è basato il cifrario di Hill. Nel secondo, non lo è affatto, ma è la sua trasposta. I conti escono tuttavia uguali.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Decrittografia</strong></span>
+</p>
+<p class='vspace'>La decrittografia è semplice: devo moltiplicare la <strong>matrice inversa</strong> per il mio vettore colonna di testo cifrato, ed ottenere così il vettore colonna di testo in chiaro.
+</p>
+<p class='vspace'>Quindi, se diamo alle matrici nomi di lettere maiuscole, abbiamo:
+</p><pre> C = KP
+ P = CK<sup>-1</sup>
+</pre><p class='vspace'>E come si trova la matrice inversa di una data matrice, sempre tenendo in considerazione il nostro caro modulo 26? Ricordiamo che il &#916; deve essere diverso da 0, per avere l'inversa.
+</p>
+<p class='vspace'>Il barbatrucco è semplice, <strong>se ho &#916; = 1</strong>:
+</p><ol><li>inverto gli elementi della diagonale principale, ovvero quella che va dall'alto in basso, e da sx a dx
+</li><li>gli altri due elementi li sostituisco con il loro <strong>inverso additivo</strong> in modulo 26, ovvero quel numero che, se lo sommo al mio numero, ottengo il neutro della somma, cioè 0
+</li></ol><p class='vspace'>Facciamo un esempio per intenderci, per vedere com'è la matrice inversa.
+</p>
+<div class='vspace'></div><pre> &#9484;      &#9488;     &#9484;        &#9488;     &#9484;       &#9488;
+ &#9474; 3  2 &#9474;     &#9474; 5  2<sup>-1</sup> &#9474;     &#9474; 5  24 &#9474;
+ &#9474;      &#9474; =&gt;  &#9474;        &#9474; =&gt;  &#9474;       &#9474;
+ &#9474; 7  5 &#9474;     &#9474; 7<sup>-1</sup>  3 &#9474;     &#9474; 19  3 &#9474;   
+ &#9492;      &#9496;     &#9492;        &#9496;     &#9492;       &#9496; 
+</pre><p class='vspace'>Infatti, per ottenere 0 a partire da 2, in modulo 26, devo sommare 24 (ovvero, sottrarre 2 a 26). Idem per il 7: sottraggo 7 a 26, ed ottengo 19.
+</p>
+<p class='vspace'>Poi si risolve il sistema lineare esattamente come prima.
+</p>
+<p class='vspace'>La cosa funziona anche per la matrice trasposta, ovviamente, ricordandosi di mettere la matrice 1x2 prima etc. etc.
+</p>
+<p class='vspace'><strong>Se invece il &#916; NON è 1,</strong> (e ovviamente non è 0...), devo fare altrimenti:
+</p><ol><li>inverto ancora gli elementi sulla diagonale principale
+</li><li>degli altri due prendi l'inverso additivo
+</li><li>moltiplico tutta la matrice per l<strong>'inverso moltiplicativo del &#916;</strong>
+</li></ol><p class='vspace'>Che cos'è l'inverso moltiplicativo del &#916;? È quel numero che risolve l'equazione
+</p><pre> &#916; * x = 1 mod 26
+</pre><p class='vspace'>Vi ricordo che, per avere un inverso in Z<sub>26</sub>, occorre che &#916; e 26 siano coprimi.
+</p>
+<p class='vspace'>Per esempio, l'inverso della matrice
+</p><pre>  5  8     9   2
+ 17  3  è  1  15
+</pre><p class='vspace'>Notate come mi sono stufato di fare la grafichina bella in ASCII.
+</p>
+<p class='vspace'>Come ho ottenuto sta roba? Beh, come ho appena detto, ho invertito gli elementi della diagonale principale e ho preso l'inverso additivo di 8 e 17:
+</p><pre>  3    -8   3  18
+  -17   5 = 9   5
+</pre><p class='vspace'>Il &#916; della matrice originaria è 5*3 - 8*17 = -121, che in modulo 26 è 9.
+</p>
+<p class='vspace'>L'inverso del &#916; è quindi quel numero che, moltiplicato per &#916;, mi dà 1.
+</p><pre> &#916; * x = 1 mod 26
+</pre><p class='vspace'>Si dà il caso che 9 * 3 = 27 = 1 mod 26, quindi &#916;<sup>-1</sup> = 3
+</p>
+<p class='vspace'>E allora moltiplico il tutto, sempre modulando con il 26:
+3 18        3*3 18*3   9  54             9  2
+9  5  * 3 = 9*3  3*5 = 27 15 modulo 26 = 1 15 
+</p>
+<p class='vspace'>Oh, siamo felici!:) Checcarinoooo:)
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Attacchi crittografici</strong></span>
+</p>
+<p class='vspace'>Se m=2, Hill nasconde la frequenza dei bigrammi. Se m = 3, nasconde anche quella dei trigrammi etc. etc.
+</p>
+<p class='vspace'>Questo vuol dire che è ben resistente ad un attacco in cui si conosce solo il testo cifrato, perché non c'è analisi della frequenza che tenga.
+</p>
+<p class='vspace'>Ma è invece vulnerabile ad un attacco known plaintext, ovvero quando ho una coppia testo in chiaro - testo cifrato. Anzi, ad essere precisi, qui mi servono <strong>m coppie</strong> di testo in chiaro e cifrato.
+</p>
+<p class='vspace'>Il motivo è piuttosto semplice. Qui parliamo di matrici, che indico con le lettere maiuscole.
+</p><ul><li><strong>X</strong> è la matrice dei miei m testi in chiaro, messi per colonna
+</li><li><strong>Y</strong> è la matrice dei corrispondenti m testi cifrati, messi anche loro per colonna
+</li><li><strong>K</strong> è la matrice della chiave, a me ignota
+</li></ul><p class='vspace'>Sappiamo come è fatto Hill:
+</p><pre> Y = K * X
+</pre><p>dove K * X è una moltiplicazione per matrici.
+</p>
+<p class='vspace'>Ma se è vero questo, allora è sicuramente vero che:
+</p><pre> Y * X<sup>-1</sup> = K * X * X<big>-1</big> =&gt; Y * X<sup>-1</sup> = K
+</pre><p>Infatti, se ho X, so anche calcolare la sua inversa (se possibile), e se moltiplico a destra e a sinistra, ottengo esattamente la cosa qui sopra, ovvero la matrice K!
+</p>
+<p class='vspace'>Spiegandomi meglio:
+</p><ul><li>io, conoscendo la matrice <strong>X</strong> dei testi in chiaro, so anche trovarne l'inversa.
+</li><li>una matrice per la sua inversa mi dà la matrice identità
+</li><li>la matrice identità è quella matrice che, moltiplicata per qualsiasi altra matrice, mi dà l'altra matrice. È l'equivalente dell'1 nella moltiplicazione
+</li><li>Ecco quindi che <strong>X * X<sup>-1</sup> = I</strong>, dove <strong>I</strong> è la matrice identità
+</li><li>In generale Hill funziona così: <strong>Y = K * X</strong>
+</li><li>E allora moltiplico entrambi i membri dell'equazione per <strong>X<sup>-1</sup></strong>
+</li><li>Ottengo:  <strong>Y * X<sup>-1</sup> = K * X * X<big>-1</big></strong>
+</li><li>So che <strong>X * X<sup>-1</sup></strong> = I, quindi posso ben dire che <strong>Y * X<sup>-1</sup> = K * I = K</strong>, visto che <strong>K * I = K</strong>
+</li></ul><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 08, 2008, at 08:03 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CifrarioDiHill?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CifrarioDiHill?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

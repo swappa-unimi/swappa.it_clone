@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Algoritmi e strutture dati - Bin Packing</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='BinPacking.html' title='Algoritmi e strutture dati - Bin Packing'>Algoritmi e strutture dati - Bin Packing</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Bin Packing ::</strong>
+</pre><div class='vspace'></div><h3>Problema</h3>
+<p>Il problema del Bin Packing è il seguente: 
+</p>
+<div class='vspace'></div><div class='indent'>dati n oggetti di peso p<sub>1</sub>, ... , p<sub>n</sub>, 
+</div><div class='indent'>bisogna partizionare gli n oggetti in contenitori (bin) di capacità C, 
+</div><div class='indent'>in modo tale che il numero totale K di contenitori utilizzati sia minimo.
+</div><p class='vspace'>Il problema è più o meno simile a quello dello zaino, con la differenza che se in quest'ultimo dovevo portar via il maggior numero di oggetti in uno spazio limitato, nel Bin Packing devo <em>traslocare</em> tutto utilizzando il minor numero di contenitori possibili.
+</p>
+<p class='vspace'>Questo problema può essere risolto progettando un algoritmo Greedy.
+</p>
+<div class='vspace'></div><h3>Soluzione</h3>
+<h4>Primo passo</h4>
+<p>Come prima cosa devo definire la struttura delle variabili <strong>P</strong> che definiscono il problema e la struttura della soluzione <strong>S</strong>.
+</p>
+<p class='vspace'><span style='font-size:120%'><strong>P</strong></span> è una struct composta da:
+</p><ul><li>n : numero degli oggetti <em>(intero)</em>
+</li><li>p<sub>i</sub> : peso dell'oggetto i, con i che va da 1 a n <em>(vettore di interi)</em>
+</li><li>C : capacità del singolo contenitore <em>(intero)</em>
+</li></ul><p class='vspace'>Da notare che se n non fosse noto a priori, non potrei definire p<sub>i</sub> come vettore perché non saprei con quante posizioni dichiararlo. In questo caso dovrei utilizzare una lista.
+</p>
+<p class='vspace'><span style='font-size:120%'><strong>S</strong></span> è una struct composta da:
+</p><ul><li>k : numero dei contenitori utilizzati <em>(intero)</em>
+</li><li>bin[i] = h : un vettore in cui ad ogni oggetto i è associato il pacchetto h in cui esso è contenuto (con h compreso tra i e k) <em>(vettore di interi)</em>
+</li></ul><div class='vspace'></div><h4>Secondo passo</h4>
+<p>Per risolvere un problema di tipo Greedy bisogna utilizzare due criteri:
+</p><ol><li>il criterio di ottimo (o ottimalità), che indica come deve avvenire la selezione degli oggetti in modo che si ottimizzi la soluzione;
+</li><li>costruzione della soluzione, che tiene conto solo di quei risultati che rispettano i vincoli del problema, che siano cioè ammissibili.
+</li></ol><p class='vspace'><strong>Criterio di ottimo</strong><br />Considero gli oggetti per peso decrescente.<br />Il principio è che scegliendo per ultimi gli oggetti più piccoli, questi si collocheranno più facilmente negli spazi ancora liberi.
+</p>
+<p class='vspace'><strong>Costruzione soluzione</strong><br />In generale, mentre costruisco la soluzione all'i-simo oggetto dovrò sapere:
+</p>
+<p class='vspace'><span style='font-size:120%'><strong>S</strong></span>:
+</p><ul><li>k<sup>'</sup> : numero dei contenitori utilizzati fino a questo momento
+</li><li>B<sub>h</sub> = C - &#8721;p<sub>i</sub> : la capacità residua del contenitore, calcolata come differenza tra la capacità totale e la sommatoria dei pesi degli oggetti ivi già collocati
+</li></ul><p class='vspace'>Quindi, indipendentemente dal criterio di ottimo utilizzato, dovrò selezionare il contenitore h<sup>'</sup> con B<sub>h<sup>'</sup></sub> &#8805; p<sub>i</sub> (ovvero un contenitore con spazio sufficiente per metterci dentro l'oggetto). Posso avere ora tre casi:
+</p><ol><li>h<sup>'</sup> = NULL : se non c'è posto nei contenitori considerati, ne apro uno nuovo
+</li><li>esiste un unico h<sup>'</sup> : allora metto l'oggetto in quel contenitore (Bin[i] = h<sup>'</sup>)
+</li><li>ho tanti h<sup>'</sup> tra cui scegliere : allora
+<ol><li>scelgo di prediligere l'aspetto computazionale (quindi l'efficienza dell'algoritmo), disinteressandomi del risultato migliore ma seguendo la logica del "fai più in fretta possibile". Soluzione: algoritmo NFD (vedi dopo)
+</li><li>scelgo di prediligere l'efficacia dell'algoritmo, in modo che rispetti la funzione obiettivo, applicando ancora il criterio di ottimo. Soluzione: algoritmo BFD
+</li><li>scelgo una via di mezzo tra le due soluzioni precedenti. Soluzione: algoritmo FFD.
+</li></ol></li></ol><div class='vspace'></div><h4>Terzo passo</h4>
+<p>Ecco ora le implementazioni in pseudocodice degli algoritmi elencati prima.
+</p>
+<div class='vspace'></div><h5>NFD</h5>
+<p>NFD sta per Next Fit Decreasing, e prevede la scelta del contenitore k<sup>'</sup> corrente per metterci dentro l'oggetto. Se ci sta, bon. Se non ci sta ne apre un altro e ce lo mette dentro.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+soluzione NFD (problema P)
+{
+   int i, b; // i sono gli oggetti, b i contenitori
+   soluzione S;
+
+   inizializzaSol(S); // bin[i]=0, cap[b]=0, K=0
+   { ordina gli oggetti per p'_i_' tali che p'_1_' &amp;#8805; ... &amp;#8805; p'_n_' }
+   S.k = 1; // apro il primo contenitore
+   S.bin[1] = 1; 
+   S.cap[1] = p1; // metto il primo oggetto nel primo contenitore
+
+   i = 2; // considero il secondo oggetto
+   b = 1;
+
+   while( i &lt;= P.n ) {
+      if(S.cap[b] &lt; P.p'_i_') b++; //se i non ci sta nel contenitore, ne apro uno nuovo
+      S.bin[i] = b; 
+      S.cap[b] -= P.p'_i_';
+      i++;
+   }
+
+   S.k = b;
+   return(S);
+}
+</pre>
+<p class='vspace'>Per la complessità dell'algoritmo, consideriamo i vari apporti:
+</p><ul><li>inizializzazione: O(n) perché devo ripetere n volte l'assegnamento del valore
+</li><li>ordinamento: se utilizzo un matchsort, allora avrò O(n logn)
+</li><li>ciclo while: ripeto n-1 volte operazioni elementari, quindi O(n)
+</li></ul><p class='vspace'>La complessità dell'algoritmo è dunque di O(n logn).
+</p>
+<div class='vspace'></div><h5>FFD</h5>
+<p>FFD sta per First Fit Decreasing, e prevede la scelta del primo contenitore k<sup>'</sup> che trova con abbastanza spazio libero per metter dentro l'oggetto. Il codice si distingue sostanzialmente dal precedente solo all'interno del ciclo while.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+soluzione FFD (problema P)
+{
+   int i, b; // i sono gli oggetti, b i contenitori
+   soluzione S;
+
+   inizializzaSol(S); // bin[i]=0, cap[b]=0, K=0
+   { ordina gli oggetti per p'_i_' tali che p'_1_' &amp;#8805; ... &amp;#8805; p'_n_' }
+   S.k = 1; // apro il primo contenitore
+   S.bin[1] = 1; 
+   S.cap[1] = p1; // metto il primo oggetto nel primo contenitore
+
+   i = 2; // considero il secondo oggetto
+
+   while( i &lt;= P.n ) {
+      b = 1;
+      while(b &lt; S.k &amp;&amp; S.cap[b] &lt; P.p'_i_') b++; // *nota
+      S.bin[i] = b; 
+      S.cap[b] -= P.p'_i_';
+      if(S.k &lt; b) S.k++; //aggiorna la lista dei contenitori usati
+      i++;
+   }
+   return(S);
+}
+</pre>
+<p class='vspace'><em>nota</em>: avviene una scansione di tutti i contenitori aperti, finché non se ne trova uno con abbastanza spazio libero da farci stare dentro i. Se non lo trova, l'ultimo <code class='escaped'>b++</code> eseguito corrisponde all'apertura di un nuovo contenitore. La lista dei contenitori usati verrà aggiornata poco più sotto.
+</p>
+<p class='vspace'>Per la complessità dell'algoritmo, consideriamo i vari apporti:
+</p><ul><li>inizializzazione: O(n) perché devo ripetere n volte l'assegnamento del valore
+</li><li>ordinamento: se utilizzo un matchsort, allora avrò O(n logn)
+</li><li>ciclo while: nel caso pessimo dovrò creare un nuovo contenitore per ogni oggetto, quindi ripeterò n volte n operazioni elementari. La complessità sarà di O(n<sup>2</sup>).
+</li></ul><p class='vspace'>La complessità dell'algoritmo è dunque di O(n<sup>2</sup>).
+</p>
+<div class='vspace'></div><h5>BFD</h5>
+<p>BFD sta per Best Fit Decreasing, e prevede la scelta tra i contenitori aperti di quello che minimizza la capacità residua dopo l'inserimento dell'oggetto i. Ad esempio se ho un oggetto di peso 5 e ho un contenitore che lascerebbe libero 3 e un altro 8, sceglierò il primo).
+</p>
+<div class='vspace'></div><pre class='escaped'>
+soluzione BFD (problema P)
+{
+   int i, b; // i sono gli oggetti, b i contenitori
+   soluzione S;
+
+   inizializzaSol(S); // bin[i]=0, cap[b]=0, K=0
+   { ordina gli oggetti per p'_i_' tali che p'_1_' &amp;#8805; ... &amp;#8805; p'_n_' }
+   S.k = 1; // apro il primo contenitore
+   S.bin[1] = 1; 
+   S.cap[1] = p1; // metto il primo oggetto nel primo contenitore
+
+   i = 2; // considero il secondo oggetto
+
+   while( i &lt;= P.n ) {
+      b = 1;
+      m = 0;
+      M = C;
+      while(b &lt;= S.k) {
+         if(S.cap[b] - P.p'_i_' &lt; M) {
+            m = b;
+            M = S.cap[b] - p'_i_';
+         }
+         b++;
+      }
+      if(m == 0) { // se l'oggetto non ci sta in nessun contenitore..
+         S.k++;    // ne apro uno nuovo
+         m = S.k;
+      }
+      S.bin[i] = m;
+      S.cap[n] -= P.p'_i_';
+      i++;
+   }
+   return(S);
+}
+</pre>
+<p class='vspace'>Per la complessità dell'algoritmo, consideriamo i vari apporti:
+</p><ul><li>inizializzazione: O(n) perché devo ripetere n volte l'assegnamento del valore
+</li><li>ordinamento: se utilizzo un matchsort, allora avrò O(n logn)
+</li><li>ciclo while: nel caso pessimo dovrò creare un nuovo contenitore per ogni oggetto, quindi ripeterò n volte n operazioni elementari. La complessità sarà di O(n<sup>2</sup>).
+</li></ul><p class='vspace'>La complessità dell'algoritmo è dunque di O(n<sup>2</sup>).
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/BinPacking)</span></div>
+  </div>
+</body>
+</html>

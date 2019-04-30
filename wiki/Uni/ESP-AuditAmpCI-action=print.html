@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Elementi di Sicurezza e Privatezza - Audit&amp;CI</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='ESP-AuditAmpCI.html' title='Elementi di Sicurezza e Privatezza - Audit&amp;CI'>Elementi di Sicurezza e Privatezza - Audit&amp;CI</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Elementi di sicurezza e privatezza</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Audit e controllo delle intrusioni ::</strong>
+</pre><div class='vspace'></div><h3>Audit di sicurezza</h3>
+<p>Gli audit di sicurezza vengono adottati per due tipologie di eccezioni:
+</p>
+<div class='vspace'></div><ol><li>Analizzare tutte le politiche e pratiche che sono state utilizzate per valutare i rischi creati da queste azioni;
+</li><li>Analizzare tutti quei processi che hanno come obiettivo di determinare se ci sono stati problemi relativi alla sicurezza.
+</li></ol><p class='vspace'>Per questi tipi di audit vi sono diverse aree di intervento:
+</p>
+<div class='vspace'></div><ul><li><em>Sicurezza organizzativa:</em> verifica delle responsabilità e politiche aziendali;
+</li><li><em>Sicurezza logica e fisica:</em>
+<ul><li>valutazione della protezione per quanto riguarda accessi non autorizzati;
+</li><li>valutazione della protezione da eventi di natura umana o ambientale (contro catastrofi naturali);
+</li><li>valutazione protezione dell'infrastruttura della rete;
+</li><li>valutazione di server e client.
+</li></ul></li><li><em>Sicurezza delle applicazioni:</em>verifica delle protezioni per i sistemi applicativi contro rischi di tipo intrinseco e implementativi.
+</li></ul><p class='vspace'>Bisogna effettuare anche un'attenta analisi dei rischi a cui si è soggetti e dunque bisogna stendere una serie di punti necessari per evitare tali rischi:
+</p>
+<div class='vspace'></div><ul><li>Meccanismi per tenere sotto controllo tutti i possibili rischi;
+</li><li>Valutazione della probabilità per ogni determinato rischio;
+</li><li>Determinare tutte le contromisure necessarie;
+</li><li>Sviluppo di tali contromisure per contenere gli effetti di un rischio;
+</li><li>Determinazione della gravità di ogni singolo rischio e assegnamento delle contromisure adatte.
+</li></ul><p class='vspace'>Segue poi una fase di preparazione, che serve a stabilire a che livello si applicherà l'audit di sicurezza. I possibili livelli sono di host, di server, di firewall o di rete. Occore poi una stesura di un <em>report</em> dove vengono raccolte diverse informazioni relative agli audit, tali informazioni dovranno poi essere conservate in modo sicuro. In tale report poi vanno conservati i risultati delle diverse analisi sul sistema che potranno essere confrontati con report precendenti per valutare il grado si sicurezza; successivamente si stila una lista di possibili problemi e contromisure adottate.<br />Una componente fondamentale nell'ambito dell'auditing è <em>l'analisi delle storia degli eventi</em>, utile per determinare come e quando si sono svolte possibili violazioni alla sicurezza. Per poter garantire l'analisi di tali informazioni dobbiamo garantire la presenza di tutte le richieste di accesso effettuate dagli utenti e di tutte le loro attività svolte. Queste informazioni dovranno dunque essere mantenute in un file di <strong>log</strong>, il cui formato può cambiare da sistema a sistema.<br />Le informazioni che devono essere presenti all'interno del log per poter effettuare l'analisi sono:
+</p>
+<div class='vspace'></div><ul><li><em>Soggetto</em>,colui che effettua le richieste di accesso;
+</li><li><em>Oggetto</em> richiesto dal soggetto;
+</li><li><em>Operazione</em> che il soggetto vorrà compiere su un determinato oggetto;
+</li><li><em>Tempo</em>, ovvero quando la richiesta è stata effettuata;
+</li><li><em>Locazione</em>, ovvero il luogo da dove proviene la richiesta;
+</li><li><em>Risposta</em>del sistema del controllo dell'accesso;
+</li><li><em>Quantità risorse</em> impiegate dal sistema;
+</li><li><em>Esisto</em> dell'operazione e se negata spiegare il motivo.
+</li></ul><p class='vspace'>Da notare che tutte queste informazioni potrebbero essere spezzate su più log.<br />
+L<em>'analisi</em> di un audit log potrebbe diventare un'operazione molto lunga per diversi motivi: i dati di audit potrebbero non rivelare tutte le violazioni possibili, l'attacante potrebbe compiere una violazione su un periodo di tempo molto lungo oppure l'analisi dell'audit potrebbe essere eseguita solo se ci sono effetti visibili (memoria insufficiente, processi rallentati, file non accessibili, ecc). Occorono dunque dei tool che eseguano delle analisi automatiche. Lo scopo di questi tool è proprio automatizzare la fase di acquisizione dei log file e stilare, in un secondo momento, un report da presentare all'utente, sarà quest'ultimo a stabilire se vi è stata una violazione oppure no.
+</p>
+<div class='vspace'></div><h3>Intrusion Detection System (IDS)</h3>
+<p>Questo sistema non intende sostituire i normali controlli, ma cerca di scoprire i loro i fallimenti (è dunque una combinazione fra sistemi base e i tool visti prima). Generalmente chi entra abusivamente in un sistema compie delle operazioni che un utente normale non effettuerebbe e i loro attacchi spesso (ma non sempre) sono rivolti ai sistemi di controllo dell'accesso.<br />
+</p><div><img src='../uploads/Uni/IDS.jpg' alt='' title='' /></div>
+<p class='vspace'>Questo è un esempio semplice dell'impiego di un IDS, egli monitora il sistema di cui bisogna garantire la sicurezza e restituisce report che sarà analizzato dall'amministratore. Affinchè il sistema funzioni, dunque che sia garantita la sicurezza, l'IDS dove possedere diverse proprietà:
+</p>
+<div class='vspace'></div><ul><li>Deve poter essere eseguito senza la supervisione umana, dunque i sistemi IDS non devono essere accessibili dagli utenti;
+</li><li>Il suo funzionamento interno dovrebbe essere analizzato dall'esterno dagli amministratori;
+</li><li>Deve essere resistente ai guasti;
+</li><li>Deve richiedere un minimo di overhead;
+</li><li>Deve essere facilmente adattabile alle esigenze del sistema da monitorare (Es: quando si cambiano i comportamenti di sistemi o di configurazione della rete);
+</li><li>Deve far fronte ai cambiamenti del sistema che stava monitorando.
+</li></ul><p class='vspace'>Gli IDS si possono classificare in due categorie per i metodi utilizzati:
+</p>
+<div class='vspace'></div><ol><li><strong>Anomaly detection:</strong>verificano le possibili intrusioni con conoscenze a posteriori, ovvero ogni utente possiede un profilo dove sono memorizzate le operazioni che generalmente compie. Si riscontra un'anomalia e dunque una possibile intrusione quando un utente compie delle operazioni non abituali (magari effettuate da un intruso con l'identità dell'utente in questione). Questi tipi di IDS sono in grado di riconoscere nuovi tipi di attacco. Lo svantaggio principale degli Anomaly detection è che in alcuni casi la creazione di profili non è banale, in quanto bisogna anche scegliere che tipo azioni bisogna misurare per poi riscontrare azioni anomale.
+</li><li><strong>Misuse detection:</strong>confronta gli eventi con degli schemi predefiniti di attacco, se riscontra delle operazioni che corrispondono a violazioni emette un particolare avviso. Conoscenza a <em>priori</em>. I problemi principali del Misuse detection è che bisgona gestire la conoscenza degli attacchi che si vogliono inserire negli schemi, dunque problemi legati a queste attività possono essere anche l'aggiornamento degli attacchi conosciuti. Un altro problema è che una descrizione potrebbe corrispondere a più attacchi.
+</li></ol><p class='vspace'>Gli IDS si possono classificare anche per <em>Host-based</em>, se opera su una singola macchina (sono dunque dedicati in quando monitora una sola macchina alla volta) e <em>Network-based</em> che controllano tutto il traffico di rete. Da notare che questi tipi di IDS sono ortogonali fra loro, ovvero possono essere usati in combinazione.<br />Gli host-based (HIDS) sono in grado di riscontrare la presenza di eventuali rootkit (ovvero la presenza di dispositivi che compromettono la macchina in questione). Lo svantaggio principale degli host-based è che si necessiterbbe di un IDS per ogni macchina, in quanto non ne disponiamo di uno distribuito. Un altro svantaggio potrebbe essere quello che se un attaccante entra in possesso di una macchina potrebbe modificare l'IDS e il suo relativo file di log. Un ultimo svantaggio è che proprio per il fatto che abbiamo un IDS dedicato (su una singola macchina) si ha una visione locale dell'attacco, dunque non si tiene conto di ciò che accade nella rete.<br />I Network-IDS (NIDS) invece, proprio per il fatto che lavorano a livello di rete, cercano eventuali violazioni a livello di rete, di pattern di connessione inusuali o di stringhe di attacco dei payload dei pacchetti. Gli svantaggi principali di un NIDS sono che non possono controllare traffico di rete crittato (es il VPN), non tutti gli attacchi provengono dalla rete e che memorizza ed elabora una grande quantità di traffico.
+</p>
+<div class='vspace'></div><h4>Anomaly vs Misuse</h4>
+<div><img src='../uploads/Uni/Immagine1.jpg' alt='' title='' /></div>
+<p class='vspace'>Come si può vedere dall'immagine esistono casi che in cui si riscontrano <strong>Falsi Negativi</strong>, ovvero casi in cui un'analisi intrusiva non riscontra la presenza di un attaccante. Questi casi sono ovviamente più pericolosi dei <strong>Falsi Positivi</strong>, casi in cui l'analisi potrebbe riscontrare la presenza di un intruso, che in realtà non c'è. Nei Falsi Positivi si hanno comunque delle conseguenze non desiderate, come interruzioni dei servizi che non sono necessarie, ma che comunque sono migliori delle conseguenze che si avrebbero nei Falsi Negativi dove a nostra insaputa è presente un attaccante nel sistema.
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/ESP-AuditAmpCI)</span></div>
+  </div>
+</body>
+</html>

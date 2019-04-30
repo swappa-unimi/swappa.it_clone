@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ruoli, responsabilità e standard nell'incident management</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RuoliResponsabilit%C3%A0EStandardNellincidentManagement.html' title='Ruoli, responsabilità e standard nell'incident management'>Ruoli, responsabilità e standard nell'incident management</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ruoli, responsabilità e standard nell'incident management ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Ove non meglio specificato, tutti i testi tra virgolette vanno intesi come citazioni letterali dalle slide del prof <a class='wikilink' href='DarioForte.html'>Dario Forte</a>, 2008.
+</p></div>
+<div class='vspace'></div><h2>Ruoli e responsabilità</h2>
+<p>Pianificare i <strong>ruoli</strong> e le <strong>responsabilità</strong> all'interno di un <em>team di risposta agli incidenti informatici</em> (CSIRT) è un'attività essenziale che andrebbe effettuata in fase di <em>preparazione</em> in modo molto attento, anche perché la sua efficacia potrà essere messa alla prova solo attraverso simulazioni o - più probabilmente - durante la risoluzione di casi reali. Va detto inoltre che nonostante la definizione di ruoli e responsabilità non sia un processo obbligato dalla legge, lo è per la stesura delle policy interne.
+</p>
+<p class='vspace'>Vediamo come si colloca un team di risposta all'interno di un organigramma aziendale:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/GII-organigramma.gif' alt='' title='' /></div>
+<p class='vspace'>Nello schema individuiamo:
+</p><ul><li>il <strong>top management</strong>, che ha la responsabilità di garantire la sicurezza in ambito informatico;
+</li><li>il <strong>security manager</strong> che riferisce gli sviluppi al top management. Il termine <em>sicurezza</em> in questo caso è inteso in senso ampio, dato che gli aspetti più tecnici sono gestiti nei livelli più bassi
+</li><li>lo <strong>CSIRT</strong> (acronimo di <em>Computer Security Incident Response Team</em>) che si occupa dell'incidente a livello tecnico. Notare che in passato ci si riferiva ad essi col termine "CERT", ora legato al team di una specifica università
+</li><li><strong>Legal</strong>, che si occupa dell'incidente e del suo impatto solo a livello legale
+</li><li><strong>Organization/PR</strong> che interviene in caso di crisi per quanto riguarda le Public Relation
+</li><li><strong>Terze parti</strong>, ovvero società di consulenza esterne, legali esterni, polizia e magistrati che aiutano il personale interno a svolgere il lavoro
+</li></ul><p class='vspace'>Nei capitoli successivi studieremo nel dettaglio le figure che gravitano attorno al team di risposta dell'incidente.
+</p>
+<div class='vspace'></div><h3>Core team di un IRT</h3>
+<p>Il cuore di un IRT (<em>Incident Response Team</em>) è composto dalle seguenti figure (dalle slide di Dario Forte, 2008):
+</p>
+<div class='vspace'></div><ul><li>"<strong>CSIRT leader</strong>: il manager responsabile delle operazioni giornaliere del team"
+</li><li>"<strong>Incident handlers</strong>: personale che riceve segnalazioni, esamina i dati dell’incidente, correla gli eventi e reagisce all’incidente, sia sul posto che remotamente". Non è detto che sia sempre il primo ad essere avvisato dell'incidente, ad esempio a volte la prima notifica arriva alle forze dell'ordine
+</li><li>"<strong>Database administrator</strong>: il volume dei dati ricevuti tipicamente dall’IRT è elevato e necessità di un database per venire correttamente salvato e processato. Un db administrator è vitale per soddisfare questo requisito". Questa figura, che ha praticamente a che fare con la memoria storica del sistema, in alcuni casi può coincidere con l'incident handler
+</li><li>"<strong>Legal counsel</strong>: questo esperto è responsabile nella conduzione delle operazioni del team in base alle vigenti leggi e normative in vigore e fornisce utili consigli sul comportamento da seguire". Può essere sia interno che esterno e viene generalmente consultato solo nei casi più complessi o particolari.
+</li></ul><div class='vspace'></div><h3>Professionisti o esperti</h3>
+<p>Al core team dello CSIRT si affiancano comunemente altre figure di professionisti o esperti, sia interni che esterni, che mettono a disposizione le proprie capacità e conoscenze. Vediamone alcuni:
+</p>
+<div class='vspace'></div><ul><li><em>Esperti su meccanismi a bomba logica</em>, capaci di rilevare e far fronte ad eventuali attacchi di questo tipo o simili azioni di sabotaggio
+</li><li><em>Specialisti di settore</em>, ad esempio i Sistemisti, che possono essere chiamati in operazioni di sistemi, reti, applicativi, etc...
+</li><li><em>Ricerca e sviluppo</em>, figure che per definizione devono conoscere benissimo i sistemi su cui operano perché devono verificarne vulnerabilità, rilasciare patch, scrivere e distribuire gli advisory, implementare meccanismi di notify
+</li><li>"<em>Amministratori di sistema</em>: sono figure responsabili di mantenere gli strumenti di sicurezza e le informazioni in buono stato. Anche se non fanno parte formalmente del team di investigazione, i system administrator gestiscono il lavoro di “back-office” per il CSIRT."
+</li><li><em>Esperto di Comunicazioni</em> che aiuti l’IRT a rilasciare informazioni al management, ai media ed alle forze dell’ordine. Quelli interni sono comunemente gestiti dalle Human Resource (vedi dopo), mentre quelli esterni si occupano di comunicazione giudiziarie o istituzionali
+</li><li><em>Human Resource</em> (risorse umane), che assieme al reparto legale offrono supporto e consigli al core team sul come gestire l'incidente
+</li></ul><div class='vspace'></div><h3>Altre figure</h3>
+<p>Esistono altre figure professionali che possono affiancarsi al team per aumentarne l'efficienza, che esamineremo separatamente ma che possono far capo anche ad un'unica persona:
+</p>
+<div class='vspace'></div><ul><li><strong>SOC</strong> (<em>Security Operation Center</em>): "in una organizzazione che monitorizza proattivamente dispositivi quali Intrusion Detection System, queste persone controllano costantemente le segnalazioni per rilevare attività sospette o non autorizzate. Possono inoltre condurre periodici vulnerability assesements sui sistemi controllati. Solitamente il supporto fornito da tale personale è di tipo 24x7" (Dario Forte, 2008)
+</li><li><strong>Shift leader</strong>. Per meglio comprendere questa figura facciamo prima una considerazione sul <em>change manager</em>, ovvero colui che si occupa di gestire la migrazione dei sistemi informativi di un'azienda che passa da una condizione consolidata ad una nuova. Lo <em>shift leader</em> è responsabile in parte del change management ed in parte dell'escalation degli incidenti, cioè quel processo per cui si passa dallo stato di incidente informatico a crisi (ad esempio si parte con 2 computer infetti e si arriva nel giro di poche ore ad averne 1000). In generale la sua attività può essere riassunta come <em>scalatura di azioni e interventi</em>
+</li><li><strong>Help-Desk</strong>, figure interfacciate telefonicamente o via mail per il supporto degli utenti ed altre attività, quali: reset di password, creazione di una nuova segnalazione di incidente, risposta ad alcune domande di carattere generale sulla sicurezza. Per questi motivi devono essere costantemente aggiornati sulle politiche di sistema, o non sarebbero in grado di gestire alcune situazioni. Possono essere un <em>point of contact</em>, e in alcuni casi coincidono con il <em>SOC</em>
+</li><li><strong>LE</strong> (<em>Law Enforcement</em>), ovvero l'insieme delle forze di polizia che interagiscono attivamente o passivamente con l'azienda; in alcune infrastrutture critiche possono far parte di un response team, ad esempio negli ISP, nelle grandi aziende, nei siti militari, eccetera. Nella fase di preparazione va tenuto conto del fatto che la polizia potrebbe indagare esternamente anche se non consultata, quindi bisogna pianificare a priori le modalità di interfacciamento.
+</li></ul><div class='vspace'></div><h3>Considerazioni</h3>
+<p>Gli schemi visti finora sono utili alla comprensione ma non vanno applicati rigidamente, anzi bisogna creare e sfruttare le modularità così da guadagnare in flessibilità di intervento (soprattutto per mantenere aggiornati i manuali aziendali, in particolare la parte riguardante la privacy). Un eccesso di schematismo aumenta il livello di burocrazia (tipico delle grandi aziende) che inevitabilmente comporta un rallentamento dei tempi di intervento. <br />Come evitare tutto ciò? Manco a dirlo: facendo una buona <em>preparazione</em> (ma và).
+</p>
+<div class='vspace'></div><h2>Standard</h2>
+<p>Gli <strong>standard</strong> vengono spesso considerati parte delle normative esistenti, anche se in realtà non rientrano in questa categoria; si trattano piuttosto di politiche e procedure comunemente accettate e condivise dalla comunità scientifica. Per l'incident management ne esistono diverse, tra cui l'ISO 17799, l'ISO 27001, il NIST e varie RFC.
+</p>
+<div class='vspace'></div><h3>ISO 17799</h3>
+<p>L'obiettivo della <strong>ISO 17799</strong> si può riassumere in quattro punti:
+</p><ol><li>fornire raccomandazioni per l'information security management
+</li><li>definire una base comune per lo sviluppo di uno standard 
+</li><li>consigliare azioni per migliorare la sicurezza
+</li><li>considerare tali raccomandazioni alla luce delle norme vigenti 
+</li></ol><p class='vspace'>Questa ISO può essere considerata come il documento master per la redazione delle proprie politiche di sicurezza, quindi rappresenta un punto di sviluppo cruciale per le linee guida. Ovviamente non tutte le sue indicazioni sono applicabili per ogni azienda, molto dipende dall'effettiva struttura del sistema (ad esempio le raccomandazioni sulla gestione dei mainframe difficilmente saranno utili a chi non li ha); per questo motivo nella ISO si usa più il "should" che il "must", in quanto si tratta sempre di procedure fortemente consigliate ma non obbligatorie (anche se le mancate osservazioni andrebbero sempre e comunque motivate). In questo modo si cerca di tener conto dell'ottica aziendale della gestione, lasciando un certo margine di arbitrio. 
+</p>
+<p class='vspace'>Lo standard ISO 17799 è a pagamento, mentre altri come quello del NIST (www.nist.gov) sono gratuiti. Tuttavia molte aziende ricercano response team certificati ISO, in quanto garanzia di efficacia e competenza.
+</p>
+<p class='vspace'>Il capitolo 13 dell'ISO 17799 è quello che tratta la gestione degli incidenti informatici. Analizziamo di seguito due paragrafi.
+</p>
+<div class='vspace'></div><h4>Paragrafo 13.1: Reporting</h4>
+<p>Tutti gli eventi di sicurezza di un'azienda devono essere comunicati attraverso i <em>report</em> alle figure interessate, ovvero utenti, addetti, terze parti, eccetera. Questa attività è particolarmente importante per i responsabili della sicurezza del sistema, che possono mantenersi aggiornati sulle ultime vulnerabilità rilevate e sugli incidenti accaduti. <br />Il sistema di reporting deve essere adeguatamente pianificato a priori e spesso viene gestito tramite database.
+</p>
+<div class='vspace'></div><h4>Paragrafo 13.2: Incident management</h4>
+<p>Una volta ricevute tutte le informazioni sull'incidente bisogna gestirle in modo organico tenendo conto delle lezioni apprese (<em>lesson learned</em>), e se sono richieste delle digital evidence bisogna collezionarle assicurando la compliance con i requisiti legali. Solo in questo modo si può garantire un costante miglioramento delle procedure (<em>continuous improvement process</em>).
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RuoliResponsabilit%e0EStandardNellincidentManagement)</span></div>
+  </div>
+</body>
+</html>

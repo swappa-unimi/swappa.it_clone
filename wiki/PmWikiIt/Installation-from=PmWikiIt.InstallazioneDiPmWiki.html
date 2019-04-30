@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Installazione di PmWiki  </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='PmWikiIt.Installation' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Installazione di PmWiki 
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWikiIt/Installation?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWikiIt/Installation?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Installation-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWikiIt/Installation?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/PmWikiIt/Installation?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> Tools
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Cal/Cal'>Calendario</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Gruppi'>Gruppi</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Categorie'>Categorie</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Utenti/WikiSandbox'>WikiSandbox</a>
+</li></ul><p class='vspace sidehead'> Categorie
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>UniCrema</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Guide'>Guide</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Qultura'>Qultura</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Recensioni'>Recensioni</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Imperdibili'>Imperdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/Perdibili'>Perdibili</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/LoschiIndividui'>Loschi individui</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/CaGate'>caGate</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringWiki'>Touring Wiki</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/TouringBar'>Touring Bar</a>
+</li></ul><p class='vspace sidehead'> Help
+</p><ul><li><a class='urllink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki' title='' rel='nofollow'>Guide interne wiki</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><p class='vspace'  style='text-align: right;'> <span style='font-size:83%'><a class='wikilink' href='http://www.swappa.it/wiki/Site/SideBar?action=edit'>edit SideBar</a></span>
+</p>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Installazione di PmWiki  was last modified on May 26, 2010, at 09:16 PM'>
+							<span style='display:none;'>Installazione di PmWiki </span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p><i>(redirected from <a rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/InstallazioneDiPmWiki?action=edit'>PmWikiIt.InstallazioneDiPmWiki</a>)</i></p><vspace>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/DeletingPages?action=edit'>Deleting pages</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/DeletingPages?action=edit'>?</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Indice documentazione</a> | <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/InitialSetupTasks?action=edit'>Initial setup tasks</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/InitialSetupTasks?action=edit'>?</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' >
+</div>
+<p class='vspace'>Questa pagina spiega come scaricare e installare PmWiki 2.1. Questa è una lista delle pagine correlate:
+</p>
+<div class='vspace'></div><ul><li><a class='wikilink' href='../PmWiki/Requirements.html'>Requirements</a> – Requisiti per installare PmWiki.
+</li><li><a class='wikilink' href='../PmWiki/Upgrades.html'>Upgrades</a> – Come aggiornare un’installazione esistente.
+</li><li><a class='wikilink' href='../PmWiki/WikiFarms.html'>WikiFarms</a> – Lanciare wiki multipli da un’installazione singola.
+</li><li><a class='wikilink' href='../PmWiki/ChangeLog.html'>ChangeLog</a> – Nuove caratteristiche e coorezioni disponibili.
+</li></ul><p class='vspace'>E' sempre apprezzato qualsiasi miglioramento a queste istruzioni. E’ sufficiente riferire qualsiasi problema incontriate alla <a class='wikilink' href='../PmWiki/MailingLists.html'>mailing list</a> degli utenti di PmWiki o utilizzare il <a class='urllink' href='http://www.pmwiki.org/PITS/PITS' title='' rel='nofollow'>PmWiki Issue Tracking System</a>.
+</p>
+<div class='vspace'></div><h2>Installare PmWiki</h2>
+<h3>1. Scaricalo.</h3>
+<p>Scarica l’ultima versione di PmWiki come file zip (<a class='urllink' href='http://www.pmwiki.org/pub/pmwiki/pmwiki-latest.zip' title='' rel='nofollow'>pmwiki-latest.zip</a>) o tarball gzip (<a class='urllink' href='http://www.pmwiki.org/pub/pmwiki/pmwiki-latest.tgz' title='' rel='nofollow'>pmwiki-latest.tgz</a>) da <a class='urllink' href='http://www.pmwiki.org/pub/pmwiki/' title='' rel='nofollow'>http://www.pmwiki.org/pub/pmwiki/</a>. 
+</p>
+<div class='vspace'></div><h3><a name='unpack' id='unpack'></a> 2. Decomprimilo</h3>
+<p>Scompatta il file (<code class='escaped'>tar zxvf pmwiki-latest.tgz</code> o <code class='escaped'>unzip pmwiki-latest.zip</code>). Verrà creata una cartella <em>pmwiki-x.y.z</em> che conterrà il software PmWiki. Ad esempio, l’attuale "ultimo" dovrebbe essere decompresso  in una cartella di nome <em>pmwiki-2.2.21</em>. I file in questa cartella includono:
+</p>
+<div class='vspace'></div><div class='indent'>README.txt Un documento introduttivo <br />pmwiki.php --&gt; Il principale script PmWiki <br />local/            Script di configurazione (File di configurazione locali) <br />cookbook/         Ricette (aggiunte) dal <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Cookbook' title='' rel='nofollow'>Cookbook</a><br />docs/             Breve documentazione, semplici script di configurazione <br />pub/              File accessibili a tutti
+<div class='indent'>css/            File fogli di stile CSS aggiuntivi <br />skins/          Esempi di layout per un aspetto <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Skins' title='' rel='nofollow'>custom</a>
+</div></div><div class='indent'>scripts/          Script inclusi in PmWiki <br />wikilib.d/        Pagine incluse in PmWiki
+</div><p class='vspace'>La cartella <em>pmwiki-x.y.z</em> deve essere in una posizione accessibile dal tuo webserver (ad es. in una cartella <em>public_html</em> di qualche tipo). Puoi pubblicare file e cartelle usando diversi metodi -- FTP, o i comandi Unix mv o cp in genere funzionano. 
+</p>
+<div class='vspace'></div><div class='indent'><span  style='font-style: italic; color: green;'> Nota: forse è una buona idea modificare anche il nome della cartella "<em>pmwiki-x.y.z</em>" semplicemente in "<em>pmwiki</em>". </span>
+</div><div class='vspace'></div><h3><a name='directories' id='directories'></a>3. Crea le cartelle.</h3>
+<p><a name='dirsetup' id='dirsetup'></a>Nella maggioranza dei casi PmWiki lo farà per te. Apri una finestra del browser con lo script <em>pmwiki.php</em> lato server (cioè, non quella sul computer locale o con un indirizzo del tipo file://...). PmWiki analizzerà la tua configurazione di sistema e fornirà le istruzioni (se necessario) per creare la cartella wiki.d/ che verrà usata per le pagine create per il tuo sito.
+</p>
+<p class='vspace'>Diversamente, ci sono due modi per riuscirci. 
+</p>
+<div class='vspace'></div><div class='indent'>3a. Puoi creare la cartella <em>wiki.d/</em> manualmente, e quindi dargli permessi di scrittura (ad es. "<code class='escaped'>chmod 777 wiki.d</code>"). Usa questo metodo quando viene attivato il  "safe mode" nell’installazione dei server PHP.
+<div class='vspace'></div></div><div class='indent'>3b. Su alcuni sistemi puoi laciare che PmWiki crei <em>wiki.d/</em> cambiando temporaneamente i permessi sulla cartella che contiene il file <em>pmwiki.php</em> a 2777. In Unix questo viene di solito fatto cambiando posizionandosi nella cartella che contiene <em>pmwiki.php</em> ed eseguendo il comando
+</div><div class='vspace'></div><pre>        chmod 2777.
+</pre><div class='vspace'></div><div class='indent'>(notate il punto alla fine). Il commando <code class='escaped'>chmod</code> funziona anche in molti programmi FTP. Creare <em>wiki.d/</em> in questo modo (1) renderà la cartella scrivibile in modo che il server web possa creare la cartella per i dati di cui ha bisogno per i file wiki, (2) conserverà la proprietà di gruppo della cartella in modo che l’account dell’installatore possa modificare i file creati in questa cartella, e (3) rendere più difficile per altri account sullo stesso server accedere ai file in <em>wiki.d/</em>.
+</div><p class='vspace'>Dopo aver impostato i permessi sulla cartella, prova di nuovo ad aprire un browser allo script <em>pmwiki.php</em>. Se è tutto ok, la cartella <em>wiki.d</em> verrà creata e vedrai la home page di default. 
+</p>
+<p class='vspace'>Importante: se hai usato il metodo 3b, dovresti reimpostare i permessi eseguendo "chmod 755 ." nella cartella che contiene <em>pmwiki.php</em>. 
+</p>
+<p class='vspace'><a name='dirsetupend' id='dirsetupend'></a>
+</p><h3>4. Inizializza</h3>
+<p>Verifica <a class='wikilink' href='../PmWiki/InitialSetupTasks.html'>Initial Setup Tasks</a> per altre azioni che potresti voler eseguire per iniziare a personalizzare la tua installazione di PmWiki. Potresti anche voler leggere le <a class='wikilink' href='../PmWiki/ReleaseNotes.html'>Release Notes</a> per ulteriori informazioni. 
+</p>
+<div class='vspace'></div><h3>5. Imposta la lingua.</h3>
+<p>Se vuoi usare PmWiki in una lingua differente scarica l’international language pack in formato zip (<a class='urllink' href='http://www.pmwiki.org/pub/pmwiki/i18n.zip' title='' rel='nofollow'>i18n.zip</a>) o tarball gzip (<a class='urllink' href='http://www.pmwiki.org/pub/pmwiki/i18n.tgz' title='' rel='nofollow'>i18n.tgz</a>) da <a class='urllink' href='http://www.pmwiki.org/pub/pmwiki/' title='' rel='nofollow'>http://www.pmwiki.org/pub/pmwiki/</a>.
+Poi estrai e copia i file nella cartella <em>wikilib.d/</em> come sopra.
+</p>
+<p class='vspace'>Ci sono due cartelle nel file decompresso i18n, <em>scripts</em> e <em>wikilib.d</em>. Copia i file rispettivamente contenuti in queste cartelle nelle cartelle <em>scripts</em> e <em>wikilib.d</em> della tua cartella PmWiki. Per esempio, per una localizzazione italiana, PmWikiIt.* e PmWiki.* devono essere contenuti nella <strong>stessa</strong> cartella.
+</p>
+<p class='vspace'>Dopo, abilita la localizzazione aggiungendo un’istruzione nel file local/config.php per caricare la pagina di traduzione della lingua che hai scelto. Per esempio, <code class='escaped'>XLPage('it','PmWikiIt.XLPage');</code> carica la pagina in lingua italiana PmWikiIt.XLPage. 
+</p>
+<p class='vspace'>Approfondisci su <a class='wikilink' href='../PmWiki/Internationalizations.html'>Internationalizations</a>. 
+</p>
+<div class='vspace'></div><h2><a name='notes' id='notes'></a> Note</h2>
+<ul><li>La distribuzione di PmWiki volutamente non include un file <em>index.php</em>. Resisti alla tentazione di rinominare <em>pmwiki.php</em> in <em>index.php</em> perché se rinomini il file non sarà sovrascritto durante un aggiornamento. Invece, aggiungi un "wrapper script" <em>index.php</em> contenente la seguente linea singola (manca volutamente un tag " ?&gt;" che chiude):
+<div class='vspace'></div><div class='indent'><code class='escaped'>&lt;?php include_once('pmwiki.php');</code>
+</div><div class='vspace'></div></li><li>Se usi il comando Unix tar per decomprimere il file del precedente passo 2, assicurati che i file siano creati con i necessari permessi per consentire al webserver di accedervi. Di solito puoi assicurarti di ciò digitando umask 002 sulla riga di commando prima di decomprimere il file tar. 
+<div class='vspace'></div></li><li>Se installi su Windows dovresti dare un’occhiata a <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/SimultaneousEdits' title='' rel='nofollow'>Cookbook:SimultaneousEdits</a> per abilitare gli <a class='wikilink' href='../PmWiki/SimultaneousEdits.html'>aggiornamenti simultanei</a> su questa piattaforma. 
+<div class='vspace'></div></li><li>Altri suggerimenti li puoi trovare su <a class='wikilink' href='../PmWiki/Troubleshooting.html'>Troubleshooting</a>.
+</li></ul><p class='vspace'><span class='trail'><span class='wikitrail'>&lt;&lt; <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/DeletingPages?action=edit'>Deleting pages</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/DeletingPages?action=edit'>?</a> | <a class='wikilink' href='DocumentationIndex.html'>Documentation Index</a> | <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/InitialSetupTasks?action=edit'>Initial setup tasks</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/InitialSetupTasks?action=edit'>?</a> &gt;&gt;</span></span>
+</p>
+<div class='vspace'></div><div class='faq' > <a name='faq' id='faq'></a> 
+<p class='vspace question'> Come imposto pmwiki.php come pagina di default per un sito?  Devo rinominare pmwiki.php in index.php?</p>
+<p class='vspace'> Non è consigliabile rinominare pmwiki.php. Crea piuttosto un file <em>index.php</em> che contiene questa singola riga:
+</p>
+<div class='vspace'></div><div class='indent'><code class='escaped'>&lt;?php include_once('pmwiki.php');</code>
+</div><p class='vspace'>Guarda anche su <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/CleanUrls' title='' rel='nofollow'>Cookbook:CleanUrls</a>.
+</p>
+<p class='vspace question'> Perchè pmwiki.org sembra avere una struttura di directory invece che "?n=pagename" negli url?</p>
+<p class='vspace'> Pmwiki.org usa una variante di <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/CleanUrls' title='' rel='nofollow'>Cookbook:CleanUrls</a>.
+</p>
+<p class='vspace question'> E' possibile spostare wiki.d in /tmp/persistent/wiki.d (nuova regola di sourceforge)?</p>
+<p class='vspace'> Sourceforge suggerisce di muovere tutto in /tmp/persistent/nuova-cartella-di-tua-scelta e di creare un collegamento simbolico alla nuova cartella in /tmp. Funziona -- vedi <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/SourceForgeServers' title='' rel='nofollow'>Cookbook:SourceForgeServers</a>.
+</p>
+<p class='vspace question'> Come faccio a lanciare PmWiki su una macchina (scollegata, portatile) ?</p>
+<p class='vspace'> Vedi <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/Standalone' title='' rel='nofollow'>Cookbook:Standalone</a>.
+</p>
+<div class='vspace'></div><hr />
+<p  style='color: #060; background-color: #cf9; border: 1px solid #060; padding: 3px; font-size: smaller;'>.
+Traduction of <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki.Installation' title='' rel='nofollow'>PmWiki.Installation</a> 
+- Original page on <a class='urllink' href='http://www.pmwiki.org/wiki/PmWiki.Installation' title='' rel='nofollow'>PmWiki.Installation</a> - <a class='wikilink' href='A-action=search&amp;q=link=PmWikiIt.Installation&amp;fmt=title.html'>Backlinks</a><br />
+Last modifications:<br /><a class='selflink' href='Installation.html'>PmWikiIt.Installation</a>: May 26, 2010, at 09:16 PM<br />
+<a class='wikilink' href='../PmWiki/Installation.html'>PmWiki.Installation</a>: June 16, 2010, at 09:55 AM
+</p></div><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/DeletingPages?action=edit'>Deleting pages</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/DeletingPages?action=edit'>?</a> |  <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation index</a>  | <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/InitialSetupTasks?action=edit'>Initial setup tasks</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/InitialSetupTasks?action=edit'>?</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+</p>
+<div class='vspace'></div><hr />
+<p  style='color: #060; background-color: #cf9; border: 1px solid #060; padding: 3px; font-size: smaller;'> Traduzione di <a style='color: #060' class='urllink' href='http://www.pmwiki.org/wiki/PmWiki.Installation' title='' rel='nofollow'>PmWiki.Installation</a> -
+Pagina originale: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWikiIt.Installation' title='' rel='nofollow'>PmWikiIt.Installation</a> -
+<a class='wikilink' href='A-action=search&amp;q=link=PmWikiIt.Installation&amp;fmt=title.html'>Backlinks</a><br />
+Ultime modifiche:<br /><a class='selflink' href='Installation.html'>PmWikiIt.Installation</a>: May 26, 2010, at 09:16 PM<br /><a class='wikilink' href='../PmWiki/Installation.html'>PmWiki.Installation</a>: June 16, 2010, at 09:55 AM
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 26, 2010, at 09:16 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWikiIt/Installation?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/PmWikiIt/Installation?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

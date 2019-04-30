@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi per l'elaborazione delle informazioni - Lezione 7</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LezSEDI07.html' title='Sistemi per l'elaborazione delle informazioni - Lezione 7'>Sistemi per l'elaborazione delle informazioni - Lezione 7</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi per l'elaborazione delle informazioni ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 22 Ottobre 2007</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 380px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>VLSM versus FLSM</a>
+</li><li><a href='#s2'>Instradamento IP</a>
+<ul><li><a href='#s21'>Instradamento diretto</a>
+</li><li><a href='#s22'>Instradamento indiretto</a>
+</li><li><a href='#s23'>La tabelle di instradamento</a>
+</li><li><a href='#s24'>Altre tecniche di instradamento</a>
+</li><li><a href='#s25'>Come scegliere tra le varie voci della tabella</a>
+</li><li><a href='#s26'>L'instradamento modifica i pacchetti</a>
+</li><li><a href='#s27'>Comunicazione tra router: ICMP</a>
+</li></ul></li><li><a href='#s3'>PING</a>
+</li><li><a href='#s4'>Tracert, o Traceroute</a>
+</li></ol></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>VLSM versus FLSM</h2>
+<p>I limiti del FLSM li abbiamo già visti tutti. In una configurazione con 4 sottoreti di 100, 8, 8 e 4 hosts ciascuna, una suddivisione FLSM è inefficiente. Devo dividere il classe C in 4 parti, ed ognuna conterrebbe al max 62 hosts, quindi la prima rete da 100 sarebbe esclusa, e notate che qui sto "contraddicendo" anche la vecchia norma che impedisce di usare net id tutti a 0 o tutti a 1. L'unica soluzione per rispettare sta norma è comprare 4 classe C diversi!
+</p>
+<p class='vspace'>Ovviamente una simile cosa non s'ha da fare, e quindi ci si deve dedicare al VLSM. Il come ve lo lascio per esercizio. Cmq anche questa prospettiva nasconde un'ingenuità: perché mai un'azienda dovrebbe comprare un classe C per dare a TUTTE le sue macchine un indirizzo pubblico? La necessità di sta cosa in effetti sfugge, e infatti vedremo poi che si ovvierà a sta situazione.
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Instradamento IP</h2>
+<p>I Gateway collegano reti diverse, e dobbiamo capire come fanno effettivamente a funzionare.
+</p>
+<p class='vspace'><a name='s21' id='s21'></a>
+</p><h3>Instradamento diretto</h3>
+<p>L<em>'instradamento diretto</em> si ha quando l'indirizzo di destinazione sta nella mia stessa sottorete. Col giochetto delle maschere di sottorete, lo capisco subito, e mando il mio bel pacchetto in qualche frame ethernet, e voilà!
+</p>
+<p class='vspace'><a name='s22' id='s22'></a>
+</p><h3>Instradamento indiretto</h3>
+<p>Se invece il mittente e il destinatario non si trovano sulla stessa rete, occorre mandare il pacchetto ad un router, il quale poi ci penserà lui a smistare dove deve. A me come mittente basta solamente l'indirizzo del router, al resto ci penserà lui. Negli esercizi c'è un esempio di come muta l'header di livello 2 e di livello 3 per un pacchetto che deve passare di rete in rete.
+</p>
+<p class='vspace'>Il gateway ha 2 schede, una su una rete e una su di un'altra, ciascuna configurata correttamente secondo la rete in cui si trova. Per trasmettere i pacchetti da un'interfaccia all'altra, occorre abilitare una funzionalità dei router chiamata IP FORWARDING, che replica un pacchetto da una rete ad un'altra. Avendo solo due schede, è ovvio che ciò che non sta da una parte deve andare sull'altra...
+</p>
+<p class='vspace'>Il Router invece ha più di 2 interfacce, quindi deve applicare una certa intelligenza per capire su quale delle molte interfacce forwardare un pacchetto. Dovrebbe sapere a quali router forwardare un certo pacchetto con un certo indirizzo per poterlo recapitare. Nel mondo della teoria, potrebbe essere lo stesso host da cui è partito il pacchetto a stabilire quali router attraversare. Non è improponibile, l'unico problema è un problema di sicurezza che non è stato ulteriormente specificato.
+</p>
+<p class='vspace'>Il router ha una tabella di instradamento, e il sistema con cui instrada si chiama <strong>instradamento table-driven</strong>.
+</p>
+<p class='vspace'><a name='s23' id='s23'></a>
+</p><h3>La tabella di instradamento</h3>
+<p>Ha 4 colonne: 
+</p><ul><li>net_id della rete destinazione
+</li><li>maschera di sottorete di ogni net id
+</li><li>indirizzo IP del gateway associato a quel net id
+</li><li>interfaccia di livello 2 a cui è associato quel net id
+</li></ul><p class='vspace'>NOTA: i pacchetti con indirizzi 127.0.0.0 NON vengono mai inviati ad un'interfaccia di rete, ma vengono copiati dal buffer di uscita al buffer di ingresso. Non si affacciano mai sulla rete. 127.0.0.0 vuol dire <em>localhost</em>, e questo indirizzo è detto interfaccia di <em>loopback</em>.
+</p>
+<p class='vspace'>Gli indirizzi <strong>0.0.0.0</strong> vogliono dire <em>ogni cosa</em>. E' una regola che  mi dice: tutti i pacchetti vanno qui. Come faccio allora a farla coesistere con altre regole? Per esempio, potrei avere una regola che mi dice che i pacchetti con prefisso 130.120 devono andare all'interfaccia eth0, e poi avere una 0.0.0.0 che mi manda tutti i pacchetti su interfaccia eth1. Ha senso?
+</p>
+<p class='vspace'>No. E infatti non funziona proprio così. Infatti, gli instradamenti degli 0.0.0.0 sono messi per ultimi nella tabella di routing, così che se tutte le altre alternative che ho visto prima non sono risultate valide, userò quel sistema.
+</p>
+<p class='vspace'>Attenzione: le tabelle non vengono fatte a mano. O meglio, finché ho una rete di 3 computer posso anche permettermelo, ma appena la complessità sale un po' non se ne parla proprio. Ci sono sistemi per aggiornare le tabelle in modo dinamico.
+</p>
+<p class='vspace'><a name='s24' id='s24'></a>
+</p><h3>Altre tecniche di instradamento</h3>
+<p>Se non so dove diavolo inviare il pacchetto, posso scegliere di adottare diverse strategie:
+</p><ul><li>RANDOM: lo invio ad un router a caso
+</li><li>FLOODING: lo mando a tutti i router che conosco
+</li><li>HOT POTATO: mando il pacchetto al router con la coda più corta.
+</li></ul><p class='vspace'><em>Flooding</em> non è un'idea stupida come potrebbe sembrare, soprattutto se ho una rete con tutti i gateway uno in sequenza all'altro: è efficiente come una tabella. Il flooding è tanto meno conveniente quanto più una rete è connessa, ovvero ci sono cammini relativamente brevi tra 2 reti diverse.
+</p>
+<p class='vspace'>In caso di rete molto connessa, cioè con cammini brevi tra reti diverse, il sistema <em>random</em> può essere utile, perché tanto la connessione della rete fa sì che bene o male prima o poi il mio pacchetto arriverà dove deve.
+</p>
+<p class='vspace'>Anche la <em>hot potato</em> funziona bene con reti molto connesse, perché sceglie il router con meno pacchetti in coda. Il tempo che si perde girando per la rete a caso lo si guadagna trascorrendo meno tempo nelle code, e in certe situazioni ci può essere un vantaggio.
+</p>
+<p class='vspace'><a name='s25' id='s25'></a>
+</p><h3>Come scegliere tra le varie voci della tabella</h3>
+<p>Le comparo una a una? Mmm. Più o meno. In realtà, si prende quella voce che combina perfettamente con il destinatario del pacchetto che sto processando, ma non solo: deve anche essere quella che combina con il più alto numero di bit. Se una voce di tabella combina per 16 bit, e un'altra per 18, sceglierò di mandare il pacchetto alla rete che combina per 18 bit.
+</p>
+<p class='vspace'>Certo, sta roba è costosa, e quindi ci sono tutti dei bravi algoritmi per ottimizzare la ricerca in tabelle lunghe, così da minimizzare il tempo di attesa che un pacchetto passa in un router.
+</p>
+<p class='vspace'>Può essere una domanda da compito quella di stabilire, data una tabella di instradamento ed un indirizzo, a quali righe il router associerà quell'indirizzo, e quali tra quelle righe sarà la PRESCELTA.
+</p>
+<p class='vspace'><a name='s26' id='s26'></a>
+</p><h3>L'instradamento modifica i pacchetti?</h3>
+<p>Sì. Innanzitutto cambiano gli indirizzi di livello 2 per ovvi motivi. Inoltre, se il mio router collega reti che hanno data link differenti, come possono esserlo una Ethernet e una SONET, allora dovrà anche cambiare il frame di livello 2, magari frammentarlo in altri modi e via dicendo. Quindi il pacchetto viene stranfognato, anche se la sostanza non deve cambiare.
+</p>
+<p class='vspace'><a name='s27' id='s27'></a>
+</p><h3>Comunicazione tra router: ICMP</h3>
+<p>I router devono poter comunicare tra di loro e parlare agli host. Infatti devono scambiarsi messaggi del tipo "ho la coda piena", "mia mamma ha preparato la polenta", "sia dannato il computer di Jack che continua a guardare siti porno".
+</p>
+<p class='vspace'>Per esempio, quando un pacchetto viene "droppato" da un router, ovvero viene cancellato per vari motivi, questa cancellazione deve essere notificata a chi ha inviato quel pacchetto.
+</p>
+<p class='vspace'>Il protocollo che si occupa di questi messaggi si chiama <strong>ICMP</strong>. E' sempre parte di IP, ma è un header aggiuntivo che si aggiunge all'header di IP. E occhio: ICMP non manda messaggi che riguardano i pacchetti ICMP, altrimenti non finirebbe più. E' come se mandassi una lettera con ricevuta di ritorno, e la ricevuta di ritorno necessitasse di una ricevuta di ricevuta di ritorno, la quale poi solleciterà una ricevuta di ricevuta di ricevuta di ritorno e così via.
+</p>
+<p class='vspace'>Per stabilire che un header IP è seguito da un header ICMP, lo si vede da un paio di campi dell'header: il campo PROTOCOL sarà messo a 1, e quello TOS a 0.
+</p>
+<p class='vspace'>I pacchetti ICMP, che si scopre essere tali proprio per via della scoperta di questi campi, a volte vengono trattati in modo riguardoso dai router: gli fanno scavalcare le code, come l'ambulanza che passa coi semafori rossi (esempio di Damiani, non mio. Io avrei detto: come Stefano da Alfredo, scavalca la coda).
+</p>
+<p class='vspace'>I pacchetti ICMP vengono scambiati tra router e router, tra router e host e tra host e host. Un esempio di messaggio ICMP tra host e host è l<em>'echo</em>, ovvero io rifletto quello che un altro mi manda. Utilità? Boh. E' spiegato nella famosa RFC 445.23u/34 bis comma ter /&amp;$&amp;"/19 che Postel scrisse in un momento di sconforto.
+</p>
+<p class='vspace'>Nota: se un pacchetto frammentato viene droppato per qualche motivo, non si manda un ICMP di notifica per ogni frammento, ma solo per il primo.
+</p>
+<p class='vspace'>Un tipo di  messaggio ICMP che può arrivare da un router all'altro è quello di <strong>redirect</strong>: un router comunica di inviare pacchetti non a lui, ma a qualcun altro. Per esempio, posso instradare i pacchetti pari ad un router e quelli dispari ad un altro router. In questo modo faccio un <strong>load balancing</strong>, cioè bilancio il carico tra macchine diverse. E notate che questo bilanciamento non deve essere reso noto a me, povero host che invio pacchetti al mio gateway di default. Ci pensano loro a sistemarsi, io invio le cose come ho sempre fatto e non ci penso. 
+</p>
+<p class='vspace'>Altri messaggi che i router si scambiano sono quelli per aggiornare le tabelle di instradamento.
+</p>
+<p class='vspace'>
+</p><h3>PING</h3>
+<p>Il <strong>ping</strong> è un modo per verificare la raggiungibilità di un host. Viene mandato un certo messaggio ICMP ad un IP, e quello risponderà. In questo modo posso rendermi conto di quanto tempo deve passare prima che un pacchetto inviato da me arrivi ad un altro host, e soprattutto se l'altro host è in linea, ovvero se risponde ai miei ping!
+</p>
+<p class='vspace'>Una nota: siccome <em>ping</em> usa ICMP, è probabile che ci siano router che fanno saltare la coda ai pacchetti ICMP, e quindi il tempo che mi dà sarà inferiore al tempo effettivo che un normale pacchetto TCP potrebbe metterci ad arrivare a quell'host. Girata in vari modi, questa è domanda da esame.
+</p>
+<p class='vspace'>
+</p><h3>Tracert, o Traceroute</h3>
+<p>Il comando <strong>tracert</strong>  mi stampa la lista dei vari router che il mio pacchetto attraversa per arrivare ad una certa destinazione. Come fa?
+</p>
+<p class='vspace'>Si basa su una proprietà del ping. Il pacchetto ICMP che fa da ping ha una proprietà chiamata TTL. Ogni volta che un router forwarda un pacchetto ping, sottrae 1 a TTL. Quando TTL arriva a 0, il pacchetto ping viene droppato.
+</p>
+<p class='vspace'>Ecco quindi che se faccio vari ping in sequenza verso un certo IP, ognuno con TTL crescente a partire da 1, il primo sarà droppato dal primo router, il secondo dal secondo router, il terzo dal terzo router e così via e avrò la lista di tutti i router che si frappongono tra il mio computer e www.xxxjack.com.
+</p>
+<p class='vspace'>(<em>CONTINUA</em>)
+</p><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LezSEDI07)</span></div>
+  </div>
+</body>
+</html>

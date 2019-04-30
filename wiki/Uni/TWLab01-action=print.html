@@ -1,0 +1,593 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Tecnologie Web - Laboratorio 1</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TWLab01.html' title='Tecnologie Web - Laboratorio 1'>Tecnologie Web - Laboratorio 1</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio 1 ::</strong>
+</pre><div class='vspace'></div><h2>Esercizio 1</h2>
+<p><strong>Scrivere un frammento di codice XHTML che rappresenti una lista di tre elementi, ognuno dei quali contiene un paragrafo e, rispettivamente, una lista non numerata, una lista numerata, una immagine.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd"&gt;
+
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+ &lt;head&gt;
+  &lt;title&gt;Esercizio 1&lt;/title&gt;
+ &lt;/head&gt;
+  &lt;body&gt;
+   &lt;ul&gt;
+    &lt;li&gt;
+     &lt;p&gt;
+      &lt;ul&gt;
+       &lt;li&gt;primo elemento&lt;/li&gt;
+       &lt;li&gt;secondo elemento&lt;/li&gt;
+       &lt;li&gt;terzo elemento&lt;/li&gt;
+      &lt;/ul&gt;
+     &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+     &lt;p&gt;
+      &lt;ol&gt;
+       &lt;li&gt;primo elemento&lt;/li&gt;
+       &lt;li&gt;secondo elemento&lt;/li&gt;
+       &lt;li&gt;terzo elemento&lt;/li&gt;
+      &lt;/ol&gt;
+     &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+     &lt;p&gt;
+      &lt;img src="http://islab.dico.unimi.it/martella/si/logo.jpg" 
+        alt="Immagine non caricata :(" width="100px" height="100px"/&gt;
+     &lt;/p&gt;
+    &lt;/li&gt;
+   &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p><strong>Scrivere un frammento di codice XHTML che rappresenti la tabellina delle moltiplicazioni fino al 5, con opportune intestazioni per gli operandi.</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd"&gt; 
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+ &lt;head&gt;
+   &lt;title&gt;Esercizio 2&lt;/title&gt;
+ &lt;/head&gt;
+    &lt;body&gt;
+    &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th&gt;
+      &lt;/th&gt;
+      &lt;td&gt;
+        &lt;th&gt;1&lt;/th&gt;
+      &lt;/td&gt;
+       &lt;td&gt;
+        &lt;th&gt;2&lt;/th&gt;
+      &lt;/td&gt;
+       &lt;td&gt;
+        &lt;th&gt;3&lt;/th&gt;
+      &lt;/td&gt;
+       &lt;td&gt;
+        &lt;th&gt;4&lt;/th&gt;
+      &lt;/td&gt;
+       &lt;td&gt;
+        &lt;th&gt;5&lt;/th&gt;
+      &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;
+      1
+      &lt;/th&gt;
+      &lt;td&gt;
+        1
+      &lt;/td&gt;
+       &lt;td&gt;
+        2
+      &lt;/td&gt;
+       &lt;td&gt;
+        3
+      &lt;/td&gt;
+       &lt;td&gt;
+        4
+      &lt;/td&gt;
+       &lt;td&gt;
+        5
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;
+      2
+      &lt;/th&gt;
+        &lt;td&gt;
+        2
+      &lt;/td&gt;
+       &lt;td&gt;
+        4
+      &lt;/td&gt;
+       &lt;td&gt;
+        6
+      &lt;/td&gt;
+       &lt;td&gt;
+        8
+      &lt;/td&gt;
+       &lt;td&gt;
+        10
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;
+      3
+      &lt;/th&gt;
+        &lt;td&gt;
+        3
+      &lt;/td&gt;
+       &lt;td&gt;
+        6
+      &lt;/td&gt;
+       &lt;td&gt;
+        9
+      &lt;/td&gt;
+       &lt;td&gt;
+        12
+      &lt;/td&gt;
+       &lt;td&gt;
+        15
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;
+      4
+      &lt;/th&gt;
+        &lt;td&gt;
+        4
+      &lt;/td&gt;
+       &lt;td&gt;
+        8
+      &lt;/td&gt;
+       &lt;td&gt;
+        12
+      &lt;/td&gt;
+       &lt;td&gt;
+        16
+      &lt;/td&gt;
+       &lt;td&gt;
+        20
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;
+      5
+      &lt;/th&gt;
+        &lt;td&gt;
+        5
+      &lt;/td&gt;
+       &lt;td&gt;
+        10
+      &lt;/td&gt;
+       &lt;td&gt;
+        15
+      &lt;/td&gt;
+       &lt;td&gt;
+        20
+      &lt;/td&gt;
+       &lt;td&gt;
+        25
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;/table&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><h2>Esercizio 3</h2>
+<p><strong>Scrivere il codice XHTML per realizzare la form riportata in figura. </strong>
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TWlab01es3.jpg' alt='' title='' /></div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd"&gt;
+
+
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+ &lt;head&gt;
+  &lt;title&gt;Esercizio 3&lt;/title&gt;
+ &lt;/head&gt;
+  &lt;body&gt;
+   &lt;form&gt;
+    &lt;h2&gt;Nuovo ordine&lt;/h2&gt;
+     Nome: &lt;input type="text" nome="nome" size="22"/&gt;
+     Indirizzo: &lt;input type="text" nome="indirizzo" size="38"/&gt;
+
+     &lt;br/&gt;&lt;br/&gt;
+
+     Citta': &lt;input type="text" nome="citta" size="20"/&gt;
+     Stato: &lt;input type="text" nome="stato" size="20"/&gt;
+     CAP: &lt;input type="text" nome="cap" size="10"/&gt;
+
+     &lt;hr/&gt;
+     &lt;br/&gt;
+
+     Tipo di capo: &lt;select type="text" nome="tipo"&gt;
+      &lt;option&gt;cappotto&lt;/option&gt;
+      &lt;option&gt;felpa&lt;/option&gt;
+      &lt;option&gt;scarpe (rosa)&lt;/option&gt;
+      &lt;option&gt;calze pecora&lt;/option&gt;
+      &lt;option&gt;calze maiale&lt;/option&gt;
+     &lt;/select&gt;
+
+     Dimensione: XL &lt;input type="radio" name="taglia" value="XL"/&gt;
+      L &lt;input type="radio" name="taglia" value="L"/&gt;
+      M &lt;input type="radio" name="taglia" value="M"/&gt;
+      S &lt;input type="radio" name="taglia" value="S" checked="checked"/&gt;
+
+     &lt;br/&gt;&lt;br/&gt;
+
+     Tipo di pagamento: 
+      &lt;input type="checkbox"/&gt;Contrassegno
+      &lt;input type="checkbox"/&gt;Bonifico
+      &lt;input type="checkbox"/&gt;Carta di credito
+
+      &lt;hr/&gt;
+      &lt;br/&gt;
+
+      &lt;input type="submit" value="invia ordine"/&gt;
+      &lt;input type="reset" value="cancella"/&gt;
+
+   &lt;/form&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<div class='vspace'></div><h2>Esercizio 4</h2>
+<p><strong>Considerare i seguenti codici: </strong>
+</p>
+<p class='vspace'><strong>dati.xml</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" ?&gt; 
+&lt;?xml-stylesheet type="text/css" href="stile.css"?&gt;
+
+&lt;classe&gt; 
+&lt;studente id=”Rossi”&gt; 
+ &lt;nome&gt;Mario&lt;/nome&gt; 
+ &lt;cognome&gt;Rossi&lt;/cognome&gt; 
+ &lt;matricola&gt;458962&lt;/matricola&gt; 
+ &lt;recapito&gt; 
+    &lt;via&gt; via Risorgimento 78 &lt;/via&gt; 
+    &lt;cap&gt; 58962 &lt;/cap&gt; 
+    &lt;comune&gt; Udine &lt;/comune&gt; 
+ &lt;/recapito&gt; 
+&lt;/studente&gt; 
+
+&lt;studente id=”Bianchi”&gt; 
+ &lt;nome&gt;Sara&lt;/nome&gt; 
+ &lt;cognome&gt;Bianchi&lt;/cognome&gt; 
+ &lt;matricola&gt;457125&lt;/matricola&gt; 
+ &lt;recapito&gt; 
+    &lt;via&gt; via Aselli 5 &lt;/via&gt; 
+    &lt;cap&gt; 15777 &lt;/cap&gt; 
+    &lt;comune&gt; Cagliari &lt;/comune&gt; 
+ &lt;/recapito&gt; 
+&lt;/studente&gt; 
+
+&lt;studente id=”Verdi”&gt; 
+ &lt;nome&gt;Simone&lt;/nome&gt; 
+ &lt;cognome&gt;Verdi&lt;/cognome&gt; 
+ &lt;matricola&gt;569862&lt;/matricola&gt; 
+ &lt;recapito&gt; 
+  &lt;via&gt; via Rimembranze 6 &lt;/via&gt; 
+  &lt;cap&gt; 69321 &lt;/cap&gt; 
+  &lt;comune&gt; Aosta &lt;/comune&gt; 
+ &lt;/recapito&gt; 
+&lt;/studente&gt; 
+&lt;/classe&gt;
+</pre>
+</div>
+<p class='vspace'><strong>stile.css</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+studente { 
+ display: block; 
+ width:10 cm; 
+ background-color: orange; 
+ color: black; 
+ border: thick black solid: 
+ margin 5mm; 
+} 
+
+nome, cognome, matricola { 
+ display: block; 
+ font-size: 20pt; 
+ margin-left: 5pt; 
+} 
+
+recapito { 
+ display: block; 
+ font-family: monospace; 
+ margin-left: 20pt; 
+}
+</pre>
+</div>
+<p class='vspace'><strong>Visualizzare il file dati.xml utilizzando il foglio di stile stile.css. Modificare a piacere il file di stile, consultando i manuali di riferimento disponibili in rete.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><ins><em>Output senza modifiche:</em></ins>
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TWlab01es4.jpg' alt='' title='' /></div>
+<p class='vspace'><ins><em>Codice CSS modificato:</em></ins>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+studente { 
+ display: block; 
+ width:10 cm; 
+ background-color: #CEF6B7;
+ color: black; 
+ border: thick black solid: 
+ margin 5mm; 
+} 
+
+nome, cognome { 
+ display: inline; 
+ font-size: medium; 
+ margin-left: auto;
+ font-family: "Times New Roman";
+ font-weight: bold;
+} 
+
+matricola {
+ display: block;
+ font-style: normal;
+}
+recapito { 
+ display: inline; 
+ font-family: "Times New Roman"; 
+ margin-left: 10pt;
+ font-style: italic;
+} 
+</pre>
+<p class='vspace'><ins><em>Output con qualche modifica:</em></ins>
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/TWlab01es41.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h2>Esercizio 5</h2>
+<p><strong>Partendo dal documento XML dell’esercizio precedente, creare le regole per mostrare in blu i dati relativi allo studente Mario Rossi e in rosso quelli relativi a Sara Bianchi.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+studente { 
+ display: block; 
+ width:10 cm; 
+ color: black; 
+ border: thick black solid: 
+ margin 5mm; 
+} 
+
+nome, cognome { 
+ display: inline; 
+ font-size: medium; 
+ margin-left: auto;
+ font-family: "Times New Roman";
+ font-weight: bold;
+} 
+
+matricola {
+ display: block;
+ font-style: normal;
+}
+
+recapito { 
+ display: inline; 
+ font-family: "Times New Roman"; 
+ margin-left: 10pt;
+ font-style: italic;
+} 
+
+studente[id=Rossi] {
+color:blue;
+}
+
+studente[id=Bianchi] {
+color:red;
+}
+
+</pre>
+<p class='vspace'>Output:
+</p><div><img src='../uploads/Uni/TWlab01es5.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h2>Esercizio 6</h2>
+<p><strong>Creare una pagina XHTML contenente una serie di link. Usando CSS fare in modo che normalmente il colore dei link sia  rosso; quando il cursore del mouse si posiziona su di essi il colore diventi giallo, e la grandezza del testo diventi 22 punti. Il colore dei link visitati deve essere blu.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'><ins><em>File XHTML</em></ins>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd"&gt; 
+  &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+    &lt;head&gt;&lt;title&gt;esercizio 6 &lt;/title&gt; &lt;/head&gt;
+    &lt;body&gt;
+    Questo collegamento ti porta a swappa : &lt;a href="www.swappa.it"/&gt;
+    &lt;br/&gt;
+    Questo a google : &lt;a href="www.google.it"/&gt; &lt;br/&gt; 
+    MmMmMmMmMmMmMmMm!!
+
+    &lt;/body&gt;
+  &lt;/html&gt;
+</pre>
+<p class='vspace'><ins><em>File CSS</em></ins>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+a:LINK{
+  color:red;
+  }
+
+a:HOVER {
+  color:yellow;
+  font-size: 22pt;
+  }
+
+a:VISITED {
+  color:blue;
+  }
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TWLab01)</span></div>
+  </div>
+</body>
+</html>

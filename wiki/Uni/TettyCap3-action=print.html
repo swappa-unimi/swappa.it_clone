@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Dispense Tetty - Capitolo 3</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TettyCap3.html' title='Dispense Tetty - Capitolo 3'>Dispense Tetty - Capitolo 3</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Capitolo 3: Programmazione strutturata ::</strong>
+</p>
+<div class='vspace'></div><h3>Indice</h3>
+<p>1 <a href='#c31'>Principi della programmazione strutturata</a><br />2 <a href='#c32'>I linguaggi di alto livello</a>
+</p><div class='indent'>2.1 Caratteristiche dei linguaggi di alto livello
+</div><div class='indent'>2.2 Cenni su altri paradigmi di programmazione
+</div><div class='indent'>2.3 Il concetto di tipo di dato
+</div><div class='indent'>2.4 Gestione della memoria
+</div><p>3 <a href='#c33'>Elementi di sintassi C/Java</a>
+</p><div class='indent'>3.1 Commenti
+</div><div class='indent'>3.2 Dichiarazione di variabili
+</div><div class='indent'>3.3 Espressioni e assegnamenti
+</div><div class='indent'>3.4 Vettori (array)
+</div><div class='indent'>3.5 Funzioni
+</div><p>4 <a href='#c34'>Costrutti di controllo</a>
+</p><div class='indent'>4.1 Esecuzione in sequenza
+</div><div class='indent'>4.2 Costrutti iterativi
+</div><div class='indent'>4.3 Costrutti di selezione
+</div><p>5 <a href='#c35'>Eliminazione dei salti</a>
+</p><div class='indent'>5.1 Il Teorema di Böhm-Jacopini
+</div><div class='indent'>5.2 La trasformazione di Ashcroft e Manna
+</div><div class='indent'>5.3 Costrutti minimali
+</div><p>6 <a href='#c36'>Strutture dati</a>
+</p><div class='indent'>6.1 Strutture dati statiche
+</div><div class='indent'>6.2 Strutture dati dinamiche
+</div><p>7 <a href='#c37'>Correttezza dei programmi</a>
+</p><div class='indent'>7.1 Verifica e validazione
+</div><div class='indent'>7.2 Validazione del codice
+</div><div class='indent'>7.1 Test di regressione
+</div><div class='indent'>7.2 Verifica del codice
+</div><div class='indent'>7.1 Asserzioni
+</div><p>8 <a href='#c38'>Modularità</a>
+</p><div class='indent'>8.1 Definizione di modulo
+</div><div class='indent'>8.2 Definizione di modularità
+</div><div class='vspace'></div><hr />
+<p class='vspace'><a name='c31' id='c31'></a>
+</p><h3>1. Principi della programmazione strutturata</h3>
+<p><span  style='color: red;'>La programmazione strutturata rappresenta la naturale estensione dell'approccio top-down al processo di scrittura del codice. </span>
+</p>
+<p class='vspace'><span  style='color: red;'>I compiti elementari di un programma strutturato sono le attività di processo</span>, mentre i requisiti non elementari sono le attività di gestione. 
+</p>
+<p class='vspace'>In generale, ciascuna attività di gestione comprende un costrutto di controllo applicato ad un'attività di livello più basso. Se un'attività di gestione contiene più di un costrutto di controllo, allora dovrebbe essere scomposta in almeno due attività di livello inferiore. L'idea è quella di scomporre il codice in parti più semplici, senza lasciare che i dettagli di ciascuno interferiscano con lo sviluppo del programma nel suo complesso. 
+<span  style='color: red;'>Tra i costrutti di controllo fondamentali, quelli ammessi sono:</span>
+</p><ul><li><span  style='color: red;'>esecuzione seriale</span>, cioè esecuzione di un'attività dopo l'altra; 
+</li><li><span  style='color: red;'>iterazione</span>, cioè ripetizione di un'attività; 
+</li><li><span  style='color: red;'>selezione</span>, cioè esecuzione di due o più attività a seconda di una condizione. 
+</li></ul><p class='vspace'>Una volta effettuata la scomposizione è necessario integrare tutte le attività in componenti funzionali chiamati moduli. Gli elementi da tenere in considerazione per la scelta delle attività da integrare nello stesso modulo sono: 
+</p><ul><li><em>dimensione</em>: ogni modulo dovrebbe starci tutto in una schermata; 
+</li><li><span  style='color: red;'><em>profondità</em>: un modulo non dovrebbe contenere più di tre livelli di strutture di controllo nidificate, meglio ancora se meno; </span>
+</li><li><em>fase temporale</em>: tutte le attività integrate in un modulo dovrebbero riguardare la stessa fase concettuale dell'algoritmo che viene realizzato; 
+</li><li><em>stessa base condizionale</em>: tutte le attività integrate nello stesso modulo dovrebbero essere eseguite nelle stesse condizioni; 
+</li><li><em>condivisione dei dati</em>: tutte le attività integrate nello stesso modulo dovrebbero lavorare sugli stessi dati; 
+</li><li><span  style='color: red;'><em>coesione funzionale</em>: ciascun modulo dovrebbe essere volto ad ottenere un solo scopo specifico o a realizzare una precisa funzionalità. </span>
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c32' id='c32'></a>
+</p><h3>2. I linguaggi di alto livello </h3>
+<h4>2.1 Caratteristiche dei linguaggi di alto livello </h4>
+<p>I linguaggi di alto livello sono linguaggi che non richiedono al programmatore di “abbassarsi” al livello della macchina, ma cercano di fornire uno strumento di programmazione che mascheri i suoi dettagli specifici e di avvicinarsi, per quanto possibile, al modo di ragionare del programmatore stesso.
+</p>
+<p class='vspace'>Un programma di alto livello dovrà essere comunque tradotto nel linguaggio macchina per essere eseguito. Si possono quindi distinguere linguaggi interpretati e linguaggi compilati a seconda che questa operazione venga svolta da un interprete o da un compilatore. Vi sono anche casi intermedi, come quello di Java, nei quali il codice viene prima compilato in un linguaggio intermedio di più basso livello (bytecode) e quindi interpretato da un apposito interprete (Java Virtual Machine).
+</p>
+<p class='vspace'>Alcuni vantaggi dei linguaggi di programmazione di alto livello sono: 
+</p><ul><li>portabilità. Dato che un linguaggio di alto livello nasconde al programmatore i dettagli della macchina su cui girerà, ne consegue che tali linguaggi siano (quasi) indipendenti dalla macchina stessa; 
+</li><li>facilità di scrittura, lettura e manutenzione. Grazie alla maggiore intuitività espressiva del linguaggio vi è una minore esposizione agli errori ed una maggiore velocità nella scrittura del codice; 
+</li><li>meno dettagli da gestire. Un linguaggio di alto livello solleva il programmatore da una serie di incombenze complesse ma necessarie, che rischiano di far perdere di vista il compito principale. Ne è un esempio la gestione della memoria. 
+</li></ul><p class='vspace'>Un linguaggio di programmazione di alto livello strutturato è caratterizzato da: 
+</p><ul><li>dichiarazione di tipi; 
+</li><li>disponibilità di costrutti di sequenza, selezione ed iterazione; 
+</li><li>dichiarazione di variabili e sottoprogrammi; 
+</li><li>presenza di regole di visibilità (scoping) che specificano in quali parti del programma ha significato un particolare identificatore. 
+</li></ul><div class='vspace'></div><h4>2.2 Cenni su altri paradigmi di programmazione </h4>
+<p>Un paradigma di programmazione definisce il modo in cui il programmatore concepisce e percepisce il programma. I principali tipi di paradigmi di programmazione per i linguaggi di alto livello sono: 
+</p><ul><li><em>imperativo</em>, quello classico e più diffuso, basato su una serie di comandi; 
+</li><li><em>funzionale</em>, le cui espressioni utilizzano le funzioni per combinare i valori di partenza. È unicamente costituito da definizioni di funzioni, e il programma stesso assume la forma di funzione; 
+</li><li><em>logico</em>, che richiede al programmatore di descrivere la struttura logica del problema piuttosto che il modo di risolverlo. Unica preoccupazione sarà quindi rappresentare adeguatamente il problema, lasciando all'interprete il compito di utilizzare le informazioni fornite e risolverlo. 
+</li></ul><div class='vspace'></div><h4>2.3 Il concetto di tipo di dato </h4>
+<p>È molto importante nella programmazione la classificazione delle variabili in base alle loro caratteristiche rilevanti, in quanto le operazioni che si possono effettuare su un tipo di dato non sono in generale altrettanto possibili su altri tipi. Per questo motivo nella maggior parte dei linguaggi di alto livello si presuppone che ogni dato, variabile, espressione e funzione appartenga ad un certo tipo. 
+</p>
+<p class='vspace'>Il tipo di un dato caratterizza e definisce l'insieme dei valori a cui può appartenere una costante, o dei valori che può assumere una variabile o un'espressione o che può restituire una funzione. 
+</p>
+<p class='vspace'>Nei linguaggi di programmazione è necessario ricorrere a metodi espliciti e inequivocabili per identificare il tipo di un dato. La soluzione più largamente adottata è che ogni entità venga manipolata dal programma debba essere prima di tutto dichiarata. 
+Una dichiarazione introduce esplicitamente una nuova costante, variabile, funzione, ecc. assegnandole un nome univoco e un tipo tra quelli disponibili, predefiniti dal linguaggio o definiti dal programmatore. 
+</p>
+<div class='vspace'></div><h4>2.4 Gestione della memoria </h4>
+<p>Abbiamo già detto come i linguaggi di alto livello abbiano tra i loro compiti quello di  mascherare al programmatore i dettagli della macchina, permettendogli in questo modo 
+di concentrarsi sul codice. 
+</p>
+<p class='vspace'><span  style='color: red;'>Uno di questi dettagli è la gestione della memoria. Se per i “dati statici” (quelli dichiarati al momento della scrittura del programma) la gestione viene svolta in modo automatico da tutti i linguaggi di alto livello, per i “dati dinamici” (quelli allocati durante l'esecuzione, secondo una logica non prevedibile al momento della scrittura) i vari linguaggi differiscono spesso per il supporto che offrono. </span>
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c33' id='c33'></a>
+</p><h3>3. Elementi di sintassi C/Java</h3>
+<p>In questo capitolo verranno fornite alcune conoscenze di base per C, C++ e Java. 
+</p>
+<div class='vspace'></div><h4>3.1 Commenti </h4>
+<p><span  style='color: red;'>Per corredare il codice di commenti, è sufficiente delimitare questi ultimi tra i due simboli: /* e */.</span> In C++ e Java è possibile inserire commenti di un'unica riga precedendoli con: //. 
+</p>
+<div class='vspace'></div><h4>3.2 Dichiarazione di variabili </h4>
+<p><span  style='color: red;'>In un linguaggio fortemente tipato (come C, C++ e Java) ogni variabile o espressione ha un tipo che è già noto al momento della compilazione, e quindi prima dell'esecuzione. Questa caratteristica aiuta il programmatore ad evitare errori comuni e ad effettuare controlli sulla compatibilità dei tipi nelle espressioni e negli assegnamenti.</span>
+</p>
+<p class='vspace'>Tipi e variabili hanno identificatori, costituiti da una qualsiasi sequenza di lettere alfabetiche, simbolo “_” e cifre. Gli identificatori non possono però avere una cifra come primo carattere, né possono coincidere con una parola chiave o riservata del linguaggio. Identificatori <span  style='color: red;'>validi possono essere ad esempio: parola, numero, c4s4, _return, a3_sei.</span>
+</p>
+<p class='vspace'>Ogni variabile deve essere dichiarata prima di essere usata, con questa forma:<br /><em>&lt;id_tipo&gt; &lt;id_variabile&gt;;</em><br />dove id_tipo è il tipo predefinito o definito dal programmatore, mentre id_variabile è l'identificatore. <span  style='color: red;'>Esempi di tipi predefiniti in C, C++ e Java sono int, char e double.</span>
+</p>
+<div class='vspace'></div><h4>3.3 Espressioni e assegnamenti </h4>
+<p><span  style='color: red;'>L'assegnamento consiste nell'attribuire un valore ad una variabile. Ha questa forma: <br />&lt;id_variabile&gt; = &lt;espressione&gt;;</span>
+</p>
+<p class='vspace'>Un'espressione è costruita combinando costanti, identificatori di variabili, invocazioni di funzioni o metodi, operatori e parentesi tonde, queste ultime necessarie per specificare la priorità degli operatori. È importante che ogni operatore sia applicato a sottoespressioni del tipo appropriato, e che gli argomenti delle funzioni siano del tipo giusto o compatibile. 
+</p>
+<p class='vspace'>Un assegnamento restituisce il valore assegnato alla sua variabile al membro sinistro, e in virtù di questo fatto può essere utilizzato a sua volta all'interno di un'espressione. Sono dunque possibili assegnamenti come i seguenti: <br />x = y = z = 0.0; <br />d = (e = (top – bottom)/2) + 1 
+</p>
+<p class='vspace'>Esistono poi una serie di operatori combinati con l'assegnamento della forma “(operatore)=” (come “+=”, “*=” o “-=”), che permettono di abbreviare certi tipi di assegnamenti che modificano il valore di una variabile in funzione del suo valore precedente. Ad esempio “x += 3” significa “x = x + 3”. 
+</p>
+<p class='vspace'>Un'ulteriore abbreviazione sono gli operatori di incremento “+ +” e di decremento “- -”, che possono essere prefissi o suffissi a un identificatore di variabile intera a seconda che si voglia effettuare l'incremento (o il decremento) prima o dopo la fine dell'istruzione. 
+</p>
+<div class='vspace'></div><h4>3.4 Vettori (array) </h4>
+<p>I vettori (o array) sono delle entità analoghe alle tabelle, definibili e gestibili da tutti i linguaggi di alto livello. Sono caratterizzati da una dimensione, corrispondente al numero di componenti di cui il vettore è formato, specificata tra parentesi quadre. 
+</p>
+<p class='vspace'>I linguaggi C, C++ e Java permettono di costruire vettori costituiti da tipi di base o definiti dal programmatore. <span  style='color: red;'>Per esempio un vettore di dieci interi si definisce come: int x[10];</span>
+</p>
+<p class='vspace'>Da notare che gli indici dei componenti del vettore partono da 0, il che significa che se un array ha dimensione n, la sua ultima componente ha indice n-1. 
+</p>
+<p class='vspace'>È possibile definire vettori multidimensionali semplicemente aggiungendo tra quadre la grandezza della dimensione successiva. <span  style='color: red;'>Per esempio una tabella di interi di quattro righe e sei colonne avrà come dichiarazione: int x[4][6];</span>
+</p>
+<div class='vspace'></div><h4>3.5 Funzioni </h4>
+<p><span  style='color: red;'>Tutti i linguaggi di alto livello permettono la gestione dei sottoprogrammi, distinguendoli in:</span>
+</p><ul><li><span  style='color: red;'>procedure</span>, ovvero sottoprogrammi che prendono in ingresso zero o più argomenti (o parametri), svolgono una particolare elaborazione in base ad essi e non restituiscono (almeno esplicitamente) alcun risultato al programma chiamante; 
+</li><li><span  style='color: red;'>funzioni</span>, ovvero sottoprogrammi che prendono in ingresso zero o più argomenti (o parametri), svolgono una particolare elaborazione in base ad essi e restituiscono un valore al programma chiamante per mezzo dell'istruzione “return &#61665; espressione &#61681;”. 
+</li></ul><p class='vspace'>Quindi: <span  style='color: red;'>le funzioni restituiscono un valore, le procedure no.</span>
+</p>
+<p class='vspace'>Le funzioni si dichiarano con la seguente sintassi: 
+</p>
+<p class='vspace'>&lt;tipo&gt; &lt;nome_funzione&gt; (&lt;argomenti&gt;) 
+{ 
+</p><pre>   &lt;corpo&gt;
+</pre><p>} 
+</p>
+<p class='vspace'>dove &lt;tipo&gt; è il tipo del risultato della funzione (o la parola chiave void, per le procedure) e &lt;argomenti&gt; è una lista di zero o più dichiarazioni di argomenti separate da virgole. 
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c34' id='c34'></a>
+</p><h3>4. Costrutti di controllo</h3>
+<p>I costrutti di controllo permettono di combinare tra loro istruzioni elementari creando così istruzioni complesse o blocchi di istruzioni. In questo capitolo verranno analizzati quelli di C, C++ e Java. 
+</p>
+<div class='vspace'></div><h4>4.1 Esecuzione in sequenza </h4>
+<p>L'esecuzione in sequenza consiste nell'esecuzione di un'istruzione dopo l'altra. <span  style='color: red;'>È possibile creare una sequenza o blocco di istruzioni scrivendole in successione e racchiudendole tra parentesi graffe: { } . </span>
+</p>
+<div class='vspace'></div><h4>4.2 Costrutti iterativi </h4>
+<p>I costrutti iterativi permettono l'esecuzione di un ciclo, ovvero la ripetizione in modo controllato di un determinato blocco di istruzioni.
+</p>
+<p class='vspace'>Il tipo di iterazione più semplice è la while:
+</p>
+<p class='vspace'><strong>while</strong> (&lt;condizione&gt;) 
+</p><div class='indent'>&lt;istruzione&gt; 
+</div><p class='vspace'>La condizione viene controllata all'inizio di ogni iterazione e l'istruzione viene eseguita solo se la condizione è verificata. Nel momento in cui la condizione non è più verificata l'esecuzione dell'iterazione viene interrotta.
+</p>
+<p class='vspace'><span  style='color: red;'>Il do...while permette l'esecuzione dell'istruzione prima del controllo della condizione, quindi almeno una volta:</span>
+</p>
+<p class='vspace'><strong>do</strong>
+</p><div class='indent'>&lt;istruzione&gt;
+</div><p><strong>while</strong> (&lt;condizione&gt;) 
+</p>
+<p class='vspace'>Se il numero di iterazioni è noto a priori, è possibile utilizzare il costrutto for: 
+</p>
+<p class='vspace'><strong>for</strong> (&lt;inizializzazione&gt;; &lt;condizione&gt;; &lt;incremento&gt;) 
+</p><div class='indent'>&lt;istruzione&gt;
+</div><p class='vspace'><span  style='color: red;'>Il for è semanticamente equivalente ad un ciclo while così strutturato: </span>
+</p>
+<p class='vspace'>&lt;inizializzazione&gt;
+while (&lt;condizione&gt;) 
+{ 
+</p><div class='indent'>&lt;istruzione&gt;
+</div><div class='indent'>&lt;incremento&gt;
+</div><p>} 
+</p>
+<p class='vspace'>Il for viene considerato zucchero sintattico, ovvero un costrutto che non aggiunge di per sé nulla alla potenza espressiva di un linguaggio, ma che abbrevia la scrittura di determinati costrutti molto comuni e ricorrenti, rendendo più chiari i programmi. 
+</p>
+<p class='vspace'><span  style='color: red;'>Esistono due istruzioni di salto controllate: </span>
+</p><ul><li><span  style='color: red;'>break, che interrompe l'esecuzione del ciclo e passa all'istruzione successiva; </span>
+</li><li><span  style='color: red;'>continue, che non esce dal ciclo ma passa all'iterazione successiva. </span>
+</li></ul><div class='vspace'></div><h4>4.3 Costrutti di selezione </h4>
+<p>I costrutti di selezione possono essere di due tipi fondamentali: 
+</p><ul><li><span  style='color: red;'>gli if , che permettono una selezione tra due alternative in base ad una </span>
+</li></ul><p>condizione binaria;
+</p><ul><li><span  style='color: red;'>gli switch , che permettono una selezione tra molte alternative in base al valore </span>
+</li></ul><p>di un'espressione scalare. Sono il corrispondente della tecnica delle tabelle di salto.
+</p>
+<p class='vspace'>La sintassi della selezione binaria è la seguente: 
+</p>
+<p class='vspace'><strong>if</strong> (&lt;condizione&gt;) 
+</p><div class='indent'>&lt;istruzione1&gt;
+</div><p><strong>else</strong> 
+</p><div class='indent'>&lt;istruzione2&gt;
+</div><p class='vspace'>Se la condizione è verificata viene eseguita l'istruzione1 (o il blocco di istruzioni1), altrimenti viene eseguita l'istruzione2 (o il blocco di istruzioni2). Se non è prevista un'alternativa, il ramo else può anche essere omesso.
+</p>
+<p class='vspace'>La sintassi della selezione tra n alternative ha invece la seguente sintassi: 
+</p>
+<p class='vspace'><strong>switch</strong> (&lt;espressione&gt;) 
+{ 
+</p><div class='indent'><strong>case</strong> &lt;costante1&gt;:
+<div class='indent'>&lt;istruzione1&gt;
+</div><div class='indent'>break; 
+</div></div><div class='indent'>... 
+</div><div class='indent'><strong>case</strong> &lt;costante n&gt;: 
+<div class='indent'>&lt;istruzionen&gt;
+</div><div class='indent'>break; 
+</div></div><div class='indent'><strong>default</strong>: 
+<div class='indent'>&lt;istruzione 0&gt; 
+</div></div><p>} 
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c35' id='c35'></a>
+</p><h3>5. Eliminazione dei salti</h3>
+<h4>5.1 Il Teorema di Böhm-Jacopini </h4>
+<p><span  style='color: red;'>Il Teorema di Böhm-Jacopini (o “di struttura”) costituisce una giustificazione matematica  all'abbandono di uno stile di programmazione che faceva uso dei salti a favore della programmazione strutturata. </span>
+</p>
+<p class='vspace'><span  style='color: red;'>Tale teorema dimostra che è possibile realizzare qualsiasi algoritmo senza utilizzare alcuna istruzione di salto, disponendo dei tre soli costrutti di controllo: sequenza, iterazione e selezione. </span>
+</p>
+<p class='vspace'><span  style='color: red;'>Unico “contro” della programmazione strutturata è che in alcuni casi un programma senza salti può essere meno efficiente di un equivalente programma con salti.</span>
+</p>
+<div class='vspace'></div><h4>5.2 La trasformazione di Ashcroft e Manna </h4>
+<p><span  style='color: red;'>Una dimostrazione alternativa del Teorema di Böhm-Jacopini è la trasformazione di Ashcroft e Manna. </span>
+</p>
+<p class='vspace'><span  style='color: red;'>L'idea che sta alla base di tale dimostrazione è che è sempre possibile trasformare un qualsiasi programma con salti in un unico ciclo while contenente tanti if.</span>
+</p>
+<div class='vspace'></div><h4>5.3 Costrutti minimali </h4>
+<p><span  style='color: red;'>Il Teorema di Böhm-Jacopini dimostra che è possibile realizzare qualsiasi algoritmo utilizzando i tre soli costrutti di esecuzione in sequenza, iterazione e selezione, ma in realtà sono sufficienti i primi due. </span>Una selezione può essere infatti trasformata in un costrutto di iterazione in cui l'iterazione viene effettuata al massimo una volta, sempre che la condizione di entrata sia verificata.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c36' id='c36'></a>
+</p><h3>6. Strutture dati</h3>
+<p>Una struttura dati è un modo sistematico di organizzare i dati utilizzati da un algoritmo e di accedere ad essi. 
+</p>
+<p class='vspace'>Così come una struttura dati dipende dall'algoritmo che la deve utilizzare, un algoritmo dipende dalle strutture dati che utilizza; il loro sviluppo deve dunque andare di pari passo. 
+</p>
+<p class='vspace'>Progettare strutture dati inadeguate rende la progettazione dell'algoritmo molto più complessa di quanto in realtà potrebbe essere. 
+</p>
+<div class='vspace'></div><h4>6.1 Strutture dati statiche </h4>
+<p>Le strutture permettono di combinare una serie di dati eterogenei in un'unità logica. 
+In C si utilizza una sintassi che per prima cosa specifica ciò che la struttura contiene, quindi dichiara una variabile che servirà per riferirsi al nuovo dato definito. 
+Per esempio: 
+</p>
+<p class='vspace'>struct { 
+</p><div class='indent'>int segnatura; 
+</div><div class='indent'>char titolo[80]; 
+</div><div class='indent'>int anno; 
+</div><div class='indent'>int copie; 
+</div><p>} un_libro; 
+</p>
+<p class='vspace'>Per fare riferimento a un campo particolare della struttura si scrive il nome della struttura seguito da un punto “.” a sua volta seguito dal nome del campo. Riprendendo l'esempio di prima, per riferirci al campo anno della variabile un_libro, si scriverà: un_libro.anno; 
+</p>
+<p class='vspace'>La definizione di una struttura è a tutti gli effetti la definizione di un nuovo tipo, a cui si può dare anche un nome. Ad esempio: 
+</p>
+<p class='vspace'>struct Libro { 
+</p><div class='indent'>int segnatura; 
+</div><div class='indent'>char titolo[80]; 
+</div><div class='indent'>int anno; 
+</div><div class='indent'>int copie; 
+</div><p>}; 
+</p>
+<p class='vspace'>permette la dichiarazione di una variabile di questo tipo: Libro la_divina_commedia;
+</p>
+<div class='vspace'></div><h4>6.2 Strutture dati dinamiche e puntatori </h4>
+<p>Le strutture dati dinamiche sono utilizzate per rappresentare le informazioni in tutti quei problemi che richiedono il cambiamento della struttura stessa durante l'elaborazione. 
+</p>
+<p class='vspace'>Pur avendo costituenti di base statici (quindi dati elementari, vettori o strutture statiche), il modo con cui vengono organizzati e collegati tra loro è ciò che li rende dinamici.
+</p>
+<p class='vspace'>Nell'allocazione dinamica della memoria l'associazione tra specifiche aree di memoria e singole componenti della variabile di una struttura dati avviene solo quando le componenti cominciano ad esistere, cioè durante l'esecuzione del programma. 
+</p>
+<p class='vspace'><span  style='color: red;'>I linguaggi di alto livello supportano l'utilizzo di strutture dati dinamiche offrendo: </span>
+</p><ul><li><span  style='color: red;'>tipi di dato in grado di fornire gli indirizzi delle locazioni di memoria, ovvero i puntatori. Si dichiarano con un asterisco * dopo l'identificatore del tipo; </span>
+</li><li>opportune convenzioni sintattiche per definire e utilizzare i puntatori; 
+</li><li>una gestione automatica dell'allocazione dinamica di memoria. 
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c37' id='c37'></a>
+</p><h3>7. Correttezza dei programmi</h3>
+<p>Un pezzo di codice si dice corretto quando fa esattamente quello che volevamo facesse. <span  style='color: red;'>Un programma corretto è quindi un programma che soddisfa le sue specifiche.</span>
+</p>
+<p class='vspace'>In termini formali, si definisce specifica una quadrupla S = &lt;X, Y, I, U&gt;, dove I(x) è la precondizione che si assume vera per ogni dato di ingresso x &#8712; X e U(x, y) è la postcondizione che deve essere vera dopo che il pezzo di codice è stato eseguito e che lega il dato di ingresso x con il risultato y. 
+</p>
+<p class='vspace'>Dire che un pezzo di codice che calcola una funzione f è corretto rispetto alla specifica S, vuol dire che:  	&#8704;x &#8712; X, f (x) &#8712; Y &#8743; I (x) &#8835; U (x, f (x)) 
+</p>
+<div class='vspace'></div><h4>7.1 Verifica e validazione </h4>
+<p>Esistono due modi per dimostrare che f sia corretta: 
+</p><ul><li>la verifica, che consiste nel considerare la formula precedente e dimostrare che f restituisce il risultato corretto per ogni possibile ingresso; 
+</li><li>la validazione, che consiste nell'eseguire una serie di prove e verificare che f restituisce il risultato desiderato in ciascuna delle prove effettuate, in modo che sia ragionevole aspettarsi che f restituirà il risultato desiderato anche in quei casi non ancora provati. 
+</li></ul><p class='vspace'><span  style='color: red;'>La verifica ha un valore assoluto di correttezza, mentre la validazione esclusivamente statistico; si può anche dire che la verifica è formale, mentre la validazione è empirica.</span>
+</p>
+<p class='vspace'>Pur essendo la via più sicura e definitiva per dimostrare la correttezza di un codice, è estremamente difficile e oneroso verificare programmi di una certa complessità; in alcuni casi addirittura proibitivo.
+</p>
+<div class='vspace'></div><h4>7.2 Validazione del codice </h4>
+<p>Quando si valida un programma lo spirito giusto non è dimostrare che il programma funziona, ma che non funziona. Tutto ciò che può fare la validazione è infatti rilevare la presenza di un errore e non garantirne l'assenza. 
+</p>
+<p class='vspace'>L'insieme dei casi di prova dovrebbe seguire i seguenti principi: 
+</p><ul><li>esercitare tutto il codice, poiché l'errore potrebbe annidarsi nel ramo di codice meno usato e più remoto; 
+</li><li>provare alcuni casi tipici, per trovare eventuali errori macroscopici dovuti a distrazione; 
+</li><li>provare alcuni casi atipici, ovvero quei casi più insidiosi perché non tenuti in considerazione dal programmatore durante la realizzazione del programma. Sono quelli su cui bisognerebbe concentrarsi maggiormente; 
+</li><li>provare tutti i casi limite (stress testing), che mettono alla prova la robustezza del codice e che possono evidenziare alcune falle dovute a mancati controlli o errori di distrazione. 
+</li></ul><div class='vspace'></div><h4>7.3 Test di regressione </h4>
+<p>Ogni modifica apportata durante la manutenzione del codice richiede nuovi collaudi. 
+<span  style='color: red;'>Il test di regressione è quel processo che controlla che le modifiche non abbiano introdotto nuovi errori in un codice già validato.</span> È un processo necessario, ma oneroso e molto costoso: è stato calcolato che le attività di manutenzione del software rappresentano i due terzi dell'intero costo di produzione.
+</p>
+<p class='vspace'>L'opzione più semplice e costosa per effettuare il test di regressione è rifare da capo tutte le prove di validazione. Normalmente però si preferisce selezionare un opportuno sottoinsieme dei casi di prova, scegliendo uno tra i seguenti approcci:
+</p><ul><li>approcci di minimizzazione, che assicurano un minimo di copertura strutturale, ad esempio selezionando una sola prova per ciascun blocco di codice modificato; 
+</li><li>approcci di copertura, anch'essi basati su approcci di copertura, ma che selezionano tutte le prove che esercitano il codice modificato; 
+</li><li>approcci sicuri, che selezionano ogni prova che potrebbe far sì che il programma modificato produca un risultato diverso dall'originale. 
+</li></ul><div class='vspace'></div><h4>7.4 Verifica del codice</h4>
+<p>Riguardo la verifica della correttezza del codice è opportuno fare una distinzione tra:
+</p><ul><li><span  style='color: red;'>correttezza totale, che corrisponde alla garanzia del soddisfacimento delle specifiche per qualsiasi ingresso in un numero finito di passi.</span> Per dimostrare la correttezza totale bisogna dimostrare che il programma termina per ogni ingresso x &#8712; X che soddisfa I(x), e dimostrare inoltre la correttezza parziale del programma; 
+</li><li><span  style='color: red;'>correttezza parziale, che corrisponde alla semplice garanzia che per ogni ingresso x &#8712; X che soddisfa I(x), il programma, se termina, produce un risultato y &#8712; Y che soddisfa la specifica.</span>
+</li></ul><div class='vspace'></div><h4>7.5 Asserzioni</h4>
+<p>Le asserzioni sono costrutti condizionali che controllano una proprietà invariante e, nel caso in cui questa non si sia verificata, producono intenzionalmente un errore di esecuzione che ha l'effetto di abortire l'esecuzione del programma, segnalando così l'anomalia al programmatore, al collaudatore o all'utente. 
+</p>
+<p class='vspace'><span  style='color: red;'>Le asserzioni costituiscono una pratica comoda ed efficace di scrittura che, se seguita con attenzione, facilita la produzione di codice corretto e di documentazione interna di un programma.</span>
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c38' id='c38'></a>
+</p><h3>8. Modularità</h3>
+<p>Uno dei principi chiave di una buona organizzazione del codice è che sia modulare, ovvero suddiviso in unità funzionali separate, chiamate moduli, chiaramente individuate e caratterizzate da un livello di complessità gestibile.
+</p>
+<div class='vspace'></div><h4>8.1 Definizione di modulo</h4>
+<p>Nella programmazione il modulo è un pezzo di programma logicamente autocontenuto, con modalità di interazione con gli altri eventuali pezzi di un sistema software ben definite e limitate. Si può dire che <span  style='color: red;'>un modulo è un blocco di codice con esattamente un punto di entrata ed un punto di uscita.</span>
+</p>
+<div class='vspace'></div><h4>8.2 Definizione di modularità</h4>
+<p>La modularità è la proprietà di un sistema costituito da unità dette moduli e progettato con dimensioni standardizzate, in modo da essere flessibile e configurabile nell'utilizzo.
+</p>
+<p class='vspace'>Nella programmazione, modularità significa identificare dei moduli semplici e ben delimitati in cui il programma può essere scomposto, in modo che ogni funzionalità sia confinata in un solo modulo e che le interazioni tra moduli siano il più possibile limitate e governate da convenzioni e regole precise. 
+</p>
+<p class='vspace'>Questa proprietà ha innegabili vantaggi:
+</p><ul><li>la possibilità di modificare il codice di un modulo senza dover di conseguenza riscrivere anche il resto del programma;
+</li><li>la possibilità di estrarre un modulo da un programma per riutilizzarlo in un altro.
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TettyCap3)</span></div>
+  </div>
+</body>
+</html>

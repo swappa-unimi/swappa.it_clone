@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi per l'elaborazione delle informazioni - Lezione 1 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.LezSEDI01' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi per l'elaborazione delle informazioni - Lezione 1
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI01?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI01?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='LezSEDI01-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI01?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI01?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi per l'elaborazione delle informazioni - Lezione 1 was last modified on March 17, 2009, at 06:32 PM'>
+							<span style='display:none;'>Sistemi per l'elaborazione delle informazioni - Lezione 1</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Sistemi per l'elaborazione delle informazioni ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 25 Settembre 2007</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 215px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Segnali</a>
+</li><li><a href='#s2'>Rete telefonica</a>
+<ul><li><a href='#s21'>Telefonia digitale</a>
+</li></ul></li><li><a href='#s3'>Multiplexing digitale</a>
+</li><li><a href='#s4'>Tecniche di multiplexing</a>
+</li><li><a href='#s5'>Sonet</a>
+</li><li><a href='#s6'>ATM</a>
+</li></ol></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>Segnali</h2>
+<p>La <em>trasmissione</em> consiste di segnali su reti che portano sequenze di bit. Queste sequenze possono essere dati, files, video etc. etc.
+</p>
+<p class='vspace'>Nei computer i bit sono statici: sono rappresentati fisicamente da cariche immagazzinate in piccoli condensatori nelle varie memorie del computer. La trasmissione invece deve rappresentare questi bit statici nel dominio del tempo, cioè trasmetterli uno dopo l'altro.
+</p>
+<p class='vspace'>Il <em>segnale</em> è una grandezza fisica che varia nel tempo, come le onde (sinusoidali, quadrate, a dente di <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Rasputin'>sega</a>. NOTA: è ovvio che fisicamente non saranno mai onde perfette, perché la perfezione non è di questo mondo etc.etc.
+</p>
+<p class='vspace'>Un segnale è <em>periodico</em> quando si ripete uguale a se stesso dopo un certo periodo di tempo. La <em>frequenza</em> mi dice appunto quante sono le ripetizioni di un segnale nell'arco di un secondo: 1 Hz = 1 ripetizione al secondo. Il <em>periodo</em> è invece il tempo che passa tra l'inizio di una forma d'onda e la sua ripetizione. È l'opposto della frequenza.
+</p>
+<p class='vspace'>Le <em>onde sinusoidali</em> sono proiezioni sull'asse y di un punto sulla circonferenza, il quale punto ruota in senso antiorario. 
+</p>
+<div class='vspace'></div><div><img src='http://doppioclic.altervista.org/wiki/uploads/Uni/onde_sinusoidali.jpg' alt='' title='' /></div>
+<p class='vspace'>Un'onda sinusoidale si può determinare univocamente in base ad <em>ampiezza</em> (cioè la lunghzza del raggio, ovvero quanto è alta la cresta dell'onda), <em>frequenza</em> e <em>fase</em>, cioè quando inizia, ovvero se all'istante di tempo 0 l'onda è a 0, a 1 oppure in qualche posizione intermedia.
+Le onde sinusoidali sono importanti perché
+</p><ol><li>facili da generare
+</li><li>perché c'è Fourier.
+</li></ol><p class='vspace'>Fourier era un matematico francese il quale dice che ogni onda periodica può essere ottenuta con la somma di un certo numero di componenti sinusoidali. Onda periodica vuol dire un'onda dal profilo qualsiasi, ma che abbia un periodo. Queste componenti sinusoidali sono dette armoniche. Ecco che ogni onda periodica è quindi scomponibile in onde sinusoidali, dette armoniche del segnale, e se prendo un treno di bit e lo vedo come un'onda periodica, ecco che posso scomporlo in onde sinusoidali facilmente riproducibili.
+</p>
+<p class='vspace'>Problema: Fourier vale per i segnali periodici, ma in genere le sequenze di bit non sono periodiche. Quindi? Vedi dopo.
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='http://doppioclic.altervista.org/wiki/uploads/Uni/fourier.jpg' alt='' title='' /><br /><strong>Armoniche di una forma d'onda</strong><br />Immagine da: <a class='urllink' href='http://www.supportimusicali.it/' title='' rel='nofollow'>Supporti musicali</a>.</span></div>
+<p>Le varie armoniche, tutte a frequenze diverse, sono dette <em>componenti spettrali</em>, e l'ampiezza delle armoniche sull'asse delle frequenze si chiama <em>spettro</em>. Per far capire ciò uso dei numeri a caso: se per generare un segnale periodico uso 10 armoniche, ed ognuna lavora a 10 Hz più dell'altra, ecco che il mio <em>spettro</em> ha un'ampiezza di 10 onde * 10 Hz = 100Hz. Questa differenza di Hz si chiama <em>banda</em>. Da notare che è una <em>differenza</em>: vuol dire che è la differenza tra l'armonica con frequenza più alta e l'armonica con frequenza più bassa. Se la più bassa è a 1000Hz e la più alta è a 1100Hz, l'ampiezza è 100Hz. Se la più bassa è a 2000Hz e la più alta è a 2100Hz, l'ampiezza è sempre 100Hz. L'armonica più bassa si chiama <em>fondamentale</em>.
+</p>
+<p class='vspace'>NOTA: secondo la teoria, ci possono essere infinite armoniche, ma è chiaro che occorre approssimare, e in genere ci si ritiene soddisfatti quando si sono generate abbastanza armoniche da coprire il 90% del segnale originale.
+Posso immaginare le armoniche esattamente come le bande verticali di un equalizzatore, che sia l'eq di uno stereo o di un lettore multimediale etc. Questo equalizzatore ha degli slider verticali, ognuno con la sua brava etichetta che dice "100Hz", "300Hz", "1500Hz" e così via. Se alzo uno di questi slider, vuol dire che tutte le onde che lavorano intorno alla frequenza dello slider stesso avranno un'ampiezza più alta: ciò vuol dire che se alzo lo slider dei 100Hz, le frequenze che lavorano intorno ai 100Hz saranno più grandi in ampiezza.
+</p>
+<p class='vspace'>Posso quindi rappresentare un segnale graficamente tramite un istogramma delle sue armoniche, in cui in genere l'altezza di un segmento è proporzionale al quadrato dell'ampiezza max dell'armonica corrispondente. Ripassando, lo <em>spettro</em> è la distanza tra la fondamentale (l'armonica più bassa) e la più alta armonica. Questo istogramma si chiama <em>spettrogramma</em>.
+</p>
+<p class='vspace'>Una situazione frequente è che il mio spettro va per esempio dai 1000Hz ai 20000Hz, ma il mezzo che uso per la riproduzione non abbia la stessa <em>risposta in frequenza</em>. Per esempio, le casse dei computer in genere hanno pochi bassi: vuol dire che <em>rispondono</em> solamente a frequenze che partono dai 500Hz in su, per esempio. Ciò vuol dire che il mio segnale originale viene <em>tagliato</em>, e quindi perdo una parte di informazione (in questo caso, il tum tum delle canzoni, che lo sento come se fosse un toc toc).
+Praticamente, le mie casse fanno da <em>filtro</em>, e si può immaginare di creare filtri da usare deliberatamente. I filtri fermano certe armoniche e ne fanno passare altre. Che utilità hanno? Per esempio, se sto registrando da un microfono che ha un brusio di fondo, posso tagliare dai 50Hz in giù per eliminarlo, perché in genere è dovuto alla corrente elettrica che da noi è a 50Hz.
+</p>
+<p class='vspace'>Quando il segnale NON è periodico, Fourier non trasforma più l'onda complessa in componenti sinusoidali che si sommano (cioè una serie), ma la trasforma in integrali: è la famosa <em>trasformata di Fourier</em>. Questi integrali appartengono alla matematica del Cariboni e quindi sono continui, non discreti come le barre di un istogramma.
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Rete telefonica</h2>
+<p>La rete telefonica trasforma la voce in corrente e poi di nuovo in suono. Lo fa perché la corrente si può trasportare per lunghe distanze, la voce che non sia di <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Patrizia'>Patrizia</a> no.
+</p>
+<p class='vspace'>La voce quando esce dalla cavità orale è aria che si muove con più o meno pressione: questa variazione di pressione può essere captata comodamente in diversi modi. Uno dei più banali è l'orecchio. L'orecchio ha una membrana che reagisce allo spostamento d'aria, la quale muove vari ossicini che sono collegati al nervo, il quale poi trasmette queste vibrazioni al cervello, il quale le interpreta come suoni.
+</p>
+<p class='vspace'>Antonio Meucci ebbe l'idea di sfruttare l'effetto <em>piezoelettrico</em> per generare corrente a partire dalla variazione di pressione. Ci sono certi materiali che quando vengono compressi generano una tensione elettrica proporzionale alla compressione. Uno di questi materiali è quella roba di carbone che si trova nelle cornette del telefono, o almeno, in quelle vecchie. Il segnale elettrico così generato viaggia sul filo e alla fine del percorso viene catturato da un'altra membrana, simile a quella in partenza, che vibra a sua volta in funzione della corrente, riproducendo così la voce originale.
+</p>
+<p class='vspace'>Buona idea. Problema: va bene per i citofoni. Il filo deve andare direttamente da una membrana all'altra. Finché ho due ricevitori (il citofono, appunto) va bene, ma se ho devo parlare con più persone, che faccio? Tiro un filo da ogni casa ad ogni casa? Qui entra in gioco l'idea di Graham Bell, il quale ha usato le sinusoidi in questo modo.
+Prende un segnale periodico con frequenza fissa, ed utilizzo il segnale della voce per modificarlo e creare così un'onda diversa: si chiama <em>modulazione</em>. Il segnale fisso è detto <em>portante</em>, e il segnale che lo modifica si chiama <em>modulante</em>.
+</p>
+<p class='vspace'>Se ho due microfoni, uso semplicemente due portanti diverse, così che posso su una portante moltiplicare il segnale della mia voce, e sull'altra moltiplicare il segnale della voce di qualcun altro: stesso filo, due conversazioni. Se ho più voci, uso più portanti. Come faccio a distinguere tra due portanti diverse? Occorre usare le formule di <em>prostaferesi</em>, che si trovano nel Necronomicon.
+</p>
+<p class='vspace'>Quindi, posso avere una portante a 100 Hz, una a 200Hz, una a 300 Hz etc. etc. Se il mio filo ha una risposta in frequenza che va da 100 a 1000 Hz, ecco che posso avere 10 conversazioni contemporanee con 10 portanti diverse.
+</p>
+<p class='vspace'>Questo procedimento si chiama <strong>multiplexing a divisione di frequenza</strong>, <strong>FDM</strong> come acronimo inglese.
+</p>
+<p class='vspace'>Siccome le portanti non sono infinite, c'erano le centraliniste che collegavano fisicamente i cavi per far comunicare utenti lontani l'uno dall'altro, nel caso in cui un utente era su di una linea e l'altro su di un'altra (ovvero sempre a meno che non si abiti nello stesso quartiere).
+</p>
+<p class='vspace'><a name='s21' id='s21'></a>
+</p><h3>Telefonia digitale</h3>
+<p>Si campiona la voce, si trasforma il campione in bit, e poi si modula il treno di bit...
+</p>
+<p class='vspace'>Il <em>campione</em> è la frequenza con cui vado ad analizzare la voce per analizzarne l'onda. Se sto campionando a 22Khz vuol dire che ogni secondo prelevo 22000 piccoli campioni dalla forma d'onda della mia voce. La frequenza di campionamento non è scelta a caso. Secondo il teorema di <em>Nyquist</em>, per mantenere un segnale identico dopo il campionamento, mi occorre una frequenza di campionamento che sia pari almeno al doppio dell'armonica più alta del mio segnale.
+</p>
+<p class='vspace'>La voce ha l'armonica più alta a 4Khz, quindi vuol dire che per rappresentarla fedelmente mi occorre campionare a 8khz, cioè raccogliere ogni secondo 8000 immagini diverse della forma d'onda della voce. Il CDROM funziona a 44.1 Khz, il che vuol dire che può rappresentare, al massimo, frequenze che si aggirano intorno ai 22050 Hz. Non è un valore scelto a caso, dato che in generale l'orecchio umano discerne suoni che arrivano a un po' prima dei 20000 Hz, e le frequenze superiori vengono comunque percepite inconsciamente e servono ad arricchire il suono.
+</p>
+<p class='vspace'>Ma non basta campionare 8000 volte al secondo. Ogni singolo campione è una piccola porzione della forma d'onda che la voce assume. Questo piccolo campione, quanti valori può assumere? Supponendo di disegnare la voce come un'onda su di un grafico, e di dividerla in tante piccole torri verticali che rappresentano i campioni, la domanda di questo paragrafo è: quanto deve essere alta ogni torre?
+</p>
+<p class='vspace'>La risposta a questa domanda viene data tramite la <em>risoluzione</em> del campione. I sistemi di telefonia digitale campionano a 8Khz e 8 bit. 8 bit significa 2^8 = 256 valori, il che vuol dire che le mie piccole torri saranno tutte divise più o meno brutalmente in 256 classi. La classe con valore minimo ha ampiezza 0, la classe con valore massimo ha ampiezza 256. Quindi, ogni singolo campione porterà con sé il suo valore in bit, che ne rappresenta l'ampiezza, ed in questo caso questo valore può assumere 256 valori diversi. Per tornare all'esempio del CDROM, questo lavora invece a 16 bit, cioè ogni singolo campione dei 44100 che analizzo ogni minuto può assumere 2^16 = 65536 valori diversi.
+</p>
+<p class='vspace'>È chiaro che più la risoluzione in bit è alta, più il segnale sarà fedele. Il limite degli 8 bit è che non è vero che l'orecchio umano discerne solo 256 livelli di volume. Già 16bit è più accettabile.
+</p>
+<p class='vspace'>La frequenza e la risoluzione mi permettono anche di determinare quanti bit al secondo mi servono per codificare la mia informazione originale, in questo caso, la voce. Il <em>bitrate</em> è la misura della trasmissione di bit al secondo: bit / secondo. Se ho 8000 campioni, ciascuno con 8 bit, vuol dire che ogni secondo avrò 8 * 8000 = 64000 bit da trasmettere, ovvero 64Kbps (64 kilo bit per secondo).
+</p>
+<p class='vspace'>Ora, la mia modulante non sarà più la forma d'onda originale della mia voce, ma sarà questo treno di bit: ogni singolo bit determinerà una variazione di una forma d'onda, variazione che viene decisa dagli standard, e l'onda risultante sarà utilizzata per modulare la portante come abbiamo visto prima, cioè col metodo FDM di Graham Bell.
+</p>
+<p class='vspace'>Il sistema che si usa per portare la voce digitalizzata è il PSTN: da casa fino alla centralina la voce corre analogicamente sul filo, che è detto <em>local loop</em>. Poi nella centralina si digitalizza la voce e la si mette su di una portante FDM fino alla centrale di zona, e poi lì viene smistata bla bla fino al destinatario, finché la sua centralina non riconverte la portante modulata con la mia voce digitalizzata in segnale analogico, il quale alla fine viene ritrasformato in suono dal suo apparecchio telefonico... puff puff!
+</p>
+<p class='vspace'>I collegamenti tra le centrali sono detti <em>trunk</em>, e sono interamente digitali. Se i vari collegamenti sono fatti bene, tra le varie centraline a livello gerarchico, ciò significa che io da casa posso raggiungere qualsiasi altro numero telefonico in tutta Italia, o anche nel mondo. Una volta c'era la centralinista che connetteva nel pannello di fronte a sé i fili: uno veniva dalla mia centrale di zona, l'altro dalla centrale di zona della mia morosa, e lei li univa fisicamente con degli spinotti. Invece adesso c'è la teleselezione: compongo un numero, il quale viene analizzato: il prefisso mi dice la zona, i primi due numeri la sottozona etc. fino a scegliere l'abbonato, e i computer mi hanno connesso automaticamente. Una volta ho letto un racconto di un telefono che si era innamorato della centralinista, e quando sono passati alla teleselezione e non c'era più la centralinista, si era rifiutato di funzionare ancora.
+</p>
+<p class='vspace'>Per far funzionare la teleselezione occorre che il sistema telefonico capisca, in base al numero che io digito sulla tastiera del mio telefono, come trovare l'altro numero. Una volta c'era la centralina che commutava manualmente i circuiti, e questa operazione viene detta <em>circuit switching</em>: metteva fisicamente in contatto il circuito del mio telefono col circuito del telefono della morosa. Invece adesso c'è la teleselezione, e al posto della centralina si usano dei messaggi di controllo che automaticamente uniscono i nostri due telefoni nel modo spiegato nel paragrafo sopra.
+</p>
+<p class='vspace'>Per inviare questi messaggi di controllo, posso adoperare 2 strategie differenti. La prima è quella di usare dei suoni particolari, all'interno dello spettro che effettivamente viene usato dai telefoni, per dare ordini alle varie centraline. Si chiama <em>in-band sygnaling</em>. Vuol dire questo: lo spettro dei suoni viene filtrato, supponiamo, dai 300Hz fino ai 4Khz per farci passare la mia voce. In questo spettro, si è scelto di dedicare (dico a caso) un fischio dell'ampiezza di 3800 Hz per indicare il numero 0, uo a 3820Hz per indicare il numero 1 e così via. Questo sistema lo si usava in America, e non è leggenda ma verità che c'era gente che era riuscita a interpretare questo linguaggio di fischi, e trovato il modo di riprodurlo con fischietti vari, riusciva a dare gli ordini che voleva alla centralina, come per esempio chiamare gratis.
+</p>
+<p class='vspace'>Da noi invece si usa la seconda strategia, che è quella dell' <em>Out of band sygnaling</em>, ovveri c'è una piccola banda dedicata a far funzionare la teleselezione e le altre amenità. Le reti di computer, tra l'altro, sono In-band, perché ovviamente non val la pena tirare un cavo per i dati e un altro per le informazioni di controllo, oltre a essere irrealizabile.
+</p>
+<p class='vspace'>Per concludere, c'è il PBX, che vuol dire <em>Private Branch Exchange</em>, che altro non è che una centralina come quelle che ci sono in ogni quartiere, solo che non è in un quartiere, ma è installata all'interno di un'azienda o simili. In questo modo quando alzo il telefono il numero che compongo non viene passato alla Telecom, ma viene teleselezionato all'interno degli uffici dell'azienda. Con questo sistema in genere se voglio chiamare all'esterno devo prima fare lo 0, così che il PBX mette in comunicazione il mio telefono col mondo circostante. È quello che succede quando le segretarie compongono il numero 126 e risponde il grande capo nell'altro ufficio e gli annunciano visite, come nei film. Il PBX può essere uno scatolo fisico, oppure una simulazione che la Telecom ti fa attraverso la rete normale.
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Multiplexing Digitale</h2>
+<p>Se la voce viene digitalizzata, perché devo usare ancora l'FDM analogico? Non posso usare un sistema direttamente digitale? È la domanda che si sono fatti alla Bell, in America.
+</p>
+<p class='vspace'>La risposta è stata l'idea di fare multiplexing non nel dominio delle frequenze (cioè una portante a frequenza diversa per ogni segnale) ma nel dominio del tempo (cioè ogni segnale ha una sua finestra temporale, e ad ogni segnale ne segue un altro in rapida successione). C'è una portante ad alta frequenza, che trasmette modulanti una dopo l'altra.
+</p>
+<p class='vspace'>Questo affare si chiama TDM, cioè <em>time division multiplexing</em>. Ha il vantaggio di essere facilmente standardizzabile, e di essere facilmente scalabile (cioè si può aumentare la dimensione dell'installazione in modo coerente). Infatti, posso fare TDM su un altro TDM, e così via, a livelli gerarchici. In America ciò è stato chiamato T1, da noi in Europa si chiama E1. Avviene che da loro le linee telefoniche siano a 7 bit, quindi con un bitrate di 56kbps. Una linea T1 trasmette ogni secondo 24 linee normali, ovvero 24 * 56kbps. Ciò vuol dire che trasmetto io, poi il mio vicino di casa, poi l'altro vicino ancora etc. e dopo 24 persone tocca ancora a me, poi ancora al vicino e così via. In Europa le E1 lavorano invece con 24 utenti, ma a 8 bit.
+</p>
+<p class='vspace'>Quando dicevo "fare il TDM del TDM" vuol dire quanto segue. Prendo una T1, e la metto su di un cavo T2, che porta 4 T1 una dopo l'altra. Ciò vuol dire che il cavo T2 mi porta fino a 24 * 4 = 96 utenti finali, uno dopo l'altro. È chiaro che una linea T2 deve essere 4 volte più veloce di una linea T1. A sua volta, la T3 porta 7 T2, cioè 7 * 4 * 24 = 672 utenti, e la T4 porta  6 T3. NOTA: sugli appunti sta scritto DS0, DS1 etc. devo ancora capire se i nomi sono intercambiabili.
+C'è da far rilevare che siccome in America usano 7 bit e non 8, a parità di portata della singola linea, loro avranno più bit sprecati.
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>Tecniche di Multiplexing</h2>
+<h3>FDMA</h3>
+<p><em>Frequency Division Multiple Access</em>
+</p><ul><li>portanti diverse
+</li><li>i segnali non si sovrappongono
+</li></ul><div class='vspace'></div><h3>TDMA</h3>
+<p><em>Time Division Multiple Access</em>
+</p><ul><li>le stazioni trasmettono a turno, un bit ciascuna, una dopo l'altra
+</li><li>i segnali non si sovrappongono
+</li><li>c'è un numero finito di slot
+</li></ul><div class='vspace'></div><h3>CDMA</h3>
+<p><em>Code Division Multiple Access</em>
+</p><ul><li>ogni stazione ha un codice diverso
+</li><li>i segnali sono sovrapposti ma intelligibili tramite al codice (Cocktail Party Effect: tutti parlano insieme, c'è rumore, ma io capisco comunque quello che mi dice l'interlocutore che ho di fronte).
+</li></ul><p class='vspace'>Le reti cellulari usano il CDMA e non gli altri sistemi di multiplexing, perché questi altri hanno un numero finito di slot disponibili, siano essi portanti o slot temporali diversi, mentre non sai mai quanti cellulari diversi posso avere sotto la stessa cella.
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h2>SONET</h2>
+<p>SONET = Synchronous Optical Network. È un sistema TDM ma usa tecnologia a fibre ottiche, con tutto il suo sistema gerarchico simile a quello delle DS0, DS1 etc.
+</p>
+<p class='vspace'>Ogni 810 byte che trasmette, SONET ne usa altri 27 per il sincronismo, perché con un alto bitrate è possibile che si perda qualche byte per strada. Ecco qui che introduciamo il concetto di <strong>overhead</strong>.
+</p>
+<p class='vspace'>L'overhead è la percentuale di informazioni, in una trasmissione, che non contengono i dati che sto inviando, ma contengono informazioni per il sincronismo. Nel caso di SONET, 27 byte su 810 = 3,33% di dati di overhead. È da notare che gli overhead esistono per <em>ogni</em> protocollo che vado ad utilizzare, a catena. Se ho una rete fisica come il SONET, ogni 810 byte ne "perdo" 27 per overhead, e 810 sono i miei dati. Di questi 810, supponiamo che uso un protocollo internet, un'altra percentuale se ne va per il suo overhead etc. etc. =&gt; gli overhead si sommano, e alla fine può rimanermi poca cosa...
+</p>
+<p class='vspace'><a name='s6' id='s6'></a>
+</p><h2>ATM</h2>
+<p><strong>ATM</strong> = Asynchronous Transfer Mode<br />Il TDM mi garantisce l'isocronia: il tempo di intervallo tra due bit consecutivi provenienti dalla stessa sorgente è sempre lo stesso. Se ho una linea a 64kbps, vuol dire che ogni bit proveniente da me arriverà garantito tra 1/64000 di secondo, così come per quello del mio vicino etc. Questo è il tempo reale, ed è una delle carateristiche del TDM: ho un tempo garantito tra un bit e l'altro. Chiaro che se poi ho schede T5 etc. il tempo tra un bit e l'altro è ancora più piccolo, e quindi la scheda sarà molto più costosa.
+</p>
+<p class='vspace'>C'è invece il sistema ATM, che al momento attuale non so a che tipo di rete si riferisca. Non è isocrono, il che vuol dire che non passa lo stesso identico tempo tra un bit e l'altro della mia trasmissione. Gli apparecchi riceventi hanno un buffer: quando il buffer viene riempito, lo svuotano, e poi attendono che si riempia ancora. È chiaro che questo sistema non funzioni bene per il telefono, perché potrei avere delle attese ora che il buffer si riempie, e mi arriva la voce a sprazzi. Questo sistema non usa trame (si chiamano trame le finestrelle temporali del TDM) ma celle con una propria intestazione, e questa intestazione indica il destinatario del pacchetto. Chiaro che qui l'overhead è più alto, perché ogni cella ha byte sprecati per l'indirizzo etc.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 17, 2009, at 06:32 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI01?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezSEDI01?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Tecnologie Web - Laboratorio 4 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.TWLab04' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Tecnologie Web - Laboratorio 4
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab04?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab04?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='TWLab04-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab04?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab04?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Tecnologie Web - Laboratorio 4 was last modified on May 17, 2009, at 09:50 PM'>
+							<span style='display:none;'>Tecnologie Web - Laboratorio 4</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Laboratorio 4 ::</strong>
+</pre><p class='vspace'><ins><strong>NOTA BENE</strong></ins>:<br />- Il server utilizzato per ospitare gli esercizi svolti in laboratorio supporta la versione 1.5 di Java e non le successive, QUINDI i file degli esercizi devono essere compilati con la 1.5 perché se vengono compilati con le versioni aggiornate (ora la 1.6) non funzionano. In Eclipse è possibile nelle opzioni specificare quale versione di Java utilizzare durante la compilazione. Per riconoscere il problema in output Tomcat restituisce un messaggio di errore 500.<br />Il problema ovviamente non sussiste se si lavora in locale.<br /><br />
+- Ricordarsi di caricare la libreria esterna <strong>servlet-api.jar</strong>, altrimenti non funziona nulla.
+</p>
+<div class='vspace'></div><h2>Esercizio 1</h2>
+<p><strong>Scrivere una servlet che produca come output un semplice biglietto da visita, contenente nome e cognome, una linea HTML orizzontale (&lt;HR&gt;), matricola e corso di laurea. La servlet viene chiamata da una pagina HTML in cui è presente un bottone per visualizzare i dati.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Il file HTML <strong>esercizio1.html</strong> è il seguente:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;html&gt;
+&lt;head&gt;
+ &lt;title&gt;Esercizo 1&lt;/title&gt;
+&lt;/head&gt;
+ &lt;body&gt;
+  &lt;h3&gt;Clicca il bottone per vedere il tuo biglietto da visita&lt;/h3&gt;
+   &lt;form action="esercizio1.do" method="POST"&gt;
+
+    &lt;input type="submit" value="Mostra chi sono e che cosa studio"&gt;
+   &lt;/form&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'>Il file <strong>web.xml</strong>, che riporta l'elenco delle servlet presenti, è il seguente:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4"&gt;
+    &lt;servlet&gt;
+      &lt;servlet-name&gt;esercizio1&lt;/servlet-name&gt;
+      &lt;servlet-class&gt;esercizio1&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;esercizio1&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/esercizio1.do&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</pre>
+<p class='vspace'>Nel servlet-mapping potremmo scegliere quello che vogliamo, ma a causa dell'installazione congiunta di Apache e Tomcat su jsp.dti.unimi.it le servlet devono essere invocate tramite l'estensione convenzionale .do. Questo non è di regola necessario.<br />Ricordiamo che il file <em>web.xml</em> deve essere inserito nella cartella WEB-INF dell'applicazione.<br />Il file web.xml riporta tutte le servlet presenti, quindi i dati della servlet di questo esercizio possono essere aggiunti a quelli degli altri esercizi, semplicemente andando ad aggiungere i tag xml con i rispettivi valori, che in questo caso per semplicità hanno tutti valore esercizio1.
+</p>
+<p class='vspace'>Il file Java <strong>Esercizio1.java</strong> invece è:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Esercizio1 extends HttpServlet {
+
+  public void doPost(HttpServletRequest request, HttpServletResponse response)
+    throws IOException, ServletException {
+
+    response.setContentType("text/html");
+    PrintWriter out = response.getWriter();
+    out.println("&lt;html&gt;");
+    out.println("&lt;head&gt;");
+    out.println("&lt;title&gt;Checkbox multipli&lt;/title&gt;");
+    out.println("&lt;/head&gt;");
+    out.println("&lt;body&gt;");
+    out.println("&lt;h3&gt;I tuoi dati sono:&lt;/h3&gt;");
+
+    out.println("Nome: Denis");
+    out.println("&lt;br /&gt;");
+    out.println("Cognome: Bondioli");
+    out.println("&lt;hr&gt;");
+    out.println("Matricola: 711598");
+    out.println("&lt;br /&gt;");
+    out.println("Corso di Studi: TS");
+
+    out.println("&lt;/body&gt;");
+    out.println("&lt;/html&gt;");
+  }
+}
+</pre>
+<p>Il file .java non è necessario caricarlo sul server, anche se consigliabile per andare a prenderlo ed editarlo in un secondo momento, l'importante è caricare il file compilato .class in WEB-INF -&gt; classes
+</p>
+<p class='vspace'>Risultato:<br /><img src='../uploads/Uni/TWlab04es1.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p><strong>Estendere il precedente codice, aggiungendo  una form di introduzione-dati nell’HTML in cui, oltre a inserire le informazioni dell’esercizio precedente, sia presente una combobox in cui specificate il vostro mese di nascita. Come output, dovrete visualizzare in forma tabellare le informazioni inserite.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Il file HTML <strong>esercizio2.html</strong> è il seguente:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Who are you?&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h3&gt;Per cortesia inserire i propri dati:&lt;/h3&gt;
+&lt;form id="form1" name="form1" method="post" action="esercizio2.do"&gt;
+    &lt;p&gt;Nome:
+  &lt;input type="text" name="nome" id="nome" /&gt;
+      Cognome:
+      &lt;input type="text" name="cognome" id="cognome" /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;Matricola:
+      &lt;input type="text" name="matr" id="matr" /&gt;
+      Corso di Laurea
+      &lt;input type="text" name="corso" id="corso" /&gt;
+    &lt;/p&gt;
+    &lt;p&gt;Mese di Nascita:
+  &lt;select name="mese" id="mese"&gt;
+    &lt;option value="Gennaio"&gt;Gennaio&lt;/option&gt;
+    &lt;option value="Febbraio"&gt;Febbraio&lt;/option&gt;
+    &lt;option value="Marzo"&gt;Marzo&lt;/option&gt;
+    &lt;option value="Aprile"&gt;Aprile&lt;/option&gt;
+    &lt;option value="Maggio"&gt;Maggio&lt;/option&gt;
+    &lt;option value="Giugno"&gt;Giugno&lt;/option&gt;
+    &lt;option value="Luglio"&gt;Luglio&lt;/option&gt;
+    &lt;option value="Agosto"&gt;Agosto&lt;/option&gt;
+    &lt;option value="Settembre"&gt;Settembre&lt;/option&gt;
+    &lt;option value="Ottobre"&gt;Ottobre&lt;/option&gt;
+    &lt;option value="Novembre"&gt;Novembre&lt;/option&gt;
+    &lt;option value="Dicembre"&gt;Dicembre&lt;/option&gt;
+  &lt;/select&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      &lt;input type="submit" name="invia" id="invia" value="Invia" /&gt;
+    &lt;/p&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'>Il file <strong>web.xml</strong>, che riporta l'elenco delle servlet presenti, è il seguente:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4"&gt;
+    &lt;servlet&gt;
+      &lt;servlet-name&gt;Esercizio1&lt;/servlet-name&gt;
+      &lt;servlet-class&gt;Esercizio1&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;Esercizio1&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/esercizio1.do&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+    &lt;servlet&gt;
+      &lt;servlet-name&gt;Esercizio2&lt;/servlet-name&gt;
+      &lt;servlet-class&gt;Esercizio2&lt;/servlet-class&gt;
+    &lt;/servlet&gt;
+    &lt;servlet-mapping&gt;
+        &lt;servlet-name&gt;Esercizio2&lt;/servlet-name&gt;
+        &lt;url-pattern&gt;/esercizio2.do&lt;/url-pattern&gt;
+    &lt;/servlet-mapping&gt;
+&lt;/web-app&gt;
+</pre>
+<p class='vspace'>Come già accennato precedentemente nel file <em>web.xml</em> abbiamo lasciato anche i dati dell'altro esercizio.
+</p>
+<p class='vspace'>Il file <strong>Esercizio2.java</strong> invece è:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+
+public class Esercizio2 extends HttpServlet {
+
+  public void doPost(HttpServletRequest request, HttpServletResponse response)
+    throws IOException, ServletException {
+
+    response.setContentType("text/html");
+    PrintWriter out = response.getWriter();
+    out.println("&lt;html&gt;");
+    out.println("&lt;head&gt;");
+    out.println("&lt;title&gt;Dati Personali&lt;/title&gt;");
+    out.println("&lt;/head&gt;");
+    out.println("&lt;body&gt;");
+    out.println("&lt;h3&gt;I Dati che hai inserito sono:&lt;/h3&gt;");
+
+    out.println("&lt;table border=\"5\" cellspacing=\"5\" cellpadding=\"5\"&gt;");
+      out.println("&lt;tr&gt; &lt;td&gt;");
+      out.println("&lt;b&gt;Parametro&lt;/b&gt;");
+      out.println("&lt;td&gt;");
+      out.println("&lt;b&gt;Valore&lt;/b&gt;");
+      out.println("&lt;tr&gt; &lt;td&gt;");
+      out.println("Nome:");
+      String nome = request.getParameter("nome");
+      out.println("&lt;td&gt;" + nome);
+      out.println("&lt;tr&gt; &lt;td&gt;");
+
+      out.println("Cognome:");
+      String cognome = request.getParameter("cognome");
+      out.println("&lt;td&gt;" + cognome);
+      out.println("&lt;tr&gt; &lt;td&gt;");
+
+      out.println("Matricola:");
+      String matricola = request.getParameter("matr");
+      out.println("&lt;td&gt;" + matricola);
+      out.println("&lt;tr&gt; &lt;td&gt;");
+
+      out.println("Corso di Laurea:");
+      String corso = request.getParameter("corso");
+      out.println("&lt;td&gt;" + corso);
+      out.println("&lt;tr&gt; &lt;td&gt;");
+
+      out.println("Mese di Nascita:");
+      String mese = request.getParameter("mese");
+      out.println("&lt;td&gt;" + mese);
+      out.println("&lt;tr&gt; &lt;td&gt;");
+
+    out.println("&lt;/body&gt;");
+    out.println("&lt;/html&gt;");
+  }
+}
+
+</pre>
+<p class='vspace'>Risultato:<br /><img src='../uploads/Uni/TWlab04es2.jpg' alt='' title='' />
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 17, 2009, at 09:50 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab04?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/TWLab04?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

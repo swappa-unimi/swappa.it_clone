@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ingegneria del Software - Appunti del 5 Maggio 2009</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IDS-5Maggio.html' title='Ingegneria del Software - Appunti del 5 Maggio 2009'>Ingegneria del Software - Appunti del 5 Maggio 2009</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - Appunti del 5 Maggio 2009 ::</strong>
+</pre><p class='vspace'>La lezione di oggi è stata un po' caotica e poco organizzata. Il suo scopo è stato quello di presentare una serie di concetti introduttori rispetto alle pratiche di testing. Per questo motivo ci sono tanti argomenti che continuano a riprendersi l'un l'altro.
+</p>
+<div class='vspace'></div><h2>Concetti iniziali</h2>
+<h3>Requisiti</h3>
+<p>I requisiti sono di due tipi: funzionali e non funzionali. Quindi, dovremo avere intuitivamente due tipi di test: dei test funzionali e dei test non funzionali.
+</p>
+<p class='vspace'>Questi due tipi di test si differenziano subito, perché:
+</p><ul><li>i test funzionali si fanno in fase di analisi =&gt; si verifica la <strong>funzionalità</strong> del software
+</li><li>i test non funzionali si fanno in fase di codifica =&gt; si verifica la <strong>correttezza</strong> del software
+</li></ul><div class='vspace'></div><h3>Granularità</h3>
+<p>Un altro concetto importante è la <strong>granularità</strong> del testing. Riprendiamo un attimo i nostri bei diagrammi UML: ho le classi, i componenti, i sottosistemi, il sistema, l'utente. Insomma, ho una scala gerarchica che parte dal singolo metodo di una classe ed arriva ad un sistema installato su di una rete.
+</p>
+<p class='vspace'>Il <strong>processo di test</strong> in generale consiste in:
+</p><ol><li>preparare un caso di test
+</li><li>somministrarlo in qualche modo al software
+</li><li>valutarne i risultati
+</li></ol><p class='vspace'>Tutti questi passaggi vanno ripetuti a tutti i livelli di granularità, e ovviamente ci saranno differenze sul come preparare e somministrare i casi di test. Un'abilità tipica del software engineer è quella di saper preparare piani di test ad ogni livello di granularità.
+</p>
+<div class='vspace'></div><h3>Copertura</h3>
+<p>La <strong>copertura</strong> può essere vista come un criterio per valutare un test.
+</p>
+<p class='vspace'>Un test controllerà un certo numero di requisiti: quanti ne controlla è appunto la copertura del test rispetto ai requisiti.
+</p>
+<p class='vspace'>Un test controlla un certo numero di valori di input di un metodo: quanti ne controlla è la copertura del test rispetto ai valori di input.
+</p>
+<p class='vspace'>Vediamo quindi che il concetto di copertura dipende dal livello di granularità a cui stiamo operando: se parlo di classi, allora coprirò gli input, se parlo di sistema allora coprirò i requisiti funzionali e così via.
+</p>
+<div class='vspace'></div><h3>Regressione</h3>
+<p>Esistono anche i <strong>test di regressione</strong>. Nei processi di sviluppo iterativi, ad ogni giro si riprende in mano il tutto e lo si modifica. Ma ogni volta che si modifica del codice, potrebbe essere possibile alterare il comportamento del software, in modo tale che un test che prima mi diceva che tutto andava bene, ora mi dirà il contrario. Posso quindi alterare la capacità del mio software di soddisfare i requisiti.
+</p>
+<p class='vspace'>Teoricamente dovrei ripetere tutti i test ad ogni giro, ma questo oltre che dispendioso è inutile: se so dove sono state eseguite le modifiche, allora posso andare a ripetere solamente quei test che interessano il codice modificato.
+</p>
+<div class='vspace'></div><h3>Modelli</h3>
+<p>Come dicevamo la lezione scorsa, non posso pretendere che il rispetto di un modello garantisca l'assenza di errori nel mio software.
+</p>
+<p class='vspace'>C'è gente che ha provato a scrivere modelli in un linguaggio matematico, il quale, tradotto poi in codice sorgente, permetteva di dimostrare a priori sul modello la funzionalità e la correttezza del codice.
+</p>
+<p class='vspace'>Purtroppo questa via, oltre ad essere ancora oggetto di ricerca, è difficilmente praticabile, perché è oggettivamente difficile poter modellare tutti i requisiti in un diagramma, e soprattutto così facendo il modello assumerebbe delle proporzioni leviataniche.
+</p>
+<div class='vspace'></div><h3>Paradosso del testing</h3>
+<p><em>Qualsiasi metodo utilizzato per individuare certi fault lascerà un residuo di fault per i quali il mio metodo non è efficace</em>.
+</p>
+<p class='vspace'>È paradossale, ma è logico: dal momento che faccio un test per cercare di individuare un certo tipo di errori, ce ne saranno degli altri che per forza di cose dovrò lasciare fuori, dal momento che di test esaustivi non posso farne.
+</p>
+<p class='vspace'>Inoltre, potrebbe essere considerata un paradosso anche la <strong>definizione</strong> di test, secondo la quale <em>un test ha successo se evidenzia una failure</em>. Lo scopo è dimostrare di aver sbagliato, e se lo facciamo siamo contenti.
+</p>
+<p class='vspace'>In effetti, il punto di vista umano è diametralmente opposto. Il capo direbbe: "Se siete programmatori così bravi come dite di essere, non fareste tutti questi errori!". E il programmatore direbbe: "Fare test su del codice così semplice è fuori discussione, lo considero un'offesa personale!". Date queste premesse socio-psicologiche, ci rendiamo conto che il testing è indispensabile.
+</p>
+<div class='vspace'></div><h3>Vocabolarietto</h3>
+<p>Il testing ha un uso di parole tutte sue. Dovremo vederne un bel po', man mano che si va avanti.
+</p>
+<div class='vspace'></div><ul><li><strong>Fault</strong> = errore nel codice, il quale può causare un errore.
+</li><li><strong>Error</strong> = stato del sw in cui il proseguimento dell'esecuzione porta ad una failure
+</li><li><strong>Failure</strong> = deviazione tra il comportamento osservato del software e quello desiderato
+</li></ul><p class='vspace'>La catena logica degli eventi è quindi Fault =&gt; Errore =&gt; Failure. Tuttavia, il test procede all'incontrario: fa di tutto per provocare una Failure; fatto questo, spetta a noi identificare il codice di errore che provoca il comportamento scorretto, e poi scovare il punto nel codice in cui tutto ciò è stato originato.
+</p>
+<p class='vspace'>E teniamo anche a mente che non è per niente detto che un fault si traduca automaticamente in una failure. Se per esempio il mio codice presenta dei difetti solo con certi valori di input, e quei valori di input non vengono mai immessi, allora non mi accorgerò mai di questo difetto.
+</p>
+<p class='vspace'>Rifacendoci alla simpatica legge di Pareto, possiamo anche inferire che i primi fault è facile scovarli: saltano fuori all'inizio e quindi il tempo ed il denaro spesi per trovarli sono pochi. Ma il brutto nasce quando sono rimasti <strong>pochi fault</strong>: ci metterò una quantità di tempo più che lineare per trovarli, perché sarà difficile far sì che il programma generi una failure!
+</p>
+<p class='vspace'>La <strong>reliability</strong> è invece l'inverso della probabilità di avere una failure.
+</p>
+<div class='vspace'></div><h3>Tipi di testing</h3>
+<p>I tipi di testing possono essere divisi in due categorie, a seconda di come li si effettuano.
+</p>
+<p class='vspace'><strong>Execution-based testing</strong> = sono tutti quei test che vengono effettuati, a qualsiasi livello di granularità, eseguendo effettivamente il codice con certi input. Ci sono tutta una serie di tecniche e di tools che permettono di testare singole classi, componenti etc.
+</p>
+<p class='vspace'><strong>Non-execution-based testing</strong> = sono quei test che si verificano senza eseguire il codice. È possibile effettuarli, anche se il limite ovvio è che il codice non viene effettivamente eseguito. Ecco i tre tipi principali:
+</p><ul><li><strong>Walkthrough</strong> = comincio a leggere il codice per vedere qualche errore. Un essere umano si crea nella propria mente un modello, ogni volta che legge un metodo, ed è un buon modo per controllare che il codice sia sensato o meno. Il problema è che se per leggere 100 righe ci metto un'ora, non è per niente detto che per leggerne il doppio ci metta il doppio del tempo: la quantità di tempo necessaria sale più che linearmente.
+</li><li><strong>Cleanroom</strong> = si modella il codice con qualche metodoformale, man mano che lo si esegue lo si testa, e poi si fanno analisi statistiche mirate per far sì che non sia rimasto indietro nulla. Tutto questo sui diagrammi.
+</li><li><strong>Verifica di correttezza</strong> = prendo il codice, faccio reverse engineering e ne traggo un modello, e poi guardando il modello controllo che la sua logica sia quella da me richiesta.
+</li></ul><p class='vspace'>Possiamo anche guardare a questa distinzione tra execution-based e non-execution-based testing tramite i concetti di <strong>blackbox</strong> e <strong>whitebox</strong>.
+</p><ul><li>il <strong>blackbox testing</strong> è quello che non guarda COME è fatto il codice dentro, ma si limita a dargli in pasto degli input per osservarne il comportamento. È l'approccio dell'execution-based testing. Funziona quindi meglio con i requisiti funzionali.
+</li><li>il <strong>whitebox testing</strong> invece parte dall'interno, cioè da come è fatto il codice, e da lì tenta di inferirne proprietà: è quindi l'approccio del non-execution-based testing. Si presta meglio ai requisiti non funzionali.
+</li></ul><p class='vspace'>Il perché dei nomi <strong>blackbox</strong> e <strong>whitebox</strong> si spiega facilmente: se una cosa è black, non posso guardarci dentro. Il contrario di black è white, e quindi posso guardarci dentro. Non che il bianco sia trasparente, ma tra whitebox e transparentbox sicuramente whitebox suona meglio.
+</p>
+<p class='vspace'>I metodi blackbox sono più fattibili di quelli whitebox. Analizzare del codice è un'operazione costosa e richiedente molto tempo. Inventare casi di test, cioè valori di input, secondo certi criteri è invece più ragionevole. Vedremo più in là quali siano questi criteri.
+</p>
+<div class='vspace'></div><h3>Altre distinzioni</h3>
+<p>C'è un altro tipo di distinzione delle tipologie di testing, in base a quale parte del software si sta guardando:
+</p><ul><li>whitebox testing = detto anche test strutturale
+</li><li>blackbox testing = detto anche test funzionale
+</li><li>testing statistico = si simulano le condizioni di carico reali che il mio sistema andrà ad affrontare
+</li><li>testing mutazionale = è quello che ha a che fare con le mutazioni del codice durante il suo sviluppo, ad esempio i test di regressione
+</li><li>object oriented testing = testo gli automi delle classi stateful
+</li></ul><div class='vspace'></div><h3>Categorie (divisione per granularità)</h3>
+<p>Nelle grandi aziene in generale i vari test sono divisi in categorie che derivano dal livello gerarchico che si va ad analizzare. Ogni categoria userà un tipo diverso di testing.
+</p>
+<div class='vspace'></div><ul><li>Unit, Module e Component testing = analizzano unità, moduli e componenti di codice. Si usano il whitebox ed il blackbox testing, e li fanno direttamente i programmatori.
+</li><li>Integration testing = è il test di integrazione, ovvero di corretta comunicazione tra i vari componenti. È infatti ben possibile l'eventualità che un componente, preso da solo, funzioni, ma insieme agli altri no. Anche questo lo può fare direttamente il programmatore
+</li><li>System Testing = testo il sistema nella sua interezza, al fine di catturare questi aspetti:
+<ol><li>funzionalità
+</li><li>performance
+</li><li>installazione
+</li></ol></li></ul><p>In generale lo fa un tester (anche se spesso, come dicevamo, non esiste una figura separata), perché occorre una visione più globale del tutto.
+</p><ul><li>User Acceptance Testing = alla fine, occorre che l'utente finale, o il cliente, sia soddisfatto del prodotto: devo farglielo provare.
+</li></ul><div class='vspace'></div><h3>Ancora vocabolario</h3>
+<p>A questo punto, possiamo ampliare il nostro vocabolario con altri termini del mondo del testing.
+</p>
+<div class='vspace'></div><ul><li><strong>Test case</strong> = abbiamo capito che è un insieme di dati in input da somministrare al nostro sw
+</li><li><strong>Test suite</strong> = un insieme di casi di test
+</li><li><strong>Stub</strong> = abbozzo di un metodo. Supponiamo di voler provare la classe PincoPallo, che tuttavia necessita del metodo Ukulele() che non abbiamo ancora scritto. Ebbene: ne scriviamo un abbozzo, appunto, che magari ritorna sempre lo stesso valore, in modo che comunque riesco a far funzionare PincoPallo per il test che mi serve
+</li><li><strong>Driver</strong> = pilota per un test. La classe PincoPallo è stata progettata per essere inserita nel componente Personaggi. Tuttavia, non ho ancora scritto il componente e voglio comunque provare la classe. Scrivo pertanto un driver, che fingerà di essere il componente e farà girare PincoPallo.
+</li></ul><p class='vspace'>Stub e Driver sono due aspetti della stessa medaglia: l'obiettivo è provare qualcosa che dovrebbe vivere in un contesto, ma al momento il contesto è incompleto. Lo stub è un completamento provvisorio verso il basso, cioè verso la granularità più fine. Il driver è un completamento provvisorio verso l'alto, cioè verso granularità più grossa.
+</p>
+<div class='vspace'></div><ul><li><strong>Test harness</strong> = è l'ambiente in cui viene eseguito un programma al fine di testarlo. È in quest'ambiente che invento i driver e gli stub
+</li><li><strong>Coverage</strong> = come dicevamo sopra, è la quantità di test che devo eseguire per coprire un certo numero di requisiti
+</li><li><strong>Adequacy</strong> = misure di efficienza e di efficacia di una test suite.
+</li><li><strong>Efficacia di una test suite</strong> = quanti bachi riesce a trovare
+</li></ul><p class='vspace'>Nel caso della programmazione ad oggetti, si usano i <strong>mock object</strong>, che sono l'equivalente dei driver e degli stub ma orientati agli oggetti. In teoria il sito www.mockobject.com dovrebbe contenere una spiegazione della differenza tra i mock object e i driver e gli stub, ma il dominio è attualmente in vendita.
+</p>
+<div class='vspace'></div><h3>Categorie di fault</h3>
+<p>Ci sono diversi tipi di fault, ovvero diversi tipi di errori che possono essere commessi nello scrivere il codcie. Poter catalogare i fault è utile, perché sapendo dove il programmatore in genere sbaglia, so anche che tipo di test fare per far saltar fuori la magagna.
+</p>
+<div class='vspace'></div><ul><li>fault algoritmici = il programma non fa quello che intendevamo quando lo scrivevamo. Casi frequenti sono i loop che vengono eseguiti su di un intervallo che non è corretto (eg da 0 a 100 invece che da 0 a 99 o robe simili), oppure errori di conversione di tipo.
+</li><li>fault di computazione o precisione = dovuti all'intervallo di rappresentazione dei tipi. Magari pretendiamo troppa precisione da un float o roba del genere
+</li><li>fault di requisiti o documentazione = abbiamo sbagliato a scrivere i requisiti, e abbiamo scritto codice funzionalmente sbagliato
+</li><li>fault di performance = beh, si capisce
+</li><li>fault di recovery = quando il sistema crasha, il file su cui lavoravamo non è più recuperabile
+</li></ul><div class='vspace'></div><h3>E quando finiscono i test?</h3>
+<p>Mai!
+</p>
+<p class='vspace'>Dal momento che dovrei testare tutti gli input, e non posso farlo, allora in linea di principio non posso mai terminare i test.
+</p>
+<p class='vspace'>Ci sono anche tecniche che permettono stocasticamente di predire il rischio di lasciare fault in un software, dato un programma e un caso di test non esaustivo. Ma è ancora area di ricerca, e a queste cose noi pragmatici unicremaschi preferiamo i criteri di copertura, che vedremo nelle prossime lezioni o, per chi è curioso, <a class='wikilink' href='LPSTesting.html'>qui</a>.
+</p>
+<div class='vspace'></div><h3>Valori critici e valori tipici</h3>
+<p>Cerchiamo di immaginare spazialmente lo spazio dei valori dei tipi che il mio codice accetta in input. All'interno di questo spazio, immaginiamo di definire un'area finita che rappresenta il range di valori che il mio codice si aspetta.
+</p>
+<p class='vspace'>L'esperienza insegna che i valori <strong>critici</strong> sono i valori che stanno ai <strong>limiti</strong> di quest'area. Se il mio programma calcola fatture, che vanno da 0 a 1 milione di euro, è più probabile che ci saranno errori nel caso di 0 &#8364; e nel caso di 1.000.000 &#8364;. Anglofonicamente parlando, i valori critici sono quelli che stanno sul <strong>boundary</strong>.
+</p>
+<p class='vspace'>Tuttavia, non possiamo accontentarci di considerare solo i valori critici. Dobbiamo sicuramente dare importanza ad essi, ma non dobbiamo affatto dimenticarci dei valori <strong>tipici</strong>, ovvero quei valori sui quali tipicamente il mio software lavorerà.
+</p>
+<p class='vspace'>Pertanto, un qualsiasi metodo per generare casi di test dovrà generarli in modo che la maggior parte della copertura riguardi i casi critici, ma non dovrà nemmeno trascurare i casi tipici.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IDS-5Maggio)</span></div>
+  </div>
+</body>
+</html>

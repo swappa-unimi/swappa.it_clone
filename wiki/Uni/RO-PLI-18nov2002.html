@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ricerca Operativa - PLI - Concentratori - 18.11.02 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RO-PLI-18nov2002' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ricerca Operativa - PLI - Concentratori - 18.11.02
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-18nov2002?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-18nov2002?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RO-PLI-18nov2002-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-18nov2002?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-18nov2002?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ricerca Operativa - PLI - Concentratori - 18.11.02 was last modified on June 02, 2009, at 12:50 PM'>
+							<span style='display:none;'>Ricerca Operativa - PLI - Concentratori - 18.11.02</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PLI - Concentratori - 18.11.02 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>Una rete telematica connette con cavi in fibra ottica diverse stazioni. Ciascuna di esse può ospitare un concentratore, ossia un punto di raccolta di messaggi provenienti da un certo sottinsieme di stazioni della rete. I concentratori devono essere localizzati in modo che ogni stazione sia assegnata ad un concentratore.<br />Ad ogni stazione della rete è associata una domanda, che rappresenta la quantità di traffico in ingresso o uscita da quella stazione. Ogni concentratore ha una capacità, che può dipendere da dove il concentratore è localizzato. E’ necessario che la somma delle domande delle stazioni assegnate allo stesso concentratore non ecceda la capacità del concentratore stesso.<br />Ogni assegnamento di una stazione i ad un concentratore j ha un costo che è dato dal prodotto tra la quantità di traffico della stazione i e il costo unitario di collegamento tra la stazione i e la stazione che ospita il concentratore j. Si vogliono minimizzare i costi complessivi.<br />I concentratori sono disponibili in numero limitato.<br />Formulare il problema, classificarlo e risolverlo con i dati del file CONCENTR.TXT.
+</p>
+<div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+Le stazioni sono 6.
+
+============================================================
+
+Tabella 1: Costi unitari di allocazione
+
+  Concentratore   1   2   3   4   5   6
+Stazione    
+   1             12  45  18  27  19  18     
+   2             38  34  18  28  34  28
+   3             11  10  15  34  23  10
+   4             37  39  31  28  29  21
+   5             15  34  11  20  28  15
+   6             12  30  20  18  27  24
+
+
+============================================================
+
+Tabella 2: Domande associate alle stazioni
+
+Stazione   Domanda
+   1         100
+   2         150
+   3         100
+   4         200
+   5         200
+   6         300
+
+============================================================
+
+Tabella 3: Capacità dei concentratori
+
+Stazione  Capacità
+   1        650
+   2        500
+   3        550
+   4        450
+   5        550
+   6        600
+
+============================================================
+
+I concentratori disponibili sono 2.
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<ul><li><strong>s = 6</strong> (numero stazioni)
+</li><li><strong>c = 2</strong> (numero concentratori)
+</li><li><strong>cos<sub>ij</sub></strong> (costo unitario collegamento tra la stazione con concentratore i=1..2 e la stazione j=1..6)
+</li><li><strong>dom<sub>j</sub></strong> (domanda associata alla stazione j=1..6)
+</li><li><strong>cap<sub>i</sub></strong> (capacità del concentratore i=1..2)
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<ul><li><strong>x<sub>j</sub></strong> (variabile binaria che indica se nella stazione j=1..6 c'è un concentratore)
+</li><li><strong>y<sub>ij</sub></strong> (variabile binaria che indica se la stazione j=1..6 è collegata alla stazione con concentratore i=1..2)
+</li></ul><div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p><strong>min (somma)<sub>j</sub> dom<sub>j</sub> * cos<sub>ij</sub> * y<sub>ij</sub></strong> (per ogni i)
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<ul><li>vincolo sul numero di concentratori disponibili:<br /><strong>(somma)<sub>j</sub> x<sub>j</sub> &lt;= 2</strong>
+</li><li>vincoli di allocazione per ogni stazione ad un unico concentratore:<br /><strong>(somma)<sub>j</sub> y<sub>ij</sub> = 1</strong> (per ogni i)
+</li><li>vincoli di capacità del concentratore. Ciò che vogliamo dire è che:<br /><strong>(somma)<sub>i</sub> dom<sub>j</sub> * y<sub>ij</sub> &lt;= cap<sub>i</sub> * x<sub>j</sub></strong><br />ma dato che formuleremo il problema in Lindo, spostiamo le incognite a sinistra e i termini noti a destra, così da ottenere:<br /><strong>[(somma)<sub>i</sub> dom<sub>j</sub> * y<sub>ij</sub>] - cap<sub>i</sub> * x<sub>j</sub> &lt;= 0</strong>
+</li></ul><div class='vspace'></div><h2>Lindizzazione del problema</h2>
+<pre class='escaped'>
+! esercizio - Concentratori
+
+! variabili: y(j) = indica se nella stazione j c'è un concentratore (binaria)
+!	       y(i,j) = indica se la stazione j è collegata alla stazione 
+!				con concentratore i (binaria)
+! le variabili sono binarie
+
+! funzione obiettivo
+min 	   1200 y11 + 4500 y12 + 1800 y13 + 2700 y14 + 1900 y15 + 1800 y16
+	+ 5700 y21 + 5100 y22 + 2700 y23 + 4200 y24 + 5100 y25 + 4200 y26
+	+ 1100 y31 + 1000 y32 + 1500 y33 + 3400 y34 + 2300 y35 + 1000 y36
+	+ 7400 y41 + 7800 y42 + 6200 y43 + 5600 y44 + 5800 y45 + 4200 y46
+	+ 3000 y51 + 6800 y52 + 2200 y53 + 4000 y54 + 5600 y55 + 3000 y56
+	+ 3600 y61 + 9000 y62 + 6000 y63 + 5400 y64 + 8100 y65 + 7200 y66
+
+st
+
+! vincolo numero di concentratori disponibili
+conDisp) y1 + y2 + y3 + y4 + y5 + y6 &lt;= 2
+
+! vincoli di allocazione per ogni stazione ad un unico concentratore
+alloSt1) y11 + y12 + y13 + y14 + y15 + y16 = 1
+alloSt2) y21 + y22 + y23 + y24 + y25 + y26 = 1
+alloSt3) y31 + y32 + y33 + y34 + y35 + y36 = 1
+alloSt4) y41 + y42 + y43 + y44 + y45 + y46 = 1
+alloSt5) y51 + y52 + y53 + y54 + y55 + y56 = 1
+alloSt6) y61 + y62 + y63 + y64 + y65 + y66 = 1
+
+! vincoli di capacità del concentratore
+capCon1) 100 y11 + 150 y21 + 100 y31 + 200 y41 + 200 y51 + 300 y61 - 650 y1 &lt;= 0
+capCon2) 100 y12 + 150 y22 + 100 y32 + 200 y42 + 200 y52 + 300 y62 - 500 y2 &lt;= 0
+capCon3) 100 y13 + 150 y23 + 100 y33 + 200 y43 + 200 y53 + 300 y63 - 550 y3 &lt;= 0
+capCon4) 100 y14 + 150 y24 + 100 y34 + 200 y44 + 200 y54 + 300 y64 - 450 y4 &lt;= 0
+capCon5) 100 y15 + 150 y25 + 100 y35 + 200 y45 + 200 y55 + 300 y65 - 550 y5 &lt;= 0
+capCon6) 100 y16 + 150 y26 + 100 y36 + 200 y46 + 200 y56 + 300 y66 - 600 y6 &lt;= 0
+
+end
+
+! definiamo le 36 + 6 variabili binarie
+int 42
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 02, 2009, at 12:50 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-18nov2002?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-18nov2002?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

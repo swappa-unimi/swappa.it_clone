@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Crittografia - Lezione del 12 Marzo 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Stelvio12Marzo2008.html' title='Crittografia - Lezione del 12 Marzo 2008'>Crittografia - Lezione del 12 Marzo 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Crittografia - Lezione del 12 Marzo 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<div class='vspace'></div><h2>Crittanalisi</h2>
+<p>Dopo aver visto come crittare le cose in diversi metodi, vediamo un po' i sistemi per decrittare.
+</p>
+<p class='vspace'>La regola di <strong>Kerckhoffs</strong>, che abbiamo <a class='wikilink' href='Stelvio28Febbraio2008.html'>già visto</a>, dice che la sicurezza di un crittosistema deve dipendere solo dalla segretezza della chiave e non dalla segretezza dell'algoritmo usato.
+</p>
+<p class='vspace'>In effetti, tutte le tecniche moderne di crittografia vengono rese pubbliche, così che si possa testarne la robustezza permettendo a chiunque di romperle.
+</p>
+<p class='vspace'>Ci sono diverse situazioni di attacco, che corrispondono a diversi gradi di sicurezza. Più un crittosistema resiste a livelli di attacco più alti, più è robusto.
+</p><ul><li><strong>known ciphertext attack</strong>: l'attaccante conosce solo il testo cifrato
+</li><li><strong>known plaintext attack</strong>: si conosce il testo in chiaro, oltre a quello cifrato
+</li><li><strong>chosen plaintext attack</strong>: l'attaccante può ottenere la cifratura di un testo in chiaro a sua scelta
+</li><li><strong>chosen ciphertext attack</strong>: l'avversario può ottenere la decifratura di un testo cifrato a sua scelta
+</li><li><strong>chosen text attack</strong>: l'avversario ottiene cifratura e decifratura di coppie di testi in chiaro.
+</li></ul><p class='vspace'>Se un cifrario viene rotto conoscendo solo il testo cifrato, allora è molto debole.
+Se invece un attaccante riceve tutte le coppie di testo in chiaro e cifrato che vuole, e non sa come uscirne, allora vuol dire che il mio cifrario è molto robusto.
+</p>
+<div class='vspace'></div><h3>Crittanalisi di cifrari a shift</h3>
+<p>Questi cifrari sono quelli che prendono una lettera e la spostano di tot posizioni nell'alfabeto.
+La struttura sottostante del testo però rimane, ed in particolare la frequenza delle lettere cifrate corrisponde alla frequenza delle lettere in chiaro nella lingua in cui è stato scritto il testo.
+</p>
+<p class='vspace'>Le frequenze di un testo si ricavano facilmente, poi si vede quali frequenze corrispondono a quelle del testo cifrato.
+</p>
+<div class='vspace'></div><h3>Sostituzione monoalfabetica</h3>
+<p>Mappo le lettere qua e là finché non trovo la chiave. Computazionalmente parlando è molto semplice.
+</p>
+<div class='vspace'></div><h3>Cifrario di Hill</h3>
+<p>Era quello con le funzioni:
+</p><pre> y^_1_^ = ax^_1_^ + bx^_2_^ mod 26
+ y^_2_^ = cx^_1_^ + dx^_2_^ mod 26
+</pre><p class='vspace'>Questo cifrario può essere rotto conoscendo il testo in chiaro ed il testo cifrato: <strong>known plain text</strong>. 
+Se <strong>K</strong> è la chiave, <strong>M</strong> il testo in chiaro e <strong>C</strong> quello cifrato, ho le seguenti relazioni:
+</p>
+<div class='vspace'></div><pre> C = M * K
+</pre><p class='vspace'>Ma ho anche:
+</p>
+<div class='vspace'></div><pre> M<sup>-1</sup> * M * K = M<sup>-1</sup> * C  
+ =&gt;  1 * K = M<sup>-1</sup> * C  
+ =&gt;  K = M^'-1'^ * C
+</pre><p class='vspace'>dove M<sup>-1</sup> è la matrice inversa di M. Se riesco a farmi un'idea delle dimensioni della matrice M, posso più o meno far saltar fuori la matrice inversa.
+</p>
+<div class='vspace'></div><h3>Cifrario di Vigenere</h3>
+<p>Abbiamo già visto che l'analisi delle frequenze non serve, con Vigenere.
+Però, se riesco a capire quanto è lunga la chiave, riesco anche a capire quanti alfabeti cifranti sono stati utilizzati.
+</p>
+<p class='vspace'>Il <strong>test di Kasiski</strong> cerca di determinare la lunghezza della chiave, con un po' di fortuna.
+Faccio subito un esempio:
+</p>
+<div class='vspace'></div><pre> Testo in chiaro: Gattodiquagattodila
+ Chiave:          DARIO
+ Testo cifrato:   <strong>jakbc</strong>vugmf<strong>jakbc</strong>pieq
+</pre><p class='vspace'>Si vede subito l'idea di Kasiski. Se sono fortunato, trovo delle <strong>sequenze ripetute</strong> di caratteri all'interno del testo cifrato. Potrebbe quindi voler dire che quelle sequenze ripetute sono la cifratura dello STESSO testo in chiaro cifrato con la STESSA parte della chiave.
+</p>
+<p class='vspace'>La distanza fra le ripetizioni in questo caso è 5. Deduco che con buona probabilità la chiave sia di 5 caratteri. 
+</p>
+<p class='vspace'>Certo, occorre che le ripetizioni siano in effetti cifrature dello stesso testo.
+Ma ciò non è improbabile. Ci sono molte parole che si ripetono, per esempio l'articolo determinativo <strong>il</strong> o <strong>the</strong> in inglese, e cose del genere. È probabile che le parole comuni vengano cifrate allo stesso modo in più parti del testo.
+</p>
+<p class='vspace'>Generalizzando, quando trovo delle ripetizioni a distanze diverse, il Massimo Comun Divisore tra le varie distanze mi dà la lunghezza della chiave.
+</p>
+<p class='vspace'><strong>Friedman</strong> nel 1920 inventa un altro sistema per dedurre la lunghezza della chiave, l<strong>'indice di coincidenza</strong>.
+</p>
+<p class='vspace'>In astratto, si mettono due testi uno sopra l'altro e si conta quante volte la stessa lettera compare nella stessa posizione in entrambi i testi, e si ricava la probabilità di avere due lettere uguali nella stessa posizione.
+</p>
+<p class='vspace'>La probabilità dicevamo essere <strong>n / m</strong>, dove <strong>n</strong> sono i casi favorevoli, ed <strong>m</strong> i casi possibili.
+</p>
+<p class='vspace'>I casi possibili sono dati dalla seguente formula:
+</p><div><img src='../uploads/Uni/cripto001.jpg' alt='' title='' /></div>
+<p class='vspace'>dove <strong>n</strong> è la lunghezza del mio testo.
+</p>
+<p class='vspace'>I casi favorevoli sono questi:
+</p><div><img src='../uploads/Uni/cripto001.jpg' alt='' title='' /></div>
+<p class='vspace'>dove <strong>f<sub>i</sub></strong> è la probabilità di pescare la i-esima lettera in quella posizione.
+</p>
+<p class='vspace'>Le lettere sono 26, quindi devo fare la sommatoria delle 26 f^_i_^, per ricavare la seguente formula:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/cripto003.jpg' alt='' title='' /></div>
+<p class='vspace'>Ogni lingua ha il suo particolare indice di coincidenza. Per esempio, l'inglese ha 0.065. Un testo puramente casuale invece presenta un indice di coincidenza di 0.038.
+</p>
+<p class='vspace'>Come applico sta roba a Vigenere?
+Suddivido il mio testo cifrato in blocchi di una certa lunghezza, e li metto tutti in colonna, col primo blocco in alto e gli altri tutti sotto a seguire.
+</p>
+<p class='vspace'>Calcolo poi l'indice di coincidenza delle <em>colonne</em>. Perché?
+Il motivo è che se il mio blocco è lungo come la chiave, allora vuol dire che i caratteri nella stessa colonna sono stati cifrati con la stessa lettera. Pertanto, se l'indice di coincidenza della colonna <strong>assomiglia</strong> a quello della lingua del testo in chiaro, allora posso presumere che la chiave è lunga come il mio blocco.
+Altrimenti, provo con un blocco via via più grande etc.
+</p>
+<p class='vspace'>Questo vuole anche dire che ogni colonna è in pratica cifrata con Cesare: tutte le sue lettere hanno subito uno shift fisso. L'analisi delle frequenze, se il testo è abbastanza grande, può aiutarmi, in questo caso.
+</p>
+<p class='vspace'>C'è infine l<strong>'indice mutuo di coincidenza</strong>. Dopo aver creato le mie colonne, le considero come delle stringhe a se stanti. Definisco quindi l'indice mutuo di coincidenza come la probabilità che due caratteri, uno preso da una stringa ed uno preso da un'altra, siano uguali.
+</p>
+<p class='vspace'>L'indice mutuo di coincidenza tra due stringhe sarà quindi:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/cripto004.jpg' alt='' title='' /></div>
+<p class='vspace'>in cui <strong>fi</strong> è la frequenza della i-esima lettera nella prima stringa, e <strong>fi</strong>' è la frequenza della i-esima lettera nella seconda stringa.
+</p>
+<p class='vspace'>Abbiamo parlato di <em>caratteri uguali</em>. Ma sappiamo che ogni colonna, ovvero ogni nostra stringa in questo calcolo, è stata ottenuta applicando ai caratteri di quella colonna del testo in chiaro uno shift fisso, al modo di Cesare.
+</p>
+<p class='vspace'>Se entrambe le colonne fossero state shiftate con lo <em>stesso</em> valore, avremmo un indice mutuo di coincidenza pari a 0.075. Detto in altri termini, lo <strong>shift relativo</strong> tra le due colonne è 0, cioè la differenza tra lo shift della prima colonna e lo shift della seconda colonna è 0.
+</p>
+<p class='vspace'>Se invece lo shift relativo fosse 1, avrei un indice mutuo di coincidenza di 0.033, etc. etc. Ogni lingua ha il suo shift relativo.
+</p>
+<p class='vspace'>Quanti sono i possibili shift relativi? Dato che siamo in modulo 26, la distanza massima tra due lettere è 13.
+</p>
+<p class='vspace'>Il procedimento è quindi quello di calcolare lo shift relativo tra la prima colonna e la seconda. Calcolato questo, posso calcolare quello tra la seconda e la terza e così via, poi tra la prima e la terza, la pima e la quarta etc. etc. etc. In questo modo ottengo un sistema lineare che si può risolvere facilmente, e ottengo la mia bella chiave.
+</p>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Stelvio12Marzo2008)</span></div>
+  </div>
+</body>
+</html>

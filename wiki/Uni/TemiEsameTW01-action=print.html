@@ -1,0 +1,494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Tema d'Esame di Tecnologie Web - 08/04/2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TemiEsameTW01.html' title='Tema d'Esame di Tecnologie Web - 08/04/2008'>Tema d'Esame di Tecnologie Web - 08/04/2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appello d'esame di Tecnologie Web - 08/04/2008 ::</strong>
+</pre><div class='vspace'></div><h2>Esercizio 1</h2>
+<p><strong>Considerando il seguente documento XML:</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0"  
+encoding="ISO-8859-1"?&gt; 
+&lt;elenco&gt; 
+ &lt;cd&gt; 
+  &lt;titolo&gt;Empire Burlesque&lt;/titolo&gt; 
+  &lt;autore&gt;Bob Dylan&lt;/autore&gt; 
+  &lt;anno&gt;1985&lt;/anno&gt; 
+  &lt;prezzo&gt;10,50&lt;/prezzo&gt; 
+ &lt;/cd&gt; 
+ &lt;cd&gt; 
+  &lt;titolo&gt;Heil to the Thief&lt;/titolo&gt;
+  &lt;autore&gt;Radiohead&lt;/autore&gt; 
+  &lt;anno&gt;2003&lt;/anno&gt; 
+  &lt;prezzo&gt;15,00&lt;/prezzo&gt; 
+ &lt;/cd&gt; 
+ &lt;cd&gt; 
+  &lt;titolo&gt;Eta Beta&lt;/titolo&gt; 
+  &lt;autore&gt;Timoria&lt;/autore&gt; 
+  &lt;anno&gt;1997&lt;/anno&gt; 
+  &lt;prezzo&gt;12,00&lt;/prezzo&gt; 
+ &lt;/cd&gt; 
+&lt;/elenco&gt; 
+</pre>
+</div>
+<p class='vspace'><strong>1.a Scrivete un foglio di stile che modifichi la struttura del documento.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Umm...emh...umh...
+</p>
+<p class='vspace'><strong>1.b Scrivete un foglio di stile che permetta di formattare il documento in un formato di visualizzazione.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;
+ &lt;xsl:template match="/"&gt;
+   &lt;html&gt;
+    &lt;head&gt;
+    &lt;title&gt;Visualizzazione Documento Es1&lt;/title&gt;
+    &lt;/head&gt;
+     &lt;body&gt;
+      &lt;xsl:call-template name="Visualizzazione"/&gt;
+     &lt;/body&gt;
+   &lt;/html&gt;
+ &lt;/xsl:template&gt;
+
+
+&lt;xsl:template name="Visualizzazione"&gt;
+ &lt;table border="2" cellpadding="5" cellspacing="5"&gt;
+  &lt;tr&gt;
+   &lt;td&gt;&lt;b&gt;Titolo&lt;/b&gt;&lt;/td&gt;
+   &lt;td&gt;&lt;b&gt;Autore&lt;/b&gt;&lt;/td&gt;
+   &lt;td&gt;&lt;b&gt;Anno&lt;/b&gt;&lt;/td&gt;
+   &lt;td&gt;&lt;b&gt;Prezzo&lt;/b&gt;&lt;/td&gt;
+  &lt;/tr&gt;
+
+  &lt;xsl:for-each select="elenco/cd"&gt;
+   &lt;tr&gt;
+    &lt;td&gt;
+     &lt;u&gt;&lt;xsl:value-of select="titolo"/&gt;&lt;/u&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+     &lt;i&gt;&lt;xsl:value-of select="autore"/&gt;&lt;/i&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+     &lt;xsl:value-of select="anno"/&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+     &lt;xsl:value-of select="prezzo"/&gt;
+    &lt;/td&gt;
+   &lt;/tr&gt;
+  &lt;/xsl:for-each&gt;
+ &lt;/table&gt;
+&lt;/xsl:template&gt;
+&lt;/xsl:stylesheet&gt;
+</pre>
+<p class='vspace'>Ecco il risultato a video:
+</p><div><img src='../uploads/Uni/TW01es1.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h2>Esercizio 2</h2>
+<p><strong>Considerando il seguente documento CSS:</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'> 
+p { 
+text-align: center; 
+font-family: Georgia, Times, serif; 
+font-size: 10px; 
+} 
+.titolo { 
+font-size: 20px; 
+} 
+.sottotitolo { 
+font-size: 18px; 
+font-family: Georgia, Times, serif; 
+} 
+div &gt; p { 
+font-size: 12px; 
+font-weight: italic; 
+}
+.menu { 
+border:1px solid #333333; 
+width: 100%; 
+padding: 5px; 
+} 
+</pre>
+</div>
+<p class='vspace'><strong>2.a Scrivete un frammento HTML che permetta di attivare tutte le regole di stile descritte.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;link type="text/css"  rel="stylesheet" href="es2.css"&gt;
+&lt;title&gt;Documento senza titolo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;div class="titolo"&gt;
+    Titolo
+    &lt;/div&gt;
+
+    &lt;div class="sottotitolo"&gt;
+    Sottotitolo
+    &lt;/div&gt;
+
+    &lt;p&gt;
+    Paragrafo di prova!
+    &lt;/p&gt;
+
+    &lt;div&gt;
+        &lt;p&gt;
+        Paragrafo annidato Corsivo!!
+        &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="menu"&gt;
+    Menu con Bordo Solid!
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p class='vspace'><strong>2.b Citate un tipo di selettore non presente nel documento.</strong>
+</p>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<div class='vspace'></div><ul><li>il selettore per <strong>body</strong> sicuramente presente in una pagina HTML.
+</li><li>il selettore che va a considerare ad esempio l<strong>'id</strong> di un DIV (se presente nella pagina) tramite <strong>#nomeId</strong>.
+</li><li>E1 E2 che seleziona ogni elemento E2 discendente di E1.
+</li></ul><div class='vspace'></div><h2>Esercizio 3</h2>
+<p><strong>3a. Spiegate la differenza tra gli ambienti GOPHER e WWW.</strong><br /><br />
+<span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>L'ambiente GOPHER forniva un meccanismo di organizzazione di documenti di testo in gerarchie distribuite su più server.<br /><a class='urllink' href='TemiEsameTW01-action=print.html' title='' rel='nofollow'>gopher://gopher.&#64258;oodgap.com</a><br />L'ambiente WWW(world wide web) serve per presentare a schermo i documenti ipertestuali e multimediali. Il punto di forza del WWW è la <em>scalabilità</em>, ottenuta tramite il meccanismo dei link, che semplifica il protocollo e semplifica la navigazione ipertestuale.<br />Le due componenti principali legate al WWW sono:
+</p><ul><li>browser(client): permette di visualizzare i documenti.
+</li><li>server:  meccanismo di accesso a risorse locali, in grado di trasmettere via socket TCP documenti identificati da un nome univoco. Può anche collegarsi ad applicazioni lato server(tramite protocollo CGI) agendo da tramite tra il browser e l'applicazione, quindi il browser diventa l'interfaccia dell'applicazione.<br /><br />
+</li></ul><p><strong>3b. Spiegate la differenza tra la versione HTTP 1.0 e 1.1.</strong><br /><br />
+<span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Indipendentemente dalla versione e modalità, HTTP è un protocollo <strong>stateless</strong>, cioè senza gestione dello stato.<br />Versione HTTP 1.0:
+</p><ul><li>il protocollo utilizza <strong>connessioni non persistenti</strong>, quindi ad ogni richiesta del client il server apre una nuova connessione. Questo significa che ogni sessione TCP viene chiusa dopo che il server ha risposto alla richiesta del client.
+</li><li>ogni richiesta HTTP è preceduta dal <strong>3-way handshake TCP</strong> per stabilire una connessione.
+</li><li><strong>Overhead molto elevato</strong> considerando che normali connessioni HTTP sono molto brevi e frequenti.
+</li><li>viene utilizzata la modalità di autenticazione <strong>Basic Authentication Scheme</strong>.
+</li></ul><p>Caratteristiche Basic Authentication Scheme: il client si autentica rispetto ad un server attraverso User ID e Password che vengono inviate come un'unica stringa, separate da <em>:</em> e codificate in base64 come parametri dell'Header Field <strong>Authorization</strong>. La password passa in chiaro ogni volta che è necessario richiedere quella risorsa.<br /><br />
+Versione HTTP 1.1:
+</p><ul><li>il protocollo utilizza <strong>connessioni persistenti</strong>, quindi richieste e risposte successive fluiscono all'interno della stessa connessione TCP, che non viene chiusa dal server. La connessione TCP viene chiusa dal server a seguito di un time out di inattività.
+</li><li>introdotti i <strong>cookie</strong>(file testuale contenente attributi) per poter simulare lo stato di una sessione HTTP. Vengono scambiati tra client e server e contengono sempre almeno un <em>identificatore</em> della sessione del particolare utente. Possono servire per informazioni commerciali(pagine visitate, prodotti cercati...) e per poter effettuare autenticazione senza ripetere il login.
+</li><li>viene utilizzata la modalità di autenticazione <strong>Digest Authentication Scheme</strong>.
+</li></ul><p>Caratteristiche Digest Authentication Scheme: aumenta la sicurezza dell'autenticazione HTTP, poiché permette l'invio della password in modo cifrato. I componenti fondamentali sono: una <strong>funzione di hash non invertibile(MD5</strong>) per impedire che il contenuto codificato possa essere decodificato; un valore (<strong>nonce</strong>) definito dal server e comunicato al client.
+</p>
+<div class='vspace'></div><h2>Esercizio 4</h2>
+<p><strong>Cosa sono le HTTP Servlet? Spiegare i metodi doGet() e doPost().</strong><br /><br />
+<span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Le servlet sono codice java utilizzato per generare contenuti dinamici sul Web. Le HTTP Servlet sono servlet che utilizzano metodi specifici per gestire connessioni HTTP. In particolare sono istanze (oggetti) della classe java.servlet.http.HttpServlet che definiscono i metodi per gestire le connessioni HTTP.<br />Gli obiettivi delle HTTP Servlet sono:<br />- definire un meccanismo robusto per spedire contenuti ad un client secondo il modello client/server<br />- generare contenuto dinamico su Web, gestendo sessioni HTTP.<br /><br />
+Esistono 7 metodi d’invocazione per una http Servlet.<br />Due di questi sono:<br />- <strong>doGet()</strong> comprende una quantità limitata d’informazione (non più di 255 caratteri) in forma di <em>query string</em>: lista che inizia con ?, seguita da coppie nome-valore.<br />ad es. /index.html?nome=lara&amp;cognome=dolera&amp;pw=giallo<br />
+- <strong>doPost()</strong> può essere basato su query string; con questo metodo si può spedire una quantità illimitata d’informazione come parte di una richiesta HTTP, senza apparire come parte di URL.<br />ad es. public void doGet(HttpServletRequest request, HttpServletResponse response).
+</p>
+<div class='vspace'></div><h2>Esercizio 5</h2>
+<p><strong>Spiegare cosa sono gli elementi ed i template di una JSP. Quali tipi di elementi conosci?</strong><br /><br />
+<span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Le JSP sono formate da codice HTML + frammenti di codice Java. Le componenti di una JSP sono gli elementi ed i template.<br />I <strong>template</strong> sono le parti di codice statico.<br />Gli <strong>elementi</strong> sono le parti di codice dinamico e si dividono in 3 categorie:
+</p><ol><li><ins><em>Elementi di script</em></ins>: metodo più semplice per rendere dinamica una pagina. Si suddivide a sua volta in 3 parti:
+<div class='vspace'></div><ol><li><em>scriptlet</em>: frammenti di codice Java. Definiti <em>&lt;% codice Java%&gt;</em>, adatti per i cicli, condizioni e funzionalità semplici.
+</li><li><em>espressioni</em>: stringhe di testo dinamiche. Definite <em>&lt;%= codice Java %&gt;</em>. Qualunque sia il tipo di dati del risultato di un’espressione viene sempre convertito dal metodo <strong>toString</strong> prima di essere inviato al client.
+</li><li><em>dichiarazioni</em>: frammenti di codice Java utilizzato per definire nuovi metodi o variabili globali. Definite da <em>&lt;%! codice Java%&gt;</em>. Vengono eseguite prima di _jspService().
+</li></ol><div class='vspace'></div></li><li><ins><em>Direttive</em></ins>: istruzioni per il container che specificano gli aspetti specifici dell’esecuzione di una JSP. Definite da <em>&lt;%@ direttiva attr1="val1",...,attrN="valN" %&gt;</em>. Esempi:
+<ol><li><em>direttiva page</em>: specifica informazioni relative alla pagina (tipo di contenuto,  linguaggio  di script, librerie da importare).
+</li><li><em>direttiva include</em>: serve per includere testo o codice nella JSP a tempo di traduzione (cioè quando la JSP viene convertita in servlet, quindi prima che venga compilata). Nota: ciò che viene incluso deve far parte della stessa applicazione Web.
+</li></ol><div class='vspace'></div></li><li><ins><em>Azioni</em></ins>: servono per linkare codice dinamico. Ad es. &lt;jsp: include page=“page”/&gt;, però a differenza della direttiva include i file sono inclusi in fase di esecuzione, quindi in caso di modifica del file incluso le modifiche apportate vengono visualizzate immediatamente.
+</li></ol><p class='vspace'>In sintesi gli elementi di una pagina JSP:
+</p><ul><li>Blocchi di codice HTML
+</li><li>Commenti  &lt;%-- --%&gt;
+</li><li>Scriptlet  &lt;%   %&gt;
+</li><li>Espressioni  &lt;%=   %&gt;
+</li><li>Dichiarazioni  &lt;%!    %&gt;
+</li><li>Direttive  &lt;%@  %&gt;
+</li></ul><div class='vspace'></div><h2>Esercizio 6</h2>
+<p><strong>Spiegare a cosa serve ed analizzare in maniera dettagliata il seguente codice. Sulla base di quanto scritto in questo codice, scrivere una traccia del file cinema.xml a cui si fa riferimento, inventando i dati per 2/3 esempi di film.</strong>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %&gt;
+&lt;%@ taglib uri="http://java.sun.com/jsp/jstl/xml" prefix="x" %&gt;
+&lt;%@ include file="header.jsp" %&gt;
+
+&lt;table class="tabella" &gt;
+&lt;tr&gt;
+&lt;td class="colonna" &gt;
+&lt;%@ include file="menu.jsp" %&gt;
+&lt;/td&gt;
+&lt;td class="colonna1"&gt;
+
+  &lt;c:set var="fileXML"&gt;
+   &lt;%@ include file="cinema.xml" %&gt;
+  &lt;/c:set&gt;
+
+  &lt;x:parse doc="${fileXML}" var="xml"/&gt;
+
+   &lt;x:forEach select="$xml/Films/Film"&gt;
+   &lt;x:set var="nodoGenere" select="string(Genere)"/&gt;
+
+    &lt;c:if test="${nodoGenere==param.genere}"&gt;
+    &lt;c:set var="controllo" value="true"/&gt;
+
+     &lt;x:set var="t" select="string(Titolo)"/&gt;
+     &lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
+     Titolo: &lt;c:out value="${t}"/&gt;&lt;br/&gt;&lt;br/&gt;
+     &lt;img src="&lt;x:out select='string(Locandina)'/&gt;"/&gt;
+     &lt;br/&gt;&lt;br/&gt;
+
+     &lt;x:forEach select="Attori/Attore"&gt;
+      &lt;x:set var="no" select="string(Nome)"/&gt;
+      &lt;x:set var="co" select="string(Cognome)"/&gt;
+      &lt;c:out value="${no}"/&gt; &lt;c:out value="${co}"/&gt;
+     &lt;br/&gt; &lt;br/&gt;
+
+     &lt;/x:forEach&gt;
+      &lt;x:forEach select="Proiezioni/Proiezione"&gt;
+      &lt;x:set var="g" select="string(Giorno)"/&gt;
+       Giorno:&lt;c:out value="${g}"/&gt;&lt;br/&gt;&lt;br/&gt;
+       &lt;x:set var="o" select="string(OrarioInizio)"/&gt;
+       Ora:&lt;c:out value="${o}"/&gt;&lt;br/&gt;&lt;br/&gt;
+       &lt;x:set var="n" select="string(nomeSala)"/&gt;
+       Sala:&lt;c:out value="${n}"/&gt;&lt;br/&gt;&lt;br/&gt;
+       &lt;/x:forEach&gt;
+     &lt;/c:if&gt;
+
+     &lt;/x:forEach&gt;
+      &lt;c:if test='${controllo != "true"}'&gt;
+        Nessun risultato trovato!!!
+      &lt;br/&gt;&lt;br/&gt;
+      &lt;/c:if&gt;
+   &lt;/td&gt;
+  &lt;/tr&gt;
+ &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</div>
+<p class='vspace'><span  style='color: red;'><span style='font-size:83%'><strong>SOLUZIONE</strong></span></span>
+</p>
+<p class='vspace'>Questo pezzo di codice è un file jsp che utilizza le librerie JSTL CORE e XML. Include un header.jsp che avrà un tag &lt;html&gt; di apertura perché in fondo è presente un tag di chiusura &lt;/html&gt;. All'inizio include un file menu.jsp all'interno del quale sarà presente una form che richiede l'inserimento del genere di film, scelta che sarà cruciale poi all'interno del documento.<br />Il documento crea e visualizza una tabella con tutti i dati che rispettano il genere scelto andando a fare un parsing del file cinema.xml. Se non viene trovato un genere corrispondente a quello inserito viene visualizzato il messaggio: "Nessun risultato trovato!!!"<br />
+</p><pre class='escaped'>
+&lt;films&gt;
+	&lt;film&gt;
+		&lt;genere&gt;horror&lt;/genere&gt;
+		&lt;titolo&gt;shining&lt;/titolo&gt;
+		&lt;locandina&gt;http://www.mialocandina.it/shining.jpg&lt;/locandina&gt;
+		&lt;attori&gt;
+			&lt;attore&gt;
+				&lt;nome&gt;jack&lt;/nome&gt;
+				&lt;cognome&gt;nicholson&lt;/cognome&gt;
+			&lt;/attore&gt;
+		&lt;attore&gt;
+				&lt;nome&gt;shelley&lt;/nome&gt;
+				&lt;cognome&gt;duvall&lt;/cognome&gt;
+			&lt;/attore&gt;
+		&lt;/attori&gt;
+		&lt;Proiezioni&gt;
+			&lt;Proiezione&gt;
+				&lt;Giorno&gt;lunedì
+				&lt;OrarioInizio&gt;21
+				&lt;nomeSala&gt;energia
+			&lt;/Proiezione&gt;
+		&lt;/Proiezioni&gt;
+		&lt;Proiezioni&gt;
+			&lt;Proiezione&gt;
+				&lt;Giorno&gt;martedì
+				&lt;OrarioInizio&gt;23
+				&lt;nomeSala&gt;fuoco
+			&lt;/Proiezione&gt;
+		&lt;/Proiezioni&gt;
+	&lt;/film&gt;
+
+	&lt;film&gt;
+		&lt;genere&gt;drammatico&lt;/genere&gt;
+		&lt;titolo&gt;qualcuno volò sul nido del cuculo&lt;/titolo&gt;
+		&lt;locandina&gt;http://www.mialocandina.it/cuculo.jpg&lt;/locandina&gt;
+		&lt;attori&gt;
+			&lt;attore&gt;
+				&lt;nome&gt;jack&lt;/nome&gt;
+				&lt;cognome&gt;nicholson&lt;/cognome&gt;
+			&lt;/attore&gt;
+		&lt;attore&gt;
+				&lt;nome&gt;danny&lt;/nome&gt;
+				&lt;cognome&gt;de vito&lt;/cognome&gt;
+			&lt;/attore&gt;
+		&lt;/attori&gt;
+		&lt;Proiezioni&gt;
+			&lt;Proiezione&gt;
+				&lt;Giorno&gt;mercoledì
+				&lt;OrarioInizio&gt;20
+				&lt;nomeSala&gt;aria
+			&lt;/Proiezione&gt;
+		&lt;/Proiezioni&gt;
+		&lt;Proiezioni&gt;
+			&lt;Proiezione&gt;
+				&lt;Giorno&gt;giovedì
+				&lt;OrarioInizio&gt;15
+				&lt;nomeSala&gt;acqua
+			&lt;/Proiezione&gt;
+		&lt;/Proiezioni&gt;
+	&lt;/film&gt;
+&lt;/films&gt;
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TemiEsameTW01)</span></div>
+  </div>
+</body>
+</html>

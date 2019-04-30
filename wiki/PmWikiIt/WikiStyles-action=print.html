@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : PmWikiIt / Stili wiki</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/PmWikiIt' title='Pm Wiki It Home'>Pm Wiki It</a> /
+    <a href='WikiStyles.html' title='Stili wiki'>Stili wiki</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='BlockMarkup.html'>Markup per blocchi</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Indice documentazione</a> | <a class='wikilink' href='WikiStyleExamples.html'>Esempi di stili wiki</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' >
+</div>
+<div class='frame rfloat small' > 
+<p><strong>Indice</strong>
+</p><ul><li><a href='#Basics'>Concetti di base</a>
+</li><li><a href='#Scopes'>Campi di applicazione</a>
+</li><li><a href='#Attributes'>Attributi</a>
+</li><li><a href='#Blocks'>Applicazione ai blocchi</a>
+</li><li><a href='#Styles'>Abilitare gli stili</a>
+</li><li><a href='#Shortcuts'>Scorciatoie personalizzate</a>
+</li><li><a href='#predefined'>Scorciatoie predefinite</a>
+</li><li><a href='#Examples'>Esempi</a>
+</li><li><a href='#KnownIssues'>Problemi</a>
+</li><li><a href='#SeeAlso'>Altri riferimenti</a>
+</li></ul></div><div class='test' > 
+<p><span class='frame rfloat' style='font-size: smaller; background-color: #ffffcc;'> authors (basic)</span>
+</p>
+<p class='vspace'><a name='Basics' id='Basics'></a>
+</p><h2>Concetti di base</h2>
+<p>I <a class='selflink' href='WikiStyles.html'>Wiki styles</a> permettono agli autori di modificare lo stile del testo.  
+Uno stile si scrive usando il carattere percento; ad esempio: <span  style='color: red;'><code class='escaped'>%red%</code></span> oppure <span  style='background-color: lightblue;'><code class='escaped'>%bgcolor=lightblue%</code></span>.
+</p>
+<p class='vspace'>L'uso più immediato degli stili wiki è la modifica di alcune proprietà del testo, come il colore, lo sfondo e il font. PmWiki fornisce una serie di stili per cambiare il colore del testo:%black%, %white%, %red%, %yellow%, %blue%, %gray%, %silver%, %maroon%, %green%, %navy%, and %purple%.
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Nel cesto ci sono %red% mele, %blue%
+mirtilli, %purple% melanzane, %green%
+lime %% e altro.
+</pre></td><td 
+        class='markup2' valign='top'><p>Nel cesto ci sono <span  style='color: red;'> mele, </span><span  style='color: blue;'> mirtilli, </span><span  style='color: purple;'> melanzane, </span><span  style='color: green;'> lime </span> e altro.
+</p>
+</td></tr></table>
+<p class='vspace'>Per colori diversi da quelli predefiniti si deve usare lo stile <code class='escaped'>%color=...%</code>.  (Nota: i colori specificati come RGB (#rrggbb) devono essere sempre scritti con lettere minuscole, per evitare conflitti con <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiWord?action=edit'>WikiWord</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiWord?action=edit'>?</a>.)
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Vorrei anche qualche %color=#ff7f00%
+arancia rossa%%!
+</pre></td><td 
+        class='markup2' valign='top'><p>Vorrei anche qualche <span  style='color: #ff7f00;'> arancia rossa</span>!
+</p>
+</td></tr></table>
+<p class='vspace'>Per cambiare il colore di sfondo bisogna usare il wikistyle <code class='escaped'>%bgcolor=...%</code>:
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Questa frase contiene %bgcolor=green
+yellow% testo giallo su sfondo verde.
+</pre></td><td 
+        class='markup2' valign='top'><p>Questa frase contiene <span  style='background-color: green; color: yellow;'> testo giallo su sfondo verde.</span>
+</p>
+</td></tr></table>
+<p class='vspace'>Si veda <a class='wikilink' href='WikiStyleColors.html'>Colori con stili wiki</a> per ulteriori informazioni sui colori.
+</p>
+<p class='vspace'><a name='Scopes' id='Scopes'></a>
+</p><h2>Campi di applicazione</h2>
+<p>Gli stili sono caratterizzati da un <em>campo di validità</em>. Normalmente, uno stile si applica al testo che ne segue la definizione, fino all'applicazione di un altro stile o alla fine del paragrafo. È possibile specificare un campo di applicazione alternativo, per applicare lo stile a:
+</p><ul><li>un intero paragrafo (<strong><code class='escaped'>%p ...%</code></strong>), 
+</li><li>un'intera lista (<strong><code class='escaped'>%list ...%</code></strong>), 
+</li><li>l'elemento di una lista (<strong><code class='escaped'>%item ...%</code></strong>), o
+</li><li>qualunque <a class='wikilink' href='BlockMarkup.html'>blocco</a> (<strong><code class='escaped'>%block ...%</code></strong>).  
+</li></ul><p>I campi appena mostrati sono scorciatoie per l'attributo "apply=", discusso <a href='#apply_to_blocks'>più avanti</a>.
+</p>
+<div class='vspace'></div><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>%p bgcolor=#ffeeee% Lo stile specificato all'inizio di questa linea si
+applica all'intero paragrafo, anche se %blue% altri stili %% sono
+specificati nello stesso paragrafo.
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><p  style='background-color: #ffeeee;'> Lo stile specificato all'inizio di questa linea si applica all'intero paragrafo, anche se <span  style='color: blue;'> altri stili </span> sono specificati nello stesso paragrafo.
+</p>
+</td></tr></table>
+<p class='vspace'>Il blocco <strong><code class='escaped'>&gt;&gt;style&lt;&lt;</code></strong> può essere usato per applicare uno stile wiki a un <a class='wikilink' href='BlockMarkup.html'>blocco</a>. Questo stile viene interrotto dal successivo <code class='escaped'>&gt;&gt;&lt;&lt;</code>.
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>&gt;&gt;blue font-style:italic
+bgcolor=#ffffcc&lt;&lt;
+Tutto questo viene scritto in blu e in
+corsivo,
+
+Quindi anche
+    testo preformattato
+* liste
+-&gt; elementi rientrati
+&gt;&gt;&lt;&lt;
+</pre></td><td 
+        class='markup2' valign='top'><div  style='color: blue; font-style: italic; background-color: #ffffcc;' > 
+<p>Tutto questo viene scritto in blu e in corsivo,
+</p>
+<p class='vspace'>Quindi anche
+</p><pre>    testo preformattato
+</pre><ul><li>liste
+</li></ul><div class='indent'>elementi rientrati
+</div></div>
+</td></tr></table>
+<p class='vspace'>La direttiva <strong><code class='escaped'>(:div style:)</code></strong> funziona <em>quasi</em> come <code class='escaped'>&gt;&gt;style&lt;&lt;</code>, ma le informazioni sullo stile sono inserite nell'attributo HTML <code>style=""</code>.
+</p><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>(:div class="green"
+style="font-style:italic; border:1px
+solid blue; background-color:#ffffcc":)
+Tutto questo testo è in verde e in
+corsivo.
+
+Quindi anche
+    testo preformattato
+* liste
+-&gt; elementi rientrati
+(:divend:)
+</pre></td><td 
+        class='markup2' valign='top'><div class='green' style='font-style:italic; border:1px solid blue; background-color:#ffffcc' >
+<p>Tutto questo testo è in verde e in corsivo.
+</p>
+<p class='vspace'>Quindi anche
+</p><pre>    testo preformattato
+</pre><ul><li>liste
+</li></ul><div class='indent'>elementi rientrati
+</div></div>
+</td></tr></table>
+<p class='vspace'>Gli stili wiki si possono applicare anche a  <a class='wikilink' href='Tables.html'>Tabelle</a> e <a class='wikilink' href='TableDirectives.html'>Direttive per tabelle</a>
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>||class="green"
+style="font-style:italic; border:1px
+solid blue; background-color:#ffffcc"
+||Tutto questo è in verde e in corsivo.
+||
+|| ||
+||Quindi anche ||
+||    testo preformattato ||
+||* liste ||
+||-&gt; elementi rientrati ||
+</pre></td><td 
+        class='markup2' valign='top'><table class='green' style='font-style:italic; border:1px solid blue; background-color:#ffffcc' ><tr ><td  align='left'>Tutto questo è in verde e in corsivo.</td></tr>
+<tr ><td >&nbsp;</td></tr>
+<tr ><td  align='left'>Quindi anche</td></tr>
+<tr ><td  align='center'>testo preformattato</td></tr>
+<tr ><td  align='left'>* liste</td></tr>
+<tr ><td  align='left'>-&gt; elementi rientrati</td></tr>
+</table>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>(:table class="green"
+style="font-style:italic; border:1px
+solid blue; background-color:#ffffcc":)
+(:cellnr:)
+Tutto questo è in verde e in corsivo.
+
+Quindi anche
+    testo preformattato
+* liste
+-&gt; elementi rientrati
+(:tableend:)
+</pre></td><td 
+        class='markup2' valign='top'><table class='green' style='font-style:italic; border:1px solid blue; background-color:#ffffcc' >
+<tr ><td  valign='top'>
+<p>Tutto questo è in verde e in corsivo.
+</p>
+<p class='vspace'>Quindi anche
+</p><pre>    testo preformattato
+</pre><ul><li>liste
+</li></ul><div class='indent'>elementi rientrati
+</div></td></tr></table>
+</td></tr></table>
+<p class='vspace'><a name='Attributes' id='Attributes'></a>
+</p><h2>Attributi</h2>
+<p>Nella specifica di uno stile sono riconosciuti i seguenti attributi:
+</p>
+<table class='tabtable' style='padding-left:3em;' ><tr ><td  align='center' colspan='2'>------------- CSS -------------</td><td  align='center'>-- HTML --</td></tr>
+<tr ><th  align='center'>color</th><th  align='center'>bgcolor</th><th  align='center'>class</th></tr>
+<tr ><td  align='left'>background-color</td><td  align='left'>margin</td><td  align='left'>id</td></tr>
+<tr ><td  align='left'>text-align</td><td  align='left'>padding</td><td >hspace</td></tr>
+<tr ><td  align='left'>text-decoration</td><td  align='left'>border</td><td >vspace</td></tr>
+<tr ><td  align='left'>font-size</td><td  align='left'>float</td><td >target</td></tr>
+<tr ><td  align='left'>font-family</td><td  align='left'>list-style</td><td >rel</td></tr>
+<tr ><td  align='left'>font-weight</td><td  align='left'>width<sup><a href='#widthheight'>*</a></sup></td><td >accesskey</td></tr>
+<tr ><td  align='left'>font-style</td><td  align='left'>height<sup><a href='#widthheight'>*</a></sup></td><td >value</td></tr>
+</table>
+<table ><tr ><td  colspan='3'>Speciali: define, apply</td></tr>
+</table>
+<p class='vspace'>Gli attributi elencati nelle prime due colonne corrispondono alle proprietà dei <em><a class='urllink' href='http://blooberry.com/indexdot/css/propindex/all.htm' title='' rel='nofollow'>fogli di stile CSS (cascading style sheet)</a></em>.  Gli attributi nella terza colonna si applicano solo ad alcuni elementi:
+</p>
+<div class='vspace'></div><ul><li><strong><code class='escaped'>class=</code></strong> e <strong><code class='escaped'>id=</code></strong> assegnano una classe o un id CSS a un elemento HTML
+</li><li><strong><code class='escaped'>target=name</code></strong> fa aprire i link in una finestra del browser chiamata "name"
+</li><li><strong><code class='escaped'>rel=name</code></strong> in un link definisce la relazione con la pagina di destinazione
+</li><li><strong><code class='escaped'>accesskey=x</code></strong> imposta il tasto 'x' come scorciatoia per i link che seguono
+</li><li><strong><code class='escaped'>value=9</code></strong> imposta il numero dell'elemento corrente in una lista numerata.
+</li></ul><div class='vspace'></div><div class='outdent'><a name='widthheight' id='widthheight'></a><sup>*</sup> Gli attributi "width" e "height" sono indicati con asterischi perché hanno un valore speciale nel caso di tag &lt;img .../&gt;. Se usati da soli (cioè senza il parametro "apply="), allora impostano i parametri omonimi di tutte i tag &lt;img ... /&gt; che seguono. Altrimenti impostano le proprietà omonime dell'elemento a cui si stà applicando lo stile.
+</div><p class='vspace'><a name='Blocks' id='Blocks'></a>
+</p><h2>Applicare stili a <a class='wikilink' href='BlockMarkup.html'>blocchi</a> <a name='apply_to_blocks' id='apply_to_blocks'></a></h2>
+<p>Un wikistyle si applica normalmente a una serie di linee di testo; l'attributo <strong>apply=</strong> permette di applicarlo a qualcos'altro. I valori predefiniti per apply= sono:
+</p>
+<div class='vspace'></div>
+<table border='1' cellpadding='3' cellspacing='0' ><tr ><td  align='left'>apply=img</td><td >applica a tutte le immagini che seguono</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>apply=p</td><td >applica al paragrafo corrente</td><td  align='left'>*</td></tr>
+<tr ><td  align='left'>apply=pre</td><td >applica al testo preformattato corrente</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>apply=list</td><td >applica alla lista corrente</td><td  align='left'>*</td></tr>
+<tr ><td  align='left'>apply=item</td><td >applica all'elemento corrente della lista</td><td  align='left'>*</td></tr>
+<tr ><td  align='left'>apply=div</td><td >applica al &lt;div&gt; corrente</td><td >&nbsp;</td></tr>
+<tr ><td  align='left'>apply=block</td><td >applica al blocco corrente, sia esso<br />un paragrafo, preformattato, una lista, un titolo<br />o un &lt;div&gt;.</td><td  align='left'>*</td></tr>
+</table>
+<p class='vspace'>Gli elementi contrassegnati con un asterisco hanno alcune scorciatoie già definite; quindi <code class='escaped'>%p color=blue%</code> è lo stesso che <code class='escaped'>%apply=p color=blue%</code>, e <code class='escaped'>%list ROMAN%</code> vale come <code class='escaped'>%apply=list list-style=upper-roman%</code>.
+</p>
+<p class='vspace'>Alcune scorciatoie includono "apply", come ad esempio <code class='escaped'>%right%</code> corrisponde a <code class='escaped'>%text-align=right apply=block%</code>.
+</p>
+<p class='vspace'>Un wikistile con "apply" ha effetto solo se si trova nella prima linea di ciò che esso deve modificare. In altre parole, un wikistyle nella terza linea di un paragrafo non può modificare quest'ultimo:
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>questo paragrafo è
+diviso su più linee, quindi se vogliamo
+%apply=p color=blue% cambiare il suo
+colore
+a metà non ci riusciamo, perché lo stile
+è specificato quando il paragrafo è già
+iniziato.
+</pre></td><td 
+        class='markup2' valign='top'><p>questo paragrafo è
+diviso su più linee, quindi se vogliamo
+ cambiare il suo colore
+a metà non ci riusciamo, perché lo stile
+è specificato quando il paragrafo è già
+iniziato.
+</p>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Questo paragrafo, invece, %p color=red%
+''diventa'' rosso, perché lo stile di
+blocco è inserito
+nella prima linea del testo.
+</pre></td><td 
+        class='markup2' valign='top'><p  style='color: red;'>Questo paragrafo, invece, 
+<em>diventa</em> rosso, perché lo stile di blocco è inserito
+nella prima linea del testo.
+</p>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>* Elemento di una lista
+* %list red% Ops, è troppo tardi per
+modificare tutta la lista!
+</pre></td><td 
+        class='markup2' valign='top'><ul><li>Elemento di una lista
+</li><li> Ops, è troppo tardi per modificare tutta la lista!
+</li></ul>
+</td></tr></table>
+<p class='vspace'><a name='Styles' id='Styles'></a>
+</p><h2>Abilitare gli stili</h2>
+<p>L'amministratore di PmWiki può abilitare altri stili, che non siano quelli descritti finora. Per fare questo bisogna modificare il file local/config.php. Per esempio, è possibile abilitare l'attributo "line-height" aggiungendo la linea:
+</p>
+<div class='vspace'></div><div class='indent'>&#36;WikiStyleCSS[] = 'line-height';
+</div><p class='vspace'>al file suddetto.
+</p>
+<p class='vspace'><a name='Shortcuts' id='Shortcuts'></a>
+</p><h2>Scorciatoie personalizzate</h2>
+<p>L'attributo <strong><code class='escaped'>define=</code></strong> si può usare per definire scorciatoie per qualunque stile.
+Questa scorciatoia può essere usata successivamente:
+</p>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>%define=box block bgcolor=#ddddff
+border="2px dotted blue"%
+
+%box% [@
+$ echo "Ciao mondo"
+Ciao mondo
+$ exit
+@]
+
+%box font-weight=bold color=green% [@
+$ echo "Ho detto CIAO"
+@]
+</pre></td><td 
+        class='markup2' valign='top'><div class='vspace'></div> <pre  style='background-color: #ddddff; border: 2px dotted blue;' class='escaped'>
+$ echo "Ciao mondo"
+Ciao mondo
+$ exit
+</pre>
+<div class='vspace'></div> <pre  style='background-color: #ddddff; border: 2px dotted blue; font-weight: bold; color: green;' class='escaped'>
+$ echo "Ho detto CIAO"
+</pre>
+</td></tr></table>
+<div class='vspace'></div><div class='outdent'><strong>Suggerimento:</strong>  Spesso è una buona idea inserire gli stili più usati nelle pagine <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/GroupHeaders?action=edit'>Group Header</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/GroupHeaders?action=edit'>?</a>, in modo da condividerli con tutte le pagine di un gruppo.  In alternativa, il <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiAdministrator?action=edit'>wiki administrator</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiAdministrator?action=edit'>?</a> può inserire stili validi per tutto il sito attraverso un file di <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/LocalCustomizations?action=edit'>local customization</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/LocalCustomizations?action=edit'>?</a> (si veda <a class='wikilink' href='CustomWikiStyles.html'>Stili wiki personalizzati</a>).
+<div class='vspace'></div></div><div class='outdent'><strong>Suggerimento:</strong>  Utilizzate gli stili personalizzati per associare un significato al testo, anziché solo un colore.  Per esempio, se gli avvertimenti devono essere mostrati in verde, definite <code class='escaped'>%define=warn green%</code> e quindi usate <code class='escaped'>%warn%</code> nel documento, anziché <code class='escaped'>%green%</code>.  Così facendo, se doveste cambiare idea in futuro, sarà molto più facile aggiornare gli stili di tutti gli avvertimenti: basterà modificare una sola definizione!
+<div class='vspace'></div></div><div class='outdent'><strong>Suggerimento:</strong> Un WikiStyle non definito viene automaticamente trattato come una richiesta di una classe. Ad esempio, <code class='escaped'>%pre%</code> ha lo stesso effetto che <code class='escaped'>%class=pre%</code>.
+</div><div class='vspace'></div><h2><a name='predefined' id='predefined'></a> Scorciatoie predefinite</h2>
+<p>PmWiki definisce un gran numero di scorciatoie.
+</p>
+<div class='vspace'></div><ul><li>Colore del testo: <span  style='color: black;'>black</span>, <span  style='color: white; background-color: black;'>white</span>, <span  style='color: red;'>red</span>, <span  style='color: yellow;'>yellow</span>, <span  style='color: blue;'>blue</span>, <span  style='color: gray;'>gray</span>, <span  style='color: silver;'>silver</span>, <span  style='color: maroon;'>maroon</span>, <span  style='color: green;'>green</span>, <span  style='color: navy;'>navy</span>, <span  style='color: purple;'>purple</span>  (scorciatoie per <code class='escaped'>%color=...%</code>)
+</li><li>Allineamento: <code class='escaped'>%center%</code> and <code class='escaped'>%right%</code>
+</li><li>Immagini e riquadri
+<ul><li>Flottanti a destra e sinistra: <code class='escaped'>%rfloat%</code> and <code class='escaped'>%lfloat%</code>
+</li><li>Testo incorniciato: <code class='escaped'>%frame%</code>, <code class='escaped'>%rframe%</code>, and <code class='escaped'>%lframe%</code>
+</li><li>Anteprima rimpicciolita: <code class='escaped'>%thumb%</code>
+</li></ul></li><li>Link che si aprono in una nuova finestra: <code class='escaped'>%newwin%</code>  (scorciatoia per <code class='escaped'>%target=_blank%</code>)
+</li><li>Commenti: <code class='escaped'>%comment%</code> (shortcut for <code class='escaped'>%display=none%</code>)
+</li><li>Liste ordinate: <code class='escaped'>%decimal%</code>, <code class='escaped'>%roman%</code>, <code class='escaped'>%ROMAN%</code>, <code class='escaped'>%alpha%</code>, <code class='escaped'>%ALPHA%</code> (si veda anche <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/OutlineLists' title='' rel='nofollow'>Cookbook:OutlineLists</a>)
+</li></ul><p class='vspace'><a name='Examples' id='Examples'></a>
+</p><h2>Esempi</h2>
+<p><a class='wikilink' href='WikiStyleExamples.html'>Esempi di stili wiki</a> contiene numerosi esempi.
+</p>
+<p class='vspace'><a name='KnownIssues' id='KnownIssues'></a>
+</p><h2>Problemi conosciuti</h2>
+<ul><li>I segni percentuali nelle definizioni degli stili (ad esempio: <code class='escaped'>%block width=50% %</code>) devono essere scritti "pct" anziché "%".
+</li></ul><p class='vspace'><a name='SeeAlso' id='SeeAlso'></a>
+</p><h2>Altri riferimenti</h2>
+<ul><li><a class='wikilink' href='CustomWikiStyles.html'>Stili wiki personalizzati</a> 
+</li><li><a class='wikilink' href='BlockMarkup.html'>Markup per blocchi</a> Questa pagina descrive tutte le possibili combinazioni di markup per blocchi
+</li><li><a class='wikilink' href='ListStyles.html'>Stili per gli elenchi</a> Stili per gli <a class='wikilink' href='TextFormattingRules.html#BulletedLists'>elenchi</a>
+</li></ul><p class='vspace'><span class='trail'> <span class='wikitrail'>&lt;&lt; <a class='wikilink' href='BlockMarkup.html'>Markup per blocchi</a> | <a class='wikilink' href='DocumentationIndex.html'>Indice documentazione</a> | <a class='wikilink' href='WikiStyleExamples.html'>Esempi di stili wiki</a> &gt;&gt;</span></span>
+</p>
+<div class='vspace'></div></div><div class='faq' > <a name='faq' id='faq'></a> 
+<p class='vspace question'>  Alcuni colori non funzionano! Ad esempio <code class='escaped'>%color=#AAAAAA%</code> funziona, ma <code class='escaped'>%color=#AA3333%</code> no. Perché?</p>
+<p class='vspace'>  Attenzione a usare solo lettere minuscole per specificare colori RGB in esadecimale. Altrimenti, PmWiki potrebbe pensare che si tratti di <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiWord?action=edit'>WikiWord</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiWord?action=edit'>?</a>.
+</p>
+<p class='vspace question'>  Perché questo non funziona?</p>
+<table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>(:div class="blue rframe" style="font-size:smaller":)
+Questo testo dovrebbe essere piccolo, blu e circondato da una cornice
+flottante a destra.
+(:divend:)
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><div class='blue rframe' style='font-size:smaller' >
+<p>Questo testo dovrebbe essere piccolo, blu e circondato da una cornice flottante a destra.
+</p></div>
+</td></tr></table>
+<p class='vspace'> Perché <strong>rframe</strong> non è una <em>class</em>.
+</p><table class='markup vert' align='center'>
+      <tr><td class='markup1' valign='top'><pre>(:div class="blue rfloat frame" style="font-size:smaller":)
+Questo testo dovrebbe essere piccolo, blu e circondato da una cornice
+flottante a destra.
+(:divend:)
+</pre></td></tr><tr><td 
+        class='markup2' valign='top'><div class='blue rfloat frame' style='font-size:smaller' >
+<p>Questo testo dovrebbe essere piccolo, blu e circondato da una cornice flottante a destra.
+</p></div>
+</td></tr></table>
+<p>
+</p></div><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='BlockMarkup.html'>Markup per blocchi</a> |  <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation index</a>  | <a class='wikilink' href='WikiStyleExamples.html'>Esempi di stili wiki</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+</p>
+<div class='vspace'></div><hr />
+<p  style='color: #060; background-color: #cf9; border: 1px solid #060; padding: 3px; font-size: smaller;'> Traduzione di <a style='color: #060' class='urllink' href='http://www.pmwiki.org/wiki/PmWiki.WikiStyles' title='' rel='nofollow'>PmWiki.WikiStyles</a> -
+Pagina originale: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWikiIt.WikiStyles' title='' rel='nofollow'>PmWikiIt.WikiStyles</a> -
+<a class='wikilink' href='A-action=search&amp;q=link=PmWikiIt.WikiStyles&amp;fmt=title.html'>Backlinks</a><br />
+Ultime modifiche:<br /><a class='selflink' href='WikiStyles.html'>PmWikiIt.WikiStyles</a>: May 03, 2010, at 05:56 PM<br /><a class='wikilink' href='../PmWiki/WikiStyles.html'>PmWiki.WikiStyles</a>: May 11, 2010, at 08:04 AM
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/PmWikiIt/WikiStyles)</span></div>
+  </div>
+</body>
+</html>

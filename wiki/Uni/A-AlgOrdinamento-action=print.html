@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Algoritmi e strutture dati - Algoritmi di ordinamento</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='A-AlgOrdinamento.html' title='Algoritmi e strutture dati - Algoritmi di ordinamento'>Algoritmi e strutture dati - Algoritmi di ordinamento</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e strutture dati - Algoritmi di ordinamento ::</strong>
+</pre><div class='vspace'></div><h3>Algoritmo Insertion-Sort</h3>
+<p>Risolve il problema dell'ordinamento (vedi <a class='wikilink' href='A-ConcettiIniziali.html'>la pagina con i concetti iniziali</a>) ed è efficiente per ordinare un piccolo numero di elementi.<br />La sequenza di numeri da ordinare sono anche detti <strong>chiavi</strong>.<br />Nel caso peggiore la sua complessità è O(n^2), nel caso migliore invece è &#937;(n).<br />Prende come parametro un array A[1 .. n] contenente una sequenza di lunghezza n che deve essere ordinata.<br />I numeri di input vengono ordinati sul posto: i numeri sono risistemati all’interno dell’array A, con al più un numero costante di essi memorizzati all’esterno dell’array in qualsiasi istante.<br />L’array di input A contiene la sequenza di output ordinata quando la procedura <code class='escaped'>INSERTION-SORT</code> è completata.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-insertionSort.gif' alt='' title='' /></div>
+<div class='vspace'></div><h3>Algoritmo Merge-Sort</h3>
+<p>Questo algoritmo per l'ordinamento utilizza la tecnica <a class='wikilink' href='A-ConcettiIniziali.html'><strong>Divide et impera</strong></a>. Infatti:
+</p><ul><li><strong>Divide</strong>: divide la sequenza degli n elementi da ordinare in due sottosequenze di n/2 elementi ciascuna.
+</li><li><strong>Impera</strong>: ordina le due sottosequenze in modo ricorsivo utilizzando l’algoritmo
+</li></ul><p>merge sort.
+</p><ul><li><strong>Combina</strong>: fonde le due sottosequenze ordinate per generare la sequenza ordinata.
+</li></ul><p class='vspace'>La procedura <code class='escaped'>MERGE</code> impiega un tempo &#920;(n), dove <code class='escaped'>n = r &amp;#8722; p + 1</code> è il numero di elementi da fondere.<br />Nel caso peggiore impiega &#920;(n log n).<br />L’idea consiste nel porre in fondo a ogni mazzo una carta sentinella, che contiene un valore speciale che usiamo per semplificare il nostro codice. In questo esempio usiamo &#8734; come valore sentinella, in modo che quando si presenta una carta con &#8734;, essa non può essere la carta più piccola.
+</p>
+<p class='vspace'>L' <em>InsertionSort</em> è meglio del <em>MergeSort</em> per array quasi ordinati sufficientemente grandi e anche per array piccoli.
+</p>
+<div class='vspace'></div><h3>HeapSort</h3>
+<p>L' <strong>HeapSort</strong> è un altro tipo di algoritmo di ordinamento che utilizza gli attributi migliori sia dell' <em>InsertionSort</em> sia del <em>MergeSort</em>.<br />È un algoritmo che utilizza una struttura dati detta: <strong>heap</strong>.
+</p>
+<p class='vspace'>L' <strong>HEAP</strong> è composto da un array considerabile come un albero binario. Ogni nodo dell'albero corrisponde al valore memorizzato nella relativa cella dell'array. L'array che rappresenta l'heap è caratterizzato dalla lunghezza dell'array ovvero dal numero di elementi dell'array e dalla dimensione dell'heap ovvero dal numero di elementi dell'heap registrati nell'array (heap – size [A]).<br />L'indice i identifica i nodi e il nodo genitore viene indicato con PARENT[i], il figlio sinistro: LEFT[i], quello destro: RIGHT[i].<br />Si possono avere due tipi di heap:
+</p><ul><li><strong>max heap</strong>: il contenuto di un nodo padre è sempre maggiore o al massimo uguale al contenuto dei suoi nodi figli. In sostanza il valore maggiore si trova nella radice.
+</li><li><strong>min heap</strong>: il contenuto del nodo padre è minore o al massimo uguale al contenuto dei suoi figli.
+</li></ul><p class='vspace'>Per l'algoritmo <code class='escaped'>HeapSort</code> si utilizza il <strong>max heap</strong>.<br />Si definisce altezza di un nodo il numero di archi del cammino più lungo che a partire da un nodo scende fino a un nodo foglia. Mentre l' <strong>altezza di un heap</strong> è l'altezza della sua radice.
+</p>
+<div class='vspace'></div><h5>MAX – HEAPIFY</h5>
+<p>È una sottoroutine che permette di manipolare i max – heap. Si suppone che l'albero su cui opera sia un max heap dove però viene violata la proprietà del max heap. In sostanza il valore in un nodo padre è più piccolo del valore del nodo figlio.<br />Questa sottoroutine prende a ogni passaggio il valore di ogni nodo e guarda se i suoi figli sono minori. Se lo sono la procedura termina altrimenti se i suoi figli hanno valore più grande scambia il figlio con valore maggiore con il padre. Questo accade ricorsivamente per ogni sottoalbero.
+</p>
+<p class='vspace'>Il tempo di esecuzione è: <code class='escaped'>T(n) = O(log n)</code>.
+</p>
+<div class='vspace'></div><h5>BUILT – MAX–HEAP</h5>
+<p>Costruzione di un max-heap a partire da un array utilizzando la procedura Max-Heapify dal basso verso l'alto. <br />Si inizia un ciclo for che va da [lunghezza/2] down to 1. Per esempio se la lunghezza dell'albero è 10 (10 nodi) allora parto dal 5° nodo e lo considero come radice. Chiamo Max-Heapify e guardo se il padre è più grande dei figli. Se lo è passo al successivo nodo radice (nel nostro esempio sarà il 4°) se invece non è prendo il figlio con valore massimo è lo scambio con il padre.<br />Tutto questo avviene fino al nodo 1 ricorsivamente per tutti i sottoalberi dell'heap.
+</p>
+<div class='vspace'></div><h5>HEAP SORT</h5>
+<p>Questo algoritmo di ordinamento inizialmente chiama la procedura <code class='escaped'>BUILT – MAX-HEAP</code> per un array in dimensione [1, ... ,n].<br />Dopo di che si fa un ciclo for che va da n down to 2 e dato che A[1] è l'elemento maggiore lo si scambia con il minore: A[n]. A[n] viene eliminato e di conseguenza la lunghezza dell'array diventa A[1 ... n-1]. A questo punto se la nuova radice viola la proprietà del max heap chiamo la procedura <code class='escaped'>MAX-HEAPIFY</code> creando così un max heap.<br />La complessità di questo algoritmo è <strong>O(n log n)</strong> perchè la chiamata a <code class='escaped'>BUILT - MAX-HEAP</code> è O(n) e quella al <code class='escaped'>MAX-HEAPIFY</code> è O(log n).
+</p>
+<div class='vspace'></div><h5>CODE DI PRIORITA'</h5>
+<p>Un'applicazione degli heap sono le code di priorità. Anch'esse, analogamente agli heap, possono essere code a max-priorità e code min-priorità.<br />Una <strong>coda di priorità</strong> è una struttura dati che mantiene un insieme di elementi S ai quali viene associato una chiave e che vengono estratti poi dalla coda in base alla priorità più alta.
+</p>
+<p class='vspace'>Una coda max-priorità supporta le seguenti operazioni:
+</p><ul><li><strong>INSERT(S, x)</strong>: inserisce l'elemento x in S
+</li><li><strong>MAXIMUM(S)</strong>: restituisce l'elemento in S con chiave più grande
+</li><li><strong>EXTRACT–MAX(S)</strong>: elimina e restituisce l'elemento S con chiave più grande
+</li><li><strong>INCREASE-KEY (S, x, k)</strong>: aumenta il valore della chiave di x al valore k. K dovrebbe essere almeno uguale alla chiave di x.
+</li></ul><p class='vspace'>Una coda min-priorità supporta invece le seguenti operazioni:
+</p><ul><li><strong>INSERT</strong>
+</li><li><strong>MINIMUM</strong>
+</li><li><strong>EXTRACT-MIN</strong>
+</li><li><strong>DECREASE–KEY</strong>
+</li></ul><p class='vspace'>Dato che gli heap possono implementare le code di priorità, occorre memorizzare un <strong>handle (aggancio)</strong> per ogni elemento dell'heap che serva a collegare l'oggetto dell'applicazione. Tipicamente questi handle sono gli indici di array ed è per questo che serve mantenerli aggiornati ogni qual volta l'oggetto dell'applicazione viene modificato.<br />Un heap può svolgere qualsiasi operazione con le code di priorità su un insieme di dimensione n nel tempo <code class='escaped'>O(log n)</code>.
+</p>
+<div class='vspace'></div><h3>Ordinamenti in tempo lineare</h3>
+<p>Gli algoritmi di ordinamento visti finora possono essere considerati <strong>algoritmi di confronto</strong>, perché per ordinare <em>n</em> elementi operavano dei confronti tra gli elementi. Ora invece opereremo come se gli input fossero elementi distinti.
+</p>
+<div class='vspace'></div><h5>Alberi di decisione</h5>
+<p>Gli ordinamenti per confronti possono essere visti astrattamente come <strong>alberi di decisione</strong> che sono alberi binari completi che rappresentano i confronti effettuati da un algoritmo di ordinamento che opera su n input.<br />Ogni nodo interno è rappresentato da i:j per qualche 1&#8804;i, j&#8804;n.<br />Ogni nodo foglia è rappresentato da una permutazione &lt;&#960;(1), &#960;(2), ..., &#960;(n)&gt;.<br />Nel ramo sinistro dell'albero ci saranno gli elementi ai &#8804; aj e in quello destro gli elementi ai &gt; aj.
+</p>
+<p class='vspace'><em>Qualsiasi algoritmo di ordinamento per confronti richiede &#937;(n lg n) confronti nel caso peggiore</em>. È sufficiente determinare l'altezza dell'albero di decisione dove ogni permutazione appare come una foglia raggiungibile.
+</p>
+<div class='vspace'></div><h5>COUNTING SORT</h5>
+<p>Questo algoritmo di ordinamento suppone che ogni numero n di input sia un numero intero compreso nell'intervallo [0, k]. Per ogni elemento di input x, conta il numero di elementi minori di x, in modo tale che si possa inserire x nella sua posizione dell'array di output.<br />In input avremo un array A[1, n] con lunghezza n e occorrono altri due array: B[1, n] che rappresenta l'output ordinato e C[0, k] che consiste in una memoria temporanea di lavoro.<br />La complessità sarà <strong>&#920;(n+k)</strong>.<br />Questo algoritmo di ordinamento mantiene l’ordine iniziale tra gli elementi di valore uguale infatti si dice che esso è <strong>stabile</strong>.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-countingSort.gif' alt='' title='' /></div>
+<div class='vspace'></div><h5>RADIX SORT</h5>
+<p>E' un algoritmo di ordinamento che serve ad ordinare un array A di n elementi in una certa base b dove ogni elemento ha d cifre. La cifra 1 è quella con ordine più basso mentre la cifra d è quella di ordine più alto. In sostanza le cifre di ogni elemento sono comprese nell'intervallo [1, k].<br />L'ordinamento viene effettuato eseguendo d volte un algoritmo di ordinamento stabile (CountingSort) per ordinare l'array rispetto a ciascuna delle d cifre partendo dalla mento significativa.<br />Complessità: T(n,d,k) = <strong>&#920;(d (n + k ))</strong>.
+</p>
+<p class='vspace'>Questo algoritmo non è da preferire se lo spazio di memoria principale è limitato e quindi è meglio un algoritmo di ordinamento sul posto come quicksort.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-radixSort.gif' alt='' title='' /></div>
+<div class='vspace'></div><h5>BUCKET SORT</h5>
+<p>E' un algoritmo veloce perchè fa ipotesi sull'input (come countingsort) supponendo che esso sia generato da un processo casuale che distribuisce gli elementi uniformemente nell'intervallo [0,1). Quindi gli elementi sono numeri reali.<br />L'intervallo viene poi suddiviso in n sottointervalli con uguale dimensione detti <strong>bucket</strong>.<br />Gli n numeri di input vengono poi distribuiti nei vari bucket.<br />Come output l'algoritmo tornerà i bucket ordinati poi verranno esaminati elencando gli elementi in ciascuno di essi.<br />Il codice di questo algoritmo suppone di prendere in input un array A di n elementi dove ogni elemento A[i] deve soddisfare la seguente proprietà: 0 &#8804; A[i] &lt; 1. Inoltre, l'algoritmo, si serve di un ulteriore array ausiliario B[0...n-1] di liste concatenate (bucket) supponendo ci sia un meccanismo per mantenere tali liste.<br />La complessità di esecuzione è <strong>&#920;(n)</strong> quindi viene eseguito in un tempo lineare.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-bucketSort.gif' alt='' title='' /></div>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/A-AlgOrdinamento)</span></div>
+  </div>
+</body>
+</html>

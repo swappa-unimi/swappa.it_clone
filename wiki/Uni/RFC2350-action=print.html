@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Gestione degli incidenti informatici - RFC 2350</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RFC2350.html' title='Gestione degli incidenti informatici - RFC 2350'>Gestione degli incidenti informatici - RFC 2350</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: RFC 2350 ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Le aspettative sulla gestione degli incidenti informatici</span>
+</p>
+<div class='vspace'></div><h2>1 Introduzione</h2>
+<p>La <strong>RFC 2350</strong> stabilisce alcune linee guida circa l'organizzazione e le modalità di comunicazione di un "<em>Computer Security Incident Response Team</em>" (<strong>CSIRT</strong>), ovvero la squadra che esegue, coordina e supporta la gestione degli incidenti di sicurezza che possono coinvolgere sistemi informatici di determinati soggetti, chiamati <em>constituency</em>.   Questi ultimi hanno l'interesse (e il diritto) di conoscere in primo luogo quali sono le aree di competenza e le capacità di un response team, in secondo luogo quali politiche e procedure operative adottano. Uno degli obiettivi della RFC è proprio quello di definire un modello standard per la diffusione delle informazioni tra gli CSIRT e il resto della comunità.
+</p>
+<div class='vspace'></div><h2>2 Campo di applicazione</h2>
+<p>Perché vi sia una corretta interazione tra gli CSIRT e i rispettivi constituency, all'intera comunità devono essere ben chiare le politiche e procedure dei response team, i loro rapporti con altri team o terze parti, quali canali di comunicazione utilizzano e come provvedono a renderli sicuri. I capitoli seguenti approfondiranno questi tre temi.
+</p>
+<div class='vspace'></div><h3>2.1 Pubblicazione di politiche e procedure</h3>
+<p>Dal momento che esistono molti tipi diversi di CSIRT più o meno grandi e più o meno specializzati, un potenziale constituent dovrebbe poterne conoscerne i servizi offerti e le politiche prima ancora di contattarli. Tale conoscenza è vantaggiosa sia perché l'utente saprebbe già cosa aspettarsi dal response team ("può aiutarmi? E se sì, si limiterà a un unico intervento o anche ai successivi? Si occuperà anche degli aspetti legali?"), ma anche perché potrebbe segnalare l'incidente nel modo a loro più congeniale, così che l'intervento possa essere il più rapido ed efficiente possibile.
+</p>
+<p class='vspace'>La principale caratteristica che distingue i vari response team è la grandezza del loro <em>perimetro operativo</em>, ovvero all'interno di quale ambito sono in grado di offrire il loro supporto. Andremo dunque dagli CSIRT più grandi come il <code class='escaped'>CERT Coordination Center</code> a quelli più ristretti come il <code class='escaped'>DFN-CERT</code> e il <code class='escaped'>CIAC</code>, fino ad arrivare ai team più piccoli confinati spesso a livello aziendale.
+</p>
+<p class='vspace'>Indipendentemente dalla loro estensione abbiamo già ricordato più volte quanto sia importante che comunichino il maggior numero di informazioni utili possibili alla comunità. E' importante sottolineare il termine "utile", dato che non tutte le procedure (ad esempio quelle tecniche di basso livello) aiutano gli utenti nella scelta.
+</p>
+<p class='vspace'>Il sistema con cui queste informazioni venivano diffuse in passato era a discrezione del CSIRT: alcuni diffondevano i loro quadri operativi, altri le FAQ, altri  distribuivano documenti illustrativi alle conferenze, altri facevano uso di newsletter.<br />Con questa RFC viene raccomandato ad ogni response team di pubblicare politiche e procedure su un proprio sito web, non solo per avere una semplice e univoca modalità d'accesso, ma anche per usufruire dei vantaggi offerti dai motori di ricerca. <br />Nel momento in cui si scriveva la 2350 non esisteva ancora una repository centrale che contenesse i documenti informativi di tutti gli CSIRT, anche se sul sito del <code class='escaped'>CERT</code> (<a class='urllink' href='http://www.cert.org/' title='' rel='nofollow'>http://www.cert.org/</a>) e del <code class='escaped'>first</code> (<a class='urllink' href='http://www.first.org/' title='' rel='nofollow'>http://www.first.org/</a>) ne possiamo trovare moltissimi.
+</p>
+<p class='vspace'>Ultima cosa da osservare prima di concludere il capitolo è che bisogna assicurare l'autenticità della fonte delle informazioni, ad esempio utilizzando firme digitali che la attestino; è di prioritaria importanza garantire alla constituency che non sta consultando un documento manomesso.
+</p>
+<div class='vspace'></div><h3>2.2 Relazioni tra i diversi CSIRT</h3>
+<p>Non tutti gli incidenti informatici possono essere interamente gestiti da un unico CSIRT, ma accade spesso che questi debbano interagire con altri team o terze parti che si estendono al di fuori del loro perimetro. In questo caso anche i constituency si dovrebbero adeguare, consentendo ad esempio che alcune informazioni sensibili che li riguardano possano essere divulgate agli altri response team che stanno collaborando alla gestione. A questo proposito va fatta una distinzione tra i "<em>peering agreement</em>" e le semplici collaborazioni: i primi prevedono una condivisione completa delle informazioni dei rispettivi constituent, mentre con i secondi si intendono semplici aiuti e consulenze. Le differenze sono sostanziali, dunque è essenziale che gli CSIRT stipulino tra loro accordi chiari e circostanziati, con un'attenta valutazione dei dettagli: l'abilità di un response team si vede anche dalla capacità di instaurare questo genere di rapporti.
+</p>
+<div class='vspace'></div><h3>2.3 Costituzione di comunicazioni sicure</h3>
+<p>Se uno CSIRT decide di instaurare una "<em>peering agreement</em>" con un altro team sorge il bisogno di condividere informazioni, dunque vi è necessità di assicurare la sicurezza del canale di comunicazione. Per sicurezza non intendiamo l'uso appropriato dei dati, ma la garanzia di riservatezza, integrità e autenticità.
+</p>
+<p class='vspace'>Come fare? Le tecniche di crittografia vengono in soccorso, posto che ci si accordi in fase di preparazione sulle modalità e i meccanismi, in particolar modo sulle chiavi crittografiche (pubbliche o private?).
+</p>
+<div class='vspace'></div><h2>3 Informazioni, politiche e procedure</h2>
+<p>Dopo averne tanto parlato, finalmente vediamo che tipo di informazioni deve pubblicare uno CSIRT per farsi conoscere dalla comunità. Non tutte quelle di cui parleremo sono obbligatorie (a rigor di logica, nessuna lo è), ma sono fortemente consigliate.
+</p>
+<div class='vspace'></div><h3>3.1 Ottenere il documento</h3>
+<p>Gli CSIRT possono cambiare nel tempo alcuni dettagli e caratteristiche, dunque è fondamentale che il documento sia aggiornato e che vengano fornite informazioni sul come e dove controllare gli update.
+</p>
+<p class='vspace'>Abbiamo i seguenti campi:
+</p><ul><li>data dell'ultimo aggiornamento
+</li><li>liste di distribuzione (ad esempio mailing list), ovvero meccanismi (resi sicuri da digital signature) per diffondere le notizie sugli ultimi update a un vasto numero di utenti
+</li><li>ubicazione del documento, cioè l'indirizzo (o il luogo) in cui è sempre possibile trovare l'ultima versione. Il response team si assume la responsabilità di mantenerlo aggiornato e di garantirne l'autenticità con firme digitali
+</li></ul><div class='vspace'></div><h3>3.2 Informazioni di contatto</h3>
+<p>Questa sezione è dedicata a tutte le informazioni utili per contattare uno CSIRT. <br />Le elencheremo senza commentarle dato che sono autoesplicative:
+</p><ul><li>nome dello CSIRT
+</li><li>indirizzo fisico e di posta elettronica
+</li><li>time zone (fuso orario)
+</li><li>numero di telefono
+</li><li>numero di fax
+</li><li>altri recapiti
+</li><li>chiavi pubbliche e tecnica crittografica utilizzata
+</li><li>membri del team
+</li><li>orario di servizio
+</li><li>varie ed eventuali, ad esempio siti web di riferimento, indirizzi per le mailing list, ...
+</li></ul><div class='vspace'></div><h3>3.3 Charter</h3>
+<p>Nel <em>charter</em> (letteralmente carta, ma anche "documento ufficiale") vengono date informazioni sulla missione che si è prefissa il CSIRT e sulle autorità da cui dipende. Dovrebbe includere almeno quattro elementi:
+</p><ul><li>mission statement
+</li><li>constituency
+</li><li>sponsorship / affiliation
+</li><li>authority
+</li></ul><p>Li abbiamo elencati nei loro termini originali, ora li esamineremo più nel dettaglio.
+</p>
+<div class='vspace'></div><h4>3.3.1 Mission statement</h4>
+<p>Indica con chiarezza e precisione gli obiettivi e le finalità che si sono prefissi i response team, e poiché stiamo parlando di CSIRT ci aspettiamo che tra questi ci sia anche la gestione degli incidenti informatici. 
+</p>
+<div class='vspace'></div><h4>3.3.2 Constituency</h4>
+<p>Le constituency sono quei soggetti che richiedono l'intervento o il supporto di uno CSIRT, dunque la loro dichiarazione aiuterebbe a comprendere il perimetro di lavoro dei response team stessi. Nel caso in cui gli CSIRT non potessero diffondere questo tipo di informazione (ad esempio per via delle leggi sulla privacy) dovrebbero comunque spiegarne le ragioni.
+</p>
+<div class='vspace'></div><h4>3.3.3 Sponsoring organization / affiliation</h4>
+<p>La conoscenza degli organismi che supportano e finanziano le attività degli CSIRT è un'informazione molto importante per i potenziali constituent, necessaria per comprendere l'ambiente in cui operano ed instaurare di conseguenza un rapporto di fiducia.
+</p>
+<div class='vspace'></div><h4>3.3.4 Authority</h4>
+<p>Per <em>authority</em> si intende la <em>linea di riporto</em> del response team, ovvero a chi questi deve riferire. 
+</p>
+<p class='vspace'>Le informazioni di questa sezione dipendono molto dal tipo di rapporto esistente tra response team e constituency: in un contesto aziendale l'autorità viene concessa dal management, mentre al di fuori è soggetta alla discussione e al pronunciamento della comunità. Nel secondo caso i response team possono muoversi in modo decisamente più autonomo.
+</p>
+<p class='vspace'>Un concetto molto importante da sottolineare è che non è detto che uno CSIRT abbia l'autorità di operare in tutti i sistemi all'interno del proprio perimetro, ma dipende dai rapporti di dipendenza gerarchici del team nei confronti di altri soggetti (altri CSIRT o il management).
+</p>
+<p class='vspace'>Osserviamo infine che il fatto di rendere nota l'autorità di un response team espone quest'ultimo all'assunzione di un certo numero di responsabilità aggiuntive, delle cui conseguenze legali dovrebbe essere ben informato.
+</p>
+<div class='vspace'></div><h3>3.4 Politiche</h3>
+<p>Vediamo ora quali politiche devono rendere note gli CSIRT.
+</p>
+<div class='vspace'></div><h4>3.4.1 Tipi di incidente e Livelli di supporto</h4>
+<p>In questa sezione vanno elencati brevemente i <em>tipi di incidente</em> che il response team è in grado di affrontare ed i <em>livelli di supporto</em> che offre durante la gestione. Questi ultimi possono variare a seconda del carico di lavoro del team o delle informazioni disponibili, fattori che vanno sempre riportati e motivati. Altra precisazione per quanto riguarda i tipi di incidenti: dato che è impensabile elencarli tutti – soprattutto se pensiamo a quelli non ancora conosciuti – è utile definire una serie di scenari generici supportati dallo CSIRT.
+</p>
+<div class='vspace'></div><h4>3.4.2 Cooperazione, interazione e comunicazione di informazioni</h4>
+<p>Un altro tipo di informazione che gli CSIRT devono diffondere riguarda tutti quei soggetti con cui interagiscono abitualmente, e non solo per le attività di risposta agli incidenti. I constituent potrebbero infatti chiedersi chi avrà accesso ai report e alle statistiche del team, o se questo interverrà direttamente o attraverso un altro CSIRT; in questa sezione verranno date delle risposte.
+</p>
+<p class='vspace'>I gruppi con cui i response team possono interagire sono:
+</p><ul><li><em>incident response team</em>, ovvero altri CSIRT. Queste cooperazioni sono frequenti soprattutto per la gestione di attacchi su vasta scala e spesso comportano la condivisione di informazioni a vario titolo e con diverse modalità
+</li><li><em>fornitori</em>, che svolgono un ruolo di fondamentale importanza in quei casi in cui l'incidente è legato a vulnerabilità dei loro prodotti
+</li><li><em>forze dell'ordine</em>, ovvero polizia o altre agenzie investigative. A tal proposito va ricordato che uno CSIRT deve lavorare tenendo sempre ben presente gli aspetti legali dell'incidente e del suo operato
+</li><li><em>stampa</em>, un organismo cui i constituent sono particolarmente sensibili. Un response team deve approcciarsi ad essa per aggiornarla circa la situazione e per chiarire le aspettative dei loro assistiti
+</li><li><em>altri</em>, come ad esempio le organizzazioni che li sponsorizzano o organismi di ricerca
+</li></ul><p class='vspace'>La comunicazione è importante anche se la maggior parte delle informazioni, essendo legate alla sicurezza, sono di carattere riservato; tuttavia uno CSIRT troppo riservato dal punto di vista informativo difficilmente otterrà collaborazione e fiducia dagli altri. Il modello di documento che sta delineando questa RFC dà preziosi consigli sul cosa diffondere, a chi e quando.
+</p>
+<p class='vspace'>Concludiamo osservando che alcuni fattori da cui dipende la libertà di comunicazione dei response team sono gli ordinamenti giuridici locali (spesso molto differenti tra CSIRT che operano in diverse nazioni o giurisdizioni) e i conflitti di interessi con altri constituent che potrebbero trarre vantaggi dalle loro informazioni.
+</p>
+<div class='vspace'></div><h4>3.4.3 Comunicazione e autenticazione</h4>
+<p>Tra le politiche da elencare vi sono ovviamente quelle che riguardano il metodo con cui gli CSIRT garantiscono la sicurezza delle comunicazioni tra loro e con i committenti. Andranno dunque descritte le tecniche crittografiche utilizzate (ove consentito), fornite le chiavi pubbliche, specificato l'utilizzo di firme digitali, ecc... accompagnando a tali informazioni le linee guida da seguire per verificarle e, nel caso, segnalare violazioni.
+</p>
+<p class='vspace'>Ovviamente non va detto tutto tutto, le password ad esempio è meglio tenerle per sé (nessuno affiderebbe la gestione di un incidente informatico di sicurezza a qualcuno che dà in giro le password per accedere ai loro sistemi. O almeno, non io).
+</p>
+<div class='vspace'></div><h3>3.5 Servizi</h3>
+<p>I servizi offerti da uno CSIRT possono essere distinti in "<em>attività in real time di risposta agli incidenti</em>" e "<em>attività proattive di supporto alla gestione non in real time</em>". Entriamo nei particolari.
+</p>
+<div class='vspace'></div><h4>3.5.1 Risposta agli incidenti</h4>
+<p>La fase di risposta include la valutazione delle segnalazioni di un incidente (<em>Incident Triage</em>), il coordinamento con altri CSIRT, con ISP o siti (<em>Incident Coordination</em>), e infine – opzionale – la risoluzione e il ripristino del sistema (<em>Incident Resolution</em>). Esaminiamo ognuna di queste sottofasi elencandone i campi.
+</p>
+<div class='vspace'></div><h5>3.5.1.1 Incident Triage</h5>
+<p>L'incident triage generalmente include:
+</p><ul><li><em>report assesment</em>: valutazione e interpretazione del report di segnalazione dell'incidente, assegnamento di priorità, relazionamento tra gli incidenti in corso e le tendenze
+</li><li><em>verifica</em>: aiuto nel determinare se l'incidente è realmente avvenuto, e se sì qual è il suo campo di applicazione
+</li></ul><div class='vspace'></div><h5>3.5.1.2 Incident Coordination</h5>
+<p>L'incident coordination generalmente include:
+</p><ul><li><em>categorizzazione delle informazioni</em> relative all'incidente  (quelle dai contatti, dai file di log, ...)
+</li><li><em>coordinamento</em>, ovvero la notifica delle altre parti con cui andranno condivise le informazioni (sempre nel rispetto delle politiche di divulgazione)
+</li></ul><div class='vspace'></div><h5>3.5.1.3 Incident Resolution</h5>
+<p>L'incident resolution generalmente include:
+</p><ul><li><em>assistenza tecnica</em>, che potrebbe includere l'analisi del sistema compromesso
+</li><li><em>eradication</em>, cioè la rimozione della vulnerabilità che ha permesso l'incidente di sicurezza e dei suoi effetti
+</li><li><em>recovery</em>, ovvero il ripristino del sistema allo stato precedente l'incidente
+</li></ul><div class='vspace'></div><h4>3.5.2 Attività proattive</h4>
+<p>Sono una serie di servizi opzionali aggiuntivi come: fornitura di informazioni su vulnerabilità note e patch, installazione di strumenti di sicurezza, formazione del personale, valutazione di siti web e prodotti.
+</p>
+<div class='vspace'></div><h3>3.6 Moduli di segnalazione degli incidenti</h3>
+<p>L'utilizzo di moduli di segnalazione concordati tra CSIRT e committenti rende infinitamente più semplice ed efficiente la gestione degli incidenti informatici. I primi possono in questo modo ricevere tutte le informazioni che ritengono necessarie per la risposta scritte nel modo a loro più congeniale; i secondi possono invece usufruire di una struttura di segnalazione già conosciuta prima dell'incidente, così che possano affrontarlo più preparati.
+</p>
+<p class='vspace'>È opportuno utilizzare moduli diversi a seconda del tipo di segnalazione, ad esempio una per gli incidenti e un'altra per la notifica di vulnerabilità.
+</p>
+<div class='vspace'></div><h3>3.7 Avvertenze</h3>
+<p>Anche se il documento che descrive lo CSIRT non è un contratto implica comunque un certo livello di responsabilità nei confronti dei committenti che lo consultano; questi infatti baseranno il loro livello di fiducia (e interesse) sulle capacità e sui servizi descritti. È dunque opportuno che i response team concludano il loro documento con una sezione dedicata alle avvertenze, in cui segnalare agli utenti tutte le possibili limitazioni e distinguo cui potrebbero essere soggette le informazioni date.
+</p>
+<div class='vspace'></div><h2>Appendice D: il modello di un documento CSIRT</h2>
+<p>Concludiamo con lo schema che dovrebbero seguire gli CSIRT nella redazione del proprio documento informativo. I vari punti li abbiamo già spiegati, quindi mi limiterò ad elencarli:
+</p>
+<div class='vspace'></div><pre class='escaped'>1. Informazioni sul documento 
+  1.1 Data dell'ultimo aggiornamento 
+  1.2 Lista di distribuzione per le notifiche 
+  1.3 Luoghi in cui tale documento può essere trovato
+
+2. Informazioni di contatto 
+  2.1 Nome dello CSIRT
+  2.2 Indirizzo 
+  2.3 Fuso orario 
+  2.4 Numero di telefono 
+  2.5 Numero di fax 
+  2.6 Altri recapiti 
+  2.7 Indirizzo di posta elettronica 
+  2.8 chiavi pubbliche e tecniche crittografiche 
+  2.9 Membri del team 
+  2.10 Altre informazioni 
+  2.11 Punti di Contatto
+
+3. Charter
+  3.1 Mission statement
+  3.2  Constituency
+  3.3  Sponsorship e/o Affiliation
+  3.4  Authority
+
+4. Politiche
+  4.1 Tipi di incidenti e livello di supporto
+  4.2 La cooperazione, interazione e la comunicazione di informazioni
+  4.3 Comunicazione e autenticazione
+
+5. Servizi
+  5.1  Incident Response
+    5.1.1. Incident Triage
+    5.1.2. Incident Coordination
+    5.1.3. Incident Resolution
+  5.2 Attività proattiva
+
+6. Moduli di segnalazione degli incidenti
+
+7. Avvertenze</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RFC2350)</span></div>
+  </div>
+</body>
+</html>

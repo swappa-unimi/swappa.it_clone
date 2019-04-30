@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Riassunto del libro di SO: Capitolo 5 - I thread</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SOcap5.html' title='Riassunto del libro di SO: Capitolo 5 - I thread'>Riassunto del libro di SO: Capitolo 5 - I thread</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Riassunto capitolo 5 - I thread ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<div class='vspace'></div><h2>5.1 Generalità</h2>
+<p><strong>Thread</strong> = unità base dell'utilizzo della CPU. Comprende:
+</p><ul><li>id
+</li><li>program counter
+</li><li>set di registri
+</li><li>stack
+</li></ul><p>Condivide <strong>codice</strong>, <strong>dati</strong> e altre <strong>risorse</strong> con gli altri thread appartenenti allo stesso processo.
+</p>
+<p class='vspace'><strong>Processo tradizionale</strong> = 1 thread.
+</p>
+<div class='vspace'></div><h3>5.1.1 Motivazioni</h3>
+<ul><li>Creare processi è costoso (tempo e risorse, + cambio di contesto)
+</li><li>Insensato creare più processi per fare la stessa cosa (eg un server web con più processi)
+</li></ul><div class='vspace'></div><h3>5.1.2 Benefici</h3>
+<ol><li>Prontezza di risposta: anche se una parte di una appli è bloccata, gli altri thread possono andare avanti
+</li><li>Condivisione di risorse: stesso spazio di indirizamento, ma più thread che operano
+</li><li>Economia: meno costoso creare thread che processi; meno costoso il cambio di contesto tra thread
+</li><li>Utilizzo di architetture multiprocessore: un thread per processore =&gt; esecuzione parallela
+</li></ol><div class='vspace'></div><h3>5.1.3 Thread nello spazio utente e nello spazio kernel</h3>
+<p><strong>User thread</strong> = il kernel non ne sa niente<br /><strong>Kernel thread</strong> = gestiti dal kernel<br />=&gt; paragrafo 5.2
+</p>
+<div class='vspace'></div><h3>5.1.4 Le librerie di thread</h3>
+<p>2 vie:
+</p><ol><li>libreria nello spazio utente =&gt; user thread
+</li><li>libreria a livello kernel =&gt; kernel thread
+</li></ol><div class='vspace'></div><h2>5.2 Modelli multithread</h2>
+<p>Tra user thread e kernel thread deve esistere una relazione: i modelli multithread ci dicono quale
+</p>
+<div class='vspace'></div><h3>5.2.1 Il modello molti a uno</h3>
+<p>Molti user thread mappati in un kernel thread
+</p>
+<p class='vspace'>Problemi:
+</p><ul><li>se un thread si blocca (eg chiamata I/O), blocca anche tutti gli altri
+</li><li>un kernel thread = gira in 1 processore =&gt; non sfrutta i sistemi multiprocessore
+</li></ul><div class='vspace'></div><h3>5.2.2 Il modello uno a uno</h3>
+<p>1 user thread = 1 kernel thread
+</p>
+<p class='vspace'>Pro: maggior concorrenza
+Contro: overhead nella creazione =&gt; molti SO limitano il numero max di kernel thread
+</p>
+<div class='vspace'></div><h3>5.2.3 Il modello molti a molti</h3>
+<p>Molti user thread = un po' di kernel thread (stesso numero, o meno)
+</p>
+<p class='vspace'>Prende i vantaggi e non gli svantaggi dei precedenti 2 modelli
+</p>
+<p class='vspace'>Variante. il <strong>modello a 2 livelli</strong> = posso usare il molti a molti, o mappare direttamente un user thread in un kernel thread.
+</p>
+<div class='vspace'></div><h2>5.3 Problematiche relative ai thread</h2>
+<h3>5.3.1 Le chiamate fork() ed exec()</h3>
+<p>Se un thread fa una <strong>fork</strong>, duplica se stesso o l'intero processo?
+</p>
+<p class='vspace'>=&gt; 2 versioni di <strong>fork</strong>, una per ogni scopo.
+</p>
+<div class='vspace'></div><h3>5.3.2 Cancellazione</h3>
+<p><strong>Cancellare un thread</strong> = terminarlo prima che lui finisca normalmente.
+</p>
+<p class='vspace'><strong>Thread target</strong> = il thread che sta per essere cancellato.
+La cancellazione può avvenire in 2 modi:
+</p><ol><li><strong>asincrona</strong> = viene ucciso subito
+</li><li><strong>differita</strong> = il target controlla periodicamente se va terminato, e ha la possibilità di morire graziosamente
+</li></ol><p class='vspace'>Problema: cancello un thread che sta usando risorse condivise =&gt; inconsistenza dei dati (specialmente con cancellazione asincrona) =&gt; meglio la cancellazione differita =&gt; esistono i <strong>punti di cancellazione</strong> dove un thread può morire in modo sicuro.
+</p>
+<div class='vspace'></div><h3>5.3.3 La gestione dei segnali</h3>
+<p><strong>Segnali sincroni</strong> = consegnati allo stesso processo che ha eseguito l'operazione che ha causato il segnale.
+</p>
+<p class='vspace'><strong>Segnali asincroni</strong> = generati da eventi esterni al processo.
+</p>
+<p class='vspace'>Ma tutti funzionano così:
+</p><ol><li>un evento genera un segnale
+</li><li>il segnale viene consegnato ad un processo
+</li><li>il processo lo gestisce
+</li></ol><p class='vspace'>Chi gestisce il segnale:
+</p><ol><li>il gestore di segnali di defaul
+</li><li>il gestore di segnali definito dall'utente
+</li></ol><p class='vspace'>=&gt; se ho molti thread nel processo, quale di essi gestisce il segnale?
+</p><ol><li>il thread che l'ha causato &lt;= segnali sincroni
+</li><li>tutti i thread
+</li><li>alcuni thread
+</li><li>un thread che fa gestione dei segnali
+</li></ol><p class='vspace'>Il problema c'è con gli asincroni: alcuni vanno dati a tutti i thread, altri no. Cmq un segnale non può essere ripetuto, e va gestito 1 sola volta =&gt; viene dato al primo thread che non lo rifiuta, di solito.
+</p>
+<p class='vspace'>In certe versioni di multithread si può specificare quali segnali un thread riceve e quali invece no.
+</p>
+<div class='vspace'></div><h3>5.3.4 Gruppi di thread</h3>
+<p>Esempio: server web che usa un thread per servire le richieste.
+Problemi:
+</p><ul><li>quanto tempo ci metto a creare un nuovo thread = quanto tempo attende il mio client?
+</li><li>così facendo non ho limiti al numero di thread che creo
+</li></ul><p class='vspace'>=&gt; <strong>pool di thread</strong> (pool = gruppo) = ne creo un po' in partenza, e do la richiesta al primo libero. Se non ce n'è nessuno, la richiesta attende.
+</p>
+<p class='vspace'>Vantaggi:
+</p><ol><li>più veloce che nemmeno creare un thread nuovo ogni volta
+</li><li>limite massimo al numero di thread in contemporanea
+</li></ol><div class='vspace'></div><h3>5.3.5 Dati specifici dei thread</h3>
+<p>I thread di un processo condividono i dati del processo =&gt; ma hanno anche bisogno di dati propri.
+</p>
+<div class='vspace'></div><h3>5.3.6 Attivazione dello schedulatore</h3>
+<p>Modello molti a molti e a 2 livelli = comunicazione tra kernel e libreria dei thread =&gt; molti SO che hanno sti sistemi usano il <strong>lightweight process</strong> = <strong>LWP</strong>
+</p>
+<p class='vspace'>LWP = struttura dati intermedia tra processo e thread.<br />L'LWP appare alla libreria dei thread come un processore virtuale su cui schedulare il thread utente.<br />Se si blocca il kernel thread, si blocca anche l'LWP e infine l'user thread =&gt; necessario un LWP per ogni chiamata bloccante.<br />Un appli decide quanti LWP avere.
+</p>
+<p class='vspace'><strong>Attivazione dello schedulatore</strong> = schema di comunicazione tra kernel e libreria dei thread.<br />Il kernel fornisce a un'appli un certo numero di processori virtuali =&gt; l'appli schedula per conto suo i suoi thread sui processori virtuali disponibili..
+</p>
+<p class='vspace'><strong>Upcall</strong> = il kernel deve informare l'applicazione di certi eventi =&gt; la libreria di thread ha un <strong>gestore di upcall</strong>.<br />Eg: un thread sta per bloccarsi =&gt; il kernel informa la libreria =&gt; essa rischedula i suoi thread.<br />Il thread bloccato si sblocca =&gt; altra upcall =&gt; altra rischedulazione.
+</p>
+<div class='vspace'></div><h2>5.4 Pthread</h2>
+<p>...
+</p>
+<div class='vspace'></div><h2>5.5 I thread di Windows XP</h2>
+<p>...
+</p>
+<div class='vspace'></div><h2>5.6 I thread di Linux</h2>
+<p>...
+</p>
+<div class='vspace'></div><h2>5.7 I thread di Java</h2>
+<p>...
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SOcap5)</span></div>
+  </div>
+</body>
+</html>

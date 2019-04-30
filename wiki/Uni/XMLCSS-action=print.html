@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Tecnologie Web - CSS</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='XMLCSS.html' title='Tecnologie Web - CSS'>Tecnologie Web - CSS</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Tecnologie Web ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>CSS</strong></span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Introduzione</a>
+</li><li><a href='#s2'>Sintassi</a>
+</li><li><a href='#s3'>Selettori</a>
+</li><li><a href='#s4'>Proprietà display</a>
+</li><li><a href='#s5'>Proprietà carattere</a>
+</li><li><a href='#s6'>Proprietà testo</a>
+</li><li><a href='#s7'>Colori</a>
+</li><li><a href='#s8'>Box</a>
+</li><li><a href='#s9'>Esempio</a>
+</li></ol></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>Introduzione</h2>
+<p><strong>CSS(Cascading Stylesheets)</strong> è un linguaggio che permette di descrivere l'aspetto dei documenti XHTML, XML e di conseguenza delle pagine web.<br />CSS non prevede alcuna trasformazione e i dati di tipo carattere sottoposti a parsing vengono presentati così come appaiono nel documento XML; inoltre non modifica il markup del documento, ma applica regole al markup già presente.
+Il motivo per cui si utilizza CSS è la possibilità di separare i contenuti dalla presentazione e quindi ottenere:
+</p><ul><li>maggiore leggibilità del codice
+</li><li>facilità nella manutenzione
+</li><li>personalizzazione dell'output
+</li></ul><div class='vspace'></div><h3>Versioni</h3>
+<p>Ci sono tre versioni differenti di CSS:
+</p><ul><li><strong>CSS Level1</strong>: la prima raccomandazione del W3C del 1996 utilizzata solo per HTML
+</li><li><strong>CSS Level2</strong>: è la raccomandazione corrente ed è utilizzata per HTML e XML. Con XML funziona in modo migliore, in quanto in XML non ci sono semantiche di visualizzazione predefinite.
+</li><li><strong>CSS Level3</strong>: versione attualmente in lavorazione che ha lo scopo di gestire le specifiche CSS in maniera modulare, così da poter implementare solo le funzionalità necessarie al nostro documento e non tutte.
+</li></ul><p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Sintassi</h2>
+<p>Un foglio di stile CSS è semplicemente un elenco di elementi ai quali devono essere applicati degli stili, che riguardano ad esempio il carattere, i colori e la formattazione. In un foglio di stile possono essere inseriti commenti tramite <em>/* */</em> e gli spazi vuoti per migliorare la leggibilità del codice CSS in quanto non vengono interpretati in alcun modo.<br /><br />
+In un foglio di stile CSS è possibile definire all'inizio del documento una sorta di stile default che viene applicato a tutti gli elementi all'interno dell'albero, appunto <em>a cascata</em>. Questo significa che non è necessario definire uno stile per tutti gli elementi, perché questi ereditano lo stile degli elementi superiori o le impostazioni di default.<br />
+</p><h3>Associazione CSS a documenti XML</h3>
+<p>I fogli di stile CSS sono utili soprattutto per le pagine web e per fare in modo che il browser rintracci il file CSS bisogna applicare al prologo di XML l'istruzione di elaborazione <em>xml-stylesheet</em>. Questa istruzione deve essere associata a due pseudo-attributi:
+</p><ul><li><strong>type</strong>:"text/css" 
+</li><li><strong>href</strong>="nome_file.css"
+</li></ul><p class='vspace'><ins>Esempio</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml-stylesheet type="text/css" href="Trucco.css"?&gt;
+</pre>
+</div>
+<p class='vspace'>I due attributi appena visti sono obbligatori, però in totale sono 6:
+</p><ul><li><strong>type</strong>: il tipo MIME del foglio di stile. <em>text/css</em> per CSS e <em>text/xml</em> per XSLT.
+</li><li><strong>href</strong>: l'URL assoluto o relativo al quale può essere rintracciato il foglio di stile.
+</li><li><strong>charset</strong>: nome del set di caratteri con cui è stato scritto il foglio di stile. Da notare che può essere diverso dal set di caratteri utilizzato nel documento da formattare.
+</li><li><strong>title</strong>: indica il nome del foglio di stile.
+</li><li><strong>media</strong>: specifica a quali tipi di media deve essere applicato il foglio di stile e può assumere i seguenti valori: screen, tty, tv, projection, handheld, print, braille, aural, all.<br />Se nel documento XML inseriamo più dichiarazioni di elaborazione xml-stylesheet possiamo rendere il documento visibile su più piattaforme in quanto possiamo associare ogni dichiarazione ad un diverso foglio di stile e ad un diverso media.
+</li><li><strong>alternate</strong>: se assume il valore <em>yes</em> significa che il foglio di stile è alternativo e normalmente non viene utilizzato. Se invece assume il valore <em>no</em> significa che è un foglio di stile primario e quindi deve essere utilizzato. Il valore di default è <em>no</em>.
+</li></ul><div class='vspace'></div><h3>Regole</h3>
+<p>Un foglio di stile è costituito dalle seguenti regole:
+</p><ul><li><strong>selettore</strong>: può essere un qualsiasi tag o un insieme di tag.
+</li><li><strong>blocco della dichiarazione</strong>: contiene tra parentesi graffe l'insieme delle proprietà di formattazione da applicare al selettore.
+</li><li><strong>proprietà</strong>: definisce una delle caratteristiche di formattazione supportate dal browser.
+</li><li><strong>valore</strong>: specifica il valore di una proprietà.
+</li></ul><p class='vspace'><ins>Esempio</ins>:
+</p><div><img src='../uploads/Uni/XMLCSSes01.jpg' alt='' title='' /></div>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Selettori</h2>
+<p>CSS mette a disposizione alcuni selettori che permettono appunto di selezionare determinati elementi al posto di altri:
+</p>
+<div class='vspace'></div><ul><li><strong>Selettore Universale</strong>: <strong>*</strong>{font-size:large;}<br />Il carattere asterisco corrisponde a qualsiasi elemento, quindi la regola viene applicata a qualsiasi elemento del documento che non sia associato a una regola più specifica.<br />Nell'esempio tutti gli elemento del documento devono utilizzare un carattere <em>large</em>.
+<div class='vspace'></div></li><li><strong>Selettori Raggruppati</strong>: h1, h2, h3{background:white;}<br />La regola viene applicata a tutti gli elementi elencati.
+<div class='vspace'></div></li><li><strong>Selettori per Elemento Discendente</strong>: p strong{color:red;}<br />La regola generale dice che un nome di elemento A seguito da un nome di elemento B trova una corrispondenza in tutti gli elementi B che discendono dagli elementi A.<br />La regola dell'esempio quindi trova una corrispondenza negli elementi strong che risultano essere discendenti degli elementi p, ma non in quelli che appaiono in qualunque altro punto del documento.
+<div class='vspace'></div></li><li><strong>Selettori per Elemento Figlio</strong>: p &gt; strong{color:red;}<br />La regola dice che se abbiamo due elementi separati da &gt;, allora il secondo elemento deve essere un figlio diretto del primo elemento.<br />Nell'esempio quindi a strong viene applicato il colore rosso solo se è figlio diretto di p.
+<div class='vspace'></div></li><li><strong>Selettori per Elemento Adiacente</strong>: h1 + p{margin: 10px;}<br />La regola dice che se abbiamo due elementi separati da un +, allora il secondo elemento deve essere esattamente l'elemento successivo rispetto al primo elemento.<br />Nell'esempio quindi il margine di 10pixel viene applicato solo al primo p successivo ad h1.
+<div class='vspace'></div></li><li><strong>Selettori per Attributo</strong>: <code class='escaped'> *[lang=fr]{display:none;}  a[rel~="copyright"]{color:red;} </code><br />Nelle parentesi quadre abbiamo il nome di un attributo o un valore di attributo.<br />Nel primo esempio la regola nasconde tutti gli elementi che sono in francese indipendentemente dal loro tipo.<br />Nel secondo esempio la regola scrive in rosso gli elementi <em>a</em> che hanno come valore dell'attributo rel <em>copyright</em>.
+</li></ul><p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>Proprietà display</h2>
+<p>La proprietà <strong>display</strong> identifica come deve essere disposto l'elemento nella sua tonalità all'interno della pagina. Esistono 18 valori legali per questa proprietà, ne vediamo alcuni:
+</p>
+<div class='vspace'></div><ul><li><strong>Elementi inline</strong>: <em>display:inline</em><br />è il valore di default della proprietà e posiziona l'elemento nella prossima posizione disponibile. La direzione di spostamento varia in base alla lingua utilizzata, quindi nel nostro caso da sinistra verso destra, mentre per il Cinese tradizionale dall'alto verso il basso.
+<div class='vspace'></div></li><li><strong>Elementi blocco</strong>: <em>display:block</em><br />l'elemento viene separato dai propri fratelli con un ritorno a capo.
+<div class='vspace'></div></li><li><strong>Elementi lista</strong>: <em>display: list-item</em><br />L'elemento viene formattato come elemento di livello blocco, ma gli viene applicato un bullet all'inizio del blocco. Il bullet è personalizzabile tramite le proprietà <em>list-style-type</em>, <em>list-style-image</em>, <em>list-style-position</em>.
+<div class='vspace'></div></li><li><strong>Elementi nascosti</strong>: <em>display:none</em><br />L'elemento non viene incluso nel documento e non modifica la formattazione degli elementi adiacenti.
+<div class='vspace'></div></li><li><strong>Elementi tabella</strong>: ci sono 10 possibili valori che hanno lo stesso significato dei tag di tabella per HTML.
+<ul><li>table;
+</li><li>inline-table;
+</li><li>table-row-group;
+</li><li>table-header-group;
+</li><li>table-footer-group;
+</li><li>table-row;
+</li><li>table-column-group;
+</li><li>table-column;
+</li><li>table-cell;
+</li><li>table-caption;
+</li></ul></li></ul><p class='vspace'><a name='s5' id='s5'></a>
+</p><h2>Proprietà carattere</h2>
+<p>Tramite queste proprietà possiamo modificare il carattere del documento. Ne vediamo 5 esempi:
+</p>
+<div class='vspace'></div><ul><li><strong>font-family</strong>: si elencano nomi di caratteri separati da virgole, in ordine di preferenza. I nomi composti devono essere racchiusi tra apici, come "Times-New-Roman". L'ultimo carattere indicato dovrebbe essere uno dei nomi generici di famiglia come ad esempio <em>serif</em>.
+<div class='vspace'></div></li><li><strong>font-style</strong>: il valore di default della proprietà è <em>normal</em>, però si possono scegliere <em>italic</em> per il corsivo, <em>oblique</em> per l'inclinato.<br />Inserendo <em>inherit</em> l'elemento eredita l'impostazione font-style dell'elemento padre.
+<div class='vspace'></div></li><li><strong>font-size</strong>: specifica la dimensione del carattere. I valori attribuibili sono <em>xx-small, x-smal, small, medium, large, x-large, xx-large</em> oppure tramite percentuali.
+<div class='vspace'></div></li><li><strong>font-weight</strong>: determina quanto il testo venga ingrossato o snellito. I valori attribuibili sono <em>normal, bold, bolder, lighter</em>. Oppure tramite un multiplo di 100 da 100(snello) fino a 900(marcato).
+<div class='vspace'></div></li><li><strong>font-stretch</strong>: permette di modificare lo spazio tra le lettere in modo da rendere il testo più o meno compatto.
+</li></ul><p class='vspace'><a name='s6' id='s6'></a>
+</p><h2>Proprietà testo</h2>
+<p>Le proprietà del testo permettono di modificare la formattazione del testo come ad esempio l'indentazione o l'allineamento del paragrafo. I principali sono:
+</p>
+<div class='vspace'></div><ul><li><strong>text-indent</strong>: specifica quanto indentare la prima linea di un blocco.
+<div class='vspace'></div></li><li><strong>text-align</strong>: i valori possibili sono <em>right</em>, <em>left</em>, <em>justify</em>, <em>center</em>. Questa proprietà è applicabile solo agli elementi di livello blocco.
+<div class='vspace'></div></li><li><strong>text-decoration</strong>: i valori possibili sono <em>underline</em>, <em>overline</em>, <em>line-through</em>, <em>blink</em>.
+<div class='vspace'></div></li><li><strong>text-transform</strong>: i valori possibili sono <em>uppercase</em> per trasformare il testo tutto in maiuscolo; <em>lowercase</em> per trasformare il testo tutto in minuscolo; <em>capitalize</em> trasforma in maiuscolo solo la prima lettera di ogni parola. Il valore di default è <em>none</em> cioè nessuna trasformazione. Anche in questo caso è possibile tramite <em>inherit</em> ereditare l'impostazione utilizzata dall'elemento padre.
+<div class='vspace'></div></li><li><strong>white-space</strong>: determina come il testo deve essere mandato a capo. I valori possibili sono <em>normal</em> manda a capo il testo solo quando necessario ed è il valore di default; <em>pre</em> preserva tutti i ritorni a capo e gli spazi del documento originario; <em>nowrap</em> indica che eventuali sequenze di spazi devono essere condensate, ma non devono essere inseriti ritorni a capo non presenti nel documento originale; <em>inherit</em> eredita l'impostazione dell'elemento padre.
+</li></ul><p class='vspace'><a name='s7' id='s7'></a>
+</p><h2>Colori</h2>
+<p>Le tre proprietà principali fornite da CSS per modificare i colori sono:
+</p><ul><li><strong>color</strong>: permette di modificare il colore del testo.
+</li><li><strong>background-color</strong>: permette di modificare il colore dello sfondo.
+</li><li><strong>border-color</strong>: permette di modificare il colore di un riquadro visibile che circonda del testo.
+</li></ul><p class='vspace'>I colori da inserire nelle proprietà possono essere scelti in più modi:
+</p><ul><li>indicando le 16 costanti di colore aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, yellow.
+</li><li>indicando le tre componenti RGB. Ogni componente può assumere valori da 0 a 255, i numeri possono essere scritti in decimale o esadecimale.
+</li><li>indicando le tre componenti RGB all'interno della funzione rgb(). Esempio: nome_elemento {color: rgb(45,98,250)}. E' anche possibile inserire le percentuali nome_elemento {color: rgb(2.7%,10%,95.3%)}
+</li></ul><p class='vspace'><a name='s8' id='s8'></a>
+</p><h2>Box</h2>
+<p>In una pagina ogni elemento, che sia di linea o di blocco(inline; block) è circondato da un box.<br />In un box bisogna distinguere tra:
+</p><ul><li><strong>Area del contenuto</strong>: è la zona in cui trova spazio il contenuto vero e proprio, testo, immagini, animazioni. Le dimensioni orizzontali dell'area possono essere modificate con la proprietà <em>width</em>, mentre quelle verticali con <em>height</em>.
+</li><li>Larghezza effettiva del box: data dalla somma del margine sinistro + bordo sinistro + padding sinistro + area del contenuto + padding destro + bordo destro + margine destro.<br />In dettaglio:
+<ul><li><strong>Padding</strong>: spazio vuoto che può essere creato tra l'area del contenuto e il bordo dell'elemento.
+</li><li><strong>Bordo</strong>: linea che circonda la zona del padding e l'area del contenuto,. E' variabile per stile, colore e dimensione.
+</li><li><strong>Margine</strong>: spazio di dimensioni variabili che separa un dato elemento da quelli adiacenti.
+</li></ul></li></ul><div class='vspace'></div><h3>Posizionamento</h3>
+<ul><li><strong>Static</strong>: è il valore di default e rappresenta la posizione che normalmente un elemento occupa nel flusso del documento.
+</li><li><strong>Absolute</strong>: il box dell'elemento viene rimosso dal flusso del documento ed è posizionato in base alle coordinate fornite con le proprietà <em>top</em>, <em>left</em>, <em>right</em>, <em>bottom</em>. Il posizionamento avviene sempre rispetto al box contenitore dell'elemento. Questo è rappresentato dal primo elemento antenato che abbia un posizionamento diverso da static. Se tale elemento non esiste il posizionamento avviene in base all'elemento radice HTML.
+</li><li><strong>Fixed</strong>: il box dell'elemento, come per absolute, non segue il normale flusso del documento. Con fixed il box contenitore è sempre il cosidetto viewport (finestra del broswer).
+</li><li><strong>Relative</strong>: l'elemento viene posizionato relativamente al suo box contenitore. La posizione viene anche qui impostata con le proprietà <em>top</em>, <em>left</em>, <em>right</em>, <em>bottom</em>, ma esse non indicano un punto preciso: indicano l'ammontare dello spostamento rispetto al box contenitore.
+</li></ul><p class='vspace'><a name='s9' id='s9'></a>
+</p><h2>Esempio</h2>
+<p>In questo esempio ho creato tre file:
+</p><ul><li><strong>Poe.xml</strong> è il file xml che contiene la poesia, il titolo e l'autore.
+</li><li><strong>poesia.dtd</strong> è il file DTD che descrive come sono organizzati i vari elementi presenti nel file XML e cosa possono contenere.
+</li><li><strong>poesia.xsd</strong> è il file XSD che può essere usato in alternativa alla dichiarazione DTD, anche in questo caso descrive come sono organizzati i vari elementi.
+</li><li><strong>Poesia.css</strong> descrive la formattazione del testo e degli elementi.
+</li></ul><p class='vspace'><ins>Poe.xml</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE poesia SYSTEM "poesia.dtd"&gt;
+&lt;?xml-stylesheet type="text/css" href="Poesia.css" ?&gt; 
+
+&lt;poesia&gt;
+	&lt;titolo&gt;Eldorado&lt;/titolo&gt;	
+
+	&lt;autore&gt;Edgar Allan Poe&lt;/autore&gt;	
+
+	&lt;testo&gt;
+         &lt;linea&gt;Con il suo gaio cimitero&lt;/linea&gt;
+         &lt;linea&gt;un ardito cavaliere,&lt;/linea&gt;
+         &lt;linea&gt;sotto il sole e in fitta ombra,&lt;/linea&gt;
+         &lt;linea&gt;gia' da tempo andava errando&lt;/linea&gt;
+         &lt;linea&gt;- e cantava una canzone -&lt;/linea&gt;
+         &lt;linea&gt;ricercando l' Eldorado.&lt;/linea&gt;
+
+         &lt;linea&gt;Ma divento' vecchio intanto -&lt;/linea&gt;
+         &lt;linea&gt;questo prode cavaliere - &lt;/linea&gt;
+         &lt;linea&gt;e gli calo' sul cuore &lt;/linea&gt;
+         &lt;linea&gt;un' ombra, che' non trovava &lt;/linea&gt;
+         &lt;linea&gt;mai terra o luogo &lt;/linea&gt;
+         &lt;linea&gt;somigliante all' Eldorado. &lt;/linea&gt;
+
+         &lt;linea&gt;E quando le forze &lt;/linea&gt;
+         &lt;linea&gt;l' abbandonarono infine, &lt;/linea&gt;
+         &lt;linea&gt;incontro' un' ombra pellegrina - &lt;/linea&gt;
+         &lt;linea&gt;"Ombra", egli chiese, &lt;/linea&gt;
+         &lt;linea&gt;"dove mai si trovera' &lt;/linea&gt;
+         &lt;linea&gt;questa terra d' Eldorado?" &lt;/linea&gt;
+
+         &lt;linea&gt;"Oltre ai Monti &lt;/linea&gt;
+         &lt;linea&gt;della Luna, &lt;/linea&gt;
+         &lt;linea&gt;giu' nella Valle delle Tenebre, &lt;/linea&gt;
+         &lt;linea&gt;cavalca, cavalca intrepido", &lt;/linea&gt;
+         &lt;linea&gt;cosi' l'ombra gli rispose - &lt;/linea&gt;
+         &lt;linea&gt;"se vai in cerca d'Eldorado!"&lt;/linea&gt;
+	&lt;/testo&gt;
+&lt;/poesia&gt;
+</pre>
+</div>
+<p class='vspace'><ins>Poesia.css</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+/* impostazioni di default del documento */
+poesia	{ font-family: Verdana, serif; 
+	  font-size: medium; }
+
+/* il titolo lo inseriamo in grande e grassetto */
+titolo	{
+	  display: block;
+	  font-family: Vivaldi, Verdana, serif;
+	  text-align: center;
+	  font-weight: bold;
+	  font-size: x-large;
+	  text-decoration: underline;
+}
+
+/* l'autore lo inseriamo in corsivo e largo */
+autore	{
+	  display: block;
+	  font-family: Vivaldi, Verdana, serif;
+	  text-align: center;
+	  font-style: italic;
+	  font-size: large;
+}
+
+testo	{
+	  display: block;
+	  font-family: Verdana, serif;
+	  text-align: center;
+	  font-style: normal;
+	  font-size: x-small;
+}
+
+linea	{
+	  display: block;
+	  font-family: Verdana, serif;
+	  text-align: center;
+	  font-style: normal;
+	  font-size: x-small;
+}
+</pre>
+</div>
+<p class='vspace'><ins>poesia.dtd</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;!ELEMENT poesia (titolo, autore, testo, linea+)&gt;
+&lt;!ELEMENT titolo (#PCDATA)&gt;
+&lt;!ELEMENT autore (#PCDATA)&gt;
+&lt;!ELEMENT testo (linea+)&gt;
+&lt;!ELEMENT linea (#PCDATA)&gt;
+</pre>
+</div>
+<p class='vspace'><ins>poesia.xsd</ins>:
+</p><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<pre class='escaped'>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"&gt;
+    &lt;xsd:element name="poesia"&gt;
+	&lt;xsd:complexType&gt;
+		&lt;xsd:sequence&gt;
+			&lt;xsd:element name="titolo" type="xsd:string"/&gt;
+			&lt;xsd:element name="autore" type="xsd:string"/&gt;
+			&lt;xsd:element ref="testo"/&gt;
+		&lt;/xsd:sequence&gt;
+	&lt;/xsd:complexType&gt;
+    &lt;/xsd:element&gt;
+    &lt;xsd:element name="testo"&gt;
+	&lt;xsd:complexType&gt;
+	   &lt;xsd:sequence&gt;
+	     &lt;xsd:element name="linea" 
+                          type="xsd:string" 
+                          minOccurs="1" 
+                          maxOccurs="unbounded"/&gt;
+           &lt;/xsd:sequence&gt;
+	&lt;/xsd:complexType&gt;
+    &lt;/xsd:element&gt;
+&lt;/xsd:schema&gt;
+</pre>
+</div>
+<p class='vspace'><ins>RISULTATO</ins>:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'> <img src='../uploads/Uni/XMLCSSpoe.jpg' alt='' title='' /></div>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='TecnologieWeb.html'>Torna alla pagina di Tecnologie Web</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/XMLCSS)</span></div>
+  </div>
+</body>
+</html>

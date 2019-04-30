@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Economia del Cambiamento Tecnologico - Lezione 2 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.LezECT02' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Economia del Cambiamento Tecnologico - Lezione 2
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT02?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT02?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='LezECT02-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT02?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT02?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Economia del Cambiamento Tecnologico - Lezione 2 was last modified on January 11, 2009, at 05:49 PM'>
+							<span style='display:none;'>Economia del Cambiamento Tecnologico - Lezione 2</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='EconomiaDelCambiamentoTecnologico.html'>Torna alla pagina di Economia del Cambiamento Tecnologico</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Economia del Cambiamento Tecnologico ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 30/09/2008</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 240px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Approcci di analisi di teoria della produzione in sequenza storica</a>
+</li><li><a href='#s2'>Proprietà della tecnologia</a>
+</li><li><a href='#s3'>Le forme dell'isoquanto</a>
+</li><li><a href='#s4'>Prodotto Marginale e Prodotto Medio del fattore produttivo variabile</a>
+</li><li><a href='#s5'>Esercizio - Prodotto medio e marginale del valore produttivo variabile</a>
+</li></ol><div class='vspace'></div></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>Approcci di analisi di teoria della produzione in sequenza storica</h2>
+<p>In realtà gli approcci all'analisi della produzione si possono trovare già da Aristotele, ma i primi a farne uno studio approfondito furono i fisiocratici (significa potere dominante della natura) e in particolare <em>François Quesnay</em> che scrisse le tavole Input/Output alla base della moderna economia.
+Gli approcci che analizzeremo sono:<br /><strong>1. approccio degli economisti classici</strong> = così detto perchè i suoi studiosi furono i primi a parlare di economia in questo approccio. Fanno parte di questa teoria:
+</p><ul><li><em>Adam Smith</em> (1776 circa)
+</li><li><em>David Ricardo</em> (stesso periodo circa)
+</li><li><em>Karl Marx</em> viene assegnato a questo periodo anche se il suo pensiero è leggerissimamente diverso
+</li></ul><p><strong>2. approccio neoclassico</strong>(o marginalista) = matematici che cercavano di applicare i modelli fisici all'economia. Facevano parte:
+</p><ul><li><em>Jevans</em>
+</li><li><em>Alfred Marshall</em>
+</li><li><em>Wicksell</em>
+</li><li><em>Robert Solow</em> (che insieme a Swan scrisse un libro importante sull'economia nel 1956/57)
+</li></ul><p><strong>3. approccio di Levontiev</strong> = ha formalizzato la tavola di François Quisnay e l'ha formulizzata. Queste tavole hanno matrici che rappresentano livelli di Input per produrre un certo Output, utili per fare previsioni, infatti sono utilizzate dall'ISTAT. <em>Sraffa</em> invece sempre in questo periodo ha recuperato gli scritti di Ricardo.<br /><strong>4. approccio di Dagutta</strong>(anni 2000) = recupera le teorie neoclassiche di Solow ma applicandole all'economia moderna aggiungendo dei dati.<br />La formula adottata è:<br /><br />
+ Y=K<sup>&#951;</sup>E<sup>&#952;</sup>L<sup>1-&#951;-&#952;</sup>
+</p>
+<p class='vspace'>Dove:<br />per ogni &#952;*&#951; &#1108; (0;1)<br />E:
+</p><ul><li>Y = output
+</li><li>K = capitale fisico (macchinari, impianti)
+</li><li>L = capitale sociale (non solo lavoratori dipendenti ma anche in proprio o così via)
+</li><li>E = capitale naturale (environment)
+</li></ul><p class='vspace'>Il PIL per esempio è determinato da capitale fisico, lavoro umano e risorse naturali del territorio. Questa formula può essere applicata sia su scala nazionale che su scala regionale o locale.
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Proprietà della tecnologia</h2>
+<ol><li><strong>Continuità</strong>
+</li><li><strong>Monotonicità</strong>
+</li><li><strong>Convessità</strong>
+</li></ol><p class='vspace'><ins>Monotonicità</ins><br /><br />Se abbiamo dei fattori che consentono di produrre una certa quantità di Output se raddoppiamo la quantità di Input l'Output dovrebbe essere almeno il doppio.<br />Implicitamente la monotonicità fa si che l'isoquanto abbia inclinazione negativa.<br /><img src='../uploads/Uni/graficoproduzione.jpg' alt='' title='' /><br /><br />
+<ins>Convessità</ins><br /><br />Se abbiamo due combinazioni produttive A=(x<sub>1</sub>,x<sub>2</sub>) e B=(z<sub>1</sub>,z<sub>2</sub>) che producono un livello di Y di output, la media aritmetica (ponderata) di A e B rappresenta una nuova combianzione di fattori che consente di ottenere un livello di prodotto almeno pari a Y se non di più.<br /><img src='../uploads/Uni/graficomedia.jpg' alt='' title='' /><br />Se la tecnologia si rappresentasse con una funzione di produzione concava, la media aritmetica starebbe al di sotto.<br /><img src='../uploads/Uni/graficomediasotto.jpg' alt='' title='' /><br />Perciò per ipotesi la rappresento in questo modo, altrimenti non rappresenterebbe la realtà.<br /><br />
+<ins>Continuità</ins><br /><br />Si presuppone che la produzione fili via liscia e non magari a "gradoni". Perciò la funzione è rappresentata come una mappa di isoquanti.<br />Ma cosa sono questi isoquanti?<br /><br /><em>L'isoquanto è uno spazio geometrico composto da tutte le combinazioni produttive che consentono di ottenere in modo efficiente da un punto di vista tecnico la medesima quantità di prodotto.</em><br /><br />Per rappresentarlo su una superficie piana come il piano cartesiano, immaginiamo di prendere un'arancia e tagliarla in tante fette rotonde. Questi cerchi concentrici messi su un piano e tagliati a metà mi danno le varie funzioni di produzione.<br /><img src='../uploads/Uni/graficoisoquanti.jpg' alt='' title='' /><br />
+<a name='s3' id='s3'></a>
+</p><h2>Le forme dell'isoquanto</h2>
+<p>Le forme variano in base al grado di sostituibilità tra i fattori produttivi. Ci sono essenzialmente quattro forme:<br /><em>1. Isoquanto lineare</em><br />La sostituibilità tra i fattori è perfetta. In questa funzione posso prendere in considerazione anche gli estremi.<br /><img src='../uploads/Uni/isoquantolineare.jpg' alt='' title='' /><br /><br /><em>2. Isoquanto I/O (o alla Leontiev)</em><br />I fattori produttivi non sono sostituibili, esiste un'unica combinazione efficiente.<br /><img src='../uploads/Uni/isoquantoio.jpg' alt='' title='' /><br /><br /><em>3. Isoquanto spezzato</em><br />La sostituzione tra i fattori produttivi è possibile solo in un numero limitato di situazioni (solo nei punti dove ho le combinazioni produttive ottenute)<br /><img src='../uploads/Uni/isoquantospezzato.jpg' alt='' title='' /><br /><br /><em>4. Isoquanto liscio e continuo</em><br />I fattori sono sostituibili in un intervallo del piano.<br /><img src='../uploads/Uni/isoquantoliscio.jpg' alt='' title='' /><br /><br />
+<a name='s4' id='s4'></a>
+</p><h2>Prodotto Marginale e Prodotto Medio del fattore produttivo variabile</h2>
+<p>Da questo tipo di grafico posso ottenere diverse informazioni utili.
+I prodotti marginali discendono dalle derivate prime parziali rispetto al K o al L annullate in quel punto. Oppure con definizione economica fino a quando il prodotto marginale del fattore produttivo variabile è pari a zero.<br />Il prodotto marginale è una misura di produttività
+</p>
+<div class='vspace'></div><pre>       &#948;Y              &#948;Y<br />PMaL = -- = 0   PMaK = -- = 0
+       &#948;L              &#948;K<br /><a name='s5' id='s5'></a>
+</pre><h2>Esercizio - Prodotto medio e marginale del valore produttivo variabile</h2>
+<p>Riprendendo l'esempio dell'altra volta, aggiungiamo il prodotto marginale e il prodotto medio del lavoro, il valore produttivo variabile.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+Terra        Lavoro          Y          PMeL (Ptot/L)            PMaL(&amp;#916;Ptot/&amp;#916;L)
+                                (misura di produttività)           y2-y1/L2-L1
+
+1              0             0              0/0 = 0                                 
+                                                               6-0/1-0 = 6
+1              1             6              6/1 = 6                   
+                                                                         7.5
+1              2             13.5        13.5/2 = 6.75                
+                                                                         7.5
+1              3             21            21/4 = 7
+                                                                         7
+1              4             28                   7
+                                                                         6
+1              5             34                   6.80
+                                                                         4
+1              6             38                   6.30
+                                                                         0
+1              7             38                   5.40
+                                                                        -1
+1              8             37                   4.60
+
+</pre><br /><br />
+<p>NOTA: &amp;#916 (numero nella tabella) = &#916;<br /><br />
+Rappresentiamo graficamente le due funzioni:<br /><img src='../uploads/Uni/PmeLPMaL.jpg' alt='' title='' /><br /><br />
+Il <strong>prodotto medio</strong> (prodotto tot/valore prodotto variabile) cresce, raggiunge un massimo e poi decresce restando sempre positivo(o al massimo nullo).<br />Il <strong>prodotto marginale</strong> cresce a tassi crescenti, raggiunge un massimo prima del massimo del prodotto medio, poi decresce, interseca il prodotto medio ne punto in cui il prodotto medio è massimo, quindi continua a decrescere fino ad annullarsi nel punti in cui la f.ne di produzione è massima (essendo la sua derivata prima è logico), infine assume valori negativi.<br />La <strong>funzione di produzione</strong> presenta rendimenti marginali crescenti:
+</p><ul><li>dall'origine degli assi al punto di flesso -&gt;versione matematica
+</li><li>nell'intervallo in cui la derivata prima del prodotto rispetto al fattore produttivo variabile è decrescente -&gt; versione grafica
+</li><li>fino al punto di massimo della funzione del prodotto marginale -&gt; versione economica
+</li></ul><p>Da un certo punto in poi (cioè il punto di flesso della funzione di produzione o il punto di massimo della funzione marginale) della funzione di produzione i rendimenti marginali diventano decrescenti.
+</p><hr />
+<p><a class='wikilink' href='EconomiaDelCambiamentoTecnologico.html'>Torna alla pagina di Economia del Cambiamento Tecnologico</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 11, 2009, at 05:49 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT02?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LezECT02?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

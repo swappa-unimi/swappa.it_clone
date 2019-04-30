@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Modellazione ed Analisi di Sistemi - ASM</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='ASM.html' title='Modellazione ed Analisi di Sistemi - ASM'>Modellazione ed Analisi di Sistemi - ASM</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='ModellazioneEdAnalisiDiSistemi.html'>Torna alla pagina di Modellazione ed Analisi di Sistemi</a>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Modellazione ed Analisi di Sistemi - Abstract State Machines ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>Ove non meglio specificato, tutti i testi tra virgolette vanno intesi come citazioni letterali dalle slide della prof <a class='wikilink' href='RiccobeneElviniaMaria.html'>Riccobene Elvinia Maria</a>, 2010.
+</p></div>
+<div class='vspace'></div><h3>Introduzione alle ASM</h3>
+<p>A causa delle innumerevoli limitazioni presentate dalle FMS sono state introdotte le ASM – Abstract State Machines. Le ASM sono l'estensione degli automi a stati finiti, la differenza con quest'ultimi sta proprio nello stato, di fatti si passa ad uno stato di controllo strutturato, dove è possibile effettuare una modellazione anche su dati complessi.<br />Le transizioni nelle ASM sono regole che governano il cambiamento di funzioni da uno stato attuale allo stato successivo. Esistono diversi costruttori di regole, i quali sono descritti brevemente di seguito:
+</p>
+<div class='vspace'></div><ul><li><strong>par</strong> (parallelismo): esecuzione in parallelo di più regole;<br />
+</li><li><strong>seq</strong> (sequenziale): esecuzione in sequenza di più regola;<br />
+</li><li><strong>choose</strong>: scelta non deterministica;<br />
+</li><li><strong>forall</strong>: parallelismo sincrono non limitato;<br />
+</li><li>Multi agenti sincroni/asincroni.
+</li></ul><p class='vspace'>Per poter modellare un sistema le AMS posseggono un tool per l'Editing, la Simulazione, la Validazione, la Verifica e Generazione di casi di Test. Tutti questi ingredienti rendono le ASM uno strumento molto vicino al linguaggio di programmazione. <br />Le ASM si compongono di un:<br />
+</p>
+<div class='vspace'></div><ul><li><strong>Header</strong>: dove c'è una fase di inizializzazione e dove si importano le librerie necessarie; <br />
+</li><li><strong>Body</strong>: dove vengono definite le regole del modello; <br />
+</li><li><strong>Main rule</strong>: è la regola principale (punto di partenza), mediante il quale si mandano in esecuzione le altre regole a seconda della modalità scelta (se in parallelo o in sequenza); <br />
+</li><li><strong>Inizialization</strong>: dove si inizializzano le regole ad uno stato iniziale prescelto.
+</li></ul><p class='vspace'>Nelle macchine a stati finiti una particolare situazione può essere modellata con un automa, il quale possiede uno stato iniziale e delle funzioni di transizione che fanno cambiare lo stato a seconda del verificarsi di determinate regole. Questo in ASM può essere definito da programmi:<br />
+</p>
+<div class='vspace'></div><pre>                      if ctl_state = i then
+	                   if c1 then
+		              R1
+		              ctl_state := j1
+		              […] 
+</pre><p class='vspace'><em>ASM vs FSM quali sono le differenze?</em><br />
+</p><ul><li>Le ASM sono la diretta estensione delle FSM, la differenza è nello stato, il quale, nelle FSM, può assumere solo un determinato valore di un insieme finito, mentre nelle ASM lo stato è più complesso. <br />
+</li><li>Una seconda differenza la si trova nelle condizioni di input  e di output. Nelle FSM si ha a disposizione un alfabeto finito, mentre nelle ASM si può avere un input di qualsiasi genere.<br />
+</li></ul><p class='vspace'>Inoltre nelle ASM gli stati, oltre ad essere associati ad un insieme di qualsiasi tipo, possono essere memorizzati in variabili e funzioni. Dunque quando si avrà un cambiamento di stato all'interno della locazione si avrà un cambiamento di valore.<br />Per concludere si può dire che un' ASM è una macchina a stati finiti con memoria, le cui transizioni possono far cambiare valore alla cella utilizzata per memorizzare gli stati. <br /><br />
+</p>
+<div class='vspace'></div><h3>Vocabolario</h3>
+<p>Nelle ASM in un vocabolario &#931;  definisco tutti i simboli e i nomi di funzione che si possono utilizzare. Si possono distinguere due tipi di funzioni, Statiche o Dinamiche.<br />Le funzioni Statiche sono quelle funzioni (che posseggono arietà &gt; 0) definite mediante una legge fissa. In particolare sono funzioni che non variano durante l'esecuzione della macchina. Esempi di funzioni statiche sono le classiche operazioni sui numeri (+,-,*, …) e sui booleani. Si possono definire anche funzioni nuove, il vincolo che si deve rispettare è che tali operazioni siano ammesse nel dominio definito. Esistono anche funzioni statiche di arietà pari a 0, tali funzioni prendono il nome di costanti.<br />La funzioni Dinamiche sono quelle funzioni che variano la legge durante l'esecuzione della macchina.<br />Esempio di vocabolario: &#931;<sub>bool</sub> &#8594; vocabolario dell'algebra boolena. Tale vocabolario possiede:<br />
+</p>
+<div class='vspace'></div><ul><li>due costanti: 0 e 1;<br />
+</li><li>funzione unaria per la negazione;<br />
+</li><li>due funzioni binarie per i nomi: “+” per l'OR e “*” per l'AND;<br />
+</li><li>tutte funzioni statiche.<br />
+</li></ul><p class='vspace'>Se fisso un insieme di simboli e ne do la loro interpretazione quello che ottengo è una struttura algebrica o algebra. Dall'esempio precedente si ottiene:<br />
+</p>
+<div class='vspace'></div><pre>                             <strong>&#931;<sub>bool</sub> = { 0, 1, -, +, *}</strong>
+</pre><p class='vspace'>Possedendo questi elementi possiamo dare una definizione di Stato ASM:<br /><em>“Fissato un vocabolario <strong>&#931;</strong>, uno stato <strong>A</strong> del vocabolario è un insieme non vuoto X, detto <strong>super-universo di A</strong>, con le interpretazioni dei nomi delle funzioni di  &#931;”.</em><br /><br />
+</p>
+<div class='vspace'></div><h3>Domini ASM</h3>
+<p>Modellando un sistema con le ASM è possibile considerare un <em>super-universo</em> all'interno del quale vi sono tanti piccoli universi, anziché vedere ogni componente del sistema separata. Ogni universo è un <strong>dominio</strong>, il quale contiene le sue funzioni e le sue operazioni.<br />Ad esempio se ho un super-universo che fa riferimento ai Processi all'interno di esso potrò identificare due universi:
+</p>
+<div class='vspace'></div><ul><li>Processo <em>Sender</em>;<br />
+</li><li>Processo <em>Receiver</em>.
+</li></ul><p class='vspace'>Come identifico uno dei due domini all'interno del mio super-universo? Supponiamo di voler identificare il processo dei Receiver:<br />
+</p>
+<div class='vspace'></div><pre>                   <strong>RECEIVER: X &#8594; Bool t.c. RECEIVER(t) = TRUE, &#8704; t &#8712; X</strong>
+</pre><p class='vspace'>Grazie a questa proprietà è possibile operare su domini eterogenei, dove l'utente può definirne altri di base (domini enumerativi, astratti, ecc) oppure a partire da altri domini esistenti, formando domini strutturati.<br /><br />
+</p>
+<div class='vspace'></div><h3>Termini ASM</h3>
+<p><em>“I termini  di &#931; sono espressioni sintattiche così costruite:</em><br />
+</p>
+<div class='vspace'></div><ul><li><em>Le variabili v0, v1, v2, … sono termini;</em><br />
+</li><li><em>Costanti c di &#931; sono termini;</em><br />
+</li><li><em>Se f è una funzione n-aria di &#931; e t1, t2, … tn sono termini, allora f(t1, t2, … tn) è un termine.”</em><br /><br />
+</li></ul><div class='vspace'></div><h3>Regole di transizione ASM</h3>
+<p>Modellare un sistema mediante le ASM vuol dire costruire un modello il quale possiede diversi stati, attraverso i quali la macchina può passare a seconda della computazione fatta. Di conseguenza, nella fase di modellazione, dovremo scrivere delle regole che faranno aggiornare il sistema a seconda del verificarsi o meno di alcune regole. Si è parlato prima di domini astratti, <em>“aggiornare stati astratti vuol dire cambiare l'interpretazione delle funzioni di segnatura della macchina”</em>.
+Ci sono diversi costruttori i quali consentono di far aggiornare lo stato attuale della macchina e sono: <br /><br />
+</p><ul><li><strong>Update Rule</strong>: costruttore base il quale possiede la seguente forma: <em>“f(t1,t2,...,tn) := s”</em> ovvero allo stato successivo della macchina il valore della <em>f</em> sarà aggiornato ad <em>s</em>. Nel qual caso la funzione <em>f</em> sia una funzione di arietà 0 (quindi una costante) il costruttore acquisirà la seguente forma <em>“c := s”</em>;<br />
+</li><li><strong>Conditional Rule</strong>: sarebbe il costruttore <em>if-then-else</em> il quale prima di aggiornare lo stato della macchina controlla se è verificata o meno una determinata regola.<br />
+</li></ul><p class='vspace'>Oltre a questi due costruttori di regole ce ne sono altri e sono (il contenuto delle parentesi graffe denota la sintassi):<br />
+</p>
+<div class='vspace'></div><ul><li><strong>Skip Rule</strong>: non fa nulla <em>[skip]</em>;<br />
+</li><li><strong>Block Rule</strong>: esecuzione in parallelo di più regole <em>[par P Q endpar]</em>;<br />
+</li><li><strong>Sequence Rule</strong>: esegue in sequenza più regole <em>[seq P Q endseq]</em>;<br />
+</li><li><strong>Let Rule</strong>: assegna il valore di t ad x ed esegue successivamente P <em>[let x = t in P]</em>;<br />
+</li><li><strong> Forall Rule</strong>: esegue una regola P in parallelo per ogni x che soddisfa una determinata condizione &#966; <em>[forall x with &#966; do P]</em>;<br />
+</li><li><strong>Choose Rule</strong>: Sceglie una x (in modo non deterministico) che soddisfa la condizione &#966; e quindi esegui P <em>[choose x with &#966; do P</em>];<br />
+</li><li><strong>MacroCall Rule</strong>: Esegui la regola di transizione r con parametri t1,...tn (equivalente ad una chiamata di funzione).
+</li></ul><p class='vspace'>Analizziamo alcuni dei costruttori di regole:
+Il <em>Block Rule</em>, come detto in precedenza esegue in parallelo due regole. Per capire il suo funzionamento osserviamo l'esempio seguente:<br />
+</p>
+<div class='vspace'></div><pre>                      <img src='../uploads/Uni/EsempioASM1.png' alt='' title='' /> 
+</pre><p class='vspace'>Nell'immagine si è supposto che allo stato S<sub>0</sub>  il valore di f(5) sia pari ad 1. Dopo la regola R allo stato S1 la stessa funzione f(5) è aggiornata al valore 2, mentre l'effetto della regola su g(3)  vede come conseguenza l'assegnazione a tale funzione del valore 1. 
+Si può dire che questa è la base del costruttore <strong>par</strong>, essendo la regola eseguita in parallelo prima dello stato S<sub>1</sub> il valore della funzione g(3) assumerà il valore di f(5) posseduto allo stato precedente. <br /><br />
+Il costruttore seq esegue due regole in sequenza, quindi a differenza del par nell'esempio precedente si avrà che, per effetto della regola g(3) := f(5), il valore di g(3) questa volta sarà 2. Tale evento è spiegabile da fatto che, per effetto delle operazioni fatte in sequenza, prima verrà aggiornato lo stato di f(5) e successivamente ci sarà l'assegnamento a g(3).<br /><br />
+Le MacroCall Rule invece corrispondono a delle chiamate di funzione, quindi la seguente notazione r[t1,...,tn] possiede il seguente significato: “Chiama r (regola con parametri) con argomenti t1,...,tn”. <br /><br />
+</p>
+<div class='vspace'></div><h3>Classificazione delle funzioni ASM</h3>
+<pre>              <img src='../uploads/Uni/AlberoFunzioniASM.png' alt='' title='' /><br />                           <em>Figura presa dalle slide del corso</em><br /><br />
+</pre><p class='vspace'>Questo è l'albero delle funzioni ASM, si può osservare che le funzioni <strong>Dynamic</strong> possiedono più tipi di sotto-funzioni, diamone una breve descrizione:
+</p>
+<div class='vspace'></div><ul><li><strong>in</strong>: sono le cosiddette funzioni monitorate ovvero quelle funzioni il cui valore proviene dall'esterno delle macchina, quindi dall'ambiente (lette dalla macchina e scritte dall'ambiente);<br />
+</li><li><strong>out</strong>: sono quelle funzioni fornite dalla macchina ASM (scritte dalla macchina e lette dall'ambiente);<br />
+</li><li><strong>controlled</strong>: sono quelle funzioni che sono aggiornate dalla macchina ASM secondo le sue regole (lette e scritte dalla macchina);<br />
+</li><li><strong>shared</strong>: sono quelle funzioni che sono condivide tra l'ambiente e la macchina (lette e scritte da ambiente e macchina);
+</li></ul><p class='vspace'>Osservando l'albero è possibile osservare che ci sono anche una classe di funzioni chiamate <strong>Derived</strong> e sono quelle funzioni che non sono nuove ma derivate da altre funzioni. Più precisamente i valori di questa tipologia di funzioni sono <em>“computati da funzioni monitorate e funzioni statiche per mezzo di una legge o schema fissati a priori”</em>.<br /><br />
+</p>
+<div class='vspace'></div><h3>Aggiornamenti Consistenti</h3>
+<p>Si è detto in precedenza cosa vuol dire aggiornare lo stato di una ASM e come tale aggiornamento può essere fatto. Formalmente un aggiornamento può essere definito come una tripla <em>(f, (a1,...,an), b)</em> dove <em>f</em> è la funzione n-aria in considerazione, <em>(a1,...,an)</em> sono gli argomenti di tale funzione e <em>b</em> sono elementi del super-universo.<br />Dati gli elementi formali di un aggiornamento la definizione formale di aggiornamento è la seguente: <em>“Aggiornare un ASM per uno stato A vuol dire che l'interpretazione della funzione f in A viene modificata per gli argomenti a1,...,an con il valore di b”</em>.\\ 
+Il problema degli aggiornamenti consistenti può essere provocato da una serie di aggiornamenti, effettuati in parallelo, su una funzione per gli stessi argomenti. Di conseguenza ogni qual volta si utilizzi il costruttore par nel quale sia richiesto aggiornare più volte gli stessi argomenti di una data funzione, bisogna assicurarsi che tutti gli aggiornamenti siano consistenti. Per far rispettare questa proprietà possiamo verificare la seguente proprietà:
+</p>
+<div class='vspace'></div><pre>                    <strong> (f, (a1,...,an),b) &#8712; U &amp; (f, (a1,...,an),c) &#8712; U, con b=c</strong>
+</pre><p class='vspace'>così facendo saremo sicuri che di non avere nessun aggiornamento inconsistente.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ModellazioneEdAnalisiDiSistemi.html'>Torna alla pagina di Modellazione ed Analisi di Sistemi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/ASM)</span></div>
+  </div>
+</body>
+</html>

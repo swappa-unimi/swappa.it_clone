@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Sincronizzazione </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-Sincronizzazione' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Sincronizzazione
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Sincronizzazione?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Sincronizzazione?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-Sincronizzazione-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Sincronizzazione?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Sincronizzazione?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Sincronizzazione was last modified on April 10, 2008, at 02:02 PM'>
+							<span style='display:none;'>Sistemi Operativi - Sincronizzazione</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Sincronizzazione</span>
+</p>
+<div class='vspace'></div><h2>Concorrenza</h2>
+<p>La <strong>concorrenza</strong> sussiste quando ho più <a class='wikilink' href='SO-Processi.html'>processi</a> che richiedono l'accesso a risorse condivise usabili solo in mutua esclusione. Tali processi vengono definiti <em>concorrenti</em>. Sarà detto qui una volta per tutte, tutto ciò di cui si parlerà in questa sede si applica sia ai processi che ai <a class='wikilink' href='SO-Thread.html'>thread</a>, a meno di notifica.<br />Per <em>mutua esclusione</em> si intende banalmente che non possono essere compiute contemporaneamente sulla stessa risorsa operazioni incompatibili da parte di più processi. Ad esempio una scrittura e una lettura sullo stesso dato non sono concesse, due letture sì. Il suo scopo è dunque preservare la consistenza dell'informazione, o si avrebbero casi in cui i processi computino dati scorretti. La <strong>sincronizzazione</strong> è quindi quell'insieme di politiche e meccanismi che si occuperanno di garantire tale principio per l'uso di risorse condivise, che queste siano fisiche (come le periferiche) o informative (come file o altri dati). Notare come sia un problema peculiare dei sistemi multi-tasking, dal momento che se avessi un'esecuzione seriale dei processi non avrei mai richieste di accesso parallele.
+</p>
+<div class='vspace'></div><h2>Corse e sezioni critiche</h2>
+<p>Il <em>problema del produttore-consumatore</em> è un modello classico per lo studio della sincronizzazione nei sistemi operativi. Esso consiste nel sincronizzare due processi, uno (il <em>produttore</em>) che vuole inviare informazioni (sui suoi prodotti) e l'altro (il <em>consumatore</em>) che vuole leggerli. Entrambi i processi utilizzano un buffer circolare di <em>n</em> elementi come struttura dati di appoggio condivisa. I codici potrebbero essere i seguenti:
+</p>
+<p class='vspace'><em>Produttore</em>
+</p>
+<div class='vspace'></div><pre class='escaped'>while (count == BUFFER_SIZE) ; // non fa nulla
+// aggiungi un elemento nel buffer
+++count;
+buffer[in] = item;
+in = (in + 1) % BUFFER_SIZE;
+</pre>
+<p class='vspace'>Quando il produttore vorrà inviare delle informazioni, se il buffer non è pieno le inserirà nel primo spazio vuoto disponibile, incrementando di uno il valore di ''count'.
+</p>
+<p class='vspace'><em>Consumatore</em>
+</p>
+<div class='vspace'></div><pre class='escaped'>while (count == 0) ; // non fa nulla
+// rimuovi un elemento nel buffer
+--count;
+item = buffer[out];
+out = (out + 1) % BUFFER_SIZE;
+</pre>
+<p class='vspace'>Se il consumatore trova il buffer vuoto aspetta, altrimenti legge l'informazione e decrementa di uno il contatore degli elementi presenti nel buffer.
+</p>
+<p class='vspace'>Il problema nasce nella condivisione della variabile <em>count</em>. Se ad esempio scade il time slice del processo produttore proprio quando sta per incrementare il contatore, avrei risultati inconsistenti dato che l'inserimento non sarà segnalato al consumatore che accederà a valori obsoleti. Queste situazioni in cui più processi accedono agli stessi dati in maniera concorrente e il risultato dell'esecuzione dipende dall'ordine in cui ha avuto luogo l'accesso, si chiamano <strong>corse critiche</strong>. Ricorrono molto frequentemente e non sempre conducono a effettiva inconsistenza delle informazioni. Il problema è che possono farlo, dunque vanno evitate.<br />Quindi, la corsa critica del problema del produttore-consumatore non è legata ad operazioni contemporanee di lettura e scrittura, dal momento che ognuna di esse avviene all'interno dello spazio di indirizzamento dei rispettivi processi; ma è dovuta ai possibili errori nell'aggiornamento del contatore del buffer. Le operazioni di incremento e decremento sono infatti realizzate con una sequenza di istruzioni assembler, e proprio in quanto sequenza per definizione interrompibili. 
+</p>
+<p class='vspace'>La <strong>sezione critica</strong> è una porzione di codice che può generare <em>corse critiche</em> se eseguita in modo concorrente, ad esempio modifiche di variabili comuni, scrittura su file condivisi, eccetera. Lo scopo della sua individuazione è quello di creare un protocollo che possa essere utilizzato per bypassare i problemi di inconsistenza; la soluzione deve dunque soddisfare tre condizioni:
+</p><ul><li><em>mutua esclusione</em>, ovvero se un processo sta eseguendo la sua sezione critica nessun altro può farlo
+</li><li><em>progresso</em>, che stabilisce che solo chi <em>non</em> sta eseguendo la propria sezione critica può concorrere con gli altri per accedervi, e la scelta non può durare indefinitamente
+</li><li><em>attesa limitata</em>, bisogna cioè fare in modo che nessun processo attenda troppo a lungo di evolversi
+</li></ul><p class='vspace'>Riassumendo, le sezioni critiche di codice devono avere accesso esclusivo alle variabili condivise, e devono sfruttarle in modo rapido perché altri processi che usano la stessa risorsa non debbano attendere indefinitamente. Ciò si ottiene progettando <em>processi cooperanti</em>, che superino le criticità con un'opportuna sincronizzazione dell'evoluzione delle loro computazioni. L'idea di base è che ognuno di loro sappia a che punto della computazione si trova l'altro prima di entrare in una sezione critica, e che questi interrompa la computazione fintanto che il primo vi rimane.
+</p>
+<div class='vspace'></div><h2>Variabili di turno</h2>
+<p>Un tipo di approccio a livello di istruzioni per la sincronizzazione di due processi concorrenti, sono le <strong>variabili di turno</strong>. Esse sono variabili condivise tra i processi che interagiscono per accedere in modo concorrente a una risorsa, stabilendone il turno d'uso. In altre parole dicono quale processo ha il diritto di usarla in un certo istante. Vediamo tre possibili implementazioni che garantiscono la mutua esclusione tra due processi <strong>0</strong> e <strong>1</strong>.
+</p>
+<div class='vspace'></div><h3>Algoritmo 1</h3>
+<p>Riportiamo parte del codice, e in seguito i commenti.
+</p>
+<div class='vspace'></div><pre class='escaped'>...
+  private volatile int turn;  // la variabile di turno 
+  public Algorithm 1() // (1)
+  {
+    turn = TURN 0;
+  }
+  public void enteringCriticalSection (int t) // (2)
+  {
+    while (turn != t)
+      Thread.yield();
+  }
+  public void leavingCriticalSection (int t) // (3)
+  {
+    turn = 1 - t;
+  }
+...</pre>
+<p class='vspace'><em>(1)</em> Inizializza a <em>0</em> la variabile di turno, dando così la possibilità al processo <strong>0</strong> di accedere alla propria sezione critica.<br /><em>(2)</em> Il processo <strong>0</strong> può accedere all'uso della risorsa condivisa, mentre a un qualsiasi altro processo (con valore <em>t</em> diverso da 0) viene invece impedito l'accesso, lasciandolo bloccato nella funzione di attesa <code class='escaped'>yield()</code>. Ovviamente, se fosse il processo <strong>1</strong> quello che sta utilizzando in quel momento la risorsa, sarebbe <strong>0</strong> quello mantenuto in attesa.<br /><em>(3)</em> Quando il processo <strong>0</strong> (o <strong>1</strong>) avrà terminato le sue operazioni nella sezione critica, concederà l'uso delle risorse condivise all'altro processo. Ciò avviene cambiando il valore alla variabile <em>turn</em>, in questo caso con l'assegnamento "1 - t" (perché ho solo due processi).
+</p>
+<p class='vspace'>Questo algoritmo garantisce la mutua esclusione imponendo una stretta alternanza dei processi, con tutti gli svantaggi che questo comporta. Se ad esempio ho un produttore che vuole deporre più informazioni durante il suo turno, non potrà farlo perché dovrà prima aspettare che il consumatore esaurisca il suo (e viceversa). In più, non viene garantito il progresso, dato che non lo lascio evolvere fino ai suoi limiti naturali; nel caso del consumatore essi sono l'aver letto tutte le informazioni, mentre per il produttore è ritrovarsi col buffer pieno. 
+</p>
+<div class='vspace'></div><h3>Algoritmo 2</h3>
+<p>Associa un flag per ogni processo in modo che sia impostato a <em>true</em> quando sono nella sezione critica, <em>false</em> altrimenti. Come prima, riportiamo parte del codice e in seguito i commenti.
+</p>
+<div class='vspace'></div><pre class='escaped'>...
+  private volatile boolean flag0, flag1;
+  public Algorithm 2() // (1)
+  {
+    flag0 = false; flag1 = false;
+  }
+  public void enteringCriticalSection (int t) // (2)
+  {
+    if (t == 0) 
+    {
+      flag0 = true;
+      while (flag1 == true)
+        Thread.yield();
+    }
+    else 
+    {
+      flag1 = true;
+      while (flag0 == true)
+        Thread.yield();
+    }
+  }
+  public void leavingCriticalSection (int t) // (3)
+  {
+    if(t == 0) flag0 = false; else flag1 = false;
+  }
+...</pre>
+<p class='vspace'><em>(1)</em> Inizializza entrambi i flag a <em>false</em> per l'ovvio motivo che i processi devono ancora fare richiesta di entrare nelle rispettive sezioni critiche.<br /><em>(2)</em> Se il processo che vuole accedere alla risorsa è lo <strong>0</strong>, flag0 passa a <em>true</em>. Nel caso in cui flag1 sia già a <em>true</em> (e quindi stia già usando la risorsa condivisa), attende prima che finisca.<br /><em>(3)</em> Quando un processo termina le sue operazioni sulla sezione critica, pone il proprio flag a <em>false</em>.
+</p>
+<p class='vspace'>Questo algoritmo garantisce la mutua esclusione ma senza imporre una stretta alternanza dei processi, dato che chi fa richiesta di accesso a una risorsa controlla dai valori dei flag se gli è consentito o meno. Continua però a non garantire il progresso, e per di più potrebbe portare un processo a un'attesa infinita.
+</p>
+<div class='vspace'></div><h3>Algoritmo 3</h3>
+<p>Utilizza sia i flag che la variabile di turno, i primi per la prenotazione della risorsa, la seconda per stabilire chi ha accesso. Riportiamo parte del codice e in seguito i commenti.
+</p>
+<div class='vspace'></div><pre class='escaped'>...
+  private volatile boolean flag0, flag1;
+  private volatile int turn;
+  public Algorithm 3()
+  {
+    flag0 = false; flag1 = false;
+    turn = TURN 0;
+  }
+  public void enteringCriticalSection (int t) // (1)
+  {
+    int other = 1 - t;
+    turn = other;
+    if (t == 0) 
+    {
+      flag0 = true;
+      while (flag1 == true &amp;&amp; turn == other)
+        Thread.yield();
+    }
+    else 
+    {
+      flag1 = true;
+      while (flag0 == true &amp;&amp; turn == other)
+        Thread.yield();
+    }
+  }
+  public void leavingCriticalSection (int t)
+  {
+    if(t == 0) flag0 = false; else flag1 = false;
+  }
+...</pre>
+<p class='vspace'><em>(1)</em> Grazie all'assegnamento <code class='escaped'>turn = other;</code>, la prossima volta che viene lanciata la funzione verrà passato <code class='escaped'>other</code> (l'altro processo) come parametro. Se quest'ultimo non deve fare nulla ripassa immediatamente il turno all'altro, altrimenti esegue le operazioni sulla risorsa di cui ha ottenuto l'accesso.
+</p>
+<p class='vspace'>Questo algoritmo garantisce sia la mutua esclusione che il progresso, perché non rimane bloccato a causa di prenotazioni grazie alla doppia condizione del while.
+</p>
+<div class='vspace'></div><h2>Variabili di lock</h2>
+<p>La <strong>variabile di lock</strong> è una variabile condivisa che definisce lo stato di uso di una risorsa, cioè quando è in uso da parte di un processo (che è evidentemente nella sua sezione critica). Cambia così il punto di vista rispetto alla <em>variabile di turno</em>: non sono più i processi ad alternarsi ma è la risorsa stessa a dire se è disponibile o no. Inoltre, le variabili di turno devono essere inizializzate e gestite a seconda del numero di processi che accedono alla stessa risorsa, e nella grande maggioranza dei casi questo numero non è predicibile a priori; i <em>lock</em> invece scalano benissimo, perché non importa quanti sono i processi che vogliono una risorsa, lui sarà sempre o libero o occupato.<br />Può assumere due valori: <em>0</em> se la risorsa è libera, <em>1</em> se è in uso. 
+</p>
+<p class='vspace'>L'acquisizione di una risorsa avviene a interruzioni disabilitate, come si evince dai seguenti passaggi operativi:
+</p><ul><li>disabilito le interruzioni
+</li><li>leggo la variabile di lock
+</li><li>se la risorsa è libera (<em>lock = 0</em>), la marco in uso ponendo <em>lock = 1</em> e riabilito le interruzioni
+</li><li>se la risorsa è in uso (<em>lock = 1</em>), riabilito le interruzioni e pongo il processo in attesa che la risorsa si liberi 
+</li><li>per rilasciare la risorsa pongo <em>lock = 0</em>
+</li></ul><p class='vspace'>Il motivo per cui vanno bloccate le interruzioni è che le operazioni di lettura ed eventuale scrittura di un <em>lock</em> sono realizzate con una sequenza di istruzioni macchina, quindi interrompibili (solo la singola istruzione macchina è atomica). Se quindi non mi tutelo sospendendo gli interrupt finirei per avere una corsa critica nello stesso sistema che uso per prevenirle.
+</p>
+<p class='vspace'>Una soluzione alternativa è introdurre direttamente nell'hardware del processore dei meccanismi per ottenere la sincronizzazione. Ad esempio è possibile inserire l'istruzione atomica <strong>TEST-AND-SET</strong> che traduce la sequenza di istruzioni precedenti in una sola, non rendendo più necessaria alcuna sospensione delle interruzioni. Essa implementa infatti in un'unica istruzione le seguente operazioni: legge la variabile di lock e la pone in un flag del processore, quindi la pone uguale a uno, infine se il flag (vecchio valore di lock) era <em>0</em> allora significa che la risorsa era libera, altrimenti il processo dovrà attendere. Il limite di questa soluzione è che non spetta al programmatore la sua implementazione, bensì al progettista del processore.
+</p>
+<div class='vspace'></div><h2>Semafori</h2>
+<p>La gestione delle variabili di lock è un'operazione delicata, quindi è preferibile evitare di fare affidamento sul solo buonsenso dei programmatori, lasciando che sia il sistema operativo ad occuparsene. Ciò implica un innalzamento del livello di astrazione della sincronizzazione e una garanzia di consistenza, visto che l'esecuzione <em>supervisor</em> è a interruzioni disabilitate.<br />A tal fine sono stati introdotti i <strong>semafori binari</strong> <em>S</em>, una struttura dati (in particolare, una variabile binaria) gestita dal sistema operativo che rappresenta lo stato di uso della risorsa condivisa: ha valore <em>1</em> se la risorsa è <em>libera</em>, <em>0</em> se è <em>in uso</em>.<br />Nonostante il significato dei valori sia opposto a quelli di lock, non c'è rischio di confondersi dato che il programmatore userà direttamente le funzioni di sistema, delegando a quest'ultimo il problema di assegnare il valore corretto.<br />Le funzioni succitate per la manipolazione del semaforo <em>S</em> sono atomiche proprio in quanto chiamate di sistema, e vanno utilizzate all'entrata e all'uscita della sezione critica di un processo. Esse sono:
+</p><ul><li><em>acquire(S)</em>, che richiede l'uso della risorsa (se il valore del semaforo è <em>1</em>, lo porta a <em>0</em>)
+</li><li><em>release(S)</em>, che rilascia la risorsa (riporta il valore a <em>1</em>)
+</li></ul><p>Se ho delle code di attesa posso regolarle con una qualsiasi politica di ordinamento, in tutto simili a quelle viste per la schedulazione, passando ulteriori parametri alla <code class='escaped'>acquire()</code> che diano informazioni sulla gestione della coda stessa.
+</p>
+<p class='vspace'>Il problema dell'<code class='escaped'>acquire()</code> è che crea attese attive sul semaforo <em>S</em>, ovvero processi che pur essendo in stato di attesa continuano a effettuare computazioni per verificare se la risorsa si è liberata. Ciò comporta spreco di CPU che altri processi potrebbero usare in modo più produttivo. Questo fenomeno si chiama <em>spinlock</em> e se avviene per brevi periodi può tornare anche utile, dal momento che evita onerosi cambi di contesto (i processi rimangono sempre nello stato di <em>wait</em>). Quando però i tempi di attesa attiva diventano troppo lunghi si può adottare una tecnica diversa, ovvero spostare i processi in attesa in una coda di attesa così concepita:
+</p><ul><li>quando un processo esegue un' <code class='escaped'>acquire(S)</code>, se la risorsa non è disponibile passa in stato di <em>wait</em> e viene accodato nella coda di attesa del semaforo
+</li><li>quando un processo esegue una <code class='escaped'>release(S)</code>, la risorsa viene rilasciata e viene attivato il primo processo della coda di attesa di <em>S</em>, a cui viene concesso l'accesso
+</li><li>nel frattempo lo schedulatore dei processi in attesa della risorsa definisce l’ordine di ottenimento della risorsa stessa in base alla politica adottata
+</li></ul><p>Bisogna comunque prestare attenzione alla progettazione della coda di attesa, o potrei avere fenomeni di <em>stallo</em> (<a class='wikilink' href='SO-Deadlock.html'><em>deadlock</em></a>) in cui due o più processi aspettano un evento che può essere generato solo da uno dei processi in attesa. In altre parole bisogna prestare attenzione all'ordine con cui avvengono le chiamate di sistema di prenotazione e rilascio delle risorse, o potrei avere attesa circolari senza rilascio. Un altro pericolo è quello di incorrere in una <em>starvation</em>, il blocco indefinito meglio affrontato nel capitolo sulla <a class='wikilink' href='SO-Schedulazione.html'>schedulazione</a>.
+</p>
+<p class='vspace'>I <strong>semafori generalizzati</strong> <em>S</em> sono invece variabili intere che rappresentano lo stato di uso di un insieme di risorse omogenee condivise; in altre parole, indicano il numero <em>n</em> di risorse libere del tipo richiesto. La sintassi delle funzioni di manipolazioni del semaforo rimangono le stesse, con la differenza che in questo caso l' <code class='escaped'>acquire(S)</code> (acquisizione d'uso di una risorsa) e la <code class='escaped'>release(S)</code> (rilascio della risorsa) rispettivamente incrementano e decrementano di uno il valore del semaforo. In particolare, quando l'<code class='escaped'>acquire()</code> arriva a <em>0</em> si blocca.
+</p>
+<div class='vspace'></div><h2>Monitor</h2>
+<p>Nonostante la loro semplicità ed efficacia, il problema principale della sincronizzazione con uso di semafori è che la responsabilità della loro correttezza è lasciata al programmatore. Per quanto questi possa essere preparato e attento, potrebbero comunque avvenire errori nella progettazione e/o implementazioni del codice; un esempio piuttosto grossolano potrebbe essere dimenticarsi di rilasciare una risorsa, o gestire male le code d'attesa così da avere <em>starvation</em>. E' per questo motivo che è preferibile sollevare il programmatore da questo onere, innalzando ulteriormente il livello di astrazione per la gestione della sincronizzazione lasciando che sia il sistema operativo ad occuparsene. Un costrutto fondamentale di questo tipo è il tipo di dati astratto <strong>monitor</strong>, che incapsula un'insieme di operazioni definite dall'utente su cui garantisce la mutua esclusione. Viene formulato a livello di linguaggio di programmazione, e al suo interno vengono definite una serie di procedure, ognuna delle quali se invocata causa l'accesso del processo a una sezione critica. La sincronizzazione è implicita, dal momento che il compilatore del linguaggio non consentirebbe l'esecuzione di più flussi concorrenti nello stesso tipo di dati.
+</p>
+<p class='vspace'>Un esempio di pseudocodice in java è il seguente:
+</p>
+<div class='vspace'></div><pre class='escaped'>monitor nome-del-monitor
+{
+  // dichiarazione delle variabili
+
+  public entry p1(..) { ... }
+  public entry p2(..) { ... }
+  ...
+}</pre>
+<p class='vspace'>Perché un processo possa accedere alle risorse deve soddisfare alcune condizioni, rappresentate da variabili di tipo <code class='escaped'>condition</code> definite dal programmatore. Se il processo associato a una di esse la verifica, prosegue; altrimenti chiama una funzione speciale di <code class='escaped'>wait</code> e si mette in attesa, fino a quando un altro processo associato alle stesse condizioni lo risveglia con una <code class='escaped'>signal</code>. Notare come quest'ultima funzione non si riferisca a un processo specifico, ma a tutti quelli nella coda dei processi associati alla condizione, così che possano concorrere tra loro per avere il monitor.<br />Supponiamo ora di avere due processi P e Q associati a una condizione <code class='escaped'>x</code>, con Q in attesa. Se P invoca una <code class='escaped'>x.signal</code> e viene concesso al processo Q di riprendere, posso comportarmi in due modi:
+</p><ul><li><em>segnala e aspetta</em>, in cui P attende finché Q lascia il monitor, o aspetta un'altra condizione
+</li><li><em>segnala e continua</em>, il contrario
+</li></ul><p>Un compromesso tra le due è la soluzione adottata dal linguaggio Concurrent Pascal: quando il processo P esegue l'operazione <code class='escaped'>signal</code>, lascia immediatamente il monitor e Q viene subito risvegliato.
+</p>
+<div class='vspace'></div><h2>Transazioni atomiche</h2>
+<p>Lettura festosa dal libro.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 10, 2008, at 02:02 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Sincronizzazione?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-Sincronizzazione?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

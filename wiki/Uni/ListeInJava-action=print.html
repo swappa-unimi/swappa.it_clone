@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Liste in Java</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='ListeInJava.html' title='Liste in Java'>Liste in Java</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Liste in Java ::</strong>
+</pre><p class='vspace'>Questa pagina contiene la <a class='wikilink' href='http://www.swappa.it/wiki/Utenti/Dario'>mia</a> implementazione delle liste spiegate dall'Aringhieri in Java. Tutti gli operatori etc. sono lì e pare che funzionino anche giusti.<br /><br />
+Si tratta di una lista che memorizza solo Integer, per pura semplicità.<br /><br />
+</p><h3>Come compilare il codice</h3>
+<p>Copiate quanto scritto qua sotto in un file che chiamarete <strong>listaint.java</strong>. Per compilarlo basta fare <br /><br /><code class='escaped'>javac listaint.java</code>
+</p>
+<p class='vspace'>e per lanciarlo<br /><br /><code class='escaped'>java listaint</code>
+</p>
+<p class='vspace'>Questo presuppone però che abbiate un'ambiente di compilazione Java già funzionante...<br /><br />
+Se invece avete solo la Java Virtual Machine, allora scaricatevi questo JAR: <a rel='nofollow' class='createlinktext' href='ListeInJava-action=upload&amp;upname=Liste.jar.html'>Liste.jar</a><a rel='nofollow' class='createlink' href='ListeInJava-action=upload&amp;upname=Liste.jar.html'>&nbsp;&Delta;</a>.<br /><br />
+Per farlo partire:<br /><br /><code class='escaped'>java -jar Liste.jar</code>
+</p>
+<div class='vspace'></div><h3>listaint.java</h3>
+<pre class='escaped'>import java.util.*;
+
+/** Questa è la Cella, cioè una singola posizione della lista 
+  * Allo stato attuale contiene solo Integer
+  */
+class Cella {
+	Integer valore;
+	Cella next;
+	Cella prev;
+}
+
+/** La Lista implementa tutte gli operatori, e come nell'implementazione del libro,
+  * non fa nessun controllo sulle condizioni per comodità.
+  * Sta quindi a chi la usa controllare di non fare porcate
+  */
+class Lista {
+
+	/** Il costruttore inizializza la centinella*/
+	Lista () {
+		sentinella = new Cella();
+		sentinella.next = sentinella;
+		sentinella.prev = sentinella;
+	}
+
+
+	/**Ritorna vero se la lista è vuota, ovvero se 
+        il prossimo elemento della sentinella è essa stessa*/
+	boolean listaVuota () {
+		if (sentinella.next == sentinella) return true;
+		else return false;
+	}
+
+	/**Ritorna il primo elemento della lista, ovvero quello che sta a 
+          destra della sentinella.
+	  Occorre controllare manualmente che la lista non sia vuota!
+	  */
+	Cella primoLista () {
+		return sentinella.next;
+	}
+
+	/**Ritorna l'ultimo elemento della lista, e valgono le considerazioni della cella 
+          * precedente: occorre controllare manualmente che la lista non sia vuota
+          */
+	Cella ultimoLista () {
+		return sentinella.next.prev;
+	}
+
+	/**Ritorna la cella successiva ad una cella data*/
+	Cella succLista (Cella chi) {
+		return chi.next;
+	}
+
+	/**Ritorna la cella precedente ad una cella data*/
+	Cella predLista (Cella chi) {
+		return chi.prev;
+	}
+
+	/**Ritorna vero se la cella è l'ultima della lista*/
+	boolean fineLista (Cella chi) {
+		return (chi.next == sentinella.next);
+	}
+
+	/**Restituisce il valore di una cella (si può accedervi direttamente, 
+        però l'implementazione del libro è così*/
+	Integer leggiLista (Cella chi) {
+		return chi.valore;
+	}
+
+	/**Cambia il valore di una cella*/
+	void scriviLista (Integer value, Cella chi) {
+		chi.valore = value;
+	}
+
+	/**Inserisce una cella nuova a sinistra di una cella esistente (dove)*/
+	void insLista (Integer value, Cella dove) {
+		Cella nuova = new Cella();
+		nuova.valore = value;
+
+		/* Se ho la lista vuota, devo agire in modo particolare*/
+		if (listaVuota()) {
+			sentinella.next = nuova;
+			nuova.next = nuova;
+			nuova.prev = nuova;
+		}
+		else {
+			nuova.prev = dove.prev;
+			nuova.next = dove;
+			dove.prev.next = nuova;
+			dove.prev = nuova;
+		}
+// 		dove = nuova;
+	}
+
+
+	/**Cancella dalla lista una cella esistente*/
+	void cancLista(Cella chi) {
+		chi.prev.next = chi.next;
+		chi.next.prev = chi.prev;
+	}
+
+	Cella sentinella;
+}
+
+public class listaint {
+	public static void main (String[] args) {
+		Lista lista = new Lista();
+		System.out.println("La lista è vuota? " + lista.listaVuota());
+		lista.insLista(new Integer(20),lista.primoLista());
+		lista.insLista(new Integer(30), lista.primoLista());
+		lista.insLista(new Integer(40), lista.primoLista());
+
+		Cella primo = lista.primoLista();
+		while (! lista.fineLista(primo)) {
+			System.out.println(primo.valore);
+			primo = lista.succLista(primo);
+		}
+
+		primo = lista.ultimoLista();
+		System.out.println("Valore dell'ultimoLista: " + primo.valore);
+		System.out.println("Valore del next di ultimoLista: " + primo.next.valore);
+		System.out.println("lista.ultimoLista() è veramente l'ultimo della lista? "+
+                lista.fineLista(primo));
+
+
+		primo = lista.primoLista();
+		System.out.println("Valore di primoLista: " + primo.valore);
+		System.out.println("Valore del next di primoLista: "+ primo.next.valore);
+		System.out.println("Valore del prev di primoLista: "+ primo.prev.valore);
+		System.out.println("Valore del next di primoLista: " 
+                + lista.succLista(primo).valore);
+		System.out.println("Valore del prev di primoLista: " 
+                + lista.predLista(primo).valore);
+		System.out.println("La lista è vuota? " + lista.listaVuota());
+
+	}
+}
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a> - <a class='categorylink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/ListeInJava)</span></div>
+  </div>
+</body>
+</html>

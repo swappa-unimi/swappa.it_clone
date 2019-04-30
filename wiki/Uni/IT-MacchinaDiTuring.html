@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Informatica Teorica - Macchina di Turing  </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IT-MacchinaDiTuring' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Informatica Teorica - Macchina di Turing 
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-MacchinaDiTuring?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-MacchinaDiTuring?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IT-MacchinaDiTuring-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-MacchinaDiTuring?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-MacchinaDiTuring?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Informatica Teorica - Macchina di Turing  was last modified on June 24, 2010, at 10:01 PM'>
+							<span style='display:none;'>Informatica Teorica - Macchina di Turing </span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Macchina di Turing ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 21 Aprile</span>
+</p>
+<div class='vspace'></div><h2>Concetti iniziali</h2>
+<p>La <strong>Macchina di Turing</strong> (da ora, <code class='escaped'>MdT</code>) è un modello per calcolatore general purpose. Si tratta di un modello molto potente, molto più di tutti quelli visti finora, ed è in grado di fare tutto ciò che un computer reale può fare, quindi risolvere problemi che si trovano entro il limite della calcolabilità.<br />Vediamo le caratteristiche:
+</p><ul><li>usa un nastro infinito come memoria illimitata;
+</li><li>ha una testina che può leggere e scrivere simboli sulle celle del nastro;
+</li><li>la testina può muoversi lungo il nastro sia a sinistra che a destra;
+</li><li>a inizio computazione il nastro contiene solo la stringa d'ingresso, mentre tutte le altre celle sono bianche;
+</li><li>la computazione continua (all'infinito) finché non produce in uscita un <em>accetta</em> o un <em>rifiuta</em>, che si riferiscono rispettivamente agli stati di accettazione o rifiuto designati.
+</li></ul><p class='vspace'>Lo schema di una possibile MdT è il seguente:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-esMdT.gif' alt='' title='' /></div>
+<p class='vspace'>La MdT come modello di calcolo è stato introdotta nel 1936 da Alan Turing per dare risposta all'Entscheidungsproblem (problema di decisione) proposto da Hilbert  nel suo programma di fondazione formalista della matematica.
+</p>
+<div class='vspace'></div><h2>Esempio 1</h2>
+<p>Dobbiamo creare una MdT M che verifichi l'appartenenza di una stringa al linguaggio:<br /><em>B = {w#w | w &#8712; {0,1}* }</em>
+</p>
+<p class='vspace'>In pratica M dovrà accettare stringhe binarie composte da due sottostringhe identiche separate dal simbolo #, e rifiutare tutte le altre. Come fare? Memorizzare tutti i caratteri di una sottostringa e confrontarli con la seconda sarebbe folle, perché possono essere di lunghezza spropositata. La soluzione è far spostare avanti e indietro la testina lungo il nastro per confrontare i caratteri delle due sottostringhe che si trovano alla stessa posizione, e se questi corrispondono ci mettiamo un bel marcatore per ricordarci che li abbiamo già esaminati.<br />Questa descrizione non ci basta, ne vogliamo una non troppo formale ma sicuramente più precisa:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>M = "su ingresso <em>w</em>:
+</p><ol><li>vai avanti e indietro lungo il nastro tra le posizioni corrispondenti delle sottostringhe separate dal simbolo #, e verifica se queste posizioni contengono lo stesso simbolo. In caso negativo, o se non si trova nessun simbolo #, RIFIUTA; altrimenti se i simboli corrispondono sostituiscili col simbolo <code class='escaped'>x</code>;
+</li><li>quando tutti i simboli a sinistra del # sono stati sostituiti con la <code class='escaped'>x</code>, controlla se ne rimangono altri non segnati a destra. Se sì, allora RIFIUTA; altrimenti ACCETTA."
+</li></ol></div>
+<p class='vspace'>Vediamo un esempio di esecuzione (la <code class='escaped'>v</code> sopra un carattere indica la posizione della testina):
+</p>
+<div class='vspace'></div><pre class='escaped'>
+v
+0 1 1 0 # 0 1 1 0 _ ...
+
+  v
+x 1 1 0 # 0 1 1 0 _ ...
+
+          v
+x 1 1 0 # x 1 1 0 _ ...
+
+v
+x 1 1 0 # x 1 1 0 _ ...
+
+  v
+x x 1 0 # x 1 1 0 _ ...
+
+...
+
+                  v
+x x x x # x x x x _ ...
+
+              accetta!</pre>
+<div class='vspace'></div><h2>Definizione formale</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Una <strong>MdT</strong> è una 7-upla (Q,&#931;,&#915;,&#948;,q<sub>0</sub>,q<sub>accetta</sub>,q<sub>rifiuta</sub>), dove:
+</p><ul><li>Q è l'insieme degli stati
+</li><li>&#931; è l'alfabeto dei simboli in ingresso, che non contiene il simbolo <em>blank</em> |_|
+</li><li>&#915; è l'alfabeto del nastro, dove <em>|_| &#8712; &#915;</em> e <em>&#931; &#8838; &#915;</em>
+</li><li>&#948;: Q × &#915; &#8594; Q × &#915; × {L,R} è la funzione di transizione
+</li><li>q<sub>0</sub> &#8712; Q è lo stato iniziale
+</li><li>q<sub>accetta</sub> &#8712; Q è lo stato accettante
+</li><li>q<sub>rifiuta</sub> &#8712; Q è lo stato rifiutante, dove q<sub>accetta</sub>&#8800;q<sub>rifiuta</sub>
+</li></ul></div>
+<p class='vspace'>La funzione di transizione &#948; in pratica dice che quando la macchina si trova in uno stato <em>q</em> e la testina è su una cella che contiene il simbolo <em>b</em>, sostituisce quest'ultimo col simbolo <em>a</em> e si sposta nello stato <em>r</em>. Lo spostamento è verso sinistra se il terzo componente della funzione di transizione è <code class='escaped'>L</code>; mentre se è <code class='escaped'>R</code> si sposta verso destra. Riassumendo il tutto, spostandoci ad esempio a sinistra: <em>&#948;(q,a)=(r,b,L)</em>.
+</p>
+<div class='vspace'></div><h2>Funzionamento della MdT</h2>
+<p>Siano dati:
+</p><ul><li>una MdT M=(Q,&#931;,&#915;,&#948;,q<sub>0</sub>,q<sub>accetta</sub>,q<sub>rifiuta</sub>)
+</li><li>una stringa di ingresso <em>w</em> tale che <em>w = w<sub>1</sub>w<sub>2</sub>..w<sub>n</sub></em>, dove ogni w<sub>i</sub> fa parte dell'alfabeto &#931;*
+</li></ul><p class='vspace'>Inizialmente <em>w</em> occupa le prime <em>n</em> celle a sinistra del nastro, e la testina si trova sulla prima cella a sinistra. Poiché l'alfabeto &#931; non contiene il simbolo <em>blank</em>, il primo |_| che appare sul nastro coincide con la fine dell'ingresso.<br />Una volta che M è partita, la computazione procede in accordo alle regole descritte dalla funzione di transizione. Si noti che se ci viene chiesto di spostarci a sinistra del limite sinistro del nastro, rimaniamo fermi sulla prima cella senza sforare. La computazione continua fino a quando non si arriva a un q<sub>accetta</sub> o un q<sub>rifiuta</sub>, nel qual caso la MdT termina; altrimenti va avanti all'infinito.
+</p>
+<p class='vspace'>Durante la computazione, M continua a modificare lo stato corrente, il contenuto del nastro e la posizione della testina. I valori assunti da questi tre elementi ad ogni passo prendono il nome di <strong>configurazione</strong> della MdT. Le configurazioni possono essere rappresentate in una forma molto semplice, che spieghiamo con un esempio: 010001q<sub>3</sub>01011, significa che il contenuto del nastro è 01000101011, che lo stato corrente è q<sub>3</sub>, e che la testina si trova sul carattere all'immediata destra dello stato, ovvero sul quinto 0.<br />Si dice che una configurazione C<sub>1</sub> <strong>produce</strong> una configurazione C<sub>2</sub> se la MdT può passare legalmente da C<sub>1</sub> a C<sub>2</sub> in un unico passo.<br />Alcune configurazioni importanti di M sono:
+</p><ul><li>configurazione di partenza, ovvero <em>q<sub>0</sub>w</em>;
+</li><li>configurazione di accettazione, in cui lo stato corrente è q<sub>accetta</sub>;
+</li><li>configurazione di rifiuto, in cui lo stato corrente è q<sub>rifiuta</sub>.
+</li></ul><p class='vspace'>Tutte queste definizioni ci servivano per dire che M accetta l'ingresso <em>w</em> se esiste una sequenza di configurazioni C<sub>1</sub>, ... , C<sub>k</sub> tali che:
+</p><ol><li>C<sub>1</sub> è la configurazione di partenza di M sull'ingresso <em>w</em>;
+</li><li>ogni C<sub>i</sub> produce C<sub>i+1</sub>;
+</li><li>C<sub>k</sub> è la configurazione di accettazione.
+</li></ol><div class='vspace'></div><h2>Definizioni</h2>
+<p>L'insieme di stringhe che M accetta sono chiamate <strong>linguaggio di M</strong>, o <em>linguaggio riconosciuto da M</em>, scritto anche <em>L(M)</em>.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Chiamiamo un linguaggio <strong>Turing-riconoscibile</strong> se esiste una MdT che lo riconosce.
+</p></div>
+<p class='vspace'>Una MdT può accettare, rifiutare o andare in loop su un certo ingresso, dove per loop si intende quel comportamento per cui non si arriva mai a uno stato di terminazione. Dato che è difficile sapere se la fase di loop è temporanea o definitiva, spesso alle MdT generiche si preferisce una variante chiamata <strong>decisori</strong>, che arrivano sempre a una decisione finale (la stringa è accettata oppure no). Se un decisore riconosce un certo linguaggio, si può dire anche che lo <em>decide</em>.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Chiamiamo un linguaggio <strong>Turing-decidibile</strong> o semplicemente <strong>decidibile</strong> se esiste una MdT che lo decide.
+</p></div>
+<div class='vspace'></div><h2>Varianti</h2>
+<p>Della MdT vedremo due varianti molto importanti: la MdT multinastro e quella <code class='escaped'>n.d.</code>. Si noti che ognuna di esse ha le stesse potenzialità dato che riconosce gli stessi linguaggi delle altre (sono quindi equivalenti); questa proprietà è detta <strong>robustezza</strong>.
+</p>
+<div class='vspace'></div><h3>MdT multinastro</h3>
+<p>Una <strong>MdT multinastro</strong> si differenzia da quelle "standard" per le seguenti caratteristiche:
+</p><ul><li>ha più nastri, ognuno con la propria testina per leggere e scrivere;
+</li><li>inizialmente la stringa d'ingresso si trova solo sul primo nastro, mentre tutti gli altri sono inizializzati coi simboli <em>blank</em> (quindi sono considerati vuoti);
+</li><li>la funzione di transizione cambia nella forma:<br /><strong>&#948;: Q × &#915;<sup>k</sup> &#8594; Q × &#915;<sup>k</sup> × {L,R,S}<sup>k</sup></strong><br />, dove gli indici k permettono di compiere più operazioni su k nastri contemporaneamente, mentre l'aggiunta del simbolo S indica che la testina può muoversi a sinistra (L), a destra (R) o stare ferma (S, <em>Stay</em>).
+</li></ul><p class='vspace'>Come dicevamo, e contrariamente a quanto possa sembrare, la MdT multinastro è equivalente a quella a nastro singolo, e per convincervi scomodiamo un teorema.
+</p>
+<div class='vspace'></div><h4>Teorema 1 - sulle MdT multinastro</h4>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Ogni MdT multinastro ha una equivalente MdT a singolo nastro.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Ciò che dobbiamo fare è riuscire a convertire una MdT multinastro M nell'equivalente a singolo nastro S. L'idea è copiare il contenuto dei <em>k</em> nastri di M sull'unico nastro di S, e separarli da un carattere delimitatore, ad esempio il #. Per quanto riguarda invece le testine di M, possiamo mettere un pallino sopra ogni carattere in S corrispondente. Nel nostro caso useremo il simbolo °; ad esempio nella stringa w<sub>1</sub>w°<sub>2</sub>w<sub>3</sub> la testina "virtuale" è sul carattere w<sub>2</sub>.<br />Proviamo a dare una descrizione più completa dell'algoritmo di conversione, che tenga conto anche di casi critici come lo spostamento su un simbolo #.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>S = "su ingresso <em>w = w<sub>1</sub>...w<sub>n</sub></em>:
+</p><ol><li>scrivi sul nastro la configurazione iniziale di M nel formato corretto:<br />#w°<sub>1</sub>w<sub>2</sub>...w<sub>n</sub>#|_|°#|_|°#...#
+</li><li>per simulare una singola mossa: <em>(a)</em> fai uno scan del nastro partendo dal primo # (limite sinistro) al (k+1)simo # (limite destro), così da capire dove sono posizionate le testine virtuali; <em>(b)</em> fai un secondo scan per aggiornare il nastro in accordo alle funzioni di transizione di M
+</li><li>se, applicando le funzioni di transizione di M, la testina di S si sposta a destra di un #, significa che in M si sarebbe finiti su una cella <em>blank</em>. Quindi, S deve scrivere un simbolo <em>blank</em> in quella cella e shiftare a destra di una posizione tutti i caratteri rimanenti del nastro. Fatto questo, può continuare la simulazione."
+</li></ol></div>
+<div class='vspace'></div><h4>Corollario al Teorema 1</h4>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio è Turing-riconoscibile se e solo se esiste una MdT multinastro che lo riconosce.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Il teorema è un "se e solo se", quindi vanno dimostrati entrambi i sensi delle implicazioni. 
+</p>
+<p class='vspace'><strong>(I)</strong> <em>Se un linguaggio è Turing-riconoscibile, allora esiste una MdT multinastro che lo riconosce</em><br />Dato che un linguaggio è Turing-riconoscibile se esiste una MdT a singolo nastro che lo riconosce, e che questa è un caso particolare di una MdT multinastro (dove il numero di nastri k=1), l'implicazione è banalmente risolta.
+</p>
+<p class='vspace'><strong>(II)</strong> <em>Se un linguaggio è riconosciuto da una MdT multinastro, allora è Turing-riconoscibile</em><br />Dato che per il Teorema 1 ogni MdT multinastro ha una equivalente MdT a singolo nastro, e che un linguaggio è Turing-riconoscibile se esiste una MdT (a singolo nastro) che lo riconosce, anche la seconda implicazione è banalmente risolta.
+</p>
+<div class='vspace'></div><h3>MdT non deterministica</h3>
+<p>Una <strong>MdT non deterministica</strong> può procedere ad ogni punto della computazione secondo diverse possibilità. La funzione di transizione assumerà dunque la nuova forma:<br /><strong>&#948;: Q × &#915; &#8594; P(Q × &#915; × {L,R,S})</strong>
+</p>
+<div class='vspace'></div><h4>Teorema 2 - sulle MdT non deterministiche</h4>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Ogni MdT <code class='escaped'>n.d.</code> ha una equivalente MdT deterministica.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Dobbiamo dimostrare che è possibile simulare una MdT <code class='escaped'>n.d.</code> N con una MdT deterministica D. L'idea è semplice: D dovrà tentare tutti i possibili rami di computazione <code class='escaped'>n.d.</code> di N, e se arriva a uno stato di accettazione, accetta.<br />Come sappiamo, la computazione di N può essere vista come un albero, in cui ogni ramo rappresenta un ramo del nondeterminismo ed ogni nodo una configurazione di N (ad esempio, la radice è quella di partenza). D dovrà quindi esplorare l'albero alla ricerca di una configurazione di accettazione. Ocio però: non conviene fare un'esplorazione per profondità (dalla radice alla foglia, e poi ancora su) perché potrei incappare in un ramo infinito e non uscirne mai più (è il nondeterminismo, bellezza!). La strategia giusta è quella in larghezza, in cui prima controllo tutti i nodi sullo stesso livello, poi passo a quello più in basso.
+</p>
+<p class='vspace'>Ora che sappiamo cosa fare, cosa facciamo? :| <br />Costruiamo D come una MdT a 3 nastri (tanto il Teorema 1 ci dice che possiamo sempre convertirla in una a singolo nastro), ognuno dei quali ha un proprio ruolo:
+</p><ol><li>contiene la stringa d'ingresso, ed è in sola lettura;
+</li><li>mantiene una copia del nastro di N su un certo ramo <code class='escaped'>n.d.</code> di computazione, su cui fa le simulazioni;
+</li><li>tiene traccia della posizione di D sull'albero di computazione <code class='escaped'>n.d.</code> di N. Ad esempio la sequenza <code class='escaped'>123</code> significa che devo partire dalla radice, spostarmi sul suo primo figlio, da qui andare al suo secondo figlio, e infine da qui al suo terzo figlio.
+</li></ol><p class='vspace'>Ecco uno schema:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-MdT-nd2d.gif' alt='' title='' /></div>
+<p class='vspace'>Descriviamo D, in modo meno formale del solito:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>D = "
+</p><ol><li>inizialmente abbiamo sul primo nastro l'ingresso <em>w</em>, mentre gli altri due sono vuoti;
+</li><li>copiamo il contenuto del primo nastro sul secondo;
+</li><li>simuliamo sul secondo nastro il comportamento di N con ingresso <em>w</em> su un certo ramo di computazione <code class='escaped'>n.d.</code>. Prima di ogni passo di N dobbiamo consultare il prossimo simbolo sul terzo nastro, così da capire quale scelta dobbiamo fare tra quelle consentite dalla funzione di transizione di N. Se non ci sono più simboli sul terzo nastro, o quella scelta non è valida, usciamo da questo ramo di computazione e andiamo al passo 4. Stessa cosa se troviamo una configurazione di rifiuto. Se invece troviamo una configurazione di accettazione, D ACCETTA l'ingresso;
+</li><li>sostituisci la stringa sul terzo nastro con quella successiva. Simula il prossimo ramo di computazione di N tornando al passo 2."
+</li></ol></div>
+<div class='vspace'></div><h4>Corollario al Teorema 2</h4>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio è Turing-riconoscibile se e solo se esiste una MdT <code class='escaped'>n.d.</code> che lo riconosce.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Il teorema è un "se e solo se", quindi vanno dimostrati entrambi i sensi delle implicazioni. 
+</p>
+<p class='vspace'><strong>(I)</strong> <em>Se un linguaggio è Turing-riconoscibile, allora esiste una MdT <code class='escaped'>n.d.</code> che lo riconosce</em><br />Dato che un linguaggio è Turing-riconoscibile se esiste una MdT deterministica che lo riconosce, e che questa è un caso particolare di una MdT <code class='escaped'>n.d.</code>, l'implicazione è banalmente risolta.
+</p>
+<p class='vspace'><strong>(II)</strong> <em>Se un linguaggio è riconosciuto da una MdT <code class='escaped'>n.d.</code>, allora è Turing-riconoscibile</em><br />Dato che per il Teorema 2 ogni MdT <code class='escaped'>n.d.</code> ha una equivalente MdT deterministica, e che un linguaggio è Turing-riconoscibile se esiste una MdT deterministica che lo riconosce, anche la seconda implicazione è banalmente risolta.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 24, 2010, at 10:01 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-MacchinaDiTuring?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-MacchinaDiTuring?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

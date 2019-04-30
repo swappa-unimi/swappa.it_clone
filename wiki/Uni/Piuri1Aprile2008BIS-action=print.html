@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Lezione del 1° Aprile 2008 BIS</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri1Aprile2008BIS.html' title='Sistemi Operativi - Lezione del 1° Aprile 2008 BIS'>Sistemi Operativi - Lezione del 1° Aprile 2008 BIS</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Lezione del 1° Aprile 2008 BIS ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'>E via che si riprende... stavolta si parte dalla gestione della memoria... per piacere non urlate così forte per l'entusiasmo...
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 1 - Indirizzamento in memoria centrale</strong></span>
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/bus.jpg' alt='' title='' /><br /><strong>Il bus degli indirizzi</strong></span></div>
+<p>Il problema da cui tutto nasce è che occorre far apparire la memoria in un modo diverso rispetto a come essa veramente è.
+</p>
+<p class='vspace'>L<strong>'indirizzo fisico</strong> è l'indirizzo nella memoria centrale: ogni parola di memoria ha un 1 indirizzo che la identifica univocamente, ed è quello a cui la CPU può accedere direttamente tramite il bus degli indirizzi.
+</p>
+<p class='vspace'>Un processo, in generale, occupa 1 porzione di memoria che va da 1 addr. fisico ad un altro addr. fisico. Ma il processo non vede QUESTO: lui vede uno spazio <strong>logico</strong> che va da 0 a X. Al processo non interessa sapere che ci sono altri processi in giro per il sistema, che anche loro condividono la RAM etc.
+</p>
+<p class='vspace'>Serve pertanto un modo per <strong>mappare</strong> gli indirizzi logici in indirizzi fisici. Per esempio, l'indirizzo 100 del programma (partendo da 0) potrebbe essere l'indirizzo 34AF della memoria, e cose del genere.
+</p>
+<p class='vspace'>La formuletta è:
+</p><pre> addr.fisico = addr.logico + offset
+</pre><p>dove offset è lo spiazzamento tra lo 0 logico del processo e la mappatura effettiva in RAM di quello 0.
+</p>
+<p class='vspace'>Nella fase di <strong>linking</strong> dei programmi, viene eseguito il calcolo degli address logici: da indirizzo <strong>simbolico</strong> (call funzione) si passa all'indirizzo logico.<br />Nella fase di <strong>binding</strong> si passa dall'indirizzo logico a quello fisico.
+</p>
+<p class='vspace'>La fase di binding può avvenire durante la compilazione, oppure durante la fase di loading del programma, o anche durante l'esecuzione.
+</p>
+<p class='vspace'>Se ho <strong>librerie dinamiche</strong>, effettuo il binding durante la fase di esecuzione, perché non so a priori dove le librerie dinamiche siano state caricate.
+</p>
+<div class='vspace'></div><h3>Collegamento in fase di compilazione</h3>
+<p>È <strong>statico</strong>, in posizione <strong>fissa</strong>. Infatti, devo sapere già quando compilo il programma dove esso andrà a finire una volta che sarà diventato un processo.
+</p>
+<p class='vspace'>Una volta calcolati gli indirizzi, questi sono immutabili.
+</p>
+<div class='vspace'></div><h3>Collegamento in fase di caricamento</h3>
+<p>Avviene una <strong>rilocazione</strong> del codice durante il caricamento, cioè il SO decide dove caricare il processo in memoria, e da quella locazione partirà lo 0 relativo del processo, in base al quale calcolerò tutte le altre posizioni in base al loro offset.
+</p>
+<p class='vspace'>In questo modo, posso caricare il programma dove voglio, che tanto uso l'offset relativamente all'indirizzo di base.
+</p>
+<p class='vspace'>Ciononostante, il caricamento è ancora di tipo statico: posso piazzare il codice dove voglio, ma una volta che è lì, lì deve rimanere. Cmq ho il vantaggio di poter già caricare 2 istanze dello stesso programma, visto che non ho indirizzi statici a cui obbedire.
+</p>
+<div class='vspace'></div><h3>Collegamento in fase di esecuzione</h3>
+<p>Se voglio fare ciò, ho bisogno di una <strong>MMU</strong> configurata propriamente. In questo modo posso spostare pezzi di codice qua e là durante l'esecuzione, e nessuno ne soffre.
+</p>
+<p class='vspace'>Si tratta di un caricamento statico rilocabile.
+</p>
+<div class='vspace'></div><h3>Ma...</h3>
+<p>...chi mi obbliga a caricare tutto il programma in memoria centrale? Magari ci sono parti che vengono utilizzate molto raramente etc. e quindi sarebbe uno spreco.
+</p>
+<p class='vspace'>Il <strong>caricamento dinamico</strong> mi permette quindi di caricare cose diverse durante l'esecuzione di un programma, solo quando esse mi servono.
+</p>
+<p class='vspace'>In questo modo posso evitare di caricare 10 volte la stessa libreria, se 10 processi diversi ne fanno uso: la carico una sola volta e dinamicamente la collego al processo che la utilizza.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 2 - Partizionamento</strong></span>
+</p>
+<p class='vspace'>Lo spazio di indirizzamento della CPU è l'insieme di tutte le parole cui la CPU può accedere direttamente. Ma il più delle volte lo spazio fisico è di gran lunga inferiore. E questa memoria va ripartita tra SO e processi vari, e protetta.
+</p>
+<p class='vspace'>Come ottengo tutto ciò, visto che è necessario per la multiprogrammazione e quindi per il multitasking?
+</p>
+<p class='vspace'>L'idea principale è quella di creare <strong>partizioni</strong> di memoria, e poi distribuirle: tu al SO, tu a questo processo, tu a quell'altro.
+</p>
+<p class='vspace'>Per tenere traccia di chi occupa quale spazio, posso dividere in modo <strong>statico</strong> la mia memoria in tot partizioni, e in una tabella segnarmi dove una finisce e dove inizia l'altra.
+</p>
+<p class='vspace'>Oppure, posso gestire il tutto in modo <strong>dinamico</strong>, se ho partizioni che possono avere dimensioni variabili.
+</p>
+<p class='vspace'>Quale che sia il metodo che uso, insorge il problema della <strong>frammentazione</strong>, perché quando levo un programma di grosse dimensioni dalla memoria, e al suo posto ne metto uno più piccolo, lo spazio che avanza va sprecato, e potrebbe essere comunque tanto.
+</p>
+<div class='vspace'></div><h3>Riassumendo</h3>
+<p>Le caratteristiche del partizionamento sono:
+</p><ul><li>multiprogrammazione con protezione
+</li><li>non si aumenta lo spazio di memoria centrale complessivo
+</li><li>deve essere realizzato dal SO
+</li></ul><p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3 - Overlaying</strong></span>
+</p>
+<p class='vspace'>Il limite dello spazio fisico è pesante. Infatti, se ho poca memoria potrei non essere in grado di usare un processo ciccione. Se voglio evitare ciò, e permettere anche ai grassi di essere eseguiti, devo trovare un altro sistema, anche se va potenzialmente a discapito delle prestazioni.
+</p>
+<p class='vspace'>Per ottenere ciò, nei tempi che furono si è pensato alla tecnica dell<strong>'overlaying</strong>. L'idea di fondo è che carico in memoria solo le parti di programma che mi servono. Quelle che non mi servono, le carico dopo. E tutte queste parti, le carico nello <strong>stesso</strong> spazio in memoria.
+</p>
+<p class='vspace'>Se eseguo le funzioni di una certa parte del mio programma, caricherò quella parte di programma in memoria. Quando mi rivolgerò ad un'altra parte di programma, quell'altra parte verrà caricata al posto della prima, e così via.
+</p>
+<p class='vspace'>Così facendo lo spazio di indirizzamento logico viene mappato in uno spazio di indirizzamento fisico di dimensioni inferiori.
+</p>
+<p class='vspace'>I problemi di sta tecnica sono che:
+</p><ol><li>deve pensarci il programmatore a definire gli overlay;
+</li><li>se ho moduli di dimensione diversa, ho comunque uno spreco quando carico un modulo piccolo, perché lo spazio riservato deve essere grande cmq per contenere il modulo più grosso.
+</li></ol><p class='vspace'>Certo, poi sarà il compilatore a provvedere al caricatore di overlay etc. ma deve essere il programmatore che divide il suo programma in overlay diversi.
+</p>
+<p class='vspace'>Posso anche avere degli overlay <strong>gerarchici</strong>, in cui overlay grossi contengono più overlay piccoli etc. Naturalmente, tutto a carico del programmatore, il che NON è un bene.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 4 - Swapping</strong></span>
+</p>
+<p class='vspace'>L'idea di partizionare la memoria va bene, ma è utile tenere in memoria anche i processi che non stanno facendo niente? Eh no, è uno spreco.
+</p>
+<p class='vspace'>Ecco quidi che tolgo dalla memoria i processi in stato di <strong>attesa</strong> e faccio posto a processi <strong>ready</strong> o <strong>running</strong>. Togliendoli dalla memoria, occorre salvare tutti i loro dati sensibili, tranne il codice che tanto quello lo posso sempre ricaricare.
+</p>
+<p class='vspace'>È possibile anche decidere di cacciare dalla memoria i processi che sono pronti, e magari far posto a processi con priorità più alta.
+</p>
+<p class='vspace'>Questo sistema
+</p><ul><li>aumenta la multiprogrammazione...
+</li><li>...ma non aumenta lo spazio fisico
+</li><li>è gestito dal SO
+</li><li>è potenzialmente lento, quando si copiano processi da e verso memoria secondaria
+</li></ul><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri1Aprile2008BIS)</span></div>
+  </div>
+</body>
+</html>

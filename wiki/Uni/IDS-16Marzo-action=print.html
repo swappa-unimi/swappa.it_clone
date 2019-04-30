@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ingegneria del Software - Appunti del 16 Marzo 2009</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IDS-16Marzo.html' title='Ingegneria del Software - Appunti del 16 Marzo 2009'>Ingegneria del Software - Appunti del 16 Marzo 2009</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ingegneria del Software - Appunti del 16 Marzo 2009 ::</strong>
+</p>
+<div class='vspace'></div><h2>Sintassi e semantica</h2>
+<p>I casi d'uso, visti nelle lezioni precedenti, sono dotati di sintassi ma non di semantica. Dobbiamo vedere bene che cosa significhi questa affermazione, perché si rivelerà di capitale importanza.
+</p>
+<p class='vspace'>Un linguaggio ha una <strong>sintassi</strong> quando posso dire, in base a regole certe, se una certa sua istanza è ben formata o no, ovvero se sto rispettando le regole relative all<em>'ordine</em> con cui i simboli dell'alfabeto del linguaggio vanno messi.<br />Sotto questo punto di vista, i CdU hanno una sintassi: infatti, guardando un diagramma posso dire se è un CdU o no analizzandolo. Per fare un esempio, se vedo due ellissi senza nessuna freccia in mezzo, posso dire senza tema di smentita che quel diagramma non è ben formato.<br />Attenzione: nel caso dei CdU, il linguaggio è composto da diagrammi e non solo da parole, ma ai fini della definizione questo non è importante. Ciò che conta è che ci sia un insieme di simboli ben definito, e delle regole per combinarli.
+</p>
+<p class='vspace'>Un linguaggio ha una <strong>semantica</strong> quando posso prendere un'istanza del linguaggio stesso e riferirlo, in modo matematico, ad un <strong>dominio</strong>.<br />Per capire bene che cosa significhi, prendiamo i nostri CdU. Quando una persona guarda il diagramma di un CdU possono venirgli in mente diverse cose: a me viene in mente questo, a te viene in mente quello. Chi ha ragione? Sicuramente avrà ragione il cliente, ma il problema è che solo guardando il diagramma non posso capire con esattezza che cosa intendeva chi l'ha disegnato.<br />Questo avviene perché i CdU non sono dotati di una semantica vera e propria, ovvero, non è possibile guardare un diagramma e, con una funzione matematica, darne un'interpretazione univoca e non ambigua. Come appena mostrato, l'interpretazione non è affatto univoca, proprio perché io lo interpreto in un modo e tu in un altro.<br />
+Certo, i CdU non sono messi proprio così male. In fondo, le interpretazioni che si danno di un CdU si somigliano tutte (pur non essendo uguali), e per questo motivo diciamo che i CdU hanno una <strong>semantica informale</strong>, la quale può essere vista come una via di mezzo tra un'interpretazione univoca per tutti, e l'anarchia.
+</p>
+<p class='vspace'>Il vantaggio dei CdU è che sono facilmente comprensibili, cioè "danno l'idea" del sistema anche alle persone che non sanno niente di matematica, o ai tanto vituperati manager; un computer però avrebbe dei problemi ad interpretare un CdU, proprio per l'assenza di semantica.<br />Al contrario, un linguaggio dotato di una semantica formale sarà sicuramente comprensibile in modo algoritmico da un calcolatore, ma probabilmente un essere umano o un manager che lo guardano avranno difficoltà a comprenderlo.
+</p>
+<p class='vspace'>Sopra abbiamo detto che la semantica permette un'associazione matematica da un insieme di simboli ben formati ad un certo dominio, in modo univoco.<br />Ci sono due modi per realizzare questa associazione matematica: la <strong>funzione</strong> e l<strong>'applicazione</strong>. Vediamo di chiarire bene la differenza tra questi due termini.
+</p>
+<p class='vspace'>Una <strong>funzione</strong> è una roba scritta in genere così: <em>f: X -&gt; Y</em> dove
+</p><ul><li><strong>X</strong> è il dominio, ovvero l'insieme degli elementi dati in pasto alla <em>f</em>
+</li><li><strong>Y</strong> è il codominio, ovvero l'insieme degli elementi che la <em>f</em> sputa fuori
+</li><li><strong>f</strong> è una legge che ad ogni elemento di X associa uno e uno solo elemento di Y
+</li></ul><p class='vspace'>Un<strong>'applicazione</strong> <em>dovrebbe</em> essere sinonimo di funzione, però viene anche usata per distinguere tra le funzioni definite come qui sopra, e quelle altre funzioni meno "potenti" che invece non associano ad ogni elemento di X un elemento di Y.
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><span  style='color: white;'><strong>Questa definizione va chiarita...</strong></span>
+</p>
+<div class='vspace'></div><h2>DFD</h2>
+<p><strong>DFD</strong> = <strong>Data Flow Diagram</strong>. Si tratta di un linguaggio informale, non dotato di semantica, spesso usato per specificare strutture aziendali, ma che si presta anche alla specifica dei requisiti.
+</p>
+<p class='vspace'>Similmente ai casi d'uso, è composto da ellissi e frecce, ma prevede anche delle righe nere più spesse che possono essere <strong>sorgenti</strong> o <strong>pozzi</strong> di informazione.
+</p>
+<div class='vspace'></div><ul><li><strong>ellissi</strong> = attività, proprio come nei Cdu
+</li><li><strong>frecce</strong> = flussi di informazione tra le varie attività
+</li><li><strong>righe</strong> = sorgenti di informazione <em>oppure</em> pozzi di informazione'' oppure un misto tra i due, ovvero punti in cui l'informazione entra oppure esce dal sistema.
+</li></ul><p class='vspace'>I DFD, come dice il loro nome, visualizzano quindi in modo immediato il "giro" che l'informazione fa dentro un sistema, e niente altro. Ciò significa che non ci sono né strutture per il controllo né indicazioni di temporizzazione ("quando devo attivare un processo?"), ma solo flussi di informazione.
+</p>
+<p class='vspace'>A causa di ciò, un DFD deve presentare <strong>tutti</strong> i possibili flussi di informazione che un sistema prevede, ovvero tutte le possibili strade alternative che l'informazione può prendere. Devono inoltre realizzare un dizionario univoco con i nomi e le definizioni, e nel caso delle frecce anche le informazioni che trasporta.
+</p>
+<p class='vspace'>Ma, mancando le strutture di controllo, mancano totalmente anche i modi per segnalare <strong>quando</strong> intraprendere una strada e quando un'altra. Il fatto che una freccia entri in un'ellisse non vuol dire che, non appena arriva l'informazione, si esegue l'attività di quell'ellisse, perché non sta scritto da nessuna parte. Così come i CdU, quindi, i DFD non tengono in nessuna considerazione i fattori legati al <strong>tempo</strong>.
+</p>
+<p class='vspace'>Questa mancanza di "attenzione" al tempo si spiega con il fatto che i DFD sono privi di semantica. I requisiti di temporizzazione e di sincronizzazione vanno specificati ben bene in modo da non lasciare nessun dubbio in chi li legge. L'unico modo per non lasciare dubbi in chi legge un diagramma è avere una semantica. I DFD, visto che li usano i manager, non hanno semantica, e quindi evitano il problema delle ambiguità legate al tempo ignorandole del tutto.
+</p>
+<div class='vspace'></div><h3>Alberi decisionali</h3>
+<p>Così come il solo diagramma di un CdU non era completo, ma andava corredato di un bello schemino per capire le precondizioni, le postcondizioni e varie note, così anche i DFD vanno completati con un <strong>albero decisionale</strong>, il quale supplisce all'impossibilità di rappresentare delle condizioni in un diagramma. 
+</p>
+<p class='vspace'>Per ciascuna ellisse del mio DFD occorre un albero decisionale, così capisco le condizioni di quell'attività. Volendo posso poi accorparle tutte in un unico mega-albero, sicuramente completo ma a prezzo di minor comprensibilità e immediatezza.
+</p>
+<p class='vspace'>DFD + alberi decisionali raggiungono un considerevole potere espressivo per gli utenti, sicuramente più dei CdU che devono mettere giù le precondizioni per iscritto (a meno che - e nessuno ce lo vieta - corrediamo anche il caso d'uso di un albero decisionale).
+</p>
+<div class='vspace'></div><h3>Ambiguità dei DFD</h3>
+<p>I DFD sono potenzialmente ambigui. Perché mancano di semantica? Certo, ma vediamo un esempio.
+</p>
+<div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/IDSalberodecisionale.png' alt='' title='' /></span></div>
+<p>Questo è un DFD. L'ambiguità sta proprio nelle frecce del DFD, che non ci aiutano a capire una cosa: <strong>quando</strong> vado da C a D? Possibili risposte sono:
+</p><ul><li>quando arriva A
+</li><li>quando arriva B
+</li><li>quando sono arrivati entrambi
+</li><li>prima deve arrivare A, poi B
+</li><li>prima deve arrivare B, poi A
+</li></ul><p>Ecco qui l'ambiguità: io lo guardo e capisco una cosa. Tu lo guardi e ne capisci un'altra, e ovviamente il cliente ne intendeva una terza.
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><span  style='color: white;'><strong>Domanda da esame: "perché questo DFD è ambiguo?"</strong></span>
+</p>
+<div class='vspace'></div><h2>Il problema della sincronizzazione</h2>
+<p>Abbiamo già intuito che il problema della sincronizzazione è un problema grosso. Le modalità e i tempi di comunicazioni tra le varie attività, in certi casi, sono importantissimi, e sia i CdU che i DFD non permettono di esprimere questo tipo di relazione.
+</p>
+<p class='vspace'>Nel caso in cui A produca e B consumi, i casi classici della sincronizzazione sono i seguenti:
+</p><ul><li>tipo <strong>unbuffered</strong>: A può produrre solo dopo che B ha consumato il dato precedente
+</li><li>tipo <strong>buffered</strong>: A produce finché c'è spazio nel buffer (ovvero nel canale di comunicazione); B mangia fintantoché il buffer non è vuoto.
+</li></ul><p class='vspace'>Tutto ciò ci fa capire che per alcuni requisiti è <em>necessaria</em> un'espressione più formale, in particolare proprio per quelli che riguardano la sincronizzazione. Che tecniche posso usare?
+</p><ul><li>un'estensione dei DFD, che vedremo fra poco
+</li><li>modelli operazionali come gli automi a stati finiti o le reti di Petri, che vedremo poi
+</li></ul><div class='vspace'></div><h2>Estensione dei DFD: i FDFD</h2>
+<p>I DFD possono essere estesi per venire incontro ai problemi della sincronizzazione. In questo caso vengono chiamati <strong>FDFD</strong>, ovvero <strong>Formal DFD</strong>.
+</p>
+<p class='vspace'>Le nostre ellissi, nei FDFD, diventano <strong>trasformatori di dati</strong>: hanno <em>m</em> ingressi, cioè le frecce entranti, e hanno <em>n</em> uscite, ovvero le frecce uscenti. In questo modo posso rappresentare le ellissi come <em>funzioni matematiche parziali</em>, dove <em>parziali</em> significa che non tutto il codominio è mappato dalla funzione.
+</p>
+<p class='vspace'>Per avere una vera semantica occorre che da qualche parte io scriva: "questa ellisse, pardon, questo trasformatore di dati prende in ingresso due numeri interi e ne restituisce la moltiplicazione". In questo modo c'è un'interpretazione univoca della funzione dell'ellisse, e sono felice.
+</p>
+<p class='vspace'>Mancano ancora, tuttavia, le strutture di controllo: questo trasformatore, quando viene attivato?
+</p>
+<div class='vspace'></div><h3>I contenitori di dati</h3>
+<p>I contenitori di dati sono rappresentati da dei quadrati, in cui il numero interno rappresenta la loro <strong>capacità</strong>, cioè il numero di dati che possono contenere. I contenitori sono dunque nuovi elementi lessicali che indicano quando saranno utilizzabili gli input, operando così una funzione di controllo: le attività saranno abilitate solo se i loro contenitori avranno un certo valore.
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/IDStrasformatore.png' alt='' title='' /><br /><strong>Transformer</strong></span></div>
+<p>Il transformer <strong>Optimus Prime</strong> sarà eseguito solo se i due contenitori alla sua sinistra avranno riempito la loro capacità. La freccia indica che il dato prodotto dal quadrato sarà <strong>consumato</strong> dal transformer, e pertanto ogni volta che vengono consumati i dati, ne occorrono di nuovi per attivare di nuovo Optimus Prime.
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/IDStrasformatore2.png' alt='' title='' /><br /><strong>Un'altro transformer</strong></span></div>
+<p>Questo transformer è diverso perché dal primo contenitore parte una freccia con 2 punte. Ciò sta a significare che la lettura <strong>non è distruttiva</strong>: il dato che il quadrato produce non viene distrutto da <strong>Optimus Second</strong>, ma rimane lì, e quindi <strong>Optimus Second</strong> funzionerà ogni qual volta il secondo quadrato produrrà un dato. In pratica, è come se stessimo sincronizzando Optimus col secondo contenitore di dati: attendo solo lui, e non più il primo quadrato. È più facile da intuire che da spiegare:)
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+<div class='vspace'></div><h2>Automi</h2>
+<p>Per quanto riguarda gli automi, inviterei ad andare <a class='wikilink' href='LPSFSM.html'>alla pagina di Linguaggi di Programmazione per la Sicurezza</a> che tratta proprio questo argomento. Quello che interessa a noi va dall'inizio fino al paragrafo "Limiti delle FSM".
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IDS-16Marzo)</span></div>
+  </div>
+</body>
+</html>

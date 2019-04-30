@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Struttura delle memorie di massa </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-StrutturaDelleMemorieDiMassa' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Struttura delle memorie di massa
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StrutturaDelleMemorieDiMassa?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StrutturaDelleMemorieDiMassa?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-StrutturaDelleMemorieDiMassa-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StrutturaDelleMemorieDiMassa?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StrutturaDelleMemorieDiMassa?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Struttura delle memorie di massa was last modified on September 13, 2009, at 04:54 PM'>
+							<span style='display:none;'>Sistemi Operativi - Struttura delle memorie di massa</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Struttura delle memorie di massa</span>
+</p>
+<div class='vspace'></div><h2>Struttura dei dischi</h2>
+<p>Nei computer attuali i <strong>dischi</strong> rappresentano la principale memoria secondaria. Sono indirizzati come grandi array monodimensionali di <em>blocchi logici</em>, ovvero la più piccola unità di dati trasferibile in lettura o scrittura. Questo array viene mappato nei settori del disco in modo sequenziale, così da poter convertire un indirizzo logico di un blocco nel corrispondente indirizzo fisico.<br />L'indirizzo fisico è composto da <em>numero di cilindro</em>, <em>numero di traccia</em> all'interno del cilindro e <em>numero di settore</em> all'interno della traccia. In alcuni dispositivi il numero di settori per traccia non è costante perché più la traccia è distante dal centro maggiore è il numero di settori che può contenere. Per mantenere lo stesso tasso di dati scanditi dalla testina si fa in modo di incrementare la velocità di rotazione del disco quando accede alle tracce più interne. Altri dispositivi come i dischi rigidi mantengono invece costante la velocità angolare, ma diminuiscono la densità di bit dall'interno all'esterno.
+</p>
+<div class='vspace'></div><h2>Schedulazione degli accessi al disco</h2>
+<p>Per rendere più efficiente l'uso del disco bisogna avere un rapido <strong>tempo di accesso</strong> e una buona <strong>larghezza di banda</strong>. Il tempo di accesso è dato dal <em>tempo di  ricerca</em> (per muovere la testina fino al cilindro col settore richiesto) e dalla <em>latenza di rotazione</em> (che fa in modo che il disco ruoti fino al settore desiderato). La larghezza di banda è invece il numero di byte trasferiti nell'unità di tempo. E' possibile migliorare entrambi questi fattori programmando opportunamente le schedulazioni delle richieste di I/O.
+</p>
+<p class='vspace'>La larghezza di banda è un fattore legato soprattutto all'hardware del sistema, dunque per aumentarne le prestazioni (maggiore ampiezza) bisognerebbe scegliere dischi e interfacce più performanti. I tempi di accesso sono invece migliorabili con la <strong>schedulazione degli accessi</strong>, che si pone come obiettivo quello di fare in modo che il processo ottenga i dati nel minor tempo mediamente possibile. 
+</p>
+<div class='vspace'></div><h3>Schedulazione FCFS</h3>
+<p>La schedulazione <strong>FCFS</strong> (First Come First Served) è la più semplice: "primo arrivato, primo servito". E' indubbiamente l'algoritmo più equo, ma non garantisce affatto le prestazioni migliori.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/FCFS.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Schedulazione SSTF</h3>
+<p>Nella schedulazione <strong>SSTF</strong> (Shortest Seek Time First) si sceglie la richiesta che comporta il minor tempo di ricerca rispetto alla posizione corrente della testina, anche se è stata l'ultima a entrare in coda. Non importa ciò che perde o guadagna un singolo processo, è importante che nel complesso il sistema sia più rapido e lo è di circa tre volte rispetto la FCFS. Poiché la coda viene riempita in continuazione si potrebbero verificare fenomeni di <em>starvation</em>.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/SSTF.jpg' alt='' title='' /></div>
+<p class='vspace'>Abbiamo già detto che la SSTF è migliore del FSFS, ma non è ancora l'algoritmo ottimale.
+</p>
+<div class='vspace'></div><h3>Schedulazione SCAN</h3>
+<p>Con l'algoritmo di schedulazione <strong>SCAN</strong> viene effettuata una sorta di scansione del disco muovendo il braccio della testina da un'estremità all'altra e servendo tutte le richieste che si incontrano sul percorso. Se dunque durante una scansione entrerà in coda una richiesta ad un cilindro che si trova in quella direzione, verrà presto servita; altrimenti dovrà aspettare il suo ritorno al prossimo giro. La SCAN rende minimo il numero di cambiamenti di direzione della testina, tenendo conto del fatto che essi comportano rallentamenti e usura.
+</p>
+<p class='vspace'>Viene anche chiamato <em>algoritmo dell'ascensore</em> perché serve tutte le richieste <em>in salita</em> e poi quelle <em>in discesa</em>. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/SCAN.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Schedulazione C-SCAN</h3>
+<p>La schedulazione <strong>C-SCAN</strong> muove la testina da un capo all'altro del disco come una SCAN, ma quando raggiunge un'estremità ritorna a quella opposta senza servire alcuna richiesta durante il rientro. Serve quindi in un'unica direzione, assicurando tempi di attesa più uniformi.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/CSCAN.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Schedulazione LOOK</h3>
+<p>La <strong>LOOK</strong> è una versione più efficiente dei due algoritmi precedenti, di cui prende gli stessi principi salvo il fatto che il suo braccio non percorre l'intera larghezza del disco, ma si ferma all'ultima richiesta da servire per ciascuna delle due direzioni. Va da sé che esiste anche una versione <strong>C-LOOK</strong>.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/LOOK.jpg' alt='' title='' /></div>
+<div class='vspace'></div><h3>Selezione dell'algoritmo di schedulazione</h3>
+<p>In generale sia l'SSTF che il LOOK sono una scelta ragionevole come algoritmi predefiniti, perché danno tempi di accesso mediamente bassi. Vanno però considerati altri fattori, tra cui:
+</p><ul><li><em>carico di lavoro</em>, se è elevato sarebbe preferibile evitare la SSTF che può incorrere facilmente in starvation
+</li><li><em>allocazione dei file</em>, dato che allocazioni contigue presuppongono movimenti limitati della testina, mentre quelle collegate o indicizzate il contrario
+</li><li><em>posizione della directory e dei blocchi di indici</em>, sono vicini o no a quelli del file?
+</li></ul><p class='vspace'>Per tutte queste complessità la procedura di schedulazione del disco andrebbe mantenuta separata dal sistema operativo e effettuata direttamente in hardware, dove possono essere più facilmente considerati altri fattori quali il tempo di latenza. Nella pratica però il sistema operativo impone alcuni vincoli anche in questi scenari, intervenendo su queste procedure ad esempio per segnalare delle priorità o per imporre dei vincoli su alcuni ordini di accesso (per prevenire crash del sistema), ecc.<br />Gli algoritmi visti finora toccano infatti solo l'ordinamento delle richieste e considerano tutti i processi ugualmente importanti, ma per un motivo: politiche di priorità forzerebbero la testina a spostarsi molto di più, il che comporterebbe un aumento dei tempi di accesso globale.
+</p>
+<div class='vspace'></div><h2>Amministrazione del disco</h2>
+<h3>Configurazione del disco</h3>
+<p>Per poter memorizzare dati un disco deve essere suddiviso in settori che il controller possa leggere e scrivere. Questo processo prende il nome di <strong>formattazione fisica</strong> o a basso livello, e per ogni settore predispone la seguente struttura dati: <em>intestazione</em>, <em>zona dati</em> e <em>terminatore</em>. Intestazione e terminatore contengono informazioni per il controller, cioè il numero di settore e la parola di verifica. Questa è scritta in un codice di correzione degli errori, quindi non solo è in grado di rilevare i settori corrotti ma anche di ripristinarli.<br />Per memorizzare i file su disco bisogna a questo punto <em>partizionarlo</em> in uno o più insiemi di cilindri detti <em>partizioni</em>, ognuno indipendente dall'altro.<br />Infine si procede con una <strong>formattazione logica</strong> che provveda alla creazione di un file system.
+</p>
+<p class='vspace'>Nel caso in cui non si voglia formattare alcun file system, la partizione viene lasciata come grande array di blocchi sequenziali e assume il nome di <em>disco grezzo</em>. Il suo principale utilizzo è per l'area di <strong>swap</strong>.
+</p>
+<div class='vspace'></div><h3>Il blocco di avvio</h3>
+<p>Il <strong>bootstrap</strong> è un programma da eseguire a ogni avvio del sistema e ha il compito di inizializzarne tutte le funzioni, quindi i registri della CPU, i controller di periferica ed il contenuto della memoria centrale. In altre parole è preposto all'avvio del sistema operativo.
+</p>
+<p class='vspace'>In molti computer risiede su memorie ROM (non volatili e di sola lettura), che in alcuni casi contengono un <em>loader</em> che referenzia una partizione di avvio interamente caricata su disco, chiamata <strong>disco di boot</strong> o <em>di sistema</em>. Questa seconda modalità d'avvio è sicuramente più sofisticata di quella interamente memorizzata su ROM.
+</p>
+<div class='vspace'></div><h3>Blocchi difettosi</h3>
+<p>I dischi sono dispositivi in continuo movimento e con meccanismi molto delicati, dunque sono particolarmente soggetti a guasti. Su dischi semplici la gestione dei <em>blocchi difettosi</em> (<em>bad block</em>) prevede il loro isolamento con una marcatura nella tabella FAT, e conseguente perdita dei dati se erano in uso.<br />Dischi più sofisticati hanno tecniche di gestione più complesse. Anzitutto viene mantenuta una lista dei blocchi guasti costantemente aggiornata direttamente su disco, dopodiché sono previste tutta una serie di contromisure hardware e software. Vengono ad esempio riservati un certo numero di settori aggiuntivi di scorta (<em>sector sparing</em>), utilizzabili esclusivamente per sostituire blocchi difettosi e previsti per ogni cilindro così da mantenere i vantaggi della schedulazione. Un altro sistema è quello dello slittamento di settore (<em>sector slipping</em>), che prevede il rimappaggio di tutta una serie di settori traslandoli di un'unità. 
+</p>
+<p class='vspace'>L'intervento manuale è richiesto comunque poiché si incorre spesso in una perdita di dati.
+</p>
+<div class='vspace'></div><h2>Gestione dello spazio di swap</h2>
+<p>La gestione dello spazio di <strong>swap</strong> ha come ovvio obiettivo quello di gestirlo al meglio, compito non banale dato che gli accessi al disco sono di gran lunga le operazioni più lente del sistema.
+</p>
+<div class='vspace'></div><h3>Uso dello spazio di swap</h3>
+<p>L'uso dello spazio di swap dipende dal sistema operativo installato e dagli algoritmi di gestione della memoria che implementa. Ad esempio può essere usato per conservare le immagini dei processi (dati e codice compreso), o per immagazzinare le pagine tolte dalla memoria centrale. 
+</p>
+<p class='vspace'>Possono essere riservati fino ad alcuni gigabyte di disco per lo swap, ed è sempre meglio sovrastimarlo piuttosto che vedersi abortire alcuni processi perché non hanno abbastanza spazio.
+</p>
+<div class='vspace'></div><h3>Locazione dello spazio di swap</h3>
+<p>Lo spazio di swap può risiedere in due posti:
+</p><ul><li>in un file, quindi gestito attraverso le normali funzioni del file system. Tra i suoi svantaggi ha la frammentazione esterna e un tempo di gestione elevato, colpa della necessità di continuare a scandire la struttura directory e dati
+</li><li>avere una partizione separata dal disco, senza alcun file system (grezza). Quello che si perde in efficienza di salvataggio e in aumento della frammentazione interna, lo si guadagna enormemente in velocità. 
+</li></ul><p class='vspace'>La seconda via è quella più saggia dato che nell'area di swap ci vanno generalmente solo dati con un periodo di vita molto breve e su cui avvengono richieste d'accesso molto frequenti; la velocità in questi casi è il fattore da perseguire. <br />In alcuni sistemi operativi sono implementati entrambi.
+</p>
+<div class='vspace'></div><h2>La struttura RAID</h2>
+<p>Con la riduzione delle dimensioni delle unità disco è diventato possibile collegarne più di una insieme, così da sfruttare le maggiori velocità se fatte lavorare in parallelo o per migliorare l'affidabilità memorizzando informazioni ridondanti. Esistono tutta una serie di tecniche di organizzazione dei dischi che prendono il nome di <strong>RAID</strong>, ovvero array ridondante di dischi a basso costo o indipendenti. La struttura RAID può essere definita come gruppo di dischi fisici gestiti in modo integrato così da apparire un unico disco con caratteristiche elevate di tolleranza ai guasti o di prestazioni.
+</p>
+<div class='vspace'></div><h3>Il miglioramento dell'affidabilità mediante la ridondanza</h3>
+<p>Consideriamo l'affidabilità e osserviamo che la possibilità che un certo disco in un insieme di dischi si guasti è molto maggiore rispetto alla probabilità che non ne funzioni più uno indipendente. Tale problema può essere superato con la <em>ridondanza</em>, cioè con la memorizzazione di informazioni supplementari normalmente non necessarie ma utili in caso di guasto. 
+</p>
+<p class='vspace'>Il metodo più semplice per introdurre la ridondanza è duplicare ogni disco con una tecnica chiamata <strong>mirroring</strong>, creando un disco logico che è in realtà costituito da due dischi fisici identici. Ogni scrittura deve avvenire su entrambi, possibilmente in tempi diversi come precauzione contro l'incoerenza.<br />Con una ridondanza del 100% dello spazio a disposizione protegge con efficacia dai guasti singoli, ma una volta ripristinato un blocco danneggiato questo rimane "scoperto".
+</p>
+<p class='vspace'>Il tempo medio al guasto di un disco in mirroring dipende sia da quello dei singoli dischi che dai tempi medi di riparazione, ma è comunque molto alto.
+</p>
+<div class='vspace'></div><h3>Il miglioramento delle prestazioni con il parallelismo</h3>
+<p>Il mirroring dei dati aumenta l'affidabilità a scapito delle prestazioni dato che le operazioni per unità di tempo sono raddoppiate. Per aumentare la velocità di trasferimento si può invece adottare la tecnica del <strong>data-striping</strong>, che consiste nel dividere i bit di ogni byte su dischi multipli (<em>bit-level striping</em>). Se ad esempio abbiamo 8 dischi e distribuiamo gli 8 bit che compongono un byte a ciascuno di essi, avremo un disco logico 8 volte più grande di quello fisico e soprattutto con velocità di accesso 8 volte maggiori! 
+</p>
+<p class='vspace'>Questa tecnica - che realizza di fatto il <strong>parallelismo</strong> - può essere generalizzata a un qualunque multiplo o sottomultiplo di 8 dischi, e non si limita esclusivamente allo spezzettamento del byte ma anche a quello dei blocchi (<em>block-level striping</em>).
+</p>
+<p class='vspace'>Gli obiettivi del parallelismo sono dunque quelli di aumentare il rendimento di piccoli accessi multipli equilibrando il carico, e ridurre il tempo di risposta per gli accessi di maggiore entità.
+</p>
+<div class='vspace'></div><h3>I livelli di RAID</h3>
+<p>Esistono diverse configurazioni di dischi che cercano questo o quel compromesso tra il fattore affidabilità e quello delle prestazioni, e prendono il nome di <strong>livelli di RAID</strong>. Elenchiamoli:
+</p>
+<div class='vspace'></div><ul><li><strong>RAID livello 0</strong>: <br />array di dischi con spezzettamento dei blocchi ma nessuna ridondanza. Altissime prestazioni ma nessuna protezione contro i guasti
+<div class='vspace'></div></li><li><strong>RAID livello 1</strong>: <br />mirroring
+<div class='vspace'></div></li><li><strong>RAID livello 2</strong> o di <em>organizzazione a codice di correzione di errore (ECC)</em>:<br />si basa sul bit di parità per il rilevamento di errori a singoli bit, mentre utilizza bit supplementari (mantenuti su dischi separati) negli schemi di correzione degli errori per ricostruirli. Per quattro dischi ne sono necessari altri tre per realizzare questo schema. Alte prestazioni ottenute tramite bit-level striping
+<div class='vspace'></div></li><li><strong>RAID livello 3</strong> o di <em>organizzazione di parità a bit alternati</em>:<br />si basa sul fatto che i controllori dei dischi possono individuare se un settore è danneggiato, e quindi si può ricostruire il dato danneggiato controllando la parità dei restanti dischi. Migliora il livello 2 dato che è sufficiente un unico disco supplementare a parità di efficacia. <br />Rispetto ai livelli senza parità, il livello 3 supporta un numero più basso di I/O al secondo perché ogni disco deve partecipare a ogni richiesta, ed è inoltre più lento perché parte del tempo viene speso per il controllo della parità. Le prestazioni possono essere migliorate introducendo un controller hardware dedicato alla parità e utilizzando una cache per memorizzare i blocchi mentre questa viene calcolata
+<div class='vspace'></div></li><li><strong>RAID livello 4</strong> o di <em>organizzazione di parità a blocchi alternati</em>:<br />usa una suddivisione a livello di blocco come nel RAID 0 ma ne mantiene in più uno di parità su un disco separato. Se un disco viene a mancare, il blocco di parità in collaborazione con gli altri blocchi corrispondenti degli altri dischi è in grado di ripristinarlo. La lettura di un blocco accede solo a un disco, mantenendo gli altri liberi per altre richieste; questo rallenta la velocità di trasferimento per ogni accesso ma consente accessi multipli in parallelo. La velocità generale di I/O è quindi elevata, escludendo i casi di accesso a porzioni di dati inferiori ad un blocco
+<div class='vspace'></div></li><li><strong>RAID livello 5</strong> o di <em>parità distribuita a blocchi alternati</em>:<br />distribuisce i dati e le parità tra tutti i dischi invece che mantenere queste ultime in un disco separato. Per ogni blocco c'è quindi un disco che memorizza la parità e gli altri i dati. In questo modo si evita l'uso eccessivo del disco di singola parità in caso di guasto
+<div class='vspace'></div></li><li><strong>RAID livello 6</strong> o <em>schema di ridondanza P+Q</em>:<br />è simile al RAID 5 ma memorizza ulteriori informazioni ridondanti così da essere in grado di fronteggiare guasti contemporanei di più dischi. Non usa la parità ma particolari codici correttori degli errori noti come di Reed-Solomon
+<div class='vspace'></div></li><li><strong>RAID livello 0+1</strong>:<br />combina il livello 0 e 1 e i rispettivi benefici. E' composto da due serie di dischi in bit-level striping messi in mirroring tra loro. Esiste anche il livello <strong>1+0</strong> costituito da dischi in mirroring messi in data-striping con altre coppie. Il vantaggio teorico di quest'ultimo è che il guasto su un disco non comporta l'inaccessibilità di tutta la sua suddivisione, ma unicamente la sua coppia in mirroring
+</li></ul><div class='vspace'></div><h3>Scelta di un livello di RAID</h3>
+<p>Come scegliere il livello di RAID più adeguato alle proprie necessità? Se ciò che interessano sono le prestazioni e la perdita dei dati non è un fattore critico, allora la scelta è ovvia: RAID 0. Se servono invece alte affidabilità e recuperi veloci, si punti sul RAID 1. Se si vuole un compromesso tra i due fattori si scelga tra RAID 0+1 o 1+0, o in alternativa RAID 5 se si vuole usare un numero minore di dischi; il RAID 6 sarebbe più efficiente, ma non è ancora pienamente supportato.
+</p>
+<p class='vspace'>Ultima nota sul RAID è che è possibile predisporre dischi di ricambio (<em>hot spare</em>) non utilizzati per i dati ma configurati in modo da rimpiazzare immediatamente un disco guasto.
+</p>
+<div class='vspace'></div><h2>Collegamento dei dischi</h2>
+<p>I computer possono accedere in due modi alla memoria su disco: mediante la <em>memorizzazione con collegamento all'host</em> o con quella <em>a collegamento di rete</em>.
+</p>
+<div class='vspace'></div><h3>Memorizzazione con collegamento all'host</h3>
+<p>A questo tipo di memorizzazione si accede tramite le porte locali di I/O, che possono avere diverse architetture (ad esempio IDE, ATA o SCSI e FC). I comandi I/O che danno inizio ai trasferimento dei dati sono letture e scritture di blocchi logici di dati diretti a ben precise unità di memorizzazione.
+</p>
+<div class='vspace'></div><h3>Memorizzazione con collegamento di rete</h3>
+<p>In questi sistemi si accede a distanza su una rete di dati con un'interfaccia di chiamata di procedura remota (RPC), ad esempio NFS in UNIX o CIFS in Windows. Questo collegamento consente ai computer di una LAN di condividere in modo conveniente periferiche di memorizzazione, anche se sicuramente con prestazioni inferiori rispetto ai collegamenti diretti.
+</p>
+<div class='vspace'></div><h2>Struttura di memoria terziaria</h2>
+<h3>Periferiche di archiviazione terziaria</h3>
+<p>Il basso costo è la caratteristica principale di una memorizzazione <strong>terziaria</strong>, che viene tipicamente effettuata su supporti rimovibili.
+</p>
+<div class='vspace'></div><h4>Dischi rimovibili</h4>
+<p>Ne abbiamo di diversi tipi:
+</p><ul><li>dischi magnetici (ad esempio i floppy), caratterizzati da alta velocità di accesso ma maggior rischio di danni
+</li><li>dischi magneto-ottici, che usano tecniche sia magnetiche che ottiche (quindi anche laser). Sono più resistenti alla rottura delle testine
+</li><li>dischi ottici, tra cui dischi a sola lettura o riscrivibili (anche detti a cambiamento di fase)
+</li></ul><div class='vspace'></div><h4>I nastri</h4>
+<p>I nastri contengono più dati di un disco ottico o magnetico e sono più economici a parità di dimensione. Sono particolarmente adatti all'accesso sequenziale e vengono spesso utilizzati per copie di backup e non per accessi diretti.
+</p>
+<div class='vspace'></div><h4>Le tecnologie future</h4>
+<p>Vediamone alcune:
+</p><ul><li>memorizzazione olografica: usa la luce laser per registrare fotografie olografiche da milioni di bit su speciali dispositivi. Ha una velocità di trasferimento altissima e sta diventando sempre più affidabile
+</li><li>sistemi meccanici microelettronici: potrebbero  fornire una tecnologia di memorizzazione non volatile dei dati più veloce del disco magnetico e più economica della DRAM
+</li></ul><div class='vspace'></div><h3>Compiti del sistema operativo</h3>
+<p>Due importanti compiti di un sistema operativo sono la gestione dei dispositivi fisici e la presentazione alle applicazioni di un'astrazione di macchine virtuale. Vediamo come vengono gestite sui supporti rimovibili:
+</p>
+<div class='vspace'></div><h4>Interfaccia dell'applicazione</h4>
+<p>La maggior parte dei sistemi operativi gestisce i dischi rimovibili come se fossero fissi, dunque possono essere sia formattati con un file system sia gestiti in modo grezzo. Può avvenire un uso condiviso dei propri dati tra più processi attivi, e le modalità d'accesso possono essere sia dirette che sequenziali.
+</p>
+<p class='vspace'>Con le unità nastro l'interfaccia dell'applicazione cambia: vengono utilizzati solo in modo grezzo e il loro usufrutto è esclusivo di un solo processo alla volta. L'accesso è strettamente sequenziale. In linea di principio è possibile implementare un file system su nastro, ma con strutture dati e algoritmi completamente differenti da quelli visti finora.
+</p>
+<div class='vspace'></div><h4>Nomina dei file</h4>
+<p>Uno dei maggiori problemi di gestione della memoria terziaria è trovare una denominazione univoca dei file nei supporti rimovibili, che includa un identificativo del dispositivo e che garantisca inoltre la portabilità. Non esiste una soluzione omogenea per tutti i sistemi operativi, salvo per alcuni supporti di memorizzazione standardizzati come i CD e i DVD.
+</p>
+<div class='vspace'></div><h4>Gestione della memorizzazione gerarchica</h4>
+<p>La gestione della memorizzazione gerarchica aumenta il grado di astrazione del sistema ed estende la gerarchia di memorizzazione oltre la memoria centrale secondaria per incorporare la terziaria. Fa uso di <em>jukebox robotizzati</em> per la sostituzione dei supporti senza intervento umano, e viene utilizzato solitamente nei centri di calcolo con supercomputer e in altre grandi installazioni con enormi quantità di dati.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: September 13, 2009, at 04:54 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StrutturaDelleMemorieDiMassa?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-StrutturaDelleMemorieDiMassa?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ricerca Operativa - PLI - Cestini - 19.01.04 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RO-PLI-19gen2004' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ricerca Operativa - PLI - Cestini - 19.01.04
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-19gen2004?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-19gen2004?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RO-PLI-19gen2004-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-19gen2004?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-19gen2004?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ricerca Operativa - PLI - Cestini - 19.01.04 was last modified on June 15, 2009, at 06:47 PM'>
+							<span style='display:none;'>Ricerca Operativa - PLI - Cestini - 19.01.04</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PLI - Cestini - 19.01.04 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>La raccolta differenziata nel dipartimento non è cosa facile: ci sono rifiuti sparsi qua e là. Il direttore del dipartimento ritiene che l'attuale disposizione dei cestini dei rifiuti sia poco razionale e incarica gli studenti del corso di Ricerca Operativa di studiare il problema. Dopo una breve indagine effettuata dagli studenti, essi hanno a disposizione i dati riguardanti le possibili locazioni dei cestini (che sono disponibili in numero limitato), le fonti di pattume, le quantità prodotte da ciascuna fonte e il tempo che ciascun utente deve impiegare per raggiungere il cestino dalla fonte di pattume in cui si trova. Si vogliono posizionare i cestini in modo ottimo per minimizzare il tempo massimo di conferimento del pattume.<br />Formulare il problema, classificarlo e risolverlo con i dati del file CESTINI.TXT.
+</p>
+<div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+Ci sono 5 fonti di pattume: 
+1: Piano docenti
+2: Aule Nord
+3: Aule Sud
+4: Laboratori Didattici
+5: Laboratori di Ricerca
+
+Ci sono 6 possibili luoghi in cui localizzare i cestini:
+1: Piano docenti
+2: Zona macchine caffè
+3: Ingresso bar lato Nord
+4: Ingresso bar lato Sud
+5: Biblioteca
+6: Corridoio laboratori
+
+I cestini disponibili sono 4.
+
+=========================================================
+
+Tabella 1: Tempo di raggiungimento dei cestini dalle fonti 
+           (secondi)
+
+	Fonti	1  2  3  4  5  
+Luoghi
+	1	4 20 20 35 40
+	2      20  5 10 20 20 
+	3      20  5  8 20 20
+	4      20  8  5 25 25
+	5      40 15 12 10 12
+	6      40 15 20  8  2
+
+=========================================================
+
+Tabella 2: Quantità di pattume prodotto (Kg/giorno)
+
+1: 12
+2:  8
+3:  8
+4: 15
+5: 12
+
+=========================================================
+
+Capacita': 20 Kg
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<ul><li><strong>fonti = 5</strong> (numero di fonti di pattume)
+</li><li><strong>luoghi = 6</strong> (numero luoghi possibili in cui localizzare i cestini)
+</li><li><strong>cestini = 4</strong> (numero cestini disponibili)
+</li><li><strong>tRagg<sub>ij</sub></strong> (tempo di raggiungimento del cestino posizionato nel luogo i=1..6 dalla fonte j=1..5) [secondi]
+</li><li><strong>quantita<sub>j</sub></strong> (quantità pattume prodotto dalla fonte j=1..5) [kg/giorno]
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<ul><li><strong>x<sub>i</sub></strong> (variabile binaria che indica se nel luogo i=1..6 c'è il cestino)
+</li><li><strong>y<sub>ij</sub></strong> (variabile binaria che indica se la fonte j=1..5 deve buttare il pattume nel cestino posto nel luogo i=1..6)
+</li></ul><div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p>Si vuole minimizzare il massimo tempo di raggiungimento di un cestino, quindi dovremo introdurre una variabile ausiliaria che definiremo meglio poi nei vincoli:<br /><strong>min z</strong>
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<ul><li>vincolo disponibilità cestini:<br /><strong>(somma)<sub>i</sub> x<sub>i</sub> = 4</strong>
+</li><li>vincolo che associ ad ogni fonte un cestino:<br /><strong>(somma)<sub>i</sub> y<sub>ij</sub> = 1</strong> (per ogni j)
+</li><li>vincolo che impone a una fonte di non buttare il pattume in un luogo in cui non c'è il cestino:<br /><strong>y<sub>ij</sub> &lt;= x<sub>i</sub></strong> (per ogni j)
+</li></ul><p>In altre parole se la x<sub>i</sub> vale 0, nessuna fonte potrà avere y<sub>ij</sub> maggiore di 0 dato che non ci son cestini in cui buttare roba; se invece la x<sub>i</sub> vale 1 significa che lì c'è il cestino, quindi le y<sub>ij</sub> delle varie fonti possono buttare o meno lì il pattume.
+</p>
+<div class='vspace'></div><ul><li>vincolo per introdurre la variabile ausiliaria z, definita come il massimo tempo di raggiungimento di un cestino:<br /><strong>z &gt;= y<sub>ij</sub> * tRagg<sub>ij</sub></strong> (per ogni i e per ogni j)
+</li></ul><div class='vspace'></div><h2>Linghizzazione del problema</h2>
+<pre class='escaped'>
+! esercizio: cestini;
+model:
+
+sets:
+fonti /1..5/;
+luoghi /1..6/: x;
+associazioni(fonti, luoghi): tRagg,
+					 y;
+endsets
+
+data:
+tRagg =  4 20 20 20 40 40 
+    	20  5  5  8 15 15
+    	20 10  8  5 12 20
+    	35 20 20 25 10  8
+    	40 20 20 25 12  2;
+cestini = 4;
+enddata
+
+! funzione obiettivo;
+min = z;
+
+! vincolo disponibilità cestini;
+@sum(luoghi(i): x(i)) = cestini;
+
+! vincolo che associ ad ogni fonte un cestino;
+@for(luoghi(i): @sum(fonti(j): y(i,j)) = 1);
+
+! vincolo che impone alle fonti di buttare pattume dove c'è
+  un cestino;
+@for(luoghi(i): @for(fonti(j): y(i,j) &lt;= x(i)));
+
+! vincolo per definire la variabile ausiliaria z;
+@for(luoghi(i): @for(fonti(j): z &gt;= tRagg(i,j) * y(i,j) ));
+
+! definisco le variabili binarie;
+@for(luoghi(i): @bin(x(i)));
+@for(luoghi(i): @for(fonti(j): @bin(y(i,j))));
+
+end
+</pre>
+<div class='vspace'></div><h2>Altre domande</h2>
+<h3>Determinare inoltre la capacità minima richiesta per ciascun cestino.</h3>
+<p>Per rispondere a questa domanda bisogna verificare quali sono le fonti associate ad ogni cestino, e quindi sommare le quantità di pattume prodotte da ognuna di esse. Quindi osservando il report della soluzione possiamo affermare che:
+</p><ul><li>nel cestino situato nel luogo 1 le fonti associate sono la 1, quindi guardando i dati la capacità minima dovrà essere di 12 kg/giorno
+</li><li>nel cestino situato nel luogo 3 le fonti associate sono la 2 e la 3, quindi la capacità minima dovrà essere di 8 + 8 = 16 kg/giorno
+</li><li>nel cestino situato nel luogo 5 non ci sono fonti associate
+</li><li>nel cestino situato nel luogo 6 le fonti associate sono la 4 e la 5, quindi la capacità minima dovrà essere di 15 + 12 = 27 kg/giorno
+</li></ul><div class='vspace'></div><h3>Come andrebbe modificato il modello se la capacità dei cestini fosse nota a priori?</h3>
+<p>Se la capacità dei cestini fosse nota a priori, e in particolare come definito dai dati <strong>capacita = 20 [kg/giorno]</strong>, allora bisogna aggiungere un nuovo vincolo al modello:
+</p><ul><li>vincolo sulle capacità massime dei cestini:<br /><strong>(somma)<sub>j</sub> y<sub>ij</sub> * quantita<sub>j</sub> &lt;= capacita</strong> (per ogni i)
+</li></ul><p class='vspace'>Che in Lingo si traduce come:
+</p>
+<p class='vspace'><code class='escaped'>@for(luoghi(i): @sum(fonti(j): y(i,j) * quantita(j)) &lt;= capacita);</code>
+</p>
+<div class='vspace'></div><h3>Studiare poi il caso in cui si voglia minimizzare il tempo medio di conferimento dei rifiuti nei cestini.</h3>
+<p>Bisognerà cambiare la funzione obiettivo, sbarazzandoci della variabile ausiliaria z, e minimizzando al suo posto il tempo medio necessario per buttare i rifiuti nei cestini. In altre parole bisognerà minimizzare la media pesata dei tempi di conferimento, e quindi:<br /><strong>min (somma)<sub>i</sub> (somma)<sub>j</sub> y<sub>ij</sub> * tRagg<sub>ij</sub></strong>
+</p>
+<p class='vspace'>Che in Lingo diventa:
+</p>
+<p class='vspace'><code class='escaped'>min = @sum(luoghi(i): @sum(fonti(j): y(i,j) * tRagg(i,j)));</code>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 15, 2009, at 06:47 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-19gen2004?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-PLI-19gen2004?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

@@ -1,0 +1,728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Panoramica REST </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.PanoramicaSulREST' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Panoramica REST
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PanoramicaSulREST?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PanoramicaSulREST?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='PanoramicaSulREST-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PanoramicaSulREST?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PanoramicaSulREST?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Panoramica REST was last modified on March 16, 2011, at 11:35 AM'>
+							<span style='display:none;'>Panoramica REST</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='IngegneriaProcessiAziendali.html'>Torna alla pagina di Ingegneria dei Processi Aziendali</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'>  <strong>:: Panoramica sul REST :: </strong>
+</pre><div class='vspace'></div><table >
+<tr ><td  valign='top'>
+<h2>1. Cos'è il REST?</h2>
+<p><strong>REST</strong> è un termine introdotto da Roy Fielding per descrivere uno stile architetturale per applicazioni web, ed è l'acronimo di <strong><em>Re</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer</em>. Per capire cosa significa facciamo un passo indietro.<br />Il web è formato da <em>risorse</em>, intese come oggetti di interesse. Ad esempio la RAI potrebbe definire come risorsa il programma <code class='escaped'>Blob</code>, ed i client potrebbero accedere alla risorsa attraverso l'URL:<br /><code class='escaped'>http://www.rai.it/programma/blob</code><br />Ciò che viene restituito al client è una <em>rappresentazione</em> della risorsa (ad esempio una pagina html, se è un browser), che lo porrà in un certo <em>stato</em>. Utilizzando i collegamenti ipertestuali inclusi nella rappresentazione ricevuta, il client potrà accedere ad altre risorse (altre rappresentazioni) passando in un nuovo stato. Riassumendo: l'applicazione del client cambia (<em>trasferisce</em>) lo stato ad ogni rappresentazione della risorsa, da cui <em>Representational State Transfer</em>.<br />Prima di andare avanti, ecco il disclaimer fondamentale: <strong>la pagina web NON È una risorsa, ma una sua rappresentazione</strong>.
+</p></td><td width='10'  valign='top'>
+</td><td  valign='top'>
+<p><br />
+</p><div  style='text-align: left; background-color: #f5f9fc; width: 380px; border: 2px solid #cccccc; padding: 20px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<p class='vspace'><a href='#p1'>1. Cos'è il REST</a><br /><a href='#p2'>2. Principi architetturali</a>
+</p><div class='indent'><a href='#p21'>2.1 Design delle URL</a>
+</div><div class='indent'><a href='#p22'>2.2 Interfaccia comune</a>
+</div><div class='indent'><a href='#p23'>2.3 Flusso tra ipertesti</a>
+</div><div class='indent'><a href='#p24'>2.4 Stateless o stateful?</a>
+</div><p><a href='#p3'>3. Operazioni SAFE e UNSAFE</a>
+</p><div class='indent'><a href='#p31'>3.1 Esempio "Ordini"</a>
+</div><div class='indent'><a href='#p32'>3.2 Esempio "Ordini 2"</a>
+</div><p><a href='#p4'>4. Metodologia di progettazione</a><br /><a href='#p5'>5. Esempio finale: SONDAGGIO</a>
+</p><div class='indent'><a href='#p51'>5.1 Identificare le risorse</a>
+</div><div class='indent'><a href='#p52'>5.2 Relazioni tra le risorse</a>
+</div><div class='indent'><a href='#p53'>5.3 Definire le URI</a>
+</div><div class='indent'><a href='#p54'>5.4 Definire l'interfaccia comune</a>
+<div class='indent'><a href='#p541'>5.4.1 Creare un sondaggio</a>
+</div><div class='indent'><a href='#p542'>5.4.2 Leggere voti o sondaggi</a>
+</div><div class='indent'><a href='#p543'>5.4.3 Votare</a>
+</div><div class='indent'><a href='#p544'>5.4.4 Cambiare il voto</a>
+</div><div class='indent'><a href='#p545'>5.4.5 Cancellare voti o sondaggi</a>
+</div></div><p><a href='#p6'>6. Breve considerazione sui cookie</a>
+</p></div>
+</td></tr></table>
+<p class='vspace'>Il REST è un'alternativa leggera ai meccanismi come le RPC e i servizi Web che usano SOAP, WSDL, ecc. Questo non significa che non sia potente, e infatti non c'è nulla che si possa fare in SOAP che non sia possibile realizzare con un'architettura REST.
+</p>
+<p class='vspace'>Va detto infine che il REST non è uno standard, ma ne usa molti: HTTP, URI, formati standard dei file (xml, html, jpg, ...), tipi MIME (text/xml, text/html, image/jpg, ...), ...
+</p>
+<p class='vspace'><a name='p2' id='p2'></a>
+</p><h2>2. Principi architetturali</h2>
+<p>Il REST definisce un insieme di principi architetturali per realizzare i servizi web, che spesso sono dei veri e propri vincoli di progettazione:
+</p><ul><li>il modello dell'applicazione è di tipo <em>client-server</em>;
+</li><li>il sistema è formato da <em>risorse</em>, che rappresentano sia lo <em>stato</em> che le <em>funzionalità</em> del servizio. Le risorse sono per il REST ciò che i <em>metodi</em> sono per le RPC e per il SOAP;
+</li><li>le risorse devono essere identificate tramite <em>URI</em>;
+</li><li>deve esistere un' <em>interfaccia uniforme</em> per la comunicazione tra client e server, così che ognuno possa essere sviluppato in modo indipendente;
+</li><li>lo stato dell'applicazione deve evolversi attraverso un flusso tra collegamenti ipertestuali;
+</li><li>le comunicazioni tra client e server devono essere <em>stateless</em>, ovvero devono contenere tutte le informazioni necessarie per comprendere la richiesta (parametri, contesto, dati), senza contare su altri file salvati sul server. Se questa scelta aumenta da un lato la disponibilità e la scalabilità del sistema, dall'altro si riflette sulle sue prestazioni: troppe richieste e risposte da replicare, dato che il server non può salvarsi un contesto in locale;
+</li><li>per alleggerire le problematiche appena citate della comunicazione stateless, il paradigma REST incoraggia l'utilizzo della <em>cache</em> ogni qual volta è possibile. A questo proposito, le risposte dei server dovrebbero essere sempre etichettate come "cacheable" o "non-cacheable" a seconda dei casi, per evitare che i client utilizzino informazioni obsolete per le richieste future;
+</li><li>il sistema può essere <em>stratificato</em> aggiungendo dispositivi intermedi (proxy, cache server, gateway, ...) tra i client e le risorse, così da implementare caratteristiche aggiuntive nella rete (sicurezza, Quality of Service, scalabilità, ...).
+</li></ul><p class='vspace'>Non sono invece vincoli di progettazione la piattaforma su cui vengono eseguiti i servizi (non importa se il server è Unix e il client è Mac, o viceversa), né il tipo di linguaggio usato per implementarli.
+</p>
+<p class='vspace'>Nei prossimi sottoparagrafi approfondiremo alcuni dei principi architetturali citati.
+</p>
+<p class='vspace'><a name='p21' id='p21'></a>
+</p><h3>2.1 Design delle URL</h3>
+<h4>Linee guida</h4>
+<p>Ecco alcune linee guida da seguire nella fase di progettazione delle URI:
+</p><ul><li>usare nomi (<em>cosa sono</em>) e non verbi (<em>cosa fanno</em>):
+<ul><li><em>Cattivo esempio</em>: www.rai.it/<del>scegliprogramma</del>
+</li><li><em>Buon esempio</em>: www.rai.it/programma
+</li></ul></li><li>non utilizzare le URI per passare i parametri attraverso una GET: in un'architettura RESTful le GET dovrebbero usate esclusivamente per operazioni SAFE (<a href='#p3'>vedi paragrafo</a>). Inoltre in questo modo si contribuisce a mantenere le URI più corte e facili da ricordare:
+<ul><li><em>Cattivo esempio</em>: www.rai.it/programma/<del>scegli.php?nome=blob</del>
+</li><li><em>Buon esempio</em>: www.rai.it/programma/blob
+</li></ul></li><li>usare solo lettere minuscole;
+</li><li>le risorse dovrebbero avere un nome plurale, gli oggetti singolare;
+</li><li>scegliere una struttura chiara, intuitiva e facilmente comprensibile:
+<ul><li><em>Cattivo esempio</em>: www.rai.it/<del>pg11/pln.php?nm=blob</del>
+</li><li><em>Buon esempio</em>: www.rai.it/programma/blob/orario
+</li></ul></li><li>nascondere la tecnologia implementativa utilizzata, in primo luogo perché all'utente non gliene frega nulla, e in secondo luogo per evitare di fornire indicazioni utili a malintenzionati. Quindi ad esempio niente URL come <code class='escaped'>www.rai.it/servlet/programma</code>, che risparmierebbero molto tempo a potenziali hacker per scoprire come bucarmi il servizio web;
+</li><li>alle istanze delle risorse (che hanno vita limitata rispetto al sistema) è comunemente assegnato un identificativo numerico;
+</li><li>quando progettiamo la struttura URI dobbiamo tenere conto che l'obiettivo è non cambiarla più. Il REST infatti introduce un accoppiamento molto forte tra client e server (ad esempio incoraggia l'utilizzo di <em>Segnalibri</em>), e spezzarlo è male. Se proprio dobbiamo cambiare una URL, usiamo le <code class='escaped'>redirect</code>;
+</li><li>un altro motivo per usare le <code class='escaped'>redirect</code> è per indirizzare risorse con contenuti sensibili, come informazioni personali degli utenti. Ad esempio si potrebbe fare in modo che la richiesta della URL <code class='escaped'>www.banca.it/mio-username/saldo</code> mi ridiriga alla URL col mio username, ad esempio <code class='escaped'>www.banca.it/guido/saldo</code> (possibilmente solo dopo avermi fatto autenticare).
+</li></ul><div class='vspace'></div><h4>URL logiche e URL fisiche</h4>
+<p>Una <em>risorsa</em> è un'entità concettuale, e una <em>rappresentazione</em> è la concreta manifestazione della risorsa sull'applicazione del client. Abbiamo detto che ogni risorsa ha un URL associata, ma va chiarito che questa non è una URL fisica, bensì logica.<br />Per capire meglio consideriamo questa URL di esempio, che restituisce la rappresentazione della risorsa "3230° puntata di Blob":<br /><code class='escaped'>http://www.rai.it/programma/blob/3230</code><br />L'identificativo numerico non deve farci credere che esistono (almeno) 3230 file, uno per ogni rappresentazione della risorsa "puntata di Blob": bastano infatti 2-3 file di script per generare automaticamente il contenuto di tutte le rappresentazioni. Dato però che all'utente va nascosta la tecnologia implementativa dietro ogni URL, gli sarà fornito un indirizzo alla risorsa logica e non a quella fisica che la genera. <br />Ecco dunque perché le URL di un servizio REST sono chiamate <strong>URL logiche</strong>, perché non implicano l'esistenza di un file fisico associato.
+</p>
+<p class='vspace'>Breve nota sulle istanze delle risorse: hanno vita limitata rispetto 'identificativo numerico: si tratta di una pratica comune per identificare le istanze delle risorse. Queste
+</p>
+<p class='vspace'><a name='p22' id='p22'></a>
+</p><h3>2.2 Interfaccia comune</h3>
+<p>Avere un'interfaccia comune tra client e server semplifica e disaccoppia l'architettura, facendo sì che le due componenti possano evolvere in modo indipendente. L'interfaccia standard per i servizi web RESTful è il protocollo HTTP, non a caso quello di trasferimento di un ipertesto. Le operazioni supportate sono le cosiddette funzioni <strong>CRUD</strong>:
+</p><ul><li><span style='font-size:83%'>(<strong><em>C</strong>REATE</em>)</span> <strong>POST</strong>, per creare una sotto-risorsa sul server;
+</li><li><span style='font-size:83%'>(<strong><em>R</strong>EAD</em>)</span> <strong>GET</strong>, per recuperare lo stato corrente di una risorsa. Va utilizzata solo per operazioni di sola lettura;
+</li><li><span style='font-size:83%'>(<strong><em>U</strong>PDATE</em>)</span> <strong>PUT</strong>, per inizializzare o aggiornare lo stato della risorsa con l'URI data;
+</li><li><span style='font-size:83%'>(<strong><em>D</strong>ELETE</em>)</span> <strong>DELETE</strong>, per cancellare una risorsa (dopo la sua esecuzione l'URI che la identifica non sarà più valida).
+</li></ul><p class='vspace'>Per essere più completi, ecco una tabella che mostra gli effetti delle richieste HTTP su due diversi tipi di URI: quelle che identificano gli insiemi di risorse e quelle che le identificano singolarmente.
+</p>
+<div class='vspace'></div><table width='100%' cellpadding='5' >
+<tr ><td bgcolor='#dddddd'  valign='top'>Risorsa
+</td><td align='center' bgcolor='#dddddd'  valign='top'><strong>POST</strong>
+</td><td align='center' bgcolor='#dddddd'  valign='top'><strong>GET</strong>
+</td><td align='center' bgcolor='#dddddd'  valign='top'><strong>PUT</strong>
+</td><td align='center' bgcolor='#dddddd'  valign='top'><strong>DELETE</strong>
+</td></tr><tr ><td align='center'  valign='top'>URI insiemi di risorse<br /><code class='escaped'>www.rai.it/programmi</code>
+</td><td align='center'  valign='top'>Crea un nuovo membro dell'insieme (la sua URI è assegnata automaticamente, e di solito viene ritornata al client)
+</td><td align='center'  valign='top'>Mostra l'elenco delle URI e qualche dettaglio aggiuntivo sui membri dell'insieme
+</td><td align='center'  valign='top'>Sostituisce l'intero insieme con un altro
+</td><td align='center'  valign='top'>Cancella l'intero insieme
+</td></tr><tr ><td align='center' bgcolor='#eeeeee'  valign='top'>URI singole risorse<br /><code class='escaped'>www.rai.it/programmi/blob</code>
+</td><td align='center' bgcolor='#eeeeee'  valign='top'>Tratta la risorsa indicata come se fosse un insieme e crea una nuova sotto-risorsa al suo interno
+</td><td align='center' bgcolor='#eeeeee'  valign='top'>Restituisce una rappresentazione della risorsa indicata, espressa nel tipo MIME più appropriato
+</td><td align='center' bgcolor='#eeeeee'  valign='top'>Sostituisce la risorsa indicata, e se non esiste la crea
+</td><td align='center' bgcolor='#eeeeee'  valign='top'>Cancella la risorsa indicata dal suo insieme
+</td></tr></table>
+<div class='vspace'></div><h4>Codici di risposta</h4>
+<p>Un altro aspetto importante di una chiamata REST è quella di ritornare il codice di risposta HTTP appropriato. Vediamo i principali:
+</p><ul><li><strong>200 OK</strong>: la richiesta ha avuto successo;
+</li><li><strong>201 Created</strong>: la richiesta è stata processata e il risultato è la creazione di una nuova risorsa. A questa deve essere assegnato un URL (o più di uno) da ritornare al client chiamante;
+</li><li><strong>204 No Content</strong>: il server ha processato la richiesta ma non ha bisogno di ritornare nulla al client;
+</li><li><strong>303 See Other</strong>: si tratta di una <code class='escaped'>redirect</code>, e dice che la risposta alla richiesta può essere trovata in un URL diverso da quello contattato ;
+</li><li><strong>400 Bad Request</strong>: il server non capisce la richiesta a causa di errori nella sintassi;
+</li><li><strong>401 Unauthorized</strong>: la richiesta richiede l'autenticazione dell'utente. La risposta deve avere un campo "WWW-Authenticate" nel suo header, che contenga un challenge applicabile alla risorsa richiesta;
+</li><li><strong>404 Not Found</strong>: la risorsa richiesta non è stata trovata;
+</li><li><strong>405 Method Not Allowed</strong>: il metodo specificato nella richiesta non è applicabile alla risorsa identificata dall'URL. La risposta deve avere un campo "Allow" nel suo header, che contenga la lista dei metodi validi per quella risorsa;
+</li><li><strong>422 Unprocessable Entity</strong>: il server riconosce il formato della richiesta, ma non è in grado di processare le istruzioni in essa contenute.
+</li></ul><p class='vspace'><a name='p23' id='p23'></a>
+</p><h3>2.3 Flusso tra ipertesti</h3>
+<p>Quando si progetta la modalità di navigazione tra ipertesti per i trasferimenti di stato, la regola d'oro è: MAI lasciare al client il compito di costruire la URL per effettuare azioni sulla risorsa, ma INCLUDERLE nella risposta REST sotto forma di elenco di link.
+</p>
+<p class='vspace'>Ad esempio se il client vuole ottenere l'elenco dei programmi della RAI e successivamente accedere alla rappresentazione di uno di questi:
+</p><ul><li><em>Cattiva soluzione</em>: viene dato al client l'elenco dei nomi dei programmi, lasciandogli il compito di costruire l'URL sapendo che lo schema è <code class='escaped'>www.rai.it/programma/[nome_programma]</code>;
+</li><li><em>Buona soluzione</em>: viene dato al client l'elenco delle URL dei programmi già creato lato server.
+</li></ul><p class='vspace'><a name='p24' id='p24'></a>
+</p><h3>2.4 Stateless o stateful?</h3>
+<p>Abbiamo detto che le comunicazioni tra client e server devono essere stateless, ma questo non vale per i servizi web o le loro risorse. Come il significato stesso del nome "REST" ci ricorda, tutto ruota intorno al problema di concordare uno stato in un sistema distribuito!<br />Dal punto di vista dei client lo stato è catturato dalla posizione corrente nell'ipertesto, cioè l'interfaccia attraverso cui possono interagire con le risorse. Il server può influenzare le transizioni di stato del client inviando diverse rappresentazioni nelle risposte alle GET, o inviando diversi collegamenti ipertestuali da seguire.<br />Dal punto di vista dei server è lo stato della risorsa che cattura lo stato attuale del servizio. In questa prospettiva il client non è solo colui che ha accesso alla risorsa (nelle sue diverse rappresentazioni), ma anche colui che ne può manipolare lo stato usando l'interfaccia CRUD.
+</p>
+<p class='vspace'>Nello schema sotto illustreremo meglio quanto detto finora:
+</p><ul><li>il client si trova nello stato "...";
+</li><li>il client chiede accesso alla risorsa <code class='escaped'>risorsa</code>, e si sposta nello stato "000";
+</li><li>il server gli risponde che accedendo a quella risorsa può passare allo stato "111" o "222";
+</li><li>il client sceglie di passare allo stato "111", e il server gli restituisce l'xml relativo.
+</li></ul><div class='vspace'></div><pre class='escaped'>
+STATO DEL CLIENT ###                      ### STATO DELLA RISORSA
+                 ###                      ###
+                  |                        |
+       ...        | GET /risorsa           |   ------------------
+       ...        |-----------------------&gt;|   |/risorsa        |
+                  |&lt;-----------------------|   |----------------|
+        |         | &lt;a href="1" /&gt;         |   |&lt;a href="1" /&gt;  |
+        |         | &lt;a href="2" /&gt;         |   |&lt;a href="1" /&gt;  |
+                  |                        |   |                |
+       000        |                        |   |                |
+       000        |                        |   |                |
+                  |                        |   |                |
+      /   \       | GET /1                 |   |/1              |
+     /     \      |-----------------------&gt;|   |----------------|
+                  |&lt;-----------------------|   |&lt;xml&gt;           |
+   111     222    | 200 OK                 |   |                |
+   111     222    | &lt;xml&gt;                  |   |----------------|
+                  |                        |
+                  |                        |</pre>
+<p class='vspace'><a name='p3' id='p3'></a>
+</p><h2>3. Operazioni SAFE e UNSAFE</h2>
+<p>La funzione POST può essere usata sia in lettura che in scrittura, quindi va trattata con attenzione perché potrebbe cambiare lo stato della risorsa con effetti indesiderati. Ad esempio, se vogliamo incrementare il saldo di un conto corrente di 200€ utilizzando una POST e qualcosa va storto nella comunicazione (ad esempio il server va giù), ripetere l'operazione potrebbe depositare 400€ invece della somma corretta. <br />Le altre funzioni CRUD sono definite invece <strong>idempotenti</strong>, perché la loro ripetizione non ha effetti collaterali sulla risorsa:
+</p><ul><li>la GET è un'operazione di sola lettura, quindi ripetendola più volte si ottiene una lettura ripetuta della risorsa;
+</li><li>la PUT è un'operazione di aggiornamento, quindi ripetendola più volte si otterrà una sovrascrittura dello stato della risorsa sempre con lo stesso valore;
+</li><li>la DELETE è un'operazione di eliminazione, quindi se la risorsa è già stata cancellata non avrà alcun effetto, altrimenti la eliminerà.
+</li></ul><div class='vspace'></div>In particolare, le operazioni idempotenti che non modificano lo stato del server (come la GET) sono definite <strong>SAFE</strong>; mentre quelle <strong>UNSAFE</strong> (come la POST) sono l'esatto opposto. Per limitare i potenziali danni di un'esecuzione errata di una UNSAFE è opportuno riformularla sotto forma di una serie di operazioni SAFE. Ad esempio, trasformare l'operazione <code class='escaped'>Deposita(200€);</code> in:<br /><pre class='escaped'>s = GetSaldo() // si usa una GET (operazione SAFE)
+s = s + 200€ // operazione eseguita in locale
+SetSaldo(s) // si usa una PUT (operazione idempotente)</pre>
+<p class='vspace'>Si ottiene perciò uno schema di questo tipo:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+			 /saldo
+
+OOO                      000
+OOO                      000
+ |                        |
+ |  GET /saldo            |
+ |-----------------------&gt;|
+ |&lt;-----------------------|
+ |  200 OK                |
+ |  s: 26                 |
+ |                        |
+ |                        |
+ | PUT /saldo             |
+ | s: 26                  |
+ |-----------------------&gt;|
+ |&lt;-----------------------|
+ |  200 OK                |
+ |  s: 27                 |</pre>
+<p class='vspace'>Il servizio potrebbe essere ulteriormente raffinato, ad esempio tenendo conto delle modifiche concorrenti allo stato della risorsa da parte di due client diversi. Queste potrebbero generare infatti problemi come questo:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+			 /saldo
+
+OOO                      000                      888
+OOO                      000                      888
+ |                        |                        |
+ |  GET /saldo            |                        |
+ |-----------------------&gt;|                        |
+ |&lt;-----------------------|  PUT /saldo            |
+ |  200 OK                |  s: 26                 |
+ |  s: 26                 |&lt;-----------------------|
+ |                        |-----------------------&gt;|
+ |                        |  200 OK                |
+ | PUT /saldo             |  s: 27                 |
+ | s: 26                  |                        |
+ |-----------------------&gt;|                        |
+ |&lt;-----------------------|                        |
+ |  409 Conflict          |                        |</pre>
+<p class='vspace'>Il messaggio di errore 409 informa che c'è stato un conflitto dovuto all'inconsistenza della risorsa, che era stata infatti chiamata con un valore diverso da quello corrente.
+</p>
+<p class='vspace'>Nei sottoparagrafi seguenti vedremo altri esempi di soluzione dei problemi di utilizzo di operazioni UNSAFE.
+</p>
+<p class='vspace'><a name='p31' id='p31'></a>
+</p><h3>3.1 Esempio "Ordini"</h3>
+<p>Abbiamo creato un servizio web che tra le altre cose permette all'utente di ordinare un oggetto e farselo recapitare a casa. Ciò che vogliamo è che nessun ordine venga perso, e che nessun ordine venga processato due volte (o spediremmo due oggetti uguali). In breve:
+</p><ul><li>un singolo ordine deve essere processato una volta sola;
+</li><li>in caso di fallimento dell'ordinazione, possiamo tentare ancora.
+</li></ul><p class='vspace'>La soluzione è fare in modo che ogni richiesta d'ordine sia unica. Come? Ad esempio, se stiamo facendo compilare l'ordine attraverso una form html potremo inviare un parametro nascosto (insieme a quelli inseriti dall'utente) che faccia creare lato server un "ticket" dell'ordine. In questo modo se il server riceve una richiesta d'ordine con un ticket già noto potrà facilmente scartarla in quanto duplicato. Vediamo lo schema:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+CLIENT			        SERVER
+
+ OOO                             000
+ OOO                             000
+  |                               |
+  |  POST                         |
+  |------------------------------&gt;| (insieme "ticket")
+  |&lt;------------------------------|
+  |  200 OK                       |
+  |  ticket                       |
+  |                               |
+  |                               |
+  | POST                          |
+  | ordine+ticket                 |
+  |------------------------------&gt;| (insieme "ordini aperti")
+  |&lt;------------------------------|
+  |  201 Created                  |
+  |  Location: URI ordini aperti  |</pre>
+<p class='vspace'>Alcune caratteristiche che deve avere il ticket:
+</p><ul><li>deve essere unico (ad esempio GUID, UUID, ...);
+</li><li>non deve essere salvato sul server (o basterebbero una decina di client scritti male perché la loro connessione continui a fallire e siano richiesti milioni di ticket);
+</li><li>deve essere robusto;
+</li><li>i ticket usati con successo devono essere archiviati e associati agli ordini creati.
+</li></ul><p class='vspace'><a name='p32' id='p32'></a>
+</p><h3>3.2 Esempio "Ordini 2"</h3>
+<p>Proviamo a trovare una soluzione alternativa a quella descritta nel paragrafo precedente. <br />Se prima abbiamo "incorporato" il ticket nei dati inviati tra client e server, ora lo utilizzeremo per creare un <em>ordine pendente</em>, cioè una URL su cui il client potrà ordinare usando una PUT. Una volta ordinato con successo, l'ordine pendente sarà spostato nell'insieme di risorse <em>ordini aperti</em>, a cui il client sarà rediretto con una risposta dal server con codice di stato 303 ("la risposta alla richiesta può essere trovata sotto un'altra URI usando il metodo GET").<br />Ecco lo schema:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+CLIENT			          SERVER
+
+ OOO                               000
+ OOO                               000
+  |                                 |
+  |  POST                           |
+  |--------------------------------&gt;| (insieme "ordini pendenti")
+  |&lt;--------------------------------|
+  |  201 Created                    |
+  |  Location: URI ordine pendente  |
+  |                                 |
+  |                                 |
+  | PUT                             |
+  | ordine                          |
+  |--------------------------------&gt;| (ordine pendente)
+  |&lt;--------------------------------|
+  |  303 See Other                  |
+  |  Location: URI ordine aperto    |</pre>
+<p class='vspace'>Si tratta di una soluzione migliore della precedente, perché usa l'operazione PUT che è meravigliosamente idempotente: potremo quindi continuare a inoltrare la richiesta finché questa non avrà successo.<br />L'insieme "ordini pendenti" non sarà altro che una nuova risorsa, che avrà dunque bisogno di essere considerata nella fase di design delle URI.
+</p>
+<p class='vspace'><a name='p4' id='p4'></a>
+</p><h2>4. Metodologia di progettazione</h2>
+<p>Una possibile metodologia di progettazione di un servizio REST è la seguente:
+</p><ol><li>identificare le risorse da mostrare come servizi (ad esempio "elenco programmi", "report annuali di rischio", "catalogo libri", "tratte aeree", "sondaggi", ...);
+</li><li>modellare le relazioni (ad esempio "è contenuta", "referenzia", "è una transizione di stato", ...) tra risorse tramite collegamenti ipertestuali. In questa fase bisogna evitare di creare delle "isole", ovvero rappresentazioni scollegate o irraggiungibili dalle altre;
+</li><li>definire URI appropriate per indirizzare le risorse;
+</li><li>decidere cosa far fare alle risorse attraverso le funzioni messe a disposizione dall'interfaccia comune. Si tenga conto che le informazioni andrebbero rivelate gradualmente: meglio avere tanti link per ottenere maggiori informazioni che inviare un singolo mega-documento di risposta;
+</li><li>progettare e documentare la rappresentazione..
+<ul><li>..del formato delle richieste e delle risposte, utilizzando uno schema come il DTD, il W3C schema, ...;
+</li><li>..del servizio, utilizzando un documento WSDL o un semplice html.
+</li></ul></li><li>implementare e fare il deploy del web server;
+</li><li>testarlo con un browser.
+</li></ol><p class='vspace'><a name='p5' id='p5'></a>
+</p><h2>5. Esempio finale: SONDAGGIO</h2>
+<p>Progettiamo l'applicazione web "<strong>POTA, VOTA!</strong>" che permette di creare sondaggi e di votare, e proviamo a seguire i primi quattro passi della metodologia di progettazione descritti sopra.
+</p>
+<p class='vspace'><a name='p51' id='p51'></a>
+</p><h3>5.1 Identificare le risorse</h3>
+<p>Le risorse individuate sono: 
+</p><ul><li><code class='escaped'>poll</code>, che identifica l'insieme dei sondaggi;
+</li><li><code class='escaped'>vote</code>, che identifica l'insieme dei voti.
+</li></ul><p class='vspace'><a name='p52' id='p52'></a>
+</p><h3>5.2 Relazioni tra le risorse</h3>
+<p>Ogni sondaggio dell'insieme <code class='escaped'>poll</code> è identificato da un {id}, così come le istanze dell'insieme <code class='escaped'>vote</code>. L'{id} potrebbe essere benissimo un identificativo numerico.<br />Ogni istanza di sondaggio contiene la sotto-risorsa voto, che a sua volta contiene i voti effettivi degli utenti. Graficamente potremo avere una struttura di questo tipo:
+</p>
+<div class='vspace'></div><pre class='escaped'>poll
+   {id1}
+      vote
+         {id4}
+         {id5}
+   {id2}
+   {id3}
+   ...
+</pre>
+<p class='vspace'>La strategia con cui vengono assegnati gli {id} dipende dalla funzione CRUD utilizzata per istanziare le risorse. La questione sarà approfondita nei paragrafi successivi.
+</p>
+<p class='vspace'><a name='p53' id='p53'></a>
+</p><h3>5.3 Definire le URI</h3>
+<p>Le URI delle risorse dovranno incorporare gli {id} delle loro istanze, quindi avremo qualcosa come:
+</p><ul><li><code class='escaped'>www.potavota.it/poll/01234</code>, si riferisce al sondaggio 01234;
+</li><li><code class='escaped'>www.potavota.it/poll/01234/vote/2</code>, si riferisce al voto 2 del sondaggio 01234.
+</li></ul><p class='vspace'><a name='p54' id='p54'></a>
+</p><h3>5.4 Definire l'interfaccia comune</h3>
+<p><a name='p541' id='p541'></a>
+</p><h4>5.4.1 Creare un sondaggio</h4>
+<p>Per creare un sondaggio dovremo:
+</p><ol><li>creare un documento xml conforme allo schema che "POTA, VOTA!" ha progettato per i sondaggi (e che ad esempio ha reso noto in un documento WSDL);
+</li><li>inviare il documento al web server usando una POST.
+</li></ol><div class='vspace'></div><pre class='escaped'>
+	  	                     /poll
+			             /poll/01234
+
+888 -------------------------------&gt; 000
+888 &lt;------------------------------- 000
+
+  POST /poll
+  Host: www.potavota.it
+  Content-Type: application/xml
+  &lt;?xml version="1.0"&gt;		
+  &lt;options&gt;A,B,C&lt;/options&gt;	
+
+  201 Created		
+  Location: /poll/01234</pre>
+<p class='vspace'>Il server assegna al sondaggio appena creato una URL (<code class='escaped'>www.potavota.it/poll/01234</code>), che in futuro può essere usata come servizio web anche da altri client.<br />Ripetiamo per l'ennesima volta che il modo in cui il web service genera il sondaggio è completamente trasparente al client: l'unica cosa che deve sapere è che se invia quell'xml con una POST otterrà la creazione di una nuova istanza della risorsa <code class='escaped'>poll</code>. In virtù di questa trasparenza, i programmatori del servizio sono liberi di modificare l'implementazione delle risorse senza che il client ne risenta.
+</p>
+<p class='vspace'><a name='p542' id='p542'></a>
+</p><h4>5.4.2 Leggere voti o sondaggi</h4>
+<p>Per leggere il contenuto di un messaggio o di un voto useremo una GET.
+</p>
+<div class='vspace'></div><pre class='escaped'>
+/poll
+/poll/01234
+/poll/01234/vote
+
+000 &lt;------------------------------- 888
+000 -------------------------------&gt; 888
+
+  GET /poll/01234 HTTP/1.1
+  Host: www.potavota.it
+  Accept: application/xml
+
+  200 OK
+  &lt;options&gt;A,B,C&lt;/options&gt;
+  &lt;votes href="/vote"&gt;</pre>
+<p class='vspace'>Il formato del documento che il server deve restituire a una GET non deve essere specificato nell'URI, ma nell'header della GET come valore del parametro <code class='escaped'>Accept:</code>, in cui va inserita la lista di tipi MIME accettati dal client. <br />Forzare il formato del documento da ricevere nell'URI (ad esempio con una <code class='escaped'>GET www.potavota.it/poll/01234.html</code>) non è un'ottima strategia per il client, perché il server potrebbe non essere in grado di rappresentare la risorsa nel formato richiesto e non gli ritornerebbe niente.
+</p>
+<p class='vspace'><a name='p543' id='p543'></a>
+</p><h4>5.4.3 Votare</h4>
+<p>Partecipare al sondaggio significa creare una sotto-risorsa di tipo voto all'interno del <code class='escaped'>poll</code> interessato. Nello schema seguente (come nei successivi) sarà mostrata a sinistra l'operazione e a destra la verifica del suo risultato utilizzando una GET:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+			              /poll
+			              /poll/01234
+		  	              /poll/01234/vote
+			              /poll/01234/vote/1
+
+888 --------------------------------&gt; 000 &lt;------------------------------ 888
+888 &lt;-------------------------------- 000 ------------------------------&gt; 888
+
+  POST /poll/01234/vote		            GET /poll/01234
+  Host: www.potavota.it                     Host: www.potavota.it
+  Content-Type: application/xml             Accept: application/xml
+  &lt;?xml version="1.0"&gt;	
+  &lt;name&gt;Pippo&lt;/name&gt;		            200 OK
+  &lt;choice&gt;B&lt;/choice&gt;                        &lt;options&gt;A,B,C&lt;/options&gt;
+                                            &lt;votes&gt;
+  201 Created			              &lt;vote id="1"&gt;
+  Location:			                &lt;name&gt;Pippo&lt;/name&gt;
+  /poll/01234/vote/1		                &lt;choice&gt;B&lt;/choice&gt;
+				     	      &lt;/vote&gt;
+				            &lt;/votes&gt;</pre>				
+<p class='vspace'><a name='p544' id='p544'></a>
+</p><h4>5.4.4 Cambiare il voto</h4>
+<p>Cambiare il voto in un sondaggio significa aggiornare il valore di quello già dato, per cui dovremo utilizzare la chiamata PUT:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+			              /poll
+			              /poll/01234
+		  	              /poll/01234/vote
+			              /poll/01234/vote/1
+
+888 --------------------------------&gt; 000 &lt;------------------------------ 888
+888 &lt;-------------------------------- 000 ------------------------------&gt; 888
+
+  PUT /poll/01234/vote/1 HTTP/1.1           GET /poll/01234
+  Host: www.potavota.it                     Host: www.potavota.it
+  Content-Type: application/xml             Accept: application/xml
+  &lt;?xml version="1.0"&gt;
+  &lt;name&gt;Pippo&lt;/name&gt;		            200 OK
+  &lt;choice&gt;C&lt;/choice&gt;                        &lt;options&gt;A,B,C&lt;/options&gt;
+                                            &lt;votes&gt;
+  200 OK			     	      &lt;vote id="1"&gt;
+				                &lt;name&gt;Pippo&lt;/name&gt;
+				                &lt;choice&gt;C&lt;/choice&gt;
+					      &lt;/vote&gt;
+				            &lt;/votes&gt;</pre>
+<p class='vspace'>Ora che abbiamo visto sia la POST che la PUT possiamo chiederci: "qual è il metodo corretto per creare una risorsa inizializzando il suo stato??"<br />La risposta è: <strong>dipende</strong>. Da cosa? Dal modo in cui vogliamo che gli {id} siano generati:
+</p><ul><li>Con la PUT l'inizializzazione dell'istanza avviene insieme alla richiesta:<br /><pre class='escaped'>-&gt; PUT /resource/{id} 
+&lt;- 201 Created</pre>Il sistema è a prova di fallimenti (la PUT è idempotente), ma dovremo assicurare che l'{id} sia univoco (due client concorrenti potrebbero creare due risorse diverse assegnandogli lo stesso identificativo). La soluzione potrebbe essere l'utilizzo di una GUID;
+<div class='vspace'></div></li><li>Con la POST lasciamo al server l'onere di creare un {id} univoco:<br /><pre class='escaped'>-&gt; POST /resource 
+&lt;- 301 Moved Permanently 
+   Location: /resouce/{id}</pre>Il problema di questa soluzione è complementare a quello precedente: la POST è UNSAFE, quindi ripeterla due volte in caso di fallimento della comunicazione potrebbe avere effetti indesiderati.
+</li></ul><p class='vspace'>In realtà c'è una terza via: predisporre una URL del tipo <code class='escaped'>www.potavota.it/poll/poll-new</code> da richiamare con una GET, che restituirà al client tutte le informazioni necessarie per creare una nuova risorsa con una POST. Queste informazioni potrebbero essere sotto forma di form html, o di prototipo xml, o di altro tipo.
+</p>
+<p class='vspace'><a name='p545' id='p545'></a>
+</p><h4>5.4.5 Cancellare voti o sondaggi</h4>
+<p>Infine, per cancellare un voto già dato o un intero sondaggio si userà la richiesta DELETE. Nell'esempio che segue mostreremo come avviene la cancellazione del sondaggio con ID <code class='escaped'>01234</code> (si noti che la GET successiva restituisce l'avviso che la risorsa non è stata trovata):
+</p>
+<div class='vspace'></div><pre class='escaped'>
+			      /poll
+			      /poll/01234
+		 	      /poll/01234/vote
+			      /poll/01234/vote/1
+
+888 ------------------------&gt; 000 &lt;------------------------ 888
+888 &lt;------------------------ 000 ------------------------&gt; 888
+
+DELETE /poll/01234		     GET /poll/01234
+                                     Host: www.potavota.it
+200 OK				     Accept: application/xml
+
+                                     404 Not Found</pre>
+<p class='vspace'><a name='p6' id='p6'></a>
+</p><h2>6. Breve considerazione sui cookie</h2>
+<p>In un'architettura REST ben progettata i cookie non dovrebbero essere né presenti, né tanto meno necessari. In primo luogo per una coerenza di design: le chiamate devono essere stateless, quindi dovrebbero contenere al loro interno tutte le informazioni necessarie perché il server le processi. Poiché i cookie per definizione sono informazioni esterne alle chiamate, rappresenterebbero un'eccezione allo stile architetturale.<br />Il secondo motivo riguarda invece la scalabilità del sistema. Supponiamo ad esempio che i cookie contengano anche solo una <em>chiave di sessione</em> che catturi lo stato dell'applicazione. In questo caso il client dovrà trasferire meno informazioni per chiamata, ma il server sarà obbligato a salvarsi da qualche parte i dati contenuti nel cookie: più sono i client e più saranno i dati da salvare. Inoltre il server si dovrà dotare di un qualche meccanismo di <em>garbage collection</em> per ripulire tutte le sessioni diventate ormai inattive, e all'aumentare dei client serviti il carico di lavoro diventerebbe sempre più oneroso.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaProcessiAziendali.html'>Torna alla pagina di Ingegneria dei Processi Aziendali</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 16, 2011, at 11:35 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PanoramicaSulREST?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PanoramicaSulREST?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

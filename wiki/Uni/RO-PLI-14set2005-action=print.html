@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ricerca Operativa - PLI - Incendi - 14.09.05</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='RO-PLI-14set2005.html' title='Ricerca Operativa - PLI - Incendi - 14.09.05'>Ricerca Operativa - PLI - Incendi - 14.09.05</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ricerca Operativa - PLI - Incendi - 14.09.05 ::</strong>
+</pre><div class='vspace'></div><h2>Testo del problema</h2>
+<p>Il tempo necessario per spegnere un incendio cresce col tempo, poiché l’incendio aumenta di dimensioni. Nel caso in cui diversi focolai di incendio vengano segnalati contemporaneamente e si abbia a disposizione una sola squadra antincendio, si pone il problema decisionale di scegliere l’ordine in cui spegnere gli incendi.<br />Una volta iniziate le operazioni di spegnimento di un incendio esse non possono essere interrotte prima che l’incendio sia stato spento completamente.<br />Si ipotizza che la relazione tra il tempo necessario per lo spegnimento e l’istante di inizio dello spegnimento sia la seguente: d(i) = a(i) + b(i)*r(i), dove d(i) è la durata delle operazioni di spegnimento dell’incendio i-esimo, r(i) è il ritardo, cioè la distanza in tempo tra l’istante in cui inizia l’incendio e l’istante in cui inizia lo spegnimento, ed infine a(i) e b(i) sono parametri caratteristici dell’incendio.<br />Si vuole minimizzare la durata complessiva delle operazioni di spegnimento, conoscendo per un dato insieme di incendi gli istanti di accensione ed i parametri caratteristici a e b.<br />Formulare il problema, classificarlo e risolverlo con i dati del file INCENDI.TXT. Discutere l’ottimalità e l’unicità della soluzione ottenuta.
+</p>
+<div class='vspace'></div><h3>Dati</h3>
+<pre class='escaped'>
+Gli incendi sono 5.
+I coefficienti che descrivono il tempo necessario a spegnere ogni 
+incendio sono i seguenti:
+
+Incendio   1    2    3    4    5
+a          5    8   10    9    3
+b         0.1  0.3  0.2  0.5  0.4 
+accens.    0    0    2    0    4
+
+L'ultima riga della tabella indica l'istante in cui inizia l'incendio.
+</pre>
+<div class='vspace'></div><h2>Formulazione del problema</h2>
+<h3>Dati</h3>
+<ul><li><strong>inc = 5</strong> (numero di incendi in atto)
+</li><li><strong>par = 2</strong> (numero di parametri caratteristici)
+</li><li><strong>param<sub>ij</sub></strong> (parametro j=1..2 dell'incendio i=1..5)
+</li><li><strong>temAcc<sub>i</sub></strong> (istante di accensione dell'incendio i=1..5)
+</li></ul><div class='vspace'></div><h3>Variabili</h3>
+<ul><li><strong>x<sub>ik</sub></strong> (indica se lo spegnimento dell'incendio i=1..5 precede quello dell'incendio k=1..5) (binaria)
+</li><li><strong>y<sub>i</sub></strong> (istante di tempo in cui si inizia lo spegnimento dell'incendio i=1..5)
+</li></ul><div class='vspace'></div><h3>Funzione obiettivo</h3>
+<p>Bisogna minimizzare la massima durata complessiva delle operazioni di spegnimento, quindi introduciamo la variabile ausiliaria z ma che poi definiremo nei vincoli:<br /><strong>min z</strong>
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<p>Come prima cosa definiamo la variabile ausiliaria z introducendone una nuova: temFin<sub>i</sub>, che indica l'istante di tempo in cui si conclude lo spegnimento dell'incendio i:<br /><strong>z &gt;= temFin<sub>i</sub></strong> (per ogni i)
+</p>
+<p class='vspace'>Per definire temFin abbiamo bisogno di un'altra variabile ausiliaria: temIni<sub>i</sub>, che indica l'istante di tempo in cui inizio lo spegnimento dell'incendio i:<br /><strong>temFin<sub>i</sub> = temIni<sub>i</sub> + (param<sub>i1</sub> + param<sub>i2</sub> * (temIni<sub>i</sub> – temAcc<sub>i</sub>))</strong> (per ogni i)<br />che si legge “istante in cui finisce lo spegnimento dell'incendio i = istante in cui inizia lo spegnimento di i + (primo parametro dell'incendio i + secondo parametro * (istante inizio spegnimento – istante accensione incendio))”
+</p>
+<p class='vspace'>Ora bisogna imporre che l'istante di inizio spegnimento dell'incendio i sia maggiore o uguale all'istante di fine spegnimento dell'incendio k (posso dedicarmi a un solo incendio alla volta), a meno che k non preceda i:<br /><strong>temIni<sub>i</sub> &gt;= temFin<sub>k</sub> – 10000 * x<sub>ik</sub></strong>
+</p>
+<p class='vspace'>Perché abbiamo moltiplicato per 10000? Per rispondere a questa domanda dobbiamo prima spiegare perché abbiamo sottratto un valore a temFin<sub>k</sub>, e cioè che bisogna tener conto dell'eventualità in cui l'incendio k preceda l'incendio i. Nel caso in cui x<sub>ik</sub> vale 0 (quindi se i non precede k) non c'è niente da spiegare: temIni<sub>i</sub> deve essere maggiore o uguale a temFin<sub>k</sub>, ovvero prima di iniziare a spegnere l'incendio i dobbiamo aver finito con il k. Se invece x<sub>ik</sub> vale 1 significa che i precede k, e quindi che temIni<sub>i</sub> dovrà essere minore di temFin<sub>k</sub>! Ma se sottraiamo soltanto 1 a temFin<sub>k</sub> c'è il rischio che il risultato sia ancora troppo alto perché possa essere correttamente pesato nella valutazione complessiva di tutti gli incendi, quindi moltiplichiamo il tutto per 10000 (arbitrariamente), così che temIni<sub>i</sub> debba semplicemente essere maggiore o uguale a un numero negativo (vincolo molto meno stringente) e se la possa giocare alla pari con tutti gli altri incendi.
+</p>
+<div class='vspace'></div><h2>Linghizzazione del problema</h2>
+<pre class='escaped'>
+! esercizio: Incendi;
+model:
+
+sets:
+incendi /1..5/: paramA, paramB, temIni, temAcc, temFin;
+coppia (incendi,incendi): x;
+endsets
+
+data:
+paramA = 5 8 10 9 3;
+paramB = 0.1 0.3 0.2 0.5 0.4;
+temAcc = 0 0 2 0 4;
+enddata
+
+
+! funzione obiettivo;
+min = z;
+
+
+! vincolo per definire la variabile ausiliaria z;
+@for(incendi(i): z &gt;= temFin(i));
+
+
+! vincolo per definire la variabile ausiliaria temFin;
+@for(incendi(i): temFin(i) = temIni(i) + 
+                   (paramA(i) + paramB(i)*(temIni(i)-temAcc(i))));
+
+
+! vincolo per regolare la sequenza di incendi da affrontare;
+@for(incendi(i): 
+    @for(incendi(k) | k #ne# i:
+       temIni(i) &gt;= temFin(k) - 10000 * x(i,k)
+    )); 
+
+
+!vincolo per far sì che se i precede j non può valere il contrario, e viceversa;
+@for(incendi(i): 
+    @for(incendi(k) | k #ne# i:
+       x(i,k) + x(k,i) = 1
+    )); 
+
+
+! definizione delle variabili binarie;
+@for(coppia (i,k): @bin(x(i,k)));
+
+end
+</pre>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/RO-PLI-14set2005)</span></div>
+  </div>
+</body>
+</html>

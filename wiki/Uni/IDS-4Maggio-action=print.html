@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ingegneria del Software - Appunti del 4 Maggio 2009</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IDS-4Maggio.html' title='Ingegneria del Software - Appunti del 4 Maggio 2009'>Ingegneria del Software - Appunti del 4 Maggio 2009</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - Appunti del 4 Maggio 2009 ::</strong>
+</pre><div class='vspace'></div><h2>Architetture di componenti</h2>
+<p>Le architetture per realizzare fisicamente componenti saranno oggetto di più approfondite lezioni verso la fine del corso, quando studieremo nel dettaglio <strong>EJB</strong>. Tuttavia, il professore ha deciso di anticiparci qualcosa ora così da comprendere meglio i prossimi argomenti.
+</p>
+<p class='vspace'>Facciamo un riassunto delle puntate precedenti. Lo scopo di suddividere il nostro sw in componenti è quello di avere una successiva facilità di manutenzione, visto che la manutenzione è la parte più costosa del processo di sviluppo del software.
+</p>
+<p class='vspace'>UML ci fornisce alcuni strumenti per pensare ad una suddivisione in componenti; tuttavia si tratta di un'operazione eseguita durante la fase di implementazione e dipendente dal linguaggio e dall'architettura scelta. Esistono degli standard language independent, ma solo in linea di principio.
+</p>
+<p class='vspace'>Quando decidiamo di dividere in componenti, utilizziamo fondamentalmente i criteri di <strong>stereotipia</strong> e di <strong>coesione</strong>.
+</p>
+<div class='vspace'></div><h3>Dynamic Linking</h3>
+<p>Ma il componente non è solo un modo per catalogare le classi, come potrebbe esserlo uno stereotipo. Oltre a ciò, il componente definisce anche:
+</p><ul><li>le unità di distribuzione del software;
+</li><li>la tecnica di <strong>dynamic linking</strong> che andrò poi ad utilizzare.
+</li></ul><p class='vspace'>Sul primo punto, ovvero le unità di distribuzione del software, è già stato detto qualcosa. Al momento dell'installazione, se il nostro software è modulare, è possibile scegliere quale moduli installare e su quali macchine della rete.
+</p>
+<p class='vspace'>Il secondo punto riguarda invece il <strong>come</strong> i nostri componenti effettivamente comunicheranno. Il <strong>linking</strong> è quella fase del processo di compilazione in cui i riferimenti che il mio programma fa verso altri programmi o librerie vengono riempiti. Il <strong>link dinamico</strong> è un link che non viene eseguito del tutto in fase di compilazione, bensì in <strong>fase di esecuzione</strong>.
+</p>
+<p class='vspace'>Se non ci fosse la possibilità di eseguire un link dinamico non potremmo avere librerie condivise, e tutti i programmi sarebbero dei monoliti giganteschi con, compilate all'interno, tutte le librerie di cui necessitano.
+</p>
+<div class='vspace'></div><h3>Chi definisce gli standard?</h3>
+<p>Nel mondo del software, gli standard vengono proposti dalle singole industrie, e se piacciono vengono ratificati. Per esempio, UML è stato inventato dalla Rational, e poi è stato codificato ed ora lo usano tutti.
+</p>
+<p class='vspace'>I grandi componenti del mondo degli standard dei componenti sono:
+</p><ul><li>Microsoft
+</li><li>Resto del mondo, tramite OMG (Object Management Group, lo stesso che ratifica UML)
+</li></ul><p class='vspace'>Ci sono varie caratteristiche di un'architettura a componenti che portano alla sua eleggibilità a standard. Le vedremo meglio in futuro, ma ricordiamo già da ora la <strong>transazionalità</strong>, ovvero la proprietà per cui l'esecuzione di diverse operazioni su diversi componenti o va tutta a buon fine, o fallisce completamente e non rimane niente in sospeso o a metà, e la possibilità di installare parti di software su macchine diverse per configurazione hardware e software.
+</p>
+<p class='vspace'>OMG ha prodotto OMA (Object Management Architecture), che è uno standard al quale si rifanno le varie architetture di componenti.
+</p>
+<div class='vspace'></div><h3>Il Software Bus</h3>
+<p>Parlavamo prima della necessità di avere un linker dinamico. Concretamente, ciò si realizza mediante un <strong>software bus</strong>, ovvero un programma il cui scopo è quello di ricevere chiamate dai componenti e di smistarle agli altri componenti, attivandoli e disattivandoli a seconda delle necessità.
+</p>
+<p class='vspace'>Così come un bus fisico, su di una scheda madre, riceve segnali e li smista ai controller giusti, così il bus software riceve messaggi dai componenti, e li smista ai destinatari giusti.
+</p>
+<p class='vspace'>Il primo software bus è stato <strong>ORB</strong>, ovvero <strong>Object Request Broker</strong>. A partire da ORB è stato creato lo standard <strong>CORBA</strong>, cioè <strong>Common Object Request Broker Architecture</strong>. Noi non lo studieremo, lo ricordiamo solo per motivi storici.
+</p>
+<p class='vspace'>Concettualmente, un software bus ha a che fare con:
+</p><ul><li><strong>eventi</strong>: sono generati dai componenti, e vengono inoltrati al software bus. Gli altri componenti devono venir notificati dell'accadere di questi eventi
+</li><li><strong>naming</strong>: l'assegnamento ad ogni componente di una URN (Universal Resource Name) che permette l'identificazione univoca del componente stesso tra tutti gli altri registrati presso lo stesso software bus, così che si possa fare appello al componente giusto.
+</li></ul><p class='vspace'>Le aziende di software inoltre coltivano un sogno segreto, relativo alle funzionalità del software bus. La loro speranza è che il software bus si possa accollare <strong>tutte le responsabilità non funzionali</strong> di un software, come ad esempio i requisiti di security, di persistenza e così via. Le aziende dovrebbero scrivere codice rispettando i soli requisiti funzionali, e con la serena certezza che tutti i requisiti non funzionali sarebbero stati gestiti ed implementati dal software bus. Pia speranza? Non lo sappiamo ancora.
+</p>
+<p class='vspace'>Quando si sente parlare di <strong>middleware</strong>, altro non è che un appellativo del software bus: è "middle" perché sta in mezzo a tutti.
+</p>
+<div class='vspace'></div><h3>EJB</h3>
+<p><strong>Enterprise Java Beans</strong> è l'architettura a componenti di Java. È strettamente language dependent, essendo stata pensata appositamente per Java.
+</p>
+<p class='vspace'>L'idea su cui si sono basate le prime versioni di EJB era quella di avere client leggeri e server pesanti. La "pesantezza" riguardava due fronti: quello delle responsabilità, e quello del carico di CPU. Sulle macchine server dovrebbero girare degli <strong>application server</strong>, ai quali, nel corso degli anni, sono state demandate sempre più responsabilità, secondo la visione delle aziende illustrata prima.
+</p>
+<p class='vspace'>Tuttavia, ci si è resi conto che proprio a livello di CPU il carico di lavoro per una singola macchina era un po' troppo, e ultimamente si sta facendo marcia indietro. Ricordo che la Sun qualche anno fa aveva lanciato dei thin client, ma non hanno avuto molto successo. L'impiegato medio non vuole un pc poco potente connesso ad un server centrale, perché non può giocare ad Open Arena nelle pause.
+</p>
+<p class='vspace'>EJB ci offre un mare infinito di sigle, in puro stile Java. Le cito qui, senza svilupparle troppo:
+</p><ul><li>JNDI = il servizio di naming
+</li><li>JDBL = connettività a database
+</li><li>JTA e JTS = transactional API e Service
+</li><li>JPS = Java Server Pages, ovvero la possibilità di eseguire programmi Java come script per pagine dinamiche
+</li></ul><div class='vspace'></div><h3>COM e DCOM</h3>
+<p>L'architettura <strong>COM</strong> è stata l'architettura principale di Windows per diversi anni. Da essa è nata <strong>DCOM</strong>, che altro non è che Distributed COM.
+</p>
+<p class='vspace'>COM nasce da <strong>OLE</strong>, ovvero <strong>Object Linking ad Execution</strong>. OLE forniva, ai tempi, quella tanto decantata possibilità di linkare ad esempio un foglio di Excel in una pagina Word, e di farlo funzionare come se fossimo stati direttamente in Excel. Molti Office fa ciò era una sorta di miracolo, un passo in più rispetto al copia &amp; incolla.
+</p>
+<p class='vspace'>COM fornisce anche uno standard binario: le DLL per le librerie sulla stessa macchina, e le OCX per le librerie chiamate in una rete.
+</p>
+<p class='vspace'>Un oggetto COM ha dei <strong>metodi</strong> e uno <em>stato<strong>. Internamente è composto di classi. Ha almeno un'interfaccia esterna, chiamata </strong>IUnknown</em>', che deve essere sempre presente. Quando chiamo un COM, posso chiamare la sua interfaccia IUnknown e farmi dire quali sono le altre interfacce, e che metodi esse hanno. Questo è comodo perché non sono obbligato a conoscere l'interfaccia di un metodo prima di chiamarlo. Ovvio che se invece la conosco salto l'intervista ad IUnknown e vado avanti direttamente.
+</p>
+<p class='vspace'>COM offre inoltre la possibilità di <strong>estendere</strong> un'interfaccia, aggiungendo nuove funzionalità. Nel mondo della teoria, quando aggiorno un COM, dovrei tenere quello vecchio ed estenderlo con un COM nuovo. In questo modo, le applicazioni vecchie che facevano appello al COM vecchio potranno continuare a funzionare, mentre le applicazioni nuove potranno usare il COM nuovo.
+</p>
+<p class='vspace'>Ma non è così.
+</p>
+<p class='vspace'>Spesso, troppo spesso, le versione nuove sono andate a <strong>sostituire</strong> in toto le versioni vecchie. Espongono più o meno la stessa interfaccia, ma non le stesse funzionalità. Pertanto, accade che un'applicazione possa esplodere improvvisamente quando chiama un COM che all'apparenza è uguale a quello di cui lei ha nozione, ma che ritorna valori un po' diversi. Inoltre, diversi COM presentavano interfacce <strong>non documentate</strong>, e diverse applicazioni le utilizzavano.
+</p>
+<p class='vspace'>Questo è il motivo per cui, dopo un po' di tempo, il sistema Windows diventa instabile. Windows non ha alcun modo per verificare quali versioni dei COM vengono installate, e quali versioni di un determinato COM sono desiderate da un'applicazione.
+</p>
+<div class='vspace'></div><h3>.NET</h3>
+<p><strong>.NET</strong> sostituisce COM. Non è più basato sul codice nativo, ma sul <strong>bytecode</strong>, un po' come Java. Il problema di chiamate a COM misteriosi che fanno crashare tutto viene notevolmente ridimensionato, perché all'interndo di una virtual machine è più facile recuperare dagli errori senza far morire l'applicazione.
+</p>
+<p class='vspace'>.NET in realtà presenta una <strong>Common Language Runtime</strong>, che è il target di destinazione per diversi linguaggi di programmazione, attraverso uno stack predefinito di librerie. Quando si compila un programma, questo viene tradotto in un linguaggio intermedio detto MSIL (Microsoft Intermediate Language), e poi compilato tramite tecniche JIT (Just In Time, cioè la prima volta che viene chiamato).
+</p>
+<div class='vspace'></div><h3>Il diagramma dei componenti</h3>
+<p>Dopo questa carrellata sulle architetture di componenti, dobbiamo ricordare che nei diagrammi di componenti <strong>non</strong> si mettono le proprietà del middleware che abbiamo appena visto. Al massimo, nelle note che lo corredano scriverò che useremo EJB, ad esempio, e poi se la vedranno i programmatori.
+</p>
+<p class='vspace'>Va poi notato che questo trasferimento di responsabilità dal software al middleware si traduce in un parallelo trasferimento di reponsabilità dal programmatore al sistemista, e per questo motivo occorrono sistemisti in gamba.
+</p>
+<div class='vspace'></div><h2>Il Testing</h2>
+<p>In questa lezione anticipiamo alcuni dei temi importanti del testing, che saranno affrontati a partire dalla lezione di domani.
+</p>
+<p class='vspace'>La prima cosa da dire è che nelle grandi imprese esiste la figura del <strong>tester</strong>, che è distinta da quella del programmatore. Certo, possono anche coincidere, e spesso è così, ma questa informazione serve per ricordarci che il testing è un'attività con  una sua peculiarità ed importanza, che merita tutta l'attenzione necessaria.
+</p>
+<p class='vspace'>I <strong>piani di test</strong> sono documenti che vengono prodotti già dalla fase di analisi. Alla fine di ogni iterazione si andrà a verificare sul codice il test preparato durante questi momenti, oltre a tutti quei test che le fasi successive hanno prodotto.
+</p>
+<p class='vspace'>Queste righe ci servono per introdurre un concetto fondamentale: <strong>il testing non è una fase del processo di sviluppo</strong>. Non è una fase a se stante, bensì un'attività complementare o ortogonale a tutte le altre fasi di sviluppo. Ogni fase ha i suoi test specifici.
+</p>
+<div class='vspace'></div><h3>Modelli e testing</h3>
+<p>Abbiamo blaterato a lungo sulla bellezza dei modelli, dovuta al fatto che tramite la semantica ci permettono di dimostrare in modo automatico certe proprietà del software.
+</p>
+<p class='vspace'>Tuttavia, questo non basta per il testing. Tramite un modello posso garantire, se ad esempio sto usando le Reti di Petri, proprietà come temporizzazione e sincronizzazione, ma non posso dire nulla dei <strong>requisiti funzionali</strong>. Temporizzazione e sincronizzazione sono infatti requisiti non funzionali. Per quelli funzionali, è necessario il testing.
+</p>
+<div class='vspace'></div><h3>Errori e statistica</h3>
+<p>Una proprietà simpatica degli errori è che non sono distribuiti secondo le distribuzioni statistiche che siamo abituati a vedere. Le distribuzioni statistiche "solite" possono essere riassunte da un valore, che è la <strong>media</strong>.
+</p>
+<p class='vspace'>Nelle creazioni sociali, come ad esempio il software, che è scritto da uomini, parlare di media non serve a niente. Una migliore approssimazione statistica è quella di <strong>Pareto</strong>, che dice riassuntivamente che <strong>l'80% degli eventi è generato dal 20% degli attori</strong>.
+</p>
+<p class='vspace'>Traducendo questo dato nella distribuzione degli errori, possiamo dire che l'80% degli errori in un programma (vedremo domani come categorizzare gli errori) sarà presente nel 20% dei moduli del nostro software.
+</p>
+<p class='vspace'>In virtù di tale proprietà, discorsi come "difettosità media per riga di codice" non hanno molto senso, proprio perché la media non è un valore tipico della distribuzione che modella le attività umane.
+</p>
+<p class='vspace'>Un'altra implicazione di questa proprietà è che è praticamente inutile fare test esaustivi (oltre che impossibile). Testare tutti i possibili valori di input nell'80% dei casi non porterà a nulla. Occorre invece essere più furbi ed individuare il 20% di codice dove si annideranno gli errori. Come? Vedremo.
+</p>
+<p class='vspace'>Annunciamo sin da ora che un test esaustivo, oltre che inutile perché in contrasto con la distribuzione di Pareto, è anche nella maggioranza dei casi semplicemente inattuabile. Per fare un esempio, se devo testare una funzione che prende in input tre valori, ciascuno di tipo integer, dovrei provare <strong>tutte</strong> le combinazioni di tre interi per avere un caso di test esaustivo... Quindi, no.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IDS-4Maggio)</span></div>
+  </div>
+</body>
+</html>

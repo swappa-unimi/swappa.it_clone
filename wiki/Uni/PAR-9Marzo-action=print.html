@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Protocolli avanzati di rete - Appunti del 9 Marzo</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='PAR-9Marzo.html' title='Protocolli avanzati di rete - Appunti del 9 Marzo'>Protocolli avanzati di rete - Appunti del 9 Marzo</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 9 Marzo ::</strong>
+</pre><div class='vspace'></div><h2>Cenni ai protocolli di rete pubblica</h2>
+<p>Parliamo un po' di codifiche di trasmissione a livello ISO/OSI 1 (quello fisico). Nella rete pubblica ne abbiamo fondamentalmente di due tipi: quella di tipo elettrico e quella di tipo ottico.
+</p>
+<p class='vspace'>Lo standard di trasmissione elettrica è l<strong>'STS</strong> (<em>Synchronous Transport Signal</em>), basato su una codifica che considera i cambi di fronte del segnale digitale, quindi l'inversione dei segni, proprio come la Manchester che avevamo trattato nel corso di <a class='wikilink' href='Sistemi.html'>Sistemi</a>. Un altro tipo di codifica avrebbe potuto mappare gli 0 o gli 1 con opportuni valori di tensione elettrica, ma ciò si dimostra inapplicabile sulle linee lunghe dato che non possiamo avere valori di riferimento comuni su entrambi i capi. Questo problema è noto con il nome di "terra comune".<br />Abbiamo vari livelli di STS: l'STS-1 che ha una velocità dei dati pari a 51,84Mbps, l'STS-3 che ha velocità tripla (155,52Mbps), l'STS-12 eccetera.
+</p>
+<p class='vspace'>In generale, una delle principali proprietà di una codifica è il rapporto tra <em>baudrate</em> e <em>bitrate</em>, dove il primo è il numero di cambi di fronte nell'unità di tempo e il secondo è il numero di bit trasmessi nell'unità di tempo. Per usare al meglio il canale di comunicazione bisognerebbe utilizzare una codifica che garantisca certe proprietà al flusso di bit, in particolare avvicinando il valore del bitrate a quello del baudrate. Ciò si può ottenere aumentando la dispersione degli 1, ovvero la loro percentuale nella sequenza di bit che costituisce il segnale, perché si forza la generazione di nuovi fronti. Una strategia per ottenere questo risultato è lo <strong>scrambling</strong>, che in una sua possibile implementazione prevede i seguenti passi:
+</p><ol><li>la moltiplicazione del segnale digitale per un certo polinomio (opportunamente scelto)
+</li><li>il trasferimento del segnale scramblato
+</li><li>la divisione del segnale per il polinomio di partenza così che possa riacquistare la forma originale prima che avvenga la ricezione
+</li></ol><p class='vspace'>L'altra codifica di trasmissione è quella relativa alla rete ottica, in cui lo standard prende il nome di <strong>OC-N</strong>. Questo genere di trasmissione permette di avere cavi molto più lunghi rispetto a quelli elettrici, arrivando fino a 40km di portata (altri standard arrivano a centinaia di chilometri); oggi quasi tutti i trunk di rete pubblica sono ottici.<br />Il mezzo trasmissivo della rete ottica è la <em>fibra ottica</em>, costruita in modo da permettere a un raggio laser di una certa lunghezza d'onda e polarizzazione di propagarsi al suo interno senza perdere in potenza, impedendo cioè la sua dispersione. Questo tipo di tecnologia richiede schede di creazione e ricezione di segnali ottici che sono molto costose: viaggiamo tra i 60mila e gli 80mila dollari.<br />La codifica può avvenire solo usando la <em>fase</em> (<strong>WDM</strong>), perché se andiamo a intervenire su altri parametri c'è il rischio che il segnale si disperda. Le diverse fasi sono ottenute fisicamente facendo passare il laser attraverso una lente comandata, così da ottenere un rallentamento codificabile in bit. Nella circuiteria ottica è tipico utilizzare quattro possibili valori di ritardo utilizzando una coppia di bit (00, 01, 10, 11), e quindi mi servono più bit per riscontrare un cambio di fase.
+</p>
+<p class='vspace'>Il multiplexing su rete ottica si può realizzare in due modi:
+</p><ul><li>costruendo più cilindri concentrici di fibra all'interno dello stesso cavo, ognuna con una propria capacità di rifrazione. In questo modo è possibile sparare più laser a lunghezza d'onda diversa contemporaneamente, tanto non ci sarà modo di confonderli. Avrò però bisogno di un filtro all'arrivo
+</li><li>utilizzo più laser di una stessa lunghezza d'onda all'interno della stessa fibra ottica, ma multiplexandole in tempo (TDM)
+</li></ul><p>Generalmente queste due strategie vengono adottate insieme.
+</p>
+<p class='vspace'>Osserviamo inoltre che la rete ottica introduce un fattore di sicurezza fisica delle informazioni trasmesse, cioè nessuno può intercettare a livello fisico una comunicazione in fibra poiché richiede un'azione troppo invasiva e costosa (altrettanto non si può dire della normale trasmissione che viaggia sottoforma di segnale elettrico).
+</p>
+<p class='vspace'>Vediamo quali sono gli attori della rete (dagli appunti di Damiani):
+</p><div  style='text-align: center;'><img src='../uploads/Uni/elemRetePubbl.gif' alt='' title='' /></div>
+<p class='vspace'>dove:
+</p><ul><li><strong>TM</strong> è il <em>terminal mux</em>, il multiplexer/demultiplexer direttamente collegato ai subscribers loop degli utenti. Effettua la codifica del segnale da analogico a digitale e viceversa
+</li><li><strong>ADM</strong> è l<em>'add &amp; drop mux</em>, che (semplificando) aggiunge e toglie telefonate dal trunk a cui è interfacciato; per farlo deve essere in grado di effettuare una conversione da elettrico a ottico e viceversa
+</li><li><strong>DCC</strong> è il <em>digital cross connect</em>, ovvero il punto di separazione che consente il biforcamento dei trunk
+</li><li><strong>MN</strong> è il <em>matched node</em>, cioè quel nodo di passaggio con compiti non prefissati. Ad esempio può fare switching o fungere da ripetitore
+</li><li><strong>D+R</strong> è il <em>drop &amp; repeat</em>, un punto di arrivo in cui alcuni segnali vengono rigenerati ed altri no
+</li></ul><p class='vspace'>Tutti questi elementi sono soggetti a standard di controllo della stessa famiglia del signaling, anche se la tendenza attuale è spostarsi verso il protocollo IP per diramare i comandi di amministrazione.
+</p>
+<p class='vspace'>Per quanto riguarda la topologia ne abbiamo fondamentalmente di due tipi: quella aperta chiamata <strong>long haul</strong> e quella chiusa ad anello chiamata <strong>ring</strong>. In entrambi i casi abbiamo delle linee <em>full duplex</em>, perché la propagazione del laser procede in un unico senso.
+</p>
+<p class='vspace'>Ma come vengono coordinati tutti questi dispositivi e tecnologie? Con la definizione di un <strong>OAM&amp;P</strong> (<em>Operations, Administration, Maintenance, and Provisioning</em>), ovvero quell'insieme di protocolli orientati alla gestione della rete. Tra questi citiamo: l' <em>AIS</em> (<em>Alarm Indication Signal</em>) e l' <em>RDI</em> (<em>Remote Defect Indication</em>). <br />L'amministrazione della rete pubblica è profondamente diversa da quella di una rete privata, in cui ad esempio eventuali malfunzionamenti e comportamenti anomali sono segnalati direttamente dall'utenza. Nella rete pubblica abbiamo invece un sistema di <em>allarmistica</em> che raccoglie tutti i tipi di messaggi generati dai vari dispositivi della rete stessa, in particolar modo quelli critici. Tutti questi segnali di allarme sono monitorati da terminali di controllo come i <strong>NOC</strong> (<em>Network Operating Center</em>), difficilmente affidati alla supervisione umana, ma più spesso gestiti da sistemi automatizzati.
+</p>
+<p class='vspace'>Concludiamo citando il concetto di <strong>cross layering</strong> applicato alla rete telefonica, ovvero l'interfacciamento di diversi livelli ISO/OSI così da poter prendere ad esempio alcune decisioni a livello IP (come l'instradamento) tenendo conto della situazione di livello 2. Notare che i confini dei livelli erano sempre stati per definizione inviolabili, dunque ci troviamo di fronte a nuove tecniche e tendenze.
+</p>
+<div class='vspace'></div><h2>Telefonia digitale</h2>
+<p>Gli appunti sono abbastanza disordinati, perché disordinata è stata l'esposizione del prof. Iniziamo con uno schema e poi ragioniamoci su:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/schemaTelDig.jpg' alt='' title='' /></div>
+<p class='vspace'>Partiamo da sinistra, in cui abbiamo i punti di <em>MUX/DEMUX</em> (multiplexing/demultiplexing) direttamente collegati ai subscribers loop e il cui compito è portare il bitrate dei canali ad un livello sufficiente per essere utilizzato in fibra. Notiamo l'esistenza di una gerarchia TDM, necessaria perché non è possibile avere una portante (o una lunghezza d'onda, se stiamo parlando di cavi ottici) per ogni flusso utente su uno stesso trunk digitale, ma dovremo unirne più di una in canali a bitrate più alto. Il caso più semplice consiste nel mettere due flussi da 64Kb in un unico da 128Kb e spedire prima un bit dell'uno e poi dell'altro. I MUX/DEMUX che fanno parte di questa gerarchia sono chiamati <strong>DS-n</strong> (<em>Digital Signal</em>, in america noti come <em>T-n</em>), dove <em>n</em> indica il loro livello: il <em>DS-0</em> è un unico canale con velocità di 64kb, mentre il <em>DS-1</em> (in Europa) aggrega 32 DS-0 arrivando così a 2Mb. Questo mi fa capire che per avere l'ADSL devo per forza saltare dei livelli gerarchici e collegarmi direttamente a quelli che offrono banda più alta. Osserviamo infine che più alto è il numero di canali multiplexati nello stesso trunk e maggiore è la probabilità di avere banda sprecata nascosta, dovuta a quei canali che non sono associati a nessuna chiamata.
+</p>
+<p class='vspace'>Proseguiamo con lo schema e notiamo l'apparizione della linea ottica (sempre digitale, ma ad alta velocità), nel nostro caso con una topologia <em>long haul</em>. Ad essa sono interfacciati gli <em>ADM</em> (Add &amp; drop), che smistano le chiamate in entrata e in uscita previa trasduzione elttro/ottica, e i dispositivi di <em>connect</em> che rappresentano i punti di snodo (puramente ottici) verso altre centrali, eventualmente di altri operatori telefonici. I cavi uscenti da un connect sono chiamati rilanci in fibra e sono a livelli più bassi di <em>OC-n</em>, quindi avremo una gerarchia anche nella rete ottica dato che le ripartizioni di una linea veloce saranno per forza di cose più lente.
+</p>
+<p class='vspace'>Osservazione sulle società di telecomunicazione: tutti gli operatori di rete pubblica devono soddisfare opportuni requisiti ed avere l'approvazione del ministero, formalità non necessarie invece per quelli di rete privata. Esistono molte formule di ingaggio o di mercato per gli operatori, ad esempio la vendita di fibra accesa o spenta (con o senza le schede di illuminazione incluse nel prezzo.
+</p>
+<p class='vspace'>Nel corso degli anni c'è stato un processo di standardizzazione del livello 2 di rete pubblica su fibra, e il contributo più grande è arrivato dal <strong>CCITT</strong> (<em>Comité consultatif international téléphonique et télégraphique</em>) attualmente noto come <strong>ITU-T</strong>, ovvero l'ente più importante per la definizione di protocolli di telecomunicazione (è quello che l<strong>'IEEE</strong> è per l'elettronica e l'informatica). Nel 1988 vennero approvati gli standard <strong>SONET/SDH</strong>, il primo utilizzato in america e il secondo in Europa. Tutti i dispositivi che abbiamo visto in questa lezione sono definiti in tale standard.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/PAR-9Marzo)</span></div>
+  </div>
+</body>
+</html>

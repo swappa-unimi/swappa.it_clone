@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - Riassunto del capitolo 2 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SOcap2' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - Riassunto del capitolo 2
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap2?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap2?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SOcap2-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap2?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap2?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - Riassunto del capitolo 2 was last modified on April 03, 2008, at 11:28 PM'>
+							<span style='display:none;'>Sistemi Operativi - Riassunto del capitolo 2</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Riassunto del capitolo 2 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<div class='vspace'></div><h2>Capitolo 2 - Architettura del computer</h2>
+<h3>2.1 Funzionamento del computer</h3>
+<p>Un computer general-purpose (cioè adatto a fare un po' tutto) ha:
+</p><ul><li>CPU
+</li><li>Dispositivi di controllo
+</li><li>Memoria condivisa
+</li></ul><p class='vspace'>Ogni dispositivo di controllo gestisce una periferica specifica.
+Sono tutti su un bus condiviso.
+Tutti, CPU e dispositivi, agiscono in modo concorrente per rubarsi a vicenda l'accesso alla memoria =&gt; occorre un <strong>controller della memoria</strong> per gestire gli accessi.
+</p>
+<p class='vspace'>Per partire quando si dà corrente occorre un programma di <strong>bootstrap</strong>
+</p><ul><li>semplice
+</li><li>in genere in una ROM con indirizzo noto, così la CPU sa dove andare a pescarlo.
+</li></ul><p class='vspace'>Eventi = segnalati da interruzioni (<strong>interrupt</strong>).
+Gli eventi che le generano possono essere
+</p><ul><li>provenienti dall'hardware
+</li><li>provenienti dal software (chiamate di sistema = system call = monitor call)
+</li></ul><p class='vspace'>Sistemi operativi moderni = guidati dalle interruzioni
+</p>
+<p class='vspace'>Eventi = segnalati da interrupt o da <strong>eccezioni</strong> (<strong>trap</strong>), che sono interruzioni generate dal software (divisioni per zero, accessi non validi alla memoria).
+</p>
+<p class='vspace'>Per ogni interrupt, c'è una routine che lo deve gestire =&gt; il controllo deve passare a questa routine =&gt; per sapere quale routine assegnare a quale int, c'è una <strong>tabella</strong>.
+</p>
+<p class='vspace'>Gestire un interrupt = salvare l'indirizzo dell'istruzione che ha chiamato l'interrupt nello <strong>stack</strong>, assieme a program counter e a registri =&gt; dopo aver gestito l'interrupt, si riprende come se non fosse successo niente.
+</p>
+<p class='vspace'>Chiamata di sistema = un processo utente chiama una funzione del SO =&gt; in genere si usa una trap.
+</p>
+<div class='vspace'></div><h3>2.2 Struttura dell'I/O</h3>
+<p>Controller della periferica = mantiene dati nel buffer locale. Responsabile dello spostamento di dati tra periferiche.
+</p>
+<div class='vspace'></div><h3>2.2.1 Interruzioni di I/O</h3>
+<p>Iniziare un'operazione IO:
+</p><ul><li>CPU: carica i registri appropriati nel controller del dispositivo
+</li><li>Controller: in base ai valori, decide che azione intraprendere
+</li><li>Controller: finita l'operazione, genera un'int e avvisa la CPU che ha finito
+</li></ul><p class='vspace'>Dopo che è iniziata, l'operazione di I/O può essere:
+</p><ul><li><strong>sincrona</strong>: quando finisce l'I/O, il controllo torna al processo che chiamò l'I/O
+</li><li><strong>asincrona</strong>: non si aspetta che l'op finisca, e si fanno altre cose nel frattempo.
+</li></ul><p class='vspace'>Attesa della rispsota dell'I/O, alternative:
+</p><ul><li><strong>Wait</strong> = istruzione che alcune CPU hanno per dormire mentre attendono I/O.
+</li><li>wait loop: un loop che chiama se stesso fino a che non arriva un int.
+</li></ul><p class='vspace'>I/O sincrono: posso gestire una chiamata I/O alla volta perché aspetto che finisca =&gt; no I/O concorrente.
+</p>
+<p class='vspace'>I/O asincrono: meglio, ma devo tener traccia delle molte richieste contemporanee =&gt; <strong>tabella di stato del dispositivo</strong> che indica
+</p><ul><li>tipo
+</li><li>indirizzo
+</li><li>condizione
+</li></ul><p>del dispositivo. Se il dispositivo è impegnato, allora salvo la richiesta nella tabella =&gt; più processi che vogliono accedere allo stesso dispositivo sono messi in una <strong>coda di attesa</strong>.
+</p>
+<p class='vspace'>Arriva un interrupt:
+</p><ul><li>la CPU deve determinare quale periferica lo generò
+</li><li>la CPU cerca nella tabella di stato del dispositivo e vede se far partire il dispositivo con un altra richiesta
+</li></ul><p class='vspace'>Se dal dispositivo arriva qualcosa che un processo attendeva, posso ridare il controllo a questo processo.
+</p>
+<p class='vspace'>Kernel buffer = dispositivo per salvare i segnali in input prima che qualcuno li richieda (eg buffer della tastiera).
+</p>
+<p class='vspace'>La routine di gestione dell'interrupt salva tutti i registri che la CPU stava utilizzando, così poi può riprendere da dov'era.
+</p>
+<p class='vspace'>Vantaggio dell'I/O asincrono = più efficienza, perché mentre un I/O avviene, la CPU fa altro &lt;= in genere l'I/O è molto più lento della CPU.
+</p>
+<div class='vspace'></div><h3>2.2.2 Trasferimenti in DMA</h3>
+<p>Dispositivo ad alta velocità = trasmette veloce quasi quanto la CPU =&gt; gli interrupt sarebbero troppo frequenti.
+</p>
+<p class='vspace'>=&gt; DMA: <strong>direct memory access</strong>. Il controller del dispositivo imposta il conroller DMA e trasferisce <strong>blocchi di dati</strong> direttamente tra sé e la memoria, senza intervento della CPU =&gt; un solo interrupt per blocco.
+</p>
+<p class='vspace'>Ocio: cmq il DMA compete con la CPU per l'accesso alla memoria.
+</p>
+<div class='vspace'></div><h3>2.3 Struttura della memoria</h3>
+<p>Programmi dei computer: per essere eseguiti devono stare nella memoria centrale (RAM).
+RAM = sequenza di parole, ognuna con il proprio indirizzo.
+</p>
+<p class='vspace'>Ciclo di esecuzione di un'istruzione in Von Neumann:
+</p><ul><li>fetch
+</li><li>decode
+</li><li>execute
+</li></ul><p class='vspace'>Situazione ideale = tutti i programmi da eseguire in RAM, per velocità. Ma:
+</p><ol><li>RAM in genere troppo piccola
+</li><li>Se spengo, la RAM si cancella
+</li></ol><p class='vspace'>=&gt; esiste una <strong>memoria secondaria</strong>.
+</p>
+<div class='vspace'></div><h3>2.3.1 Memoria Centrale</h3>
+<p>Memoria centrale = l'unica cui la CPU accede direttamente =&gt; ai dischi eg non accede direttamente, perché non può usare indirizzi delle parole nei dischi come usa invece gli indirizzi di memoria.
+</p>
+<p class='vspace'>Spazio di indirizzamento = insieme degli indirizzi di memoria cui la CPU può accedere.
+</p>
+<p class='vspace'>Accesso comdo all'I/O = <strong>I/O a memoria mappata</strong>, in cui alcuni blocchi dello spazio di indirizzamento sono mappati non nella memoria centrale, ma in registri del controller del dispositivo =&gt; utile per dispositivi rapidi eg schede video.
+</p>
+<p class='vspace'>Per spedire dati la CPU:
+</p><ul><li>scrive quei dati nel registro dei dati
+</li><li>attiva un bit nel registro di controllo per segnalare che il byte è stato messo
+</li></ul><p>Il dispositivo:
+</p><ul><li>prende il byte
+</li><li>azzera il bit nel registro di controllo per segnalare che il byte è stato preso.
+</li></ul><p class='vspace'><strong>I/O programmato</strong>:  è la CPU che ciclicamente controlla lo stato del bit nel registro di controllo.
+<strong>I/O guidati da interrupt</strong>: è il dispositivo che genera un interrupt dicendo che ha trasferito il byte.
+</p>
+<p class='vspace'>Accesso ai registri della CPU: si ottiene in un clock.
+Accesso alla memoria: si ottiene in più clock =&gt; rallenta il tutto =&gt; occorre della <strong>cache</strong> per cercare di velocizzare questo possibile collo di bottiglia (si vedrà poi).
+</p>
+<div class='vspace'></div><h3>2.3.2 Dischi magnetici</h3>
+<p>Memoria secondaria di grandi dimensioni.
+Composti da:
+</p><ul><li>piatti magnetici
+</li><li>braccio
+</li><li>testina in fondo al braccio
+</li></ul><p class='vspace'>Un piatto è diviso in tracce circolari.
+Una traccia è divisa in settori.
+Cilindro = insieme delle tracce che stanno sotto il braccio  (vedi immaginetta sul libro...)
+</p>
+<p class='vspace'><strong>Tasso di trasferimento</strong> = ritmo con cui i dati vanno da disco a processore.
+<strong>Tempo di posizionamento</strong> = somma del tempo richiesto per
+</p><ul><li>spostare il braccio sul cilindro desiderato
+</li><li>far ruotare il piatto sotto la testina.
+</li></ul><p class='vspace'>Caduta della testina: essa atterra sul piatto e lo distrugge.
+</p>
+<p class='vspace'><strong>I/O bus</strong> = cavi per collegare dischi al computer (EIDE, SCSI, ATA).
+I trasferimenti sono gestiti da controller:
+</p><ul><li>un controller presso il computer
+</li><li>un controller presso il disco, dotato di cache interna.
+</li></ul><div class='vspace'></div><h3>2.3.3 Nastri magnetici</h3>
+<p>Accesso lento e sequenziale =&gt; ideale per backup, non per accesso diretto.
+</p>
+<div class='vspace'></div><h3>2.4 Gerarchia di memorizzazione</h3>
+<p>Vedi il libro per la piramide. Il succo è che più la memoria è veloce, più è costosa. L'ideale è trovare un compromesso tra velocità d'accesso e quantità di memoria. Per questo c'è la cache.
+</p>
+<div class='vspace'></div><h3>2.4.1 Caching</h3>
+<p>Caching = memorizzazione temporanea di informazioni in dispositivi veloci.
+Quando si accede ad un sistema di memorizzazione (uno qualsiasi), i dati vengono prima copiati nella cache, che è veloce e vicina al processore, e da lì vengono acceduti.
+</p>
+<p class='vspace'>Gestione della cache = in hw o in sw.
+Politiche di aggiornamento = se sono buone, ho 80-99% di accessi in cache.
+</p>
+<p class='vspace'>Nella gerarchia di memorizzazione, un tipo di memoria più in alto può fare da cache per memorie più in basso.
+</p>
+<div class='vspace'></div><h3>2.4.2 Consistenza</h3>
+<p>Struttura gerarchica usata come cache =&gt; stessi dati che appaiono in modi diversi in due livelli diversi =&gt; devo renderli consistenti.
+</p>
+<p class='vspace'>Sistemi con un solo processo: allo stesso dato accede lo stesso processo =&gt; accede sempre al livello più alto possibile =&gt; non è un problema.
+</p>
+<p class='vspace'>Sistemi multitasking: allo stesso dato possono accedere processi diversi =&gt; necessario sincronizzare le copie dei dati disponibili ai vari processi.
+</p>
+<p class='vspace'>Sistemi multiprocessore: l'aggiornamento della cache di un processore deve riflettersi nella cache dell'altro processore =&gt; coerenza della cache in genere gestita in hw.
+</p>
+<p class='vspace'>Modi per garantire coerenza = capitolo 16.
+</p>
+<div class='vspace'></div><h3>2.5 Protezione hardware</h3>
+<p>Primi tempi: quando il system admin si connetteva, faceva quello che voleva.
+</p>
+<p class='vspace'>Monitor residente: i primi SO installati, che governavano l'hw.
+</p>
+<p class='vspace'>Poi: condivisione risorse tra diversi utenti =&gt; multiprogrammazione =&gt; un processo può causare errori sia un un altro processo, che nel monitor (SO) stesso.
+</p>
+<div class='vspace'></div><h3>2.5.1 Funzionamento in modalità differenziate</h3>
+<p>Voglio funzionamento corretto =&gt; proteggere i processi e il SO da altri processi =&gt; protezione per ogni risorsa condivisa.
+</p>
+<p class='vspace'>2 modalità separate:
+</p><ol><li><strong>user mode</strong> = modalità utente
+</li><li><strong>supervisor | monitor | system | privileged mode</strong> = modalità di sistema
+</li></ol><p class='vspace'>Bit di modalità: dice in che modalità sto.
+</p>
+<p class='vspace'>Avvio: computer in modalità di sistema, poi si caricano i processi dell'utente.
+Trap o interrupt: computer passa in modalità di sistema.
+</p>
+<p class='vspace'>Istruzioni privilegiate = eseguibili solo in modalità di sistema =&gt; <strong>chiamata di sistema</strong> da parte di un processo utente per chiedere al SO di fare cose privilegiate.
+</p>
+<p class='vspace'>Chiamata di sistema = trattata come un interrupt software =&gt; SO controlla che i parametri siano legali, esegue e ritorna.
+</p>
+<p class='vspace'>Se c'è la modalità di sistema in hardware, i programmi che la violano sono trovati automaticamente dall'hw, il quale invierà una trap al SO =&gt; possibile terminazione anomala del processo (eventuale dump).
+</p>
+<div class='vspace'></div><h3>2.5.2 Protezione dell'I/O</h3>
+<p>Il funzionamento anomalo del sistema si può avere con:
+</p><ul><li>chiamate a I/O illegali
+</li><li>accesso a locazioni di memoria proprie del SO
+</li><li>rifiuto di un processo di lasciare il processore ad altri
+</li></ul><p class='vspace'>=&gt; tutte le op. I/O sono definite privilegiate =&gt; se un utente vuole usare l'I/O deve passare attraverso le chiamate di sistema.
+</p>
+<p class='vspace'>Se un processo utente diventa attivo in modalità supervisore, può fare danni =&gt; virus che sfruttano errori di programmazione del SO per abusarne.
+</p>
+<div class='vspace'></div><h3>2.5.3 Protezione della memoria</h3>
+<ul><li>Proteggere la memoria usata dal SO
+</li><li>Proteggere la memoria usata da un processo
+</li></ul><p>=&gt; i non autorizzati non devono leggere fuori dai loro confini
+</p>
+<p class='vspace'>Confini di memoria =&gt; indirizzo di partenza della memoria valida è contenuto nel <strong>registro base</strong>, indirizzo finale nel <strong>registro limite</strong> =&gt; ogni processo ha i suoi confini =&gt; l'hw controlla ogni accesso in memoria per vedere se è legale.
+</p>
+<p class='vspace'>Registi base e limite sono caricabili solo dal SO.
+</p>
+<div class='vspace'></div><h3>2.5.4 Protezione della CPU</h3>
+<p>Il SO deve mantenere il controllo: se un processo prende il sopravvento, il SO scompare 
+</p>
+<p class='vspace'><strong>Temporizzatore</strong>: un clock che interrompe il computer dopo un tot di tempo.
+</p>
+<p class='vspace'>Uso comune del temporizzatore: si definisce un <strong>quanto di tempo</strong> della durata di N millisecondi =&gt; alla scadenza una interrupt ferma il processore e trasferisce il controllo al SO, che opera un <strong>cambio di contesto</strong> (cap 4).
+</p>
+<div class='vspace'></div><h3>2.6 Strutture di rete</h3>
+<p>Due tipi:
+</p><ul><li>LAN = Local Area Network
+</li><li>WAN = Wide Area Network = reti geografiche (città diverse etc.)
+</li></ul><p class='vspace'>=&gt; differenze in hw, protocolli, efficienza etc.
+</p>
+<div class='vspace'></div><h3>2.6.1 Reti locali</h3>
+<p>LAN = nate inizio anni 70 come sostituto dei grandi mainframe =&gt; più economico avere piccoli computer in rete ed autonomi che uno ciccione centrale.
+</p>
+<p class='vspace'>LAN = poca distanza =&gt; cavi veloci ed affidabili.
+</p>
+<p class='vspace'>Gateway = punti di accesso ad altre reti.
+</p>
+<p class='vspace'>Lo schema più usato è Ethernet per la connessione fisica =&gt; non è centralizzata, ma è un bus ad accesso multiplo in "autogestione" =&gt; scala facilmente.
+</p>
+<div class='vspace'></div><h3>2.6.2 Reti geografiche</h3>
+<p>Vasta area =&gt; bassa velocità, meno affidabilità rispetto alle LAN.
+</p>
+<p class='vspace'>Computer connessi molto diversi.
+</p>
+<p class='vspace'>Reti locali raggruppate in reti regionali =&gt; <strong>router</strong> per connettere più reti regionali nella rete mondiale.
+</p>
+<p class='vspace'>Altri tipi di accesso: telefono (56K e DSL), fibra ottica, wireless.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 03, 2008, at 11:28 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap2?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap2?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

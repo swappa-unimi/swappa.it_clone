@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Informatica Teorica - Linguaggi liberi dal contesto </title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IT-LinguaggiLiberiDalContesto.html' title='Informatica Teorica - Linguaggi liberi dal contesto '>Informatica Teorica - Linguaggi liberi dal contesto </a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Linguaggi liberi dal contesto ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 17 Marzo</span>
+</p>
+<div class='vspace'></div><h2>Concetti iniziali</h2>
+<p>Gli automi a stati finiti ci permettono di descrivere linguaggi, ma solo quelli regolari. E tutti gli altri? C'è bisogno di strumenti più potenti, come le <strong>grammatiche libere dal contesto</strong>, che permettono di generare - manco a dirlo - <em>linguaggi liberi dal contesto</em>.
+</p>
+<p class='vspace'>Una <em>grammatica</em> consiste in un insieme di <strong>regole di sostituzione</strong>, ognuna delle quali appare come una riga formata da un simbolo e una stringa separati da una freccia, ad esempio: <code class='escaped'>A-&gt;CA50</code>. I simboli a sinistra della freccia (generalmente lettere maiuscole) sono chiamati <em>variabili</em>, mentre le stringhe a destra possono essere composte da variabili o altri simboli chiamati <em>terminali</em>. Tra tutte le variabili ce n'è una chiamata <em>variabile iniziale</em>, che in genere compare nella parte sinistra della prima regola. 
+</p>
+<p class='vspace'>Facciamo un esempio definendo una grammatica G<sub>1</sub>:
+</p><div class='indent'>A-&gt;0A1
+</div><div class='indent'>A-&gt;B
+</div><div class='indent'>B-&gt;#
+</div><p class='vspace'>In G<sub>1</sub> abbiamo due variabili (A e B, di cui A è quella iniziale) e tre simboli terminali (0, 1 e #).
+</p>
+<div class='vspace'></div><h3>Come si usa una grammatica</h3>
+<p>Il sistema con cui le grammatiche permettono di descrivere un linguaggio, passa attraverso la generazione di ogni sua stringa. Per farlo bisogna seguire alcuni passaggi:
+</p><ol><li>scrivere la variabile iniziale;
+</li><li>per ogni variabile, trovare una regola in cui essa compaia nella parte sinistra (rispetto alla freccia);
+</li><li>sostituire la variabile con la parte destra della regola;
+</li><li>ripetere (2) e (3) finché non rimangono variabili.
+</li></ol><p class='vspace'>Ad esempio, che stringhe genera la nostra grammatica G<sub>1</sub>? Dovremo ripetere i passi appena descritti facendo le opportune sostituzioni, secondo una sequenza che prende il nome di <strong>derivazione</strong>. Facciamo allora una derivazione di G<sub>1</sub>:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+A --&gt; 0A1 --&gt; 00A11 --&gt; 000A111 --&gt; 000B111 --&gt; 000#111
+  r.1     r.1       r.1         r.2         r.3</pre>
+<p class='vspace'>, dove ad esempio "r.1" indica l'applicazione della regola 1 della grammatica. Si noti che questa è solo una delle possibili stringhe ottenibili da G<sub>1</sub>, un'altra sarebbe potuta essere 00#11, ottenuta con questa derivazione:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+A --&gt; 0A1 --&gt; 00A11 --&gt; 00B11 --&gt; 00#11
+  r.1     r.1       r.2       r.3</pre>
+<p class='vspace'>I possibili percorsi di derivazione possono essere mostrati graficamente con i <em>parse tree</em>. Ad esempio il <em>parse tree</em> per la stringa 000#111 nella grammatica G<sub>1</sub> è:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-parseTree.gif' alt='' title='' /></div>
+<p class='vspace'>Per far capire che con le grammatiche libere dal contesto si possono descrivere linguaggi ben più complicati, facciamo un esempio di grammatica G<sub>2</sub> che descriva una porzione della lingua italiana:
+</p><pre class='escaped'>
+          &lt;frase&gt; -&gt; &lt;soggetto-frase&gt; &lt;predicato-frase&gt;
+ &lt;soggetto-frase&gt; -&gt; &lt;nome-comp&gt; | &lt;nome-comp&gt; &lt;preposiz-frase&gt;
+&lt;predicato-frase&gt; -&gt; &lt;predicato-comp&gt; | &lt;predicato-comp&gt; &lt;preposiz-frase&gt;
+ &lt;preposiz-frase&gt; -&gt; &lt;preposiz&gt; &lt;nome-comp&gt;
+      &lt;nome-comp&gt; -&gt; &lt;articolo&gt; &lt;nome&gt;
+ &lt;predicato-comp&gt; -&gt; &lt;predicato&gt; | &lt;predicato&gt; &lt;soggetto-frase&gt;
+       &lt;articolo&gt; -&gt; un | il
+           &lt;nome&gt; -&gt; cinghiale | postino | tornado
+      &lt;predicato&gt; -&gt; amoreggia | rincorre | parla
+       &lt;preposiz&gt; -&gt; con</pre>
+<p class='vspace'>Con cui ad esempio si può formare l'illuminante frase "il tornado rincorre un postino", o la seguente "un cinghiale amoreggia con il postino":
+</p>
+<div class='vspace'></div><pre class='escaped'>
+&lt;frase&gt; -&gt; &lt;soggetto-frase&gt; &lt;predicato-frase&gt;
+        -&gt; &lt;nome-comp&gt; &lt;predicato-frase&gt;
+        -&gt; &lt;articolo&gt; &lt;nome&gt; &lt;predicato-frase&gt;
+        -&gt; &lt;articolo&gt; &lt;nome&gt; &lt;predicato-comp&gt; &lt;preposiz-frase&gt;
+        -&gt; &lt;articolo&gt; &lt;nome&gt; &lt;predicato&gt; &lt;preposiz-frase&gt;
+        -&gt; &lt;articolo&gt; &lt;nome&gt; &lt;predicato&gt; &lt;preposiz&gt; &lt;nome-comp&gt;
+        -&gt; &lt;articolo&gt; &lt;nome&gt; &lt;predicato&gt; &lt;preposiz&gt; &lt;articolo&gt; &lt;nome&gt;
+        -&gt; un &lt;nome&gt; &lt;predicato&gt; &lt;preposiz&gt; &lt;articolo&gt; &lt;nome&gt;
+        -&gt; un cinghiale &lt;predicato&gt; &lt;preposiz&gt; &lt;articolo&gt; &lt;nome&gt;
+        -&gt; un cinghiale amoreggia &lt;preposiz&gt; &lt;articolo&gt; &lt;nome&gt;
+        -&gt; un cinghiale amoreggia con &lt;articolo&gt; &lt;nome&gt;
+        -&gt; un cinghiale amoreggia con il &lt;nome&gt;
+        -&gt; un cinghiale amoreggia con il postino</pre>
+<p class='vspace'>Tempi duri per i postini.
+</p>
+<div class='vspace'></div><h2>Definizione formale</h2>
+<p>Diamo finalmente la definizione di grammatica libera dal contesto, o <strong>CFG</strong> (context-free grammar).
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Una <strong>grammatica libera dal contesto</strong> è una 4-upla (V,&#931;,R,S), dove:
+</p><ol><li>V è l'insieme finito delle <strong>variabili</strong>;
+</li><li>&#931; è l'insieme finito, disgiunto da V, dei <strong>terminali</strong>;
+</li><li>R è l'insieme finito delle <strong>regole</strong>, ognuna formata da una variabile e da una stringa di variabili e terminali;
+</li><li>S &#8712; V è la variabile iniziale.
+</li></ol></div>
+<p class='vspace'>Siano <em>u</em>, <em>v</em> e <em>w</em> stringhe di variabili e terminali, e <code class='escaped'>A-&gt;w</code> una regola della grammatica, possiamo dire che <code class='escaped'>uAv</code> genera <code class='escaped'>uwv</code>, e lo scriviamo come <code class='escaped'>uAv-&gt;uwv</code>. Diciamo che <em>u</em> <strong>deriva</strong> <em>v</em>, scritto <em>u-<sup>*</sup>-&gt;v</em> (una freccia con l'asterisco sopra), se <em>u=v</em> o se la sequenza u<sub>1</sub>,u<sub>2</sub>,..,u<sub>k</sub> esiste per k&gt;=0 e <br /><em>u-&gt;u<sub>1</sub>-&gt;u<sub>2</sub>-&gt;..-&gt;u<sub>k</sub>-&gt;v</em>
+</p>
+<p class='vspace'>A questo punto possiamo definire il <strong>linguaggio della grammatica</strong> come:<br /><em>{w &#8712; &#931;* | S-<sup>*</sup>&gt;w}</em>
+</p>
+<p class='vspace'>Riportandola sul pratico, nella nostra vecchia cara grammatica G<sub>1</sub> avremo che:
+</p><ul><li>V = {A,B}
+</li><li>&#931; = {0,1,#}
+</li><li>S = A
+</li><li>R = "A-&gt;0A1", "A-&gt;B", "B-&gt;#"
+</li></ul><div class='vspace'></div><h3>Ambiguità</h3>
+<p>Una grammatica potrebbe generare la stessa stringa in modi diversi, seguendo diverse derivazioni; ne consegue che la stringa avrebbe più <em>parse tree</em>, e quindi più significati. Questo non è un problema di per sé, ma lo diventa per certi tipi di applicazioni in cui l'interpretazione di una stringa deve essere univoca, come ad esempio nei linguaggi di programmazione. <br />Se una stessa stringa è generata da una grammatica in modi diversi, allora si dice che la stringa è derivata in modo <em>ambiguo</em>. Intuitivamente, una grammatica G si dice <strong>ambigua</strong> se genera una stringa in modo ambiguo.
+</p>
+<div class='vspace'></div><h3>Esercizietto 1</h3>
+<p>Data la grammatica G<sub>3</sub> = ({S},{a,b},R,S} e l'insieme di regole S-&gt;aSb|SS|&#949; , generare alcune stringhe appartenenti a L(G<sub>3</sub>).
+</p>
+<p class='vspace'><strong>Soluzione</strong>
+</p>
+<div class='vspace'></div><pre class='escaped'>
+S --&gt; aSb --&gt; aaSbb --&gt; aaSSbb --&gt; aaaSbaSbbb --&gt; aaababbb
+  r.1     r.1       r.2        r.1            r.3</pre>
+<p class='vspace'>oppure possono uscire cose come: <code class='escaped'>abab</code>, <code class='escaped'>aaabbb</code>, <code class='escaped'>aabaabbb</code>.
+</p>
+<div class='vspace'></div><h3>Esercizietto 2</h3>
+<p>Determinare la grammatica per il linguaggio:<br />{0<sup>n</sup>1<sup>n</sup> | n&gt;=0}U{1<sup>n</sup>0<sup>n</sup> | n&gt;=0}
+</p>
+<p class='vspace'><strong>Soluzione</strong>
+</p>
+<p class='vspace'>Dovrò definire separatamente una grammatica per la prima e la seconda parte, poi ne faccio un unione aggiungendo una nuova regola iniziale (qualcosa di molto simile a quanto visto nel capitolo del <a class='wikilink' href='IT-Nondeterminismo.html'>nondeterminismo</a>). In pratica se abbiamo <em>k</em> grammatiche da unire, la nuova grammatica avrà come prima regola:<br /><em>S -&gt; S<sub>1</sub> | S<sub>2</sub> | ... | S<sub>k</sub></em><br />, dove le variabili S<sub>i</sub> sono le variabili iniziali di ogni grammatica.
+</p>
+<p class='vspace'>Torniamo al nostro esercizio e costruiamo la grammatica S<sub>1</sub> per la prima parte del linguaggio, e la S<sub>2</sub> per la seconda.
+</p>
+<p class='vspace'>Linguaggio L<sub>1</sub>: {0<sup>n</sup>1<sup>n</sup> | n&gt;=0}<br />Grammatica G<sub>1</sub>: <strong>S<sub>1</sub> -&gt; 0S<sub>1</sub>1 | &#949;</strong>
+</p>
+<p class='vspace'>Linguaggio L<sub>2</sub>: {1<sup>n</sup>0<sup>n</sup> | n&gt;=0}<br />Grammatica G<sub>2</sub>: <strong>S<sub>2</sub> -&gt; 1S<sub>1</sub>0 | &#949;</strong>
+</p>
+<p class='vspace'>Per quanto detto finora, facendo l'unione di G<sub>1</sub> e G<sub>2</sub> otteniamo:
+</p><div class='indent'><strong>S -&gt; S<sub>1</sub> | S<sub>2</sub></strong>
+</div><div class='indent'><strong>S<sub>1</sub> -&gt; 0S<sub>1</sub>1 | &#949;</strong>
+</div><div class='indent'><strong>S<sub>2</sub> -&gt; 1S<sub>1</sub>0 | &#949;</strong>
+</div><div class='vspace'></div><h2>Forma normale di Chomsky</h2>
+<p>La <em>forma normale di Chomsky</em> ci permette di riscrivere una grammatica libera dal contesto in forma più compatta e semplificata. Ci tornerà molto utile in futuro, soprattutto se non sappiamo che nome dare al secondo criceto ("Chomsky &amp; Pumping-lemma", that's all folks!).
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Una CFG è nella <strong>forma normale di Chomsky</strong> se ogni regola è nella forma:
+</p><div class='indent'><code class='escaped'>A -&gt; BC</code>
+</div><div class='indent'><code class='escaped'>A -&gt; a</code>
+</div><p>, dove <em>a</em> è un qualsiasi terminale, A B e C sono una qualsiasi variabile, ma solo A è variabile iniziale. E' inoltre consentita la regola <em>S -&gt; &#949;</em>, dove S è la variabile iniziale.
+</p></div>
+<div class='vspace'></div><h3>Teorema 1 - sulla forma normale di Chomsky</h3>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Ogni linguaggio libero dal contesto è generato da una grammatica libera dal contesto nella forma normale di Chomsky.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Dato che per definizione un linguaggio libero dal contesto è generato da una CFG, non dobbiamo fare altro che dimostrare che ogni grammatica libera dal contesto G può essere espressa nella forma normale di Chomsky. Lo facciamo per costruzione, scandendo i vari passi.
+</p>
+<p class='vspace'><em>Passo (1)</em><br />Definiamo una nuova variabile iniziale S<sub>0</sub> e aggiungiamo la regola:
+</p><div class='indent'><strong>S<sub>0</sub>-&gt;S</strong>
+</div><p>, dove S era la variabile iniziale di G.
+</p>
+<p class='vspace'><em>Passo (2)</em><br />Dobbiamo far sparire tutte le regole espresse nella forma <em>A-&gt;&#949;</em>, dove A è una variabile diversa da quella iniziale. Si fa in due tempi:
+</p><ol><li>eliminiamo tutte le regole nella forma <em>A-&gt;&#949;</em>;
+</li><li>per ogni occorrenza di A nella parte destra di una regola, aggiungiamo una nuova regola in cui A non vi compare. In pratica, se abbiamo una regola del tipo <code class='escaped'>R-&gt;uAv</code> (dove <em>u</em> e <em>v</em> sono stringhe di variabili e/o terminali), la facciamo diventare: <strong>R-&gt;uAv|uv</strong>.
+</li></ol><p class='vspace'><em>Passo (3)</em><br />Dobbiamo far sparire tutte le regole unitarie espresse nella forma <em>A-&gt;B</em>. Anche in questo caso si opera in due tempi:
+</p><ol><li>eliminiamo tutte le regole unitarie nella forma <em>A-&gt;B</em>;
+</li><li>ogni volta che appare la regola <code class='escaped'>B-&gt;u</code>, aggiungiamo la regola <strong>A-&gt;u</strong>.
+</li></ol><p class='vspace'><em>Passo (4)</em><br />Concludiamo la costruzione convertendo tutte le altre regole nella forma appropriata. In particolare dovremo individuare ogni regola del tipo:
+</p><div class='indent'><em>A -&gt; u<sub>1</sub>u<sub>2</sub>..u<sub>k</sub></em>, con k&gt;=3 e ogni u<sub>i</sub> variabile o terminale
+</div><p>, e sostituirla con le regole:
+</p><div class='indent'><strong>A -&gt; u<sub>1</sub>A<sub>1</sub></strong>
+</div><div class='indent'><strong>A<sub>1</sub> -&gt; u<sub>2</sub>A<sub>2</sub></strong>
+</div><div class='indent'><strong>A<sub>2</sub> -&gt; u<sub>3</sub>A<sub>3</sub></strong>
+</div><div class='indent'>...
+</div><div class='indent'><strong>A<sub>k-2</sub> -&gt; u<sub>k-1</sub>u<sub>k</sub></strong>, dove le varie A<sub>i</sub> sono nuove variabili.
+</div><p>Quando arriviamo ad avere tutte regole con k=2, sostituiamo il terminale u<sub>i</sub> nelle regole precedenti con la nuova variabile <em>U<sub>i</sub></em>, e aggiungiamo la regola: <strong>U<sub>i</sub>-&gt;u<sub>i</sub></strong>.
+</p>
+<div class='vspace'></div><h3>Esempio di conversione</h3>
+<p>Tra il dire e il fare c'è di mezzo il mare. Imbarchiamoci per convertire una CFG nella corrispettiva forma normale di Chomsky.
+</p>
+<p class='vspace'>La grammatica G da convertire è la seguente:
+</p><div class='indent'>S -&gt; ASA | aB
+</div><div class='indent'>A -&gt; B | S
+</div><div class='indent'>B -&gt; b | &#949;
+</div><p class='vspace'>Applichiamo il <strong>Passo (1)</strong>
+</p><div class='indent'><em>aggiungiamo una nuova variabile iniziale</em>
+<div class='indent'><strong>S<sub>0</sub> -&gt; S</strong>
+</div><div class='indent'>S -&gt; ASA | aB
+</div><div class='indent'>A -&gt; B | S
+</div><div class='indent'>B -&gt; b | &#949;
+</div></div><p class='vspace'>Applichiamo il <strong>Passo (2)</strong>
+</p><div class='indent'><em>eliminiamo la regola B-&gt;&#949;</em>
+<div class='indent'>S<sub>0</sub> -&gt; S
+</div><div class='indent'>S -&gt; ASA | aB | <strong>a</strong>
+</div><div class='indent'>A -&gt; B | S | <strong>&#949;</strong>
+</div><div class='indent'>B -&gt; b <del>| &#949;</del>
+</div><div class='vspace'></div></div><div class='indent'><em>eliminiamo la regola A-&gt;&#949;</em>
+<div class='indent'>S<sub>0</sub> -&gt; S
+</div><div class='indent'>S -&gt; ASA | aB | a <strong>| SA | AS | S</strong>
+</div><div class='indent'>A -&gt; B | S <del>| &#949;</del>
+</div><div class='indent'>B -&gt; b
+</div></div><p class='vspace'>Applichiamo il <strong>Passo (3)</strong>
+</p><div class='indent'><em>eliminiamo la regola unitaria S-&gt;S</em>
+</div><div class='indent'>S<sub>0</sub> -&gt; S <strong>| ASA | aB | a | SA | AS</strong>
+</div><div class='indent'>S -&gt; ASA | aB | a | SA | AS <del>| S</del>
+</div><div class='indent'>A -&gt; B | S
+</div><div class='indent'>B -&gt; b
+<div class='vspace'></div></div><div class='indent'><em>eliminiamo la regola unitaria S<sub>0</sub>-&gt;S</em>
+</div><div class='indent'>S<sub>0</sub> -&gt; <del>S |</del> ASA | aB | a | SA | AS
+</div><div class='indent'>S -&gt; ASA | aB | a | SA | AS
+</div><div class='indent'>A -&gt; B | S
+</div><div class='indent'>B -&gt; b
+<div class='vspace'></div></div><div class='indent'><em>eliminiamo la regola unitaria A-&gt;B</em>
+</div><div class='indent'>S<sub>0</sub> -&gt; ASA | aB | a | SA | AS
+</div><div class='indent'>S -&gt; ASA | aB | a | SA | AS
+</div><div class='indent'>A -&gt; <del>B |</del> S <strong>| b</strong>
+</div><div class='indent'>B -&gt; b
+<div class='vspace'></div></div><div class='indent'><em>eliminiamo infine la regola unitaria A-&gt;S</em>
+</div><div class='indent'>S<sub>0</sub> -&gt; ASA | aB | a | SA | AS
+</div><div class='indent'>S -&gt; ASA | aB | a | SA | AS
+</div><div class='indent'>A -&gt; <del>S |</del> b <strong>| ASA | aB | a | SA | AS</strong>
+</div><div class='indent'>B -&gt; b
+</div><p class='vspace'>Applichiamo il <strong>Passo (4)</strong>
+</p><div class='indent'><em>convertiamo le regole rimanenti nella forma appropriata</em>
+</div><div class='indent'>S<sub>0</sub> -&gt; AA<sub>1</sub> | UB | a | SA | AS
+</div><div class='indent'>S -&gt; AA<sub>1</sub> | UB | a | SA | AS
+</div><div class='indent'>A -&gt; b | AA<sub>1</sub> | UB | a | SA | AS
+</div><div class='indent'>A<sub>1</sub> -&gt; SA
+</div><div class='indent'>U -&gt; a
+</div><div class='indent'>B -&gt; b
+</div><div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IT-LinguaggiLiberiDalContesto)</span></div>
+  </div>
+</body>
+</html>

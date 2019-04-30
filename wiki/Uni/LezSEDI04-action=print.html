@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi per l'elaborazione delle informazioni - Lezione 4</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LezSEDI04.html' title='Sistemi per l'elaborazione delle informazioni - Lezione 4'>Sistemi per l'elaborazione delle informazioni - Lezione 4</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi per l'elaborazione delle informazioni ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 2 Ottobre 2007</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 290px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>I livelli</a>
+<ul><li><a href='#s11'>Livello fisico e di Data Link</a>
+</li><li><a href='#s12'>Livello di rete</a>
+</li><li><a href='#s13'>Livello di trasporto</a>
+</li><li><a href='#s14'>Lo standard ISO/OSI e i livelli</a>
+</li></ul></li><li><a href='#s2'>Principi generali</a>
+<ul><li><a href='#s21'>Circuit Switching</a>
+</li><li><a href='#s22'>Pocket Switching</a>
+</li><li><a href='#s23'>Message Switching</a>
+</li></ul></li><li><a href='#s3'>I livelli (2)</a>
+<ul><li><a href='#s31'>Collegare ethernet diverse</a>
+</li><li><a href='#s32'>Hub</a>
+</li><li><a href='#s33'>Switch</a>
+</li><li><a href='#s34'>Bridge</a>
+</li></ul></li><li><a href='#s4'>Note di colore sul MAC</a>
+</li></ol></div>
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>I livelli</h2>
+<p><a name='s11' id='s11'></a>
+</p><h3>Livello fisico e di Data Link</h3>
+<p>Tornando al livello fisico, dobbiamo ricordarci che la Ethernet a 100Mbit non usa la codifica Manchester che abbiamo illustrato precedentemente, bensì la <strong>4B5B</strong> (che non appena leggo sul libro che cos'è ve lo faccio sapere), e usa cavi più corti proprio per via del legame tra banda passante e lunghezza dei cavi che abbiamo analizzato nelle lezioni dei giorni scorsi.
+</p>
+<p class='vspace'>Quindi, anche se il DataLink fosse uguale, il livello fisico dovrebbe per forza di cosa cambiare. E comunque questo cambiamento sarebbe indolore, dal punto di vista del DataLink: questi sono i vantaggi dei livelli.
+</p>
+<p class='vspace'><a name='s12' id='s12'></a>
+</p><h3>Livello di rete</h3>
+<p>Il DataLink funziona su una rete <em>locale</em>, una sola alla volta, e <em>non specifica</em> come far colloquiare 2 Ethernet diverse. A noi sembra tanto banale, ma vi ricordo che a questo punto non sappiamo ancora che cosa sia il TCP/IP, e ci dobbiamo attaccare: i cavi sono lunghi tot, e oltre non vanno; tutti i computer devono essere "a portata di pacchetto" e così via. Per collegare 2 Ethernet diverse occorrono macchine specifiche.
+</p>
+<p class='vspace'>Questo è poi il primo livello software, perché i 2 livelli precedenti sono implementati da hardware.
+</p>
+<p class='vspace'><a name='s13' id='s13'></a>
+</p><h3>Livello di trasporto</h3>
+<p>Quando un frame viene scartato, la specifica Ethernet non ci dice affatto <em>come</em> recuperalo. Occorre che ci sia un software che gestisca il reinvio dei pacchetti inviati e collisi (si dice così?), perché la NIC, di per sé, non ne sa niente.
+</p>
+<p class='vspace'>Occorre quindi gestire il trasporto. Le caratteristiche del trasporto devono essere:
+</p><ul><li>senza errori;
+</li><li>in sequenza (un pacchetto dopo l'altro)
+</li><li>senza perdite;
+</li><li>senza duplicati;
+</li><li>il truput deve essere costante.
+</li></ul><p class='vspace'>Nella Ethernet, l'overhead di protocollo (di cui abbiamo parlato nella prima lezione), non è affatto poco. Ciò vuol dire che il truput effettivo è inferiore alla banda passante nominale.
+</p>
+<p class='vspace'>Per esempio, in un frame ci sono sempre e comunque 208 byte che se ne vanno tra header e trailer, e al max ci sono 1500 byte di dati. 208 byte su 1500 sono una quantità apprezzabile di overhead: <code class='escaped'>208 : (1500 + 208) = x : 100; x = 12,86%</code>.
+</p>
+<p class='vspace'><a name='s14' id='s14'></a>
+</p><h3>Lo standard ISO/OSI e i livelli</h3>
+<p>Lo standard ISO/OSI presenta uno schema dei vari livelli, e ogni livello ha il suo protocollo specificato.
+</p>
+<p class='vspace'>Occorre tenere conto di questo principio: quello che un livello considera esclusivamente come payload, verrà a sua volta formattato da un livello superiore secondo il suo protocollo. Questo vuol dire che ad ogni livello, un pezzo di payload se ne va per ospitare gli header dei vari protocolli.
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/isoosi.gif' alt='' title='' /><br /><strong>Schema originale dei livelli ISO/OSI</strong></span></div>
+<p><br clear='all' />
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Principi generali</h2>
+<p>Le reti possono essere <em>Circuit Switching</em> o <em>Packet Switching</em>.
+</p>
+<p class='vspace'><a name='s21' id='s21'></a>
+</p><h3>Circuit Switching</h3>
+<p>Vuol dire <em>a commutazione di circuito</em>. Questo vuol dire che per ogni comunicazione viene creata una linea <em>fisica</em> tra mittente e ricevente.
+</p>
+<p class='vspace'>È quello che accade col telefono: i vari apparecchi che si trovano lungo la linea telefonica commutano in modo tale da creare una connessione diretta tra il mio telefono e quello che sto chiamando.
+</p>
+<p class='vspace'>Il vantaggio di questo tipo di collegamento è indubbiamente la velocità: ho una linea tutta per me, e posso sfruttarla al massimo.
+</p>
+<p class='vspace'>Lo svantaggio è che questa linea, una volta che è stata stabilita, rimane stabilita anche se non la sto usando. Un esempio stupido: se alzo la cornetta e chiamo qualcuno, e poi stiamo zitti al telefono, pago la chiamata anche se non sto comunicando niente
+</p>
+<p class='vspace'><a name='s22' id='s22'></a>
+</p><h3>Packet Switching</h3>
+<p>Le linee <em>a commutazione di pacchetto</em> invece usano una stessa linea per condividere più connessioni. È quello che abbiamo visto fino ad ora con Ethernet.
+</p>
+<p class='vspace'>Il vantaggio è il costo, inferiore perché la linea è una e le stazioni sono tante.
+</p>
+<p class='vspace'>Ovviamente, lo svantaggio è proprio la velocità: se siamo in troppi a comunicare, la linea si intasa.
+</p>
+<p class='vspace'><a name='s23' id='s23'></a>
+</p><h3>Message Switching</h3>
+<p>Invio un messaggio, e fin quando non l'ho terminato completamente, gli altri stanno zitti. Precursore del packet switching, è oggi e nella maggior parte dei casi già implementato nel packet e nel circuit switching.
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>I livelli</h2>
+<p>Ancora! Sinceramente l'ordine delle spiegazioni di Pier Damiani è un po' caotico, ma tant'è!
+</p>
+<p class='vspace'>I livelli di cui ci occupiamo sono: <em>fisisco</em>, <em>datalink</em>, <em>rete</em>, <em>trasporto</em>, <em>applicazione</em>. Ogni livello ha la sua responsabilità. Ogni apparecchio di rete funziona ad un certo livello. Per esempio, lo switch opera a livello 2, il sistema operativo lavora a livello 3 e così via.
+</p>
+<p class='vspace'><a name='s31' id='s31'></a>
+</p><h3>Collegare Ethernet diverse</h3>
+<p>Lo switch opera a livello 2, cioè non guarda nel payload del frame ma si limita ad analizzare l'header per capire dove inoltrare il frame. Lo hub invece è di livello 1, perché è un cavo compatto, come più volte spiegato precedentemente.
+</p>
+<p class='vspace'>Collegare Ethernet diverse vuol dire quindi capire come funzionano questi apparecchi.
+</p>
+<p class='vspace'><a name='s32' id='s32'></a>
+</p><h3>Hub</h3>
+<p>Prende un frame da una porta e lo replica su tutte le altre. Fa broadcast. Tratta tutti i bit in arrivo allo stesso modo, non li guarda minimamente.
+</p>
+<p class='vspace'><a name='s33' id='s33'></a>
+</p><h3>Switch</h3>
+<p>Lo switch invece non tratta tutti i bit in egual maniera: deve leggerli e capire dove mandarli, è quindi un apparecchio dotato di una qualche forma di intelligenza.
+</p>
+<p class='vspace'>La sua intelligenza viene usata per leggere i bit del MAC di destinazione del pacchetto in arrivo, capire a quale porta inoltrarlo, e inviarcelo.
+</p>
+<p class='vspace'>Questo presuppone la capacità dello switch di associare ad ogni porta un MAC. Infatti è ciò che avviene: ha una tabella interna che mantiene proprio questa relazione porta - MAC.
+</p>
+<p class='vspace'>Come fa a creare sta tabella? Non è pensabile che l'amministratore di rete prenda ogni mattina a scrivere sta tabella nello switch.
+</p>
+<p class='vspace'>Nelle reti Ethernet 100MBit è prevista una modalità di colloquio tra le schede e lo switch: in questo modo una scheda manda certi messaggi predefiniti e lo switch impara di lei quello che deve imparare.
+</p>
+<p class='vspace'>Ma le schede 10Mbit, che seguono lo standard originale di Ethernet, non sanno niente di tutto ciò, anche perché all'epoca gli switch non erano ancora stati inventati. Ecco come si comporta lo switch in questi casi:
+</p><ul><li>arriva un pacchetto
+</li><li>non sa dove mandarlo, lo replica a tutti
+</li><li>ma è furbo: quando qualcuno mi invia un frame, lo vede arrivare da una porta =&gt; si segna l'indirizzo del mittente nella tabella porte - MAC
+</li><li>la prossima volta che mi compare questo MAC, so a che porta associarlo
+</li></ul><p class='vspace'>Questo processo si chiama <em>learning</em>. L'accesso alla tabella di switch deve essere inoltre molto rapido, per evitare latenze nella rete. La memoria veloce è costosa, quindi gli switch costano.
+</p>
+<p class='vspace'>Ecco che abbiamo introdotto un'altra differenza tra 802.3 e 802.3u (100Mbit): non solo il livello fisico è diverso (cavi più corti, banda più ampia etc.), ma anche il Data Link è leggermente diverso, perché prevede questo dialogo con lo switch che non era previsto in origine.
+</p>
+<p class='vspace'>Non solo: ci sono ditte che hanno aggiunto ancora delle funzionalità agli switch, e quindi al DataLink, in modo del tutto non standard.
+</p>
+<p class='vspace'>Riassumendo, lo switch lavora a livello 2 perché deve guardare all'interno del frame.
+</p>
+<p class='vspace'><a name='s34' id='s34'></a>
+</p><h3>Bridge</h3>
+<p>I Bridge ora sono poco usati, perché per connettere 2 reti si collegano degli switch, che hanno a questo proposito un'uscita ultraveloce, in genere in fibra ottica, per collegarsi ad altri switch. Questa porta si chiama BACKBONE, e viene tirata in ballo nel momento in cui lo switch trova un MAC che non esiste nella sua tabella: allora lo replica nella backbone, e spetta a qualcun altro occuparsene.
+</p>
+<p class='vspace'>Per fortuna che ste backbone sono veloci, perché altrimenti si intaserebbe la linea replicando a tutti i messaggi di cui non si sa identificare il destinatario. Ai bei tempi, quando non c'erano le backbone veloci, replicare i messaggi a caso era un processo che poteva portare al tracollo il cavo coassiale.
+</p>
+<p class='vspace'>Per questo esistevano i Bridge. Lavora a livello 2: copia da un livello all'altro i frames, filtrandoli però in base al loro MAC. Un bridge è collegato con una porta ad una rete, con l'altra porta ad un'altra rete. Esattamente come lo switch, fa il learning dei MAC e delle porte, così che sa indirizzare un pacchetto che gli arriva alla porta giusta, oppure non inoltrarlo dall'altra parte se la sua destinazione è nella stessa rete da cui è provenuto. Anzi, a dire la verità è lo switch che ha copiato il learning dal bridge, perché il bridge è stato inventato prima dello switch.
+</p>
+<p class='vspace'>Nella fase di learning, un bridge impara ad associare certi MAC ad una porta. Ma che cosa succede se metto due Bridge tra le stesse 2 reti? Il Bridge 1 prende i dati dalla rete A e li replica sulla rete B. Il Bridge 2 vede arrivare questi dati dalla rete B e li replica sulla rete A. Nel frattempo, B ha imparato che questi MAC vengono dalla rete B, mentre in realtà sono stati copiati su B dal Bridge numero 1! Al passo successivo, le parti si invertono (provate ad immaginare perché) e così via. Insomma, è un grafo in cui c'è un ciclo tra i nodi (vedi Algoritmi per le definizioni di grafo, nodi e ciclo).
+</p>
+<p class='vspace'>Per ovviare a questo problema, sono stati inventati dei Bridge che implementano un algoritmo detto <em>Spanning Tree</em>, il quale si accorge di questa situazione e vi pone rimedio. In sostanza crea un albero a partire dal grafo delle connessioni, e toglie il sottoalbero che non serve. Da notare che ormai sti bridge non li fanno più, che ormai non servono più.
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>Note di colore sul MAC</h2>
+<p>Il MAC può essere visto come un <em>algoritmo probabilistico distribuito</em>. Volano parole grosse, eh?
+</p>
+<div class='vspace'></div><ul><li><em>Algoritmo</em>: il MAC serve per mappare della memoria che non risiede in un solo luogo fisico, ma in posti diversi. Deve fare dei calcoli per mapparla nel posto giusto. Un po' come le reti di Nello, con quegli scatoli che indirizzavano le celle e così via.
+</li><li><em>Probabilistico</em>: è opposto a deterministico, ovvero non sa quanto tempo ci metterà per trovare il punto giusto della memoria e copiarci i dati.
+</li><li><em>Distribuito</em>: infatti i calcoli non avvengono in un luogo unico, ma su ogni scheda: per questo è distribuito.
+</li></ul><p class='vspace'>Quindi, il CSMA/CD, che è un MAC, è un algoritmo di copia della memoria.
+</p>
+<p class='vspace'>Da notare che esistono anche MAC che sono deterministici, cioè in cui il tempo di trasfermimento è noto a priori.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LezSEDI04)</span></div>
+  </div>
+</body>
+</html>

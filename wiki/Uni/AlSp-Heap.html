@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Heap e HeapSort </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.AlSp-Heap' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Heap e HeapSort
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-Heap?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-Heap?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='AlSp-Heap-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-Heap?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-Heap?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Heap e HeapSort was last modified on March 22, 2008, at 05:45 PM'>
+							<span style='display:none;'>Heap e HeapSort</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Heap e HeapSort ::</strong>
+</pre><div class='vspace'></div><h2>La PrioriCoda</h2>
+<p>La <em>PrioriCoda</em> è una coda di priorità. Sappiamo già che le code sono strutture dati di tipo FIFO. La coda di priorità è una coda in cui gli elementi sono ordinati tramite una relazione di ordinamento globale. Questa può essere un &gt;=, o un &lt;=. 
+</p>
+<p class='vspace'>Da notare che le relazioni di ordinamento si scrivono &lt;= o &gt;= anche se non si tratta di numero, stiamo sempre parlando di tipi di dato in astratto.
+</p>
+<p class='vspace'>Orbene, le PrioriCode (ma che nome è, sembra <em>la coda dei Priori</em>...) hanno queste specifiche:
+</p>
+<div class='vspace'></div><ul><li>creaprioricoda: () -&gt; prioricoda
+</li><li>inserisci: (tipoelem, prioricoda) -&gt; prioricoda
+</li><li>min: (prioricoda) -&gt; tipoelem
+</li><li>cancellamin: (prioricoda) -&gt; prioricoda
+</li></ul><p class='vspace'>Sono intuitive, no?
+</p>
+<div class='vspace'></div><h2>Realizzazioni</h2>
+<p>Come posso realizzarle? Ci sono tre alternative. La prima usa delle liste ordinate, la seconda delle liste non ordinate, e la terza infine (rullo di tamburi) lo heap.
+</p>
+<div class='vspace'></div><h3>Liste Ordinate</h3>
+<p>Una lista ordinata è una lista in cui, quando inserisco un elemento, non lo metto nella prima posizione disponibile, ma controllo che sia soddisfatta la famosa relazione d'ordinamento globale e lo metto quindi al posto giusto. Ecco quindi che si spiega la complessità degli operatori:
+</p>
+<div class='vspace'></div><ul><li>inserisci: O(n)
+</li><li>min: O(1)
+</li><li>cancellamin: O(1)
+</li></ul><p class='vspace'><strong>min</strong> e <strong>cancellamin</strong> sono O(1) perché devo solo estrarre il primo elemento dalla lista, dato che l'inserimento è stato fatto rispettando l'ordine, e quindi è questo il motivo per cui <strong>inserisci</strong> costa così caro.
+</p>
+<div class='vspace'></div><h3>Liste Non Ordinate</h3>
+<p>Viceversa: l'inserimento avviene nella prima posizione, mentre determinare il minimo e cancellarlo sono costose perché devo esaminare tutta la lista.
+</p>
+<div class='vspace'></div><ul><li>inserisci: O(1)
+</li><li>min: O(n)
+</li><li>cancellamin: O(n)
+</li></ul><div class='vspace'></div><h2>Heap</h2>
+<p>Lo <strong>heap</strong> è un <strong>vettore</strong> oppure un <strong>binalbero</strong>. Sì, avete capito bene: posso rappresentare uno heap indifferentemente come un vettore o come un binalbero. Lo heap serve per rappresentare in modo intelligente una prioricoda.
+</p>
+<p class='vspace'>Per comodità, lo immagineremo come un albero binario, e poi spiegheremo come farlo diventare un vettore.
+</p>
+<p class='vspace'>Ha queste tre proprietà:
+</p><ol><li><em>h</em> è il livello massimo =&gt; ci sono <em>2^h - 1</em> nodi di livello minore di <em>h</em>
+</li><li>tutte le foglie di livello <em>h</em> sono addossate a sinistra
+</li><li>un nodo contiene un elemento che è &gt;= del padre (la relazione di ordinamento di prima).
+</li></ol><p class='vspace'>Ecco una pessima rappresentazione di uno heap:
+</p><pre class='escaped'>
+            1
+         /      \
+      8           7
+    /    \       /
+  10     12     9  
+</pre>
+<p class='vspace'>(<em>Si attende un volontario che faccia i disegnini</em>)
+</p>
+<p class='vspace'>Come vedete, l'elemento minimo è in posizione <em>radice</em>, e man mano che si scende sono rispettate tutte le tre proprietà dello Heap. Se immaginiamo di mappare una prioricoda su di uno Heap, vediamo subito che l'operatore <strong>min</strong> costa O(1). Ed è già un vantaggio.
+</p>
+<p class='vspace'>Rimangono gli operatori <strong>inserisci</strong> e <strong>cancellamin</strong>, i quali dovranno operare su questo binalbero.
+</p>
+<div class='vspace'></div><h3>Cancellamin</h3>
+<p>Il minimo sappiamo che è la radice. Per cancellare il minimo e riorganizzare il binalbero, dobbiamo fare le seguenti operazioni:
+</p><ul><li>copiare il valore dell'ultima foglia in basso a destra al posto del valore della radice
+</li><li>eliminare l'ultima foglia in basso a destra
+</li><li>fare in modo che questa nuova foglia occupi la posizione che gli spetta in mezzo all'albero, secondo la proprietà 3:
+<ol><li>prendo il minore dei suoi figli
+</li><li>se è più grande di lui, la <em>scambio</em> con esso (per soddisfare la proprietà 3)
+</li><li>ripeto il controllo con il minore dei suoi figli etc. finché non soddisfo la proprietà 3
+</li></ol></li></ul><p class='vspace'>Ecco una pessima rappresentazione grafica della <strong>cancellamin</strong>. L'albero è quello di prima, e voglio cancellare 1.
+</p><pre class='escaped'>
+            1                    9                   7
+        /       \              /    \              /   \
+      8          7  =&gt;        8      7  =&gt;        8     9
+     /  \       /           /  \                 / \
+  10     12    9           10  12              10  12
+</pre>
+<p class='vspace'>Quanto è complesso questo operatore? Il numero di livello è dato da log_2(n), dove n è il numero dei nodi, quindi la complessità è O(n), perché nel caso peggiore sposto un valore dalla radice fino in fondo all'albero. .Un bel passo in avanti rispetto a O(n)!
+</p>
+<div class='vspace'></div><h3>Inserisci</h3>
+<p>L'operatore <strong>inserisci</strong> si realizza mettendo il nuovo elemento appena arrivato in basso a destra, così da essere l'ultima delle foglie, e lo si fa risalire fino a che non soddisfo la proprietà 3. Risalire vuol dire che lo scambio col suo padre se il suo padre è di valore superiore a lui. Nel caso pessimo, dovrò risalire fino alla radice, e quindi siamo ancora in O(logn).
+</p>
+<p class='vspace'>Qui sotto inserisco un nodo di valore 6
+</p>
+<div class='vspace'></div><pre class='escaped'>
+          7              7             6
+        /   \          /   \         /    \
+       8      9  =&gt;  8       6 =&gt;   8      7
+      / \    /      / \     /      / \    /
+     10  12  6     10  12   9    10  12  9
+</pre>
+<div class='vspace'></div><h3>Ecco fatto!</h3>
+<p>In questo modo, abbiamo una bella PrioriCoda realizzata con un albero binario con operatori ottimi:) Non vi sentite più felici e sollevati, ora?
+</p>
+<div class='vspace'></div><h2>Il vettore Heap</h2>
+<p>Il binalbero che rappresenta uno heap può essere mappato su di un vettore. Il sistema è il seguente:
+</p><ul><li>il primo elemento del vettore è la radice
+</li><li>i figli di un nodo qualsiasi, che sta in posizione <em>i</em>, si troveranno in posizione <em>2i</em> (figlio sx) e in posizione <em>2i + 1</em> (figlio dx).
+</li></ul><p class='vspace'>I nodi del figlio in posizione 1, cioè la radice, staranno in 2*1 e in 2*1 + 1, cioè in pos 2 e 3. I figli di 2 staranno in 4 e 5, i figli di 3 in 6 e 7 etc.
+Praticamente si prende l'albero e si inseriscono i nodi per ogni livello, da sinistra  a destra, e poi si va a capo con il livello successivo.
+</p>
+<p class='vspace'>Questo sotto è l'albero iniziale:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+            1
+         /      \
+      8          7
+    /    \      /
+  10     12    9  
+</pre>
+<p class='vspace'>Inserirò i nodi nel vettore in questo ordine: 1 - 8 - 7 - 10 - 12 - 9. Provate e vedrete che rispetta le specifiche del 2i, 2i + 1 etc.
+</p>
+<p class='vspace'>Una conseguenza è che il <em>padre</em> di un qualsiasi nodo di posizione i, sta in posizione i/2. Tutto ciò è vero perché ad ogni livello aggiunto io raddoppio il numero di nodi dei livelli precedenti.
+</p>
+<div class='vspace'></div><h3>Realizzazione col vettore</h3>
+<p>Adesso vediamo come realizzare lo heap col vettore. <em>NON</em> presento pseudocodice, perché lo si trova sul libro. Però sotto c'è un'implementazione dello heapsort in Java, e lì ovviamente il codice lo trovate... Si accettano tuttavia richieste in merito, e si vedrà di evaderle:)
+</p>
+<div class='vspace'></div><h3>Inserisci</h3>
+<ul><li>inserisco il nuovo nodo in fondo al mio vettore
+</li><li>vado a recuperare il padre (posizione Padre = posizione Figlio / 2)
+</li><li>soddisfo la proprietà 3? Se sì, fine, altrimenti:
+<ul><li>swappo il contenuto dei due nodi
+</li><li>ora Figlio deve puntare alla posizione del Padre, e ora Padre deve puntare al Padre di questo nodo
+</li><li>vado avanti a soddisfare l'ingorda proprietà 3.
+</li></ul></li></ul><div class='vspace'></div><h3>Cancellamin</h3>
+<ul><li>copio il valore dell'ultimo elemento del vettore nella radice
+</li><li>accorcio il vettore di 1
+</li><li>prendo il minore dei figli della radice
+</li><li>se soddisfo la proprietà 3, ok, altrimenti:
+<ul><li>swappo la radice con il suo figlio minore
+</li><li>ripeto il controllo con i figli di questo nodo etc. etc.
+</li></ul></li></ul><div class='vspace'></div><h2>HeapSort</h2>
+<p>Ed eccoci al piatto forte del menu odierno:) Lo HeapSort è un algoritmo per ordinare degli elementi, e si appoggia sulla struttura Heap testé descritta. Fino ad ora abbiamo usato il Selection Sort, cioè: 
+</p>
+<div class='vspace'></div><ul><li>prendo il minor elemento di una lista e lo tolgo
+</li><li>prendo il minor elemento della lista che rimane e lo tolgo
+</li><li>prendo... etc.
+</li></ul><p class='vspace'>Insomma, O(n^2). Orrorrrre!
+</p>
+<p class='vspace'>Lo HeapSort invece lavora infilando un vettore dentro uno Heap, ed estraendo poi il <strong>min</strong> per avere il vettore ordinato. È come se fagocitasse un vettore caotico e lo risputasse fuori in ordine:)
+</p>
+<div class='vspace'></div><ul><li>Per ogni elemento del vettore di origine, eseguo una <strong>inserisci</strong> nel mio heap
+</li><li>Poi, ripeto fino ad esaurimento PrioriCoda:
+<ul><li><strong>min</strong>
+</li><li><strong>cancellamin</strong>
+</li></ul></li></ul><p class='vspace'>Siccome devo introdurre tutti i dati, e effettuare logn operazioni su di essi, la complessità del mio algoritmo HeapSort è O(nlogn), ed è il nuovo limite inferiore al problema dell'ordinamento!
+</p>
+<p class='vspace'>C'è anche un modo per non usare una PrioriCoda esterna al vettore che devo ordinare, ma trasformare il vettore stesso in una PrioriCoda, ma questa è un'altra storia, e adesso non ho voglia di parlarne:)
+</p>
+<div class='vspace'></div><h3>HeapSort in Java</h3>
+<p>Qui sotto trovate un bel programmino in Java, il quale implementa una PrioriCoda, e fa un bell'heapsort di un vettore, generato casualmente, secondo il sistema descritto qui sopra. Ho cercato di tradurre il codice scritto sul libro, con qualche eccezione dovuta alla chiarezza (ok non ho ecceduto in chiarezza) e soprattutto perché il libro assume i vettori con posizione iniziale a 1, mentre è noto che nella maggior parte dei linguaggi di programmazioni i vettori e gli array in genere partono da 0.
+</p>
+<p class='vspace'>Per compilare il programma è necessario un Java &gt;= 1.5, perché uso dei costrutti che nelle versioni precedenti non c'erano (Vector&lt;Integer&gt; per intenderci).
+Si compila con <code class='escaped'>javac heapsort.java</code> e si esegue con <code class='escaped'>java heapsort</code>.
+</p>
+<p class='vspace'><a class='urllink' href='../uploads/Uni/heapsort.java' title='' rel='nofollow'>heapsort.java</a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a> - <a class='categorylink' href='http://www.swappa.it/wiki/Category/Programmazione'>Programmazione</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 22, 2008, at 05:45 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-Heap?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/AlSp-Heap?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

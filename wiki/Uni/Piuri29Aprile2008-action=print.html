@@ -1,0 +1,377 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / SO - Lezione del 29 aprile 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri29Aprile2008.html' title='SO - Lezione del 29 aprile 2008'>SO - Lezione del 29 aprile 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: SO - Lezione del 29 aprile 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<div class='vspace'></div><h2>Struttura del FS - Le directory</h2>
+<p>Dopo aver parlato dei files, parliamo della seconda struttura tipica del FS, cioè le <strong>directory</strong>. Non mi piace la parola direttorio, quindi non la uso. Il prof la pensa diversamente, tuttavia...
+</p>
+<p class='vspace'>Servono per organizzare in modo logico il disco: posizionare i files all'interno di dir server per sistemarli secondo un qualche criterio.
+</p>
+<div class='vspace'></div><h3>Directory ad 1 livello</h3>
+<p>Tutto è nella stessa directory. Immaginate il casino. Posso ancora dividere le cose per utente, con permessi etc. ma non è molto comodo perché devo avere nomi univochi e non posso separare il materiale in base all'utilizzo
+</p>
+<div class='vspace'></div><h3>2 livelli</h3>
+<p>C'è una dir per utente, ed è quindi adatto a SO multiutente. Sono quindi ammessi files omonimi, la ricerca è efficiente, però rimane ancora la faccenda che ogni utente vede tutti i suoi files nello stesso calderone.
+</p>
+<div class='vspace'></div><h3>Ma noi come lo vogliamo, sto FS?</h3>
+<p>Prendendo a modello la biblioteca, vorremmo poter organizzare i nostri files secondo un qualche criterio che più ci aggrada, ovvero per argomento. E ogni argomento sarebbe bello poterlo dividere in sottoargomenti e così via.
+</p>
+<div class='vspace'></div><h3>Struttura ad albero</h3>
+<p>Ecco allora che nasce spontanea la struttura ad <strong>albero</strong>, in cui il primo nodo è la <strong>radice</strong> del filesystem, e ogni nodo rappresenta un gruppo di files.
+</p>
+<p class='vspace'>Un gruppo di file può contenere files o altre dir, e così via. Se un file appartiene ad un gruppo, cioè ad un sottinsieme, non può appartenere a nessun altro gruppo.
+</p>
+<p class='vspace'>Per individuare i files, dobbiamo conoscere, oltre al loro nome, anche la <strong>posizione logica</strong> all'interno del FS, cioè la sequenza di dir, a partire dalla radice, che dovrei percorrere per giungere a quel file.
+</p>
+<p class='vspace'>Nella struttura a 2 livelli, ogni utente ha la sua dir. Qui non sono obbligato ad avere una dir per utente, anche se in genere lo si fa lo stesso perché alla fine è comodo.
+</p>
+<p class='vspace'>Ho la possibilità di avere files omonimi, perché il nome intero del files comprende anche il percorso, e finché il percorso logico è diverso, allora van bene anche le omonimie. Posso cercare in modo efficiente, posso spostare qua e là un file, posso raggruppare secondo i criteri che preferisco, e posso mettere facilmente gruppi in condivisione. Very good.
+</p>
+<div class='vspace'></div><h3>Directory a grafo aciclico</h3>
+<p>L'unico svantaggio dell'albero è che non posso dare nomi diversi allo stesso file: infatti, i gruppi sono un partizionamento dell'insieme dei files, e pertanto sono sottinsiemi disgiunti.
+</p>
+<p class='vspace'>Esiste allora la <strong>directory a grafo aciclico</strong>, in cui un unico oggetto può essere visto con 2 nomi diversi. Eg, /home/dario/testo.txt è la stessa roba di /usr/local/parole.doc, volendo.
+</p>
+<p class='vspace'>In questo modo condividere files è molto più semplice e naturale che doverli ricopiare in una dir apposita.
+</p>
+<p class='vspace'>Si dice "grafo aciclico" perché ad un certo punto questo gioco di rimandi deve finire.
+</p>
+<div class='vspace'></div><h3>Directory a grafo generale</h3>
+<p>Qui invece ammetto anche dei cicli, e posso quindi puntare ovunque nel FS. Comodo per fare ricerche, ma occorre comunque stare attenti che le ricerche non si perdano in un ciclo.
+</p>
+<div class='vspace'></div><h3>Memorie di massa a dischi multipli</h3>
+<p>Ogni disco ha il FS in proprio. Ma come li vede l'utente?
+</p>
+<p class='vspace'>L'approccio semplice è quello di rendere visibile all'utente la divisione in dischi. Ovvero, all'utente è reso noto che quel FS appartiene a quel disco e quell'altro FS a quell'altro disco. È l'approccio di uindoz, per intenderci, in cui abbiamo i drive D:\, E:\ etc. 
+</p>
+<p class='vspace'>Ma dal pdv logico è irrazionale: che gliene frega all'utente dei dischi? Dovrebbe esserci un FS unico, astratto rispetto alla fisicità del computer. Avere i dischi visibili è comodo solo a chi scrive il SO.
+</p>
+<div class='vspace'></div><h3>Dischi grossi</h3>
+<p>C'è un FSone gigantesco, con conseguente poca efficienza, e soprattutto, pericolo. Infatti, se per qualche motivo il FS si danneggia, tutto il disco potrebbe diventare poco usabile, o addirittura per niente utilizzabile.
+</p>
+<p class='vspace'>La mossa astuta allora è dividere il disco in <strong>partizioni</strong>, e su ogni partizione mettere un FS diverso, e separare in qualche modo intelligente il materiale in queste partizioni. Così facendo, se il FS di una partizione si danneggia, questo danno non pregiudica i FS delle altre partizioni.
+</p>
+<p class='vspace'>Ad esempio, se in una partizione metto i dati e nell'altra le applicazioni, un danno al FS delle applicazioni non pregiudica i miei dati, ben più importanti. Infatti uinzoz non fa così, sarebbe troppo intelligente.
+</p>
+<p class='vspace'>Un <strong>volume logico</strong> è l'astrazione di una partizione che sta però su più dischi. Alcuni SO forniscono tale astrazione, e ci pensano poi loro a mandare le richieste al posto giusto.
+</p>
+<p class='vspace'>Se ho più dischi fisici, e voglio vederli in un unico FS, allora alcuni nodi del FS vengono detti <strong>punti di montaggio</strong>: in questi punti viene "collegata" la dir radice del FS di un'altra partizione, così che se parto dal FS generale, arrivo a quel punto e automagicamente passo nel FS dell'altro disco (o dell'altra partizione). E questa è cosa buona e giusta.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3 - Condivisione dei files &amp; protezione</strong></span>
+</p>
+<p class='vspace'  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><span  style='color: yellow;'><strong>Warning!</strong><br /><strong>Tutto quanto detto in questa Lezione 3 NON È l'argomento "protezione dei files", bensì una specie di introduzione. E allora, che lo scrivo a fare?:)</strong></span>
+</p>
+<p class='vspace'>Nei sistemi multiutente vorrei poter condividere files, così che ogni utente possa usarli, oppure rendere possibile la collaborazione, ovvero avere più utenti che lavorano contemporaneamente allo stesso file. Certo, c'è la solita storia degli accessi compatibili in lettura e scrittura e bla bla <span style='font-size:144%'>BLA</span>.
+</p>
+<p class='vspace'>Nei sistemi multiutente devo <strong>autenticare</strong> utenti e gruppi, così so che privilegi accordare loro. Per esempio, i files possono portarsi dietro degli attributi che mi dicono chi può leggerli, chi può scriverli e simili amenità.
+</p>
+<p class='vspace'>L'idea è quella di implementare un concetto, detto <strong>dominio di protezione</strong>, che non abbiamo ancora visto, ma che vedremo.
+</p>
+<p class='vspace'>Si possono anche condividere <strong>files remoti</strong>, tramite sistemi come <strong>ftp</strong>, <strong>http</strong>, <strong>fs di rete</strong> o ancora <strong>fs distribuiti</strong>.
+</p>
+<p class='vspace'>Con ftp e http, mi connetto al server, scarico il mio files, lo palpugno e poi lo reuploado al server.
+</p>
+<p class='vspace'>Con un fs di rete, invece, quel fs è montato sul mio fs generale =&gt; lavoro direttamente in remoto, non devo stare lì a copiare e ricopiare. Certo saranno più lente le operazioni perché devono passare per la rete, ma se ho files grossi risparmio il tempo di download e upload ad ogni modifica.
+</p>
+<p class='vspace'>Per mantenere la <strong>coerenza</strong> (vedi <a class='wikilink' href='BDComplementi.html'>qui dentro</a>), ho diverse scelte:
+</p><ul><li>modifiche visibili immediatamente dopo 1 modifica
+</li><li>modifiche visibili solo dopo che chiudo il file
+</li><li>modifiche visibili solo in una sessione successiva
+</li><li>immutabilità dei files condivisi
+</li></ul><p class='vspace'>Vediamo di spiegarci.
+</p>
+<p class='vspace'>Nel primo caso, se l'utente A modifica il file F, l'altro utente B lo vede subito. Nel secondo caso, invece l'utente B vede le modifiche solo dopo che A ha chiuso il file. Nel terzo caso, infine, qualsiasi cosa abbia fatto A al file, B deve chiudere F e poi riaprirlo per ottenere le nuove modifiche.
+</p>
+<p class='vspace'>Se accadono guasti, può insorgere dell<strong>'incoerenza</strong> nei miei files. Introduciamo allora il concetto di <strong>stato del FS</strong>, e più in là ci verrà spiegato.
+</p>
+<p class='vspace'>Per quanto riguarda la <strong>protezione</strong>, devo impedire accessi improprio. Il già citato dominio di protezione verrà implementato in qualche modo, così che ogni utente potrà autenticarsi, e ricevere una lista di permessi da applicare in giro per il FS.
+</p>
+<p class='vspace'>Il <strong>controllo dell'accesso</strong> lo posso fare in molti modi.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>FS: Struttura e realizzazione</strong></span>
+</p>
+<p class='vspace'>L<strong>'obiettivo</strong> del FS è di gestire omogeneamente le risorse informative e fisiche del sistema di elaborazione, e tutte ste risorse devono essere viste come <strong>flussi di informazioni elementari</strong>.
+</p>
+<p class='vspace'>Diciamo risorse sia informative che fisiche, perché vogliamo trattare allo stesso modo i files e le varie periferiche. Ad esempio, la tastiera è una periferica da cui leggo caratteri, uno alla volta, per esempio. Allo stesso modo, una scheda audio è una periferica in cui scrivo campioni sonori, e così via.
+</p>
+<p class='vspace'>Ogni periferica e ogni files ha il suo <strong>tipo di dato elementare</strong>. La tastiera usa il carattere, la scheda video i pixel (per esempio), il file dario.txt degl interi. Noi vogliamo che il FS mostri tutte queste risorse come un flusso delle info elementari di cui sono costituite.
+</p>
+<p class='vspace'>Qui noi ci focalizzeremo sulle risorse informative (i files), piuttosto che su quelle fisiche.
+</p>
+<div class='vspace'></div><h3>Supporto fisico del FS</h3>
+<p>Posso mettere FS ovunque, ma qui parliamo di dischi di memoria secondaria, che sono diffusi e noti.
+</p>
+<p class='vspace'>Abbiamo già visto che a basso livello ci sono settori e tracce e cilindri. È ovvio che non possiamo andare a cercare la roba per il disco in base a queste informazioni, che hanno ben poco di umano. E infatti, qui sopra dicevamo che vogliamo offrire flussi di tipi base agli utenti, e non cilindri e settori.
+</p>
+<p class='vspace'>E allora occorre astrarre: da cilindri e settori passiamo a <strong>blocchi</strong>, e dai blocchi passeremo ai <strong>files</strong> e alla loro organizzazione logica nel FS. È proprio il FS che realizza questa astrazione.
+</p>
+<p class='vspace'>Ad esempio, noi vogliamo che i dati tra il settore 47 e l'85 della traccia 2 siano il file testo.txt, oppure - visto che vogliamo trattarli allo stesso modo - che i caratteri che provengono dalla tastiera siano disponibili nel file /dev/keyboard.
+</p>
+<div class='vspace'></div><h3>Strutture del software che gestisce il FS</h3>
+<div><span class='frame rfloat'><img src='../uploads/Uni/gattodj.jpg' alt='' title='' /><br /><strong>Guarda come gestisce bene i dischi!</strong></span></div>
+<p>È composto da 4 livelli diversi
+</p><ol><li>gestione fisica della periferica = è il driver di periferica delle <a class='wikilink' href='Piuri21Aprile2008.html'>lezioni precedenti</a>
+</li><li>FS di base: legge e scrive blocchi fisici
+</li><li>modulo di organizzazione dei files: mappatura tra files e blocchi presi in ordine
+</li><li>FS logico: dir, nomi files, permessi et similia
+</li></ol><p class='vspace'>Il punto 1 è il driver di periferica, diviso in dipendente ed indipendente dall HW.
+</p>
+<p class='vspace'>I punti 2, 3 e 4 sono invece il FS vero e proprio.
+</p>
+<p class='vspace'>Ma vediamo un po' sti <strong>blocchi</strong>. Sul disco, ho questi tipi di blocchi:
+</p><ul><li>blocco di controllo del boot
+</li><li>blocco di controllo della partizione
+</li><li>directories
+</li><li>blocchi di controllo dei files
+</li></ul><p class='vspace'>I blocchi che descrivono i files devono contenere le info relative ai files:
+</p><ul><li>permessi
+</li><li>date del file (ultimo accesso, ultima scrittura, creazione)
+</li><li>proprietario, gruppo, eventuale Access Control List
+</li><li>dimensione
+</li><li>lista ordinata dei blocchi che costituiscono il file
+</li></ul><p class='vspace'>Tutti sti blocchi devono rimanere <strong>sul disco</strong>, così che quando spengo e riaccendo il computer non scompare la roba:)
+</p>
+<p class='vspace'>Ma ci sono anche altre cose che, invece, devono risiedere in memoria centrale:
+</p><ul><li>la tabella delle partizioni
+</li><li>i descrittori delle dir
+</li><li>la tabella dei files aperti dal sistema
+</li><li>la tabella dei files aperti da ogni processo
+</li><li>la tabella di montaggio del FS
+</li></ul><p class='vspace'>Per <strong>aprire</strong> un file, si usa la primitiva <strong>open</strong>. Viene eseguita nello spazio utente, si controlla il percorso e i permessi nello spazio kernel, e poi si accede al blocco corretto.
+</p>
+<p class='vspace'>La <strong>open</strong> è una funzione che restituisce un indice. Questo è l'indice di una posizione nella <strong>tabella dei files aperti del processo</strong>. A sua volta, quella posizione nella tabella rimanda ad un'altra posizione, stavolta nella <strong>tabella dei files aperti dal SO</strong>.
+</p>
+<p class='vspace'>Ogni processo ha la sua tabella, che è nello spazio privato del processo e nessuno la può tangere. Se più processi hanno lo stesso files aperto, avremo semplicemente che la voce relativa a quel file nella tabella dei processi porterà alla stessa voce nella tabella del SO.
+</p>
+<p class='vspace'>Tutte le primitive per agire sul file vengono passate al SO indicandogli l<strong>'indice</strong> del file che voglio utilizzare. Il SO prima controlla nella tabella del processo, poi risale alla tabella del SO, e da qui sa risalire al blocco giusto nel disco.
+</p>
+<div class='vspace'></div><h3>FS virtuali</h3>
+<p>Il FS virtuale è realizzato tramite un'interfaccia che dal pdv logico sta sotto all'interfaccia del FS. Il VFS pensa a gestire i FS locali e quelli remoti in modo del tutto trasparente rispetto a chi lo utilizza.
+</p>
+<p class='vspace'>Un <strong>FS distribuito</strong> appare come un <strong>unico ed identico</strong> FS da qualsiasi macchina io usi per accedervi. Se invece ogni macchina ha sì l'accesso ad un FS remoto tramite la rete, non ho un vero FS distribuito.
+</p>
+<p class='vspace'>Perché? Il motivo è che ogni macchina avrà, nel complesso, un FS diverso. Infatti
+</p><ul><li>o la porzione locale del FS è diversa per ogni macchina;
+</li><li>o il FS remoto è montato in punti diversi su diverse macchine;
+</li><li>o una macchina ha montati certi FS e un'altra ne ha altri
+</li></ul><p>e quindi NON È un vero VFS
+</p>
+<div class='vspace'></div><h3>Realizzazione delle dir</h3>
+<p>Una dir è un <strong>elenco</strong> di descrittori di files, i quali possono essere, a loro volta, files o altre dir. Come realizzo questo elenco?
+</p>
+<div class='vspace'></div><h4>Struttura a lista</h4>
+<p>C'è una lista, e ogni elemento ha un puntatore all'elemento dopo. Semplice, ed efficiente quando l'elenco è ordinato e vi accedo in ordine.
+</p>
+<p class='vspace'>Ma se devo cercare un elemento a caso, in generale il tempo di scansione è O(n), perché devo passare da tutti gli elementi.
+</p>
+<p class='vspace'>Come posso ottimizzare un po'?
+</p><ul><li>mantenendo la lista ordinata: se cerco un file che inizia per D, e dopo la C trovo la E, sapendo che la lista è sicuramente ordinata allora so per certo che il file che cerco non esiste. Insomma, in media faccio solamente n/2 accessi
+</li><li>usando una cache per velocizzare la faccenda
+</li><li>usando un <strong>albero binario</strong>, e se è bilanciato, tanto meglio.
+</li></ul><div class='vspace'></div><h4>Struttura a tabella di hash</h4>
+<p>Occorre una funzione di hash adatta, che comprima, dia poche collisioni e distribuisca bene i files. Vedi <a class='wikilink' href='Piuri14Aprile2008.html'>altrove</a> per qualche parola in più sulle funzioni di hash.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Lezione 3: Realizzazione dei files - Gestione dell'astrazione dei file</strong></span>
+</p>
+<p class='vspace'>Il file in realtà non esiste. È un entità che appare solo quando la guardo in un certo modo, ovvero quando la guardo tramite il FS (visione logica) o dal pdv fisico.
+</p>
+<div class='vspace'></div><h3>Visione logica</h3>
+<p>Come già dicemmo, il file è una sequenza di elementi omogenei in numero non limitato a priori.
+</p>
+<p class='vspace'>Che tipo di elementi? Quelli che l'applicazione vuole, e si chiamano <strong>record logici</strong>. Quando creo il file, dichiaro anche il tipo base, e quindi so quanto occupa sul disco in base alla dimensione del record logico e al numero di record logici che il file contiene.
+</p>
+<div class='vspace'></div><h3>Visione fisica</h3>
+<p>Il file è una sequenza ordinata di blocchi. Per ogni file, il FS deve sapere da che blocco iniziare, dove finire, e in che ordine essi vanno presentati.
+</p>
+<p class='vspace'>Si vede subito che la visione fisica va mappata nella visione logica, e al solito posso farlo in diversi modi.
+</p>
+<div class='vspace'></div><h4>1 record logico = 1 blocco fisico</h4>
+<p>Va bene, ma qui dipende dalle dimensioni reciproche.
+</p>
+<p class='vspace'>Se il record logico è più piccolo del blocco fisico, allora spreco spazio in ogni blocco. Al contrario, se il record logico è più grosso del blocco fisico, non ci sta.
+</p>
+<p class='vspace'>Se ci pensiamo, non è logico forzare la dimensioni dei record logici sulla base del blocco fisico.
+</p>
+<div class='vspace'></div><h4>+ record logici in 1 blocco fisico</h4>
+<p>Metto record in un blocco finchè c'è spazio. Ma c'è sempre il solito vincolo illogico.
+</p>
+<div class='vspace'></div><h4>Byte Stream</h4>
+<p>Un'applicazione può usare tutti i record logici che vuole, ma alla fin fine, dal pdv di una macchina, essi altro non sono che delle sequenze di 0 ed 1, organizzate in parole.
+</p>
+<p class='vspace'>E allora, la cosa migliore da fare è vedere tutti i record logici per quello che sono, ovvero sequenze di byte, e scriverli uno dopo l'altro in un <strong>byte stream</strong>, cioè un flusso di byte.
+</p>
+<p class='vspace'>Il blocco quindi avrà le dimensioni che voglio, che tanto scriverò sempre tutti i byte in fila, uno dietro l'altro, fregandomene del record logico. Ci deve infatti pensare l'appli a interpretare i byte come vuole lei.
+</p>
+<p class='vspace'>Quindi, posso fregarmene della dimensione del record logico, perché tanto scrivo sempre e solo dei byte in fila.
+</p>
+<p class='vspace'>Gli sprechi sono ridotti al minimo. Ho sprechi solo quando:
+</p><ul><li>scrivo 1 o più record logici, la cui dimensione complessiva è inferiore a quella di un blocco fisico
+</li><li>ho n record logici, divisi in m blocchi, e l'ultimo blocco non è usato del tutto
+</li></ul><p>Ma si tratta di ben poca roba. Quello che faccio è dividere il bytestream in tot parti, ciascuna grossa come un blocco fisico, e via.
+</p>
+<p class='vspace'>Che cosa succede con la <strong>lettura</strong>? Il FS opera sui blocchi, ma l'appli opera sui record logici.
+</p>
+<p class='vspace'>L'idea qui è quella di avere una <strong>finestra</strong>, ed è l'appli a dire al SO quanto essa è grande. La finestra si sposta sul bytestream, passando da un record logico all'altro.
+</p>
+<p class='vspace'>Il FS allora non deve fare altro che tenere in memoria i blocchi che stanno <strong>sotto</strong> la finestra corrente, e dare i byte che stanno sotto alla finestra all'appli, e poi ci pensa l'appli. Ecco come si realizza l'astrazione.
+</p>
+<p class='vspace'>Idem per la scrittura: scrivo i blocchi che stanno sotto alla finestra, e la finestra al solito ha le dimensioni che l'appli preferisce.
+</p>
+<p class='vspace'>La finestra si sposta sul filesystem di L byte alla volta, dove L è la dimensione del record logico.
+</p>
+<p class='vspace'>Il posizionamento avviene tramite un rapido calcolo che, data la dimensione del blocco, della finestra, e il numero dell'elemento che voglio, sa risalire a quali blocchi caricare in memoria.
+</p>
+<p class='vspace'>Quando chiudo un file, scrivo le modifiche su disco, e levo tutte le voci necessarie dalle tabelle del processo e del SO.
+</p>
+<p class='vspace'>In genere si decide di scrivere le modifiche ad un blocco non appena esso viene riempito, così da minimizzare l'impatto di eventuali guasti a metà scrittura.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri29Aprile2008)</span></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Informatica Teorica - Complessità nel tempo </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IT-ComplessitàNelTempo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Informatica Teorica - Complessità nel tempo
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0NelTempo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0NelTempo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IT-Complessit%C3%A0NelTempo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0NelTempo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0NelTempo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Informatica Teorica - Complessità nel tempo was last modified on June 07, 2010, at 11:22 AM'>
+							<span style='display:none;'>Informatica Teorica - Complessità nel tempo</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Complessità nel tempo ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 5 Maggio</span>
+</p>
+<div class='vspace'></div><h2>Cenni teorici</h2>
+<p>Sia M una Macchina di Turing (da ora MdT) deterministica che si ferma su ogni ingresso. Il <strong>tempo di esecuzione</strong> o <strong>complessità nel tempo</strong> di M è la funzione f: N -&gt; N, dove f(n) è il numero massimo di passi che M impiega su ogni ingresso di lunghezza n. Se f(n) è il tempo di esecuzione di M, diciamo che M è eseguita in tempo f(n) e che M è una tempo f(n) MdT. 
+</p>
+<p class='vspace'>Della complessità nel tempo non si dà una misura precisa, ma una stima risultante dall'analisi asintotica dell'algoritmo. In particolare introduciamo le notazioni <strong>O</strong> ("o grande") e <strong>o</strong> ("o piccolo"). <br />Siano f e g due funzioni f,g: N -&gt; R<sup>+</sup>. Diciamo che <strong>f(n) = O(g(n))</strong> se esistono due interi positivi c e n<sub>0</sub> tali che per ogni intero n&gt;=n<sub>0</sub>:
+<code class='escaped'>f(n) &gt;= c*g(n)</code><br />Quando f(n) = O(g(n)) diciamo che g(n) è un limite superiore (<em>upper bound</em>) per f(n), o più precisamente che g(n) è un limite superiore asintotico per f(n), per enfatizzare il fatto che stiamo ignorando le costanti.<br />Se O può essere definita come una funzione asintoticamente "non maggiore" di un'altra (minore o uguale), con o piccolo definiamo una funzione asintoticamente "minore" di un'altra (strettamente minore). Facendo qualche esempio:
+</p><ul><li>n = o(nlog(logn))
+</li><li>nlog(logn) = o(n(logn))
+</li><li>n<sup>2</sup> = o(n<sup>3</sup>)
+</li></ul><p class='vspace'>Perché abbiamo parlato di o grandi e o piccole? Perché quando si fa l'analisi asintotica di un algoritmo si considerano solo i termini di ordine maggiore che partecipano a formare il tempo di esecuzione complessivo, trascurando i coefficienti, le costanti e tutti i termini di grado inferiore. <br />Ad esempio: f(n) = 3n<sup>3</sup> + 2n<sup>2</sup> + n + 100 = O(n<sup>3</sup>)
+</p>
+<p class='vspace'>Concludiamo definendo cos'è una classe di complessità nel tempo:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Sia t:N-&gt;R<sup>+</sup> una funzione. Definiamo la <strong>classe di complessità nel tempo</strong>, <strong>TIME(t(n))</strong>, come l'insieme di tutti i linguaggi che sono decidibili in tempo O(t(n)) (polinomiale) da una MdT.
+</p></div>
+<div class='vspace'></div><h2>Teorema 1 - sulle relazioni di complessità tra modelli</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Sia t(n) una funzione, con t(n)&gt;=n. Ogni MdT multinastro t(n)-tempo ha una equivalente MdT a nastro singolo O(t<sup>2</sup>(n))-tempo.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Consideriamo M una MdT con k nastri, ed S la corrispondente MdT a nastro singolo. S è costruita copiando i contenuti dei k nastri sul suo mettendoli in fila uno dopo l'altro e separandoli con un #. Perché S riesca a simulare un singolo passo di M su un certo nastro, dovrà prima posizionare la propria testina sul punto corrispondente, e solo dopo compiere l'operazione. Sappiamo dal testo del teorema che nel peggiore dei casi la testina di M impiegherà t(n) tempo per raggiungere il punto desiderato e compiere l'operazione, quindi avrà complessità O(t(n)). La complessità di S sarà dunque data dai contributi derivanti dalle seguenti operazioni:
+</p><ul><li>ricopiare correttamente il contenuto di M, impiegando O(n) passi
+</li><li>simulare M su nastro singolo, impiegando t(n) passaggi ognuno con complessità O(t(n)). Ovvero: t(n)*O(t(n))=O(t<sup>2</sup>(n))
+</li></ul><p class='vspace'>Dato che tra O(n) e O(t<sup>2</sup>(n)) il secondo è il contributo più importante, trascuriamo il primo è affermiamo che simulare una multinastro su MdT a nastro singolo richiede il quadrato del tempo di esecuzione della prima.
+</p>
+<div class='vspace'></div><h2>Teorema 2 - sulle relazioni di complessità tra modelli</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Sia t(n) una funzione, con t(n)&gt;=2. Ogni MdT a singolo nastro non-deterministica t(n)-tempo ha una equivalente MdT a nastro singolo deterministica 2<sup>O(t(n))</sup>-tempo.
+</p>
+<div class='vspace'></div></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Data una MdT non deterministica N con tempo di esecuzione t(n), sappiamo che è possibile creare una MdT deterministica D equivalente che intraprende ogni possibile ramo della computazione non deterministica. In particolare, dato un ingresso di lunghezza n (la grandezza della stringa w) ogni ramo dell'albero di computazione non deterministica di N avrà al massimo lunghezza t(n). Supponendo che ogni nodo possa avere al massimo b figli (ovvero le scelte legali della funzione di transizione), avremo al massimo b<sup>t(n)</sup> foglie.<br />Per rendere più efficiente l'algoritmo, l'esplorazione dell'albero per cercare lo stato di accettazione non viene fatta in profondità (dalla radice alla foglia e poi da capo con un altro percorso), ma in ampiezza (controllando gli stati dei nodi livello per livello).<br />Il numero di nodi nell'albero è di poco inferiore al doppio delle foglie, quindi possiamo dare come limite superiore al numero di nodi O(b<sup>t(n)</sup>). A questo punto, sapendo che il tempo di esplorazione dalla radice a qualunque nodo è pari a O(t(n)), e che nel caso peggiore bisognerà visitare tutti gli O(b<sup>t(n)</sup>) nodi dell'albero, il tempo totale di esecuzione dell'algoritmo D è pari a:<br />O(t(n)*b<sup>t(n)</sup>) = 2<sup>O(t(n))</sup>
+</p>
+<p class='vspace'>Facciamo qualche considerazione conclusiva sull'equivalenza O(t(n)*b<sup>t(n)</sup>)=2<sup>O(t(n))</sup>:
+</p><ul><li>si tratta di un prodotto tra un polinomio e un'esponenziale, ed avendo quest'ultimo un ordine di grandezza maggiore, è possibile trascurare il primo e considerare come complessità dell'algoritmo solo O(b<sup>t(n)</sup>)
+</li><li>per una serie di motivi che non ci interessano (che riguardano comunque la teoria della complessità), è possibile passare da O(b<sup>t(n)</sup>) a O(2<sup>t(n)</sup>)
+</li><li>siccome la base 2 è una costante, possiamo portare in alto l'o grande: O(2<sup>t(n)</sup>)=2<sup>O(t(n))</sup>
+</li></ul><p class='vspace'>Il teorema sembra già dimostrato, ma in realtà non va dimenticato che la D che simula N non è più una MdT a singolo nastro, ma per costruzione ne ha 3. Poco male: dal <em>Teorema 1</em> sopra riportato sappiamo che ogni MdT multinastro t(n)-tempo ha una equivalente MdT a nastro singolo O(t<sup>2</sup>(n))-tempo. Quindi:<br />(2<sup>O(t(n))</sup>)<sup>2</sup> = 2<sup>O(2t(n))</sup> = 2<sup>O(t(n))</sup>
+</p>
+<p class='vspace'>Dimostrazione conclusa.
+</p>
+<div class='vspace'></div><h2>Classe P</h2>
+<p>Introduciamo ora la <strong>classe P</strong>, ovvero la classe dei linguaggi che sono decidibili in tempo polinomiale su una MdT deterministica a singolo nastro. Si tratta di una classe matematicamente robusta, che non dipende quindi dal modello computazionale che sceglieremo per risolvere il problema.<br />I problemi in P, o tempo-polinomiali, sono una classe di problemi realisticamente risolvibili con un calcolatore. Per dimostrare che un problema è tempo-polinomiale bisognerà prima dare un limite polinomiale superiore (in notazione O grande) per il numero di passi che l'algoritmo usa per un ingresso di lunghezza n, poi esaminare ogni passo della descrizione dell'algoritmo per assicurarci che ogni passo sia tempo-polinomiale.
+</p>
+<div class='vspace'></div><h2>PATH è P?</h2>
+<p>Dato un grafo diretto G, il problema <strong>PATH</strong> ha come obiettivo quello di determinare se esiste un percorso diretto tra due nodi s e t. Più formalmente:
+<code class='escaped'>PATH = {&lt;G,s,t&gt; | G è un grafo diretto che ha percorso diretto tra s e t}</code>
+</p>
+<p class='vspace'>Per dimostrare che PATH appartiene a P dovremo dimostrare che è risolvibile in tempo polinomiale. Una possibile strada è quella di partire da s e marcare tutti i nodi raggiungibili con passo 1, per poi ripetere l'operazione partendo da essi (raggiungendo una distanza da s pari a 2). L'operazione va ripetuta finché non è più possibile marcare nuovi nodi. A questo punto bisogna verificare se t è stato segnato o no: se sì PATH è vero, altrimenti no.<br />Costruiamo ora la MdT deterministica M che implementa l'algoritmo:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>M = "su ingresso &lt;G,s,t&gt;:
+</p><div class='indent'>1. marca s;
+</div><div class='indent'>2. ripeti finché non abbiamo nuovi nodi da marcare:
+<div class='indent'>3.fai una scan degli archi di G. Se trovi l'arco (a,b), dove a è un nodo marcato e b no, 
+<div class='indent'>marca b;
+</div></div></div><div class='indent'>4. se t è marcato, allora ACCETTA; altrimenti RIFIUTA."
+</div></div>
+<p class='vspace'>Facciamo l'analisi dell'algoritmo:
+</p><ul><li>i passi (1) e (4) sono ripetuti una sola volta
+</li><li>i passi (2) e (3) (il loop) sono eseguiti m volte, dove m è il numero di nodi
+</li></ul><p class='vspace'>Quindi, dato che il numero di passi è 1+1+m e che ognuno di essi ha complessità polinomiale, PATH è in P.
+</p>
+<div class='vspace'></div><h2>RELPRIME è P?</h2>
+<p>Prima di tutto, di cosa diavolo stiamo parlando? Il problema RELPRIME è quello che deve verificare se due numeri sono primi tra loro, ovvero se il più grande intero che li divide entrambi è 1. Più formalmente:<br /><code class='escaped'>RELPRIME = {&lt;x,y&gt; | x e y sono primi tra loro}</code>
+</p>
+<p class='vspace'>Per dimostrare che RELPRIME appartiene a P dobbiamo trovare una MdT deterministica che lo risolva in tempo polinomiale. Iniziamo a scrivere una MdT che calcoli il divisore maggiore dati due interi x e y:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>E = "su ingresso &lt;x,y&gt;:
+</p><div class='indent'>1. ripeti finché y=0;
+<div class='indent'>2. assegna a x il valore <code class='escaped'>x mod y</code>;
+</div><div class='indent'>3. scambia x e y;
+</div></div><div class='indent'>4. output: x"
+</div></div>
+<p class='vspace'>Facciamo un esempio di risoluzione. Dati in ingresso x=24 e y=18:<br />(1)
+</p><div class='indent'>(2) x = 24 mod 18 = 6
+</div><div class='indent'>(3) x = 18 , y = 6
+</div><p>(1) y=0? NO
+</p><div class='indent'>(2) x = 18 mod 6 = 0
+</div><div class='indent'>(3) x = 6 , y = 0
+</div><p>(1) y=0? SÌ<br />(4) output: 6
+</p>
+<p class='vspace'>Creiamo ora una seconda MdT che usa E come sub-routine:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>R = "su ingresso &lt;x,y&gt;:
+</p><ol><li>esegui E su ingresso &lt;x,y&gt;;
+</li><li>se il risultato è 1, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Per fare l'analisi dell'algoritmo E, consideriamo due casi:
+</p><ul><li>se <em>(x/2) &gt;= y</em>, dato che <em>(x mod y) &lt; y</em>, avremo che:
+</li></ul><div class='indent'><code class='escaped'>(x mod y) &lt; y &lt;= (x/2)</code>
+</div><ul><li>se <em>(x/2) &lt; y</em>, dato che <em>(x mod y) = x - y</em>, avremo che:
+</li></ul><div class='indent'><code class='escaped'>(x mod y) = x - y &lt;= (x/2)</code>
+</div><p class='vspace'>In entrambi i casi avremo che ad ogni passata del ciclo il valore della x viene come minimo dimezzato. Quindi il numero massimo di volte in cui vengono ciclati i passi (2) e (3) di E è il valore più piccolo tra <em>2logx</em> e <em>2logy</em>. Essendoci di messo un logaritmo il numero di passi è sicuramente polinomiale, ed essendo ogni operazione di complessità polinomiale il problema RELPRIME è sicuramente in P.
+</p>
+<div class='vspace'></div><h2>Teorema 3 - sui linguaggi liberi dal contesto</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Ogni linguaggio libero dal contesto è membro di P.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Sappiamo già dalle lezioni precedenti che i linguaggi liberi dal contesto (da ora CFL) sono decidibili, perché è possibile creare un algoritmo che lo decida. Dobbiamo quindi dimostrare che tale algoritmo viene eseguito in tempo polinomiale. Dov'è la fregatura? Che la dimostrazione della decidibilità di un CFL L tirava in ballo il fatto che era stato generato da una grammatica libera dal contesto G espressa nella forma normale di Chomsky, e che bisognava verificare tutte le derivazioni di G per vedere se una certa stringa di L poteva essere accettata. Il numero di derivazioni è però esponenziale, quindi dobbiamo scegliere un'altra strada per dimostrare il nostro teorema.
+</p>
+<p class='vspace'>Chi di noi non stava pensando alla <strong>programmazione dinamica</strong> come soluzione? Esatto. <br />Nella programmazione dinamica si cercano e si utilizzano le soluzioni di sottoproblemi per risolvere il problema principale. Nel nostro caso i sottoproblemi sono le sottostringhe generate per scomposizione dall'originale stringa w generata da G, e dovremo verificare che ognuna di esse possa essere derivata a partire dalle variabili della grammatica. Per fare ciò costruiremo una tabella <em>n x n</em>, con coordinate i e j. In ogni cella (i,j) con i&lt;=j potrò trovare tutte le variabili che mi permettono di generare la sottostringa w<sub>i</sub>w<sub>i+1</sub>...w<sub>j</sub>; al contrario tutte le celle con i&gt;j rimarranno inutilizzate. Grazie ai principi della programmazione dinamica useremo via via le soluzioni ottenute per le sottostringhe precedenti. Come? Quando andando avanti con la risoluzione scopro che posso generare una data (i,j) utilizzando una sottostringa già risolta, metto nella cella quella sottostringa. Come? Ogni sottostringa di lunghezza k+1 può essere divisa in k modi possibili (ad esempio w<sub>1</sub>w<sub>2</sub>w<sub>3</sub>w<sub>4</sub> può essere divisa in: w<sub>1</sub>|w<sub>2</sub>w<sub>3</sub>w<sub>4</sub>, w<sub>1</sub>w<sub>2</sub>|w<sub>3</sub>w<sub>4</sub>, w<sub>1</sub>w<sub>2</sub>w<sub>3</sub>|w<sub>4</sub>). Per riutilizzare le informazioni già messe in tabella basterà cercare nella mia grammatica una regola A-&gt;BC dove B mi permette di generare la parte sinistra e C la destra.<br />Ed ora, vediamo la MdT D che fa tutto questo (con "subs" si intenderà "sottostringa"):
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>D = "su ingresso w=w<sub>1</sub>...w<sub>n</sub>:
+</p><div class='indent'>1. se w=&#949; ed S-&gt;&#949; è una regola, ACCETTA;
+</div><div class='indent'>2. ripeti da i=1 ad i=n:
+<div class='indent'>3. per ogni variabile A:
+<div class='indent'>4. verifica se A-&gt;b è una regola, dove b=w<sub>i</sub>;
+</div><div class='indent'>5. se sì, inserisci A nella tabella alle coordinate (i,i);
+</div></div></div><div class='indent'>6. ripeti da l=2 ad l=n: (l è la lunghezza della subs)
+<div class='indent'>7. ripeti da i=1 ad i=n-l+1: (i è la posizione iniziale della subs)
+<div class='indent'>8. sia j=i+l-1; (j è la posizione finale della subs)
+</div><div class='indent'>9. ripeti da k=i a k=j-1: (k è la posizione della separazione)
+<div class='indent'>10. per ogni regola A-&gt;BC:
+<div class='indent'>11. se la cella (i,k) contiene B e la cella (k+1,j) contiene C, 
+<div class='indent'>allora metti A nella cella (i,j)
+</div></div></div></div></div></div><div class='indent'>12. se S è nella cella (1,n) ACCETTA; altrimenti RIFIUTA."
+</div></div>
+<p class='vspace'>In altre parole, se nell'ultima colonna della prima riga ci ritroviamo la variabile iniziale S l'algoritmo ha successo. Via quelle sopracciglia alzate, facciamo piuttosto l'analisi dell'algoritmo considerando i passaggi più critici:
+</p><ul><li>(4) e (5) possono essere ripetuti al più n*v volte, dove v è il numero di variabili della grammatica. Dato che v è comunque una costante (non dipende dalla n), entrambi i passi hanno complessità O(n);
+</li><li>(6) può essere svolto al più n volte, quindi è O(n);
+</li><li>(7) viene ripetuto al più n volte tutte le volte che viene eseguito (6), quindi avrà complessità O(n)*n =O(n<sup>2</sup>);
+</li><li>(8) e (9) vengono ripetuti al più n volte tutte le volte che viene eseguito (7), quindi avranno complessità O(n<sup>2</sup>)*n =O(n<sup>3</sup>);
+</li><li>(10) e quindi (11) vengono eseguiti ogni volta che partono (8) e (9), e vengono ripetuti r volte, dove r è il numero di regole. Avranno quindi complessità O(n<sup>3</sup>)*r=O(n<sup>3</sup>) (perché r è costante).
+</li></ul><p class='vspace'>La complessità totale dell'algoritmo sarà dunque O(n)+O(n<sup>3</sup>)=O(n<sup>3</sup>), che è meravigliosamente polinomiale. Quindi abbiamo dimostrato che ogni linguaggio libero dal contesto è in P.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 07, 2010, at 11:22 AM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0NelTempo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Complessit%e0NelTempo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

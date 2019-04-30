@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Protocolli avanzati di rete - Appunti del 23 Marzo </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.PAR-23Marzo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Protocolli avanzati di rete - Appunti del 23 Marzo
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-23Marzo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-23Marzo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='PAR-23Marzo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-23Marzo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-23Marzo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Protocolli avanzati di rete - Appunti del 23 Marzo was last modified on March 25, 2009, at 12:58 PM'>
+							<span style='display:none;'>Protocolli avanzati di rete - Appunti del 23 Marzo</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Protocolli avanzati di rete - Appunti del 23 Marzo ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>Tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='Damiani.html'>Damiani</a>
+</p></div>
+<div class='vspace'></div><h2>Link management</h2>
+<p>Tanto per cambiare un po argomento discutiamo di come opera la signaling.<br />Prendiamola larga e cominciamo a ricordare che con la comunicazione in fibra possono coesistere diversi standard di trasmissione. Indipendentemente però che stiamo trasmettendo in WDM (quindi a livello <strong>LSC</strong>, in multi &#955;) o TDM (su <strong>TSC</strong>, con &#955; fissato), dovremo riassegnare - rispettivamente - le &#955; e i canali ad ogni tratto, perché non è detto che gli stessi siano disponibili anche nella sezione successiva. Per tratto intendiamo il circuito virtuale che si genera in ogni sezione.
+</p>
+<p class='vspace'>La domanda è: <strong>se la connessione deve ancora nascere, come faccio a creare il percorso??</strong><br /><span  style='color: red;'>Attraverso un protocollo di signaling creo un percorso (circuito) mittente-destinatario assegnando delle <strong>label</strong> (etichette) ai dispositivi intermedi.</span><span  style='color: black;'><br />Questa operazione viene chiamata <strong>label switching</strong> o <strong>circuit provisioning</strong>, ed è supportata sia in LSC che in TSC. Viene effettuata una volta ogni tanto per riconfigurare la rete, soprattutto in seguito a guasti. L'evento scatenante potrebbe anche essere di livello 3, ma sicuramente non a livello di comunicazione, piuttosto di routering (riconfigurare tutto ad ogni telefonata sarebbe impensabile).<br />Ogni singola <em>label</em> può essere assegnata a uno slot temporale, a una lunghezza d'onda o ad una fibra, e la loro successione dà un'indicazione precisa sul percorso che dovranno seguire i dati.<br />Ecco in dettaglio come funziona: </span>
+</p><ul><li>il nodo iniziale del percorso assegna un'etichetta ai dati, ad esempio <code class='escaped'>L5</code>, e la trasmette al secondo
+</li><li>questo sostituisce la label con quella del nuovo canale che assegna lui, ad esempio <code class='escaped'>L7</code>, e la trasmette al terzo
+</li><li>...
+</li><li>con la sostituzione della label nell'ultimo nodo (ad esempio con <code class='escaped'>L9</code>), il nodo sorgente conosce finalmente l'intero (<code class='escaped'>L5-&gt;L7-&gt;...-&gt;L9</code>) e da questo momento si può procedere con la costruzione della comunicazione.
+</li></ul><p class='vspace'>Per quanto riguarda la terminologia, i nodi estremi si chiamano <strong>LER</strong> (<em>Label Edge Router</em>) e quelli intermedi <strong>LSR</strong> (<em>Label Switch Router</em>). Notare che in questo modo non è possibile fare broadcast.
+</p>
+<p class='vspace'>L'esempio fatto sulle slide di Damiani è illuminante:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/labelSwitching.jpg' alt='' title='' /></div>
+<p class='vspace'>Commentiamolo. A livello 3 i protocolli di routing si scambiano informazioni sulla ragiungibilità dei vari nodi. Contemporaneamente a livello 2 un protocollo di distribuzione delle label definisce la sequenza di etichette che identificano il percorso. Successivamente il primo nodo (il LER) riceve il pacchetto IP e lo etichetta con 10. Ogni nodo intermedio per il quale passa il pacchetto cancella la label precedente e mette la sua. Al secondo nodo abbiamo quindi lo stesso pacchetto IP con label 20, e così via. Arrivati a destinazione il LER finale cancella l'etichetta e consegna il pacchetto al destinatario :)
+</p>
+<p class='vspace'>Il fatto che si tratta di protocolli di configurazione ci viene ricordato anche dalla sigle finale <strong>-TE</strong> che sta per <em>Traffic Engeneering</em>.
+</p>
+<p class='vspace'>Nota di folklore: il <strong>drive run</strong> è la ricerca di un difetto di configurazione sulla rete, in una situazione di testing in cui non c'è traffico dati. Sono operazioni statiche da fare una volta ogni tot per garantire un servizio efficiente.
+</p>
+<div class='vspace'></div><h2>Protocolli di link management</h2>
+<p>I principali protocolli che gestiscono l'instradamento a livello 2 sono tre: <strong>OSPF</strong> , <strong>RSVP</strong> e <strong>LMP</strong>. Operano <em>out-of-band</em>, quindi utilizzano per la signaling un canale distinto da quello usato per la comunicazione. Fanno tutti e tre parte della famiglia (o suite) di protocolli <strong>GMPLS</strong> (<em>Generalized Multi-Protocol Label Switching</em>), dedicati alla gestione del <code class='escaped'>control plane</code> su rete pubblica. Spieghiamo meglio quest'ultimo concetto: i protocolli che si occupano del trasporto di dati utente sono <code class='escaped'>data plane</code>, mentre quelli che si occupano della costruzione e configurazione dei data plane sono i <code class='escaped'>control plane</code>. Un esempio di protocolli di quest'ultimo tipo su rete privata sono quelli di gestione dello switching, in particolare quelli che effettuano un controllo su quali sono i servizi abilitati su una data porta della macchina (prevenendo in questo modo gli attacchi al DHCP autorizzando solo certi MAC conosciuti sicuri).
+</p>
+<p class='vspace'>Come collaborano questi protocolli per la gestione dei percorsi di rete? Facciamo una panoramica generale:
+</p><ul><li>con l'OSPF-TE, dato un indirizzo IP di destinazione, viene calcolata la sequenza di label da seguire per portare i pacchetti al nodo finale. Generalmente questa oeprazione si fa in fase di drive run, quindi non è necessario ricalcolare i percorsi ad ogni telefonata
+</li><li>l'RSVP-TE controlla in run time se le etichette individuate nella fase precedente sono attualmente disponibili, e se sì le riserva per la comunicazione
+</li><li>chi si assicura che la sequenza di label sia sempre operativa? Il protocollo LMP, grazie al quale coppie di dispositivi si comunicano a vicenda la funzionalità effettiva delle proprie label, così da accorgersi in tempi rapidi se qualcosa non va
+</li></ul><p class='vspace'>Vediamo ora in dettaglio questi tre sfavillanti protocolli.
+</p>
+<div class='vspace'></div><h3><span  style='color: red;'>OSPF</span></h3>
+<p><strong>OSPF</strong> sta per <em>Open Shortest Path First</em> ed è il protocollo che definisce il cammino minimo per collegare ciascuna coppia di nodi in una rete. Ogni nodo ospita una tabella di routing in cui è indicato il nodo successivo da percorrere per raggiungere una data destinazione. Qualora un nodo non fosse raggiungibile (ad esempio per congestione della rete) viene trovato un percorso alternativo facendo aggiornare le tabelle di tutti i nodi coinvolti.<br />Detto in soldoni OSPF assegna le label, ed è definito come protocollo di instradamento.<br />Lo rivedremo meglio nella <a class='wikilink' href='PAR-24Marzo.html'>lezione di domani</a>.
+</p>
+<div class='vspace'></div><h3><span  style='color: red;'>RSVP</span></h3>
+<p>L' <strong>RSVP</strong> (<em>ReSerVation Protocol</em>) è il protocollo che ha il compito di riservare un percorso esclusivo per la condivisione di risorse tra due nodi, e avere così miglior resa della trasmissione. Le risorse riservate dal protocollo sono label su reti pubbliche e porte di switch su reti private.<br />Facciamo un esempio pratico: il nostro DTI registra le lezioni di DAMIANI. Le manda al server UNIMI a Milano per l'elaborazione e la creazione dei DVD.
+Riservando un percorso che va da DTI a UNIMI e viceversa invio le riprese su questo canale così sono sicuro che il video arriva presto e integro. Se però non l'avessi riservato, i frame contenenti il video sarebbero viaggiati sul percorso tradizionale insieme a tutto il traffico ordinario (mail che si scambiano innamorati, download di file etc.).<br />RSVP supporta due metodi per fare la riserva:
+</p><ul><li><strong>hop by hop routing</strong>: ogni nodo attraversato dalla richiesta di reservation decide quale sarà il prossimo nodo. Viene eseguito solo se per qualche motivo non abbiamo già fatto OSPF
+</li><li><strong>explicit routing</strong>: la lista dei nodi attraversati viene fornita direttamente al primo nodo del percorso
+</li></ul><p class='vspace'>Vediamo come funziona:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/RSVP.jpg' alt='' title='' /></div>
+<ul><li>il nodo sorgente manda un messaggio PATH al nodo successivo, specificando il nodo di destinazione
+</li><li>il messaggio si propaga fino alla meta generando label
+</li><li>la reservation vera e propria avviene con la propagazione del messaggio RESV, quindi solo al "ritorno"
+</li></ul><p class='vspace'>Una volta riservato il cammino posso iniziare a trasmettere come se fossi collegato col nodo finale con una connessione point to point, quindi è come se avessi creato un macro-switch a rete ottica. Qualsiasi cosa voglia dire.
+</p>
+<div class='vspace'></div><h2><span  style='color: red;'>LMP</span></h2>
+<p>Il protocollo <strong>LMP</strong> (<em>Link Management Protocol</em>) ha tre funzionalità:
+</p><ol><li>collegare due nodi rispettandone le proprietà (ad esempio collega due nodi che hanno la stessa velocità)
+</li><li>verificare i collegamenti in modo sincrono o asincrono rispetto alla riserva, controllando che i nodi indicati da OSPF siano effettivamente disponibili
+</li><li>individuazione dei guasti: quando un segmento cade bisogna identificare la label che ha fallito e sostituire solo lei
+</li></ol><p class='vspace'>Al contrario della maggior parte dei canali di controllo, la <em>link verification</em> deve avvenire per forza in-band sullo stesso canale dei dati. Viene effettuata generalmente in fase di drive run per verificare che i canali dei dati funzionino effettivamente. Quando invece nella rete c'è traffico dati (o un guasto) possiamo usare questo canale di controllo per fare misurazioni sulla trasmissione.
+</p>
+<p class='vspace'>Per quanto riguarda la <em>fault localization</em>, l'LMP è in grado di individuare la specifica &#955; su cui si è verificato l'errore. Ovviamente deve funzionare almeno il laser di controllo, se no arrivederci e grazie. Ecco uno schema:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/linkVerification.jpg' alt='' title='' /></div>
+<p class='vspace'>Particolarità: per ogni collegamento tra due nodi devono essere specificate diverse informazioni come il numero di canali presenti sul link, gli identificativi dei singoli canali, eccetera.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProtocolliAvanzatiDiRete.html'>Torna alla pagina di Protocolli avanzati di rete</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 25, 2009, at 12:58 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-23Marzo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/PAR-23Marzo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

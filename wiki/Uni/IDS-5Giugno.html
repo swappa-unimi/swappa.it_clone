@@ -1,0 +1,473 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ingegneria del Software - 5 giugno </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IDS-5Giugno' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ingegneria del Software - 5 giugno
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-5Giugno?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-5Giugno?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IDS-5Giugno-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-5Giugno?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-5Giugno?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ingegneria del Software - 5 giugno was last modified on June 13, 2009, at 04:48 PM'>
+							<span style='display:none;'>Ingegneria del Software - 5 giugno</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - 5 giugno ::</strong>
+</pre><div class='vspace'></div><h2>Testing Black-Box</h2>
+<p>All'esame ci sarà un esercizio che avrà una di queste due forme:
+</p><ul><li>ci dà l'interfaccia della funzione, ovvero i parametri che prende in ingresso;
+</li><li>ci dà i requisiti di una data funzione.
+</li></ul><p class='vspace'>Trattandosi di test Black-Box non avremo il codice della funzione stessa, e dovremo invece partizionare lo spazio di input in modo astuto. Occorre testare sia i valori validi che quelli non validi, e per determinare chi è valido e chi no possiamo basarci su diversi ragionamenti, che poi vedremo.
+</p>
+<p class='vspace'>Ad ogni modo, il procedimento è sempre quello:
+</p><ol><li>partiziono lo spazio di input in base ad un qualche criterio (valori ammissibili, pre- o post-condizioni);
+</li><li>per ogni partizione, scelgo i valori per il test.
+</li></ol><p class='vspace'>Ricordiamo che <strong>per qualsiasi scelta che facciamo</strong> il professore vuole che la documentiamo. Questo significa che:
+</p><ol><li>dobbiamo descrivere i motivi che ci hanno indotto a scegliere quel modo di partizionare l'input;
+</li><li>dobbiamo descrivere i motivi che ci hanno indotto, all'interno di ogni singola partizione, a scegliere quei determinati valori di input.
+</li></ol><div class='vspace'></div><h3>Esempio 1</h3>
+<p>Ho una funzione che prende in input un intero, e sappiamo che i valori in ingresso vanno da 10.000 a 99.999. Non sappiamo niente su quello che fa la funzione, tranne che restituisce un intero. Abbiamo a disposizione 10 casi di test.
+</p>
+<p class='vspace'>La prima osservazione è che <strong>non scegliamo i valori a caso</strong> nell'intervallo di input. Si potrebbe anche fare, nessuno lo vieta, ma scegliere a caso vuol dire in genere non garantire la <strong>copertura uniforme</strong> delle partizioni. Al contrario, è possibile, all'interno di una partizione, scegliere a caso, fatti salvi i criteri del boundary e dei valori critici.
+</p>
+<p class='vspace'>Ma quali sono le partizioni, in sto caso? Se il valore in ingresso fosse stato un intero e basta, allora il valore minimo sarebbe stato MIN_INT e quello massimo MAX_INT. Avremmo quindi diviso l'intervallo [MIN_INT, MAX_INT] in 10 parti (perché abbiamo a disposizione 10 casi di test), e per ciascuna di queste 10 parti avremmo scelto un valore (anche casuale).
+</p>
+<p class='vspace'>Nel nostro caso invece i valori di input leciti sono [10.000, 99.999]. Questi valori sono dei limiti che ci aiuteranno a partizionare.<br /><strong>ATTENZIONE</strong>: il tipo in input è sempre un <strong>int</strong>, e quindi le partizioni vanno fatte su <strong>tutti</strong> gli interi! La differenza rispetto a prima è che qui ho informazioni ulteriori riguardanti l'input, che mi serviranno appunto a creare delle partizioni.
+</p>
+<p class='vspace'>Un esempio di partizione dell'input per questo esercizio potrebbe essere:
+</p><pre> [MIN_INT - 9999], [10.000 - 50.000], [50.001 - 99.999], [99.999 - MAX_INT]
+</pre><p>Poi prendo gli estremi di ciascuna partizione, oppure i punti centrali di ogni partizione, purché io copra tutte le partizioni.
+</p>
+<div class='vspace'></div><h3>E se avessi avuto stringhe?</h3>
+<p>Nel caso delle stringhe, è difficile che ci siano delle condizioni sull'input. Tuttavia, noi sappiamo che è comunque possibile ordinare le stringhe lessicograficamente. Questo significa che utilizzeremo l'ordinamento per stabilire delle partizioni.
+</p>
+<p class='vspace'>Il discorso vale in generale per tutti quei tipi per i quali non si sa che pesci pigliare: se è possibile ordinarli, allora si usa l'ordinamento del tipo per metterli in un certo ordine, e poi si divide questa "scala graduata" nel numero di partizioni desiderato.
+</p>
+<div class='vspace'></div><h3>Esempio 2: pre-condizioni e post-condizioni</h3>
+<p>Una funzione serve per cercare una chiave in un array. Se lo trova, restituisce in un booleano il valore <strong>true</strong>, e restituisce anche il valore della chiave. Se non la trova, restituisce <strong>false</strong> nel booleano.
+</p>
+<p class='vspace'>Ecco le condizioni che devono valere per questa funzione:
+</p><ul><li>pre-condizione: l'array ha almeno un elemento
+</li><li>post-condizione: se l'elemento da cercare c'è, lo trova
+</li><li>post-condizione: se l'elemento da cercare non c'è, mi dice false
+</li></ul><p class='vspace'>Il discorso che si può fare in generale è che le pre-condizioni sono lì apposta a partizionare lo spazio di input, mentre le post-condizioni no. Però c'è almeno un caso in cui anche le post-condizioni servono per partizionare lo spazio di input, e quel caso si ha quando la post-condizione è in realtà una disgiunzione, ovvero un <strong>OR</strong> di due condizioni.
+</p>
+<p class='vspace'>Che cosa significa? Vuol dire che la post-condizione può essere verificata da due diverse cause, che sono appunto quelle messe in OR.
+</p>
+<p class='vspace'>Per chiarire la roba, guardiamo al nostro caso.
+</p><ol><li>array con 0 elementi
+</li><li>array con &gt;= 1 elementi
+<ol><li>l'elemento c'è
+</li><li>l'elemento non c'è
+</li></ol></li></ol><p class='vspace'>Se guardiamo alle specifiche della funzione, leggiamo che se l'elemento è presente, mi deve dire <strong>true</strong> e restituire l'indice. Se l'elemento non è presente, mi deve restituire <strong>false</strong>. Quindi la precondizione è duplice, è una disgiunzione di due comportamenti diversi, e quindi mi serve ad indurre partizionamento sullo spazio di input.
+</p>
+<p class='vspace'>Ecco quindi come potrei partizionare l'input:
+</p><ol><li>array vuoto
+</li><li>array con 1 elemento, chiave presente
+</li><li>array con 1 elemento, chiave assente
+</li><li>array con &gt;1 elemento, il primo è la chiave cercata
+</li><li>array con &gt;1 elemento, l'ultimo è la chiave cercata
+</li><li>array con &gt;1 elemento, quello in mezzo è la chiave cercata
+</li><li>array con &gt;1 elemento, non c'è la chiave
+</li></ol><div class='vspace'></div><h3>Come si presentano i casi di test</h3>
+<p>La forma generale per presentare un caso di test è questa:
+</p><table width='45%' border='0' cellpadding='5' cellspacing='0' align='center' >
+<tr ><td bgcolor='#d9e4f2' align='center'  valign='top'> <strong>Input</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>Output atteso</strong>
+</td></tr><tr ><td  valign='top'> Valore in input
+</td><td  valign='top'> Output atteso
+</td></tr></table> <br />
+<p>Le colonne <strong>Input</strong> devono essere tante quanti i valori in input passati alla funzione, così come le colonne in output devono essere tante quante i valori in output. Nel caso della funzione che cerca nell'array, quindi, avremmo avuto una tabella così:
+</p>
+<div class='vspace'></div><table width='45%' border='0' cellpadding='5' cellspacing='0' align='center' >
+<tr ><td bgcolor='#d9e4f2' align='center'  valign='top'> <strong>Input</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>Input</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>Output atteso</strong>
+</td><td bgcolor='#d9e4f2'  valign='top'> <strong>Output atteso</strong>
+</td></tr><tr ><td  valign='top'> Valore in input
+</td><td  valign='top'> Valore in input
+</td><td  valign='top'> Output atteso
+</td><td  valign='top'> Output atteso
+</td></tr></table> <br />
+<p>Infatti, in input abbiamo due robe diverse: l'array e la chiave da ricercare nell'array. Abbiamo anche due output: il booleano che dice se ha trovato o meno la chiave, e la chiave stessa in caso di successo.
+</p>
+<div class='vspace'></div><h2>Testing White-Box</h2>
+<p>Attenzione: questa parte della lezione è più confusa e disorganizzata rispetto a quella prima.
+</p>
+<p class='vspace'>Partiamo subito con un esempio: la ricerca binaria. Qui abbiamo la precondizione che l'array sia ordinato. Infatti, la ricerca binaria consiste nel cercare un elemento in un array ordinato, partendo dalla metà. Se il numero è superiore, si prende la metà della metà successiva, altrimenti la metà della metà inferiore e così via.
+</p>
+<p class='vspace'>In questo caso, la "binarietà" induce una partizione dello spazio di input del 50% e 50%. Però, se nell'esercizio ci mette il codice sorgente, allora occorre fare del white-box testing, e le cose cambiano un po'.
+</p>
+<div class='vspace'></div><h3>Code coverage</h3>
+<p>La copertura del codice è la misura di quante righe di codice una suite di casi di test esegue. In genere la domanda è: <em>fammi il code coverage, e dimmi se è possibile arrivare al 100%</em>. Arrivare al 100% non è sempre possibile: il codice può essere scritto in modo da avere del <strong>dead code</strong>, cioè del codice irraggiungibile, sepolto da condizioni che non si avvereranno mai. Rimandiamo alle lezioni in aula per verificare questa faccenda.
+</p>
+<p class='vspace'>Qualsiasi sia il tipo di test, è in genere consigliabile disegnare il <strong>grafo di flusso</strong> della porzione di codice, in modo che si abbiano sott'occhio tutte le istruzioni ed i percorsi, dettati dalle condizioni, che portano ad esse.
+</p>
+<div class='vspace'></div><h3>Edge Coverage</h3>
+<p>L'edge coverage vuole coprire ogni arco del nostro diagramma di flusso. L'arco collega due nodi, e noi vogliamo coprirli tutti.
+</p>
+<p class='vspace'>Da non confondere con il...
+</p><h3>Path coverage</h3>
+<p>che ha a che fare con la <strong>complessità ciclomatica</strong> di McCabe.
+</p>
+<p class='vspace'>Un cammino esecutivo è un percorso nel mio grafo di flusso. Due cammini sono <strong>indipendenti</strong> quando differiscono per almeno un'istruzione. Due cammini sono invece non indipendenti quando sono ripetizione di stesso codice, ad esempio l'interno di un ciclo <strong>for</strong>.
+</p>
+<p class='vspace'>Notiamo subito che avere la copertura di tutti i cammini indipendenti è possibile, ma coprire tutti i cammini non indipendenti praticamente non lo è. L'esempio del ciclo for serve per chiarire questa affermazione. Se un ciclo viene eseguito 10 volte, allora ho coperto 10 cammini indipendenti. Ma se in teoria lo posso eseguire 1000000 di volte, allora dovrei avere valori in input che lo fanno eseguire 1000000 di volte. E se invece il limite al numero di volte che il for viene ripetuto è MAX_INT, dovrei dare in input valori che lo facciano ripetere MAX_INT volte. Se poi un for è innestato ad un altro, è finita. Quindi, <strong>lasciamo perdere</strong> ed occupiamoci solo della copertura dei cammini indipendenti.
+</p>
+<div class='vspace'></div><ul><li>DOMANDA: quanti sono i cammini indipendenti?
+</li><li>RISPOSTA: numero di if + 1
+</li></ul><p class='vspace'>Per rispondere a questa domana, oltre a guardare il codice, può essere molto utile disegnare il diagramma di flusso della nostra funzione, così che con un colpo d'occhio ci rendiamo conto dei cammini esistenti in modo "concreto".
+</p>
+<p class='vspace'>Nel disegnare il grafo, teniamo presente queste avvertenze:
+</p><ol><li>le condizioni AND sono rappresentate da due istruzioni, una in sequenza all'altra
+</li><li>le condizioni OR sono rappresentate da due istruzioni, una in parallelo all'altra
+</li><li>tutte le altre strutture di controllo si possono ricondurre ad un if (come spiegava Tettamanzi ai tempi...:( )
+</li></ol><div class='vspace'></div><h3>Condition coverage</h3>
+<p>Tutte le condizioni delle strutture di controllo sono valutate almeno una volta.
+</p>
+<p class='vspace'>Ad esempio, c'è una riga così:
+</p><pre> if (c &gt; 0 or d == 0) then BLA else BLO
+</pre><p class='vspace'>Se avessimo voluto del <strong>code coverage</strong>, trattandosi di un <strong>OR</strong>, sarebbe bastato (in)soddisfare una sola di queste due proprietà:
+</p><ul><li>c &gt; 0
+</li><li>oppure d == 0
+</li></ul><p>Per esempio, una volta prendiamo c &gt; 0 ed eseguiamo BLA, poi prendiamo c == 0 ed eseguiamo BLO.
+</p>
+<p class='vspace'>Ma volendo avere invece la condition coverage, occorre notare che qui le condizioni sono in realtà 2: c &gt; 0 e d == 0. Pertanto, dovrò avere questi casi di test:
+</p><ul><li>un caso in cui c &gt; 0
+</li><li>un caso in cui c &lt;= 0
+</li><li>un caso in cui d == 0
+</li><li>un caso in cui d != 0
+</li></ul><p class='vspace'>Inoltre, notiamo anche che la valutazione di <strong>d == 0</strong> è subordinata al <strong>fallimento</strong> di <strong>c &gt; 0</strong>.
+</p>
+<p class='vspace'>Riassumendo, per fare condition coverage devo avere almeno un caso di test per ogni componente atomico delle condizioni.
+</p>
+<div class='vspace'></div><h2>UML</h2>
+<p>Le domande di UML saranno più o meno di questo tipo:
+</p><ul><li>Questo è il diagramma delle classi, fammi il diagramma delle sequenze
+</li><li>Questo è il diagramma delle sequenze, traine il diagramma delle classi
+</li></ul><p class='vspace'><strong>ATTENZIONE</strong>: i due diagrammi devono essere <strong>compatibili</strong>! Se nel diagramma delle sequenze c'è una classe, ma nel diagramma delle classi essa non compare, allora è grave! Le regole di compatibilità sono queste:
+</p><ol><li>ogni oggetto di un diagramma deve apparire anche nell'altro;
+</li><li>quando un oggetto chiama un altro oggetto, il <strong>CHIAMATO</strong> deve avere un metodo che ha lo stesso nome del messaggio che gli arriva.
+</li></ol><p class='vspace'>La regola numero due tuttavia ammette una deroga, riguardante gli oggetti GUI (Graphical User Interface), ovvero le interfacce utente. Per esempio, quando io premo il pulsante OK, nel diagramma delle sequenze metterò la freccia etichettata "premiOK", ma ovviamente non esisterà un vero metodo chiamato "premiOK()".
+</p>
+<div class='vspace'></div><h2>COCOMO</h2>
+<p>Le domande sul COCOMO saranno di questi due tipi:
+</p><ol><li>ci viene data la dimensione di un programma (in KLOC) e ci chiede il costo;
+</li><li>ci viene data la dimensione e la dead line (la scadenza entro la quale il software va consegnato) e ci chiede quanti programmatori impiegheremmo.
+</li></ol><p class='vspace'>In entrambe le tipologie di domande, la prima cosa da fare è dedurre l'effort a partire dalla dimensione. Occorre usare la formula COCOMO:
+</p><pre> Effort = A * Dimensioni<sup>B</sup> * M
+</pre><p>dove:
+</p><ul><li>A = variabile che esprime l'organizzazione aziendale
+</li><li>B = variabile che esprime la non proporzionalità tra dimensioni del codice e impestatezza dello stesso, ed è la variabile più importante
+</li><li>M = variabile che esprime la capacità della gente che metto al lavoro, ma anche la bontà dei processi industriali che applico. A volte la si chiama C.
+</li></ul><p class='vspace'>La linearità nel rapporto dimensione/effort esprime un principio: per fare un programma di dimensione 100, occorre 10 volte il tempo che serve per fare un programma di dimensione 10.
+</p>
+<p class='vspace'>Purtroppo questo assunto non è vero, ed ecco perché introduciamo la B, che serve appunto a dar conto della non-linearità del mondo reale.
+</p>
+<p class='vspace'>Il risultato è dato in MESI / UOMO. Se ci chiede il costo complessivo, allora ci darà anche il costo del mese uomo, eg 5000 &#8364;, e poi facciamo le dovute moltiplicazioni.
+</p>
+<p class='vspace'>Quando otteniamo l'Effort, ad esempio 10 mesi uomo, possiamo dire con buona certezza che per consegnare il software in un mese mi occorrono 10 programmatori, e che il costo sarà quindi di 5000 * 10 = 50.000 &#8364;.
+</p>
+<p class='vspace'>C'è però da ricordare anche che dividere l'effort totale per numero di programmatori è a sua volta un'ipotesi di linearità: 2 persone ci mettono la metà del tempo, a fare la stessa roba, che ci avrebbe impiegato una persona sola. Noi in realtà sappiamo che più la gente è tanta, più c'è overhead di comunicazione tra di essi (un po' come le economie e le diseconomie di scala).
+</p>
+<p class='vspace'>Una formula per tener conto di ciò potrebbe essere:
+</p><ul><li>Effort = (Effort singolo - overhead dovuto alla presenza di troppa gente) * numero di singoli
+</li></ul><p>dove con Effort singolo intendo dire l'Effort che una singola persona riesce a produrre.
+</p>
+<p class='vspace'>Se la variabile <strong>B</strong> è attorno ad 1, allora posso assumere che il progetto sia molto lineare, e quindi l'overhead è nullo. Se invece <strong>B</strong> comincia a salire, allora occorre ipotizzare che la produttività del singolo diminuirà, e la deadline diventerà un incubo ricorrente per tutti gli impiegati.
+</p>
+<p class='vspace'>La regola del pollice per questa faccenda è la seguente: se Effort e Deadline sono dello stesso ordine di grandezza, allora va tutto bene ed assumo ipotesi di linearità nella produttività del singolo. Se invece l'Effort è di un ordine di grandezza superiore, allora sarà il caso di preoccuparsi ed aggiungere un programmatore.
+</p>
+<p class='vspace'>NOTA del trascrittore: in realtà la faccenda è nebulosa, perché più gente aggiungo più si crea casino e meno produco. Boh. Questo è ciò che ha detto...
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 13, 2009, at 04:48 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-5Giugno?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-5Giugno?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

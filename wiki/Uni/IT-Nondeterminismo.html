@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Informatica Teorica - Nondeterminismo  </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IT-Nondeterminismo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Informatica Teorica - Nondeterminismo 
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Nondeterminismo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Nondeterminismo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IT-Nondeterminismo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Nondeterminismo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Nondeterminismo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Informatica Teorica - Nondeterminismo  was last modified on June 06, 2010, at 06:35 PM'>
+							<span style='display:none;'>Informatica Teorica - Nondeterminismo </span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Nondeterminismo ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 17 Marzo</span>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Le immagini di questa pagina sono prese dalle slide della prof <a class='wikilink' href='GTrucco.html'>Trucco</a>
+</p></div>
+<div class='vspace'></div><h2>Concetti iniziali</h2>
+<p>Una computazione deterministica è quella in cui dato uno stato e un ingresso posso andare in un unico nuovo stato. Intuitivamente, in una computazione non deterministica (da ora <code class='escaped'>n.d.</code>) dato uno stato e un ingresso posso andare a finire in un insieme di stati; in altre parole ogni stato può avere più di una transizione per ogni simbolo dell'alfabeto. A proposito di simboli, aggiungiamo al pacchetto quello di stringa vuota &#949;: si ha una transizione etichettata con &#949; quando si passa al nuovo stato senza leggere alcun ingresso.<br />Un automa finito <code class='escaped'>n.d.</code>, o <strong>NFA</strong>, data una stringa di ingresso funziona così:
+</p><ul><li>tutte le volte che uno stato potrebbe avere più transizioni per diversi simboli dell'alfabeto, l'automa si duplica in più copie, ognuna delle quali segue il suo corso. Si vengono così a creare più rami di computazione indipendenti che sono eseguiti in parallelo;
+</li><li>se il prossimo simbolo che dobbiamo passare a uno stato non si trova su nessuna delle sue frecce uscenti, si abbandona l'intero ramo di computazione che porta a lui;
+</li><li>se almeno una delle copie raggiunge uno stato di accettazione, l'automa accetta la stringa di partenza;
+</li><li>quando si incontra uno stato che ha il simbolo &#949; su una delle sue frecce in uscita, si duplica la macchina in più copie: quelle che seguono le &#949; in uscita, e quella che rimane nello stato corrente.
+</li></ul><p class='vspace'>Con un esempio si fissano meglio le idee. Dato l'NFA:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-nfaEs1.gif' alt='' title='' /></div>
+<p class='vspace'>Ecco l'albero di computazione corrispondente per la stringa di ingresso <code class='escaped'>010110</code>:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-nfaEs2.gif' alt='' title='' /></div>
+<p class='vspace'>La rappresentazione ad albero è particolarmente utile perché basta una veloce occhiata per capire quali sono le sottostringhe che la stringa iniziale deve contenere perché sia accettata dall'automa. In questo caso sono <code class='escaped'>101</code> e <code class='escaped'>11</code>.
+</p>
+<div class='vspace'></div><h2>Definizione formale</h2>
+<p>La definizione formale di NFA è molto simile a quella dei DFA (<em>Deterministic Finite Automaton</em>, automi finiti deterministici), poiché entrambi hanno stati (di cui uno iniziale e almeno uno finale), un alfabeto di ingresso e funzioni di transizione. Sono proprio queste ultime a distinguerli, perché fa la sua comparsa il simbolo di stringa vuota &#949;.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un automa a stati finiti non deterministico è una 5-tupla (<em>Q</em>, <em>&#931;</em>, <em>&#948;</em>, <em>q<sub>0</sub></em>, <em>F</em>) dove:
+</p><ul><li><em>Q</em> è l'insieme finito degli stati dell'automa
+</li><li><em>&#931;</em> è un insieme finito di simboli chiamato alfabeto
+</li><li><em>&#948;: Q &#215; &#931;<sub>&#949;</sub> &#8594; P(Q)</em> è la funzione di transizione. &#931;<sub>&#949;</sub> significa che consideriamo l'unione tra gli insiemi &#931; ed {&#949;}
+</li><li><em>q<sub>0</sub> &#8712; Q</em> è lo stato iniziale dell'automa
+</li><li><em>F &#8838; Q</em> è l'insieme degli stati accettanti
+</li></ul></div>
+<p class='vspace'>La definizione formale dell'NFA dell'esempio sopra sarà quindi:
+</p><div class='indent'>1. Q = {q<sub>1</sub>, q<sub>2</sub>, q<sub>3</sub>, q<sub>4</sub>}
+</div><div class='indent'>2. &#931; = {0,1}
+</div><div class='indent'>3. &#948; è dato da:
+</div><div class='vspace'></div><table align='center' width='40%' >
+<tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>0
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>1
+</td><td bgcolor='#f5f9fc' align='center'  valign='top'>&#949;
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>q<sub>1</sub>
+</td><td align='center'  valign='top'>{q<sub>1</sub>}
+</td><td align='center'  valign='top'>{q<sub>1</sub>,q<sub>2</sub>}
+</td><td align='center'  valign='top'>0
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>q<sub>2</sub>
+</td><td align='center'  valign='top'>{q<sub>3</sub>}
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>{q<sub>3</sub>}
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>q<sub>3</sub>
+</td><td align='center'  valign='top'>0
+</td><td align='center'  valign='top'>{q<sub>4</sub>}
+</td><td align='center'  valign='top'>0
+</td></tr><tr ><td bgcolor='#f5f9fc' align='center'  valign='top'>q<sub>4</sub>
+</td><td align='center'  valign='top'>{q<sub>4</sub>}
+</td><td align='center'  valign='top'>{q<sub>4</sub>}
+</td><td align='center'  valign='top'>0
+</td></tr></table>
+<div class='vspace'></div><div class='indent'>4. q<sub>1</sub> è lo stato di partenza
+</div><div class='indent'>5. F = {q<sub>4</sub>}
+</div><div class='vspace'></div><h3>Definizione formale di computazione</h3>
+<p>Sia dato un automa <code class='escaped'>n.d.</code> N=(<em>Q</em>,<em>&#931;</em>,<em>&#948;</em>,<em>q<sub>0</sub></em>,<em>F</em>), ed una stringa di ingresso w tale che w = y<sub>1</sub>y<sub>2</sub>..y<sub>m</sub> , dove ogni y<sub>i</sub> fa parte dell'alfabeto &#931;<sub>&#949;</sub>.<br />Diciamo che N <strong>accetta</strong> w se esiste una sequenza di stati r<sub>0</sub>r<sub>1</sub>..r<sub>m</sub> in Q che rispettino tre condizioni:
+</p><ol><li>r<sub>0</sub> = q<sub>0</sub> (la macchina parte dallo stato iniziale);
+</li><li>r<sub>i+1</sub> &#8712; &#948;(r<sub>i</sub>,y<sub>i+1</sub>), per ogni i = 0, ... , m-1 (lo stato futuro è uno dei possibili prossimi stati quando N è in r<sub>i</sub> e legge y<sub>i+1</sub>);
+</li><li>r<sub>m</sub> &#8712; F (la macchina accetta l'ingresso se l'ultimo stato è tra quelli finali).
+</li></ol><div class='vspace'></div><h2>Teorema 1 - sull'equivalenza tra NFA e DFA</h2>
+<p>Automi deterministici e non deterministici riconoscono la stessa classe di linguaggi, il che è anti-intuitivo perché questi ultimi sembrano più potenti. Ma se riconoscono gli stessi linguaggi significa che sono equivalenti, sarà vero?
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Ogni automa a stati finiti <code class='escaped'>n.d.</code> ha un automa a stati finiti deterministico equivalente.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>L'idea è quella di dimostrare il teorema per costruzione, ovvero provare che è possibile costruire un DFA equivalente ad un NFA dato. In pratica, dato un automa <code class='escaped'>n.d.</code> N=(Q,&#931;,&#948;,q<sub>0</sub>,F) che supponiamo riconosca il linguaggio A, vogliamo creare il corrispondente automa deterministico M=(Q',&#931;',&#948;',q<sub>0</sub>',F') che riconosca A.<br />Distinguiamo due casi: il caso (1) in cui non ci sono stati con frecce uscenti etichettate con &#949;, e il caso (2) in cui ci sono. 
+</p>
+<p class='vspace'><em>Caso (1)</em>
+</p><ul><li>Q' = P(Q)<br />P(Q) è l'insieme di sottoinsiemi di Q, e l'equivalenza significa che il DFA deve avere uno stato per ogni possibile sottostato di N
+</li><li>dato R lo stato di M in cui ci troviamo (R &#8712; Q'), e considerando un simbolo <em>a</em> &#8712; &#931;, sia:<br /><em>&#948;'(R,</em>a<em>) = {q &#8712; Q | q &#8712; &#948;(r,</em>a<em>) per r &#8712; R}</em>
+</li><li>q<sub>0</sub>' = {q<sub>0</sub>}<br />Gli stati di partenza corrispondono
+</li><li>F' = {R &#8712; Q' | R contiene uno stato finale di N}<br />L'automa M accetta se uno dei possibili stati in cui si può trovare N è accettante.
+</li></ul><p class='vspace'><em>Caso (2)</em><br />Considerando anche gli &#949;, dovremo trovare un modo per includerli nella notazione: per ogni stato R di M definiamo <em>E(R)</em> l'insieme di stati che possono essere raggiunti da R viaggiando attraverso le frecce &#949;, R incluso. Più formalmente, per R &#8712; Q:<br /><em>E(R) = {q | q può essere raggiunto da R viaggiando attraverso 0 o più frecce &#949;}</em><br />Ecco allora come cambia la quintupla (le corrispondenze uguali al Caso (1) non saranno ricommentate):
+</p><ul><li>Q' = P(Q)
+</li><li>dato R lo stato di M in cui ci troviamo (R &#8712; Q'), e considerando un simbolo <em>a</em> &#8712; &#931;, sia:<br /><em>&#948;'(R,</em>a<em>) = {q &#8712; Q | q &#8712; E(&#948;(r,</em>a<em>)) per r &#8712; R}</em><br />In questo modo la funzione di transizione di M terrà conto degli stati che possono essere raggiunti attraverso le frecce &#949;
+</li><li>q<sub>0</sub>' = E({q<sub>0</sub>})<br />Lo stato iniziale di M tiene conto degli eventuali stati che potrebbero essere raggiunti dallo stato iniziale di N attraverso frecce &#949;
+</li><li>F' = {R &#8712; Q' | R contiene uno stato finale di N}
+</li></ul><p class='vspace'>Seguendo le indicazioni descritte nei casi (1) e (2) è possibile costruire correttamente un DFA M che corrisponde a un NFA N: la dimostrazione del teorema è completa!
+</p>
+<div class='vspace'></div><h3>Esempio</h3>
+<p>Dato il seguente NFA:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-nfa2dfa-1.gif' alt='' title='' /></div>
+<p class='vspace'>Ecco il DFA corrispondente:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-nfa2dfa-2.gif' alt='' title='' /></div>
+<div class='vspace'></div><h3>Corollario al Teorema 1</h3>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio è regolare se e solo se esiste un automa a stati finiti <code class='escaped'>n.d.</code> che lo riconosce.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Il teorema è un "se e solo se", quindi vanno dimostrati entrambi i sensi delle implicazioni.
+</p>
+<p class='vspace'><em>Se un automa <code class='escaped'>n.d.</code> riconosce un linguaggio allora questo è regolare</em><br />Un linguaggio è regolare se esiste un automa a stati finiti deterministico che lo riconosce. Ma abbiamo appena visto nel Teorema 1 che ogni NFA può essere convertito in un DFA equivalente, quindi entrambi riconoscono la stessa classe di linguaggi, quindi anche quelli regolari.
+</p>
+<p class='vspace'><em>Se un linguaggio è regolare allora esiste un automa <code class='escaped'>n.d.</code> che lo riconosce</em><br />Dato che gli automi <code class='escaped'>n.d.</code> sono una generalizzazione di quelli deterministici, un DFA è anche un NFA, quindi se il linguaggio è riconosciuto da uno lo è anche dall'altro.
+</p>
+<div class='vspace'></div><h2>Chiusura rispetto alle operazioni regolari</h2>
+<p>Le operazioni regolari sono <em>unione</em>, <em>concatenazione</em> e <em>star</em>. Si dice che una collezione di oggetti è chiusa rispetto ad una determinata operazione se applicandola ai membri della collezione si ottiene un oggetto che appartiene ancora alla collezione stessa.
+</p>
+<div class='vspace'></div><h3>Teorema 2 - sulla chiusura rispetto l'operazione di unione</h3>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>La classe di linguaggi regolari è chiusa rispetto all'operazione di unione.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Abbiamo due linguaggi A<sub>1</sub> e A<sub>2</sub> e vogliamo dimostrare che la loro unione è regolare. L'idea è quella di prendere due automi <code class='escaped'>n.d.</code> N<sub>1</sub> ed N<sub>2</sub> che li riconoscano (rispettivamente) e combinarli in un nuovo NFA N, che dovrà accettare la stringa in ingresso se uno dei due la accetta. Dato che ogni N<sub>i</sub> ha propri stati iniziali e finali, come li dobbiamo combinare?<br />Basta aggiungere un nuovo stato iniziale che con frecce &#949; si colleghi ai vecchi stati iniziali, così da avere garanzia che la stringa in ingresso arrivi a entrambi gli N<sub>i</sub>, e se uno di loro accetta tutto N accetta! Vediamo in figura che si capisce meglio:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-chiusUn.gif' alt='' title='' /></div>
+<p class='vspace'>Più formalmente, siano dati due automi <code class='escaped'>n.d.</code>:
+</p><ul><li>N<sub>1</sub>=(<em>Q<sub>1</sub></em>,<em>&#931;</em>,<em>&#948;<sub>1</sub></em>,<em>q<sub>1</sub></em>,<em>F<sub>1</sub></em>) che riconosce il linguaggio A<sub>1</sub>;
+</li><li>N<sub>2</sub>=(<em>Q<sub>2</sub></em>,<em>&#931;</em>,<em>&#948;<sub>2</sub></em>,<em>q<sub>2</sub></em>,<em>F<sub>2</sub></em>) che riconosce il linguaggio A<sub>2</sub>.
+</li></ul><p class='vspace'>La costruzione di N=(<em>Q</em>,<em>&#931;</em>,<em>&#948;</em>,<em>q<sub>0</sub></em>,<em>F</em>) che riconosce l'unione dei linguaggi A<sub>1</sub> e A<sub>2</sub> va fatta così:
+</p><ol><li>Q = {q<sub>0</sub>} U Q<sub>1</sub> U Q<sub>2</sub><br />Gli stati di N sono tutti quelli di N<sub>1</sub> più quelli di N<sub>2</sub> più il nuovo stato iniziale q<sub>0</sub>
+</li><li>&#931; non cambia
+</li><li>q<sub>0</sub> è il nuovo stato iniziale
+</li><li>F = F<sub>1</sub> U F<sub>2</sub><br />N accetta se o N<sub>1</sub> o N<sub>2</sub> accettano
+</li><li>definiamo la &#948; in modo che per q&#8712;Q e <em>a</em>&#8712;&#931;<sub>&#949;</sub> si abbia:
+</li></ol><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-chiusUn-transiz.gif' alt='' title='' /></div>
+<div class='vspace'></div><h3>Teorema 3 - sulla chiusura rispetto l'operazione di concatenazione</h3>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>La classe di linguaggi regolari è chiusa rispetto all'operazione di concatenazione.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Abbiamo due linguaggi A<sub>1</sub> e A<sub>2</sub> e vogliamo dimostrare che la loro concatenazione è regolare. L'idea è quella di prendere due automi <code class='escaped'>n.d.</code> N<sub>1</sub> ed N<sub>2</sub> che li riconoscano (rispettivamente) e combinarli in un nuovo NFA N. Dato che ogni N<sub>i</sub> ha propri stati iniziali e finali, come li dobbiamo combinare?
+</p><ul><li>lo stato iniziale di N deve corrispondere a quello di N<sub>1</sub>, quindi i due riconosceranno le stesse stringhe di ingresso;
+</li><li>gli stati finali di N<sub>1</sub> vanno collegati a quello iniziale di N<sub>2</sub> con frecce &#949;;
+</li><li>lo stato finale di N deve corrispondere a quello di N<sub>2</sub>.
+</li></ul><p>Anche in questo caso si capisce meglio in figura:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-chiusCo.gif' alt='' title='' /></div>
+<p class='vspace'>Più formalmente, siano dati due automi <code class='escaped'>n.d.</code>:
+</p><ul><li>N<sub>1</sub>=(<em>Q<sub>1</sub></em>,<em>&#931;</em>,<em>&#948;<sub>1</sub></em>,<em>q<sub>1</sub></em>,<em>F<sub>1</sub></em>) che riconosce il linguaggio A<sub>1</sub>;
+</li><li>N<sub>2</sub>=(<em>Q<sub>2</sub></em>,<em>&#931;</em>,<em>&#948;<sub>2</sub></em>,<em>q<sub>2</sub></em>,<em>F<sub>2</sub></em>) che riconosce il linguaggio A<sub>2</sub>.
+</li></ul><p class='vspace'>La costruzione di N=(<em>Q</em>,<em>&#931;</em>,<em>&#948;</em>,<em>q<sub>1</sub></em>,<em>F<sub>2</sub></em>) che riconosce la concatenazione dei linguaggi A<sub>1</sub> e A<sub>2</sub> va fatta così:
+</p><ol><li>Q = Q<sub>1</sub> U Q<sub>2</sub><br />Gli stati di N sono tutti quelli di N<sub>1</sub> più quelli di N<sub>2</sub>
+</li><li>&#931; non cambia
+</li><li>q<sub>1</sub> è lo stato iniziale
+</li><li>F<sub>2</sub> è l'insieme degli stati finali
+</li><li>definiamo la &#948; in modo che per q&#8712;Q e <em>a</em>&#8712;&#931;<sub>&#949;</sub> si abbia:
+</li></ol><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-chiusCo-transiz.gif' alt='' title='' /></div>
+<div class='vspace'></div><h3>Teorema 4 - sulla chiusura rispetto l'operazione di star</h3>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>La classe di linguaggi regolari è chiusa rispetto all'operazione di star.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>L'operazione star è quella che ci permette di concatenare per un certo numero di volte la stessa stringa.<br />Abbiamo un linguaggio A e vogliamo dimostrare che il suo star A* è regolare. L'idea è quella di prendere l'automa <code class='escaped'>n.d.</code> N<sub>1</sub> che lo riconosce e realizzare un nuovo NFA N che implementi lo star. Lo costruiamo mettendo delle frecce &#949; addizionali che vadano dagli stati finali di N<sub>1</sub> a quello iniziale di N<sub>1</sub>, così che si possa ricominciare il giro. Dato che stiamo usando un automa <code class='escaped'>n.d.</code> non possiamo trascurare il fatto che la stringa passata in ingresso potrebbe essere vuota: la ripetizione di una stringa vuota è una stringa vuota, quindi lo stato iniziale di N dovrà essere anche tra quelli finali. Il nuovo stato iniziale è collegato a quello vecchio di N<sub>1</sub> da una solita freccia &#949;.<br />Vediamo in figura:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-chiusSt.gif' alt='' title='' /></div>
+<p class='vspace'>Più formalmente, sia dato l'automa <code class='escaped'>n.d.</code>:
+</p><ul><li>N<sub>1</sub>=(<em>Q<sub>1</sub></em>,<em>&#931;</em>,<em>&#948;<sub>1</sub></em>,<em>q<sub>1</sub></em>,<em>F<sub>1</sub></em>) che riconosce il linguaggio A<sub>1</sub>.
+</li></ul><p class='vspace'>La costruzione di N=(<em>Q<sub>1</sub></em>,<em>&#931;</em>,<em>&#948;<sub>1</sub></em>,<em>q<sub>0</sub></em>,<em>F<sub>1</sub></em>) che riconosce lo star del linguaggio A<sub>1</sub> va fatta così:
+</p><ol><li>Q = {q<sub>0</sub>} U Q<sub>1</sub>
+</li><li>&#931; non cambia
+</li><li>q<sub>0</sub> è il nuovo stato iniziale
+</li><li>F = {q<sub>0</sub>} U F<sub>1</sub>
+</li><li>definiamo la &#948; in modo che per q&#8712;Q e <em>a</em>&#8712;&#931;<sub>&#949;</sub> si abbia:
+</li></ol><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-chiusSt-transiz.gif' alt='' title='' /></div>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 06, 2010, at 06:35 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Nondeterminismo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-Nondeterminismo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

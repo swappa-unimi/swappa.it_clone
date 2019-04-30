@@ -1,0 +1,220 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - File system distribuiti</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SO-FileSystemDistribuiti.html' title='Sistemi Operativi - File system distribuiti'>Sistemi Operativi - File system distribuiti</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>File system distribuiti</span>
+</p>
+<div class='vspace'></div><h2>L'ambiente distribuito</h2>
+<p>Nel <a class='wikilink' href='SO-StruttureDeiSistemiDistribuiti.html'>capitolo precedente</a> abbiamo definito i <strong>sistemi distribuiti</strong> come un insieme di computer debolmente 
+collegati da una rete di comunicazione. Un <strong>file system distribuito</strong> (<strong>DFS</strong>) è un'implementazione distribuita di quello classico centralizzato, ed è caratterizzato dalle seguenti entità:
+</p><ul><li><strong>servizio</strong>, un programma in esecuzione su una o più macchine che fornisce ad altre (non note a priori) le sue funzionalità
+</li><li><strong>server</strong>, singola macchina che offre un servizio
+</li><li><strong>client</strong>, host che richiede servizi a macchine remote
+</li></ul><p class='vspace'>Un DFS può quindi essere considerato come un <em>file server</em>, poiché fornisce attraverso la rete i servizi di accesso e uso dei file ai client. Notare che le macchine possono essere indistintamente sia server che client, l'importante è che il sistema appaia come dotato di un unico file system centralizzato; la dispersione di servizi e risorse deve essere del tutto trasparente agli utenti.<br />Teoricamente andrebbe esteso il principio di trasparenza anche alla rapidità di accesso ai servizi, ma questo è un obiettivo più difficile da garantire a causa dei tempi e delle esigenze computazionali della comunicazione lungo una rete.
+</p>
+<p class='vspace'>Il DFS controlla un gran numero di dispositivi di memorizzazione, in ognuno dei quali si possono individuare le <strong>unità componenti</strong> del file system distribuito, ovvero il più piccolo gruppo di file che si possa memorizzare su una macchina e che deve risiedere esclusivamente in essa.
+</p>
+<div class='vspace'></div><h2>Attribuzione dei nomi e trasparenza</h2>
+<p>L'attribuzione dei nomi su disco locale fornisce agli utenti un'astrazione del file che nasconde i dettagli di come e dove è stato memorizzato. In un DFS trasparente viene aggiunto un nuovo livello di astrazione nascondendo anche l'host su cui è localizzato in rete.
+</p>
+<div class='vspace'></div><h3>Le strutture di attribuzione dei nomi</h3>
+<p>In un DFS realmente trasparente dovrebbe essere garantita sia la <strong>trasparenza della locazione</strong> (non si hanno informazioni sull'effettiva locazione fisica del file) che l' <strong>indipendenza della locazione</strong> (il nome di un file non deve cambiare nemmeno se viene fisicamente spostato). Quest'ultimo requisito non è spesso assicurato poiché sono pochi i sistemi che supportano una reale <em>migrazione dei file</em>; si parla in questi casi di <em>file system di rete</em>. 
+</p>
+<p class='vspace'>Su file system realmente distribuiti (come ad esempio l'AFS) potremmo avere client senza dischi che fanno intero affidamento al server sia per accedere ai dati che per avviare il sistema operativo (previa esecuzione di un protocollo speciale memorizzato su ROM). In questo modo si risparmia sì sui dischi, ma a prezzo di una maggiore complessità di avvio e di prestazioni inferiori rispetto ai mappaggi locali.
+</p>
+<div class='vspace'></div><h3>Gli schemi di attribuzione dei nomi</h3>
+<p>Per l'attribuzione dei nomi abbiamo tre approcci principali, i primi due per file system di rete e l'ultimo per il DFS:
+</p><ul><li>identificare il file come <code class='escaped'>nome macchina + nome file in locale</code>. E' il metodo più semplice ma non è né trasparente né indipendente alla locazione
+</li><li>montaggio del file system remoto sul direttorio locale attraverso un <em>automount</em>, così che il nome del file venga calcolato nel file system della macchina. Questa struttura è versatile ma complessa da gestire, e determina percorsi diversi del file a seconda della macchina
+</li><li>(DFS) esiste una singola struttura globale dei nomi che genera tutti i file del sistema distribuito, che riescono così ad avere un nome univoco. E' uno schema difficile da realizzare a causa dei molti file speciali che devono rimanere specifici per singole macchine
+</li></ul><div class='vspace'></div><h3>Tecniche di implementazione</h3>
+<p>L'implementazione dell'attribuzione trasparente dei nomi richiede una mappatura tra il nome del file e la locazione associata; per mantenere più semplice la gestione, i file vengono spesso aggregati in <em>unità componenti</em> e trattati in quanto tali.
+</p>
+<p class='vspace'>Per aumentare la disponibilità delle informazioni cruciali per la mappatura vengono adottate tecniche come la <em>replica</em> e la <em>cache locale</em> (o entrambe), che possono essere migliorate con l'uso di identificatori di file indipendenti dalla locazione per essere costantemente aggiornate.
+</p>
+<div class='vspace'></div><h2>Accesso remoto ai file</h2>
+<p>Quando un utente chiede di accedere a un file remoto in un file system di rete, il trasferimento dei dati richiesto avviene con l'uso di un meccanismo di servizio remoto generalmente implementato con una RPC. Tale sistema prevede la copiatura locale in cache e il conseguente aggiornamento, quindi il salvataggio in remoto.<br />In un DFS queste operazioni vengono trattate mediante meccanismi di servizi locali, eventualmente eseguiti in remoto in modo trasparente.
+</p>
+<div class='vspace'></div><h3>Schema di base per l'uso della cache</h3>
+<p>L'uso della cache assicura prestazioni ragionevoli riducendo sia il traffico di rete che gli accessi I/O al disco. Il concetto è che se i dati richiesti non sono già al suo interno, allora bisogna ricopiarli dagli originali contenuti sul server. Si cerca cioè di mantenere in queste memorie veloci le informazioni richieste più spesso, accelerando di conseguenza i tempi di servizio.
+</p>
+<p class='vspace'>E' di fondamentale importanza garantire la coerenza della cache in caso di modifica dei dati, o potrebbero avvenire accessi a dati inconsistenti. Ne vanno perciò studiate la locazione e le politiche di aggiornamento più appropriate, e non ultimo vanno valutate attentamente le sue dimensioni: più la cache è grande più RAM viene richiesta e maggiori sono gli oneri per garantirne la coerenza, ma allo stesso tempo maggiore è la probabilità che contenga il file di interesse.
+</p>
+<div class='vspace'></div><h3>Locazione della cache</h3>
+<p>Dove memorizzare la cache? Se viene collocata su disco avremo maggiore affidabilità e dimensione e memorizzazioni non volatili, se invece viene messa su RAM diventa molto più veloce e può essere implementata su client senza memorie secondarie.
+</p>
+<div class='vspace'></div><h3>Politica di aggiornamento della cache</h3>
+<p>Le <em>politiche di aggiornamento della cache</em> indicano come comportarsi in seguito a modifiche sulle copie, ed hanno un effetto critico sulle prestazioni e affidabilità del sistema.
+</p>
+<p class='vspace'>La politica più semplice è la <strong>scrittura immediata</strong> (write-through), in cui la scrittura avviene contemporaneamente su cache e su disco. E' estremamente affidabile ma ha prestazioni in scrittura molto basse.<br />Un'alternativa è la <strong>scrittura ritardata</strong>, in cui vengono disaccoppiate le scritture rapide su cache e quelle lente in memoria di massa. Le scritture diventano così molto più veloci a prezzo di una minore affidabilità.<br />Una variante dell'ultima politica è la <strong>scrittura in chiusura</strong> che ricopia il file dalla cache al disco solo quando viene chiuso. E' una strategia vantaggiosa se i file vengono mantenuti aperti a lungo e aggiornati di frequente.
+</p>
+<div class='vspace'></div><h3>Coerenza</h3>
+<p>Abbiamo due metodi per verificare la validità dei dati in cache. Il primo è la <strong>verifica iniziata dal client</strong>, che ad ogni accesso o a intervalli di tempo regolari controlla che i dati locali siano coerenti con quelli principali sul server. Il secondo è la <strong>verifica iniziata dal server</strong>, che registra i file che vengono posti in cache dai vari client, e se le modalità d'accesso richieste potrebbero minare la coerenza (ad esempio la scrittura da parte di almeno uno dei due) vengono fatti partire i controlli.
+</p>
+<div class='vspace'></div><h3>Confronto tra i servizi con cache e quelli remoti</h3>
+<p>Vediamo i pro e i contro dell'utilizzo della cache:
+</p><ul><li><em>pro</em>: supporta una gestione efficace di un numero notevole di accessi remoti, ha maggiore rapidità prestazionale, comporta sovraccarichi minori della rete se gestisce grosse porzioni di dati
+</li><li><em>contro</em>: garantire la coerenza è un compito piuttosto oneroso soprattutto se vengono effettuate molte scritture, sono necessarie memorie centrali e dischi di grandi dimensioni o l'efficacia andrebbe persa
+</li></ul><div class='vspace'></div><h2>File server con e senza stato</h2>
+<p>Lo <strong>stato di un file server</strong> è l'insieme delle informazioni che caratterizzano l'uso di un file aperto. In un file con stato il client per accedere a un file deve effettuare prima una <code class='escaped'>open()</code>, dopodiché riceve dal server un identificatore univoco di connessione che viene mantenuto per tutta la sessione. Ha prestazioni maggiori grazie al mantenimento delle informazioni in memoria centrale, facilmente accessibili grazie agli identificatori.
+</p>
+<p class='vspace'>Un file server senza stato evita di richiedere e mantenere informazioni di stato, quindi soddisfa ogni richiesta in modo indipendente. Ha prestazioni minori ma è più semplice da realizzare e reagisce meglio ai guasti.
+</p>
+<div class='vspace'></div><h2>Replica dei file</h2>
+<p>La <strong>replica</strong> dei file su diverse macchine è una ridondanza utile sia per aumentare la disponibilità del servizio che le prestazioni, dato che selezionare una replica in un server vicino per soddisfare una richiesta di accesso comporta un tempo di servizio più breve.
+</p>
+<p class='vspace'>La gestione della replica non è indipendente alla locazione perché la disponibilità di una di esse non può e non deve essere influenzata dalle altre. Inoltre, i suoi dettagli dovrebbero essere mantenuti trasparenti agli utenti di alto livello, o diventerebbe più problematico garantirne la consistenza.
+</p>
+<p class='vspace'>Il problema principale delle repliche è legato al loro aggiornamento, che in teoria dovrebbe riflettersi automaticamente su tutte le istanze per mantenerle coerenti, ma che difficilmente avviene perché comporta una notevole riduzione delle prestazioni.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SO-FileSystemDistribuiti)</span></div>
+  </div>
+</body>
+</html>

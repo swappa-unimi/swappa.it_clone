@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Algoritmi e Strutture Dati</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Algoritmi.html' title='Algoritmi e Strutture Dati'>Algoritmi e Strutture Dati</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e Strutture Dati ::</strong>
+</pre><table align='right' cellpadding='5' cellspacing='15' >
+<tr ><td bgcolor='#f6f6ff'  valign='top'><h5>Quanto ti è piaciuta la materia?</h5>
+<form action='Algoritmi.html' method='post'><input type='hidden' name='n' value='Uni.Algoritmi' /><input type='hidden' name='action' value='rater' /><input type='hidden' name='rs_id' value='1' /><input type='radio' name='rating_1[]' value='1' id='rating_11' /><label for='rating_11'><span style='font-size:69%'>*</span></label> <input type='radio' name='rating_1[]' value='2' id='rating_12' /><label for='rating_12'><span style='font-size:69%'>**</span></label> <input type='radio' name='rating_1[]' value='3' id='rating_13' /><label for='rating_13'><span style='font-size:69%'>***</span></label> <input type='radio' name='rating_1[]' value='4' id='rating_14' /><label for='rating_14'><span style='font-size:69%'>****</span></label> <input type='radio' name='rating_1[]' value='5' id='rating_15' /><label for='rating_15'><span style='font-size:69%'>*****</span></label> <input type='submit' name='post' value='Vota' class='inputbutton' /><br /><img src='../pub/rater/img/yellow30star.gif' alt='3 stars' title='3 stars' /> <span style='font-size:83%'>N° voti: 99</span><br /><strong></strong>
+</form>
+
+</td></tr><tr ><td bgcolor='#f6f6ff'  valign='top'><h5>Come ti è sembrato il corso?</h5>
+<form action='Algoritmi.html' method='post'><input type='hidden' name='n' value='Uni.Algoritmi' /><input type='hidden' name='action' value='rater' /><input type='hidden' name='rs_id' value='2' /><input type='radio' name='rating_2[]' value='1' id='rating_21' /><label for='rating_21'><span style='font-size:69%'>*</span></label> <input type='radio' name='rating_2[]' value='2' id='rating_22' /><label for='rating_22'><span style='font-size:69%'>**</span></label> <input type='radio' name='rating_2[]' value='3' id='rating_23' /><label for='rating_23'><span style='font-size:69%'>***</span></label> <input type='radio' name='rating_2[]' value='4' id='rating_24' /><label for='rating_24'><span style='font-size:69%'>****</span></label> <input type='radio' name='rating_2[]' value='5' id='rating_25' /><label for='rating_25'><span style='font-size:69%'>*****</span></label> <input type='submit' name='post' value='Vota' class='inputbutton' /><br /><img src='../pub/rater/img/yellow25star.gif' alt='2.5 stars' title='2.5 stars' /> <span style='font-size:83%'>N° voti: 88</span><br /><strong></strong>
+</form>
+
+</td></tr></table>
+<p class='vspace'><strong>Docente</strong>: <a class='wikilink' href='DeCapitani.html'>De Capitani</a>.
+</p>
+<div class='vspace'></div><h2>Materiale ufficiale</h2>
+<table cellpadding='5' cellspacing='5' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><a target='_blank'  class='urllink' href='http://www.dti.unimi.it/~decapita/lucidi-algoritmi.html' title='' rel='nofollow'><strong>Lucidi</strong></a>
+</td></tr></table>
+<div class='vspace'></div><h2>Appunti</h2>
+<ul><li><a class='wikilink' href='A-ConcettiIniziali.html'>Concetti iniziali</a>
+</li><li><a class='wikilink' href='A-AlgOrdinamento.html'>Algoritmi di ordinamento</a>
+</li><li><a class='wikilink' href='A-StackCodeListeAlbRadicati.html'>Stack, code, liste, Alberi radicati</a>
+</li><li><a class='wikilink' href='A-TabelleFunzioniHash.html'>Tabelle e funzioni hash</a>
+</li><li><a class='wikilink' href='A-AlberiBinariERedBlack.html'>Alberi binari e Red-Black</a>
+</li><li><a class='wikilink' href='A-SDInsiemiDisgiunti.html'>Strutture dati per insiemi disgiunti</a>
+</li><li><a class='wikilink' href='A-CamminiMinimi.html'>Cammini minimi</a>
+</li><li><a class='wikilink' href='A-MetodiFF-EK.html'>Metodi di Ford-Fulkerson e di Edmonds-Karp</a>
+</li><li><a class='wikilink' href='A-GlossarioGrafi.html'>Glossario Grafi</a>
+</li><li><a class='wikilink' href='A-ProgrammazioneDinamicaEGreedy.html'>Programmazione dinamica e Greedy</a>
+</li><li><a class='wikilink' href='A-GlossarioHuffman.html'>Glossario Huffman</a>
+</li></ul><div class='vspace'></div><h2>Ripasso (Versione Beta)</h2>
+<p>Scritto da Marco Baratta (basandosi principalmente sulle slide)
+</p><ul><li><a class='urllink' href='../uploads/Uni/RipassoAlgo.pdf' title='' rel='nofollow'>Ripasso</a>
+</li></ul><div class='vspace'></div><h2>Temi Di Esame</h2>
+<ul><li><a class='urllink' href='../uploads/Uni/2010-2016_Temi_Esame_Algoritmi_Sabrina_De_Capitani_di_Vimercati_Presenza_e_Online.zip' title='' rel='nofollow'>Esami Sabrina De Capitani di Vimercati dal 2009 al 2016, Studenti in Presenza, Studenti Online, Prove Itinere e Appelli</a>
+</li><li><a class='urllink' href='../uploads/Uni/2012.06.11%20-%20Appello.pdf' title='' rel='nofollow'>2012.06.11 - Appello</a>
+</li><li><a class='urllink' href='../uploads/Uni/2016.11.19%20-%20Prima%20Prova%20Itinere%20Online.pdf' title='' rel='nofollow'>2016.11.19 - Prima Prova Itinere Online</a>
+</li><li><a class='urllink' href='../uploads/Uni/2017.01.13%20-%20Seconda%20Prova%20Itinere%20Online.pdf' title='' rel='nofollow'>2017.01.13 - Seconda Prova Itinere Online</a>
+</li><li><a class='urllink' href='../uploads/Uni/2017.01.28%20-%20Seconda%20Prova%20Itinere%20Online.pdf' title='' rel='nofollow'>2017.01.28 - Seconda Prova Itinere Online</a>
+</li><li><a class='urllink' href='../uploads/Uni/2017.01.28%20-%20Appello%20Oline.pdf' title='' rel='nofollow'>2017.01.28 - Appello Online</a>
+</li><li><a class='urllink' href='../uploads/Uni/2017.03.17%20-%20Appello%20Oline.pdf' title='' rel='nofollow'>2017.03.17 - Appello Online</a>
+</li><li><a class='urllink' href='../uploads/Uni/2017.04.20%20-%20Appello%20Online.pdf' title='' rel='nofollow'>2017.04.20 - Appello Online</a>
+</li><li><a class='urllink' href='../uploads/Uni/2017.06.23%20-%20Appello%20Online.pdf' title='' rel='nofollow'>2017.06.23 - Appello Online</a>
+</li></ul><p class='vspace'>NB Alcuni parziali Online non contengono nel testo di esame dicitura "online". Tramite i calendari accademici degli scorsi anni per coincidenza di date gli ho attribuiti agli studenti Online, a meno che la professoressa non facesse coincidere le date degli studenti in presenza e online nel medesimo giorno.
+</p>
+<div class='vspace'></div><h2>Modalità di esame studenti online e consigli pratici</h2>
+<p>Dall'anno 2014 per gli studenti Online è cambiata la prova di esame, dove prima erano presenti solo esercizi attualmente vengono solitamente proposti 10 domande di teoria e 3 esercizi. Le video lezioni attuali, al 2017, sono ancora quelle del precedente docente Roberto Aringhieri che non segue e ne copre completamente gli argomenti trattati dalla Sabrina De Capitani di Vimercati. Si consiglia pertanto di guardare le slide e le registrazioni delle lezioni in presenza.
+</p>
+<div class='vspace'></div><h2>Lista delle domande</h2>
+<p>Qui c'è una lista delle domande tratte da tutti i compiti 2009/2010. 
+</p><ul><li><a class='wikilink' href='DomandeAlgoritmi.html'>DomandeAlgoritmi</a>
+</li></ul><div class='vspace'></div><h2>Qualche esercizio</h2>
+<p>Per coloro interessati qui si propongono alcuni esercizi:
+</p><ul><li><a class='wikilink' href='EsplorazioneDiUnGrafo.html'>Esplorazione di un grafo</a>
+</li><li><a class='wikilink' href='EsplorazioneDiUnGrafoNonOrientato.html'>Esplorazione di un grafo non orientato</a>
+</li><li><a class='wikilink' href='BinPacking.html'>Bin Packing</a>
+</li><li><a class='wikilink' href='MergesortHeapsortEQuicksort.html'>Mergesort, Heapsort e Quicksort</a>
+</li><li><a class='wikilink' href='KruskalEDijkstra.html'>Kruskal e Dijkstra</a>
+</li><li><a class='wikilink' href='B-alberi.html'>B-alberi</a>
+</li><li><a class='wikilink' href='AlgoritmiDiFork-Fulkerson.html'>Algoritmi di Fork-Fulkerson</a>
+</li><li><a class='wikilink' href='AlgoritmiDiFloyd-Warshall.html'>Algoritmi di Floyd-Warshall</a>
+</li></ul><div class='vspace'></div><h2>Appunti</h2>
+<ul><li><a class='wikilink' href='ALG-Risposte2009.html'>Esami del 2009</a>
+</li><li><a class='wikilink' href='ALG-Risposte2010.html'>Esami del 2010</a>
+</li><li><a class='wikilink' href='ListeInJava.html'>Liste</a>
+</li><li><a class='wikilink' href='AlSp-Heap.html'>Code di priorità, heap e heapsort con tanto di Java</a>
+</li><li><a class='urllink' href='../uploads/Uni/2017%20-%20Appunti_Algoritmi_by_Draghetti.pdf' title='' rel='nofollow'>Appunti, Esercizi e Risposte ai Temi di Esami dal 2014 al 2017.</a>
+</li></ul><div class='vspace'></div><h2>Specifiche</h2>
+<p>Tutte le specifiche delle strutture dati incontrate a lezione, sintassi + semantica + codice in C++.
+</p><table >
+<tr ><td  valign='top'>
+<ul><li><a class='wikilink' href='AlSp-Vettori.html'>Vettori</a>
+</li><li><a class='wikilink' href='AlSp-Liste.html'>Liste</a>
+</li></ul></td><td  valign='top'>
+<ul><li><a class='wikilink' href='AlSp-Pile.html'>Pile</a>
+</li><li><a class='wikilink' href='AlSp-Code.html'>Code</a>
+</li></ul></td><td  valign='top'>
+<ul><li><a class='wikilink' href='AlSp-Alberi.html'>Alberi</a>
+</li><li><a class='wikilink' href='AlSp-AlberiBinari.html'>Alberi binari</a>
+</li></ul></td></tr></table>
+<div class='vspace'></div><hr />
+<p  style='text-align: left; background-color: #d9e4f2; font-size: 10pt; color: black; padding: 5px;'><a style='color: black' class='categorylink' href='../Category/UniCrema.html'><strong>UniCrema</strong></a> | <a style='color: black' class='categorylink' href='../Category/SecondoSemestre.html'>Secondo Semestre</a> | <a style='color: black' class='categorylink' href='../Category/SecondoAnno.html'>Secondo Anno</a> | <a style='color: black' class='categorylink' href='../Category/Informatica.html'>Informatica</a> - <a style='color: black' class='categorylink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Algoritmi)</span></div>
+  </div>
+</body>
+</html>

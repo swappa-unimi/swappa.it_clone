@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Basi di Dati - Complementi - Lezione del 4 marzo 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='BDC4marzo2008.html' title='Basi di Dati - Complementi - Lezione del 4 marzo 2008'>Basi di Dati - Complementi - Lezione del 4 marzo 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi - Lezione del 4 marzo 2008 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Appunti Glamour</strong></span>
+</p>
+<p class='vspace'><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+<div class='vspace'></div><h3>Gestore della concorrenza</h3>
+<p>Il Gestore della Concorrenza si occupa di realizzare la proprietà Isolamento. Il punto è che in genere nelle applicazioni ci sono tante operazioni che vanno eseguite contemporaneamente, e questo non deve inficiarne la correttezza. Si parla di <strong>tps</strong>, ovvero <strong>transactions per second</strong>, e possono essere decine o migliaia. Questo gestore deve decidere se accettarle o no, e se le accetta, in che ordine eseguirle (<strong>scheduling</strong>).
+</p>
+<div class='vspace'></div><h3>Problemi legati alla concorrenza</h3>
+<p>Se la concorrenza non viene gestita bene, possono accadere spiacevoli inconvenienti, qui sotto classificati.
+</p>
+<div class='vspace'></div><ul><li><strong>Perdita di aggiornamenti</strong>: le modifiche di una transazione vengono perse perché sovrascritte da un'altra transazione concorrente.
+</li><li><strong>Lettura sporca</strong>: una trans legge il risultato intermedio di un'altra trans, la quale poi fallisce e fa il rollback. La prima trans si trova quindi a lavorare su dati non validi.
+</li><li><strong>Lettura inconsistente</strong>: una trans legge a più riprese oggetti che una seconda trans sta modificando: tra le due letture c'è inconsistenza, cioè non coincidono.
+</li><li><strong>Aggiornamento fantasma</strong>: una trans lavora su dati e li fa andare temporaneamente fuori dai vincoli di integrità; un'altra trans legge sti dati, li vede non validi e abortisce.
+</li><li><strong>Inserimento fantasma</strong>: tra due letture che una trans fa di una lista di oggetti, un'altra trans ne inserisce un'altro. Se per esempio sto confrontando dei valori medi, ciò sballa tutto.
+</li></ul><p class='vspace'>In quest'ultimo caso non basta dire: "questo valore è lockato", perché se si tratta di una query nidificata che lavora su dati aggregati, essa prima fa un lock, poi lo rilascia, poi rifà il lock sugli stessi dati. Ma nel frattempo i dati sono liberi e altre applicazioni possono spaciugarli. Quindi occorre anche un lock sui predicati.
+</p>
+<div class='vspace'></div><h3>Teoria del controllo della concorrenza</h3>
+<p  style='text-align: center; background-color: red; border: 3px dotted yellow; padding: 3px;'><strong>¡¡¡ Questa è materia da esercizio !!!</strong>
+</p>
+<p class='vspace'><a class='wikilink' href='BDCexSchedule.html'>Vai agli esercizi sugli schedule</a>
+</p>
+<p class='vspace'>In questa teoria, vediamo una transazione come una sequenza di operazioni di <strong>read</strong> e <strong>write</strong>, tutte marcate da un identificatore il quale ci permette di distinguere le op di una trans dalle op di un'altra. Inoltre, assumiamo le trans come ben formate (vedi <a class='wikilink' href='BDC3marzo2008.html'>lezione precedente</a>).
+Esempio:
+</p><pre> t<sub>1</sub> : r<sub>1</sub>(x) r<sub>1</sub>(y) w<sub>1</sub>(x) w<sub>1</sub>(z)
+</pre><p class='vspace'>Uno <strong>schedule</strong> è una sequenza di operazioni di I/O presentate da trans concorrenti. Tutte le op di ciascuna trans devono essere nel loro ordine, anche se le op di una trans possono essere intervallate a op di un'altra trans.
+</p>
+<p class='vspace'><strong>OCIO</strong>: per ora, consideriamo che sia soddisfatta la <strong>commit-proiezione</strong>, ovvero che compaiano solo le trans che hanno fatto commit e trascuriamo l'abort.
+</p>
+<p class='vspace'>Se ho queste due transazioni:
+</p><pre> t<sub>1</sub>: r<sub>1</sub>(x) w<sub>1</sub>(x) r<sub>1</sub>(y) w<sub>1</sub>(y)
+ t<sub>2</sub>: r<sub>2</sub>(y) w<sub>2</sub>(y)
+</pre><p>uno schedule è semplicemente una qualsiasi sequenza delle op di queste due trans, purché si rispetti l'ordine interno ad ogni trans.
+</p>
+<div class='vspace'></div><h3>Tipi di schedule</h3>
+<p>Sono divisibili in due classi:
+</p><ul><li><strong>seriali</strong>: tutte le trans sono eseguite in sequenza, ovvero prima tutta t<sub>1</sub>, poi tutta t<sub>2</sub> etc.
+</li><li><strong>serializzabili</strong>: sono schedule non seriali, ma che producono lo stesso risultato di uno schedule seriale.
+</li></ul><p class='vspace'>Serializzabile vuol dire quindi che uno schedule non seriale è equivalente ad uno schedule seriale. Ciò vuol dire che lo stato finale in cui si trovano i miei dati deve essere lo stesso sia per uno schedule seriale che per uno schedule serializzabile ad esso equivalente.
+</p>
+<p class='vspace'><strong>Nota:</strong> si usano schedule serializzabili perché spesso raggruppando operazioni simili si guadagna tempo nell'accesso in memoria.
+</p>
+<div class='vspace'></div><h3>View-serializzabilità e View-equivalenza</h3>
+<div><span class='frame lfloat'><img width='150px' src='../uploads/Uni/complementi2.jpg' alt='' title='' /><br /><strong>Immagine per blandire studentesse</strong></span></div>
+<p>Quando 1 schedule alla fine dà la stessa vista sui dati di uno schedule seriale, è <strong>view-serializzabili</strong>.
+</p>
+<p class='vspace'>Per verificare ciò, si usano questi 2 concetti: <strong>leggi-da</strong> e <strong>scrittura finale</strong>.
+</p>
+<p class='vspace'>La <strong>leggi-da</strong> è una relazione tra scritture e letture di uno stesso dato. Ad esempio, posso dire che
+</p><pre> r1(x) <strong>legge-da</strong> w2(x)
+</pre><p>se l'operazione di scrittura w2(x) precede la lettura r1(x), e tra queste due non c'è nessun'altra operazione di scrittura sullo stesso dato x.
+</p>
+<p class='vspace'>La <strong>scrittura finale</strong> invece è l'ultima scrittura di un certo dato x nel mio schedule. Dopo di essa, nessuno scrive più su x.
+</p>
+<p class='vspace'>Quindi, posso ora dire che 2 schedule sono <strong>view-equivalenti</strong> se, sulle stesse trans, hanno le stesse <strong>leggi-da</strong> e le stesse <strong>scritture finali</strong>.
+</p>
+<p class='vspace'>Chiamiamo poi <strong>VSR</strong> l'insieme di tutti gli schedule che sono view-serializzabili.
+</p>
+<p class='vspace'>Lo scheduler quindi potrebbe prendere uno schedule serializzabile e vedere se è view-equivalente ad un qualsiasi schedule seriale su quelle stesse trans.
+Ad esempio, se ho 3 trans diverse, ho <strong>3!</strong> schedule seriali. Devo quindi confrontare ciascun schedule per verificarne la view-serializzabilità, ovvero la view-equivalenza con uno qualsiasi dei miei 3! schedule seriali.
+</p>
+<p class='vspace'>Tutto ciò è cosa bella, ma il costo è polinomiale, perché si tratta di un problema NP-difficile. Se le operazioni sono tante, occorrerà confrontare uno schedule serializzabile con gli n! schedule seriali possibili. Quindi, si usano altre condizioni, più strette di queste, ma più pratiche, per verificare la bontà di uno schedule.
+</p>
+<p class='vspace'><a class='wikilink' href='BDCexSchedule.html'>Vai agli esercizi sugli schedule</a>
+</p>
+<p class='vspace'><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+<div class='vspace'></div>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/BDC4marzo2008)</span></div>
+  </div>
+</body>
+</html>

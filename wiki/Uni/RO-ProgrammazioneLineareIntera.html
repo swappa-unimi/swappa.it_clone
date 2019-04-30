@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ricerca Operativa - Programmazione lineare intera </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RO-ProgrammazioneLineareIntera' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ricerca Operativa - Programmazione lineare intera
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-ProgrammazioneLineareIntera?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-ProgrammazioneLineareIntera?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RO-ProgrammazioneLineareIntera-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-ProgrammazioneLineareIntera?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-ProgrammazioneLineareIntera?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ricerca Operativa - Programmazione lineare intera was last modified on June 17, 2009, at 10:55 PM'>
+							<span style='display:none;'>Ricerca Operativa - Programmazione lineare intera</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Ricerca Operativa - Programmazione lineare intera ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Tutte le immagini di questa pagina sono prese dalle slide del prof <a class='wikilink' href='GiovanniRighini.html'>Giovanni Righini</a>
+</p></div>
+<div class='vspace'></div><h2>Introduzione</h2>
+<p>Finora abbiamo studiato problemi di programmazione lineare nel continuo, in cui cioè le variabili possono assumere valori reali. I problemi di <strong>programmazione lineare intera</strong> hanno invece variabili con valori nel dominio del discreto, ed hanno forma standard:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROpliFormaStandard.jpg' alt='' title='' /></div>
+<p>Il terzo vincolo è quello che mi indica che sono in un dominio dicreto non negativo.
+</p>
+<p class='vspace'>Due casi particolari:
+</p><ul><li>se alcune variabili sono continue e altre intere si parla di <em>mixed integer programming</em>
+</li><li>se le variabili sono binarie (cioè le x possono assumere solo valore 0 o 1) abbiamo invece la <em>binary programming</em>
+</li></ul><p class='vspace'>Salvo poche eccezioni conosciute, la complessità computazionale di un problema di PLI è maggiore di quella della PL continua. Si tratta infatti di problemi <code class='escaped'>NP-HARD</code>, che però si rivelano molto potenti da un punto di vista modellistico.
+</p>
+<div class='vspace'></div><h2>Rilassamento continuo</h2>
+<p>La prima cosa che ci serve capire per risolvere un problema di programmazione lineare intera è il suo <strong>rilassamento continuo</strong>, ovvero il problema di programmazione lineare che si otterrebbe trascurando i vincoli di integralità. Si può pensare al rilassamento continuo come all'anello di congiunzione tra PL e PLI.
+</p>
+<p class='vspace'>L'insieme delle soluzioni ammissibili nel discreto (X<sub>PLI</sub>) sono un sottoinsieme di quelle che si trovano nel rilassamento continuo (X<sub>PL</sub>), di conseguenza la funzione obiettivo non cambia e la regione ammissibile è soltanto allargata. Per quanto riguarda la soluzione ottima distinguiamo due casi:
+</p><ul><li>se stiamo massimizzando: z<sub>PL</sub> &gt;= z<sub>PLI</sub>
+</li><li>se stiamo minimizzando: z<sub>PL</sub> &lt;= z<sub>PLI</sub>
+</li></ul><p class='vspace'>Se scopriamo che la z<sub>PL</sub> è intera, allora quella soluzione è ottima anche per il problema intero. Ma se intera non lo è, non potremmo semplicemente risolvere il problema PLI arrotondandola all'intero più vicino? No, perché ci sarebbero troppi casi in cui questa strada porterebbe a risultati molto lontani dall'ottimo, se non addirittura fuori dalla regione ammissibile. Guarda l'esempio sotto per credere:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROrilassamentoErr.jpg' alt='' title='' /></div>
+<p class='vspace'>La differenza che passa tra il risolvere un problema nel continuo ed uno nel discreto è misurabile, e l'unità di misura utilizzata per quantificarla è l' <strong>integrality gap</strong> dato da <em>z<sub>PL</sub> - z<sub>PLI</sub></em>. Si tratta di un indice che dà informazioni sulla difficoltà del problema e sulla sua bontà di formulazione. Questa ha infatti caratteristiche diverse rispetto al continuo, una su tutte il fatto che lo stesso problema intero può essere definito con molte formulazioni diverse (diversi vicoli, anche in numero). In generale la formulazione migliore è quella che ha i vincoli corrispondenti agli iperpiani (chiamati <strong>faccette</strong>) che definiscono il <strong>guscio convesso</strong> (<em>convex hull</em>) delle soluzioni ammissibili intere. Fermi tutti, di cosa stiamo parlando? Stiamo dicendo che dobbiamo fissare i vertici del poliedro su coordinate intere, così che la regione ammissibile possa essere il più stringente possibile. Ciò è molto utile perché se riusciamo a descrivere un problema di programmazione lineare intera come guscio convesso dei suoi punti interi, allora siamo anche in grado di utilizzare l'algoritmo del simplesso per calcolare l'ottimo: risolvendo la PL risolveremmo anche la PLI!<br />Tutto questo è molto bello, ma accade molto raramente.
+</p>
+<p class='vspace'>Il rilassamento continuo non è l'unico tipo di rilassamento possibile. Abbiamo anche:
+</p><ul><li><strong>rilassamento surrogato</strong>, che si ottiene facendo una combinazione lineare di due o più vincoli del sistema, ad esempio sommandoli. Il motivo per cui si riesce a diminuire il numero di vincoli è che tutte le soluzioni che soddisfano quelli di partenza soddisfano anche la loro combinazione lineare, mentre non è vero il viceversa. Notare che anche questo tipo di rilassamento allarga la regione ammissibile
+</li><li><strong>rilassamento combinatorio</strong>, che si ottiene quando elimino i vincoli di <code class='escaped'>subtour elimination constructor</code> (???)
+</li><li><strong>rilassamento LaGrangiano</strong>, che non consiste nell'ignorare un vincolo, ma nel toglierlo direttamente dal sistema e penalizzarne la violazione modificando la funzione obiettivo
+</li></ul><p class='vspace'>Indipendentemente dal tipo di rilassamento che decideremo di usare, l'obiettivo è ottenere il più piccolo integrality gap possibile, così da migliorare la facilità del problema.
+</p>
+<div class='vspace'></div><h2>Branch-and-bound</h2>
+<h3>Branching</h3>
+<p>Una tecnica che fa uso di tutte queste informazioni e strategie e che funziona sempre si chiama <strong>Branch-and-bound</strong> e consente di trovare la soluzione ottima di problemi combinatori NP-HARD. Nota bene prima di cominciare: si tratta di un sistema per progettare algoritmi, ma <strong>non è</strong> un algoritmo.
+</p>
+<p class='vspace'>L'idea più semplice per trovare le soluzioni di problemi combinatori nel discreto è enumerarle tutte, tanto saranno sicuramente un numero finito. Ok, l'idea è semplice, ma impraticabile: elencare esplicitamente una soluzione alla volta impiegherebbe un tempo di calcolo potenzialmente esponenziale, quindi impensabile nella maggior parte dei casi.
+</p>
+<p class='vspace'>L'alternativa è enumerarle implicitamente, così da considerarle tutte ma senza elencarle una per una. Come si fa? Dato un problema P con regione ammissibile X(P) si partiziona quest'ultima in tanti sottoinsiemi, ovvero si generano più problemi figli (più facili) a partire da un problema padre. Se sono in grado di risolverli allora potrò confrontarne le soluzioni per scegliere quella migliore, altrimenti li scompongo ricorsivamente in nuovi figli. <br />Quest'operazione di partizionamento o biforcamento prende il nome di <strong>branching</strong>, e genera un albero chiamato <strong>albero di decisione</strong> (<em>decision tree</em>) il cui numero di nodi cresce in modo esponenziale man mano che scendiamo di livello. La foglia dell'albero è quindi la base della ricorsione, e corrisponde o a un sottoproblema talmente elementare che possiamo ricavare subito la soluzione, o a un sottoproblema inammissibile.<br />Nota di folklore: più che un albero è un'alborescenza dato che è limitato ed ha solo archi orientati.
+</p>
+<p class='vspace'>L'operazione di branching deve essere fatta con attenzione, rispettando alcune precise condizioni. Per prima cosa deve garantire la <strong>correttezza</strong>, che mi permette di essere sicuro di aver enumerato implicitamente tutte le soluzioni del problema. Questa proprietà si esprime formalmente dicendo che l'unione delle regioni ammissibili di tutti i figli deve corrispondere a quella del padre. In formula:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROcorrettezzaBB.jpg' alt='' title='' /></div>
+<p class='vspace'>In secondo luogo voglio raggiungere l<strong>'efficienza</strong> facendo in modo che le regioni ammissibili dei figli siano disgiunte, o altrimenti una stessa soluzione potrebbe essere contenuta in più di un problema figlio, e quindi verrebbe considerata più volte. Questa seconda condizione si esprime dicendo che l'intersezione delle regioni ammissibili di due figli diversi sia nulla. In formula:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROefficienzaBB.jpg' alt='' title='' /></div>
+<p class='vspace'>Come si fa a fare branching? Tipicamente possiamo seguire due strategie: aggiungere vincoli o fissare variabili. Vediamo gli esempi che il prof Righini ha fatto sulle sue slide:
+</p>
+<div class='vspace'></div><table cellspacing='8' >
+<tr ><td width='50%' bgcolor='#d4e1f0' align='center' width='50%'  valign='top'><strong>1</strong>
+</td><td width='50%' bgcolor='#d4e1f0' align='center' width='50%'  valign='top'><strong>2</strong>
+</td></tr><tr ><td align='center' valign='middle' bgcolor='#f2f6f9' ><img src='../uploads/Uni/RObranching1.jpg' alt='' title='' />
+<p>Problema lineare con due vincoli nel discreto.
+</p></td><td align='center' valign='middle' bgcolor='#f2f6f9' ><img src='../uploads/Uni/RObranching2.jpg' alt='' title='' />
+<p>Faccio branching aggiungendo un vincolo, dividendo così il padre in due figli.
+</p></td></tr><tr ><td width='50%' bgcolor='#d4e1f0' align='center' width='50%'  valign='top'><strong>3</strong>
+</td><td width='50%' bgcolor='#d4e1f0' align='center' width='50%'  valign='top'><strong>4</strong>
+</td></tr><tr ><td align='center' valign='middle' bgcolor='#f2f6f9' ><img src='../uploads/Uni/RObranching3.jpg' alt='' title='' />
+<p>Faccio branching fissando variabili, generando quattro figli che hanno come regione ammissibile tutti i punti su una retta.
+</p></td><td align='center' valign='middle' bgcolor='#f2f6f9' ><img src='../uploads/Uni/RObranching4.jpg' alt='' title='' />
+<p>Esempi di problemi inammissibili o banali, che rappresentano la base della ricorsione.
+</p></td></tr></table>
+<p class='vspace'>Abbiamo detto un po' di parolone e introdotto qualche concetto, ma non montiamoci la testa: limitarsi a creare quest'albero senza fare nessun altro tipo di intervento equivale ad effettuare un'enumerazione esplicita! Infatti tutto ciò che abbiamo detto finora è che dobbiamo arrivare alle foglie per raggiungere la base della ricorsione, ma dato che queste sono pari al numero di soluzioni del problema originario non abbiamo fatto alcun passo avanti. Ecco perché il metodo del branch-and-bound non si chiama solo branch, ma c'è anche il...
+</p>
+<div class='vspace'></div><h3>Bounding</h3>
+<p>Il <strong>bounding</strong> è quell'attività che associa ad ogni sottoproblema una stima del valore ottimo, fatta per eccesso se stiamo massimizzando o per difetto in caso contrario, chiamata <strong>bound duale</strong>. Perché mi serve? Perché tutte le volte che grazie al bound duale scopro che il valore ottimo che potrei raggiungere espandendo tutto il sottoalbero di un certo nodo P non è migliore di una certa soluzione che conosco già, allora posso fare benissimo a meno di espanderlo risparmiando tempo e memoria.<br />Abbiamo quindi bisogno di una soluzione nota che faccia da termine di paragone, e dato che si tratta di un'approssimazione può essere ad esempio calcolata con un algoritmo euristico; va da sé che più è vicina all'ottimo e più sarà utile. Una volta trovata, associo un bound ad ogni nodo (che ricordiamo corrisponde a un sottoproblema P) e lo confronto con la soluzione nota. Abbiamo due possibili casi:
+</p><ul><li>se sto minimizzando, il bound duale è un <strong>lower bound</strong> (<strong>LB</strong>), cioè un limite inferiore. Indica quanto posso sperare di scendere con la soluzione enumerando tutte le soluzioni di P
+</li><li>se sto massimizzando, il bound duale è un <strong>upper bound</strong> (<strong>UB</strong>)
+</li></ul><p class='vspace'>In formula:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/ROformLBeUB.jpg' alt='' title='' /></div>
+<p>dove con "P chiuso" si intende che posso fare a meno di esplorare il nodo P.
+</p>
+<p class='vspace'>Ricapitolando, per fare bounding dobbiamo necessariamente conoscere una soluzione ammissibile di paragone ed un algoritmo per calcolare il bound duale di ogni sottoproblema.<br />Le prestazioni computazionali complessive del branch-and-bound dipendono molto dall'efficacia di questa sua seconda fase.
+</p>
+<p class='vspace'>Commentiamo la figura a destra.<br /><span class='frame rfloat'><img src='../uploads/Uni/RObounding.jpg' alt='' title='' /></span>
+Abbiamo diviso il problema in due sottoproblemi aggiungendo un vincolo, quello orizzontale in basso tracciato in viola. Consideriamo la parte inferiore. Per risolverlo come problema di programmazione lineare calcoliamone il rilassamento continuo: dopo opportuni calcoli abbiamo scoperto che l'ottimo va a finire sul cerchietto in rosso, ed ha come curva di livello della funzione obiettivo in quel punto quella obliqua di colore arancione. Questa rappresenterà il bound duale, perché è una stima per eccesso di quanto può valere nel migliore dei casi l'ottimo di quel sottoproblema: nessun'altra soluzione ammissibile del figlio potrà valere di più.<br />Supponiamo ora che un'euristica abbia calcolato come soluzione di paragone quella segnata con x' (x trattino): il suo valore è il bound primale e corrisponde alla curva di livello obliqua tracciata in viola. Come possiamo facilmente vedere, la curva del bound duale si trova sempre sotto quella del bound primale, quindi tutte le soluzioni del sottoproblema inferiore sono peggiori di x'. Posso perciò ignorare  tranquillamente quel sottoproblema, tanto non migliorerà mai la soluzione nota.
+</p>
+<p class='vspace'>Ecco dunque perché è utile avere una buona euristica, per essere indicativa nello scartare i sottoproblemi non utili.
+</p>
+<div class='vspace'></div><h3>Esplorazione dell'albero</h3>
+<p>Un'altra componente importante dell'algoritmo branch-and-bound è la <strong>strategia di esplorazione dell'albero</strong>, poiché non è possibile esaminare simultaneamente tutti i problemi figli di ogni problema padre in parallelo. La <em>searching strategy</em> stabilisce un ordinamento dei sottoproblemi aperti e quindi una politica di esplorazione, ed incide molto sulle prestazioni dell'algoritmo, in particolare sulla quantità di memoria utilizzata più che sul tempo.
+</p>
+<div class='vspace'></div><h3>Componenti fondamentali del branch-and-bound</h3>
+<p>Tirando le somme, i quattro componenti fondamentali per gli algoritmi di tipo branch-and-bound sono:
+</p><ol><li>la regola di branching, che usiamo per partizionare ogni problema in sottoproblemi
+</li><li>l'algoritmo di calcolo del bound duale
+</li><li>l'algoritmo di calcolo del bound primale
+</li><li>la strategia di esplorazione dell'albero
+</li></ol><p class='vspace'>Vediamo alcuni esempi per ognuno di essi.
+</p>
+<div class='vspace'></div><h4>Regole di branching</h4>
+<ul><li>su <em>variabile binaria</em>, che genera alberi binari. E' quella usata anche da Lindo
+</li><li>su <em>vincolo intero</em>, che genera un albero binario un po' diverso da quello precedente, dato che nel primo caso fissiamo una variabile mentre qui stiamo introducendo un vincolo
+</li><li>su <em>variabile intera</em>, che genera alberi n-ari fissando una variabile
+</li><li>su <em>M variabili binarie</em>
+</li></ul><div class='vspace'></div><h4>Calcolo del bound duale</h4>
+<p>In genere il bound duale si calcola o risolvendo all'ottimo un rilassamento, o trovando una soluzione ammissibile ad un problema duale. Nel secondo caso, se stiamo massimizzando, l'idea è trovare una soluzione che sia maggiore uguale dei valori ammissibili del problema primale; in altre parole significa calcolare l'UB.
+</p>
+<p class='vspace'>Rivediamo le principali tecniche di rilassamento:
+</p><ul><li><em>rilassamento lineare/continuo</em>
+</li><li><em>rilassamento surrogato</em>, ottenuto combinando linearmente diversi vincoli lineari in un unico vincolo lineare
+</li><li><em>rilassamento lagrangeano</em>, che elimina alcuni vincoli penalizzandone la violazione aggiungendo termini alla funzione obiettivo
+</li></ul><div class='vspace'></div><h4>Calcolo del bound primale</h4>
+<p>Il bound primale si può calcolare nei seguenti modi:
+</p><ul><li>con un algoritmo di approssimazione (quindi euristico) da far partire prima del branch-and-bound
+</li><li>arrivando a una qualsiasi foglia durante l'esplorazione dell'albero
+</li><li>eseguendo un algoritmo euristico di approssimazione in ogni nodo. Questa via sarà la più sicura e affidabile ma è poco ottimizzata
+</li></ul><div class='vspace'></div><h4>Strategia di esplorazione</h4>
+<p>Concludiamo citando le principali strategie di esplorazione dell'albero decisionale:
+</p><ul><li><em>"depth-first-search"</em> (in profondità): ogni volta che un padre genera i figli li ordina in qualche modo, poi prende il primo e lo espande; il tutto avviene ricorsivamente mentre gli altri aspettano. Non richiede troppa memoria dato che deve memorizzare solo i nodi in sospeso, e arrivando velocemente alla foglia trova il bound primale relativamente presto. E' una strategia molto utile se non abbiamo euristiche a disposizione
+</li><li><em>"best-first-search"</em>: si ordinano i nodi in modo da esplorare per primi quelli più promettenti, guardando i loro bound duali
+</li><li><em>metodi ibridi</em>, che passano da una tecnica all'altra in run-time
+</li></ul><div class='vspace'></div><h4>Relazioni tra componenti</h4>
+<p>Ognuno di questi componenti è indipendente dal punto di vista della correttezza, ma sono in stretta relazione per quanto riguarda l'efficienza (o meglio ancora, l'efficacia)! Nel realizzare un algoritmo branch-and-bound dovremmo infatti tenere conto di alcune cose (ricopiate dalle slide di Righini):
+</p><ul><li>"se il calcolo del bound duale produce una soluzione ammissibile del sottoproblema in esame, essa ne è anche la soluzione ottima. Quindi il sottoproblema è già risolto e non richiede branching. La soluzione ottima del sottoproblema è un bound primale"
+</li><li>"il calcolo del bound duale può fornire quasi gratis anche un bound primale (euristiche lagrangeane)"
+</li><li>"la politica depth-first fornisce più in fretta dei buoni bounds primali"
+</li><li>"la 'miglior' strategia di branching è quella che produce la maggior variazione nei bounds duali associati ai nodi figli"
+</li></ul><p class='vspace'>Inoltre osserviamo che nel passaggio dal padre al figlio il bound duale si stringe sempre di più dal momento che quest'ultimo diventa sempre più vincolato (da un nuovo vincolo o da una variabile fissata). Il bound primale è invece calcolato con euristiche, e dato che può essere aggiornato se ne trovo di migliori, il suo valore non può peggiorare durante l'esplorazione dell'albero.
+</p>
+<div class='vspace'></div><h3>Branch-and-bound troncato</h3>
+<p>Abbiamo già detto che il tempo di calcolo del branch-and-bound non è garantito polinomiale (è NP-HARD), quindi utilizzarlo così com'è per risolvere problemi di grandi dimensioni ci farà correre il rischio di non vivere abbastanza per vedere il risultato. L'idea è quella di <strong>troncarlo</strong> (interromperlo) dopo un certo periodo di tempo dall'inizio o dall'ultimo miglioramento trovato, tanto se abbiamo adottato una buona strategia di esplorazione ed abbiamo calcolato i bound in modo intelligente, avremo buone probabilità che l'algoritmo riesca a trovare rapidamente la soluzione ottima. Ovviamente questo ha un prezzo, ovvero la perdita della garanzia di ottimalità, la sua certezza assoluta.
+</p>
+<p class='vspace'>Se però non cerchiamo l'ottimalità a tutti i costi, il troncamento non è l'unico metodo per velocizzare il branch-and-bound: un secondo sistema consiste nel modificare il test di chiusura di un nodo. Quello classico è (se stiamo minimizzando):<br /> <strong>LB(P) &gt;= z(x')</strong> ; mentre quello più veloce è <strong>LB(P) &gt;= &#945; * z(x')</strong>, con 0&lt;&#945;&lt;1 che rende più probabile l'eventualità che il test abbia successo. Otteniamo in questo modo un algoritmo 1/&#945; approssimante, in cui più è piccolo &#945; e più facile diventerà la chiusura di un nodo.
+</p>
+<div class='vspace'></div><h3>Applicazione</h3>
+<p>Come si applica un branch-and-bound in un problema di programmazione lineare intera? Semplice! Andatevi a vedere le slide del professore dalla <code class='escaped'>Lezione8_22</code> alla <code class='escaped'>Lezione8_24</code>.
+</p>
+<div class='vspace'></div><h2>Altre tecniche</h2>
+<p>Esistono altre tecniche che consentono di risolvere problemi di PLI senza ricorrere al branching, ma lavorando direttamente nel nodo radice e continuando a risolvere iterativamente sottoproblemi lineari interi sempre più vincolati. Questi metodi sono chiamati <strong>piani di taglio</strong> (<em>cutting planes</em>), ed un esempio è quello di <em>Gomory</em>.
+</p>
+<p class='vspace'>Possiamo combinare questi metodi con il branch-and-bounds dando origine al simpaticissimo <strong>branch-and-cut</strong>, che sfortunatamente non vedremo.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RicercaOperativa.html'>Torna alla pagina di Ricerca Operativa</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 17, 2009, at 10:55 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-ProgrammazioneLineareIntera?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RO-ProgrammazioneLineareIntera?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

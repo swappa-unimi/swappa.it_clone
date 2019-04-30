@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Informatica Teorica - Classe di complessità NP </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IT-ClasseDiComplessitàNP' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Informatica Teorica - Classe di complessità NP
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-ClasseDiComplessit%e0NP?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-ClasseDiComplessit%e0NP?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IT-ClasseDiComplessit%C3%A0NP-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-ClasseDiComplessit%e0NP?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-ClasseDiComplessit%e0NP?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Informatica Teorica - Classe di complessità NP was last modified on June 08, 2010, at 06:55 PM'>
+							<span style='display:none;'>Informatica Teorica - Classe di complessità NP</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Classe di complessità NP ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 12 Maggio</span>
+</p>
+<div class='vspace'></div><h2>Verificatori e classe NP</h2>
+<p>Iniziamo il magico viaggio nella <em>classe di complessità NP</em> considerando il problema <strong>HAMPATH</strong>, così definito:
+<code class='escaped'>HAMPATH = {&lt;G,s,t&gt; | G è un grafo diretto con un percorso Hamiltoniano tra s e t}</code><br />Scopo del problema è determinare l'esistenza in un grafo di un percorso Hamiltoniano tra due nodi, ovvero un cammino che li colleghi passando da tutti i vertici del grafo una e una sola volta. Ad esempio:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-hampath.gif' alt='' title='' /></div>
+<p class='vspace'>Questo problema gode della proprietà di <em>verificabilità polinomiale</em>, ovvero verificare l'esistenza di un percorso Hamiltoniano dato in ingresso è più semplice e veloce che determinare se un grafo ne contiene uno. Di questo secondo caso non è infatti nota alcuna soluzione tempo polinomiale. 
+</p>
+<p class='vspace'>Per dimostrare che un problema è verificabile polinomialmente avremo bisogno di un <strong>verificatore</strong>.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Il <strong>verificatore</strong> di un linguaggio A è un algoritmo V tale che:
+</p><div class='indent'>A = {w | V accetta {w,c} per qualche stringa c}
+</div><p>Misuriamo il tempo di un verificatore in funzione della lunghezza di w, quindi un <strong>verificatore tempo polinomiale</strong> sarà eseguito in un tempo polinomiale rispetto alla lunghezza di w. Un linguaggio A è <strong>verificabile polinomialmente</strong> se ha un verificatore tempo polinomiale.
+</p></div>
+<p class='vspace'>Il verificatore avrà quindi due ingressi:
+</p><ul><li>la stringa <strong>w</strong> (che ad esempio nell'HAMPATH è il grafo G più i nodi s e t);
+</li><li>il certificato <strong>c</strong>, ovvero un'informazione aggiuntiva che ci permette di verificare che w sia membro del linguaggio A (che certificato potrei usare nell'HAMPATH? il percorso da testare!).
+</li></ul><p class='vspace'>Finalmente possiamo definire cos'è una <strong>classe di complessità NP</strong>, la classe di linguaggi che hanno verificatori tempo-polinomiali. Nota bene: NP non sta per NOT-POLYNOMIAL come tu e tu stavate pensando, ma per <em>nondeterministic polynomial</em>. Una definizione alternativa potrebbe infatti essere che un problema è di classe NP se con una Macchina di Turing (da ora MdT) non deterministica, riesco a deciderlo in tempo polinomiale. Va da sé che se la MdT utilizzata fosse deterministica lo risolverei in un tempo esponenziale.
+</p>
+<div class='vspace'></div><h2>HAMPATH è NP?</h2>
+<p>Da quanto detto finora, per dimostrare che HAMPATH appartiene alla classe NP dovremo trovare una MdT non deterministica che lo risolva in tempo polinomiale (ovvero il tempo impiegato per percorrere il ramo di computazione più lungo).<br />Proponiamo dunque la MdT non deterministica N così definita:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>N = "su ingresso &lt;G,s,t&gt;:
+</p><ol><li>genera in modo non deterministico una lista di m numeri corrispondenti agli m nodi del grafo G;
+</li><li>verifica che non ci siano ripetizioni. Se ci sono il percorso non è Hamiltoniano, quindi RIFIUTA;
+</li><li>verifica che il primo numero della lista corrisponda al nodo s, e che l'ultimo corrisponda al nodo t. Se non è così il percorso non è Hamiltoniano, quindi RIFIUTA;
+</li><li>verifica se tra i nodi corrispondenti ai numeri della lista in quel dato ordine, esista effettivamente un arco che li colleghi. Se non è così il percorso non è Hamiltoniano, quindi RIFIUTA. Se invece tutti i test sono stati superati, ACCETTA."
+</li></ol></div>
+<p class='vspace'>Analizzando la complessità dell'algoritmo, è semplice osservare che sia la generazione della lista degli m nodi che i tre semplici test seguenti sono tutti eseguibili in tempo polinomiale. Quindi HAMPATH, avendo un verificatore tempo polinomiale, appartiene alla classe NP.
+</p>
+<div class='vspace'></div><h2>Teorema</h2>
+<p>Siccome a tutto questo non ci crediamo finché non abbiamo un bel teorema da dimostrare, ecco qua: 
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio è in NP se e solo se è deciso da una MdT tempo polinomiale nondeterministica.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Partendo dal presupposto che abbiamo già definito che un problema è NP se ha un verificatore tempo polinomiale, dividiamo la dimostrazione nei due sensi del "se e solo se":
+</p>
+<p class='vspace'><strong>(I)</strong> <em>A &#8712; NP -&gt; A deciso da MdT non deterministica N in tempo polinomiale</em><br />Se A &#8712; NP, allora avremo un verificatore V tempo polinomiale che lo verifica. Il tempo che ci metterà a verificarlo è un n<sup>k</sup>, con k costante (V -&gt; n<sup>k</sup>).<br />Utilizziamo queste informazioni per definire N:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>N = "su ingresso w di lunghezza n:
+</p><ol><li>seleziona in modo non deterministico una stringa c di lunghezza al più pari a n<sup>k</sup> (stiamo in pratica costruendo un certificato c da dare in pasto al verificatore V);
+</li><li>esegui V su &lt;w,c&gt;;
+</li><li>se V accetta, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>N è evidentemente tempo polinomiale poiché ogni suo passo lo è.
+</p>
+<p class='vspace'><strong>(II)</strong> <em>A deciso da N in tempo polinomiale -&gt; A &#8712; NP</em><br />In questo caso dovremo costruire V partendo dalla MdT non deterministica N, quindi:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>V = "su ingresso &lt;w,c&gt;:
+</p><ol><li>simula N su w, e usa ogni simbolo di c come descrizione di scelta non deterministica da fare ad ogni passo;
+</li><li>se il ramo trovato da N accetta, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Abbiamo in pratica usato il ramo di computazione accettante come certificato, e ne siamo usciti con un verificatore V tempo polinomiale che dimostra il secondo senso del "se e solo se" del nostro teorema.
+</p>
+<div class='vspace'></div><h2>CLIQUE è NP?</h2>
+<p>Partendo da un grafo non orientato, una <strong>CLIQUE</strong> è un sottoinsieme di nodi del grafo in cui ogni coppia è collegata direttamente con un arco. Il nostro problema è determinare se in un certo grafo c'è una clique di k nodi. Più formalmente:
+<code class='escaped'>CLIQUE = {&lt;G,k&gt; | G è un grafo non diretto con una k-clique}</code><br />Per verificare se il problema appartiene alla classe NP possiamo scegliere ora due strade: costruire o il verificatore V o la MdT non deterministica N e controllare che siano risolvibili in tempo polinomiale. Per non sbagliare le faremo entrambe.
+</p>
+<div class='vspace'></div><h3>..costruiamo il verificatore</h3>
+<p>Si noti che in questo caso la stringa di ingresso w è &lt;G,k&gt;, mentre il certificato è un sottoinsieme di k nodi di G (ovvero la solita soluzione che vogliamo testare essere valida).
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>V = "su ingresso &lt;&lt;G,k&gt;,c&gt;:
+</p><ol><li>verificare se c è un sottoinsieme di k nodi in G;
+</li><li>verificare se G contiene tutti gli archi che connettono i nodi in c;
+</li><li>se (1) e (2) vanno a buon fine, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Ogni passo viene ripetuto una volta sola, e sono tutte operazioni tempo polinomiali. V è dunque tempo polinomiale, quindi CLIQUE è in NP.
+</p>
+<div class='vspace'></div><h3>..costruiamo la MdT non deterministica</h3>
+<div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>N = "su ingresso &lt;G,k&gt;:
+</p><ol><li>seleziona in modo non deterministico un sottoinsieme c di k nodi di G;
+</li><li>verificare se c è un sottoinsieme di k nodi in G;
+</li><li>verificare se G contiene tutti gli archi che connettono i nodi in c;
+</li><li>se (2) e (3) vanno a buon fine, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Ogni passo viene ripetuto una volta sola, e sono tutte operazioni tempo polinomiali. N è dunque tempo polinomiale, quindi CLIQUE è in NP.<br />Come avrete intuito, una volta scritto il verificatore trovare anche la MdT diventa banale: al primo passaggio si genera un certificato in modo non deterministico, mentre gli altri passaggi sono identici a quelli di V.
+</p>
+<div class='vspace'></div><h2>SUBSET-SUM è NP?</h2>
+<p>Il problema <strong>SUBSET-SUM</strong> è così definito:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/IT-subsetsum.gif' alt='' title='' /></div>
+<p class='vspace'>Il problema consiste cioè nel trovare un sottoinsieme di S tale per cui la sua somma sia pari a un numero <em>t</em> dato. Anche in questo caso per verificare che SUBSET-SUM è in NP ne troveremo sia il verificatore che la MdT non deterministica che lo decide, e controlleremo che siano risolvibili in tempo polinomiale.
+</p>
+<div class='vspace'></div><h3>..costruiamo il verificatore</h3>
+<p>In questo caso la stringa di ingresso w è &lt;S,t&gt;, mentre il certificato è un sottoinsieme di S.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>V = "su ingresso &lt;&lt;S,t&gt;,c&gt;:
+</p><ol><li>verificare se c è una collezione di numeri la cui somma è t;
+</li><li>verificare se i numeri di c sono tutti numeri di S;
+</li><li>se (1) e (2) vanno a buon fine, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Ogni passo viene ripetuto una volta sola, e sono tutte operazioni tempo polinomiali. V è dunque tempo polinomiale, quindi SUBSET-SUM è in NP.
+</p>
+<div class='vspace'></div><h3>..costruiamo la MdT non deterministica</h3>
+<div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>N = "su ingresso &lt;S,t&gt;:
+</p><ol><li>seleziona in modo non deterministico un sottoinsieme c di S;
+</li><li>verificare se c è una collezione di numeri la cui somma è t;
+</li><li>verificare se i numeri di c sono tutti numeri di S;
+</li><li>se (2) e (3) vanno a buon fine, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Ogni passo viene ripetuto una volta sola, e sono tutte operazioni tempo polinomiali. N è dunque tempo polinomiale, quindi SUBSET-SUM è in NP.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 08, 2010, at 06:55 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-ClasseDiComplessit%e0NP?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-ClasseDiComplessit%e0NP?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

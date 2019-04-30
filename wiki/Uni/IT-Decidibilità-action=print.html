@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Informatica Teorica - Decidibilità</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IT-Decidibilit%C3%A0.html' title='Informatica Teorica - Decidibilità'>Informatica Teorica - Decidibilità</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - Decidibilità ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 21 Aprile</span>
+</p>
+<div class='vspace'></div><h2>Teorema 1 - A<sub>DFA</sub> è decidibile</h2>
+<p>Sia dato il problema di verificare se un automa a stati finiti deterministico accetta una stringa. Più formalmente:<br /><em>A<sub>DFA</sub> = {&lt;B,w&gt; | B è un DFA che accetta la stringa in ingresso w}</em>
+</p>
+<p class='vspace'>Si dimostri il seguente teorema:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>A<sub>DFA</sub> è un linguaggio decidibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Dobbiamo trovare una MdT deterministica che lo risolva:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>M = "su ingresso &lt;B,w&gt;:
+</p><ol><li>simula B su w;
+</li><li>se la simulazione finisce in uno stato finale, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Anche se abbiamo già dimostrato il teorema, diamo qualche altro dettaglio implementativo. Anzitutto B non è altro che la quintupla che definisce un DFA, e quindi <em>Q, &#931;, &#948;, q<sub>0</sub>, F</em>. Quindi M come prima cosa verificherà che B sia effettivamente un DFA (altrimenti RIFIUTA subito), quindi simulerà la stringa w direttamente su di lui. Come? Scrivendo ad ogni passo sul nastro lo stato e la posizione corrente di B sull'ingresso w, che sarà inizialmente q<sub>0</sub> e dovrà rispettare ad ogni step la funzione di transizione &#948;. Quando M arriverà a processare l'ultimo simbolo di w, dovrà verificare se è arrivato in uno degli stati finali accettati dal DFA, e accettare o rifiutare la stringa d'ingresso di conseguenza.
+</p>
+<div class='vspace'></div><h2>Teorema 2 - A<sub>NFA</sub> è decidibile</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>A<sub>NFA</sub> è un linguaggio decidibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Quello che cambia rispetto al Teorema 1 è che ora abbiamo a che fare con un automa non deterministico. Poco male, sapendo che ogni NFA ha un DFA corrispondente, definiamo la MdT non deterministica che lo risolve:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>N = "su ingresso &lt;B,w&gt;:
+</p><ol><li>converti NFA B in DFA C;
+</li><li>esegui M sull'ingresso &lt;C,w&gt;;
+</li><li>se M accetta, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<div class='vspace'></div><h2>Teorema 3 - E<sub>DFA</sub> è decidibile</h2>
+<p>Il problema <strong>Emptiness</strong> verifica se un automa a stati finiti non accetta alcuna stringa, ovvero:<br /><em>E<sub>DFA</sub> = {&lt;A&gt; | A è un DFA e L(A)=0}</em>
+</p>
+<p class='vspace'>Si dimostri ora il seguente teorema: 
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>E<sub>DFA</sub> è un linguaggio decidibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Verificare che un DFA non accetti nessuna stringa significa dimostrare che il suo linguaggio è vuoto, ovvero che nessuna stringa gli appartiene. Viceversa, si ricorda che un DFA accetta una stringa se e solo se è possibile raggiungere uno stato finale utilizzando le sue funzioni di transizione. 
+</p>
+<p class='vspace'>Diventa dunque facile definire una MdT deterministica T che risolva E<sub>DFA</sub>:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>T = "su ingresso &lt;A&gt;: <em>(dove A è un DFA)</em>
+</p><div class='indent'>1. marca lo stato iniziale di A;
+</div><div class='indent'>2. ripeti finché non trovi nuovi stati marcati:
+<div class='indent'>3. marca un nuovo stato con transizione proveniente da uno stato già marcato
+</div></div><div class='indent'>4. se lo stato finale è marcato allora RIFIUTA; altrimenti ACCETTA."
+</div></div>
+<p class='vspace'>Il punto (4) è ovvio: se si avesse uno stato finale marcato significherebbe che una stringa è accettata dal DFA in ingresso, e quindi T deve rifiutare.
+</p>
+<div class='vspace'></div><h2>Teorema 4 - EQ<sub>DFA</sub> è decidibile</h2>
+<p>Il problema <strong>Equivalence</strong> verifica se due automi a stati finiti riconoscono lo stesso linguaggio, ovvero:<br /><em>EQ<sub>DFA</sub> = {&lt;A,B&gt; | A e B sono due DFA L(A)=L(B)}</em>
+</p>
+<p class='vspace'>Si dimostri ora il seguente teorema: 
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>EQ<sub>DFA</sub> è un linguaggio decidibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Per la dimostrazione si procederà a definire un terzo automa a stati finiti C che accetti le stringhe di A o quelle di B, ma non entrambe. Per realizzarlo si potranno usare solo le operazioni di intersezione, unione o complemento, perché sono chiuse rispetto ai linguaggi regolari. In particolare si utilizzerà la formula della <em>differenza simmetrica</em>:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-diffsimm.gif' alt='' title='' /></div>
+<p class='vspace'>In particolare: L(C)=0 se e solo se L(A)=L(B). Il problema EQ<sub>DFA</sub> su A e B può essere dunque ricondotto a un problema di E<sub>DFA</sub> su C! Costruiamo allora la MdT deterministica F che risolve EQ<sub>DFA</sub>:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>F = "su ingresso &lt;A,B&gt;:
+</p><ol><li>costruisci C;
+</li><li>esegui la MdT T su &lt;C&gt;;
+</li><li>se T accetta, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<div class='vspace'></div><h2>Teorema 5 - A<sub>CFG</sub> è decidibile</h2>
+<p>Passiamo ora dai problemi decidibili relativi a linguaggi regolari a quelli relativi a linguaggi liberi dal contesto. Cominciamo col problema A<sub>CFG</sub> che consiste nel determinare se una grammatica libera dal contesto (CFG) genera una particolare stringa, ovvero:<br /><em>A<sub>CFG</sub> = {&lt;G,w&gt; | G è una CFG che genera la stringa w}</em>
+</p>
+<p class='vspace'>Dimostriamo il seguente teorema: 
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>A<sub>CFG</sub> è un linguaggio decidibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+Metterci a fare tutte le derivazioni di G per vedere se una di queste è una derivazione di w sarebbe folle, perché nel caso in cui non fosse vero potremmo andare avanti all'infinito. L'alternativa è usare la grammatica G in forma normale di Chomsky, perché in questo caso le derivazioni di w sarebbero solo 2n-1 (dove n è la lunghezza della stringa), e avremmo la garanzia di trovare una soluzione in un numero finito di passi.<br />Costruiamo allora la MdT S che risolve A<sub>CFG</sub>:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>S = "su ingresso &lt;G,w&gt;:
+</p><ol><li>converti G nella forma equivalente di Chomsky;
+</li><li>fai una lista di tutte le derivazioni di 2n-1 passi, dove n=|w|;
+</li><li>se una derivazione genera w, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<div class='vspace'></div><h2>Teorema 6 - E<sub>CFG</sub> è decidibile</h2>
+<p>Consideriamo il problema di Emptiness per grammatiche libere dal contesto, che si pone l'obiettivo di verificare se una CFG non genera alcuna stringa. Più formalmente:<br /><em>E<sub>CFG</sub> = {&lt;G&gt; | G è una CFG e L(G)=0}</em>
+</p>
+<p class='vspace'>Dimostriamo il teorema: 
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>E<sub>CFG</sub> è un linguaggio decidibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Per verificare se la grammatica è vuota dobbiamo dimostrare di non riuscire ad arrivare ad una stringa composta solo da terminali. <br />Come prima cosa dovremo scorrere la CFG e marcare tutti i terminali. Successivamente si passa a scansionare le regole, e se da una di queste risulta che una variabile può essere sostituita da terminali marcati, marchiamo anche lei. L'operazione va ripetuta marcando tutte le variabili ottenute a partire da simboli (terminali/variabili) già marcati. Se si arriva a marcare anche la variabile iniziale significa che da lei posso raggiungere una sequenza composta solo da terminali, quindi la MdT R che risolve E<sub>CFG</sub> dovrà rifiutare tale eventualità.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>R = "su ingresso &lt;G&gt;:
+</p><div class='indent'>1. marca i simboli terminali di G;
+</div><div class='indent'>2. ripeti finché non ci sono nuove variabili marcate:
+<div class='indent'>3. marca ogni variabile A in cui G abbia una regola <em>A-&gt;U<sub>1</sub>...U<sub>k</sub></em> in cui ogni U<sub>1</sub>, ... , U<sub>k</sub> 
+<div class='indent'>sia già marcato;
+</div></div></div><div class='indent'>4. se la variabile iniziale non è marcata, allora ACCETTA; altrimenti RIFIUTA."
+</div></div>
+<div class='vspace'></div><h2>Teorema 7 - sulla decidibilità dei linguaggi liberi dal contesto</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Ogni linguaggio libero dal contesto è decidibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Sia A un qualsiasi linguaggio libero dal contesto generato dalla CFG G. Per la dimostrazione sfruttiamo la MdT S definita nel teorema di A<sub>CFG</sub>, e scriviamo la macchina di Turing M<sub>G</sub> che decide A:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>M<sub>G</sub> = "su ingresso w:
+</p><ol><li>esegui S su ingresso &lt;G,w&gt;;
+</li><li>se S accetta, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<div class='vspace'></div><h2>Teorema 8 - sull'indecidibilità dell'Halting Problem</h2>
+<p>Non tutti i problemi sono algoritmicamente risolvibili, e il più famoso di questi è l' <strong>Halting Problem</strong>: dato un programma ed una precisa specifica di cosa il programma debba fare, verificare che il programma funzioni come specificato. Il tutto si può ridurre al problema di verificare se una MdT accetta una data stringa in ingresso:<br /><em>A<sub>TM</sub> = {&lt;M,w&gt; | M è una MdT e M accetta w}</em>
+</p>
+<p class='vspace'>A<sub>TM</sub> è Turing-riconoscibile, e infatti scrivere una MdT U che lo riconosca è decisamente semplice:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>U = "su ingresso &lt;M,w&gt;:
+</p><ol><li>esegui M sull'ingresso w;
+</li><li>se M entra nello stato di accettazione, allora ACCETTA; se M entra invece nello stato di rifiuto, RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Qual è il problema allora? Che se M non termina su w, allora la macchina va in loop sull'ingresso &lt;M,w&gt;. Il fatto che non possa uscire da questo loop rende il problema <strong>indecidibile</strong>.
+</p>
+<p class='vspace'>L'indecidibilità la dimostriamo con il <strong>metodo della diagonalizzazione</strong> scoperto dal matematico Cantor per misurare la dimensione degli insiemi infiniti. Poiché in collezioni infinite non è possibile contare gli elementi che ne fanno parte, per capire se due insiemi sono della stessa dimensione si verifica se è possibile mettere in corrispondenza gli elementi dell'uno con quelli dell'altro. Più formalmente, due insiemi infiniti A e B sono della stessa dimensione se esiste una <em>corrispondenza</em> f:A-&gt;B. Per corrispondenza si intende una funzione biettiva da A a B, quindi ogni elemento di A può corrispondere a un solo elemento di B, e ogni elemento di B ha un unico di elemento di A che corrisponde ad esso.
+</p>
+<p class='vspace'>Facciamo un esempio: l'insieme N dei numeri naturali ha la stessa dimensione dell'insieme E dei numeri naturali pari? Esiste una corrispondenza f tra i due? Sì: f(n) = 2n. Quindi hanno stessa dimensione.
+</p>
+<p class='vspace'>Anche se sembrerà di starci allontanando dall'obiettivo (dimostrare che A<sub>TM</sub> è indecidibile), dobbiamo introdurre un po' di teoremi e dimostrazioni di tipo matematico. Torneranno utilissime poi.
+</p>
+<div class='vspace'></div><h3>Insiemi contabili</h3>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un insieme A è detto contabile se è finito o se ha la stessa dimensione di N.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Per la dimostrazione usiamo come esempio quello dei numeri razionali positivi Q, così definibili:<br /><em>Q = {(m/n) | m,n &#8712; N}</em>
+</p>
+<p class='vspace'>Trovare una corrispondenza tra i due insiemi non è banale, ma comunque possibile. Come prima cosa creiamo una matrice bidimensionale |N|x|N| e scriviamo in ogni cella (i,j) il numero razionale i/j. A questo punto creiamo una lista di numeri spostandoci sulle diagonali ed evitando le ripetizioni (ad esempio 1/1 e 2/2 sono lo stesso valore, quindi li contiamo una sola volta), secondo lo schema mostrato in figura:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-diagon.gif' alt='' title='' /></div>
+<p class='vspace'>Questa lista dimostra l'esistenza di una corrispondenza tra N e Q, quindi i due insiemi infiniti hanno la stessa dimensione.
+</p>
+<div class='vspace'></div><h3>Insiemi non contabili - Teorema</h3>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>L'insieme dei numeri reali R non è contabile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Dimostriamo il teorema per assurdo, sostenendo che R è contabile e che quindi esiste una sua corrispondenza con N. Questo ci semplifica la vita, perché basterà trovare una x&#8712;R che non sia compresa nella corrispondenza per mostrare la contraddizione della tesi.<br />Supponiamo che f(n) sia una corrispondenza tra R ed N, e costruiamoci su misura una x che appartenga ad R ma non abbia corrispondenza in N. Per capire come, partiamo da un esempio:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-noncont1.gif' alt='' title='' /></div>
+<p class='vspace'>Costruiamo la x in questo modo: <em> x = 0 , c<sub>1</sub> c<sub>2</sub> ... c<sub>n</sub> </em><br />dove la cifra decimale c<sub>i</sub> deve essere diversa dalla i-sima cifra decimale dell'i-simo elemento. Riprendendo il nostro esempio:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-noncont2.gif' alt='' title='' /></div>
+<p class='vspace'>Questa costruzione ci dà garanzia che x sia diverso da qualsiasi elemento di R messo in corrispondenza con N (da una fantomatica f(n) che per assurdo abbiamo supposto esistesse). Dato che x sfugge alla corrispondenza pur appartenendo all'insieme dei numeri reali, R ed N non sono della stessa dimensione, e in particolare R non è contabile.
+</p>
+<p class='vspace'>Si noti che in questa dimostrazione si è sfruttato ancora un metodo che sfrutta la diagonali. Benedetto Cantor.
+</p>
+<div class='vspace'></div><h4>Insiemi non contabili - Corollario</h4>
+<p>Ci stiamo finalmente avvicinando al nostro obiettivo: dimostrare che A<sub>TM</sub> non è decidibile. Ci serve ancora quest'ultimo teorema:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Alcuni linguaggi non sono Turing-riconoscibili.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>La chiave della dimostrazione è che l'insieme dei linguaggi possibili non è contabile, mentre quello delle macchine di Turing sì; dato che una MdT riconosce un solo linguaggio, alcuni linguaggi rimarranno tagliati fuori: quelli non Turing-riconoscibili. Questa spiegazione ci basterebbe se fossimo al bar a parlare di Turing-riconoscibilità, ma siccome - e per fortuna - non lo siamo dobbiamo verificare ogni affermazione.
+</p>
+<p class='vspace'><em>I. L'insieme delle MdT è contabile</em><br />Dato un generico alfabeto &#931;, l'insieme di tutte le stringhe &#931;<sup>*</sup> da lui definite è contabile perché è possibile fare una lista di tutte le stringhe di una certa lunghezza (che è finita). Dal momento che ogni MdT può essere codificata come una stringa &lt;M&gt;, anche l'insieme delle MdT è contabile.
+</p>
+<p class='vspace'><em>II. L'insieme dei linguaggi non è contabile</em><br />Definiamo <em>sequenza binaria infinita</em> una sequenza infinita di 0 e di 1, ad esempio 01011010010101011010110101011010110..<br />Definiamo B l'insieme di tutte le sequenze binarie infinite, e si può dimostrare che non è contabile utilizzando lo stesso metodo della diagonalizzazione usato per l'insieme dei numeri reali R. <br />Definiamo ora L l'insieme dei linguaggi definiti sull'alfabeto &#931; e cerchiamo una relazione tra L e B. Lo scopo è chiaro: se la troviamo abbiamo dimostrato che l'insieme dei linguaggi non è contabile.<br />Dato un linguaggio A appartenente ad L, definiamo <em>sequenza caratteristica</em> di A (X<sub>A</sub>) la sequenza binaria in cui ogni bit vale 1 se A usa una possibile stringa del linguaggio, 0 altrimenti. Facciamo un esempio:
+</p><div class='indent'>&#931;<sup>*</sup>= {&#949;, 0, 1, 00, 01, 10, 11, 000, 001, 010, ...}
+</div><div class='indent'>A =  {   0, 1,     01,     11, 000,      010, ...}
+</div><div class='indent'>X<sub>A</sub> =  0  1  1   0   1   0   1    1    0    1 ...
+</div><p class='vspace'>Possiamo quindi affermare che esiste una funzione f:L-&gt;B, dove f(A) è la sequenza caratteristica di A che è unica in B. L'esistenza della funzione ci permette finalmente di sostenere che se B non è contabile nemmeno l'insieme dei linguaggi L lo è.
+</p>
+<div class='vspace'></div><h3>Non decidibilità di A<sub>TM</sub></h3>
+<p>Ci siamo, possiamo dimostrare che:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>A<sub>TM</sub> è non decidibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Anche in questo caso la dimostrazione avverrà per assurdo.<br />Ricordiamo che:<br /><em>A<sub>TM</sub> = {&lt;M,w&gt; | M è una MdT e M accetta w}</em>
+</p>
+<p class='vspace'>Supponiamo di avere un decisore H del linguaggio tale che:
+</p><pre class='escaped'>
+H(&lt;M,w&gt;) = / ACCETTA se M accetta w
+           \ RIFIUTA se M non accetta w</pre>
+<p class='vspace'>Costruiamo ora una MdT D che usi H come sottoprocedura e faccia esattamente l'opposto:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>D: "su ingresso &lt;M&gt;:
+</p><ol><li>esegui H sull'ingresso &lt;M,&lt;M&gt;&gt;; <em>(dove M è la stringa che descrive la MdT)</em>
+</li><li>se H accetta, allora RIFIUTA; altrimenti ACCETTA."
+</li></ol></div>
+<p class='vspace'>Il comportamento di D è quindi il seguente:
+</p><pre class='escaped'>
+D(&lt;M&gt;) = / ACCETTA se M non accetta &lt;M&gt;
+         \ RIFIUTA se M accetta &lt;M&gt;</pre>
+<p class='vspace'>Cosa succede se chiediamo a D di girare su sé stesso?
+</p><pre class='escaped'>
+D(&lt;D&gt;) = / ACCETTA se D non accetta &lt;D&gt; ????
+         \ RIFIUTA se D accetta &lt;D&gt; ????</pre>
+<p class='vspace'>In entrambi i casi il decisore ciocca, perché dovrebbe tenere il comportamento opposto a sé stesso. Siamo dunque arrivati a una contraddizione, dimostrando così per assurdo che A<sub>TM</sub> non è decidibile.
+</p>
+<p class='vspace'>Mi sembra di sentirvi dire: "E in tutto questo la diagonalizzazione dove sta?".<br />Ri-rappresentiamo il tutto con una bella matrice: come indice di ogni riga mettiamo la MdT M<sub>i</sub>, e come indice delle colonne la stringa &lt;M<sub>j</sub>&gt;. Se una M<sub>i</sub> accetta una stringa &lt;M<sub>j</sub>&gt;, scriveremo <code class='escaped'>accetta</code> nella cella (i,j), <code class='escaped'>rifiuta</code> altrimenti. Aggiungiamo poi un'ultima riga per il decisore D, e un'ultima colonna per la stringa &lt;D&gt; che lo descrive. La riga D è riempita scrivendo l'opposto delle celle che si trovano sulla diagonale della stessa colonna. Bene: che diavolo scriviamo nella cella che incrocia D e &lt;D&gt;? Appunto. Abbiamo così ritrovato la stessa contraddizione di prima su una diagonale, e questo non può che renderci felici.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-atmnondec.gif' alt='' title='' /></div>
+<div class='vspace'></div><h2>Teorema 9 - sui linguaggi co-Turing riconoscibili</h2>
+<p>Un linguaggio è <em>non-Turing riconoscibile</em> o <strong>co-Turing riconoscibile</strong> se è il complemento di un linguaggio Turing-riconoscibile.
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio è decidibile se e solo se è Turing-riconoscibile e co-Turing riconoscibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Per abbreviare, consideriamo un linguaggio A e chiamiamo:
+</p><ul><li>A<sub>dec</sub>: "A decidibile";
+</li><li>A<sub>Tu</sub>: "A Turing-riconoscibile";
+</li><li>A<sub>coTu</sub>: "A co-Turing-riconoscibile".
+</li></ul><p class='vspace'>Dimostriamo entrambi i sensi del "se e solo se".
+</p>
+<p class='vspace'><em>I. Se A<sub>dec</sub> allora A<sub>Tu</sub> &#923; A<sub>coTu</sub> </em><br />Se un linguaggio A è decidibile è per forza di cose anche Turing-riconoscibile, e dato che il complemento di un linguaggio decidibile è anch'esso decidibile, A sarà anche co-Turing-riconoscibile.
+</p>
+<p class='vspace'><em>I. Se A<sub>Tu</sub> &#923; A<sub>coTu</sub> allora A<sub>dec</sub> </em><br />Introduciamo il riconoscitore M<sub>1</sub> per il linguaggio A, e il riconoscitore M<sub>2</sub> per il complemento del linguaggio A. Definiamo ora una MdT M che sia decisore per A:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>M: "su ingresso w:
+</p><ol><li>esegui M<sub>1</sub> e M<sub>2</sub> in parallelo sull'ingresso w; <em>(M dovrà dunque avere due nastri, uno per decisore)</em>
+</li><li>se M<sub>1</sub> accetta, allora ACCETTA; se M<sub>2</sub> accetta, allora RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Dimostriamo che M è un decisore per A:
+</p><ul><li>dato che ogni stringa w può essere in A o nel suo complemento, o M<sub>1</sub> o M<sub>2</sub> la accetteranno;
+</li><li>dato che M termina quando o M<sub>1</sub> o M<sub>2</sub> accettano, M terminerà sicuramente.
+</li></ul><p>Per entrambi i motivi, M è un decisore di A, e quindi A è decidibile.
+</p>
+<div class='vspace'></div><h2>Teorema 10 - corollario al Teorema 9</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Il complemento di A<sub>TM</sub> è Turing-riconoscibile.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Visto che A<sub>TM</sub> non è decidibile, o A<sub>TM</sub> o il suo complemento saranno sicuramente non riconoscibili. Dato però che all'inizio del paragrafo sul Teorema 8 abbiamo dimostrato che A<sub>TM</sub> è Turing-riconoscibile, il suo complemento non può esserlo, o per il Teorema 9 A<sub>TM</sub> diventerebbe decidibile.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IT-Decidibilit%e0)</span></div>
+  </div>
+</body>
+</html>

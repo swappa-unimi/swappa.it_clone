@@ -1,0 +1,265 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Ingegneria del Software - Appunti dell'11 Maggio 2009</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='IDS-11Maggio.html' title='Ingegneria del Software - Appunti dell'11 Maggio 2009'>Ingegneria del Software - Appunti dell'11 Maggio 2009</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - Appunti dell'11 Maggio 2009 ::</strong>
+</pre><div class='vspace'></div><h2>Testing</h2>
+<p>Partiamo subito informando che:
+</p><ul><li>il <strong>testing funzionale</strong> si effettua principalmente con tecniche <strong>blackbox</strong>; il criterio di copertura qui è dato dal numero di requisiti che un test copre;
+</li><li>il <strong>testing non funzionale</strong> si effettua principalmente con tecniche <strong>whitebox</strong>, e il criterio di copertura è dato dalla percentuale di codice eseguito durante il test stesso.
+</li></ul><p class='vspace'>C'è però un particolare interessante, relativo al testing funzionale. Un conto è dire che tutti i requisiti sono stati coperti; ma stiamo attenti che potremmo aver testato un requisito con solo pochi valori dello spazio di input, o magari solo uno! Dire che tutti i requisiti sono stati coperti pertanto non è sufficiente a garantire la bontà di un test.
+</p>
+<div class='vspace'></div><h2>Redigere il test plan</h2>
+<p>Il <strong>test plan</strong>, come abbiamo già visto, è l'insieme di casi di test che mi assicura un certo livello di copertura.
+</p>
+<p class='vspace'>Nel processo di sviluppo a cascata, il testing è l'ultima fase della vita del software. Lo stesso accade per i processi di sviluppo life-cycle oriented, ovvero quelli le cui fasi rispecchiano le fasi di vita del prodotto software: il testing è una fase, e nel caso di processi iterativi sarà ripetuta ad ogni iterazione.
+</p>
+<p class='vspace'>Invece, con i processi di sviluppo non life-cycle oriented, l'attività di testing è distribuita durante tutto il processo di testing, in modo vario ed eventuale. Questo va tenuto in conto durante la redazione di un test plan.
+</p>
+<div class='vspace'></div><h3>Elementi fondamentali di un test plan</h3>
+<p>L<strong>'introduzione</strong> di un test plan ci deve dire:
+</p><ul><li>lo scopo del test in questione
+</li><li>la sua descrizione, cioè a che punto del processo si inserisce il test
+</li></ul><p class='vspace'>L<strong>'ambiente</strong> di testing comprende l'elenco di tutti i <strong>driver</strong> e tutti gli <strong>stub</strong> necessari per eseguire questo test. Ricordiamo che i driver e gli stub possono essere anche molto costosi.
+</p>
+<p class='vspace'>Occorre poi una <strong>descrizione</strong> del caso di test, cioè i criteri di copertura seguiti, e qualche <strong>dettaglio</strong> relativo all'esecuzione del file stesso:
+</p><ul><li>un qualche identificativo univoco del test
+</li><li>lo scopo del test
+</li><li>il valore o l'insieme di valori usati come test
+</li><li>il risultato atteso
+</li><li>il risultato effettivo
+</li><li>il livello di priorità del test stesso
+</li></ul><p>Chiaramente, se il risultato effettivo differisce da quello atteso, allora è grama.
+</p>
+<p class='vspace'>Infine, occorre redigere anche un po' di <strong>conclusioni</strong>, cioè tirare un po' le somme sui risultati del mio test.
+</p>
+<div class='vspace'></div><h3>Altri elementi di un test plan</h3>
+<p>Oltre ai punti elencati sopra, è possibile completare il test plan con le seguenti informazioni:
+</p><ul><li>processo di test usato
+</li><li>riferimenti ai requisiti che si stanno testando
+</li><li>tested items, ovvero <strong>quale</strong> prodotto è oggetto del test (ovvero, quale versione di quella classe o libreria o quello che è sto testando: ricordiamo che il software cresce e si sviluppa e può modificare i suoi comportamenti)
+</li><li>schedule di test, ovvero quando eseguire il test e con che risorse
+</li><li>test record, ovvero un formato di memorizzazione del test e dei suoi risultati
+</li><li>i requisiti hw e sw necessari per eseguire il testing
+</li><li>eventuali vincoli nell'esecuzione del test
+</li></ul><p class='vspace'>Per quanto riguarda lo schedule, bisogna aggiungere un'osservazione relativa alle responsabilità del testing. Esse si dividono in due parti:
+</p><ul><li>la responsabilità dell'estensore del caso di test
+</li><li>la responsabilità dell'esecutore (somministratore) del caso di test
+</li></ul><p>Certo, spesso l'estensore e l'esecutore sono la stessa persona, ma si tratta comunque di due aspetti concettualmente separati.
+</p>
+<div class='vspace'></div><h2>Come scegliere i casi di test</h2>
+<p>Abbiamo barbellato a lungo sui criteri di copertura, ed è giunta l'ora di vederne un po'.
+</p>
+<div class='vspace'></div><h3>Criterio di copertura uniforme dello spazio di input</h3>
+<p>Sappiamo già bene che non è possibile in pratica coprire tutto lo spazio di input, anche per i casi più semplici. Potremmo decidere di generare a caso valori di input, ma per essere un pochettino più furbi utilizziamo invece una distribuzione <strong>uniforme</strong> dei casi di test rispetto allo spazio di input.
+</p>
+<p class='vspace'>Ad esempio, se ho a disposizione 10 minuti, e ogni minuto riesco a fare 6000 test, allora dividerò lo spazio di input complessivo in 6000 * 10 parti. Se la funzione prende come valore in input un intero (2<sup>32</sup>), allora faccio 2'^32 / 60000, e di ciascuna "fettina" così ricavata prendo il valore centrale.
+</p>
+<div class='vspace'></div><h3>Valori tipici e critici</h3>
+<p>Tuttavia, usare pedissequamente la copertura uniforme non ci permette di mettere nella dovuta considerazione la faccenda dei valori tipici e critici, vista nella <a class='wikilink' href='IDS-5Maggio.html'>precedente lezione</a>.
+</p>
+<p class='vspace'>Per sistemare questo problema, stabiliamo che se la nostra fettina dello spazio in input è una fettina che sta sul bordo, allora considereremo più importanti i valori sul bordo piuttosto che quelli che stanno in mezzo alla fettina. Se invece la fettina sta nel mezzo, allora ci comportiamo come prima ed utilizziamo il suo punto centrale.
+</p>
+<p class='vspace'>Dobbiamo stare tuttavia attenti a non concentrare tutto lo sforzo sui valori del <strong>boundary</strong>, perché potrebbero essere veramente tanti ed esaurire il tempo a nostra disposizione.
+</p>
+<p class='vspace'>Anche prima parlavamo di tempo: nel mondo reale c'è solo un tempo limitato che si può dedicare al testing, e pertanto va sfruttato nel modo più intelligente possibile.
+</p>
+<div class='vspace'></div><h3>Sfruttare le pre- e le post-condizioni</h3>
+<p>Durante la fase di modellazione potrei aver avuto modo di stabilire, per ogni metodo, delle <strong>precondizioni</strong> e delle <strong>postcondizioni</strong>. Le precondizioni sono quelle condizioni che devono valere prima della chiamata di un metodo. Le postcondizioni sono quelle condizioni che invece devono valre dopo l'esecuzione di un metodo.
+</p>
+<p class='vspace'>Quando stabilisco a priori queste condizioni, si dice che faccio una <strong>verifica</strong> del modello. Controllare queste condizioni a posteriori si chiama invece <strong>validazione</strong>. Le persone che si occupano di generare modelli dotati di semantica (cioè, in ultima analisi, di pre- e postcondizioni) in questo caso possono essere le stesse che genereranno il test plan, proprio perché sfrutto le informazioni che il modello mi dà per generare casi di test. L'attività si chiama allora <strong>Verification and Validation</strong>, <strong>V&amp;V</strong> in breve.
+</p>
+<p class='vspace'>All'atto pratico, utilizzerò come casi di test quei valori che generano una violazione delle precondizioni, perché sarà lì che il mio codice presumibilmente cascherà.
+</p>
+<div class='vspace'></div><h2>Test non funzionali</h2>
+<p>All'inizio dicevamo che i test non funzionali si eseguono perlopiù con tecniche whitebox, cioè tecniche che applicano criteri di copertura basati sul codice scritto.
+</p>
+<p class='vspace'>Il criterio di copertura si può definire come il numero di <strong>tracce esecutive</strong> che il mio caso di test esegue con un certo valore, rispetto al numero di tracce esecutive totale.
+</p>
+<p class='vspace'>Una traccia esecutiva è un "percorso" all'interno del mio codice. Se immaginiamo il nostro codice sotto forma di diagramma di flusso, allora una traccia esecutiva è un percorso in questo diagramma che parte dall'inizio e arriva alla fine. Una traccia può coinvolgere o meno tutte le parti di questo diagramma, e proprio la quantità di questa copertura è il mio criterio.
+</p>
+<p class='vspace'>In realtà siamo un po' più specifici, e consideriamo questi aspetti di copertura del codice:
+</p><ul><li><strong>statement coverage</strong> = quante <strong>istruzioni</strong> singole sono state eseguite
+</li><li><strong>loop coverage</strong> = quanti <strong>loop</strong> ho eseguito
+</li><li><strong>branch coverage</strong> = quante <strong>branch</strong>, ovvero rami di una condizione, ho coperto
+</li><li><strong>path coverage</strong> = quante <strong>tracce esecutive</strong> ho percorso
+</li></ul><p class='vspace'>Spesso queste definizioni sono intercambiabili: ad esempio, una copertura completa delle branch è sicuramente una copertura completa del codice. Tuttavia servono per focalizzarsi meglio sulla parte di codice che voglio testare.
+</p>
+<div class='vspace'></div><h3>Altri tipi di test non funzionali</h3>
+<p>Non si testa solamente il codice, ci sono anche altri requisiti non funzionali che possono essere oggetto di testing.
+</p>
+<div class='vspace'></div><ul><li>configuration testing = si cambiano le configurazioni del programma, e si vede se si comporta ancora bene
+</li><li>recovery testing = si verifica il comportamento del sw dopo un crash e successivo recovery
+</li><li>safety testing = si verifica se il programma rispetta i permessi dei dati che manipola
+</li><li>security testing = si verifica se il programma resiste ad attacchi maliziosi
+</li><li>stress testing = si verifica il comportamento del programma nelle condizioni di lavoro più onerose, dal punto di vista delle performance
+</li><li>performance testing = si verifica il comportamento del programma, sempre dal punto di vista delle performance, ma nel caso di carico di lavoro medio
+</li></ul><div class='vspace'></div><h4>Test di utilità</h4>
+<p>Un test di utilità mi dice quanto il prodotto soddisfa le esigenze dell'utente, così come previsto dalle specifiche.
+</p>
+<p class='vspace'>Sicuramente, implica la <strong>completezza funzionale</strong>: se non fa quello che deve, allora sicuramente non gli piace. Ma occorre anche vedere <strong>come</strong> fa quello che deve fare.
+</p>
+<p class='vspace'>Si deve quindi anche considerare la <strong>facilità d'uso</strong>, o l<strong>'accessibilità</strong>, tenendo a mente che questa dipende da chi utilizzerà il programma. Gli utenti potranno essere diversi, e potranno avere una cultura diversa, attitudini diverse, approcci diversi allo stesso problema, pur utilizzando lo stesso software. Ci si aspetta che il nostro prodotto rispetti queste differenze interne all'ambiente lavorativo in cui sarà installato
+</p>
+<p class='vspace'>Infine, c'è da valutare anche il <strong>rapporto costi/funzionalità</strong>.
+</p>
+<div class='vspace'></div><h3>Note sulla correttezza di un programma</h3>
+<p>Un sw è <strong>corretto</strong> quando, usato secondo le specifiche, soddisfa le specifiche stesse.
+</p>
+<p class='vspace'>Qui però salta fuori la distinzione tra fault e failure. Prendiamo ad esempio il seguente frammento di codice C:
+</p><pre> if (c = 0) { ... }
+</pre><p>La condizione è stata scritta <strong>c = 0</strong>, cioè si tratta di un <strong>assegnamento</strong>, il cui risultato sarà sempre <strong>true</strong>. 
+</p>
+<p class='vspace'>Se l'utilizzo solito del programma prevede che a quel punto la variabile <strong>c</strong> valga effettivamente 0, allora non ci accorgeremo mai dell'errore, perché si comporta sempre come dovrebbe! Se infatti <strong>c</strong> valesse 0, la condizione corretta <strong>c == 0</strong> darebbe <strong>true</strong>, esattamente come già dà ora l'assegnamento <strong>c = 0</strong>. Pertanto non ho una failure, pur avendo un fault nel codice. La failure è in agguato nell'oscurità!
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/IDS-11Maggio)</span></div>
+  </div>
+</body>
+</html>

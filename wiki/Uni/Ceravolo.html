@@ -1,0 +1,773 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Lezioni con Ceravolo </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Ceravolo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Lezioni con Ceravolo
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Ceravolo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Ceravolo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Ceravolo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Ceravolo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Ceravolo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Lezioni con Ceravolo was last modified on March 17, 2009, at 06:36 PM'>
+							<span style='display:none;'>Lezioni con Ceravolo</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: A lezione con Ceravolo! ::</strong>
+</p>
+<p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>ovvero Protocolli applicativi - Application Layer</span>
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 300px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#s1'>Cosa sono</a>
+</li><li><a href='#s2'>Nozioni preliminari</a>
+</li><li><a href='#s3'>Comunicazioni fra processi</a>
+<ul><li><a href='#s31'>Porte note</a>
+</li></ul></li><li><a href='#s4'>Che cosa definisce un protocollo applicativo?</a>
+</li><li><a href='#s5'>Che tipi di servizio richiede un'applicazione distribuita?</a>
+</li><li><a href='#s6'>Livello di trasporto <ins>TCP vs UDP</ins></a>
+</li><li><a href='#s7'>WEB &amp; HTTP</a>
+</li><li><a href='#s8'>HTTP</a>
+<ul><li><a href='#s81'>HTTP message</a>
+</li><li><a href='#s82'>HTTP REQUEST MESSAGE</a>
+</li><li><a href='#s83'>HTTP RESPONSE MESSAGE</a>
+</li><li><a href='#s84'>Esempio di HTTP Message</a>
+</li><li><a href='#s85'>Implementare stati HTTP</a>
+</li><li><a href='#s86'>Proxy Server</a>
+</li></ul></li><li><a href='#s9'>FTP</a>
+</li><li><a href='#s10'>Posta elettronica</a>
+<ul><li><a href='#s101'>Sample SMTP interaction</a>
+</li><li><a href='#s102'>MIME (RFC 822)</a>
+</li><li><a href='#s103'>POP</a>
+</li></ul></li><li><a href='#s11'>DNS</a>
+</li><li><a href='#s12'>Content distribution</a>
+<ul><li><a href='#s121'>Web caching</a>
+</li><li><a href='#s122'>Content distribution networks</a>
+</li></ul></li><li><a href='#s13'>P2P</a>
+<ul><li><a href='#s131'>P2P centralizzato - Eg. Napster</a>
+</li><li><a href='#s132'>P2P distribuito - Eg. Gnutella</a>
+</li><li><a href='#s133'>P2P ibrido - Eg. Kazaa</a>
+</li></ul></li><li><a href='#s14'>Scalability</a>
+</li><li><a href='#s15'>Socket programming</a>
+<ul><li><a href='#s151'>Socket programming with TCP</a>
+</li><li><a href='#s152'>Socket programming with UDP</a>
+</li></ul></li><li><a href='#s16'>Costruire un semplice Web server</a>
+</li></ol></div>
+<div class='vspace'></div><hr />
+<p class='vspace'><a name='s1' id='s1'></a>
+</p><h2>Cosa sono?</h2>
+<p>Sono applicazioni distribuite, ovvero eseguiti su una macchina locale ma che interagiscono con una macchina posta altrove sulla rete. Esempi di questi protocolli sono: server Email su internet, Msn, Emule, VoIp ecc...
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s2' id='s2'></a>
+</p><h2>Nozioni preliminari</h2>
+<p>Ci sono tipi diversi di applicazioni distribuite: 
+</p>
+<div class='vspace'></div><ol><li><strong>Client-server</strong> = c'è un client, presente in modo discontinuo sulla rete che richiede man mano informazioni al server che invece è sempre presente. I client per contro non possono comunicare direttamente l'uno con l'altro ma solo tramite server. <strong><em>IL SERVER é SCALABILE??(ndP)</em></strong>
+<div class='vspace'></div></li><li><strong>P2P</strong> = ogni host chiede e passa informazioni ad altri host che possono esserci o non esserci, sono connessi in modo intermittente. Proprio qui sta il problema: le informazioni devono essere "garantite" a prescindere da quali host sono connessi. Sono rare le P2P pure, di solito sono ibride, l'unico è Gnutella che è scalabile cioè funziona sia con pochi utenti che con tanti.
+<div class='vspace'></div></li><li><strong>Ibride</strong> = ci sono dei <em>supernodi</em> che smistano gli host collegati. Esempi di ibridi sono Napster (file transfer P2P) o IM (istant messaging) in cui comunico ad un server la mia esistenza e quando sono registrata trova tutti gli indirizzi collegati al mio buddy (il profilo).
+</li></ol><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s3' id='s3'></a>
+</p><h2>Comunicazioni fra processi</h2>
+<p>Un processo è un qualunque programma che funziona su un host, sia lato client che lato server. Il sistema operativo gestisce i processi e la IPC (Inter Process Communication). Come collegare tra loro processi diversi? Tramite la nozione di <strong>porta</strong>. Una porta è un concetto astratto per stabilire che il processo X, che sarà interrotto da altri processi, possa comunicare con il processo Y, il quale parimenti sarà interrotto e così via. Sostanzialmente per porta si intende quindi un canale di comunicazione attraverso cui due host riescono a comunicare.
+</p>
+<p class='vspace'>Per gestire la comunicazione dei processi fra host diversi uso i <em>socket</em>. A cosa mi servono le porte allora? Beh, non posso tener conto solo del fatto che ogni host ha un indirizzo IP unico, perchè processi diversi possono essere inviati sullo stesso terminale. Devo quindi associare un numero di porta per distinguerli (eg il numero di porta di internet solitamente è 80).
+</p>
+<p class='vspace'><a name='s31' id='s31'></a>
+</p><h4>Porte note</h4>
+<p>Le <strong>porte note</strong> (<em>well known ports</em>, per dirlo alla francese) sono delle porte dai valori compresi tra lo 0 e il 1023, che lo <strong>IANA</strong> (<strong><em>I</strong>nternet <strong>A</strong>ssigned <strong>N</strong>umbers <strong>A</strong>uthority</em>) ha associato a specifici servizi TCP e/o UDP. Tra le più importanti ricordiamo:
+</p>
+<div class='vspace'></div><table width='50%' border='0' cellpadding='5' cellspacing='0' align='left' >
+<tr ><td bgcolor='#d9e4f2' align='center'  valign='top'> <strong>Porta</strong>
+</td><td bgcolor='#d9e4f2' align='center'  valign='top'> <strong>Servizio</strong>
+</td></tr><tr ><td width='20%'  valign='top'> <strong>20</strong> /tcp
+</td><td  valign='top'> <a href='#s9'>FTP</a> (data)
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' > <strong>21</strong> /tcp
+</td><td bgcolor='#f5f9fc' valign='middle' > FTP (controllo)
+</td></tr><tr ><td width='20%'  valign='top'> <strong>23</strong> /tcp
+</td><td  valign='top'> Telnet
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' > <strong>25</strong> /tcp
+</td><td bgcolor='#f5f9fc' valign='middle' > <a href='#s10'>SMTP</a>
+</td></tr><tr ><td width='20%'  valign='top'> <strong>53</strong> /tcp/udp
+</td><td  valign='top'> <a href='#s11'>DNS</a>
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' > <strong>80</strong> /tcp
+</td><td bgcolor='#f5f9fc' valign='middle' > <a href='#s8'>HTTP</a>
+</td></tr><tr ><td width='20%'  valign='top'> <strong>110</strong> /tcp
+</td><td  valign='top'> <a href='#s103'>POP3</a>
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' > <strong>143</strong> /tcp
+</td><td bgcolor='#f5f9fc' valign='middle' > IMAP4
+</td></tr></table>
+<p><br clear='all' />
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s4' id='s4'></a>
+</p><h2>Che cosa definisce un protocollo applicativo?</h2>
+<ul><li>Formato dei messaggi
+</li><li>Ordine della comunicazione
+</li><li>Azioni da intraprendere a seconda di ciò che riceve
+</li></ul><p class='vspace'>Solitamente il protocollo definisce espressamente le prime due cose, la terza è implicita.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s5' id='s5'></a>
+</p><h2>Che tipi di servizio richiede un'applicazione distribuita?</h2>
+<p>In base a ciò che un'applicazione richiede si caratterizza il protocollo:
+</p><ol><li><em>Perdita dei dati</em>: è tollerata o no?
+</li><li><em>Tempistica</em>: i pacchetti devono arrivare entro un certo tempo?
+</li><li><em>Banda</em>: quanta banda minima mi serve?
+</li></ol><p class='vspace'>Eg: per il trasferimento dei file non dovrò avere perdita di dati, poco tempo di attesa e una banda elastica in base alla quantità di dati da trasferire.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s6' id='s6'></a>
+</p><h2>Livello di trasporto: <ins>TCP vs UDP</ins></h2>
+<table border='0' width='55%' cellpadding='5' cellspacing='0' >
+<tr ><td bgcolor='#d9e4f2' colspan='2' align='center'  valign='top'><strong>TCP</strong>
+</td><td bgcolor='#d9e4f2' colspan='2' align='center'  valign='top'><strong>UDP</strong>
+</td></tr><tr ><td valign='middle' >connessione
+</td><td valign='middle' >NO connessione 
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' >controllo flusso
+</td><td bgcolor='#f5f9fc' valign='middle' >NO controllo flusso
+</td></tr><tr ><td valign='middle' >controllo congestione 
+</td><td valign='middle' >NO congestion control
+</td></tr><tr ><td bgcolor='#f5f9fc' valign='middle' >NO timing
+</td><td bgcolor='#f5f9fc' valign='middle' >NO timing
+</td></tr><tr ><td valign='middl' >NO banda minima 
+</td><td valign='middle' >NO banda minima
+</td></tr></table>
+<p><br clear='all' />
+</p>
+<p class='vspace'>Ma se UDP non fa un cavolo, che utilità ha? Beh, innanzitutto è un protocollo più leggero (intestazione di 8 byte) e quindi comporta un basso consumo di banda. Poi il fatto di non creare alcuna connessione elimina i ritardi dovuti alla configurazione della comunicazione (non ci sono partecipanti da sincronizzare).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s7' id='s7'></a>
+</p><h2>WEB &amp; HTTP</h2>
+<p>Le pagine web come tutti sappiamo sono composte da un gran numero di oggetti: un file html di base contiene infatti riferimenti ad altri oggetti: immagini jpg, applet java ecc...  Ogni oggetto è indirizzabile con un URL: eg. "www.someschool.edu/someDept/pic.gif" identificherà il nome di un'immagine.
+</p>
+<p class='vspace'>Attenzione! Ci sono delle differenze quando di parla di <strong>URL</strong>, <strong>URI</strong> e <strong>URN</strong>!
+</p><ul><li><strong>URL</strong> = Universal Resource Locator: identifica la risorsa in modo globale attraverso la <em>locazione</em> della risorsa stessa ("su che server è")
+</li><li><strong>URI</strong> = Universal Resource Identifier: identifica la risorsa indipendentemente da dove si trova o dal nome con il quale è nota
+</li><li><strong>URN</strong> = Universal Resource Name: identifica la risorsa attraverso il <em>nome</em> anche se l'oggetto stesso non è reperibile (eg. voglio dare un nome alla documentazione di un software all'interno della mia rete aziendale)
+</li></ul><p class='vspace'>Una URI può essere rappresentata in forma di URL, URN o una combinazione di entrambi.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s8' id='s8'></a>
+</p><h2>HTTP (Hyper Test Transfer Protocol)</h2>
+<p>Applicazione Web. Il client invia una richiesta di un oggetto, identificato con un URI: il server se ce l'ha lo invia, altrimenti risponde con un errore. Semplice vero?<br />Ne esistono due versioni diverse: la 1.0 e la 1.1 (come <a class='wikilink' href='../Olimpo/GDA.html'>GDA</a> d'altronde).
+</p>
+<p class='vspace'>L'HTTP si basa su TCP: il client richiede dati aprendo una connessione TCP al server sulla porta 80; quando ho ottenuto le informazioni che mi servono, la connessione si chiude. Per ogni oggetto invio una richiesta.<br />E' semplice da gestire, sia lato client che lato server, e questa è stata la base del successo iniziale del web.<br />E' un protocollo senza stati, cioè la connessione viene aperta e chiusa ogni volta; il server non tiene memoria delle richieste precedenti, perciò se non mi arriva un oggetto dovrò ripetergliela. 
+</p>
+<p class='vspace'>Dato però che questa semplicità eccessiva non permetteva di gestire la persistenza della connessione (e per altri motivi), si è passati alla versione 1.1 con il vantaggio che riesco a mandare più oggetti con una singola connessione, risparmiando banda.
+</p>
+<p class='vspace'><strong>Attenzione!</strong> Mantenere la connessione aperta non significa avere gli stati.
+</p>
+<p class='vspace'><a name='s81' id='s81'></a>
+</p><h4>HTTP Message</h4>
+<p>Nell' <em>HTTP 1.0</em>:
+</p><ul><li>client apre una connessione TCP con un host su una certa porta 
+</li><li>server risponde
+</li><li>client invia REQUEST MESSAGE per un oggetto
+</li><li>server invia RESPONSE MESSAGE e chiude la connessione 
+</li><li>se però il client aprendo la pagina vede che contiene 10 oggetti richiede le 10 immagini in sequenza e ricomincia daccapo
+</li></ul><p class='vspace'>Quant'è perciò il tempo di risposta? C'è un RTT per aprire la connessione, un RTT per la richiesta HTTP e i primi bytes della risposta, infine il tempo di trasmissione dei file.
+</p>
+<p class='vspace'  style='text-align: center; color: green;'> TOTALE = 2RTT + tempo di trasmissione per ogni oggetto.
+</p>
+<p class='vspace'>Ecco perchè sorge la necessità di un HTTP persistente.
+</p>
+<p class='vspace'>Ci sono due implementazioni di persistenza:
+</p><ul><li>una si limita a NON chiudere la connessione dopo l'invio di un oggetto
+</li><li>l'altra è detta PIPELING: il client manda richiesta per ogni oggetto che trova, senza aspettare di aver ricevuto gli oggetti trovati prima; il server crea una <em>pipeline</em> e glieli manda tutti insieme.
+</li></ul><p class='vspace'>Ho due messaggi HTTP: <em>REQUEST</em> e <em>RESPONSE</em>
+</p>
+<p class='vspace'><a name='s82' id='s82'></a>
+</p><h4>HTTP REQUEST MESSAGE</h4>
+<p>E' in ASCII ed è composto da tre parti:
+</p>
+<div class='vspace'></div><ul><li><strong>request line</strong>, così formata: <em>metodo</em> (vedi dopo), URI, versione del protocollo.<br />Ad esempio: <span  style='color: green;'>GET/somedir/page.html HTTP/1.1</span>
+</li><li><strong>header line</strong>, così formata:
+<ul><li><em>Host</em> : www.someschool.edu
+</li><li><em>User-agent</em> : Mozilla/4.0
+</li><li><em>Connection</em> : Close (indico che voglio chiudere la connessione)
+</li><li><em>Accept-language</em> : Fr (se il server gestisce più versioni dello stesso oggetto in base alla lingua, posso richiederlo)
+</li><li>infine, un <em>&lt;CR&gt;</em> (Carriage Return) e un <em>&lt;LF&gt;</em> (Line Feed) che indicano la fine del messaggio. 
+</li></ul></li><li><strong>body</strong>, che è il corpo del messaggio, con cui si può inviare roba al server.
+</li></ul><p class='vspace'>I <em>metodi</em> che possono apparire nella request line sono i seguenti, divisi per versione del protocollo:
+</p>
+<div class='vspace'></div><table border='0' width='100%' cellpadding='5' cellspacing='0' >
+<tr ><td bgcolor='#d9e4f2' width='10%' align='center'  valign='top'><strong>HTTP 1.0</strong>
+</td><td bgcolor='#d9e4f2' width='10%' align='center'  valign='top'><strong>HTTP 1.1</strong>
+</td><td bgcolor='#d9e4f2' align='center'  valign='top'><strong>Descrizione</strong>
+</td></tr><tr ><td align='center' valign='middle' >GET
+</td><td align='center' valign='middle' >GET
+</td><td valign='middle' >Serve a richiedere dati al server, la risposta finisce nell'URL/URI (tanti server mandano le variabili direttamente nell'URI, con un vantaggio per il copia e incolla - ad esempio i file di youtube con il ?= - ma uno svantaggio perché sono in chiaro).
+</td></tr><tr ><td align='center' bgcolor='#f5f9fc' valign='middle' >POST
+</td><td align='center' bgcolor='#f5f9fc' valign='middle' >POST
+</td><td bgcolor='#f5f9fc' valign='middle' >Serve a richiedere dati al server, ma in questo caso la risposta finisce nel body.
+</td></tr><tr ><td align='center' valign='middle' >HEAD
+</td><td align='center' valign='middle' >HEAD
+</td><td valign='middle' >Non chiede tutto l'oggetto ma solo l'intestazione (eg. per conoscere quando è stato aggiornato l'oggetto).
+</td></tr><tr ><td align='center' bgcolor='#f5f9fc' valign='middle' >
+</td><td align='center' bgcolor='#f5f9fc' valign='middle' >PUT
+</td><td bgcolor='#f5f9fc' valign='middle' >Per l'upload dei file.
+</td></tr><tr ><td align='center' valign='middle' >
+</td><td align='center' valign='middle' >DELETE
+</td><td valign='middle' >Per cancellare file dal server.
+</td></tr></table>
+<p><br clear='all' />
+</p>
+<p class='vspace'><a name='s83' id='s83'></a>
+</p><h4>HTTP RESPONSE MESSAGE</h4>
+<p>Anch'essi composti da tre parti:
+</p><ul><li><strong>status line</strong>, nella quale compare un codice a tre cifre che definisce la categoria del messaggio. Per conoscere il significato dei vari codici si può fare richiesta con un telnet, oppure andare su <a class='wikilink' href='CodiciDiStato.html'>questa pagina</a>. Ad esempio, una status line potrebbe essere: <span  style='color: green;'> "HTTP/1.1 200 OK &lt;CR&gt;&lt;LF&gt;"</span>
+</li><li><strong>header</strong>:
+<ul><li><em>Connection</em>, eg: close
+</li><li><em>Date</em>, eg: Thu,6 august
+</li><li><em>Server</em>, tipo e versione del server. Eg: Apache/1.3.0(Unix)
+</li><li><em>Last modified</em>, eg: Thu,1 may
+</li><li><em>Content length</em>, eg: 6821
+</li><li><em>Content type</em>, tipo di contenuto restituito. Eg: text/html (sono i tipi MIME)
+</li></ul></li><li><strong>body</strong>, il contenuto della risposta.
+</li></ul><p class='vspace'><a name='s84' id='s84'></a>
+</p><h4>Esempio di HTTP Message</h4>
+<em>HTTP REQUEST MESSAGE</em>:<br /><pre class='escaped'>GET /wiki HTTP/1.1
+Host: doppioclic.altervista.org
+Connection: Close 
+User-Agent: Mozilla/5.0
+Accept: text/html, image/jpeg, image/png, text/*, image/*, */*
+Accept-Encoding: x-gzip, x-deflate, gzip, deflate, identity
+Accept-Charset: iso-8859-1, utf-8;q=0.5, *;q=0.5 
+Accept-Language: it</pre>
+<div class='vspace'></div><em>HTTP RESPONSE MESSAGE</em>:<br /><pre class='escaped'>HTTP/1.1 301 Moved Permanently
+Date: Fri, 18 Jan 2008 20:56:52 GMT
+Server: Apache
+Location: http://doppioclic.altervista.org/wiki/
+Vary: Accept-Encoding
+Content-Length: 246
+Connection: close
+Content-Type: text/html; charset=iso-8859-1
+
+&lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;
+&lt;html&gt;&lt;head ... ecc ecc</pre>
+<p class='vspace'><a name='s85' id='s85'></a>
+</p><h4>Implementare stati HTTP</h4>
+<p>Per simulare uno stato nell'HTTP vengono usati i <strong>Cookies</strong>.<br />Eg. ho un sito che vende ciarpame e voglio mantenere un carrello della spesa per un utente. Dato che HTTP non ha memoria, scrivo le informazioni su file detti cookies. Posso dunque usarli per:
+</p><ul><li>autorizzazioni
+</li><li>shopping carts
+</li><li>raccomandazioni
+</li><li>sessioni aperte (eg web mail)
+</li></ul><p class='vspace'>Se serve un cookie, quando il server risponde aggiungerà una linea nell'header (ad esempio) <em>"Set-cookie:1678"</em> ed il client dovrà mantenerlo in memoria. Quando poi il client invierà successive richieste, manderà anche <em>"cookie: 1678"</em> così che il server sappia chi sono. 
+</p>
+<p class='vspace'>E' tutto bello e comodo, ma sorgono però dei problemi di privacy, dato che questi file contengono informazioni più o meno riservate sul mio conto.
+</p>
+<p class='vspace'><a name='s86' id='s86'></a>
+</p><h5>Proxy server</h5>
+<p>Per migliorare l'efficienza della rete è meglio ridurre il numero di richieste sui server. Si utilizzano così dei dispositivi chiamati <strong>proxy</strong> che provvedono a fare da tramite e che mantengono nella loro cache una copia degli oggetti richiesti, così da mandar questi invece di richiederli dai server. Certo, in questo modo un proxy dovrà sempre controllare che l'oggetto nella cache sia aggiornato, ed ecco quindi a cosa serve il campo date dello header HTTP. (<strong>Attenzione!</strong> l'aggiornamento non viene fatto ogni volta, o il risparmio di traffico sarebbe relativo) <br />Il server a cui viene chiesto di controllare se l'oggetto sia stato aggiornato risponde 304 se non lo è, con una data altrimenti.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s9' id='s9'></a>
+</p><h3>FTP</h3>
+<p>File Transfer Protocol. Attivo sulla porta 21, apre due connessioni: una per il controllo e una per il trasferimento dati. Problemi:
+</p><ul><li>è basato su due connessioni, perciò non basta telnet per usarlo
+</li><li>la codifica dei caratteri va gestita perchè può essere che server e client usino codifiche diverse.
+</li></ul><p class='vspace'>E' persistente perciò la connessione viene tenuta aperta e si mantiene una sessione. Meglio ancora: è la connessione per il controllo del trasferimento che rimane aperta per tutta la sessione, mentre quella del trasferimento vero e proprio si apre e si chiude per ogni file trasferito.<br />Per autenticarsi occorre mandare username e password. 
+</p>
+<p class='vspace'>I comandi FTP sono delle stringhe di caratteri ASCII, che richiedono l'inserimento di una USER e di una PASSword per ogni sessione. Alcuni comandi:
+</p><ul><li><strong>LIST</strong>, ritorna una lista di file nella directory corrente
+</li><li><strong>RETR</strong>, filename retrievers (gets) file. Obbliga il server a spedire una copia del file all'utente/server dall'altra parte della connessione.
+</li><li><strong>STOR</strong>, filename stores (puts) file onto remote host. Obbliga il server ad accettare i dati inviati tramite la connessione dati e salvarli.
+</li></ul><p class='vspace'>Di seguito alcuni codici di ritorno dell'FTP:
+</p><ul><li><strong>125</strong>: data connection already open, transfer starting
+</li><li><strong>200</strong>: command ok
+</li><li><strong>220</strong>: service ready for new user
+</li><li><strong>231</strong>: user logged out; service terminated
+</li><li><strong>331</strong>: user ok, pass requied
+</li><li><strong>332</strong>: need account for login
+</li><li><strong>425</strong>: can't open data connection
+</li><li><strong>452</strong>: error writing file
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s10' id='s10'></a>
+</p><h3>Posta elettronica</h3>
+<p>Esistono tre componenti principali:
+</p><ol><li>user agent (il client email, ad esempio Thunderbird o <del>Outlook</del>)
+</li><li>mail server
+</li><li>SMTP (Simple Mail Transfer Protocol)
+</li></ol><p class='vspace'>...e tre fasi di comunicazione:
+</p><ol><li>handshaking 
+</li><li>transfer
+</li><li>closure
+</li></ol><p class='vspace'>Il messaggio viene passato in codifica ASCII.
+</p>
+<p class='vspace'>Passaggi:
+</p><ol><li>Scrivo un messaggio con un User agent
+</li><li>Lo mando al mio mail server, esso viene messo in una coda
+</li><li>Il lato client dell'SMTP apre una connessione TCP con il server mail del destinatario
+</li><li>SMTP client manda il messaggio attraverso una connessione TCP
+</li><li>Il mail server del destinatario mette il messaggio nella casella di posta destinata
+</li><li>Per leggere il messaggio utilizzo di nuovo l'User agent
+</li></ol><p class='vspace'><a name='s101' id='s101'></a>
+</p><h4>Sample SMTP interaction</h4>
+<p>Il client si presenta con il comando HELLO:
+</p>
+<div class='vspace'></div><pre class='escaped'>client: MAIL FROM &lt;address@server.extension&gt;
+server: 250 server ok
+client: RCPT TO &lt;....@....&gt;
+server: recipient ok
+client: DATA
+server: 354 Enter mail
+client: ...inizio email....</pre>
+<p class='vspace'>Le email sono terminate da un punto messo in una riga da solo. La connessione viene aperta e chiusa alla fine del messaggio. Si può eseguire il tutto da telnet sulla porta 25.<br />Alla fine si saluta scrivendo <code class='escaped'>QUIT</code>.
+</p>
+<p class='vspace'>Riassumendo i comandi principali di un messaggio in SMTP sono: <strong>HELO</strong>, <strong>MAIL FROM</strong>, <strong>RCPT TO</strong>, <strong>DATA</strong>, <strong>QUIT</strong>.
+</p>
+<p class='vspace'>SMTP viene usato anche tra server e server per l'invio effettivo di mail. <em>NON</em> c'è bisogno di autenticazioni.
+</p>
+<p class='vspace'><a name='s102' id='s102'></a>
+</p><h4>MIME (RFC 822)</h4>
+<p>Il MIME (Multipurpose Internet Mail Extensions) è uno standard che estende il formato delle e-mail, consentendo di inviare altri tipi di informazione oltre al testo ASCII, come ad esempio testi scritto in lingue diverse dall'Inglese, immagini, suoni e filmati, o anche programmi.
+</p>
+<p class='vspace'>Gli <em>headers</em> aggiuntivi del MIME sono:
+</p><ul><li><strong>MIME-Version</strong>: se è presente nel messaggio significa che questo è formattato secondo lo standard MIME. Generalmente la versione è la 1.0
+</li><li><strong>Content-type</strong>: il tipo dei dati multimediali contenuti nel messaggio, descritti come <em>tipo/sottotipo</em>. Tra questi ricordiamo:
+<ul><li>testo semplice: <em>text/plain</em> (che è il valore di default dell'header content-type)
+</li><li>testo html: <em>text/html</em>
+</li><li>immagine: eg, <em>image/jpg</em>
+</li><li>audio: eg, <em>audio/mp3</em>
+</li><li>video: eg, <em>video/avi</em>
+</li></ul></li><li><strong>Content-transfer-encoding</strong>: metodo usato per decodificare i dati. Generalmente impostato come <em>base 64</em>
+</li></ul><p class='vspace'><a name='s103' id='s103'></a>
+</p><h4>POP3</h4>
+<p>Diversamente dall'SMTP, per ricevere la posta ha bisogno dell'autenticazione con username e pass. Si possono listare i messaggi, che vengono identificati con un numero, e poi cancellati dal server, e non posso più rileggere i messaggi se accedo a un altro client.
+</p>
+<p class='vspace'>IMAP invece mantiene tutti i messaggi sul server e si può accedervi da diversi client. I messaggi in genere contengono più oggetti, esempio testo e allegati. Il MIME è quello che me li fa vedere. Devo anche stabilire un marcatore per dividere un tipo di oggetto da un altro, eg. BOUNDARY: "--next part 011397--", quindi dopo questa riga so che c'è un altro oggetto di diverso.<br />Poi, nel DATA di una mail, ogni singolo pezzo ha il suo charnet e il suo tipo MIME.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s11' id='s11'></a>
+</p><h3>DNS</h3>
+<p>Domain Name System: è basato su architetture client - server ma è un protocollo "fondativo" di internet, un servizo offerto alle applicazioni.
+</p>
+<p class='vspace'>I servizi offerti sono:
+</p><ul><li>alias di host
+</li><li>alias dei mail server
+</li><li>si distribuisce il carico di un server: si danno più indirizzi IP a un singolo nome così che ci sono più computer che lo gestiscono
+</li></ul><p class='vspace'>Perchè non è una buona idea avere un registro centrale? Perchè:
+</p><ul><li>la rete rallenterebbe
+</li><li>inoltre non è scalabile
+</li></ul><p class='vspace'>Il DNS usa un database distribuito, strutturato con server organizzati gerarchicamente: in pratica se non so una cosa il DNS sa a quale altro server chiedere, magari di livello superiore. Usa inoltre una cache per mantenere la lista dei nomi.
+</p>
+<p class='vspace'>Nella gerarchia c'è un ROOT DNS (ce ne sono pochi nel mondo) e poi altri livelli più bassi, uno per il dominio (.com, .edu, ecc.. =&gt; server top level) e infine quelli locali.<br />Nelle organizzazioni si possono mantenere DNS per indirizzi interni alla rete.<br />I DNS mantengono una cache (aggiornata) di indirizzi dopo che ne hanno trovati alcuni sconosciuti.
+</p>
+<p class='vspace'>Al DNS si possono fare delle richieste:
+</p><ul><li><strong>TYPE A</strong>: dò un nome intero, voglio un IP
+</li><li><strong>TYPE NS</strong>: dò un dominio, mi dà l'IP del DNS che sa qualcosa di quel dominio
+</li><li><strong>TYPE CNAME</strong>: nome è l'alias, mi dà indietro il suo nome canonico (eg.www.ibm.com è alias di severeast.backup2.ibm.com)
+</li><li><strong>TYPE MX</strong>: mi dà l'IP di un mail server associato con nome
+</li></ul><p class='vspace'>Il formato delle richieste RR (Resource Record) sono del tipo: <em>name, value, type, TTL</em> e anche le risposte sono così. A seconda del tipo di chiamata il VALUE contiene cose diverse.<br />Le QUERY e le REPLY hanno lo stesso formato di messaggio. A una richiesta DNS possono rispondere sia con DNS che hanno in cache, sia con quelli che sono AUTORITHATIVE per quel server. Se indico RECURSION voglio raggiungere il server autoritativo di quell'indirizzo, se no lascio decidere al DNS a cui chiedo.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s12' id='s12'></a>
+</p><h3>Content distribution</h3>
+<p>Viaggiando dal sorgente al destinatario il pacchetto può essere soggetto a differenti ritardi. Elementi di ritardo possono essere:
+</p><ul><li><em>Propagazione</em>: tempo e velocità di propagazione dei byte
+</li><li><em>trasmissione</em> legata alla banda (dtrans = Lunghezza/ Rate{portata})
+</li><li><em>coda dei pacchetti</em> che dipende dalla prestazioni del router e dei protocolli di trasporto
+</li><li><em>tempo di processo</em> legato all’header del pacchetto e all’instradamento dei router
+</li></ul><p class='vspace'>Le strategie per ridurre il ritardo sono chiamate di <em>Content Distribution</em>. Tutte agiscono sul tempo di trasmissione aumentando e diminuendo l’uso della banda. Esse sono:
+</p><ul><li>web caching (ottimizzare contenuti server)
+</li><li>mirroring
+</li><li>distribution of multiple host on a single DNS
+</li><li>P2P
+</li></ul><p class='vspace'><a name='s121' id='s121'></a>
+</p><h4>Web caching</h4>
+<p>Server proxy: le richieste del client non vanno al server di origine ma si fermano in un server diverso che ha già in sè la maggioranza delle informazioni richieste dal client. Il vantaggio principale è derivato dal fatto che di solito la banda passante tra client e proxy è maggiore di quella tra client e server di origine.
+Inoltre riduce il tempo di risposta alla richiesta e il traffico al link.
+E' un'architettura con grande replicazione cache e a chi ha banda bassa può fornire risorse con banda alta richiedendo direttamente alla cache. Siccome non so come mettere i suoi disegni guardare le sue dispense:
+</p>
+<p class='vspace'><ins>Vedi slide 74-78 Ceravolo</ins>
+</p>
+<p class='vspace'><a name='s122' id='s122'></a>
+</p><h4>Content distribution networks</h4>
+<p>Sono compagnie che affittano spazi dove i clienti possono replicare contenuti. Il cliente sviluppa un meccanismo che risolve le richieste del server centrale e le reindirizza al più vicino CND, quindi fornisco degli spazi dove smistare le richieste a vari mirroring. L’impatto positivo è la valorizzazione economica del servizio.
+Conoscere la mappa della rete è quindi importante.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s13' id='s13'></a>
+</p><h3>P2P</h3>
+<p>Non si usa un’architettura client-server (richiesta a un fornitore di servizio) ma host che fungono sia da client che da server. Distribuire i contenuti non significa però diminuirli.
+</p>
+<p class='vspace'>Ci sono tre tipi di file sharing: 
+</p><ol><li><strong>bootstrap</strong>: gli host si collegano alla rete quindi deve essere agganciato alla rete stessa e avere un punto di collegamento per invio richieste ad altri peer. Smisto le richieste sapendo chi sono i suoi vicini
+</li><li><strong>lookup</strong>: per avere la risorsa x devo fornire uno o più host che mi dicono ciò che voglio
+</li><li><strong>data transfert</strong>: permette a un host di prendere le risorse da altri (host to host)
+</li></ol><p class='vspace'>Penso che tutti sappiano come sia il file sharing, i punti principali sono spiegati <ins>nella slide 81 di Ceravolo</ins> comunque.
+</p>
+<p class='vspace'><a name='s131' id='s131'></a>
+</p><h4>P2P centralizzato - Eg. Napster</h4>
+<p>In quest'architettura centralizzata il server riconosce l'host e lo registra e si occupa del lookup cioè controlla chi è l'host che può soddisfare la richiesta inviata da un altro host. (Lookup = richiesta di dati ai vicini, che propagano la richiesta ad altri vicini e man mano si allarga il giro)
+</p>
+<p class='vspace'>I problemi di questo tipo sono:
+</p><ul><li>collo di bottiglia: collegamento con problemi di banda tra host con differenti bande
+</li><li>infrazione di copyright: il server non sa cosa si inviano tra loro gli host perchè il trasferimento dei file è decentralizzato
+</li></ul><p class='vspace'><a name='s132' id='s132'></a>
+</p><h4>P2P distribuito - Eg. Gnutella</h4>
+<p>Successivo a Napster. In questo caso le richieste di dati vengono propagate attraverso query attraverso una connessione TCP tra host. Le query sono gestite attraverso un TTL per cui dopo un po' non può più essere propagata la richiesta per non saturare la rete. Il protocollo ha una sua tipologia che si inserisce su internet.
+</p>
+<p class='vspace'>Per capire meglio l'architettura vedi slide 86
+</p>
+<p class='vspace'><a name='s133' id='s133'></a>
+</p><h4>P2P ibrido - Eg. KaZaA</h4>
+<p>In quest'architettura c'è un <em>super peer</em> cioè un gruppo leader che funge da server, collegati ciascuno ad altrettanti host tutti attraverso il protocollo TCP. 
+</p>
+<p class='vspace'>Ogni file ha un suo codice e una descrizione. Il client manda la query con la parola chiave al suo gruppo leader. Questo risponde con le informazioni richieste fornendo metadata (dati relativi al dato dato), hash e IP address. Se il gruppo leader deve inviare la domanda ad altri gruppi anche questi dovranno rispondere con le stesse informazioni. Infine il client sceglie i file da scaricare.
+</p>
+<p class='vspace'>Ci sono dei problemi sull'efficienza e la sicurezza perchè un peer può ingannare l'altro modificando i dati visibili del file da scaricare. Limitato inoltre il download parallelo per via delle code nella rete.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s14' id='s14'></a>
+</p><h3>Scalability</h3>
+<p>La scalabilità di un protocollo è relativa all'efficacia del servizio di lookup (cioè quello che manda i messaggi di richiesta dei dati).
+</p>
+<p class='vspace'>Due sono gli obiettivi principali:
+</p><ul><li>minimizzare il numero di messaggi richiesti per il lookup
+</li><li>minimizzare i metadata richiesti per descrivere ogni nodo
+</li></ul><p class='vspace'>Il progetto <em>Chord</em> si prefigge di sviluppare sistemi distribuiti scalabili (può allargare la sua distribuzione) e robusti sfruttando le idee del peer-to-peer. Il componente base del progetto Chord è l'algoritmo di ricerca distribuita basata su tabelle di hash, tabelle di codici di dati. Chord può trovare dati usando log(N) messaggi, dove N è il numero di nodi nel sistema. Perciò per trovare dei dati non fa passare il messaggio di richiesta da tutti i nodi ma solo a logN nodi attraverso un sistema di ricerca del "vicino". Cioè invio la richiesta a un nodo  conoscendo già il suo o i suoi vicini.  
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s15' id='s15'></a>
+</p><h3>Socket programming</h3>
+<p>Cos'è un socket?
+Un socket in inglese è letteralmente la "presa da muro". Attraverso di esso un processo applicativo può sia mandare che ricevere messaggi da un altro processo. I socket permettono al protocollo applicativo di comunicare con il protocollo di trasporto.
+Il protocollo di trasporto può essere come tutti ben sappiamo UDP o TCP.
+</p>
+<p class='vspace'><a name='s151' id='s151'></a>
+</p><h4>Socket programming with TCP</h4>
+<p>TCP è un protocollo affidabile, ossia trasferisce pacchetti in ordine tra client e server. E' più lungo da utilizzare perchè bisogna tener conto del fatto che il client e il server "si mettono d'accordo" su dettagli di trasferimento.<br />Infatti il client contatta il server che deve essere prima fatto "partire" (running) e deve essere stata creata una socket door che riceve il client.<br />Quando il client vuole contattare il server deve fornire IP address e port number. Quando il client crea il socket il client TCP stabilisce una connessione con il server TCP. E ogni volta che il client lo contatta il server TCP crea nuovi socket per il processo per comunicare con il client. Il server può parlare con molti client e identificarli attraverso il numero di porta.
+</p>
+<p class='vspace'><span style='font-size:120%'>Stream jargon</span> <em>(non ho la minima idea del perchè sia messo qui, ma teniamolo)</em>
+</p>
+<p class='vspace'>Lo stream è una sequenza di caratteri che scorre dentro o fuori dal processo.
+</p>
+<div class='vspace'></div><ul><li>Input stream = semplicemente tutti i dati che vengono dalle periferiche di input (tastiera, mouse ecc)
+</li><li>Output stream = tutti i dati che deve inviare in uscita (stampante)
+</li></ul><p class='vspace'><strong><em>Esempio client/server with TCP</em></strong><br /><br />
+1. client legge le righe che riceve in input (inFromUser stream) e le manda al server via socket (outToServer stream)<br />2. il server legge le linee dal socket<br />3. le converte in maiuscolo (uppercase???)e le rimanda al client<br />4. il client legge, stampa e modifica le linee dal socket (inFromServer stream)<br /><br />
+<ins>vedi slide 100-104 per un esempio di Java client/server TCP</ins>
+</p>
+<p class='vspace'><a name='s152' id='s152'></a>
+</p><h4>Socket programming with UDP</h4>
+<p>UDP non dà connessione e il lavoro è perciò ridotto perchè non c'è bisogno dei patteggiamenti (le "strette di mano") da fare con UDP, è un modello più semplice perchè non c'è bisogno di aprire la connessione. Però come ricordiamo è un protocollo non affidabile quindi i pacchetti possono essere persi o ricevuti in ordine sbagliato.
+Che differenza c'è? C'è che l'IP address e la porta di destinazione del mittente deve essere estratta direttamente dal pacchetto inviato, non viene mandato a parte.
+</p>
+<p class='vspace'><ins>vedi slide 107-112 per un esempio di Java client/server UDP</ins>
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='s16' id='s16'></a>
+</p><h3>Costruire un semplice Web server</h3>
+<p><em>(nb. può servirci per costruire quello da fare per Sassi?)</em><br />Un web server si occupa di richieste HTTP e di tutti gli annessi e i connessi, cioè: accettare le richieste, analizzare l'header, ottenere le richieste dal server file system, creare una risposta al messaggio HTTP (header lines + file), mandare la risposta al client.<br />Dopo aver creato un server HTTP posso fare le richieste direttamente dal browser.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Sistemi.html'>Torna alla pagina di Sistemi per l'elaborazione delle informazioni</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 17, 2009, at 06:36 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Ceravolo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Ceravolo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

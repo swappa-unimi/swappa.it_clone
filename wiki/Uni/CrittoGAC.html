@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Crittografia: Gruppi, Anelli e Campi </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.CrittoGAC' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Crittografia: Gruppi, Anelli e Campi
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGAC?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGAC?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='CrittoGAC-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGAC?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGAC?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Crittografia: Gruppi, Anelli e Campi was last modified on May 02, 2008, at 01:19 PM'>
+							<span style='display:none;'>Crittografia: Gruppi, Anelli e Campi</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Crittografia: Gruppi, Anelli e Campi ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<div class='vspace'></div><h3>I gruppi {G, +}</h3>
+<p>Il <strong>gruppo</strong> è un insieme di elementi, in cui è definita l'operazione binaria <strong>+</strong>. NON È necessariamente la somma come la intendiamo noi, potrebbe essere una qualsiasi operazione che agisce su due operandi (binaria), e che ha le seguenti proprietà
+</p><ul><li><strong>chiusura</strong>: per ogni a e b appartenenti a G, a + b appartiene a G
+</li><li><strong>associatività</strong>: (a + b) + c = a + (b + c)
+</li><li><strong>esistenza dell'elemento identità</strong>: in altre parole il neutro, che per intenderci è quello che mi rende possibile l'operazione a + e = e + a = a, con <strong>e</strong> che è l'elemento identità
+</li><li><strong>esistenza dell'inverso</strong>: per ogni a appartenente a G, esiste un a' tale che a + a' = 0 (0 è il neutro)
+</li></ul><p class='vspace'>Per esempio, prendiamo un insieme, <strong>Nn</strong>, composto da <strong>n</strong> simboli distinti. E poi, di questo insieme facciamo tutte le n! possibili permutazioni, e le raggruppiamo in un insieme, <strong>Sn</strong>. <strong>Sn</strong> è quindi l'insieme di tutte le permutazioni di n simboli distinti.
+</p>
+<p class='vspace'>Bene, è possibile dimostrare che <strong>Sn</strong> è un <strong>gruppo</strong>, ovvero valgono le proprietà di cui sopra.
+</p>
+<p class='vspace'>Un elemento di <strong>Sn</strong> può essere ad esempio: {3, 1, 2} supponendo che <strong>Nn</strong> abbia tre elementi. La scrittura {3, 1, 2} significa che prendo il primo elemento di Nn, e lo metto nel 3° posto, poi il 2° e lo metto nel 1° ed infine il 3° lo metto nel 2°. Indica praticamente le <strong>destinazioni</strong> degli elementi.
+</p>
+<p class='vspace'>L'operazione <strong>+</strong> la definiamo così: {3, 1, 2} + {&#945;, &#946;, &#947;} = {&#947;, &#946;, &#945;}, per la regola qui sopra. Prendo il secondo elemento e lo spaciugo secondo quanto mi dice il primo elemento.
+</p>
+<p class='vspace'>Quest'operazione in Sn gode delle proprietà di:
+</p><ul><li><strong>chiusura</strong>: sì
+</li><li><strong>associatività</strong>: sì
+</li><li><strong>elemento identità</strong>: sì, ed è {1, 2, 3} che trasforma sempre una permutazione in se stessa
+</li><li><strong>esiste l'inverso</strong>: sì, e l'inverso di una permutazione è quella permutazione che sommata alla prima mi dà il neutro. Ad esempio, {1, 3, 2} + {1, 3, 2} = {1, 2, 3}
+</li></ul><p class='vspace'>Se <strong>n</strong> è un numero finito, allora il gruppo è detto <strong>finito</strong> e l<strong>'ordine</strong> del gruppo è <strong>n</strong>. Altrimenti è un gruppo <strong>infinito</strong>.
+</p>
+<div class='vspace'></div><h3>Gruppo Abeliano</h3>
+<p>È un gruppo, in cui per l'operazione <strong>+</strong> vale anche la proprietà aggiuntiva:
+</p><ul><li><strong>commutatività</strong> = a+ b = b + a, per ogni a, b appartenenti a G
+</li></ul><div class='vspace'></div><h3>Gruppo ciclico</h3>
+<p>Definiamo l<strong>'elemento a potenza</strong> come la ripetizione dell'operazione <em><big><strong> (qualsiasi cosa il </strong></big></em> voglia dire, ovviamente).
+</p>
+<p class='vspace'>Vigono codeste proprietà:
+</p><ul><li>a<sup>3</sup> = a + a + a
+</li><li>a<sup>0</sup> = e, dove <strong>e</strong> è l'elemento identità
+</li><li>a<sup>-n</sup> = (a')<sup>n</sup>, dove <strong>a</strong>' è l'inverso di <strong>a</strong>
+</li></ul><p class='vspace'>Orbene, un gruppo si dice <strong>ciclico</strong> se esiste un <strong>a</strong> tale che, elevato a potenza, genera tutti gli elementi del gruppo {G, +}. Tale elemento <strong>a</strong> è detto <strong>generatore</strong> del gruppo.
+</p>
+<p class='vspace'>Per intenderci, prendiamo il gruppo degli interi &gt;= 0, con l'operazione +: {N+, +}. L'elemento 1 è un generatore. Infatti, le potenze saranno 1+1, 1+1+1, 1+1+1+1, 1+1+1...+1 e generano tutti gli elementi del gruppo (gli interi maggiori di 0).
+</p>
+<div class='vspace'></div><h3>Anello</h3>
+<p>Un anello si segna così: <strong>{R, +, *}</strong>, cioè è un insieme di elementi in cui sono definite 2 operazioni binarie, + e * (in seguito spesso ometteremo il segno * per indicare la seconda operazione, proprio come si fa con le moltiplicazioni).
+</p>
+<p class='vspace'>Le proprietà che deve avere sono:
+</p><ul><li>rispetto al +, deve essere un <strong>gruppo abeliano</strong>
+</li><li><strong>chiusura</strong> rispetto a *
+</li><li><strong>associatività</strong> rispetto a *
+</li><li><strong>distributività</strong>: a(b+c) = ab + ac; (a+b)c = ac + cb
+</li></ul><p class='vspace'>L'anello insomma è un insieme di elementi in cui valgono somma, sottrazione e moltiplicazione.
+</p>
+<div class='vspace'></div><h3>Anello commutativo</h3>
+<p>Se vale anche la <strong>proprietà commutativa</strong> per l'operazione *, allora l'anello è un <strong>anello commutativo</strong>.
+</p>
+<div class='vspace'></div><h3>Dominio integrale</h3>
+<p>Un <strong>dominio integrale</strong> è un anello commutativo in cui vigono anche queste proprietà:
+</p><ul><li><strong>esiste l'elemento identità</strong> per *
+</li><li><strong>annullamento del prodotto</strong>: se ab = 0, allora ho o che a=0, o che b=0
+</li></ul><p class='vspace'>Per esempio, l'insieme di tutti gli interi, positivi, negativi, e con lo 0, e con le normali operazioni + e *, è un <strong>dominio integrale</strong>.
+</p>
+<div class='vspace'></div><h3>Campo</h3>
+<p>Il <strong>campo</strong> è un dominio integrale {F, +, *} in cui esiste anche l<strong>'inverso moltiplicativo</strong>:
+</p><ul><li>per ogni a appartenente ad F, esiste un a<sup>-1</sup> tale che aa<sup>-1</sup> = a<sup>-1</sup>a = 1, dove 1 è l'elemento identità
+</li></ul><p class='vspace'>Insomma, ogni numero ha il suo inverso, e vuol dire che un campo è un insieme di elementi in cui sono definite somme, sottrazioni, moltiplicazioni e divisioni.
+</p>
+<div class='vspace'></div><h3>Riassuntino</h3>
+<table border='0' width='80%' >
+<tr ><td style='padding:5px;' bgcolor='#9ab6d0'  valign='top'>
+<p><strong>{G, +}</strong>
+</p></td><td style='padding:5px;' bgcolor='#9ab6d0'  valign='top'>
+<p><strong>{R, +, *}</strong>
+</p></td><td style='padding:5px;' bgcolor='#9ab6d0'  valign='top'>
+<p><strong>{F, +, *}</strong>
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>Gruppo
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Anello
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Campo
+</p></td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>Gruppo abeliano
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Anello commutativo
+</p></td><td style='padding:5px;'  valign='top'>
+</td></tr><tr ><td style='padding:5px;'  valign='top'>
+<p>Gruppo ciclico
+</p></td><td style='padding:5px;'  valign='top'>
+<p>Dominio integrale
+</p></td><td style='padding:5px;'  valign='top'>
+</td></tr></table>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 02, 2008, at 01:19 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGAC?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/CrittoGAC?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

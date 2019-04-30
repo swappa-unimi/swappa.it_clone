@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Sistemi Operativi - L'interfaccia del file system </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SO-LInterfacciaDelFileSystem' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Sistemi Operativi - L'interfaccia del file system
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LInterfacciaDelFileSystem?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LInterfacciaDelFileSystem?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SO-LInterfacciaDelFileSystem-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LInterfacciaDelFileSystem?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LInterfacciaDelFileSystem?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Sistemi Operativi - L'interfaccia del file system was last modified on September 12, 2009, at 06:58 PM'>
+							<span style='display:none;'>Sistemi Operativi - L'interfaccia del file system</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>L'interfaccia del file system</span>
+</p>
+<p class='vspace'>Il <strong>file system</strong> fornisce il supporto per la memorizzazione e l'accesso ai dati e ai programmi, ed è l'aspetto più visibile agli utenti del sistema operativo.<br />E' composto dai <em>file</em> (che contengono dati o programmi), dalla <em>struttura della directory</em> (che li organizza e ne fornisce le informazioni) e in alcuni sistemi dalle <em>partizioni</em> (che separano logicamente o fisicamente grandi insiemi di directory).
+</p>
+<div class='vspace'></div><h2>Il concetto di file</h2>
+<p>Il concetto di <strong>file</strong> è qualcosa di estremamente generale, cerchiamo di darne alcune definizioni. In primo luogo esso rappresenta un insieme di informazioni, è identificato in modo univoco da un nome ed è memorizzato in un dispositivo di memoria secondaria così che sia sempre disponibile anche in seguito a un riavvio del sistema. Può essere anche considerato come una sequenza di bit (o di byte, o di righe, o di record) il cui significato è definito dal creatore del file e dall'utente.
+</p>
+<p class='vspace'>In un file possono essere memorizzati molti tipi diversi di informazioni: programmi sorgente o eseguibili, testi, immagini, ... Ognuno di essi ha una specifica struttura strettamente legata al tipo, così che possa essere trattato opportunamente dal sistema operativo.
+</p>
+<div class='vspace'></div><h3>Attributi del file</h3>
+<p>Gli <em>attributi</em> del file possono variare col sistema operativo, ma in genere sono:
+</p><ul><li><strong>nome</strong>, ovvero il nome simbolico del file composto generalmente da una stringa di caratteri. Viene mantenuto in forma leggibile dagli utenti ed è indipendente dal processo, dall'utente e dal sistema operativo che lo hanno creato
+</li><li><strong>identificatore</strong>, un'etichetta solitamente numerica che identifica in modo univoco il file all'interno del file system
+</li><li><strong>tipo</strong>
+</li><li><strong>locazione</strong>, il puntatore al dispositivo e alla locazione fisica del file
+</li><li><strong>dimensione corrente</strong>, espressa in byte, parole o blocchi
+</li><li><strong>protezione</strong>, ovvero informazioni per il controllo dell'accesso
+</li><li><strong>tempo</strong>, <strong>data</strong> e <strong>identificativo dell'utente</strong>, tutte informazioni utili per la sicurezza e il controllo
+</li></ul><p class='vspace'>I valori degli attributi dei file vengono mantenuti nel <strong>descrittore del file</strong> contenuto nella directory, anch'essa residente in un'unità di memoria secondaria.
+</p>
+<div class='vspace'></div><h3>Operazioni sui file</h3>
+<p>Per poter meglio definire un file è opportuno descrivere il tipo di operazioni che lo riguardano:
+</p><ul><li><strong>creazione</strong>, che consta di due passaggi: ricerca dello spazio nel file system e creazione di un descrittore nella directory in cui registrare il nome, la locazione ed altre informazioni
+</li><li><strong>scrittura</strong>, che avviene attraverso una chiamata di sistema in cui si specifica sia il nome del file che le informazioni da scriverci dentro. Dato il nome, il sistema operativo cerca nella directory la posizione fisica del file, quindi mantiene un puntatore di scrittura alla locazione in cui avverrà la scrittura successiva
+</li><li><strong>lettura</strong>, che avviene per mezzo di una chiamata di sistema in cui si indica il nome e dove dovrebbe essere allocato in memoria il record successivo. Sia per la lettura che per la scrittura viene mantenuto un puntatore alla posizione corrente del file per risparmiare spazio e ridurre la complessita delle operazioni
+</li><li><strong>riposizionamento</strong> all'interno di un file, in cui si setta il puntatore alla posizione corrente con un determinato valore. E' anche detto <em>ricerca nel file</em> e non implica un accesso alle informazioni
+</li><li><strong>cancellazione</strong>, che dopo aver cercato nella directory il file col nome indicato prevede il rilascio di tutto lo spazio a lui assegnato (disponibile ora per gli altri) e l'eliminazione del suo descrittore
+</li><li><strong>troncamento</strong>, che cancella il contenuto del file ma non i suoi attributi (salvo naturalmente la dimensione, che viene azzerata)
+</li></ul><p class='vspace'>A queste sei operazioni di base possono esserne aggiunte altre (come l' <em>accodamento</em> o la <em>rinomina</em>) e possono essere combinate tra loro (ad esempio la <em>copia</em> o lo <em>spostamento</em>). 
+</p>
+<p class='vspace'>Dato che la maggior parte di queste operazioni prevede la ricerca nelle directory del descrittore del file (operazione lenta se effettuata su memorie secondarie), molti sistemi operativi prevedono l<em>'apertura</em> di un file con la chiamata di sistema <code class='escaped'>open()</code>. Questa operazione ne comprende molte altre, ovvero:
+</p><ul><li>la verifica delle autorizzazioni all'accesso
+</li><li>l'identificazione del descrittore del file nel file system
+</li><li>l'identificazione della locazione nei dispositivi fisici
+</li><li>la verifica e gestione dello stato di uso condiviso
+</li><li>l'inizializzazione delle informazioni per una gestione efficiente
+</li></ul><p class='vspace'>Viene inoltre mantenuta una <strong>tabella dei file aperti</strong> che contiene tutte le informazioni sui file attualmente utilizzati, e dalla quale vengono tolti solo in seguito a una chiamata di sistema <code class='escaped'>close()</code> o nel momento in cui i processi che li hanno aperti terminano.
+</p>
+<p class='vspace'>In sistemi più complessi multiutente come UNIX si preferisce usare due tabelle, una per il processo e una per il sistema, così da permettere a due processi diversi di accedere allo stesso file. A tal fine vengono mantenute nelle tabelle le seguenti informazioni:
+</p><ul><li><strong>puntatore al file</strong>, che indica l'ultima posizione di lettura o scrittura ed è unico per ogni processo operante sul file 
+</li><li><strong>contatore delle aperture di un file</strong>. Solo quando il suo valore arriva a 0 il sistema operativo può rimuovere il descrittore del file dalla tabella dei file aperti
+</li><li><strong>posizione del file su disco</strong>
+</li><li><strong>diritti d'accesso</strong>, che specificano le modalità d'accesso al file e sono riportate nella tabella dei file aperti relativa al processo
+</li></ul><p class='vspace'>Infine, alcuni sistemi operativi permettono di bloccare un file aperto (o parti di esso) per impedire ad altri processi di accedervi. Ne esistono di tre tipi: <strong>blocco esaustivo</strong> o <strong>condiviso</strong> (in lettura, su richiesta), <strong>blocco esclusivo</strong> (in scrittura, su richiesta) e <strong>blocco consigliato</strong> (in scrittura, obbligatorio, imposto).
+</p>
+<div class='vspace'></div><h3>Tipi di file</h3>
+<p>Una tecnica comune per indicare il tipo di file è includerlo nel nome sottoforma di <strong>estensione</strong>, ovvero un codice (generalmente di tre caratteri) che lo identifica. Le estensioni non sono richieste, quindi se un'applicazione apre un file che non ne ha cercherà di aprirlo nel formato che si aspetta.
+</p>
+<div class='vspace'></div><h3>Struttura del file</h3>
+<p>Abbiamo detto che dal tipo del file dipende anche la sua struttura interna. Il sistema operativo deve supportare ognuna di queste strutture, quindi deve avere un codice di gestione specifico per ognuna di esse, il che può diventare molto ingombrante. 
+</p>
+<p class='vspace'>UNIX ha un numero minimo di strutture di file supportate e considera ogni file come una sequenza di byte (di 8 bit) che il sistema operativo non interpreta in alcun modo. Se questo da un lato garantisce la flessibilità, dall'altro dà poco supporto demandando alle applicazioni il compito di includere il proprio codice interpretativo.
+</p>
+<p class='vspace'>In generale un sistema operativo non deve avere troppi tipi supportati o sarebbe troppo voluminoso, ma non deve averne nemmeno troppo pochi o renderebbe la programmazione difficoltosa.
+</p>
+<div class='vspace'></div><h3>Struttura interna del file</h3>
+<p>Esistono tre tipi di strutturazione di un file:
+</p><ul><li><strong>nessuna</strong>, ovvero una sequenza di byte o parole una dietro l'altra
+</li><li><strong>struttura semplice</strong>, suddivisa per linee a lunghezza fissa o variabile
+</li><li><strong>struttura complessa</strong>, tipica dei documenti formattati o dei file caricabili rilocabili
+</li></ul><div class='vspace'></div><h2>Metodi di accesso</h2>
+<h3>Accesso sequenziale</h3>
+<p>L' <strong>accesso sequenziale</strong> è il metodo più semplice, in cui le informazioni nel file vengono elaborate in ordine un record dopo l'altro. E' l'accesso tipico degli editor e dei compilatori.
+</p>
+<div class='vspace'></div><h3>Accesso diretto</h3>
+<p>L' <strong>accesso diretto</strong> o <em>relativo</em> è basato su un modello di file composti da record logici di lunghezza fissa che permettono ai programmi di leggere e scrivere velocemente senza un ordine particolare. Sono molto utili per l'accesso immediato a grandi quantità di informazioni, per questo motivo le basi di dati li adottano frequentemente. 
+</p>
+<p class='vspace'>Le operazioni sui file devono essere modificate per includere come parametro il numero del blocco fisico relativo, che rappresenta un indice riguardante l'inizio del file e che fa in modo che l'utente non possa accedere a blocchi che non fanno parte del file stesso. 
+</p>
+<p class='vspace'>Alcuni sistemi operativi supportano sia l'accesso diretto che quello sequenziale, altri solo uno dei due. E' possibile inoltre simulare il sequenziale a partire dal diretto, ma con risultati poco soddisfacenti.
+</p>
+<div class='vspace'></div><h3>Altri metodi di accesso</h3>
+<p>Un possibile metodo di accesso basato su quello diretto è l' <strong>accesso indicizzato</strong> che prevede la costruzione di un <em>indice</em>, ovvero una serie ordinata di puntatori a vari blocchi fisici. Per trovare un record logico nel file bisogna prima cercarlo nell'indice, quindi usare il puntatore per accedere direttamente al file e al record voluto. Questa struttura permette di eseguire una ricerca in un file di grosse dimensioni con poche chiamate di I/O. 
+</p>
+<p class='vspace'>Se l'indice diventa troppo grande  è a sua volta indicizzabile; si avrà dunque un <em>indice primario</em> che punterà a quello <em>secondario</em> che referenzia i dati effettivi.
+</p>
+<div class='vspace'></div><h2>Struttura della directory</h2>
+<p>I file system possono essere molto vasti dunque è prioritario organizzarli al meglio. Anzitutto ogni disco è diviso in una o più <strong>partizioni</strong> (o <em>volumi</em>), cioè delle strutture a basso livello in cui sono memorizzati file e cartelle. Notare che un sistema può avere più partizioni o averne una in comune con altri sistemi. Esse consentono all'utente di preoccuparsi esclusivamente della directory logica e dei file, trascurando tutti i problemi di allocazione che ci sono dietro. Ogni partizione mantiene le informazioni sui file in essa contenuti nella <em>directory del dispositivo</em> (o <em>indice del volume</em>).
+</p>
+<p class='vspace'>La <strong>directory</strong> è una struttura informativa che può essere vista come una tabella simbolica il cui compito è tradurre i nomi dei file nei corrispondenti descrittori. E' in grado di supportare il raggruppamento di file in base a criteri logici, la gestione efficiente dell'accesso ad essi, la loro condivisione e protezione.<br />Le operazioni che si possono compiere sulle directory sono:
+</p><ul><li><strong>ricerca</strong> di un file
+</li><li><strong>creazione</strong> e <strong>cancellazione</strong>
+</li><li><strong>elenco</strong> di una directory
+</li><li><strong>rinomina</strong>, che può far cambiare la posizione dei file nella struttura generale
+</li><li><strong>attraversamento del file system</strong>, che permette di accedere a ogni directory e ad ogni file all'interno della struttura
+</li></ul><p class='vspace'>Per strutturazione del file system si intende l'organizzazione globale dei file del sistema nelle varie directory. Vediamone alcuni tipi.
+</p>
+<div class='vspace'></div><h3>Directory a singolo livello</h3>
+<p>La <strong>directory a singolo livello</strong> è la struttura più semplice, in cui tutti i file si trovano in un'unica directory. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/singoloLivello.jpg' alt='' title='' /></div>
+<p class='vspace'>Ha un grosso limite: dato che i nomi dei file in una stessa cartella devono essere univoci, quando il loro numero aumenta (soprattutto se si pensasse di rendere tale sistema multiutente) la loro gestione e raggiungibilità diventerebbe decisamente ostica. Inoltre non essendo permesso alcun raggruppamento risulta impossibile dare una qualsiasi struttura logica a file legati a diverse attività.
+</p>
+<p class='vspace'>Questa strutturazione era pensata per sitemi monoutente con una piccola memoria di massa, in cui non esisteva ancora il concetto di omogeneizzazione tra risorse fisiche e informative.
+</p>
+<div class='vspace'></div><h3>Directory a due livelli</h3>
+<p>Nella struttura della <strong>directory a due livelli</strong> ogni utente ha una propria <em>home directory</em> (<strong>UFD</strong>) che contiene solo e soltanto i suoi file. Quando ha inizio un processo dell'utente o un utente si connette, viene effettuata una ricerca nella <em>directory principale</em> (<strong>MFD</strong>) indicizzata per nome utente o numero dell'account, in cui ogni descrittore punta al rispettivo UFD. In questo modo utenti diversi possono avere file con lo stesso nome dato che ognuno opera esclusivamente sui file nella propria home directory. 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/dueLivelli.jpg' alt='' title='' /></div>
+<p class='vspace'>Tale struttura viene mantenuta aggiornata da un programma di sistema che si preoccupa di creare o cancellare le UFD e i rispettivi descrittori nelle MFD. Può essere anche vista come un albero a due livelli, dove la directory principale è la radice, le home sono i figli e i file sono le foglie. Con questa rappresentazione è possibile definire un percorso univoco per ciascun file lungo l'albero.
+</p>
+<p class='vspace'>Il limite delle <strong>directory a due livelli</strong> è che risolvendo il problema del conflitto dei nomi isolando un utente dall'altro non ha tenuto conto dell'eventualità che in alcuni casi gli utenti vogliano cooperare e accedere a file condivisi. <br />Per quanto riguarda la condivisione esiste però un'eccezione, ovvero una speciale directory utente che contiene tutti i file di sistema configurata in modo che se un utente non trova un file nella propria UFD potrà provare a cercarlo lì.
+</p>
+<div class='vspace'></div><h3>Visione logica del file system</h3>
+<p>Come avere una vera astrazione dell'informazione? Come organizzarla in modo logico prescindendo da dettagli come proprietà, condivisioni, ... ? Il modo più naturale per trovare informazioni è raggrupparle per aspetti comuni in sottoinsiemi disgiunti via via più specifici. Si può intuitivamente rappresentare questa struttura con un albero, dal quale è facilmente deducibile che nessun file potrà appartenere a direttori diversi dato che può avere un unico percorso radice-file.
+</p>
+<p class='vspace'>Con questa struttura non sappiamo più dove si trovano fisicamente i file nel disco, ma lo sappiamo a livello logico ed è tutto di guadagnato. La posizione logica è il percorso del file, ovvero la sequenza di cartelle a partire dalla radice che attraverso per arrivare al file stesso. 
+</p>
+<div class='vspace'></div><h3>Directory strutturata ad albero</h3>
+<p>La <strong>directory strutturata ad albero</strong> estende di fatto la struttura della directory a un albero di altezza arbitraria. Gli utenti possono così creare delle proprie sottodirectory e organizzare in esse i file, applicando una visione logica al file system. L'albero ha una <em>directory radice</em> (<em>root</em>) e ogni file ha un percorso assoluto (che inizia dalla radice e attraversa tutte le sottodirectory fino al file specificato) e uno relativo (che parte dalla directory corrente). 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/albero.jpg' alt='' title='' /></div>
+<p class='vspace'>La <em>cartella corrente</em> è quella attualmente richiesta dall'utente e dovrebbe essere quella che contiene i file di attuale interesse; proprio per questo motivo si può cambiare in qualsiasi momento. <br />Questo sistema consente all'utente di realizzare una struttura arbitraria dell'insieme dei file, e gli permette di accedere oltre che ai propri anche a quelli altrui.
+</p>
+<p class='vspace'>Un'interessante decisione politica in una struttura ad albero riguarda la cancellazione di una directory: si possono eliminare cartelle non vuote oppure sì? Da un punto di vista implementativo entrambi i meccanismi sono piuttosto facili da realizzare, e in particolare il secondo è più conveniente ma più pericoloso.
+</p>
+<div class='vspace'></div><h3>Directory a grafo aciclico</h3>
+<p>La <strong>struttura a grafo aciclico</strong> è un'estensione della struttura ad albero e consente a due o più utenti di condividere uno stesso file o una stessa cartella facendola apparire in due diverse sottodirectory. Notare due cose: 1. non si tratta di copie, gli interventi avvengono sullo stesso elemento 2. non ci sono cicli, come immaginabile.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/grafoAciclico.jpg' alt='' title='' /></div>
+<p class='vspace'>Come si implementa? O utilizzando i <em>link</em> (quindi puntatori ad altri file o cartelle) o <em>duplicando le informazioni contenute nei loro descrittori</em> (uno per directory). In quest'ultimo caso abbiamo però alcuni fattori critici:
+</p><ul><li>bisogna sempre garantire la coerenza delle copie in seguito a scritture
+</li><li>un file può avere diversi percorsi assoluti
+</li><li>bisogna fare attenzione al momento della cancellazione di file condivisi perché potrei rimanere con puntatori pendenti. Una soluzione potrebbe essere non cancellare un file finché non sono stati cancellati tutti i riferimenti ad esso, il che implica il mantenimento di una lista o di un contatore
+</li></ul><div class='vspace'></div><h3>Directory a grafo generale</h3>
+<p>La <strong>struttura a grafo generale</strong> è la generalizzazione (appunto) di quella precedente e permette l'esistenza di cicli al suo interno. Se in questo modo viene risparmiato il dispendioso onere di assicurare che non ci siano cicli, dall'altro si perdono la semplicità degli algoritmi di attraversamento del grafo e la possibilità di determinare quando non ci sono più riferimenti ad un file. Se infatti un file si autoreferenziasse, anche se non venisse mai più usato non si potrebbe mai cancellarlo dato che il suo contatore sarebbe diverso da 0.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/grafoGenerale.jpg' alt='' title='' /></div>
+<p class='vspace'>Il sistema adottato per individuare i file e le cartelle da cancellare è chiamato <strong>garbage collection</strong> e consiste nel raggiungimento e marcatura di tutti gli elementi del file system in cui si riesce ad arrivare. Tutto ciò che non è stato marcato viene inserito in una lista dello spazio libero e dunque considerato disponibile. Questo sistema è tuttavia estremamente dispendioso sui dischi e per questo motivo viene usato raramente.
+</p>
+<div class='vspace'></div><h2>Montaggio del file system</h2>
+<p>Il <strong>montaggio di un file system</strong> è quell'operazione che lo rende disponibile ai processi del sistema. La procedura è diretta: al sistema operativo viene fornito il nome del dispositivo e il <em>punto di montaggio</em>, ovvero la locazione in cui il file system da montare si aggancerà a quello esistente. A questo punto viene verificato che il dispositivo abbia un file system valido (del formato previsto) e quindi annota nella propria struttura della directory che tutto è andato a buon fine.
+</p>
+<p class='vspace'>Questa procedura è configurabile, ad esempio è possibile specificare se il punto di montaggio deve essere una cartella vuota oppure no, se il file system agganciato può vedere quello esistente oppure no, se un file system può essere montato in diversi punti oppure no, ecc.
+</p>
+<div class='vspace'></div><h2>Condivisione dei file</h2>
+<h3>Il caso di più utenti</h3>
+<p>Per implementare la <strong>condivisione</strong> e la <strong>protezione</strong> in sistemi operativi che supportano la multiutenza si deve conservare per ogni file o cartella più attributi di quanti ne sarebbero necessari in un sistema monoutente.<br />La strategia più diffusa introduce il concetto di <strong>proprietario</strong> e di <strong>gruppo</strong>. Il primo è l'utente che può modificare gli attributi e garantire l'accesso, il secondo invece definisce un sottoinsieme di utenti che possono voler condividere l'accesso al file. Nella maggior parte dei sistemi operativi l'attributo del proprietario si realizza con l'identificatore di utente (<em>ID</em>) e quello di gruppo con l'ID di gruppo. Notare che ogni utente può appartenere a più gruppi.
+</p>
+<div class='vspace'></div><h3>File system remoti</h3>
+<p>Con l'evoluzione della tecnologia delle reti è oggi possibile avere numerose strade per la condivisione dei file: trasferimento manuale tra macchine mediante programmi come <em>ftp</em>, utilizzo di file system distribuiti (<em>DFS</em>), world wide web, ecc.
+</p>
+<div class='vspace'></div><h4>Il modello Client-Server</h4>
+<p>I file system remoti permettono a un computer di montare uno o più file system da una o più macchine remote. La macchina che contiene i file è il <em>server</em>, che li specifica a livello di partizione o sottodirectory. La macchina che chiede accesso a tali file è il <em>client</em>, che può essere identificato con un nome di rete o un indirizzo IP. La comunicazione client-server deve essere quanto più controllata e sicura possibile data la sensibilità dell'operazione.
+</p>
+<p class='vspace'>Una volta montato il file system remoto i client effettuano le richieste d'accesso ai file condivisi attraverso il protocollo DFS. Il server controlla se su quella determinata macchina l'utente con quell'ID che ha richiesto un accesso è autorizzato; se sì gli viene ritornato un descrittore (<em>file handle</em>) e l'applicazione può compiere l'operazione desiderata.
+</p>
+<div class='vspace'></div><h4>Sistemi informativi distribuiti</h4>
+<p>I <strong>sistemi informativi distribuiti</strong> forniscono un accesso unificato alle informazioni necessarie per il calcolo remoto. Ad esempio il <em>server dei nomi del dominio</em> (<em>DNS</em>) effettua la traduzione del nome dell'host in un indirizzo di rete valido per tutta Internet. Altri sistemi informativi distribuiti utilizzano una combinazione di <code class='escaped'>username/password/user ID/group ID</code> per identificare i file ed effettuare operazioni in ambiente distribuito.
+</p>
+<p class='vspace'>Per quanto riguarda i meccanismi di assegnazione dei nomi si sta consolidando il <em>protocollo leggero di accesso alle directory</em> (<strong>LDAP</strong>), che garantisce con un'autenticazione singola sicura l'accesso a tutti i computer del sistema e alle informazioni in essi contenuti.
+</p>
+<div class='vspace'></div><h4>Modalità di guasto</h4>
+<p>Nei file system remoti le possibilità di guasto sono molto maggiori rispetto a quelli locali a causa della maggiore complessità dell'architettura, che si estende lungo una rete. Oltre ai guasti locali si sommano dunque gli altri legati alla comunicazione tra host, danni che rendono impraticabili gli accessi ai file system remoti.
+</p>
+<p class='vspace'>Va detto però che i rischi ci sono, ma non così alti. E' tuttavia preferibile in caso di guasto evitare di terminare tutte le operazioni in atto e di attendere qualche tempo confidando che il malfunzionamento venga riparato o bypassato.
+</p>
+<div class='vspace'></div><h3>Semantica della coerenza</h3>
+<p>La <strong>semantica della coerenza</strong> si applica a quelle operazioni in cui più utenti accedono contemporaneamente a un file condiviso e ne specifica le modalità d'accesso per garantire la consistenza delle informazioni. In altre parole definisce le modalità di aggiornamento dei file condivisi: modifiche immediatamente visibili, modifiche visibili solo dopo la chiusura dei file, visibili solo nelle sessioni successive alla chiusura del file, file condivisi immutabili, ...
+</p>
+<p class='vspace'>Per garantirla è necessario introdurre il concetto di <strong>sessione</strong>, ovvero quella serie di accessi (in lettura o scrittura) che si effettuano sul file tra una <code class='escaped'>open()</code> e una <code class='escaped'>close()</code>, quindi per tutta la sua durata di apertura.
+</p>
+<div class='vspace'></div><h2>Protezione</h2>
+<p>Quando le informazioni sono memorizzate in un computer si desidera mantenerle al sicuro dai danni fisici (<em>affidabilità</em>) e da accessi impropri (<em>protezione</em>).
+</p>
+<div class='vspace'></div><h3>Tipi di accesso</h3>
+<p>La risposta più adeguata alla necessità di proteggere i file è l' <strong>accesso controllato</strong>, che tende a limitare i tipi di accesso accordando o meno permessi per operazioni di lettura, scrittura, esecuzione, accodamento, cancellazione o elenco. Esistono altre tipologie di accesso che possono essere controllate (ad esempio la rinomina) ma sono a livello più alto.
+</p>
+<div class='vspace'></div><h3>Controllo dell'accesso</h3>
+<p>Il sistema più conveniente per controllare e proteggere gli accessi è considerarli dipendenti dall'identità degli utenti. Si può dunque associare ad ogni file una <strong>lista di controllo degli accessi</strong> (<strong>ACL</strong>) che il sistema operativo consulta per verificare che l'utente è autorizzato o meno all'accesso richiesto. La versione più usata della ACL è quella ridotta, in cui sono definiti tre soli tipi di utente: <em>proprietario</em> (chi ha creato il file), <em>gruppo</em> (utenti che condividono il file e hanno tipi di accessi simili), <em>universo</em> (tutti gli altri). In questo modo sono necessari solo tre campi per definire la protezione, in UNIX di 3 bit ciascuno: <code class='escaped'>rwx-rwx-rwx</code>.
+</p>
+<div class='vspace'></div><h3>Altri metodi di protezione</h3>
+<p>Un altro sistema di protezione potrebbe essere associare ad ogni file una password, ma poi si richiederebbe all'utente di ricordarsene troppe e sicuramente userà sempre la stessa vanificando l'utilità della tecnica. Sarebbe meglio applicare una password solo alle directory, ma basterebbe scoprirne una per accedere a molte risorse informative.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: September 12, 2009, at 06:58 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LInterfacciaDelFileSystem?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SO-LInterfacciaDelFileSystem?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

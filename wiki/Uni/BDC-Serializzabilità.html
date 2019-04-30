@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Basi di Dati - Complementi - Esercizi: Serializzabilità di Schedule </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.BDC-Serializzabilità' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Basi di Dati - Complementi - Esercizi: Serializzabilità di Schedule
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Serializzabilit%e0?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Serializzabilit%e0?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='BDC-Serializzabilit%C3%A0-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Serializzabilit%e0?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Serializzabilit%e0?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Basi di Dati - Complementi - Esercizi: Serializzabilità di Schedule was last modified on June 30, 2009, at 03:34 PM'>
+							<span style='display:none;'>Basi di Dati - Complementi - Esercizi: Serializzabilità di Schedule</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Basi di Dati - Complementi ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Esercizi: Serializzabilità di Schedule</strong></span>
+</p>
+<div class='vspace'></div><h2>Teoria</h2>
+<p>Il concetto di serializzabilità di schedule si inserisce nella teoria del controllo di concorrenza tra transazioni, qui considerate come una sequenza di azioni in lettura o scrittura, gli <em>schedule</em> appunto. Le operazioni di ogni transazione sono contraddistinte da un proprio indice numerico, onde evitare confusione tra quelle attive concorrenti. Un esempio di schedule è il seguente:
+</p>
+<p class='vspace'  style='text-align: center;'>S<sub>1</sub>: r<sub>1</sub>(x) r<sub>2</sub>(y) w<sub>2</sub>(y) w<sub>1</sub>(x)
+</p>
+<p class='vspace'>In generale, r<sub>i</sub>(<em>ogg</em>) rappresenta la lettura dell'oggetto <em>ogg</em> da parte della transazione t<sub>i</sub>, mentre w<sub>i</sub>(<em>ogg</em>) ne indica la scrittura. L'esecuzione delle varie operazioni di I/O sugli oggetti segue l'ordine con cui sono riportati negli schedule.
+</p>
+<p class='vspace'>Il modulo che si occupa del controllo di concorrenza è lo <em>scheduler</em>, e dovrà rifiutare gli schedule che porterebbero a inconsistenze o anomalie ed accettare tutti gli altri. Un metodo teorico per studiare quali schedule sono corretti e quali no è considerarne solo le <em>commit-proiezioni</em>, ovvero tutte e sole le operazioni delle transazioni che non producono un <em>abort</em>. Da un punto di vista pratico non è una strada perseguibile, ma ce ne preoccuperemo poi. Con questi presupposti, baseremo il controllo della concorrenza sulle definizioni di <em>schedule seriale</em> e <em>serializzabile</em>.
+</p>
+<p class='vspace'>Uno schedule si dice <em>seriale</em> se per ogni transazione tutte le loro operazioni sono eseguite consecutivamente, senza essere inframmezzate da altre. Uno schedule non seriale si dice <em>serializzabile</em> se produce lo stesso risultato di uno schedule seriale delle stesse transazioni. Assumiamo che una sequenza di transazioni seriali sia corretta, e di conseguenza lo sia anche uno schedule serializzabile. Ma ho degli strumenti pratici per capire quando lo è? Certo, e si basano sui concetti di <em>view-equivalenza</em> e i suoi raffinamenti, ovvero <em>conflict-equivalenza</em> e il <em>locking a due (e tre) fasi</em>. Cosa sono e come verificarli lo vedremo nei prossimi paragrafi in modo pratico.
+</p>
+<div class='vspace'></div><h2>View-equivalenza</h2>
+<h4>Cenni teorici</h4>
+<p>Per stabilire se due schedule sono <em>view-equivalenti</em> bisogna verificare che abbiano le stesse relazioni <em>legge-da</em> e le stesse <em>scritture finali</em>.
+</p>
+<p class='vspace'>In generale un'operazione r<sub>i</sub>(x) <code class='escaped'>legge da</code> w<sub>j</sub>(x) se la scrittura precede la lettura e non vi sono altre scritture sullo stesso oggetto (o risorsa) da parte di altre transazioni. Ad esempio, dato il seguente schedule:
+</p><dl><dd><div class='indent'>S: r<sub>1</sub>(x) w<sub>1</sub>(x) w<sub>1</sub>(y) r<sub>2</sub>(x) w<sub>2</sub>(y)
+</div></dd></dl><p>r<sub>1</sub>(x) non legge da nessuno, mentre r<sub>2</sub>(x) legge da w<sub>1</sub>(x)
+</p>
+<p class='vspace'>Una scrittura invece si dice <em>finale</em> per un dato oggetto se, molto banalmente, è l'ultima scrittura su di esso nello schedule. Riprendendo l'esempio di prima:
+</p><dl><dd><div class='indent'>S: r<sub>1</sub>(x) w<sub>1</sub>(x) w<sub>1</sub>(y) r<sub>2</sub>(x) w<sub>2</sub>(y)
+</div></dd></dl><p>w<sub>1</sub>(x) è scrittura finale per l'oggetto x, mentre w<sub>2</sub>(y) lo è per y.
+</p>
+<p class='vspace'>Uno schedule viene detto <em>view-serializzabile</em> (VSR) se è view-equivalente ad uno seriale. Verificare la view-equivalenza di uno schedule generico è un problema NP-difficile, quindi a questo sistema è preferibile applicare condizioni più restrittive che ne abbassino la complessità.
+</p>
+<div class='vspace'></div><h4>Come determinare se uno schedule è view-serializzabile</h4>
+<p>Utilizziamo uno schedule d'esempio:
+</p><dl><dd><div class='indent'>r<sub>1</sub>(x) r<sub>1</sub>(t) r<sub>2</sub>(z) w<sub>3</sub>(x) w<sub>1</sub>(x) r<sub>1</sub>(y) w<sub>3</sub>(t) w<sub>2</sub>(x) w<sub>1</sub>(y)
+</div></dd></dl><p class='vspace'>Dovendo verificare la view-equivalenza, dovremo determinare le relazioni <em>legge da</em> e le <em>scritture finali</em>, che per comodità riporteremo in forma tabellare.<br />Iniziamo dalle <em>leggi da</em>, e mettiamo su una colonna tutte le operazioni in lettura e su una seconda colonna le prime scritture sulla stessa risorsa che le precedono:
+</p>
+<div class='vspace'></div><table align='center' width='400px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>LETTURA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>LEGGE DA</strong>
+</td></tr><tr ><td  valign='top'>r<sub>1</sub>(x)
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>r<sub>1</sub>(t)
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>r<sub>2</sub>(z)
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>r<sub>1</sub>(y)
+</td><td  valign='top'>-
+</td></tr></table>
+<p class='vspace'>Quindi nel caso particolare non abbiamo individuato operazioni di lettura che leggono da qualcuno. 
+</p>
+<p class='vspace'>Passiamo ora alle <em>scritture finali</em> e, partendo dal fondo, teniamo traccia per ogni risorsa delle ultime scritture su essa. In tabella avremo una colonna per le risorse, una per le scritture finali ed una aggiuntiva su eventuali altre operazioni di scrittura sulla stessa risorsa.
+</p>
+<div class='vspace'></div><table align='center' width='500px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RISORSA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>SCRITTURA FINALE</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>ALTRE SCRITTURE</strong>
+</td></tr><tr ><td  valign='top'>x
+</td><td  valign='top'>w<sub>2</sub>(x)
+</td><td  valign='top'>w<sub>1</sub>(x), w<sub>3</sub>(x)
+</td></tr><tr ><td  valign='top'>y
+</td><td  valign='top'>w<sub>1</sub>(y)
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>z
+</td><td  valign='top'>-
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>t
+</td><td  valign='top'>w<sub>3</sub>(t)
+</td><td  valign='top'>-
+</td></tr></table>
+<p class='vspace'>Dalla prima riga deduciamo che la transazione 2 deve seguire le transazioni 1 e 3, dato che è l'ultima a dover scrivere sull'oggetto x. Osservando la tabella delle relazioni legge da possiamo stabilire inoltre la precedenza della transazione 1 sulla 3, dato che l'operazione r<sub>1</sub>(x) non legge da w<sub>3</sub>(x). Riassumendo le varie considerazioni fatte, lo schedule seriale che otteniamo è il seguente (t<sub>1</sub>, t<sub>3</sub>, t<sub>2</sub>):
+</p><dl><dd><div class='indent'>r<sub>1</sub>(x) r<sub>1</sub>(t) w<sub>1</sub>(x) r<sub>1</sub>(y) w<sub>1</sub>(y) w<sub>3</sub>(x) w<sub>3</sub>(t) r<sub>2</sub>(z) w<sub>2</sub>(x) 
+</div></dd></dl><p class='vspace'>Lo confrontiamo con quello di partenza e verifichiamo che abbiano stesse relazioni <em>legge da</em> e stesse <em>scritture finali</em>. 
+</p>
+<div class='vspace'></div><table align='center' width='600' >
+<tr ><td  valign='top'>
+<table align='left' width='150px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>LETTURA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>LEGGE DA</strong>
+</td></tr><tr ><td  valign='top'>r<sub>1</sub>(x)
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>r<sub>1</sub>(t)
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>r<sub>2</sub>(z)
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>r<sub>1</sub>(y)
+</td><td  valign='top'>-
+</td></tr></table>
+</td><td align='right'  valign='top'>
+<table align='right' width='400px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>RISORSA</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>SCRITTURA FINALE</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>ALTRE SCRITTURE</strong>
+</td></tr><tr ><td  valign='top'>x
+</td><td  valign='top'>w<sub>2</sub>(x)
+</td><td  valign='top'>w<sub>1</sub>(x), w<sub>3</sub>(x)
+</td></tr><tr ><td  valign='top'>y
+</td><td  valign='top'>w<sub>1</sub>(y)
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>z
+</td><td  valign='top'>-
+</td><td  valign='top'>-
+</td></tr><tr ><td  valign='top'>t
+</td><td  valign='top'>w<sub>3</sub>(t)
+</td><td  valign='top'>-
+</td></tr></table>
+</td></tr></table>
+<p class='vspace'>Le tabelle sono identiche, quindi lo schedule dato è <em>view-serializzabile</em> (VSR).<br />
+</p><h2>Conflict-equivalenza</h2>
+<h4>Cenni teorici</h4>
+<p>Verificare la view-serializzabilità di uno schedule è un'operazione molto complessa, dunque è preferibile sfruttare la nozione di <em>conflitti</em> e di <em>conflict-serializzabilità</em>. <br />Due operazioni si dicono <em>in conflitto</em> tra loro se soddisfano tre condizioni:
+</p><ul><li>appartengono a transazioni diverse
+</li><li>riguardano la stessa risorsa
+</li><li>almeno una delle due è una scrittura: lettura-scrittura, scrittura-lettura, scrittura-scrittura
+</li></ul><p class='vspace'>Due schedule si dicono <em>conflict-equivalenti</em> se contengono le stesse operazioni e se le coppie di operazioni in conflitto appaiono con lo stesso ordine. Abbiamo ora tutti gli strumenti per determinare se uno schedule è <em>conflict-serializzabile</em>, ovvero quando è conflict-equivalente ad uno schedule seriale. L'insieme di tutti gli schedule conflict-serializzabili è chiamato CSR.
+</p>
+<div class='vspace'></div><h4>Come determinare se uno schedule è conflict-serializzabile</h4>
+<p>Riprendiamo lo schedule dell'esempio precedente:
+</p><dl><dd><div class='indent'>r<sub>1</sub>(x) r<sub>1</sub>(t) r<sub>2</sub>(z) w<sub>3</sub>(x) w<sub>1</sub>(x) r<sub>1</sub>(y) w<sub>3</sub>(t) w<sub>2</sub>(x) w<sub>1</sub>(y)
+</div></dd></dl><p class='vspace'>Come prima cosa dovremo individuare tutte le operazioni in conflitto. Partiamo dalla prima e verifichiamo le tre condizioni elencate prima per ognuna delle operazioni a seguire. Terminati i confronti, passiamo alla seconda operazione e ripetiamo la procedura e così via. Nel nostro caso avremo i seguenti conflitti:
+</p><ul><li>r<sub>1</sub>(x), w<sub>3</sub>(x)
+</li><li>r<sub>1</sub>(x), w<sub>2</sub>(x)
+</li><li>r<sub>1</sub>(t), w<sub>3</sub>(t)
+</li><li>w<sub>3</sub>(x), w<sub>1</sub>(x)
+</li><li>w<sub>3</sub>(x), w<sub>2</sub>(x)
+</li><li>w<sub>1</sub>(x), w<sub>2</sub>(x)
+</li></ul><p class='vspace'>Disegnamo a questo punto il <em>grafo dei conflitti</em>, ovvero un grafo orientato i cui nodi rappresentano le transazioni e gli archi la direzione delle operazioni in conflitto. Se tale grafo non presenta cicli, allora lo schedule è <em>conflict-serializzabile</em>. In questo caso otteniamo:
+</p>
+<div class='vspace'></div><div><img src='../uploads/Uni/grafoConflitti.jpg' alt='' title='' /></div>
+<p class='vspace'>che forma un ciclo tra le transazioni t<sub>1</sub> e t<sub>3</sub>. Dunque così com'è lo schedule d'esempio non è CSR.<br />Se venisse chiesto di scegliere una o più operazioni da eliminare per renderlo CSR, andranno ovviamente scelte quelle che concorrono a formare il ciclo, cercando di toglierne possibilmente il meno possibile. Ad esempio in questo caso sarebbe preferibile eliminare o solo w<sub>3</sub>(x) o solo w<sub>1</sub>(x), piuttosto che eliminare la coppia r<sub>1</sub>(x)-r<sub>1</sub>(t) o la coppia r<sub>1</sub>(x)-w<sub>3</sub>(t).
+</p>
+<p class='vspace'>Notiamo infine che verificare che uno schedule è CSR ha complessità lineare, dal momento che si riduce all'analisi di ciclicità di un grafo orientato; pur avendo però diminuito la complessità rispetto al VSR, la sua risoluzione rimane piuttosto onerosa.
+</p>
+<div class='vspace'></div><h2>Locking a due fasi</h2>
+<h4>Cenni teorici</h4>
+<p>Le due strategie viste finora non garantiscono la serializzabilità, ma la verificano a posteriori. Nei sistemi utilizzati in pratica si preferisce invece fare in modo che essa sia in qualche modo assicurata, adottando particolari accorgimenti e spesso strutture dati d'appoggio. Una delle tecniche più utilizzate si basa sul <em>locking</em>, che fa uso di una variabile di <em>lock</em> per descrivere lo stato di una risorsa rispetto alle operazioni che lo riguardano. Quando una transazione vuole utilizzare una risorsa deve <em>prima</em> richiederne il lock, attendere finché non gli viene concesso e rilasciarlo dopo il suo utilizzo. In particolare, nel <em>locking a due fasi</em> (2PL) una volta che una transazione ha rilasciato un lock qualsiasi, non può più acquisirne altri. Quindi, se una transazione t<sub>i</sub> ha bisogno del lock su una risorsa già occupata da t<sub>j</sub>, quest'ultima prima di rilasciarla dovrà acquisire il lock di tutte le risorse a cui deve ancora accedere, perché una volta unlockata una risorsa non potrà più lockarne nessuna.
+</p>
+<p class='vspace'>Perché ci interessano tanto gli schedule generati con questa tecnica? <em>Perché sono serializzabili</em>.
+</p>
+<p class='vspace'>Esistono due tipi di 2PL, a seconda della variabile di lock che viene utilizzata:
+</p><ul><li>a <em>2 stati</em>: il lock può essere <em>locked</em> (risorsa bloccata) o <em>unlocked</em> (risorsa rilasciata o comunque disponibile)
+</li><li>a <em>3 stati</em>: il lock può essere <em>read locked</em>, <em>write locked</em> o <em>unlocked</em>. L'introduzione del read locked consente a due o più transazioni di condividere la stessa risorsa in lettura.
+</li></ul><p class='vspace'>Ultima considerazione: gli schedule 2PL sono un sottoinsieme della classe di schedule CSR, che sono a loro volta sottoinsieme dei VSR. Ne consegue che se uno schedule è non view-serializzabile non è nemmeno conflict-serializzabile né tantomeno basato su 2PL!
+</p>
+<div class='vspace'></div><h4>Come determinare se uno schedule è generato da uno scheduler basato su 2PL</h4>
+<p>Riprendiamo lo schedule dell'esempio precedente:
+</p><dl><dd><div class='indent'>r<sub>1</sub>(x) r<sub>1</sub>(t) r<sub>2</sub>(z) w<sub>3</sub>(x) w<sub>1</sub>(x) r<sub>1</sub>(y) w<sub>3</sub>(t) w<sub>2</sub>(x) w<sub>1</sub>(y)
+</div></dd></dl><p class='vspace'>Per iniziare torna molto utile raggruppare le operazioni per transazione, così da facilitare le azioni di lock e unlock. Dunque avremo:<br />t<sub>1</sub> = r<sub>1</sub>(x) r<sub>1</sub>(t) w<sub>1</sub>(x) r<sub>1</sub>(y) w<sub>1</sub>(y)<br />t<sub>2</sub> = r<sub>2</sub>(z) w<sub>2</sub>(x)<br />t<sub>3</sub> = w<sub>3</sub>(x) w<sub>3</sub>(t)
+</p>
+<p class='vspace'>Ora dobbiamo stabilire operazione per operazione, mantenendo l'ordine dello schedule dato, a quale transazione dare il lock e su quale risorsa. Conviene mantenere queste informazioni in una tabella con una colonna per le operazioni, una per i lock/unlock e infine tante colonne quante sono le risorse, in cui indicare quale transazione ne detiene attualmente l'accesso. L'istruzione da scrivere nella colonna dei lock avrà la seguente forma: <code class='escaped'>lock (transazione, risorsa): OK/NO</code>, o il complementare <code class='escaped'>unlock (transazione, risorsa): OK/NO</code>.<br />Riempiamo la tabella con il nostro schedule:
+</p>
+<div class='vspace'></div><table align='center' width='550px' >
+<tr ><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>OPERAZIONE</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>LOCK</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>X</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>Y</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>Z</strong>
+</td><td bgcolor='#d4e1f0' align='center'  valign='top'><strong>T</strong>
+</td></tr><tr ><td  valign='top'>r<sub>1</sub>(x)
+</td><td  valign='top'>lock(t<sub>1</sub>, x): OK
+</td><td  valign='top'>t<sub>1</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td></tr><tr ><td  valign='top'>r<sub>1</sub>(t)
+</td><td  valign='top'>lock(t<sub>1</sub>, t): OK
+</td><td  valign='top'>t<sub>1</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>
+</td><td  valign='top'>t<sub>1</sub>
+</td></tr><tr ><td  valign='top'>r<sub>2</sub>(z)
+</td><td  valign='top'>lock(t<sub>2</sub>, z): OK
+</td><td  valign='top'>t<sub>1</sub>
+</td><td  valign='top'>
+</td><td  valign='top'>t<sub>2</sub>
+</td><td  valign='top'>t<sub>1</sub>
+</td></tr><tr ><td  valign='top'>w<sub>3</sub>(x)
+</td><td  valign='top'>lock(t<sub>1</sub>, y): OK
+</td><td  valign='top'>t<sub>1</sub>
+</td><td  valign='top'>t<sub>1</sub>
+</td><td  valign='top'>t<sub>2</sub>
+</td><td  valign='top'>t<sub>1</sub>
+</td></tr><tr ><td  valign='top'>
+</td><td  valign='top'>unlock(t<sub>1</sub>, x): NO
+</td><td  valign='top'>t<sub>1</sub>
+</td><td  valign='top'>t<sub>1</sub>
+</td><td  valign='top'>t<sub>2</sub>
+</td><td  valign='top'>t<sub>1</sub>
+</td></tr></table>
+<p class='vspace'>Osserviamo i passaggi effettuati a partire dall'operazione w<sub>3</sub>(x):
+</p><ul><li>la transazione 3 vuole effettuare una scrittura su x, quindi deve prima togliere il lock alla transazione che ne ha possesso, ovvero la t<sub>1</sub>
+</li><li>prima di unlockare una risorsa a t<sub>1</sub> devo prima bloccare tutte quelle risorse di cui in futuro avrà bisogno, quindi la y
+</li><li>a questo punto unlocko x dalla transazione 1, e qui sta il problema: l'operazione successiva dello schedule è w<sub>1</sub>(x), ma avendo appena unlockato non potrò più rilockarlo
+</li></ul><p class='vspace'>Quindi lo schedule in esame non è 2PL. Notare che in realtà noi già sapevamo l'esito della verifica: dato che lo schedule non era CSR, non poteva in alcun modo essere nemmeno 2PL!
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='BDComplementi.html'>Torna alla pagina di Basi di Dati - Complementi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 30, 2009, at 03:34 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Serializzabilit%e0?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/BDC-Serializzabilit%e0?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

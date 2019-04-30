@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Log Files e Syslog </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.LogFilesESyslog' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Log Files e Syslog
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LogFilesESyslog?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LogFilesESyslog?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='LogFilesESyslog-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LogFilesESyslog?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/LogFilesESyslog?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Log Files e Syslog was last modified on January 15, 2009, at 06:43 PM'>
+							<span style='display:none;'>Log Files e Syslog</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Log Files e Syslog ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Ove non meglio specificato, tutti i testi tra virgolette vanno intesi come citazioni letterali dalle slide del prof <a class='wikilink' href='DarioForte.html'>Dario Forte</a>, 2008.
+</p></div>
+<div class='vspace'></div><h2>Definizione di log</h2>
+<p>Il file <strong>log</strong> è un record che consente di tener traccia di determinati eventi accaduti all'interno di un sistema o di una rete, ed è formato da una serie di <em>entry</em> che rappresentano le informazioni legate agli eventi stessi. I file log sono una risorsa fondamentale per i response team, che li utilizzano per i seguenti scopi: 
+</p><ul><li>"<code class='escaped'>troubleshooting e diagnosi problemi</code>", dove per <em>troubleshooting</em> si intende ricerca e riparazione di un guasto
+</li><li>"<code class='escaped'>ottimizzazione delle prestazioni di sistemi e reti</code>"
+</li><li>"<code class='escaped'>tracciare le attività utente</code>". Questa attività è particolarmente utile per verificare che certi utenti non abbiano compiuto operazioni per le quali non erano autorizzati
+</li><li>"<code class='escaped'>fornire informazioni utili per l'investigazione</code>"
+</li></ul><p class='vspace'>Ogni sistema e periferica di rete dovrebbe avere una fonte unica e non duplicata di log, strutturata in modo da essere accessibile a più utenti. In altre parole bisogna fare in modo che più persone possano accedere allo stesso log, ma non che più log tengano traccia della stessa cosa. Si rende perciò necessaria l'introduzione di un sistema rigoroso di gestione dei log, composto da una serie precisa di task e definito nel suo insieme <strong>log management</strong>.
+</p>
+<p class='vspace'>La generazione dei log può essere <em>continua</em> o <em>schedulata</em> (batch mode). Nel primo caso la registrazione dell'evento avviene in tempo reale, mentre nel secondo solo al momento della chiusura della sessione monitorata. Da segnalare inoltre l'esistenza del cosiddetto <strong>log grezzo</strong> (o <em>raw</em>), ovvero il primo log disponibile dopo la fase di acquisizione.
+</p>
+<div class='vspace'></div><h2>Computer security log management</h2>
+<p>Da quanto detto finora già si intuisce l'enorme importanza dell'analisi dei log, ma anche la grande quantità di dispositivi che li generano all'interno di un contesto aziendale. Per questo motivo diventa fondamentale adottare un sistema di gestione dei log efficiente, chiamato <strong>computer security log management</strong> (o solo <em>log management</em>) e che si occupa di gestirli nelle loro diverse fasi: generazione, trasmissione, memorizzazione, analisi e disposizione finale dei dati elaborati.
+</p>
+<p class='vspace'>Il lavoro del <em>log management</em> comporta una serie di provvedimenti e pianificazioni a priori, sia per quanto riguarda l'architettura e lo storage dei log, che per la definizione di una serie di policy su <em>rotation</em> (sovrascrittura delle nuove entry sulle vecchie), <em>retention</em> (tempo minimo e massimo di conservazione dei log), <em>field</em>, <em>payload</em>, <em>access</em> e <em>chain of custody</em>. Tutte queste attività dovrebbero essere svolte in fase di preparazione, durante la quale non vanno persi di vista anche altri aspetti:
+</p><ul><li>garantire che il paradigma <code class='escaped'>C.I.A.</code> (<em>confidentiality, integrity, availability</em>) sia rispettato per i log generati; eventuali eccezioni vanno giustificate
+</li><li>separare opportunamente i ruoli e le responsabilità, ad esempio tra amministratore di sistema e response team 
+</li><li>preparare adeguatamente gli addetti alla log analysis 
+</li><li>utilizzare software che adottino un modello di <code class='escaped'>three tiers architecture</code>, ovvero divisi in tre moduli: interfaccia utente (ad esempio PTK o Autopsy), gestione dei dati (ad esempio database) e logica funzionale (che fa funzionare il tutto)
+</li></ul><div class='vspace'></div><h2>Tipi di log</h2>
+<p>I log possono essere suddivisi in tre categorie:
+</p><ul><li><strong>log di sicurezza</strong>, tra i cui compiti vi sono: il monitoraggio della propria infrastruttura di rete e di sicurezza (misurata con metriche opportune), l'identificazione di nuove minacce e il tracciamento delle attività degli utenti/utilizzatori
+</li><li><strong>log di sistema operativo</strong>, che tiene traccia di <em>tutti</em> gli eventi che avvengono in un sistema operativo, compresi quelli relativi alla sicurezza
+</li><li><strong>log di rete</strong>, che non sono soggetti al controllo di sicurezza e sono associati al traffico di rete 
+</li></ul><p class='vspace'>E' importante sapere con quale tipo di log abbiamo a che fare per poter poi effettuare tutte le <em>correlazioni</em> (<strong>correlation</strong>) possibili, ovvero una serie di attività che hanno come obiettivo l'analisi correlata tra i risultati dell'esame sulla macchina compromessa e la log analysis. I punti di correlazione trovati sono da tenere in alta considerazione per rendere più agevole e precisa l'individuazione del responsabile e la ricostruzione dell'accaduto.
+</p>
+<p class='vspace'>Esaminiamo ora nel dettaglio i <em>log di sicurezza</em> e quelli <em>di sistema operativo</em>.
+</p>
+<div class='vspace'></div><h3>Log di sicurezza</h3>
+<p>I <em>log di sicurezza</em> tengono traccia di tutti gli eventi del sistema relativi alla sicurezza. I <em>security software</em> sono la fonte primaria di questo tipo di log, e si rivelano particolarmente utili per comprendere le modalità di penetrazione dell'intruder, per agevolare la collaborazione con le forze di polizia e per collezionare il maggior numero possibile di evidence sull'istrusione. Elenchiamone alcuni:
+</p>
+<div class='vspace'></div><ul><li><strong>router</strong> e <strong>firewall</strong>, ovvero dispositivi che bloccano o consentono il traffico di rete in base a policy prestabilite. In entrambi i casi le informazioni sul traffico bloccato sono memorizzate su log, anche se i firewall in particolare consentono un maggior livello di dettaglio e ispezione
+</li><li><strong>antimalware software</strong>, che registra su log tutti i suoi interventi (rilevazione, rimozione, quarantena, aggiornamenti)
+</li><li><strong>Intrusion Detection System</strong> (IDS) e <em>Intrusion Prevention System</em> (IPS). I primi generano log continui, mentre i secondi fanno delle analisi che hanno come obiettivo la prevenzione degli attacchi
+</li><li><strong>Vulnerability Management Software</strong>, responsabile del monitoraggio della cosiddetta "patch installation history" e dello stato delle vulnerabilità della macchina. Agiscono in modalità batch
+</li><li>"<strong>Autentication Server</strong>: si occupano di gestire ogni tentativo (riuscito o meno) di autenticazione, inclusa l'origine". Una delle componenti di questo dispositivo è l' <em>OTP</em>, responsabile della generazione delle password che saranno poi registrate nel log
+</li><li><strong>Network Quarantine Server</strong>, che fa a sua volta parte della <em>NAC</em> (<em>Network Access Control</em>). Mantiene i log delle macchine messe in quarantena, ed il loro traffico viene posto in una porzione di rete anch'essa quarantenata. Finché queste macchine non soddisfano determinate policy non potranno rientrare in rete 
+</li><li><strong>Remote Access Server</strong>, che non memorizza sui log solo il traffico concesso a un determinato utente ma anche quello bloccato, così che si possa monitorare un'intera sessione indipendentemente dai permessi di accesso alla rete 
+</li><li><strong>Web Proxy</strong>, utilizzati come mediatori tra client e server per creare un livello aggiuntivo di sicurezza. Consultare i loro log si rivela spesso un'attività molto utile
+</li></ul><div class='vspace'></div><h3>Log di sistema operativo</h3>
+<p>I <em>log di sistema operativo</em> sono quelli che registrano gli eventi dei sistemi operativi di rete, di servizio e di workstation, ma anche di altre applicazioni tra cui quelle viste in precedenza. Possiamo distinguere due tipi principali:
+</p>
+<div class='vspace'></div><ul><li><strong>eventi di sistema</strong>, che forniscono informazioni (timestamp compreso) sulle "operazioni eseguite dal sistema operativo e dai suoi componenti", in particolare quelle che non vanno a buon fine o che si risolvono in errore. In alcuni casi è data possibilità all'amministratore di filtrare le categorie di eventi da loggare
+</li><li><strong>audit</strong>, che tiene unicamente traccia degli eventi di sicurezza, ad esempio: autenticazione riuscite/fallite, violazione di policy, accesso ai file e/o risorse, alterazione del sistema, ...
+</li></ul><p class='vspace'>Va detto infine che la maggior parte dei log dei sistemi operativi <code class='escaped'>Unix-like</code> adottano il protocollo <strong>Syslog</strong> (che studieremo più avanti), mentre quelli Microsoft utilizzano un formato proprietario. A questo proposito va detto che l'analisi di log in formati proprietari è possibile solo grazie a viewer messi a disposizione dalle case di produzione, oppure appellandosi direttamente ad essi (incrociando le dita).
+</p>
+<div class='vspace'></div><h2>Log rotation e retention</h2>
+<p>"Con il termine <strong>log rotation</strong> si indica la metodica con la quale un log viene spostato dalla modalità on-line a quella off-line", ovvero su dispositivi di archiviazione secondari. Questo spostamento può avvenire periodicamente, oppure solo quando la dimensione del file di log ha superato un certo valore. Indipendentemente dal motivo, che va comunque documentato, la log rotation avviene generalmente con i seguenti passaggi:
+</p><ol><li>estrazione e compressione della porzione di file di log da archiviare
+</li><li>generazione dell'hash di tale archivio, così da poterne in seguito comprovarne l'integrità
+</li><li>spostamento in un sistema di raccolta centralizzato, in cui verrà controllato l'hash
+</li></ol><p class='vspace'>Con la <strong>log retention</strong> vengono invece stabiliti i tempi minimi e massimi di conservazione dei log in un sistema. Non esiste una regola universale, ma molto dipende dalla tipologia di azienda (finanziaria, industriale, pubblica amministrazione, ...) e dall'architettura di log e di storage.
+</p>
+<div class='vspace'></div><h2>Errori comuni</h2>
+<p>Di seguito una serie di errori comuni nel processo di log management (dalle slide di Dario Forte, 2008):
+</p>
+<div class='vspace'></div><ul><li>"non abilitare il logging"
+</li><li>"procedere alla produzione e raccolta dei log senza effettuarne l'analisi"
+</li><li>"revisionare unicamente i log prodotti dai sistemi perimetrali omettendo i sistemi interni"
+</li><li>"sviluppare la propria infrastruttura di logging prima di individuare le fonti da cui attingere", quindi "prima di aver deciso cosa raccogliere"
+</li><li>"memorizzare i log per un periodo troppo breve"
+</li><li>"prioritizzare le informazioni prima di averle raccolte"
+</li><li>"ignorare i log applicativi"
+</li><li>"ricercare solo i pattern riconosciuti pericolosi, omettendo le rimanenti entry dall'analisi"
+</li><li>"considerare i log raccolti come evidence nonostante non venga pianificato correttamente il processo di generazione e raccolta"
+</li><li>"sottostimare il volume delle informazioni da raccogliere"
+</li><li>"ricondurre la disciplina del log management ad un problema di data management"
+</li></ul><div class='vspace'></div><h2>Cosa fare in caso di incidente</h2>
+<p>Prima di vedere due casi pratici, forniamo alcune regole generali da rispettare in caso di incidente:
+</p><ul><li>identificare i punti di raccolta dei log
+</li><li>contattare l'amministratore di sistema
+</li><li>contenere il danno
+</li><li>collezionare i log in locale senza alterarli in alcun modo
+</li><li>creare un'immagine della macchina compromessa rispettando l'ordine di volatilità delle informazioni
+</li></ul><div class='vspace'></div><h3>Esempio 1</h3>
+<p>Un worm ha causato un incidente di sicurezza su una delle tre sottoreti di una rete, cosa facciamo?
+</p>
+<div class='vspace'></div><ul><li>verifichiamo che il nostro antivirus conosca la firma del worm che ha provocato l'incidente, così da capire se garantiva una protezione adeguata contro questa tipologia di malware
+</li><li>ci assicuriamo che i log siano fisicamente presenti
+</li><li>effettuiamo la duplicazione dei log 
+</li><li>controlliamo i punti di correlazione dei log file 
+</li><li>verifichiamo se ci sia stata una violazione delle policy 
+</li><li>controlliamo il traffico di entrata e uscita della rete, ad esempio utilizzando uno strumento come <code class='escaped'>Network Behaviour Analysis Tool</code>, che analizza il payload dei pacchetti. Il traffico è monitorato non solo per motivi di sicurezza ma anche per costruire il grafo di andamento della rete, che dà un'idea sulle performance della rete stessa
+</li></ul><div class='vspace'></div><h3>Esempio 2</h3>
+<p>Bisogna risalire al personale interno di un'azienda che ha utilizzato siti pirata, cosa facciamo?
+</p>
+<div class='vspace'></div><ul><li>verifichiamo i log di autenticazione 
+</li><li>cerchiamo il flusso della rete che ha come destinazione i siti pirata 
+</li><li>monitoriamo tale flusso così da poter risalire al colpevole 
+</li></ul><div class='vspace'></div><h2>Syslog</h2>
+<p>Il <strong>Syslog</strong> è un protocollo che consente la trasmissione attraverso la rete di messaggi di log da macchine dette <em>Syslog Sender</em> a dispositivi di raccoglimento chiamati <em>Syslog Servers</em> o <em>Syslog Daemon</em>. L'RFC di riferimento è la 3164, molto tecnica, che stabilisce tra le altre cose che i messaggi devono essere trasmessi tramite UDP, in particolare alla porta 514; ciò significa che non si hanno garanzie di consegna, poiché nell'User Datagram Protocol non è previsto l'invio dell'ack da parte del ricevente (per maggiori dettagli consultate le pagine del wiki di <a class='wikilink' href='Sistemi.html'>Sistemi di elaborazione dell'informazione</a>). Problemi di affidabilità e di autenticazione tra le parti sono dunque da mettere in conto, così come l'esposizione ad altri pericoli come il dropping o lo spoofing di un messaggio.<br />Esiste tuttavia una versione avanzata del Syslog più orientata alla sicurezza: il <em>Secsyslog</em>, che utilizza il TCP e sfrutta i covert channel.
+</p>
+<p class='vspace'>Il syslog non è sempre abilitato di default poiché comporta un impatto rilevante sulle performance della macchina, impatto che aumenta all'aumentare delle informazioni da monitorare. Per questo motivo l'eventualità di una sua attivazione deve essere valutata con attenzione in fase di preparazione.
+</p>
+<div class='vspace'></div><h3>Syslog Daemon</h3>
+<p>Il <strong>Syslog Daemon/Server</strong> è un'entità passiva che rimane in ascolto dei messaggi syslog a lei diretti. Per <em>passiva</em> si intende che non è lei a fare richiesta dei log da un determinato device, ma sono questi ultimi che autonomamente le inviano i messaggi quando lo ritengono opportuno. Ne consegue che in un'indagine forense andranno controllati sia deamon che sender. 
+</p>
+<p class='vspace'>Il mantenimento di un unico syslog deamon è sconsigliato perché rappresenterebbe un <em>Single Point Of Failure</em>, ovvero la sua compromissione ne minerebbe irrimediabilmente l'affidabilità. E' quindi opportuno distribuire i log su più macchine, così che lo sforzo per danneggiarli diventi maggiore.
+</p>
+<div class='vspace'></div><h3>Attori del protocollo</h3>
+<p>Per evitare ambiguità con la terminologia definiamo con precisione i vari attori del protocollo:
+</p>
+<div class='vspace'></div><ul><li><strong>Device</strong>: "macchina in grado di generare messaggi" (ad esempio firewall, router, ...)
+</li><li><strong>Relay</strong>: "macchina in grado di ricevere messaggi e inoltrarli ad un secondo sistema", il cui utilizzo disinnesca il problema del <em>singol point of failure</em> e consente inoltre una distribuzione del carico di lavoro. Si noti che i relay possono inoltrare i messaggi ad altri relay
+</li><li><strong>Collector</strong>: macchina in grado di ricevere messaggi e memorizzarli senza inoltrarli. La memorizzazione può avvenire su file di testo (tipico dei log grezzi) o su database (tipico dei sistemi avanzati, dato che consente di effettuare query). I collector sono chiamati anche <em>syslog server</em> o "<code class='escaped'>bidoni centrali</code>" (sic)
+</li><li><strong>Sender</strong>: possono essere sia device che relay, ed inviano i messaggi verso relay o collector senza sapere a priori quali dei due siano;
+</li><li><strong>Receiver</strong>: possono essere sia collector che relay, ovvero dispositivi che ricevono messaggi Syslog
+</li></ul><p class='vspace'>Nella figura seguente sono visualizzati a titolo di esempio una serie di connessioni possibili tra i dispositivi coinvolti in una comunicazione Syslog.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/syslogComunicazione.gif' alt='' title='' /></div>
+<p class='vspace'>Concludiamo il discorso sugli attori del protocollo sottolineando l'importanza dei controlli di sicurezza sull'architettura Syslog, che devono garantire l'integrità dei messaggi e tenere sotto controllo i loro tempi di latenza, attività quest'ultima fondamentale per il corretto funzionamento di sistemi in tempo reale e dei gestori delle sincronizzazioni.
+</p>
+<div class='vspace'></div><h3>Pacchetti Syslog</h3>
+<p>I messaggi Syslog viaggiano attraverso le reti incapsulati in <strong>pacchetti</strong>, ognuno dei quali non deve superare i 1024 byte di grandezza ed è composto da tre parti: <em>PRI</em>, <em>Header</em> e <em>Msg</em>. Vediamoli nel dettaglio.
+</p>
+<div class='vspace'></div><h4>PRI</h4>
+<p><strong>PRI</strong> sta per <em>priority part</em>, è composto da 8 bit ed indica il livello di priorità del log. Contiene due informazioni:
+</p>
+<div class='vspace'></div><ul><li>la <strong>facility</strong>, che indica il componente del sistema operativo che genera il messaggio di log. Ad essa sono dedicati 5 bit, quindi ha 32 possibili valori: <code class='escaped'>0, 1, 2, ... , 31</code>. I primi sedici valori sono standard, e in particolare i primi cinque sono <em>security sensitive</em>; dal 17 in poi sono personalizzabili
+</li><li>la <strong>severity</strong>, che rappresenta il livello di criticità dei log. Ad essa sono riservati i rimanenti 3 bit della priority part, quindi ha 8 possibili livelli in ordine decrescente di gravità (lo 0 è il più grave)
+</li></ul><p class='vspace'>In molti casi è più comodo considerare insieme le due componenti e ciò è possibile attraverso il calcolo del <strong>priority value</strong>, ottenuto moltiplicando la facility per 8 e quindi aggiungendo al risultato il valore della severity. In formula: 
+<code class='escaped'>priority value = (facility * 8) + severity</code>
+Più basso sarà il valore ottenuto e più urgente sarà l'evento e di conseguenza l'intervento necessario.
+</p>
+<p class='vspace'>Concludiamo il paragrafo sul PRI osservando che solo il sender ha la possibilità (e il dovere) di stabilire il valore di facility e severity, mentre il daemon può solo utilizzarli per funzioni di filtraggio dei pacchetti.
+</p>
+<div class='vspace'></div><h4>Header</h4>
+<p>Nell' <strong>Header</strong> viene tenuta traccia di:
+</p><ul><li><em>timestamp</em> che indica la data e l'ora in cui il sistema locale ha generato il messaggio. Lo standard per esprimerlo è il seguente: <code class='escaped'>mmm dd hh:mm:ss</code>, dove <code class='escaped'>mmm</code> è il mese, <code class='escaped'>dd</code> è il giorno, <code class='escaped'>hh</code> l'ora, <code class='escaped'>mm</code> i minuti e <code class='escaped'>ss</code> i secondi. Notare come non ci sia alcun riferimento all'anno e come la sua veridicità sia legata al corretto funzionamento del clock di sistema
+</li><li><em>identificativo della macchina che ha generato il messaggio</em>, che può essere indicata sottoforma di hostname o indirizzo IP
+</li></ul><div class='vspace'></div><h4>MSG</h4>
+<p>La terza ed ultima parte di un pacchetto Syslog è il <strong>messaggio</strong> (<strong>MSG</strong>) vero e proprio, composto da un <em>tag</em> che indica il nome del programma che l'ha generato ed un <em>content</em> che è il contenuto del messaggio vero e proprio.
+</p>
+<div class='vspace'></div><h3>Syslogd</h3>
+<p>Unix utilizza come demone per il logging dell'intero sistema il <strong>Syslogd</strong>, che offre diverse opzioni di comportamento e una buona configurabilità. Il suo file di configurazione si trova generalmente in <code class='escaped'>/etc/syslog.conf</code>, percorso da conoscere con precisione in quanto sarà uno dei principali obiettivi degli attacker. <br />Ogni riga del file di configurazione è composta da due campi:
+</p><ul><li><strong>Selettore</strong>, che indica attraverso la specifica di facility e severity su quali eventi o categorie di eventi si intende agire
+</li><li><strong>Azione</strong>, quella da intraprendere sugli eventi indicati dal selettore
+</li></ul><p class='vspace'>La comunicazione con il deamon syslogd può avvenire tramite il programma <code class='escaped'>logger</code> (che ha una sintassi precisa e dedicata), oppure utilizzando librerie per il C (<code class='escaped'>syslog.h</code>), o moduli per Perl e Python.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 15, 2009, at 06:43 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LogFilesESyslog?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/LogFilesESyslog?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

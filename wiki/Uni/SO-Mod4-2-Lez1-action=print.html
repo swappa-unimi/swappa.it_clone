@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Appunti caotici</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SO-Mod4-2-Lez1.html' title='Sistemi Operativi - Appunti caotici'>Sistemi Operativi - Appunti caotici</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti caotici ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Lezione 1</span>
+<span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Paginazione</span>
+</p>
+<div class='vspace'></div><h2>Pag 1</h2>
+<h4>Sommario</h4>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 2</h2>
+<h4>Problemi</h4>
+<p>...
+</p>
+<div class='vspace'></div><h4>Obiettivi (1)</h4>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 3</h2>
+<h4>Obiettivi (2)</h4>
+<p><strong>Efficienza di gestione</strong>: possibile non contiguità delle porzioni di un processo nella memoria centrale fisica, così che non devo per forza spostare porzioni di memoria da una parte all'altra.
+</p>
+<p class='vspace'><strong>Correttezza, sicurezza ed equità</strong>: gestione indipendente dal programmatore e dal gestore del sistema.
+</p>
+<div class='vspace'></div><h4>Paginazione (1)</h4>
+<p>La memoria centrale fisica viene divisa in <strong>pagine fisiche</strong> (<em>frame</em>).<br />Lo spazio di indirizzamento del processo viene diviso in <strong>pagine logiche</strong> (<em>pagine</em>).
+</p>
+<p class='vspace'>Pagine logiche e fisiche hanno la stessa dimensione, ed è questa proprietà che consente una gestione efficiente.
+</p>
+<div class='vspace'></div><h2>Pag 4</h2>
+<h4>Paginazione (2)</h4>
+<p>La <strong>tabella delle pagine</strong> di un processo definisce la corrispondenza tra pagine logiche e fisiche del processo considerato. In questo modo si tiene traccia di dove si trovano le pagine logiche del processo in memoria centrale.
+</p>
+<div class='vspace'></div><h6>!!Paginazione (3)</h6>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 5</h2>
+<h4>Gestione della paginazione (1)</h4>
+<p>...
+</p>
+<div class='vspace'></div><h4>Gestione della paginazione (2)</h4>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 6</h2>
+<h4>Gestione della paginazione (3)</h4>
+<p>Si ha un <em>page fault</em> quando la pagina richiesta non è caricata nello swap, ed è quindi necessario caricarla dalla memoria centrale. Quest'operazione non si può fare a mano, e viene per questo affidato il compito alla <em>MMU</em>.
+</p>
+<div class='vspace'></div><h4>Supporto hardware: MMU</h4>
+<p>L'hardware dedicato per il supporto alla paginazione è la <strong>Memory Management Unit</strong>, che contiene la tabella delle pagine o il suo indirizzo in memoria centrale e traduce l'indirizzo logico in indirizzo fisico.
+</p>
+<p class='vspace'>Nella fase di context switching, una delle preoccupazioni del sistema operativo dovrà essere predisporre l'ambiente in cui il processo lavorerà, quindi anche configurare la MMU in modo che possa tradurre gli indirizzi in modo adeguato.
+</p>
+<div class='vspace'></div><h2>Pag 7</h2>
+<h4>Come gestire grandi tabelle delle pagine?</h4>
+<p>All'aumentare delle dimensioni delle tabelle delle pagine diventerebbe troppo pesante caricarle nella MMU. E' anche vero però che lasciandole in memoria centrale dovrei ogni volta effettuarvi un accesso, perdendo tempo di computazione. Come fare? Ho diverse tecniche:
+</p><ul><li>memoria ausiliaria di traduzione
+</li><li>tabella gerarchica delle pagine
+</li><li>tabella delle pagine con hashing
+</li><li>tabella invertita delle pagine
+</li></ul><div class='vspace'></div><h4>Memoria ausiliaria di traduzione</h4>
+<p>La <strong>memoria ausiliaria di traduzione</strong> mantiene un elenco delle pagine più usate di recente, che usa per effettuare poi la traduzione. E' anche detta <em>translation look-aside-buffer</em> ed è gestita direttamente in hardware con una memoria associativa, che non cerca per indirizzi ma per valore contenuto. Se tale memoria non contiene informazioni sull'area di memoria richiesta (<em>TLB miss</em>), allora sono costretto a caricarmela dalla memoria centrale, liberando spazio togliendo l'informazione che vi risiede da più tempo (la più obsoleta).
+</p>
+<p class='vspace'>Con la <em>translation look-aside buffer</em> cambia l'approccio di rappresentazione degli indirizzi: nella tabella scrivo direttamente la coppia di indrizzi della pagina e del frame. Se quindi in una riga trovo la pagina desiderata, nella stessa riga trovo anche il corrispondente numero del frame.
+</p>
+<div class='vspace'></div><h2>Pag 8</h2>
+<h4>Tabella gerarchica delle pagine (1)</h4>
+<p>Si divide la tabella delle pagine in più porzioni di uguale dimensione e si carica nella MMU solo gli indirizzi delle porzioni stesse.
+</p>
+<div class='vspace'></div><h4>Tabella gerarchica delle pagine (2)</h4>
+<p>...
+</p>
+<div class='vspace'></div><h2>Pag 9</h2>
+<h4>Tabella delle pagine con hashing</h4>
+<p>La funzione di hashing comprime l'indirizzo logico <strong>p</strong> riducendone il numero di bit e generando un valore che metterà nella tabella di hashing. Detta tabella è ovviamente più piccola di quella di partenza.
+</p>
+<div class='vspace'></div><h4>Tabella invertita delle pagine (1)</h4>
+<p>Ribalta il punto di vista: fornisce l'identificatore del processo e il numero di pagina logica caricata in una pagina fisica.
+</p>
+<p class='vspace'><code class='escaped'>TabellaInversaPagine [PaginaFisica] = Processo, PaginaLogica</code>
+Se non viene trovata la pagina logica significa che non è mai stata caricata in memoria centrale.
+</p>
+<div class='vspace'></div><h2>Pag 10</h2>
+<h4>Tabella inverita delle pagine (2)</h4>
+<p>Nello schema:
+</p><ul><li><em>pid</em> è l'identificativo del processo.
+</li><li><em>p</em> è la pagina logica
+</li><li><em>d</em> è lo spiazzamento
+</li></ul><div class='vspace'></div><h4>Protezione delle pagine</h4>
+<p>Può essere di due tipi:
+</p><ul><li><em>implicita</em>, che garantisce l'inviolabilità tra spazi di indirizzamento ma non interviene al suo interno; quindi se ad esempio scrivo male il programma posso comunque fare un casino. La protezione dagli accessi di altri processi è implicita nella tabella delle pagine, anche in quella invertita dal momento che è la MMU e il sistema operativo che garantiscono che la ricerca avvenga con la coppia di "coordinate" <code class='escaped'>pid, p</code>
+</li><li><em>esplicita</em>, che fa uso di bit di protezione che verificano la correttezza delle modalità di esecuzione dei programmi, ad esempio definendo pagine cui è possibile l'accesso in lettura/scrittura (dati), o sola lettura (costanti) o sola esecuzione (porzioni di codice). Se coi bit di protezione viene rilevato che un programma non rispetta i suoi permessi, questo viene immediatamente abortito sollevando un errore di programmazione
+</li></ul><div class='vspace'></div><h2>Pag 11</h2>
+<h4>Condivisione delle pagine</h4>
+<p>Se ho più processi che vogliono utilizzare lo stesso codice (quindi marcabile con il bit di sola esecuzione), posso caricarlo una volta sola in memoria centrale, risparmiando spazio e garantendo comunque la consistenza e la correttezza delle informazioni. Quindi IMPORRE una protezione in sola esecuzione su alcune pagine permette la condivisione delle porzioni di memoria, che rimangono comunque sempre virtualmente disgiunte. Questo sistema è un modo più sofisticato per garantire la non interferenza tra l'evoluzione della computazione dei processi.
+</p>
+<div class='vspace'></div><h4>In sintesi</h4>
+<p>Notiamo che la paginazione:
+</p><ul><li>crea spazio logico più grande dello spazio fisico (visto teoricamente grosso quanto lo spazio di indirizzamento del processo) assegnato ad un processo nella memoria centrale fisica
+</li><li>è gestito automaticamente dal sistema operativo
+</li><li>è efficiente poiché sposta piccole porzioni di memoria
+</li></ul><div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SO-Mod4-2-Lez1)</span></div>
+  </div>
+</body>
+</html>

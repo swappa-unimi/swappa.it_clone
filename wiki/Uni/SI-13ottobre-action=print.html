@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Intelligenti - Appunti del 13 Ottobre</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SI-13ottobre.html' title='Sistemi Intelligenti - Appunti del 13 Ottobre'>Sistemi Intelligenti - Appunti del 13 Ottobre</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Intelligenti - Appunti del 13 Ottobre ::</strong>
+</pre><div class='vspace'></div><div class='frame' > 
+<p>La lezione di oggi è stata tenuta - cos'è, un vizio?! - dal prof Ferrari.
+</p></div>
+<div class='vspace'></div><h2>Ancora sulla backpropagation</h2>
+<p>Settimana scorsa parlavamo di <em>backpropagation</em>, e la usavamo per addestrare le nostre reti neurali feedforward. Per affrontare l'argomento riprendiamo la parte finale della <a class='wikilink' href='SI-7ottobre.html'>scorsa lezione</a>.
+</p>
+<p class='vspace'>Consideriamo la cosa da un punto di vista grafico. Ammettiamo di conoscere l'andamento dell'errore (<code class='escaped'>er</code>) rispetto ad un certo parametro (<code class='escaped'>par</code>) secondo questa forma:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/erroreMultistrato.gif' alt='' title='' /></div>
+<p class='vspace'>Se sappiamo di essere nel punto (a), possiamo chiederci in che direzione dovremmo muoverci per migliorare la soluzione: aumentiamo o diminuiamo il valore del parametro? Per decidere basta calcolare la derivata della funzione in quel punto e regolarci in base ad essa. Nell'esempio sopra ci spoteremo verso sinistra.
+</p>
+<p class='vspace'>Introduciamo a questo punto il problema dei minimi locali, che abbiamo già accennato all'inizio della lezione. Per capirli facciamo un nuovo esempio:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/minimiLocali.gif' alt='' title='' /></div>
+<p class='vspace'>Se ci troviamo nel punto (a) è logico immaginare che ci sposteremo nel punto (b) e qui ci fermeremo, anche se in (c) si avrebbe una soluzione migliore.<br />Altro problema: di quanto ci dobbiamo spostare a destra o a sinistra? Se troppo poco rischiamo di rimanere bloccati in un punto, se troppo rischiamo di saltare dei minimi appetitosi. La scelta non è affatto banale.
+</p>
+<p class='vspace'>Ricapitolando, se localmente so decidere con una certa facilità in che verso muovermi, non so né di quanto e né se ci potrebbero essere soluzioni locali migliori (magari dei minimi globali).
+</p>
+<p class='vspace'>A tutto questo si tenta di far fronte con la <em>tecnica del gradiente</em>, nel quale ha capitale importanza il <strong>delta rule</strong>, ovvero la regola che mi permette di spostare il parametro nella direzione opposta a quella del gradiente. Perché bisogna comportarsi così? Perché il minimo locale ha sempre direzione opposta rispetto a quella della derivata.<br />Il parametro &#951; della formula tratta dalle slide di Ferrari (che non vedremo mai), rappresenta il valore di aggiornamento dei pesi: più il numero è piccolo e più saranno i passi necessari per l'addestramento stesso. Non c'è modo di conoscere il valore ottimale per &#951;, perché non conosciamo esattamente la funzione dell'errore; del resto, se la conoscessimo esattamente non staremmo qui a fare la backpropagation come tanti coglioni.
+</p>
+<div class='vspace'></div><h2>Interruzione addestramento</h2>
+<p>Quanto deve durare l'addestramento? Quanti passi devo fare prima di fermarmi?<br />Per rispondere a queste domande ci sono diverse tecniche basate sull'errore. Prima di studiarle chiariamo bene cosa intendiamo per <strong>errore</strong>.<br />Siano dati:
+</p><ul><li>il dataset <em>D = (x_1_, y_1_), ... , (x_n_, y_n_)</em>
+</li><li>la rete neurale <em>R<sub>N</sub> = {w<sub>ij</sub>, &#963;<sub>i</sub>}</em> (in realtà ci sarebbero altri parametri intrinsechi, come ad esempio il numero N di neuroni che la compongono, ma facciamo finta che non siano importanti)
+</li></ul><p class='vspace'>Grazie alle informazioni del dataset riusciamo a individuare diversi punti nello spazio (quello bidimensionale ingressi-uscite), e ciò che chiediamo alla rete è la funzione che potrebbe averli generati. Questa però non è unica, dunque è lecito chiedersi qual è la migliore. E' proprio a questo punto che diventa necessario il concetto di errore, calcolato come:
+</p>
+<p class='vspace'  style='text-align: center;'>E = (y - y')<sup>2</sup> 
+</p>
+<p class='vspace'>dove y'<sub>i</sub> = R<sub>N</sub>(x<sub>i</sub>), ed E è la capacità della rete di approssimare l'esempio i-simo
+</p>
+<p class='vspace'>Per estensione possiamo definire l'errore globale come:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/erroreGlobaleRN.gif' alt='' title='' /></div>
+<p class='vspace'>Questo valore misura quanto la rete è in grado di approssimare il dataset. Spesso si aggiunge un <code class='escaped'>1/2</code> prima della sommatoria, così che quando andiamo a derivare l'errore possiamo semplificarlo con il 2 che scende dal quadrato della differenza. Questo accorgimento non è fondamentale, ma semplifica comunque qualcosina.<br />Se l'errore globale è basso allora immagino che la funzione sia approssimata bene.
+</p>
+<p class='vspace'>All'inizio dell'addestramento l'errore globale è massimo, e poi nel tempo scende. 
+</p>
+<div class='vspace'></div><table width='100%' >
+<tr ><td align='center' width='50%'  valign='top'>Teoricamente si comporta così
+<div class='vspace'></div><div><img src='../uploads/Uni/erroreAddestramentoTeorico.gif' alt='' title='' /></div>
+</td><td align='center'  valign='top'>...mentre in pratica fa così
+<div class='vspace'></div><div><img src='../uploads/Uni/erroreAddestramentoPratico.gif' alt='' title='' /></div>
+</td></tr></table>
+<p class='vspace'>In ogni caso l'algoritmo ci assicura che arriveremo almeno ad un minimo locale.<br />Bene, ora vediamo quali sono le tecniche di interruzione dell'algoritmo di backpropagation basate sull'errore:
+</p>
+<div class='vspace'></div><table width='70%' >
+<tr ><td  valign='top'><strong>1. numero di cicli</strong>:
+</td><td  valign='top'><img src='../uploads/Uni/interruzioneNcicli.gif' alt='' title='' />
+</td></tr><tr ><td  valign='top'><strong>2. soglia di errore</strong><br />Viene usata spesso quando dobbiamo sviluppare applicazioni che hanno tra le specifiche un valore di accuratezza da garantire
+</td><td  valign='top'><img src='../uploads/Uni/interruzioneSoglia.gif' alt='' title='' />
+</td></tr><tr ><td  valign='top'><strong>3. variazione dell'errore</strong>:<br />Si ispira al grafico ideale: quando l'errore si avvicina al minimo globale asintotico, interrompo l'algoritmo.<br />Il problema di questo metodo è quando ci troviamo davanti un andamento dell'errore a gradini, con minimi locali a catena (vedi esempio accanto). Mettendo infatti un limite alla variazione con cui l'errore si manifesta, ci fermeremmo subito al primo gradino.
+</td><td valign='bottom' ><img src='../uploads/Uni/interruzioneVariaz.gif' alt='' title='' />
+</td></tr></table>
+<div class='vspace'></div><h2>Tecniche migliorative della backpropagation</h2>
+<p>Per migliorare la faccenda ci sono varie tecniche ed accorgimenti. Uno di questi tiene in considerazione il problema dell'aggiornamento dei pesi, e propone due soluzioni:
+</p><ul><li><em>batch</em>: mostro prima tutti gli esempi del dataset, e poi modifico i pesi. Il vantaggio di questo addestramento è che l'ordine di presentazione degli esempi non è importante
+</li><li><em>stocastico</em>: "i pesi vengono modificati dopo aver presentato alla rete ogni singolo esempio del dataset". Il problema è che diverse sequenze di esempi fanno evolvere la rete in modo differente (una potrebbe rimanere intrappolata in un minimo locale, altre no). Questo metodo garantisce di arrivare prima alla soluzione migliore
+</li></ul><p class='vspace'>Un altro miglioramento da introdurre nel nostro modello è la <em>tecnica dei momenti</em>, che permette di evitare problemi come le oscillazioni attorno un minimo locale, o la lentezza dell'apprendimento. In formula:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/tecnicaMomenti.gif' alt='' title='' /></div>
+<p class='vspace'>In questo modo introduciamo una sorta di inerzia della variazione del peso: la variazione precedente smorza un po' eventuali divergenze con quella attuale, mentre enfatizza le convergenze.
+</p>
+<p class='vspace'>Osserviamola in azione:
+</p>
+<div class='vspace'></div><table width='80%' align='center' >
+<tr ><td  valign='top'><img src='../uploads/Uni/tecnicaMomentiEs1.jpg' alt='' title='' />
+<p class='vspace'>Come si può vedere l'algoritmo oscilla attorno al valore ottimale, e ciò è male perché perdo solo tempo.
+</p></td><td valign='middle' align='center' >-&gt;
+</td><td align='center'  valign='top'><img src='../uploads/Uni/tecnicaMomentiEs2.jpg' alt='' title='' />
+<p class='vspace'>Aggiungendo il momento la variazione precedente influenza l'attuale e quindi raggiungo più velocemente il minimo.
+</p></td></tr></table>
+<p class='vspace'>Altro esempio:
+</p>
+<div class='vspace'></div><table width='80%' align='center' >
+<tr ><td  valign='top'><img src='../uploads/Uni/tecnicaMomentiEs3.jpg' alt='' title='' />
+<p class='vspace'>Arriviamo ad un minimo locale molto peggiore dell'ottimo globale poco più a destra.
+</p></td><td valign='middle' align='center' >-&gt;
+</td><td align='center'  valign='top'><img src='../uploads/Uni/tecnicaMomentiEs4.jpg' alt='' title='' />
+<p class='vspace'>Aggiungendo il momento si possono evitare le trappole del minimo locale.
+</p></td></tr></table>
+<p class='vspace'>L'ultima tecnica migliorativa dell'algoritmo (anche se non necessariamente legata alla backpropagation) è il <em>simulated annealing</em>, per il quale attendiamo le slide.
+</p>
+<div class='vspace'></div><h2>Prestazioni</h2>
+<p>L'unico parametro che possiamo considerare per valutare la rete neurale è l'errore globale. Bisogna infatti tener conto che tutto ciò che abbiamo a disposizione sono solo esempi, dunque affetti da rumore e che danno una conoscenza limitata della funzione.<br />L'errore sperimentato durante l'addestramento è limitato al dataset di training, che può essere minimizzato semplicemente avendo a disposizione un po' di risorse di calcolo. Il problema è che la funzione da creare assomiglia proprio ai dati, li approssima, dunque non possiamo basarci solo su questi.<br />Inoltre minimizzare l'errore di training può portare all' <strong>overfitting</strong>: troppa aderenza ai dati degli esempi, che comporta una perdita di generalizzazione.
+</p>
+<p class='vspace'>Quando abbiamo un insieme limitato di dati la cosa migliore da fare sarebbe spezzare il dataset in almeno due blocchi: uno da utilizzare come dataset vero e proprio, l'altro come esempi di verifica. Dal <strong>D</strong> iniziale otterremo dunque:
+</p><ul><li><strong>D<sub>A</sub></strong>. Il dataset apprendimento su cui la conoscenza della funzione si limiterà
+</li><li><strong>D<sub>V</sub></strong>. Il dataset di verifica sarà utilizzato al termine dell'addestramento per fare dei test su esempi che l'algoritmo non ha mai visto
+</li></ul><p class='vspace'>L'errore quindi si sdoppia! Avremo:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/erroriDataset.jpg' alt='' title='' /></div>
+<p class='vspace'>Poiché E<sub>V</sub> non è calcolato sui dati usati per costrure la funzione, ma su altri tenuti sapientemente da parte, è dei due quello più affidabile. Anzi, di più: è l'unico tipo di errore che ha senso verificare.
+</p>
+<p class='vspace'>Potrebbe sembrare ovvio che saremo contenti quando E<sub>A</sub> = E<sub>V</sub>, ma anche se è vero in generale in alcuni casi è negativo: se la rete fa schifo, faranno schifo entrambi. A ogni modo, statisticamente vale il concetto che se E<sub>A</sub> è diverso da E<sub>V</sub>, allora è probabile che soffriamo di overfitting o altre paturnie.
+</p>
+<p class='vspace'>Se E<sub>V</sub> è molto maggiore di E<sub>A</sub> possiamo modificare il modello della rete e rifare l'addestramento, possibilmente ritoccando qualche parametro così da migliorare la risposta; operazione da ripetere finché i due errori non si assomiglieranno. Fermi tutti: siamo sicuri che questo sia ciò che vogliamo?? No, perché in questo caso avremo tenuto conto di D<sub>V</sub> per l'addestramento, ed era proprio quello che dovevamo evitare (ok, non l'avremo fatto nella backpropagation, ma subito dopo). Allora cosa facciamo? Speziamo il dataset in tre parti:
+</p><ul><li><strong>D<sub>A</sub></strong>, dataset training
+</li><li><strong>D<sub>M</sub></strong>, dataset per la validazione del modello, da usare per capire se ci stiamo muovendo nella direzione giusta
+</li><li><strong>D<sub>V</sub></strong>, dataset test. Usato per valutare le prestazioni, così da testare la funzione su qualche esempio mai visto prima
+</li></ul><p class='vspace'>Con che percentuali ripartisco il dataset di partenza nei tre appena elencati? Per esperienza, per essere sicuri che la rete non faccia overfitting va riservato un elevato numero di D<sub>V</sub> e D<sub>M</sub>. E' vero anche che in questo modo avremo pochi esempi per il training, quindi rischiamo di ottenere una funzione poco affidabile. Siamo quindi al solito ritornello: non ci sono regole precise, si deve procedere per tentativi.<br />Se disponiamo di un dataset bello corposo e la rete non è troppo grande, vale comunque la pena riservare molti esempi come test: alla fine è l'unico a fornirci un parametro credibile per misurare le performance!
+</p>
+<div class='vspace'></div><h2>Ultime considerazioni</h2>
+<p>I dati sono caratterizzati da:
+</p><ul><li>numerosità degli esempi (più ne abbiamo e più copriamo il dominio del fenomeno)
+</li><li>accuratezza, ovvero l'errore sui dati (più aumenta e meno ci fidiamo del singolo esempio)
+</li></ul><p class='vspace'>Il paradigma matematico che usiamo per approssimare la rete ha come caratteristiche:
+</p><ul><li>i parametri (di cui consideriamo sia il numero che la specie)
+</li><li>l'algoritmo di addestramento (con cui i valori dei parametri vengono fissati)
+</li></ul><p class='vspace'>Le caratteristiche di dati e tipologia di rete non sono scollegati, anzi! In particolare, la scelta del numero di parametri deve essere limitata fortemente da quello degli esempi, e deve tenere in alta considerazione anche delle entità degli errori. Per riuscirci ci vuole esperienza, tentativi e fortuna.
+</p>
+<div class='vspace'></div><h2>Introduzione al dilemma Bias-Variance..</h2>
+<p>..che non verrà mai approfondito nelle lezioni seguenti, ma dato per fatto.<br />In ogni caso l'idea che sta dietro a questo dilemma è che abbiamo due tipi di errore: uno che cresce all'aumentare del numero di parametri, e l'altro il contrario. In particolare la componente Bias tiene conto dell'errore legato alla struttura della rete, mentre la Variance è più legata all'overfitting. 
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiIntelligenti.html'>Torna alla pagina di Sistemi Intelligenti</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SI-13ottobre)</span></div>
+  </div>
+</body>
+</html>

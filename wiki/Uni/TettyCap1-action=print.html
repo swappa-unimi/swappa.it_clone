@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Dispense Tetty - Capitolo 1</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='TettyCap1.html' title='Dispense Tetty - Capitolo 1'>Dispense Tetty - Capitolo 1</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Capitolo 1: Concetti di base ::</strong>
+</p>
+<div class='vspace'></div><h3>Indice</h3>
+<p>1 <a href='#c11'>Che cos'è la programmazione degli elaboratori</a><br />2 <a href='#c12'>Elementi di matematica e logica per la programmazione</a>
+</p><div class='indent'>2.1 Logica proposizionale
+</div><div class='indent'>2.2 Insiemistica
+</div><div class='indent'>2.3 Logica dei predicati
+</div><p>3 <a href='#c13'>La nozione di “algoritmo”</a><br />4 <a href='#c14'>I linguaggi di programmazione</a>
+</p><div class='indent'>4.1 Definizione formale di linguaggio
+</div><div class='indent'>4.2 Grammatica
+</div><div class='indent'>4.3 Grammatiche nel formato di Backus e Naur
+</div><div class='indent'>4.4 Carte sintattiche
+</div><div class='indent'>4.5 Linguaggi di alto e basso livello
+</div><p>5 <a href='#c15'>Fasi della programmazione</a>
+</p><div class='indent'>5.1 Specifica
+</div><div class='indent'>5.2 Progettazione
+</div><div class='indent'>5.3 Modellazione
+</div><div class='indent'>5.4 Codifica
+</div><div class='indent'>5.5 Verifica e correzione
+</div><p>6 <a href='#c16'>Strumenti di modellazione della programmazione</a>
+</p><div class='indent'>6.1 Diagrammi di flusso
+</div><div class='indent'>6.2 Pseudocodice
+</div><p>7 <a href='#c17'>Documentazione</a>
+</p><div class='indent'>7.1 Documentazione interna
+</div><div class='indent'>7.2 Documentazione esterna
+</div><div class='vspace'></div><hr />
+<p class='vspace'><a name='c11' id='c11'></a>
+</p><h3>1. Che cos'è la programmazione degli elaboratori </h3>
+<p>Per poter comprendere il concetto di programmazione degli elaboratori elettronici, è prima necessario chiarire cos'è un elaboratore elettronico, e quindi cosa significa programmarlo.
+</p>
+<p class='vspace'><span  style='color: red;'>Gli elaboratori elettronici sono delle macchine per elaborare informazioni</span>, dove per macchine si intendono dispositivi - anche molto complessi - il cui scopo è sostituire o facilitare il lavoro umano nello svolgimento di compiti ripetitivi, difficili o faticosi. 
+</p>
+<p class='vspace'>Il concetto che sta alla base della programmazione è che una macchina in grado di compiere più compiti è meglio di una che ne sa svolgere uno solo, dal momento che con un unico dispositivo (e quindi un'unica spesa, trasporto, manuale, ...) otterremo qualcosa che normalmente richiederebbe l'impiego di più strumenti diversi. <span  style='color: red;'>Gli elaboratori elettronici sono quindi programmabili per motivi economici</span> e per versatilità.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c12' id='c12'></a>
+</p><h3>2. Elementi di matematica e logica per la programmazione</h3>
+<h4>2.1 Logica Proposizionale</h4>
+<p>La logica proposizionale si occupa della verità o falsità delle proposizioni, dove <span  style='color: red;'>per <em>proposizione</em> si intende una frase di senso compiuto che può essere vera o falsa</span>. Un esempio di proposizione potrebbe essere che è pomeriggio, o che il sole è freddo, o che <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/Uni/Ronaldinho?action=edit'>questa</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/Uni/Ronaldinho?action=edit'>?</a> è una donna. Per comodità di manipolazione, viene spesso associato ad ogni proposizione un simbolo, così da sfruttare le più compatte ed esaustive notazioni matematiche per descrivere le interazioni dei vari eventi (ad esempio,  N: “io sono nudo”).
+</p>
+<p class='vspace'><span  style='color: red;'>Le proposizioni possono essere atomiche (semplici) oppure composte. Le seconde sono ottenute combinando una o più atomiche con i connettivi logici <em>non</em> (¬), <em>e</em> (&#8743;), <em>o</em> (&#8744;), <em>implica</em> (&#8835;), <em>se e solo se</em> (&#8801;). Le proposizioni atomiche e quelle composte prendono anche il nome di <em>formule ben formate</em> o <em>fbf</em>.</span>
+</p>
+<p class='vspace'>Il <em>valore di verità</em> di una fbf ci dice se questa è vera o falsa, e dipende dai valori di verità delle proposizioni che la compongono. Questi ultimi cambiano a seconda del contesto in cui li caliamo, dalla loro <span  style='color: red;'><em>interpretazione</em>, ovvero dal particolare assegnamento di valori di verità dato ad ogni proposizione atomica</span> (riprendendo l'esempio di prima, N è vero quando prendo il sole integrale ma è falso quando sono in università). 
+</p>
+<p class='vspace'>Le <em>tabelle di verità</em> sono tabelle (!) che indicano il valore di verità di una fbf a seconda del valore di verità delle sue “sotto-fbf”. <span  style='color: red;'>Da notare che se una fbf è combinazione di <em>n</em> atomiche, la sua tabella di verità sarà formata da <em>2<sup>n</sup></em> righe</span>. Le tabelle di verità dei connettivi logici sono:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/tabelle_verita.jpg' alt='' title='' /></div>
+<p class='vspace'><span  style='color: red;'>Una fbf può essere:</span>
+</p><ul><li><span  style='color: red;'><em>valida</em> (tautologia), se è vera per qualsiasi interpretazione. Es. "io sono io";</span>
+</li><li><span  style='color: red;'><em>inconsistente</em> (contraddizione), se è falsa per ogni interpretazione. Es. "io sono un sasso";</span>
+</li><li><span  style='color: red;'><em>soddisfacibile</em>, se e solo se esiste almeno un'interpretazione per cui essa è vera, ovvero che la soddisfa. Es. "io sono alto".</span>
+</li></ul><p class='vspace'>Esistono in logica proposizionale alcune relazioni tra proposizioni così importanti da essere considerate leggi:
+</p><ol><li>P  &#8801; Q = (P  &#8835; Q) &#8743; (Q &#8835; P );
+</li><li>P  &#8835; Q = ¬P &#8744; Q;
+</li><li>
+<ol  style='list-style: lower-alpha;'><li>  P &#8743; Q = Q &#8743; P , 
+</li><li> P &#8744; Q = Q &#8744; P ; (leggi commutative)
+</li></ol></li><li>
+<ol  style='list-style: lower-alpha;'><li>  P &#8743; (Q &#8743; R) = (P &#8743; Q) &#8743; R,
+</li><li> P &#8744; (Q &#8744; R) = (P &#8744; Q) &#8744; R; (leggi associative)
+</li></ol></li><li>
+<ol  style='list-style: lower-alpha;'><li>  P &#8743; (Q &#8744; R) = (P &#8743; Q) &#8744; (P &#8743; R),
+</li><li> P &#8744; (Q &#8743; R) = (P &#8744; Q) &#8743; (P &#8744; R); (leggi distributive)
+</li></ol></li><li>P &#8743; T = P , P &#8744; &#8869; = P ; <span style='font-size:83%'>(T è la proposizione sempre vera, mentre &#8869; è sempre falsa)</span>
+</li><li>P &#8743; &#8869; = &#8869;, P &#8744; T = T;
+</li><li>P &#8743; ¬P  = &#8869;, P &#8744; ¬P  = T;
+</li><li>¬(¬P ) = P ;
+</li><li>
+<ol  style='list-style: lower-alpha;'><li>  <span  style='color: red;'>¬(P &#8743; Q) = ¬P &#8744; ¬Q,</span>
+</li><li> <span  style='color: red;'>¬(P &#8744; Q) = ¬P &#8743; ¬Q. (leggi di De Morgan)</span>
+</li></ol></li></ol><p class='vspace'><span  style='color: red;'>In generale una fbf Q segue logicamente da una fbf P se e solo se ogni interpretazione che soddisfa P soddisfa anche Q.</span> In questo caso la formula P  &#8835; Q si dice teorema, dove P è l'ipotesi e Q la sua tesi. La dimostrazione di un teorema è una successione di passaggi, verificabili in modo meccanico e oggettivo, che trasformano l'ipotesi nella tesi. <span  style='color: red;'>Scrivere programmi spesso richiede la dimostrazione di teoremi.</span>
+</p>
+<div class='vspace'></div><h4>2.2 Insiemistica </h4>
+<p>Un <em>insieme</em> è una qualsiasi collezione di elementi. <br />Un elemento x che appartiene ad un insieme A si indica con la notazione x &#8712; A. <br />Due insiemi si dicono uguali se e solo se contengono gli stessi elementi.<br />Un insieme A è sottoinsieme di B se e solo se ogni elemento di A è anche elemento di B.<br />L'intersezione di due insiemi A &#8745; B è l'insieme di tutti gli elementi comuni ad A e B.<br />L'unione di due insiemi A U B è l'insieme di tutti gli elementi che appartengono ad A o a B, o ad entrambi.<br />Un insieme che non contiene nessun elemento si chiama insieme vuoto e si indica con Ø.<br />Il complemento di un insieme A è l'insieme di tutti gli elementi che non appartengono ad A.
+</p>
+<p class='vspace'>Gli insiemi godono delle seguenti proprietà:
+</p><ol><li>Proprietà commutativa:<br />  A U B = B U A	--- A &#8745; B =  B &#8745; A
+</li><li>Proprietà associativa:<br />  A U ( B U C) = (A U B) U C <br />  A &#8745; ( B &#8745; C) = (A &#8745; B) &#8745; C
+</li><li>Proprietà distributiva:<br />  A U ( B &#8745; C) = (A U B) &#8745; (A U C)<br />  A &#8745; ( B U C) = (A &#8745; B) U (A &#8745; C)
+</li><li>Idempotenza:<br />  A U A = A --- A &#8745; A = A
+</li><li>Identità:<br />  A U Ø = A --- A &#8745; U = A --- A &#8745; Ø = Ø --- A U U = U
+</li><li>Proprietà transitiva dell'inclusione:<br />  se A &#8838; B &#8838; C, allora A &#8838; C
+</li><li>Involuzione:<br />  &#256; = A
+</li><li><span  style='color: red;'>Leggi di De Morgan:<br /><img src='../uploads/Uni/deMorgan.jpg' alt='' title='' /></span>
+</li></ol><p class='vspace'>Dati <em>n</em> insiemi <em>U<sub>1</sub>, U<sub>2</sub>, ... U<sub>n</sub></em>, il loro prodotto cartesiano <em>U<sub>1</sub> X U<sub>2</sub> X ... X U<sub>n</sub></em> è l'insieme di tutte le <em>n</em>-uple ordinate (<em>u<sub>1</sub> X u<sub>2</sub> X ... X u<sub>n</sub></em>) dove u<sub>i</sub> &#8712; U<sub>i</sub> per i = 1, 2, ... , n.
+</p>
+<p class='vspace'>Dati due insiemi A e B, una <em>funzione f</em> di dominio A e codominio B è una mappa che associa ad ogni elemento <em>a &#8712; A</em> un elemento <em>b = f(a) &#8712; A</em>. In formula, <em>f: A &#8594; B</em>.
+</p>
+<p class='vspace'>Una funzione f  si dice <em>iniettiva</em>  se e solo se x<sub>1</sub> &#8800; x<sub>2</sub>  implica f (x<sub>1</sub>) &#8800; f (x<sub>2</sub>). 
+Una funzione si dice <em>suriettiva</em> se la sua immagine coincide con il suo codominio. 
+Una <em>corrispondenza biunivoca</em>  (o funzione biiettiva) è una funzione sia iniettiva che suriettiva.  
+</p>
+<p class='vspace'>La <em>cardinalità</em> di un insieme A è il numero di elementi che appartengono all'insieme A, e si denota &#9553;A&#9553;. Dati due insiemi A e B: 
+</p><ul><li><span  style='color: red;'>il prodotto cartesiano A × B ha una cardinalità data dal prodotto delle cardinalità degli insiemi A e B, cioè  &#9553;A × B&#9553; = &#9553;A&#9553; · &#9553;B&#9553;;</span>
+</li><li>l'insieme delle funzioni  f: A &#8594; B ha una cardinalità esponenziale data da &#9553;B&#9553;<sup>&#9553;A&#9553;</sup>;
+</li><li><span  style='color: red;'>l'insieme di tutti i sottoinsiemi di A ha cardinalità 2<sup>&#9553;A&#9553;</sup>.</span>
+</li></ul><div class='vspace'></div><h4>2.3 Logica dei predicati</h4>
+<p>La <em>logica dei predicati</em> è un passo avanti nel livello di astrazione della descrizione degli eventi, perché offre strumenti di descrizione molto più potenti e versatili di quelli della logica delle proposizioni. Facendo un esempio, se abbiamo dieci lampadine e dobbiamo dire se funzionano o se sono fulminate, nella logica delle proposizioni dovremo definire una proposizione per ogni lampadina. Il che può andare bene quando le lampadine sono dieci, ma quando sono diecimila? E' qui che giunge in soccorso la logica dei predicati, in grado di parametrizzare e quindi "riassumere" i vari eventi.
+</p>
+<p class='vspace'><span  style='color: red;'>La logica dei predicati è costituita da:</span>
+</p><ul><li><span  style='color: red;'><em>simboli individuali</em></span> (i nomi degli oggetti coinvolti nel ragionamento, chiamati anche <em>istanze</em>);
+</li><li><span  style='color: red;'><em>variabili</em></span> (ad esempio x, y e z), che possono assumere dei valori attinti dall'insieme dei simboli individuali;
+</li><li><span  style='color: red;'><em>simboli di funzione</em></span>, utilizzati per costruire nuove istanze;
+</li><li><span  style='color: red;'><em>simboli di predicato</em></span>, utilizzati per costruire proposizioni su particolari istanze.
+</li></ul><p class='vspace'><span  style='color: red;'>I <em>termini</em> sono gli argomenti di un predicato nella logica dei predicati</span>, e rappresentano quelle entità sulle quali è possibile costruire affermazioni. Possono essere:
+</p><ul><li><em>simboli individuali</em>;
+</li><li><em>variabili</em>;
+</li><li><span  style='color: red;'>se f è una funzione <em>n</em>-aria e t<sub>1</sub>, ... , t<sub>n</sub> sono termini, anche f(t<sub>1</sub>, ... , t<sub>n</sub>) è un termine.</span>
+</li></ul><p class='vspace'>Attraverso l'utilizzo dei termini diventa possibile scrivere della formule in cui ciascuna variabile può essere sostituita da una qualsiasi delle istanze. 
+</p>
+<p class='vspace'>La logica dei predicati mette inoltre a disposizione due utili elementi, i <em>quantificatori</em>, grazie ai quali è possibile specificare se le variabili di una data proposizione si riferiscono a tutte le loro istanze o solo ad un numero più ristretto. Ne esistono di due tipi, quello <em>esistenziale</em> &#8707;  (“esiste”) e quello <em>universale</em> &#8704;  (“per ogni”). <span  style='color: red;'>Molto importante ricordare come i quantificatori possano essere applicati alle sole variabili libere di una formula.</span>
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c13' id='c13'></a>
+</p><h3>3. La nozione di "algoritmo"</h3>
+<p><span  style='color: red;'>L'algoritmo è una procedura passo per passo grazie alla quale un'operazione può essere svolta senza alcun esercizio di intelligenza e quindi, per esempio, da una macchina.</span> Se il suo scopo è quello di risolvere problemi, capite bene con quanti algoritmi abbiamo a che fare tutti i giorni. <span  style='color: red;'>Un esempio legittimo di algoritmo potrebbe essere perfino una <a style='color: red' class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/Uni/Pinguino?action=edit'>ricetta di cucina</a><a style='color: red' rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/Uni/Pinguino?action=edit'>?</a>.</span>
+</p>
+<p class='vspace'><span  style='color: red;'>Requisiti essenziali per un algoritmo sono:</span>
+</p><ul><li><span  style='color: red;'><em>poter essere risolto in un numero finito di operazioni</em></span>, perché va da sé che se il numero fosse infinito non si arriverebbe mai a risolvere il problema. Ad esempio, se <em>trovare i primi dieci numeri primi</em> è un algoritmo (basta applicare determinate operazioni per un numero finito di volte), <em>trovare <strong><em>tutti</em></strong> i numeri primi</em> non lo è più (le operazioni da eseguire sono <em>le stesse</em>, ma non si finirà mai di ripeterle);
+</li><li><em>essere il meno ambiguo possibile</em>. Ad esempio, in una ricetta di cucina la frase "<em>un pizzico di sale</em>" non potrebbe essere ben interpretata da tutti (<em>un milligrammo? Dieci milligrammi? Sedici tonnellate?</em>).
+</li></ul><p class='vspace'>Non esiste un unico linguaggio per esprimere un algoritmo, dipende da cosa bisogna fare, come bisogna farlo e da chi farlo eseguire.
+</p>
+<p class='vspace'><span  style='color: red;'>L' <em>analisi di un algoritmo</em> è lo studio della sua <em>complessità computazionale</em>, che dipende dalla quantità di risorse necessarie alla sua esecuzione,</span> a loro volta strettamente dipendenti dalla difficoltà del problema da risolvere. Le due risorse principali sono:
+</p><ul><li><em>il tempo impiegato</em> per eseguire l'algoritmo;
+</li><li><em>lo spazio</em>, ovvero la quantità di memoria necessaria per contenere i dati iniziali, intermedi e finali del problema che si sta risolvendo.
+</li></ul><p class='vspace'><span  style='color: red;'>Da notare che la difficoltà di un problema è misurata dalla complessità computazionale del più efficiente algoritmo che lo risolve.</span>
+</p>
+<p class='vspace'><span  style='color: red;'>Dal momento che sarebbe troppo complicato studiare la complessità di un algoritmo su una macchina reale, il suo studio avviene su un modello generico della tecnologia che verrà utilizzata per realizzarlo.</span> Il nostro modello sarà una macchina con accesso casuale alla memoria e con un processore singolo, la <em>random-access machine</em> (RAM). <span  style='color: red;'>Peculiarità della RAM è che le istruzioni vengono eseguite in sequenza, con lo stesso tempo di esecuzione e senza operazioni concorrenti. Questo significa che il tempo di esecuzione di un algoritmo su un dato ingresso è dato dal numero di passi necessari per eseguirlo moltiplicato per una costante di tempo t<sub>i</sub>.</span> Per quanto riguarda lo spazio occupato, si considera invece la quantità massima di informazione da mantenere durante l'esecuzione.
+</p>
+<p class='vspace'>Lo spazio e il tempo dipendono fortemente dal particolare ingresso dell'algoritmo, quindi per il loro studio non possiamo interessarci di pochi casi particolari, ma di una statistica su tutte le possibili esecuzioni. Le statistiche possibili sono tre (<em>caso migliore</em>, <em>caso medio</em>, <em>caso peggiore</em>), ma <span  style='color: red;'>l'analisi degli algoritmi si concentra sul caso peggiore (maggior impiego di tempo e di spazio possibile) per tre buoni motivi:</span>
+</p><ul><li><span  style='color: red;'>stabilisce un limite superiore alle risorse che l'esecuzione dell'algoritmo potrebbe richiedere (quindi le risorse messe a disposizione saranno sufficienti per ogni caso possibile);</span>
+</li><li><span  style='color: red;'>per alcuni algoritmi il caso peggiore è quello che accade più spesso;</span>
+</li><li><span  style='color: red;'>è molto frequente che il caso medio sia molto simile a quello peggiore.</span>
+</li></ul><p class='vspace'><span  style='color: red;'>Ciò che però realmente determina la complessità di un algoritmo non è la quantità precisa di risorse, ma l' <em>ordine</em>, ovvero il suo tasso di crescita (logaritmico, lineare, cubico, esponenziale, ...) al crescere delle dimensioni dell'ingresso. Ovviamente più l'ordine è basso e più l'algoritmo è semplice ed efficiente. </span>
+</p>
+<p class='vspace'>Facciamo due esempi: 
+</p><ol><li><span  style='color: red;'>abbiamo due algoritmi A e B. Il primo nel caso peggiore gira in un tempo pari a nlogn, mentre il secondo in un tempo pari a 100logn. Anche se per n piccolo è A il più veloce, l'ordine di crescita di A è esponenziale, mentre quello di B logaritmico. Quindi B è un algoritmo più efficiente di A;</span>
+</li><li><span  style='color: red;'>abbiamo due algoritmi A e B. Il primo nel caso peggiore gira in un tempo pari a nlogn, mentre il secondo in un tempo pari a 6nlogn. Il coefficiente 6 non deve trarre in inganno, perché l'ordine di crescita al crescere delle dimensioni dell'ingresso è esponenziale per entrambi. Quindi A e B hanno stessa complessità computazionale.</span>
+</li></ol><p class='vspace'>In base al loro ordine, i problemi si possono suddividere in:
+</p><ul><li><em>semplici</em>, quando sono risolvibili da algoritmi di ordine logaritmico o lineare;
+</li><li><em>trattabili</em>, quando hanno complessità polinomiale in tempo di calcolo;
+</li><li><span  style='color: red;'><em>difficili</em> o <em>intrattabili</em>, quando richiedono una quantità esponenziale di tempo;</span>
+</li><li><span  style='color: red;'><em>indecidibili</em>, quando non possono essere risolti in un tempo finito da nessun algoritmo e quindi da nessun programma. Ne è un classico esempio il problema "dell'arresto", che consiste nello stabilire se, dato un programma, questo termina su un particolare ingresso.</span>
+</li></ul><p class='vspace'>In base alla loro complessità computazionale, gli algoritmi possono essere suddivisi in <em>classi di complessità</em>, assegnate in base alla scelta del modello di calcolo (come la RAM o, ancora più astratto, la macchina di Turing e la macchina di Turing con oracolo) ed al concetto di riduzione del problema.
+</p>
+<p class='vspace'><em>...e tanto per sapere:</em> La macchina di Turing è un dispositivo governato da una logica interna costituita da un automa a stati finiti ed equipaggiato con una testina che legge e scrive simboli di un certo alfabeto su un nastro infinito, sul quale si può spostare di una casella alla volta. La macchina di Turing con oracolo o “non deterministica” è una macchina di Turing ideale nella quale ogni volta che l’algoritmo prevede il compimento di una scelta, lui fa sempre quella giusta.
+</p>
+<p class='vspace'>Ultimo concetto da prendere in considerazione nell'analisi di un algoritmo è quello di <em>riduzione</em> o <em>riducibilità</em>, che permette di verificare se un certo algoritmo associato alla risoluzione di uno specifico problema può essere adoperato per risolverne anche altri.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c14' id='c14'></a>
+</p><h3>4. I linguaggi di programmazione</h3>
+<p>Un linguaggio di programmazione è un linguaggio non ambiguo ed estremamente preciso, grazie al quale è possibile comunicare ad una macchina le operazioni che deve eseguire in modo del tutto meccanico e automatico. 
+</p>
+<p class='vspace'>Non esiste un unico linguaggio di programmazione, ed un buon programmatore non deve impararne uno a menadito ed usare sempre e solo quello, ma dovrà scegliere l'uno o l'altro a seconda delle necessità e di ciò che deve fare.
+</p>
+<div class='vspace'></div><h4>4.1 Definizione formale di linguaggio</h4>
+<p>Un <em>linguaggio</em> è un repertorio di segni convenzionali e di regole per combinarli in enunciati più complessi, più altre regole che associano un significato ad ogni enunciato. 
+</p>
+<p class='vspace'>Esistono tre livelli di linguaggio:
+</p><ul><li><em>sintattico</em>, l’insieme delle regole che specificano in quali modi i segni possono essere combinati per formare enunciati. Ad esempio, nel linguaggio italiano ad una "q" non può seguire una "f";
+</li><li><em>semantico</em>, l’insieme delle regole che permettono di associare un significato a segni ed enunciati;
+</li><li><em>pragmatico</em> (non interessa ai nostri fini), che riguarda le conseguenze pratiche di un enunciato.
+</li></ul><p class='vspace'>L’insieme dei segni convenzionali (anche detti <em>simboli</em> o <em>token</em>) con i quali si possono costruire gli enunciati di un linguaggio, viene chiamato indifferentemente <em>alfabeto</em> o <em>vocabolario</em>. <span  style='color: red;'>Una <em>parola</em> (in alcuni casi detta <em>stringa</em> o <em>frase</em>) è invece una sequenza di lunghezza finita di simboli dell’alfabeto. <em>Un linguaggio è completamente definito dall'insieme delle parole che gli appartengono.</em></span>
+</p>
+<p class='vspace'>Una parola vuota è una sequenza di zero simboli, uguale per qualsiasi alfabeto e indicata con &#1108;. Se &#8721; è un alfabeto, &#8721;* indica l’insieme di tutte le parole composte da elementi di &#8721;, &#1108; compresa. Per esempio se<br />&#8721; = {c,a}, &#8721;* = {&#1108;, c, a, ca, ac, acc, ..., acca, caca, ..., cacca, ...}.
+</p>
+<p class='vspace'>Una definizione più formale di linguaggio potrebbe essere: <em>un linguaggio L è un sottoinsieme delle parole costruibili su un alfabeto &#8721;, L &#8838; &#61472;&#8721;*</em>. Ne consegue che, data una parola w &#8712; &#8721;* ci sono due possibilità:
+</p><ul><li>w appartiene al linguaggio e quindi rappresenta un enunciato di L;
+</li><li>w non appartiene al linguaggio e dunque non ne rappresenta un enunciato valido.
+</li></ul><div class='vspace'></div><h4>4.2 Grammatica</h4>
+<p>Un modo esauriente per rappresentare il linguaggio L è definire una procedura in grado di generare tutte le sue parole. <span  style='color: red;'>Una <em>grammatica</em> è proprio uno di questi sistemi generativi, quindi <em>un insieme di regole di produzione impiegate per descrivere in modo finito linguaggi infiniti</em>.</span>
+</p>
+<p class='vspace'>Più formalmente, una grammatica G è una quadrupla (N, &#8721;, R, S), dove:
+</p><ul><li><strong>N</strong> sono i <em>non terminali</em>, ovvero simboli che non compaiono negli enunciati ma che servono a indicarne gli elementi. Da notare che: N &#8745; &#931; = &#8709;;
+</li><li><strong>&#8721;</strong> è l<em>'alfabeto</em> del linguaggio, i cui simboli sono chiamati <em>terminali</em> (in quanto usati per costruire gli enunciati);
+</li><li><strong>R</strong> è l' <em>insieme delle regole di produzione</em>. <br />Queste hanno forma &#945;  &#8594;  &#946;, dove &#945; &#8712;  N* \ {&#1108;} e &#946; &#8712; (N &#8746; &#931;)* <br /><span style='font-size:83%'>(tradotto in parole: "<strong>se</strong> ho <em>alfa</em> <strong>allora</strong> produco <em>beta</em>, dove alfa appartiene all'insieme dei non terminali (meno la parola vuota) mentre beta appartiene all'unione tra i non terminali e l'alfabeto (parola vuota compresa)")</span>;
+</li><li><strong>S</strong> è il <em>simbolo di partenza</em>, un simbolo non terminale speciale (e quindi S &#8712; N) che indica un enunciato valido.
+</li></ul><p class='vspace'>La relazione di produzione in una grammatica G è espressa come:<br />&#8658;G &#8838; (N &#8746; &#931;)<sup>&#8727;</sup> × (N &#8746; &#931;)<sup>&#8727;</sup>
+</p>
+<p class='vspace'>ed il linguaggio generato da questa grammatica, indicato con L(G) è definito come:<br />L(G) = {w : w &#8712; &#931;<sup>&#8727;</sup> &#8743; S &#8658;<sup>&#8727;</sup>w}
+</p>
+<p class='vspace'>ovvero tutte le stringhe w &#8712; &#931;<sup>&#8727;</sup> che derivano dal simbolo di partenza S utilizzando le regole della grammatica.
+</p>
+<div class='vspace'></div><h4>4.3 Grammatiche nel formato di Backus e Naur</h4>
+<p>Esistono altri tipi di notazione per definire le grammatiche, di più pratica lettura e scrittura. Ne è un esempio quella di Backus e Naur (abbreviato <em>BNF</em>), creata negli anni '60 per definire la sintassi del linguaggio Algol 60.
+</p>
+<p class='vspace'>Alcune differenze rispetto alla notazione vista prima:
+</p><ul><li>la freccia a destra &#8594; delle regole viene sostituita da ::=  ;
+</li><li>i simboli non terminali sono rappresentati da stringhe alfanumeriche tra parentesi angolari, come &lt;esempio&gt; ;
+</li><li>i simboli terminali sono racchiusi tra virgolette, singole o doppie.
+</li></ul><p class='vspace'>Un esempio di notazione in BNF potrebbe essere:
+&lt;cifra&gt;  ::== '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0'
+che associa al non terminale cifra uno dei 10 valori messi tra virgolette e separati dal metasimbolo di alternativa <strong>|</strong>.
+</p>
+<div class='vspace'></div><h4>4.4 Carte sintattiche</h4>
+<p>Le carte sintattiche sono dei diagrammi che permettono di visualizzare le regole di una grammatica in forma grafica. In un diagramma i simboli non terminali vengono rappresentati da rettangoli, mentre quelli terminali da elementi rotondi o rettangolari con gli angoli smussati. I simboli sono collegati tra loro con delle frecce orientate.
+</p>
+<div class='vspace'></div><h4>4.5 Linguaggi di alto e basso livello</h4>
+<p>Un linguaggio di programmazione può essere o direttamente comprensibile dalla macchina o più vicino al modo di ragionare di chi lo dovrà utilizzare. Nel primo caso si parla di un <em>linguaggio di basso livello</em> (come l'assembly o il MIXAL), nel secondo caso di <em>alto livello</em> (come il C++ o il Java). 
+</p>
+<p class='vspace'>Per rendere anche questi ultimi comprensibili dalla macchina, ci sarà bisogno di: 
+</p><ul><li><span  style='color: red;'>un <em>interprete</em>, che interpreta ed esegue le istruzioni di un altro programma scritto in un altro linguaggio, rendendo difatto i programmi <em>portabili</em>, oppure</span>
+</li><li>un <em>compilatore</em>, che traduce automaticamente il programma di alto livello in uno direttamente eseguibile dalla macchina.
+</li></ul><p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c15' id='c15'></a>
+</p><h3>5. Fasi della programmazione</h3>
+<p><span  style='color: red;'>Esistono cinque fasi distinte nella scrittura di un programma:</span>
+</p><ol><li><span  style='color: red;'>specifica;</span>
+</li><li><span  style='color: red;'>progettazione;</span>
+</li><li><span  style='color: red;'>modellazione;</span>
+</li><li><span  style='color: red;'>codifica;</span>
+</li><li><span  style='color: red;'>verifica e correzione.</span>
+</li></ol><div class='vspace'></div><h4>5.1 Specifica</h4>
+<p>La <em>specifica</em> è la fase in cui viene descritto in modo più o meno formale il problema che il programma deve risolvere, più gli eventuali vincoli e requisiti che dovrà rispettare.
+</p>
+<p class='vspace'>Una <em>specifica informale</em> non è altro che un testo con la descrizione del problema da risolvere e le relazioni che si desidera mantenere tra ingressi e uscite.
+</p>
+<p class='vspace'><span  style='color: red;'>Una <em>specifica formale</em> è una quadrupla S = &lt;X, Y, I, U&gt;, dove:</span>
+</p><ul><li><span  style='color: red;'><em>X</em> sono gli <em>ingressi</em></span>, ovvero i dati da fornire al programma;
+</li><li><span  style='color: red;'><em>Y</em> sono le <em>uscite</em></span>, cioè i risultati che il programma deve produrre;
+</li><li><span  style='color: red;'><em>I</em> sono le <em>precondizioni</em></span>, cioè le condizioni che gli ingressi devono rispettare;
+</li><li><span  style='color: red;'><em>U</em> sono le <em>postcondizioni</em></span>, ovvero le condizioni che le uscite devono soddisfare perché il programma sia corretto.
+</li></ul><p class='vspace'>Esprimendo i concetti in formule, per ogni dato x &#8712; X che soddisfa la formula I(x), il risultato y &#8712; Y prodotto dal programma deve soddisfare la formula U(x, y).
+</p>
+<div class='vspace'></div><h4>5.2 Progettazione</h4>
+<p>La <em>progettazione</em> consiste nell'analisi del problema da risolvere e nella progettazione in modo astratto dell'algoritmo. <span  style='color: red;'>Esistono due approcci antitetici alla progettazione:</span>
+</p><ul><li><span  style='color: red;'><em>analisi top-down</em> (dall'alto verso il basso)</span>, che scompone i requisiti da soddisfare in un numero minore di sotto-requisiti, a loro volta scomposti in... ecc. fino a che il programma è scomposto in una sequenza di compiti elementari;
+</li><li><span  style='color: red;'><em>analisi bottom-up</em> (dal basso verso l'alto)</span>, che parte dai compiti elementari che si sanno già svolgere e che cerca di combinarli nel modo più opportuno per ottenere la soluzione al problema. Con questo sistema si creano collezioni di piccoli programmi funzionali, comodamente organizzabili in librerie da cui poi prelevarli e riutilizzarli.
+</li></ul><p class='vspace'>Questi due approcci di progettazione possono essere combinati, ad esempio scomponendo un problema dall'alto e individuando quali sottorequisiti comuni e ricorrenti possono essere progettati in stile bottom-up.
+</p>
+<p class='vspace'>Un sistema di progettazione tra i più recenti è quello <span  style='color: red;'>ad oggetti</span>, che consiste nell'individuare tutti gli elementi rilevanti che compaiono nella definizione del problema (gli oggetti) e quindi modellizzarli e strutturarli tra loro.
+</p>
+<div class='vspace'></div><h4>5.3 Modellazione</h4>
+<p>La <em>modellazione</em> è la fase in cui viene rappresentato l'algoritmo in maniera più formale e dettagliata, con lo scopo di renderne più evidenti i passaggi e più chiara la struttura concettuale.
+</p>
+<p class='vspace'>È una fase molto importante e troppo spesso sottovalutata, che aiuta il programmatore a creare un programma corretto e corredato di una buona documentazione.
+</p>
+<div class='vspace'></div><h4>5.4 Codifica</h4>
+<p>La <em>codifica</em> è il momento in cui il programma viene effettivamente scritto nel linguaggio di programmazione prescelto. Tale scelta può dipendere da vari fattori, sia interni (ad esempio, preferenze) che esterni (ad esempio, imposizioni del richiedente).
+</p>
+<div class='vspace'></div><h4>5.5 Verifica e correzione</h4>
+<p>La <em>verifica</em> è quella fase eterna in cui viene testato il programma, un momento necessario dato che è molto improbabile che esso sia privo di errori al primo colpo. La <em>correzione</em> degli errori è la logica conseguenza della fase di verifica, in cui vengono corrette (!) le parti del codice segnalate dal testing. 
+</p>
+<p class='vspace'>Tutte queste attività si basano sul concetto che <span  style='color: red;'>un programma è corretto solo quando soddisfa <em>tutte</em> le sue specifiche.</span>
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c16' id='c16'></a>
+</p><h3>6. Strumenti di modellazione della programmazione</h3>
+<p>Esistono fondamentalmente due strumenti più o meno formali per aiutare il programmatore nella delicata fase di modellazione (quella intermedia tra l'algoritmo e il programma): i diagrammi di flusso e lo pseudocodice.
+</p>
+<div class='vspace'></div><h4>6.1 Diagrammi di flusso</h4>
+<p>Un <em>diagramma di flusso</em> è la rappresentazione grafica simbolica dell'algoritmo, realizzata come sequenza di blocchi contenenti i vari passi dell'algoritmo stesso. 
+</p>
+<p class='vspace'><span  style='color: red;'>Ogni diagramma di flusso ha uno stato di partenza e zero o più stati finali (rappresentati come cerchietti), più altri blocchi intermedi rappresentati come rettangoli per le istruzioni e come rombi per i test.</span> Blocchi e stati sono collegati con delle frecce, che puntano al blocco successivo da eseguire.
+</p>
+<div class='vspace'></div><h4>6.2 Pseudocodice</h4>
+<p><span  style='color: red;'>Un altro strumento di modellazione della programmazione è lo <em>pseudocodice</em></span>, ovvero un linguaggio fittizio che permette di descrivere un algoritmo senza utilizzare la sintassi di un linguaggio di programmazione specifico. Non può essere eseguito direttamente dal computer, ma aiuta il programmatore nella stesura del codice vero e proprio.
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<p class='vspace'><a name='c17' id='c17'></a>
+</p><h3>7. Documentazione</h3>
+<p>La documentazione di un programma è tutto quel materiale informativo prodotto per facilitare la comprensione - e quindi l'utilizzo - del programma stesso. Può essere di due tipi: interna ed esterna.
+</p>
+<div class='vspace'></div><h4>7.1 Documentazione interna</h4>
+<p><span  style='color: red;'>La <em>documentazione interna</em> di un programma è costituita principalmente dai commenti introdotti nel codice nella fase di codifica</span>, con lo scopo di chiarire il suo funzionamento. <span  style='color: red;'>Perfino la formattazione di un programma (indentazione, distribuzione su più righe, ...) e le asserzioni (vedi <a style='color: red' class='wikilink' href='TettyCap3.html'>Capitolo 3</a>) sono una forma di documentazione interna.</span>
+</p>
+<div class='vspace'></div><h4>7.2 Documentazione esterna</h4>
+<p><span  style='color: red;'>La documentazione esterna di un programma è costituita dai vari documenti di progetto prodotti separatamente dal programma. </span>Sono documenti di specifica, spiegazioni scritte, manuali di riferimento, schemi e diagrammi, ... praticamente tutto il materiale prodotto nella fase di modellazione.
+</p>
+<p class='vspace'>La documentazione non deve limitarsi alla mera fase di codifica del programma, ma anche a quella di collaudo, con la spiegazione dei sistemi di verifica applicati e dei risultati che hanno restituito.
+</p>
+<p class='vspace'>Per quanto riguarda i manuali, consigliati per ogni programma complesso, si distinguono due tipi: il <em>manuale utente</em> (per l'utente comune che dovrà utilizzare il programma) e il <em>manuale di riferimento</em> (per l'utente avanzato o per un eventuale programmatore che potrebbe riutilizzare il programma come componente di un altro più grande).
+</p>
+<p class='vspace'><a href='#su'><span style='font-size:83%'><strong>Torna su</strong></span></a>
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ProgrammazioneElaboratori.html'>Torna alla pagina di Programmazione degli Elaboratori</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/TettyCap1)</span></div>
+  </div>
+</body>
+</html>

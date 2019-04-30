@@ -1,0 +1,913 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / SistBio10</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Domande1.html' title='SistBio10'>SistBio10</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiBiometrici.html'>Torna a Sistemi Biometrici</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Domande Esame - Sistemi Biometrici ::</strong>
+</pre><p class='vspace'><strong>La definizione più corretta di "tecniche per i sistemi biometrici" è la seguente</strong>
+</p>
+<p class='vspace'>Insieme di tecniche automatiche per l’identificazione degli individui basata sulle loro caratteristiche fisiche e comportamentali.
+</p>
+<p class='vspace'><strong>L’operazione che associa una identità ad un individuo può essere distinta in "autenticazione" e "Identificazione"</strong>
+</p>
+<p class='vspace'>Vero
+</p>
+<p class='vspace'><strong>Rispetto al contesto visto a lezione, se si dispongono i metodi di identificazione in ordine CRESCENTE di ACCURATEZZA della identificazione, quale disposizione è più corretta in generale?</strong>
+</p>
+<p class='vspace'>Qualcosa che hai &lt; Qualcosa che sai &lt; Qualcosa che sei
+</p>
+<p class='vspace'><strong>Esamina questa situazione: al bancomat il sistema controlla se chi sta usando la carta sia effettivamente il possessore della carta. Può essere definito un caso di:</strong>
+</p>
+<p class='vspace'>Autenticazione Positiva
+</p>
+<p class='vspace'><strong>Nel 2005, meno di 350000 persone sono state registrate in sistemi biometrici, ma è previsto un fortissimo tasso di crescita dell'impiego dei sistemi biometrici nei prossimi anni.</strong>
+</p>
+<p class='vspace'>Falso
+</p>
+<p class='vspace'><strong>La fase di "Enrollment" corrisponde alla fase di Identificazione</strong>
+</p>
+<p class='vspace'>Falso
+</p>
+<p class='vspace'><strong>I sistemi biometrici possono essere considerati come dei sistemi di "pattern recognition"</strong>
+</p>
+<p class='vspace'>Vero: hanno una struttura concettuale molto simile
+</p>
+<p class='vspace'><strong>Gli algoritmi di signal/image enhancement possono introdurre degli artefatti nella rappresentazione del sample che possono essere dannosi per le performance del sistema biometrico</strong>
+</p>
+<p class='vspace'>VERO
+</p>
+<p class='vspace'><strong>Gli animali e gli esseri umani riescono a riconscersi fra loro grazie a peculiari caratteristiche biologiche e comportamentali. E' possibile considerare questo approccio come simile a quello di un sistema biometrico?</strong>
+</p>
+<p class='vspace'>Si, perché un sistema biometrico impiega proprio queste caratteristiche per effettuare una operazione di autenticazione o di identificazione.
+</p>
+<p class='vspace'><strong>I primi reperti o documenti che dimostrano l'uso di un tratto biometrico a scopo di autenticazione personale sono da attribuirsi intorno al</strong>
+</p>
+<p class='vspace'>1800 A.C. in Babilonia
+</p>
+<p class='vspace'><strong>Il sistema Bertillon è da considerarsi come il primo sistema di identificazione biometrico…..</strong>
+</p>
+<p class='vspace'>….che, nonstante la complessità delle operazioni, ebbe un buon successo in tutto il mondo e fu usato fino ad essere soppiantato con gradualità dalle impronte dopo il 1900
+</p>
+<p class='vspace'><strong>Il tratto biometrico più diffuso nel mercato mondiale dei sistemi biometrici al 2006 è</strong>
+</p>
+<p class='vspace'>Impronta
+</p>
+<p class='vspace'><strong>Esistono tre approcci fondamentali per il riconoscimento delle impronte digitali</strong>
+</p>
+<p class='vspace'>Basati sulla correlazione delle immagini, sul confronto dei ridge e sul confronto della minuzie
+</p>
+<p class='vspace'><strong>Una webcam non può essere impiegata come sensore per il riconoscimento del volto a causa della definizione del CCD troppo bassa</strong>
+</p>
+<p class='vspace'>Falso: possono essere impiegate
+</p>
+<p class='vspace'><strong>Vi sono circa 17 fattori diversi di cui tenere conto quando si progetta o si valuta un sistema biometrico</strong>
+</p>
+<p class='vspace'>Vero: tuttavia il peso da dare ai vari fattori dipende dalla tipologia della applicazione
+</p>
+<p class='vspace'><strong>Tutti i tratti biometrici si possono in teoria sempre usare per eseguire operazioni di identificazione e verifica della identità</strong>
+</p>
+<p class='vspace'>Vero
+</p>
+<p class='vspace'><strong>Tutti i 10 tipi di tratti biometrici più usati nel mondo in applicazioni biometriche garantiscono una variabilità del tratto nel tempo di vita della persona pressochè trascurabile</strong>
+</p>
+<p class='vspace'>Falso: vi sono tratti biometrici impiegati che presentano variabilità rilevabile anche sulla scala dei minuti
+</p>
+<p class='vspace'><strong>La percezione degli utenti rispetto si sistemi biometrici …</strong>
+</p>
+<p class='vspace'>è duplice, ossia vengono percepiti i vantaggi dovuti alla maggiore sicurezza ma anche gli aspetti negativi che fanno vedere i sistemi biometrici come invasivi della propria privacy
+</p>
+<p class='vspace'><strong>Il problema della proscription si verifica quando…</strong>
+</p>
+<p class='vspace'>le informazioni inviate al sistema biometrico vengono usate per scopi diversi da quello per il quale sono stati inviati e/o sono inviate ad altri sistemi anche per accedere o immettere l'utente in liste in base alla sua situazione/comportamento
+</p>
+<p class='vspace'><strong>Memorizzare nei sistemi biometrici il template e non direttamente il sample permette di mettere al riparo l'utente dai problemi connessi alla privacy</strong>
+</p>
+<p class='vspace'>Questa affermazione è stata a lungo condivisa nella comunità scientifica, ma ora vi sono delle evidenze che sia possibile risalire al sample partendo dal template.
+</p>
+<p class='vspace'><strong>Quale è la sequenza più corretta di moduli componenti un generico sistema biometrico funzionante in enrollment ?</strong>
+</p>
+<p class='vspace'>1) Modulo di acquisizione 2) estrazione di caratteristica 3) creazione del template 4) memorizzazione nel DB
+</p>
+<p class='vspace'><strong>Durante le operazioni di identificazione dell'individuo il modulo di matching ….</strong>
+</p>
+<p class='vspace'>Compara il template in ingresso con alcuni template registrati nel DB
+</p>
+<p class='vspace'><strong>Se durante la fase di enrollment un sistema biometrico impiega un modulo per il controllo della qualità del sample, in quale posizione della catena di moduli esso deve essere inserito?</strong>
+</p>
+<p class='vspace'>immediatamente dopo il modulo di acquisizione
+</p>
+<p class='vspace'><strong>Esitono algoritmi di matching basati su filtri?</strong>
+</p>
+<p class='vspace'>Si, essi confrontano non direttamente due impronte fra loro, ma le immagini o i coefficienti estratti dalle immagini elaborate dai filtri
+</p>
+<p class='vspace'><strong>La variabilità temporale del tratto biometrico può contribuire a</strong>
+</p>
+<p class='vspace'>aumentare la distanza intraclasse
+</p>
+<p class='vspace'><strong>La variabilità temporale del tratto biometrico può portare ad avere sample diversi per lo stesso individuo, ma i rispettivi template sono sempre uguali</strong>
+</p>
+<p class='vspace'>Falso
+</p>
+<p class='vspace'><strong>La similitudine intraclasse …</strong>
+</p>
+<p class='vspace'>produce vantaggi utili per il funzionamento del sistema biometrico
+</p>
+<p class='vspace'><strong>Quale è la formulazione esatta del problema della rappresentazione dell'informazione nei sistemi biometrici</strong>
+</p>
+<p class='vspace'>il problema consiste nell'individuare quale rappresentazione “machine-readable” cattura completamente l’informazione invariante e discriminatoria della misura in ingresso”
+</p>
+<p class='vspace'><strong>E' corretto affermare che la migliore rappresentazione della informazione per un sistema biometrico è quella che assicura sia la massima variabilità interclasse sia la minima variabilità intraclasse ?</strong>
+</p>
+<p class='vspace'>Vero
+</p>
+<p class='vspace'><strong>Un singolo sample biometrico codificato nello spazio delle feature …</strong>
+</p>
+<p class='vspace'>corrisponde ad un punto
+</p>
+<p class='vspace'><strong>La dimensione del DB di un sistema biometrico di grandi dimensioni è più probabile che nel tempo tenda a …</strong>
+</p>
+<p class='vspace'>aumentare
+</p>
+<p class='vspace'><strong>E' possibile che il peggioramento delle prestazioni di un sistema biometrico sia in proporzione minore dell'incremento del numero di nuovi utenti immessi nel DB?</strong>
+</p>
+<p class='vspace'>Vero
+</p>
+<p class='vspace'><strong>La gestione di DB biometrici di grandi dimensioni può essere maggiormente migliorata se</strong>
+</p>
+<p class='vspace'>Tutte le precedenti
+</p>
+<p class='vspace'><strong>Il tasso di errore FMR per una data soglia T di decisione è un ottimo indicatore delle performance del sistema biometrico per una specifica applicazione</strong>
+</p>
+<p class='vspace'>Falso
+</p>
+<p class='vspace'><strong>Cosa succede se la soglia di decisione con la quale si confrontano i match score di un sistema biometrico è posta uguale a zero</strong>
+</p>
+<p class='vspace'>Tutti gli utenti saranno abilitati dal sistema
+</p>
+<p class='vspace'><strong>Si consideri la seguente formulazione. Dato in ingresso un insieme di caratteristiche XQ e la dichiarata identità I occorre determinare se (I, XQ) appartengono a D1 o D2, dove D1 indica che la richiesta è vera (utente genuino) D2 indica che la richiesta è falsa (un impostore)</strong>
+</p>
+<p class='vspace'>E' la formulazione del problema della Verifica della identità dell'utente
+</p>
+<p class='vspace'><strong>Come vengono chiamati gli utenti che hanno la seguente caratteristica: Individui capaci di manipolare il tratto biometrico per impersonare un utente legittimato</strong>
+</p>
+<p class='vspace'>Lupi
+</p>
+<p class='vspace'><strong>Gli utenti registrati con features che si sovrappongono estesamente con quelli degli altri utenti registrati, quindi con bassa distanza interclasse sono chiamati</strong>
+</p>
+<p class='vspace'>Agnelli
+</p>
+<p class='vspace'><strong>Inserire nel DB nuovi utenti con features che si sovrappongono estesamente con quelli degli altri utenti registrati (quindi con bassa distanza interclasse) …</strong>
+</p>
+<p class='vspace'>tende a far aumentare il False Accept rate
+</p>
+<p class='vspace'><strong>Nei sistemi biometrici on card</strong>
+</p>
+<p class='vspace'>La fase di matching è solitamente eseguita o nel dispositivo lettore di smart card o in un sistema diverso a cui è collegato
+</p>
+<p class='vspace'><strong>I moduli di riconoscimento della qualità di un sample</strong>
+</p>
+<p class='vspace'>Entrambe le risposte precedenti
+</p>
+<p class='vspace'><strong>La funzione di matching</strong>
+</p>
+<p class='vspace'>è una delle possibili metriche nello spazio delle features
+</p>
+<p class='vspace'><strong>Impiegare N partizoni nel DB biometrico porta ad avere un tasso di penetrazione pari a 100/N%</strong>
+</p>
+<p class='vspace'>Falso
+</p>
+<p class='vspace'><strong>Considerare la seguente situazione: Un utente non entra nella propria casa perché il sistema biometrico ritiene che il suo template non assomigli abbastanza a quello/i registrati.</strong>
+</p>
+<p class='vspace'>Si tratta di un caso di False Non Match
+</p>
+<p class='vspace'><strong>Quale è la percentuale stimata generale di persone in una popolazione che ha le impronte digitali non idonee ad essere acquisite da un sistema biometrico</strong>
+</p>
+<p class='vspace'>4%
+</p>
+<p class='vspace'><strong>Le impronte digitali possono essere considerate come un tratto biometrico stabile a partire</strong>
+</p>
+<p class='vspace'>dell' ottavo mese di gestazione
+</p>
+<p class='vspace'><strong>I sistemi di classificazione per le impronte digitali attuali prevedono</strong>
+</p>
+<p class='vspace'>tre classi principali con un totale di 8 sottoclassi
+</p>
+<p class='vspace'><strong>I livelli di analisi di un impronta sono tipicamente</strong>
+</p>
+<p class='vspace'>3
+</p>
+<p class='vspace'><strong>Quali dei seguenti gruppi di feature appartengono TUTTI al livello globale?</strong>
+</p>
+<p class='vspace'>delta, core, ridge counting
+</p>
+<p class='vspace'><strong>A livello locale esistono circa</strong>
+</p>
+<p class='vspace'>oltre 150 tipi di minutiae
+</p>
+<p class='vspace'><strong>Il miglior sensore possibile per le impronte digitali dovrebbe</strong>
+</p>
+<p class='vspace'>catturare il numero maggiore di dettagli possibile della pelle del dito, perché maggiori dettagli il sistema cattura, migliore sarà la capacità del sistema di identificare/verificare le identità delle persone
+</p>
+<p class='vspace'><strong>L'acquisizione off-line delle impronte è tipicamente eseguita con sensori allo stato solido, appoggiando delicatamente il dito sul sensore.</strong>
+</p>
+<p class='vspace'>falso
+</p>
+<p class='vspace'><strong>Le impronte latenti sono del tipo live-scan</strong>
+</p>
+<p class='vspace'>falso
+</p>
+<p class='vspace'><strong>la maggiorparte delle immagini acquisite dai sensori per le impronte digitali sono</strong>
+</p>
+<p class='vspace'>in toni di grigio
+</p>
+<p class='vspace'><strong>la compressione delle immagini delle impronte digitali</strong>
+</p>
+<p class='vspace'>è possibile ma a patto di usare un formato di compressione dedicato se si vuole ottenere un fattore di compressione elevato
+</p>
+<p class='vspace'><strong>L'acquisizione mediante scanner delle 10 immagini delle impronte off-line di un individuo secondo i requisiti FBI (500 dpi) in formato non compresso occupa circa</strong>
+</p>
+<p class='vspace'>10Mbyte
+</p>
+<p class='vspace'><strong>E' possibile affermare che il calcolo della probabilità che 2 persone abbiano in comune tutte le 12 minutiae presenti in una impronta latente comparata con una immagine completa del dito, con una area di tolleranza prefissata relativa di 1/70, sia vicino al</strong>
+</p>
+<p class='vspace'>0.0000000001%
+</p>
+<p class='vspace'><strong>La normalizzazione è una tecnica di filtraggio che</strong>
+</p>
+<p class='vspace'>riporta la media e la varianza dell'intensità dei pixel dell'immagine di una impronta a valori prefissati
+</p>
+<p class='vspace'><strong>Il filtro di Winer</strong>
+</p>
+<p class='vspace'>può essere usato su tutte le immagini di impronte ma funziona correttamente solo se si conoscono le proprietà spettrali dell'impronta e del rumore
+</p>
+<p class='vspace'><strong>Le tecnica più diffusa di segmentazione</strong>
+</p>
+<p class='vspace'>lavora su blocchi e controlla la varianza dei toni di grigio nel blocco per classificarlo come foreground o background
+</p>
+<p class='vspace'><strong>Le feature estraibili da una impronta possono provenire dai livelli di analisi</strong>
+</p>
+<p class='vspace'>I , II e III
+</p>
+<p class='vspace'><strong>la definizione "misura dei ridge che attraversano una linea immaginaria passante tra due minutiae" si riferisce feature chiamata</strong>
+</p>
+<p class='vspace'>ridge count
+</p>
+<p class='vspace'><strong>La ridge frequency è</strong>
+</p>
+<p class='vspace'>l'inverso della distanza media tra due picchi consecutivi
+</p>
+<p class='vspace'><strong>la mappa degli orientamenti di una impronta si può ottenere da</strong>
+</p>
+<p class='vspace'>dalle immagini gradiente lungo l'asse x e y
+</p>
+<p class='vspace'><strong>Il calcolo esatto e robusto dell’orientamento dei ridge é fondamentale nelle fasi di enhacement, nell’identificazione delle minutiae e nella classificazione delle impronte</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Le Orientation Field Flow Curves servono per</strong>
+</p>
+<p class='vspace'>classificare le impronte
+</p>
+<p class='vspace'><strong>L'indice di Poincare calcolato in ogni regione di una immagine serve per</strong>
+</p>
+<p class='vspace'>trovare i delta ed core
+</p>
+<p class='vspace'><strong>L'approccio classico per l'estrazione della minutiae in una impronta è composto esattamente da questa sequenza di passi</strong>
+</p>
+<p class='vspace'>1) Prefiltraggio ed enhacement 2) Binarization 3) Thinning 4) Estrazione delle minutiae 5) Postprocessing
+</p>
+<p class='vspace'><strong>La descrizone del funzionamento del modulo di matching, durante il confronto di due impronte/template, prevede solamente</strong>
+</p>
+<p class='vspace'>4 possbili casi di cui 2 tipi di errori e 2 casi di risposte corrette
+</p>
+<p class='vspace'><strong>Nel caso delle impronte digitali, il problema della scrittura di un algoritmo di matching è ormai considerato in letteratura come un problema risolto.</strong>
+</p>
+<p class='vspace'>falso, NON sono presenti in letteratura metodi che possono assicurare l'ERR che desidera il cliente a patto di aumentare la complessità degli algoritmi
+</p>
+<p class='vspace'><strong>La distorsione dell'impronta dovuta per esempio a rototraslazioni del dito durante l'acquisizione …</strong>
+</p>
+<p class='vspace'>è un problema, ma esistono tecniche riduzione degli effetti della deformazione elastica che possono aiutare a risolverlo riducendo i false-non-match, ma che però, allo stesso tempo, aumentano anche i false-match
+</p>
+<p class='vspace'><strong>Un sistema biometrico basato sull'impronte digitali è attaccabile solo attraverso il suo sensore in ingresso</strong>
+</p>
+<p class='vspace'>falso
+</p>
+<p class='vspace'><strong>La registrazione direttamente in enroll di una impronta sintetica</strong>
+</p>
+<p class='vspace'>rappresenta uno dei casi possibili di attacco
+</p>
+<p class='vspace'><strong>Attraverso un calco di una impronta digitale e la sua riscostruzione in lattice o gelatina</strong>
+</p>
+<p class='vspace'>è possibile ricreare la struttura dei ridge e la disposizione delle minutiae
+</p>
+<p class='vspace'><strong>Se un sistema biometrico acquisisce più dita di una persona durante il suo funzionamento, la sua accuratezza tende a</strong>
+</p>
+<p class='vspace'>aumentare per il numero di caratteristiche maggiore che possono essere controllate
+</p>
+<p class='vspace'><strong>I gemelli omozigoti hanno le impronte digitali</strong>
+</p>
+<p class='vspace'>con struttura simile, ma con dettagli diversi che ne permettono sempre una chiara distinzione
+</p>
+<p class='vspace'><strong>Come la pressione influenza l'acquisizione del dito da parte del sensore?</strong>
+</p>
+<p class='vspace'>maggiore è la pressione, maggiore sarà la continuità dei ridge nella impronta e quindi si ottiene una maggiore qualità della acquisizione. Oltre ad un certo limite però i ridge iniziano ad unirsi fino a confondersi peggiorando quindi notevolemente la qualità della acquisizione
+</p>
+<p class='vspace'><strong>Il filtro di Gabor</strong>
+</p>
+<p class='vspace'>migliora le caratteristiche dei ridge di una immagine in toni di grigio
+</p>
+<p class='vspace'><strong>Quale test di liveness NON può essere applicato nel caso di un sensore ottico?</strong>
+</p>
+<p class='vspace'>Misura delle differenze di potenziale elettrico dovuto alla attività muscolare del dito
+</p>
+<p class='vspace'><strong>Il pattern dell'iride contiene</strong>
+</p>
+<p class='vspace'>numerosissime caratteristiche, stabili nel tempo
+</p>
+<p class='vspace'><strong>I sistemi basati sull'iride, rispetto agli altri sistemi biometrici, sono</strong>
+</p>
+<p class='vspace'>costosi ma difficili da frodare
+</p>
+<p class='vspace'><strong>Il pattern dell'iride si deforma elasticamente</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Le iridi in un sistema biometrico basato sull'iriscode sono rappresentate come</strong>
+</p>
+<p class='vspace'>una stringa digitale di 256 byte
+</p>
+<p class='vspace'><strong>Perché una acquisizione dell'iride sia considerata come valida deve essere presente una percentuale della corona dell'iride del</strong>
+</p>
+<p class='vspace'>50%
+</p>
+<p class='vspace'><strong>Le palpebre e le ciglia che si sovrappongono nell'iride nella immagine</strong>
+</p>
+<p class='vspace'>devono essere individuate, segmentate e rimosse
+</p>
+<p class='vspace'><strong>Il problema del controllo del fuoco dell'immagine dell'iride</strong>
+</p>
+<p class='vspace'>è fondamentale in quanto la possibilità di avere l'iride fuori fuoco può essere sempre presente anche in condizioni ideali
+</p>
+<p class='vspace'><strong>Durante l'acquisizione dell'iride, il fuoco dell'immagine contenente dell'iride è controllato</strong>
+</p>
+<p class='vspace'>da un sistema software in tempo reale a livello di frame in acquisizione
+</p>
+<p class='vspace'><strong>Una immagine fuori fuoco deve essere scartata perché produrrebbe un Iriscode pressochè casuale e quindi inutile sia in sede di enroll, sia in sede di verification/identification</strong>
+</p>
+<p class='vspace'>Vero
+</p>
+<p class='vspace'><strong>La probabilità di ogni singolo bit di essere 1 o 0 nell'Iriscode è circa il 50%</strong>
+</p>
+<p class='vspace'>vero, infatti è possible inserirlo nella categoria dei codici a massima entropia
+</p>
+<p class='vspace'><strong>Nell'iris code vi sono alcune correlazioni fra gruppi di bit. Questo è legato anche al fatto che la struttura dell'iride presenta caratteristiche spesso radiali</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Posizioni diverse della testa in diverse acquisizioni portano ad aumentare leggermente</strong>
+</p>
+<p class='vspace'>la variabilità intra-classe
+</p>
+<p class='vspace'><strong>Le dimensioni massime fino ad oggi raggiunte da sistemi basati sull'iride sono</strong>
+</p>
+<p class='vspace'>quelle corrispondenti a un DB di milioni di persone
+</p>
+<p class='vspace'><strong>Le proprietà dell'iriscode rendono la rappresentazione</strong>
+</p>
+<p class='vspace'>Nessuna delle precedenti
+</p>
+<p class='vspace'><strong>Gli algoritmi per l'estrazione delle palpebre e delle ciglia lavorano usando in ingresso</strong>
+</p>
+<p class='vspace'>L'immagine in toni di grigio dell'iride
+</p>
+<p class='vspace'><strong>Il valore finale del matching di 2 Iriscode è ottenuto</strong>
+</p>
+<p class='vspace'>da almeno 3 comparazioni fra le stringhe (di cui una traslata) misurata con la distanza di Hamming
+</p>
+<p class='vspace'><strong>Le distribuzioni binomiali usate per valutare i tassi di errore di un sistema impiegante Iriscode potrebbero produrre dei risultati non corretti in quanto non tengono conto delle situazioni di non idealità di acquisizione del sistema</strong>
+</p>
+<p class='vspace'>VERO
+</p>
+<p class='vspace'><strong>Perché uno spettrometro potrebbe aiutare a controllare se una acquisizione è avvenuta in modo corretto?</strong>
+</p>
+<p class='vspace'>perché permette di classificare la natura del materiale in esame (tessuto, grasso, plastico, cartaceo,…)
+</p>
+<p class='vspace'><strong>I sistemi biometrici basati sul volto 2D hanno la caratteristica di</strong>
+</p>
+<p class='vspace'>poter effettuare la scansione anche senza la collaborazione dell'utente
+</p>
+<p class='vspace'><strong>I template dei sistemi biometrici basati sul volto presentano tipicamente una bassissima variabilità intraclasse</strong>
+</p>
+<p class='vspace'>falso
+</p>
+<p class='vspace'><strong>Nel caso dei sistemi basati sul volto, quale ordine delle fasi di elaborazione è corretto?</strong>
+</p>
+<p class='vspace'>1) face detection 2) face segmentation 3) face normalization
+</p>
+<p class='vspace'><strong>La skin tone detection è una tecnica di</strong>
+</p>
+<p class='vspace'>face detection
+</p>
+<p class='vspace'><strong>I termografi</strong>
+</p>
+<p class='vspace'>possono essere usati per fare acquisizioni dei volti per sistemi biometrici
+</p>
+<p class='vspace'><strong>La tecnica che individua i contorni delle possibili facce in una immagine si chiama</strong>
+</p>
+<p class='vspace'>face detection
+</p>
+<p class='vspace'><strong>Quale è l'ordine corretto per queste fasi della face detection</strong>
+</p>
+<p class='vspace'>1) Lighting compensation 2) Skin tone detection 3) Localization of the facial features
+</p>
+<p class='vspace'><strong>La PCA è una tecnica di analisi</strong>
+</p>
+<p class='vspace'>globlale rispetto all'immagine
+</p>
+<p class='vspace'><strong>Lo spazio delle facce è uno spazio che normalmente ha</strong>
+</p>
+<p class='vspace'>elevatissima dimensionalità
+</p>
+<p class='vspace'><strong>L'analisi lineare è un modo per</strong>
+</p>
+<p class='vspace'>esaminare sottospazi dello spazio delle facce a dimensionalità minore
+</p>
+<p class='vspace'><strong>Le occlusioni al volto sono un problema per i sistemi di riconoscimento del volto</strong>
+</p>
+<p class='vspace'>vero, perché la regione da cui estrarre informazioni è limitata dalle occlusioni
+</p>
+<p class='vspace'><strong>Controllare la sincornia fra il parlato ed i movimenti del volto permette di individuare un attacco portato al sistema mediante proiezione di un video</strong>
+</p>
+<p class='vspace'>Falso.
+</p>
+<p class='vspace'><strong>Nel caso dei sistemi biometrici basasti sul volto, è possibile ricreare un sample da dei template memorizzati in un sistema?</strong>
+</p>
+<p class='vspace'>Si, basta avere accesso al match score ed avere a disposizione un numero di tentativi sufficiente
+</p>
+<p class='vspace'><strong>I sistemi biometrici basati sul volto 3D attualmente disponibili sono i grado di gestire correttamente acquisizioni</strong>
+</p>
+<p class='vspace'>1) frontale - 2) con espressione facciale neutra
+</p>
+<p class='vspace'><strong>I sistemi biometrici basati sul volto 3D basati su scansione laser automatica</strong>
+</p>
+<p class='vspace'>sono fra i sistemi più precisi ma anche i più costosi
+</p>
+<p class='vspace'><strong>Nei sistemi biometrici basati su scansione a coded light</strong>
+</p>
+<p class='vspace'>Il sistema ricostruisce la tridimensionalità usando la deformazione delle bande proiettate sul soggetto presenti nell’immagine
+</p>
+<p class='vspace'><strong>Nel caso di sistemi biometrici basati sui volti, è necessario confrontare immagini 2D sempre e solo con immagini 2D, oppure superfici 3D con superfici 3D</strong>
+</p>
+<p class='vspace'>falso, è possibile partire da dati di formato diverso ed arrivare ugualmente alla fase di matching grazie a opportune conversioni
+</p>
+<p class='vspace'><strong>Negli algoritmi per il matching di superfici tridimensionali di volti il valore di matching è direttamente legato alla distanza minima che intercorre fra le due superfici dei volti al termine della fase di allineamento</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>I sistemi più aggiornati di riconoscimento facciale basati su tecniche 2D e 3D arrivano ad avere un</strong>
+</p>
+<p class='vspace'>Verification rate del 99.9% con FAR del 0.001
+</p>
+<p class='vspace'><strong>Una possibile contromisura per un attacco portato ad un sistema biometrico basato sul volto 3D mediante maschere facciali sintetiche</strong>
+</p>
+<p class='vspace'>consiste nell'usare un sistema in grado anche di scandire termograficamente il volto
+</p>
+<p class='vspace'><strong>L'uso di illuminatori e sensori multispettrali</strong>
+</p>
+<p class='vspace'>permette di classificare alcune classi di sostanze presenti sul volto e quindi individuare alcuni tipi di attacchi al sensore
+</p>
+<p class='vspace'><strong>Esistono in commercio sistemi che integrano automaticamente scansione 3D del volto e immagini termografiche?</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Due dei principali effetti negativi che influenzano i sistemi biometrici basati sul volto sono le differenze di</strong>
+</p>
+<p class='vspace'>illuminazione e posa
+</p>
+<p class='vspace'><strong>Attraverso l'ICAO si stà affermando un formato di intercambio basato su</strong>
+</p>
+<p class='vspace'>requisiti di ripresa e di inquadratura, compressione, e risoluzione (della scannerizzazione o della immagine)
+</p>
+<p class='vspace'><strong>Nell'analisi e comparazione di volti basata sulle autofacce, la distanza fra l'immagine ricostrutita e quella inziale rispetto alle distanze degli altri volti indica</strong>
+</p>
+<p class='vspace'>manca risposta
+</p>
+<p class='vspace'><strong>La risoluzione di un sistema biometrico 3D si misura</strong>
+</p>
+<p class='vspace'>in mm sulla superficie del soggetto posto a distanza prefissata
+</p>
+<p class='vspace'><strong>I migliori sistemi biometrici basati sul volto, nel caso di immagini acquisite con condizioni favorevoli, arrivano ad avere performance che</strong>
+</p>
+<p class='vspace'>sono migliori di quelle di un umano
+</p>
+<p class='vspace'><strong>La tecnologia dei sistemi biometrici basati sulla mano è</strong>
+</p>
+<p class='vspace'>sul mercato da oltre 20 anni e ben assestata
+</p>
+<p class='vspace'><strong>Il numero di feature estrabili dalla mano è</strong>
+</p>
+<p class='vspace'>elevato, si può arrivare a quasi un centinaio di feature utili per il sistema biometrico
+</p>
+<p class='vspace'><strong>I sensori della mano presentano le seguenti caratteristiche</strong>
+</p>
+<p class='vspace'>costano circa 1000 dollari e l'utente deve essere collaborativo
+</p>
+<p class='vspace'><strong>Attualmente non esistono sistemi biometrici per il riconoscimento della voce completamente automatici</strong>
+</p>
+<p class='vspace'>Falso, esistono sistemi anche completamente automatici
+</p>
+<p class='vspace'><strong>Il telefono può essere usato come sensore per un sistema biometrico basato sulla voce?</strong>
+</p>
+<p class='vspace'>Si, ma il peggioramento del segnale è notevole e solo una parte delle informazioni contenute nella voce può essere estratta
+</p>
+<p class='vspace'><strong>Il modello del parlatore che viene impiegato in alcuni sistemi biometrici basato sulla voce può riflettere la sua fisiologia ed il suo comportamento</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>L'energia del suono nelle varie bande spettrali dello spettrogramma è una feature della voce…</strong>
+</p>
+<p class='vspace'>acustica (di basso livello)
+</p>
+<p class='vspace'><strong>Quali delle seguenti caratteristiche rappresenta uno svantaggio per i sistemi biometrici basati sulla voce?</strong>
+</p>
+<p class='vspace'>Nessuna delle precedenti
+</p>
+<p class='vspace'><strong>L'accelerazione della penna è una caratteristica tipica dei sistemi biometrici basati sulla firma</strong>
+</p>
+<p class='vspace'>online
+</p>
+<p class='vspace'><strong>La tecnica del Dinamic Time Warping è una tecnica che serve per allineare temporalmente i tracciati di due firme off-line per eseguire un corretto matching</strong>
+</p>
+<p class='vspace'>falso
+</p>
+<p class='vspace'><strong>Il template di una firma online occupa una dimensione di memoria di circa</strong>
+</p>
+<p class='vspace'>1MB
+</p>
+<p class='vspace'><strong>I tassi di errore recenti dei sistemi di riconoscimento biometrico basati sulla firma online mostra un EER di circa</strong>
+</p>
+<p class='vspace'>4%
+</p>
+<p class='vspace'><strong>La retina è un tratto biometrico considerato come tra i più affidabili ed accurati nel panorama delle tecniche biometriche</strong>
+</p>
+<p class='vspace'>Vero
+</p>
+<p class='vspace'><strong>I sistemi biometrici di identificazione basati sul DNA sono considerati come</strong>
+</p>
+<p class='vspace'>i sistemi che possiedono l'accuratezza potenziale più elevata di tutti gli altri sistemi bioemtrici
+</p>
+<p class='vspace'><strong>La tecnica PCR è uno dei passi fondamentali per l'analisi del DNA per l'identificazione. Essa serve per…</strong>
+</p>
+<p class='vspace'>moltiplicare delle piccole quantità di DNA per riuscire a fare un'analisi
+</p>
+<p class='vspace'><strong>La percentuale di DNA che cambia da individuo ad individuo</strong>
+</p>
+<p class='vspace'>è una frazione molto piccola, intorno al 0.1%-0.5%
+</p>
+<p class='vspace'><strong>Il sensore di acquisizione di una sistema biometrico basato sull'odore è un sistema di detettori chiamato spesso con il nome di naso elettronico.</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Nei sistemi biometrici basati sull'odore, i sensori conduttivi componenti l'array del sensore di acquisizione rilevano le molecole dell'odore in base a variazioni della conducibilità della superficie del sensore esposta alle molecole dell'odore</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Le caratteristiche che possono essere estratte da un array di sensori di un sistema biometrico basato sull'odore sono circa</strong>
+</p>
+<p class='vspace'>90
+</p>
+<p class='vspace'><strong>Attualmente i sistemi biometrici basati sulla mano sono</strong>
+</p>
+<p class='vspace'>più diffusi dei sistemi basati su iride
+</p>
+<p class='vspace'><strong>Le retine di due gemelli sono</strong>
+</p>
+<p class='vspace'>simili nella struttura, ma con sufficienti particolari per riuscire a distinguerle
+</p>
+<p class='vspace'><strong>Tutto il DNA è composto dalla alternanza di</strong>
+</p>
+<p class='vspace'>4 basi
+</p>
+<p class='vspace'><strong>I tempi di pressione possono contribuire a migliorare le performance di un sistema che già usa i tempi di latenza dei tasti</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Le latenze dei tasti possono essere impiegate anche per attaccare un sistema di login su canale protetto da SSH</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Se in aeroporto si installa un sistema biometrico per l'accesso alle aree riservate con FAR=0.2% e FRR=0.3% ed in un giorno lo valicano 1000 persone, quanti utenti abilitati in media non vengono fatti entrare al primo tentativo?</strong>
+</p>
+<p class='vspace'>30
+</p>
+<p class='vspace'><strong>Considerando l'essere umano come un sistema capace di identificare una persona impiegando le informazioni provenienti da più sensi e comparandole con quelle memorizzate, si potrebbe definirlo come operante in modalità multimodale?</strong>
+</p>
+<p class='vspace'>Vero
+</p>
+<p class='vspace'><strong>I sistemi multimodali sono di solito più accurati degli elementi che li compongono?</strong>
+</p>
+<p class='vspace'>Vero, è grazie alla possibilità di valutare congiuntamente informazioni provenenti da tratti diverse che aumenta l'accuratezza
+</p>
+<p class='vspace'><strong>In un sistema biometrico multimodale generico, è possible eseguire tecniche di fusione della informazione</strong>
+</p>
+<p class='vspace'>in tre livelli: 1) a livello di feature 2) a livello di match score 3) a livello di modulo decisionale
+</p>
+<p class='vspace'><strong>Di solito si ottengono maggiori incrementi di accuratezza usando 2 sample dello stesso tipo di tratto biometrico in un sistema multibiometrico, oppure usando lo stesso sample ma due diversi metodi di matching con prestazioni simili?</strong>
+</p>
+<p class='vspace'>usando due sample
+</p>
+<p class='vspace'><strong>Le tecniche di fusione delle informazioni basate su classificatore sono implementate in moduli che nella catena biometrica stanno</strong>
+</p>
+<p class='vspace'>dopo il modulo di matching
+</p>
+<p class='vspace'><strong>In quali sistemi avvengono acquisizioni biometriche in cascata a seconda del risultato dell’identificazione precedente</strong>
+</p>
+<p class='vspace'>nei sistemi multimodali gerarchici
+</p>
+<p class='vspace'><strong>I sistemi multimodali gerarchici in verification possono ridurre il tempo di acquisizione</strong>
+</p>
+<p class='vspace'>vero, perché, con una certa percentuale, alcuni utenti dovranno mostrare un solo tratto biometrico
+</p>
+<p class='vspace'><strong>Se, in caso di sistemi multimodali gerarchici, si pongono in cima alla catena i sistemi meno accurati</strong>
+</p>
+<p class='vspace'>si aumenta il tempo medio di verifica
+</p>
+<p class='vspace'><strong>I moderni sistemi biometrici di riconoscimento del volto basati su “multiple images” o su “2.5D faces”</strong>
+</p>
+<p class='vspace'>sono dei sistemi multibiometrici e non unimodali
+</p>
+<p class='vspace'><strong>L'analisi della correlazione spaziale e/o temporale di due tratti biometrici dipendenti può essere utile per …</strong>
+</p>
+<p class='vspace'>riconoscere un possibile attacco ad un sensore del sistema biometrico
+</p>
+<p class='vspace'><strong>Quale dei sistemi elencati implementa due delle più accurate e "resistenti agli attacchi" tecnologie presenti sul mercato</strong>
+</p>
+<p class='vspace'>Iride + retina
+</p>
+<p class='vspace'><strong>I sistemi multimodali quadrimodali sono più diffusi di quelli trimodali?</strong>
+</p>
+<p class='vspace'>Falso
+</p>
+<p class='vspace'><strong>La normalizzazione dei match score in un sistema multimodale è una operazione molto importante e necessaria perché</strong>
+</p>
+<p class='vspace'>permette al classificatore (o al combinatore) successivo di comparare correttamente ed in modo bilanciato tutti i matchscore
+</p>
+<p class='vspace'><strong>Quando vi sono delle differenze di alcuni ordini di grandezza fra gli intervalli di variabilià dei matchscore in un sistema multimodale, quale metodo di normalizzazione è meglio usare?</strong>
+</p>
+<p class='vspace'>la normalizzazione decimale
+</p>
+<p class='vspace'><strong>Creare una soglia personalizzata per ogni utente di un sistema bioemtrico in base alla sua personale distribuzione delle distanze con gli altri utenti</strong>
+</p>
+<p class='vspace'>è metodologicamente corretto
+</p>
+<p class='vspace'><strong>Acquistando sistemi biometrici monomodali sul mercato basati su tratti biometrici diversi è più semplice ed immediato creare un sistema biometrico multimodale usando una tecnica di fusione</strong>
+</p>
+<p class='vspace'>a livello di matching
+</p>
+<p class='vspace'><strong>Nel documento "Best Practices" sulla valutazione delle perfermance biometrice dei sistemi, con il termine "presentation effects" si intendono gli effetti delle variabili inerenti alla presentazione del tratto biometrico al sensore</strong>
+</p>
+<p class='vspace'>vero
+</p>
+<p class='vspace'><strong>Che tipo di valutazione viene definita con la frase "The goal of the evaluation is to compare competing algorithms from a single technology. Testing of all algorithms is carried out on a standardised database collected by a “universal” sensor."?</strong>
+</p>
+<p class='vspace'>Technology evaluation
+</p>
+<p class='vspace'><strong>Quali di queste tre valutazioni soffre maggiormente del problema della non riproducibilita' dei risultati?</strong>
+</p>
+<p class='vspace'>Operational evaluation
+</p>
+<p class='vspace'><strong>Perché è importante che i sample nella valutazione siano "non self" ovvero "geneticamente differenti"?</strong>
+</p>
+<p class='vspace'>Perché se usassimo tratti biometrici indipendenti ma provenienti dalla stessa persona (come l'occhio destro e sinistro dello stesso individuo, o tratti biometrici presi da gemelli) per creare il DB avremmo una stima non corretta nel computo dei FMR
+</p>
+<p class='vspace'><strong>In quale caso si è quando "the impostor submits their own biometric feature as if they were attempting successful verification against their own template"?</strong>
+</p>
+<p class='vspace'>Un tentativo di tipo "Zero-effort"
+</p>
+<p class='vspace'>'''Cosa significa che l'intervallo di confidenza al 95% di un FAR è tra 0.02 e 0.01?
+</p>
+<p class='vspace'>Che abbiamo il 95% delle probabilità che il vero valore del FAR del sistema cada in quell'intervallo
+</p>
+<p class='vspace'><strong>Nelle valutazioni "Scenario" e "operational" la soglia di decisione del sistema biometrico va fissata prima o dopo iniziare la campagna di acquisizione dei dati?</strong>
+</p>
+<p class='vspace'>Prima
+</p>
+<p class='vspace'><strong>Nelle valutazioni "Scenario" e "operational" nei casi nei quali il sistema non ritorna il match score, ma solo yes/no, è possibile ottenere le curva ROC del sistema?</strong>
+</p>
+<p class='vspace'>No, in ogni caso
+</p>
+<p class='vspace'><strong>E' considerata come buona prassi l'operazione di inserimento di dati sintetici nel DATABASE di sample per i test di valutazione del sistema?</strong>
+</p>
+<p class='vspace'>No, perché le stime della valutazione verrebbero polarizzate rispetto al modello usato per generare le immagini sintetiche
+</p>
+<p class='vspace'><strong>Per definire la grandezza del campione di volontari che devono produrre i dati, quali delle seguenti regole possono essere utili?</strong>
+</p>
+<p class='vspace'>La regola del 3 e la regola dei 30
+</p>
+<p class='vspace'><strong>Due sistemi biometrici con lo stesso EER sono del tutto equivalenti dal punto di vista biometrico</strong>
+</p>
+<p class='vspace'>falso: pur avendo lo stesso EER i sitemi possono avere delle curve ROC che si diversificano in diverse regioni di funzionamento della soglia e quindi di fatto possono non essere equivalenti se non lavorano nella regione vicina all'EER
+</p>
+<p class='vspace'><strong>Quale parametro rappresenta "la misura del grado di separazione presente fra le distribuzioni degli impostori e dei genuini calcolato considerando le loro medie e deviazioni standard"</strong>
+</p>
+<p class='vspace'>il parametro d'
+</p>
+<p class='vspace'><strong>Lo standard ISO/IEC 19794 si occupa dell’interscambio dei dati biometrici fra istituzioni e aziende</strong>
+</p>
+<p class='vspace'>riguardanti solo impronte digitali, immagini di volti, iridi, ecc.
+</p>
+<p class='vspace'><strong>Il fatto che l'applicazione sia di autenticazione o identificazione può influire sulla scelta del tratto biometrico?</strong>
+</p>
+<p class='vspace'>Si, perché non tutti i tratti biometrici possono essere impiegati in identificazione, ad esempio nel caso di sistemi di grandi dimensioni
+</p>
+<p class='vspace'><strong>E' importante controllare se gli utenti previsiti per un sistema possono essere allenati oppure no alle operazioni di acquisizione del tratto?</strong>
+</p>
+<p class='vspace'>Si, le evidenze sperimentali mostrano che le performance (accuratezza e assenza di retry) migliorano notevolmente se gli utenti imparano come “farsi acquisire” sono collaborativi al rispetto delle procedure/consigli per l’acquisizione del tratto
+</p>
+<p class='vspace'><strong>Il fatto che il sistema debba essere di tipo "covert" può influenzare la scelta del tratto?</strong>
+</p>
+<p class='vspace'>Si, alcuni tratti biometrici non sono adatti ad applicazioni "covert"
+</p>
+<p class='vspace'><strong>In un sistema multimodale, i sistemi per la fusione di tipo combinatorio</strong>
+</p>
+<p class='vspace'>agiscono sulle uscite binarie delle catene biometriche impiegate dal sistema multimodale
+</p>
+<p class='vspace'><strong>Il modulo di decisione finale basato sul ranking di un sistema multimodale …</strong>
+</p>
+<p class='vspace'>produce la sua uscita analizzando le graduatorie di valori di matching trovati nel DB per ogni catena biometrica presente nel sistema nultimodale
+</p>
+<p class='vspace'><strong>Usare due impressioni dello stesso dito in un sistema per trarre la decisione finale non rende il sistema di fatto ne multimodale, ne multibiometrico</strong>
+</p>
+<p class='vspace'>Falso, perché possiamo estrarre feature diverse e ottenere poi matching diversi
+</p>
+<p class='vspace'><strong>Se si integrano due sistemi biometrici che producono uscite 1/0 con un combinatore di tipo AND…</strong>
+</p>
+<p class='vspace'>Si aumenta il parametro chiamato sicurity (si abbassa il FAR)
+</p>
+<p class='vspace'><strong>In generale, le regole prevedono che sia meglio creare un un test A di 200 persone che provano 2 volte ad entrare dopo l'enroll, o un test B da 250 persone che provano ad entrare 1 volta dopo l'enroll?</strong>
+</p>
+<p class='vspace'>meglio il test B, anche se porta solo a 240 tentativi, sono tutti indipendenti anche se solo 200 sono veramente statisticamente indipendenti
+</p>
+<p class='vspace'><strong>In generale, quando è possibile stabilire se il numero di sample usato per il test è abbastanza grande?</strong>
+</p>
+<p class='vspace'>Solo dopo l'acquisizione dei dati
+</p>
+<p class='vspace'><strong>E' possible che la soglia del sistema biometrico usata in un test operazionale possa influenzare il comportamento degli utenti (e quindi rendere meno rappresentivi i sample raccolti, visto che sarebero influenzati dalla soglia usata)?</strong>
+</p>
+<p class='vspace'>Si, nel caso di acquisizioni multiple. Ad esempio nel caso di soglia bassa, l'utente può accorgersi che può presentare il tratto al sensore anche con poca cura, visto che riesce ad entrare lo stesso.
+</p>
+<p class='vspace'><strong>Cosa deve essere fatto se nella stima dell'intervallo di confidenza di un FAR si ottiene un estremo inferiore negativo?</strong>
+</p>
+<p class='vspace'>Significa che il metodo di stima statistica del parametro FAR non è adatto, occorre passare ad una tecnica diversa (ad esempio un metodo di bootstrap)
+</p>
+<p class='vspace'><strong>Seguendo le direttive internazionali per i passaporti biometrici, quale dimensione approssimativa dovrebbe avere un sample di un volto?</strong>
+</p>
+<p class='vspace'>circa 20kB
+</p>
+<div class='vspace'></div>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Domande1)</span></div>
+  </div>
+</body>
+</html>

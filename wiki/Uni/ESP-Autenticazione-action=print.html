@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Elementi di Sicurezza e Privatezza - Autenticazione</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='ESP-Autenticazione.html' title='Elementi di Sicurezza e Privatezza - Autenticazione'>Elementi di Sicurezza e Privatezza - Autenticazione</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Elementi di sicurezza e privatezza</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Autenticazione ::</strong>
+</pre><div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: 200px; border: 2px solid #cccccc; padding: 5px;' > 
+<p  style='text-align: center;'><strong>Indice</strong>
+</p>
+<div class='vspace'></div><ol><li><a href='#a1'>Introduzione</a>
+</li><li><a href='#a2'>Autenticazione</a>
+</li><li><a href='#a3'>Single Sign On</a>
+</li></ol></div>
+<p class='vspace'><a name='a1' id='a1'></a>
+</p><h2>Introduzione</h2>
+<p>Un sistema informatico può (e dovrebbe) avere diversi servizi di sicurezza, introduciamoli sommariamente. Innanzitutto esistono tecniche di <strong>identificazione</strong>, ovvero processi in cui l'utente presenta delle credenziali al sistema per poter essere identificato, e meccanismi di <strong>autenticazione</strong> per verificarle. Il <strong>controllo dell'accesso</strong> deciderà se permettere o negare una richiesta di accesso in base a regole predefinite più o meno elaborate scritte dagli amministratori e applicate dal <em>reference monitor</em>. Esistono servizi di sicurezza anche una volta ottenuto l'accesso (a posteriori) come ad esempio la <strong>crittazione</strong> dei dati che garantisce il loro utilizzo solo ai legittimi riceventi, o il sistema <strong>audit</strong> che rileva eventuali violazioni e permette ai gestori del sistema di prendere gli opportuni provvedimenti.
+</p>
+<p class='vspace'><a name='a2' id='a2'></a>
+</p><h2>Autenticazione</h2>
+<p>L' <em>autenticazione</em> stabilisce l'identità di una parte ad un'altra parte, dove per "parte" si intendono sia utenti che computer. E' un servizio di sicurezza primario, necessario in un sistema locale chiuso (l'autenticazione è difatti poco utile su un sistema distribuito).
+</p>
+<p class='vspace'>L' <strong>autenticazione dell'origine dei dati</strong> garantisce l'origine di un'unità dati, ovvero verifica che i messaggi ricevuti provengano dalla sorgente indicata e che non siano stati modificati. Utilizza delle tecniche crittografiche ed è composta da due livelli: il <em>livello inferiore</em> è una stringa prodotta da un autenticatore che permette di verificare l'integrità dei dati, mentre il <em>livello superiore</em> è un protocollo di autenticazione che usa la funzione di livello inferiore.<br />L' <em>autenticatore</em> può utilizzare tre classi di funzioni, cioè la <em>crittografia dei messaggi</em>, il <em>Message Authentication Code (MAC)</em> e la <em>funzione hash</em>. Nel primo caso viene preso l'intero messaggio, crittato e inviato alla controparte, che se riesce a leggerlo correttamente ha la prova che non è stato modificato; così impostato è un meccanismo pesante e oneroso. Per quanto riguarda il codice MAC e la funzione di hash, entrambi producono un valore di lunghezza fissa derivato dal messaggio usando una funzione pubblica, con la differenza che il primo in più utilizza una chiave segreta. Le ultime due classi di funzioni possono essere combinate dall'autenticatore in questo modo:
+</p><ol><li>si applica una funzione di hash al messaggio iniziale, ottenendo una stringa crittata
+</li><li>su questa stringa applico una chiave di crittografia pubblica, ottenendo un valore che associo al messaggio da inviare
+</li><li>invio il messaggio
+</li><li>il ricevente verifica che il valore associato al messaggio corrisponda a quello che avrebbe ottenuto lui manipolando il messaggio con gli stessi procedimenti (hash + stessa chiave pubblica) usati dal mittente
+</li><li>se corrispondono, il messaggio è considerato non corrotto
+</li></ol><p class='vspace'>Affrontiamo ora l'argomento dell' <strong>autenticazione utente a computer</strong>, studiando tre diverse tecniche.
+</p>
+<div class='vspace'></div><h3>Autenticazione basata sulla conoscenza</h3>
+<p>L' <strong>autenticazione basata sulla conoscenza</strong> è l'autenticazione di un utente in base a qualcosa che solo lui (si spera) conosce, ed è basata sulla coppia di informazioni:
+</p><ul><li><em>user ID</em>, col quale l'utente si identifica
+</li><li><em>password</em>, stringa di caratteri con cui l'utente fornisce una prova della sua identità
+</li></ul><p class='vspace'>Ci sono vari aspetti che rendono questa tecnica la più diffusa e duratura, principalmente la sua semplicità di implementazione e utilizzo, che la rendono a tutti gli effetti la strategia di autenticazione più economica da perseguire. Tutto ciò va però a scapito della sicurezza, dal momento che l'eccessiva facilità viene pagata in termini di vulnerabilità. Le password possono essere infatti:
+</p><ul><li>in alcuni casi facilmente indovinate (<em>guessing</em>). Molti usano la propria data di nascita, o il nome del partner, o direttamente la parola "password"
+</li><li>osservate da persone che spiano gli utenti legittimi mentre le scrivono (<em>snooping</em>)
+</li><li>acquisite da terze parti durante la comunicazione lungo la rete (<em>sniffing</em>)
+</li><li>acquisite da terze parti che impersonano l'interfaccia di login (<em>spoofing</em>)
+</li><li>chieste all'utente, approfittando della sua fiducia e leggerezza (<em>fishing</em>)
+</li><li>cercate nelle liste contenute nel sistema
+</li></ul><p class='vspace'>Approfondiamo quest'ultimo caso. La validazione di nome utente e password avviene confrontando quella inserita dall'utente con quella registrata in un file di sistema. Bisogna impedire in ogni modo che utenti malintenzionati possano accedere a tali liste, con meccanismi più robusti di un semplice controllo dell'accesso, dato che basterebbe un bug nel sistema operativo per compromettere la protezione. Per questo motivo il file delle password viene crittato, dopodiché per essere verificato esistono due strategie di verifica: il sistema decritta la password memorizzata e la confronta con quella inserita dall'utente, oppure critta la password inserita dall'utente e la confronta con quella crittata. Nel secondo caso, più sicuro, password diverse devono essere crittate in valori diversi, o sarebbero confuse dal sistema. In particolare, che succede se due utenti utilizzano la stessa password? Non c'è il rischio che possano essere confuse? I sistemi Unix-based risolvono questo problema assegnando a ogni utente un numero univoco di 12 bit chiamato <em>salt</em>. Nel file verrà memorizzato il valore crittato della concatenazione tra password e salt, quest'ultima memorizzata in chiaro perché tanto da sola non serve a nulla.
+</p>
+<div class='vspace'></div><div class='frame' style='margin-left: auto; margin-right: auto; width: 450px; text-align: center;'><img src='../uploads/Uni/psw1.jpg' alt='' title='' /><br /><strong>Scrittura nel file delle password</strong> </div>
+<div class='vspace'></div><div class='frame' style='margin-left: auto; margin-right: auto; width: 500px; text-align: center;'><img src='../uploads/Uni/psw2.jpg' alt='' title='' /><br /><strong>Validazione password</strong></div>
+<p><br clear='all' />
+Un'ultima strada per scoprire la password di un utente è procedere per tentativi. Ci sono diverse tecniche, la più semplice è l' <em>attacco esaustivo</em> (<strong>brute force attack</strong>), ovvero un algoritmo che prova in modo sistematico tutte le possibili password. Pur garantendo che prima o poi troverà quella corretta, è decisamente oneroso e poco utile, dal momento che per provare tutte le possibili combinazioni di lettere maiuscole e minuscole, numeri e simboli ci potrebbe mettere degli anni. Una tecnica più raffinata è effettuare tentativi con <em>password più probabili</em>, che tengano conto di aspetti pratici. Ad esempio le scelte di un attaccante dovrebbero ricadere per prime su password simili al nome utente, poi sulle parole/nomi/pattern di uso comune (<a target='_blank'  class='urllink' href='http://www.newlaunches.com/archives/10_most_commonly_used_online_passwords.php' title='' rel='nofollow'>qui</a> la top ten). Successivamente ha senso ricercare tra le parole di senso compiuto, effettuando il cosiddetto <em>attacco dizionario</em>. Se nemmeno questa via conduce a risultati (il che è piuttosto probabile), non resta che ricorrere all'attacco esaustivo, a meno di seguire le altre tecniche viste sopra (sniffing, spoofing, ...).
+</p>
+<p class='vspace'>Comunque siano intercettate, chiunque riesca a conoscere le password di un utente può impersonarlo (<em>masquerading</em>), con tutti i pericoli che questo scenario comporta. Per questo è importante che il sistema sia sicuro, ma che anche gli utenti si facciano più furbi. Alcuni semplici accorgimenti sono:
+</p><ul><li>cambiare spesso la password
+</li><li>non riferirla a colleghi o amici, ma mantenerle private (<code class='escaped'>trust no one</code>)
+</li><li>non scegliere password deboli, ormai sappiamo come operano gli attaccanti, bisogna rendergli il lavoro il più difficile possibile. Quindi si dovrebbero usare almeno 8 caratteri, utilizzare maiuscole minusole o altri simboli ed evitare le parole dei dizionari. Deve tuttavia essere facile da ricordare: non ha senso una password supersicura se poi ce la dimentichiamo
+</li><li>non usare la stessa password su più computer
+</li><li>non scriverla su pezzi di carta. Sembrerà assurdo, ma questa è la vulnerabilità più comune
+</li></ul><p>Molti di questi accorgimenti sono implementati nei sistemi sottoforma di controlli automatici, che operano restrizioni sulla lunghezza dei caratteri, che rifiutano le parole di uso comune e che impongono un tempo di validità limitato, dopodiché bisogna cambiare la parola segreta.
+</p>
+<p class='vspace'>Un ultimo tipo di password sono quelle grafiche, introdotte nella metà degli anni '90 e il cui processo di autenticazione sfrutta delle immagini. Il vantaggio principale è la resistenza agli attacchi di tipo dizionario, lo svantaggio è la sua vulnerabilità ad osservazioni dirette.
+</p>
+<p class='vspace'>Un esempio importante di autenticazione basata sulla conoscenza riguarda <strong>Apache</strong>, ovvero il web server open source più diffuso, sviluppato per sistemi operativi come UNIX e Windows. Essendo modulare, le funzionalità possono essere estese o modificate a seconda delle proprie esigenze. Ad esempio il modulo <code class='escaped'>mod_auth</code> è quello di autenticazione utenti che usa un file di testo, mentre il <code class='escaped'>mod_auth_digest</code> utilizza la funzione di hash MD5.<br />L'autenticazione base in Apache non fa uso di tecniche crittografiche ed è basata sulla coppia "login - password", che richiede la creazione di un file in cui memorizzarla (<code class='escaped'>htpasswd</code>). Per proteggere queste informazioni è possibile creare in ogni cartella un file <code class='escaped'>.htaccess</code> che definisce gli utenti cui possono accedervi e i loro privilegi. Se invece si volesse andare oltre l'autenticazione base e crittare il file delle password (o parte di esso) per garantire maggiore sicurezza, si può utilizzare l'autenticazione <em>digest</em>. Questa utilizza un hash MD5 della concatenazione di nome utente, password, dominio più un numero pseudocasuale detto nonce, tutto ciò per rendere ancora più univoche le stringhe crittate. Il client invia i dati in forma crittata, ed il server confronta la stringa ricevuta con quella memorizzata nel file delle password: se coincidono all'utente viene consentito l'accesso. Questo tipo di autenticazione seppur più sicura non può essere utilizzata in generale, perché supportata solo da alcuni browser.
+</p>
+<div class='vspace'></div><h3>Autenticazione basata sul possesso</h3>
+<p>L' <strong>autenticazione basata sul possesso</strong> è basata sulla proprietà da parte degli utenti di <strong>token</strong>, ovvero strumenti di autenticazione che posseggono al loro interno una chiave crittografica usata per dimostrare l'identità del token a un computer. In generale questo sistema è più sicuro delle password, ma a patto che se ne mantenga il possesso. Questa è allo stesso tempo una vulnerabilità decisiva: se un token viene perso, rubato o falsificato, chiunque se ne sia impossessato può impersonare l'utente legittimo. A questo proposito questo tipo di autenticazione è spesso abbinata a quella basata sulla conoscenza. Ad esempio il bancomat chiede prima la tessera, poi il codice.
+</p>
+<p class='vspace'>Passiamo più sul concreto e vediamo qualche tipo di token.<br />Abbiamo anzitutto le <strong>memory card</strong>, che hanno memoria ma non capacità di processo e che vengono usate con il <em>personal identification number</em> (PIN). Quest'ultimo non può essere controllato o codificato, né può essere crittato per la trasmissione che avvenendo in chiaro si rivela vulnerabile agli attacchi di sniffing e richiede fiducia nel server di autenticazione.<br />Le <strong>microprocessor card</strong> hanno invece sia memoria che processori, e si rivelano in generale più sicure dal momento che rendono possibile un controllo e una codifica sul PIN.
+</p>
+<p class='vspace'>Esistono infine gli <strong>smart token</strong> (o <em>smart card</em>), anch'essi con capacità di processo e che prevedono sistemi di autenticazione più raffinati che assicurano maggiore sicurezza. Il processore integrato viene utilizzato in diverse fasi: lo <em>scambio statico di password</em>, la <em>generazione dinamica di password</em> ed il <em>challenge response</em>. Lo <em>scambio statico di password</em> avviene tra utente, token e server. Sono necessarie dunque due autenticazioni, una tra utente e token, ed un'altra tra quest'ultimo e il sistema. La <em>generazione dinamica di password</em> prevede l'utilizzo di una chiave (seme) cambiata periodicamente e condivisa con il server, sulla cui base vengono generate nuove parole d'ordine. Infine il <em>challenge-response</em> è una sorta di "sfida" ingaggiata tra il server e l'utente, che se la supera viene autenticato. E' basato sul protocollo <em>challenge response handshake</em>, così sequenziato: il server di autenticazione stabilsce una sfida (<em>challenge</em>), il token genera la risposta (<em>response</em>) diversa per ogni sfida (così da garantire la proprietà di freschezza), l'autenticazione ha successo se la risposta è corretta.<br />Vediamo ora un esempio di challenge response:
+</p><ul><li>la smart card ha un'unica chiave privata nota al server di autenticazione
+</li><li>l'utente inserisce il PIN nella smart card, che lo verifica
+</li><li>la smart card critta l'identificatore dell'utente, il PIN e informazioni addizionali (come data e ora) per generare una <em>one-time</em> password
+</li><li>il messaggio crittato viene inviato al server
+</li><li>l'autenticazione ha successo se il server può decodificare correttamente il messaggio crittato
+</li></ul><p class='vspace'>Il challenge response è un sistema robusto rispetto a <em>replay attack passivi</em>, ma è decisamente vulnerabile rispetto ad attacchi attivi come il <em>reflection attack</em> o il <em>man in the middle attack</em>. Vediamo un esempio.<br />L' <strong>identify friend of foe</strong> è nato come sistema di identificazione elettronica di aerei amici/nemici. Come in un qualsiasi sistema di challenge response viene fatta una domanda (lanciata una sfida) all'altro aereo: se risponde correttamente è un amico, se no lo si attacca. Il <em>reflection attack</em> è piuttosto primitivo, ma almeno agli inizi funzionava. In pratica se l'aereo amico (A) manda un challenge al nemico (B), quest'ultimo potrebbe rispondergli con la stessa domanda. A ricevendo la domanda rispedisce subito la risposta corretta, che può essere usata da B per sembrare un amico. Sono state perciò introdotte altre modalità di comunicazione delle sfide (almeno quattro) di complessità e sicurezza crescente, che ad esempio includono nella risposta anche l'identificatore del soggetto rispondente.
+</p>
+<div class='vspace'></div><h3>Autenticazione basata su caratteristiche</h3>
+<p>L' <strong>autenticazione basata su caratteristiche</strong> (o <em>biometrica</em>) è legata agli attributi biometrici dell'utente, che possono essere di due tipi:
+</p><ul><li><em>caratteristiche fisiche</em>, ad esempio impronte digitali o della retina
+</li><li><em>caratteristiche comportamentali</em>, ad esempio firma o timbro di voce
+</li></ul><p class='vspace'>Questo tipo di tecnica richiede una fase iniziale chiamata <em>enrollment phase</em>, che consiste nella misurazione ripetuta della proprietà di interesse e nella definizione di un template. Terminata questa fase, il processo di autenticazione consiste nella misurazione della caratteristica e nel confronto con il template: se questi corrispondono entro un certo intervallo di tolleranza, all'utente viene dato l'accesso. Una soglia di tolleranza si rende necessaria perché non ci si può aspettare un uguaglianza perfetta, tuttavia la sua scelta deve essere estremamente studiata, in modo da massimizzare i successi e minimizzare gli insuccessi.<br />Il fatto che tra template e misurazione rilevata ci possano essere piccole differenze può trarre in inganno: l'autenticazione biometrica è la forme di autenticazione più forte, perché elimina ogni vulnerabilità dovute a impersonificazioni. I motivi per i quali è ancora poco utilizzata sono il suo costo (richiede hardware specifico piuttosto oneroso) e le perplessità che suscita per il mantenimento della privacy degli utenti.
+</p>
+<p class='vspace'>Ricapitolando, abbiamo visto tre tecniche di autenticazione: qual è la migliore? Sarebbe troppo semplice dire l'ultima perché la più sicura, bisogna prima fare un bilancio tra costi e benefici. Beh, tirando le somme pare che il metodo delle password sia quello più utilizzato, perché economico, più semplice e tutto sommato piuttosto sicuro con alcuni accorgimenti e un po' di attenzione degli utenti. Da un punto di vista prettamente tecnico, il sistema migliore in termini di sicurezza sarebbe un'autenticazione biometrica tra utente e token, quindi la mutua autenticazione basata su crittografia fra token e sistema.
+</p>
+<p class='vspace'><a name='a3' id='a3'></a>
+</p><h2>Single sign on</h2>
+<p>Finora ci siamo concentrati sui sistemi locali, ora alzeremo la visuale e tratteremo dei sistemi distribuiti.
+</p>
+<p class='vspace'>Grazie ad <em>internet</em> è possibile accedere a servizi di ogni tipo, su macchine remote dislocate qua e là su sistemi distribuiti. L'utente sarà dunque costretto ad autenticarsi nell'ambito di ciascun dominio con cui interagisce, dovrà cioè fornire user ID e password per ogni servizio di cui vorrà usufruire. Ciò oltre a comportare la duplicazione delle informazioni personali, costringere l'utente a ricordarsi più password, o peggio ancora ad utilizzare sempre la stessa.
+</p>
+<p class='vspace'>I sistemi <strong>Single Sign On</strong> (<em>SSO</em>) sono stati concepiti per risolvere questa situazione, consentendo all'utente di autenticarsi una volta per tutta a più servizi distribuiti utilizzando un'unica credenziale, dove per credenziale intendiamo la solita login e password. La robustezza del sistema rimane legata al processo di autenticazione utilizzato, che deve essere particolarmente forte data la sensibilità delle informazioni da condividere su più sistemi distribuiti.<br />In un SSO esiste un <em>dominio primario</em>, presso cui l'utente si registra e si autentica. Ad esso sono collegati una serie di domini secondari, con i quali esistono delle relazioni di trust per garantire la sicurezza, ai quali il dominio principale si preoccuperà di comunicare le informazioni rilasciate dall'utente che ha usato il servizio di sign on.
+</p>
+<p class='vspace'>Un sistema <em>Single Sign On</em> può avere due tipologie: <strong>centralizzata</strong> e <strong>federativa</strong> (in realtà esiste anche quella <em>cooperativa</em>, che non sarà trattata in questa sede).<br />In un <em>SSO centralizzato</em> esiste un'autorità centrale e una repository centralizzata che gestiscono le informazioni di autenticazione di TUTTI gli utenti, e che comunica con i domini secondari attraverso protocolli come il <em>SAML</em> o il <em>SOAP</em>. Il vantaggio di questa tipologia è la facilità di gestione e di controllo dell'accesso, a costo però di avere un <em>single point of failure</em>: un attacco diretto al dominio primario danneggerebbe l'intero sistema.<br />Il protocollo SAML (<em>Security Assertion Markup Language</em>) è un insieme di specifiche per lo scambio di informazioni, chiamate <em>asserzioni</em>. Sono basate sul linguaggio XML e sono progettate per funzionare sui meccanismi di trasporto più comuni, come HTTP, SMTP, FTP e altri ancora. Le asserzioni possono essere di tre tipi:
+</p><ul><li>di <em>autenticazione</em>, che identificano un utente
+</li><li>di <em>attributi</em>, che contengono le informazioni specifiche dell'utente
+</li><li>di <em>permessi</em>, che definiscono quali operazioni può compiere un utente e quali no
+</li></ul><p>Indipendentemente dal tipo, ogni assezione deve contenere il suo identificatore univoco, la data e l'ora di creazione, il periodo di validità e cosa essa dichiara, oltre ad informazioni addizionali come ad esempio la dipendenza da altre asserzioni.<br />Infine è importante sottolineare che SAML di per sé non autentica né autorizza nessuno, si limita esclusivamente a trasportare informazioni tra i domini.
+</p>
+<p class='vspace'>Negli <em>SSO federati</em> l'autenticazione è invece realizzata da più server SSO indipendenti, ognuno dei quali possiede un'identità parziale dell'utente. La combinazione delle identità indipendenti registrate nei vari domini forma la <em>network identity</em>; in altre parole, essa è l'insieme di tutte le informazioni dell'utente (username, indirizzo, telefono, ...) che egli ha rilasciato ai diversi service provider per autenticarsi. La ricostruzione della network identity è possibile solo se esiste una <em>federazione</em> tra i vari service provider, quindi solo in seguito ad accordi stipulati che l'utente deve rispettare e accettare. Una di queste federazioni è la <em>Liberty Alliance</em>, che ha creato una serie di tracciati (<em>circoli</em>) che mettono in comunicazione i service provider facendo agire alcuni di essi come server SSO di autenticazione (<em>identity provider</em>). Le identità locali vengono combinate in modo che l'utente possa utilizzare i servizi di un circolo dopo l'autenticazione presso uno degli identity provider.
+</p>
+<div class='vspace'></div><h3>Caso di studio: Microsoft .NET Passport</h3>
+<p><em>Passport</em> è un SSO centralizzato ideato da Microsoft e basato sull'utilizzo dei cookie, in cui abbiamo tre attori in gioco: l'utente, i siti partecipanti e il Server Passport Sign-On. Vediamo come funziona.
+</p>
+<p class='vspace'>Come prima cosa l'utente deve registrarsi presso il server centrale Passport, o non potrà autenticarsi ai servizi offerti dai siti partecipanti. Per aumentare il livello di sicurezza, data la sensibilità della procedura sono state introdotte due contromisure per evitare le registrazioni automatiche, che potrebbero essere utilizzate da utenti maliziosi per mandare spam o violare il sistema. Una prima difesa è il <em>CAPTCHA</em>, un test visivo che permette di distinguere le macchine dagli umani. Generalmente si tratta di riconoscere i caratteri presenti in un'immagine in cui vengono riportati pesantemente distorti. Più facile a vedersi che a dirsi:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/captcha.jpg' alt='' title='' /></div>
+<p>La seconda contromisura è invece la classica email di conferma inviata sulla casella di posta indicata in fase di registrazione.
+</p>
+<p class='vspace'>Una volta registrati, per ogni utente viene generato e assegnato un identificatore univoco chiamato <em>Passport Unique Identifier</em> (<em>PUID</em>). Passiamo ora alla fase di autenticazione. Quando un utente cerca di autenticarsi a un sito partecipante, viene automaticamente reinderizzato alla pagina di login di Passport. Se l'operazione va a buon fine, il server crea tre cookie (che critta con una chiave di cifratura inviatagli dal sito di partenza) che contengono: il PUID dell'utente e il timestamp (<em>ticket cookie</em>), le informazioni del profilo (<em>profile cookie</em>) e infine la lista dei siti a cui si è collegato (<em>visited sites cookie</em>). A questo punto l'utente viene rispedito al sito partecipante cui si era inizialmente collegato, il quale decritta i cookie e gli consente l'accesso ai servizi richiesti. Notare che il server Passport non comunica username e password dell'utente, ma si limita a segnalare che l'autenticazione è andata a buon fine.
+</p>
+<p class='vspace'>Se i cookie sono protetti dalla cifratura, altrettanto protetto non è il canale di comunicazione su cui viaggiano. Se venissero intercettati, un utente malizioso potrebbe tenerli così come sono per impersonare l'utente legittimo al posto suo. Una soluzione è adottare un protocollo <em>Secure Socket Layer</em> (SSL) durante tutto il processo di autenticazione, che critta il traffico impedendo di fatto a un intruso di capire quando e se è stato spedito un cookie tra browser dell'utente e il server Passport. Si può alzare ulteriormente il grado di sicurezza portando a due i livelli di autenticazione, uno per login e password, l'altro con un PIN (che dopo un certo numero di tentativi errati solleva altre procedure di protezione). Anche questo secondo livello è crittato con protocollo SSL.
+</p>
+<p class='vspace'>La tipologia di questo sistema è un SSO centralizzato, ciò rende il server Passport un <em>single point of failure</em>. Un utente malintenzionato potrebbe attaccarlo per provocare un DoS (<em>denial of service</em>, l'interruzione del servizio), o peggio ancora per accedere alle informazioni riservate degli utenti registrati. Di seguito presenteremo tre tipologie di attacco: l' <em>attacco passivo</em>, l' <em>attacco attivo</em>, e l'attacco <em>DNS</em>, che possono essere generalizzate anche al di fuori del SSO Passport.<br />In un <strong>attacco passivo</strong> abbiamo un utente malintenzionato che crea un finto sito Passport, magari con un indirizzo leggermente diverso, in tutto identico all'originale. L'utente non avveduto tenterà di autenticarsi a questo sito fornendo il proprio username e password all'attaccante, che saprà sicuramente cosa farsene.<br />In un <strong>attacco attivo</strong> l'attaccante è riuscito invece ad accedere alla rete tra gli utenti e Passport, ed è inoltre in grado di modificare il contenuto dei pacchetti che si mandano. In questo modo potrà reindirizzare l'utente presso il proprio sito di autenticazione fasullo, e dunque sottrargli le informazioni del suo account.<br />Infine in un <strong>attacco DNS</strong> l'utente malizioso riesce ad accedere alle tabelle DNS dell'attaccato, riscrivendo alcuni indirizzi IP di siti di fiducia (come il server Passport) in modo che indirizzino al proprio sito fasullo. L'attacco si completa come nei casi precedenti.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='ElementiSicurezzaPrivatezza.html'>Torna alla pagina di Elementi di sicurezza e privatezza</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/ESP-Autenticazione)</span></div>
+  </div>
+</body>
+</html>

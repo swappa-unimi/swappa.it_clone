@@ -1,0 +1,507 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Ingegneria del Software - Appunti del 4 Aprile 2009 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IDS-6Aprile' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Ingegneria del Software - Appunti del 4 Aprile 2009
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-6Aprile?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-6Aprile?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IDS-6Aprile-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-6Aprile?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-6Aprile?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Ingegneria del Software - Appunti del 4 Aprile 2009 was last modified on May 03, 2009, at 02:18 PM'>
+							<span style='display:none;'>Ingegneria del Software - Appunti del 4 Aprile 2009</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p>
+<p class='vspace'><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Ingegneria del Software - Appunti del 4 Aprile 2009 ::</strong>
+</pre><div class='vspace'></div><h2>Relazioni tra classi</h2>
+<p>Il diagramma delle classi mi permette anche di specificare quali relazioni intercorrano tra le varie classi. La faccenda non è di poca rilevanza, perché influenza moltissimo il design e la conseguente implementazione del nostro software.
+</p>
+<p class='vspace'>Innanzitutto, possiamo dire che una <strong>classe</strong> rappresenta le proprietà che un oggetto (inteso in senso generico e non programmatorio) deve avere per poter dire di appartenere ad un certo insieme.
+</p>
+<p class='vspace'>Le relazioni tra classi sono di tre tipi:
+</p><ul><li>ereditarietà
+</li><li>associazione
+</li><li>composizione
+</li></ul><div class='vspace'></div><h3>Ereditarietà</h3>
+<p>L<strong>'ereditarietà</strong> è una relazione molto stretta tra classi.
+</p>
+<p class='vspace'>Una classe identifica un <strong>tipo</strong> del mio linguaggio di programmazione, come un int o un float. Dire che una classe <strong>eredita</strong> da un'altra vuol dire che la classe ereditante è un sottotipo della classe da cui eredita.
+</p>
+<p class='vspace'>Se la classe è il criterio per identificare i membri di un insieme, allora la sottoclasse è il criterio per identificare sottinsiemi di quell'insieme. Se abbiamo l'insieme degli Animali e il sottinsieme dei Gatti, un oggetto del sottinsieme dei Gatti <strong>È</strong> anche un Animale, ma non è detto che un qualsiasi Animale sia anche un gatto.
+</p>
+<p class='vspace'>La cosa importante è che una sottoclasse eredita dal padre l'interfaccia pubblica e, a seconda delle possibilità offerte da un dato linguaggio, anche l'implementazione della classe padre. Per questo bisogna fare molta attenzione quando si utilizza la relazione di ereditarietà.
+</p>
+<p class='vspace'>In UML si segna in questo modo:
+</p><div><img src='../uploads/Uni/ids-uml-ereditarieta.png' alt='' title='' /></div>
+<p class='vspace'><br clear='all' />
+</p>
+<p class='vspace'>Un altro punto di vista per affrontare l'ereditarietà è dire che un sottotipo è una <strong>specializzazione</strong> del supertipo (o superclasse, basta ci sia dentro super). Il Gatto è una specializzazione dell'Animale, perché oltre a fare tutte le cose "standard" che un animale deve fare, può anche fare cose che gli altri animali non possono fare, per esempio fare le fusa.
+</p>
+<p class='vspace'>A livello di implementazione, quello che una classe può fare è rappresentato dai suoi metodi. Se l'animale ha i metodi <strong>mangia()</strong> e <strong>bevi()</strong>, il Gatto avrà sicuramente i metodi <strong>mangia()</strong> e <strong>bevi()</strong>, ma anche il metodo <strong>pruprurra()</strong>.
+</p>
+<p class='vspace'>L'ereditarietà può andare avanti e non fermarsi al primo livello: posso avere intere gerarchie di tipi e sottotipi etc. Inoltre, a seconda del linguaggio di programmazione, posso avere un tipo che eredita da più di un padre (magie dell'ingegneria genetica). Ma questa è un'altra faccenda, permessa in C++ ma non in Java, e da usare con molta cautela.
+</p>
+<p class='vspace'>In Java, per esempio, TUTTI gli oggetti sono sottotipi della classe primigenia che fantasiosamente è stata chiamata <strong>Object</strong>.  Pertanto, se da qualche parte dichiaro un Array di Object, posso infilarci tutto quello che voglio:)
+</p>
+<div class='vspace'></div><h4>Cautela nell'uso dell'ereditarietà</h4>
+<p>Come dicevamo sopra, l'ereditarietà è un legame molto molto forte tra due classi (e tra i relativi oggetti istanze di quelle classi). Qualsiasi modifica faccio alla classe padre, avrà delle ripercussioni su tutta la sua progenie, il che è potenzialmente dannoso!
+</p>
+<p class='vspace'>Il software engineer tende, al contrario, ad avere componenti il più possibile indipendenti, così che le modifiche ad uno non siano necessariamente delle catastrofi per il resto dell'ambiente. Per questo motivo preferiscono far sì che classi diverse si <strong>chiamino</strong>, piuttosto che siano legate dall'ereditarietà.
+</p>
+<div class='vspace'></div><h3>Associazione</h3>
+<p>L<strong>'associazione</strong> è una relazione molto debole, che dice solamente che un oggetto istanza di una certa classe ha una non meglio precisata nozione dell'esistenza di un oggetto appartenente ad un'altra classe.
+</p>
+<p class='vspace'>Una relazione deve avere come soggetti due individui, cioè due oggetti. In un'associazione tuttavia non è detto che ciascun oggetto debba essere a conoscenza dell'esistenza dell'altro oggetto: l'Amante della Moglie sa dell'esistenza del Marito, ma il Marito non sa niente dell'esistenza dell'Amante.
+</p>
+<p class='vspace'>UML permette di distinguere quindi il caso in cui entrambi sono a conoscenza l'uno dell'altro, e il caso in cui solo uno è a conoscenza dell'altro. Ecco come: <img src='../uploads/Uni/ids-uml-association.png' alt='' title='' />
+</p>
+<p class='vspace'><br clear='all' />
+Nel disegno c'è scritto <strong>navigable</strong>. È il concetto di cui abbiamo appena parlato: se posso andare da A verso B, vuol dire che posso "navigare" da A verso B. Allo stesso modo, una linea semplice tra due classi vuol dire che ognuna è consapevole dell'esistenza dell'altra, e quindi posso partire da Class1 e arrivare a Class2, ma anche partire da Class2 ed arrivare a Class1. Il canale che connette Class1 e Class2 è navigabile in due direzioni.
+</p>
+<p class='vspace'>A destra invece c'è un'associazione unidirezionale: in questo caso Class1 è a conoscenza di Class2, ma Class2 non sa niente di Class1. Posso navigare quel canale solo in una direzione.
+</p>
+<p class='vspace'>Attenzione: se in UML segno l'esistenza di un'associazione, sto anche contemplando la possibilità che l'associazione rimanga insoddisfatta. Ovvero, dire che Class1 è associata a Class2 in realtà vuol dire che Class1 PUÒ essere associata a Class2, ma anche no.
+</p>
+<div class='vspace'></div><h3>Aggregazione</h3>
+<p>L<strong>'aggregazione</strong> è una relazione molto stretta tra due classi. Il concetto che descrive è quello che un certo oggetto è <strong>PARTE DI</strong> un altro oggetto.
+</p>
+<p class='vspace'>Nell'associazione mi limito a dire che una classe ha nozione dell'esistenza di un'altra classe. Qui invece mi spingo oltre e dico che una classe è composta da una o più altre classi.
+</p>
+<p class='vspace'>Questa composizione può essere obbligatoria oppure opzionale. Per spiegare la differenza, facciamo un esempio. Ho l'Essere Umano, ho la Testa e ho la Gamba. Un Essere Umano per essere completo deve avere sia la Testa che la Gamba, ma con una differenza: senza la Gamba, l'Essere Umano vive lo stesso. Senza la Testa, l'Essere Umano non può nemmeno esistere.
+</p>
+<p class='vspace'>Nel caso della Testa, ho un'aggregazione immutabile, mentre nel caso della gamba l'aggregazione è opzionale. Le aggregazioni immutabili si segnano con una losanga nera, mentre quelle opzionali con  una losanga vuota. <img src='../uploads/Uni/ids-uml-aggregation.png' alt='' title='' />
+</p>
+<p class='vspace'><br clear='all' />
+</p><h3>Molteplicità</h3>
+<p>Stiamo parlando del diagramma delle classi, e quindi ci si aspetta che le relazioni abbiano come soggetti le classi stesse. E invece no! La classe è solo la dichiarazione di un tipo, mentre le istanze di questa classe vengono chiamate oggetti, e saranno gli oggetti ad avere vera "vita" all'interno del software, a essere relazionati e composti e così via.
+</p>
+<p class='vspace'>Nel caso dell'ultimo disegno che abbiamo visto, quello con Sailboat, Engine, Sail, Hull, ci sono dei numerini accanto alle frecce di aggregazioni. Essi stanno ad indicare la <strong>cardinalità</strong> dell'aggregazione stessa.
+</p>
+<p class='vspace'>Per esempio, la freccia losangata che collega Sailboat ad Engine ha, su entrambi i lati, la dicitura <strong>0..1</strong>:
+</p><ul><li>dal pdv di Sailboat, posso avere 0 oppure 1 Engine
+</li><li>dal pdv di Engine, posso essere montato su 0 oppure 1 Sailboat
+</li></ul><p class='vspace'>Prendiamo invece la freccia losangata che collega Sailboat a Sail. Sul lato di Sailboat ha la dicitura <strong>0..1</strong>, mentre sul lato di Sail ha la dicitura <strong>*</strong>:
+</p><ul><li>dal pdv di Sailboat, posso avere 0 o 1 Sail
+</li><li>dal pdv di Sail, posso essere montata su un numero qualsiasi (0, 100, 1000...) di Sailboat
+</li></ul><p class='vspace'>Prendiamo ora l'ultima freccia losangata, tra Sailboat e Hull. Dal lato di Sailboat la dicitura è <strong>0...1</strong>, con losanga nera. Dal lato di Hull la dicitura è 1. Avere la losanga nera significa che l'aggregazione è immutabile, ovvero, senza Hull la Sailboat non esiste nemmeno. Posso non avere nessun Hull, ma allora non esisto nemmeno.
+</p>
+<p class='vspace'>Che cosa c'entra questo con la faccenda di cui parlavo prima, cioè che saranno gli Oggetti e non le Classi ad essere i veri soggetti delle relazioni? Ora lo spiego. Se ci pensiamo un attimo, c'è qualcosa di dissonante in questi disegni. Se esiste UNA classe chiamata Sailboat, UNA classe chiamata Engine, e UNA classe chiamata Sail, com'è possibile avere una relazione in cui compaia un numero imprecisato di Sail? Ovviamente non è così: la molteplicità della relazione mi dice quante <strong>istanze</strong> di Sail possono essere aggregate a Sailboat, e quindi sta parlando di Oggetti e non di Classi.
+</p>
+<div class='vspace'></div><h3>Vincoli</h3>
+<p>La molteplicità di una relazione può anche rappresentare un <strong>vincolo</strong>. Ad esempio, se su un capo di una linea metto <strong>2..10</strong>, vuol dire che posso avere nozione di un numero che va da 2 a 10 istanze di quella particolare classe. Sto quindi esprimendo un vincolo sulla molteplicità.
+</p>
+<div class='vspace'></div><h3>Relazioni ternarie e oltre</h3>
+<p>Ecco, le relazioni ternarie, quaternarie etc. sono <strong>il male</strong> e vanno evitate. In tutti i linguaggi di programmazione, visto che le relazioni si esprimono tramite <strong>un attributo</strong> oppure <strong>coppie di attributi</strong>, tutto ciò che trascende l'1 e il 2 non va bene:)
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/ids-uml-ternaria.jpeg' alt='' title='' /></span></div>
+<p>UML mi permette di avere questo tipo di relazioni ternarie, ma per i motivi di cui parlavo sopra vanno evitate, altrimenti implementarle diventa un macello non più finito.
+</p>
+<p class='vspace'><br clear='all' />
+</p>
+<div class='vspace'></div><h2>Dalla prospettiva delle classi alla prospettiva delle interfacce</h2>
+<p>Le classi vengono utili perché modellano <strong>concetti</strong> ed <strong>entità</strong> del mondo reale. Fin qui tutto bene, però c'è da pensare anche a questa faccenda: è ragionevole pensare che ogni volta che faccio riferimento ad un certo concetto o ad una certa entità, ovvero ad una certa classe, io debba per forza di cose <strong>istanziare</strong> una nuova classe nel mio software?
+</p>
+<p class='vspace'>Istanziare vuol dire portare via tempo e memoria: si tratta di un'operazione lenta e costosa, che in genere va fatta il minor numero di volte possibile.
+</p>
+<p class='vspace'>Questo significa che al momento dell'implementazione occorre porsi qualche domanda, e scoprire se vale la pena mantenere la distinzione concettuale che si è portata avanti fino ad ora (1 concetto = 1 classe), oppure eliminarla per lasciare posto a qualcosa di più efficiente. Questo si chiama passare alla <strong>prospettiva delle interfacce</strong>.
+</p>
+<p class='vspace'>Nei diagrammi posso mantenere la distinzione concettuale, che è molto chiara ed aiuta la comprensione. Ma nella realtà posso invece saltarla per motivi di efficienza.
+</p>
+<p class='vspace'>Nel progetto che presenteremo all'esame, se si mettono le ragioni per un tale cambio di prospettiva il professore ne sarà felice, e noi con lui.
+</p>
+<div class='vspace'></div><h2>Implementazione in Java delle relazioni tra classi</h2>
+<p>Come già abbiamo visto, le relazioni tra classi vengono sì specificate in UML tramite una notazione standard ed uniforme, ma la loro implementazione in un linguaggio di programmazione non lo è affatto. A seconda del linguaggio con cui si andrà a scrivere codice, verranno utilizzati costrutti diversi.
+</p>
+<p class='vspace'>Qui vogliamo vedere come le relazioni di composizione, aggregazione ed associazione vengono realizzate in Java.
+</p>
+<div class='vspace'></div><h3>Composizione</h3>
+<p>La composizione è una relazione in cui una classe è parte integrante di un altra. In Java, un riferimento ad un'altra classe lo si ottiene sempre tramite un <strong>attributo</strong> della classe stessa. Tuttavia, avere un attributo del tipo della classe desiderata non basta a far sì che quella classe venga effettivamente istanziata: occorre farlo in modo esplicito nel costruttore della classe che la contiene.
+</p>
+<p class='vspace'>La frase è convoluta, ma vediamo un esempio. Abbiamo una classe <strong>Contenuto</strong> e una classe <strong>Contenitore</strong>, ed il <strong>Contenuto</strong> va composto in <strong>Contenitore</strong>.
+</p>
+<div class='vspace'></div><pre> public class Contenuto {
+     public Contenuto(String nome) {
+        // Costruttore del contenuto
+     }
+ }
+
+
+ public class Contenitore {
+     private Contenuto mioContenuto;
+
+     public Contenitore(String nome) {
+        this.Contenuto = new Contenuto("Tu sei mio!");
+     }
+ }
+</pre><p class='vspace'>Come vedete, la classe <strong>Contenitore</strong> ha un <strong>attributo</strong> di tipo <strong>Contenuto</strong>. La relazione di composizione tra le classi mi obbliga a far sì che nel costruttore della classe <strong>Contenitore</strong> si istanzi la classe <strong>Contenuto</strong>.
+</p>
+<p class='vspace'>Quando Java chiamerà il distruttore automatico della classe <strong>Contenitore</strong> (a differenza del C++, il distruttore non lo si scrive esplicitamente perché non ce n'è bisogno), la JVM penserà anche a distruggere l'istanza di <strong>Contenuto</strong> a cui si riferisce l'attributo <strong>mioContenuto</strong>.
+</p>
+<div class='vspace'></div><h3>Aggregazione</h3>
+<p>L'aggregazione è invece una relazione un po' meno forte, in cui dal <strong>Contenitore</strong> devo avere accesso ad un <strong>Contenuto</strong>, ma non in modo obbligatorio.
+</p>
+<p class='vspace'>Come nel caso della composizione, avrò ancora, in <strong>Contenitore</strong>, un attributo di tipo <strong>Contenuto</strong>, ma a differenza della composizione <strong>non lo istanzio nel costruttore</strong>, perché le loro vite sono sì legate, ma non così tanto da nascere e vivere insieme.
+</p>
+<p class='vspace'>L'attributo di tipo <strong>Contenuto</strong> rimane <strong>pendente</strong>, o anche <strong>dangling</strong>, e potrò riempirlo o modificarlo a runtime tramite opportuni metodi. Qui ne diamo un esempio:
+</p>
+<div class='vspace'></div><pre> public class Contenitore {
+     private Contenuto mioContenuto;
+
+     public Contenitore(String nome) {
+        // Niente costruttore di mioContenuto
+     }
+
+     public void setContenuto(Contenuto c) {
+         // In questo metodo posso assegnare il riferimento pendente
+         // ad un'istanza di Contenuto passata come parametro
+         this.mioContenuto = c;
+     }
+
+     public Contenuto getMioContenuto() {
+         // Siamo bravi e abbiamo anche un metodo per 
+         // recuperare il Contenuto vigente
+         return this.mioContenuto;
+     }
+ }
+</pre><p class='vspace'>Come vedete, al momento dell'istanziazione di <strong>Contenitore</strong> l'attributo <strong>mioContenuto</strong> rimane pendente. Poi, durante la vita dell'oggetto, potrò quante volte voglio assegnare un nuovo <strong>Contenuto</strong> al <strong>Contenitore</strong> tramite il metodo <strong>setContenuto(Contenuto c)</strong>.
+</p>
+<p class='vspace'>Con ogni probabilità, gli altri eventuali metodi della classe <strong>Contenitore</strong> dovranno essere scritti in modo da tenere conto dell'eventualità che <strong>mioContenuto</strong> sia pendente. Ad esempio, potrei avere un frammento di codice così fatto:
+</p>
+<div class='vspace'></div><pre> ...
+ int valore;
+ if (this.mioContenuto != null) {
+     valore = mioContenuto.unQualsiasiMetodo();
+ } else {
+     valore = 100;
+ }
+ ...
+</pre><p class='vspace'>Per controllare se l'attributo è pendente o no, controllo se è <strong>null</strong>.
+</p>
+<div class='vspace'></div><h3>Associazione</h3>
+<p>L'associazione è un legame ancora più debole. Qui utilizzare la dicitura <strong>Contenitore</strong> e <strong>Contenuto</strong> è piuttosto fuorviante, perché in realtà le classi hanno vita molto molto separata. Tuttavia la manteniamo per coerenza con gli esempi precedenti.
+</p>
+<p class='vspace'>Dal momento che <strong>Contenitore</strong> ha solo una vaga nozione della classe cui è associata, non possiamo avere un riferimento diretto al <strong>Contenuto</strong>. Dobbiamo però, all'occorrenza, poter risalire a questo <strong>Contenuto</strong>, anche se non ci interessa minimamente CHI esso sia.
+</p>
+<p class='vspace'>Per ottenere ciò, si utilizza una classe intermedia, a cui <strong>Contenitore</strong> chiederà: "Ascolta, dammi un Contenuto che devo fargli fare alcune cose".
+</p>
+<p class='vspace'>La classe intermedia, a prescindere dal modo con cui essa saprà recuperare un <strong>Contenuto</strong>, avrà sicuramente un metodo così:
+</p>
+<div class='vspace'></div><pre> public class Intermediario {
+   ...
+
+   public Contenuto dammiUnContenuto() {
+       return ilContenutoCheVoglioIo;
+   }
+
+   ...
+ }
+</pre><p class='vspace'>E <strong>Contenitore</strong> farà appello all<strong>'Intermediario</strong> ogni qualvolta desidererà avere a che fare con un <strong>Contenuto</strong>. Ovviamente, dovrà sapere a QUALE intermediario fare appello:
+</p>
+<div class='vspace'></div><pre> public class Contenitore {
+   private Intermediario mioIntermediario;
+
+   ...
+
+   public void faiQualcosa() {
+      Contenuto c = mioIntermediario.dammiUnContenuto();
+
+      ...
+      ...
+   }
+ }
+</pre><p class='vspace'>Notiamo che alla stessa istanza di <strong>Intermediario</strong> possono fare riferimento anche più classi <strong>Contenitore</strong>, così che diversi oggetti possano avere a che fare con un certo <strong>Contenuto</strong> in modo indipendente.
+</p>
+<div class='vspace'></div><h3>Nel progetto d'esame...</h3>
+<p>... il professore sarà contento se noi, dopo aver tracciato il diagramma delle classi UML, riusciremo anche a fornire non un'implementazione completa del software, ma un'implementazione funzionante delle varie relazioni tra classi. Se scegliamo di usare Java come linguaggio di riferimento, allora il professore vorrà vedere degli abbozzi di classi Java che realizzino nei modi qui sopra descritti le relazioni tra le varie classi.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='IngegneriaDelSoftware.html'>Torna alla pagina di Ingegneria del Software</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: May 03, 2009, at 02:18 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-6Aprile?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IDS-6Aprile?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

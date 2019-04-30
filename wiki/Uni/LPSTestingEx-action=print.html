@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / LPS - Esercizi sul testing</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='LPSTestingEx.html' title='LPS - Esercizi sul testing'>LPS - Esercizi sul testing</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: LPS - Esercizi sul testing ::</strong>
+</pre><div class='vspace'></div><h2>Compito del 2/7/07</h2>
+<pre class='escaped'>
+int somma (int x, int y) {
+	if (x &gt; y) return x * y;
+	else return x + y;
+}
+</pre>
+<p class='vspace'>Trovare un criterio valido, uno affidabile ed uno ideale.
+</p>
+<p class='vspace'>Un criterio valido è <strong>C:{(x,y) t.c. x, y sono INT, x &gt;= y}</strong>. Infatti, nel caso in cui <strong>x = y</strong>, non scopre l'errore. Ma c'è almeno un caso (in realtà tanti) in cui <strong>x &gt; y</strong>, e quindi scopre l'errore. Da notare che NON È affidabile.
+</p>
+<p class='vspace'>Un criterio affidabile è <strong>C:{(x,y) t.c. x, y sono INT, x &lt; y}</strong>, perché tutti i risultati che ottiene dalla funzione sono coerenti. Ma NON È valido, perché non scopre l'errore.
+</p>
+<p class='vspace'>Un criterio ideale è <strong>C:{(x,y) t.c. x, y sono INT, x = y + 1}</strong>, che è valido (trovo almeno una volta l'errore) ed affidabile (trovo sempre l'errore).
+</p>
+<div class='vspace'></div><h2>Compito del 12/9/07</h2>
+<pre class='escaped'>
+int diff(int x, int y) {
+	if (x &gt; y) return x - y;
+	else return x * y;
+
+}
+</pre>
+<div class='vspace'></div><ul><li>Criterio ideale: x &lt; y
+</li><li>Criterio affidabile: x &gt; y
+</li><li>Criterio valido: x &gt;= y
+</li></ul><div class='vspace'></div><h2>Esercizio in classe</h2>
+<p>Rappresentare con un grafo di flusso il seguente codice:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+read (x,y)
+	a:=x
+	b:=y
+	while (a &lt;&gt; b) do
+		if (a &gt; b) then a := a - b;
+		else b = b - a;
+		endif
+	endwhile
+end
+</pre>
+<div class='vspace'></div><div><img src='../uploads/Uni/LPStestex1.png' alt='' title='' /></div>
+<div class='vspace'></div><h2>Esercizio in classe</h2>
+<p>Rappresentare con un grafo di flusso il seguente codice:
+</p>
+<div class='vspace'></div><pre class='escaped'>
+int main(int x, int y) {
+	int i;
+	for (i = 0; i &lt; 10; i ++) {
+		if (x &gt; y) printf("A");
+		else if (x == y) printf("B");ù
+		else printf("C");
+	}
+	printf("D");
+}
+</pre>
+<div class='vspace'></div><div><img src='../uploads/Uni/LPStestex2.png' alt='' title='' /></div>
+<p><br /><br />
+</p><h2>Esercizio in classe</h2>
+<p><br />Scrivi in Java un metodo CONFORME che prende come parametro un intero a e un intero b e
+<br />
+</p>
+<div class='vspace'></div><ol><li>restituisce <em>true</em> se e solo se a è CONFORME a b (cioè a è tra b e 2b oppure 0), e un metodo CALCOLA che prende come parametro in ingresso un array Y di interi positivi e un numero x e restituisce il numero maggiore in Y che sia CONFORME a x, oppure -1 se non ci sono interi conformi a x.
+</li><li><br /> Individua i casi di test necessari per ottenere i tipi di copertura di istruzioni e decisioni del metodo CALCOLA, e esegui i casi di test con EMMA. 
+</li><li><br /> Scrivi i casi di test del punto 2 con JUnit.
+</li></ol><p class='vspace'><br /><br />
+1.
+<br />
+</p><pre class='escaped'>
+
+public class Prova {
+
+	static boolean conforme(int a, int b){
+      	if ( (a&gt;=b &amp;&amp; a&lt;=2*b) || (a == 0)){
+		 return true;
+	}          
+   	return false;
+
+	}
+
+      static int calcola(int[] Y, int x){
+
+           //Si assume che Y contenga interi positivi
+       int max = -1;
+       for (int i=0; i&lt;Y.length; i++){
+          	if (conforme(Y[i],x) &amp;&amp; Y[i] &gt; max){
+                              max = Y[i];
+		}
+            return max;
+      }
+}
+
+</pre>
+<p class='vspace'><br />
+2.
+<br />
+Per il codice di cui al punto 1. (dove il caso “return -1” e il caso “return max con max diverso da
+-1” sono accorpati in un’unica istruzione m.) basta un solo caso di test per coprire tutte le
+istruzioni di calcola() e conforme(), e cioè un caso di test in cui il vettore Y contiene almeno
+due elementi: uno conforme a x per coprire la d. di conforme(), ed uno non conforme a x per
+coprire la e. di conforme(). Ad. es. Y= [1,3] e x=2. L’istruzione m. viene sempre coperta (per
+come è stato definito il codice); se, invece max venisse inizializzato ad es. a x-1 (come qualcuno
+ha fatto!) e al posto di m. avessi
+</p><br /><pre class='escaped'>
+         if (max = x-1) return -1;
+         else return max;
+</pre>
+<p><br />allora occorrerebbe un ulteriore caso per coprire la “return -1”, ad es. prendendo Y vuoto.
+Per coprire le decisioni (j. e k. di calcola(), e c. di conforme()), lo stesso caso di test Y= [1,3] e
+x=2 è sufficiente. (<em>Ricordate che coprire una decisione significa identificare due</em> <em>casi: uno in cui</em>
+<em>è vera, ed uno in cui è falsa</em>)
+</p>
+<p class='vspace'><br />
+3.
+<br />
+E’ banale. Nel caso di test Y= [1,3] e x=2 bastava un’istruzione assertEquals(3,calcola(Y,x)).
+</p>
+<p class='vspace'><br />
+</p><hr />
+<p><a class='wikilink' href='LinguaggiProgrammazioneSicurezza.html'>Torna alla pagina di LPS</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/LPSTestingEx)</span></div>
+  </div>
+</body>
+</html>

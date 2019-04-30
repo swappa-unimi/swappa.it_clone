@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Strumenti di investigazione e forensic </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.StrumentiDiInvestigazioneEForensic' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Strumenti di investigazione e forensic
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/StrumentiDiInvestigazioneEForensic?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/StrumentiDiInvestigazioneEForensic?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='StrumentiDiInvestigazioneEForensic-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/StrumentiDiInvestigazioneEForensic?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/StrumentiDiInvestigazioneEForensic?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Strumenti di investigazione e forensic was last modified on January 14, 2009, at 03:23 PM'>
+							<span style='display:none;'>Strumenti di investigazione e forensic</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='su' id='su'></a>
+<a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p><hr />
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>:: Strumenti di investigazione e forensic ::</strong>
+</p>
+<div class='vspace'></div><div class='frame' > 
+<p>Ove non meglio specificato, tutti i testi tra virgolette vanno intesi come citazioni letterali dalle slide del prof <a class='wikilink' href='DarioForte.html'>Dario Forte</a>, 2008.
+</p></div>
+<div class='vspace'></div><h2>Strumenti operativi</h2>
+<p>Gli <strong>strumenti operativi</strong> (o <em>standard operativi</em>) sono quelli utilizzati dal response team per la gestione degli incidenti informatici. Gli strumenti più diffusi di <em>Incident Management</em> permettono di seguire l'intero corso dell'incidente e generare report compatibili con i più rigorosi standard internazionali; inoltre consentono di effettuare un'attenta analisi economica dei danni, considerando gli asset coinvolti, le ore uomo impiegate (o sprecate) e altri costi collaterali (spese legali, recupero marketing, ...).
+</p>
+<p class='vspace'>Vediamo quali features dovrebbe avere un software di questo tipo:
+</p>
+<div class='vspace'></div><ul><li><strong>Report</strong> dettagliato con tutte le informazioni relative all'incidente e rispettoso dello standard <strong>IODEF</strong>. Lo IODEF è un metalinguaggio basato su XML il cui standard si trova su <code class='escaped'>ietf.org</code> e che garantisce univoca interpretazione e portabilità del report. E' estendibile con moduli aggiuntivi certificati, purché rispettino i prerequisiti e non creino dipendenze
+</li><li><strong>Timeline</strong> (<em>tabella dei tempi</em>), una sorta di log in cui viene preso nota di tutto ciò che accade nel sistema e di tutte le operazioni effettuate dagli investigatori. Deve consentire un certo margine di personalizzazione, ad esempio dando la possibilità di aggiungere informazioni sul nome dell'utente che ha generato un evento
+</li><li><strong>Analisi Grafica</strong> delle statistiche relative all'incidente e agli impatti monetari conseguenti
+</li><li><strong>Allegati</strong>, ad esempio lettere pervenute dalla polizia giudiziaria, log, file di configurazione, ...
+</li><li><strong>Ricerca</strong>, fondamentale per verificare se l'incidente informatico in analisi ha analogie con altri
+</li><li><strong>Dashboard</strong>, che visualizza un riepilogo delle principali informazioni legate al caso presenti nel database
+</li><li><strong>Sistema di Messaggistica Separata</strong> per evitare compromissioni
+</li><li><strong>Modulo Supervisor</strong> che gestisce gli utenti, assegna i task, garantisce la comunicazione tra operatori e controlla la dashboard
+</li><li>Possibilità di <strong>inviare e ricevere report esterni</strong>
+</li></ul><div class='vspace'></div><h2>Validazione dei toolkit</h2>
+<p>Tra le attività di gestione del laboratorio di investigazione una delle più importanti riguarda la <em>validazione degli strumenti</em>, la <strong>tool validation</strong>. Può essere <em>interna</em> quando è svolta in laboratorio ed è frutto di un processo di verifica; ad esempio dopo aver scaricato una iso ne verifico gli MD5 per vedere se è corrotta, faccio una serie di test standard e verbalizzo tutto. Se è invece effettuata da terze parti <code class='escaped'>trusted</code> viene chiamata <em>esterna</em>; ad esempio <code class='escaped'>PTK</code> è validato sia in laboratorio con test di configurazione, sia dalla comunità con test sullo strumento stesso. In entrambi i casi, vengono spesso utilizzati strumenti di testing creati appositamente, chiamati <strong>DFTT</strong> (<em>Digital Forensics Testing Tool</em>).
+</p>
+<p class='vspace'>Ultima considerazione va fatta sulle validazioni esterne fatte da organismi come il <em>NIST</em> (<em>National Institute for Standard and Technologies</em>), che hanno la caratteristica di avere la <code class='escaped'>Recognition in Court</code>, ovvero sono attestati e accertati in tribunale in quanto la loro validità ha riconoscimento giudiziario.
+</p>
+<div class='vspace'></div><hr />
+<div class='vspace'></div><h2>EnCase</h2>
+<p><strong>EnCase</strong> è tra le suite di investigazione commerciali più utilizzate e diffuse al mondo; gira sotto Windows ed è prodotto dalla <em>Guidance Software</em>. Ne esistono diverse versioni che variano in funzionalità, performance e ovviamente prezzo; noi tratteremo <strong>EnCase Forensic</strong>, considerato lo standard nella computer forensic, che lavora standalone ed è facilmente estendibile con una nutrita serie di moduli aggiuntivi.
+</p>
+<p class='vspace'>Una delle maggiori critiche che vengono mosse a questo prodotto è che non rende visibile il codice sorgente del programma, che dunque non può essere soggetto alla validazione di tutta la comunità scientifica; è comunque validato dal NIST, che per fini legali è più che sufficiente. Altro aspetto negativo è il prezzo, dato che la versione <em>Forensic</em> costa circa 4000 €, la <em>Lab</em> tra i 30 e i 40000 € ed <em>EnCase Enterprise</em> può arrivare al milione e mezzo di euro.
+</p>
+<p class='vspace'>Nei prossimi paragrafi illustreremo una serie di funzionalità offerte da EnCase Forensic.
+</p>
+<div class='vspace'></div><h3>Preview</h3>
+<p>La funzione <em>Preview</em> consente all’investigatore di visionare in anteprima il contenuto del media in esame prima di effettuare un'acquisizione. Ciò che si guadagna in velocità lo si perde parzialmente nell'integrità dei dati, dato che una preview comporta l'inevitabile alterazione di alcune informazioni (come ad esempio la data di ultimo accesso).
+</p>
+<div class='vspace'></div><h3>Acquisizione</h3>
+<p><em>EnCase forensic</em> supporta i principali media (floppy, dischi ottici, hard disk, periferiche di storage, ...) e molti tipi diversi di file system, tra cui ovviamente quelli di Windows (FAT12, FAT16, FAT32, NFTS), Macintosh (HFS, HFS+), Linux (EXT2, EXT3, ...), Solaris, cellulari e molti altri ancora.
+</p>
+<p class='vspace'>Con l'acquisizione abbiamo la <em>creazione delle immagini disco</em>, ovvero copie di servizio che - fedeli al principio di preservation - consentono di lavorare su un media garantendo l'integrità dell'originale. Questa fase si compone di diversi task:
+</p>
+<div class='vspace'></div><ul><li><strong>sanitize</strong> del media. Si tratta della "sterilizzazione" del disco su cui verrà memorizzata l'immagine per evitare che rimanenze dei dati delle vecchie indagini possano inquinare quelle attuali. Questa procedura prende il nome di <code class='escaped'>wiping</code> ed EnCase mette a disposizione dell'utente diversi algoritmi di questo tipo, tra cui il <em>DoD</em> e il <em>Gutmann</em>. Il primo prevede la sovrascrittura del disco per tre o sette volte con sequenze di 0 o di 1 (o con pattern casuali); nel secondo invece si arriva addirittura a 35 passaggi di sovrascrittura. L'efficacia dei due metodi è equalmente riconosciuta, ma il benchmark attuale è il <em>DoD</em> dato che una sanitation di 2-3 Tera di dati con il <em>Gutmann</em> può impiegare diversi giorni. La scelta dell'algoritmo di wiping va comunque motivata e documentata, ed è consigliabile per un laboratorio di forensic che una volta scelto uno non lo si abbandoni più
+</li></ul><div class='vspace'></div><div><span class='frame rfloat'><img src='../uploads/Uni/fastblock.gif' alt='' title='' /></span></div>
+<ul><li><strong>acquisizione bit-by-bit</strong> e <strong>conservazione dei dati</strong>. L'acquisizione vera e propria può essere effettuata collegando il disco da esaminare con quello in cui conservare i dati, o per mezzo di cavi (parallelo, firewire, USB, ethernet) o allacciandoli entrambi alla stessa scheda madre. Il sistema più efficiente e sicuro è però <strong>Fastbloc</strong>, un dispositivo hardware prodotto dalla stessa <em>Guidance Software</em> che protegge il drive da qualsiasi tipo di scrittura (accidentale o volontaria) e garantisce così un trasferimento rapido e controllato. Va infine segnalato che alcuni duplicatori hardware consentono di distinguere tra <em>copia bitstream</em> e <em>copia fisica</em>, quest'ultima che contiene qualche informazione in più sul media
+<div class='vspace'></div></li><li><strong>copia ed analisi di dischi RAID e di volumi cifrati</strong> (come <code class='escaped'>Saveboot</code>). L'accesso a questi ultimi non avviene bucando i sistemi di sicurezza, ma grazie ad accordi tra EnCase e i loro produttori. Questi ultimi assicurano infatti alcune modalità di accesso preferenziali alternative.
+</li></ul><div class='vspace'></div><h3>Analisi</h3>
+<p>Una volta acquisite le immagini del disco queste devono poter essere analizzate. EnCase fornisce diverse features che potenziano questa attività:
+</p><ul><li>un'interfaccia intuitiva per analizzare il contenuto dei documenti che si hanno a disposizione
+</li><li>verifica degli hash
+</li><li>raccolta di informazioni dal database <em>Active Directory</em> di Windows, da cui è possibile carpire username, SID, ultimo accesso al sistema e altro ancora
+</li><li>possibilità di creare e personalizzare alcune funzioni scrivendole nel linguaggio proprietario <em>EnScript</em>, molto simile al PERL e i cui programmatori sono molto richiesti
+</li><li>"File Signature Analysis"
+</li></ul><div class='vspace'></div><h3>Visualizzazione di dati e risultati</h3>
+<p>EnCase fornisce una serie di strumenti per potenziare la visualizzazione di dati e risultati (gallerie e timeline comprese). Tra questi elenchiamo (dalle slide di Dario Forte, 2008):
+</p>
+<div class='vspace'></div><ul><li>"possibilità di filtrare i dati sulla base di molteplici criteri"
+</li><li>"condizioni di filtro e possibilità di eseguire query"
+</li><li>"visualizzazione di file cancellati e frammenti di file nello spazio non allocato o all'interno dello slack-space" (ovvero lo spazio sprecato per via della frammentazione interna)
+</li><li>"folder recovery"
+</li><li>"log file e eventlog analysis"
+</li><li>"analisi del registro di sistema"
+</li><li>"ricerca di contenuti", anche all'interno di mail e nella cronologia di navigazione
+</li></ul><div class='vspace'></div><h3>Report</h3>
+<p>Concludiamo la panoramica delle funzionalità offerte da EnCase Forensic riportando ovviamente quella che riguarda la stesura dei <em>Report</em>, facilitata da molti automatismi e da altri utili accorgimenti come ad esempio la possibilità di usare bookmarks.
+</p>
+<div class='vspace'></div><h2>UTK</h2>
+<p>Un'altra famosa suite commerciale di strumenti per la digital investigation è <strong>Ultimate Toolkit</strong> (<strong>UTK</strong>) della <em>AccessData</em>. UTK è composta da:
+</p>
+<div class='vspace'></div><ul><li><strong>Forensic Toolkit</strong> (<strong>FTK</strong>), che non solo supporta un gran numero di media e file system, ma è anche in grado di importare formati creati da EnCase (come ad esempio <em>Expert Witness</em>). Da quest'ultimo si distingueva per il fatto che indicizzava le immagini dei dischi in un database prima ancora di cominciarne l'analisi; se da un lato questa operazione faceva perdere un po' di tempo, dall'altra consentiva di risparmiarne molto di più nelle ricerche e in altre attività. L'ultima versione di EnCase adotta la stessa strategia, così come del resto anche <strong>PTK</strong>. Altre caratteristiche di FTK sono la possibilità di avere l'anteprima di un vastissimo numero di formati di file, di effettuare rapidamente ricerche avanzate (anche con l'utilizzo di espressioni regolari), di esaminare email e file compressi e di rimuovere dei file sulla base di varie opzioni (ad esempio in funzione degli hash)
+<div class='vspace'></div></li><li><strong>FTK Imager</strong> è lo strumento che effettua preview dei dischi e ne crea le copie di servizio, il tutto ovviamente senza alterare alcun dato
+<div class='vspace'></div></li><li><strong>Password Recovery Toolkit</strong> (<strong>PRTK</strong>), più efficiente ed efficace di quello di EnCase e che agisce su più fronti (dal bruteforce al dictionary attack, eccetera)
+<div class='vspace'></div></li><li><strong>Registry Viewer</strong>, ovvero uno strumento per l'analisi del registro di Windows che mette a disposizione funzioni aggiuntive come la ricerca in base a chiavi e/o valori e la generazione automatica di report
+<div class='vspace'></div></li><li><strong>Distribuited Network Attack</strong> (<strong>DNA</strong>), che fa uso della potenza di calcolo di più computer (i <em>client DNA</em>) per la decrittazione di file protetti da password, in modo che questa avvenga più rapidamente e con minor aggravio sulle performance dei singoli sistemi
+<div class='vspace'></div></li><li><strong>Wipe Drive</strong>, la consueta funzionalità di wiping dei dischi per garantire che i dati di un caso non siano inquinati da quelli precedenti. UTK supporta solo l'algoritmo <em>DoD</em>
+</li></ul><div class='vspace'></div><h2>Wetstone</h2>
+<p><strong>Wetstone</strong> è una software house che produce diversi strumenti per la digital forensic, tra cui <em>Gargoyle Investigator</em>, <em>Stego suite</em> e <em>LimeWire Investigator</em>.
+</p>
+<p class='vspace'><strong>Gargoyle Investigator</strong> verifica con rapidità la presenza di malware nel sistema compromesso. Tale ricerca avviene confontando ogni file con le signature memorizzate in un database interno in base alle quali classificherà gli eventuali programmi ostili rilevati. La versione <code class='escaped'>Forensic Pro Edition</code> costa 1195 $, mentre quella <code class='escaped'>Enterprise</code> - che offre una serie di funzionalità aggiuntive come l'esecuzione da remoto - arriva a 1995 $.
+</p>
+<p class='vspace'><strong>Stego suite</strong> è tra i più efficaci strumenti di rilevazione ed analisi di dati <em>steganografici</em>, dove per <em>steganografia</em> si intende una tecnica utilizzata per nascondere l'esistenza di un messaggio (e non il suo contenuto, come avviene con la crittografia). Non esiste un metodo univoco per realizzarla, né tanto meno un unico algoritmo, tuttavia nella maggior parte dei casi i messaggi sono nascosti all'interno di un'immagine (vedi l'esempio in <a class='urllink' href='http://en.wikipedia.org/wiki/Steganography#Example_from_modern_practice' title='' rel='nofollow'>questa pagina</a> su wikipedia) o di file audio. L'approccio di <em>Stego suite</em> per rilevarli è cercare le signature dei programmi più comuni utilizzati per implementarla, una strategia che dà ancora oggi buoni risultati.<br /><em>Stego suite</em> costa 1495$ ed è formata da tre componenti, che possono essere usati anche in parallelo:
+</p><ul><li><em>stego watch</em>, che effettua le ricerche delle signature nel file system
+</li><li><em>stego analyst</em>, che analizza nel dettaglio immagini, tracce audio e testi
+</li><li><em>stego break</em>, che cerca di forzare le password
+</li></ul><p class='vspace'>Infine abbiamo <strong>LimeWire Investigator</strong> (9995 $), un ottimo strumento che consente di effettuare una <em>Live System Analysis</em> senza interrompere le normali operazioni del sistema in esame. L'analisi avviene sulle informazioni volatili (memoria, registri, processi e porte attive, stato dei programmi, ...) e con un rapporto 1:1 , cioè su una sola macchina alla volta; EnCase permette invece un rapporto 1:n .
+</p>
+<div class='vspace'></div><h2>Prodiscover</h2>
+<p>Concludiamo la panoramica sui principali tool di forensic con <strong>Prodiscover</strong> della <em>Technology Pathways</em>, molto utilizzato per la live analysis e live acquisition via network TCP/IP. Come <em>LimeWire</em> anche <em>Prodiscover</em> consente di monitorare un unico target alla volta, sul quale deve girare un agente che può essere installato o fatto partire da CD live o chiavetta USB (la scelta va giustificata sulla documentazione perché comporta la modifica dello stato della macchina). E' progettato secondo le specifiche del <em>NIST</em>, ed è indicato per sistemi medio-piccoli.
+</p>
+<p class='vspace'><em>Prodiscover</em> può effettuare l'acquisizione di RAM e hard disk sia da locale che da remoto, supporta un buon numero di file system e consente di scegliere tra due formati di immagini del disco: <code class='escaped'>Unix dd</code> o un formato proprietario. Consente inoltre di lavorare su zone nascoste dei dischi come le <em>HPA</em> (<em>Host Protected Area</em>), a patto di installare driver ad hoc sulle macchine utilizzate per l'analisi.
+</p>
+<p class='vspace'>Le funzionalità offerte come supporto all'analisi e alla generazione di report sono pressoché identiche a quelle viste finora. In particolare segnaliamo il supporto e l'utilizzo di script in PERL per l'automatizzazione di funzioni e procedure, script che ovviamente devono essere sottoposti al controllo della comunità scientifica per essere validati.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='GestioneDegliIncidentiInformatici.html'>Torna alla pagina di Gestione degli incidenti informatici</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: January 14, 2009, at 03:23 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/StrumentiDiInvestigazioneEForensic?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/StrumentiDiInvestigazioneEForensic?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

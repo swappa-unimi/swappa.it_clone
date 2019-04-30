@@ -1,0 +1,643 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : PmWikiIt / Regole di base per la modifica</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/PmWikiIt' title='Pm Wiki It Home'>Pm Wiki It</a> /
+    <a href='BasicEditing.html' title='Regole di base per la modifica'>Regole di base per la modifica</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a name='trailstart' id='trailstart'></a> 
+</p><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='Introduction.html'>Introduzione</a> | <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Indice documentazione</a> | <a class='wikilink' href='CreatingNewPages.html'>Creare nuove pagine</a> &gt;</span> 
+</p></div>
+<div style='clear:right;' ><span class='frame rfloat' style='font-size: smaller; background-color: #ffffcc;'>autori (base)</span>
+</div>
+<p class='vspace'>Le pagine di questo sito sono pagine <a class='wikilink' href='WikiWikiWeb.html'>WikiWikiWeb</a>, il che significa che possono essere create ed editate da molti autori. Per modificare una pagina fai clic sul link <strong>Modifica</strong> posto in alto e in fondo alla pagina. Per modificare alcune pagine può essere necessario possedere una <a class='wikilink' href='Passwords.html'>password</a>.
+</p>
+<p class='vspace'>Quando modifichi una pagina vedi il <em>markup text</em> che ne descrive il contenuto. Le regole base sono piuttosto semplici:
+</p><ol><li>Lasciare un rigo bianco tra i paragrafi
+</li><li>Per una lista numerata fare iniziare ogni riga con il simbolo del cancelletto <strong>#</strong> mentre va usato l'asterisco <strong>*</strong> per le liste non numerate
+</li><li>Per una intestazione, cominciare la riga con un punto esclamativo <strong>!</strong>, con due punti esclamativi <strong>!!</strong> si ottiene un sottotitolo, con tre <strong>!!!</strong> un sotto-sottotitolo
+</li><li>Per enfatizzare il testo racchiuderlo da due apici singoli <code class='escaped'>''</code> per avere il <em>corsivo</em>, o tra tre apici singoli <code class='escaped'>'''</code> per avere il <strong>neretto</strong>
+</li><li>Per mettere un link ad un altra pagina (link interno al wiki), racchiudere il nome della pagina tra doppie parentesi quadre <code class='escaped'>[[</code> e <code class='escaped'>]]</code>; per esempio <code class='escaped'>[[basic editing]]</code> è un link a questa pagina. Link a <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/NonexistentPages?action=edit'>pagine ancora non esistenti</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/NonexistentPages?action=edit'>?</a> sono mostrati in modo speciale, con un punto interrogativo sopra, per invitare alla creazione di quella pagina.
+</li><li>Per fare un link ad un sito esterno è sufficiente scrivere il suo indirizzo, preceduto sempre da <code class='escaped'>http://</code>, ad esempio: <a class='urllink' href='http://www.example.com' title='' rel='nofollow'>http://www.example.com</a>
+</li></ol><p class='vspace'><strong>Per fare prove, si può usare la <a class='wikilink' href='WikiSandbox.html'>WikiSandbox</a>.</strong> Questa pagina può essere <a class='wikilink' href='http://www.swappa.it/wiki/PmWikiIt/WikiSandbox?action=edit'>modificata</a> senza ripercussioni sul resto del sito.
+Quando modifichi pagine scritte da altri, è cortese "firmare il tuo contributo". Scrivendo di seguito tre tildi ~~~ (Alt+126 nel tastierino numerico) fai comparire - come firma - il nome che hai inserito nel campo Autore della pagina che stai modificando 
+</p>
+<div class='vspace'></div><h2>Esempi</h2>
+<p>La tabella che segue mostra molte delle possibilità di formattazione che PmWiki offre. Nella colonna a destra si trovano gli effetti visivi prodotti, in quella a sinistra come ottenerli. Altre informazioni si trovano tra le <a class='wikilink' href='TextFormattingRules.html'>regole di formattazione</a> ed in altre pagine di documentazione. La <strong>lista completa dei marcatori</strong> è invece qui: <a class='wikilink' href='MarkupMasterIndex.html'>Indice principale markup</a>.
+</p>
+<div class='vspace'></div><h3>Uso Generale</h3>
+<table class='markup horiz' align='center' >
+<tr ><td class='markup1'  valign='top'>
+<p  style='text-align: center;'> <strong>Cosa si scrive</strong>
+</p></td><td class='markup2'  valign='top'>
+<p  style='text-align: center;'> <strong>Cosa si vede</strong>
+</p></td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Andare a capo
+semplicemente non si vede.
+
+Per iniziare un nuovo paragrafo bisogna
+lasciare una riga vuota.
+</pre></td><td 
+        class='markup2' valign='top'><p>Andare a capo
+semplicemente non si vede.
+</p>
+<p class='vspace'>Per iniziare un nuovo paragrafo bisogna lasciare una riga vuota.
+</p>
+</td></tr></table>
+<div class='vspace'></div><h3><a name='lists' id='lists'></a> <a class='wikilink' href='TextFormattingRules.html#BulletedLists'>Liste</a></h3>
+<table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>* Le liste puntate si creano con un
+asterisco davanti ad ogni singola voce
+** Con due o più asterischi si crea un
+sottoelenco
+*** Una lista viene terminata
+dalla prima riga che non è una lista
+* una lista si prosegue allineando
+  il testo con spazi bianchi
+* inserendo due slash \\
+  si va a capo
+</pre></td><td 
+        class='markup2' valign='top'><ul><li>Le liste puntate si creano con un asterisco davanti ad ogni singola voce
+<ul><li>Con due o più asterischi si crea un sottoelenco
+<ul><li>Una lista viene terminata
+</li></ul></li></ul></li></ul><p>dalla prima riga che non è una lista
+</p><ul><li>una lista si prosegue allineando
+il testo con spazi bianchi
+</li><li>inserendo due slash <br />  si va a capo
+</li></ul>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre># Le liste numerate si creano col segno
+di cancelletto davanti ad ogni 
+# singola voce
+## più cancelletti creano sottoliste
+*** le liste si possono combinare
+-&gt; per mantenere le numerazioni
+utilizzare gli [[list styles|stili delle
+liste]]
+## Inserendo testo tra gli elementi di
+una lista, la numerazione riparte da 1
+## %item value=3% a questo si può porre
+rimedio
+</pre></td><td 
+        class='markup2' valign='top'><ol><li>Le liste numerate si creano col segno di cancelletto davanti ad ogni 
+</li><li>singola voce
+<ol><li>più cancelletti creano sottoliste
+<ul><li>le liste si possono combinare
+</li></ul></li></ol></li></ol><div class='indent'>per mantenere le numerazioni utilizzare gli <a class='wikilink' href='ListStyles.html'>stili delle liste</a>
+<ol><li>Inserendo testo tra gli elementi di una lista, la numerazione riparte da 1
+</li><li value='3' > a questo si può porre rimedio
+</li></ol></div>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>-&gt; Le indentazioni di paragrafo si
+fanno  con una freccia a inizio riga
+(-&gt;)
+
+   Per mantenere l'indentazione bisogna
+allineare il testo usando spazi bianchi 
+
+--&gt;una freccia più lunga (--&gt;) fa
+rientrare di più
+
+-&lt;Con una freccia rovesciata (-&lt;)
+invece si crea un rientro diverso
+(paragrafo appeso): perchè è solo la
+prima riga che rientra, le altre
+rimangono normali
+--&lt;Anche qui, frecce più lunghe
+aumentano l'indentazione
+</pre></td><td 
+        class='markup2' valign='top'><div class='indent'>Le indentazioni di paragrafo si fanno  con una freccia a inizio riga (-&gt;)
+<div class='vspace'></div>Per mantenere l'indentazione bisogna allineare il testo usando spazi bianchi 
+<div class='vspace'></div><div class='indent'>una freccia più lunga (--&gt;) fa rientrare di più
+</div></div><div class='vspace'></div><div class='outdent'>Con una freccia rovesciata (-&lt;) invece si crea un rientro diverso (paragrafo appeso): perchè è solo la prima riga che rientra, le altre rimangono normali
+<div class='outdent'>Anche qui, frecce più lunghe aumentano l'indentazione
+</div></div>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>: Lista di definizioni : a ciascun
+elemento corrisponde una definizione
+: termine 1 da definire : la definizione
+1
+: termine 2 da definire : la definizione
+2
+:: indentazione : è possibile aumentare
+la profondità della lista
+</pre></td><td 
+        class='markup2' valign='top'><dl><dt> Lista di definizioni </dt><dd> a ciascun elemento corrisponde una definizione
+</dd><dt> termine 1 da definire </dt><dd> la definizione 1
+</dd><dt> termine 2 da definire </dt><dd> la definizione 2
+<dl><dt> indentazione </dt><dd> è possibile aumentare la profondità della lista
+</dd></dl></dd></dl>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre> Righe che iniziano con uno spazio
+ bianco vengono rese esattamente
+ come scritte, comprese le andate a
+capo,
+ in un font tipo Courier monospazio
+
+Attenzione in questo caso a non fare
+righe troppo 
+lunghe perchè allargano la pagina e
+possono perciò 
+renderla difficile da leggere
+</pre></td><td 
+        class='markup2' valign='top'><pre> Righe che iniziano con uno spazio
+ bianco vengono rese esattamente
+ come scritte, comprese le andate a capo,
+ in un font tipo Courier monospazio
+</pre><p class='vspace'>Attenzione in questo caso a non fare righe troppo 
+lunghe perchè allargano la pagina e possono perciò 
+renderla difficile da leggere
+</p>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>%rfloat% Questo testo è in un box
+allineato a destra
+
+%rframe% Questo testo è in un box a
+destra, con bordi
+
+Questo testo non è allineato, serve per
+chiarire l'esempio.
+
+%center% Testo centrato
+
+%right% Testo allineato a destra (è
+necessario indentarlo -&gt; se il testo
+precedente non è indentato)
+</pre></td><td 
+        class='markup2' valign='top'><p><span class='rfloat'> Questo testo è in un box allineato a destra</span>
+</p>
+<p class='vspace'><span class='frame rfloat'> Questo testo è in un box a destra, con bordi</span>
+</p>
+<p class='vspace'>Questo testo non è allineato, serve per chiarire l'esempio.
+</p>
+<p class='vspace'  style='text-align: center;'> Testo centrato
+</p>
+<p class='vspace'  style='text-align: right;'> Testo allineato a destra (è necessario indentarlo -&gt; se il testo precedente non è indentato)
+</p>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Quattro o più trattini (segno meno)
+ad inizio riga
+----
+producono una linea orizzontale
+</pre></td><td 
+        class='markup2' valign='top'><p>Quattro o più trattini (segno meno)
+ad inizio riga
+</p><hr />
+<p>producono una linea orizzontale
+</p>
+</td></tr></table>
+<div class='vspace'></div><h3><a name='links' id='links'></a> <a class='wikilink' href='Links.html'>Link</a></h3>
+<table class='markup horiz' align='center' >
+<tr ><td class='markup1'  valign='top'>
+<p><span style='font-size:83%'> <strong>Cosa si scrive</strong> </span>
+</p></td><td class='markup2'  valign='top'>
+<p><span style='font-size:83%'><strong>Cosa si vede</strong> </span>
+</p></td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>* Il testo tra doppie parentesi quadre
+diventa un link ad una pagina
+* Il titolo della pagina viene
+visualizzato con l'iniziale maiuscola
+Esempio: fai pratica nella [[wiki
+sandbox]].
+</pre></td><td 
+        class='markup2' valign='top'><ul><li>Il testo tra doppie parentesi quadre diventa un link ad una pagina
+</li><li>Il titolo della pagina viene visualizzato con l'iniziale maiuscola
+</li></ul><p>Esempio: fai pratica nella <a class='wikilink' href='WikiSandbox.html'>wiki sandbox</a>.
+</p>
+</td></tr></table>
+<div class='vspace'></div><ul><li>Quando si fa un collegamento a una pagina in un altro wikigroup diverso, bisogna specificare il nome di tale gruppo, seguito da un separatore e dal nome della pagina.
+</li><li>Se il separatore è uno slash (/) apparirà solo il nome della pagina.
+</li><li>Se il separatore è un punto (.) allora apparirà anche il nome del gruppo.
+</li></ul><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Fai pratica nella [[Main/WikiSandbox]].
+
+In quale?
+Nella [[Main.WikiSandbox]].
+</pre></td><td 
+        class='markup2' valign='top'><p>Fai pratica nella <a class='wikilink' href='../Main/WikiSandbox.html'>WikiSandbox</a>.
+</p>
+<p class='vspace'>In quale?
+Nella <a class='wikilink' href='../Main/WikiSandbox.html'>Main.WikiSandbox</a>.
+</p>
+</td></tr></table>
+<div class='vspace'></div><ul><li>Il testo inserito dopo una barra diritta (|) o prima di una freccia (-&gt;) è il testo del link.
+</li><li>PmWiki mette automaticamente lettere maiuscole nei link
+</li></ul><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Esercitati nell'[[WikiSandbox | area di
+pratica]].
+
+Esercitati nell'[[Main.WikiSandbox |
+area di pratica]].
+
+Esercitati nell'[[area di pratica -&gt;
+Wiki sandbox]].
+
+Le direttive avanzate per costruire
+tabelle sono descritte nella pagina
+[[table directives]].
+</pre></td><td 
+        class='markup2' valign='top'><p>Esercitati nell'<a class='wikilink' href='WikiSandbox.html'>area di pratica</a>.
+</p>
+<p class='vspace'>Esercitati nell'<a class='wikilink' href='../Main/WikiSandbox.html'>area di pratica</a>.
+</p>
+<p class='vspace'>Esercitati nell'<a class='wikilink' href='WikiSandbox.html'>area di pratica</a>.
+</p>
+<p class='vspace'>Le direttive avanzate per costruire tabelle sono descritte nella pagina <a class='wikilink' href='TableDirectives.html'>table directives</a>.
+</p>
+</td></tr></table>
+<div class='vspace'></div><ul><li>I suffissi diventano parte del testo del link
+</li><li>Le parentesi tonde nascondono parti del testo del link.
+</li></ul><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>esercitati nelle [[wiki sandbox]]es;
+
+esercitati nella [[(wiki) sandbox]]
+# a riferimenti: [[Tables |#]]
+# al titolo di una pagina [[Basic
+editing|+]]
+</pre></td><td 
+        class='markup2' valign='top'><p>esercitati nelle <a class='wikilink' href='WikiSandbox.html'>wiki sandboxes</a>;
+</p>
+<p class='vspace'>esercitati nella <a class='wikilink' href='WikiSandbox.html'> sandbox</a>
+</p><ol><li>a riferimenti: <a class='wikilink' href='Tables.html'>[1]</a>
+</li><li>al titolo di una pagina <a class='selflink' href='BasicEditing.html'>Regole di base per la modifica</a>
+</li></ol>
+</td></tr></table>
+<div class='vspace'></div><ul><li>Si possono usare speciali <a class='wikilink' href='InterMap.html'>InterMap prefixes</a> che hanno un preciso significato.
+</li><li>Le parentesi tonde possono nascondere anche questi.
+</li></ul><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Cosa significa [[(Wikipedia:)aardvark]]?
+
+</pre></td><td 
+        class='markup2' valign='top'><p>Cosa significa <a class='urllink' href='http://www.wikipedia.com/wiki/aardvark' title='' rel='nofollow'>aardvark</a>? 
+</p>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Link a siti esterni:
+# indicazione semplice dell'url:
+http://www.google.com
+# link di testo [[http://www.google.com
+| Google]]
+# come riferimento, in nota:
+[[http://www.google.com |#]]
+</pre></td><td 
+        class='markup2' valign='top'><p>Link a siti esterni:
+</p><ol><li>indicazione semplice dell'url: <a class='urllink' href='http://www.google.com' title='' rel='nofollow'>http://www.google.com</a>
+</li><li>link di testo <a class='urllink' href='http://www.google.com' title='' rel='nofollow'>Google</a>
+</li><li>come riferimento, in nota: <a class='urllink' href='http://www.google.com' title='' rel='nofollow'>[1]</a>
+</li></ol>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Si possono aprire i siti esterni in una
+nuova finestra,
+come in %newwin% http://www.pmwiki.org 
+</pre></td><td 
+        class='markup2' valign='top'><p>Si possono aprire i siti esterni in una nuova finestra,
+come in  <a target='_blank'  class='urllink' href='http://www.pmwiki.org' title='' rel='nofollow'>http://www.pmwiki.org</a> 
+</p>
+</td></tr></table>
+<div class='vspace'></div><h3>Andare a capo</h3>
+<table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Due backslash \\
+interrompono una linea, andando a capo.
+
+I wikistyle e altre
+'''%red%formattazioni\\
+continuano%% sulla linea''' seguente
+
+In alternativa, per andare a capo si può
+usare [[&lt;&lt;]].
+
+Aggiungendo backslash\\\\
+si aggiungono linee vuote.
+</pre></td><td 
+        class='markup2' valign='top'><p>Due backslash <br />interrompono una linea, andando a capo.
+</p>
+<p class='vspace'>I wikistyle e altre <strong><span  style='color: red;'>formattazioni<br />continuano</span> sulla linea</strong> seguente
+</p>
+<p class='vspace'>In alternativa, per andare a capo si può usare <br clear='all' />.
+</p>
+<p class='vspace'>Aggiungendo backslash<br /><br /><br />si aggiungono linee vuote.
+</p>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Un singolo backslash unisce la \
+prossima linea; in questo modo, più \
+linee vengono trattate come una sola.
+</pre></td><td 
+        class='markup2' valign='top'><p>Un singolo backslash unisce la prossima linea; in questo modo, più linee vengono trattate come una sola.
+</p>
+</td></tr></table>
+<div class='vspace'></div><h3>Formattazione caratteri</h3>
+<table class='markup horiz' align='center' >
+<tr ><td class='markup1'  valign='top'>
+<p><span style='font-size:83%'> <strong>Cosa si scrive</strong> </span>
+</p></td><td class='markup2'  valign='top'>
+<p><span style='font-size:83%'><strong>Cosa si vede</strong> </span>
+</p></td></tr></table>
+<div class='vspace'></div><ul><li>Negli esempi che seguono si usano solo apostrofi (') e mai virgolette (")
+</li></ul><div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>Si può ''enfatizzare'', '''molto''' o
+'''''moltissimo''''' i
+</pre></td><td 
+        class='markup2' valign='top'><p>Si può <em>enfatizzare</em>, <strong>molto</strong> o <strong><em>moltissimo</em></strong> i
+</p>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>@@Testo a grandezza fissa
+(monospaziato)@@
+
+[@Questo è un blocco
+  di testo
+    preformattato@]
+</pre></td><td 
+        class='markup2' valign='top'><p><code>Testo a grandezza fissa (monospaziato)</code>
+</p>
+<div class='vspace'></div><pre class='escaped'>Questo è un blocco
+  di testo
+    preformattato</pre>
+</td></tr></table>
+<div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>* Testo con '^apici^'
+* Testo con '_pedici_'
+* Testo{-cancellato-} 
+* Testo {+sottolineato+}
+* Testo [+grande+], [++molto grande++], 
+[-piccolo-], [--piccolissimo--]
+</pre></td><td 
+        class='markup2' valign='top'><ul><li>Testo con <sup>apici</sup>
+</li><li>Testo con <sub>pedici</sub>
+</li><li>Testo<del>cancellato</del> 
+</li><li>Testo <ins>sottolineato</ins>
+</li><li>Testo <span style='font-size:120%'>grande</span>, <span style='font-size:144%'>molto grande</span>, 
+</li></ul><p><span style='font-size:83%'>piccolo</span>, <span style='font-size:69%'>piccolissimo</span>
+</p>
+</td></tr></table>
+<div class='vspace'></div><h3><a class='wikilink' href='WikiStyles.html'>Wiki styles</a></h3>
+<table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>I [[WikiStyles]] permettono al %red%
+testo
+%blue% di %green% avere
+%color=#ff7f00% differenti %%colori.
+</pre></td><td 
+        class='markup2' valign='top'><p>I <a class='wikilink' href='WikiStyles.html'>WikiStyles</a> permettono al <span  style='color: red;'> testo</span>
+<span  style='color: blue;'> di </span><span  style='color: green;'> avere</span>
+<span  style='color: #ff7f00;'> differenti </span>colori.
+</p>
+</td></tr></table>
+<div class='vspace'></div><h3>Intestazioni e blocchi</h3>
+<table class='markup horiz' align='center' >
+<tr ><td class='markup1'  valign='top'>
+<p><span style='font-size:83%'> <strong>Cosa si scrive</strong> </span>
+</p></td><td class='markup2'  valign='top'>
+<p><span style='font-size:83%'><strong>Cosa si vede</strong> </span>
+</p></td></tr></table>
+<div class='vspace'></div><ul><li>Le intestazioni sono utili per creare pagine "ben strutturate". Non servono solamente a inserire testo ingrandito.
+</li></ul><div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>!! Intestazione principale
+!! [-Intestazione principale con testo
+rimpicciolito-]
+!!! Intestazione secondaria
+!!!! E altri
+!!!!! sottotitoli minori
+</pre></td><td 
+        class='markup2' valign='top'><h2>Intestazione principale</h2>
+<h2><span style='font-size:83%'>Intestazione principale con testo rimpicciolito</span></h2>
+<h3>Intestazione secondaria</h3>
+<h4>E altri</h4>
+<h5>sottotitoli minori</h5>
+</td></tr></table>
+<p class='vspace'><a name='pagetitles' id='pagetitles'></a>
+</p><h3>Titolo della pagina</h3>
+<ul><li>La  direttiva <code class='escaped'>(:title:)</code>, qui ad es. <code class='escaped'>(:title Regole di base per la modifica:)</code> mette come titolo della pagina qualcosa di diverso dal suo nome 
+</li></ul><div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>(:Title Regole di base per la modifica:)
+Il titolo di questa pagina è {$Title};
+con spazi {$Titlespaced}.
+</pre></td><td 
+        class='markup2' valign='top'><p>Il titolo di questa pagina è Regole di base per la modifica; con spazi Regole di base per la modifica.
+</p>
+</td></tr></table>
+<p class='vspace'><a name='pagesummary' id='pagesummary'></a>
+</p><h3>Sommario di una pagina</h3>
+<ul><li>La direttiva <code class='escaped'>(:Summary:Inserisci il sommario qui:)</code> imposta il sommario della pagina. Questo viene visualizzato nelle liste di pagine e durante le ricerche.
+</li></ul><div class='vspace'></div><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>(:Summary: Sintassi di base PmWiki:)
+Il sommario di questa pagina è
+{$:Summary}.
+</pre></td><td 
+        class='markup2' valign='top'><p>Il sommario di questa pagina è Sintassi di base PmWiki.
+</p>
+</td></tr></table>
+<p class='vspace'><a name='blockstyles' id='blockstyles'></a>
+</p><h3>Stili di blocco</h3>
+<ul><li>i blocchi permettono di applicare uno stile a un numero arbitrario di linee, paragrafi e <a class='wikilink' href='Images.html'>immagini</a>.
+</li></ul><table class='markup horiz' align='center'>
+      <tr><td class='markup1' valign='top'><pre>&gt;&gt;purple&lt;&lt;
+Tutto il testo in questo blocco è viola
+* Mucche viola e fiori viola
+* Mangiatori di gente viola
+&gt;&gt;red&lt;&lt;
+* Adesso questa lista è rossa
+&gt;&gt;center&lt;&lt;
+* e questa è centrata
+&gt;&gt;right green&lt;&lt;
+* e questa è verde e allineata a destra.
+&gt;&gt;&lt;&lt;
+* E questa è normale.
+</pre></td><td 
+        class='markup2' valign='top'><div  style='color: purple;' > 
+<p>Tutto il testo in questo blocco è viola
+</p><ul><li>Mucche viola e fiori viola
+</li><li>Mangiatori di gente viola
+</li></ul></div><div  style='color: red;' > 
+<ul><li>Adesso questa lista è rossa
+</li></ul></div><div  style='text-align: center;' > 
+<ul><li>e questa è centrata
+</li></ul></div><div  style='text-align: right; color: green;' > 
+<ul><li>e questa è verde e allineata a destra.
+</li></ul></div>
+<ul><li>E questa è normale.
+</li></ul>
+</td></tr></table>
+<div class='vspace'></div><div class='faq' > <a name='faq' id='faq'></a> 
+<p><a name='beginning' id='beginning'></a>
+</p><p class='question'> Sono un nuovo utente di PmWiki, da dove posso cominciare?</p>
+<p> La pagina <a class='selflink' href='BasicEditing.html'>Basic Editing</a> è un buon inizio. Da lì, puoi seguire i link alla fine della pagina (si chiamano <a class='createlinktext' rel='nofollow' 
+    href='http://www.swappa.it/wiki/PmWikiIt/WikiTrails?action=edit'>Wiki Trails</a><a rel='nofollow' 
+    class='createlink' href='http://www.swappa.it/wiki/PmWikiIt/WikiTrails?action=edit'>?</a>) alle altre pagine, oppure puoi andare all'<a class='wikilink' href='DocumentationIndex.html'>Indice documentazione</a>, che contiene un sommario delle pagine più importanti, organizzate per livello di difficoltà.
+</p>
+<p class='vspace question'> Come faccio a inserire caratteri speciali nelle pagine?</p>
+<p> Per inserire <a class='wikilink' href='SpecialCharacters.html'>Caratteri speciali</a> bisogna usare i codici numerici; per esempio, i simboli di copyright (&#169;) e Trademark (&#174; or &#8482;), che non si trovano sulla tastiera.
+</p>
+<p class='vspace question'> Come mai più linee di testo nel codice markup diventano una sola linea nell'output?</p>
+<p> PmWiki tratta più linee di testo come un paragrafo, unendole tra loro. Questo avviene anche con altri sistemi wiki. Gli autori possono comunque utilizzare la direttiva <code class='escaped'>(:linebreaks:)</code> per far sì che linee separate nel codice restino separate anche nell'output.
+</p>
+<p class='vspace question'> Posso inserire direttamente codice HTML?</p>
+<p> Per default (e per come è stato progettato), PmWiki non permette l'inserimento di codice HTML attraverso i form di modifica delle pagine. Ci sono diverse ragioni che motivano questa scelta, sono descritte nella pagina <a class='wikilink' href='PmWikiPhilosophy.html'>Filosofia di PmWiki</a> e <a class='wikilink' href='Audiences.html'>Pubblico PmWiki</a>. In due parole, Pm ritiene che abilitare l'inserimento di HTML nelle pagine wiki in un ambiente di collaborazione avrebbe l'effetto di escludere potenziali autori dalla modifica delle pagine; inoltre, si presenterebbero sollevare numerosi problemi di sicurezza. In ogni caso, l'amministratore di un sito può usare la ricetta <a class='urllink' href='http://www.pmwiki.org/wiki/Cookbook/EnableHTML' title='' rel='nofollow'>Cookbook:EnableHTML</a> per abilitare l'uso di HTML direttamente nelle pagine.
+</p>
+<p class='vspace question'> Dove posso trovare altra documentazione?</p>
+<p> Sulla pagina <a class='wikilink' href='DocumentationIndex.html'>Indice documentazione</a>.
+</p></div><div style='clear:right; float:right; font-size:smaller; background-color:#eee;' >
+<p><span class='wikitrail'>&lt; <a class='wikilink' href='Introduction.html'>Introduzione</a> |  <a class='wikilink' href='DocumentationIndex.html#trailstart%23trailend'>Documentation index</a>  | <a class='wikilink' href='CreatingNewPages.html'>Creare nuove pagine</a> &gt;</span> 
+</p></div>
+<p><a name='trailend' id='trailend'></a>
+</p>
+<div class='vspace'></div><hr />
+<p  style='color: #060; background-color: #cf9; border: 1px solid #060; padding: 3px; font-size: smaller;'> Traduzione di <a style='color: #060' class='urllink' href='http://www.pmwiki.org/wiki/PmWiki.BasicEditing' title='' rel='nofollow'>PmWiki.BasicEditing</a> -
+Pagina originale: <a class='urllink' href='http://www.pmwiki.org/wiki/PmWikiIt.BasicEditing' title='' rel='nofollow'>PmWikiIt.BasicEditing</a> -
+<a class='wikilink' href='A-action=search&amp;q=link=PmWikiIt.BasicEditing&amp;fmt=title.html'>Backlinks</a><br />
+Ultime modifiche:<br /><a class='selflink' href='BasicEditing.html'>PmWikiIt.BasicEditing</a>: May 03, 2010, at 10:19 PM<br /><a class='wikilink' href='../PmWiki/BasicEditing.html'>PmWiki.BasicEditing</a>: August 12, 2010, at 03:17 PM
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/PmWikiIt/BasicEditing)</span></div>
+  </div>
+</body>
+</html>

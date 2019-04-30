@@ -1,0 +1,448 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Traduttori - Lezione del 5 marzo 2009 </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.Trad120309' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Traduttori - Lezione del 5 marzo 2009
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Trad120309?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Trad120309?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='Trad120309-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Trad120309?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/Trad120309?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Traduttori - Lezione del 5 marzo 2009 was last modified on March 22, 2009, at 02:42 PM'>
+							<span style='display:none;'>Traduttori - Lezione del 5 marzo 2009</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Traduttori - Lezione del 5 marzo 2009 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Traduttori.html'>Torna alla pagina di Traduttori</a>
+</p>
+<div class='vspace'></div><h3>Definizione formale di derivazione</h3>
+<p>Una derivazione si scrive così, in termini formali: &#957; -&gt; &#947;, dove la prima lettera &#957; è la <em>ni</em> dell'alfabeto greco.<br />Quindi, da &#957; si deriva &#947; per la grammatica G sse:
+</p><ul><li>&#957; = &#963;A&#964;
+</li><li>&#947; = &#963;&#945;&#964;
+</li><li>A -&gt; &#945; &#8712; P
+</li></ul><p class='vspace'>Spieghiamo bene queste cose:
+</p><ul><li>Le prime due regole mi dicono come sono fatte le stringhe &#957; e &#947;
+</li><li>&#963; e &#964; possono essere simboli terminali o no, e possono anche essere eventualmente vuote
+</li><li>A è un simbolo non terminale
+</li><li>&#945; può essere un simbolo terminale o no
+</li></ul><p>In pratica, queste regole mi stanno dicendo che posso andare da &#957; a &#947; se esiste una regola che trasforma una qualche parte di &#957; in modo tale che la renda uguale a &#947;. Dal punto di vista teorico, niente di nuovo, però è così che si scrive formalmente.
+</p>
+<p class='vspace'>Una derivazione si dice <strong>diretta</strong> se basta una sola produzione per andare da &#957; a &#947;.<br />Una derivazione è invece <strong>indiretta</strong> se c'è bisogno di una serie di stringhe intermedie, e delle condizioni così fatte:
+</p><ul><li>&#957; = w<sub>0</sub>
+</li><li>&#947; = w<sub>n</sub>
+</li><li>per ogni i da 0 a n, w<sub>i</sub> -&gt; w<sub>i+1</sub>
+</li></ul><p>Questo vuol dire che da &#957; si deriva &#947; se esiste una sequenza di stringhe frutto di successive derivazioni consecutive, che partono proprio da &#957; e arrivano a &#947;.<br />La derivazione indiretta si scrive <strong>&#957; -&gt;* &#947;</strong> (l'asterisco dovrebbe essere sopra il -&gt;).
+</p>
+<div class='vspace'></div><h3>Derivazioni canoniche</h3>
+<p>Supponiamo di avere una stringa che voglio derivare:
+</p><pre> aAbcBaA
+</pre><p>Le lettere maiuscole A e B sono simboli non terminali, che quindi andranno sostituiti. In generale si sottolinea il simbolo non terminale che vado a derivare. In questo caso, se scelgo di derivare la prima A, scriverei
+</p><pre> a<ins>A</ins>bcBaA -&gt; adbcBaA
+</pre><p>(notate che mi sono anche inventato la produzione A -&gt; db)
+</p>
+<p class='vspace'>La <strong>derivazione canonica sinistra</strong> è una derivazione in cui scelgo di sviluppare sempre il non terminale più a sinistra nella mia stringa.
+</p>
+<p class='vspace'>Nella <strong>derivazione canonica sinistra</strong> invece sviluppo sempre per primo il non terminale più a destra.
+</p>
+<p class='vspace'>Fra un po' vedremo a che cosa serve questa distinzione apparentemente inutile.
+</p>
+<div class='vspace'></div><h3>Definizione formale di linguaggio</h3>
+<p>Data una grammatica G = (NT, T, S, P), il linguaggio generato da G lo si può segnare così: <strong>L<sub>g</sub></strong>, oppure così: <strong>L(G)</strong>.
+</p>
+<p class='vspace'>La sua definizione formale è questa:
+</p><pre> L(G) = {w appartenente a T<sup>*</sup> | S -&gt;* w}
+</pre><p>che vuol dire: è composto da tutte e sole le stringhe <strong>w</strong> appartenenti all<strong>'alfabeto terminale</strong> della grammatica (ovvero tutte le stringhe producibili con i simboli terminali T della grammatica G), tali che esista una derivazione, anche indiretta, che parta dall<strong>'assioma</strong> della grammatica, cioè <strong>S</strong>, e porti alla stringa <strong>w</strong>.
+</p>
+<p class='vspace'>Intuitivamente questo concetto era già chiaro, e questa è solo la sua formalizzazione.
+</p>
+<div class='vspace'></div><h2>Classificazione delle grammatiche</h2>
+<p><a class='urllink' href='http://it.wikipedia.org/wiki/Gerarchia_di_Chomsky' title='' rel='nofollow'>Chomsky</a> ha classificato, tempo addietro, le grammatiche, a seconda dei vincoli che vengono posti sulle regole di produzione.<br />Questa distinzione è importante perché permette di riassumere certe proprietà delle grammatiche e dei linguaggi da esse generate, e ci permette di stabilire che tipo di <em>macchina</em> sarà poi in grado di riconoscere e/o generare quella particolare grammatica.
+</p>
+<div class='vspace'></div><h3>Grammatiche di tipo 0</h3>
+<p>La grammatica di tipo 0 non ha nessun vincolo sulle produzioni. Viene anche detta <strong>grammatica a struttura di frase</strong>. I linguaggi generati da questa grammatica sono anche detti <strong>ricorsivamente enumerabili</strong>.
+</p>
+<div class='vspace'></div><h3>Grammatiche di tipo 1</h3>
+<p>E' detta <strong>grammatica dipendente dal contesto</strong>.
+</p>
+<p class='vspace'>Le regole di questa grammatica hanno la seguente forma:
+</p><pre> &#947;A&#948; -&gt; &#947;&#945;&#948;
+</pre><p>con i seguenti vincoli:
+</p><ul><li>A appartiene all'insieme dei NT
+</li><li>&#947; e &#948; appartengono a (NT U T)<sup>*</sup>
+</li><li>&#945; appartiene a (NT U T)<sup>+</sup>
+</li></ul><p class='vspace'>L'appartenenza di &#947; e &#948; a (NT U T)<sup>*</sup> vuol dire che possono essere una qualsiasi combinazione, eventualmente composta dalla stringa nulla, di tutti i simboli terminali o non terminali.
+</p>
+<p class='vspace'>Invece, dire che &#945; appartiene a (NT U T)<sup>+</sup> vuol dire che la stringa nulla è esclusa: &#945; deve essere qualcosa.
+</p>
+<p class='vspace'>Questo significa che la stringa derivata non può mai essere più piccola della stringa iniziale, proprio perché &#945; non è mai vuota.
+</p>
+<p class='vspace'>Perché si parla di <strong>dipendenza dal contesto</strong>? Il contesto è rappresentato da &#947; e &#948;, le quali "circondano" A e determinano se è possibile sostituirla con &#945;.
+</p>
+<div class='vspace'></div><h3>Grammatiche di tipo 2</h3>
+<p>Questo sono dette <strong>grammatiche libere dal contesto</strong>:
+</p><pre> A -&gt; &#946;
+</pre><p>dove:
+</p><ul><li>A è un simbolo non terminale
+</li><li>&#946; &#8712; (NT U T)<sup>*</sup>
+</li></ul><p class='vspace'>Ciò che circonda A non ha nessuna importanza per la sua trasformazione in &#946;.
+</p>
+<div class='vspace'></div><h3>Grammatiche di tipo 3</h3>
+<p>Sono le <strong>grammatiche regolari</strong>, e i linguaggi che generano sono detti <strong>linguaggi regolari</strong>.
+</p>
+<p class='vspace'>Le possiamo distinguere in due tipi, a seconda che il simbolo terminale sia a destra o a sinistra di B:
+</p><pre> 1) A -&gt; aB
+    A -&gt; a
+ 2) A -&gt; Ba 
+    A -&gt; a
+</pre><p><em>a</em> appartiene a (NT U T)<sup>*</sup>, quindi può essere un non terminale oppure un terminale, o anche il nulla. B invece deve essere un non terminale.<br />Le prime sono <em>lineari a sinistra</em>, le seconde <em>lineari a destra</em>.
+</p>
+<p class='vspace'>Attenzione però: una grammatica regolare o è lineare destra, oppure è lineare sinistra. Non può essere entrambe le cose, se no diventa una grammatica di tipo 2, cioè libera dal contesto.
+</p>
+<div class='vspace'></div><h3>Proprietà delle grammatiche</h3>
+<p>A seconda di quale grammatica lo genera, un linguaggio si classifica come L<sub>3</sub>, L<sub>2</sub>, L<sub>1</sub> ed L<sub>0</sub>.
+</p>
+<p class='vspace'>Le grammatiche di tipo 2 e 3 sono quelle utilizzate per definire i linguaggi di programmazione, perché si prestano alla loro implementazione algoritmica.
+</p>
+<p class='vspace'>Le grammatiche sono in relazione tra di loro: quelle di tipo 3 sono incluse in quelle di tipo 2, a loro volta incluse in quelle di tipo 1, a loro volta incluse in quelle di tipo 0.
+</p>
+<p class='vspace'>Ci sono però dei linguaggi che <strong>non</strong> sono generabili da una grammatica: esiste quindi un "soprainsieme" che comprende G<sup>0</sup>.
+</p>
+<p class='vspace'>Inoltre, ci sono linguaggi di una classe L<sub>i</sub> che non possono essere generati da una grammtica G<sub>i+1</sub>. Questo è anche abbastanza logico, visto che nelle definizioni qui sopra si è visto che man mano che il tipo "aumenta", aumentano anche le restrizioni poste alle regole di produzione.
+</p>
+<div class='vspace'></div><h3>Ricorsione</h3>
+<p>La ricorsione è un particolare tipo di derivazione. Se è <em>ricorsione a sinistra</em>, ha questa forma:
+</p><pre> A -&gt;<sup>+</sup> A&#946;
+</pre><p>Se è <em>ricorsione a destra</em>, sarà invece
+</p><pre> A -&gt;<sup>+</sup> &#946;A
+</pre><p class='vspace'>C'è anche la <em>ricorsione interna</em>, oppure <em>autoinclusiva</em>:
+</p><pre> A -&gt;<sup>+</sup> &#945;A&#946;
+</pre><p class='vspace'>Ricordo che la scrittura -&gt;<sup>+</sup> significa che derivo in almeno un passaggio.
+</p>
+<p class='vspace'>Le derivazioni ricorsive portano a linguaggi infiniti.
+</p>
+<div class='vspace'></div><h3>Grammatica ambigua</h3>
+<p>Una grammatica è <strong>ambigua</strong> se esiste nel linguaggio da essa generato una stringa generabile con due derivazioni canoniche dello stesso tipo ma distinte, ovvero, generabile con due diverse derivazioni canoniche sinistre oppure due diverse derivazioni canoniche destre.<br />Ecco a che cosa serviva la definizione di derivazione canonica:)
+</p>
+<p class='vspace'>Un linguaggio è detto <strong>non ambiguo</strong> se esiste <strong>almeno</strong> una grammatica non ambigua che lo genera.<br />Presupposto di questa frase è che un L possa essere generato da G diverse: è infatti vero.<br />Se invece tutte le G che generano questo L sono ambigue, allora L è purtroppo intrinsecamente ambiguo.
+</p>
+<div class='vspace'></div><h3>Parse tree</h3>
+<p>Il <strong>parse tree</strong> è una rappresentazione grafica e gerarchica della derivazione. Ocio: della <em>derivazione</em>, e non di una grammatica! Ogni singola derivazione ha il suo parse tree, e se questo è uguale a quello di un'altra derivazione della stessa canonicità, allora la grammatica è ambigua.
+</p>
+<p class='vspace'>Il parse tree è un albero. La sua radice (in cima) è S, ovvero l'assioma della grammatica (la prima regola da cui si parte sempre per produrre). Tutti i nodi che non sono foglie sono simboli non terminali. Le foglie invece sono o simboli terminali, o la stringa vuota &#949;. Un singolo sottoalbero descrive una <strong>produzione</strong>.
+</p>
+<p class='vspace'>L'insieme delle foglie è detto <strong>frontiera</strong> del parse tree. La frontiera viene letta da sinistra a destra, e quello che esce sarebbe la stringa derivata.
+</p>
+<p class='vspace'>Ma facciamo un esempio, tanto per scurirci.
+</p>
+<p class='vspace'>Prendiamo una bella grammatica, in cui i non terminali sono messi tra parentesi angolari (come è costume nelle grammatiche BNF che affronteremo in seguito). Scrivo qui le regole di produzione, e il resto lo inferite da soli:
+</p><pre> S = &lt;nome&gt; &lt;verbo&gt; &lt;oggetto&gt;
+ &lt;nome&gt; = Dario | Patty | Denisoglu
+ &lt;verbo&gt; = mangia | sacrifica | assale
+ &lt;oggetto&gt; Patty | Patrizia | Patrizioglu
+</pre><p class='vspace'>Una frase generata da questa grammatica può essere: "Dario mangia Patrizia", oppure "Patty assale Patty", oppure "Denisoglu sacrifica Patty". Comunque vada, Patrizia ne fa le spese.
+</p>
+<p class='vspace'>La derivazione che porta a "Dario mangia Patrizia" può essere inalberata in questo modo:
+</p><pre class='escaped'>
+              S
+            / | \
+           /  |  \
+          /   |   \
+         /    |    \
+    &lt;nome&gt; &lt;verbo&gt; &lt;oggetto&gt;
+        |     |       |
+      Dario mangia  Patrizia           
+</pre>
+<p>La frontiera è composta da Dario, mangia e Patrizia, e quindi la frase finita è "Dario mangia Patrizia". La si legge da sinistra verso destra, e non al contrario, e quindi leggere "Patrizia mangia Dario" è sbagliato, oltre che concettualmente oltraggioso.
+</p>
+<p class='vspace'>Un compilatore (lo scopo della mia vita è scrivere un compilatore di linguaggi pruprurrosi e denisoglui!) prenderà una stringa, ne genererà il parse tree e, secondo oscure tecniche ancora ignote, stabilirà se i frutti di questo albero saranno buoni o no.
+</p>
+<p class='vspace'>Come dicevamo sopra, se c'è più di un parse tree per stringa, allora siamo in presenza di ambiguità. Ci sono però delle regole per disambiguare in modo automatico, oppure semplicemente il compilatore prende l'iniziativa e stabilisce lui come risolvere l'ambiguità. Immaginate poi la dannazione di chi scrive programmi e non sa che cosa sta succedendo.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Traduttori.html'>Torna alla pagina di Traduttori</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: March 22, 2009, at 02:42 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Trad120309?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/Trad120309?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

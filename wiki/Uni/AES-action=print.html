@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / AES</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='AES.html' title='AES'>AES</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: AES ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+<div class='vspace'></div><h2>Che cos'è</h2>
+<p>AES è un cifrario a blocchi, che sta già iniziando a sostituire <a class='wikilink' href='DES.html'>DES</a> come standard per le agenzie governative americane, il che vuol dire che diventerà standard in tutto il mondo. <a class='wikilink' href='DES.html'>DES</a> infatti non è ormai più troppo sicuro.
+</p>
+<div class='vspace'></div><h2>Caratteristiche.</h2>
+<p>Non è basato per niente sulla <a class='wikilink' href='DES.html'>rete di Feistel</a>, ma usa uno schema ben diverso. Inoltre, si basa per i suoi calcoli interni su di un tipo particolare di <a class='wikilink' href='CrittoGAC.html'>campo</a>, il <strong>campo finito 2<sup>8</sup></strong>. Le operazioni aritmetiche vengono compiute all'interno di questo campo.
+</p>
+<div class='vspace'></div><ul><li>Dimensioni blocco: 128, 192, 256 bit
+</li><li>Dimensioni chiave: 128, 192, 256 bit
+</li><li>Numero di round (fasi): 10, 12, 14 (chiave lunga, più round)
+</li><li>Numero di sottochiavi: round*4 + 4 =&gt; 10 round = 44 sottochiavi; 12 round = 52; 14 round = 60
+</li></ul><p class='vspace'>Ogni round usa 4 sottochiavi, che per brevità sotto chiameremo chiave di round. Inoltre, c'è uno stadio aggiuntivo, fuori dalle fasi, che usa le 4 sottochiavi che avanzano.
+</p>
+<div class='vspace'></div><h2>Come funziona</h2>
+<p>Ogni round è composto da 4 <strong>stadi</strong> differenti:
+</p><ul><li><strong>Substitute Bytes</strong> (SUB) = una sostituzione che fa uso delle S-Box 
+</li><li><strong>Shift Rows</strong> (SHIFT) = una permutazione
+</li><li><strong>Mix Columns</strong> (MIX) = una sostituzione
+</li><li><strong>Add Round Keys</strong> (ARK) = una sostituzione che fa uso della chiave di round
+</li></ul><p class='vspace'>Non si tratta di una rete di Feistel, come dicevo sopra: ciò vuol dire che ogni round e ogni stadio lavora sull'intero blocco.<br />
+La <strong>cifratura</strong> avviene in questo modo:
+</p><pre> Blocco
+  |
+ ARK
+  | 
+ ROUND * 9, 11, 13
+   SUB      
+   SHIFT
+   MIX
+   ARK
+  |
+ ROUND * 1
+   SUB      
+   SHIFT
+   ARK
+  |
+ output
+</pre><p class='vspace'>Lo schemino sta a significare che si parte dal blocco, si fa una ARK iniziale, poi si esegue il round per 9 volte (o 11 o 13). Ogni round è composto dai 4 stadi in fila: SUB, SHIFT, MIX, ARK. Alla fine, fa un ultima volta SUB, SHIFT e ARK e poi arriva l'output.
+</p>
+<p class='vspace'>La <strong>decifratura</strong> avviene invece così:
+</p><pre> Blocco
+  |
+ ARK
+  |
+ ROUND * 9, 11, 13
+  SHIFT
+  SUB
+  ARK
+  MIX
+  |
+ ROUND "DIVERSO" * 1
+  SHIFT
+  SUB
+  ARK
+  |
+ output
+</pre><p class='vspace'>In questo caso, c'è sempre una ARK iniziale, ma l'ordine delle operazioni è differente: sono infatti <strong>scambiate due a due</strong>: se ci fate caso, la coppia SUB -&gt; SHIFT in crittografia diventa SHIFT -&gt; SUB in decrittografia, mentre MIX -&gt; ARK diventa ARK -&gt; MIX
+</p>
+<p class='vspace'><a class='wikilink' href='Crittografia.html'>Torna alla pagina di Crittografia</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/AES)</span></div>
+  </div>
+</body>
+</html>

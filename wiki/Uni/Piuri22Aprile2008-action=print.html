@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Lezione del 22 aprile 2008</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='Piuri22Aprile2008.html' title='Sistemi Operativi - Lezione del 22 aprile 2008'>Sistemi Operativi - Lezione del 22 aprile 2008</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Sistemi Operativi - Lezione del 22 aprile 2008 ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>Struttura delle memorie di massa</strong>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Schedulazione degli accessi al disco</strong></span>
+</p>
+<p class='vspace'>L'accesso al disco ha dei tempi di latenza. Il <strong>seek time</strong> è il tempo che si perde per posizionare la testina sulla traccia giusta. Poi c'è la <strong>rotational latency</strong> che è la latenza introdotta dal fatto che il braccio della testina ruota.
+</p>
+<p class='vspace'>L'obiettivo è minimizzare il tempo di accesso medio, così che il disco sembri migliore. Non posso fare molto invece riguardo alla <strong>larghezza di banda</strong>, perché quella dipende dall'interconnessione. Però, gestendo bene la coda degli accessi, posso guadagnare qualcosa.
+</p>
+<div class='vspace'></div><h3>Schedulazione FCFS</h3>
+<p>First Come, First Served. Nient'altro da aggiungere.
+</p>
+<div class='vspace'></div><h3>SSTF = Shortest Seek Time First</h3>
+<p>Mi trovo in una data posizione, che chiamo X. Gli accessi in coda vengono ordinati in base alla <strong>distanza</strong> relativa ad X.
+</p>
+<p class='vspace'>Una nuova richiesta di accesso può anche essere eseguita subito, se si trova vicino alla testina X.
+</p>
+<p class='vspace'>Anche se alcuni processi verranno ritardati, non è un problema, perché il tempo di accesso medio si abbassa notevolmente, ed è questo quello che a noi interessa.
+</p>
+<div class='vspace'></div><h3>Schedulazione SCAN</h3>
+<p>Per evitare troppe sollecitazioni meccaniche al braccio ed alla testina, si ordinano gli accessi in modo che prima eseguo tutte le richieste che possono essere effettuate andando nella stessa direzione, poi cambio direzione e faccio le altre.
+</p>
+<div class='vspace'></div><h3>Schedulazione Circular SCAN (C-SCAN)</h3>
+<p>Come sopra, ma ad ogni cambio di direzione riparto dall'inizio del disco.
+</p>
+<div class='vspace'></div><h3>Schedulazione LOOK</h3>
+<p>Ordina gli elementi, e quando arriva all'ultimo elemento di una direzione, inverte e va nell'altra direzione. Invece di partire da capo come con la SCAN, parte da dove si trova, e guadagna un po' di tempo.
+</p>
+<p class='vspace'>Qualsiasi schedulazione io scelga, non guadagno tanto se ho i files sparpagliati in blocchi qua e là per il disco: per rendere meglio, dovrebbero trovarsi il più contigui possibile.
+</p>
+<p class='vspace'>Ad ogni modo, la SSTF e la LOOK sono quelle che vengono scelte maggiormente.
+</p>
+<p class='vspace'>Un'altra considerazione da fare è che queste schedulazioni non fanno distinzione tra quale processo richiede l'accesso. Se invece ho delle priorità o delle scadenze per ogni processo, il SO potrebbe privilegiare i processi con alta priorità o scadenza vicina.
+</p>
+<p class='vspace'>Bisogna però stare attenti: usare solo la priorità del processo per schedulare gli accessi al disco non è molto felice, perché se mando la testina troppo in giro qua e là per il disco, alla fine ci smeno.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Organizzazione del disco</strong></span>
+</p>
+<p class='vspace'>Il disco viene organizzato e configurato secondo tre livelli diversi, che ora vedremo: formattazione fisica, partizionamento e formattazione logica.
+</p>
+<div class='vspace'></div><h3>Formattazione fisica</h3>
+<p>Altrimenti nota come <strong>a basso livello</strong>. Divide fisicamente il disco in settori, che poi il controller può raggiungere.
+</p>
+<p class='vspace'>I settori hanno
+</p><ul><li>header
+</li><li>dati
+</li><li>terminatore
+</li></ul><p>così che si possono distinguere l'uno dall'altro. Nel terminatore in genere c'è una checksum che serve per controllarne l'integrità.
+</p>
+<div class='vspace'></div><h3>Partizionamento</h3>
+<p>Per vari motivi, si divide l'intero spazio offerto dal disco in più <strong>partizioni</strong>, ad esempio una contenente i files di sistema e un'altra per i files degli utenti. Però può anche avere una sola partizione.
+</p>
+<div class='vspace'></div><h3>Formattazione logica</h3>
+<p>Visto che non è pratico dire "leggimi i dati contenuti nel settore 4 traccia 3", occorre dotare la nostra partizione di un <strong>filesystem</strong> che organizzi <strong>logicamente</strong>, e non più fisicamente, i dati presenti sul disco.
+</p>
+<p class='vspace'>Posso anche decidere di non formattare la partizione, e lasciarla in uno stato grezzo: <strong>raw disk</strong>. Questo serve per usare la partizione come <strong>area di swap</strong>, perché ci deve pensare il gestore della memoria ad organizzarsela come vuole lui.
+</p>
+<div class='vspace'></div><h3>Il blocco di avvio</h3>
+<p>Contiene il SO o una sua parte. È il settore 0. Quando partiziono, devo stabilire se far sì che un disco sia <strong>avviabile</strong> o no, e questo permette di far partire da quel disco il SO a partire proprio da quel settore.
+</p>
+<p class='vspace'>I settori successivi sono usati in genere per filesystem etc, e poi cominciano i dati.
+</p>
+<div class='vspace'></div><h3>Blocchi difettosi</h3>
+<p>Può capitare che un blocco si danneggi. Che fare? Non può più essere utilizzato, ovviamente.
+</p>
+<p class='vspace'>Ma se in una traccia devo avere eg 10 settori, e uno si danneggia, ne rimangono 9, e quella traccia rimane menomata rispetto alle altre =&gt; potrebbe essere un problema per la struttura logica.
+</p>
+<p class='vspace'>Posso quindi prevedere questa situazione, e tenere via delle tracce <strong>spare</strong>, cioè di ricambio, e quando un settore si danneggia lo "sostituisco" con uno di quelli di ricambio. Ci penserà il controller a deviare l'accesso al blocco difettoso verso il blocco di ricambio. Questo sistema si chiama <strong>sector forwarding</strong>.
+</p>
+<p class='vspace'>Se no, applico il <strong>sector slipping</strong> e salto tranquillamente al blocco dopo.
+</p>
+<p class='vspace'>Finora abbiamo assunto che i settori si identificano tramite il loro numero all'interno di una traccia. In alcuni sistemi però si preferisce dare a tutti i settori del disco una numerazione assoluta, e poi ci penserà il controller a stabilire che il settor 1456 è nella traccia 7 alla posizione 15.
+</p>
+<div class='vspace'></div><h3>Uso dell'area di swap</h3>
+<p>Come già sappiamo, essa serve per supportare la multiprogrammazione ed il multitasking. E come dicevamo sopra, è il gestore della memoria a gestirla interamente con chiamate di basso livello.
+</p>
+<p class='vspace'>A seconda delle tecniche di memoria virtuale che uso, la swap conterrà <strong>interi processi</strong>, <strong>pagine</strong> o <strong>segmenti</strong>.
+</p>
+<p class='vspace'>Le partizioni RAW sono le più indicate, perché più veloci, per fare da swap. Alcuni sistemi operativi offrono anche la possibilità di usare un file nel filesystem come swap, ma dovendo appunto passare per il filesystem, è molto più lento.
+</p>
+<p class='vspace'>La swap, comunque venga realizzata, deve contenere una <strong>mappa</strong> che permette di associare i settori alle pagine (o segmenti o quello che volete) che sono ivi contenuti.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Memoria terziaria</strong></span>
+</p>
+<div class='vspace'></div><div><span class='frame lfloat'><img src='../uploads/Uni/sorella.jpg' alt='' title='' /><br /><strong>Tua sorella, a casa mia</strong></span></div>
+<p>La memoria secondaria può non bastare: è piuttosto costosa, ed è limitata nelle dimensioni.
+</p>
+<p class='vspace'>Per poter archiviare grandi volumi a basso costo, sono stati inventati vari dispositivi, che vanno tutti insieme a formare la <strong>memoria terziaria</strong>. Costano poco, vengono parimenti poco usati, e sono lenti. Sono però più affidabili delle memorie secondarie
+</p>
+<p class='vspace'>Il SO deve al solito fare in modo che un supporto removibile facente parte della memoria terziaria si integri bene col resto del sistema, gestendone filesystem, condivisione ed accesso (diretto o sequenziale a seconda del dispositivo).
+</p>
+<p class='vspace'>Il vero problema è come <strong>identificare</strong> in modo univoco i files tra tutti i supporti della memoria terziaria. Su due chiavette USB diverse, per esempio, posso avere lo stesso file <strong>sorella.jpg</strong>, ma mentre uno contiene una foto di tua sorella, l'altro contiene invece una foto ben più angosciante di Carmen La Sorella.
+</p>
+<p class='vspace'>Per distinguerli, devo anche dire su <strong>quale</strong> supporto il file è stato salvato. 
+</p>
+<p class='vspace'>Un altro problema è quello della <strong>portabilità</strong>. L'ideale sarebbe poter scrivere con un SO su di un supporto removibile, e poterlo leggere su di un altro supporto. Questo è possibile quando ci sono degli <strong>standard</strong>, come ad esempio i CD ed i DVD. Da notare che cmq questi standard non risolvono il problema dell'identificatore univoco dei files.
+</p>
+<p class='vspace'>Infine, occorre che la memoria terziaria sia integrata nel sistema, o più precisamente, integrata dal <strong>gestore della memorizzazione gerarchica</strong> (Hierarchical storage managemente). La gerarchia del filesystem viene estesa "appendendoci" il supporto terziario.
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>Dischi RAID</strong></span>
+</p>
+<p class='vspace'>RAID = Redundant Array of Inexpensive Disks.
+</p>
+<p class='vspace'>Tutti vorrebbero dischi più veloci e più sicuri. Il problema è che un singolo disco, per avere caratteristiche di alto livello, può venire a costare parecchio.
+</p>
+<p class='vspace'>Allora, si è pensato di usare dei dischi "normali" (gli Inexpensive Disks dell'acronimo) e di gestirli in un modo particolare per avere dei vantaggi.
+</p>
+<p class='vspace'>I vantaggi che voglio avere sono in termini di:
+</p><ul><li>velocità
+</li><li>capacità
+</li><li>affidabilità
+</li></ul><p>e i vari <strong>livelli</strong> RAID permettono di ottenere queste cose.
+</p>
+<div class='vspace'></div><h4>Parallelismo</h4>
+<p>Vuol dire mantenere i dati su più di un disco.
+</p>
+<p class='vspace'>Ci sono 2 tecniche:
+</p><ol><li>bit-level striping
+</li><li>block-level striping
+</li></ol><p class='vspace'>Il <strong>bit-level striping</strong> divide una parola (byte) in n parti, e su ogni n-esimo disco scrive la n-esima parte. Per esempio, con 8 dischi la scrittura di 1 byte viene effettuata con il 1° bit nel primo disco, il 2° nel secondo etc.
+</p>
+<p class='vspace'>Il <strong>block-level striping</strong> invece mette un blocco per disco.
+</p>
+<p class='vspace'>I vantaggi del parallelismo sono soprattutto in termini di <strong>velocità</strong>, perché i dischi scrivono e leggono in parallelo, e i dati vengono recuperati dal controller senza bisogno di fare accessi sequenziali allo stesso disco.
+</p>
+<div class='vspace'></div><h3>Livelli RAID</h3>
+<p>RAID è stato standardizzato, e qui sotto vedremo i livelli di questo standard.
+</p>
+<div class='vspace'></div><h4>RAID 0</h4>
+<p>Distribuzione non ridondante, con l'obiettivo di migliorare le prestazioni in velocità.
+</p>
+<p class='vspace'>Faccio striping, a livello di bit o di blocco, su diversi dischi.
+</p>
+<div class='vspace'></div><h4>RAID 1</h4>
+<p>Duplicazione dei dischi = <strong>mirroring</strong>.
+</p>
+<p class='vspace'>L'obiettivo è alta affidabilità. Quando scrivo, scrivo su n dischi, così ho n copie dello stesso dato. Se uno si rompe, ho cmq le altre copie. Va bene perché in generale i guasti nei dischi sono totalmente scorrelati, e quindi se si rompe uno è poco probabile che si rompa ANCHE l'altro.
+</p>
+<p class='vspace'>Il problema è che se ho n copie, e accadono n-1 guasti, ho sì i miei dati protetti, ma non lo saranno più in futuro, perché quel settore ormai è spacciato su tutti i mirror. Il problema sarà risolto nei prossimi livelli.
+</p>
+<p class='vspace'>La ridondanza, ovvero la duplicazione dello spazio, qui è al 100%: ogni disco è copia dell'altro.
+</p>
+<p class='vspace'>Posso anche sfruttare il parallelismo in lettura, eg leggendo un po' da un disco e un po' dall'altro. Occorre però tenere a mente che ogni utilizzo di un disco ne accorcia la vita, e quindi potrei sollecitare troppo entrambi i dischi. Posso quindi scrivere su tutti e due ma leggere solo da 1, così l'altro si consuma di meno.
+</p>
+<div class='vspace'></div><h4>RAID 2</h4>
+<p>Introduco <strong>ECC</strong>, cioè Error Correction Codes, un codice numerico che serve per controllare se i dati sono corretti o no.
+</p>
+<p class='vspace'>I codici ECC sono messi tutti in un disco, detto disco <strong>C</strong>, mentre i dati stanno sugli altri dischi.
+</p>
+<p class='vspace'>La faccenda funziona così. Se ho 3 dischi, di cui uno è il C, nel settore X del disco C metto l'ECC del settore X del disco A e del settore X del disco B. Non interessa se i settori in A e B rappresentano files diversi, non ha importanza ai fini dell'ECC.
+</p>
+<p class='vspace'>Se uno dei due dischi si guasta in quel settore, io posso risalire al suo valore a partire dall'ECC e dal valore dello stesso settore nell'altro disco. Posso quindi fermare tutto, estrarre il disco rotto, mettere un disco nuovo, copiare i dati copiabili e quelli vecchi ricavarli dall'ECC e dall'altro disco.
+</p>
+<p class='vspace'>In questo caso, con 3 dischi ho ridondanza del 33%, perché 1 su tre viene usato per ridondanza.
+</p>
+<div class='vspace'></div><h4>RAID 3</h4>
+<p>Parità a bit alternati = <strong>bit-interleaved parity</strong>.
+</p>
+<p class='vspace'>Nel RAID 2, se modifico un settore di un disco devo anche modificare il suo ECC nel terzo disco. il C. Quindi il disco C viene usato per ogni operazione di scrittura su altri dischi.
+</p>
+<p class='vspace'>Se uso in parallelo i dati degli altri due dischi, allora ottengo dei vantaggi in termini di tempo, ma se il disco C è sempre uno, i vantaggi vengono vanificati dai mille accessi a C.
+</p>
+<p class='vspace'>L'idea è allora usare i singoli bit per calcolare la parità (che può essere vista come un ECC), e fare tutto in parallelo. Così, anche il disco C viene usato in parallelo con gli altri per calcolare la parità.
+</p>
+<div class='vspace'></div><h4>RAID 4</h4>
+<p>Come il 3 ma con la <strong>block-interleaved parity</strong>.
+</p>
+<div class='vspace'></div><h4>RAID 5</h4>
+<p>Invece di usare un disco per tutti, metto le info di parità distribuite in tutti i dischi del sistema, così che ho gli accessi distribuiti per disco, e non uso lo stesso disco C mille volte.
+</p>
+<p class='vspace'>Così anche se muore un disco so ricalcolarne il contenuto a partire dagli altri rimanenti.
+</p>
+<div class='vspace'></div><h4>RAID 6</h4>
+<p>Uso <strong>P+Q redundancy</strong>, ovvero doppia parità, così che posso tollerare fino a 2 dischi che muoiono, ricostruibili tramite i rimanenti.
+</p>
+<div class='vspace'></div><h3>RAID 0+1 e 1+0</h3>
+<p>Posso anche fare delle combo, di cui noi vedremo 0+1 e 1+0.
+</p>
+<p class='vspace'>Nel <strong>RAID 0+1</strong> metto una serie di mirror in striping, e poi faccio il mirror, sempre in striping, di tutto la prima serie.
+</p>
+<p class='vspace'>Nel <strong>RAID 1+0</strong> metto i dischi in mirror a coppie, e poi metto i mirror in uno stripe. Rispetto a 0+1 tollera più guasti.
+</p>
+<p class='vspace'>Tutti questi livelli vengono gestiti in hardware da appositi controller.
+</p>
+<p class='vspace'  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'><strong>Il filesystem</strong>
+</p>
+<p class='vspace'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'><strong>I files e le loro caratteristiche</strong></span>
+</p>
+<p class='vspace'>Non si vuole che la struttura fisica del disco rimanga visibile all'utente, perché è improbabile andare a cercare i dati nel settore X della traccia Z o robe simili. Sarebbe bello avere un'organizzazione logica e più "umana" dei dati presenti in un disco.
+</p>
+<p class='vspace'>Il <strong>filesystem</strong> serve proprio a darci una visione <strong>logica</strong> e <strong>omogenea</strong> dei dispositivi fisici, così che non dobbiamo preoccuparci dei dettagli delle periferiche.
+</p>
+<p class='vspace'>Le informazioni vengono organizzate in <strong>files</strong>, mentre i files vengono organizzati in <strong>directory</strong>. Se i files sono informazioni, le directory sono <strong>metainformazioni</strong>, perché di per se non aggiungono niente, ma servono di supporto alla gestione del file.
+</p>
+<div class='vspace'></div><h3>Aggregazione di informazioni</h3>
+<p>Dai linguaggi di programmazione, sappiamo che un<strong>'array</strong> è una lista di n elementi omogenei, mentre un <strong>record</strong> contiene n elementi anche disomogenei.
+</p>
+<p class='vspace'>Ebbene, un file è un<strong>'aggregazione</strong> di elementi omogenei, in un numero non noto a priori.
+</p>
+<p class='vspace'>Ogni elemento del file è identificato da un indice. Essendo l'indice numerico, il numero di elementi è determinato dal massimo numero rappresentabile da quella macchina, piuttosto che dallo spazio rimanente sul disco. Ma in linea teorica, l'unico limite alla dimensione di un file è lo spazio che ho.
+</p>
+<p class='vspace'>Ho diversi tipi di dati, int, float, char o quello che vogliamo. Ma sotto sotto il computer se ne frega: lui vede e memorizza solamente sequenze di 0 e 1 organizzate in byte, e quindi al livello più basso un file è una sequenza di byte.
+</p>
+<p class='vspace'>La struttura interna del files dipende dall'applicazione che l'ha creato, e viene interpretata dall'applicazione che lo sa fare, ma ciò non dipende dal fatto che è una sequenza di byte.
+</p>
+<div class='vspace'></div><h3>Attributi del file</h3>
+<p>Sono molteplici: nome, id, tipo, locazione, dimensione, timestamp dell'ultima lettura o scrittura, proprietario, permessi etc. etc.
+</p>
+<p class='vspace'>Il <strong>tipo</strong>, come dicevamo sopra, non è una proprietà del file stesso in quanto sequenza di byte, ma serve di ausilio al SO per decidere quale applicazione utilizzare per lavorare su quel particolare file.
+</p>
+<p class='vspace'>Per scoprire di che tipo è un file, si possono usare vari modi, tra cui l'estensione (.exe, .jpg e così via), o un <em>magic number</em> all'inizio del file. Il problema è che ci sono <strong>troppi</strong> tipi di files, e al SO non gliene frega niente. Se dovesse sapere come gestirli tutti, gli servirebbe tantissimo spazio. Pertanto, la tendenza è che il SO se ne frega, e spetta alla singola applicazione riconoscere il file che le va bene.
+</p>
+<p class='vspace'>Tutti questi attributi rappresentano il <strong>descrittore</strong> del file, che viene salvato dal SO.
+</p>
+<div class='vspace'></div><h3>Operazioni sui files</h3>
+<p>Un file lo posso aprire, chiudere, leggere, modificare, troncare, estendere, bloccare per la condivisione. 
+</p>
+<div class='vspace'></div><h4>Apertura</h4>
+<p>Devo innanzitutto avere i permessi per aprire il file. Il file va poi identificato tramite il filesystem, e occorre verificare che sia possibile aprirle nelle attuali condizioni di condivisione.
+</p>
+<p class='vspace'>Il SO mantiene una lista dei files aperti.
+</p>
+<div class='vspace'></div><h4>Lettura &amp; scrittura</h4>
+<p>C'è un puntatore che punta all'elemento corrente, e il SO copia in memoria a partire da quella posizione.
+</p>
+<p class='vspace'>Come dicevamo sopra, sta all'applicazione che sa leggere il file dire quanta roba leggere, e poi attribuirgli un significato.
+</p>
+<p class='vspace'>L'accesso <strong>sequenziale</strong> parte dall'inizio e va avanti. Ogni modifica di quest'ordine implica ricominciare da capo.
+</p>
+<p class='vspace'>L'accesso <strong>diretto</strong> invece mi permette di specificare una qualsiasi posizione all'interno del file.
+</p>
+<p class='vspace'>La tabella che il SO mantiene per i files aperti dice anche dove si trova il puntatore all'elemento corrente per ogni file.
+</p>
+<div class='vspace'></div><h4>Chiusura</h4>
+<p>Il processo rilascia tutte le info di gestione del file, ed eventualmente il lock che s'era preso prima.
+</p>
+<div class='vspace'></div><h3>Files con indice</h3>
+<p>Alcuni files molto grossi vengono di fatto divisi un due parti: una contiene un <strong>indice</strong>, e l'altra i dati effettivi.
+</p>
+<p class='vspace'>Per cercare una posizione in un file, si consulta prima l'indice, che dice più o meno dove partire nel file grosso a cercare. Questo evita lunghi accessi sequenziali per trovare posizioni che non sono note a priori.
+</p>
+<p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/Piuri22Aprile2008)</span></div>
+  </div>
+</body>
+</html>

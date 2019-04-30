@@ -1,0 +1,364 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Reti wireless - Modbus, Introduzione IrDA </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.RW-16Marzo' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Reti wireless - Modbus, Introduzione IrDA
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-16Marzo?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-16Marzo?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='RW-16Marzo-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-16Marzo?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-16Marzo?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Reti wireless - Modbus, Introduzione IrDA was last modified on June 14, 2010, at 02:43 PM'>
+							<span style='display:none;'>Reti wireless - Modbus, Introduzione IrDA</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='RetiWireless.html'>Torna alla pagina di Reti wireless</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Reti wireless - Modbus, Introduzione IrDA ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti del 16 Marzo</span>
+</p>
+<p class='vspace'><span style='font-size:83%'><em>[il prof ha portato in aula un PLC da far girare tra i banchi. Se non sapete cos'è e vi aspettate che ve lo spieghi, <a target='_blank'  class='urllink' href='http://it.wikipedia.org/wiki/Programmable_logic_controller' title='' rel='nofollow'>campa cavallo</a>]</em></span>
+</p>
+<div class='vspace'></div><h2>Modbus</h2>
+<p>Come facciamo a interrogare un PLC? Che protocolli software sono stati definiti sopra l'RS-485? Devo utilizzare protocolli diversi se la comunicazione fisica avviene attraverso interfacce ethernet?<br />A tutte queste domande dà una risposta lo standard <strong>Modbus</strong>, semplice, attuale e "concretamente molto sviluppabile". Si tratta di un protocollo software, quindi decide come sono fatte le trame di bit che passano sopra i fili di una seriale o di un RS-485, o sopra uno stack TCP/IP (via ethernet).<br />Chi ha standardizzato il Modbus si è posto il problema di renderlo in grado di funzionare su apparecchiature molto diverse tra loro, dai PLC ad elevata complessità ai termometri digitali, dagli interruttori ai buzzer. Una volta allacciati tutti questi dispositivi sullo stesso bus sarà dunque possibile gestirli via software con un unico protocollo.
+</p>
+<p class='vspace'>Per semplicità stabiliamo di lavorare solo su RS-485. Tutto quello che posso fare con questo standard fisico è collegare ogni periferica con due fili in entrata e uscita, e assegnarle un numero identificativo che va da 1 a 255. Il Modbus arriva a questo punto, e si pone il problema di come interfacciarsi al dispositivo per interrogarlo. Dato che la periferica può essere un oggetto estremamente variabile (funziona in sola lettura? in sola scrittura? entrambe? lavora in digitale? in analogico? ..), quei furbastri che hanno progettato lo standard hanno deciso di semplicizzarlo al massimo stabilendo che:
+</p><ol><li>ogni oggetto ha due banchi di memoria: uno di scrittura, in cui scrive il nodo (e ci legge il bus), ed uno di lettura, da cui legge il nodo (e ci scrive il bus). Al Modbus non interessa come sono implementati, si tratta di un problema tecnologico che sarà risolto forse poi. Ovviamente i due banchi sono separati tra loro, quindi totalmente indipendenti;
+</li><li>le operazioni possibili sono fondamentalmente due:
+<ul><li><em>read</em>: "leggi da questo nodo a questo indirizzo questo numero di byte, impacchettameli e restituiscimeli". Ma cosa c'è scritto a quell'indirizzo in quei byte? Chi se ne frega!, basta che la lettura abbia buon esito! Quando implementiamo un Modbus su una soluzione dobbiamo quindi capire dove scrive i dati il dispositivo a cui ci interfacciamo (a partire da quali indirizzi?), consultando il suo data-sheet (o altrimenti non sapremmo quale byte richiedere per avere un certo tipo di informazione). Ad esempio il PLC che il professore ha portato in aula mette in ordine prima tutti gli I/O digitali, poi quelli analogici;
+</li><li><em>write</em>: "scrivi su questo nodo a questo indirizzo questo numero di byte e con questi valori da inserire". E' esattamente il duale dell'operazione precedente, e in pratica scrive nella memoria della periferica (quella che per lei è di lettura) delle informazioni, così che questa le mappi sull'I/O realizzando le operazioni richieste (ad esempio l'accensione di una lampadina).
+</li></ul></li></ol><p class='vspace'>Questo standard allo stesso tempo banale e funzionale è diventato uno standard assoluto: l'automazione industriale è fatta così, qualsiasi PLC di questa terra lo implementa.<br />Come cambia la situazione su ethernet? Semplice: le informazioni viaggeranno all'interno di una trama TCP/IP e non in un pacchetto seriale, e gli id dei nodi non saranno più numeri tra 1-255, ma IP address.<br />Ma è davvero tutto qui? Ha davvero solo due funzioni? 
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit:</strong><br />"Potrebbe anche essere solo così.. ma giusto per scrivere un po' di manuali, perché la carta sai, le foreste sono troppe, che palle ste foreste!, bruciamole tutte. Giusto per scrivere un po' di carta han preso.."
+</p></div>
+<p class='vspace'>..quelle due funzioni base e le hanno moltiplicate per 4-5 in lettura e scrittura, diversificandole a seconda che si vada a leggere singoli byte, piuttosto che bit, piuttosto che word. In sostanza però non cambia niente.
+</p>
+<p class='vspace'>Le chiamate di read/write possono essere scritte in un qualsiasi linguaggio di programmazione sotto forma di funzioni, l'importante è che contengano tutti i parametri necessari (indirizzo del nodo, funzione da chiamare, indirizzo di memoria da cui iniziare, numero di byte da leggere/scrivere, CRC) disposti su un buffer, così che possano essere sparati su RS-485. Il nodo interrogato mi risponderà dicendomi chi è e restituendomi i byte richiesti con un CRC in fondo, o scrivendo i byte inviati dove indicato. <br />Un esempio di funzione di read scritta in C# è:
+</p>
+<div class='vspace'></div><pre class='escaped'>public int readInputRegisters{
+  int slaveAddr, // indirizzo dello slave da interrogare
+  int startRef, // indirizzo a partire dal quale si leggeranno i byte
+  short[] regArr // array in cui mettere i byte letti 
+                 // (il c# deduce automaticamente la dimensione dell'array)
+};</pre>
+<p class='vspace'>Come abbiamo già detto, ricaviamo lo <code class='escaped'>startRef</code> andando a leggere il datasheet dell'oggetto da interrogare: dobbiamo sapere tutto di lui, in particolare dove scrive e quanto. Per quanto riguarda il <code class='escaped'>regArr</code> andrebbe messo un limite alla sua dimensione massima per motivi tecnologici di compatibilità con l'RS-485. E se volessi leggere più byte di quelli concessi? Ovvio, chiamerò più volte la funzione.<br />La funzione di scrittura è la <code class='escaped'>writeMultipleRegisters</code>, i cui parametri sono praticamente identici a quelli della sua duale di lettura. Si noti che quando si parla di registri, il Modbus parla di 16 bit.
+</p>
+<p class='vspace'>Ribadiamo per l'ennesima volta il concetto: questo protocollo funziona per tutto, dall'interfacciamento di un PLC complesso, alla richiesta della temperatura da un termometro digitale, al funzionamento di un lampeggiante su un dispositivo. Il Modbus è l'ultimo degli standard semplici che vedremo, dato che poi le cose si faranno molto più complicate.
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit:</strong><br />"Questi qui che stavano a Bruxelles non avevano un cazzo da fare, c'era anche brutto tempo, e han detto: 'Che cazzo facciamo?' 'Definiamo un po' di standard!' E si son fatti prendere la mano, e si son detti 'Com'è fatto un lampeggiante?' Ma fatti i cazzi tuoi! Io lo faccio come mi pare a me un lampeggiante!"
+</p></div>
+<p class='vspace'>Quelli del Modbus invece han detto: facciamo un protocollo semplice, io scrivo e leggo i byte, poi la loro semantica te la scegli di volta in volta quando progetti l'elettronica del tuo dispositivo. In questo modo è vero che ci si allontana da soluzioni standard, ma comunque chi userà i miei prodotti dovrà pur leggere prima i miei manuali per sapere come funzionano. E' anche questa libertà d'azione che ha fatto la fortuna del protocollo.
+</p>
+<p class='vspace'>Le specifiche del Modbus sono liberamente scaricabili da questa pagina: <a class='urllink' href='http://www.modbus.org/specs.php' title='' rel='nofollow'>http://www.modbus.org/specs.php</a><br />In particolare ecco com'è fatto un frame Modbus:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/RW-frameModbus.gif' alt='' title='' /></div>
+<ul><li>l'additional address in viola dipende dal protocollo fisico su cui si appoggia il modbus: se è RS-485 sarà l'id del nodo, se è ethernet sarà un indirizzo IP;
+</li><li>il function code mi permette di richiedere una certa funzione, quindi cosa voglio che faccia l'altro nodo;
+</li><li>i dati, quindi i parametri che ci siamo raccontati prima vedendo le funzioni;
+</li><li>l'error check, un CRC a 16 bit. La funzione per fare il CRC Modbus è disponibile online scritta in mille linguaggi
+</li></ul><p class='vspace'>Tutte le funzioni possibili del Modbus sono scritte a pagina 11 della documentazione. E' importante dire che spesso chi implementa Modbus se ne frega di tutte quelle funzioni che fanno sottigliezze tra i vari tipi di lettura/scrittura a seconda del bit/byte/word da leggere. Perché? Perché non ha senso fare una chiamata su un bus, impacchettare 10byte, far lavorare un interprete dall'altra parte di 10byte, capire che funzione è stata richiesta, eseguirla, rimpacchettare il tutto, spedire la risposta, capire la risposta, eccetera solo per ottenere UN bit! Cosa si fa normalmente? Si dà l'indirizzo del nodo interessato e ci si fa spedire <strong>tutta</strong> la sua memoria. In questo modo si ottimizza il traffico di rete perché si fa una sola chiamata e si ottiene tutto (anche se molto più del necessario), tanto io conosco la semantica dei bit e so dove andare a pescare l'informazione che mi serve. Se infatti ad esempio dovessi chiedere 10 informazioni diverse posizionate su 10 bit diversi dovrei fare 10 chiamate da 1 bit con dispendio di energie e di banda sproporzionati rispetto ai miei fini; con un'unica chiamata invece trasferisco tutto, e poi mi spazzolo il buffer prendendo ciò che mi serve. In genere quindi le funzioni più usate sono la <code class='escaped'>write multiple register</code> e la <code class='escaped'>read multiple register</code>.
+</p>
+<p class='vspace'>Fine dell'excursus sui protocolli wired.
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit:</strong><br />"Cos'è, noi studiamo reti wireless e non abbiamo ancora fatto niente di wireless, ti sembra bello? No! Ma era molto importante introdurre questa roba qui, perchè voi non la sapete, cazzo! Neanche adesso, però potete studiarla.. beh, non esageriamo, studiare, ragazzi è faticoso, poi sta per arrivare la primavera, l'ormone si alza.."
+</p></div>
+<div class='vspace'></div><h2>Introduzione all'IrDA</h2>
+<p>Il primo protocollo wireless che studieremo è banale: l' <strong>IrDA</strong>, ovvero InfraRed Data Association, gli infrarossi. Si tratta fondamentalmente di una linea seriale spezzata, al cui termine c'è un emettitore infrarosso e dall'altra parte c'è un ricevitore. Un trasmettitore infrarosso è in grado di tradurre un treno di bit alti e bassi in lampi di luce infrarossa di intensità diversa; il ricevitore sa fare invece l'operazione opposta, traducendo i segnali ottici in digitali. <br />L'IrDA introduce così il concetto di trasmissione wireless, ma è piuttosto limitato. In primo luogo i dispositivi devono vedersi: se ci mettiamo qualcosa in mezzo la trasmissione si interrompe. Il raggio di funzionamento poi è di circa 2 metri, anche se normalmente viene usato per trasmissioni che vanno dai 30 cm a massimo un metro. In secondo luogo l'indirizzamento è critico anche a brevi distanze, perché i trasmettitori emettono il segnale con un cono (un'apertura d'angolo) di appena 15°; se il ricevitore non si trova entro questo range, decisamente limitato, non riceve nulla.<br />Tra i suoi vantaggi vi sono il fatto di non inquinare a livello radio. Inoltre ha un costo bassissimo, sicuramente il limite inferiore per la tecnologia wireless. 
+</p>
+<p class='vspace'>Per le applicazioni più comuni (telecomandi remoti) l'IrDA trasmette a velocità molto basse, tipo quelle della seriale, ma nel tempo sono stati definiti standard sempre più veloci (ad opera dei Giapponesi) che possono arrivare a diversi Giga trasmessi per secondo. 
+</p>
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p><strong>Ipse dixit:</strong><br />"..anche se di queste non se ne capisce il bisogno! E poi l'ambito di applicabilità dell'IrDA è talmente sfigato.. per me di avere un telecomando della televisione da 500 Giga che cazzo me ne faccio? devo cambiare canale! devo dirti un numero.."
+</p></div>
+<p class='vspace'>L'infrarosso è nello spettro non visibile e come abbiamo detto non è sensibile all'ambiente inquinato da un punto di vista delle onde radio, mentre lo è all'inquinamento ottico: se lo spettro usato dalla trasmissione è usato da qualcos'altro che si trova nell'ambiente, il ricevitore è accecato. Il trasmettitore infatti trasmette e attende l'ACK, e se non arriva ritrasmette a frequenze più alte (aumentando l'intensità della luce emessa), continuando ad aumentarle fino a saturare l'ambiente. Esempio pratico. Molti sistemi antincendio hanno un doppio sensore per rilevare incendi, ovvero un rilevatore di fumo e un sensore infrarossi, che se entrambi segnalano pericolo fanno scattare l'allarme. Se a casa nostra abbiamo un sensore antincendio che usa la stessa frequenza del nostro telecomando, addio zapping. Ok, in ambienti domestici è quasi impossibile che succeda, ma in altri ambienti è realmente accaduto con conseguenze ben più inquietanti. Ad esempio gli infrarossi venivano usati nelle sale operatorie per i telecomandi che regolavano i movimenti del tavolo operatorio: non inquina, è perfettamente sicuro. Poi un bel giorno hanno messo i nuovi sistemi antincendio, per sfiga sulle stesse frequenze e il tavolo non si muoveva più. E se invece si fosse messo a muoversi da solo? Quante volte potremo dare la colpa ai poltergeist?
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='RetiWireless.html'>Torna alla pagina di Reti wireless</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 14, 2010, at 02:43 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-16Marzo?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/RW-16Marzo?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

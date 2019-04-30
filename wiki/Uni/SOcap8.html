@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Riassunto capitolo 8 - Lo stallo (deadlock) </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.SOcap8' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Riassunto capitolo 8 - Lo stallo (deadlock)
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap8?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap8?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='SOcap8-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap8?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap8?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Riassunto capitolo 8 - Lo stallo (deadlock) was last modified on April 06, 2008, at 07:00 PM'>
+							<span style='display:none;'>Riassunto capitolo 8 - Lo stallo (deadlock)</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: title Riassunto capitolo 8 - Lo stallo (deadlock) ::</strong>
+</pre><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+<p class='vspace'>La maggior parte dei SO NON fornisce strumenti di prevenzione dello stallo -&gt; probabilmente in futuro.
+</p>
+<div class='vspace'></div><h2>8.1 Il modello delle risorse di sistema e dei processi</h2>
+<p>Risorse = di molti tipi, distribuite fra i vari processi.
+</p>
+<p class='vspace'>Se un processo vuole un tipo di risorsa, può ottenere con soddisfazione una qualunque <strong>istanza</strong> di quella risorsa. Deve chiederla <strong>prima</strong> di usarla, e rilasciarla <strong>dopo</strong>:
+</p><ol><li><strong>richiesta</strong>: se non è soddisfacibile, il processo deve attendere
+</li><li><strong>uso</strong>: il processo usa la risorsa
+</li><li><strong>rilascio</strong>: il processo libera la risorsa
+</li></ol><p class='vspace'>Richiesta &amp; rilascio = chiamate di sistema.
+</p>
+<p class='vspace'>Un gruppo di processi è in stallo se ogni processo del gruppo è in attesa di un evento che può essere generato solo da un processo del gruppo.
+</p>
+<p class='vspace'>Multithread =&gt; proni al deadlock perché i thread accedono a risorse condivise.
+</p>
+<div class='vspace'></div><h2>8.2 Caratterizzazione del deadlock</h2>
+<h3>8.2.1 Condizioni per il verificarsi del deadlock</h3>
+<p>Condizioni affinché si abbia un deadlock:
+</p><ol><li><strong>Mutua esclusione</strong> nell'uso di una risorsa
+</li><li><strong>Hold &amp; wait</strong>: stato in cui un processo ha una risorsa (hold) ma ne attende un'altra (wait)
+</li><li><strong>Nessun rilascio anticipato</strong>: le risorse possono essere liberate solo con un atto volontario del processo
+</li><li><strong>Attesa circolare</strong>: A attende da B che attende da C che attende da A
+</li></ol><p class='vspace'>Devono verificarsi <strong>tutte e 4</strong> le condizioni.
+</p>
+<div class='vspace'></div><h3>8.2.2 Grafo di allocazione delle risorse</h3>
+<p>Nodi = 2 tipi
+</p><ul><li>cerchi = processi
+</li><li>quadrati = risorse
+<ul><li>ogni pallino in un quadrato rappresenta un'istanza di quella risorsa
+</li></ul></li></ul><p class='vspace'>Archi:
+</p><ul><li><strong>arco di richiesta</strong> = da processo a risorsa = il processo è in attesa di quella risorsa
+</li><li><strong>arco di assegnazione</strong> = da risorsa a processo = il processo possiede quella risorsa
+</li></ul><p class='vspace'>Se il grafo NON contiene cicli =&gt; di sicuro non ci sarà nessun deadlock.<br />Se il grafo ha un ciclo =&gt; <strong>possibile</strong> deadlock (condizione necessaria ma non sufficiente)
+</p>
+<div class='vspace'></div><h2>8.3 Metodi di gestione del deadlock</h2>
+<p>Ci sono 3 modi per gestire il deadlock:
+</p><ul><li>impedire o evitare i deadlock, facendo in modo che il SO non entri mai in un deadlock
+</li><li>permettere l'ingresso in uno stallo, ma rilevarlo e recuperare
+</li><li>ignorare il problema, perché tanto è raro, e ci penserà l'utente a fermare il processo in dl
+</li></ul><p class='vspace'>Ignorare il problema è il sistema maggiormente utilizzato: spetta al programmatore far sì che i dl non accadano.
+</p>
+<p class='vspace'><strong>Prevenire</strong> i dl = impedire in partenza che l'assegnazione delle risorse possa ingenerare una delle 4 condizioni viste prima.
+</p>
+<p class='vspace'><strong>Evitare</strong> i dl = se conosco tutte le richieste che il processo farà, so dire in partenza se si può finire in dl.
+</p>
+<div class='vspace'></div><h2>8.4 Prevenire il deadlock</h2>
+<p>4 tecniche diverse, ciascuna atta a scongiurare l'avverarsi di una delle 4 condizioni viste sopra.
+</p>
+<div class='vspace'></div><h3>8.4.1 Mutua esclusione</h3>
+<p>Le risorse condivisibili non creano dl. Quelle non condivisibili invece potrebbero.
+</p>
+<p class='vspace'>Dovrei impedire la mutua esclusione di risorse non condivisibili =&gt; ma è impraticabile perché ho risorse intrinsecamente non condivisibili (eg la stampante).
+</p>
+<div class='vspace'></div><h3>8.4.2 Possesso ed attesa</h3>
+<p>Per evitare la condizione di possesso ed attesa, devo fare in modo che un processo che abbia già una risorsa non possa attendere per un'altra.
+</p>
+<p class='vspace'>Posso avere 2 protocolli:
+</p><ol><li>un processo deve acquisire tutte le risorse <strong>prima</strong> di partire
+</li><li>un processo può acquisire risorse solo quando non ne ha nessuna
+</li></ol><p class='vspace'>Il problema della tecnica 1 è che un processo può tenere bloccata per lungo tempo una risorsa che userà invece per poco.
+</p>
+<p class='vspace'>=&gt; in generale
+</p><ul><li>l'uso delle risorse è basso perché vengono assegnate a lungo ma non utilizzate
+</li><li>può insorgere starvation (un processo attende indefinitamente delle risorse comuni)
+</li></ul><div class='vspace'></div><h3>8.4.3 Nessun rilascio anticipato</h3>
+<p>Protocollo 1:
+Se il processo non può ottenere le risorse che chiede deve mollare tutte quelle che ha, e rimettersi in lista di attesa per tutte.
+</p>
+<p class='vspace'>Protocollo 2:
+Un processo che chiede risorse le può ottenere:
+</p><ul><li>o se sono già disponibili;
+</li><li>o se sono di proprietà di un processo attualmente in attesa di altre risorse =&gt; quest'ultimo processo viene preemptivato e privato delle proprie risorse
+</li></ul><div class='vspace'></div><h3>8.4.4 Attesa circolare</h3>
+<p>Tutte le risorse vengono numerate in modo crescente (non importa quale).
+</p>
+<p class='vspace'>Si impone poi che un processo può richiedere solamente risorse con un ordine più alto di quelle che già ha =&gt; deve chiederle in ordine =&gt; si previene l'attesa circolare.
+</p>
+<p class='vspace'>Ma l'imporre un ordinamento alle risorse di per sé non cambia nulla =&gt; occorre che il programmatore rispetti l'ordinamento.
+</p>
+<div class='vspace'></div><h2>8.5 Evitare il deadlock</h2>
+<p>Gli algoritmi di prevenzione del deadlock impediscono l'insorgere delle condizioni del deadlock =&gt; tuttavia le periferiche vengono sottoutilizzate.
+</p>
+<p class='vspace'>=&gt; si richiedono informazioni supplementari al processo, relativamente alle risorse che vorrà chiedere =&gt; sapendo in anticipo che cosa vorrà, si sa subito se far attendere o meno il processo.
+</p>
+<div class='vspace'></div><h3>8.5.1 Lo stato sicuro</h3>
+<p><strong>Sequenza sicura</strong> = una sequenza di processi P<sub>i</sub> ... P<sub>n</sub> tale che le richieste del P<sub>i</sub>-esimo programma possono essere soddisfatte
+</p><ul><li>con le risorse ancora libere
+</li><li>e con le risorse dei P<sub>j</sub> con <strong>j &lt; i</strong>
+</li></ul><p class='vspace'>Esiste una sequenza sicura =&gt; siamo in uno <strong>stato sicuro</strong>.
+</p>
+<p class='vspace'>Ocio: stato non sicuro non implica un dl, però non può garantirne la non insorgenza.
+</p>
+<p class='vspace'>Un sistema può passare da uno stato sicuro ad uno non sicuro =&gt; occorre controllare le richieste e verificare che ciò possa non avvenire =&gt; le richieste vengono soddisfatte solo se mantengono il sistema in uno stato sicuro.
+</p>
+<div class='vspace'></div><h3>8.5.2 Algoritmo del grafo di allocazione delle risorse</h3>
+<p>Si usa nel caso ci sia un'istanza per ogni tipo di risorsa.
+</p>
+<p class='vspace'>Rispetto al grafo "normale" viene introdotto l<strong>'arco di prenotazione</strong> = da un processo ad una risorsa = vuol dire che il processo vorrà in futuro quella risorsa.
+</p>
+<p class='vspace'>È necessario conoscere le richieste future quando un processo viene avviato.
+</p>
+<p class='vspace'>Il sistema è in uno stato sicuro se non ci sono cicli, considerando anche gli archi di prenotazione.
+</p>
+<div class='vspace'></div><h3>8.5.3 Algoritmo del banchiere</h3>
+<p>Si usa quando ci sono più istanze per la stessa risorsa. Il processo deve dichiarare all'ingresso nel sistema quante istanze di ogni risorsa richiederà in futuro.
+</p>
+<p class='vspace'>Occorrono parecchie strutture dati per implementare questo algoritmo.<br /><strong>n</strong> = numero di processi
+<strong>m</strong> = numero di tipi di risorse
+</p><ul><li><strong>Vettore Available[m]</strong> = la i-esima posizione ci dice quante istanze di quella risorsa ci sono
+</li><li><strong>Matrice Max[n*m]</strong> = ogni riga esprime le massime richieste di quel processo per ogni tipo di risorsa
+</li><li><strong>Matrice Allocation[n*m]</strong> = ogni riga esprime le risorse correntemente allocate a quel processo
+</li><li><strong>Matrice Need[n*m]</strong> = ogni riga indica il bisogno restante di risorse per quel processo.
+</li></ul><p class='vspace'>Attenzione: <strong>Need[i][j] = Max[i][j] - Allocation[i][j]</strong>, il che vuol dire che le risorse di cui un processo ha ancora bisogno devno essere pari a quelle che ha chiesto all'inizio in totale (max) meno quelle già allocate (Allocation).
+</p>
+<p class='vspace'>Ci sono poi 2 algoritmi:
+</p><ul><li><strong>algoritmo di sicurezza</strong> = controlla se uno stato è sicuro
+</li><li><strong>algoritmo di richiesta</strong> = controlla se una richiesta conduce ad uno stato sicuro
+</li></ul><div class='vspace'></div><h4>8.5.3.1 L'algoritmo di sicurezza</h4>
+<ol><li><strong>Work[m] = Available</strong>; <strong>Finish[n] = false</strong> per ogni 0 &lt; i &lt; n
+</li><li>Si cerca una <strong>i</strong> tale per cui:
+<ul><li>Finish[i] == false;
+</li><li>Need<sub>i</sub> &lt;= Work (l'i-esima riga di Need è &lt;= del vettore Work)
+</li><li>Se non esiste una i che soddisfa ciò passo al punto 4
+</li></ul></li><li>Work = Work + Allocation<sub>i</sub>; Finish[i] = true; vado al punto 2
+</li><li>Se per ogni i, Finish[i] è true, allora sono in uno stato sicuro.
+</li></ol><p class='vspace'>Quello che succede è che per ogni processo controllo se ha abbastanza risorse per soddisfare tutte le sue richieste passate e future.<br />Le risorse le cerco in 2 punti:
+</p><ul><li>tra quelle libere
+</li><li>tra quelle dei processi che vengono prima di lui (vedi definizione di stato sicuro)
+</li></ul><p class='vspace'>Se ogni processo può avere tutte le risorse che chiede (Finish[i] = true, per ogni i), allora sono in uno stato sicuro.
+</p>
+<p class='vspace'>Complessità: O(m * n<sup>2</sup>)
+</p>
+<div class='vspace'></div><h4>8.5.3.2 L'algoritmo di richiesta delle risorse</h4>
+<p><strong>Request[m]</strong> è il vettore delle richieste dell'i-esimo processo.
+</p>
+<div class='vspace'></div><ol><li>Se Request<sub>i</sub> &lt;= Need<sub>i</sub> vai al punto 2; altrimenti errore (il processo richiede più di quanto dichiarato in partenza)
+</li><li>Se Request<sub>i</sub> &lt;= Available, vai al punto 3; altrimenti il processo attende (chiede ciò che non può ancora ottenere)
+</li><li>Il sistema alloca al processo le risorse richieste modificando così lo stato:
+<ul><li>Available = Available - Request<sub>i</sub>
+</li><li>Allocation<sub>i</sub> = Allocation<sub>i</sub> + Request<sub>i</sub>
+</li><li>Need<sub>i</sub> = Need<sub>i</sub> - Request<sub>i</sub>
+</li><li>se questo stato è sicuro (verifico con l'algoritmo di prima), allora lo confermo. Altrimenti il processo deve attendere, e torno allo stato precedente.
+</li></ul></li></ol><div class='vspace'></div><h2>8.6 Rilevazione del deadlock</h2>
+<p>Il SO lascia accadere i deadlock, ma cerca di rilevarli e poi di porvi rimedio.
+</p>
+<p class='vspace'>Occorre
+</p><ul><li>un algoritmo che rilevi il deadlock
+</li><li>un algoritmo che recuperi dallo stato di deadlock
+</li></ul><p class='vspace'>Anche in questo caso, i comportamenti sono diversi a seconda che si abbiano risorse ad istanze singole o multiple.
+</p>
+<div class='vspace'></div><h3>8.6.1 Singola istanza di ogni tipo di risorsa</h3>
+<p>Grafo <strong>wait-for</strong> = variazione del grafo di allocazione delle risorse
+</p><ul><li>i nodi delle risorse collassano, rimangono quelli dei processi
+</li><li>un arco da un processo A ad un proceso B indica che A vuole una risorsa posseduta da B
+</li></ul><p class='vspace'>Mantengo il grafo ad ogni richiesta di risorse.<br />Controllo periodicamente che non ci siano cicli in questo grafo. Se ci sono cicli, è possibile un deadlock.
+</p>
+<p class='vspace'>Complessità: O(n<sup>2</sup>)
+</p>
+<div class='vspace'></div><h3>8.6.2 Istanze multiple di un tipo di risorsa</h3>
+<p>Uso strutture dati simili a quelle dell'algoritmo del banchiere.
+</p>
+<p class='vspace'>Come prima, <strong>m</strong> è il numero di tipi di risorse, <strong>n</strong> è il numero dei processi.
+</p>
+<div class='vspace'></div><ul><li><strong>Available[m]</strong> = istanze disponibili per ogni tipo di risorsa
+</li><li><strong>Allocation[n*m]</strong> = ogni riga dice quante risorse sono allocate a quel processo
+</li><li><strong>Request[n*m]</strong> = ogni riga indica quante risorse quel processo chiede
+</li></ul><div class='vspace'></div><ol><li><strong>Work[m] = Available</strong>; <strong>Finish[i] = false</strong> se Allocation<sub>i</sub> = 0, altrimenti <strong>Finish[i] = true</strong>
+</li><li>Cerco una i tale che
+<ul><li>Finish[i] == false
+</li><li>Request<sub>i</sub> &lt;= Work
+</li><li>Se non esiste, vado al punto 4
+</li></ul></li><li>Work = Work + Allocation<sub>i</sub>; Finish[i] = true; vado al punto 2
+</li><li>Se c'è una Finish[i] == false, allora sono in uno stato di deadlock, e il processo P<sub>i</sub> è in stallo
+</li></ol><p class='vspace'>Questo algoritmo all'inizio indica tutti i processi come adatti alla terminazione (Finish[i] = true) se non hanno nessuna risorsa allocata: niente risorse, niente deadlock. Altrimenti, Finish[i] = false.
+</p>
+<p class='vspace'>Poi, analizzo tutte le richieste per ogni processo. Se sono soddisfacibili, allora stabilisco che le risorse di quel processo saranno utilizzabili da altri processo (Work = Work + Allocation<sub>i</sub>), e che quel processo potrà terminare.
+</p>
+<p class='vspace'>Se c'è qualche processo che, alla fine, è indicato come impossibilitato a terminare, vuol dire che c'è un deadlock nel sistema, e che quel processo è in stallo.
+</p>
+<p class='vspace'>La scelta del punto 3 si spiega in questo modo: se un processo ha le risorse che vuole, suppongo ottimisticamente che potrà finire tranquillamente. Se ciò non accadrà, una successiva passata dell'algoritmo lo rileverà comunque.
+</p>
+<p class='vspace'>Complessità = O(m x n<sup>2</sup>)
+</p>
+<div class='vspace'></div><h3>8.6.3 Uso dell'algoritmo di rilevazione</h3>
+<p>La frequenza con cui invocare questo algoritmo dipende da 2 fattori:
+</p><ol><li>quanto spesso si verifica un deadlock nel sistema
+</li><li>quanti processi sono coinvolti in un deadlock, quando questo accade
+</li></ol><p class='vspace'>Se i deadlock sono frequenti, allora l'algoritmo andrebbe invocato frequentemente.
+</p>
+<p class='vspace'>Caso limite = invocarlo ogni volta che c'è una richiesta di allocazione non immediatamente soddisfacibile (quindi, una dipendenza da altri processi).
+</p>
+<p class='vspace'>Questo algoritmo genera overhead =&gt; costoso eseguirlo sempre =&gt; posso eseguirlo eg solo quando l'uso della CPU scende sotto il 40%, perché i deadlock tendono a paralizzare il sistema.
+</p>
+<div class='vspace'></div><h2>8.7 Ripristino dal deadlock</h2>
+<p>Quando è stato rilevato un deadlock, posso
+</p><ul><li>far intervenire l'operatore
+</li><li>decidere automaticamente che cosa fare
+<ul><li>abortisco uno o più processi finché il dl non scompare
+</li><li>preemptivo alcuni processi per riprendermi delle risorse.
+</li></ul></li></ul><div class='vspace'></div><h3>8.7.1 Termine del processo</h3>
+<p>Posso
+</p><ul><li>Abortire tutti i processi in deadlock =&gt; molto costoso, perché posso fermare anche processi che non c'entrano e che magari erano a buon punto
+</li><li>Abortirne uno alla volta finché il deadlock non scompare =&gt; molto overhead dovuto alla ripetizione, ad ogni uccisione, dell'algoritmo di rilevazione
+</li></ul><p class='vspace'>Per decidere quale processo uccidere, posso scegliere tra diversi criteri, eg priorità, interattività etc. =&gt; si sceglie quello la cui morte, in base al criterio scelto, sia di costo minimo.
+</p>
+<div class='vspace'></div><h3>8.7.2 Rilascio anticipato delle risorse</h3>
+<p>Tolgo le risorse a qualcuno e le do a qualcun altro.
+</p>
+<div class='vspace'></div><ol><li><strong>Scelta della vittima</strong>, in base a fattori di costo (tempo già consumato, numero di risorse in uso etc.)
+</li><li><strong>Rollback</strong> = annullare le modifiche eseguite dal processo in corso
+</li><li><strong>Starvation</strong> = se mi si ripresenta una situazione uguale, e uccido con lo stesso criterio, sempre lo stesso processo verrà ucciso =&gt; starvation di quel processo =&gt; includo nel fattore costo il numero di rollback eseguiti.
+</li></ol><p class='vspace'><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: April 06, 2008, at 07:00 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap8?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/SOcap8?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

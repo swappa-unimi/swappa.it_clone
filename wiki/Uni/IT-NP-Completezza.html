@@ -1,0 +1,472 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Swappa :: Informatica Teorica - NP-Completezza </title>
+	<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+	<meta http-equiv='Content-Language' content='it' />
+	<meta http-equiv='Content-Style-Type' content='text/css' />
+	<meta http-equiv="imagetoolbar" content="no" />
+	<meta name="robots" content="noarchive" />
+	<meta name="verify-v1" content="W0mbMJBKN/iA23fcLw5UzRqXfwbh0SdGZ62YJgVCtqg=" />
+	<meta name='description' content="Wiki creato da e per gli studenti del DTI dell'Università di Crema (Informatica, Sicurezza, DTI). Contiene appunti, riassunti, guide, esercizi, temi d'esame."  />
+	<meta name='keywords' content="wiki, università, studenti, crema, appunti, riassunti, guide, informatica, sicurezza, esami, programmazione, recensioni, esercizi, progetti" />
+	
+  <link rel='icon' href='../pub/skins/sticWin/sticWinicon.gif.html' type='image/gif' />
+  <link rel='SHORTCUT ICON' href='../pub/skins/sticWin/sticWinicon.gif.html' />
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='index,follow' />
+  <link rel='stylesheet' href='../pub/skins/sticWin/sticWin.css' type='text/css' />
+  
+</head>
+
+<body>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-5744461-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<!--PageHeaderFmt-->
+	<table summary='Site: Header' id='siteheadtable' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr>
+			<td colspan='2' id='navi'>
+			<table width='420' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='navi' width='300'>
+					<!-- Inizio Codice Shinystat -->
+					<script type="text/javascript" language="JavaScript" src="http://codice.shinystat.com/cgi-bin/getcod.cgi?USER=swappa"></script>
+					<noscript>
+					<a href="http://www.shinystat.com/it" target="_top">
+					<img src="http://www.shinystat.com/cgi-bin/shinystat.cgi?USER=swappa" alt="Contatori visite gratuiti" border="0"></a>
+					</noscript>
+					<!-- Fine Codice Shinystat -->
+				</td>
+				<td id='riemp2'></td>
+				<td id='navi' width='80'>
+					<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+						<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+					</a>
+				</td>
+			
+				<td id='riemp5'></td>
+				
+			</tr>
+			</table>
+			</td>	
+		</tr>
+		<tr>
+			<td colspan='2' id='siteheadfind'>
+				<a href='../Site.Search.html'
+				title='Cerca nel sito' rel='nofollow'>cerca</a> 
+				<form class='siteheadfind search' action='../index.html'>
+				<input class='searchbox' type='text' name='q' value='' size='40' />
+				<input class='searchbut' type='submit' value='vai' />
+				<!-- version > beta53 -->
+				<!-- <input type='hidden' name='n' value='Uni.IT-NP-Completezza' /><input type='hidden' name='action' value='search' /> -->
+				<!-- version < beta53 -->
+				<input type='hidden' name='n' value='Site.Search' />
+				</form>
+			</td>					
+		</tr>
+		<tr><td id='riemp1'></td></tr>
+		<tr>
+			<td id='pagetitle' width='560'>
+				Informatica Teorica - NP-Completezza
+			</td>
+			<td id='siteheadcmds'>
+			<table width='360' cellpadding='0' cellspacing='0' align='right'>
+			<tr>
+				<td id='siteheadmenu'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-NP-Completezza?action=edit' title='Modifica la pagina'>modifica</a>
+				</td> 
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-NP-Completezza?action=diff' title='Ultime modifiche della pagina'>cronologia</a>
+				</td>
+				<td id='siteheadmenu'>
+					<a  rel='nofollow' href='IT-NP-Completezza-action=print.html' title='Stampa la pagina'>stampa</a>
+				</td>	
+				<td id='riemp5'></td>
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-NP-Completezza?action=login' title='Login'>login</a>
+				</td>	
+				<td id='log'>
+					<a rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-NP-Completezza?action=logout' title='Logout'>logout</a>
+				</td>	
+				<td id='riemp2'></td>
+			</tr>
+			</table>
+			</td>				
+		</tr>  
+		
+	</table>
+	<!--/PageHeaderFmt-->
+
+	<table summary='Site: Main' id='contentmain' width='960'
+	cellpadding='0' cellspacing='0' border='0' align='center'>
+	<tbody>
+		<tr>
+			<td id='riemp2'></td>
+			<!--PageLeftFmt-->
+			<td id='mainsidebar'>
+			
+			<p class='sidehead'> Wiki
+</p><ul><li><a class='wikilink' href='../Main/HomePage.html'>HomePage</a>
+</li><li><a class='wikilink' href='http://www.swappa.it/wiki/Main/Forum'>Forum</a>
+</li><li><a target='_blank'  class='urllink' href='http://www.swappa.it/gallery/main.php' title='' rel='nofollow'>Galleria</a>
+</li></ul><p class='vspace sidehead'> UniCrema
+</p><ul><li><a class='wikilink' href='../Category/UniCrema.html'>Tutte le materie</a>
+</li><li><a class='wikilink' href='../Category/Docenti.html'>Docenti</a>
+</li><li><a class='wikilink' href='Progetti.html'>Progetti</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Materie per semestre
+</p><ul><li><a class='wikilink' href='../Category/PrimoSemestre.html'>Primo semestre</a>
+</li><li><a class='wikilink' href='../Category/SecondoSemestre.html'>Secondo semestre</a>
+</li></ul><p class='vspace sidehead'> Materie per anno
+</p><ul><li><a class='wikilink' href='../Category/PrimoAnno.html'>Primo anno</a>
+</li><li><a class='wikilink' href='../Category/SecondoAnno.html'>Secondo anno</a>
+</li><li><a class='wikilink' href='../Category/TerzoAnno.html'>Terzo anno</a>
+</li><li><a class='wikilink' href='../Category/ComplementariOMagistrale.html'>Complem. / magistrale</a>
+</li></ul><p class='vspace sidehead'> Materie per laurea
+</p><ul><li><a class='wikilink' href='../Category/Informatica.html'>Informatica</a>
+</li><li><a class='wikilink' href='../Category/Sicurezza.html'>Sicurezza</a>
+</li><li><a class='wikilink' href='../Category/TS.html'>TS</a>
+</li></ul><p><br clear='all' />
+</p>
+<p class='vspace sidehead'> Help
+</p><ul><li><a class='wikilink' href='http://www.swappa.it/wiki/Category/GuideInterneWiki'>Guide interne</a>
+</li><li><a class='wikilink' href='../Main/FAQ.html'>FAQ</a>
+</li></ul><div class='vspace'></div>
+
+			
+				<div id='sidebarbottom'>
+					<span style='white-space:nowrap;'>
+						<a  rel='nofollow' href='http://validator.w3.org/check/referer'
+						title='Validate XHTML'>XHTML</a>
+					</span>
+				</div>
+			</td>
+			<!--/PageLeftFmt-->
+			<td id='riemp1'></td>
+			<td id='mainsitetext'>
+				<!-- table to work around an NS4 bug -->
+				<table summary='Content Body' id='sitebody'
+				cellpadding='0' cellspacing='0' border='0'> 
+					<tr>
+						<td>
+							<!--PageTitleFmt-->
+							<div id='sitepagetitle'
+							title='Informatica Teorica - NP-Completezza was last modified on June 29, 2010, at 02:49 PM'>
+							<span style='display:none;'>Informatica Teorica - NP-Completezza</span>	
+							</div>
+							<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Informatica Teorica - NP-Completezza ::</strong>
+</pre><p class='vspace'  style='text-align: center;'> <span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'> Appunti &amp; Dimostrazioni del 12 Maggio</span>
+</p>
+<div class='vspace'></div><h2>Teorema 1 - sulla Riducibilità tempo polinomiale</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Se A &#8804;<sub>P</sub> B e B &#8712; P, allora A &#8712; P
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Capiamo bene le due ipotesi:
+</p><ul><li>A &#8804;<sub>P</sub> B, significa che avremo una funzione f che ci permetterà di fare una riduzione da A a B in tempo polinomiale;
+</li><li>B &#8712; P, significa che B è decidibile in un tempo polinomiale utilizzando una MdT deterministica, che chiameremo M.
+</li></ul><p class='vspace'>La tesi del teorema ci dice che date le premesse A si troverà in P, ovvero avrà una MdT deterministica N che lo deciderà in tempo polinomiale. Scriviamola:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>N = "su ingresso w:
+</p><ol><li>calcola f(w) (ovvero applica la formula di riduzione sulla stringa in ingresso);
+</li><li>esegui M su f(w). Se M accetta, allora ACCETTA; altrimenti RIFIUTA."
+</li></ol></div>
+<p class='vspace'>Dato che f è una riduzione da A a B, w &#8712; A se e solo se f(w) &#8712; B, e quindi M accetterà f(w) se e solo se w è accettata da A. Ottenuto quello che volevamo, dobbiamo verificare che N sia risolvibile in tempo polinomiale, e lo è perché sia l'operazione di riduzione che l'esecuzione di M lo sono. La tesi è dunque verificata!
+</p>
+<div class='vspace'></div><h2>Teorema 2 - sui 3SAT</h2>
+<p>I 3cnf-formula sono formule in forma normale congiuntiva con clausole composte da 3 letterali. Una <strong>3SAT</strong> è una 3cnf-formula soddisfacibile. <br />Veniamo al teorema:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>3SAT è tempo polinomiale riducibile a CLIQUE.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Abbiamo davanti una formula booleana che deve essere riducibile in tempo polinomiale a una CLIQUE (un sottoinsieme di nodi di un grafo tutti connessi tra loro). Dovremo quindi convertire la 3SAT in un grafo che contenga una CLIQUE se e solo se la 3SAT è soddisfacibile.
+</p>
+<p class='vspace'>Come costruiamo il grafo? Teniamo conto che partiamo da una formula di questo tipo:
+</p><div  style='text-align: center;'><img src='../uploads/Uni/IT-3sat.gif' alt='' title='' /></div>
+<p>e che vogliamo una funzione che ci generi una stringa di tipo &lt;G,k&gt; (dove G è il grafo e k il numero di nodi che compongono la cricca).<br />Come prima cosa stabiliamo che k corrisponda al numero di clausole di cui è composta &#934;, e che organizzeremo i nodi del grafo in k gruppi da 3 nodi ciascuno.
+</p>
+<p class='vspace'>Consideriamo la seguente 3SAT di esempio:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-3sat_es.gif' alt='' title='' /></div>
+<p class='vspace'>Organizziamo i nodi in k=3 gruppi da tre:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-3sat_es2.gif' alt='' title='' /></div>
+<p class='vspace'>Consideriamo infine ogni coppia di nodi e li colleghiamo con un arco solo se rispettano entrambe le regole:
+</p><ol><li>non appartengono allo stesso gruppo; 
+</li><li>non sono tra loro complementari.
+</li></ol><p class='vspace'>Tornando al nostro esempio, mostriamo come devono essere i collegamenti del primo nodo del gruppo in alto:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-3sat_es3.gif' alt='' title='' /></div>
+<p class='vspace'>E così via.<br />A questo punto bisogna dimostrare che il grafo così formato abbia una k-CLIQUE se e solo se &#934; è soddisfacibile. E' un "se e solo se", quindi dovremo dimostrare entrambi i sensi dell'implicazione:
+</p>
+<p class='vspace'><strong>(I)</strong> <em>&#934; è soddisfacibile -&gt; k-CLIQUE </em><br />Selezioniamo da ogni clausola di &#934; un letterale che sia pari a 1 (se ce ne sono diversi ne scelgo uno a caso). Dimostriamo ora (con un verificatore amichevole e alla buona) che i nodi selezionati formano effettivamente una k-CLIQUE:
+</p>
+<div class='vspace'></div><div  style='text-align: left; background-color: #fbf3ff; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>V = "
+</p><ol><li>abbiamo selezionato k nodi? Sì, ne abbiamo preso uno per ognuna delle k clausole; 
+</li><li>questi k nodi hanno un arco che li collega? Sì, per costruzione (non avendo creato archi tra nodi complementari, se seleziono un nodo pari a 1 non potrà mai essere collegato ad uno pari a 0);
+</li><li>quindi? ACCETTA."
+</li></ol></div>
+<p class='vspace'><strong>(II)</strong> <em>k-CLIQUE -&gt; &#934; è soddisfacibile</em><br />Si dimostra in modo complementare a <em>(I)</em>: se assegniamo valore 1 ai nodi che formano la CLIQUE, per costruzione ce ne sarà almeno uno per clausola. Essendo la &#934; una 3cnf-formula, se ha almeno un letterale uguale a 1 per clausola, allora sarà vera, quindi soddisfacibile.
+</p>
+<div class='vspace'></div><h2>NP-Completezza</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Un linguaggio B è NP-Completo se soddisfa due condizioni:
+</p><ul><li>B è in NP;
+</li><li>ogni A in NP è tempo polinomiale riducibile a B.
+</li></ul></div>
+<div class='vspace'></div><h2>Teorema 3 - sulla NP-Completezza</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>Se B è NP-Completo e B &#8804;<sub>P</sub> C per C in NP, allora C è NP-Completo.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Per dimostrare il teorema dovremo verificare che siano vere entrambe le condizioni perché un linguaggio sia NP-Completo:
+</p><ul><li>C è in NP? Sì, ce lo dice il testo;
+</li><li>ogni A in NP è &#8804;<sub>P</sub> C? Poiché ci è dato sapere che B è NP-Completo, sappiamo anche che ogni problema A in NP è &#8804;<sub>P</sub> B. Ma se A &#8804;<sub>P</sub> B e B &#8804;<sub>P</sub> C, facendo la composizione delle riduzioni tempo polinomiali avremo che anche A &#8804;<sub>P</sub> C.
+</li></ul><p class='vspace'>La tesi è perciò dimostrata.
+</p>
+<div class='vspace'></div><h2>Teorema di Cook-Levin</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>SAT è NP-Completo.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Per dimostrare che SAT è NP-Completo dobbiamo verificare se sono soddisfatte le solite due condizioni:
+</p><ol><li>SAT è in NP? Sì, perché si può facilmente realizzare una MdT non deterministica che, dato un assegnamento per una certa &#934;, lo accetta in tempo polinomiale se questo soddisfa &#934;;
+</li><li>ogni A in NP è &#8804;<sub>P</sub> SAT? E' questa la parte difficile.
+</li></ol><p class='vspace'>Per verificare la seconda condizione bisogna costruire una riduzione tempo polinomiale per ogni linguaggio A in NP che riconduca a SAT. Cominciamo col definire una MdT non deterministica N che decide A in un tempo polinomiale, ovvero <strong>N -&gt; n<sup>k</sup></strong>. Introduciamo ora il cosiddetto <strong>tableau</strong>, una magnifica tabella in cui ad ogni riga corrisponde una configurazione della nostra macchina N. Le dimensioni del tableau sono n<sup>k</sup> x n<sup>k</sup>, ed è così costruito:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-tableau.gif' alt='' title='' /></div>
+<p class='vspace'>Dove:
+</p><ul><li>la prima e l'ultima colonna è composta di <strong>#</strong>;
+</li><li>la prima riga è la configurazione iniziale di N sull'ingresso w;
+</li><li>possono esserci delle celle bianche nelle ultime colonne.
+</li></ul><p class='vspace'>Il tableau è detto <em>accettante</em> se una qualsiasi delle sue righe corrisponde a una configurazione accettante (contiene ovvero una q<sub>accept</sub>). Quello che vogliamo fare è associare al tableau una formula che sarà soddisfatta se e solo se il tableau è accettante, perché significherebbe che A accetta w. <br />Introduciamo ora le variabili della nostra formula, che sarebbero poi tutti i possibili simboli che compariranno nel tableau. Prima di tutto definiamo l'alfabeto:<br />C = Q U &#915; U {#}<br />, dove Q sono gli stati della macchina, &#915; sono i simboli che possono essere sul nastro, e infine c'è il simbolo #.<br />Ad ogni cella sarà associata una variabile binaria <strong>x<sub>i,j,s</sub></strong>, dove i e j sono le coordinate nel tableau, mentre s è un simbolo preso da C. In particolare, x<sub>i,j,s</sub> varrà 1 se in (i,j) c'è il simbolo s, 0 altrimenti.
+</p>
+<p class='vspace'>Abbiamo tutto quello che ci serve per realizzare una &#934; che corrisponda a un tableau accettante:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-FIaccettante.gif' alt='' title='' /></div>
+<p class='vspace'>Analizziamo una per una le quattro parti in AND di cui è composta.
+</p>
+<p class='vspace'><strong>&#934;<sub>cell</sub></strong><br />Stabilisce che in ogni cella deve esserci un solo simbolo. Vediamola in formula:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-FIcell.gif' alt='' title='' /></div>
+<p class='vspace'>, dove il primo OR dice che all'interno di ogni cella deve esserci almeno un simbolo (e infatti richiede che almeno una delle variabili sia pari a 1), mentre il secondo AND dice che in ogni cella del tableau non deve esserci più di un simbolo, e le due parti sono in AND tra loro perché devono essere ovviamente vere entrambe.
+</p>
+<p class='vspace'><strong>&#934;<sub>start</sub></strong><br />Stabilisce che la prima riga deve corrispondere alla configurazione di partenza della MdT N. Vediamola in formula:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-FIstart.gif' alt='' title='' /></div>
+<p class='vspace'><strong>&#934;<sub>accept</sub></strong><br />Garantisce che nel tableau ci sia almeno una configurazione accettante, ovvero che ci sia una q<sub>accept</sub>. Vediamola in formula:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-FIaccept.gif' alt='' title='' /></div>
+<p class='vspace'><strong>&#934;<sub>move</sub></strong><br />Garantisce che ogni configurazione segua la precedente in modo legale, rispettando cioè la funzione di transizione di N. Per verificarla si ritagliano nel tableau delle finestre di dimensioni 2x3, e si dimostra che sono legali. Se tutte le finestre sono legali, allora è garantito che ogni configurazione del tableau segue in maniera corretta la precedente.<br />Facciamo un po' di esempi. Abbiamo due funzioni di transizione:
+</p><ul><li>&#948;(q<sub>1</sub>,a) = <code class='escaped'>{(</code>q<sub>1</sub>, b, R<code class='escaped'>)}</code>
+</li><li>&#948;(q<sub>1</sub>,b) = <code class='escaped'>{(</code>q<sub>2</sub>, c, L), (q<sub>2</sub>, a, R<code class='escaped'>)}</code>
+</li></ul><p class='vspace'>Consideriamo le seguenti possibili finestre:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/ITesMove.gif' alt='' title='' /></div>
+<p class='vspace'>Sono legali o no?
+</p><ul><li>(a): è legale, per la seconda &#948; (mi sposto a sinistra e passo a q<sub>2</sub> dopo aver sostituito b con c);
+</li><li>(b): è legale, per la seconda &#948; (mi sposto a destra e passo a q<sub>2</sub> dopo aver sostituito a con a);
+</li><li>(c): è legale, perché la testina è come se si spostasse di una posizione a destra rispetto alla finestra, e potrebbe benissimo stare implementando la prima &#948; in cui si sposta a destra e sostituisce con una b;
+</li><li>(d): è legale, perché anche se non c'è la testina non sta infrangendo di fatto nessuna regola;
+</li><li>(e): è legale, per la seconda &#948; (mi sono spostato a sinistra passando a q<sub>2</sub>);
+</li><li>(f): è legale, per la seconda &#948; (mi sono spostato a sinistra e ho sostituito b con c);
+</li><li>(g): non è legale, perché è cambiato il contenuto del nastro senza avere vicino alcuna testina;
+</li><li>(h): non è legale, perché dopo q<sub>1</sub> si sarebbe dovuti passare a q<sub>2</sub>;
+</li><li>(i): non è legale, perché ci sono due testine.
+</li></ul><p class='vspace'>Ora che abbiamo un'idea su come funziona la verifica della legalità delle finestre, vediamo come esprimere &#934;<sub>move</sub> in formula:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-FImove.gif' alt='' title='' /></div>
+<p class='vspace'><span style='font-size:120%'><strong>Ricapitolando</strong></span>, avevamo detto che: 
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-FIaccettante.gif' alt='' title='' /></div>
+<p class='vspace'>e quindi la &#934; sarà soddisfatta se tutte le sue componenti saranno pari a 1. Ma dato che <em>per costruzione</em> abbiamo fatto sì che questa proprietà fosse vera, avremo che la &#934; è soddisfacibile. Siamo dunque riusciti a trovare una formula per cui ogni A in NP è riducibile a SAT, quindi non rimane altro da dimostrare che questo avviene in tempo polinomiale.<br />Analizziamo le varie parti dell'algoritmo:
+</p><ul><li>il tableau ha dimensione n<sup>k</sup> x n<sup>k</sup>, quindi ha n<sup>2k</sup>celle;
+</li><li>in ogni cella ci sono l variabili associate. Essendo però l un valore costante che non è legato alla grandezza del tableau, possiamo trascurarlo nell'analisi della complessità;
+</li><li>il numero di variabili è un O(n<sup>2k</sup>);
+</li><li>&#934;<sub>cell</sub>, &#934;<sub>move</sub> e &#934;<sub>accept</sub> agiscono su tutte le celle del tableau, quindi sono un O(n<sup>2k</sup>);
+</li><li>&#934;<sub>start</sub> agisce solo sulla prima riga del tableau, quindi è un O(n<sup>k</sup>).
+</li></ul><p class='vspace'>Il termine dominante è n<sup>2k</sup>, quindi l'algoritmo ha complessità O(n<sup>2k</sup>), che è tempo polinomiale. Fantastico: abbiamo dimostrato anche la seconda condizione per cui SAT è NP-Completo! Ora possiamo raccogliere le braccia da terra.
+</p>
+<div class='vspace'></div><h2>Corollario al teorema di Cook-Levin</h2>
+<div  style='text-align: left; background-color: #f5f9fc; width: auto; border: 2px solid #cccccc; padding: 5px;' > 
+<p>3SAT è NP-Completo.
+</p></div>
+<p class='vspace'><strong>Dimostrazione</strong>
+</p>
+<p class='vspace'>Per dimostrare che 3SAT è NP-Completo dobbiamo verificare se sono soddisfatte le solite due condizioni:
+</p><ol><li>3SAT è in NP? Sì dai, se SAT è in NP perché dobbiamo perdere tempo a chiederci se lo è anche 3SAT?
+</li><li>ogni A in NP è &#8804;<sub>P</sub> 3SAT? Ideona: dato che per il teorema di Cook-Levin ogni linguaggio A in NP è riducibile a SAT in tempo polinomiale, se riusciamo a dimostrare che SAT è  &#8804;<sub>P</sub> 3SAT siamo a cavallo!
+</li></ol><p class='vspace'>Quello che dobbiamo fare è modificare la dimostrazione del SAT in modo che produca una formula nella forma normale congiuntiva con tre letterali per clausola (una 3SAT, appunto). Rivediamo la &#934; di SAT:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/IT-FIaccettante.gif' alt='' title='' /></div>
+<p class='vspace'>Come prima cosa verifichiamo che ogni parte sia in forma normale congiuntiva (FNC):
+</p><ul><li>&#934;<sub>cell</sub> è un AND di sottoformule, ognuna delle quali contiene un OR di letterali e un AND di OR: quindi <em>è in FNC</em>!
+</li><li>&#934;<sub>start</sub> è un AND di letterali (tante clausole con un solo letterale): quindi <em>è in FNC</em>!
+</li><li>&#934;<sub>accept</sub> è un OR di letterali (una clausola con tanti letterali): quindi <em>è in FNC</em>!
+</li><li>&#934;<sub>move</sub> è un AND di sottoformule, ognuna delle quali contiene un OR di AND: quindi <em>non è in FNC</em>! Riusciamo però a rappresentarla in forma normale congiuntiva applicando la proprietà distributiva:
+</li></ul><div  style='text-align: center;'><img src='../uploads/Uni/IT-3SAT-1.gif' alt='' title='' /></div>
+<dl><dd><div class='indent'>In questo modo si riesce a porre anche &#934;<sub>move</sub> in FNC, al prezzo però di un aumento significativo delle dimensioni di ogni sottoformula. Amen.
+</div></dd></dl><p class='vspace'>Ora che abbiamo tutte le parti della &#934; in forma normale congiuntiva non ci resta che vincolare ogni clausola ad avere al massimo 3 letterali. Studiamo i vari casi possibili e le contromisure da adottare:
+</p><ol><li><em>la clausola ha 3 letterali</em><br />perfetta: la lasciamo così;
+</li><li><em>la clausola ha meno di 3 letterali</em><br />basta replicare un letterale quante volte serve per arrivare a 3, e metterlo in OR con gli altri (tanto per la proprietà di idempotenza il valore di verità non cambia);
+</li><li><em>la clausola ha più di 3 letterali</em><br />si introduce una nuova variabile e la si utilizza in questo modo:
+</li></ol><div  style='text-align: center;'><img src='../uploads/Uni/IT-3SAT-2.gif' alt='' title='' /></div>
+<dl><dd><div class='indent'>Ad esempio:
+</div></dd></dl><div  style='text-align: center;'><img src='../uploads/Uni/IT-3SAT-3.gif' alt='' title='' /></div>
+<p class='vspace'>Dopo tutte queste modifiche, è più che semplice verificare che la nuova &#934; ottenuta è soddisfacibile se e solo se la &#934; originale lo è. Quindi, essendo la dimostrazione usata per il teorema di Cook-Levin più che valida anche per questo suo corollario, possiamo affermare che anche 3SAT è NP-Completo.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='InformaticaTeorica.html'>Torna alla pagina di Informatica Teorica</a>
+</p>
+</div>
+
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td id='foot' colspan='4' rowspan='1'>
+				<table summary='Wiki: Footer' width='100%' cellpadding='0' cellspacing='0' border='0'>
+				<!--PageFooterFmt-->
+				<tr>
+					<td id='footleft'>
+					<span id='footchanges'>
+						<a  rel='nofollow' href='RecentChanges.html'
+						title='Ultime modifiche della sezione'
+						accesskey='c'>Ultime modifiche</a>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.AllRecentChanges'
+						title='(Tutte le modifiche del sito'
+						accesskey='a'>(Tutte)</a>
+					</span>
+					<span id='footeditsb'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Site.SideBar?action=edit'
+						title='Modifica la barra laterale'
+						accesskey='b'>edit SideBar</a>
+					</span>
+					</td>
+					<td id='footmiddle'>
+					<span id='footlastmod'>Ultimo aggiornamento: June 29, 2010, at 02:49 PM</span> 
+					</td>
+					<td id='footright'>
+					<span id='footedit'>
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-NP-Completezza?action=edit'
+						title='Modifica la pagina'
+						accesskey='e'>Modifica</a>
+					</span>
+					<span id='foothist'>| 
+						<a  rel='nofollow' href='http://www.swappa.it/wiki/Uni/IT-NP-Completezza?action=diff'
+						title='Ultime modifiche della pagina'
+						accesskey='h'>Cronologia</a>
+					</span> 
+					</td>
+				</tr>
+				<!--/PageFooterFmt-->
+				</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+
+	</body>
+	
+</html>
+ 
+ 

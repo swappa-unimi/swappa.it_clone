@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Sistemi Operativi - Gestione della memoria centrale</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='SO-GestioneDellaMemoriaCentrale.html' title='Sistemi Operativi - Gestione della memoria centrale'>Sistemi Operativi - Gestione della memoria centrale</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p><hr />
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Appunti 2.0 ::</strong>
+</pre><p class='vspace'  style='text-align: center;'><span  style='background-color: #d9e4f2; font-size: 11pt; padding: 4px; padding-left: 50px; padding-right: 50px;'>Gestione della memoria centrale</span>
+</p>
+<div class='vspace'></div><h2>Concetti generali</h2>
+<p>La <strong>memoria centrale</strong> è un componente essenziale di un moderno elaboratore, e consiste in un vettore di <strong>parole</strong> di memoria (o <em>byte</em>), ognuna delle quali ha un proprio indirizzo. Il processore caricherà nei propri registri istruzioni e dati presi direttamente da essa, in particolare da quella posizione indicata dal <em>program counter</em>. Il numero di accessi alla memoria durante la normale esecuzione di un processo può essere elevatissimo, dunque la sua gestione deve essere efficiente e rigorosa.<br />La memoria centrale vede solo flussi di indirizzi, ciò significa che ignora chi e come li generi e con quale scopo.
+</p>
+<div class='vspace'></div><h3>Collegamento degli indirizzi</h3>
+<p>I programmi risiedono generalmente su memorie secondarie sottoforma di file binari eseguibili, pronti ad essere attivati come processi. L'insieme dei processi in attesa di essere caricati in memoria centrale forma la cosiddetta <strong>coda di entrata</strong>, dalla quale ne verrà selezionato uno (o più) da caricare e mandare in esecuzione; a computazione terminata, le risorse allocate (quindi anche i bytes) torneranno ad essere disponibili per gli altri.
+</p>
+<p class='vspace'>I processi non possono essere caricati a partire da un indirizzo qualunque, ma bisogna effettuare diversi passaggi (alcuni facoltativi) durante i quali dati/istruzioni e rispettivi indirizzi saranno collegati in modo diverso.
+</p>
+<div class='vspace'></div><ol><li><strong>Collegamento in fase di compilazione</strong>, quando si conosce esattamente dove verrà caricato il processo già al momento della compilazione. Viene generato un <strong>codice assoluto</strong>, che sarà <em>statico</em>, <em>fisso</em> e <em>immutabile</em> (se la locazione di partenza cambia bisogna ricompilare il codice) 
+</li><li><strong>Collegamento in fase di caricamento</strong>. Se al momento della compilazione non si sa ancora dove risiederà il processo, allora il compilatore dovrà generare un <strong>codice rilocabile</strong>. In pratica il sistema operativo decide a partire da quale indirizzo caricare il processo in memoria, e quella locazione sarà l'indirizzo 0 relativo in base al quale verranno allocati tutti gli altri dati/istruzioni del processo. Il collegamento all'indirizzo assoluto in memoria centrale avviene in <em>fase di caricamento</em>
+</li><li><strong>Collegamento in fase di esecuzione</strong>, caratteristico di quei processi che possono essere spostati da una zona all'altra anche durante l'esecuzione. Necessita di un hardware preposto a tale compito, ovvero un' <strong>unità di gestione della memoria centrale</strong> (<em>MMU</em>) configurata opportunamente, ed è il tipo di collegamento maggiormente usato nei vari sistemi operativi
+</li></ol><div class='vspace'></div><h3>Spazio di indirizzamento logico e fisico</h3>
+<p>L' <strong>indirizzo fisico</strong> è l'indirizzo nello spazio di memoria centrale che individua in modo univoco una parola in esso contenuta. Lo <strong>spazio di indirizzamento fisico</strong> è un vettore lineare che va da 0 all'ultimo spazio indirizzabile del chip di memoria.<br />L' <strong>indirizzo logico</strong> è invece un indirizzo astratto, consistente solo all'interno dello spazio di indirizzamento del processo, rappresentandone lo spiazzamento rispetto alla prima parola. Lo <strong>spazio di indirizzamento logico</strong> è dunque lo spazio indirizzabile dal nostro processo, e la sua prima parola corrisponde ad un certo indirizzo fisico detto <em>indirizzo di base</em>. Al processo non interessa se al di là dei confini del proprio spazio di indirizzamento siano caricate parole associate ad altri processi, tanto lui non potrà accedervi come gli altri non possono accedere al suo.
+</p>
+<p class='vspace'>I metodi di collegamento degli indirizzi in fase di compilazione e caricamento generano indirizzi logici e fisici identici, cosa che invece non accade in fase di esecuzione. In quest'ultimo caso la responsabilità di trasformarli è demandata a un dispositivo ausiliario hardware che abbiamo già nominato, ovvero la <strong>MMU</strong>. Il sistema di trasformazione semplice consiste nell'utilizzo del <strong>registro di rilocazione</strong>, il cui valore viene aggiunto ad ogni indirizzo generato dal processo nel momento in cui viene inviato in memoria. La formula generale è: <code class='escaped'>indirizzo fisico = indirizzo logico + offset</code>, dove l'offset è lo spiazzamento tra lo 0 logico del processo e la sua mappatura effettiva in memoria centrale. Grazie a questo mappaggio il processo non vede mai gli indirizzi fisici reali, ma tratta solo quelli logici che sono molti meno del totale quindi più semplici e veloci da manipolare.
+</p>
+<p class='vspace'>Ricapitolando: gli indirizzi logici vanno da <code class='escaped'>0</code> a un <code class='escaped'>valore massimo</code>, mentre i corrispondenti indirizzi fisici vanno da <code class='escaped'>R+0</code> a <code class='escaped'>R+valore massimo</code> (dove R è il valore del registro di rilocazione). Nella fase di <strong>linking</strong> dei programmi, viene eseguito il calcolo degli indirizzi logici a partire da quelli simbolici generati dalle chiamate di sistema invocate. Nella fase di <strong>binding</strong> si passa invece dall'indirizzo logico a quello fisico; può avvenire durante la compilazione, o nel momento del loading del programma, o anche durante l'esecuzione (soprattutto se ho librerie dinamiche).
+</p>
+<div class='vspace'></div><h3>Caricamento dinamico</h3>
+<p>Dato che per essere eseguito un programma deve risiedere in memoria centrale, come fare quando le sue dimensioni superano quelle della memoria stessa? La soluzione è il <strong>caricamento dinamico</strong>, che prevede inizialmente il caricamento di un insieme di procedure fondamentali e il mantenimento delle altre su disco in formato di caricamento rilocabile; nel caso in cui queste ultime si rivelino necessarie, verrà richiesto a un <em>loader</em> di caricarle e di aggiornare la tabella degli indirizzi del programma. Il vantaggio di tale sistema è che non si spreca inutilmente spazio di memoria per procedure che vengono utilizzate raramente (come quelle di gestione degli errori). Il sistema operativo non gestisce direttamente il caricamento dinamico, la sua reale implementazione è lasciata ai programmatori.
+</p>
+<div class='vspace'></div><h3>Collegamento dinamico e librerie condivise</h3>
+<p>Utilizzare collegamenti dinamici piuttosto che statici alle librerie di sistema consente di risparmiare spazio sia su memorie di massa che in quella centrale. Il motivo è semplice: un collegamento statico considererebbe le librerie come un qualsiasi altro modulo da caricare, quindi ogni programma dovrebbe incorporarne una copia nel file eseguibile e nel suo spazio di indirizzamento. Con i <strong>collegamenti dinamici</strong> (attuati in fase di esecuzione) viene invece inclusa nell'eseguibile un' <em>immagine</em> (<em>stub</em>) che indica come individuare la procedura di libreria desiderata già residente in memoria, o come reperirla dal disco se non è presente. In questo modo tutti i processi che usano una stessa libreria eseguiranno una sola copia del codice.
+</p>
+<p class='vspace'>Il sistema a <strong>librerie condivise</strong> estende i vantaggi del collegamento dinamico, consentendo inoltre di aggiornare le versioni delle librerie e di fare in modo che ogni programma utilizzi quella a sé compatibile.
+</p>
+<p class='vspace'>Al contrario del caricamento dinamico, il collegamento dinamico può richiedere l'intervento del sistema operativo, ad esempio in quei casi in cui un processo avrebbe bisogno di una procedura contenuta nello spazio di indirizzamento di un altro.
+</p>
+<div class='vspace'></div><h3>Overlay</h3>
+<p>Se il caricamento dinamico offriva una soluzione all'esecuzione dei processi con dimensioni maggiori della memoria centrale, la tecnica dell' <strong>overlay</strong> consente a un processo di essere più grande della quantità di memoria a esso allocata, ovvero al suo spazio di indirizzamento. Il principio è simile: mantenere in memoria solo le istruzioni e i dati che sono necessari in un certo momento, rimpiazzando man mano quelle più vecchie. Si può dire che un overlay è una sorta di partizione del programma di partenza, indipendente dagli altri e quindi in grado di compiere autonomamente tutta una serie di operazioni che lo caratterizzano. Quando la sua esecuzione parziale del programma si esaurisce, viene deallocato e al suo posto ne viene caricato un altro.
+</p>
+<p class='vspace'>Gli overlay non richiedono alcun supporto speciale da parte del sistema operativo, è compito del programmatore definirne il numero e le suddivisioni. Questo si rivela però un compito improbo, dato che i programmi in questione sono generalmente molto grandi (per quelli piccoli questa tecnica non è evidentemente necessaria) e suddividerli in parti implica una conoscenza puntigliosa della loro struttura. Inoltre i moduli possono avere dimensioni diverse, con conseguenti sprechi di spazio quando se ne caricheranno alcuni di grandezza più ridotta. Troppe responsabilità al programmatore e sfruttamento della memoria centrale poco efficiente fanno così dell'overlay una tecnica utilizzata solo per sistemi con poca memoria fisica e supporto hardware poco avanzato.
+</p>
+<div class='vspace'></div><h2>Swapping</h2>
+<p>In un sistema operativo multitasking è naturale che tra i processi caricati in memoria centrale alcuni non stiano facendo niente, o perché sono in attesa o perché hanno bassa priorità. Ciò però comporta uno spreco di spazio, cui si può far fronte adottando la tecnica dello <strong>swapping</strong>. In breve essa consiste nello scambiare temporaneamente un processo in attesa con un altro in stato di pronto o running che si trova in una <em>memoria temporanea</em> (<em>backing storage</em>), tipicamente un disco veloce. Nello specifico avremo quattro fasi:
+</p><ul><li><em>identificare</em> i processi in stato di attesa
+</li><li><em>salvare sulla memoria temporanea</em> i loro dati sensibili (dati globali, heap, stack)
+</li><li>rimuovere dalla memoria centrale tali processi (<em>scaricamento</em>)
+</li><li>caricare nello spazio appena liberato quei processi in stato di pronto o running che si trovavano nella memoria temporanea (<em>caricamento</em>).
+</li></ul><p class='vspace'>Una variante di questa tecnica è il <strong>roll out/roll in</strong>, che individua i processi da caricare e scaricare in base alla loro priorità.
+</p>
+<p class='vspace'>Lo swapping si applica sugli interi processi ed impone almeno due vincoli. Il primo è che si possono spostare solo quei processi in stato di riposo; il secondo è che non si possono spostare quei processi che hanno invocato una chiamata di funzione e sono ancora in attesa di una risposta, o il processo che gli subentrerebbe la riceverebbe al posto suo. Possibili soluzioni sono impedire lo swap di processi in attesa di I/O oppure permetterlo solo a quelli che usano i buffer condivisi del sistema operativo.
+</p>
+<p class='vspace'>Lo swapping standard ha come vantaggio l'aumento del grado di multiprogrammazione del sistema, ma essendo gestito automaticamente dal sistema operativo ed essendo applicato agli interi processi comporta un netto rallentamento delle prestazioni. Una versione modificata viene invece utilizzata in molti sistemi operativi UNIX, in cui ad esempio viene attivato solo quando esaurisce lo spazio in memoria centrale e solo fintanto non se ne libera un po'.
+</p>
+<div class='vspace'></div><h2>Allocazione contigua di memoria</h2>
+<p>L' <em>allocazione contigua di memoria</em> è un metodo per allocare nel modo più efficiente possibile sia il sistema operativo che i processi degli utenti in memoria centrale. Il primo viene generalmente memorizzato nella parte bassa della memoria centrale, separato dalle sezioni riservate ai processi da un <em>vettore di interrupt</em>.
+</p>
+<div class='vspace'></div><h3>Protezione della memoria centrale</h3>
+<p>Proteggere la memoria centrale significa garantire che non avvengano al suo interno <em>accessi illegali</em> da parte dei processi, dove per accessi illegali si intendono quelli al di fuori del proprio spazio di indirizzamento (che sconfinano quindi in quello del sistema operativo o di altri processi). La protezione avviene attraverso l'utilizzo congiunto di due registri che fanno parte del contesto di ogni processo: 
+</p><ul><li>il <strong>registro di rilocazione</strong>, che contiene il valore del più piccolo indirizzo fisico
+</li><li>il <strong>registro limite</strong> che contiene l'intervallo degli indirizzi logici, quindi la dimensione in byte dello spazio di indirizzamento
+</li></ul><p class='vspace'>Quando lo schedulatore seleziona un processo da mandare in esecuzione, la <em>Memory Management Unit</em> si occuperà di verificare che ogni indirizzo logico sia inferiore del registro limite associato, dopodiché lo mapperà dinamicamente aggiungendogli il valore del registro di rilocazione. L'indirizzo così ottenuto è inviato in memoria centrale.<br />Il registro di rilocazione fa inoltre in modo che le dimensioni del sistema operativo cambino dinamicamente, rendendo possibile l'utilizzo o meno di parte del codice (detto <em>transiente</em>).
+</p>
+<div class='vspace'></div><h3>Allocazione della memoria centrale</h3>
+<p>Uno dei metodi più semplici per allocare memoria centrale consiste nel suddividerla in <em>partizioni</em>, ciascuna delle quali può contenere al più un processo. Dal loro numero dipende il grado di multiprogrammazione del sistema. In particolare, con il <em>metodo delle partizioni multiple</em> quando un processo termina la sua computazione viene sostituito con uno selezionato dalla coda dei processi pronti.
+</p>
+<p class='vspace'>Abbiamo due schemi di partizionamento:
+</p><ul><li><strong>schema a partizione fissa</strong>, in cui si hanno partizioni di dimensione <em>statica</em> (definite al bootstrap) e una tabella aggiornata che indica quali parti della memoria centrale sono disponibili e quali occupati (inizialmente sono tutti liberi). Man mano che i processi si attivano, vengono messi in una coda di entrata gestita con un qualsiasi algoritmo di schedulazione; il sistema operativo valuterà le loro richieste di memoria e cercherà di allocarli in blocchi abbastanza grandi da ospitarli. Se tale ricerca fallisce, il processo entra in stato di attesa e vi rimarrà finché un altro non avrà terminato la sua computazione e quindi reso disponibile la partizione che occupava
+</li><li><strong>schema a partizione variabile</strong>, che a differenza dello schema precedente consente di modificare l'indirizzo di base delle varie partizioni rendendo di fatto possibile variarne le dimensioni, ad esempio unendo blocchi contigui precedentemente distinti o suddividendone uno particolarmente sovradimensionato.
+</li></ul><p class='vspace'>Nello schema a partizione variabile la configurazione dello spazio disponibile continua a variare, dunque il sistema dovrà controllare spesso se la situazione è diventata favorevole per il caricamento di uno dei processi in attesa nella coda di entrata. Questo viene anche chiamato <em>problema dell'allocazione dinamica della memoria centrale</em>, per il quale sono percorribili tre strategie:
+</p><ul><li><em>first-fit</em>, che assegna il primo blocco libero abbastanza grande per contenere lo spazio richiesto
+</li><li><em>best-fit</em>, che assegna il più piccolo blocco libero che lo può contenere
+</li><li><em>worst-fit</em>, che assegna il più grande blocco libero che lo può contenere
+</li></ul><p class='vspace'>Le simulazioni hanno dimostrato che le strategie migliori sono le prime due, in particolar modo la <em>first-fit</em> che è la più veloce.
+</p>
+<div class='vspace'></div><h3>Frammentazione</h3>
+<p>Il problema del <em>first-fit</em> e del <em>best-fit</em> è che soffrono di <strong>frammentazione esterna</strong>, ovvero lasciano dei blocchi liberi fra quelli occupati, blocchi che se fossero uniti e contigui potrebbero ospitare un altro processo. Questo accumularsi di spazio non sfruttato alla lunga comporta un considerevole abbassamento delle prestazioni, cosa particolarmente grave se si pensa che nel caso peggiore potrebbe soffrire di frammentazione esterna ogni coppia di blocchi. Il problema non è evitabile: la <em>regola del 50 per cento</em> dice che su N blocchi allocati con la first fit ne andranno persi N/2 a causa della frammentazione. Bisogna dunque fare in modo di ottimizzare la situazione a posteriori.
+</p>
+<p class='vspace'>Una prima soluzione è la <em>compattazione</em>, ovvero la fusione di tutti i blocchi liberi in uno solo. Tuttavia questa tecnica può essere applicata solo se la rilocazione è dinamica ed è fatta al momento dell'esecuzione, dato che in tal caso basterebbe spostare programma e dati. Si tratta inoltre di un procedimento piuttosto costoso.<br />Altra contromisura è permettere allo spazio di indirizzo logico di un processo di essere non contiguo, un'idea che verrà usata con profitto dalle tecniche di <em>paginazione</em> e <em>segmentazione</em> che vedremo poi.
+</p>
+<p class='vspace'>Se abbiamo la <em>frammentazione esterna</em> non possiamo certo farci mancare anche la <strong>frammentazione interna</strong>, che si presenta quando carichiamo all'interno di un blocco un processo più piccolo della sua dimensione. Lo scarto di spazio tra la dimensioni del processo e del blocco rappresenta la frammentazione.
+</p>
+<div class='vspace'></div><h2>Paginazione</h2>
+<p>La <strong>paginazione</strong> è uno schema di gestione della memoria centrale che, nel tentativo di superare gran parte dei problemi di gestione visti finora, si prefigge i seguenti obiettivi:
+</p><ul><li>caricare e scaricare solo piccole porzioni di memoria, evitando così l'overhead dello swapping
+</li><li>mantenere in memoria solo le parti che servono
+</li><li>non sprecare spazio, per quanto possibile
+</li><li>poter utilizzare porzioni di memoria non contigue per lo stesso programma
+</li><li>essere indipendentemente dal programmatore, ma gestito dall'hardware e in modo integrato col sistema operativo
+</li></ul><p class='vspace'>E' usata nelle sue varie forme nella maggior parte dei sistemi operativi, ed è quasi esclusivamente gestita dall'hardware anche se negli ultimi processori a 64 bit è sempre più integrata con il sistema operativo stesso.
+</p>
+<div class='vspace'></div><h3>Metodo base</h3>
+<p>Il metodo base per implementare la paginazione è suddividere la memoria fisica (centrale e ausiliaria) in blocchi di dimensione fissa chiamati <strong>frame</strong> (o pagine fisiche), e la memoria logica in blocchi di uguale dimensione detti <strong>pagine</strong> (o pagine logiche). <br />Gli indirizzi generati dalla CPU sono divisi in due parti, ovvero il <strong>numero di pagina</strong> (<em>p</em>) e lo <strong>spiazzamento nella pagina</strong> o offset (<em>d</em>). Il numero di pagina viene usato come indice nella <strong>tabella delle pagine</strong>, che contiene gli indirizzi iniziali di tutti i frame presenti nella memoria fisica; la combinazione di tali indirizzi base con lo spiazzamento permette di ottenere l'indirizzo fisico associato. Dato poi che è il sistema operativo a gestire la memoria centrale, dovrà sapere esattamente quali blocchi sono liberi e quali in uso; è stata a tal fine introdotta la <strong>tabella dei frame</strong>, che per ogni frame sa dire se è libero o occupato, e in quest'ultimo caso anche da chi. Riassumendo:
+</p><ul><li><strong>indirizzo logico</strong> = (<strong>p</strong>, <strong>d</strong>)<br />dove <em>p</em> è il numero di pagina logica e <em>d</em> è lo spiazzamento
+</li><li><strong>indirizzo fisico</strong> = (<strong>f</strong>, <strong>d</strong>)<br />dove <em>f</em> è il numero di pagina fisica
+</li><li><strong>tabellaPagine[<em>PaginaLogica</em>]</strong> = <strong>PaginaFisica</strong> se è caricata, niente altrimenti
+</li></ul><p class='vspace'>La dimensione dei blocchi è decisa dall'hardware ed è generalmente una potenza di 2 per semplicità rappresentative. Con la paginazione non si ha frammentazione esterna perché le dimensioni di pagine e frame coincidono e possono essere assegnate anche in modo non contiguo. Perdura invece il problema della frammentazione interna, dato che non è sempre vero (anzi, lo è di rado) che un processo riempia interamente tutti i suoi frame. Riducendo le dimensioni dei frame l'entità della frammentazione interna diminuisce, ma allo stesso tempo si riducono le prestazioni e l'efficacia di operazioni importanti quali i trasferimenti.
+</p>
+<p class='vspace'>Notare la netta separazione tra la visione che ha l'utente della memoria centrale con la sua realtà implementativa: l'utente vede la memoria come un unico singolo spazio contiguo in cui è caricato tutto e solo il suo programma che invece si trova sparpagliato nella memoria fisica in mezzo ad altri. Il sistema operativo si prende l'onere di rimappare gli indirizzi fisici in modo da garantire al tempo stesso il corretto funzionamento del processo e l'impedimento di accessi non autorizzati. <br />Come supporto per la gestione della memoria fisica il sistema operativo mantiene per ogni processo una copia della tabella delle pagine, che indica per ogni pagina se questa è allocata e in quest'ultimo caso in quale frame.
+</p>
+<p class='vspace'>Ultima nota: il mantenimento per ogni processo di una copia della tabella delle pagine inciderà sui tempi di cambiamento di contesto.
+</p>
+<div class='vspace'></div><h3>Supporto hardware</h3>
+<p>Ogni sistema operativo ha il suo sistema di memorizzazione della tabella delle pagine, la maggior parte dei quali ne alloca una per ogni processo. Nel caso più semplice, ovvero quando sono pochi i processi da gestire, vengono utilizzati con profitto una serie di <em>registri</em> ad alta velocità dedicati.<br />Nei computer odierni però la tabella delle pagine è estremamente grande (fino a un milione di elementi), quindi ai registri si preferisce un'altra soluzione: il mantenimento della tabella in memoria centrale con l'utilizzo di un <em>registro base</em> che la referenzi, così che sia sufficiente modificare quest'ultimo per puntare a un'altra. L'aspetto negativo di questo sistema è che per ogni accesso a un byte se ne deve prima effettuare un altro in tabella, dunque avrei un rallentamento di fattore 2. Per questo motivo viene utilizzata una piccola cache hardware per l'indicizzazione veloce, la <strong>memoria associativa</strong> (<em>Translation Look-Aside Buffer</em>, <strong>TLB</strong>). Ogni elemento contenuto in essa è costituito di due parti: una <em>chiave</em> (tag) e un valore. Il meccanismo è il seguente:
+</p><ol><li>la CPU genera un indirizzo logico il cui numero di pagina viene presentato alla TLB
+</li><li>se il numero di pagina viene trovato significa che il corrispondente numero di frame è immediatamente disponibile e viene rilasciato per l'accesso alla memoria centrale
+</li><li>se il numero di pagina non è presente (<em>TLB-miss</em>) la TLB deve procurarselo insieme al numero di frame facendo riferimento alla memoria centrale. Il nuovo elemento della TLB può essere aggiunto alla tabella e se non c'è abbastanza spazio si possono rimpiazzare gli elementi esistenti con logiche <em>LRU</em> ("quello usato meno di recente viene rimpiazzato") o più semplicemente a caso
+</li></ol><p>Vediamo uno schema:
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/TLB.gif' alt='' title='' /></div>
+<p class='vspace'>La frequenza con cui un particolare numero di pagina viene richiesto nella TLB è il <strong>tasso di accesso con successo</strong> (<em>hit-ratio</em>).
+</p>
+<p class='vspace'>Alcune TLB memorizzano anche gli <strong>identificatori dello spazio degli indirizzi</strong> (<em>ASID</em>) che identificano appunto in modo univoco a quale processo è associata una determinata coppia <code class='escaped'>chiave-valore</code>; in questo modo la TLB può contenere contemporaneamente gli indirizzi di diversi processi. Se invece gli ASID non sono supportati, la TLB andrebbe flushata ad ogni cambio di contesto o si rischierebbe di ricevere come risposta dei numeri di frame che appartengono allo spazio di indirizzamento di altri processi.
+</p>
+<div class='vspace'></div><h3>Protezione</h3>
+<p>La protezione della memoria centrale viene garantita esplicitamente con <strong>bit di protezione</strong> associati a ogni frame. Questi possono indicare se l'accesso al frame è consentito in sola lettura (es. costanti), o in lettura-scrittura (es. dati), o in sola esecuzione (es. codice) o ancora se è dentro o fuori lo spazio di indirizzamento del processo. Quest'ultimo bit è detto di <em>validità/non validità</em> e protegge dunque la memoria centrale da accessi illegali. <br />Alcuni sistemi hanno invece un hardware detto <strong>registro della lunghezza della pagina</strong> preposto alla protezione degli spazi di indirizzamento, che indica la dimensione della tabella delle pagine.
+</p>
+<p class='vspace'>Tutti i tentativi illegali di accesso sollevano in genere una <em>trap</em> del sistema operativo, che la gestirà in modo opportuno.
+</p>
+<div class='vspace'></div><h3>Struttura della tabella delle pagine</h3>
+<h4>Paginazione gerarchica</h4>
+<p>Dato che i sistemi operativi moderni hanno un vasto spazio di indirizzamento logico, la tabella delle pagine diventa eccessivamente grande, dunque è preferibile suddividerla in parti più piccole. Questo sistema è detto delle <strong>paginazioni gerarchiche</strong>.
+</p>
+<p class='vspace'>Ci sono diversi modi per realizzarla, il primo dei quali potrebbe essere l'utilizzo di una <em>paginazione a due livelli</em>, in cui la tabella stessa è paginata. Avremo dunque un indirizzo logico con tre valori: <em>p<sub>1</sub></em> (indice nella tabella esterna), <em>p<sub>2</sub></em> (spostamento nella pagina delle tabelle a partire da <em>p<sub>1</sub></em>), <em>d</em> (spiazzamento della pagina). Questo schema è detto anche della <strong>tabella delle pagine mappate in avanti</strong>. <br />Una variante è il <strong>VAX</strong>, che divide lo spazio di indirizzamento logico in quattro sezioni uguali, individuate dai 2 bit più significativi. <br />La tabella esterna delle pagine può essere a sua volta paginata, arrivando a 3 livelli (accade ad esempio nello SPARC); addirittura alcuni Motorola arrivano a 4.
+</p>
+<p class='vspace'>Per le architetture a 64bit le tabelle di paginazione gerarchiche sono invece inadeguate perché richiederebbero un numero proibitivo di accessi ai vari livelli di paginazione per tradurre con profitto l'indirizzo logico.
+</p>
+<div class='vspace'></div><h4>Tabella delle pagine con hashing</h4>
+<p>Nella tecnica della <strong>tabella delle pagine con hashing</strong> ogni elemento della tabella è composto da tre campi: <em>q</em> (numero della pagina virtuale), <em>s</em> (numero del frame corrispondente), puntatore all'elemento successivo.<br />La pagina virtuale (<em>p</em>) dell'indirizzo logico generato dalla CPU è usata come argomento di una funzione di hash, che permette di ottenere una <em>tabella di hashing</em> più piccola di quella di partenza. L'algoritmo funziona così:
+</p><ol><li>si applica la funzione di hash al numero della pagina contenuto nell’indirizzo virtuale, identificando un elemento nella tabella di hashing
+</li><li>si confronta il numero di pagina virtuale con l’elemento contenuto nella <em>q</em> del primo elemento della lista concatenata corrispondente
+<ul><li>se i valori coincidono, si usa il campo <em>s</em> per generare l’indirizzo fisico
+</li><li>altrimenti si esamina l'elemento successivo della lista
+</li></ul></li></ol><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PT-Hashing.gif' alt='' title='' /></div>
+<p class='vspace'>Una variante è la <strong>tabella delle pagine a gruppi</strong>, particolarmente adatta nei sistemi a 64bit, in cui ogni elemento della tabella di hashing si riferisce a più pagine (di solito 16).
+</p>
+<div class='vspace'></div><h4>Tabella delle pagine invertita</h4>
+<p>Finora abbiamo visto che le tabelle delle pagine associate a ciascun processo restituivano il numero di frame corrispondente al numero di pagina indicato nell'indirizzo logico. Dato però che ognuna di esse può contenere milioni di elementi e che ci possono essere molti processi attivi simultaneamente si avrà un'enorme occupazione di spazio.
+</p>
+<p class='vspace'>Una soluzione che ribalta la prospettiva appena illustrata è quella della <strong>tabella delle pagine invertita</strong>, in cui si mantiene un'unica tabella che avrà un elemento per ogni pagina fisica della memoria centrale. Ognuno di questi elementi è composto da un <em>ASID</em> (necessario perché la tabella contiene parecchi spazi di indirizzamento appartenenti a processi differenti), il numero di pagina logica memorizzata in quel frame e lo spiazzamento.<br />Questa tecnica permette di diminuire la quantità di memoria centrale necessaria per memorizzare ogni tabella, garantendo sempre la legalità degli accessi. Per contro ha però l'aumento del tempo necessario per cercare nella tabella quando si hanno riferimenti alla pagina, dal momento che nel caso peggiore bisogna scandirla tutta. A tal proposito si può utilizzare una <strong>tabella invertita con hashing</strong>, che velocizza la ricerca ma richiede due accessi. Insomma, le soluzioni ci sono, va solo cercato il giusto equilibrio.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/PT-Invertita.gif' alt='' title='' /></div>
+<div class='vspace'></div><h3>Pagine condivise</h3>
+<p>La paginazione consente con relativa facilità la condivisione di alcune pagine fisiche tra diversi processi, in modo da risparmiare una considerevole quantità di spazio. Ad esempio imporre una protezione in sola esecuzione su alcune pagine realizza di fatto la condivisione di tali porzioni di memoria seppur virtualmente disgiunte.
+</p>
+<p class='vspace'>I sistemi che usano tabelle delle pagine invertite hanno però maggiori difficoltà implementative: se infatti in quelle standard è possibile fare in modo che a diversi numeri di pagina siano associati gli stessi frame, quelle invertite assegnano per definizione un'unica pagina a un dato frame. Vanno trovate soluzioni alternative.
+</p>
+<div class='vspace'></div><h2>Segmentazione</h2>
+<h3>Metodo base</h3>
+<p>Un limite della paginazione è che non consente di tipizzare le varie porzioni di spazio di indirizzamento logico, distinguendo ad esempio l'area del codice da quella dei dati, il che diventa un problema quando si vogliono fare controlli mirati su parti specifiche di programmi di grosse dimensioni. Per lo stesso motivo non si possono nemmeno effettuare condivisioni semplici ed efficienti di porzioni di memoria omogenei per scopo e tipo, ad esempio tutta la parte di codice.
+</p>
+<p class='vspace'>La <strong>segmentazione</strong> è uno schema di gestione della memoria centrale che mantiene gran parte degli obiettivi della paginazione, compresa la separazione tra memoria logica e fisica, ma suddivide quest'ultima in segmenti di dimensione variabile ognuno con un proprio nome che lo individua (spesso un numero per semplicità implementativa). Il suo nuovo obiettivo sarà dunque dare una consistenza logica alle porzioni di spazio di indirizzamento dei processi, supportandone la tipizzazione e una più efficace condivisione. 
+</p>
+<div class='vspace'></div><h3>Hardware</h3>
+<p>Nella segmentazione la memoria centrale fisica è divisa in <strong>segmenti fisici</strong> (<em>frame</em>) di dimensioni diverse, mentre lo spazio di indirizzamento del processo è diviso in <strong>segmenti logici</strong> (<em>segmenti</em>). Notare che un segmento è tipizzato ed è caricato in un frame di medesima dimensione.
+</p>
+<p class='vspace'>In modo analogo alla paginazione, la traduzione degli indirizzi logici avviene attraverso una <strong>tabella dei segmenti</strong> in cui ogni elemento ha una <em>base di segmento</em> (indirizzo fisico di partenza) e un <em>limite del segmento</em> (la sua lunghezza). I segmenti di un processo possono essere caricati in frame non contigui in memoria centrale fisica, mentre quelli non caricati sono conservati nell'area di swap.<br />L'indirizzo logico è costituito dal numero di segmento (<em>s</em>) e dallo spiazzamento (<em>d</em>). Ogni indirizzo prodotto dalla CPU viene controllato utilizzando la tabella dei segmenti, accertandosi che rientri nei valori legali ad esso consentiti. Ad esempio se lo spiazzamento è maggiore del valore del limite, allora verrà impedito l'accesso.
+</p>
+<div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/segmentazione.gif' alt='' title='' /></div>
+<p class='vspace'>L'hardware dedicato per il supporto alla segmentazione è anche in questo caso la <strong>MMU</strong>, stavolta orientata alla gestione dei segmenti.
+</p>
+<div class='vspace'></div><h3>Protezione e condivisione</h3>
+<p>Il fatto stesso di suddividere la memoria centrale (e dunque di riflesso anche i processi che la occupano) in blocchi semanticamente omogenei, i segmenti appunto, facilita e velocizza le operazioni di protezione e condivisione dato che è plausibile che elementi facenti parte dello stesso segmento vadano trattati nello stesso modo. Le tecniche sono quelle già viste per la paginazione.
+</p>
+<div class='vspace'></div><h3>Frammentazione</h3>
+<p>La frammentazione esterna è un problema per la segmentazione dal momento che i segmenti sono di dimensione variabile e quindi non sempre coincidono con le pagine di dimensione fissa della memoria fisica. Dato però che per sua stessa natura la segmentazione avviene con una rilocazione dinamica, è possibile adottare sistemi di compattazione che riducono il problema. Se in aggiunta vengono effettuate valutazioni ben ponderate da parte dello schedulatore a lungo termine, si può mantenere la frammentazione esterna sotto controllo.
+</p>
+<div class='vspace'></div><h2>Segmentazione con paginazione</h2>
+<p>Abbiamo visto che paginazione e segmentazione presentano vantaggi e svantaggi, ma con la loro combinazione è possibile migliorarle a vicenda prendendo il meglio di ognuna:
+</p><ul><li>dalla paginazione si prende l'identificazione dei frame liberi, la scelta del frame libero in cui caricare una pagina, nessuna frammentazione
+</li><li>dalla segmentazione si prende la verifica degli accessi e delle operazioni, la condivisione di porzioni di memoria
+</li></ul><p class='vspace'>La memoria centrale fisica è divisa in <strong>pagine fisiche</strong> (<em>frame</em>) di dimensione fissa, mentre lo spazio di indirizzamento del processo è suddiviso in <strong>segmenti logici</strong> (<em>segmenti</em>) di dimensioni diverse ciascuno suddiviso in <em>pagine logiche</em>. I segmenti contengono informazioni di tipo diverso (sono quindi tipizzati), mentre le pagine di cui sono costituiti sono porzioni indifferenziate del loro spazio di indirizzamento. Notare che i frame hanno la stessa dimensione delle pagine logiche, che infatti vengono caricate in essi.
+</p>
+<p class='vspace'>L'indirizzo logico è dunque costituito dalla tripla: <em>s</em> (numero di segmento), <em>p</em> (numero di pagina), <em>d</em> (spiazzamento della pagina).<br />L'indirizzo fisico invece è rappresentato come: <em>f</em> (numero di frame), <em>d</em> (spiazzamento nel frame).
+</p>
+<p class='vspace'>E' il sistema operativo che gestisce tutto automaticamente, avvalendosi della <strong>MMU</strong> opportunamente configurata come supporto hardware dedicato per la traduzione dell'indirizzo logico in quello fisico.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='SistemiOperativi.html'>Torna alla pagina di Sistemi Operativi</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/SO-GestioneDellaMemoriaCentrale)</span></div>
+  </div>
+</body>
+</html>

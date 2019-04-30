@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Algoritmi e strutture dati - Tabelle e funzioni hash</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='A-TabelleFunzioniHash.html' title='Algoritmi e strutture dati - Tabelle e funzioni hash'>Algoritmi e strutture dati - Tabelle e funzioni hash</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+<a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p><hr />
+<div class='vspace'></div><div class='round lrindent evvai' > 
+<p>Questa pagina è stata aggiornata GRAZIE agli appunti che AVETE INVIATO nel periodo di chiusura della sezione UniCrema!! <strong><em>È SERVITA A QUALCOSA, NO?!</em></strong> <span style='font-size:144%'>;)</span>
+</p></div>
+<div class='vspace'></div><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Algoritmi e strutture dati - Tabelle e funzioni hash ::</strong>
+</pre><div class='vspace'></div><h3>Hashing</h3>
+<p><strong>Dizionario</strong>: insieme dinamico A di elementi aventi un campo key e altri campi in cui vengono memorizzate altre informazioni legate alla chiave.
+</p>
+<div class='vspace'></div><h5>TABELLE A INDIRIZZAMENTO DIRETTO</h5>
+<p>La tecnica di indirizzamento diretto funziona bene se l'insieme universo U delle chiavi è piccolo.<br />Avremo una tabella T[0..m-1] dove ogni posizione o <strong>slot</strong> ha una chiave di U.<br />La tabella contiene i puntatori agli elementi k.
+</p>
+<p class='vspace'>Le operazioni <code class='escaped'>SEARCH</code>, <code class='escaped'>INSERT</code> e <code class='escaped'>DELETE</code> vengono eseguite nel tempo O(1).
+</p>
+<p class='vspace'><em>SVANTAGGI</em>:
+</p><ul><li>serve riservare una memoria sufficiente per tante celle quante sono le chiavi possibili.
+</li><li>Se U è troppo grande non è possibile utilizzare l'indirizzamento diretto.
+</li><li>Se le chiavi effettivamente usate sono una piccola parte di U la memoria viene sprecata.
+</li><li>Prima di utilizzare una tavola ad indirizzamento diretto occorre inizializzare tutti gli elementi a NIL. Tempo O(U).
+</li></ul><div class='vspace'></div><div  style='text-align: center;'><img src='../uploads/Uni/A-tabIndDiretto.gif' alt='' title='' /></div>
+<div class='vspace'></div><h3>TABELLE HASH</h3>
+<p>Sono array contenenti un insieme di m celle molto minore della dimensione dell'universo.<br />Viene utilizzata una <strong>funzione hash</strong> h per calcolare lo slot della chiave k.<br />L'elemento con chiave k è h(k) che può essere considerato anche come valore hash di k.<br />Dato che vengono utilizzati per le chiavi solo m valori e non tutto U allora lo spazio di memoria usato sarà meno rispetto alle tabelle a indirizzamento diretto.
+</p>
+<p class='vspace'><strong>Problema</strong>: due chiavi possono essere associate allo stesso slot e questa viene detta <strong>collisione</strong>.<br />Per risolvere il problema delle collisioni vengono adottati diversi approcci tra cui quello del <strong>concatenamento</strong>.<br />Con questa tecnica tutti gli elementi di uno slot vengono messi in una lista concatenata. L'operazione INSERT sarà eseguita in un tempo O(1) come la DELETE (T, x) per la quale non occorre prima cercare l'elemento x perchè gli viene passato subito x e non la chiave k.
+</p>
+<p class='vspace'>Data una tabella hash T con m slot in cui sono memorizzati n elementi, si definisce fattore di carico della tabella (<strong>alfa</strong>) il rapporto n/m che indica il numero medio degli elementi memorizzati nella catena. Alfa può essere minore, uguale o maggiore di 1.
+</p>
+<p class='vspace'>SEARCH viene eseguita nel caso peggiore nel tempo &#920;(n), quindi quando tutte le chiavi sono associate allo stesso slot.
+</p>
+<p class='vspace'>Si suppone che ogni elemento abbia la stessa probabilità di essere associato a uno qualsiasi degli m slot, indipendentemente dallo slot cui sarà associato qualsiasi altro elemento. Questa è la base dello <strong>hashing uniforme semplice</strong> (tutte le chiavi hanno probabilità 1/m). <br />Le operazioni vengono eseguite nel tempo O(1).
+</p>
+<div class='vspace'></div><h3>Funzioni hash</h3>
+<p>Una buona funzione hash dovrebbe soddisfare l'ipotesi dell' <strong>hashing uniforme semplice</strong> vista sopra. Però non è possibile sempre verificare questa condizione.<br />Un dei metodi per buone funzioni hash è il <strong>metodo della divisione</strong> che calcola il valore hash come resto della divisione tra la chiave e un determinato numero primo.
+</p>
+<p class='vspace'>Supporremo che l'insieme universo delle chiavi sia l'insieme N dei numeri naturali.
+</p>
+<div class='vspace'></div><h5>METODO DELLA DIVISIONE</h5>
+<p>Questo metodo, che serve a creare una funzione hash, consiste nel inserire una chiave k in uno degli m slot calcolato come resto della divisione di k per m. Ovvero h(k) = (k mod m). <br />Questo è un metodo molto veloce perchè fa solo una operazione di divisione.
+</p>
+<p class='vspace'>Il valore m dovrebbe preferisci diverso da una potenza di 2 (2p) quindi sarebbe meglio un numero primo non troppo vicino a una potenza esatta di 2.
+</p>
+<div class='vspace'></div><h5>METODO DELLA MOLTIPLICAZIONE</h5>
+<p>Il metodo della moltiplicazione consiste di 2 passi:
+</p><ol><li>si moltiplica la chiave k per una certa costante A, 0 &lt; A &lt; 1, estraendo la parte frazionaria kA;
+</li><li>moltiplico la parte frazionaria per m e prendo la parte intera inferiore del risultato.
+</li></ol><p>In sostanza avremo che: h(k) = m |_(kA mod 1)_|.
+</p>
+<p class='vspace'>In questo caso m non è critico. Esso può assumere un valore 2p (potenza di 2). Però, si ha la probabilità che funzioni bene questo metodo quando, in particolare, il valore di A si avvicina al valore: (&#8730;5 -1)/2.
+</p>
+<div class='vspace'></div><h5>INDIRIZZAMENTO APERTO</h5>
+<p>Gli elementi sono memorizzati nella stessa tabella hash. Ogni slot potrà contenere un elemento dell'insieme dinamico oppure il valore NIL.<br />Per ricercare un elemento si scansiona ogni slot della tabella fino a quando non lo si trova.
+</p>
+<p class='vspace'>Un difetto è che la tabella può riempirsi senza così fare altri inserimenti.<br />Il fattore di carico alfa non sarà mai &gt; 1.
+</p>
+<p class='vspace'>Il vantaggio di questa tecnica è che esclude i puntatori. Calcola la sequenza degli slot da esaminare senza seguire i puntatori.<br />Dato che i puntatori non ci sono posso avere più spazio per la tabella hash, a parità di memoria occupata.<br />Questo comporta ricerche più veloci e meno collisioni.
+</p>
+<p class='vspace'>L'operazione INSERT scansiona la tabella fino a trovare uno slot vuoto per inserire la chiave. La sequenza di scansione dipende dalla chiave da inserire. Si chiede che per ogni chiave la sequenza di scansione sia una permutazione di &lt; 0, 1,.., m-1&gt; e che ogni posizione della tabella hash venga considerata come slot per una nuova chiave mentre la tabella si riempie.
+</p>
+<p class='vspace'>La cancellazione è più complicata. Se cancello da uno slot i una chiava k non posso mettere nello slot il valore NIL perchè potrebbe essere impossibile ritrovare qualsiasi chiave k durante il cui inserimento abbiamo esaminato lo slot i ed era occupato. Una soluzione: marcare lo slot al valore speciale DELETED. Lo slot DELETED viene considerato dalla INSERT come vuoto. 
+</p>
+<p class='vspace'>Ci sono delle approssimazioni accettabili per implementare l'hashing uniforme semplice:
+</p><ul><li><strong>scansione (o ispezione) lineare</strong>;
+</li><li><strong>scansione quadratica</strong>;
+</li><li><strong>doppio hashing</strong>.
+</li></ul><p class='vspace'>Nella <strong>scansione lineare</strong> la funzione di hash si ottiene da una funzione hash ordinaria definita come <strong>funzione hash ausiliaria</strong>. Questo tipo di implementazione presenta un problema: <strong>clustering primario</strong>. In pratica si formano lunghe file di slot occupati e quindi il tempo per la ricerca si allunga.
+</p>
+<p class='vspace'>Nella <strong>scansione quadratica</strong> si parte con in input una chiave, applico la funzione di hash che mi restituisce una cella e se essa è occupata rieseguo la funzione di hash con i che va da 1 a m-1. Nella tabella si fanno salti più lunghi.<br />È meglio di quella lineare anche se presenta anch'essa un problema anche se minore. Problema: <strong>clustering secondario</strong>: celle occupate una dopo l'altra distanziate di un certo passo. Come per la scansione lineare, anche in questa, ho solo m sequenze di scansione distinte.
+</p>
+<p class='vspace'>Infine il <strong>doppio hashing</strong> risolve il problema dell'addensamento (clustering), utilizzando due funzioni di hash. Genera anch'esso sequenze di ispezione diverse ma molte di più rispetto alla scansione lineare e quadratica: m<sup>2</sup>. Sparpaglia maggiormente le chiavi nella tabella.
+</p>
+<div class='vspace'></div><hr />
+<p><a class='wikilink' href='Algoritmi.html'>Torna alla pagina di Algoritmi e strutture dati</a>
+</p>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/A-TabelleFunzioniHash)</span></div>
+  </div>
+</body>
+</html>

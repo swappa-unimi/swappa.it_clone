@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+ <title>Swappa : Uni / Elementi di Sicurezza e Privatezza - Kerberos</title>
+ <meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1' />
+ <meta http-equiv='Content-Language' content='en' />
+ <meta http-equiv='Content-Style-Type' content='text/css' />
+ <meta http-equiv="imagetoolbar" content="no" />
+ <meta name='MSSmartTagsPreventParsing' content='true' />
+ <!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+.progress-bar {
+	display: block;
+	background: transparent; 
+	width: 520px;
+	font-size: 1px; /* for IE */
+	margin: 2px 0;
+}
+
+.progress-bar .pb1, .progress-bar .pb2, .progress-bar .pb3, .progress-bar .pb4 {
+	display: block; 
+	background: #fff; 
+	border-left:  1px solid #999; 
+	border-right: 1px solid #999;
+
+	overflow: hidden; 
+	height: 1px; 
+}
+.progress-bar .pb1 { margin: 0 4px; background: #999;}
+.progress-bar .pb2 { margin: 0 2px; border-width: 0 2px; }
+.progress-bar .pb3 { margin: 0 1px; }
+.progress-bar .pb4 { height: 11px; padding: 0 3px; }
+.progress-bar .pb5 { display: block; background: #eeeeef; overflow:hidden; }
+
+.progress-bar .bar {
+	display: block;
+	background: #a5bbd8;
+	height: 11px;
+	padding: 0;
+}
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style>
+  <link rel='stylesheet' href='../pub/wsplus/wsplus.css' 
+    type='text/css' />
+  <!--[if IE]><style type='text/css' media='screen'>
+    body { behavior:url('http://www.swappa.it/wiki/pub/wsplus/csshover.htc'); }
+    .rollover * { visibility: visible; }
+  </style><![endif]-->
+<script type='text/javascript' src='../pub/syntaxlove/scripts/shCore.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCSharp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushCpp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushJava.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPerl.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPhp.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushPython.js'></script><script type='text/javascript' src='../pub/syntaxlove/scripts/shBrushRuby.js'></script> <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shCore.css'/>
+  <link type='text/css' rel='stylesheet' href='../pub/syntaxlove/css/shThemeDefault.css'/>
+  <script type='text/javascript'>
+  	SyntaxHighlighter.config.clipboardSwf = 'http://www.swappa.it/wiki/pub/syntaxlove/scripts/clipboard.swf';
+  	SyntaxHighlighter.all();
+  </script>  <meta name='robots' content='noindex,nofollow' />
+
+ <style type='text/css'><!--
+
+/* Default Fonts */
+body { font-family: Verdana,Arial,Helvetica,sans-serif; }
+body, td, th { color:#000000; }
+body, td, th { font-size: 10pt; }
+small { font-size:0.85em; }
+code { white-space: nowrap; }
+h1, h2, h3, h4, h5 { margin-top:1em; margin-bottom:0.6em; }
+h1 { font-size: 1.9em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1.06em; }
+h5 { font-size: 1.0em; }
+ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+
+/* Misc. */
+body { width:auto; background-color:#ffffff; margin:0px; padding:0.5em; }
+img { border-width: 0px; }
+.indent { margin-left:30px; }
+.outdent { margin-left:30px; text-indent:-30px; }
+.vspace { margin-top:1.33em; }
+
+/* Links */
+a:link { color:#333333; font-weight:normal; text-decoration:underline; }
+a:visited { color:#333333; font-weight:normal; text-decoration:underline; }
+a.wikilink:hover { color: #333333; text-decoration:underline; }
+a.createlink { text-decoration:none; position:relative; top:-0.5em; font-weight:bold; font-size:smaller; border-bottom:none; }
+a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+a.varlink { text-decoration:none; }
+.apprlink { font-size:smaller; }
+
+/* Print View Page Header */
+#printhead { font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+#printhead a, #printhead a:visited { font-weight:bold; text-decoration:none; }
+#cc { float:right; font-size:11pt; border-bottom:2px solid #a0a0a0; margin-bottom:1em; }
+
+/* Print View Page Footer */
+#printfoot { font-family: Arial,Helvetica,Geneva,sans-serif; margin-top:1em; border-top:2px solid #a0a0a0; font-size:7pt; }
+  
+ --></style>
+</head>
+<body>
+  <div id='printhead'>
+    <a href='../index.html' title='Swappa Home'>Swappa</a> :
+    <a href='http://www.swappa.it/wiki/Uni' title='Uni Home'>Uni</a> /
+    <a href='ESPKerberos.html' title='Elementi di Sicurezza e Privatezza - Kerberos'>Elementi di Sicurezza e Privatezza - Kerberos</a>
+    <div id='cc'>
+	<a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/2.5/it/">
+	<img alt="Creative Commons License" style="border-width:0" height="15" width="80" src="http://i.creativecommons.org/l/by-nc-sa/2.5/it/80x15.png" />
+	</a>
+    </div>
+  </div>
+  
+<!--PageText-->
+<div id='wikitext'>
+<p>
+</p><pre  style='text-align: center; background-color: #ffe4c4; border: 2px solid #cccccc; font-size: 13pt; padding: 5px;'> <strong>:: Elementi di Sicurezza e Privatezza - Kerberos ::</strong>
+</pre><p class='vspace'>Questo è una sorta di riassunto semplificato di Kerberos, così che si capisca un po' meglio rispetto alle slide. Ci sono 4 passi, ma è solo per semplicità. Non si entra in dettagli scabrosi.
+</p>
+<p class='vspace'>Le entità in gioco sono AS, TGS, client e Server:
+</p><ul><li>AS = Authentication Server
+</li><li>TGS = Ticket Granting Server
+</li><li>Server = il server generico che offre il servizio voluto dal client
+</li></ul><p class='vspace'>Un <strong>kerberos realm</strong> è l'insieme dei Server e dei client che fanno capo ad una singola coppia AS/TGS. I vari realms possono comunicare, così che non è necessario per un utente iscriversi a mille realms. Per ottenere ciò è comunque necessario un pre-accordo fra i vari realms.
+</p>
+<p class='vspace'>AS contiene le password di tutti gli utenti: quando un client si connette a lui, AS verifica che ID e password coincidano, e quindi prosegue l'autenticazione.<br />Inoltre, AS sa anche tutte le password dei vari TGS: altrimenti, non potrebbe mai dare al client il tgt (ticket granting ticket) che il client poi deve forwardare al server.
+</p>
+<p class='vspace'>I ticket in ballo sono 2:
+</p><ol><li>tgt = lo scrive AS, e viene recapitato a TGS dal client, e dice: "Caro TGS, il client che ti recapita il messaggio è chi dice di essere. Saluti, AS"
+</li><li>ticket di servizio= lo scrive TGS e viene forwardato dal client al Server, e dice: "Caro Server, il client che ti recapita il messaggio è chi dice di essere"
+</li></ol><p class='vspace'>Riguardo ai ticket, occorre sapere che hanno sempre un timestamp, perché hanno <strong>durata limitata</strong>. Ciò vuol dire che se mando un ticket vecchio, esso non è più accettato.
+</p>
+<p class='vspace'>Il fatto che sia necessario il timestamp implica un'altra cosa: gli orologi di tutti i sistemi devono essere <strong>sincronizzati</strong>. A questo scopo si usa il network time protocol, va beh.
+</p>
+<p class='vspace'>Va inoltre evidenziato che AS deve essere <strong>sempre disponibile</strong>: quando va giù, tutto il sistema non si regge più in piedi. È quindi un <strong>single point of failure</strong>. Inoltre, sapendo esso le password di tutti i client, se viene crackato la faccenda si fa grama.
+</p>
+<div class='vspace'></div><h3>Passo 1</h3>
+<p>Il client si autentica presso AS. Riceve 2 messaggi:
+</p><ol><li>chiave di sessione per il TGS (che chiamo <strong>chiaveTGS</strong>)
+</li><li>messaggio da forwardare al TGS (contiene la <strong>chiaveTGS</strong> e l<strong>'ID</strong> del client; è crittato con la chiave SEGRETA del TGS) (<strong>tgt = ticket granting ticket</strong>)
+</li></ol><div class='vspace'></div><h3>Passo 2</h3>
+<p>Il client comunica con TGS, e gli invia:
+</p><ol><li>il proprio id, crittato con la <strong>chiaveTGS</strong>
+</li><li>il messaggio 2 proveniente dalla fase precedente, ovvero il tgt
+</li></ol><p class='vspace'>Il messaggio numero 2, essendo stato crittato da AS con la chiave segreta di TGS, viene aperto da TGS. Conteine la chiaveTGS, e la usa per aprire il messaggio numero 1, e controlla che l'ID del client corrisponda.
+</p>
+<div class='vspace'></div><h3>Passo 3</h3>
+<p>Il TGS allora invia al client:
+</p><ol><li>la chiave di sessione da usare con il server = <strong>chiaveServer</strong>
+</li><li>un messaggio da forwardare al Server (contiene la <strong>chiaveServer</strong>, e l'ID del client; è crittato con la chiave SEGRETA del Server) (<strong>ticket di servizio</strong>)
+</li></ol><div class='vspace'></div><h3>Passo 4</h3>
+<p>Il client invia al Server:
+</p><ol><li>il messaggio da forwardare (il messaggio 2 del punto precedente, cioè il ticket di servizio)
+</li><li>il proprio ID crittato con la chiaveServer
+</li></ol><p class='vspace'>Il Server al solito decritta 1, ne trae <strong>chiaveServer</strong>, la usa per aprire 2 e vede se i dati coincidono. Se sì, allora il client è autenticato. e gli dà finalmente quello che vuole.
+</p>
+<div class='vspace'></div><h3>Domandina</h3>
+<p>Perché ci sono un AS e un TGS? Non basterebbe un AS e basta, senza il TGS di mezzo?
+</p>
+<p class='vspace'>La risposta è che AS e TGS fanno cose diverse. AS fornisce l'autenticazione, mentre TGS fornisce il controllo dell'accesso. L'autenticazione serve per stabilire CHI è il client, mentre il controllo dell'accesso serve per sapere CHE COSA quel client può fare.
+</p>
+<p class='vspace'>Quindi, l'AS in tutto sto bailamme ha questi ruoli:
+</p><ol><li>fornisce autenticazione
+</li><li>conosce le password degli utenti
+</li><li>conosce le password dei TGS
+</li></ol><p class='vspace'>Mentre il TGS, nello stesso bailamme:
+</p><ol><li>fornisce controllo dell'accesso
+</li><li>conosce le password dei server
+</li><li>dà al client il ticket di servizio necessario per accedere a un servizio su un certo Server
+</li></ol>
+</div>
+
+  <div id='printfoot'>
+    <div class='printview'>(Printable View of <span style='white-space:nowrap;'>http://www.swappa.it/wiki/Uni/ESPKerberos)</span></div>
+  </div>
+</body>
+</html>
